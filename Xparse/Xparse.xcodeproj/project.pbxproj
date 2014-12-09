@@ -100,6 +100,7 @@
 		299CCC311A329DB400D0E0CD /* ElementSmpBldr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CCC221A329DB400D0E0CD /* ElementSmpBldr.cpp */; };
 		299CCC321A329DB400D0E0CD /* ElementSmpInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CCC241A329DB400D0E0CD /* ElementSmpInfo.cpp */; };
 		299CCC331A329DB400D0E0CD /* ElementSmpParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CCC261A329DB400D0E0CD /* ElementSmpParser.cpp */; };
+		299CE02A1A36BC390006AF9A /* mainConstants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CE0291A36BC390006AF9A /* mainConstants.cpp */; };
 		29B44F2E1A1E86700013AA05 /* AttGrpBldr_DataMmbrs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B44F2D1A1E86700013AA05 /* AttGrpBldr_DataMmbrs.cpp */; };
 		29BBA29C1A2FEA04004BEAC2 /* ElementCategorize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBA29A1A2FEA04004BEAC2 /* ElementCategorize.cpp */; };
 		29D5AF861A26E15300C0F494 /* DELETEME.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D5AF841A26E15300C0F494 /* DELETEME.cpp */; };
@@ -335,6 +336,7 @@
 		299CCC261A329DB400D0E0CD /* ElementSmpParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementSmpParser.cpp; sourceTree = "<group>"; };
 		299CCC271A329DB400D0E0CD /* ElementSmpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementSmpParser.h; sourceTree = "<group>"; };
 		299CCC341A32A17A00D0E0CD /* mainDoCreateElementSmps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateElementSmps.h; sourceTree = "<group>"; };
+		299CE0291A36BC390006AF9A /* mainConstants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainConstants.cpp; sourceTree = "<group>"; };
 		29A1F8DD1A2E977F00B69133 /* mainDoCreateCxSmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateCxSmp.h; sourceTree = "<group>"; };
 		29B44F2D1A1E86700013AA05 /* AttGrpBldr_DataMmbrs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AttGrpBldr_DataMmbrs.cpp; sourceTree = "<group>"; };
 		29BBA13A1A2FC451004BEAC2 /* mainDoCreateCxEmpty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateCxEmpty.h; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 				294091FC1A16FCAC00386E3A /* mainDoLoadSimpleTypes.h */,
 				297962A81A13C77C00C9EA39 /* main_simpleTypes.cpp */,
 				29DA9CB41A141BF300204B41 /* mainConstants.h */,
+				299CE0291A36BC390006AF9A /* mainConstants.cpp */,
 				295C08041A1546D50017C715 /* mainDoDbReplaceXsdTbl.h */,
 				293590711A16A3420022BAAA /* mainDoDbReplaceAttributesTbl.h */,
 				292121AF1A1D2FC700701D86 /* mainDoCreateAttributeGroupClasses.h */,
@@ -1086,6 +1089,7 @@
 				29E7CAF91A2B97E700B9778D /* CxSmpBldr_getCppFile.cpp in Sources */,
 				298F13591A2A868D006A0AF1 /* CxSmpParser.cpp in Sources */,
 				2972D8621A323D320018E453 /* ElementEmptyBldr_testFile.cpp in Sources */,
+				299CE02A1A36BC390006AF9A /* mainConstants.cpp in Sources */,
 				297962E51A13C77C00C9EA39 /* Parse.cpp in Sources */,
 				29FD8F911A33F92D0056C50F /* ElementMxBldr_Init.cpp in Sources */,
 				2972D8601A323D320018E453 /* ElementEmptyBldr_Init.cpp in Sources */,

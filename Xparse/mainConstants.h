@@ -82,6 +82,15 @@ namespace constants
         dirPath << "LexiconTests/";
         return dirPath.str();
     }
+    
+    class License
+    {
+    public:
+        static std::string getLicense();
+    private:
+        static std::string ourLicense;
+        static void init();
+    };
 }
 
 
