@@ -12,33 +12,22 @@ inline void mainDoResearch()
 {
     using namespace XsdClasses;
     using namespace xparse;
-    std::string lic = constants::License::getLicense();
-    
-    FileList files = FileInfo::getDir( "/Volumes/MusikPlatz/Xparse/" );
-    for ( FileInfo f : files )
+    Elements sequenceNodes = SequenceParser::getSequenceNodes();
+    Elements simpleSequences;
+    for ( auto e : sequenceNodes )
     {
-        if ( f.getExtension() == "h" || f.getExtension() == "cpp" )
+        if ( SequenceParser::getIsSequenceComposedOfElementsOnly( e ) )
         {
-            std::string line;
-            std::ifstream input( f.getFullpath() );
-            if ( input.is_open() )
+            if ( SequenceParser::getIsSequenceComposedOfRefElementsOnly( e ) )
             {
-                
-                FileInfo outinfo;
-                outinfo.setDirectory( "/Users/mjb/Desktop/out/" );
-                outinfo.setFileName( f.getFileName() );
-                std::ofstream output;
-                output.open ( outinfo.getFullpath() );
-                output << "/* See MusicXML License at the bottom of this code page. */" << std::endl <<std::endl;
-                while ( getline ( input, line ) )
-                {
-                    
-                    output << line << '\n';
-                }
-                output << lic;
+                simpleSequences.push_back( e );
             }
         }
     }
+    
+    int a = 1;
+    int x = 0;
+    int y = x + 1;
 }
 
 
