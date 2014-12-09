@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:Notes/ToDo.md">
+   </FileRef>
+   <FileRef
+      location = "group:Tests/Tests.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CppUnitLite/CppUnitLite.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Lexicon/Lexicon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Xparse/Xparse.xcodeproj">
+   </FileRef>
+</Workspace>

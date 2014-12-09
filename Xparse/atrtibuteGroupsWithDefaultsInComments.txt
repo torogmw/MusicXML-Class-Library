@@ -1,0 +1,76 @@
+<xs:attributeGroup name="halign">
+		<xs:annotation>
+			<xs:documentation>In cases where text extends over more than one line, horizontal alignment and justify values can be different. The most typical case is for credits, such as:
+
+	Words and music by
+	  Pat Songwriter
+
+Typically this type of credit is aligned to the right, so that the position information refers to the right-most part of the text. But in this example, the text is center-justified, not right-justified.
+
+The halign attribute is used in these situations. If it is not present, its value is the same as for the justify attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="halign" type="left-center-right"/>
+	</xs:attributeGroup>
+
+
+<xs:attributeGroup name="letter-spacing">
+		<xs:annotation>
+			<xs:documentation>The letter-spacing attribute specifies text tracking. Values are either "normal" or a number representing the number of ems to add between each letter. The number may be negative in order to subtract space. The default is normal, which allows flexibility of letter-spacing for purposes of text justification.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="letter-spacing" type="number-or-normal"/>
+</xs:attributeGroup>
+
+	<xs:attributeGroup name="print-object">
+		<xs:annotation>
+			<xs:documentation>The print-object attribute specifies whether or not to print an object (e.g. a note or a rest). It is yes by default.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="print-object" type="yes-no"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="print-spacing">
+		<xs:annotation>
+			<xs:documentation>The print-spacing attribute controls whether or not spacing is left for an invisible note or object. It is used only if no note, dot, or lyric is being printed. The value is yes (leave spacing) by default.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="print-spacing" type="yes-no"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="printout">
+		<xs:annotation>
+			<xs:documentation>The printout attribute group collects the different controls over printing an object (e.g. a note or rest) and its parts, including augmentation dots and lyrics. This is especially useful for notes that overlap in different voices, or for chord sheets that contain lyrics and chords but no melody.
+
+By default, all these attributes are set to yes. If print-object is set to no, the print-dot and print-lyric attributes are interpreted to also be set to no if they are not present.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="print-object"/>
+		<xs:attribute name="print-dot" type="yes-no"/>
+		<xs:attributeGroup ref="print-spacing"/>
+		<xs:attribute name="print-lyric" type="yes-no"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="trill-sound">
+		<xs:annotation>
+			<xs:documentation>The trill-sound attribute group includes attributes used to guide the sound of trills, mordents, turns, shakes, and wavy lines, based on MuseData sound suggestions. The default choices are:
+	
+	start-note = "upper"
+	trill-step = "whole"
+	two-note-turn = "none"
+	accelerate = "no"
+	beats = "4".
+	
+Second-beat and last-beat are percentages for landing on the indicated beat, with defaults of 25 and 75 respectively.
+	
+For mordent and inverted-mordent elements, the defaults are different:
+	
+	The default start-note is "main", not "upper".
+	The default for beats is "3", not "4".
+	The default for second-beat is "12", not "25".
+	The default for last-beat is "24", not "75".</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="start-note" type="start-note"/>
+		<xs:attribute name="trill-step" type="trill-step"/>
+		<xs:attribute name="two-note-turn" type="two-note-turn"/>
+		<xs:attribute name="accelerate" type="yes-no"/>
+		<xs:attribute name="beats" type="trill-beats"/>
+		<xs:attribute name="second-beat" type="percent"/>
+		<xs:attribute name="last-beat" type="percent"/>
+	</xs:attributeGroup>
+
