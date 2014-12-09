@@ -12,8 +12,30 @@ inline void mainDoResearch()
 {
     using namespace XsdClasses;
     using namespace xparse;
+
+#if 0
+    
+    FileList flist = FileInfo::getDir( constants::getPathLexiconSourceCode() );
+    for ( auto f : flist )
+    {
+        if ( f.getExtension() == "h" )
+        {
+            if ( f.getFileName().substr( 0, 4) == "MxEs" )
+            {
+                std::cout << "mlist.push_back( std::make_shared<";
+                std::cout << f.getNameWithoutExtension();
+                std::cout << ">() );";
+                std::cout << std::endl;
+            }
+        }
+    }
+#endif
+    
+#if 1
     Elements sequenceNodes = SequenceParser::getSequenceNodes();
     Elements simpleSequences;
+    Elements implementedSequences;
+    
     for ( auto e : sequenceNodes )
     {
         if ( SequenceParser::getIsSequenceComposedOfElementsOnly( e ) )
@@ -21,9 +43,18 @@ inline void mainDoResearch()
             if ( SequenceParser::getIsSequenceComposedOfRefElementsOnly( e ) )
             {
                 simpleSequences.push_back( e );
+                if ( SequenceParser::getIsSequenceComposedOfImplementedElementsOnly( e ) )
+                {
+                    implementedSequences.push_back( e );
+                }
             }
         }
+        
+        std::cout << "--------------------------------------------------------------------------------------" << std::endl;
+        std::cout << e->str() << std::endl << std:: endl;
+        
     }
+#endif
     
     int a = 1;
     int x = 0;

@@ -25,6 +25,9 @@ namespace XsdClasses
         static bool getElementHasDataSpecification( const xparse::ElementPtr e );
         static bool getIsElementRefOnly( const xparse::ElementPtr& e );
         static bool getIsElementImplemented( const xparse::ElementPtr& e );
+        static bool getIsSequenceComposedOfImplementedElementsOnly( const xparse::ElementPtr& e );
+        static std::string getElementName( const xparse::ElementPtr& e );
+        static std::string getElementXmlDataType( const xparse::ElementPtr& e );
         
     private:
         const static std::shared_ptr<XsdDocument> ourXsdDoc;

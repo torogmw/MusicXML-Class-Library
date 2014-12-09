@@ -505,8 +505,28 @@ namespace lexicon
                 return o;
             }
         }
+        for ( auto o : getElementObjects() )
+        {
+            if ( o->getXmlTypeName() == XmlName )
+            {
+                return o;
+            }
+        }
         throw "blow";
         return std::make_shared<MxColor>();
+    }
+    
+    bool XparseHelperFunctions::getIsElementObjectImplemented( const std::string& XmlName )
+    {
+        MxList mlist = getElementObjects();
+        for ( auto o : mlist )
+        {
+            if ( o->getXmlTypeName() == XmlName )
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

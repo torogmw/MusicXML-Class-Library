@@ -18,7 +18,8 @@ namespace XsdClasses
 {
     /* ctor */
     ElementSmpBldr::ElementSmpBldr( const HElementSmpInfo& info )
-    :myName( info->getCppName() )
+    :IClassBldr( info->getElement() )
+    ,myName( info->getCppName() )
     ,myNamespaces()
     ,myHFileHeader( new ClassFileHeader() )
     ,myCppFileHeader( new ClassFileHeader() )

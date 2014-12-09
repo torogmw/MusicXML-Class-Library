@@ -166,16 +166,91 @@ namespace XsdClasses
             throw std::invalid_argument( "this not an element, an xs:element node was expected." );
         }
         lexicon::XparseHelperFunctions xh;
-        HMxObject obj = xh.getObjectByXmlName( e->name() );
-        if ( obj )
+        return xh.getIsElementObjectImplemented( getElementXmlDataType( e ) );
+        return false;
+    }
+    
+    std::string SequenceParser::getElementName( const xparse::ElementPtr& e )
+    {
+        if ( !e )
         {
-            HMxElement check = std::static_pointer_cast<MxElement>( obj );
-            if ( check )
+            throw std::invalid_argument( "null ptr." );
+        }
+        if ( ! getIsElement( e ) )
+        {
+            throw std::invalid_argument( "this not an element, an xs:element node was expected." );
+        }
+        for ( int i = 0; i < e->count_attributes(); ++i )
+        {
+            AttributePtr a = e->get_attribute( i );
+            if ( a )
             {
-                return true;
+                if ( a->name() == "name" )
+                {
+                    return a->value();
+                }
             }
         }
-        return false;
+        return "not found";
+    }
+    std::string SequenceParser::getElementXmlDataType( const xparse::ElementPtr& e )
+    {
+        if ( !e )
+        {
+            throw std::invalid_argument( "null ptr." );
+        }
+        if ( ! getIsElement( e ) )
+        {
+            throw std::invalid_argument( "this not an element, an xs:element node was expected." );
+        }
+        for ( int i = 0; i < e->count_attributes(); ++i )
+        {
+            AttributePtr a = e->get_attribute( i );
+            if ( a )
+            {
+                if ( a->name() == "type" )
+                {
+                    return a->value();
+                }
+                else if ( a->name() == "ref" )
+                {
+                    return a->value();
+                }
+            }
+        }
+        return "not found";
+    }
+    
+    bool SequenceParser::getIsSequenceComposedOfImplementedElementsOnly( const xparse::ElementPtr& e )
+    {
+        if ( !e )
+        {
+            throw std::invalid_argument( "null ptr." );
+        }
+        if ( ! getIsSequence( e ) )
+        {
+            throw std::invalid_argument( "this not an sequence, an xs:sequence node was expected." );
+        }
+        for ( int i = 0; i < e->count_children(); ++i )
+        {
+            ElementPtr c = e->get_child( i );
+            if ( getIsElement( c ) )
+            {
+                if ( ! getIsElementImplemented( c ) )
+                {
+                    return false;
+                }
+            }
+            else if ( c->name() == "xs:annotation" )
+            {
+                // ignore it
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
 

@@ -21,6 +21,7 @@
 #include "AttGrpBldr.h"
 #include "LexiconBaseObjects.h"
 #include "XparseHelperFunctions.h"
+#include "IClassBldr.h"
 
 namespace XsdClasses
 {
@@ -28,7 +29,7 @@ namespace XsdClasses
     typedef std::shared_ptr<ElementMxBldr> HElementMxBldr;
     typedef std::vector<HElementMxBldr> ElementMxBldrs;
     
-    class ElementMxBldr
+    class ElementMxBldr : public IClassBldr
     {
         
     public:

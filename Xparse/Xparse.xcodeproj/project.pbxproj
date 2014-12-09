@@ -121,6 +121,7 @@
 		29E7CAFC1A2B97E700B9778D /* CxSmpBldr_testFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7CAF21A2B97E700B9778D /* CxSmpBldr_testFile.cpp */; };
 		29E7CAFD1A2B97E700B9778D /* CxSmpBldr_testGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7CAF31A2B97E700B9778D /* CxSmpBldr_testGen.cpp */; };
 		29E7CAFE1A2B97E700B9778D /* CxSmpBldr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7CAF41A2B97E700B9778D /* CxSmpBldr.cpp */; };
+		29F1A8EF1A37AA060076C971 /* IClassBldr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F1A8ED1A37AA060076C971 /* IClassBldr.cpp */; };
 		29FD8F8C1A33F92D0056C50F /* ElementMxBldr_DataMmbrs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FD8F811A33F92D0056C50F /* ElementMxBldr_DataMmbrs.cpp */; };
 		29FD8F8D1A33F92D0056C50F /* ElementMxBldr_FuncGrps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FD8F821A33F92D0056C50F /* ElementMxBldr_FuncGrps.cpp */; };
 		29FD8F8E1A33F92D0056C50F /* ElementMxBldr_Funcs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FD8F831A33F92D0056C50F /* ElementMxBldr_Funcs.cpp */; };
@@ -439,6 +440,8 @@
 		29E7CAF31A2B97E700B9778D /* CxSmpBldr_testGen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CxSmpBldr_testGen.cpp; sourceTree = "<group>"; };
 		29E7CAF41A2B97E700B9778D /* CxSmpBldr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CxSmpBldr.cpp; sourceTree = "<group>"; };
 		29E7CAF51A2B97E700B9778D /* CxSmpBldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxSmpBldr.h; sourceTree = "<group>"; };
+		29F1A8ED1A37AA060076C971 /* IClassBldr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IClassBldr.cpp; sourceTree = "<group>"; };
+		29F1A8EE1A37AA060076C971 /* IClassBldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IClassBldr.h; sourceTree = "<group>"; };
 		29FD8F811A33F92D0056C50F /* ElementMxBldr_DataMmbrs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementMxBldr_DataMmbrs.cpp; sourceTree = "<group>"; };
 		29FD8F821A33F92D0056C50F /* ElementMxBldr_FuncGrps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementMxBldr_FuncGrps.cpp; sourceTree = "<group>"; };
 		29FD8F831A33F92D0056C50F /* ElementMxBldr_Funcs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementMxBldr_Funcs.cpp; sourceTree = "<group>"; };
@@ -501,13 +504,6 @@
 			name = sequence;
 			sourceTree = "<group>";
 		};
-		294091F41A16D5C900386E3A /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ThirdParty;
-			sourceTree = "<group>";
-		};
 		296F6BDF1A2A7DBB00C8459E /* complexType */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,7 +560,6 @@
 				2979628D1A13C74D00C9EA39 /* MxNumber */,
 				29DA9C5F1A14168800204B41 /* mysqlpp */,
 				297962811A13C73700C9EA39 /* Products */,
-				294091F41A16D5C900386E3A /* ThirdParty */,
 				297963251A13C86100C9EA39 /* Utility */,
 				297963241A13C85E00C9EA39 /* xparse */,
 				2979632C1A13DA7B00C9EA39 /* XsdClasses */,
@@ -637,6 +632,8 @@
 				297962941A13C77C00C9EA39 /* ClassFileHeader.h */,
 				2979629C1A13C77C00C9EA39 /* Enum.cpp */,
 				2979629D1A13C77C00C9EA39 /* Enum.h */,
+				29F1A8ED1A37AA060076C971 /* IClassBldr.cpp */,
+				29F1A8EE1A37AA060076C971 /* IClassBldr.h */,
 			);
 			name = CodeBuilding;
 			sourceTree = "<group>";
@@ -1068,6 +1065,7 @@
 				298BD8831A2EC2F10052BDDC /* CxEmptyBldr_getHFile.cpp in Sources */,
 				2979632F1A13DAC700C9EA39 /* XsNode.cpp in Sources */,
 				295C080A1A156A040017C715 /* DbColumn.cpp in Sources */,
+				29F1A8EF1A37AA060076C971 /* IClassBldr.cpp in Sources */,
 				299CCC2E1A329DB400D0E0CD /* ElementSmpBldr_myObject.cpp in Sources */,
 				297962DB1A13C77C00C9EA39 /* Document.cpp in Sources */,
 				298BD8881A2EC2F10052BDDC /* CxEmptyBldr.cpp in Sources */,

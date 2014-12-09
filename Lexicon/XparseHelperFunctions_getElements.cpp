@@ -2,6 +2,8 @@
 
 #include "XparseHelperFunctions.h"
 #include "LexiconBaseObjects.h"
+
+/**********************************/
 #include "MxEeAccent.h"
 #include "MxEeAccordionHigh.h"
 #include "MxEeAccordionLow.h"
@@ -90,6 +92,8 @@
 #include "MxEeWavyLine.h"
 #include "MxEeWedge.h"
 #include "MxEeWordFont.h"
+
+/**********************************/
 #include "MxEmAccordionMiddle.h"
 #include "MxEmActualNotes.h"
 #include "MxEmAlter.h"
@@ -184,11 +188,87 @@
 #include "MxEmWorkNumber.h"
 #include "MxEmWorkTitle.h"
 
+/**********************************/
+#include "MxEsAccidental.h"
+#include "MxEsAccidentalMark.h"
+#include "MxEsBarStyle.h"
+#include "MxEsBassAlter.h"
+#include "MxEsBassStep.h"
+#include "MxEsBeam.h"
+#include "MxEsBeater.h"
+#include "MxEsBreathMark.h"
+#include "MxEsCancel.h"
+#include "MxEsCreator.h"
+#include "MxEsCreditWords.h"
+#include "MxEsDegreeAlter.h"
+#include "MxEsDegreeType.h"
+#include "MxEsDegreeValue.h"
+#include "MxEsDistance.h"
+#include "MxEsElision.h"
+#include "MxEsEncoder.h"
+#include "MxEsEnding.h"
+#include "MxEsFeature.h"
+#include "MxEsFermata.h"
+#include "MxEsFigureNumber.h"
+#include "MxEsFingering.h"
+#include "MxEsFirstFret.h"
+#include "MxEsFootnote.h"
+#include "MxEsFret.h"
+#include "MxEsGroupAbbreviation.h"
+#include "MxEsGroupBarline.h"
+#include "MxEsGroupName.h"
+#include "MxEsGroupSymbol.h"
+#include "MxEsHammerOn.h"
+#include "MxEsHandbell.h"
+#include "MxEsHoleClosed.h"
+#include "MxEsInversion.h"
+#include "MxEsKeyOctave.h"
+#include "MxEsKind.h"
+#include "MxEsLevel.h"
+#include "MxEsLineWidth.h"
+#include "MxEsMeasureNumbering.h"
+#include "MxEsMeasureRepeat.h"
+#include "MxEsMetronomeBeam.h"
+#include "MxEsMiscellaneousField.h"
+#include "MxEsMultipleRest.h"
+#include "MxEsNotehead.h"
+#include "MxEsNoteSize.h"
+#include "MxEsOffset.h"
+#include "MxEsOtherAppearance.h"
+#include "MxEsOtherArticulation.h"
+#include "MxEsOtherDirection.h"
+#include "MxEsOtherTechnical.h"
+#include "MxEsPartAbbreviation.h"
+#include "MxEsPartName.h"
+#include "MxEsPartSymbol.h"
+#include "MxEsPerMinute.h"
+#include "MxEsPluck.h"
+#include "MxEsPrefix.h"
+#include "MxEsPrincipalVoice.h"
+#include "MxEsPullOff.h"
+#include "MxEsRehearsal.h"
+#include "MxEsRelation.h"
+#include "MxEsRights.h"
+#include "MxEsRootAlter.h"
+#include "MxEsRootStep.h"
+#include "MxEsStem.h"
+#include "MxEsString.h"
+#include "MxEsSuffix.h"
+#include "MxEsTap.h"
+#include "MxEsText.h"
+#include "MxEsTupletNumber.h"
+#include "MxEsTupletType.h"
+#include "MxEsType.h"
+#include "MxEsWithBar.h"
+#include "MxEsWords.h"
+
 namespace lexicon
 {
     MxList XparseHelperFunctions::getElementObjects()
     {
         MxList mlist;
+        
+        /***********************************************************/
         mlist.push_back( std::make_shared<MxEeAccent>() );
         mlist.push_back( std::make_shared<MxEeAccordionHigh>() );
         mlist.push_back( std::make_shared<MxEeAccordionLow>() );
@@ -277,6 +357,8 @@ namespace lexicon
         mlist.push_back( std::make_shared<MxEeWavyLine>() );
         mlist.push_back( std::make_shared<MxEeWedge>() );
         mlist.push_back( std::make_shared<MxEeWordFont>() );
+        
+        /***********************************************************/
         mlist.push_back( std::make_shared<MxEmAccordionMiddle>() );
         mlist.push_back( std::make_shared<MxEmActualNotes>() );
         mlist.push_back( std::make_shared<MxEmAlter>() );
@@ -370,6 +452,82 @@ namespace lexicon
         mlist.push_back( std::make_shared<MxEmWood>() );
         mlist.push_back( std::make_shared<MxEmWorkNumber>() );
         mlist.push_back( std::make_shared<MxEmWorkTitle>() );
+        
+        /***********************************************************/
+        mlist.push_back( std::make_shared<MxEsAccidental>() );
+        mlist.push_back( std::make_shared<MxEsAccidentalMark>() );
+        mlist.push_back( std::make_shared<MxEsBarStyle>() );
+        mlist.push_back( std::make_shared<MxEsBassAlter>() );
+        mlist.push_back( std::make_shared<MxEsBassStep>() );
+        mlist.push_back( std::make_shared<MxEsBeam>() );
+        mlist.push_back( std::make_shared<MxEsBeater>() );
+        mlist.push_back( std::make_shared<MxEsBreathMark>() );
+        mlist.push_back( std::make_shared<MxEsCancel>() );
+        mlist.push_back( std::make_shared<MxEsCreator>() );
+        mlist.push_back( std::make_shared<MxEsCreditWords>() );
+        mlist.push_back( std::make_shared<MxEsDegreeAlter>() );
+        mlist.push_back( std::make_shared<MxEsDegreeType>() );
+        mlist.push_back( std::make_shared<MxEsDegreeValue>() );
+        mlist.push_back( std::make_shared<MxEsDistance>() );
+        mlist.push_back( std::make_shared<MxEsElision>() );
+        mlist.push_back( std::make_shared<MxEsEncoder>() );
+        mlist.push_back( std::make_shared<MxEsEnding>() );
+        mlist.push_back( std::make_shared<MxEsFeature>() );
+        mlist.push_back( std::make_shared<MxEsFermata>() );
+        mlist.push_back( std::make_shared<MxEsFigureNumber>() );
+        mlist.push_back( std::make_shared<MxEsFingering>() );
+        mlist.push_back( std::make_shared<MxEsFirstFret>() );
+        mlist.push_back( std::make_shared<MxEsFootnote>() );
+        mlist.push_back( std::make_shared<MxEsFret>() );
+        mlist.push_back( std::make_shared<MxEsGroupAbbreviation>() );
+        mlist.push_back( std::make_shared<MxEsGroupBarline>() );
+        mlist.push_back( std::make_shared<MxEsGroupName>() );
+        mlist.push_back( std::make_shared<MxEsGroupSymbol>() );
+        mlist.push_back( std::make_shared<MxEsHammerOn>() );
+        mlist.push_back( std::make_shared<MxEsHandbell>() );
+        mlist.push_back( std::make_shared<MxEsHoleClosed>() );
+        mlist.push_back( std::make_shared<MxEsInversion>() );
+        mlist.push_back( std::make_shared<MxEsKeyOctave>() );
+        mlist.push_back( std::make_shared<MxEsKind>() );
+        mlist.push_back( std::make_shared<MxEsLevel>() );
+        mlist.push_back( std::make_shared<MxEsLineWidth>() );
+        mlist.push_back( std::make_shared<MxEsMeasureNumbering>() );
+        mlist.push_back( std::make_shared<MxEsMeasureRepeat>() );
+        mlist.push_back( std::make_shared<MxEsMetronomeBeam>() );
+        mlist.push_back( std::make_shared<MxEsMiscellaneousField>() );
+        mlist.push_back( std::make_shared<MxEsMultipleRest>() );
+        mlist.push_back( std::make_shared<MxEsNotehead>() );
+        mlist.push_back( std::make_shared<MxEsNoteSize>() );
+        mlist.push_back( std::make_shared<MxEsOffset>() );
+        mlist.push_back( std::make_shared<MxEsOtherAppearance>() );
+        mlist.push_back( std::make_shared<MxEsOtherArticulation>() );
+        mlist.push_back( std::make_shared<MxEsOtherDirection>() );
+        mlist.push_back( std::make_shared<MxEsOtherTechnical>() );
+        mlist.push_back( std::make_shared<MxEsPartAbbreviation>() );
+        mlist.push_back( std::make_shared<MxEsPartName>() );
+        mlist.push_back( std::make_shared<MxEsPartSymbol>() );
+        mlist.push_back( std::make_shared<MxEsPerMinute>() );
+        mlist.push_back( std::make_shared<MxEsPluck>() );
+        mlist.push_back( std::make_shared<MxEsPrefix>() );
+        mlist.push_back( std::make_shared<MxEsPrincipalVoice>() );
+        mlist.push_back( std::make_shared<MxEsPullOff>() );
+        mlist.push_back( std::make_shared<MxEsRehearsal>() );
+        mlist.push_back( std::make_shared<MxEsRelation>() );
+        mlist.push_back( std::make_shared<MxEsRights>() );
+        mlist.push_back( std::make_shared<MxEsRootAlter>() );
+        mlist.push_back( std::make_shared<MxEsRootStep>() );
+        mlist.push_back( std::make_shared<MxEsStem>() );
+        mlist.push_back( std::make_shared<MxEsString>() );
+        mlist.push_back( std::make_shared<MxEsSuffix>() );
+        mlist.push_back( std::make_shared<MxEsTap>() );
+        mlist.push_back( std::make_shared<MxEsText>() );
+        mlist.push_back( std::make_shared<MxEsTupletNumber>() );
+        mlist.push_back( std::make_shared<MxEsTupletType>() );
+        mlist.push_back( std::make_shared<MxEsType>() );
+        mlist.push_back( std::make_shared<MxEsWithBar>() );
+        mlist.push_back( std::make_shared<MxEsWords>() );
+        
+        /***********************************************************/
         return mlist;
     }
 }
