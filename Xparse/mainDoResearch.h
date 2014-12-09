@@ -12,21 +12,7 @@ inline void mainDoResearch()
 {
     using namespace XsdClasses;
     using namespace xparse;
-    
-    std::stringstream license;
-    license << std::endl << std::endl << "/*" << std::endl << std::endl;
-    
-    FileInfo licensefileinfo;
-    licensefileinfo.setDirectory( constants::getPathInput() );
-    licensefileinfo.setFileName( "license.txt" );
-    std::ifstream licensefstream( licensefileinfo.getFullpath() );
-    std::string licenseline;
-    while ( getline ( licensefstream, licenseline ) )
-    {
-        license << licenseline << '\n';
-    }
-    license << std::endl << std::endl << "*/" << std::endl << std::endl;
-    std::string lic = license.str();
+    std::string lic = constants::License::getLicense();
     
     FileList files = FileInfo::getDir( "/Volumes/MusikPlatz/Xparse/" );
     for ( FileInfo f : files )
