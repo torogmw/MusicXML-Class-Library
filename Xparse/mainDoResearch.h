@@ -7,12 +7,14 @@
 #include "FileInfo.h"
 #include "mainConstants.h"
 #include <fstream>
+#include "IClassBldr.h"
+#include "SequenceSmpBldr.h"
 
 inline void mainDoResearch()
 {
     using namespace XsdClasses;
     using namespace xparse;
-
+    
 #if 0
     
     FileList flist = FileInfo::getDir( constants::getPathLexiconSourceCode() );
@@ -35,6 +37,7 @@ inline void mainDoResearch()
     Elements sequenceNodes = SequenceParser::getSequenceNodes();
     Elements simpleSequences;
     Elements implementedSequences;
+    mjb::ClassBldrs bldrs;
     
     for ( auto e : sequenceNodes )
     {
@@ -46,6 +49,7 @@ inline void mainDoResearch()
                 if ( SequenceParser::getIsSequenceComposedOfImplementedElementsOnly( e ) )
                 {
                     implementedSequences.push_back( e );
+                    bldrs.push_back( std::make_shared<SequenceSmpBldr>( e ) );
                 }
             }
         }

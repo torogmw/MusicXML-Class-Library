@@ -23,6 +23,7 @@ namespace mjb
 
     public:
         IClassBldr( const xparse::ElementPtr& XsdNode );
+        IClassBldr( const xparse::ElementPtr& XsdNode, const std::string& classNamePrefix );
         virtual ~IClassBldr();
         
         /* simple values */
@@ -97,5 +98,6 @@ namespace mjb
         std::string myClassNamePrefix;
     protected:
         void datachanged();
+        void init();
     };
 }

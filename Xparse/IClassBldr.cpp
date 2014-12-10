@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include "tab.h"
+#include "mainConstants.h"
 
 namespace mjb
 {
@@ -22,10 +23,37 @@ namespace mjb
     ,myOutputDirectoryH()
     ,myOutputDirectoryTest()
     ,myClassNamePrefix()
-    {}
-    
+    {
+        
+    }
+    IClassBldr::IClassBldr( const xparse::ElementPtr& XsdNode, const std::string& classNamePrefix )
+    :myXsdNode( XsdNode )
+    ,myName( "DefaultConstructed" )
+    ,myNamespaces()
+    ,myHFileHeader( new ClassFileHeader() )
+    ,myCppFileHeader( new ClassFileHeader() )
+    ,myPrivateFunctionGroups()
+    ,myPublicFunctionGroups()
+    ,myPrivateConstStaticDataMembers()
+    ,myPrivateDataMembers()
+    ,myOutputDirectoryCpp()
+    ,myOutputDirectoryH()
+    ,myOutputDirectoryTest()
+    ,myClassNamePrefix( classNamePrefix )
+    {
+        
+    }
     /* dtor */
     IClassBldr::~IClassBldr() {}
+    
+    void IClassBldr::init()
+    {
+        setOutputDirectoryCpp( constants::getPathLexiconTempSourceCode() );
+        setOutputDirectoryH( constants::getPathLexiconTempSourceCode() );
+        setOutputDirectoryTest( constants::getPathLexiconTempTestCode() );
+        std::vector<std::string> namespaces_temp = { "lexicon" };
+        setNamespaceNesting( namespaces_temp );
+    }
     
     void IClassBldr::datachanged()
     {
