@@ -103,6 +103,7 @@
 		299CE02A1A36BC390006AF9A /* mainConstants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CE0291A36BC390006AF9A /* mainConstants.cpp */; };
 		29B44F2E1A1E86700013AA05 /* AttGrpBldr_DataMmbrs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B44F2D1A1E86700013AA05 /* AttGrpBldr_DataMmbrs.cpp */; };
 		29BBA29C1A2FEA04004BEAC2 /* ElementCategorize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBA29A1A2FEA04004BEAC2 /* ElementCategorize.cpp */; };
+		29BC62091A38F705003BF9AA /* SequenceSmpBldr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BC62071A38F705003BF9AA /* SequenceSmpBldr.cpp */; };
 		29D5AF861A26E15300C0F494 /* DELETEME.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D5AF841A26E15300C0F494 /* DELETEME.cpp */; };
 		29DA9CAC1A1416B900204B41 /* libmysqlclient.18.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DA9CAA1A1416B900204B41 /* libmysqlclient.18.dylib */; };
 		29DA9CAD1A1416B900204B41 /* libmysqlpp_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DA9CAB1A1416B900204B41 /* libmysqlpp_d.dylib */; };
@@ -344,6 +345,8 @@
 		29BBA29A1A2FEA04004BEAC2 /* ElementCategorize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementCategorize.cpp; sourceTree = "<group>"; };
 		29BBA29B1A2FEA04004BEAC2 /* ElementCategorize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementCategorize.h; sourceTree = "<group>"; };
 		29BBA29D1A2FEAC4004BEAC2 /* mainDoElementResearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoElementResearch.h; sourceTree = "<group>"; };
+		29BC62071A38F705003BF9AA /* SequenceSmpBldr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SequenceSmpBldr.cpp; sourceTree = "<group>"; };
+		29BC62081A38F705003BF9AA /* SequenceSmpBldr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceSmpBldr.h; sourceTree = "<group>"; };
 		29D5AF841A26E15300C0F494 /* DELETEME.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DELETEME.cpp; sourceTree = "<group>"; };
 		29D5AF851A26E15300C0F494 /* DELETEME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DELETEME.h; sourceTree = "<group>"; };
 		29DA9C611A14169E00204B41 /* cgi_jpeg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cgi_jpeg.cpp; sourceTree = "<group>"; };
@@ -498,6 +501,8 @@
 		290AE8671A366991003B2C41 /* sequence */ = {
 			isa = PBXGroup;
 			children = (
+				29BC62071A38F705003BF9AA /* SequenceSmpBldr.cpp */,
+				29BC62081A38F705003BF9AA /* SequenceSmpBldr.h */,
 				290AE8681A3669BA003B2C41 /* SequenceParser.cpp */,
 				290AE8691A3669BA003B2C41 /* SequenceParser.h */,
 			);
@@ -1050,6 +1055,7 @@
 				297963191A13C7AC00C9EA39 /* IntPair.cpp in Sources */,
 				2933A05F1A2E27200034BD2F /* CxSmpBldr_myObject.cpp in Sources */,
 				297962D71A13C77C00C9EA39 /* Attribute.cpp in Sources */,
+				29BC62091A38F705003BF9AA /* SequenceSmpBldr.cpp in Sources */,
 				297962E71A13C77C00C9EA39 /* SectionSeparatorComment.cpp in Sources */,
 				297962E11A13C77C00C9EA39 /* Include.cpp in Sources */,
 				2937AECB1A1E509D009CDF2A /* AttGrpBldr_FuncGrps.cpp in Sources */,
