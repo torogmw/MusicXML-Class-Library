@@ -2642,9 +2642,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "ElementSmpInfo::getAttributeGetValueFunctions()"
-            landmarkType = "5">
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2964,6 +2962,22 @@
             startingLineNumber = "515"
             endingLineNumber = "515"
             landmarkName = "XparseHelperFunctions::getObjectByXmlName( const std::string&amp; XmlName )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/SequenceSmpBldr.cpp"
+            timestampString = "439944814.463236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "SequenceSmpBldr::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

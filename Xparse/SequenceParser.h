@@ -30,7 +30,7 @@ namespace XsdClasses
         static std::string getElementXmlDataType( const xparse::ElementPtr& e );
         static std::string getXmlName( const xparse::ElementPtr& e );
         static std::string getCppName( const xparse::ElementPtr& e );
-        
+        static xparse::Elements getElementNodesFromSequenceComposedOfElementsOnly( const xparse::ElementPtr& e );
     private:
         const static std::shared_ptr<XsdDocument> ourXsdDoc;
         static xparse::Elements ourSequenceNodes;

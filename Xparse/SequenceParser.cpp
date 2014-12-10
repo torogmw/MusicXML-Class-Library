@@ -281,6 +281,31 @@ namespace XsdClasses
         ss << SequenceParser::getXmlName( e );
         return ss.str();
     }
+    Elements SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( const xparse::ElementPtr& e )
+    {
+        if ( !e )
+        {
+            throw std::invalid_argument( "null ptr." );
+        }
+        if ( ! getIsSequence( e ) )
+        {
+            throw std::invalid_argument( "this not an sequence, an xs:sequence node was expected." );
+        }
+        if ( ! getIsSequenceComposedOfElementsOnly( e ) )
+        {
+            throw std::invalid_argument( "This elements contains items other than xs:elements." );
+        }
+        Elements output;
+        for ( int i = 0; i < e->count_children(); ++i )
+        {
+            ElementPtr c = e->get_child( i );
+            if ( getIsElement( c ) )
+            {
+                output.push_back( c );
+            }
+        }
+        return output;
+    }
 }
 
 

@@ -2,6 +2,11 @@
 
 #include "SequenceSmpBldr.h"
 #include "SequenceParser.h"
+#include "ElementCategorize.h"
+#include "ElementSmpBldr.h"
+#include "ElementSmpParser.h"
+#include "ElementEmptyBldr.h"
+#include "ElementEmptyParser.h"
 
 namespace XsdClasses
 {
@@ -38,6 +43,30 @@ namespace XsdClasses
         
         
         /* For each element, construct an ElementBldr */
+        xparse::Elements elements = SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() );
+        for ( auto e : elements )
+        {
+            ElementType etype = ElementCategorize::getType( e );
+            switch ( etype )
+            {
+                case ElementType::CxSmpRef:
+                {
+                    ElementSmpParser parser;
+                    HElementSmpInfo info = parser.createElementSmpInfo( e );
+                    myElementBldrs.push_back( std::make_shared<ElementSmpBldr>( info ) );
+                }
+                    break;
+                case ElementType::CxEmptyRef:
+                {
+                    ElementEmptyParser parser;
+                    HElementEmptyInfo info = parser.createElementEmptyInfo( e );
+                    myElementBldrs.push_back( std::make_shared<ElementEmptyBldr>( info ) );
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
     }
     
     
