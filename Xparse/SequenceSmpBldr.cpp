@@ -7,6 +7,9 @@
 #include "ElementSmpParser.h"
 #include "ElementEmptyBldr.h"
 #include "ElementEmptyParser.h"
+#include "ElementMxBldr.h"
+#include "ElementMxParser.h"
+
 
 namespace XsdClasses
 {
@@ -63,6 +66,19 @@ namespace XsdClasses
                     myElementBldrs.push_back( std::make_shared<ElementEmptyBldr>( info ) );
                 }
                     break;
+                case ElementType::MxSimpleTypeRef:
+                {
+                    ElementMxParser parser;
+                    HElementMxInfo info = parser.createElementMxInfo( e );
+                    myElementBldrs.push_back( std::make_shared<ElementMxBldr>( info ) );
+                }
+                    break;
+                case ElementType::XsTypeRef:
+                {
+                    ElementMxParser parser;
+                    HElementMxInfo info = parser.createElementMxInfo( e );
+                    myElementBldrs.push_back( std::make_shared<ElementMxBldr>( info ) );
+                }
                 default:
                     break;
             }
