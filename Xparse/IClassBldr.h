@@ -27,6 +27,7 @@ namespace mjb
         
         /* simple values */
         virtual void setName ( const std::string& name_in );
+        virtual void setName ( const std::string& name_in, bool add_class_name_prefix );
         virtual std::string getName() const;
         virtual void setNamespaceNesting ( const std::vector<std::string>& namespaces_in );
         virtual std::string getNamespaceQualifiers() const;
@@ -46,6 +47,7 @@ namespace mjb
         virtual void setMusicXmlID( int id_in );
         virtual std::string getClassNamePrefix() const;
         virtual void setClassNamePrefix( const std::string& value_in );
+        virtual xparse::ElementPtr getXsdNode() const;
         
         /* ADDING FUNCTIONS AND DATA MEMBERS */
         virtual void addPrivateFunctionGroup( const mjb::FunctionGroup& functionGroup_in );

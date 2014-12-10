@@ -15,15 +15,19 @@ namespace XsdClasses
     
     void SequenceSmpBldr::init()
     {
-        if( ! SequenceParser::getIsSequence( e ) );
+        if( ! SequenceParser::getIsSequence( IClassBldr::getXsdNode() ) )
         {
-            throw "This is not a sequence.";
+            throw std::invalid_argument( "This is not a sequence." );
         }
-        if ( ! SequenceParser::getIsSequenceComposedOfElementsOnly( e ) )
+        if ( ! SequenceParser::getIsSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() ) )
         {
-            throw "This sequence has items that are not an xs::Element."
+            throw std::invalid_argument( "This sequence has items that are not an xs::Element." );
+        }
+        if ( ! SequenceParser::getIsSequenceComposedOfImplementedElementsOnly( IClassBldr::getXsdNode() ) )
+        {
+            throw std::invalid_argument( "This sequence has xselements that are not implemented yet." );
         }
         IClassBldr::setClassNamePrefix( "MxSeqSmp" );
-        IClassBldr::setName( "" );
+        IClassBldr::setName( SequenceParser::getCppName( IClassBldr::getXsdNode() ), true );
     }
 }

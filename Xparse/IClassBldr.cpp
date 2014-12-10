@@ -57,6 +57,21 @@ namespace mjb
         myName = name_in;
         datachanged();
     }
+    void IClassBldr::setName ( const std::string& name_in, bool add_class_name_prefix )
+    {
+        if ( ! add_class_name_prefix )
+        {
+            setName( name_in );
+        }
+        else
+        {
+            std::stringstream ss;
+            ss << getClassNamePrefix();
+            ss << name_in;
+            setName( ss.str() );
+        }
+        
+    }
     std::string IClassBldr::getName() const
     {
         return myName;
@@ -286,5 +301,8 @@ namespace mjb
     {
         return tab( getNamespaceCount() + indent );
     }
-    
+    xparse::ElementPtr IClassBldr::getXsdNode() const
+    {
+        return myXsdNode;
+    }
 }

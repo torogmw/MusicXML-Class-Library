@@ -252,6 +252,35 @@ namespace XsdClasses
         }
         return true;
     }
+    std::string SequenceParser::getXmlName( const xparse::ElementPtr& e )
+    {
+        if ( !e )
+        {
+            throw std::invalid_argument( "null ptr." );
+        }
+        if ( ! getIsSequence( e ) )
+        {
+            throw std::invalid_argument( "this not an sequence, an xs:sequence node was expected." );
+        }
+        std::stringstream ss;
+        ss << e->getIndex();
+        return ss.str();
+    }
+    std::string SequenceParser::getCppName( const xparse::ElementPtr& e )
+    {
+        if ( !e )
+        {
+            throw std::invalid_argument( "null ptr." );
+        }
+        if ( ! getIsSequence( e ) )
+        {
+            throw std::invalid_argument( "this not an sequence, an xs:sequence node was expected." );
+        }
+        std::stringstream ss;
+        ss << "Node";
+        ss << SequenceParser::getXmlName( e );
+        return ss.str();
+    }
 }
 
 
