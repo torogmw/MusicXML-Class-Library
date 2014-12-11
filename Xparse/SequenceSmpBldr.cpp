@@ -45,6 +45,8 @@ namespace XsdClasses
         
         /* Set the name */
         IClassBldr::setName( SequenceParser::getCppName( IClassBldr::getXsdNode() ), true );
+        IClassBldr::setBriefDescription( "This class represents an xs:sequence object from musicxml.xsd." );
+        IClassBldr::setFullDescription( "This class represents an xs:sequence object from musicxml.xsd." );
         
         /* For each element, construct an ElementBldr */
         xparse::Elements elements = SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() );
@@ -184,7 +186,7 @@ namespace XsdClasses
             SetIsPresentFunc.setReturnType( "void" );
             SetIsPresentFunc.isConst( false );
             std::stringstream SetIsPresentDocumentation;
-            SetIsPresentDocumentation << "Sets whether or not <" << elementName << "> is present.";
+            SetIsPresentDocumentation << "Sets whether or not <" << elementName << "> is present.  If the element is not present, you should ignore this return value.  Note that the shared_ptr for the <" << elementName << "> will not be altered in any way when you delcare that the <" << elementName << "> element is not present.";
             fgrp.addFunction( SetIsPresentFunc );
         }
         
@@ -196,11 +198,17 @@ namespace XsdClasses
         GetValueFunc.isConst( true );
         std::stringstream getValueDocumentation;
         getValueDocumentation << "Returns a shared pointer handle to the <" << elementName << "> element. ";
-        getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, the returned shared ";
-        getValueDocumentation << "pointer will contain a null pointer.";
+        getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, this value will still exist (even though it is not in the xml document) and you should ignore it.";
         GetValueFunc.setDocumentation( getValueDocumentation.str() );
         std::stringstream getValueFuncCode;
-        getValueFuncCode << "return " << dmValue.getName() << ";";
+        getValueFuncCode << "if( " << dmValue.getName() << " )" << end();
+        getValueFuncCode << "{" << end();
+        getValueFuncCode << tab( 1 ) << << "return " << dmValue.getName() << ";" << end();
+        getValueFuncCode << "}" << end();
+        getValueFuncCode << "else" << end();
+        getValueFuncCode << "{" << end();
+        getValueFuncCode << tab( 1 ) << "return std::make_shared<" << dmValue.getDataType()<< ">();" << end();
+        getValueFuncCode << "}";
         GetValueFunc.setCode( getValueFuncCode );
         fgrp.addFunction( GetValueFunc );
         
@@ -221,7 +229,7 @@ namespace XsdClasses
         if ( !isRequired )
         {
             setValueDocumentation << "Note that if " << SetIsPresentFunc.getName() << " is false, the internal shared ";
-            setValueDocumentation << "pointer will be set to a null pointer.";
+            setValueDocumentation << "pointer will not be altered and will hold a value that does not exist in xml.";
         }
         SetValueFunc.setDocumentation( setValueDocumentation.str() );
         std::stringstream setValueFuncCode;
@@ -229,6 +237,51 @@ namespace XsdClasses
         SetValueFunc.setCode( setValueFuncCode );
         fgrp.addFunction( SetValueFunc );
         
+        Function getMinOccurs;
+        std::stringstream getMinOccursName;
+        getMinOccursName << "get" << elementName << "MinOccurs";
+        getMinOccurs.setName( getMinOccursName.str() );
+        getMinOccurs.setReturnType( "int" );
+        getMinOccurs.isConst( true );
+        std::stringstream getMinOccursDocumentation;
+        getMinOccursDocumentation << "Returns the minimum number of occurences of the <" << elementName << "> element. ";
+        getMinOccursDocumentation << " i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means the element is optional.";
+        getMinOccurs.setDocumentation( getMinOccursDocumentation.str() );
+        std::stringstream getMinOccursCode;
+        getMinOccursCode << "return my" << elementName << ".getMinOccurs();";
+        getMinOccurs.setCode( getMinOccursCode );
+        fgrp.addFunction( getMinOccurs );
+        
+        Function getMaxOccurs;
+        std::stringstream getMaxOccursName;
+        getMaxOccursName << "get" << elementName << "MaxOccurs";
+        getMaxOccurs.setName( getMaxOccursName.str() );
+        getMaxOccurs.setReturnType( "int" );
+        getMaxOccurs.isConst( true );
+        std::stringstream getMaxOccursDocumentation;
+        getMaxOccursDocumentation << "Returns the maximum number of occurences of the <" << elementName << "> element. ";
+        getMaxOccursDocumentation << "Typically the MaxOccurs is specified as either '1' or 'unbounded'.  When the specification says 'unbounded' ";
+        getMaxOccursDocumentation << "'getIs" << elementName << "Unbounded' will return 'true' and the return value of '" << getMaxOccurs.getName() << "' should be ignored.";
+        getMaxOccurs.setDocumentation( getMaxOccursDocumentation.str() );
+        std::stringstream getMaxOccursCode;
+        getMaxOccursCode << "return my" << elementName << ".getMaxOccurs();";
+        getMaxOccurs.setCode( getMaxOccursCode );
+        fgrp.addFunction( getMaxOccurs );
+        
+        Function getUnbounded;
+        std::stringstream getUnboundedName;
+        getUnboundedName << "getIs" << elementName << "Unbounded";
+        getUnbounded.setName( getUnboundedName.str() );
+        getUnbounded.setReturnType( "int" );
+        getUnbounded.isConst( true );
+        std::stringstream getUnboundedDocumentation;
+        getUnboundedDocumentation << "Returns 'true' if the specification says that the maximum number of occurences of the <" << elementName << "> element is 'unbounded'.";
+        getUnboundedDocumentation << "When this function returns 'true', the value returned by '" << getMaxOccurs.getName() << "' should be ignored.";
+        getUnbounded.setDocumentation( getUnboundedDocumentation.str() );
+        std::stringstream getUnboundedCode;
+        getUnboundedCode << "return my" << elementName << ".getIsUnbounded();";
+        getUnbounded.setCode( getUnboundedCode );
+        fgrp.addFunction( getUnbounded );
         addPublicFunctionGroup( fgrp );
     }
     

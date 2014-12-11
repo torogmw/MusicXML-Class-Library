@@ -5,6 +5,7 @@
 #include <sstream>
 #include "tab.h"
 #include "mainConstants.h"
+#include "getDateTime.h"
 
 namespace mjb
 {
@@ -50,11 +51,39 @@ namespace mjb
     
     void IClassBldr::init()
     {
+        
         setOutputDirectoryCpp( constants::getPathLexiconTempSourceCode() );
         setOutputDirectoryH( constants::getPathLexiconTempSourceCode() );
         setOutputDirectoryTest( constants::getPathLexiconTempTestCode() );
         std::vector<std::string> namespaces_temp = { "lexicon" };
         setNamespaceNesting( namespaces_temp );
+
+        myHFileHeader->setAuthor( "Matthew James Briggs" );
+        myHFileHeader->setBriefDescription( "Brief Description Here" );
+        myHFileHeader->setClassName( this->getName() );
+        myHFileHeader->setClassNameNamespaceQualifier( "lexicon" );
+        myHFileHeader->setDate( getDateTime() );
+        myHFileHeader->setEmail( "matthew.james.briggs@gmail.com" );
+        myHFileHeader->setFileType( mjb::ClassFileHeader::fileType::h );
+        myHFileHeader->setFullDescription( "Full description goes here." );
+        myHFileHeader->setMusicXmlID( getXsdNode()->getIndex() );
+        myHFileHeader->setProjectName( "Lexicon" );
+        myHFileHeader->setProjectVersionNumber( "1.0" );
+        myHFileHeader->setUrl( "http://matthewjamesbriggs.com" );
+        
+        myCppFileHeader->setAuthor( myHFileHeader->getAuthor() );
+        myCppFileHeader->setBriefDescription( myHFileHeader->getBriefDescription() );
+        myCppFileHeader->setClassName( myHFileHeader->getClassName() );
+        myCppFileHeader->setClassNameNamespaceQualifier( myHFileHeader->getClassNameNamespaceQualifier() );
+        myCppFileHeader->setDate( myHFileHeader->getDate() );
+        myCppFileHeader->setEmail( myHFileHeader->getEmail() );
+        myCppFileHeader->setFileType( mjb::ClassFileHeader::fileType::cpp );
+        myCppFileHeader->setFullDescription( myHFileHeader->getFullDescription() );
+        myCppFileHeader->setMusicXmlID( myHFileHeader->getMusicXmlID() );
+        myCppFileHeader->setProjectName( myHFileHeader->getProjectName() );
+        myCppFileHeader->setProjectVersionNumber( myHFileHeader->getProjectVersionNumber() );
+        myCppFileHeader->setUrl( myHFileHeader->getUrl() );
+        
     }
     
     void IClassBldr::datachanged()

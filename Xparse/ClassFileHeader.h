@@ -40,6 +40,21 @@ namespace mjb
         void setUrl( const std::string& url_in );
         void setMusicXmlID( int id_in );
         void setFileType( const fileType& fileType_in );
+        
+        std::string getAuthor() const;
+        std::string getDate() const;
+        std::string getClassName() const;
+        std::string getClassNameNamespaceQualifier() const;
+        std::string getBriefDescription() const;
+        std::string getFullDescription() const;
+        std::string getProjectName() const;
+        std::string getProjectVersionNumber() const;
+        std::vector<Include> getIncludes() const;
+        std::string getEmail() const;
+        std::string getUrl() const;
+        int getMusicXmlID() const;
+        fileType getFileType() const;
+        
         std::string toString( bool pragmaOnce_in = true ) const;
         std::vector<Include>::iterator IncludesBegin();
         std::vector<Include>::iterator IncludesEnd();

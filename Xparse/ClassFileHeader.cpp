@@ -219,6 +219,59 @@ namespace mjb
     {
         return myIncludes;
     }
+    
+    std::string ClassFileHeader::getAuthor() const
+    {
+        return myAuthor;
+    }
+    std::string ClassFileHeader::getDate() const
+    {
+        return myDate;
+    }
+    std::string ClassFileHeader::getClassName() const
+    {
+        return myClassName;
+    }
+    std::string ClassFileHeader::getClassNameNamespaceQualifier() const
+    {
+        return myClassNamespaceQualifiers;
+    }
+    std::string ClassFileHeader::getBriefDescription() const
+    {
+        return myBriefDescription;
+    }
+    std::string ClassFileHeader::getFullDescription() const
+    {
+        return myFullDescription;
+    }
+    std::string ClassFileHeader::getProjectName() const
+    {
+        return myProjectname;
+    }
+    std::string ClassFileHeader::getProjectVersionNumber() const
+    {
+        return myProjectVersionNumber;
+    }
+    std::vector<Include> ClassFileHeader::getIncludes() const
+    {
+        return myIncludes;
+    }
+    std::string ClassFileHeader::getEmail() const
+    {
+        return myEmail;
+    }
+    std::string ClassFileHeader::getUrl() const
+    {
+        return myUrl;
+    }
+    int ClassFileHeader::getMusicXmlID() const
+    {
+        return myMusicXmlID;
+    }
+    ClassFileHeader::fileType ClassFileHeader::getFileType() const
+    {
+        return myFileType;
+    }
 }
 
 
