@@ -36,7 +36,7 @@ namespace XsdClasses
         ElementSmpBldr( const HElementSmpInfo& info );
         virtual ~ElementSmpBldr();
         static ElementSmpBldrs createElementSmpBldrs();
-
+        virtual FunctionGroupCollection getPublicFunctionGroups() const;
         
         void setName ( const std::string& name_in );
         std::string getName() const;

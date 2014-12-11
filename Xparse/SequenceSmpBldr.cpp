@@ -140,7 +140,9 @@ namespace XsdClasses
         
         
         DataMember dmValue;
-        dmValue.setDataType( bldr->getName() );
+        std::stringstream dmValueDataType;
+        dmValueDataType << "H" << bldr->getName();
+        dmValue.setDataType( dmValueDataType.str() );
         std::stringstream dmValueName;
         dmValueName << "my" << elementName;
         dmValue.setName( dmValueName.str() );
@@ -168,10 +170,9 @@ namespace XsdClasses
         GetIsPresentDocumentation << " If <" << elementName << "> is required, no corresponding 'setIs" << elementName << "Present' will exist.";
         GetIsPresentFunc.setDocumentation( GetIsPresentDocumentation.str() );
         fgrp.addFunction( GetIsPresentFunc );
-        
+        Function SetIsPresentFunc;
         if ( !isRequired )
         {
-            Function SetIsPresentFunc;
             std::stringstream SetIsPresentFuncName;
             SetIsPresentFuncName << "setIs" << elementName << "Present";
             Parameter p;
@@ -186,6 +187,47 @@ namespace XsdClasses
             SetIsPresentDocumentation << "Sets whether or not <" << elementName << "> is present.";
             fgrp.addFunction( SetIsPresentFunc );
         }
+        
+        Function GetValueFunc;
+        std::stringstream getValueFuncName;
+        getValueFuncName << "get" << elementName;
+        GetValueFunc.setName( getValueFuncName.str() );
+        GetValueFunc.setReturnType( dmValue.getDataType() );
+        GetValueFunc.isConst( true );
+        std::stringstream getValueDocumentation;
+        getValueDocumentation << "Returns a shared pointer handle to the <" << elementName << "> element. ";
+        getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, the returned shared ";
+        getValueDocumentation << "pointer will contain a null pointer.";
+        GetValueFunc.setDocumentation( getValueDocumentation.str() );
+        std::stringstream getValueFuncCode;
+        getValueFuncCode << "return " << dmValue.getName() << ";";
+        GetValueFunc.setCode( getValueFuncCode );
+        fgrp.addFunction( GetValueFunc );
+        
+        Function SetValueFunc;
+        std::stringstream setValueFuncName;
+        setValueFuncName << "set" << elementName;
+        SetValueFunc.setName( setValueFuncName.str() );
+        SetValueFunc.isConst( false );
+        Parameter SetValueFuncParameter;
+        SetValueFuncParameter.setName( "value_in" );
+        std::stringstream setValueFuncParameterDataType;
+        setValueFuncParameterDataType << dmValue.getDataType() << "&";
+        SetValueFuncParameter.setDataType( setValueFuncParameterDataType.str() );
+        SetValueFuncParameter.isConst( true );
+        SetValueFunc.addParameter( SetValueFuncParameter );
+        std::stringstream setValueDocumentation;
+        setValueDocumentation << "Sets the internal shared pointer handle for the <" << elementName << "> element. ";
+        if ( !isRequired )
+        {
+            setValueDocumentation << "Note that if " << SetIsPresentFunc.getName() << " is false, the internal shared ";
+            setValueDocumentation << "pointer will be set to a null pointer.";
+        }
+        SetValueFunc.setDocumentation( setValueDocumentation.str() );
+        std::stringstream setValueFuncCode;
+        setValueFuncCode << dmValue.getName() << " = value_in;";
+        SetValueFunc.setCode( setValueFuncCode );
+        fgrp.addFunction( SetValueFunc );
         
         addPublicFunctionGroup( fgrp );
     }

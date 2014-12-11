@@ -55,6 +55,7 @@ namespace XsdClasses
         FileInfo getCppFileInfo() const;
         std::string getTestFile() const;
         FileInfo getTestFileInfo() const;
+        virtual FunctionGroupCollection getPublicFunctionGroups() const;
         
         void setAuthor( const std::string& author_in );
         void setDate( const std::string& date_in );

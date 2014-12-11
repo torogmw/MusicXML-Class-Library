@@ -56,7 +56,9 @@ inline void mainDoResearch()
         
         std::cout << "--------------------------------------------------------------------------------------" << std::endl;
         std::cout << e->str() << std::endl << std:: endl;
-        
+        int a = 1;
+        int x = 0;
+        int y = x + 1;
     }
 #endif
     

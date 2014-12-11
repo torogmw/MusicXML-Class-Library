@@ -36,7 +36,7 @@ namespace XsdClasses
         ElementMxBldr( const HElementMxInfo& info );
         virtual ~ElementMxBldr();
         static ElementMxBldrs createElementMxBldrs();
-
+        virtual FunctionGroupCollection getPublicFunctionGroups() const;
         
         void setName ( const std::string& name_in );
         std::string getName() const;

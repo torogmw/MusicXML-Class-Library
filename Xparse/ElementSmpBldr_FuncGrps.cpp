@@ -6,7 +6,10 @@
 
 namespace XsdClasses
 {
-    
+    FunctionGroupCollection ElementSmpBldr::getPublicFunctionGroups() const
+    {
+        return createFnGroups( ElementSmpBldr::FuncLoc::Public );
+    }
     FunctionGroupCollection ElementSmpBldr::createFnGroups( FuncLoc loc ) const
     {
         FunctionGroupCollection grps;
