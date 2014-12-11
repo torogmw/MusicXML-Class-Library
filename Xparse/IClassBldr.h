@@ -65,9 +65,9 @@ namespace mjb
         
         virtual void addPrivateDatamember( const mjb::DataMember& data_member_in );
         std::vector<DataMember>::iterator getPrivateDatamembersBegin();
-        std::vector<DataMember>::iterator getPrivateDatamemberDatamembersEnd();
+        std::vector<DataMember>::iterator getPrivateDatamembersEnd();
         std::vector<DataMember>::const_iterator getPrivateDatamembersBegin() const;
-        std::vector<DataMember>::const_iterator getPrivateDatamemberDatamembersEnd() const;
+        std::vector<DataMember>::const_iterator getPrivateDatamembersEnd() const;
         
         virtual void addPublicDatamember( const mjb::DataMember& data_member_in );
         std::vector<DataMember>::iterator getPublicDatamembersBegin();
@@ -90,6 +90,11 @@ namespace mjb
         virtual FileInfo getCppFileInfo() const;
         virtual std::string getTestFile() const = 0 ;
         virtual FileInfo getTestFileInfo() const;
+        virtual std::string getXmlDocumentation() const;
+        virtual void setXmlDocumentation( const std::string& value_in );
+        virtual std::string getXmlName() const;
+        virtual void setXmlName( const std::string& value_in );
+        
         
         /* VALUE OBJECT */
         virtual std::string getValueObjectObjectInstantiationString() const = 0 ;
@@ -117,6 +122,9 @@ namespace mjb
         std::string myOutputDirectoryH;
         std::string myOutputDirectoryTest;
         std::string myClassNamePrefix;
+        std::string myXmlDocumentation;
+        std::string myXmlName;
+        
     protected:
         void datachanged();
         void init();

@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 14:43:42
+  * @date       2014-12-11 15:30:29
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 6271
@@ -39,6 +39,18 @@ namespace lexicon
 		virtual ~MxSeqSmpNode6271();
 		MxSeqSmpNode6271( const MxSeqSmpNode6271& other );
 		MxSeqSmpNode6271& operator=( const MxSeqSmpNode6271& other );
+
+/* defaultName ------------------------------------------------------------------------ */
+
+		/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+		std::string getXmlTypeName() const;
+
+		/** Returns the name of this C++ class. **/
+		std::string getClassName() const;
+
+		/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+		    document. **/
+		std::string getDocumentation() const;
 
 /* DisplayStep Functions -------------------------------------------------------------- */
 

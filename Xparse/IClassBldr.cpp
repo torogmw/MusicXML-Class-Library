@@ -83,7 +83,71 @@ namespace mjb
         myCppFileHeader->setProjectName( myHFileHeader->getProjectName() );
         myCppFileHeader->setProjectVersionNumber( myHFileHeader->getProjectVersionNumber() );
         myCppFileHeader->setUrl( myHFileHeader->getUrl() );
+
+        // const static int myXsdID;
+        DataMember xsdID;
+        xsdID.setName( "myXsdID" );
+        xsdID.setDataType( "int" );
+        std::stringstream xsdIDValue;
+        xsdIDValue << myXsdNode->getIndex();
+        xsdID.setValue( xsdIDValue.str() );
+        addPrivateConstStaticDatamember( xsdID );
+
+		// const static std::string myXmlTypeName;
+        DataMember xmlTypeName;
+        xmlTypeName.setName( "myXmlTypeName" );
+        xmlTypeName.setDataType( "std::string" );
+        xmlTypeName.setValue( getXmlName() );
+        xmlTypeName.setQuotes( Quotes::quotes );
+        addPrivateConstStaticDatamember( xmlTypeName );
         
+        
+        
+		// const static std::string myCppClassName;
+        DataMember cppClassName;
+        cppClassName.setName( "myCppClassName" );
+        cppClassName.setDataType( "std::string" );
+        cppClassName.setValue( getName() );
+        cppClassName.setQuotes( Quotes::quotes);
+        addPrivateConstStaticDatamember( cppClassName );
+        
+		// const static std::string myDocumentation;
+        DataMember documentation;
+        documentation.setName( "myDocumentation" );
+        documentation.setDataType( "std::string" );
+        documentation.setValue( getXmlDocumentation() );
+        documentation.setQuotes( Quotes::quotes );
+        addPrivateConstStaticDatamember( documentation );
+        
+        FunctionGroup getClassInfo;
+        {
+            Function f;
+            f.setName( "getXmlTypeName" );
+            f.setDocumentation( "Returns the name of this xs:element as found in the musicxml.xsd document." );
+            f.setReturnType( "std::string" );
+            f.isConst( true );
+            f.setCode( "return myImpl->getXmlTypeName();" );
+            getClassInfo.addFunction( f );
+        }
+        {
+            Function f;
+            f.setName( "getClassName" );
+            f.setDocumentation( "Returns the name of this C++ class." );
+            f.setReturnType( "std::string" );
+            f.isConst( true );
+            f.setCode( "return myImpl->getClassName();" );
+            getClassInfo.addFunction( f );
+        }
+        {
+            Function f;
+            f.setName( "getDocumentation" );
+            f.setDocumentation( "Returns the documentation for this musicxml type as found in the musicxml.xsd document." );
+            f.setReturnType( "std::string" );
+            f.isConst( true );
+            f.setCode( "return myImpl->getDocumentation();" );
+            getClassInfo.addFunction( f );
+        }
+        addPublicFunctionGroup( getClassInfo );
     }
     
     void IClassBldr::datachanged()
@@ -409,7 +473,7 @@ namespace mjb
         return myPrivateDataMembers.begin();
     }
 
-    std::vector<DataMember>::iterator IClassBldr::getPrivateDatamemberDatamembersEnd()
+    std::vector<DataMember>::iterator IClassBldr::getPrivateDatamembersEnd()
     {
         return myPrivateDataMembers.end();
     }
@@ -419,7 +483,7 @@ namespace mjb
         return myPrivateDataMembers.cbegin();
     }
 
-    std::vector<DataMember>::const_iterator IClassBldr::getPrivateDatamemberDatamembersEnd() const
+    std::vector<DataMember>::const_iterator IClassBldr::getPrivateDatamembersEnd() const
     {
         return myPrivateDataMembers.cend();
     }
@@ -449,5 +513,20 @@ namespace mjb
     {
         return myPublicDataMembers.cend();
     }
-
+    std::string IClassBldr::getXmlDocumentation() const
+    {
+        return myXmlDocumentation;
+    }
+    void IClassBldr::setXmlDocumentation( const std::string& value_in )
+    {
+        myXmlDocumentation = value_in;
+    }
+    std::string IClassBldr::getXmlName() const
+    {
+        return myXmlName;
+    }
+    void IClassBldr::setXmlName( const std::string& value_in )
+    {
+        myXmlName = value_in;
+    }
 }

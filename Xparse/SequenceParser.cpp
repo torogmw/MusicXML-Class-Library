@@ -263,7 +263,7 @@ namespace XsdClasses
             throw std::invalid_argument( "this not an sequence, an xs:sequence node was expected." );
         }
         std::stringstream ss;
-        ss << e->getIndex();
+        ss << "node-" << e->getIndex();
         return ss.str();
     }
     std::string SequenceParser::getCppName( const xparse::ElementPtr& e )

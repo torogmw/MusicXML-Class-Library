@@ -48,6 +48,10 @@ namespace XsdClasses
         IClassBldr::setBriefDescription( "This class represents an xs:sequence object from musicxml.xsd." );
         IClassBldr::setFullDescription( "This class represents an xs:sequence object from musicxml.xsd." );
         
+        /* INIT Set Xml Info */
+        IClassBldr::setXmlDocumentation( "No XSD Documentation." );
+        IClassBldr::setXmlName( SequenceParser::getXmlName( getXsdNode() ) );
+        
         /* INIT For each element, construct an ElementBldr */
         xparse::Elements elements = SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() );
         for ( auto e : elements )
@@ -565,20 +569,48 @@ namespace XsdClasses
         
         /* CPP IMPL DataMembers */
         ss << baselineIndent( 0 ) << "private:" << end();
-        for ( auto dm = getPrivateDatamembersBegin(); dm != getPrivateDatamemberDatamembersEnd(); ++dm )
+        for ( auto dm = getPrivateDatamembersBegin(); dm != getPrivateDatamembersEnd(); ++dm )
         {
             
-            ss << baselineIndent( 1 ) << datamember.getDataType();
-            ss << " " << datamember.getName() << ";" << std::endl;
+            ss << baselineIndent( 1 ) << dm->getDataType();
+            ss << " " << dm->getName() << ";" << std::endl;
         }
         
-        /* CPP IMPL */
+        /* CPP IMPL static const datamember declarations */
+        for ( auto dm = getPrivateConstStaticDatamembersBegin(); dm != getPrivateConstStaticDatamembersEnd(); ++dm )
+        {
+            ss << baselineIndent( 1 ) << "const static " << dm->getDataType();
+            ss << " " << dm->getName() << ";" << std::endl;
+        }
+        ss << std::endl;
         
-        /* CPP IMPL */
+        /* CPP IMPL Public Functions */
+        for ( FunctionGroup fgrp : getPublicFunctionGroups() )
+        {
+            if ( fgrp.isPublic() )
+            {
+                if ( fgrp.size() > 0 )
+                {
+                    ss << fgrp.write("", getNamespaceCount()+1, ClassFileHeader::fileType::cpp, 90 );
+                    ss << std::endl;
+                }
+            }
+        }
         
-        /* CPP IMPL */
+        /* CPP IMPL Private Functions */
         
-        /* CPP IMPL */
+        /* CPP IMPL static const datamember instantiation */
+        for ( auto dm = getPrivateConstStaticDatamembersBegin(); dm != getPrivateConstStaticDatamembersEnd(); ++dm )
+        {
+            ss << baselineIndent( 0 ) << "const " << dm->getDataType();
+            ss << " " << getName() << "::Impl::" << dm->getName() << " = ";
+            ss << dm->getValue() << ";" << std::endl;
+        }
+        ss << std::endl;
+        
+        /* CPP IMPL Close */
+        ss << baselineIndent( 0 ) << "}; // struct " << getName() << "::Impl"<< std::endl;
+        ss << std::endl;
         
         /* return statement */
         return ss.str();

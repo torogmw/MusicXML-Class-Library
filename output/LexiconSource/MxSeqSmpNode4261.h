@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 14:43:37
+  * @date       2014-12-11 15:30:24
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4261
@@ -38,6 +38,18 @@ namespace lexicon
 		virtual ~MxSeqSmpNode4261();
 		MxSeqSmpNode4261( const MxSeqSmpNode4261& other );
 		MxSeqSmpNode4261& operator=( const MxSeqSmpNode4261& other );
+
+/* defaultName ------------------------------------------------------------------------ */
+
+		/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+		std::string getXmlTypeName() const;
+
+		/** Returns the name of this C++ class. **/
+		std::string getClassName() const;
+
+		/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+		    document. **/
+		std::string getDocumentation() const;
 
 /* StaffDistance Functions ------------------------------------------------------------ */
 

@@ -72,7 +72,6 @@ namespace xparse
 
 std::ostream& operator<<( std::ostream& os, const xparse::Element& rhs );
 
-
 /*
 
 MusicXML™ Public License Version 3.0
