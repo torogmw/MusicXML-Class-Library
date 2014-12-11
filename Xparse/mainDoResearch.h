@@ -1,4 +1,3 @@
-/* See MusicXML License at the bottom of this code page. */
 
 #pragma once
 
@@ -68,8 +67,8 @@ inline void mainDoResearch()
                     FileInfo testFileInfo = bldr->getTestFileInfo();
                     
                     fileStream( hFileInfo.getFullpath(), hFileContents );
-                    fileStream( cppFileInfo.getFullpath(), cppFileContents );
-                    fileStream( testFileInfo.getFullpath(), testFileContents );
+                    // fileStream( cppFileInfo.getFullpath(), cppFileContents );
+                    // fileStream( testFileInfo.getFullpath(), testFileContents );
                     std::cout << "created " << counts << ": " << bldr->getName() << std::endl;
                     ++ counts;
                 }
@@ -78,8 +77,8 @@ inline void mainDoResearch()
             }
         }
         
-        std::cout << "--------------------------------------------------------------------------------------" << std::endl;
-        std::cout << e->str() << std::endl << std:: endl;
+        //std::cout << "--------------------------------------------------------------------------------------" << std::endl;
+        //std::cout << e->str() << std::endl << std:: endl;
         int a = 1;
         int x = 0;
         int y = x + 1;
