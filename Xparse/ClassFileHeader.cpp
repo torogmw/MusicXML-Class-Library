@@ -60,7 +60,19 @@ namespace mjb
     }
     void ClassFileHeader::addInclude( const Include& include_in )
     {
-        myIncludes.push_back( include_in );
+        if ( myIncludes.size() == 0 )
+        {
+            myIncludes.push_back( include_in );
+        }
+        else if ( std::find(myIncludes.begin(), myIncludes.end(), include_in ) == myIncludes.end() )
+        {
+            myIncludes.push_back( include_in );
+        }
+        else
+        {
+            // duplicate include;
+        }
+        
     }
     void ClassFileHeader::setClassNameNamespaceQualifier(const std::string &qualifiers_in)
     {

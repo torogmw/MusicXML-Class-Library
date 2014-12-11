@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:32
+  * @date       2014-12-11 14:43:37
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4261
@@ -17,6 +17,12 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEmStaffDistance.h"
 
 namespace lexicon
 {
@@ -50,7 +56,7 @@ namespace lexicon
 		    Note that if setIsStaffDistancePresent is false, the internal shared
 		    pointer will not be altered and will hold a value that does not exist
 		    in xml. **/
-		int setStaffDistance( const HMxEmStaffDistance&& value_in );
+		int setStaffDistance( const HMxEmStaffDistance& value_in );
 
 		/** Returns the minimum number of occurences of the <StaffDistance> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

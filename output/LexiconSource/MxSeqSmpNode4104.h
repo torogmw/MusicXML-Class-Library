@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:27
+  * @date       2014-12-11 14:43:32
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4104
@@ -17,6 +17,11 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
 
 namespace lexicon
 {

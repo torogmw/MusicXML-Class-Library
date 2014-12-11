@@ -25,7 +25,7 @@ namespace XsdClasses
     
     void SequenceSmpBldr::init()
     {
-        /* Make sure a valid ElementPtr was passed on the constructor */
+        /* INIT Make sure a valid ElementPtr was passed on the constructor */
         if ( ! IClassBldr::getXsdNode() )
         {
             throw std::invalid_argument( "The ElementPtr is null." );
@@ -43,12 +43,12 @@ namespace XsdClasses
             throw std::invalid_argument( "This sequence has xs:elements that are not implemented yet." );
         }
         
-        /* Set the name */
+        /* INIT Set the name */
         IClassBldr::setName( SequenceParser::getCppName( IClassBldr::getXsdNode() ), true );
         IClassBldr::setBriefDescription( "This class represents an xs:sequence object from musicxml.xsd." );
         IClassBldr::setFullDescription( "This class represents an xs:sequence object from musicxml.xsd." );
         
-        /* For each element, construct an ElementBldr */
+        /* INIT For each element, construct an ElementBldr */
         xparse::Elements elements = SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() );
         for ( auto e : elements )
         {
@@ -87,7 +87,15 @@ namespace XsdClasses
             }
         }
         
-        /* For each element, add appropriate data member and functions */
+        /* INIT add basic includes */
+        IClassBldr::addPublicInclude( Include( "iostream", true ) );
+        IClassBldr::addPublicInclude( Include( "memory", true ) );
+        IClassBldr::addPublicInclude( Include( "string", true ) );
+        IClassBldr::addPublicInclude( Include( "vector", true ) );
+        IClassBldr::addPublicInclude( Include( "LexiconBaseObjects.h", false ) );
+        IClassBldr::addPrivateInclude( Include( this->getHFileInfo().getFileName(), false ) );
+        
+        /* For each element, add appropriate data member, functions, and include */
         for ( HClassBldr h : myElementBldrs )
         {
             ElementType etype = ElementCategorize::getType( h->getXsdNode() );
@@ -155,6 +163,10 @@ namespace XsdClasses
         DataMember dmValue;
         std::stringstream dmValueDataType;
         dmValueDataType << "H" << bldr->getName();
+        std::stringstream filetoinclude;
+        filetoinclude << bldr->getName() << ".h";
+        Include include( filetoinclude.str(), false );
+        IClassBldr::addPublicInclude( include );
         dmValue.setDataType( dmValueDataType.str() );
         std::stringstream dmValueName;
         dmValueName << "my" << elementName;
@@ -235,9 +247,10 @@ namespace XsdClasses
             Parameter SetValueFuncParameter;
             SetValueFuncParameter.setName( "value_in" );
             std::stringstream setValueFuncParameterDataType;
-            setValueFuncParameterDataType << dmValue.getDataType() << "&";
+            setValueFuncParameterDataType << dmValue.getDataType();
             SetValueFuncParameter.setDataType( setValueFuncParameterDataType.str() );
             SetValueFuncParameter.isConst( true );
+            SetValueFuncParameter.setParameterType( mjb::Parameter::ParameterType::Reference );
             SetValueFunc.addParameter( SetValueFuncParameter );
             std::stringstream setValueDocumentation;
             setValueDocumentation << "Sets the internal shared pointer handle for the <" << elementName << "> element. ";
@@ -511,7 +524,64 @@ namespace XsdClasses
     }
     std::string SequenceSmpBldr::getCppFile() const
     {
-        throw std::invalid_argument( "not implemented." );
+        /* return value object */
+        std::stringstream ss;
+        
+        /* CPP IMPL HEAD */
+        ss << IClassBldr::getCppFileHeader()->toString( false ) << std::endl;
+        SectionSeparatorComment classStart( "Impl", 90 );
+        ss << classStart.toString() << std::endl;
+        ss << end();
+        ss << openNamespaces();
+        
+        /* CPP IMPL Declare Struct */
+        ss << baselineIndent( 0 ) << "struct " << IClassBldr::getName() << "::Impl" << std::endl;
+        ss << baselineIndent( 0 ) << "{" << end();
+
+        ss << baselineIndent( 1 ) << "Impl()" << end();
+        int i = 0;
+        for ( auto dm = IClassBldr::getPublicDatamembersBegin(); dm != IClassBldr::getPublicDatamembersEnd(); ++dm )
+        {
+            ss << baselineIndent( 1 );
+            if ( i == 0 )
+            {
+                ss << ":";
+                ++i;
+            }
+            else
+            {
+                ss << ",";
+            }
+            ss << dm->getName() << "(";
+            if ( dm->getMemberInitializationValue().size() > 0 )
+            {
+                ss << " " << dm->getMemberInitializationValue() << " ";
+            }
+            ss << ")" << end();
+            
+        }
+        ss << baselineIndent( 1 ) << "{}" << end();
+        ss << std::endl;
+        
+        /* CPP IMPL DataMembers */
+        ss << baselineIndent( 0 ) << "private:" << end();
+        for ( auto dm = getPrivateDatamembersBegin(); dm != getPrivateDatamemberDatamembersEnd(); ++dm )
+        {
+            
+            ss << baselineIndent( 1 ) << datamember.getDataType();
+            ss << " " << datamember.getName() << ";" << std::endl;
+        }
+        
+        /* CPP IMPL */
+        
+        /* CPP IMPL */
+        
+        /* CPP IMPL */
+        
+        /* CPP IMPL */
+        
+        /* return statement */
+        return ss.str();
     }
     std::string SequenceSmpBldr::getTestFile() const
     {

@@ -2252,6 +2252,7 @@
 		293590721A16A93D0022BAAA = {
 			isa = PBXGroup;
 			children = (
+				29ED91191A3A508600F0D5EA /* SeqSmp */,
 				299805781A34C7BB00880D6B /* ElementMx */,
 				299CCC351A32B3B600D0E0CD /* ElementSmp */,
 				2972D8681A3276F80018E453 /* ElementEmpty */,
@@ -3358,6 +3359,13 @@
 				29A1F95D1A2E9FBA00B69133 /* MxCxSmpTypedText.h */,
 			);
 			name = CxSimp;
+			sourceTree = "<group>";
+		};
+		29ED91191A3A508600F0D5EA /* SeqSmp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SeqSmp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

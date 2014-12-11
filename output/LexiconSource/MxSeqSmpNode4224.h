@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:30
+  * @date       2014-12-11 14:43:35
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4224
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEmPageHeight.h"
+#include "MxEmPageWidth.h"
 
 namespace lexicon
 {
@@ -47,7 +54,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <PageHeight> element.
 		     **/
-		int setPageHeight( const HMxEmPageHeight&& value_in );
+		int setPageHeight( const HMxEmPageHeight& value_in );
 
 		/** Returns the minimum number of occurences of the <PageHeight> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -81,7 +88,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <PageWidth> element.
 		     **/
-		int setPageWidth( const HMxEmPageWidth&& value_in );
+		int setPageWidth( const HMxEmPageWidth& value_in );
 
 		/** Returns the minimum number of occurences of the <PageWidth> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

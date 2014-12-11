@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:22
+  * @date       2014-12-11 14:43:28
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3480
@@ -17,6 +17,15 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEsString.h"
+#include "MxEsFret.h"
+#include "MxEsFingering.h"
+#include "MxEeBarre.h"
 
 namespace lexicon
 {
@@ -46,7 +55,7 @@ namespace lexicon
 		HMxEsString getString() const;
 
 		/** Sets the internal shared pointer handle for the <String> element.  **/
-		int setString( const HMxEsString&& value_in );
+		int setString( const HMxEsString& value_in );
 
 		/** Returns the minimum number of occurences of the <String> element. 
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -78,7 +87,7 @@ namespace lexicon
 		HMxEsFret getFret() const;
 
 		/** Sets the internal shared pointer handle for the <Fret> element.  **/
-		int setFret( const HMxEsFret&& value_in );
+		int setFret( const HMxEsFret& value_in );
 
 		/** Returns the minimum number of occurences of the <Fret> element.  i.e.
 		    MinOccurs > 0 means the element is required, MinOccurs == 0 means the
@@ -113,7 +122,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <Fingering> element.
 		    Note that if setIsFingeringPresent is false, the internal shared pointer
 		    will not be altered and will hold a value that does not exist in xml. **/
-		int setFingering( const HMxEsFingering&& value_in );
+		int setFingering( const HMxEsFingering& value_in );
 
 		/** Returns the minimum number of occurences of the <Fingering> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -149,7 +158,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <Barre> element. Note
 		    that if setIsBarrePresent is false, the internal shared pointer will
 		    not be altered and will hold a value that does not exist in xml. **/
-		int setBarre( const HMxEeBarre&& value_in );
+		int setBarre( const HMxEeBarre& value_in );
 
 		/** Returns the minimum number of occurences of the <Barre> element.  i.e.
 		    MinOccurs > 0 means the element is required, MinOccurs == 0 means the

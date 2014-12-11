@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:36
+  * @date       2014-12-11 14:43:41
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 6250
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEmLeftMargin.h"
+#include "MxEmRightMargin.h"
 
 namespace lexicon
 {
@@ -47,7 +54,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <LeftMargin> element.
 		     **/
-		int setLeftMargin( const HMxEmLeftMargin&& value_in );
+		int setLeftMargin( const HMxEmLeftMargin& value_in );
 
 		/** Returns the minimum number of occurences of the <LeftMargin> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -81,7 +88,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <RightMargin> element.
 		     **/
-		int setRightMargin( const HMxEmRightMargin&& value_in );
+		int setRightMargin( const HMxEmRightMargin& value_in );
 
 		/** Returns the minimum number of occurences of the <RightMargin> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

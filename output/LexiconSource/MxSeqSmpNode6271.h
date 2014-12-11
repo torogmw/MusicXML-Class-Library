@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:37
+  * @date       2014-12-11 14:43:42
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 6271
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEmDisplayStep.h"
+#include "MxEmDisplayOctave.h"
 
 namespace lexicon
 {
@@ -47,7 +54,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <DisplayStep> element.
 		     **/
-		int setDisplayStep( const HMxEmDisplayStep&& value_in );
+		int setDisplayStep( const HMxEmDisplayStep& value_in );
 
 		/** Returns the minimum number of occurences of the <DisplayStep> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -81,7 +88,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <DisplayOctave> element.
 		     **/
-		int setDisplayOctave( const HMxEmDisplayOctave&& value_in );
+		int setDisplayOctave( const HMxEmDisplayOctave& value_in );
 
 		/** Returns the minimum number of occurences of the <DisplayOctave> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

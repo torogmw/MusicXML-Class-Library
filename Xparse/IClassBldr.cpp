@@ -373,4 +373,81 @@ namespace mjb
     {
         return myCppFileHeader;
     }
+    
+//    void IClassBldr::addPrivateConstStaticDatamember( const mjb::DataMember& data_member_in )
+//    {
+//        myPrivateConstStaticDataMembers.push_back( data_member_in );
+//    }
+    std::vector<DataMember>::iterator IClassBldr::getPrivateConstStaticDatamembersBegin()
+    {
+        return myPrivateConstStaticDataMembers.begin();
+    }
+
+    std::vector<DataMember>::iterator IClassBldr::getPrivateConstStaticDatamembersEnd()
+    {
+        return myPrivateConstStaticDataMembers.end();
+    }
+
+    std::vector<DataMember>::const_iterator IClassBldr::getPrivateConstStaticDatamembersBegin() const
+    {
+        return myPrivateConstStaticDataMembers.cbegin();
+    }
+
+    std::vector<DataMember>::const_iterator IClassBldr::getPrivateConstStaticDatamembersEnd() const
+    {
+        return myPrivateConstStaticDataMembers.cend();
+    }
+
+    
+//    void IClassBldr::addPrivateDatamember( const mjb::DataMember& data_member_in )
+//    {
+//        myPrivateDataMembers.push_back( data_member_in );
+//    }
+
+    std::vector<DataMember>::iterator IClassBldr::getPrivateDatamembersBegin()
+    {
+        return myPrivateDataMembers.begin();
+    }
+
+    std::vector<DataMember>::iterator IClassBldr::getPrivateDatamemberDatamembersEnd()
+    {
+        return myPrivateDataMembers.end();
+    }
+
+    std::vector<DataMember>::const_iterator IClassBldr::getPrivateDatamembersBegin() const
+    {
+        return myPrivateDataMembers.cbegin();
+    }
+
+    std::vector<DataMember>::const_iterator IClassBldr::getPrivateDatamemberDatamembersEnd() const
+    {
+        return myPrivateDataMembers.cend();
+    }
+
+    
+    void IClassBldr::addPublicDatamember( const mjb::DataMember& data_member_in )
+    {
+        return myPublicDataMembers.push_back( data_member_in );
+    }
+
+    std::vector<DataMember>::iterator IClassBldr::getPublicDatamembersBegin()
+    {
+        return myPublicDataMembers.begin();
+    }
+
+    std::vector<DataMember>::iterator IClassBldr::getPublicDatamembersEnd()
+    {
+        return myPublicDataMembers.end();
+    }
+
+    std::vector<DataMember>::const_iterator IClassBldr::getPublicDatamembersBegin() const
+    {
+        return myPublicDataMembers.cbegin();
+    }
+
+    std::vector<DataMember>::const_iterator IClassBldr::getPublicDatamembersEnd() const
+    {
+        return myPublicDataMembers.cend();
+    }
+
 }

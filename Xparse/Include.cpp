@@ -47,6 +47,10 @@ namespace mjb
     }
 }
 
+bool operator==( const mjb::Include& lhs, const mjb::Include& rhs )
+{
+    return  lhs.operator==( rhs );
+}
 
 /*
 

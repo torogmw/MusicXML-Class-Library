@@ -2987,8 +2987,24 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "Xparse/mainDoResearch.h"
+            timestampString = "440023991.997172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "mainDoResearch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "Xparse/SequenceSmpBldr.cpp"
-            timestampString = "439971842.505709"
+            timestampString = "440029062.031716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -3003,14 +3019,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Xparse/mainDoResearch.h"
-            timestampString = "440023991.997172"
+            filePath = "Xparse/SequenceSmpBldr.cpp"
+            timestampString = "440029068.241314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "mainDoResearch()"
-            landmarkType = "7">
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "SequenceSmpBldr::init()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

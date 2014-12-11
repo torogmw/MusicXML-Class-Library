@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:19
+  * @date       2014-12-11 14:43:24
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3154
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEsBassStep.h"
+#include "MxEsBassAlter.h"
 
 namespace lexicon
 {
@@ -47,7 +54,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <BassStep> element.
 		     **/
-		int setBassStep( const HMxEsBassStep&& value_in );
+		int setBassStep( const HMxEsBassStep& value_in );
 
 		/** Returns the minimum number of occurences of the <BassStep> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -83,7 +90,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <BassAlter> element.
 		    Note that if setIsBassAlterPresent is false, the internal shared pointer
 		    will not be altered and will hold a value that does not exist in xml. **/
-		int setBassAlter( const HMxEsBassAlter&& value_in );
+		int setBassAlter( const HMxEsBassAlter& value_in );
 
 		/** Returns the minimum number of occurences of the <BassAlter> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

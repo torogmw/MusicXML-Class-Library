@@ -25,6 +25,8 @@ namespace mjb
     };
 }
 
+bool operator==( const mjb::Include& lhs, const mjb::Include& rhs );
+
 
 /*
 

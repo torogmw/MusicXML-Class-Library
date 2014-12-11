@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:32
+  * @date       2014-12-11 14:43:37
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 5619
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEsTupletNumber.h"
+#include "MxEsTupletType.h"
 
 namespace lexicon
 {
@@ -50,7 +57,7 @@ namespace lexicon
 		    Note that if setIsTupletNumberPresent is false, the internal shared
 		    pointer will not be altered and will hold a value that does not exist
 		    in xml. **/
-		int setTupletNumber( const HMxEsTupletNumber&& value_in );
+		int setTupletNumber( const HMxEsTupletNumber& value_in );
 
 		/** Returns the minimum number of occurences of the <TupletNumber> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -86,7 +93,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <TupletType> element.
 		    Note that if setIsTupletTypePresent is false, the internal shared pointer
 		    will not be altered and will hold a value that does not exist in xml. **/
-		int setTupletType( const HMxEsTupletType&& value_in );
+		int setTupletType( const HMxEsTupletType& value_in );
 
 		/** Returns the minimum number of occurences of the <TupletType> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

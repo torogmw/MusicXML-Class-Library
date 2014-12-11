@@ -254,7 +254,7 @@ namespace lexicon
 		MxElementEmpty();
 		virtual ~MxElementEmpty();
         
-	}; // class MxAttrGrpColor
+	};
     
 } // namespace lexicon
 
@@ -270,10 +270,27 @@ namespace lexicon
 		MxElementSimple();
 		virtual ~MxElementSimple();
         
-	}; // class MxAttrGrpColor
+	};
     
 } // namespace lexicon
 
+namespace lexicon
+{
+    class MxIndentable;
+    typedef std::shared_ptr<MxIndentable> HMxIndentable;
+    typedef std::unique_ptr<MxIndentable> UMxIndentable;
+    
+	class MxIndentable : public MxElement
+	{
+	public:
+		MxIndentable();
+		virtual ~MxIndentable();
+        virtual std::ostream& stream( std::ostream& os_out ) const;
+        virtual std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in = "\t" ) const = 0;
+        
+	};
+    
+} // namespace lexicon
 
 /*
 

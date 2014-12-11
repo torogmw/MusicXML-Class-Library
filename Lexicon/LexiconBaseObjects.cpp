@@ -64,6 +64,16 @@ namespace lexicon
     
 } // namespace lexicon
 
+namespace lexicon
+{
+    MxIndentable::MxIndentable() {}
+    MxIndentable::~MxIndentable() {}
+    std::ostream& MxIndentable::stream( std::ostream& os_out ) const
+    {
+        return stream( os_out, 0, "" );
+    }
+    
+} // namespace lexicon
 
 /*
 

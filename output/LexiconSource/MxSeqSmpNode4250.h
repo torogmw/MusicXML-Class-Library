@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:31
+  * @date       2014-12-11 14:43:36
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4250
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEmMillimeters.h"
+#include "MxEmTenths.h"
 
 namespace lexicon
 {
@@ -47,7 +54,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <Millimeters> element.
 		     **/
-		int setMillimeters( const HMxEmMillimeters&& value_in );
+		int setMillimeters( const HMxEmMillimeters& value_in );
 
 		/** Returns the minimum number of occurences of the <Millimeters> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -80,7 +87,7 @@ namespace lexicon
 		HMxEmTenths getTenths() const;
 
 		/** Sets the internal shared pointer handle for the <Tenths> element.  **/
-		int setTenths( const HMxEmTenths&& value_in );
+		int setTenths( const HMxEmTenths& value_in );
 
 		/** Returns the minimum number of occurences of the <Tenths> element. 
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

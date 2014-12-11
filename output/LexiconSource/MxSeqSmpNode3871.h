@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:25
+  * @date       2014-12-11 14:43:30
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3871
@@ -17,6 +17,13 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEsRootStep.h"
+#include "MxEsRootAlter.h"
 
 namespace lexicon
 {
@@ -47,7 +54,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <RootStep> element.
 		     **/
-		int setRootStep( const HMxEsRootStep&& value_in );
+		int setRootStep( const HMxEsRootStep& value_in );
 
 		/** Returns the minimum number of occurences of the <RootStep> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -83,7 +90,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <RootAlter> element.
 		    Note that if setIsRootAlterPresent is false, the internal shared pointer
 		    will not be altered and will hold a value that does not exist in xml. **/
-		int setRootAlter( const HMxEsRootAlter&& value_in );
+		int setRootAlter( const HMxEsRootAlter& value_in );
 
 		/** Returns the minimum number of occurences of the <RootAlter> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means

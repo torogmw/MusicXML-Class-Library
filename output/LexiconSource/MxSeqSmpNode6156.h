@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:35
+  * @date       2014-12-11 14:43:40
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 6156
@@ -17,6 +17,14 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEsCancel.h"
+#include "MxEmFifths.h"
+#include "MxEmMode.h"
 
 namespace lexicon
 {
@@ -49,7 +57,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <Cancel> element. Note
 		    that if setIsCancelPresent is false, the internal shared pointer will
 		    not be altered and will hold a value that does not exist in xml. **/
-		int setCancel( const HMxEsCancel&& value_in );
+		int setCancel( const HMxEsCancel& value_in );
 
 		/** Returns the minimum number of occurences of the <Cancel> element. 
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -81,7 +89,7 @@ namespace lexicon
 		HMxEmFifths getFifths() const;
 
 		/** Sets the internal shared pointer handle for the <Fifths> element.  **/
-		int setFifths( const HMxEmFifths&& value_in );
+		int setFifths( const HMxEmFifths& value_in );
 
 		/** Returns the minimum number of occurences of the <Fifths> element. 
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -116,7 +124,7 @@ namespace lexicon
 		/** Sets the internal shared pointer handle for the <Mode> element. Note
 		    that if setIsModePresent is false, the internal shared pointer will
 		    not be altered and will hold a value that does not exist in xml. **/
-		int setMode( const HMxEmMode&& value_in );
+		int setMode( const HMxEmMode& value_in );
 
 		/** Returns the minimum number of occurences of the <Mode> element.  i.e.
 		    MinOccurs > 0 means the element is required, MinOccurs == 0 means the

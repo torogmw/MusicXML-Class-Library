@@ -55,8 +55,26 @@ namespace mjb
         /* ADDING FUNCTIONS AND DATA MEMBERS */
         virtual void addPrivateFunctionGroup( const mjb::FunctionGroup& functionGroup_in );
         virtual void addPublicFunctionGroup( const mjb::FunctionGroup& functionGroup_in );
+        
+        
         virtual void addPrivateConstStaticDatamember( const mjb::DataMember& data_member_in );
+        std::vector<DataMember>::iterator getPrivateConstStaticDatamembersBegin();
+        std::vector<DataMember>::iterator getPrivateConstStaticDatamembersEnd();
+        std::vector<DataMember>::const_iterator getPrivateConstStaticDatamembersBegin() const;
+        std::vector<DataMember>::const_iterator getPrivateConstStaticDatamembersEnd() const;
+        
         virtual void addPrivateDatamember( const mjb::DataMember& data_member_in );
+        std::vector<DataMember>::iterator getPrivateDatamembersBegin();
+        std::vector<DataMember>::iterator getPrivateDatamemberDatamembersEnd();
+        std::vector<DataMember>::const_iterator getPrivateDatamembersBegin() const;
+        std::vector<DataMember>::const_iterator getPrivateDatamemberDatamembersEnd() const;
+        
+        virtual void addPublicDatamember( const mjb::DataMember& data_member_in );
+        std::vector<DataMember>::iterator getPublicDatamembersBegin();
+        std::vector<DataMember>::iterator getPublicDatamembersEnd();
+        std::vector<DataMember>::const_iterator getPublicDatamembersBegin() const;
+        std::vector<DataMember>::const_iterator getPublicDatamembersEnd() const;
+        
         virtual FunctionGroupCollection getPublicFunctionGroups() const;
         
         /* FILE OUTPUT */
@@ -94,6 +112,7 @@ namespace mjb
         mjb::FunctionGroupCollection myPublicFunctionGroups;
         std::vector<mjb::DataMember> myPrivateConstStaticDataMembers;
         std::vector<mjb::DataMember> myPrivateDataMembers;
+        std::vector<mjb::DataMember> myPublicDataMembers;
         std::string myOutputDirectoryCpp;
         std::string myOutputDirectoryH;
         std::string myOutputDirectoryTest;

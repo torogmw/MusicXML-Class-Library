@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 13:05:21
+  * @date       2014-12-11 14:43:26
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3245
@@ -17,6 +17,14 @@
   * 
  **/
 
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxEsDegreeValue.h"
+#include "MxEsDegreeAlter.h"
+#include "MxEsDegreeType.h"
 
 namespace lexicon
 {
@@ -47,7 +55,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <DegreeValue> element.
 		     **/
-		int setDegreeValue( const HMxEsDegreeValue&& value_in );
+		int setDegreeValue( const HMxEsDegreeValue& value_in );
 
 		/** Returns the minimum number of occurences of the <DegreeValue> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -81,7 +89,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <DegreeAlter> element.
 		     **/
-		int setDegreeAlter( const HMxEsDegreeAlter&& value_in );
+		int setDegreeAlter( const HMxEsDegreeAlter& value_in );
 
 		/** Returns the minimum number of occurences of the <DegreeAlter> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
@@ -115,7 +123,7 @@ namespace lexicon
 
 		/** Sets the internal shared pointer handle for the <DegreeType> element.
 		     **/
-		int setDegreeType( const HMxEsDegreeType&& value_in );
+		int setDegreeType( const HMxEsDegreeType& value_in );
 
 		/** Returns the minimum number of occurences of the <DegreeType> element.
 		    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
