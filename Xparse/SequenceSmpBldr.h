@@ -8,6 +8,7 @@
 
 namespace XsdClasses
 {
+
     class SequenceSmpBldr : public mjb::IClassBldr
     {
 
@@ -25,10 +26,15 @@ namespace XsdClasses
         virtual void changeValueObjectValue() const;
         
     private:
-        /* Functions */
-        void init();
-        
         /* Data Members */
         mjb::ClassBldrs myElementBldrs;
+        
+        /* Functions */
+        void init();
+        void addDataMemberAndFunctionsOnsie( const mjb::HClassBldr& bldr, const std::string& elementName, bool isRequired,
+                                            int minOccurs, int maxOccurs, bool isUnbounded );
+        
+        
+        
     };
 }
