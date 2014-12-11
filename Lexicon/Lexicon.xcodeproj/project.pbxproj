@@ -1723,6 +1723,7 @@
 		29860E031A29175100511E13 /* XparseHelperFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XparseHelperFunctions.cpp; sourceTree = "<group>"; };
 		29860E041A29175100511E13 /* XparseHelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XparseHelperFunctions.h; sourceTree = "<group>"; };
 		29860E071A29186E00511E13 /* XparseHelperFunctions_loadAllSimpleTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XparseHelperFunctions_loadAllSimpleTypes.cpp; sourceTree = "<group>"; };
+		2992B9BB1A3A3DA7002197AC /* _hidden_indent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _hidden_indent.h; sourceTree = "<group>"; };
 		2992DEAB1A193D4E00CE7E1F /* _hidden_rtrim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _hidden_rtrim.h; sourceTree = "<group>"; };
 		2992DEAC1A193D5D00CE7E1F /* _hidden_ltrim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _hidden_ltrim.h; sourceTree = "<group>"; };
 		2999FA5B1A191D2A00698417 /* XsToken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsToken.cpp; sourceTree = "<group>"; };
@@ -2530,6 +2531,7 @@
 				2992DEAB1A193D4E00CE7E1F /* _hidden_rtrim.h */,
 				2992DEAC1A193D5D00CE7E1F /* _hidden_ltrim.h */,
 				290010071A200E38004B856D /* _hidden_attributeStream.h */,
+				2992B9BB1A3A3DA7002197AC /* _hidden_indent.h */,
 			);
 			name = Hidden;
 			sourceTree = "<group>";

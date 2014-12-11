@@ -5,6 +5,7 @@
 #include "IClassBldr.h"
 #include "Element.h"
 #include "SequenceParser.h"
+#include "ElementCategorize.h"
 
 namespace XsdClasses
 {
@@ -32,7 +33,9 @@ namespace XsdClasses
         /* Functions */
         void init();
         void addDataMemberAndFunctionsOnsie( const mjb::HClassBldr& bldr, const std::string& elementName, bool isRequired,
-                                            int minOccurs, int maxOccurs, bool isUnbounded );
+                                            int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype );
+        void addDataMemberAndFunctionsVector( const mjb::HClassBldr& bldr, const std::string& elementName, bool isRequired,
+                                            int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype );
         
         
         
