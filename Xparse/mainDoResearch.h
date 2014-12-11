@@ -9,6 +9,7 @@
 #include <fstream>
 #include "IClassBldr.h"
 #include "SequenceSmpBldr.h"
+#include "fileStream.h"
 
 inline void mainDoResearch()
 {
@@ -38,8 +39,8 @@ inline void mainDoResearch()
     Elements simpleSequences;
     Elements implementedSequences;
     mjb::ClassBldrs bldrs;
-    
-    for ( auto e : sequenceNodes )
+    int counts = 1;
+    for ( xparse::ElementPtr e : sequenceNodes )
     {
         if ( SequenceParser::getIsSequenceComposedOfElementsOnly( e ) )
         {
@@ -48,9 +49,32 @@ inline void mainDoResearch()
                 simpleSequences.push_back( e );
                 if ( SequenceParser::getIsSequenceComposedOfImplementedElementsOnly( e ) )
                 {
+                    std::shared_ptr<SequenceSmpBldr> bldr = std::make_shared<SequenceSmpBldr>( e );
+                    bldrs.push_back( bldr );
                     implementedSequences.push_back( e );
-                    bldrs.push_back( std::make_shared<SequenceSmpBldr>( e ) );
+                    
+                    
+                    std::stringstream cppFileContents;
+                    //cppFileContents << bldr->getCppFile();
+                    
+                    std::stringstream hFileContents;
+                    hFileContents << bldr->getHFile();
+                    
+                    std::stringstream testFileContents;
+                    //testFileContents << bldr->getTestFile();
+                    
+                    FileInfo cppFileInfo = bldr->getCppFileInfo();
+                    FileInfo hFileInfo = bldr->getHFileInfo();
+                    FileInfo testFileInfo = bldr->getTestFileInfo();
+                    
+                    fileStream( hFileInfo.getFullpath(), hFileContents );
+                    fileStream( cppFileInfo.getFullpath(), cppFileContents );
+                    fileStream( testFileInfo.getFullpath(), testFileContents );
+                    std::cout << "created " << counts << ": " << bldr->getName() << std::endl;
+                    ++ counts;
                 }
+                
+
             }
         }
         

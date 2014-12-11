@@ -49,7 +49,9 @@ namespace mjb
         virtual std::string getClassNamePrefix() const;
         virtual void setClassNamePrefix( const std::string& value_in );
         virtual xparse::ElementPtr getXsdNode() const;
-        
+        virtual mjb::HClassFileHeader getHFileHeader() const;
+        virtual mjb::HClassFileHeader getCppFileHeader() const;
+
         /* ADDING FUNCTIONS AND DATA MEMBERS */
         virtual void addPrivateFunctionGroup( const mjb::FunctionGroup& functionGroup_in );
         virtual void addPublicFunctionGroup( const mjb::FunctionGroup& functionGroup_in );

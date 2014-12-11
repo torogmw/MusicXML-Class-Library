@@ -24,7 +24,8 @@ namespace mjb
     ,myOutputDirectoryTest()
     ,myClassNamePrefix()
     {
-        
+        init();
+        datachanged();
     }
     IClassBldr::IClassBldr( const xparse::ElementPtr& XsdNode, const std::string& classNamePrefix )
     :myXsdNode( XsdNode )
@@ -41,7 +42,8 @@ namespace mjb
     ,myOutputDirectoryTest()
     ,myClassNamePrefix( classNamePrefix )
     {
-        
+        init();
+        datachanged();
     }
     /* dtor */
     IClassBldr::~IClassBldr() {}
@@ -332,5 +334,14 @@ namespace mjb
     xparse::ElementPtr IClassBldr::getXsdNode() const
     {
         return myXsdNode;
+    }
+    
+    mjb::HClassFileHeader IClassBldr::getHFileHeader() const
+    {
+        return myHFileHeader;
+    }
+    mjb::HClassFileHeader IClassBldr::getCppFileHeader() const
+    {
+        return myCppFileHeader;
     }
 }

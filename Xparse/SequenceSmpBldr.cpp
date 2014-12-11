@@ -9,7 +9,7 @@
 #include "ElementEmptyParser.h"
 #include "ElementMxBldr.h"
 #include "ElementMxParser.h"
-
+#include "SectionSeparatorComment.h"
 
 namespace XsdClasses
 {
@@ -236,7 +236,60 @@ namespace XsdClasses
     
     std::string SequenceSmpBldr::getHFile() const
     {
-        throw std::invalid_argument( "not implemented." );
+        /* H File Top */
+        std::stringstream ss;
+        ss << IClassBldr::getHFileHeader()->toString() << end();
+        ss << IClassBldr::openNamespaces();
+        SectionSeparatorComment classComment( IClassBldr::getName(), 90 );
+        ss << classComment.toString() << std::endl << std::endl;
+        
+        /* H File Begin Class Declaration */
+        ss << baselineTabs() << "class " << IClassBldr::getName() << " : public MxSeq" << end();
+        ss << baselineTabs() << "{" << std::endl;
+        ss << baselineTabs() << "public:" << std::endl << std::endl;
+        
+        /* H File constructor */
+        SectionSeparatorComment constructorsComment( "Constructor, Destructor, Copy, Assignment", 90 );
+        ss << constructorsComment.toString() << std::endl;
+        ss << std::endl;
+        ss << baselineIndent( 1 ) << IClassBldr::getName() << "();" << end();
+        
+        /** H File destructor **/
+        ss << baselineIndent( 1 ) << "virtual ~" << IClassBldr::getName() << "();" << std::endl;
+        
+        /** H File copy constructor **/
+        ss << baselineIndent( 1 ) << IClassBldr::getName();
+        ss << "( const " << IClassBldr::getName() << "& other );" << std::endl;
+        
+        /** H File assignment **/
+        ss << baselineIndent( 1 ) << IClassBldr::getName() << "& operator=( const ";
+        ss << IClassBldr::getName() << "& other );";
+        ss << std::endl << std::endl;
+        
+        /* H File Functions */
+        for ( FunctionGroup fgrp : getPublicFunctionGroups() )
+        {
+            if ( fgrp.isPublic() )
+            {
+                ss << fgrp.write("", getNamespaceCount()+1, ClassFileHeader::fileType::h, 90 );
+                ss << std::endl;
+            }
+        }
+        
+        /** H File Declare Impl **/
+        SectionSeparatorComment implComment( "Impl", 90 );
+        ss <<implComment.toString() << std::endl << std::endl;
+        ss << baselineTabs() << "private:" << std::endl;
+        ss << baselineIndent( 1 ) << "class Impl;" << std::endl;
+        ss << baselineIndent( 1 ) << "std::unique_ptr<Impl> myImpl;" << std::endl;
+        
+        /* H File Close */
+        ss << std::endl;
+        ss << baselineTabs() << "}; // class " << IClassBldr::getName() << std::endl << std::endl;
+        ss << closeNamespaces();
+        
+        /* H File Return */
+        return ss.str();
     }
     std::string SequenceSmpBldr::getCppFile() const
     {

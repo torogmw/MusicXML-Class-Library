@@ -8,7 +8,7 @@
 
 inline void fileStream( const std::string& filepath_in, const std::stringstream& data_in )
 {
-    ofstream ofile( filepath_in, ios_base::binary );
+    std::ofstream ofile( filepath_in, std::ios_base::binary );
     if (!ofile)
     {
         throw "can't open output file";
