@@ -48,6 +48,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -61,6 +62,12 @@
 namespace lexicon
 {
 /* MxEeFingernails -------------------------------------------------------------------- */
+
+	class MxEeFingernails;
+	typedef std::shared_ptr<MxEeFingernails> HMxEeFingernails;
+	typedef std::vector<MxEeFingernails> MxEeFingernailss;
+	typedef MxEeFingernailss::iterator MxEeFingernailssIter;
+	typedef MxEeFingernailss::const_iterator MxEeFingernailssIterConst;
 
 	class MxEeFingernails : public MxObject
 	{

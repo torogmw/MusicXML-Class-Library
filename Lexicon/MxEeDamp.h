@@ -44,6 +44,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -58,6 +59,12 @@
 namespace lexicon
 {
 /* MxEeDamp --------------------------------------------------------------------------- */
+
+	class MxEeDamp;
+	typedef std::shared_ptr<MxEeDamp> HMxEeDamp;
+	typedef std::vector<MxEeDamp> MxEeDamps;
+	typedef MxEeDamps::iterator MxEeDampsIter;
+	typedef MxEeDamps::const_iterator MxEeDampsIterConst;
 
 	class MxEeDamp : public MxObject
 	{

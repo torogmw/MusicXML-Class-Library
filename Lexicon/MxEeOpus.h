@@ -40,6 +40,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "XlinkActuate.h"
@@ -52,6 +53,12 @@
 namespace lexicon
 {
 /* MxEeOpus --------------------------------------------------------------------------- */
+
+	class MxEeOpus;
+	typedef std::shared_ptr<MxEeOpus> HMxEeOpus;
+	typedef std::vector<MxEeOpus> MxEeOpuss;
+	typedef MxEeOpuss::iterator MxEeOpussIter;
+	typedef MxEeOpuss::const_iterator MxEeOpussIterConst;
 
 	class MxEeOpus : public MxObject
 	{

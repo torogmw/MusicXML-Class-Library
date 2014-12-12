@@ -46,6 +46,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -60,6 +61,12 @@
 namespace lexicon
 {
 /* MxEeSegno -------------------------------------------------------------------------- */
+
+	class MxEeSegno;
+	typedef std::shared_ptr<MxEeSegno> HMxEeSegno;
+	typedef std::vector<MxEeSegno> MxEeSegnos;
+	typedef MxEeSegnos::iterator MxEeSegnosIter;
+	typedef MxEeSegnos::const_iterator MxEeSegnosIterConst;
 
 	class MxEeSegno : public MxObject
 	{

@@ -47,6 +47,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumDistanceType.h"
@@ -55,6 +56,12 @@
 namespace lexicon
 {
 /* MxEsDistance ----------------------------------------------------------------------- */
+
+	class MxEsDistance;
+	typedef std::shared_ptr<MxEsDistance> HMxEsDistance;
+	typedef std::vector<MxEsDistance> MxEsDistances;
+	typedef MxEsDistances::iterator MxEsDistancesIter;
+	typedef MxEsDistances::const_iterator MxEsDistancesIterConst;
 
 	class MxEsDistance : public MxElementSimple
 	{

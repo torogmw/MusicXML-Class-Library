@@ -2,11 +2,13 @@
 
 #include <iostream>
 #include "mainDoResearch.h"
+#include "mainDoRegex.h"
 
 int main(int argc, char **argv)
 {
 
-    mainDoResearch();
+    //mainDoResearch();
+    mainDoRegex();
     return 0;
 }
 

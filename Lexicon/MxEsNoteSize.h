@@ -51,6 +51,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumNoteSizeType.h"
@@ -59,6 +60,12 @@
 namespace lexicon
 {
 /* MxEsNoteSize ----------------------------------------------------------------------- */
+
+	class MxEsNoteSize;
+	typedef std::shared_ptr<MxEsNoteSize> HMxEsNoteSize;
+	typedef std::vector<MxEsNoteSize> MxEsNoteSizes;
+	typedef MxEsNoteSizes::iterator MxEsNoteSizesIter;
+	typedef MxEsNoteSizes::const_iterator MxEsNoteSizesIterConst;
 
 	class MxEsNoteSize : public MxElementSimple
 	{

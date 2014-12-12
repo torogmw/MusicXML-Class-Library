@@ -50,12 +50,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 
 namespace lexicon
 {
 /* MxEeChord -------------------------------------------------------------------------- */
+
+	class MxEeChord;
+	typedef std::shared_ptr<MxEeChord> HMxEeChord;
+	typedef std::vector<MxEeChord> MxEeChords;
+	typedef MxEeChords::iterator MxEeChordsIter;
+	typedef MxEeChords::const_iterator MxEeChordsIterConst;
 
 	class MxEeChord : public MxObject
 	{

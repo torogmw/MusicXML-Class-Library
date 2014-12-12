@@ -44,6 +44,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumBackwardForward.h"
@@ -53,6 +54,12 @@
 namespace lexicon
 {
 /* MxEeRepeat ------------------------------------------------------------------------- */
+
+	class MxEeRepeat;
+	typedef std::shared_ptr<MxEeRepeat> HMxEeRepeat;
+	typedef std::vector<MxEeRepeat> MxEeRepeats;
+	typedef MxEeRepeats::iterator MxEeRepeatsIter;
+	typedef MxEeRepeats::const_iterator MxEeRepeatsIterConst;
 
 	class MxEeRepeat : public MxObject
 	{

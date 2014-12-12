@@ -47,6 +47,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -61,6 +62,12 @@
 namespace lexicon
 {
 /* MxEsBassStep ----------------------------------------------------------------------- */
+
+	class MxEsBassStep;
+	typedef std::shared_ptr<MxEsBassStep> HMxEsBassStep;
+	typedef std::vector<MxEsBassStep> MxEsBassSteps;
+	typedef MxEsBassSteps::iterator MxEsBassStepsIter;
+	typedef MxEsBassSteps::const_iterator MxEsBassStepsIterConst;
 
 	class MxEsBassStep : public MxElementSimple
 	{

@@ -52,6 +52,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -68,6 +69,12 @@
 namespace lexicon
 {
 /* MxEsPullOff ------------------------------------------------------------------------ */
+
+	class MxEsPullOff;
+	typedef std::shared_ptr<MxEsPullOff> HMxEsPullOff;
+	typedef std::vector<MxEsPullOff> MxEsPullOffs;
+	typedef MxEsPullOffs::iterator MxEsPullOffsIter;
+	typedef MxEsPullOffs::const_iterator MxEsPullOffsIterConst;
 
 	class MxEsPullOff : public MxElementSimple
 	{

@@ -40,6 +40,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumLeftCenterRight.h"
@@ -51,6 +52,12 @@
 namespace lexicon
 {
 /* MxEeImage -------------------------------------------------------------------------- */
+
+	class MxEeImage;
+	typedef std::shared_ptr<MxEeImage> HMxEeImage;
+	typedef std::vector<MxEeImage> MxEeImages;
+	typedef MxEeImages::iterator MxEeImagesIter;
+	typedef MxEeImages::const_iterator MxEeImagesIterConst;
 
 	class MxEeImage : public MxObject
 	{

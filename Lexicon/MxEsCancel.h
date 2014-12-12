@@ -49,6 +49,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumCancelLocation.h"
@@ -57,6 +58,12 @@
 namespace lexicon
 {
 /* MxEsCancel ------------------------------------------------------------------------- */
+
+	class MxEsCancel;
+	typedef std::shared_ptr<MxEsCancel> HMxEsCancel;
+	typedef std::vector<MxEsCancel> MxEsCancels;
+	typedef MxEsCancels::iterator MxEsCancelsIter;
+	typedef MxEsCancels::const_iterator MxEsCancelsIterConst;
 
 	class MxEsCancel : public MxElementSimple
 	{

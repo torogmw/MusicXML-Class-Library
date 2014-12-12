@@ -48,6 +48,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEsMeasureNumbering --------------------------------------------------------------- */
+
+	class MxEsMeasureNumbering;
+	typedef std::shared_ptr<MxEsMeasureNumbering> HMxEsMeasureNumbering;
+	typedef std::vector<MxEsMeasureNumbering> MxEsMeasureNumberings;
+	typedef MxEsMeasureNumberings::iterator MxEsMeasureNumberingsIter;
+	typedef MxEsMeasureNumberings::const_iterator MxEsMeasureNumberingsIterConst;
 
 	class MxEsMeasureNumbering : public MxElementSimple
 	{

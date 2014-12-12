@@ -339,6 +339,7 @@
 		299CCC271A329DB400D0E0CD /* ElementSmpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementSmpParser.h; sourceTree = "<group>"; };
 		299CCC341A32A17A00D0E0CD /* mainDoCreateElementSmps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateElementSmps.h; sourceTree = "<group>"; };
 		299CE0291A36BC390006AF9A /* mainConstants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainConstants.cpp; sourceTree = "<group>"; };
+		29A01BB71A3B7CDB006050A8 /* mainDoRegex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoRegex.h; sourceTree = "<group>"; };
 		29A1F8DD1A2E977F00B69133 /* mainDoCreateCxSmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateCxSmp.h; sourceTree = "<group>"; };
 		29B44F2D1A1E86700013AA05 /* AttGrpBldr_DataMmbrs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AttGrpBldr_DataMmbrs.cpp; sourceTree = "<group>"; };
 		29BBA13A1A2FC451004BEAC2 /* mainDoCreateCxEmpty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateCxEmpty.h; sourceTree = "<group>"; };
@@ -747,6 +748,7 @@
 				299CCC341A32A17A00D0E0CD /* mainDoCreateElementSmps.h */,
 				29FD8F991A34035E0056C50F /* mainDoCreateElementMx.h */,
 				294CB7181A35313600CA2734 /* mainDoResearch.h */,
+				29A01BB71A3B7CDB006050A8 /* mainDoRegex.h */,
 			);
 			name = main;
 			sourceTree = "<group>";

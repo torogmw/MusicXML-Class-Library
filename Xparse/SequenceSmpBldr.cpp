@@ -126,7 +126,7 @@ namespace XsdClasses
         stream.setName( "stream" );
         stream.isVirtual( true );
         stream.isConst( true );
-        stream.setReturnType( "void" );
+        stream.setReturnType( "std::ostream&" );
         Parameter streamParam1;
         streamParam1.setName( "os_out" );
         streamParam1.setDataType( "std::ostream" );
@@ -147,10 +147,11 @@ namespace XsdClasses
         stream.addParameter( streamParam1 );
         stream.addParameter( streamParam2 );
         stream.addParameter( streamParam3 );
+        std::stringstream streamCode( "throw \"todo: write the code.\";");
+        stream.setCode( streamCode );
         FunctionGroup stringy;
         stringy.setName( "Stringing and Streaming" );
         stringy.addFunction( stream );
-        std::stringstream streamCode( "throw \"todo: write the code.\";");
         this->addPublicFunctionGroup( stringy );
     }
     
@@ -346,6 +347,7 @@ namespace XsdClasses
         std::stringstream GetIsPresentDocumentation;
         GetIsPresentDocumentation << "Returns the count of <" << elementName << "> elements.";
         GetCountFunc.setDocumentation( GetIsPresentDocumentation.str() );
+        std::stringstream GetCountFuncCode( "throw \"todo: write the code.\";");
         fgrp.addFunction( GetCountFunc );
         
         std::stringstream BeginCode( "throw \"todo: write the code.\";");
@@ -379,12 +381,18 @@ namespace XsdClasses
         GetElementsEnd.setCode( EndCode );
         fgrp.addFunction( GetElementsEnd );
         
+        std::stringstream BeginConst;
+        BeginConst << GetElementsBegin.getName() << "Const";
+        GetElementsBegin.setName( BeginConst.str() );
         GetElementsBegin.isConst( true );
         GetElementsBegin.setReturnType( GetElementsIterConstType );
         GetElementsBegin.setCode( BeginConstCode );
         fgrp.addFunction( GetElementsBegin );
         
+        std::stringstream EndConst;
         GetElementsEnd.isConst( true );
+        EndConst << GetElementsEnd.getName() << "Const";
+        GetElementsEnd.setName( EndConst.str() );
         GetElementsEnd.setReturnType( GetElementsIterConstType );
         GetElementsEnd.setCode( EndConstCode );
         fgrp.addFunction( GetElementsEnd );
@@ -402,6 +410,7 @@ namespace XsdClasses
         AddElement.isConst( false );
         AddElement.setReturnType( "bool" );
         AddElement.setDocumentation( "Adds the element handle to the internal collection. Returns 'true' if successful, returns 'false' to indicate failure.  If you try to add more elements than is allowed by MaxOccurs, the this function will fail.  If you try to add a nullptr this function will fail." );
+        AddElement.setCode( AddElementCode );
         fgrp.addFunction( AddElement );
         
         Function RemoveElement;
@@ -416,7 +425,8 @@ namespace XsdClasses
         RemoveElement.addParameter( RemoveElementParameter );
         RemoveElement.isConst( false );
         RemoveElement.setReturnType( "bool" );
-        RemoveElement.setDocumentation( "Removes the element handle to the internal collection. Returns 'true' if successful, returns 'false' to indicate failure.  If you try to remove more elements that would result in a count less than MinOccurs, the this function will fail." );
+        RemoveElement.setDocumentation( "Removes the element handle to the internal collection. Returns 'true' if successful, returns 'false' to indicate failure.  If you try to remove elements that would result in a count less than MinOccurs, the this function will fail." );
+        RemoveElement.setCode( RemoveElementCode );
         fgrp.addFunction( RemoveElement );
         
         Function getMinOccurs;
@@ -478,7 +488,7 @@ namespace XsdClasses
         ss << classComment.toString() << std::endl << std::endl;
         
         /* H File Begin Class Declaration */
-        ss << baselineTabs() << "class " << IClassBldr::getName() << " : public MxSeq" << end();
+        ss << baselineTabs() << "class " << IClassBldr::getName() << " : public MxIndentable" << end();
         ss << baselineTabs() << "{" << std::endl;
         ss << baselineTabs() << "public:" << std::endl << std::endl;
         

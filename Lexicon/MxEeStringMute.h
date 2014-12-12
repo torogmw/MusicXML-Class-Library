@@ -42,6 +42,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -57,6 +58,12 @@
 namespace lexicon
 {
 /* MxEeStringMute --------------------------------------------------------------------- */
+
+	class MxEeStringMute;
+	typedef std::shared_ptr<MxEeStringMute> HMxEeStringMute;
+	typedef std::vector<MxEeStringMute> MxEeStringMutes;
+	typedef MxEeStringMutes::iterator MxEeStringMutesIter;
+	typedef MxEeStringMutes::const_iterator MxEeStringMutesIterConst;
 
 	class MxEeStringMute : public MxObject
 	{

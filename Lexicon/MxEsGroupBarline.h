@@ -45,6 +45,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -53,6 +54,12 @@
 namespace lexicon
 {
 /* MxEsGroupBarline ------------------------------------------------------------------- */
+
+	class MxEsGroupBarline;
+	typedef std::shared_ptr<MxEsGroupBarline> HMxEsGroupBarline;
+	typedef std::vector<MxEsGroupBarline> MxEsGroupBarlines;
+	typedef MxEsGroupBarlines::iterator MxEsGroupBarlinesIter;
+	typedef MxEsGroupBarlines::const_iterator MxEsGroupBarlinesIterConst;
 
 	class MxEsGroupBarline : public MxElementSimple
 	{

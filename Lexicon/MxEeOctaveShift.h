@@ -48,6 +48,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEeOctaveShift -------------------------------------------------------------------- */
+
+	class MxEeOctaveShift;
+	typedef std::shared_ptr<MxEeOctaveShift> HMxEeOctaveShift;
+	typedef std::vector<MxEeOctaveShift> MxEeOctaveShifts;
+	typedef MxEeOctaveShifts::iterator MxEeOctaveShiftsIter;
+	typedef MxEeOctaveShifts::const_iterator MxEeOctaveShiftsIterConst;
 
 	class MxEeOctaveShift : public MxObject
 	{

@@ -49,6 +49,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumYesNo.h"
@@ -58,6 +59,12 @@
 namespace lexicon
 {
 /* MxEeGrace -------------------------------------------------------------------------- */
+
+	class MxEeGrace;
+	typedef std::shared_ptr<MxEeGrace> HMxEeGrace;
+	typedef std::vector<MxEeGrace> MxEeGraces;
+	typedef MxEeGraces::iterator MxEeGracesIter;
+	typedef MxEeGraces::const_iterator MxEeGracesIterConst;
 
 	class MxEeGrace : public MxObject
 	{

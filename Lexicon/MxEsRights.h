@@ -58,6 +58,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "XsString.h"
@@ -66,6 +67,12 @@
 namespace lexicon
 {
 /* MxEsRights ------------------------------------------------------------------------- */
+
+	class MxEsRights;
+	typedef std::shared_ptr<MxEsRights> HMxEsRights;
+	typedef std::vector<MxEsRights> MxEsRightss;
+	typedef MxEsRightss::iterator MxEsRightssIter;
+	typedef MxEsRightss::const_iterator MxEsRightssIterConst;
 
 	class MxEsRights : public MxElementSimple
 	{

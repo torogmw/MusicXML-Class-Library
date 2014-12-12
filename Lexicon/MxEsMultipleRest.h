@@ -48,6 +48,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumYesNo.h"
@@ -56,6 +57,12 @@
 namespace lexicon
 {
 /* MxEsMultipleRest ------------------------------------------------------------------- */
+
+	class MxEsMultipleRest;
+	typedef std::shared_ptr<MxEsMultipleRest> HMxEsMultipleRest;
+	typedef std::vector<MxEsMultipleRest> MxEsMultipleRests;
+	typedef MxEsMultipleRests::iterator MxEsMultipleRestsIter;
+	typedef MxEsMultipleRests::const_iterator MxEsMultipleRestsIterConst;
 
 	class MxEsMultipleRest : public MxElementSimple
 	{

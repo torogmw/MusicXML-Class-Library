@@ -45,6 +45,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -67,6 +68,12 @@
 namespace lexicon
 {
 /* MxEsFootnote ----------------------------------------------------------------------- */
+
+	class MxEsFootnote;
+	typedef std::shared_ptr<MxEsFootnote> HMxEsFootnote;
+	typedef std::vector<MxEsFootnote> MxEsFootnotes;
+	typedef MxEsFootnotes::iterator MxEsFootnotesIter;
+	typedef MxEsFootnotes::const_iterator MxEsFootnotesIterConst;
 
 	class MxEsFootnote : public MxElementSimple
 	{

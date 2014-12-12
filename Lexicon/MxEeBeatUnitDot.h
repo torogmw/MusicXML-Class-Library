@@ -45,12 +45,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 
 namespace lexicon
 {
 /* MxEeBeatUnitDot -------------------------------------------------------------------- */
+
+	class MxEeBeatUnitDot;
+	typedef std::shared_ptr<MxEeBeatUnitDot> HMxEeBeatUnitDot;
+	typedef std::vector<MxEeBeatUnitDot> MxEeBeatUnitDots;
+	typedef MxEeBeatUnitDots::iterator MxEeBeatUnitDotsIter;
+	typedef MxEeBeatUnitDots::const_iterator MxEeBeatUnitDotsIterConst;
 
 	class MxEeBeatUnitDot : public MxObject
 	{

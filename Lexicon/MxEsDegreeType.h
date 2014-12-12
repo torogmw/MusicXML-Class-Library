@@ -49,6 +49,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEsDegreeType --------------------------------------------------------------------- */
+
+	class MxEsDegreeType;
+	typedef std::shared_ptr<MxEsDegreeType> HMxEsDegreeType;
+	typedef std::vector<MxEsDegreeType> MxEsDegreeTypes;
+	typedef MxEsDegreeTypes::iterator MxEsDegreeTypesIter;
+	typedef MxEsDegreeTypes::const_iterator MxEsDegreeTypesIterConst;
 
 	class MxEsDegreeType : public MxElementSimple
 	{

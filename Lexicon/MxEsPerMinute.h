@@ -48,6 +48,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxCommaSeparatedText.h"
@@ -59,6 +60,12 @@
 namespace lexicon
 {
 /* MxEsPerMinute ---------------------------------------------------------------------- */
+
+	class MxEsPerMinute;
+	typedef std::shared_ptr<MxEsPerMinute> HMxEsPerMinute;
+	typedef std::vector<MxEsPerMinute> MxEsPerMinutes;
+	typedef MxEsPerMinutes::iterator MxEsPerMinutesIter;
+	typedef MxEsPerMinutes::const_iterator MxEsPerMinutesIterConst;
 
 	class MxEsPerMinute : public MxElementSimple
 	{

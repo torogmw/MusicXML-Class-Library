@@ -49,6 +49,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumLineWidthType.h"
@@ -57,6 +58,12 @@
 namespace lexicon
 {
 /* MxEsLineWidth ---------------------------------------------------------------------- */
+
+	class MxEsLineWidth;
+	typedef std::shared_ptr<MxEsLineWidth> HMxEsLineWidth;
+	typedef std::vector<MxEsLineWidth> MxEsLineWidths;
+	typedef MxEsLineWidths::iterator MxEsLineWidthsIter;
+	typedef MxEsLineWidths::const_iterator MxEsLineWidthsIterConst;
 
 	class MxEsLineWidth : public MxElementSimple
 	{

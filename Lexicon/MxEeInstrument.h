@@ -43,6 +43,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "XsIdRef.h"
@@ -50,6 +51,12 @@
 namespace lexicon
 {
 /* MxEeInstrument --------------------------------------------------------------------- */
+
+	class MxEeInstrument;
+	typedef std::shared_ptr<MxEeInstrument> HMxEeInstrument;
+	typedef std::vector<MxEeInstrument> MxEeInstruments;
+	typedef MxEeInstruments::iterator MxEeInstrumentsIter;
+	typedef MxEeInstruments::const_iterator MxEeInstrumentsIterConst;
 
 	class MxEeInstrument : public MxObject
 	{

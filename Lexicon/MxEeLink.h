@@ -45,6 +45,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxNumberTenths.h"
@@ -61,6 +62,12 @@
 namespace lexicon
 {
 /* MxEeLink --------------------------------------------------------------------------- */
+
+	class MxEeLink;
+	typedef std::shared_ptr<MxEeLink> HMxEeLink;
+	typedef std::vector<MxEeLink> MxEeLinks;
+	typedef MxEeLinks::iterator MxEeLinksIter;
+	typedef MxEeLinks::const_iterator MxEeLinksIterConst;
 
 	class MxEeLink : public MxObject
 	{

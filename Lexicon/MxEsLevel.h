@@ -49,6 +49,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumSymbolSize.h"
@@ -58,6 +59,12 @@
 namespace lexicon
 {
 /* MxEsLevel -------------------------------------------------------------------------- */
+
+	class MxEsLevel;
+	typedef std::shared_ptr<MxEsLevel> HMxEsLevel;
+	typedef std::vector<MxEsLevel> MxEsLevels;
+	typedef MxEsLevels::iterator MxEsLevelsIter;
+	typedef MxEsLevels::const_iterator MxEsLevelsIterConst;
 
 	class MxEsLevel : public MxElementSimple
 	{

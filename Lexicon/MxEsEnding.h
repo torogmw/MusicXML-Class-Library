@@ -65,6 +65,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -81,6 +82,12 @@
 namespace lexicon
 {
 /* MxEsEnding ------------------------------------------------------------------------- */
+
+	class MxEsEnding;
+	typedef std::shared_ptr<MxEsEnding> HMxEsEnding;
+	typedef std::vector<MxEsEnding> MxEsEndings;
+	typedef MxEsEndings::iterator MxEsEndingsIter;
+	typedef MxEsEndings::const_iterator MxEsEndingsIterConst;
 
 	class MxEsEnding : public MxElementSimple
 	{

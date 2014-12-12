@@ -46,6 +46,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumHoleClosedLocation.h"
@@ -54,6 +55,12 @@
 namespace lexicon
 {
 /* MxEsHoleClosed --------------------------------------------------------------------- */
+
+	class MxEsHoleClosed;
+	typedef std::shared_ptr<MxEsHoleClosed> HMxEsHoleClosed;
+	typedef std::vector<MxEsHoleClosed> MxEsHoleCloseds;
+	typedef MxEsHoleCloseds::iterator MxEsHoleClosedsIter;
+	typedef MxEsHoleCloseds::const_iterator MxEsHoleClosedsIterConst;
 
 	class MxEsHoleClosed : public MxElementSimple
 	{

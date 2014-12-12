@@ -44,6 +44,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumBeaterValue.h"
@@ -52,6 +53,12 @@
 namespace lexicon
 {
 /* MxEsBeater ------------------------------------------------------------------------- */
+
+	class MxEsBeater;
+	typedef std::shared_ptr<MxEsBeater> HMxEsBeater;
+	typedef std::vector<MxEsBeater> MxEsBeaters;
+	typedef MxEsBeaters::iterator MxEsBeatersIter;
+	typedef MxEsBeaters::const_iterator MxEsBeatersIterConst;
 
 	class MxEsBeater : public MxElementSimple
 	{

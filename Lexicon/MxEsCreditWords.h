@@ -45,6 +45,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -67,6 +68,12 @@
 namespace lexicon
 {
 /* MxEsCreditWords -------------------------------------------------------------------- */
+
+	class MxEsCreditWords;
+	typedef std::shared_ptr<MxEsCreditWords> HMxEsCreditWords;
+	typedef std::vector<MxEsCreditWords> MxEsCreditWordss;
+	typedef MxEsCreditWordss::iterator MxEsCreditWordssIter;
+	typedef MxEsCreditWordss::const_iterator MxEsCreditWordssIterConst;
 
 	class MxEsCreditWords : public MxElementSimple
 	{

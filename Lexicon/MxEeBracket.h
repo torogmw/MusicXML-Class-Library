@@ -51,6 +51,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEeBracket ------------------------------------------------------------------------ */
+
+	class MxEeBracket;
+	typedef std::shared_ptr<MxEeBracket> HMxEeBracket;
+	typedef std::vector<MxEeBracket> MxEeBrackets;
+	typedef MxEeBrackets::iterator MxEeBracketsIter;
+	typedef MxEeBrackets::const_iterator MxEeBracketsIterConst;
 
 	class MxEeBracket : public MxObject
 	{

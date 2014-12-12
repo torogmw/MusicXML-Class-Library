@@ -50,6 +50,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumYesNo.h"
@@ -59,6 +60,12 @@
 namespace lexicon
 {
 /* MxEeSupports ----------------------------------------------------------------------- */
+
+	class MxEeSupports;
+	typedef std::shared_ptr<MxEeSupports> HMxEeSupports;
+	typedef std::vector<MxEeSupports> MxEeSupportss;
+	typedef MxEeSupportss::iterator MxEeSupportssIter;
+	typedef MxEeSupportss::const_iterator MxEeSupportssIterConst;
 
 	class MxEeSupports : public MxObject
 	{

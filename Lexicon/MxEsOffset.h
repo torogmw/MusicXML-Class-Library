@@ -51,6 +51,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumYesNo.h"
@@ -59,6 +60,12 @@
 namespace lexicon
 {
 /* MxEsOffset ------------------------------------------------------------------------- */
+
+	class MxEsOffset;
+	typedef std::shared_ptr<MxEsOffset> HMxEsOffset;
+	typedef std::vector<MxEsOffset> MxEsOffsets;
+	typedef MxEsOffsets::iterator MxEsOffsetsIter;
+	typedef MxEsOffsets::const_iterator MxEsOffsetsIterConst;
 
 	class MxEsOffset : public MxElementSimple
 	{

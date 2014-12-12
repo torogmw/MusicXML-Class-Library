@@ -46,6 +46,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -59,6 +60,12 @@
 namespace lexicon
 {
 /* MxEsInversion ---------------------------------------------------------------------- */
+
+	class MxEsInversion;
+	typedef std::shared_ptr<MxEsInversion> HMxEsInversion;
+	typedef std::vector<MxEsInversion> MxEsInversions;
+	typedef MxEsInversions::iterator MxEsInversionsIter;
+	typedef MxEsInversions::const_iterator MxEsInversionsIterConst;
 
 	class MxEsInversion : public MxElementSimple
 	{

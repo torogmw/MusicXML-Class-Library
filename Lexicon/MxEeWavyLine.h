@@ -46,6 +46,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEeWavyLine ----------------------------------------------------------------------- */
+
+	class MxEeWavyLine;
+	typedef std::shared_ptr<MxEeWavyLine> HMxEeWavyLine;
+	typedef std::vector<MxEeWavyLine> MxEeWavyLines;
+	typedef MxEeWavyLines::iterator MxEeWavyLinesIter;
+	typedef MxEeWavyLines::const_iterator MxEeWavyLinesIterConst;
 
 	class MxEeWavyLine : public MxObject
 	{

@@ -46,6 +46,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumBeamValue.h"
@@ -54,6 +55,12 @@
 namespace lexicon
 {
 /* MxEsMetronomeBeam ------------------------------------------------------------------ */
+
+	class MxEsMetronomeBeam;
+	typedef std::shared_ptr<MxEsMetronomeBeam> HMxEsMetronomeBeam;
+	typedef std::vector<MxEsMetronomeBeam> MxEsMetronomeBeams;
+	typedef MxEsMetronomeBeams::iterator MxEsMetronomeBeamsIter;
+	typedef MxEsMetronomeBeams::const_iterator MxEsMetronomeBeamsIterConst;
 
 	class MxEsMetronomeBeam : public MxElementSimple
 	{

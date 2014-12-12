@@ -49,6 +49,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumLeftRight.h"
@@ -58,6 +59,12 @@
 namespace lexicon
 {
 /* MxEsFirstFret ---------------------------------------------------------------------- */
+
+	class MxEsFirstFret;
+	typedef std::shared_ptr<MxEsFirstFret> HMxEsFirstFret;
+	typedef std::vector<MxEsFirstFret> MxEsFirstFrets;
+	typedef MxEsFirstFrets::iterator MxEsFirstFretsIter;
+	typedef MxEsFirstFrets::const_iterator MxEsFirstFretsIterConst;
 
 	class MxEsFirstFret : public MxElementSimple
 	{

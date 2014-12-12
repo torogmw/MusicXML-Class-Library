@@ -42,6 +42,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -57,6 +58,12 @@
 namespace lexicon
 {
 /* MxEeLeftDivider -------------------------------------------------------------------- */
+
+	class MxEeLeftDivider;
+	typedef std::shared_ptr<MxEeLeftDivider> HMxEeLeftDivider;
+	typedef std::vector<MxEeLeftDivider> MxEeLeftDividers;
+	typedef MxEeLeftDividers::iterator MxEeLeftDividersIter;
+	typedef MxEeLeftDividers::const_iterator MxEeLeftDividersIterConst;
 
 	class MxEeLeftDivider : public MxObject
 	{

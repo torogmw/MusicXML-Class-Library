@@ -54,6 +54,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumStartStop.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEsMeasureRepeat ------------------------------------------------------------------ */
+
+	class MxEsMeasureRepeat;
+	typedef std::shared_ptr<MxEsMeasureRepeat> HMxEsMeasureRepeat;
+	typedef std::vector<MxEsMeasureRepeat> MxEsMeasureRepeats;
+	typedef MxEsMeasureRepeats::iterator MxEsMeasureRepeatsIter;
+	typedef MxEsMeasureRepeats::const_iterator MxEsMeasureRepeatsIterConst;
 
 	class MxEsMeasureRepeat : public MxElementSimple
 	{

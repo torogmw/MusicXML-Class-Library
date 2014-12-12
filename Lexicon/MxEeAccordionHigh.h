@@ -45,12 +45,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 
 namespace lexicon
 {
 /* MxEeAccordionHigh ------------------------------------------------------------------ */
+
+	class MxEeAccordionHigh;
+	typedef std::shared_ptr<MxEeAccordionHigh> HMxEeAccordionHigh;
+	typedef std::vector<MxEeAccordionHigh> MxEeAccordionHighs;
+	typedef MxEeAccordionHighs::iterator MxEeAccordionHighsIter;
+	typedef MxEeAccordionHighs::const_iterator MxEeAccordionHighsIterConst;
 
 	class MxEeAccordionHigh : public MxObject
 	{

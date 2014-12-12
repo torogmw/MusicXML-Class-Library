@@ -38,12 +38,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 
 namespace lexicon
 {
 /* MxEeSfz ---------------------------------------------------------------------------- */
+
+	class MxEeSfz;
+	typedef std::shared_ptr<MxEeSfz> HMxEeSfz;
+	typedef std::vector<MxEeSfz> MxEeSfzs;
+	typedef MxEeSfzs::iterator MxEeSfzsIter;
+	typedef MxEeSfzs::const_iterator MxEeSfzsIterConst;
 
 	class MxEeSfz : public MxObject
 	{

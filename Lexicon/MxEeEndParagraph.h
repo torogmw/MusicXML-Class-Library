@@ -47,12 +47,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 
 namespace lexicon
 {
 /* MxEeEndParagraph ------------------------------------------------------------------- */
+
+	class MxEeEndParagraph;
+	typedef std::shared_ptr<MxEeEndParagraph> HMxEeEndParagraph;
+	typedef std::vector<MxEeEndParagraph> MxEeEndParagraphs;
+	typedef MxEeEndParagraphs::iterator MxEeEndParagraphsIter;
+	typedef MxEeEndParagraphs::const_iterator MxEeEndParagraphsIterConst;
 
 	class MxEeEndParagraph : public MxObject
 	{

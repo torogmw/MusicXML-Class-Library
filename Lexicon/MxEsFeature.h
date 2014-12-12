@@ -47,6 +47,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "XsString.h"
@@ -55,6 +56,12 @@
 namespace lexicon
 {
 /* MxEsFeature ------------------------------------------------------------------------ */
+
+	class MxEsFeature;
+	typedef std::shared_ptr<MxEsFeature> HMxEsFeature;
+	typedef std::vector<MxEsFeature> MxEsFeatures;
+	typedef MxEsFeatures::iterator MxEsFeaturesIter;
+	typedef MxEsFeatures::const_iterator MxEsFeaturesIterConst;
 
 	class MxEsFeature : public MxElementSimple
 	{

@@ -56,6 +56,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxEnumYesNo.h"
@@ -65,6 +66,12 @@
 namespace lexicon
 {
 /* MxEsKeyOctave ---------------------------------------------------------------------- */
+
+	class MxEsKeyOctave;
+	typedef std::shared_ptr<MxEsKeyOctave> HMxEsKeyOctave;
+	typedef std::vector<MxEsKeyOctave> MxEsKeyOctaves;
+	typedef MxEsKeyOctaves::iterator MxEsKeyOctavesIter;
+	typedef MxEsKeyOctaves::const_iterator MxEsKeyOctavesIterConst;
 
 	class MxEsKeyOctave : public MxElementSimple
 	{

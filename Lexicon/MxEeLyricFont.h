@@ -43,6 +43,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxCommaSeparatedText.h"
@@ -55,6 +56,12 @@
 namespace lexicon
 {
 /* MxEeLyricFont ---------------------------------------------------------------------- */
+
+	class MxEeLyricFont;
+	typedef std::shared_ptr<MxEeLyricFont> HMxEeLyricFont;
+	typedef std::vector<MxEeLyricFont> MxEeLyricFonts;
+	typedef MxEeLyricFonts::iterator MxEeLyricFontsIter;
+	typedef MxEeLyricFonts::const_iterator MxEeLyricFontsIterConst;
 
 	class MxEeLyricFont : public MxObject
 	{

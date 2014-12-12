@@ -47,6 +47,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <memory>
 #include "LexiconBaseObjects.h"
 #include "MxColor.h"
@@ -63,6 +64,12 @@
 namespace lexicon
 {
 /* MxEsOtherDirection ----------------------------------------------------------------- */
+
+	class MxEsOtherDirection;
+	typedef std::shared_ptr<MxEsOtherDirection> HMxEsOtherDirection;
+	typedef std::vector<MxEsOtherDirection> MxEsOtherDirections;
+	typedef MxEsOtherDirections::iterator MxEsOtherDirectionsIter;
+	typedef MxEsOtherDirections::const_iterator MxEsOtherDirectionsIterConst;
 
 	class MxEsOtherDirection : public MxElementSimple
 	{
