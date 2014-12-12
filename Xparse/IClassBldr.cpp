@@ -158,6 +158,22 @@ namespace mjb
         myCppFileHeader->setClassName( myName );
         myHFileHeader->setFileType( ClassFileHeader::fileType::h );
         myCppFileHeader->setFileType( ClassFileHeader::fileType::cpp );
+        for ( auto dm = getPrivateConstStaticDatamembersBegin(); dm != getPrivateConstStaticDatamembersEnd(); ++dm )
+        {
+            if ( dm->getName() == "myXmlTypeName" )
+            {
+                dm->setValue( myXmlName );
+            }
+            else if ( dm->getName() == "myDocumentation" )
+            {
+                dm->setValue( myXmlDocumentation );
+            }
+            else if ( dm->getName() == "myCppClassName" )
+            {
+                dm->setValue( getName() );
+            }
+        }
+        
     }
     
     FunctionGroupCollection IClassBldr::getPublicFunctionGroups() const
@@ -173,6 +189,7 @@ namespace mjb
     void IClassBldr::setClassNamePrefix( const std::string& value_in )
     {
         myClassNamePrefix = value_in;
+        datachanged();
     }
     
     void IClassBldr::setName ( const std::string& name_in )
@@ -243,6 +260,7 @@ namespace mjb
         f.setDirectory( value_in );
         f.setFileName( "fake.cpp" );
         myOutputDirectoryCpp = f.getDirectory();
+        datachanged();
     }
     std::string IClassBldr::getOutputDirectoryH() const
     {
@@ -254,6 +272,7 @@ namespace mjb
         f.setDirectory( value_in );
         f.setFileName( "fake.h" );
         myOutputDirectoryH = f.getDirectory();
+        datachanged();
     }
     std::string IClassBldr::getOutputDirectoryTest() const
     {
@@ -265,6 +284,7 @@ namespace mjb
         f.setDirectory( value_in );
         f.setFileName( "fakeTest.cpp" );
         myOutputDirectoryTest = f.getDirectory();
+        datachanged();
     }
     
     void IClassBldr::addPrivateFunctionGroup( const FunctionGroup& functionGroup_in )
@@ -520,6 +540,7 @@ namespace mjb
     void IClassBldr::setXmlDocumentation( const std::string& value_in )
     {
         myXmlDocumentation = value_in;
+        datachanged();
     }
     std::string IClassBldr::getXmlName() const
     {
@@ -528,5 +549,54 @@ namespace mjb
     void IClassBldr::setXmlName( const std::string& value_in )
     {
         myXmlName = value_in;
+        datachanged();
+    }
+    
+    FunctionGroup IClassBldr::alterFunctionGroupForImpl( FunctionGroup fgrp ) const
+    {
+        FunctionGroup output;
+        output.setName( fgrp.getName() );
+        if ( fgrp.isPrivate() )
+        {
+            output.setPrivate();
+        }
+        else
+        {
+            output.setPublic();
+        }
+        for ( auto f = fgrp.begin(); f != fgrp.end(); ++f )
+        {
+            Function alteredFunc;
+            alteredFunc.setName( f->getName() );
+            alteredFunc.setDocumentation( f->getDocumentation() );
+            alteredFunc.setNote( f->getNote() );
+            alteredFunc.setReturnType( f->getReturnType() );
+            
+            std::stringstream ss;
+            if ( ( f->getReturnType() != "void" ) && ( f->getReturnType() != "" ) )
+            {
+                ss << "return ";
+            }
+            ss << "myImpl." << f->getName() << "(";
+            if ( f->parametersBegin() != f->parametersEnd() )
+            {
+                ss << " ";
+                bool firstParameter = true;
+                for ( auto it = f->parametersBegin(); it != f->parametersEnd(); ++it )
+                {
+                    if ( !firstParameter )
+                    {
+                        ss << ", ";
+                        firstParameter = false;
+                    }
+                    ss << it->getName();
+                }
+                ss << " ";
+            }
+            ss << ");";
+            alteredFunc.setCode( ss.str() );
+            output.addFunction( alteredFunc );
+        }
+        return output;
     }
 }

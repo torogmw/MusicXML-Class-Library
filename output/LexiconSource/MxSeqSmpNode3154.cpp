@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 15:30:12
+  * @date       2014-12-11 16:20:23
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3154
@@ -189,9 +189,171 @@ namespace lexicon
 		}
 
 	const int MxSeqSmpNode3154::Impl::myXsdID = 3154;
-	const std::string MxSeqSmpNode3154::Impl::myXmlTypeName = "";
-	const std::string MxSeqSmpNode3154::Impl::myCppClassName = "DefaultConstructed";
-	const std::string MxSeqSmpNode3154::Impl::myDocumentation = "";
+	const std::string MxSeqSmpNode3154::Impl::myXmlTypeName = "node-3154";
+	const std::string MxSeqSmpNode3154::Impl::myCppClassName = "MxSeqSmpNode3154";
+	const std::string MxSeqSmpNode3154::Impl::myDocumentation = "No XSD Documentation.";
 
 	}; // struct MxSeqSmpNode3154::Impl
+
+/* MxSeqSmpNode3154 ------------------------------------------------------------------- */
+
+namespace lexicon
+{
+
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+	MxSeqSmpNode3154::MxSeqSmpNode3154()
+	:myImpl( new Impl() ) {}
+
+	MxSeqSmpNode3154::~MxSeqSmpNode3154() {}
+
+	MxSeqSmpNode3154::MxSeqSmpNode3154( const MxSeqSmpNode3154& other )
+	:myImpl( new Impl( *(other.myImpl) ) ) {}
+
+	MxSeqSmpNode3154& MxSeqSmpNode3154::operator=( const MxSeqSmpNode3154& other )
+	{
+		this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );
+		return *this;
+	}
+
+/* defaultName ------------------------------------------------------------------------ */
+
+	/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+	std::string MxSeqSmpNode3154::getXmlTypeName()
+	{
+		return myImpl.getXmlTypeName();
+	}
+
+	/** Returns the name of this C++ class. **/
+	std::string MxSeqSmpNode3154::getClassName()
+	{
+		return myImpl.getClassName();
+	}
+
+	/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+	    document. **/
+	std::string MxSeqSmpNode3154::getDocumentation()
+	{
+		return myImpl.getDocumentation();
+	}
+
+/* BassStep Functions ----------------------------------------------------------------- */
+
+	/** Tells you whether or not <BassStep> is present. If <BassStep> is required,
+	    this will always return 'true'. If <BassStep> is required, no corresponding
+	    'setIsBassStepPresent' will exist. **/
+	bool MxSeqSmpNode3154::getIsBassStepPresent()
+	{
+		return myImpl.getIsBassStepPresent();
+	}
+
+	/** Returns a shared pointer handle to the <BassStep> element. Note that
+	    if getIsBassStepPresent is false, this value will still exist (even
+	    though it is not in the xml document) and you should ignore it. **/
+	HMxEsBassStep MxSeqSmpNode3154::getBassStep()
+	{
+		return myImpl.getBassStep();
+	}
+
+	/** Sets the internal shared pointer handle for the <BassStep> element.
+	     **/
+	int MxSeqSmpNode3154::setBassStep()
+	{
+		return myImpl.setBassStep( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <BassStep> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode3154::getBassStepMinOccurs()
+	{
+		return myImpl.getBassStepMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <BassStep> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsBassStepUnbounded' will
+	    return 'true' and the return value of 'getBassStepMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3154::getBassStepMaxOccurs()
+	{
+		return myImpl.getBassStepMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <BassStep> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getBassStepMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3154::getIsBassStepUnbounded()
+	{
+		return myImpl.getIsBassStepUnbounded();
+	}
+
+/* BassAlter Functions ---------------------------------------------------------------- */
+
+	/** Tells you whether or not <BassAlter> is present. If <BassAlter> is
+	    required, this will always return 'true'. If <BassAlter> is required,
+	    no corresponding 'setIsBassAlterPresent' will exist. **/
+	bool MxSeqSmpNode3154::getIsBassAlterPresent()
+	{
+		return myImpl.getIsBassAlterPresent();
+	}
+
+	void MxSeqSmpNode3154::setIsBassAlterPresent()
+	{
+		myImpl.setIsBassAlterPresent( value_in );
+	}
+
+	/** Returns a shared pointer handle to the <BassAlter> element. Note that
+	    if getIsBassAlterPresent is false, this value will still exist (even
+	    though it is not in the xml document) and you should ignore it. **/
+	HMxEsBassAlter MxSeqSmpNode3154::getBassAlter()
+	{
+		return myImpl.getBassAlter();
+	}
+
+	/** Sets the internal shared pointer handle for the <BassAlter> element.
+	    Note that if setIsBassAlterPresent is false, the internal shared pointer
+	    will not be altered and will hold a value that does not exist in xml. **/
+	int MxSeqSmpNode3154::setBassAlter()
+	{
+		return myImpl.setBassAlter( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <BassAlter> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode3154::getBassAlterMinOccurs()
+	{
+		return myImpl.getBassAlterMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <BassAlter> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsBassAlterUnbounded' will
+	    return 'true' and the return value of 'getBassAlterMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3154::getBassAlterMaxOccurs()
+	{
+		return myImpl.getBassAlterMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <BassAlter> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getBassAlterMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3154::getIsBassAlterUnbounded()
+	{
+		return myImpl.getIsBassAlterUnbounded();
+	}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+	void MxSeqSmpNode3154::stream()
+	{
+		myImpl.stream( os_outindentcount_inindentchars_in );
+	}
+
+
+} // namespace lexicon
 

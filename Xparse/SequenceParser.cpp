@@ -278,7 +278,7 @@ namespace XsdClasses
         }
         std::stringstream ss;
         ss << "Node";
-        ss << SequenceParser::getXmlName( e );
+        ss << e->getIndex();
         return ss.str();
     }
     Elements SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( const xparse::ElementPtr& e )

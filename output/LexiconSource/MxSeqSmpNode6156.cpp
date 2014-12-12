@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 15:30:27
+  * @date       2014-12-11 16:20:38
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 6156
@@ -252,9 +252,225 @@ namespace lexicon
 		}
 
 	const int MxSeqSmpNode6156::Impl::myXsdID = 6156;
-	const std::string MxSeqSmpNode6156::Impl::myXmlTypeName = "";
-	const std::string MxSeqSmpNode6156::Impl::myCppClassName = "DefaultConstructed";
-	const std::string MxSeqSmpNode6156::Impl::myDocumentation = "";
+	const std::string MxSeqSmpNode6156::Impl::myXmlTypeName = "node-6156";
+	const std::string MxSeqSmpNode6156::Impl::myCppClassName = "MxSeqSmpNode6156";
+	const std::string MxSeqSmpNode6156::Impl::myDocumentation = "No XSD Documentation.";
 
 	}; // struct MxSeqSmpNode6156::Impl
+
+/* MxSeqSmpNode6156 ------------------------------------------------------------------- */
+
+namespace lexicon
+{
+
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+	MxSeqSmpNode6156::MxSeqSmpNode6156()
+	:myImpl( new Impl() ) {}
+
+	MxSeqSmpNode6156::~MxSeqSmpNode6156() {}
+
+	MxSeqSmpNode6156::MxSeqSmpNode6156( const MxSeqSmpNode6156& other )
+	:myImpl( new Impl( *(other.myImpl) ) ) {}
+
+	MxSeqSmpNode6156& MxSeqSmpNode6156::operator=( const MxSeqSmpNode6156& other )
+	{
+		this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );
+		return *this;
+	}
+
+/* defaultName ------------------------------------------------------------------------ */
+
+	/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+	std::string MxSeqSmpNode6156::getXmlTypeName()
+	{
+		return myImpl.getXmlTypeName();
+	}
+
+	/** Returns the name of this C++ class. **/
+	std::string MxSeqSmpNode6156::getClassName()
+	{
+		return myImpl.getClassName();
+	}
+
+	/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+	    document. **/
+	std::string MxSeqSmpNode6156::getDocumentation()
+	{
+		return myImpl.getDocumentation();
+	}
+
+/* Cancel Functions ------------------------------------------------------------------- */
+
+	/** Tells you whether or not <Cancel> is present. If <Cancel> is required,
+	    this will always return 'true'. If <Cancel> is required, no corresponding
+	    'setIsCancelPresent' will exist. **/
+	bool MxSeqSmpNode6156::getIsCancelPresent()
+	{
+		return myImpl.getIsCancelPresent();
+	}
+
+	void MxSeqSmpNode6156::setIsCancelPresent()
+	{
+		myImpl.setIsCancelPresent( value_in );
+	}
+
+	/** Returns a shared pointer handle to the <Cancel> element. Note that
+	    if getIsCancelPresent is false, this value will still exist (even though
+	    it is not in the xml document) and you should ignore it. **/
+	HMxEsCancel MxSeqSmpNode6156::getCancel()
+	{
+		return myImpl.getCancel();
+	}
+
+	/** Sets the internal shared pointer handle for the <Cancel> element. Note
+	    that if setIsCancelPresent is false, the internal shared pointer will
+	    not be altered and will hold a value that does not exist in xml. **/
+	int MxSeqSmpNode6156::setCancel()
+	{
+		return myImpl.setCancel( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <Cancel> element. 
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode6156::getCancelMinOccurs()
+	{
+		return myImpl.getCancelMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <Cancel> element. Typically
+	    the MaxOccurs is specified as either '1' or 'unbounded'.  When the
+	    specification says 'unbounded' 'getIsCancelUnbounded' will return 'true'
+	    and the return value of 'getCancelMaxOccurs' should be ignored. **/
+	int MxSeqSmpNode6156::getCancelMaxOccurs()
+	{
+		return myImpl.getCancelMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <Cancel> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getCancelMaxOccurs' should be
+	    ignored. **/
+	int MxSeqSmpNode6156::getIsCancelUnbounded()
+	{
+		return myImpl.getIsCancelUnbounded();
+	}
+
+/* Fifths Functions ------------------------------------------------------------------- */
+
+	/** Tells you whether or not <Fifths> is present. If <Fifths> is required,
+	    this will always return 'true'. If <Fifths> is required, no corresponding
+	    'setIsFifthsPresent' will exist. **/
+	bool MxSeqSmpNode6156::getIsFifthsPresent()
+	{
+		return myImpl.getIsFifthsPresent();
+	}
+
+	/** Returns a shared pointer handle to the <Fifths> element. Note that
+	    if getIsFifthsPresent is false, this value will still exist (even though
+	    it is not in the xml document) and you should ignore it. **/
+	HMxEmFifths MxSeqSmpNode6156::getFifths()
+	{
+		return myImpl.getFifths();
+	}
+
+	/** Sets the internal shared pointer handle for the <Fifths> element.  **/
+	int MxSeqSmpNode6156::setFifths()
+	{
+		return myImpl.setFifths( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <Fifths> element. 
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode6156::getFifthsMinOccurs()
+	{
+		return myImpl.getFifthsMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <Fifths> element. Typically
+	    the MaxOccurs is specified as either '1' or 'unbounded'.  When the
+	    specification says 'unbounded' 'getIsFifthsUnbounded' will return 'true'
+	    and the return value of 'getFifthsMaxOccurs' should be ignored. **/
+	int MxSeqSmpNode6156::getFifthsMaxOccurs()
+	{
+		return myImpl.getFifthsMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <Fifths> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getFifthsMaxOccurs' should be
+	    ignored. **/
+	int MxSeqSmpNode6156::getIsFifthsUnbounded()
+	{
+		return myImpl.getIsFifthsUnbounded();
+	}
+
+/* Mode Functions --------------------------------------------------------------------- */
+
+	/** Tells you whether or not <Mode> is present. If <Mode> is required,
+	    this will always return 'true'. If <Mode> is required, no corresponding
+	    'setIsModePresent' will exist. **/
+	bool MxSeqSmpNode6156::getIsModePresent()
+	{
+		return myImpl.getIsModePresent();
+	}
+
+	void MxSeqSmpNode6156::setIsModePresent()
+	{
+		myImpl.setIsModePresent( value_in );
+	}
+
+	/** Returns a shared pointer handle to the <Mode> element. Note that if
+	    getIsModePresent is false, this value will still exist (even though
+	    it is not in the xml document) and you should ignore it. **/
+	HMxEmMode MxSeqSmpNode6156::getMode()
+	{
+		return myImpl.getMode();
+	}
+
+	/** Sets the internal shared pointer handle for the <Mode> element. Note
+	    that if setIsModePresent is false, the internal shared pointer will
+	    not be altered and will hold a value that does not exist in xml. **/
+	int MxSeqSmpNode6156::setMode()
+	{
+		return myImpl.setMode( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <Mode> element.  i.e.
+	    MinOccurs > 0 means the element is required, MinOccurs == 0 means the
+	    element is optional. **/
+	int MxSeqSmpNode6156::getModeMinOccurs()
+	{
+		return myImpl.getModeMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <Mode> element. Typically
+	    the MaxOccurs is specified as either '1' or 'unbounded'.  When the
+	    specification says 'unbounded' 'getIsModeUnbounded' will return 'true'
+	    and the return value of 'getModeMaxOccurs' should be ignored. **/
+	int MxSeqSmpNode6156::getModeMaxOccurs()
+	{
+		return myImpl.getModeMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <Mode> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getModeMaxOccurs' should be
+	    ignored. **/
+	int MxSeqSmpNode6156::getIsModeUnbounded()
+	{
+		return myImpl.getIsModeUnbounded();
+	}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+	void MxSeqSmpNode6156::stream()
+	{
+		myImpl.stream( os_outindentcount_inindentchars_in );
+	}
+
+
+} // namespace lexicon
 

@@ -51,7 +51,7 @@ namespace XsdClasses
         /* INIT Set Xml Info */
         IClassBldr::setXmlDocumentation( "No XSD Documentation." );
         IClassBldr::setXmlName( SequenceParser::getXmlName( getXsdNode() ) );
-        
+
         /* INIT For each element, construct an ElementBldr */
         xparse::Elements elements = SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() );
         for ( auto e : elements )
@@ -220,7 +220,6 @@ namespace XsdClasses
         
         if ( true )//etype != ElementType::CxEmptyRef )
         {
-            
             Function GetValueFunc;
             std::stringstream getValueFuncName;
             getValueFuncName << "get" << elementName;
@@ -611,6 +610,59 @@ namespace XsdClasses
         /* CPP IMPL Close */
         ss << baselineIndent( 0 ) << "}; // struct " << getName() << "::Impl"<< std::endl;
         ss << std::endl;
+        
+        /* CPP CLASS Begin */
+        SectionSeparatorComment classStart2( getName(), 90 );
+        ss << classStart2.toString() << std::endl;
+        ss << std::endl;
+        
+        /* CPP CLASS Open Namespaces */
+        ss << openNamespaces();
+        ss << end();
+        
+        /* CPP CLASS Define Constructor */
+        SectionSeparatorComment constructorsComment( "Constructor, Destructor, Copy, Assignment", 90 );
+        ss << constructorsComment.toString() << std::endl;
+        ss << std::endl;
+        ss << baselineIndent( 0 ) << getName() << "::" << getName() << "()" << std::endl;
+        ss << baselineIndent( 0 ) << ":myImpl( new Impl() ) {}" << end() << end();
+        
+        /* CPP CLASS Destructor */
+        ss << baselineIndent( 0 ) << getName() << "::" << "~" << getName() << "() {}" << end() << end();
+        
+        /* CPP CLASS Copy Constructor */
+        ss << baselineIndent( 0 ) << getName() << "::" << getName();
+        ss << "( const " << getName() << "& other )" << std::endl;
+        ss << baselineIndent( 0 ) << ":myImpl( new Impl( *(other.myImpl) ) ) {}" << end() << end();
+        
+        /* CPP CLASS Assignment */
+        ss << baselineIndent( 0 ) << getName() << "& " << getName() << "::operator=( const ";
+        ss << getName() << "& other )" << end();
+        ss << baselineIndent( 0 ) << "{" << end();
+        ss << baselineIndent( 1 ) << "this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );" << end();
+        ss << baselineIndent( 1 ) << "return *this;" << end();
+        ss << baselineIndent( 0 ) << "}" << end() << end();
+        
+        /* CPP CLASS */
+        std::stringstream qualifier_temp;
+        qualifier_temp << getName() << "::";
+        std::string qualifier = qualifier_temp.str();
+        for ( FunctionGroup fgrp : getPublicFunctionGroups() )
+        {
+            if ( fgrp.isPublic() )
+            {
+                if ( fgrp.size() > 0 )
+                {
+                    FunctionGroup alteredFunctionGroup = IClassBldr::alterFunctionGroupForImpl( fgrp );
+                    ss << alteredFunctionGroup.write( qualifier, getNamespaceCount(), ClassFileHeader::fileType::cpp, 90 );
+                    ss << std::endl;
+                }
+            }
+        }
+        
+        /* CPP CLASS Close */
+        ss << end();
+        ss << closeNamespaces();
         
         /* return statement */
         return ss.str();

@@ -107,6 +107,8 @@ namespace mjb
         virtual std::string baselineTabs() const;
         virtual std::string baselineIndent( int indent ) const;
         
+        virtual FunctionGroup alterFunctionGroupForImpl( FunctionGroup fgrp ) const;
+        
     private:
         xparse::ElementPtr myXsdNode;
         std::string myName;

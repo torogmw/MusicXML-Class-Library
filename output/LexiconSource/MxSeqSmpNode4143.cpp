@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 15:30:20
+  * @date       2014-12-11 16:20:32
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4143
@@ -373,9 +373,369 @@ namespace lexicon
 		}
 
 	const int MxSeqSmpNode4143::Impl::myXsdID = 4143;
-	const std::string MxSeqSmpNode4143::Impl::myXmlTypeName = "";
-	const std::string MxSeqSmpNode4143::Impl::myCppClassName = "DefaultConstructed";
-	const std::string MxSeqSmpNode4143::Impl::myDocumentation = "";
+	const std::string MxSeqSmpNode4143::Impl::myXmlTypeName = "node-4143";
+	const std::string MxSeqSmpNode4143::Impl::myCppClassName = "MxSeqSmpNode4143";
+	const std::string MxSeqSmpNode4143::Impl::myDocumentation = "No XSD Documentation.";
 
 	}; // struct MxSeqSmpNode4143::Impl
+
+/* MxSeqSmpNode4143 ------------------------------------------------------------------- */
+
+namespace lexicon
+{
+
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+	MxSeqSmpNode4143::MxSeqSmpNode4143()
+	:myImpl( new Impl() ) {}
+
+	MxSeqSmpNode4143::~MxSeqSmpNode4143() {}
+
+	MxSeqSmpNode4143::MxSeqSmpNode4143( const MxSeqSmpNode4143& other )
+	:myImpl( new Impl( *(other.myImpl) ) ) {}
+
+	MxSeqSmpNode4143& MxSeqSmpNode4143::operator=( const MxSeqSmpNode4143& other )
+	{
+		this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );
+		return *this;
+	}
+
+/* defaultName ------------------------------------------------------------------------ */
+
+	/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+	std::string MxSeqSmpNode4143::getXmlTypeName()
+	{
+		return myImpl.getXmlTypeName();
+	}
+
+	/** Returns the name of this C++ class. **/
+	std::string MxSeqSmpNode4143::getClassName()
+	{
+		return myImpl.getClassName();
+	}
+
+	/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+	    document. **/
+	std::string MxSeqSmpNode4143::getDocumentation()
+	{
+		return myImpl.getDocumentation();
+	}
+
+/* LineWidth Functions ---------------------------------------------------------------- */
+
+	/** Returns the count of <LineWidth> elements. **/
+	size_type MxSeqSmpNode4143::getLineWidthCount()
+	{
+		return myImpl.getLineWidthCount();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsLineWidth>::iterator MxSeqSmpNode4143::getLineWidthBegin()
+	{
+		return myImpl.getLineWidthBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsLineWidth>::iterator MxSeqSmpNode4143::getLineWidthEnd()
+	{
+		return myImpl.getLineWidthEnd();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsLineWidth>::const_iterator MxSeqSmpNode4143::getLineWidthBegin()
+	{
+		return myImpl.getLineWidthBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsLineWidth>::const_iterator MxSeqSmpNode4143::getLineWidthEnd()
+	{
+		return myImpl.getLineWidthEnd();
+	}
+
+	/** Adds the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    add more elements than is allowed by MaxOccurs, the this function will
+	    fail.  If you try to add a nullptr this function will fail. **/
+	bool MxSeqSmpNode4143::addLineWidth()
+	{
+		return myImpl.addLineWidth( value_in );
+	}
+
+	/** Removes the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    remove more elements that would result in a count less than MinOccurs,
+	    the this function will fail. **/
+	bool MxSeqSmpNode4143::removeLineWidth()
+	{
+		return myImpl.removeLineWidth( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <LineWidth> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode4143::getLineWidthMinOccurs()
+	{
+		return myImpl.getLineWidthMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <LineWidth> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsLineWidthUnbounded' will
+	    return 'true' and the return value of 'getLineWidthMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4143::getLineWidthMaxOccurs()
+	{
+		return myImpl.getLineWidthMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <LineWidth> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getLineWidthMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4143::getIsLineWidthUnbounded()
+	{
+		return myImpl.getIsLineWidthUnbounded();
+	}
+
+/* NoteSize Functions ----------------------------------------------------------------- */
+
+	/** Returns the count of <NoteSize> elements. **/
+	size_type MxSeqSmpNode4143::getNoteSizeCount()
+	{
+		return myImpl.getNoteSizeCount();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsNoteSize>::iterator MxSeqSmpNode4143::getNoteSizeBegin()
+	{
+		return myImpl.getNoteSizeBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsNoteSize>::iterator MxSeqSmpNode4143::getNoteSizeEnd()
+	{
+		return myImpl.getNoteSizeEnd();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsNoteSize>::const_iterator MxSeqSmpNode4143::getNoteSizeBegin()
+	{
+		return myImpl.getNoteSizeBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsNoteSize>::const_iterator MxSeqSmpNode4143::getNoteSizeEnd()
+	{
+		return myImpl.getNoteSizeEnd();
+	}
+
+	/** Adds the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    add more elements than is allowed by MaxOccurs, the this function will
+	    fail.  If you try to add a nullptr this function will fail. **/
+	bool MxSeqSmpNode4143::addNoteSize()
+	{
+		return myImpl.addNoteSize( value_in );
+	}
+
+	/** Removes the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    remove more elements that would result in a count less than MinOccurs,
+	    the this function will fail. **/
+	bool MxSeqSmpNode4143::removeNoteSize()
+	{
+		return myImpl.removeNoteSize( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <NoteSize> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode4143::getNoteSizeMinOccurs()
+	{
+		return myImpl.getNoteSizeMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <NoteSize> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsNoteSizeUnbounded' will
+	    return 'true' and the return value of 'getNoteSizeMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4143::getNoteSizeMaxOccurs()
+	{
+		return myImpl.getNoteSizeMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <NoteSize> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getNoteSizeMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4143::getIsNoteSizeUnbounded()
+	{
+		return myImpl.getIsNoteSizeUnbounded();
+	}
+
+/* Distance Functions ----------------------------------------------------------------- */
+
+	/** Returns the count of <Distance> elements. **/
+	size_type MxSeqSmpNode4143::getDistanceCount()
+	{
+		return myImpl.getDistanceCount();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsDistance>::iterator MxSeqSmpNode4143::getDistanceBegin()
+	{
+		return myImpl.getDistanceBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsDistance>::iterator MxSeqSmpNode4143::getDistanceEnd()
+	{
+		return myImpl.getDistanceEnd();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsDistance>::const_iterator MxSeqSmpNode4143::getDistanceBegin()
+	{
+		return myImpl.getDistanceBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsDistance>::const_iterator MxSeqSmpNode4143::getDistanceEnd()
+	{
+		return myImpl.getDistanceEnd();
+	}
+
+	/** Adds the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    add more elements than is allowed by MaxOccurs, the this function will
+	    fail.  If you try to add a nullptr this function will fail. **/
+	bool MxSeqSmpNode4143::addDistance()
+	{
+		return myImpl.addDistance( value_in );
+	}
+
+	/** Removes the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    remove more elements that would result in a count less than MinOccurs,
+	    the this function will fail. **/
+	bool MxSeqSmpNode4143::removeDistance()
+	{
+		return myImpl.removeDistance( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <Distance> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode4143::getDistanceMinOccurs()
+	{
+		return myImpl.getDistanceMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <Distance> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsDistanceUnbounded' will
+	    return 'true' and the return value of 'getDistanceMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4143::getDistanceMaxOccurs()
+	{
+		return myImpl.getDistanceMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <Distance> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getDistanceMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4143::getIsDistanceUnbounded()
+	{
+		return myImpl.getIsDistanceUnbounded();
+	}
+
+/* OtherAppearance Functions ---------------------------------------------------------- */
+
+	/** Returns the count of <OtherAppearance> elements. **/
+	size_type MxSeqSmpNode4143::getOtherAppearanceCount()
+	{
+		return myImpl.getOtherAppearanceCount();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsOtherAppearance>::iterator MxSeqSmpNode4143::getOtherAppearanceBegin()
+	{
+		return myImpl.getOtherAppearanceBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsOtherAppearance>::iterator MxSeqSmpNode4143::getOtherAppearanceEnd()
+	{
+		return myImpl.getOtherAppearanceEnd();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsOtherAppearance>::const_iterator MxSeqSmpNode4143::getOtherAppearanceBegin()
+	{
+		return myImpl.getOtherAppearanceBegin();
+	}
+
+	/** Returns an STL iterator into the contained collection of element handles. **/
+	std::vector<HMxEsOtherAppearance>::const_iterator MxSeqSmpNode4143::getOtherAppearanceEnd()
+	{
+		return myImpl.getOtherAppearanceEnd();
+	}
+
+	/** Adds the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    add more elements than is allowed by MaxOccurs, the this function will
+	    fail.  If you try to add a nullptr this function will fail. **/
+	bool MxSeqSmpNode4143::addOtherAppearance()
+	{
+		return myImpl.addOtherAppearance( value_in );
+	}
+
+	/** Removes the element handle to the internal collection. Returns 'true'
+	    if successful, returns 'false' to indicate failure.  If you try to
+	    remove more elements that would result in a count less than MinOccurs,
+	    the this function will fail. **/
+	bool MxSeqSmpNode4143::removeOtherAppearance()
+	{
+		return myImpl.removeOtherAppearance( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <OtherAppearance> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode4143::getOtherAppearanceMinOccurs()
+	{
+		return myImpl.getOtherAppearanceMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <OtherAppearance> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsOtherAppearanceUnbounded'
+	    will return 'true' and the return value of 'getOtherAppearanceMaxOccurs'
+	    should be ignored. **/
+	int MxSeqSmpNode4143::getOtherAppearanceMaxOccurs()
+	{
+		return myImpl.getOtherAppearanceMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <OtherAppearance> element is 'unbounded'.When this
+	    function returns 'true', the value returned by 'getOtherAppearanceMaxOccurs'
+	    should be ignored. **/
+	int MxSeqSmpNode4143::getIsOtherAppearanceUnbounded()
+	{
+		return myImpl.getIsOtherAppearanceUnbounded();
+	}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+	void MxSeqSmpNode4143::stream()
+	{
+		myImpl.stream( os_outindentcount_inindentchars_in );
+	}
+
+
+} // namespace lexicon
 

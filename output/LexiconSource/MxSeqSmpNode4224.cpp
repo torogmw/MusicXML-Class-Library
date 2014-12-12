@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 15:30:23
+  * @date       2014-12-11 16:20:34
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 4224
@@ -183,9 +183,165 @@ namespace lexicon
 		}
 
 	const int MxSeqSmpNode4224::Impl::myXsdID = 4224;
-	const std::string MxSeqSmpNode4224::Impl::myXmlTypeName = "";
-	const std::string MxSeqSmpNode4224::Impl::myCppClassName = "DefaultConstructed";
-	const std::string MxSeqSmpNode4224::Impl::myDocumentation = "";
+	const std::string MxSeqSmpNode4224::Impl::myXmlTypeName = "node-4224";
+	const std::string MxSeqSmpNode4224::Impl::myCppClassName = "MxSeqSmpNode4224";
+	const std::string MxSeqSmpNode4224::Impl::myDocumentation = "No XSD Documentation.";
 
 	}; // struct MxSeqSmpNode4224::Impl
+
+/* MxSeqSmpNode4224 ------------------------------------------------------------------- */
+
+namespace lexicon
+{
+
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+	MxSeqSmpNode4224::MxSeqSmpNode4224()
+	:myImpl( new Impl() ) {}
+
+	MxSeqSmpNode4224::~MxSeqSmpNode4224() {}
+
+	MxSeqSmpNode4224::MxSeqSmpNode4224( const MxSeqSmpNode4224& other )
+	:myImpl( new Impl( *(other.myImpl) ) ) {}
+
+	MxSeqSmpNode4224& MxSeqSmpNode4224::operator=( const MxSeqSmpNode4224& other )
+	{
+		this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );
+		return *this;
+	}
+
+/* defaultName ------------------------------------------------------------------------ */
+
+	/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+	std::string MxSeqSmpNode4224::getXmlTypeName()
+	{
+		return myImpl.getXmlTypeName();
+	}
+
+	/** Returns the name of this C++ class. **/
+	std::string MxSeqSmpNode4224::getClassName()
+	{
+		return myImpl.getClassName();
+	}
+
+	/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+	    document. **/
+	std::string MxSeqSmpNode4224::getDocumentation()
+	{
+		return myImpl.getDocumentation();
+	}
+
+/* PageHeight Functions --------------------------------------------------------------- */
+
+	/** Tells you whether or not <PageHeight> is present. If <PageHeight> is
+	    required, this will always return 'true'. If <PageHeight> is required,
+	    no corresponding 'setIsPageHeightPresent' will exist. **/
+	bool MxSeqSmpNode4224::getIsPageHeightPresent()
+	{
+		return myImpl.getIsPageHeightPresent();
+	}
+
+	/** Returns a shared pointer handle to the <PageHeight> element. Note that
+	    if getIsPageHeightPresent is false, this value will still exist (even
+	    though it is not in the xml document) and you should ignore it. **/
+	HMxEmPageHeight MxSeqSmpNode4224::getPageHeight()
+	{
+		return myImpl.getPageHeight();
+	}
+
+	/** Sets the internal shared pointer handle for the <PageHeight> element.
+	     **/
+	int MxSeqSmpNode4224::setPageHeight()
+	{
+		return myImpl.setPageHeight( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <PageHeight> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode4224::getPageHeightMinOccurs()
+	{
+		return myImpl.getPageHeightMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <PageHeight> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsPageHeightUnbounded'
+	    will return 'true' and the return value of 'getPageHeightMaxOccurs'
+	    should be ignored. **/
+	int MxSeqSmpNode4224::getPageHeightMaxOccurs()
+	{
+		return myImpl.getPageHeightMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <PageHeight> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getPageHeightMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4224::getIsPageHeightUnbounded()
+	{
+		return myImpl.getIsPageHeightUnbounded();
+	}
+
+/* PageWidth Functions ---------------------------------------------------------------- */
+
+	/** Tells you whether or not <PageWidth> is present. If <PageWidth> is
+	    required, this will always return 'true'. If <PageWidth> is required,
+	    no corresponding 'setIsPageWidthPresent' will exist. **/
+	bool MxSeqSmpNode4224::getIsPageWidthPresent()
+	{
+		return myImpl.getIsPageWidthPresent();
+	}
+
+	/** Returns a shared pointer handle to the <PageWidth> element. Note that
+	    if getIsPageWidthPresent is false, this value will still exist (even
+	    though it is not in the xml document) and you should ignore it. **/
+	HMxEmPageWidth MxSeqSmpNode4224::getPageWidth()
+	{
+		return myImpl.getPageWidth();
+	}
+
+	/** Sets the internal shared pointer handle for the <PageWidth> element.
+	     **/
+	int MxSeqSmpNode4224::setPageWidth()
+	{
+		return myImpl.setPageWidth( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <PageWidth> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode4224::getPageWidthMinOccurs()
+	{
+		return myImpl.getPageWidthMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <PageWidth> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsPageWidthUnbounded' will
+	    return 'true' and the return value of 'getPageWidthMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4224::getPageWidthMaxOccurs()
+	{
+		return myImpl.getPageWidthMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <PageWidth> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getPageWidthMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode4224::getIsPageWidthUnbounded()
+	{
+		return myImpl.getIsPageWidthUnbounded();
+	}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+	void MxSeqSmpNode4224::stream()
+	{
+		myImpl.stream( os_outindentcount_inindentchars_in );
+	}
+
+
+} // namespace lexicon
 

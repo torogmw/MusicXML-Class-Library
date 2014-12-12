@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-11 15:30:18
+  * @date       2014-12-11 16:20:29
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3871
@@ -189,9 +189,171 @@ namespace lexicon
 		}
 
 	const int MxSeqSmpNode3871::Impl::myXsdID = 3871;
-	const std::string MxSeqSmpNode3871::Impl::myXmlTypeName = "";
-	const std::string MxSeqSmpNode3871::Impl::myCppClassName = "DefaultConstructed";
-	const std::string MxSeqSmpNode3871::Impl::myDocumentation = "";
+	const std::string MxSeqSmpNode3871::Impl::myXmlTypeName = "node-3871";
+	const std::string MxSeqSmpNode3871::Impl::myCppClassName = "MxSeqSmpNode3871";
+	const std::string MxSeqSmpNode3871::Impl::myDocumentation = "No XSD Documentation.";
 
 	}; // struct MxSeqSmpNode3871::Impl
+
+/* MxSeqSmpNode3871 ------------------------------------------------------------------- */
+
+namespace lexicon
+{
+
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+	MxSeqSmpNode3871::MxSeqSmpNode3871()
+	:myImpl( new Impl() ) {}
+
+	MxSeqSmpNode3871::~MxSeqSmpNode3871() {}
+
+	MxSeqSmpNode3871::MxSeqSmpNode3871( const MxSeqSmpNode3871& other )
+	:myImpl( new Impl( *(other.myImpl) ) ) {}
+
+	MxSeqSmpNode3871& MxSeqSmpNode3871::operator=( const MxSeqSmpNode3871& other )
+	{
+		this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );
+		return *this;
+	}
+
+/* defaultName ------------------------------------------------------------------------ */
+
+	/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+	std::string MxSeqSmpNode3871::getXmlTypeName()
+	{
+		return myImpl.getXmlTypeName();
+	}
+
+	/** Returns the name of this C++ class. **/
+	std::string MxSeqSmpNode3871::getClassName()
+	{
+		return myImpl.getClassName();
+	}
+
+	/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+	    document. **/
+	std::string MxSeqSmpNode3871::getDocumentation()
+	{
+		return myImpl.getDocumentation();
+	}
+
+/* RootStep Functions ----------------------------------------------------------------- */
+
+	/** Tells you whether or not <RootStep> is present. If <RootStep> is required,
+	    this will always return 'true'. If <RootStep> is required, no corresponding
+	    'setIsRootStepPresent' will exist. **/
+	bool MxSeqSmpNode3871::getIsRootStepPresent()
+	{
+		return myImpl.getIsRootStepPresent();
+	}
+
+	/** Returns a shared pointer handle to the <RootStep> element. Note that
+	    if getIsRootStepPresent is false, this value will still exist (even
+	    though it is not in the xml document) and you should ignore it. **/
+	HMxEsRootStep MxSeqSmpNode3871::getRootStep()
+	{
+		return myImpl.getRootStep();
+	}
+
+	/** Sets the internal shared pointer handle for the <RootStep> element.
+	     **/
+	int MxSeqSmpNode3871::setRootStep()
+	{
+		return myImpl.setRootStep( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <RootStep> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode3871::getRootStepMinOccurs()
+	{
+		return myImpl.getRootStepMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <RootStep> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsRootStepUnbounded' will
+	    return 'true' and the return value of 'getRootStepMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3871::getRootStepMaxOccurs()
+	{
+		return myImpl.getRootStepMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <RootStep> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getRootStepMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3871::getIsRootStepUnbounded()
+	{
+		return myImpl.getIsRootStepUnbounded();
+	}
+
+/* RootAlter Functions ---------------------------------------------------------------- */
+
+	/** Tells you whether or not <RootAlter> is present. If <RootAlter> is
+	    required, this will always return 'true'. If <RootAlter> is required,
+	    no corresponding 'setIsRootAlterPresent' will exist. **/
+	bool MxSeqSmpNode3871::getIsRootAlterPresent()
+	{
+		return myImpl.getIsRootAlterPresent();
+	}
+
+	void MxSeqSmpNode3871::setIsRootAlterPresent()
+	{
+		myImpl.setIsRootAlterPresent( value_in );
+	}
+
+	/** Returns a shared pointer handle to the <RootAlter> element. Note that
+	    if getIsRootAlterPresent is false, this value will still exist (even
+	    though it is not in the xml document) and you should ignore it. **/
+	HMxEsRootAlter MxSeqSmpNode3871::getRootAlter()
+	{
+		return myImpl.getRootAlter();
+	}
+
+	/** Sets the internal shared pointer handle for the <RootAlter> element.
+	    Note that if setIsRootAlterPresent is false, the internal shared pointer
+	    will not be altered and will hold a value that does not exist in xml. **/
+	int MxSeqSmpNode3871::setRootAlter()
+	{
+		return myImpl.setRootAlter( value_in );
+	}
+
+	/** Returns the minimum number of occurences of the <RootAlter> element.
+	    i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means
+	    the element is optional. **/
+	int MxSeqSmpNode3871::getRootAlterMinOccurs()
+	{
+		return myImpl.getRootAlterMinOccurs();
+	}
+
+	/** Returns the maximum number of occurences of the <RootAlter> element.
+	    Typically the MaxOccurs is specified as either '1' or 'unbounded'.
+	    When the specification says 'unbounded' 'getIsRootAlterUnbounded' will
+	    return 'true' and the return value of 'getRootAlterMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3871::getRootAlterMaxOccurs()
+	{
+		return myImpl.getRootAlterMaxOccurs();
+	}
+
+	/** Returns 'true' if the specification says that the maximum number of
+	    occurences of the <RootAlter> element is 'unbounded'.When this function
+	    returns 'true', the value returned by 'getRootAlterMaxOccurs' should
+	    be ignored. **/
+	int MxSeqSmpNode3871::getIsRootAlterUnbounded()
+	{
+		return myImpl.getIsRootAlterUnbounded();
+	}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+	void MxSeqSmpNode3871::stream()
+	{
+		myImpl.stream( os_outindentcount_inindentchars_in );
+	}
+
+
+} // namespace lexicon
 
