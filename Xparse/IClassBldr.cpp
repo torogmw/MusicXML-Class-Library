@@ -126,7 +126,8 @@ namespace mjb
             f.setDocumentation( "Returns the name of this xs:element as found in the musicxml.xsd document." );
             f.setReturnType( "std::string" );
             f.isConst( true );
-            f.setCode( "return myImpl->getXmlTypeName();" );
+            f.setCode( "return myXmlTypeName;" );
+            f.isConst( true );
             getClassInfo.addFunction( f );
         }
         {
@@ -135,7 +136,8 @@ namespace mjb
             f.setDocumentation( "Returns the name of this C++ class." );
             f.setReturnType( "std::string" );
             f.isConst( true );
-            f.setCode( "return myImpl->getClassName();" );
+            f.setCode( "return myCppClassName;" );
+            f.isConst( true );
             getClassInfo.addFunction( f );
         }
         {
@@ -144,7 +146,8 @@ namespace mjb
             f.setDocumentation( "Returns the documentation for this musicxml type as found in the musicxml.xsd document." );
             f.setReturnType( "std::string" );
             f.isConst( true );
-            f.setCode( "return myImpl->getDocumentation();" );
+            f.setCode( "return myDocumentation;" );
+            f.isConst( true );
             getClassInfo.addFunction( f );
         }
         addPublicFunctionGroup( getClassInfo );
@@ -571,13 +574,19 @@ namespace mjb
             alteredFunc.setDocumentation( f->getDocumentation() );
             alteredFunc.setNote( f->getNote() );
             alteredFunc.setReturnType( f->getReturnType() );
+            alteredFunc.isConst( f->isConst() );
+            for ( auto param = f->parametersBeginConst(); param != f->parametersEndConst(); ++param )
+            {
+                alteredFunc.addParameter( *param );
+            }
+            
             
             std::stringstream ss;
             if ( ( f->getReturnType() != "void" ) && ( f->getReturnType() != "" ) )
             {
                 ss << "return ";
             }
-            ss << "myImpl." << f->getName() << "(";
+            ss << "myImpl->" << f->getName() << "(";
             if ( f->parametersBegin() != f->parametersEnd() )
             {
                 ss << " ";
@@ -587,9 +596,9 @@ namespace mjb
                     if ( !firstParameter )
                     {
                         ss << ", ";
-                        firstParameter = false;
                     }
                     ss << it->getName();
+                    firstParameter = false;
                 }
                 ss << " ";
             }

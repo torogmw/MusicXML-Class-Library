@@ -151,6 +151,8 @@
 #include "MxEmOctaveChange.h"
 #include "MxEmOtherDynamics.h"
 #include "MxEmOtherPercussion.h"
+#include "MxEmPageHeight.h"
+#include "MxEmPageWidth.h"
 #include "MxEmPan.h"
 #include "MxEmPedalAlter.h"
 #include "MxEmPedalStep.h"
@@ -416,6 +418,8 @@ namespace lexicon
         mlist.push_back( std::make_shared<MxEmOctaveChange>() );
         mlist.push_back( std::make_shared<MxEmOtherDynamics>() );
         mlist.push_back( std::make_shared<MxEmOtherPercussion>() );
+        mlist.push_back( std::make_shared<MxEmPageHeight>() );
+        mlist.push_back( std::make_shared<MxEmPageWidth>() );
         mlist.push_back( std::make_shared<MxEmPan>() );
         mlist.push_back( std::make_shared<MxEmPedalAlter>() );
         mlist.push_back( std::make_shared<MxEmPedalStep>() );

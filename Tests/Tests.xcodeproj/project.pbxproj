@@ -392,6 +392,8 @@
 		299CCFAA1A32C49F00D0E0CD /* MxEsTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CCF621A32C49F00D0E0CD /* MxEsTypeTest.cpp */; };
 		299CCFAB1A32C49F00D0E0CD /* MxEsWithBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CCF631A32C49F00D0E0CD /* MxEsWithBarTest.cpp */; };
 		299CCFAC1A32C49F00D0E0CD /* MxEsWordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299CCF641A32C49F00D0E0CD /* MxEsWordsTest.cpp */; };
+		29A01CFD1A3BB7BB006050A8 /* MxEmPageHeightTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01CFB1A3BB7BB006050A8 /* MxEmPageHeightTest.cpp */; };
+		29A01D041A3BBA86006050A8 /* MxEmPageWidthTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D021A3BBA86006050A8 /* MxEmPageWidthTest.cpp */; };
 		29A1FA1E1A2EA02F00B69133 /* MxCxSmpAccidentalMarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F9DE1A2EA02F00B69133 /* MxCxSmpAccidentalMarkTest.cpp */; };
 		29A1FA1F1A2EA02F00B69133 /* MxCxSmpAccidentalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F9DF1A2EA02F00B69133 /* MxCxSmpAccidentalTest.cpp */; };
 		29A1FA201A2EA02F00B69133 /* MxCxSmpAccidentalTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F9E01A2EA02F00B69133 /* MxCxSmpAccidentalTextTest.cpp */; };
@@ -931,6 +933,8 @@
 		299CCF621A32C49F00D0E0CD /* MxEsTypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEsTypeTest.cpp; sourceTree = "<group>"; };
 		299CCF631A32C49F00D0E0CD /* MxEsWithBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEsWithBarTest.cpp; sourceTree = "<group>"; };
 		299CCF641A32C49F00D0E0CD /* MxEsWordsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEsWordsTest.cpp; sourceTree = "<group>"; };
+		29A01CFB1A3BB7BB006050A8 /* MxEmPageHeightTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmPageHeightTest.cpp; sourceTree = "<group>"; };
+		29A01D021A3BBA86006050A8 /* MxEmPageWidthTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmPageWidthTest.cpp; sourceTree = "<group>"; };
 		29A1F9DE1A2EA02F00B69133 /* MxCxSmpAccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpAccidentalMarkTest.cpp; sourceTree = "<group>"; };
 		29A1F9DF1A2EA02F00B69133 /* MxCxSmpAccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpAccidentalTest.cpp; sourceTree = "<group>"; };
 		29A1F9E01A2EA02F00B69133 /* MxCxSmpAccidentalTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpAccidentalTextTest.cpp; sourceTree = "<group>"; };
@@ -1531,6 +1535,8 @@
 				294CB69D1A35280100CA2734 /* MxEmWoodTest.cpp */,
 				294CB69E1A35280100CA2734 /* MxEmWorkNumberTest.cpp */,
 				294CB69F1A35280100CA2734 /* MxEmWorkTitleTest.cpp */,
+				29A01CFB1A3BB7BB006050A8 /* MxEmPageHeightTest.cpp */,
+				29A01D021A3BBA86006050A8 /* MxEmPageWidthTest.cpp */,
 			);
 			name = ElementMx;
 			sourceTree = "<group>";
@@ -1852,6 +1858,7 @@
 				294CB6EE1A35280100CA2734 /* MxEmSystemDistanceTest.cpp in Sources */,
 				294CB6B91A35280100CA2734 /* MxEmGlassTest.cpp in Sources */,
 				29A1FA311A2EA02F00B69133 /* MxCxSmpFormattedTextTest.cpp in Sources */,
+				29A01D041A3BBA86006050A8 /* MxEmPageWidthTest.cpp in Sources */,
 				294CB6CD1A35280100CA2734 /* MxEmMidiNameTest.cpp in Sources */,
 				2972E6C31A3289BA0018E453 /* MxEeSfTest.cpp in Sources */,
 				294CB6E81A35280100CA2734 /* MxEmStavesTest.cpp in Sources */,
@@ -2094,6 +2101,7 @@
 				294CB6D61A35280100CA2734 /* MxEmOctaveTest.cpp in Sources */,
 				299CCF931A32C49F00D0E0CD /* MxEsOtherArticulationTest.cpp in Sources */,
 				29A1FA541A2EA02F00B69133 /* MxCxSmpSlideTest.cpp in Sources */,
+				29A01CFD1A3BB7BB006050A8 /* MxEmPageHeightTest.cpp in Sources */,
 				299CCF8E1A32C49F00D0E0CD /* MxEsMultipleRestTest.cpp in Sources */,
 				294091051A16D2A800386E3A /* MxDateTestLeap.cpp in Sources */,
 				294CB6B51A35280100CA2734 /* MxEmEncodingDescriptionTest.cpp in Sources */,

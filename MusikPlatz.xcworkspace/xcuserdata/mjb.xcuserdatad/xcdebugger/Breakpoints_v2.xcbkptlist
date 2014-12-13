@@ -2062,7 +2062,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1577"
-            endingLineNumber = "1577">
+            endingLineNumber = "1577"
+            landmarkName = "CxSmpBldr::testGenIsDefaultDefined()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2268,9 +2270,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "CxCategorize::isSimpleContentOnlyType(const xparse::ElementPtr e)"
-            landmarkType = "5">
+            endingLineNumber = "63">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2300,9 +2300,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "CxCategorize::getComplexTypeNodes()"
-            landmarkType = "5">
+            endingLineNumber = "106">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3136,6 +3134,38 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "mainDoRegex()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/SequenceSmpBldr.cpp"
+            timestampString = "440112206.483706"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "SequenceSmpBldr::addDataMemberAndFunctionsOnsie( const HClassBldr&amp; bldr, const std::string&amp; elementName, bool isRequired, int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/main.cpp"
+            timestampString = "440122771.408007"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "main(int argc, char **argv)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

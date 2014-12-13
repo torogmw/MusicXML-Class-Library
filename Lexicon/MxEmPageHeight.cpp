@@ -1,17 +1,233 @@
 /* See MusicXML License at the bottom of this code page. */
 
-#include <iostream>
-#include "mainDoResearch.h"
-#include "mainDoRegex.h"
+/**
+  * @file       MxEmPageHeight.cpp
+  * @class      lexicon::MxEmPageHeight
+  * @author     Matthew James Briggs
+  * @email      matthew.james.briggs@gmail.com
+  * @url        http://matthewjamesbriggs.com
+  * @date       2014-12-07 16:26:32
+  * @project    Lexicon
+  * @version    1.0
+  * @musicxmlid 3126
+  * 
+  * @brief The 'AccordionMiddle' class serves as a binding for the MusicXml 'accordion-middle'
+  * element.
+  * 
+ **/
+
+#include "MxEmPageHeight.h"
+#include <sstream>
+
+/* Impl ------------------------------------------------------------------------------- */
+
+namespace lexicon
+{
+	struct MxEmPageHeight::Impl
+	{
+		Impl( const MxNumberTenths& value_in )
+		:myMxElementValue( value_in )
+		{}
+
+	private:
+		MxNumberTenths myMxElementValue;
+
+		const static int myXsdID;
+		const static std::string myXmlTypeName;
+		const static std::string myCppClassName;
+		const static std::string myDocumentation;
+		const static int myMinOccurs;
+		const static int myMaxOccurs;
+		const static int myIsMaxOccursUnbounded;
+
+	public:
+
+/* minOccurs maxOccurs ---------------------------------------------------------------- */
+
+		/** Returns the minOccurs value from the Music XML xsd specification. **/
+		int getMinOccurs() const
+		{
+			return myMinOccurs;
+		}
+
+		/** Returns the maxOccurs value from the Music XML xsd specification. **/
+		int getMaxOccurs() const
+		{
+			return myMaxOccurs;
+		}
+
+		/** Returns true if the maxOccurs value from the Music XML xsd specification
+		    is 'unbounded'. **/
+		bool getIsMaxOccursUnbounded() const
+		{
+			return myIsMaxOccursUnbounded;
+		}
+
+/* Get Set Value ---------------------------------------------------------------------- */
+
+		/** Returns the contained value. **/
+		MxNumberTenths getValue() const
+		{
+			return myMxElementValue;
+		}
+
+		/** Sets the contained value. **/
+		void setValue( const MxNumberTenths& value_in )
+		{
+			myMxElementValue = value_in;
+		}
+
+/* Get Class Information -------------------------------------------------------------- */
+
+		/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+		std::string getXmlTypeName() const
+		{
+			return myXmlTypeName;
+		}
+
+		/** Returns the name of this C++ class. **/
+		std::string getClassName() const
+		{
+			return myCppClassName;
+		}
+
+		/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+		    document. **/
+		std::string getDocumentation() const
+		{
+			return myDocumentation;
+		}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+		/** Returns the xml representation of the object's value. **/
+		std::string toString() const
+		{
+			std::stringstream ss;
+			stream( ss );
+			return ss.str();
+		}
+
+		/** Returns the xml representation of the object's value. **/
+		std::ostream& stream( std::ostream& os_out ) const
+		{
+			os_out << '<';
+			os_out << getXmlTypeName();
+			os_out << '>';
+			os_out << getValue().toString();
+			os_out << "</";
+			os_out << getXmlTypeName();
+			os_out << '>';
+			return os_out;
+		}
+
+	}; // struct MxEmPageHeight::Impl
+
+	const int MxEmPageHeight::Impl::myXsdID = 4226;
+	const std::string MxEmPageHeight::Impl::myXmlTypeName = "page-height";
+	const std::string MxEmPageHeight::Impl::myCppClassName = "MxEmPageHeight";
+	const std::string MxEmPageHeight::Impl::myDocumentation = "( no documentation )";
+	const int MxEmPageHeight::Impl::myMinOccurs = 1;
+	const int MxEmPageHeight::Impl::myMaxOccurs = 1;
+	const int MxEmPageHeight::Impl::myIsMaxOccursUnbounded = false;
+
+} // namespace lexicon
 
 
-int main(int argc, char **argv)
+/* MxEmPageHeight ---------------------------------------------------------------- */
+
+namespace lexicon
 {
 
-    mainDoResearch();
-    //mainDoRegex();
-    return 0;
-}
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+	MxEmPageHeight::MxEmPageHeight( const MxNumberTenths& value_in )
+	:myImpl( new Impl( value_in ) ) {}
+
+	MxEmPageHeight::~MxEmPageHeight() {}
+
+	MxEmPageHeight::MxEmPageHeight( const MxEmPageHeight& other )
+	:myImpl( new Impl( *(other.myImpl) ) ) {}
+
+	MxEmPageHeight& MxEmPageHeight::operator=( const MxEmPageHeight& other )
+	{
+		this->myImpl = std::unique_ptr<Impl>( new Impl( *(other.myImpl) ) );
+		return *this;
+	}
+
+/* minOccurs maxOccurs ---------------------------------------------------------------- */
+
+	/** Returns the minOccurs value from the Music XML xsd specification. **/
+	int MxEmPageHeight::getMinOccurs() const
+	{
+		return myImpl->getMinOccurs();
+	}
+
+	/** Returns the maxOccurs value from the Music XML xsd specification. **/
+	int MxEmPageHeight::getMaxOccurs() const
+	{
+		return myImpl->getMaxOccurs();
+	}
+
+	/** Returns true if the maxOccurs value from the Music XML xsd specification
+	    is 'unbounded'. **/
+	bool MxEmPageHeight::getIsMaxOccursUnbounded() const
+	{
+		return myImpl->getIsMaxOccursUnbounded();
+	}
+
+/* Get Set Value ---------------------------------------------------------------------- */
+
+	/** Returns the contained value. **/
+	MxNumberTenths MxEmPageHeight::getValue() const
+	{
+		return myImpl->getValue();
+	}
+
+	/** Sets the contained value. **/
+	void MxEmPageHeight::setValue( const MxNumberTenths& value_in )
+	{
+		myImpl->setValue( value_in );
+	}
+
+/* Get Class Information -------------------------------------------------------------- */
+
+	/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+	std::string MxEmPageHeight::getXmlTypeName() const
+	{
+		return myImpl->getXmlTypeName();
+	}
+
+	/** Returns the name of this C++ class. **/
+	std::string MxEmPageHeight::getClassName() const
+	{
+		return myImpl->getClassName();
+	}
+
+	/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+	    document. **/
+	std::string MxEmPageHeight::getDocumentation() const
+	{
+		return myImpl->getDocumentation();
+	}
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+	/** Returns the xml representation of the object's value. **/
+	std::string MxEmPageHeight::toString() const
+	{
+		return myImpl->toString();
+	}
+
+	/** Returns the xml representation of the object's value. **/
+	std::ostream& MxEmPageHeight::stream( std::ostream& os_out ) const
+	{
+		return myImpl->stream( os_out );
+	}
+
+
+} // namespace lexicon
+
 
 
 /*

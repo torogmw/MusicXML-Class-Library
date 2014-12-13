@@ -1,17 +1,110 @@
 /* See MusicXML License at the bottom of this code page. */
 
+#pragma once
+
+/**
+  * @file       MxEmPageHeight.h
+  * @class      lexicon::MxEmPageHeight
+  * @author     Matthew James Briggs
+  * @email      matthew.james.briggs@gmail.com
+  * @url        http://matthewjamesbriggs.com
+  * @date       2014-12-07 16:26:32
+  * @project    Lexicon
+  * @version    1.0
+  * @musicxmlid 3126
+  * 
+  * @brief The 'AccordionMiddle' class serves as a binding for the MusicXml 'accordion-middle'
+  * element.
+  * 
+  * The purpose of 'MxEmPageHeight' is to provide a strongly-typed C++ representation
+  * of the 'accordion-middle' MusicXML element with the ability to write the
+  * element to XML-appropriate strings. 
+  * 
+  * Music XML XSD Documentation: No documentation.
+  * 
+  * 
+  * <xs:element name="page-height" type="tenths"/>
+  * 
+ **/
+
 #include <iostream>
-#include "mainDoResearch.h"
-#include "mainDoRegex.h"
+#include <string>
+#include <memory>
+#include <vector>
+#include "LexiconBaseObjects.h"
+#include "MxNumberTenths.h"
 
-
-int main(int argc, char **argv)
+namespace lexicon
 {
+/* MxEmPageHeight ---------------------------------------------------------------- */
 
-    mainDoResearch();
-    //mainDoRegex();
-    return 0;
-}
+	class MxEmPageHeight;
+	typedef std::shared_ptr<MxEmPageHeight> HMxEmPageHeight;
+	typedef std::vector<HMxEmPageHeight> MxEmPageHeights;
+	typedef MxEmPageHeights::iterator MxEmPageHeightsIter;
+	typedef MxEmPageHeights::const_iterator MxEmPageHeightsIterConst;
+
+	class MxEmPageHeight : public MxElementSimple
+	{
+	public:
+
+/* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
+
+		MxEmPageHeight(  const MxNumberTenths& value_in = MxNumberTenths() );
+		virtual ~MxEmPageHeight();
+		MxEmPageHeight( const MxEmPageHeight& other );
+		MxEmPageHeight& operator=( const MxEmPageHeight& other );
+
+/* minOccurs maxOccurs ---------------------------------------------------------------- */
+
+		/** Returns the minOccurs value from the Music XML xsd specification. **/
+		int getMinOccurs() const;
+
+		/** Returns the maxOccurs value from the Music XML xsd specification. **/
+		int getMaxOccurs() const;
+
+		/** Returns true if the maxOccurs value from the Music XML xsd specification
+		    is 'unbounded'. **/
+		bool getIsMaxOccursUnbounded() const;
+
+/* Get Set Value ---------------------------------------------------------------------- */
+
+		/** Returns the contained value. **/
+		MxNumberTenths getValue() const;
+
+		/** Sets the contained value. **/
+		void setValue( const MxNumberTenths& value_in );
+
+/* Get Class Information -------------------------------------------------------------- */
+
+		/** Returns the name of this xs:element as found in the musicxml.xsd document. **/
+		std::string getXmlTypeName() const;
+
+		/** Returns the name of this C++ class. **/
+		std::string getClassName() const;
+
+		/** Returns the documentation for this musicxml type as found in the musicxml.xsd
+		    document. **/
+		std::string getDocumentation() const;
+
+/* Stringing and Streaming ------------------------------------------------------------ */
+
+		/** Returns the xml representation of the object's value. **/
+		std::string toString() const;
+
+		/** Returns the xml representation of the object's value. **/
+		std::ostream& stream( std::ostream& os_out ) const;
+
+/* Impl ------------------------------------------------------------------------------- */
+
+	private:
+		class Impl;
+		std::unique_ptr<Impl> myImpl;
+
+	}; // class MxEmPageHeight
+
+} // namespace lexicon
+
 
 
 /*

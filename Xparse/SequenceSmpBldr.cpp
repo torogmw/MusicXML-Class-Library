@@ -176,11 +176,14 @@ namespace XsdClasses
         std::stringstream dmValueName;
         dmValueName << "my" << elementName;
         dmValue.setName( dmValueName.str() );
+        std::stringstream dmValueDefault;
+        dmValueDefault << "std::make_shared<" << bldr->getName() << ">()";
+        dmValue.setMemberInitializationValue( dmValueDefault.str() );
         
         DataMember dmIsPresent;// = createDataMemberMaxOnesieIsPresent( elementName, isRequired );
         dmIsPresent.setDataType( "bool" );
         std::stringstream dmIsPresentName;
-        dmIsPresentName << "my" << elementName << "IsPresent";
+        dmIsPresentName << "myIs" << elementName << "Present";
         dmIsPresent.setName( dmIsPresentName.str() );
         std::stringstream dmIsPresentInitVal;
         dmIsPresentInitVal << std::boolalpha << isRequired;
@@ -199,6 +202,10 @@ namespace XsdClasses
         GetIsPresentDocumentation << " If <" << elementName << "> is required, this will always return 'true'.";
         GetIsPresentDocumentation << " If <" << elementName << "> is required, no corresponding 'setIs" << elementName << "Present' will exist.";
         GetIsPresentFunc.setDocumentation( GetIsPresentDocumentation.str() );
+        GetIsPresentFunc.isConst( true );
+        std::stringstream GetIsPresentCode;
+        GetIsPresentCode << "return myIs" << elementName << "Present;";
+        GetIsPresentFunc.setCode( GetIsPresentCode );
         fgrp.addFunction( GetIsPresentFunc );
         Function SetIsPresentFunc;
         if ( !isRequired )
@@ -215,6 +222,9 @@ namespace XsdClasses
             SetIsPresentFunc.isConst( false );
             std::stringstream SetIsPresentDocumentation;
             SetIsPresentDocumentation << "Sets whether or not <" << elementName << "> is present.  If the element is not present, you should ignore this return value.  Note that the shared_ptr for the <" << elementName << "> will not be altered in any way when you delcare that the <" << elementName << "> element is not present.";
+            std::stringstream SetIsPresentFuncCode;
+            SetIsPresentFuncCode << "myIs" << elementName << "Present = value_in;";
+            SetIsPresentFunc.setCode( SetIsPresentFuncCode );
             fgrp.addFunction( SetIsPresentFunc );
         }
         
@@ -232,14 +242,11 @@ namespace XsdClasses
             getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, this value will still exist (even though it is not in the xml document) and you should ignore it.";
             GetValueFunc.setDocumentation( getValueDocumentation.str() );
             std::stringstream getValueFuncCode;
-            getValueFuncCode << "if( " << dmValue.getName() << " )" << end();
-            getValueFuncCode << "{" << end();
-            getValueFuncCode << tab( 1 ) << "return " << dmValue.getName() << ";" << end();
-            getValueFuncCode << "}" << end();
-            getValueFuncCode << "else" << end();
-            getValueFuncCode << "{" << end();
-            getValueFuncCode << tab( 1 ) << "return std::make_shared<" << dmValue.getDataType()<< ">();" << end();
-            getValueFuncCode << "}";
+//            getValueFuncCode << "if( ! " << dmValue.getName() << " )" << end();
+//            getValueFuncCode << "{" << end();
+//            getValueFuncCode << tab( 1 ) << dmValue.getName() << " = std::make_shared<" << bldr->getName() << ">();" << end();
+//            getValueFuncCode << "}" << end();
+            getValueFuncCode << "return " << dmValue.getName() << ";" << end();
             GetValueFunc.setCode( getValueFuncCode );
             fgrp.addFunction( GetValueFunc );
             
@@ -267,6 +274,7 @@ namespace XsdClasses
             std::stringstream setValueFuncCode;
             setValueFuncCode << dmValue.getName() << " = value_in;";
             SetValueFunc.setCode( setValueFuncCode );
+            SetValueFunc.setReturnType( "void" );
             fgrp.addFunction( SetValueFunc );
         }
         
@@ -282,7 +290,7 @@ namespace XsdClasses
         getMinOccursDocumentation << " i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means the element is optional.";
         getMinOccurs.setDocumentation( getMinOccursDocumentation.str() );
         std::stringstream getMinOccursCode;
-        getMinOccursCode << "return my" << elementName << ".getMinOccurs();";
+        getMinOccursCode << "return my" << elementName << "->getMinOccurs();";
         getMinOccurs.setCode( getMinOccursCode );
         fgrp.addFunction( getMinOccurs );
         
@@ -298,7 +306,7 @@ namespace XsdClasses
         getMaxOccursDocumentation << "'getIs" << elementName << "Unbounded' will return 'true' and the return value of '" << getMaxOccurs.getName() << "' should be ignored.";
         getMaxOccurs.setDocumentation( getMaxOccursDocumentation.str() );
         std::stringstream getMaxOccursCode;
-        getMaxOccursCode << "return my" << elementName << ".getMaxOccurs();";
+        getMaxOccursCode << "return my" << elementName << "->getMaxOccurs();";
         getMaxOccurs.setCode( getMaxOccursCode );
         fgrp.addFunction( getMaxOccurs );
         
@@ -306,14 +314,14 @@ namespace XsdClasses
         std::stringstream getUnboundedName;
         getUnboundedName << "getIs" << elementName << "Unbounded";
         getUnbounded.setName( getUnboundedName.str() );
-        getUnbounded.setReturnType( "int" );
+        getUnbounded.setReturnType( "bool" );
         getUnbounded.isConst( true );
         std::stringstream getUnboundedDocumentation;
         getUnboundedDocumentation << "Returns 'true' if the specification says that the maximum number of occurences of the <" << elementName << "> element is 'unbounded'.";
         getUnboundedDocumentation << "When this function returns 'true', the value returned by '" << getMaxOccurs.getName() << "' should be ignored.";
         getUnbounded.setDocumentation( getUnboundedDocumentation.str() );
         std::stringstream getUnboundedCode;
-        getUnboundedCode << "return my" << elementName << ".getIsUnbounded();";
+        getUnboundedCode << "return my" << elementName << "->getIsMaxOccursUnbounded();";
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
         addPublicFunctionGroup( fgrp );
@@ -331,23 +339,28 @@ namespace XsdClasses
         
         DataMember dmValue;
         std::stringstream dmValueDataType;
-        dmValueDataType << "std::vector<" << "H" << bldr->getName() << ">";
+        dmValueDataType << bldr->getName() << "s";
         dmValue.setDataType( dmValueDataType.str() );
         std::stringstream dmValueName;
         dmValueName << "my" << elementName << "Collection";
         dmValue.setName( dmValueName.str() );
         addPrivateDatamember( dmValue );
-
+        std::stringstream filetoinclude;
+        filetoinclude << bldr->getName() << ".h";
+        Include include( filetoinclude.str(), false );
+        IClassBldr::addPublicInclude( include );
+        
         Function GetCountFunc;
         std::stringstream GetCountFuncName;
         GetCountFuncName << "get" << elementName << "Count";
         GetCountFunc.setName( GetCountFuncName.str() );
-        GetCountFunc.setReturnType( "size_type" );
+        GetCountFunc.setReturnType( "std::size_t" );
         GetCountFunc.isConst( true );
-        std::stringstream GetIsPresentDocumentation;
-        GetIsPresentDocumentation << "Returns the count of <" << elementName << "> elements.";
-        GetCountFunc.setDocumentation( GetIsPresentDocumentation.str() );
+        std::stringstream GetCountFuncDocumentation;
+        GetCountFuncDocumentation << "Returns the count of <" << elementName << "> elements.";
+        GetCountFunc.setDocumentation( GetCountFuncDocumentation.str() );
         std::stringstream GetCountFuncCode( "throw \"todo: write the code.\";");
+        GetCountFunc.setCode( GetCountFuncCode );
         fgrp.addFunction( GetCountFunc );
         
         std::stringstream BeginCode( "throw \"todo: write the code.\";");
@@ -360,9 +373,9 @@ namespace XsdClasses
         GetElementsBeginName << "get" << elementName << "Begin";
         GetElementsBegin.setName( GetElementsBeginName.str() );
         std::stringstream GetElementsIterTypeSStr;
-        GetElementsIterTypeSStr << dmValue.getDataType() << "::iterator";
+        GetElementsIterTypeSStr << bldr->getName() << "sIter";
         std::stringstream GetElementsIterTypeConstSStr;
-        GetElementsIterTypeConstSStr << dmValue.getDataType() << "::const_iterator";
+        GetElementsIterTypeConstSStr << bldr->getName() << "sIterConst";
         std::string GetElementsIterType = GetElementsIterTypeSStr.str();
         std::string GetElementsIterConstType = GetElementsIterTypeConstSStr.str();
         GetElementsBegin.setReturnType( GetElementsIterType );
@@ -439,8 +452,7 @@ namespace XsdClasses
         getMinOccursDocumentation << "Returns the minimum number of occurences of the <" << elementName << "> element. ";
         getMinOccursDocumentation << " i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means the element is optional.";
         getMinOccurs.setDocumentation( getMinOccursDocumentation.str() );
-        std::stringstream getMinOccursCode;
-        getMinOccursCode << "return my" << elementName << ".getMinOccurs();";
+        std::stringstream getMinOccursCode( "throw \"todo: write the code.\";");
         getMinOccurs.setCode( getMinOccursCode );
         fgrp.addFunction( getMinOccurs );
         
@@ -455,8 +467,7 @@ namespace XsdClasses
         getMaxOccursDocumentation << "Typically the MaxOccurs is specified as either '1' or 'unbounded'.  When the specification says 'unbounded' ";
         getMaxOccursDocumentation << "'getIs" << elementName << "Unbounded' will return 'true' and the return value of '" << getMaxOccurs.getName() << "' should be ignored.";
         getMaxOccurs.setDocumentation( getMaxOccursDocumentation.str() );
-        std::stringstream getMaxOccursCode;
-        getMaxOccursCode << "return my" << elementName << ".getMaxOccurs();";
+        std::stringstream getMaxOccursCode( "throw \"todo: write the code.\";");
         getMaxOccurs.setCode( getMaxOccursCode );
         fgrp.addFunction( getMaxOccurs );
         
@@ -470,8 +481,7 @@ namespace XsdClasses
         getUnboundedDocumentation << "Returns 'true' if the specification says that the maximum number of occurences of the <" << elementName << "> element is 'unbounded'.";
         getUnboundedDocumentation << "When this function returns 'true', the value returned by '" << getMaxOccurs.getName() << "' should be ignored.";
         getUnbounded.setDocumentation( getUnboundedDocumentation.str() );
-        std::stringstream getUnboundedCode;
-        getUnboundedCode << "return my" << elementName << ".getIsUnbounded();";
+        std::stringstream getUnboundedCode( "throw \"todo: write the code.\";");
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
         addPublicFunctionGroup( fgrp );
@@ -553,7 +563,7 @@ namespace XsdClasses
 
         ss << baselineIndent( 1 ) << "Impl()" << end();
         int i = 0;
-        for ( auto dm = IClassBldr::getPublicDatamembersBegin(); dm != IClassBldr::getPublicDatamembersEnd(); ++dm )
+        for ( auto dm = IClassBldr::getPrivateDatamembersBegin(); dm != IClassBldr::getPrivateDatamembersEnd(); ++dm )
         {
             ss << baselineIndent( 1 );
             if ( i == 0 )
@@ -591,7 +601,9 @@ namespace XsdClasses
             ss << baselineIndent( 1 ) << "const static " << dm->getDataType();
             ss << " " << dm->getName() << ";" << std::endl;
         }
-        ss << std::endl;
+        ss << std::endl << std::endl;
+        ss << baselineIndent( 1 ) << "public:";
+        ss << std::endl << std::endl;
         
         /* CPP IMPL Public Functions */
         for ( FunctionGroup fgrp : getPublicFunctionGroups() )
@@ -608,6 +620,10 @@ namespace XsdClasses
         
         /* CPP IMPL Private Functions */
         
+        /* CPP IMPL Close */
+        ss << baselineIndent( 0 ) << "}; // struct " << getName() << "::Impl"<< std::endl;
+        ss << std::endl;
+        
         /* CPP IMPL static const datamember instantiation */
         for ( auto dm = getPrivateConstStaticDatamembersBegin(); dm != getPrivateConstStaticDatamembersEnd(); ++dm )
         {
@@ -617,17 +633,13 @@ namespace XsdClasses
         }
         ss << std::endl;
         
-        /* CPP IMPL Close */
-        ss << baselineIndent( 0 ) << "}; // struct " << getName() << "::Impl"<< std::endl;
-        ss << std::endl;
-        
         /* CPP CLASS Begin */
         SectionSeparatorComment classStart2( getName(), 90 );
         ss << classStart2.toString() << std::endl;
         ss << std::endl;
         
         /* CPP CLASS Open Namespaces */
-        ss << openNamespaces();
+        // ss << openNamespaces();
         ss << end();
         
         /* CPP CLASS Define Constructor */

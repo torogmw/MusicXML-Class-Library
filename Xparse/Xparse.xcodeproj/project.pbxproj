@@ -689,10 +689,14 @@
 				297962FB1A13C7AC00C9EA39 /* DecimalPair.cpp */,
 				297962FC1A13C7AC00C9EA39 /* DecimalPair.h */,
 				2979629B1A13C77C00C9EA39 /* end.h */,
+				294091F81A16E2E900386E3A /* FileInfo.cpp */,
+				294091F91A16E2E900386E3A /* FileInfo.h */,
 				297962A01A13C77C00C9EA39 /* fileStream.h */,
 				297962A11A13C77C00C9EA39 /* FileToCharVector.h */,
 				297962FD1A13C7AC00C9EA39 /* FloatPair.cpp */,
 				297962FE1A13C7AC00C9EA39 /* FloatPair.h */,
+				292121B31A1D3A7200701D86 /* getDateTime.h */,
+				2937C9271A180DDF00B09E2D /* getSimpleTypeIdFromXmlName.h */,
 				297962FF1A13C7AC00C9EA39 /* IntPair.cpp */,
 				297963001A13C7AC00C9EA39 /* IntPair.h */,
 				2979630F1A13C7AC00C9EA39 /* numberToName.h */,
@@ -702,10 +706,6 @@
 				297962C51A13C77C00C9EA39 /* upperlower.h */,
 				297963121A13C7AC00C9EA39 /* wrap.h */,
 				297962D21A13C77C00C9EA39 /* XsdFunc.h */,
-				294091F81A16E2E900386E3A /* FileInfo.cpp */,
-				294091F91A16E2E900386E3A /* FileInfo.h */,
-				2937C9271A180DDF00B09E2D /* getSimpleTypeIdFromXmlName.h */,
-				292121B31A1D3A7200701D86 /* getDateTime.h */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -732,23 +732,23 @@
 			isa = PBXGroup;
 			children = (
 				297963011A13C7AC00C9EA39 /* main.cpp */,
-				294091FC1A16FCAC00386E3A /* mainDoLoadSimpleTypes.h */,
 				297962A81A13C77C00C9EA39 /* main_simpleTypes.cpp */,
-				29DA9CB41A141BF300204B41 /* mainConstants.h */,
 				299CE0291A36BC390006AF9A /* mainConstants.cpp */,
-				295C08041A1546D50017C715 /* mainDoDbReplaceXsdTbl.h */,
-				293590711A16A3420022BAAA /* mainDoDbReplaceAttributesTbl.h */,
-				292121AF1A1D2FC700701D86 /* mainDoCreateAttributeGroupClasses.h */,
+				29DA9CB41A141BF300204B41 /* mainConstants.h */,
 				296F6BDB1A2A400100C8459E /* mainDoComplexTypeResearch.h */,
 				29E7CAD81A2B953300B9778D /* mainDoCreateAttributeGroupBuilders.h */,
-				29A1F8DD1A2E977F00B69133 /* mainDoCreateCxSmp.h */,
+				292121AF1A1D2FC700701D86 /* mainDoCreateAttributeGroupClasses.h */,
 				29BBA13A1A2FC451004BEAC2 /* mainDoCreateCxEmpty.h */,
-				29BBA29D1A2FEAC4004BEAC2 /* mainDoElementResearch.h */,
+				29A1F8DD1A2E977F00B69133 /* mainDoCreateCxSmp.h */,
 				299CCC181A3298DB00D0E0CD /* mainDoCreateElementEmpties.h */,
-				299CCC341A32A17A00D0E0CD /* mainDoCreateElementSmps.h */,
 				29FD8F991A34035E0056C50F /* mainDoCreateElementMx.h */,
-				294CB7181A35313600CA2734 /* mainDoResearch.h */,
+				299CCC341A32A17A00D0E0CD /* mainDoCreateElementSmps.h */,
+				293590711A16A3420022BAAA /* mainDoDbReplaceAttributesTbl.h */,
+				295C08041A1546D50017C715 /* mainDoDbReplaceXsdTbl.h */,
+				29BBA29D1A2FEAC4004BEAC2 /* mainDoElementResearch.h */,
+				294091FC1A16FCAC00386E3A /* mainDoLoadSimpleTypes.h */,
 				29A01BB71A3B7CDB006050A8 /* mainDoRegex.h */,
+				294CB7181A35313600CA2734 /* mainDoResearch.h */,
 			);
 			name = main;
 			sourceTree = "<group>";
