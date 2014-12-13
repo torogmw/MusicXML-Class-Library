@@ -60,7 +60,7 @@ inline void mainDoResearch()
                     hFileContents << bldr->getHFile();
                     
                     std::stringstream testFileContents;
-                    //testFileContents << bldr->getTestFile();
+                    testFileContents << bldr->getTestFile();
                     
                     FileInfo cppFileInfo = bldr->getCppFileInfo();
                     FileInfo hFileInfo = bldr->getHFileInfo();
@@ -68,7 +68,7 @@ inline void mainDoResearch()
                     
                     fileStream( hFileInfo.getFullpath(), hFileContents );
                     fileStream( cppFileInfo.getFullpath(), cppFileContents );
-                    // fileStream( testFileInfo.getFullpath(), testFileContents );
+                    fileStream( testFileInfo.getFullpath(), testFileContents );
                     std::cout << "created " << counts << ": " << bldr->getName() << std::endl;
                     ++ counts;
                 }

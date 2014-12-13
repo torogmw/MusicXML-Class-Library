@@ -139,6 +139,23 @@
 		294091EE1A16D30A00386E3A /* TestHiddenIntParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294091ED1A16D30A00386E3A /* TestHiddenIntParse.cpp */; };
 		294091F01A16D33300386E3A /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 294091EF1A16D33300386E3A /* libCppUnitLite.a */; };
 		294091F21A16D33900386E3A /* libLexicon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 294091F11A16D33900386E3A /* libLexicon.a */; };
+		294573D91A3C08B10059F7BB /* MxSeqSmpNode3154Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573C81A3C08B10059F7BB /* MxSeqSmpNode3154Test.cpp */; };
+		294573DA1A3C08B10059F7BB /* MxSeqSmpNode3245Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573C91A3C08B10059F7BB /* MxSeqSmpNode3245Test.cpp */; };
+		294573DB1A3C08B10059F7BB /* MxSeqSmpNode3480Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573CA1A3C08B10059F7BB /* MxSeqSmpNode3480Test.cpp */; };
+		294573DC1A3C08B10059F7BB /* MxSeqSmpNode3499Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573CB1A3C08B10059F7BB /* MxSeqSmpNode3499Test.cpp */; };
+		294573DD1A3C08B10059F7BB /* MxSeqSmpNode3871Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573CC1A3C08B10059F7BB /* MxSeqSmpNode3871Test.cpp */; };
+		294573DE1A3C08B10059F7BB /* MxSeqSmpNode3993Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573CD1A3C08B10059F7BB /* MxSeqSmpNode3993Test.cpp */; };
+		294573DF1A3C08B10059F7BB /* MxSeqSmpNode4104Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573CE1A3C08B10059F7BB /* MxSeqSmpNode4104Test.cpp */; };
+		294573E01A3C08B10059F7BB /* MxSeqSmpNode4143Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573CF1A3C08B10059F7BB /* MxSeqSmpNode4143Test.cpp */; };
+		294573E11A3C08B10059F7BB /* MxSeqSmpNode4190Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D01A3C08B10059F7BB /* MxSeqSmpNode4190Test.cpp */; };
+		294573E21A3C08B10059F7BB /* MxSeqSmpNode4224Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D11A3C08B10059F7BB /* MxSeqSmpNode4224Test.cpp */; };
+		294573E31A3C08B10059F7BB /* MxSeqSmpNode4250Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D21A3C08B10059F7BB /* MxSeqSmpNode4250Test.cpp */; };
+		294573E41A3C08B10059F7BB /* MxSeqSmpNode4261Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D31A3C08B10059F7BB /* MxSeqSmpNode4261Test.cpp */; };
+		294573E51A3C08B10059F7BB /* MxSeqSmpNode5619Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D41A3C08B10059F7BB /* MxSeqSmpNode5619Test.cpp */; };
+		294573E61A3C08B10059F7BB /* MxSeqSmpNode6056Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D51A3C08B10059F7BB /* MxSeqSmpNode6056Test.cpp */; };
+		294573E71A3C08B10059F7BB /* MxSeqSmpNode6156Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D61A3C08B10059F7BB /* MxSeqSmpNode6156Test.cpp */; };
+		294573E81A3C08B10059F7BB /* MxSeqSmpNode6250Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D71A3C08B10059F7BB /* MxSeqSmpNode6250Test.cpp */; };
+		294573E91A3C08B10059F7BB /* MxSeqSmpNode6271Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294573D81A3C08B10059F7BB /* MxSeqSmpNode6271Test.cpp */; };
 		294CB6A01A35280100CA2734 /* MxEmAccordionMiddleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CB6431A35280100CA2734 /* MxEmAccordionMiddleTest.cpp */; };
 		294CB6A11A35280100CA2734 /* MxEmActualNotesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CB6441A35280100CA2734 /* MxEmActualNotesTest.cpp */; };
 		294CB6A21A35280100CA2734 /* MxEmAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CB6451A35280100CA2734 /* MxEmAlterTest.cpp */; };
@@ -680,6 +697,23 @@
 		294091ED1A16D30A00386E3A /* TestHiddenIntParse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestHiddenIntParse.cpp; sourceTree = "<group>"; };
 		294091EF1A16D33300386E3A /* libCppUnitLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCppUnitLite.a; path = ../Build/Products/Debug/libCppUnitLite.a; sourceTree = "<group>"; };
 		294091F11A16D33900386E3A /* libLexicon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLexicon.a; path = ../Lexicon/build/Debug/libLexicon.a; sourceTree = "<group>"; };
+		294573C81A3C08B10059F7BB /* MxSeqSmpNode3154Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3154Test.cpp; sourceTree = "<group>"; };
+		294573C91A3C08B10059F7BB /* MxSeqSmpNode3245Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3245Test.cpp; sourceTree = "<group>"; };
+		294573CA1A3C08B10059F7BB /* MxSeqSmpNode3480Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3480Test.cpp; sourceTree = "<group>"; };
+		294573CB1A3C08B10059F7BB /* MxSeqSmpNode3499Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3499Test.cpp; sourceTree = "<group>"; };
+		294573CC1A3C08B10059F7BB /* MxSeqSmpNode3871Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3871Test.cpp; sourceTree = "<group>"; };
+		294573CD1A3C08B10059F7BB /* MxSeqSmpNode3993Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3993Test.cpp; sourceTree = "<group>"; };
+		294573CE1A3C08B10059F7BB /* MxSeqSmpNode4104Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4104Test.cpp; sourceTree = "<group>"; };
+		294573CF1A3C08B10059F7BB /* MxSeqSmpNode4143Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4143Test.cpp; sourceTree = "<group>"; };
+		294573D01A3C08B10059F7BB /* MxSeqSmpNode4190Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4190Test.cpp; sourceTree = "<group>"; };
+		294573D11A3C08B10059F7BB /* MxSeqSmpNode4224Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4224Test.cpp; sourceTree = "<group>"; };
+		294573D21A3C08B10059F7BB /* MxSeqSmpNode4250Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4250Test.cpp; sourceTree = "<group>"; };
+		294573D31A3C08B10059F7BB /* MxSeqSmpNode4261Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4261Test.cpp; sourceTree = "<group>"; };
+		294573D41A3C08B10059F7BB /* MxSeqSmpNode5619Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode5619Test.cpp; sourceTree = "<group>"; };
+		294573D51A3C08B10059F7BB /* MxSeqSmpNode6056Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6056Test.cpp; sourceTree = "<group>"; };
+		294573D61A3C08B10059F7BB /* MxSeqSmpNode6156Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6156Test.cpp; sourceTree = "<group>"; };
+		294573D71A3C08B10059F7BB /* MxSeqSmpNode6250Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6250Test.cpp; sourceTree = "<group>"; };
+		294573D81A3C08B10059F7BB /* MxSeqSmpNode6271Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6271Test.cpp; sourceTree = "<group>"; };
 		294CB6431A35280100CA2734 /* MxEmAccordionMiddleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmAccordionMiddleTest.cpp; sourceTree = "<group>"; };
 		294CB6441A35280100CA2734 /* MxEmActualNotesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmActualNotesTest.cpp; sourceTree = "<group>"; };
 		294CB6451A35280100CA2734 /* MxEmAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmAlterTest.cpp; sourceTree = "<group>"; };
@@ -1138,6 +1172,7 @@
 		294090CB1A16D1F700386E3A = {
 			isa = PBXGroup;
 			children = (
+				294572511A3BE0F70059F7BB /* MxSeqSmp */,
 				299809871A34CCB900880D6B /* ElementMx */,
 				299CCC3E1A32B55300D0E0CD /* ElementSmp */,
 				2972D8671A3276EE0018E453 /* ElementEmpty */,
@@ -1342,6 +1377,30 @@
 				294091EF1A16D33300386E3A /* libCppUnitLite.a */,
 			);
 			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		294572511A3BE0F70059F7BB /* MxSeqSmp */ = {
+			isa = PBXGroup;
+			children = (
+				294573C81A3C08B10059F7BB /* MxSeqSmpNode3154Test.cpp */,
+				294573C91A3C08B10059F7BB /* MxSeqSmpNode3245Test.cpp */,
+				294573CA1A3C08B10059F7BB /* MxSeqSmpNode3480Test.cpp */,
+				294573CB1A3C08B10059F7BB /* MxSeqSmpNode3499Test.cpp */,
+				294573CC1A3C08B10059F7BB /* MxSeqSmpNode3871Test.cpp */,
+				294573CD1A3C08B10059F7BB /* MxSeqSmpNode3993Test.cpp */,
+				294573CE1A3C08B10059F7BB /* MxSeqSmpNode4104Test.cpp */,
+				294573CF1A3C08B10059F7BB /* MxSeqSmpNode4143Test.cpp */,
+				294573D01A3C08B10059F7BB /* MxSeqSmpNode4190Test.cpp */,
+				294573D11A3C08B10059F7BB /* MxSeqSmpNode4224Test.cpp */,
+				294573D21A3C08B10059F7BB /* MxSeqSmpNode4250Test.cpp */,
+				294573D31A3C08B10059F7BB /* MxSeqSmpNode4261Test.cpp */,
+				294573D41A3C08B10059F7BB /* MxSeqSmpNode5619Test.cpp */,
+				294573D51A3C08B10059F7BB /* MxSeqSmpNode6056Test.cpp */,
+				294573D61A3C08B10059F7BB /* MxSeqSmpNode6156Test.cpp */,
+				294573D71A3C08B10059F7BB /* MxSeqSmpNode6250Test.cpp */,
+				294573D81A3C08B10059F7BB /* MxSeqSmpNode6271Test.cpp */,
+			);
+			name = MxSeqSmp;
 			sourceTree = "<group>";
 		};
 		2972D8671A3276EE0018E453 /* ElementEmpty */ = {
@@ -1827,8 +1886,10 @@
 				294CB6C61A35280100CA2734 /* MxEmMeasureDistanceTest.cpp in Sources */,
 				294CB6F71A35280100CA2734 /* MxEmVirtualNameTest.cpp in Sources */,
 				2972E69E1A3289BA0018E453 /* MxEeFfTest.cpp in Sources */,
+				294573E61A3C08B10059F7BB /* MxSeqSmpNode6056Test.cpp in Sources */,
 				2972E6931A3289BA0018E453 /* MxEeDoubleTongueTest.cpp in Sources */,
 				294CB6E11A35280100CA2734 /* MxEmSoftwareTest.cpp in Sources */,
+				294573E21A3C08B10059F7BB /* MxSeqSmpNode4224Test.cpp in Sources */,
 				2972E6981A3289BA0018E453 /* MxEeEyeglassesTest.cpp in Sources */,
 				29C72AED1A29725000407ADB /* MxAttrGrpLineTypeTest.cpp in Sources */,
 				294091D91A16D2DB00386E3A /* MxNumberOrNormalTest.cpp in Sources */,
@@ -1865,6 +1926,7 @@
 				299CCF801A32C49F00D0E0CD /* MxEsGroupNameTest.cpp in Sources */,
 				29BBA20E1A2FE2F2004BEAC2 /* MxCxEmptyTupletDotTest.cpp in Sources */,
 				299CCFA11A32C49F00D0E0CD /* MxEsRootAlterTest.cpp in Sources */,
+				294573DE1A3C08B10059F7BB /* MxSeqSmpNode3993Test.cpp in Sources */,
 				2940918E1A16D2BF00386E3A /* MxEnumPrincipalVoiceSymbolTest.cpp in Sources */,
 				299CCFAA1A32C49F00D0E0CD /* MxEsTypeTest.cpp in Sources */,
 				2940916A1A16D2BF00386E3A /* MxEnumCssFontSizeTest.cpp in Sources */,
@@ -1873,6 +1935,7 @@
 				294091DC1A16D2DB00386E3A /* MxNumberPositiveDivisionsTest.cpp in Sources */,
 				29A1FA3B1A2EA02F00B69133 /* MxCxSmpKeyOctaveTest.cpp in Sources */,
 				294091A61A16D2BF00386E3A /* MxEnumTopBottomTest.cpp in Sources */,
+				294573E81A3C08B10059F7BB /* MxSeqSmpNode6250Test.cpp in Sources */,
 				29A1FA331A2EA02F00B69133 /* MxCxSmpGlissandoTest.cpp in Sources */,
 				299CCF6E1A32C49F00D0E0CD /* MxEsCreatorTest.cpp in Sources */,
 				294091CD1A16D2DB00386E3A /* MxNumberBeamLevelTest.cpp in Sources */,
@@ -1891,14 +1954,17 @@
 				294091DF1A16D2DB00386E3A /* MxNumberSemitonesTest.cpp in Sources */,
 				29A1FA211A2EA02F00B69133 /* MxCxSmpBarStyleColorTest.cpp in Sources */,
 				2972E68A1A3289BA0018E453 /* MxEeCodaTest.cpp in Sources */,
+				294573DC1A3C08B10059F7BB /* MxSeqSmpNode3499Test.cpp in Sources */,
 				294090FC1A16D2A800386E3A /* MxColorTest.cpp in Sources */,
 				2940919F1A16D2BF00386E3A /* MxEnumSyllabicTest.cpp in Sources */,
 				2972E6C91A3289BA0018E453 /* MxEeStaccatoTest.cpp in Sources */,
 				2972E6C11A3289BA0018E453 /* MxEeSfppTest.cpp in Sources */,
+				294573E71A3C08B10059F7BB /* MxSeqSmpNode6156Test.cpp in Sources */,
 				294CB6BD1A35280100CA2734 /* MxEmInstrumentAbbreviationTest.cpp in Sources */,
 				29BBA1EF1A2FE2F2004BEAC2 /* MxCxEmptyArpeggiateTest.cpp in Sources */,
 				294CB6C81A35280100CA2734 /* MxEmMetalTest.cpp in Sources */,
 				2972E68C1A3289BA0018E453 /* MxEeDampAllTest.cpp in Sources */,
+				294573E31A3C08B10059F7BB /* MxSeqSmpNode4250Test.cpp in Sources */,
 				29C72B011A29725000407ADB /* MxAttrGrpValignTest.cpp in Sources */,
 				29A1FA341A2EA02F00B69133 /* MxCxSmpGroupBarlineTest.cpp in Sources */,
 				294CB6B81A35280100CA2734 /* MxEmFrameStringsTest.cpp in Sources */,
@@ -1918,6 +1984,7 @@
 				294CB6D91A35280100CA2734 /* MxEmPanTest.cpp in Sources */,
 				294090FF1A16D2A800386E3A /* MxDateTestAddMonth.cpp in Sources */,
 				29A1FA2B1A2EA02F00B69133 /* MxCxSmpDistanceTest.cpp in Sources */,
+				294573E91A3C08B10059F7BB /* MxSeqSmpNode6271Test.cpp in Sources */,
 				29A1FA461A2EA02F00B69133 /* MxCxSmpNoteSizeTest.cpp in Sources */,
 				299CCF831A32C49F00D0E0CD /* MxEsHandbellTest.cpp in Sources */,
 				2972E6921A3289BA0018E453 /* MxEeDoubleTest.cpp in Sources */,
@@ -1971,6 +2038,7 @@
 				2940917E1A16D2BF00386E3A /* MxEnumLineEndTest.cpp in Sources */,
 				294CB6CB1A35280100CA2734 /* MxEmMidiBankTest.cpp in Sources */,
 				294091891A16D2BF00386E3A /* MxEnumNoteSizeTypeTest.cpp in Sources */,
+				294573DA1A3C08B10059F7BB /* MxSeqSmpNode3245Test.cpp in Sources */,
 				2972E6C71A3289BA0018E453 /* MxEeSpiccatoTest.cpp in Sources */,
 				294CB6CF1A35280100CA2734 /* MxEmMidiUnpitchedTest.cpp in Sources */,
 				294CB6A11A35280100CA2734 /* MxEmActualNotesTest.cpp in Sources */,
@@ -1984,6 +2052,7 @@
 				294091941A16D2BF00386E3A /* MxEnumStartNoteTest.cpp in Sources */,
 				294CB6D51A35280100CA2734 /* MxEmOctaveChangeTest.cpp in Sources */,
 				2972E6B31A3289BA0018E453 /* MxEePlopTest.cpp in Sources */,
+				294573E11A3C08B10059F7BB /* MxSeqSmpNode4190Test.cpp in Sources */,
 				2972E6831A3289BA0018E453 /* MxEeAccordionLowTest.cpp in Sources */,
 				29BBA2081A2FE2F2004BEAC2 /* MxCxEmptyRepeatTest.cpp in Sources */,
 				294091D21A16D2DB00386E3A /* MxNumberMidi128Test.cpp in Sources */,
@@ -2066,6 +2135,7 @@
 				29A1FA4C1A2EA02F00B69133 /* MxCxSmpOtherPlayTest.cpp in Sources */,
 				299CCF9D1A32C49F00D0E0CD /* MxEsPullOffTest.cpp in Sources */,
 				294091851A16D2BF00386E3A /* MxEnumMetalTest.cpp in Sources */,
+				294573D91A3C08B10059F7BB /* MxSeqSmpNode3154Test.cpp in Sources */,
 				299CCF6C1A32C49F00D0E0CD /* MxEsBreathMarkTest.cpp in Sources */,
 				29C72AFA1A29725000407ADB /* MxAttrGrpPrintStyleTest.cpp in Sources */,
 				2940919B1A16D2BF00386E3A /* MxEnumStepTest.cpp in Sources */,
@@ -2075,6 +2145,7 @@
 				2972E69D1A3289BA0018E453 /* MxEeFffTest.cpp in Sources */,
 				299CCF8B1A32C49F00D0E0CD /* MxEsMeasureRepeatTest.cpp in Sources */,
 				29A1FA481A2EA02F00B69133 /* MxCxSmpOffsetTest.cpp in Sources */,
+				294573E51A3C08B10059F7BB /* MxSeqSmpNode5619Test.cpp in Sources */,
 				29A1FA281A2EA02F00B69133 /* MxCxSmpDegreeAlterTest.cpp in Sources */,
 				29A1FA221A2EA02F00B69133 /* MxCxSmpBassAlterTest.cpp in Sources */,
 				29C72AF91A29725000407ADB /* MxAttrGrpPrintStyleAlignTest.cpp in Sources */,
@@ -2096,8 +2167,10 @@
 				2972E6A71A3289BA0018E453 /* MxEeLeftDividerTest.cpp in Sources */,
 				29A1FA401A2EA02F00B69133 /* MxCxSmpMeasureRepeatTest.cpp in Sources */,
 				294CB6D81A35280100CA2734 /* MxEmOtherPercussionTest.cpp in Sources */,
+				294573DF1A3C08B10059F7BB /* MxSeqSmpNode4104Test.cpp in Sources */,
 				29C72AE61A29725000407ADB /* MxAttrGrpHalignTest.cpp in Sources */,
 				2972E6991A3289BA0018E453 /* MxEeFalloffTest.cpp in Sources */,
+				294573E01A3C08B10059F7BB /* MxSeqSmpNode4143Test.cpp in Sources */,
 				294CB6D61A35280100CA2734 /* MxEmOctaveTest.cpp in Sources */,
 				299CCF931A32C49F00D0E0CD /* MxEsOtherArticulationTest.cpp in Sources */,
 				29A1FA541A2EA02F00B69133 /* MxCxSmpSlideTest.cpp in Sources */,
@@ -2161,10 +2234,12 @@
 				294091991A16D2BF00386E3A /* MxEnumStartStopTest.cpp in Sources */,
 				29A1FA301A2EA02F00B69133 /* MxCxSmpFirstFretTest.cpp in Sources */,
 				294091CF1A16D2DB00386E3A /* MxNumberDivisionsTest.cpp in Sources */,
+				294573E41A3C08B10059F7BB /* MxSeqSmpNode4261Test.cpp in Sources */,
 				294091E21A16D2DB00386E3A /* MxNumberStringNumberTest.cpp in Sources */,
 				29A1FA4A1A2EA02F00B69133 /* MxCxSmpOtherDirectionTest.cpp in Sources */,
 				294CB6D41A35280100CA2734 /* MxEmNormalNotesTest.cpp in Sources */,
 				294091661A16D2BF00386E3A /* MxEnumBreathMarkValueTest.cpp in Sources */,
+				294573DD1A3C08B10059F7BB /* MxSeqSmpNode3871Test.cpp in Sources */,
 				2972E6D31A3289BA0018E453 /* MxEeTupletDotTest.cpp in Sources */,
 				29BBA1FB1A2FE2F2004BEAC2 /* MxCxEmptyEmptyTrillSoundTest.cpp in Sources */,
 				2940916F1A16D2BF00386E3A /* MxEnumEnclosureShapeTest.cpp in Sources */,
@@ -2212,6 +2287,7 @@
 				2972E6D21A3289BA0018E453 /* MxEeTripleTongueTest.cpp in Sources */,
 				294091A41A16D2BF00386E3A /* MxEnumTimeSymbolTest.cpp in Sources */,
 				294091801A16D2BF00386E3A /* MxEnumLineTypeTest.cpp in Sources */,
+				294573DB1A3C08B10059F7BB /* MxSeqSmpNode3480Test.cpp in Sources */,
 				294091021A16D2A800386E3A /* MxDateTestCtor.cpp in Sources */,
 				2940918B1A16D2BF00386E3A /* MxEnumOnOffTest.cpp in Sources */,
 				299CCF941A32C49F00D0E0CD /* MxEsOtherDirectionTest.cpp in Sources */,

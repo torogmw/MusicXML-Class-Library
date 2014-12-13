@@ -10,6 +10,7 @@
 #include "ElementMxBldr.h"
 #include "ElementMxParser.h"
 #include "SectionSeparatorComment.h"
+#include "TFunc.h"
 
 namespace XsdClasses
 {
@@ -99,6 +100,11 @@ namespace XsdClasses
         IClassBldr::addPublicInclude( Include( "LexiconBaseObjects.h", false ) );
         IClassBldr::addPrivateInclude( Include( this->getHFileInfo().getFileName(), false ) );
         
+        /* INIT Set up TestGroup Helper */
+        TFunc::setClassBldr( this );
+        TFunc::setTestNumber( 0 );
+        addTestGroup( TFunc::getClassInfoTests() );
+        
         /* For each element, add appropriate data member, functions, and include */
         for ( HClassBldr h : myElementBldrs )
         {
@@ -163,7 +169,8 @@ namespace XsdClasses
         std::stringstream fgrpName;
         fgrpName << elementName << " Functions";
         fgrp.setName( fgrpName.str() );
-        
+        TestGroup tgrp;
+        tgrp.setSeparatorComment( fgrpName.str() );
         
         DataMember dmValue;
         std::stringstream dmValueDataType;
@@ -189,6 +196,8 @@ namespace XsdClasses
         dmIsPresentInitVal << std::boolalpha << isRequired;
         dmIsPresent.setMemberInitializationValue( dmIsPresentInitVal.str() );
         
+        
+        
         addPrivateDatamember( dmValue );
         addPrivateDatamember( dmIsPresent );
         Function GetIsPresentFunc;
@@ -208,6 +217,13 @@ namespace XsdClasses
         GetIsPresentFunc.setCode( GetIsPresentCode );
         fgrp.addFunction( GetIsPresentFunc );
         Function SetIsPresentFunc;
+        
+        TestCode test = TFunc::testStub( 1, "bool", GetIsPresentFunc.getName() );
+        std::stringstream ex;
+        ex << std::boolalpha << isRequired;
+        TFunc::checkEq( test, ex.str(), "object." + GetIsPresentFunc.getName() + "()" );
+        tgrp.addTest( test );
+        
         if ( !isRequired )
         {
             std::stringstream SetIsPresentFuncName;
@@ -226,6 +242,14 @@ namespace XsdClasses
             SetIsPresentFuncCode << "myIs" << elementName << "Present = value_in;";
             SetIsPresentFunc.setCode( SetIsPresentFuncCode );
             fgrp.addFunction( SetIsPresentFunc );
+            
+            test = TFunc::testStub( 1, "bool", SetIsPresentFunc.getName() );
+            ex.str( "" );
+            ex << std::boolalpha << isRequired;
+            TFunc::checkEq( test, ex.str(), "object." + GetIsPresentFunc.getName() + "()" );
+            test.addCodeLine( 0, "object." + SetIsPresentFuncName.str() + "( true );" );
+            TFunc::checkEq( test, "true", "object." + GetIsPresentFunc.getName() + "()" );
+            tgrp.addTest( test );
         }
         
         
@@ -242,13 +266,15 @@ namespace XsdClasses
             getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, this value will still exist (even though it is not in the xml document) and you should ignore it.";
             GetValueFunc.setDocumentation( getValueDocumentation.str() );
             std::stringstream getValueFuncCode;
-//            getValueFuncCode << "if( ! " << dmValue.getName() << " )" << end();
-//            getValueFuncCode << "{" << end();
-//            getValueFuncCode << tab( 1 ) << dmValue.getName() << " = std::make_shared<" << bldr->getName() << ">();" << end();
-//            getValueFuncCode << "}" << end();
             getValueFuncCode << "return " << dmValue.getName() << ";" << end();
             GetValueFunc.setCode( getValueFuncCode );
             fgrp.addFunction( GetValueFunc );
+            
+            test = TFunc::testStub( 1, "std::string", GetValueFunc.getName() );
+            test.addCodeLine( 0, dmValue.getDataType() + " element;" );
+            ex.str( "\"\"" );
+            TFunc::checkEq( test, ex.str(), "object." + GetValueFunc.getName() + "()->toString()" );
+            tgrp.addTest( test );
             
             Function SetValueFunc;
             std::stringstream setValueFuncName;
@@ -276,6 +302,12 @@ namespace XsdClasses
             SetValueFunc.setCode( setValueFuncCode );
             SetValueFunc.setReturnType( "void" );
             fgrp.addFunction( SetValueFunc );
+            
+            test = TFunc::testStub( 1, "std::string", SetValueFunc.getName() );
+            test.addCodeLine( 0, dmValue.getDataType() + " element;" );
+            ex.str( "\"\"" );
+            TFunc::checkEq( test, ex.str(), "object." + GetValueFunc.getName() + "()->toString()" );
+            tgrp.addTest( test );
         }
         
         
@@ -294,6 +326,12 @@ namespace XsdClasses
         getMinOccurs.setCode( getMinOccursCode );
         fgrp.addFunction( getMinOccurs );
         
+        test = TFunc::testStub( 1, "int", getMinOccurs.getName() );
+        ex.str( "" );
+        ex << minOccurs;
+        TFunc::checkEq( test, ex.str(), "object." + getMinOccurs.getName() + "()" );
+        tgrp.addTest( test );
+        
         Function getMaxOccurs;
         std::stringstream getMaxOccursName;
         getMaxOccursName << "get" << elementName << "MaxOccurs";
@@ -310,6 +348,12 @@ namespace XsdClasses
         getMaxOccurs.setCode( getMaxOccursCode );
         fgrp.addFunction( getMaxOccurs );
         
+        test = TFunc::testStub( 1, "int", getMaxOccurs.getName() );
+        ex.str( "" );
+        ex << maxOccurs;
+        TFunc::checkEq( test, ex.str(), "object." + getMaxOccurs.getName() + "()" );
+        tgrp.addTest( test );
+        
         Function getUnbounded;
         std::stringstream getUnboundedName;
         getUnboundedName << "getIs" << elementName << "Unbounded";
@@ -325,6 +369,14 @@ namespace XsdClasses
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
         addPublicFunctionGroup( fgrp );
+        
+        test = TFunc::testStub( 1, "bool", getUnbounded.getName() );
+        ex.str( "" );
+        ex << std::boolalpha << isUnbounded;
+        TFunc::checkEq( test, ex.str(), "object." + getUnbounded.getName() + "()" );
+        tgrp.addTest( test );
+    
+        addTestGroup( tgrp );
     }
     
     void SequenceSmpBldr::addDataMemberAndFunctionsVector( const HClassBldr& bldr, const std::string& elementName, bool isRequired,
@@ -485,6 +537,8 @@ namespace XsdClasses
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
         addPublicFunctionGroup( fgrp );
+        
+        
     }
 
     
@@ -691,7 +745,13 @@ namespace XsdClasses
     }
     std::string SequenceSmpBldr::getTestFile() const
     {
-        throw std::invalid_argument( "not implemented." );
+        std::stringstream ss;
+        ss << TFunc::testFileStart();
+        for ( TestGroup grp : getTestGroups() )
+        {
+            ss << grp.toString();
+        }
+        return ss.str();
     }
     
     /* VALUE OBJECT */
@@ -707,4 +767,5 @@ namespace XsdClasses
     {
         throw std::invalid_argument( "not implemented." );
     }
+    
 }

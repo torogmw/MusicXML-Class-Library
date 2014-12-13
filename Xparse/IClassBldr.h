@@ -10,6 +10,8 @@
 #include "FileInfo.h"
 #include <memory>
 #include "Element.h"
+#include "TestCode.h"
+#include "TestGroup.h"
 
 namespace mjb
 {
@@ -109,6 +111,9 @@ namespace mjb
         
         virtual FunctionGroup alterFunctionGroupForImpl( FunctionGroup fgrp ) const;
         
+        virtual void addTestGroup( const TestGroup& tests );
+        virtual TestGroupCollection getTestGroups() const;
+        
     private:
         xparse::ElementPtr myXsdNode;
         std::string myName;
@@ -126,6 +131,7 @@ namespace mjb
         std::string myClassNamePrefix;
         std::string myXmlDocumentation;
         std::string myXmlName;
+        TestGroupCollection myTests;
         
     protected:
         void datachanged();

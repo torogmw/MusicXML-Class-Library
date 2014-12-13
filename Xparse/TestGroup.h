@@ -9,6 +9,8 @@
 
 namespace mjb
 {
+    class TestGroup;
+    typedef std::vector<TestGroup> TestGroupCollection;
     class TestGroup
     {
     

@@ -608,4 +608,13 @@ namespace mjb
         }
         return output;
     }
+    
+    void IClassBldr::addTestGroup( const TestGroup& tests )
+    {
+        myTests.push_back( tests );
+    }
+    TestGroupCollection IClassBldr::getTestGroups() const
+    {
+        return myTests;
+    }
 }

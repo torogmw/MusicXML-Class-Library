@@ -85,6 +85,7 @@ namespace lexicon
         static HMxObject getObjectByXmlName( const std::string& XmlName );
         static MxList getElementObjects();
         static bool getIsElementObjectImplemented( const std::string& XmlName );
+        static HMxObject getElementObectByName( const std::string& CppName );
     private:
         static void init();
         static MxList ourCxSmps;

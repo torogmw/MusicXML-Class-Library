@@ -528,6 +528,20 @@ namespace lexicon
         }
         return false;
     }
+    
+    HMxObject XparseHelperFunctions::getElementObectByName( const std::string& CppName )
+    {
+        MxList mlist = getElementObjects();
+        for ( HMxObject h : mlist )
+        {
+            if ( h->getClassName() == CppName )
+            {
+                return h;
+            }
+        }
+        HMxObject temp;
+        return temp;
+    }
 }
 
 

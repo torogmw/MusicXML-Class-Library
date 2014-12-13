@@ -280,7 +280,7 @@ namespace lexicon
     typedef std::shared_ptr<MxIndentable> HMxIndentable;
     typedef std::unique_ptr<MxIndentable> UMxIndentable;
     
-	class MxIndentable : public MxElement
+	class MxIndentable : public MxObject
 	{
 	public:
 		MxIndentable();
