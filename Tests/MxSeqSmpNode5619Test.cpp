@@ -183,3 +183,68 @@ TEST( Test0017_getIsTupletTypeUnbounded, MxSeqSmpNode5619 )
 
 /* End: TupletType Functions ------------------------------------------------ */
 
+/* TupletDot Functions ------------------------------------------------------ */
+
+TEST( Test0018_getTupletDotCount, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	std::size_t expected;
+	std::size_t actual;
+	expected = 0;
+	actual = object.getTupletDotCount();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0019_getTupletDotBegin, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	MxEeTupletDotsIter expected;
+	MxEeTupletDotsIter actual;
+}
+TEST( Test0020_getTupletDotBeginConst, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	MxEeTupletDotsIterConst expected;
+	MxEeTupletDotsIterConst actual;
+}
+TEST( Test0021_addTupletDot, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	std::size_t expected;
+	std::size_t actual;
+}
+TEST( Test0022_removeTupletDot, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	std::size_t expected;
+	std::size_t actual;
+	expected = 0;
+	// actual = object.removeTupletDot();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0023_getTupletDotMinOccurs, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	int expected;
+	int actual;
+}
+TEST( Test0024_getTupletDotMaxOccurs, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	int expected;
+	int actual;
+	expected = 32767;
+	actual = object.getTupletDotMaxOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0025_getIsTupletDotUnbounded, MxSeqSmpNode5619 )
+{
+	MxSeqSmpNode5619 object;
+	bool expected;
+	bool actual;
+	expected = true;
+	actual = object.getIsTupletDotUnbounded();
+	CHECK_EQUAL( expected, actual )
+}
+
+/* End: TupletDot Functions ------------------------------------------------- */
+

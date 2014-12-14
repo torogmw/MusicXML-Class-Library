@@ -415,6 +415,16 @@ namespace XsdClasses
         GetCountFunc.setCode( GetCountFuncCode );
         fgrp.addFunction( GetCountFunc );
         
+        TestGroup tgrp;
+        tgrp.setSeparatorComment( fgrpName.str() );
+        TestCode test = TFunc::testStub( 1, "std::size_t", GetCountFunc.getName() );
+        std::stringstream ex;
+        ex.str( "" );
+        ex << minOccurs;
+        TFunc::checkEq( test, ex.str(), "object." + GetCountFunc.getName() + "()" );
+        tgrp.addTest( test );
+        
+        
         std::stringstream BeginCode( "throw \"todo: write the code.\";");
         std::stringstream EndCode( "throw \"todo: write the code.\";");
         std::stringstream BeginConstCode( "throw \"todo: write the code.\";");
@@ -436,6 +446,7 @@ namespace XsdClasses
         GetElementsBegin.setCode( BeginCode );
         fgrp.addFunction( GetElementsBegin );
         
+        
         Function GetElementsEnd;
         std::stringstream GetElementsEndName;
         GetElementsEndName << "get" << elementName << "End";
@@ -444,7 +455,13 @@ namespace XsdClasses
         GetElementsEnd.isConst( false );
         GetElementsEnd.setDocumentation( "Returns an STL iterator into the contained collection of element handles." );
         GetElementsEnd.setCode( EndCode );
+        
         fgrp.addFunction( GetElementsEnd );
+        test = TFunc::testStub( 1, GetElementsIterType, GetElementsBegin.getName() );
+        ex.str( "" );
+        ex << minOccurs;
+        // TFunc::checkEq( test, "object." + GetElementsBegin.getName(), "object." + GetElementsBegin.getName() + "()" );
+        tgrp.addTest( test );
         
         std::stringstream BeginConst;
         BeginConst << GetElementsBegin.getName() << "Const";
@@ -462,6 +479,12 @@ namespace XsdClasses
         GetElementsEnd.setCode( EndConstCode );
         fgrp.addFunction( GetElementsEnd );
         
+        test = TFunc::testStub( 1, GetElementsIterConstType, GetElementsBegin.getName() );
+        ex.str( "" );
+        ex << minOccurs;
+        // TFunc::checkEq( test, "object." + GetElementsBegin.getName() + "()", "object." + GetElementsBegin.getName() + "()" );
+        tgrp.addTest( test );
+        
         Function AddElement;
         std::stringstream AddElementCode( "throw \"todo: write the code.\";");
         std::stringstream AddElementName;
@@ -477,6 +500,12 @@ namespace XsdClasses
         AddElement.setDocumentation( "Adds the element handle to the internal collection. Returns 'true' if successful, returns 'false' to indicate failure.  If you try to add more elements than is allowed by MaxOccurs, the this function will fail.  If you try to add a nullptr this function will fail." );
         AddElement.setCode( AddElementCode );
         fgrp.addFunction( AddElement );
+        
+        test = TFunc::testStub( 1, "std::size_t", AddElement.getName() );
+        ex.str( "" );
+        ex << minOccurs;
+        // TFunc::checkEq( test, ex.str(), "object." + AddElement.getName() + "()" );
+        tgrp.addTest( test );
         
         Function RemoveElement;
         std::stringstream RemoveElementCode( "throw \"todo: write the code.\";");
@@ -494,6 +523,12 @@ namespace XsdClasses
         RemoveElement.setCode( RemoveElementCode );
         fgrp.addFunction( RemoveElement );
         
+        test = TFunc::testStub( 1, "std::size_t", RemoveElement.getName() );
+        ex.str( "" );
+        ex << minOccurs;
+        TFunc::checkEq( test, ex.str(), "object." + RemoveElement.getName() + "()" );
+        tgrp.addTest( test );
+        
         Function getMinOccurs;
         std::stringstream getMinOccursName;
         getMinOccursName << "get" << elementName << "MinOccurs";
@@ -507,6 +542,12 @@ namespace XsdClasses
         std::stringstream getMinOccursCode( "throw \"todo: write the code.\";");
         getMinOccurs.setCode( getMinOccursCode );
         fgrp.addFunction( getMinOccurs );
+        
+        test = TFunc::testStub( 1, "int", getMinOccurs.getName() );
+        ex.str( "" );
+        ex << minOccurs;
+        // TFunc::checkEq( test, ex.str(), "object." + getMinOccurs.getName() + "()" );
+        tgrp.addTest( test );
         
         Function getMaxOccurs;
         std::stringstream getMaxOccursName;
@@ -523,6 +564,12 @@ namespace XsdClasses
         getMaxOccurs.setCode( getMaxOccursCode );
         fgrp.addFunction( getMaxOccurs );
         
+        test = TFunc::testStub( 1, "int", getMaxOccurs.getName() );
+        ex.str( "" );
+        ex << maxOccurs;
+        TFunc::checkEq( test, ex.str(), "object." + getMaxOccurs.getName() + "()" );
+        tgrp.addTest( test );
+        
         Function getUnbounded;
         std::stringstream getUnboundedName;
         getUnboundedName << "getIs" << elementName << "Unbounded";
@@ -536,9 +583,15 @@ namespace XsdClasses
         std::stringstream getUnboundedCode( "throw \"todo: write the code.\";");
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
+        
+        test = TFunc::testStub( 1, "bool", getUnbounded.getName() );
+        ex.str( "" );
+        ex << std::boolalpha << isUnbounded;
+        TFunc::checkEq( test, ex.str(), "object." + getUnbounded.getName() + "()" );
+        tgrp.addTest( test );
+        
         addPublicFunctionGroup( fgrp );
-        
-        
+        addTestGroup( tgrp );
     }
 
     

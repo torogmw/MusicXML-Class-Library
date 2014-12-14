@@ -35,3 +35,68 @@ TEST( Test0003_getDocumentation, MxSeqSmpNode3499 )
 	CHECK_EQUAL( expected, actual )
 }
 
+/* Feature Functions -------------------------------------------------------- */
+
+TEST( Test0004_getFeatureCount, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	std::size_t expected;
+	std::size_t actual;
+	expected = 0;
+	actual = object.getFeatureCount();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0005_getFeatureBegin, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	MxEsFeaturesIter expected;
+	MxEsFeaturesIter actual;
+}
+TEST( Test0006_getFeatureBeginConst, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	MxEsFeaturesIterConst expected;
+	MxEsFeaturesIterConst actual;
+}
+TEST( Test0007_addFeature, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	std::size_t expected;
+	std::size_t actual;
+}
+TEST( Test0008_removeFeature, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	std::size_t expected;
+	std::size_t actual;
+	expected = 0;
+	//actual = object.removeFeature();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0009_getFeatureMinOccurs, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	int expected;
+	int actual;
+}
+TEST( Test0010_getFeatureMaxOccurs, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	int expected;
+	int actual;
+	expected = 32767;
+	actual = object.getFeatureMaxOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0011_getIsFeatureUnbounded, MxSeqSmpNode3499 )
+{
+	MxSeqSmpNode3499 object;
+	bool expected;
+	bool actual;
+	expected = true;
+	actual = object.getIsFeatureUnbounded();
+	CHECK_EQUAL( expected, actual )
+}
+
+/* End: Feature Functions --------------------------------------------------- */
+
