@@ -157,3 +157,8 @@
 //
 ///* End: DisplayOctave Functions --------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode6271 )
+//{
+//    CHECK( false )
+//}

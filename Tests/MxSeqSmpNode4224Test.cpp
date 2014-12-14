@@ -157,3 +157,8 @@
 //
 ///* End: PageWidth Functions ------------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode4224 )
+//{
+//    CHECK( false )
+//}

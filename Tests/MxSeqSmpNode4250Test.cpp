@@ -157,3 +157,9 @@
 //
 ///* End: Tenths Functions ---------------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode4250 )
+//{
+//    CHECK( false )
+//}
+

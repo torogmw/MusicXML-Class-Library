@@ -159,4 +159,9 @@ TEST( Test0015_getIsStickMaterialUnbounded, MxSeqSmpNode3993 )
 
 /* End: StickMaterial Functions --------------------------------------------- */
 
+TEST( toString, MxSeqSmpNode3993 )
+{
+    CHECK( false )
+}
+
 #endif

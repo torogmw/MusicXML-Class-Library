@@ -109,3 +109,8 @@
 //
 ///* End: MeasureDistance Functions ------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode4190 )
+//{
+//    CHECK( false )
+//}

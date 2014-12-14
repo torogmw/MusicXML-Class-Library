@@ -109,3 +109,8 @@
 //
 ///* End: StaffDistance Functions --------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode4261 )
+//{
+//    CHECK( false )
+//}

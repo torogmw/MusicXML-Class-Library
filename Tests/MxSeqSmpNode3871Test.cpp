@@ -172,4 +172,10 @@ TEST( Test0016_getIsRootAlterUnbounded, MxSeqSmpNode3871 )
 
 /* End: RootAlter Functions ------------------------------------------------- */
 
+
+TEST( toString, MxSeqSmpNode3871 )
+{
+    CHECK( false )
+}
+
 #endif

@@ -16,6 +16,7 @@
  **/
 
 #include "MxSeqSmpNode3480.h"
+#include "_hidden_indent.h"
 
 /* Impl ------------------------------------------------------------------------------- */
 
@@ -211,7 +212,7 @@ namespace lexicon
 		    the element is optional. **/
 		int getFingeringMinOccurs() const
 		{
-			return myFingering->getMinOccurs();
+			return 0; //myFingering->getMinOccurs();
 		}
 
 		/** Returns the maximum number of occurences of the <Fingering> element.
@@ -295,7 +296,24 @@ namespace lexicon
 
 		std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in ) const
 		{
-			throw "todo: write the code.";
+			hidden::indent( os_out, indentcount_in, indentchars_in );
+            getString()->stream( os_out );
+            os_out << std::endl;
+            hidden::indent( os_out, indentcount_in, indentchars_in );
+            getFret()->stream( os_out );
+            if ( getIsFingeringPresent() )
+            {
+                os_out << std::endl;
+                hidden::indent( os_out, indentcount_in, indentchars_in );
+                getFingering()->stream( os_out );
+            }
+            if ( getIsBarrePresent() )
+            {
+                os_out << std::endl;
+                hidden::indent( os_out, indentcount_in, indentchars_in );
+                getBarre()->stream( os_out );
+            }
+            return os_out;
 		}
 
 	}; // struct MxSeqSmpNode3480::Impl

@@ -96,3 +96,8 @@
 //
 ///* End: Level Functions ----------------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode6056 )
+//{
+//    CHECK( false )
+//}

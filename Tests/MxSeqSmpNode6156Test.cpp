@@ -244,3 +244,9 @@
 //
 ///* End: Mode Functions ------------------------------------------------------ */
 //
+
+
+//TEST( toString, MxSeqSmpNode6156 )
+//{
+//    CHECK( false )
+//}

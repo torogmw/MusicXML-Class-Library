@@ -248,3 +248,8 @@
 //
 ///* End: TupletDot Functions ------------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode5619 )
+//{
+//    CHECK( false )
+//}

@@ -157,3 +157,8 @@
 //
 ///* End: RightMargin Functions ----------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode6250 )
+//{
+//    CHECK( false )
+//}

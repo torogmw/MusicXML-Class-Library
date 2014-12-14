@@ -102,4 +102,9 @@ TEST( Test0011_getIsFeatureUnbounded, MxSeqSmpNode3499 )
 
 /* End: Feature Functions --------------------------------------------------- */
 
+TEST( toString, MxSeqSmpNode3499 )
+{
+    CHECK( false )
+}
+
 #endif

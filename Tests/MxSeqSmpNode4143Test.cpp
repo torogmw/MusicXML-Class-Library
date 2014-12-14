@@ -295,3 +295,8 @@
 //
 ///* End: OtherAppearance Functions ------------------------------------------- */
 //
+
+//TEST( toString, MxSeqSmpNode4143 )
+//{
+//    CHECK( false )
+//}

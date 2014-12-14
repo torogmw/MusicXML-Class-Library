@@ -102,4 +102,9 @@ TEST( Test0011_getIsMiscellaneousFieldUnbounded, MxSeqSmpNode4104 )
 
 /* End: MiscellaneousField Functions ---------------------------------------- */
 
+TEST( toString, MxSeqSmpNode4104 )
+{
+    CHECK( false )
+}
+
 #endif
