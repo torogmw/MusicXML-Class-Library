@@ -146,16 +146,20 @@ TEST( Test0011_getDegreeAlter, MxSeqSmpNode3245 )
 	actual = object.getDegreeAlter()->toString();
 	CHECK_EQUAL( expected, actual )
 }
-//TEST( Test0012_setDegreeAlter, MxSeqSmpNode3245 )
-//{
-//	MxSeqSmpNode3245 object;
-//	std::string expected;
-//	std::string actual;
-//	HMxEsDegreeAlter element;
-//	expected = "";
-//	actual = object.getDegreeAlter()->toString();
-//	CHECK_EQUAL( expected, actual )
-//}
+TEST( Test0012_setDegreeAlter, MxSeqSmpNode3245 )
+{
+	MxSeqSmpNode3245 object;
+	std::string expected;
+	std::string actual;
+    object.getDegreeAlter()->setValue( MxNumberSemitones( 1 ) );
+	expected = "<degree-alter>1</degree-alter>";
+	actual = object.getDegreeAlter()->toString();
+	CHECK_EQUAL( expected, actual )
+    object.setDegreeAlter( std::make_shared<MxEsDegreeAlter>( MxNumberSemitones( 0 ) ) );
+    expected = "<degree-alter>0</degree-alter>";
+	actual = object.getDegreeAlter()->toString();
+	CHECK_EQUAL( expected, actual )
+}
 TEST( Test0013_getDegreeAlterMinOccurs, MxSeqSmpNode3245 )
 {
 	MxSeqSmpNode3245 object;
@@ -188,35 +192,51 @@ TEST( Test0015_getIsDegreeAlterUnbounded, MxSeqSmpNode3245 )
 
 /* DegreeType Functions ----------------------------------------------------- */
 
-//TEST( Test0016_getIsDegreeTypePresent, MxSeqSmpNode3245 )
-//{
-//	MxSeqSmpNode3245 object;
-//	bool expected;
-//	bool actual;
-//	expected = true;
-//	actual = object.getIsDegreeTypePresent();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0017_getDegreeType, MxSeqSmpNode3245 )
-//{
-//	MxSeqSmpNode3245 object;
-//	std::string expected;
-//	std::string actual;
-//	HMxEsDegreeType element;
-//	expected = "";
-//	actual = object.getDegreeType()->toString();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0018_setDegreeType, MxSeqSmpNode3245 )
-//{
-//	MxSeqSmpNode3245 object;
-//	std::string expected;
-//	std::string actual;
-//	HMxEsDegreeType element;
-//	expected = "";
-//	actual = object.getDegreeType()->toString();
-//	CHECK_EQUAL( expected, actual )
-//}
+TEST( Test0016_getIsDegreeTypePresent, MxSeqSmpNode3245 )
+{
+	MxSeqSmpNode3245 object;
+	bool expected;
+	bool actual;
+	expected = true;
+	actual = object.getIsDegreeTypePresent();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0017_getDegreeType, MxSeqSmpNode3245 )
+{
+	MxSeqSmpNode3245 object;
+	std::string expected;
+	std::string actual;
+	HMxEsDegreeType e1 = std::make_shared<MxEsDegreeType>();
+    e1->setValue( enums::DegreeTypeValue::add );
+    object.setDegreeType( e1 );
+	expected = "<degree-type>add</degree-type>";
+	actual = object.getDegreeType()->toString();
+	CHECK_EQUAL( expected, actual )
+    e1->setValue( enums::DegreeTypeValue::subtract );
+    expected = "<degree-type>subtract</degree-type>";
+	actual = object.getDegreeType()->toString();
+	CHECK_EQUAL( expected, actual )
+    HMxEsDegreeType e2 = std::make_shared<MxEsDegreeType>();
+    e2->setValue( enums::DegreeTypeValue::alter );
+    object.setDegreeType( e2 );
+    expected = "<degree-type>alter</degree-type>";
+	actual = object.getDegreeType()->toString();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0018_setDegreeType, MxSeqSmpNode3245 )
+{
+    MxSeqSmpNode3245 object;
+	std::string expected;
+	std::string actual;
+    object.getDegreeType()->setValue( enums::DegreeTypeValue::alter );
+	expected = "<degree-type>alter</degree-type>";
+	actual = object.getDegreeType()->toString();
+	CHECK_EQUAL( expected, actual )
+    object.setDegreeType( std::make_shared<MxEsDegreeType>( enums::DegreeTypeValue::add ) );
+    expected = "<degree-type>add</degree-type>";
+	actual = object.getDegreeType()->toString();
+	CHECK_EQUAL( expected, actual )
+}
 TEST( Test0019_getDegreeTypeMinOccurs, MxSeqSmpNode3245 )
 {
 	MxSeqSmpNode3245 object;
@@ -246,3 +266,74 @@ TEST( Test0021_getIsDegreeTypeUnbounded, MxSeqSmpNode3245 )
 }
 
 /* End: DegreeType Functions ------------------------------------------------ */
+
+TEST( Test0022_toString, MxSeqSmpNode3245 )
+{
+	MxSeqSmpNode3245 object;
+    std::string expected;
+    std::string actual;
+    
+    HMxEsDegreeValue val1 = object.getDegreeValue();
+    HMxEsDegreeAlter val2 = object.getDegreeAlter();
+    HMxEsDegreeType val3 = object.getDegreeType();
+    val1->setValue( XsPositiveInteger( 2 ) );
+    val2->setValue( MxNumberSemitones( -1) );
+    val3->setValue( enums::DegreeTypeValue::add );
+    std::stringstream acss;
+    object.stream( acss, 2 );
+    std::stringstream exss;
+    exss << "\t\t" << "<degree-value>2</degree-value>" << std::endl;
+    exss << "\t\t" << "<degree-alter>-1</degree-alter>" << std::endl;
+    exss << "\t\t" << "<degree-type>add</degree-type>";
+    expected = exss.str();
+	actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    object.stream( acss, 1, "\t" );
+    exss.str( "" );
+    exss << "\t" << "<degree-value>2</degree-value>" << std::endl;
+    exss << "\t" << "<degree-alter>-1</degree-alter>" << std::endl;
+    exss << "\t" << "<degree-type>add</degree-type>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    object.stream( acss, 3, "XYZ" );
+    exss.str( "" );
+    exss << "XYZXYZXYZ" << "<degree-value>2</degree-value>" << std::endl;
+    exss << "XYZXYZXYZ" << "<degree-alter>-1</degree-alter>" << std::endl;
+    exss << "XYZXYZXYZ" << "<degree-type>add</degree-type>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    object.stream( acss );
+    exss.str( "" );
+    exss << "" << "<degree-value>2</degree-value>" << std::endl;
+    exss << "" << "<degree-alter>-1</degree-alter>" << std::endl;
+    exss << "" << "<degree-type>add</degree-type>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    acss << object;
+    exss.str( "" );
+    exss << "" << "<degree-value>2</degree-value>" << std::endl;
+    exss << "" << "<degree-alter>-1</degree-alter>" << std::endl;
+    exss << "" << "<degree-type>add</degree-type>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    exss.str( "" );
+    exss << "" << "<degree-value>2</degree-value>" << std::endl;
+    exss << "" << "<degree-alter>-1</degree-alter>" << std::endl;
+    exss << "" << "<degree-type>add</degree-type>";
+    expected = exss.str();
+    actual = object.toString();
+	CHECK_EQUAL( expected, actual )
+}
