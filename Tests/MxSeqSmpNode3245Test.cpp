@@ -1,4 +1,3 @@
-#if 1==0
 
 #include "TestHarness.h"
 #include "MxSeqSmpNode3245.h"
@@ -53,18 +52,34 @@ TEST( Test0005_getDegreeValue, MxSeqSmpNode3245 )
 	MxSeqSmpNode3245 object;
 	std::string expected;
 	std::string actual;
-	HMxEsDegreeValue element;
-	expected = "";
+	HMxEsDegreeValue e1 = std::make_shared<MxEsDegreeValue>();
+    e1->setValue( XsPositiveInteger( 1 ) );
+    object.setDegreeValue( e1 );
+	expected = "<degree-value>1</degree-value>";
+	actual = object.getDegreeValue()->toString();
+	CHECK_EQUAL( expected, actual )
+    e1->setValue( XsPositiveInteger( 2 ) );
+    expected = "<degree-value>2</degree-value>";
+	actual = object.getDegreeValue()->toString();
+	CHECK_EQUAL( expected, actual )
+    HMxEsDegreeValue e2 = std::make_shared<MxEsDegreeValue>();
+    e2->setValue( XsPositiveInteger( 3 ) );
+    object.setDegreeValue( e2 );
+    expected = "<degree-value>3</degree-value>";
 	actual = object.getDegreeValue()->toString();
 	CHECK_EQUAL( expected, actual )
 }
 TEST( Test0006_setDegreeValue, MxSeqSmpNode3245 )
 {
-	MxSeqSmpNode3245 object;
+    MxSeqSmpNode3245 object;
 	std::string expected;
 	std::string actual;
-	HMxEsDegreeValue element;
-	expected = "";
+    object.getDegreeValue()->setValue( XsPositiveInteger( 1 ) );
+	expected = "<degree-value>1</degree-value>";
+	actual = object.getDegreeValue()->toString();
+	CHECK_EQUAL( expected, actual )
+    object.setDegreeValue( std::make_shared<MxEsDegreeValue>( 2 ) );
+    expected = "<degree-value>2</degree-value>";
 	actual = object.getDegreeValue()->toString();
 	CHECK_EQUAL( expected, actual )
 }
@@ -111,24 +126,36 @@ TEST( Test0010_getIsDegreeAlterPresent, MxSeqSmpNode3245 )
 }
 TEST( Test0011_getDegreeAlter, MxSeqSmpNode3245 )
 {
-	MxSeqSmpNode3245 object;
+    MxSeqSmpNode3245 object;
 	std::string expected;
 	std::string actual;
-	HMxEsDegreeAlter element;
-	expected = "";
+	HMxEsDegreeAlter e1 = std::make_shared<MxEsDegreeAlter>();
+    e1->setValue( MxNumberSemitones( -1 ) );
+    object.setDegreeAlter( e1 );
+	expected = "<degree-alter>-1</degree-alter>";
+	actual = object.getDegreeAlter()->toString();
+	CHECK_EQUAL( expected, actual )
+    e1->setValue( MxNumberSemitones( 0 ) );
+    expected = "<degree-alter>0</degree-alter>";
+	actual = object.getDegreeAlter()->toString();
+	CHECK_EQUAL( expected, actual )
+    HMxEsDegreeAlter e2 = std::make_shared<MxEsDegreeAlter>();
+    e2->setValue( MxNumberSemitones( 1 ) );
+    object.setDegreeAlter( e2 );
+    expected = "<degree-alter>1</degree-alter>";
 	actual = object.getDegreeAlter()->toString();
 	CHECK_EQUAL( expected, actual )
 }
-TEST( Test0012_setDegreeAlter, MxSeqSmpNode3245 )
-{
-	MxSeqSmpNode3245 object;
-	std::string expected;
-	std::string actual;
-	HMxEsDegreeAlter element;
-	expected = "";
-	actual = object.getDegreeAlter()->toString();
-	CHECK_EQUAL( expected, actual )
-}
+//TEST( Test0012_setDegreeAlter, MxSeqSmpNode3245 )
+//{
+//	MxSeqSmpNode3245 object;
+//	std::string expected;
+//	std::string actual;
+//	HMxEsDegreeAlter element;
+//	expected = "";
+//	actual = object.getDegreeAlter()->toString();
+//	CHECK_EQUAL( expected, actual )
+//}
 TEST( Test0013_getDegreeAlterMinOccurs, MxSeqSmpNode3245 )
 {
 	MxSeqSmpNode3245 object;
@@ -161,35 +188,35 @@ TEST( Test0015_getIsDegreeAlterUnbounded, MxSeqSmpNode3245 )
 
 /* DegreeType Functions ----------------------------------------------------- */
 
-TEST( Test0016_getIsDegreeTypePresent, MxSeqSmpNode3245 )
-{
-	MxSeqSmpNode3245 object;
-	bool expected;
-	bool actual;
-	expected = true;
-	actual = object.getIsDegreeTypePresent();
-	CHECK_EQUAL( expected, actual )
-}
-TEST( Test0017_getDegreeType, MxSeqSmpNode3245 )
-{
-	MxSeqSmpNode3245 object;
-	std::string expected;
-	std::string actual;
-	HMxEsDegreeType element;
-	expected = "";
-	actual = object.getDegreeType()->toString();
-	CHECK_EQUAL( expected, actual )
-}
-TEST( Test0018_setDegreeType, MxSeqSmpNode3245 )
-{
-	MxSeqSmpNode3245 object;
-	std::string expected;
-	std::string actual;
-	HMxEsDegreeType element;
-	expected = "";
-	actual = object.getDegreeType()->toString();
-	CHECK_EQUAL( expected, actual )
-}
+//TEST( Test0016_getIsDegreeTypePresent, MxSeqSmpNode3245 )
+//{
+//	MxSeqSmpNode3245 object;
+//	bool expected;
+//	bool actual;
+//	expected = true;
+//	actual = object.getIsDegreeTypePresent();
+//	CHECK_EQUAL( expected, actual )
+//}
+//TEST( Test0017_getDegreeType, MxSeqSmpNode3245 )
+//{
+//	MxSeqSmpNode3245 object;
+//	std::string expected;
+//	std::string actual;
+//	HMxEsDegreeType element;
+//	expected = "";
+//	actual = object.getDegreeType()->toString();
+//	CHECK_EQUAL( expected, actual )
+//}
+//TEST( Test0018_setDegreeType, MxSeqSmpNode3245 )
+//{
+//	MxSeqSmpNode3245 object;
+//	std::string expected;
+//	std::string actual;
+//	HMxEsDegreeType element;
+//	expected = "";
+//	actual = object.getDegreeType()->toString();
+//	CHECK_EQUAL( expected, actual )
+//}
 TEST( Test0019_getDegreeTypeMinOccurs, MxSeqSmpNode3245 )
 {
 	MxSeqSmpNode3245 object;
@@ -219,5 +246,3 @@ TEST( Test0021_getIsDegreeTypeUnbounded, MxSeqSmpNode3245 )
 }
 
 /* End: DegreeType Functions ------------------------------------------------ */
-
-#endif
