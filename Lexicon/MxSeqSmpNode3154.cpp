@@ -16,6 +16,7 @@
  **/
 
 #include "MxSeqSmpNode3154.h"
+#include "_hidden_indent.h"
 
 /* Impl ------------------------------------------------------------------------------- */
 
@@ -180,7 +181,15 @@ namespace lexicon
 
 		std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in ) const
 		{
-			throw "todo: write the code.";
+            hidden::indent( os_out, indentcount_in, indentchars_in );
+            getBassStep()->stream( os_out );
+            if ( getIsBassAlterPresent() )
+            {
+                os_out << std::endl;
+                hidden::indent( os_out, indentcount_in, indentchars_in );
+                getBassAlter()->stream( os_out );
+            }
+            return os_out;
 		}
 
 	}; // struct MxSeqSmpNode3154::Impl

@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "TestHarness.h"
 #include "MxSeqSmpNode3480.h"
 using namespace lexicon;
@@ -305,3 +307,4 @@ TEST( Test0029_getIsBarreUnbounded, MxSeqSmpNode3480 )
 
 /* End: Barre Functions ----------------------------------------------------- */
 
+#endif

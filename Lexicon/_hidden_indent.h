@@ -11,6 +11,7 @@ namespace lexicon
             {
                 os_out << indentchars_in;
             }
+            return os_out;
         }
     }
 }

@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "TestHarness.h"
 #include "MxSeqSmpNode3871.h"
 using namespace lexicon;
@@ -170,3 +172,4 @@ TEST( Test0016_getIsRootAlterUnbounded, MxSeqSmpNode3871 )
 
 /* End: RootAlter Functions ------------------------------------------------- */
 
+#endif

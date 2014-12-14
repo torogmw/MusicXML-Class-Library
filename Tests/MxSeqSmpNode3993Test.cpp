@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "TestHarness.h"
 #include "MxSeqSmpNode3993.h"
 using namespace lexicon;
@@ -157,3 +159,4 @@ TEST( Test0015_getIsStickMaterialUnbounded, MxSeqSmpNode3993 )
 
 /* End: StickMaterial Functions --------------------------------------------- */
 
+#endif

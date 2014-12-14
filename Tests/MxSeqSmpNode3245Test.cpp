@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "TestHarness.h"
 #include "MxSeqSmpNode3245.h"
 using namespace lexicon;
@@ -218,3 +220,4 @@ TEST( Test0021_getIsDegreeTypeUnbounded, MxSeqSmpNode3245 )
 
 /* End: DegreeType Functions ------------------------------------------------ */
 
+#endif

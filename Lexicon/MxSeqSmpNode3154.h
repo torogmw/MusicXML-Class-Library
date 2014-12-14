@@ -125,7 +125,8 @@ namespace lexicon
 /* Stringing and Streaming ------------------------------------------------------------ */
 
 		virtual std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in = "\t" ) const;
-
+        using MxIndentable::stream;
+        
 /* Impl ------------------------------------------------------------------------------- */
 
 	private:

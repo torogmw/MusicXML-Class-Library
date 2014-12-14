@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "TestHarness.h"
 #include "MxSeqSmpNode3499.h"
 using namespace lexicon;
@@ -100,3 +102,4 @@ TEST( Test0011_getIsFeatureUnbounded, MxSeqSmpNode3499 )
 
 /* End: Feature Functions --------------------------------------------------- */
 
+#endif
