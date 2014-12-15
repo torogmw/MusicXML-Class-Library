@@ -6,7 +6,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-12 16:19:45
+  * @date       2014-12-14 18:08:34
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3154
@@ -125,8 +125,9 @@ namespace lexicon
 /* Stringing and Streaming ------------------------------------------------------------ */
 
 		virtual std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in = "\t" ) const;
-        using MxIndentable::stream;
-        
+
+		/* unhide the stream function */
+		using MxIndentable::stream;
 /* Impl ------------------------------------------------------------------------------- */
 
 	private:

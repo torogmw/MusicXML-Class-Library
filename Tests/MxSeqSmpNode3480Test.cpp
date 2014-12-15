@@ -339,65 +339,67 @@ TEST( toString, MxSeqSmpNode3480 )
     object.stream( acss, 2 );
     std::stringstream exss;
     exss << "\t\t" << "<string color=\"#121314\">1</string>" << std::endl;
-    exss << "\t\t" << "<fret>2<fret>" << std::endl;
+    exss << "\t\t" << "<fret>2</fret>" << std::endl;
     exss << "\t\t" << "<fingering>hello</fingering>" << std::endl;
     exss << "\t\t" << "<barre type=\"stop\"/>";
     expected = exss.str();
 	actual = acss.str();
 	CHECK_EQUAL( expected, actual )
     
-//    acss.str( "" );
-//    HMxEsString val2 = object.getString();
-//    val2->setValue( MxNumberSemitones(-1) );
-//    object.setIsStringPresent( true );
-//    object.stream( acss, 1, "\t" );
-//    std::stringstream exss;
-//    exss << '\t' << "<bass-step>F</bass-step>" << std::endl;
-//    exss << '\t' << "<string>-1</string>";
-//    expected = exss.str();
-//    actual = acss.str();
-//	CHECK_EQUAL( expected, actual )
-//    
-//    acss.str( "" );
-//    val2->setValue( MxNumberSemitones(-1) );
-//    object.setIsStringPresent( true );
-//    object.stream( acss, 3, "_" );
-//    exss.str( "" );
-//    exss << "___" << "<bass-step>F</bass-step>" << std::endl;
-//    exss << "___" << "<string>-1</string>";
-//    expected = exss.str();
-//    actual = acss.str();
-//	CHECK_EQUAL( expected, actual )
-//    
-//    acss.str( "" );
-//    val2->setValue( MxNumberSemitones( 0 ) );
-//    object.setIsStringPresent( true );
-//    object.stream( acss );
-//    exss.str( "" );
-//    exss << "" << "<bass-step>F</bass-step>" << std::endl;
-//    exss << "" << "<string>0</string>";
-//    expected = exss.str();
-//    actual = acss.str();
-//	CHECK_EQUAL( expected, actual )
-//    
-//    acss.str( "" );
-//    object.setIsStringPresent( true );
-//    val2->setValue( MxNumberSemitones(1) );
-//    acss << object;
-//    exss.str( "" );
-//    exss << "" << "<bass-step>F</bass-step>" << std::endl;
-//    exss << "" << "<string>1</string>";
-//    expected = exss.str();
-//    actual = acss.str();
-//	CHECK_EQUAL( expected, actual )
-//    
-//    object.setIsStringPresent( true );
-//    val1->setValue( enums::Step::g );
-//    object.getString()->setValue( MxNumberSemitones( 2 ) );
-//    exss.str( "" );
-//    exss << "" << "<bass-step>G</bass-step>" << std::endl;
-//    exss << "" << "<string>2</string>";
-//    expected = exss.str();
-//    actual = object.toString();
-//	CHECK_EQUAL( expected, actual )
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss, 1, "\t" );
+    exss << "\t" << "<string color=\"#121314\">1</string>" << std::endl;
+    exss << "\t" << "<fret>2</fret>" << std::endl;
+    exss << "\t" << "<fingering>hello</fingering>" << std::endl;
+    exss << "\t" << "<barre type=\"stop\"/>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss, 3, ".-" );
+    exss << ".-.-.-" << "<string color=\"#121314\">1</string>" << std::endl;
+    exss << ".-.-.-" << "<fret>2</fret>" << std::endl;
+    exss << ".-.-.-" << "<fingering>hello</fingering>" << std::endl;
+    exss << ".-.-.-" << "<barre type=\"stop\"/>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss );
+    exss.str( "" );
+    exss << "" << "<string color=\"#121314\">1</string>" << std::endl;
+    exss << "" << "<fret>2</fret>" << std::endl;
+    exss << "" << "<fingering>hello</fingering>" << std::endl;
+    exss << "" << "<barre type=\"stop\"/>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    acss << object;
+    exss.str( "" );
+    exss << "" << "<string color=\"#121314\">1</string>" << std::endl;
+    exss << "" << "<fret>2</fret>" << std::endl;
+    exss << "" << "<fingering>hello</fingering>" << std::endl;
+    exss << "" << "<barre type=\"stop\"/>";
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+   
+    exss.str( "" );
+    acss << object;
+    exss.str( "" );
+    exss << "" << "<string color=\"#121314\">1</string>" << std::endl;
+    exss << "" << "<fret>2</fret>" << std::endl;
+    exss << "" << "<fingering>hello</fingering>" << std::endl;
+    exss << "" << "<barre type=\"stop\"/>";
+    expected = exss.str();
+    actual = object.toString();
+	CHECK_EQUAL( expected, actual )
 }

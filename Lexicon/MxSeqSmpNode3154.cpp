@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-12 16:19:45
+  * @date       2014-12-14 18:08:34
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3154
@@ -181,15 +181,28 @@ namespace lexicon
 
 		std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in ) const
 		{
-            hidden::indent( os_out, indentcount_in, indentchars_in );
-            getBassStep()->stream( os_out );
-            if ( getIsBassAlterPresent() )
-            {
-                os_out << std::endl;
-                hidden::indent( os_out, indentcount_in, indentchars_in );
-                getBassAlter()->stream( os_out );
-            }
-            return os_out;
+			bool isFirst = true;
+			if( getIsBassStepPresent() )
+			{
+				if ( isFirst == false )
+				{
+					os_out << std::endl;
+				}
+				hidden::indent( os_out, indentcount_in, indentchars_in );
+				getBassStep()->stream( os_out );
+				isFirst = false;
+			}
+			if( getIsBassAlterPresent() )
+			{
+				if ( isFirst == false )
+				{
+					os_out << std::endl;
+				}
+				hidden::indent( os_out, indentcount_in, indentchars_in );
+				getBassAlter()->stream( os_out );
+				isFirst = false;
+			}
+			return os_out;
 		}
 
 	}; // struct MxSeqSmpNode3154::Impl

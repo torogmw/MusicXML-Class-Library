@@ -33,9 +33,9 @@ namespace XsdClasses
         /* Functions */
         void init();
         void addDataMemberAndFunctionsOnsie( const mjb::HClassBldr& bldr, const std::string& elementName, bool isRequired,
-                                            int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype );
+                                            int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype, std::stringstream& streamCode, int& memberNumberCounter );
         void addDataMemberAndFunctionsVector( const mjb::HClassBldr& bldr, const std::string& elementName, bool isRequired,
-                                            int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype );
+                                            int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype, std::stringstream& streamCode, int& memberNumberCounter );
         
         
         

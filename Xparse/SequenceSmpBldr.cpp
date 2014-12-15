@@ -99,35 +99,14 @@ namespace XsdClasses
         IClassBldr::addPublicInclude( Include( "vector", true ) );
         IClassBldr::addPublicInclude( Include( "LexiconBaseObjects.h", false ) );
         IClassBldr::addPrivateInclude( Include( this->getHFileInfo().getFileName(), false ) );
+        IClassBldr::addPrivateInclude( Include( "_hidden_indent.h", false ) );
         
         /* INIT Set up TestGroup Helper */
         TFunc::setClassBldr( this );
         TFunc::setTestNumber( 0 );
         addTestGroup( TFunc::getClassInfoTests() );
         
-        /* For each element, add appropriate data member, functions, and include */
-        for ( HClassBldr h : myElementBldrs )
-        {
-            ElementType etype = ElementCategorize::getType( h->getXsdNode() );
-            int minOccurs = ElementCategorize::getMinOccurs( h->getXsdNode() );
-            int maxOccurs = ElementCategorize::getMaxOccurs( h->getXsdNode() );
-            bool isUnBounded = ElementCategorize::isMaxOccursUnbounded( h->getXsdNode() );
-            std::string elementName = ElementCategorize::getCppName( h->getXsdNode() );
-            bool isRequired = ( minOccurs > 0 );
-            bool isVector = ( maxOccurs > 1 );
-            
-            if ( ! isVector )
-            {
-                addDataMemberAndFunctionsOnsie( h, elementName, isRequired, minOccurs, maxOccurs, isUnBounded, etype );
-            }
-            else
-            {
-                addDataMemberAndFunctionsVector( h, elementName, isRequired, minOccurs, maxOccurs, isUnBounded, etype );
-            }
-            
-        }
-        
-        /* Add the stream function */
+        /* start the stream function */
         Function stream;
         stream.setName( "stream" );
         stream.isVirtual( true );
@@ -153,16 +132,46 @@ namespace XsdClasses
         stream.addParameter( streamParam1 );
         stream.addParameter( streamParam2 );
         stream.addParameter( streamParam3 );
-        std::stringstream streamCode( "throw \"todo: write the code.\";");
-        stream.setCode( streamCode );
         FunctionGroup stringy;
         stringy.setName( "Stringing and Streaming" );
+        
+        std::stringstream streamCode( "" );
+        int memberNumber = 0;
+        streamCode << "bool isFirst = true;" << end();
+        
+        /* For each element, add appropriate data member, functions, and include */
+        for ( HClassBldr h : myElementBldrs )
+        {
+            ElementType etype = ElementCategorize::getType( h->getXsdNode() );
+            int minOccurs = ElementCategorize::getMinOccurs( h->getXsdNode() );
+            int maxOccurs = ElementCategorize::getMaxOccurs( h->getXsdNode() );
+            bool isUnBounded = ElementCategorize::isMaxOccursUnbounded( h->getXsdNode() );
+            std::string elementName = ElementCategorize::getCppName( h->getXsdNode() );
+            bool isRequired = ( minOccurs > 0 );
+            bool isVector = ( maxOccurs > 1 );
+            
+            
+            
+            
+            if ( ! isVector )
+            {
+                addDataMemberAndFunctionsOnsie( h, elementName, isRequired, minOccurs, maxOccurs, isUnBounded, etype, streamCode, memberNumber );
+                ++memberNumber;
+            }
+            else
+            {
+                addDataMemberAndFunctionsVector( h, elementName, isRequired, minOccurs, maxOccurs, isUnBounded, etype, streamCode, memberNumber );
+                ++memberNumber;
+            }
+        }
+        streamCode << "return os_out;";
+        stream.setCode( streamCode );
         stringy.addFunction( stream );
         this->addPublicFunctionGroup( stringy );
     }
     
     void SequenceSmpBldr::addDataMemberAndFunctionsOnsie( const HClassBldr& bldr, const std::string& elementName, bool isRequired,
-                                        int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype )
+                                                         int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype, std::stringstream& streamCode, int& memberNumberCounter )
     {
         /* Create an empty FunctionGroup */
         FunctionGroup fgrp;
@@ -253,62 +262,61 @@ namespace XsdClasses
         }
         
         
-        if ( true )//etype != ElementType::CxEmptyRef )
+
+        Function GetValueFunc;
+        std::stringstream getValueFuncName;
+        getValueFuncName << "get" << elementName;
+        GetValueFunc.setName( getValueFuncName.str() );
+        GetValueFunc.setReturnType( dmValue.getDataType() );
+        GetValueFunc.isConst( true );
+        std::stringstream getValueDocumentation;
+        getValueDocumentation << "Returns a shared pointer handle to the <" << elementName << "> element. ";
+        getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, this value will still exist (even though it is not in the xml document) and you should ignore it.";
+        GetValueFunc.setDocumentation( getValueDocumentation.str() );
+        std::stringstream getValueFuncCode;
+        getValueFuncCode << "return " << dmValue.getName() << ";" << end();
+        GetValueFunc.setCode( getValueFuncCode );
+        fgrp.addFunction( GetValueFunc );
+        
+        test = TFunc::testStub( 1, "std::string", GetValueFunc.getName() );
+        test.addCodeLine( 0, dmValue.getDataType() + " element;" );
+        ex.str( "\"\"" );
+        TFunc::checkEq( test, ex.str(), "object." + GetValueFunc.getName() + "()->toString()" );
+        tgrp.addTest( test );
+        
+        Function SetValueFunc;
+        std::stringstream setValueFuncName;
+        setValueFuncName << "set" << elementName;
+        SetValueFunc.setName( setValueFuncName.str() );
+        SetValueFunc.isConst( false );
+        Parameter SetValueFuncParameter;
+        SetValueFuncParameter.setName( "value_in" );
+        std::stringstream setValueFuncParameterDataType;
+        setValueFuncParameterDataType << dmValue.getDataType();
+        SetValueFuncParameter.setDataType( setValueFuncParameterDataType.str() );
+        SetValueFuncParameter.isConst( true );
+        SetValueFuncParameter.setParameterType( mjb::Parameter::ParameterType::Reference );
+        SetValueFunc.addParameter( SetValueFuncParameter );
+        std::stringstream setValueDocumentation;
+        setValueDocumentation << "Sets the internal shared pointer handle for the <" << elementName << "> element. ";
+        if ( !isRequired )
         {
-            Function GetValueFunc;
-            std::stringstream getValueFuncName;
-            getValueFuncName << "get" << elementName;
-            GetValueFunc.setName( getValueFuncName.str() );
-            GetValueFunc.setReturnType( dmValue.getDataType() );
-            GetValueFunc.isConst( true );
-            std::stringstream getValueDocumentation;
-            getValueDocumentation << "Returns a shared pointer handle to the <" << elementName << "> element. ";
-            getValueDocumentation << "Note that if " << GetIsPresentFunc.getName() << " is false, this value will still exist (even though it is not in the xml document) and you should ignore it.";
-            GetValueFunc.setDocumentation( getValueDocumentation.str() );
-            std::stringstream getValueFuncCode;
-            getValueFuncCode << "return " << dmValue.getName() << ";" << end();
-            GetValueFunc.setCode( getValueFuncCode );
-            fgrp.addFunction( GetValueFunc );
-            
-            test = TFunc::testStub( 1, "std::string", GetValueFunc.getName() );
-            test.addCodeLine( 0, dmValue.getDataType() + " element;" );
-            ex.str( "\"\"" );
-            TFunc::checkEq( test, ex.str(), "object." + GetValueFunc.getName() + "()->toString()" );
-            tgrp.addTest( test );
-            
-            Function SetValueFunc;
-            std::stringstream setValueFuncName;
-            setValueFuncName << "set" << elementName;
-            SetValueFunc.setName( setValueFuncName.str() );
-            SetValueFunc.isConst( false );
-            Parameter SetValueFuncParameter;
-            SetValueFuncParameter.setName( "value_in" );
-            std::stringstream setValueFuncParameterDataType;
-            setValueFuncParameterDataType << dmValue.getDataType();
-            SetValueFuncParameter.setDataType( setValueFuncParameterDataType.str() );
-            SetValueFuncParameter.isConst( true );
-            SetValueFuncParameter.setParameterType( mjb::Parameter::ParameterType::Reference );
-            SetValueFunc.addParameter( SetValueFuncParameter );
-            std::stringstream setValueDocumentation;
-            setValueDocumentation << "Sets the internal shared pointer handle for the <" << elementName << "> element. ";
-            if ( !isRequired )
-            {
-                setValueDocumentation << "Note that if " << SetIsPresentFunc.getName() << " is false, the internal shared ";
-                setValueDocumentation << "pointer will not be altered and will hold a value that does not exist in xml.";
-            }
-            SetValueFunc.setDocumentation( setValueDocumentation.str() );
-            std::stringstream setValueFuncCode;
-            setValueFuncCode << dmValue.getName() << " = value_in;";
-            SetValueFunc.setCode( setValueFuncCode );
-            SetValueFunc.setReturnType( "void" );
-            fgrp.addFunction( SetValueFunc );
-            
-            test = TFunc::testStub( 1, "std::string", SetValueFunc.getName() );
-            test.addCodeLine( 0, dmValue.getDataType() + " element;" );
-            ex.str( "\"\"" );
-            TFunc::checkEq( test, ex.str(), "object." + GetValueFunc.getName() + "()->toString()" );
-            tgrp.addTest( test );
+            setValueDocumentation << "Note that if " << SetIsPresentFunc.getName() << " is false, the internal shared ";
+            setValueDocumentation << "pointer will not be altered and will hold a value that does not exist in xml.";
         }
+        SetValueFunc.setDocumentation( setValueDocumentation.str() );
+        std::stringstream setValueFuncCode;
+        setValueFuncCode << dmValue.getName() << " = value_in;";
+        SetValueFunc.setCode( setValueFuncCode );
+        SetValueFunc.setReturnType( "void" );
+        fgrp.addFunction( SetValueFunc );
+        
+        test = TFunc::testStub( 1, "std::string", SetValueFunc.getName() );
+        test.addCodeLine( 0, dmValue.getDataType() + " element;" );
+        ex.str( "\"\"" );
+        TFunc::checkEq( test, ex.str(), "object." + GetValueFunc.getName() + "()->toString()" );
+        tgrp.addTest( test );
+
         
         
         Function getMinOccurs;
@@ -368,7 +376,6 @@ namespace XsdClasses
         getUnboundedCode << "return my" << elementName << "->getIsMaxOccursUnbounded();";
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
-        addPublicFunctionGroup( fgrp );
         
         test = TFunc::testStub( 1, "bool", getUnbounded.getName() );
         ex.str( "" );
@@ -376,11 +383,36 @@ namespace XsdClasses
         TFunc::checkEq( test, ex.str(), "object." + getUnbounded.getName() + "()" );
         tgrp.addTest( test );
     
+        addPublicFunctionGroup( fgrp );
         addTestGroup( tgrp );
+        
+        /* Add code to the stream function */
+        streamCode << "if( " << GetIsPresentFunc.getName() << "() )" << end();
+        streamCode << "{" << end();
+        streamCode << tab( 1 ) << "if ( isFirst == false )" << end();
+        streamCode << tab( 1 ) << "{" << end();
+        streamCode << tab( 2 ) << "os_out << std::endl;" << end();
+        streamCode << tab( 1 ) << "}" << end();
+        streamCode << tab( 1 ) << "hidden::indent( os_out, indentcount_in, indentchars_in );" << end();
+        streamCode << tab( 1 ) << GetValueFunc.getName() << "()->stream( os_out );" << end();
+        streamCode << tab( 1 ) << "isFirst = false;" << end();
+        streamCode << "}" << end();
+        
+        /*
+         
+         getBassStep()->stream( os_out );
+         if ( getIsBassAlterPresent() )
+         {
+         os_out << std::endl;
+         hidden::indent( os_out, indentcount_in, indentchars_in );
+         getBassAlter()->stream( os_out );
+         }
+         return os_out;
+         */
     }
     
     void SequenceSmpBldr::addDataMemberAndFunctionsVector( const HClassBldr& bldr, const std::string& elementName, bool isRequired,
-                                                         int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype )
+                                                         int minOccurs, int maxOccurs, bool isUnbounded, ElementType etype, std::stringstream& streamCode, int& memberNumberCounter )
     {
         /* Create an empty FunctionGroup */
         FunctionGroup fgrp;
@@ -636,6 +668,8 @@ namespace XsdClasses
                 ss << std::endl;
             }
         }
+        ss << baselineIndent( 1 ) << "/* unhide the stream function */" << end();
+        ss << baselineIndent( 1 ) << "using MxIndentable::stream;" << end();
         
         /** H File Declare Impl **/
         SectionSeparatorComment implComment( "Impl", 90 );
