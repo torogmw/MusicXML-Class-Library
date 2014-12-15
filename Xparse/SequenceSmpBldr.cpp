@@ -443,7 +443,8 @@ namespace XsdClasses
         std::stringstream GetCountFuncDocumentation;
         GetCountFuncDocumentation << "Returns the count of <" << elementName << "> elements.";
         GetCountFunc.setDocumentation( GetCountFuncDocumentation.str() );
-        std::stringstream GetCountFuncCode( "throw \"todo: write the code.\";");
+        std::stringstream GetCountFuncCode;
+        GetCountFuncCode << "return " << dmValue.getName() << ".size();";
         GetCountFunc.setCode( GetCountFuncCode );
         fgrp.addFunction( GetCountFunc );
         
@@ -457,10 +458,14 @@ namespace XsdClasses
         tgrp.addTest( test );
         
         
-        std::stringstream BeginCode( "throw \"todo: write the code.\";");
-        std::stringstream EndCode( "throw \"todo: write the code.\";");
-        std::stringstream BeginConstCode( "throw \"todo: write the code.\";");
-        std::stringstream EndConstCode( "throw \"todo: write the code.\";");
+        std::stringstream BeginCode;
+        BeginCode << "return " << dmValue.getName() << ".begin();";
+        std::stringstream EndCode;
+        EndCode << "return " << dmValue.getName() << ".end();";
+        std::stringstream BeginConstCode;
+        BeginConstCode << "return " << dmValue.getName() << ".cbegin();";
+        std::stringstream EndConstCode;
+        EndConstCode << "return " << dmValue.getName() << ".cend();";
         
         Function GetElementsBegin;
         std::stringstream GetElementsBeginName;
@@ -518,7 +523,17 @@ namespace XsdClasses
         tgrp.addTest( test );
         
         Function AddElement;
-        std::stringstream AddElementCode( "throw \"todo: write the code.\";");
+        std::stringstream AddElementCode;
+        AddElementCode << "if( " << dmValue.getName() << ".size() >= ( get" << elementName << "MaxOccurs() - 1 ) )" << end();
+        AddElementCode << "{" << end();
+        AddElementCode << tab( 1 ) << "return false;" << end();
+        AddElementCode << "}" << end();
+        AddElementCode << "else if( value_in->get() == nullptr )" << end();
+        AddElementCode << "{" << end();
+        AddElementCode << tab( 1 ) << "return false;" << end();
+        AddElementCode << "}" << end();
+        AddElementCode << dmValue.getName() << ".push_back( value_in );" << end();
+        AddElementCode << "return true;";
         std::stringstream AddElementName;
         AddElementName << "add" << elementName;
         Parameter AddElementParameter;
@@ -540,7 +555,17 @@ namespace XsdClasses
         tgrp.addTest( test );
         
         Function RemoveElement;
-        std::stringstream RemoveElementCode( "throw \"todo: write the code.\";");
+        std::stringstream RemoveElementCode;
+        RemoveElementCode << "if( " << dmValue.getName() << ".size() <= get" << elementName << "MinOccurs() )" << end();
+        RemoveElementCode << "{" << end();
+        RemoveElementCode << tab( 1 ) << "return false;" << end();
+        RemoveElementCode << "}" << end();
+        RemoveElementCode << "else if( value_in == " << GetElementsEnd.getName() << "() )" << end();
+        RemoveElementCode << "{" << end();
+        RemoveElementCode << tab( 1 ) << "return false;" << end();
+        RemoveElementCode << "}" << end();
+        RemoveElementCode << dmValue.getName() << ".erase( value_in );" << end();
+        RemoveElementCode << "return true;";
         std::stringstream RemoveElementName;
         RemoveElementName << "remove" << elementName;
         Parameter RemoveElementParameter;
@@ -571,7 +596,8 @@ namespace XsdClasses
         getMinOccursDocumentation << "Returns the minimum number of occurences of the <" << elementName << "> element. ";
         getMinOccursDocumentation << " i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means the element is optional.";
         getMinOccurs.setDocumentation( getMinOccursDocumentation.str() );
-        std::stringstream getMinOccursCode( "throw \"todo: write the code.\";");
+        std::stringstream getMinOccursCode;
+        getMinOccursCode << "return " << minOccurs << ";";
         getMinOccurs.setCode( getMinOccursCode );
         fgrp.addFunction( getMinOccurs );
         
@@ -592,7 +618,8 @@ namespace XsdClasses
         getMaxOccursDocumentation << "Typically the MaxOccurs is specified as either '1' or 'unbounded'.  When the specification says 'unbounded' ";
         getMaxOccursDocumentation << "'getIs" << elementName << "Unbounded' will return 'true' and the return value of '" << getMaxOccurs.getName() << "' should be ignored.";
         getMaxOccurs.setDocumentation( getMaxOccursDocumentation.str() );
-        std::stringstream getMaxOccursCode( "throw \"todo: write the code.\";");
+        std::stringstream getMaxOccursCode;
+        getMaxOccursCode << "return " << maxOccurs << ";";
         getMaxOccurs.setCode( getMaxOccursCode );
         fgrp.addFunction( getMaxOccurs );
         
@@ -612,7 +639,8 @@ namespace XsdClasses
         getUnboundedDocumentation << "Returns 'true' if the specification says that the maximum number of occurences of the <" << elementName << "> element is 'unbounded'.";
         getUnboundedDocumentation << "When this function returns 'true', the value returned by '" << getMaxOccurs.getName() << "' should be ignored.";
         getUnbounded.setDocumentation( getUnboundedDocumentation.str() );
-        std::stringstream getUnboundedCode( "throw \"todo: write the code.\";");
+        std::stringstream getUnboundedCode;
+        getUnboundedCode << "return " << std::boolalpha << isUnbounded << ";";
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
         
@@ -624,6 +652,22 @@ namespace XsdClasses
         
         addPublicFunctionGroup( fgrp );
         addTestGroup( tgrp );
+        
+        /* Add code to the stream function */
+        streamCode << "if( " << GetCountFunc.getName() << "() > 0 )" << end();
+        streamCode << "{" << end();
+        streamCode << tab( 1 ) << "for ( auto it = " << GetElementsBegin.getName() << "(); ";
+        streamCode << "it != " << GetElementsEnd.getName() << "(); ++it )" << end();
+        streamCode << tab( 1 ) << "{" << end();
+        streamCode << tab( 2 ) << "if ( isFirst == false )" << end();
+        streamCode << tab( 2 ) << "{" << end();
+        streamCode << tab( 3 ) << "os_out << std::endl;" << end();
+        streamCode << tab( 2 ) << "}" << end();
+        streamCode << tab( 2 ) << "hidden::indent( os_out, indentcount_in, indentchars_in );" << end();
+        streamCode << tab( 2 ) << "(*it)->stream( os_out );" << end();
+        streamCode << tab( 2 ) << "isFirst = false;" << end();
+        streamCode << tab( 1 ) << "}" << end();
+        streamCode << "}" << end();
     }
 
     

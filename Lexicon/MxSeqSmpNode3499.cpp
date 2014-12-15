@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-12 16:19:50
+  * @date       2014-12-14 19:05:54
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3499
@@ -16,6 +16,7 @@
  **/
 
 #include "MxSeqSmpNode3499.h"
+#include "_hidden_indent.h"
 
 /* Impl ------------------------------------------------------------------------------- */
 
@@ -63,31 +64,31 @@ namespace lexicon
 		/** Returns the count of <Feature> elements. **/
 		std::size_t getFeatureCount() const
 		{
-			throw "todo: write the code.";
+			return myFeatureCollection.size();
 		}
 
 		/** Returns an STL iterator into the contained collection of element handles. **/
 		MxEsFeaturesIter getFeatureBegin()
 		{
-			throw "todo: write the code.";
+			return myFeatureCollection.begin();
 		}
 
 		/** Returns an STL iterator into the contained collection of element handles. **/
 		MxEsFeaturesIter getFeatureEnd()
 		{
-			throw "todo: write the code.";
+			return myFeatureCollection.end();
 		}
 
 		/** Returns an STL iterator into the contained collection of element handles. **/
 		MxEsFeaturesIterConst getFeatureBeginConst() const
 		{
-			throw "todo: write the code.";
+			return myFeatureCollection.cbegin();
 		}
 
 		/** Returns an STL iterator into the contained collection of element handles. **/
 		MxEsFeaturesIterConst getFeatureEndConst() const
 		{
-			throw "todo: write the code.";
+			return myFeatureCollection.cend();
 		}
 
 		/** Adds the element handle to the internal collection. Returns 'true'
@@ -96,7 +97,16 @@ namespace lexicon
 		    fail.  If you try to add a nullptr this function will fail. **/
 		bool addFeature( const MxEsFeaturesIter& value_in )
 		{
-			throw "todo: write the code.";
+			if( myFeatureCollection.size() >= ( getFeatureMaxOccurs() - 1 ) )
+			{
+				return false;
+			}
+			else if( ! *value_in )
+			{
+				return false;
+			}
+			myFeatureCollection.push_back( value_in );
+			return true;
 		}
 
 		/** Removes the element handle to the internal collection. Returns 'true'
@@ -105,7 +115,16 @@ namespace lexicon
 		    this function will fail. **/
 		bool removeFeature( const MxEsFeaturesIter& value_in )
 		{
-			throw "todo: write the code.";
+			if( myFeatureCollection.size() <= getFeatureMinOccurs() )
+			{
+				return false;
+			}
+			else if( value_in == getFeatureEndConst() )
+			{
+				return false;
+			}
+			myFeatureCollection.erase( value_in );
+			return true;
 		}
 
 		/** Returns the minimum number of occurences of the <Feature> element.
@@ -113,7 +132,7 @@ namespace lexicon
 		    the element is optional. **/
 		int getFeatureMinOccurs() const
 		{
-			throw "todo: write the code.";
+			return 0;
 		}
 
 		/** Returns the maximum number of occurences of the <Feature> element.
@@ -123,7 +142,7 @@ namespace lexicon
 		    be ignored. **/
 		int getFeatureMaxOccurs() const
 		{
-			throw "todo: write the code.";
+			return 32767;
 		}
 
 		/** Returns 'true' if the specification says that the maximum number of
@@ -132,14 +151,28 @@ namespace lexicon
 		    be ignored. **/
 		int getIsFeatureUnbounded() const
 		{
-			throw "todo: write the code.";
+			return true;
 		}
 
 /* Stringing and Streaming ------------------------------------------------------------ */
 
 		std::ostream& stream( std::ostream& os_out, int indentcount_in, const char* indentchars_in ) const
 		{
-			throw "todo: write the code.";
+			bool isFirst = true;
+			if( getFeatureCount() > 0 )
+			{
+				for ( auto it = getFeatureBeginConst(); it != getFeatureEndConst(); ++it )
+				{
+					if ( isFirst == false )
+					{
+						os_out << std::endl;
+					}
+					hidden::indent( os_out, indentcount_in, indentchars_in );
+					(*it)->stream( os_out );
+					isFirst = false;
+				}
+			}
+			return os_out;
 		}
 
 	}; // struct MxSeqSmpNode3499::Impl

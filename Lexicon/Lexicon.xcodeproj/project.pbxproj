@@ -24,8 +24,8 @@
 		2907D6DF1A1986E400787095 /* XsIdRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2907D6DD1A1986E400787095 /* XsIdRef.cpp */; };
 		2907D6E01A1986E400787095 /* XsIdRef.h in Headers */ = {isa = PBXBuildFile; fileRef = 2907D6DE1A1986E400787095 /* XsIdRef.h */; };
 		291500701A368117009B2E5F /* XparseHelperFunctions_getElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2915006F1A368117009B2E5F /* XparseHelperFunctions_getElements.cpp */; };
-		29199F261A3E7A6700277FC2 /* MxSeqSmpNode3154.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29199F241A3E7A6700277FC2 /* MxSeqSmpNode3154.cpp */; };
-		29199F271A3E7A6700277FC2 /* MxSeqSmpNode3154.h in Headers */ = {isa = PBXBuildFile; fileRef = 29199F251A3E7A6700277FC2 /* MxSeqSmpNode3154.h */; };
+		29199F501A3E88CE00277FC2 /* MxSeqSmpNode3499.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29199F2E1A3E88CE00277FC2 /* MxSeqSmpNode3499.cpp */; };
+		29199F511A3E88CE00277FC2 /* MxSeqSmpNode3499.h in Headers */ = {isa = PBXBuildFile; fileRef = 29199F2F1A3E88CE00277FC2 /* MxSeqSmpNode3499.h */; };
 		2929BA301A30E79C00179298 /* MxCxSmpDirective.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2929BA2E1A30E79C00179298 /* MxCxSmpDirective.cpp */; };
 		2929BA311A30E79C00179298 /* MxCxSmpDirective.h in Headers */ = {isa = PBXBuildFile; fileRef = 2929BA2F1A30E79C00179298 /* MxCxSmpDirective.h */; };
 		2935908F1A16A9F60022BAAA /* _hidden_AttributeRemoveSpaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 293590881A16A9F60022BAAA /* _hidden_AttributeRemoveSpaces.h */; };
@@ -803,38 +803,6 @@
 		29A01CFA1A3BB747006050A8 /* MxEmPageHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01CF81A3BB747006050A8 /* MxEmPageHeight.h */; };
 		29A01D001A3BB98E006050A8 /* MxEmPageWidth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01CFE1A3BB98E006050A8 /* MxEmPageWidth.cpp */; };
 		29A01D011A3BB98E006050A8 /* MxEmPageWidth.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01CFF1A3BB98E006050A8 /* MxEmPageWidth.h */; };
-		29A01D2D1A3BBDD9006050A8 /* MxSeqSmpNode3245.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D0B1A3BBDD9006050A8 /* MxSeqSmpNode3245.cpp */; };
-		29A01D2E1A3BBDD9006050A8 /* MxSeqSmpNode3245.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D0C1A3BBDD9006050A8 /* MxSeqSmpNode3245.h */; };
-		29A01D2F1A3BBDD9006050A8 /* MxSeqSmpNode3480.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D0D1A3BBDD9006050A8 /* MxSeqSmpNode3480.cpp */; };
-		29A01D301A3BBDD9006050A8 /* MxSeqSmpNode3480.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D0E1A3BBDD9006050A8 /* MxSeqSmpNode3480.h */; };
-		29A01D311A3BBDD9006050A8 /* MxSeqSmpNode3499.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D0F1A3BBDD9006050A8 /* MxSeqSmpNode3499.cpp */; };
-		29A01D321A3BBDD9006050A8 /* MxSeqSmpNode3499.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D101A3BBDD9006050A8 /* MxSeqSmpNode3499.h */; };
-		29A01D331A3BBDD9006050A8 /* MxSeqSmpNode3871.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D111A3BBDD9006050A8 /* MxSeqSmpNode3871.cpp */; };
-		29A01D341A3BBDD9006050A8 /* MxSeqSmpNode3871.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D121A3BBDD9006050A8 /* MxSeqSmpNode3871.h */; };
-		29A01D351A3BBDD9006050A8 /* MxSeqSmpNode3993.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D131A3BBDD9006050A8 /* MxSeqSmpNode3993.cpp */; };
-		29A01D361A3BBDD9006050A8 /* MxSeqSmpNode3993.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D141A3BBDD9006050A8 /* MxSeqSmpNode3993.h */; };
-		29A01D371A3BBDD9006050A8 /* MxSeqSmpNode4104.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D151A3BBDD9006050A8 /* MxSeqSmpNode4104.cpp */; };
-		29A01D381A3BBDD9006050A8 /* MxSeqSmpNode4104.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D161A3BBDD9006050A8 /* MxSeqSmpNode4104.h */; };
-		29A01D391A3BBDD9006050A8 /* MxSeqSmpNode4143.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D171A3BBDD9006050A8 /* MxSeqSmpNode4143.cpp */; };
-		29A01D3A1A3BBDD9006050A8 /* MxSeqSmpNode4143.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D181A3BBDD9006050A8 /* MxSeqSmpNode4143.h */; };
-		29A01D3B1A3BBDD9006050A8 /* MxSeqSmpNode4190.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D191A3BBDD9006050A8 /* MxSeqSmpNode4190.cpp */; };
-		29A01D3C1A3BBDD9006050A8 /* MxSeqSmpNode4190.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D1A1A3BBDD9006050A8 /* MxSeqSmpNode4190.h */; };
-		29A01D3D1A3BBDD9006050A8 /* MxSeqSmpNode4224.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D1B1A3BBDD9006050A8 /* MxSeqSmpNode4224.cpp */; };
-		29A01D3E1A3BBDD9006050A8 /* MxSeqSmpNode4224.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D1C1A3BBDD9006050A8 /* MxSeqSmpNode4224.h */; };
-		29A01D3F1A3BBDD9006050A8 /* MxSeqSmpNode4250.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D1D1A3BBDD9006050A8 /* MxSeqSmpNode4250.cpp */; };
-		29A01D401A3BBDD9006050A8 /* MxSeqSmpNode4250.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D1E1A3BBDD9006050A8 /* MxSeqSmpNode4250.h */; };
-		29A01D411A3BBDD9006050A8 /* MxSeqSmpNode4261.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D1F1A3BBDD9006050A8 /* MxSeqSmpNode4261.cpp */; };
-		29A01D421A3BBDD9006050A8 /* MxSeqSmpNode4261.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D201A3BBDD9006050A8 /* MxSeqSmpNode4261.h */; };
-		29A01D431A3BBDD9006050A8 /* MxSeqSmpNode5619.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D211A3BBDD9006050A8 /* MxSeqSmpNode5619.cpp */; };
-		29A01D441A3BBDD9006050A8 /* MxSeqSmpNode5619.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D221A3BBDD9006050A8 /* MxSeqSmpNode5619.h */; };
-		29A01D451A3BBDD9006050A8 /* MxSeqSmpNode6056.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D231A3BBDD9006050A8 /* MxSeqSmpNode6056.cpp */; };
-		29A01D461A3BBDD9006050A8 /* MxSeqSmpNode6056.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D241A3BBDD9006050A8 /* MxSeqSmpNode6056.h */; };
-		29A01D471A3BBDD9006050A8 /* MxSeqSmpNode6156.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D251A3BBDD9006050A8 /* MxSeqSmpNode6156.cpp */; };
-		29A01D481A3BBDD9006050A8 /* MxSeqSmpNode6156.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D261A3BBDD9006050A8 /* MxSeqSmpNode6156.h */; };
-		29A01D491A3BBDD9006050A8 /* MxSeqSmpNode6250.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D271A3BBDD9006050A8 /* MxSeqSmpNode6250.cpp */; };
-		29A01D4A1A3BBDD9006050A8 /* MxSeqSmpNode6250.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D281A3BBDD9006050A8 /* MxSeqSmpNode6250.h */; };
-		29A01D4B1A3BBDD9006050A8 /* MxSeqSmpNode6271.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A01D291A3BBDD9006050A8 /* MxSeqSmpNode6271.cpp */; };
-		29A01D4C1A3BBDD9006050A8 /* MxSeqSmpNode6271.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A01D2A1A3BBDD9006050A8 /* MxSeqSmpNode6271.h */; };
 		29A1F95E1A2E9FBA00B69133 /* MxCxSmpAccidental.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F8DE1A2E9FBA00B69133 /* MxCxSmpAccidental.cpp */; };
 		29A1F95F1A2E9FBA00B69133 /* MxCxSmpAccidental.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A1F8DF1A2E9FBA00B69133 /* MxCxSmpAccidental.h */; };
 		29A1F9601A2E9FBA00B69133 /* MxCxSmpAccidentalMark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F8E01A2E9FBA00B69133 /* MxCxSmpAccidentalMark.cpp */; };
@@ -1133,8 +1101,8 @@
 		2907D6DD1A1986E400787095 /* XsIdRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsIdRef.cpp; sourceTree = "<group>"; };
 		2907D6DE1A1986E400787095 /* XsIdRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XsIdRef.h; sourceTree = "<group>"; };
 		2915006F1A368117009B2E5F /* XparseHelperFunctions_getElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XparseHelperFunctions_getElements.cpp; sourceTree = "<group>"; };
-		29199F241A3E7A6700277FC2 /* MxSeqSmpNode3154.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3154.cpp; sourceTree = "<group>"; };
-		29199F251A3E7A6700277FC2 /* MxSeqSmpNode3154.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3154.h; sourceTree = "<group>"; };
+		29199F2E1A3E88CE00277FC2 /* MxSeqSmpNode3499.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3499.cpp; sourceTree = "<group>"; };
+		29199F2F1A3E88CE00277FC2 /* MxSeqSmpNode3499.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3499.h; sourceTree = "<group>"; };
 		2929BA2E1A30E79C00179298 /* MxCxSmpDirective.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpDirective.cpp; sourceTree = "<group>"; };
 		2929BA2F1A30E79C00179298 /* MxCxSmpDirective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxCxSmpDirective.h; sourceTree = "<group>"; };
 		2935907B1A16A93D0022BAAA /* libLexicon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLexicon.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1917,38 +1885,6 @@
 		29A01CF81A3BB747006050A8 /* MxEmPageHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxEmPageHeight.h; sourceTree = "<group>"; };
 		29A01CFE1A3BB98E006050A8 /* MxEmPageWidth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmPageWidth.cpp; sourceTree = "<group>"; };
 		29A01CFF1A3BB98E006050A8 /* MxEmPageWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxEmPageWidth.h; sourceTree = "<group>"; };
-		29A01D0B1A3BBDD9006050A8 /* MxSeqSmpNode3245.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3245.cpp; sourceTree = "<group>"; };
-		29A01D0C1A3BBDD9006050A8 /* MxSeqSmpNode3245.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3245.h; sourceTree = "<group>"; };
-		29A01D0D1A3BBDD9006050A8 /* MxSeqSmpNode3480.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3480.cpp; sourceTree = "<group>"; };
-		29A01D0E1A3BBDD9006050A8 /* MxSeqSmpNode3480.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3480.h; sourceTree = "<group>"; };
-		29A01D0F1A3BBDD9006050A8 /* MxSeqSmpNode3499.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3499.cpp; sourceTree = "<group>"; };
-		29A01D101A3BBDD9006050A8 /* MxSeqSmpNode3499.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3499.h; sourceTree = "<group>"; };
-		29A01D111A3BBDD9006050A8 /* MxSeqSmpNode3871.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3871.cpp; sourceTree = "<group>"; };
-		29A01D121A3BBDD9006050A8 /* MxSeqSmpNode3871.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3871.h; sourceTree = "<group>"; };
-		29A01D131A3BBDD9006050A8 /* MxSeqSmpNode3993.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode3993.cpp; sourceTree = "<group>"; };
-		29A01D141A3BBDD9006050A8 /* MxSeqSmpNode3993.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode3993.h; sourceTree = "<group>"; };
-		29A01D151A3BBDD9006050A8 /* MxSeqSmpNode4104.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4104.cpp; sourceTree = "<group>"; };
-		29A01D161A3BBDD9006050A8 /* MxSeqSmpNode4104.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode4104.h; sourceTree = "<group>"; };
-		29A01D171A3BBDD9006050A8 /* MxSeqSmpNode4143.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4143.cpp; sourceTree = "<group>"; };
-		29A01D181A3BBDD9006050A8 /* MxSeqSmpNode4143.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode4143.h; sourceTree = "<group>"; };
-		29A01D191A3BBDD9006050A8 /* MxSeqSmpNode4190.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4190.cpp; sourceTree = "<group>"; };
-		29A01D1A1A3BBDD9006050A8 /* MxSeqSmpNode4190.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode4190.h; sourceTree = "<group>"; };
-		29A01D1B1A3BBDD9006050A8 /* MxSeqSmpNode4224.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4224.cpp; sourceTree = "<group>"; };
-		29A01D1C1A3BBDD9006050A8 /* MxSeqSmpNode4224.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode4224.h; sourceTree = "<group>"; };
-		29A01D1D1A3BBDD9006050A8 /* MxSeqSmpNode4250.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4250.cpp; sourceTree = "<group>"; };
-		29A01D1E1A3BBDD9006050A8 /* MxSeqSmpNode4250.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode4250.h; sourceTree = "<group>"; };
-		29A01D1F1A3BBDD9006050A8 /* MxSeqSmpNode4261.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode4261.cpp; sourceTree = "<group>"; };
-		29A01D201A3BBDD9006050A8 /* MxSeqSmpNode4261.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode4261.h; sourceTree = "<group>"; };
-		29A01D211A3BBDD9006050A8 /* MxSeqSmpNode5619.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode5619.cpp; sourceTree = "<group>"; };
-		29A01D221A3BBDD9006050A8 /* MxSeqSmpNode5619.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode5619.h; sourceTree = "<group>"; };
-		29A01D231A3BBDD9006050A8 /* MxSeqSmpNode6056.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6056.cpp; sourceTree = "<group>"; };
-		29A01D241A3BBDD9006050A8 /* MxSeqSmpNode6056.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode6056.h; sourceTree = "<group>"; };
-		29A01D251A3BBDD9006050A8 /* MxSeqSmpNode6156.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6156.cpp; sourceTree = "<group>"; };
-		29A01D261A3BBDD9006050A8 /* MxSeqSmpNode6156.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode6156.h; sourceTree = "<group>"; };
-		29A01D271A3BBDD9006050A8 /* MxSeqSmpNode6250.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6250.cpp; sourceTree = "<group>"; };
-		29A01D281A3BBDD9006050A8 /* MxSeqSmpNode6250.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode6250.h; sourceTree = "<group>"; };
-		29A01D291A3BBDD9006050A8 /* MxSeqSmpNode6271.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxSeqSmpNode6271.cpp; sourceTree = "<group>"; };
-		29A01D2A1A3BBDD9006050A8 /* MxSeqSmpNode6271.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxSeqSmpNode6271.h; sourceTree = "<group>"; };
 		29A1F8DE1A2E9FBA00B69133 /* MxCxSmpAccidental.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpAccidental.cpp; sourceTree = "<group>"; };
 		29A1F8DF1A2E9FBA00B69133 /* MxCxSmpAccidental.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxCxSmpAccidental.h; sourceTree = "<group>"; };
 		29A1F8E01A2E9FBA00B69133 /* MxCxSmpAccidentalMark.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpAccidentalMark.cpp; sourceTree = "<group>"; };
@@ -3446,40 +3382,8 @@
 		29ED91191A3A508600F0D5EA /* SeqSmp */ = {
 			isa = PBXGroup;
 			children = (
-				29199F241A3E7A6700277FC2 /* MxSeqSmpNode3154.cpp */,
-				29199F251A3E7A6700277FC2 /* MxSeqSmpNode3154.h */,
-				29A01D0B1A3BBDD9006050A8 /* MxSeqSmpNode3245.cpp */,
-				29A01D0C1A3BBDD9006050A8 /* MxSeqSmpNode3245.h */,
-				29A01D0D1A3BBDD9006050A8 /* MxSeqSmpNode3480.cpp */,
-				29A01D0E1A3BBDD9006050A8 /* MxSeqSmpNode3480.h */,
-				29A01D0F1A3BBDD9006050A8 /* MxSeqSmpNode3499.cpp */,
-				29A01D101A3BBDD9006050A8 /* MxSeqSmpNode3499.h */,
-				29A01D111A3BBDD9006050A8 /* MxSeqSmpNode3871.cpp */,
-				29A01D121A3BBDD9006050A8 /* MxSeqSmpNode3871.h */,
-				29A01D131A3BBDD9006050A8 /* MxSeqSmpNode3993.cpp */,
-				29A01D141A3BBDD9006050A8 /* MxSeqSmpNode3993.h */,
-				29A01D151A3BBDD9006050A8 /* MxSeqSmpNode4104.cpp */,
-				29A01D161A3BBDD9006050A8 /* MxSeqSmpNode4104.h */,
-				29A01D171A3BBDD9006050A8 /* MxSeqSmpNode4143.cpp */,
-				29A01D181A3BBDD9006050A8 /* MxSeqSmpNode4143.h */,
-				29A01D191A3BBDD9006050A8 /* MxSeqSmpNode4190.cpp */,
-				29A01D1A1A3BBDD9006050A8 /* MxSeqSmpNode4190.h */,
-				29A01D1B1A3BBDD9006050A8 /* MxSeqSmpNode4224.cpp */,
-				29A01D1C1A3BBDD9006050A8 /* MxSeqSmpNode4224.h */,
-				29A01D1D1A3BBDD9006050A8 /* MxSeqSmpNode4250.cpp */,
-				29A01D1E1A3BBDD9006050A8 /* MxSeqSmpNode4250.h */,
-				29A01D1F1A3BBDD9006050A8 /* MxSeqSmpNode4261.cpp */,
-				29A01D201A3BBDD9006050A8 /* MxSeqSmpNode4261.h */,
-				29A01D211A3BBDD9006050A8 /* MxSeqSmpNode5619.cpp */,
-				29A01D221A3BBDD9006050A8 /* MxSeqSmpNode5619.h */,
-				29A01D231A3BBDD9006050A8 /* MxSeqSmpNode6056.cpp */,
-				29A01D241A3BBDD9006050A8 /* MxSeqSmpNode6056.h */,
-				29A01D251A3BBDD9006050A8 /* MxSeqSmpNode6156.cpp */,
-				29A01D261A3BBDD9006050A8 /* MxSeqSmpNode6156.h */,
-				29A01D271A3BBDD9006050A8 /* MxSeqSmpNode6250.cpp */,
-				29A01D281A3BBDD9006050A8 /* MxSeqSmpNode6250.h */,
-				29A01D291A3BBDD9006050A8 /* MxSeqSmpNode6271.cpp */,
-				29A01D2A1A3BBDD9006050A8 /* MxSeqSmpNode6271.h */,
+				29199F2E1A3E88CE00277FC2 /* MxSeqSmpNode3499.cpp */,
+				29199F2F1A3E88CE00277FC2 /* MxSeqSmpNode3499.h */,
 			);
 			name = SeqSmp;
 			sourceTree = "<group>";
@@ -3512,7 +3416,6 @@
 				293591E31A16AA840022BAAA /* MxEnumTopBottom.h in Headers */,
 				293591E91A16AA840022BAAA /* MxEnumUpDown.h in Headers */,
 				299CD04E1A32C4FE00D0E0CD /* MxEsCancel.h in Headers */,
-				29A01D381A3BBDD9006050A8 /* MxSeqSmpNode4104.h in Headers */,
 				294CB5A21A3527E000CA2734 /* MxEmCreditType.h in Headers */,
 				29BBA25E1A2FE303004BEAC2 /* MxCxEmptyDashes.h in Headers */,
 				299CD0461A32C4FE00D0E0CD /* MxEsBassStep.h in Headers */,
@@ -3535,7 +3438,6 @@
 				29EAA1391A292C1600A32330 /* MxAttrGrpLineHeight.h in Headers */,
 				2972E5C81A3289A40018E453 /* MxEeLink.h in Headers */,
 				29EAA1291A292C1600A32330 /* MxAttrGrpEnclosure.h in Headers */,
-				29A01D3E1A3BBDD9006050A8 /* MxSeqSmpNode4224.h in Headers */,
 				294CB5F61A3527E000CA2734 /* MxEmOctaveChange.h in Headers */,
 				2972E5A61A3289A40018E453 /* MxEeExtend.h in Headers */,
 				2972E5E61A3289A40018E453 /* MxEePppp.h in Headers */,
@@ -3550,7 +3452,7 @@
 				2972E5D21A3289A40018E453 /* MxEeMp.h in Headers */,
 				29A1F9BB1A2E9FBA00B69133 /* MxCxSmpOtherPlay.h in Headers */,
 				294CB6001A3527E000CA2734 /* MxEmPedalStep.h in Headers */,
-				29A01D321A3BBDD9006050A8 /* MxSeqSmpNode3499.h in Headers */,
+				29199F511A3E88CE00277FC2 /* MxSeqSmpNode3499.h in Headers */,
 				2935925B1A16AA990022BAAA /* MxNumberStaffNumber.h in Headers */,
 				29A1F9751A2E9FBA00B69133 /* MxCxSmpDegreeType.h in Headers */,
 				294CB5DC1A3527E000CA2734 /* MxEmMetronomeRelation.h in Headers */,
@@ -3569,7 +3471,6 @@
 				299CD0A01A32C4FE00D0E0CD /* MxEsPartAbbreviation.h in Headers */,
 				299CD0941A32C4FE00D0E0CD /* MxEsNoteSize.h in Headers */,
 				29EAA1551A292C1600A32330 /* MxAttrGrpPrintStyle.h in Headers */,
-				29A01D4A1A3BBDD9006050A8 /* MxSeqSmpNode6250.h in Headers */,
 				299CD0701A32C4FE00D0E0CD /* MxEsGroupAbbreviation.h in Headers */,
 				294CB5A41A3527E000CA2734 /* MxEmDiatonic.h in Headers */,
 				2972E57A1A3289A40018E453 /* MxEeAccent.h in Headers */,
@@ -3609,7 +3510,6 @@
 				29BBA26C1A2FE303004BEAC2 /* MxCxEmptyEmptyPrintStyleAlign.h in Headers */,
 				299CD0B01A32C4FE00D0E0CD /* MxEsRehearsal.h in Headers */,
 				299CD0501A32C4FE00D0E0CD /* MxEsCreator.h in Headers */,
-				29A01D481A3BBDD9006050A8 /* MxSeqSmpNode6156.h in Headers */,
 				293591CF1A16AA840022BAAA /* MxEnumStickLocation.h in Headers */,
 				299CD0C41A32C4FE00D0E0CD /* MxEsTupletNumber.h in Headers */,
 				299CD0741A32C4FE00D0E0CD /* MxEsGroupName.h in Headers */,
@@ -3617,7 +3517,6 @@
 				2972E60C1A3289A40018E453 /* MxEeStopped.h in Headers */,
 				299CD0401A32C4FE00D0E0CD /* MxEsAccidentalMark.h in Headers */,
 				29BBA2941A2FE303004BEAC2 /* MxCxEmptyTupletDot.h in Headers */,
-				29A01D3A1A3BBDD9006050A8 /* MxSeqSmpNode4143.h in Headers */,
 				294CB58E1A3527E000CA2734 /* MxEmAlter.h in Headers */,
 				2935918B1A16AA840022BAAA /* MxEnumHoleClosedValue.h in Headers */,
 				293592311A16AA990022BAAA /* MxNumberAccordionMiddle.h in Headers */,
@@ -3690,9 +3589,7 @@
 				293591D91A16AA840022BAAA /* MxEnumTextDirection.h in Headers */,
 				2935917B1A16AA840022BAAA /* MxEnumFontStyle.h in Headers */,
 				294CB6401A3527E000CA2734 /* MxEmWorkNumber.h in Headers */,
-				29199F271A3E7A6700277FC2 /* MxSeqSmpNode3154.h in Headers */,
 				293591E71A16AA840022BAAA /* MxEnumTwoNoteTurn.h in Headers */,
-				29A01D441A3BBDD9006050A8 /* MxSeqSmpNode5619.h in Headers */,
 				29A01CFA1A3BB747006050A8 /* MxEmPageHeight.h in Headers */,
 				299CD0661A32C4FE00D0E0CD /* MxEsFigureNumber.h in Headers */,
 				2972E5DC1A3289A40018E453 /* MxEeP.h in Headers */,
@@ -3710,7 +3607,6 @@
 				2935916D1A16AA840022BAAA /* MxEnumDegreeSymbolValue.h in Headers */,
 				29A1F9811A2E9FBA00B69133 /* MxCxSmpFingering.h in Headers */,
 				299CD09E1A32C4FE00D0E0CD /* MxEsOtherTechnical.h in Headers */,
-				29A01D361A3BBDD9006050A8 /* MxSeqSmpNode3993.h in Headers */,
 				2972E61C1A3289A40018E453 /* MxEeTripleTongue.h in Headers */,
 				294CB2431A35224400CA2734 /* XsInteger.h in Headers */,
 				293592511A16AA990022BAAA /* MxNumberPositiveDivisions.h in Headers */,
@@ -3743,7 +3639,6 @@
 				2972E5981A3289A40018E453 /* MxEeDoit.h in Headers */,
 				29A1F9651A2E9FBA00B69133 /* MxCxSmpBarStyleColor.h in Headers */,
 				29BBA2801A2FE303004BEAC2 /* MxCxEmptyNonArpeggiate.h in Headers */,
-				29A01D461A3BBDD9006050A8 /* MxSeqSmpNode6056.h in Headers */,
 				294CB6341A3527E000CA2734 /* MxEmTuningStep.h in Headers */,
 				29A1F9CF1A2E9FBA00B69133 /* MxCxSmpString.h in Headers */,
 				2935926F1A16AAB30022BAAA /* MxYesNoNumber.h in Headers */,
@@ -3792,7 +3687,6 @@
 				29A1F97B1A2E9FBA00B69133 /* MxCxSmpEnding.h in Headers */,
 				293591ED1A16AA840022BAAA /* MxEnumUprightInverted.h in Headers */,
 				299CD0881A32C4FE00D0E0CD /* MxEsMeasureNumbering.h in Headers */,
-				29A01D2E1A3BBDD9006050A8 /* MxSeqSmpNode3245.h in Headers */,
 				299CD05A1A32C4FE00D0E0CD /* MxEsDistance.h in Headers */,
 				299CD0AA1A32C4FE00D0E0CD /* MxEsPrefix.h in Headers */,
 				2972E60A1A3289A40018E453 /* MxEeStaccato.h in Headers */,
@@ -3850,7 +3744,6 @@
 				29A1F9D31A2E9FBA00B69133 /* MxCxSmpTextElementData.h in Headers */,
 				29EAA1211A292C1600A32330 /* MxAttrGrpDashedFormatting.h in Headers */,
 				29BBA26E1A2FE303004BEAC2 /* MxCxEmptyEmptyTrillSound.h in Headers */,
-				29A01D401A3BBDD9006050A8 /* MxSeqSmpNode4250.h in Headers */,
 				2972E6021A3289A40018E453 /* MxEeSlashDot.h in Headers */,
 				2972E59E1A3289A40018E453 /* MxEeDoubleTongue.h in Headers */,
 				293591731A16AA840022BAAA /* MxEnumEffect.h in Headers */,
@@ -3883,7 +3776,6 @@
 				293591791A16AA840022BAAA /* MxEnumFermataShape.h in Headers */,
 				293592551A16AA990022BAAA /* MxNumberRotationDegrees.h in Headers */,
 				294CB5F81A3527E000CA2734 /* MxEmOtherDynamics.h in Headers */,
-				29A01D341A3BBDD9006050A8 /* MxSeqSmpNode3871.h in Headers */,
 				299CD09C1A32C4FE00D0E0CD /* MxEsOtherDirection.h in Headers */,
 				29A1F9AD1A2E9FBA00B69133 /* MxCxSmpNotehead.h in Headers */,
 				293591751A16AA840022BAAA /* MxEnumEnclosureShape.h in Headers */,
@@ -3919,7 +3811,6 @@
 				2972E5801A3289A40018E453 /* MxEeBarre.h in Headers */,
 				29A1F9D11A2E9FBA00B69133 /* MxCxSmpStyleText.h in Headers */,
 				294CB5AA1A3527E000CA2734 /* MxEmDivisions.h in Headers */,
-				29A01D4C1A3BBDD9006050A8 /* MxSeqSmpNode6271.h in Headers */,
 				2907D6E01A1986E400787095 /* XsIdRef.h in Headers */,
 				29BBA2901A2FE303004BEAC2 /* MxCxEmptyTie.h in Headers */,
 				29BBA2821A2FE303004BEAC2 /* MxCxEmptyOctaveShift.h in Headers */,
@@ -4002,13 +3893,11 @@
 				2972E5921A3289A40018E453 /* MxEeDampAll.h in Headers */,
 				29EAA1251A292C1600A32330 /* MxAttrGrpDocumentAttributes.h in Headers */,
 				2935916B1A16AA840022BAAA /* MxEnumCssFontSize.h in Headers */,
-				29A01D301A3BBDD9006050A8 /* MxSeqSmpNode3480.h in Headers */,
 				293591DF1A16AA840022BAAA /* MxEnumTimeSymbol.h in Headers */,
 				299CD0601A32C4FE00D0E0CD /* MxEsEnding.h in Headers */,
 				2935917D1A16AA840022BAAA /* MxEnumFontWeight.h in Headers */,
 				2907D6CB1A19804E00787095 /* XlinkRole.h in Headers */,
 				294CB6321A3527E000CA2734 /* MxEmTuningOctave.h in Headers */,
-				29A01D3C1A3BBDD9006050A8 /* MxSeqSmpNode4190.h in Headers */,
 				293592451A16AA990022BAAA /* MxNumberNumberLevel.h in Headers */,
 				299CD0901A32C4FE00D0E0CD /* MxEsMultipleRest.h in Headers */,
 				29BBA27E1A2FE303004BEAC2 /* MxCxEmptyLyricLanguage.h in Headers */,
@@ -4028,7 +3917,6 @@
 				2999FA5E1A191D2A00698417 /* XsToken.h in Headers */,
 				2935919F1A16AA840022BAAA /* MxEnumMembrane.h in Headers */,
 				29BBA2741A2FE303004BEAC2 /* MxCxEmptyHorizontalTurn.h in Headers */,
-				29A01D421A3BBDD9006050A8 /* MxSeqSmpNode4261.h in Headers */,
 				2907D6D81A19830100787095 /* XmlLang.h in Headers */,
 				2972E5E21A3289A40018E453 /* MxEePp.h in Headers */,
 				2972E5D41A3289A40018E453 /* MxEeMusicFont.h in Headers */,
@@ -4099,7 +3987,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A01D3B1A3BBDD9006050A8 /* MxSeqSmpNode4190.cpp in Sources */,
 				2972E5F71A3289A40018E453 /* MxEeSf.cpp in Sources */,
 				293591701A16AA840022BAAA /* MxEnumDistanceType.cpp in Sources */,
 				29EAA13A1A292C1600A32330 /* MxAttrGrpLineShape.cpp in Sources */,
@@ -4194,7 +4081,6 @@
 				2972E5791A3289A40018E453 /* MxEeAccent.cpp in Sources */,
 				2972E5A91A3289A40018E453 /* MxEeF.cpp in Sources */,
 				2937C92E1A18715600B09E2D /* XsNonNegativeInteger.cpp in Sources */,
-				29A01D2D1A3BBDD9006050A8 /* MxSeqSmpNode3245.cpp in Sources */,
 				2907D6D71A19830100787095 /* XmlLang.cpp in Sources */,
 				29A1F9CA1A2E9FBA00B69133 /* MxCxSmpSlide.cpp in Sources */,
 				299CD0971A32C4FE00D0E0CD /* MxEsOtherAppearance.cpp in Sources */,
@@ -4219,10 +4105,8 @@
 				2935925C1A16AA990022BAAA /* MxNumberStringNumber.cpp in Sources */,
 				293591D21A16AA840022BAAA /* MxEnumStickType.cpp in Sources */,
 				294CB2421A35224400CA2734 /* XsInteger.cpp in Sources */,
-				29A01D431A3BBDD9006050A8 /* MxSeqSmpNode5619.cpp in Sources */,
 				293592381A16AA990022BAAA /* MxNumberFifths.cpp in Sources */,
 				294CB5F51A3527E000CA2734 /* MxEmOctaveChange.cpp in Sources */,
-				29A01D491A3BBDD9006050A8 /* MxSeqSmpNode6250.cpp in Sources */,
 				299CD0891A32C4FE00D0E0CD /* MxEsMeasureRepeat.cpp in Sources */,
 				294CB5D71A3527E000CA2734 /* MxEmMembrane.cpp in Sources */,
 				294CB59D1A3527E000CA2734 /* MxEmCircularArrow.cpp in Sources */,
@@ -4347,7 +4231,6 @@
 				29EAA1661A292C1600A32330 /* MxAttrGrpXPosition.cpp in Sources */,
 				299CD0A51A32C4FE00D0E0CD /* MxEsPerMinute.cpp in Sources */,
 				2972E5831A3289A40018E453 /* MxEeBookmark.cpp in Sources */,
-				29A01D471A3BBDD9006050A8 /* MxSeqSmpNode6156.cpp in Sources */,
 				293591E61A16AA840022BAAA /* MxEnumTwoNoteTurn.cpp in Sources */,
 				293591EA1A16AA840022BAAA /* MxEnumUpDownStopContinue.cpp in Sources */,
 				29BBA2651A2FE303004BEAC2 /* MxCxEmptyEmptyPlacement.cpp in Sources */,
@@ -4428,7 +4311,6 @@
 				293590A81A16AA6D0022BAAA /* MxEndingNumber.cpp in Sources */,
 				293591BA1A16AA840022BAAA /* MxEnumShowTuplet.cpp in Sources */,
 				29A1F9761A2E9FBA00B69133 /* MxCxSmpDegreeValue.cpp in Sources */,
-				29A01D371A3BBDD9006050A8 /* MxSeqSmpNode4104.cpp in Sources */,
 				294CB60F1A3527E000CA2734 /* MxEmStaff.cpp in Sources */,
 				294CB59B1A3527E000CA2734 /* MxEmChromatic.cpp in Sources */,
 				2935924E1A16AA990022BAAA /* MxNumberPositiveDecimal.cpp in Sources */,
@@ -4458,7 +4340,6 @@
 				29A1F9801A2E9FBA00B69133 /* MxCxSmpFingering.cpp in Sources */,
 				294CB5C31A3527E000CA2734 /* MxEmInstrumentAbbreviation.cpp in Sources */,
 				29EAA1381A292C1600A32330 /* MxAttrGrpLineHeight.cpp in Sources */,
-				29A01D451A3BBDD9006050A8 /* MxSeqSmpNode6056.cpp in Sources */,
 				294CB5D11A3527E000CA2734 /* MxEmLeftMargin.cpp in Sources */,
 				29EAA14E1A292C1600A32330 /* MxAttrGrpPrintObject.cpp in Sources */,
 				29EAA1461A292C1600A32330 /* MxAttrGrpPartNameText.cpp in Sources */,
@@ -4477,7 +4358,6 @@
 				29A1F9741A2E9FBA00B69133 /* MxCxSmpDegreeType.cpp in Sources */,
 				293592441A16AA990022BAAA /* MxNumberNumberLevel.cpp in Sources */,
 				29A1F9AC1A2E9FBA00B69133 /* MxCxSmpNotehead.cpp in Sources */,
-				29A01D351A3BBDD9006050A8 /* MxSeqSmpNode3993.cpp in Sources */,
 				299CD0B91A32C4FE00D0E0CD /* MxEsStem.cpp in Sources */,
 				294CB61F1A3527E000CA2734 /* MxEmStickMaterial.cpp in Sources */,
 				294CB5D51A3527E000CA2734 /* MxEmMeasureDistance.cpp in Sources */,
@@ -4485,7 +4365,7 @@
 				299CD0471A32C4FE00D0E0CD /* MxEsBeam.cpp in Sources */,
 				2935917A1A16AA840022BAAA /* MxEnumFontStyle.cpp in Sources */,
 				294CB5A91A3527E000CA2734 /* MxEmDivisions.cpp in Sources */,
-				29A01D311A3BBDD9006050A8 /* MxSeqSmpNode3499.cpp in Sources */,
+				29199F501A3E88CE00277FC2 /* MxSeqSmpNode3499.cpp in Sources */,
 				29EAA13E1A292C1600A32330 /* MxAttrGrpLinkAttributes.cpp in Sources */,
 				2972E61D1A3289A40018E453 /* MxEeTupletDot.cpp in Sources */,
 				29BBA27D1A2FE303004BEAC2 /* MxCxEmptyLyricLanguage.cpp in Sources */,
@@ -4516,7 +4396,6 @@
 				294CB5B31A3527E000CA2734 /* MxEmEncodingDescription.cpp in Sources */,
 				293591F61A16AA840022BAAA /* MxEnumWood.cpp in Sources */,
 				299CD03F1A32C4FE00D0E0CD /* MxEsAccidentalMark.cpp in Sources */,
-				29A01D2F1A3BBDD9006050A8 /* MxSeqSmpNode3480.cpp in Sources */,
 				29EAA15C1A292C1600A32330 /* MxAttrGrpTextFormatting.cpp in Sources */,
 				29BBA2931A2FE303004BEAC2 /* MxCxEmptyTupletDot.cpp in Sources */,
 				294CB5AD1A3527E000CA2734 /* MxEmEffect.cpp in Sources */,
@@ -4537,10 +4416,8 @@
 				293590941A16A9F60022BAAA /* _hidden_StringParser.cpp in Sources */,
 				299CD0491A32C4FE00D0E0CD /* MxEsBeater.cpp in Sources */,
 				29A1F9C21A2E9FBA00B69133 /* MxCxSmpPlacementText.cpp in Sources */,
-				29A01D331A3BBDD9006050A8 /* MxSeqSmpNode3871.cpp in Sources */,
 				294CB5FF1A3527E000CA2734 /* MxEmPedalStep.cpp in Sources */,
 				2972E5AD1A3289A40018E453 /* MxEeFf.cpp in Sources */,
-				29A01D391A3BBDD9006050A8 /* MxSeqSmpNode4143.cpp in Sources */,
 				294CB6191A3527E000CA2734 /* MxEmStaves.cpp in Sources */,
 				299CD0C71A32C4FE00D0E0CD /* MxEsType.cpp in Sources */,
 				299CD0691A32C4FE00D0E0CD /* MxEsFirstFret.cpp in Sources */,
@@ -4552,7 +4429,6 @@
 				293591661A16AA840022BAAA /* MxEnumCircularArrow.cpp in Sources */,
 				2972E58F1A3289A40018E453 /* MxEeDamp.cpp in Sources */,
 				294CB5E51A3527E000CA2734 /* MxEmMidiProgram.cpp in Sources */,
-				29A01D411A3BBDD9006050A8 /* MxSeqSmpNode4261.cpp in Sources */,
 				29A1F9C81A2E9FBA00B69133 /* MxCxSmpRootStep.cpp in Sources */,
 				29A1F9A81A2E9FBA00B69133 /* MxCxSmpMiscellaneousField.cpp in Sources */,
 				29A1F9AA1A2E9FBA00B69133 /* MxCxSmpMultipleRest.cpp in Sources */,
@@ -4561,7 +4437,6 @@
 				29A1F9DC1A2E9FBA00B69133 /* MxCxSmpTypedText.cpp in Sources */,
 				299CD0731A32C4FE00D0E0CD /* MxEsGroupName.cpp in Sources */,
 				294CB5991A3527E000CA2734 /* MxEmCapo.cpp in Sources */,
-				29199F261A3E7A6700277FC2 /* MxSeqSmpNode3154.cpp in Sources */,
 				294CB6091A3527E000CA2734 /* MxEmSlashType.cpp in Sources */,
 				294CB5971A3527E000CA2734 /* MxEmBottomMargin.cpp in Sources */,
 				29BBA2731A2FE303004BEAC2 /* MxCxEmptyHorizontalTurn.cpp in Sources */,
@@ -4573,7 +4448,6 @@
 				29BBA27B1A2FE303004BEAC2 /* MxCxEmptyLyricFont.cpp in Sources */,
 				294CB5E31A3527E000CA2734 /* MxEmMidiName.cpp in Sources */,
 				29A1F97E1A2E9FBA00B69133 /* MxCxSmpFermata.cpp in Sources */,
-				29A01D3D1A3BBDD9006050A8 /* MxSeqSmpNode4224.cpp in Sources */,
 				293591961A16AA840022BAAA /* MxEnumLineType.cpp in Sources */,
 				2972E5CF1A3289A40018E453 /* MxEeMf.cpp in Sources */,
 				294CB6011A3527E000CA2734 /* MxEmPitched.cpp in Sources */,
@@ -4611,7 +4485,6 @@
 				294CB5B71A3527E000CA2734 /* MxEmFrameFrets.cpp in Sources */,
 				2972E5C31A3289A40018E453 /* MxEeInstrument.cpp in Sources */,
 				2972E5D71A3289A40018E453 /* MxEeOpenString.cpp in Sources */,
-				29A01D4B1A3BBDD9006050A8 /* MxSeqSmpNode6271.cpp in Sources */,
 				29860E051A29175100511E13 /* XparseHelperFunctions.cpp in Sources */,
 				294CB6151A3527E000CA2734 /* MxEmStaffSize.cpp in Sources */,
 				299CD05D1A32C4FE00D0E0CD /* MxEsEncoder.cpp in Sources */,
@@ -4649,7 +4522,6 @@
 				2972E5B71A3289A40018E453 /* MxEeFingernails.cpp in Sources */,
 				29BBA25D1A2FE303004BEAC2 /* MxCxEmptyDashes.cpp in Sources */,
 				294CB5F11A3527E000CA2734 /* MxEmNormalNotes.cpp in Sources */,
-				29A01D3F1A3BBDD9006050A8 /* MxSeqSmpNode4250.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
