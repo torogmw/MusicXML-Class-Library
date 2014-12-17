@@ -64,7 +64,7 @@ namespace lexicon
 
 	class MxEeCoda;
 	typedef std::shared_ptr<MxEeCoda> HMxEeCoda;
-	typedef std::vector<MxEeCoda> MxEeCodas;
+	typedef std::vector<HMxEeCoda> MxEeCodas;
 	typedef MxEeCodas::iterator MxEeCodasIter;
 	typedef MxEeCodas::const_iterator MxEeCodasIterConst;
 

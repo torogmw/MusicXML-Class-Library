@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsGroupName;
 	typedef std::shared_ptr<MxEsGroupName> HMxEsGroupName;
-	typedef std::vector<MxEsGroupName> MxEsGroupNames;
+	typedef std::vector<HMxEsGroupName> MxEsGroupNames;
 	typedef MxEsGroupNames::iterator MxEsGroupNamesIter;
 	typedef MxEsGroupNames::const_iterator MxEsGroupNamesIterConst;
 

@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeTripleTongue;
 	typedef std::shared_ptr<MxEeTripleTongue> HMxEeTripleTongue;
-	typedef std::vector<MxEeTripleTongue> MxEeTripleTongues;
+	typedef std::vector<HMxEeTripleTongue> MxEeTripleTongues;
 	typedef MxEeTripleTongues::iterator MxEeTripleTonguesIter;
 	typedef MxEeTripleTongues::const_iterator MxEeTripleTonguesIterConst;
 

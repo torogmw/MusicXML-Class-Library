@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsRootStep;
 	typedef std::shared_ptr<MxEsRootStep> HMxEsRootStep;
-	typedef std::vector<MxEsRootStep> MxEsRootSteps;
+	typedef std::vector<HMxEsRootStep> MxEsRootSteps;
 	typedef MxEsRootSteps::iterator MxEsRootStepsIter;
 	typedef MxEsRootSteps::const_iterator MxEsRootStepsIterConst;
 

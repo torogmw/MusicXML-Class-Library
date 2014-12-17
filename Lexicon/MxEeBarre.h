@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeBarre;
 	typedef std::shared_ptr<MxEeBarre> HMxEeBarre;
-	typedef std::vector<MxEeBarre> MxEeBarres;
+	typedef std::vector<HMxEeBarre> MxEeBarres;
 	typedef MxEeBarres::iterator MxEeBarresIter;
 	typedef MxEeBarres::const_iterator MxEeBarresIterConst;
 

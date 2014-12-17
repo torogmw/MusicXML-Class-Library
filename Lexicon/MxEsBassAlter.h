@@ -70,7 +70,7 @@ namespace lexicon
 
 	class MxEsBassAlter;
 	typedef std::shared_ptr<MxEsBassAlter> HMxEsBassAlter;
-	typedef std::vector<MxEsBassAlter> MxEsBassAlters;
+	typedef std::vector<HMxEsBassAlter> MxEsBassAlters;
 	typedef MxEsBassAlters::iterator MxEsBassAltersIter;
 	typedef MxEsBassAlters::const_iterator MxEsBassAltersIterConst;
 

@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeFingernails;
 	typedef std::shared_ptr<MxEeFingernails> HMxEeFingernails;
-	typedef std::vector<MxEeFingernails> MxEeFingernailss;
+	typedef std::vector<HMxEeFingernails> MxEeFingernailss;
 	typedef MxEeFingernailss::iterator MxEeFingernailssIter;
 	typedef MxEeFingernailss::const_iterator MxEeFingernailssIterConst;
 

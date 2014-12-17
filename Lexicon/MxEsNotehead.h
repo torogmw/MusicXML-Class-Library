@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsNotehead;
 	typedef std::shared_ptr<MxEsNotehead> HMxEsNotehead;
-	typedef std::vector<MxEsNotehead> MxEsNoteheads;
+	typedef std::vector<HMxEsNotehead> MxEsNoteheads;
 	typedef MxEsNoteheads::iterator MxEsNoteheadsIter;
 	typedef MxEsNoteheads::const_iterator MxEsNoteheadsIterConst;
 

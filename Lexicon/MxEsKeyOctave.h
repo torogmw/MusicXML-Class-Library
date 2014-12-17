@@ -69,7 +69,7 @@ namespace lexicon
 
 	class MxEsKeyOctave;
 	typedef std::shared_ptr<MxEsKeyOctave> HMxEsKeyOctave;
-	typedef std::vector<MxEsKeyOctave> MxEsKeyOctaves;
+	typedef std::vector<HMxEsKeyOctave> MxEsKeyOctaves;
 	typedef MxEsKeyOctaves::iterator MxEsKeyOctavesIter;
 	typedef MxEsKeyOctaves::const_iterator MxEsKeyOctavesIterConst;
 

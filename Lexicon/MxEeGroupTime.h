@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeGroupTime;
 	typedef std::shared_ptr<MxEeGroupTime> HMxEeGroupTime;
-	typedef std::vector<MxEeGroupTime> MxEeGroupTimes;
+	typedef std::vector<HMxEeGroupTime> MxEeGroupTimes;
 	typedef MxEeGroupTimes::iterator MxEeGroupTimesIter;
 	typedef MxEeGroupTimes::const_iterator MxEeGroupTimesIterConst;
 

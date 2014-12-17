@@ -61,7 +61,7 @@ namespace lexicon
 
 	class MxEeRightDivider;
 	typedef std::shared_ptr<MxEeRightDivider> HMxEeRightDivider;
-	typedef std::vector<MxEeRightDivider> MxEeRightDividers;
+	typedef std::vector<HMxEeRightDivider> MxEeRightDividers;
 	typedef MxEeRightDividers::iterator MxEeRightDividersIter;
 	typedef MxEeRightDividers::const_iterator MxEeRightDividersIterConst;
 

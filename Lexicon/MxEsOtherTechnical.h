@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsOtherTechnical;
 	typedef std::shared_ptr<MxEsOtherTechnical> HMxEsOtherTechnical;
-	typedef std::vector<MxEsOtherTechnical> MxEsOtherTechnicals;
+	typedef std::vector<HMxEsOtherTechnical> MxEsOtherTechnicals;
 	typedef MxEsOtherTechnicals::iterator MxEsOtherTechnicalsIter;
 	typedef MxEsOtherTechnicals::const_iterator MxEsOtherTechnicalsIterConst;
 

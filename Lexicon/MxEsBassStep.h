@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsBassStep;
 	typedef std::shared_ptr<MxEsBassStep> HMxEsBassStep;
-	typedef std::vector<MxEsBassStep> MxEsBassSteps;
+	typedef std::vector<HMxEsBassStep> MxEsBassSteps;
 	typedef MxEsBassSteps::iterator MxEsBassStepsIter;
 	typedef MxEsBassSteps::const_iterator MxEsBassStepsIterConst;
 

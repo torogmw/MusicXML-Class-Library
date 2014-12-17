@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeDoubleTongue;
 	typedef std::shared_ptr<MxEeDoubleTongue> HMxEeDoubleTongue;
-	typedef std::vector<MxEeDoubleTongue> MxEeDoubleTongues;
+	typedef std::vector<HMxEeDoubleTongue> MxEeDoubleTongues;
 	typedef MxEeDoubleTongues::iterator MxEeDoubleTonguesIter;
 	typedef MxEeDoubleTongues::const_iterator MxEeDoubleTonguesIterConst;
 

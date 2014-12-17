@@ -64,7 +64,7 @@ namespace lexicon
 
 	class MxEeSegno;
 	typedef std::shared_ptr<MxEeSegno> HMxEeSegno;
-	typedef std::vector<MxEeSegno> MxEeSegnos;
+	typedef std::vector<HMxEeSegno> MxEeSegnos;
 	typedef MxEeSegnos::iterator MxEeSegnosIter;
 	typedef MxEeSegnos::const_iterator MxEeSegnosIterConst;
 

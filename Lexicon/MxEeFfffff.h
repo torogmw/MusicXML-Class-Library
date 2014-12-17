@@ -48,7 +48,7 @@ namespace lexicon
 
 	class MxEeFfffff;
 	typedef std::shared_ptr<MxEeFfffff> HMxEeFfffff;
-	typedef std::vector<MxEeFfffff> MxEeFfffffs;
+	typedef std::vector<HMxEeFfffff> MxEeFfffffs;
 	typedef MxEeFfffffs::iterator MxEeFfffffsIter;
 	typedef MxEeFfffffs::const_iterator MxEeFfffffsIterConst;
 

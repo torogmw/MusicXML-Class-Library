@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEeEndParagraph;
 	typedef std::shared_ptr<MxEeEndParagraph> HMxEeEndParagraph;
-	typedef std::vector<MxEeEndParagraph> MxEeEndParagraphs;
+	typedef std::vector<HMxEeEndParagraph> MxEeEndParagraphs;
 	typedef MxEeEndParagraphs::iterator MxEeEndParagraphsIter;
 	typedef MxEeEndParagraphs::const_iterator MxEeEndParagraphsIterConst;
 

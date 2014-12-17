@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsWithBar;
 	typedef std::shared_ptr<MxEsWithBar> HMxEsWithBar;
-	typedef std::vector<MxEsWithBar> MxEsWithBars;
+	typedef std::vector<HMxEsWithBar> MxEsWithBars;
 	typedef MxEsWithBars::iterator MxEsWithBarsIter;
 	typedef MxEsWithBars::const_iterator MxEsWithBarsIterConst;
 

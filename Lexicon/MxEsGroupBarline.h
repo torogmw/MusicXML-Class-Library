@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEsGroupBarline;
 	typedef std::shared_ptr<MxEsGroupBarline> HMxEsGroupBarline;
-	typedef std::vector<MxEsGroupBarline> MxEsGroupBarlines;
+	typedef std::vector<HMxEsGroupBarline> MxEsGroupBarlines;
 	typedef MxEsGroupBarlines::iterator MxEsGroupBarlinesIter;
 	typedef MxEsGroupBarlines::const_iterator MxEsGroupBarlinesIterConst;
 

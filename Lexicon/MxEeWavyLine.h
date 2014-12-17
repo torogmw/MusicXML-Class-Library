@@ -67,7 +67,7 @@ namespace lexicon
 
 	class MxEeWavyLine;
 	typedef std::shared_ptr<MxEeWavyLine> HMxEeWavyLine;
-	typedef std::vector<MxEeWavyLine> MxEeWavyLines;
+	typedef std::vector<HMxEeWavyLine> MxEeWavyLines;
 	typedef MxEeWavyLines::iterator MxEeWavyLinesIter;
 	typedef MxEeWavyLines::const_iterator MxEeWavyLinesIterConst;
 

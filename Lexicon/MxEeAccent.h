@@ -64,7 +64,7 @@ namespace lexicon
 
 	class MxEeAccent;
 	typedef std::shared_ptr<MxEeAccent> HMxEeAccent;
-	typedef std::vector<MxEeAccent> MxEeAccents;
+	typedef std::vector<HMxEeAccent> MxEeAccents;
 	typedef MxEeAccents::iterator MxEeAccentsIter;
 	typedef MxEeAccents::const_iterator MxEeAccentsIterConst;
 

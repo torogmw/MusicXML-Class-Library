@@ -71,7 +71,7 @@ namespace lexicon
 
 	class MxEsCreditWords;
 	typedef std::shared_ptr<MxEsCreditWords> HMxEsCreditWords;
-	typedef std::vector<MxEsCreditWords> MxEsCreditWordss;
+	typedef std::vector<HMxEsCreditWords> MxEsCreditWordss;
 	typedef MxEsCreditWordss::iterator MxEsCreditWordssIter;
 	typedef MxEsCreditWordss::const_iterator MxEsCreditWordssIterConst;
 

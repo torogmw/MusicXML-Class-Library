@@ -71,7 +71,7 @@ namespace lexicon
 
 	class MxEeDoit;
 	typedef std::shared_ptr<MxEeDoit> HMxEeDoit;
-	typedef std::vector<MxEeDoit> MxEeDoits;
+	typedef std::vector<HMxEeDoit> MxEeDoits;
 	typedef MxEeDoits::iterator MxEeDoitsIter;
 	typedef MxEeDoits::const_iterator MxEeDoitsIterConst;
 

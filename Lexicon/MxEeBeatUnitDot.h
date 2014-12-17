@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeBeatUnitDot;
 	typedef std::shared_ptr<MxEeBeatUnitDot> HMxEeBeatUnitDot;
-	typedef std::vector<MxEeBeatUnitDot> MxEeBeatUnitDots;
+	typedef std::vector<HMxEeBeatUnitDot> MxEeBeatUnitDots;
 	typedef MxEeBeatUnitDots::iterator MxEeBeatUnitDotsIter;
 	typedef MxEeBeatUnitDots::const_iterator MxEeBeatUnitDotsIterConst;
 

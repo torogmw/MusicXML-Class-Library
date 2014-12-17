@@ -59,7 +59,7 @@ namespace lexicon
 
 	class MxEsFeature;
 	typedef std::shared_ptr<MxEsFeature> HMxEsFeature;
-	typedef std::vector<MxEsFeature> MxEsFeatures;
+	typedef std::vector<HMxEsFeature> MxEsFeatures;
 	typedef MxEsFeatures::iterator MxEsFeaturesIter;
 	typedef MxEsFeatures::const_iterator MxEsFeaturesIterConst;
 

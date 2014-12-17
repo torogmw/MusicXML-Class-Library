@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEeTenuto;
 	typedef std::shared_ptr<MxEeTenuto> HMxEeTenuto;
-	typedef std::vector<MxEeTenuto> MxEeTenutos;
+	typedef std::vector<HMxEeTenuto> MxEeTenutos;
 	typedef MxEeTenutos::iterator MxEeTenutosIter;
 	typedef MxEeTenutos::const_iterator MxEeTenutosIterConst;
 

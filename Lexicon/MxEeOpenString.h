@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeOpenString;
 	typedef std::shared_ptr<MxEeOpenString> HMxEeOpenString;
-	typedef std::vector<MxEeOpenString> MxEeOpenStrings;
+	typedef std::vector<HMxEeOpenString> MxEeOpenStrings;
 	typedef MxEeOpenStrings::iterator MxEeOpenStringsIter;
 	typedef MxEeOpenStrings::const_iterator MxEeOpenStringsIterConst;
 

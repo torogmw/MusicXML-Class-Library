@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsAccidentalMark;
 	typedef std::shared_ptr<MxEsAccidentalMark> HMxEsAccidentalMark;
-	typedef std::vector<MxEsAccidentalMark> MxEsAccidentalMarks;
+	typedef std::vector<HMxEsAccidentalMark> MxEsAccidentalMarks;
 	typedef MxEsAccidentalMarks::iterator MxEsAccidentalMarksIter;
 	typedef MxEsAccidentalMarks::const_iterator MxEsAccidentalMarksIterConst;
 

@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEsStem;
 	typedef std::shared_ptr<MxEsStem> HMxEsStem;
-	typedef std::vector<MxEsStem> MxEsStems;
+	typedef std::vector<HMxEsStem> MxEsStems;
 	typedef MxEsStems::iterator MxEsStemsIter;
 	typedef MxEsStems::const_iterator MxEsStemsIterConst;
 

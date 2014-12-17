@@ -58,7 +58,7 @@ namespace lexicon
 
 	class MxEeDashes;
 	typedef std::shared_ptr<MxEeDashes> HMxEeDashes;
-	typedef std::vector<MxEeDashes> MxEeDashess;
+	typedef std::vector<HMxEeDashes> MxEeDashess;
 	typedef MxEeDashess::iterator MxEeDashessIter;
 	typedef MxEeDashess::const_iterator MxEeDashessIterConst;
 

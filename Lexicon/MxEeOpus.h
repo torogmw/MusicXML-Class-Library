@@ -56,7 +56,7 @@ namespace lexicon
 
 	class MxEeOpus;
 	typedef std::shared_ptr<MxEeOpus> HMxEeOpus;
-	typedef std::vector<MxEeOpus> MxEeOpuss;
+	typedef std::vector<HMxEeOpus> MxEeOpuss;
 	typedef MxEeOpuss::iterator MxEeOpussIter;
 	typedef MxEeOpuss::const_iterator MxEeOpussIterConst;
 

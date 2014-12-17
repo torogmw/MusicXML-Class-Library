@@ -71,7 +71,7 @@ namespace lexicon
 
 	class MxEsPrefix;
 	typedef std::shared_ptr<MxEsPrefix> HMxEsPrefix;
-	typedef std::vector<MxEsPrefix> MxEsPrefixs;
+	typedef std::vector<HMxEsPrefix> MxEsPrefixs;
 	typedef MxEsPrefixs::iterator MxEsPrefixsIter;
 	typedef MxEsPrefixs::const_iterator MxEsPrefixsIterConst;
 

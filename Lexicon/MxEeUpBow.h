@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeUpBow;
 	typedef std::shared_ptr<MxEeUpBow> HMxEeUpBow;
-	typedef std::vector<MxEeUpBow> MxEeUpBows;
+	typedef std::vector<HMxEeUpBow> MxEeUpBows;
 	typedef MxEeUpBows::iterator MxEeUpBowsIter;
 	typedef MxEeUpBows::const_iterator MxEeUpBowsIterConst;
 

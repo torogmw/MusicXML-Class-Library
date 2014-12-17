@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeStaccato;
 	typedef std::shared_ptr<MxEeStaccato> HMxEeStaccato;
-	typedef std::vector<MxEeStaccato> MxEeStaccatos;
+	typedef std::vector<HMxEeStaccato> MxEeStaccatos;
 	typedef MxEeStaccatos::iterator MxEeStaccatosIter;
 	typedef MxEeStaccatos::const_iterator MxEeStaccatosIterConst;
 

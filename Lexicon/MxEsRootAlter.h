@@ -70,7 +70,7 @@ namespace lexicon
 
 	class MxEsRootAlter;
 	typedef std::shared_ptr<MxEsRootAlter> HMxEsRootAlter;
-	typedef std::vector<MxEsRootAlter> MxEsRootAlters;
+	typedef std::vector<HMxEsRootAlter> MxEsRootAlters;
 	typedef MxEsRootAlters::iterator MxEsRootAltersIter;
 	typedef MxEsRootAlters::const_iterator MxEsRootAltersIterConst;
 

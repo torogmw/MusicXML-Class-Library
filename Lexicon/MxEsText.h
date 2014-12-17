@@ -73,7 +73,7 @@ namespace lexicon
 
 	class MxEsText;
 	typedef std::shared_ptr<MxEsText> HMxEsText;
-	typedef std::vector<MxEsText> MxEsTexts;
+	typedef std::vector<HMxEsText> MxEsTexts;
 	typedef MxEsTexts::iterator MxEsTextsIter;
 	typedef MxEsTexts::const_iterator MxEsTextsIterConst;
 

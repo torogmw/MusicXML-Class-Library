@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEeGrace;
 	typedef std::shared_ptr<MxEeGrace> HMxEeGrace;
-	typedef std::vector<MxEeGrace> MxEeGraces;
+	typedef std::vector<HMxEeGrace> MxEeGraces;
 	typedef MxEeGraces::iterator MxEeGracesIter;
 	typedef MxEeGraces::const_iterator MxEeGracesIterConst;
 

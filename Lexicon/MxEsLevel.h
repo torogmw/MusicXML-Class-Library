@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEsLevel;
 	typedef std::shared_ptr<MxEsLevel> HMxEsLevel;
-	typedef std::vector<MxEsLevel> MxEsLevels;
+	typedef std::vector<HMxEsLevel> MxEsLevels;
 	typedef MxEsLevels::iterator MxEsLevelsIter;
 	typedef MxEsLevels::const_iterator MxEsLevelsIterConst;
 

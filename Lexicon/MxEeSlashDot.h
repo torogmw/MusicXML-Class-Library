@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeSlashDot;
 	typedef std::shared_ptr<MxEeSlashDot> HMxEeSlashDot;
-	typedef std::vector<MxEeSlashDot> MxEeSlashDots;
+	typedef std::vector<HMxEeSlashDot> MxEeSlashDots;
 	typedef MxEeSlashDots::iterator MxEeSlashDotsIter;
 	typedef MxEeSlashDots::const_iterator MxEeSlashDotsIterConst;
 

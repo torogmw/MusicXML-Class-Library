@@ -66,7 +66,7 @@ namespace lexicon
 
 	class MxEsPartName;
 	typedef std::shared_ptr<MxEsPartName> HMxEsPartName;
-	typedef std::vector<MxEsPartName> MxEsPartNames;
+	typedef std::vector<HMxEsPartName> MxEsPartNames;
 	typedef MxEsPartNames::iterator MxEsPartNamesIter;
 	typedef MxEsPartNames::const_iterator MxEsPartNamesIterConst;
 

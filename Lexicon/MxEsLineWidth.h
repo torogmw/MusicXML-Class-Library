@@ -61,7 +61,7 @@ namespace lexicon
 
 	class MxEsLineWidth;
 	typedef std::shared_ptr<MxEsLineWidth> HMxEsLineWidth;
-	typedef std::vector<MxEsLineWidth> MxEsLineWidths;
+	typedef std::vector<HMxEsLineWidth> MxEsLineWidths;
 	typedef MxEsLineWidths::iterator MxEsLineWidthsIter;
 	typedef MxEsLineWidths::const_iterator MxEsLineWidthsIterConst;
 

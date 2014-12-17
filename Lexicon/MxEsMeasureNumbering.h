@@ -67,7 +67,7 @@ namespace lexicon
 
 	class MxEsMeasureNumbering;
 	typedef std::shared_ptr<MxEsMeasureNumbering> HMxEsMeasureNumbering;
-	typedef std::vector<MxEsMeasureNumbering> MxEsMeasureNumberings;
+	typedef std::vector<HMxEsMeasureNumbering> MxEsMeasureNumberings;
 	typedef MxEsMeasureNumberings::iterator MxEsMeasureNumberingsIter;
 	typedef MxEsMeasureNumberings::const_iterator MxEsMeasureNumberingsIterConst;
 

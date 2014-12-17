@@ -63,7 +63,7 @@ namespace lexicon
 
 	class MxEeSupports;
 	typedef std::shared_ptr<MxEeSupports> HMxEeSupports;
-	typedef std::vector<MxEeSupports> MxEeSupportss;
+	typedef std::vector<HMxEeSupports> MxEeSupportss;
 	typedef MxEeSupportss::iterator MxEeSupportssIter;
 	typedef MxEeSupportss::const_iterator MxEeSupportssIterConst;
 

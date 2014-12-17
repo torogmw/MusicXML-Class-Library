@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsPartSymbol;
 	typedef std::shared_ptr<MxEsPartSymbol> HMxEsPartSymbol;
-	typedef std::vector<MxEsPartSymbol> MxEsPartSymbols;
+	typedef std::vector<HMxEsPartSymbol> MxEsPartSymbols;
 	typedef MxEsPartSymbols::iterator MxEsPartSymbolsIter;
 	typedef MxEsPartSymbols::const_iterator MxEsPartSymbolsIterConst;
 

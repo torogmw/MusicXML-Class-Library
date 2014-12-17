@@ -79,7 +79,7 @@ namespace lexicon
 
 	class MxEsBeam;
 	typedef std::shared_ptr<MxEsBeam> HMxEsBeam;
-	typedef std::vector<MxEsBeam> MxEsBeams;
+	typedef std::vector<HMxEsBeam> MxEsBeams;
 	typedef MxEsBeams::iterator MxEsBeamsIter;
 	typedef MxEsBeams::const_iterator MxEsBeamsIterConst;
 

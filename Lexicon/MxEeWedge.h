@@ -70,7 +70,7 @@ namespace lexicon
 
 	class MxEeWedge;
 	typedef std::shared_ptr<MxEeWedge> HMxEeWedge;
-	typedef std::vector<MxEeWedge> MxEeWedges;
+	typedef std::vector<HMxEeWedge> MxEeWedges;
 	typedef MxEeWedges::iterator MxEeWedgesIter;
 	typedef MxEeWedges::const_iterator MxEeWedgesIterConst;
 

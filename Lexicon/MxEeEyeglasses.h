@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeEyeglasses;
 	typedef std::shared_ptr<MxEeEyeglasses> HMxEeEyeglasses;
-	typedef std::vector<MxEeEyeglasses> MxEeEyeglassess;
+	typedef std::vector<HMxEeEyeglasses> MxEeEyeglassess;
 	typedef MxEeEyeglassess::iterator MxEeEyeglassessIter;
 	typedef MxEeEyeglassess::const_iterator MxEeEyeglassessIterConst;
 

@@ -78,7 +78,7 @@ namespace lexicon
 
 	class MxEsWords;
 	typedef std::shared_ptr<MxEsWords> HMxEsWords;
-	typedef std::vector<MxEsWords> MxEsWordss;
+	typedef std::vector<HMxEsWords> MxEsWordss;
 	typedef MxEsWordss::iterator MxEsWordssIter;
 	typedef MxEsWordss::const_iterator MxEsWordssIterConst;
 

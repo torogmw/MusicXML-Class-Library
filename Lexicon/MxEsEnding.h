@@ -85,7 +85,7 @@ namespace lexicon
 
 	class MxEsEnding;
 	typedef std::shared_ptr<MxEsEnding> HMxEsEnding;
-	typedef std::vector<MxEsEnding> MxEsEndings;
+	typedef std::vector<HMxEsEnding> MxEsEndings;
 	typedef MxEsEndings::iterator MxEsEndingsIter;
 	typedef MxEsEndings::const_iterator MxEsEndingsIterConst;
 

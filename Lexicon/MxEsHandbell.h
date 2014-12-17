@@ -64,7 +64,7 @@ namespace lexicon
 
 	class MxEsHandbell;
 	typedef std::shared_ptr<MxEsHandbell> HMxEsHandbell;
-	typedef std::vector<MxEsHandbell> MxEsHandbells;
+	typedef std::vector<HMxEsHandbell> MxEsHandbells;
 	typedef MxEsHandbells::iterator MxEsHandbellsIter;
 	typedef MxEsHandbells::const_iterator MxEsHandbellsIterConst;
 

@@ -61,7 +61,7 @@ namespace lexicon
 
 	class MxEsCancel;
 	typedef std::shared_ptr<MxEsCancel> HMxEsCancel;
-	typedef std::vector<MxEsCancel> MxEsCancels;
+	typedef std::vector<HMxEsCancel> MxEsCancels;
 	typedef MxEsCancels::iterator MxEsCancelsIter;
 	typedef MxEsCancels::const_iterator MxEsCancelsIterConst;
 

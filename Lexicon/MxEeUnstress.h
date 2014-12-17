@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeUnstress;
 	typedef std::shared_ptr<MxEeUnstress> HMxEeUnstress;
-	typedef std::vector<MxEeUnstress> MxEeUnstresss;
+	typedef std::vector<HMxEeUnstress> MxEeUnstresss;
 	typedef MxEeUnstresss::iterator MxEeUnstresssIter;
 	typedef MxEeUnstresss::const_iterator MxEeUnstresssIterConst;
 

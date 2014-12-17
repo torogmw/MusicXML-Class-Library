@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeStopped;
 	typedef std::shared_ptr<MxEeStopped> HMxEeStopped;
-	typedef std::vector<MxEeStopped> MxEeStoppeds;
+	typedef std::vector<HMxEeStopped> MxEeStoppeds;
 	typedef MxEeStoppeds::iterator MxEeStoppedsIter;
 	typedef MxEeStoppeds::const_iterator MxEeStoppedsIterConst;
 

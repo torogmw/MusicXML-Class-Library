@@ -59,7 +59,7 @@ namespace lexicon
 
 	class MxEsDistance;
 	typedef std::shared_ptr<MxEsDistance> HMxEsDistance;
-	typedef std::vector<MxEsDistance> MxEsDistances;
+	typedef std::vector<HMxEsDistance> MxEsDistances;
 	typedef MxEsDistances::iterator MxEsDistancesIter;
 	typedef MxEsDistances::const_iterator MxEsDistancesIterConst;
 

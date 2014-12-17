@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEeFalloff;
 	typedef std::shared_ptr<MxEeFalloff> HMxEeFalloff;
-	typedef std::vector<MxEeFalloff> MxEeFalloffs;
+	typedef std::vector<HMxEeFalloff> MxEeFalloffs;
 	typedef MxEeFalloffs::iterator MxEeFalloffsIter;
 	typedef MxEeFalloffs::const_iterator MxEeFalloffsIterConst;
 

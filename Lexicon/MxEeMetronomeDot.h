@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeMetronomeDot;
 	typedef std::shared_ptr<MxEeMetronomeDot> HMxEeMetronomeDot;
-	typedef std::vector<MxEeMetronomeDot> MxEeMetronomeDots;
+	typedef std::vector<HMxEeMetronomeDot> MxEeMetronomeDots;
 	typedef MxEeMetronomeDots::iterator MxEeMetronomeDotsIter;
 	typedef MxEeMetronomeDots::const_iterator MxEeMetronomeDotsIterConst;
 

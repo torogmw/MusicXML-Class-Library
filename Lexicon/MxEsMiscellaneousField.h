@@ -60,7 +60,7 @@ namespace lexicon
 
 	class MxEsMiscellaneousField;
 	typedef std::shared_ptr<MxEsMiscellaneousField> HMxEsMiscellaneousField;
-	typedef std::vector<MxEsMiscellaneousField> MxEsMiscellaneousFields;
+	typedef std::vector<HMxEsMiscellaneousField> MxEsMiscellaneousFields;
 	typedef MxEsMiscellaneousFields::iterator MxEsMiscellaneousFieldsIter;
 	typedef MxEsMiscellaneousFields::const_iterator MxEsMiscellaneousFieldsIterConst;
 

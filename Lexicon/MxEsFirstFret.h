@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEsFirstFret;
 	typedef std::shared_ptr<MxEsFirstFret> HMxEsFirstFret;
-	typedef std::vector<MxEsFirstFret> MxEsFirstFrets;
+	typedef std::vector<HMxEsFirstFret> MxEsFirstFrets;
 	typedef MxEsFirstFrets::iterator MxEsFirstFretsIter;
 	typedef MxEsFirstFrets::const_iterator MxEsFirstFretsIterConst;
 

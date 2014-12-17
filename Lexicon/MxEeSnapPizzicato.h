@@ -69,7 +69,7 @@ namespace lexicon
 
 	class MxEeSnapPizzicato;
 	typedef std::shared_ptr<MxEeSnapPizzicato> HMxEeSnapPizzicato;
-	typedef std::vector<MxEeSnapPizzicato> MxEeSnapPizzicatos;
+	typedef std::vector<HMxEeSnapPizzicato> MxEeSnapPizzicatos;
 	typedef MxEeSnapPizzicatos::iterator MxEeSnapPizzicatosIter;
 	typedef MxEeSnapPizzicatos::const_iterator MxEeSnapPizzicatosIterConst;
 

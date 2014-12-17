@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeImage;
 	typedef std::shared_ptr<MxEeImage> HMxEeImage;
-	typedef std::vector<MxEeImage> MxEeImages;
+	typedef std::vector<HMxEeImage> MxEeImages;
 	typedef MxEeImages::iterator MxEeImagesIter;
 	typedef MxEeImages::const_iterator MxEeImagesIterConst;
 

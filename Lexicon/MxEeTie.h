@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeTie;
 	typedef std::shared_ptr<MxEeTie> HMxEeTie;
-	typedef std::vector<MxEeTie> MxEeTies;
+	typedef std::vector<HMxEeTie> MxEeTies;
 	typedef MxEeTies::iterator MxEeTiesIter;
 	typedef MxEeTies::const_iterator MxEeTiesIterConst;
 

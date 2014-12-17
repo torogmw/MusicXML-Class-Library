@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsFermata;
 	typedef std::shared_ptr<MxEsFermata> HMxEsFermata;
-	typedef std::vector<MxEsFermata> MxEsFermatas;
+	typedef std::vector<HMxEsFermata> MxEsFermatas;
 	typedef MxEsFermatas::iterator MxEsFermatasIter;
 	typedef MxEsFermatas::const_iterator MxEsFermatasIterConst;
 

@@ -64,7 +64,7 @@ namespace lexicon
 
 	class MxEsString;
 	typedef std::shared_ptr<MxEsString> HMxEsString;
-	typedef std::vector<MxEsString> MxEsStrings;
+	typedef std::vector<HMxEsString> MxEsStrings;
 	typedef MxEsStrings::iterator MxEsStringsIter;
 	typedef MxEsStrings::const_iterator MxEsStringsIterConst;
 

@@ -73,7 +73,7 @@ namespace lexicon
 
 	class MxEsPrincipalVoice;
 	typedef std::shared_ptr<MxEsPrincipalVoice> HMxEsPrincipalVoice;
-	typedef std::vector<MxEsPrincipalVoice> MxEsPrincipalVoices;
+	typedef std::vector<HMxEsPrincipalVoice> MxEsPrincipalVoices;
 	typedef MxEsPrincipalVoices::iterator MxEsPrincipalVoicesIter;
 	typedef MxEsPrincipalVoices::const_iterator MxEsPrincipalVoicesIterConst;
 

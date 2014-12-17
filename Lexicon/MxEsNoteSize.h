@@ -63,7 +63,7 @@ namespace lexicon
 
 	class MxEsNoteSize;
 	typedef std::shared_ptr<MxEsNoteSize> HMxEsNoteSize;
-	typedef std::vector<MxEsNoteSize> MxEsNoteSizes;
+	typedef std::vector<HMxEsNoteSize> MxEsNoteSizes;
 	typedef MxEsNoteSizes::iterator MxEsNoteSizesIter;
 	typedef MxEsNoteSizes::const_iterator MxEsNoteSizesIterConst;
 

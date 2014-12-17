@@ -66,7 +66,7 @@ namespace lexicon
 
 	class MxEsPartAbbreviation;
 	typedef std::shared_ptr<MxEsPartAbbreviation> HMxEsPartAbbreviation;
-	typedef std::vector<MxEsPartAbbreviation> MxEsPartAbbreviations;
+	typedef std::vector<HMxEsPartAbbreviation> MxEsPartAbbreviations;
 	typedef MxEsPartAbbreviations::iterator MxEsPartAbbreviationsIter;
 	typedef MxEsPartAbbreviations::const_iterator MxEsPartAbbreviationsIterConst;
 

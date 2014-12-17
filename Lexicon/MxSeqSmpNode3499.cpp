@@ -4,7 +4,7 @@
   * @author     Matthew James Briggs
   * @email      matthew.james.briggs@gmail.com
   * @url        http://matthewjamesbriggs.com
-  * @date       2014-12-14 19:05:54
+  * @date       2014-12-17 15:43:36
   * @project    Lexicon
   * @version    1.0
   * @musicxmlid 3499
@@ -95,13 +95,16 @@ namespace lexicon
 		    if successful, returns 'false' to indicate failure.  If you try to
 		    add more elements than is allowed by MaxOccurs, the this function will
 		    fail.  If you try to add a nullptr this function will fail. **/
-		bool addFeature( const MxEsFeaturesIter& value_in )
+		bool addFeature( const HMxEsFeature& value_in )
 		{
-			if( myFeatureCollection.size() >= ( getFeatureMaxOccurs() - 1 ) )
+			if( ! getIsFeatureUnbounded() )
 			{
-				return false;
+				if( myFeatureCollection.size() >= ( getFeatureMaxOccurs() - 1 ) )
+				{
+					return false;
+				}
 			}
-			else if( ! *value_in )
+			else if( value_in )
 			{
 				return false;
 			}
@@ -258,7 +261,7 @@ namespace lexicon
 	    if successful, returns 'false' to indicate failure.  If you try to
 	    add more elements than is allowed by MaxOccurs, the this function will
 	    fail.  If you try to add a nullptr this function will fail. **/
-	bool MxSeqSmpNode3499::addFeature( const MxEsFeaturesIter& value_in )
+	bool MxSeqSmpNode3499::addFeature( const HMxEsFeature& value_in )
 	{
 		return myImpl->addFeature( value_in );
 	}

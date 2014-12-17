@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEsEncoder;
 	typedef std::shared_ptr<MxEsEncoder> HMxEsEncoder;
-	typedef std::vector<MxEsEncoder> MxEsEncoders;
+	typedef std::vector<HMxEsEncoder> MxEsEncoders;
 	typedef MxEsEncoders::iterator MxEsEncodersIter;
 	typedef MxEsEncoders::const_iterator MxEsEncodersIterConst;
 

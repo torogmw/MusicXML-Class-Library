@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsPullOff;
 	typedef std::shared_ptr<MxEsPullOff> HMxEsPullOff;
-	typedef std::vector<MxEsPullOff> MxEsPullOffs;
+	typedef std::vector<HMxEsPullOff> MxEsPullOffs;
 	typedef MxEsPullOffs::iterator MxEsPullOffsIter;
 	typedef MxEsPullOffs::const_iterator MxEsPullOffsIterConst;
 

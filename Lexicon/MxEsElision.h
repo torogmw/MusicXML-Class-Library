@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsElision;
 	typedef std::shared_ptr<MxEsElision> HMxEsElision;
-	typedef std::vector<MxEsElision> MxEsElisions;
+	typedef std::vector<HMxEsElision> MxEsElisions;
 	typedef MxEsElisions::iterator MxEsElisionsIter;
 	typedef MxEsElisions::const_iterator MxEsElisionsIterConst;
 

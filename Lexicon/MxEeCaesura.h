@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeCaesura;
 	typedef std::shared_ptr<MxEeCaesura> HMxEeCaesura;
-	typedef std::vector<MxEeCaesura> MxEeCaesuras;
+	typedef std::vector<HMxEeCaesura> MxEeCaesuras;
 	typedef MxEeCaesuras::iterator MxEeCaesurasIter;
 	typedef MxEeCaesuras::const_iterator MxEeCaesurasIterConst;
 

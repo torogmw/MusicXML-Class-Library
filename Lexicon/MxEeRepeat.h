@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEeRepeat;
 	typedef std::shared_ptr<MxEeRepeat> HMxEeRepeat;
-	typedef std::vector<MxEeRepeat> MxEeRepeats;
+	typedef std::vector<HMxEeRepeat> MxEeRepeats;
 	typedef MxEeRepeats::iterator MxEeRepeatsIter;
 	typedef MxEeRepeats::const_iterator MxEeRepeatsIterConst;
 

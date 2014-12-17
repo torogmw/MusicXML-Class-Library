@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsRelation;
 	typedef std::shared_ptr<MxEsRelation> HMxEsRelation;
-	typedef std::vector<MxEsRelation> MxEsRelations;
+	typedef std::vector<HMxEsRelation> MxEsRelations;
 	typedef MxEsRelations::iterator MxEsRelationsIter;
 	typedef MxEsRelations::const_iterator MxEsRelationsIterConst;
 

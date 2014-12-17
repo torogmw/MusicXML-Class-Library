@@ -69,7 +69,7 @@ namespace lexicon
 
 	class MxEeThumbPosition;
 	typedef std::shared_ptr<MxEeThumbPosition> HMxEeThumbPosition;
-	typedef std::vector<MxEeThumbPosition> MxEeThumbPositions;
+	typedef std::vector<HMxEeThumbPosition> MxEeThumbPositions;
 	typedef MxEeThumbPositions::iterator MxEeThumbPositionsIter;
 	typedef MxEeThumbPositions::const_iterator MxEeThumbPositionsIterConst;
 

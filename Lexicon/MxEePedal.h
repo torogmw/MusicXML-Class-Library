@@ -70,7 +70,7 @@ namespace lexicon
 
 	class MxEePedal;
 	typedef std::shared_ptr<MxEePedal> HMxEePedal;
-	typedef std::vector<MxEePedal> MxEePedals;
+	typedef std::vector<HMxEePedal> MxEePedals;
 	typedef MxEePedals::iterator MxEePedalsIter;
 	typedef MxEePedals::const_iterator MxEePedalsIterConst;
 

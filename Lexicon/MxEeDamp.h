@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEeDamp;
 	typedef std::shared_ptr<MxEeDamp> HMxEeDamp;
-	typedef std::vector<MxEeDamp> MxEeDamps;
+	typedef std::vector<HMxEeDamp> MxEeDamps;
 	typedef MxEeDamps::iterator MxEeDampsIter;
 	typedef MxEeDamps::const_iterator MxEeDampsIterConst;
 

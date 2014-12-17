@@ -100,7 +100,7 @@ namespace lexicon
 
 	class MxEsKind;
 	typedef std::shared_ptr<MxEsKind> HMxEsKind;
-	typedef std::vector<MxEsKind> MxEsKinds;
+	typedef std::vector<HMxEsKind> MxEsKinds;
 	typedef MxEsKinds::iterator MxEsKindsIter;
 	typedef MxEsKinds::const_iterator MxEsKindsIterConst;
 

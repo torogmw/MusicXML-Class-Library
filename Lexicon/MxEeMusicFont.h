@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeMusicFont;
 	typedef std::shared_ptr<MxEeMusicFont> HMxEeMusicFont;
-	typedef std::vector<MxEeMusicFont> MxEeMusicFonts;
+	typedef std::vector<HMxEeMusicFont> MxEeMusicFonts;
 	typedef MxEeMusicFonts::iterator MxEeMusicFontsIter;
 	typedef MxEeMusicFonts::const_iterator MxEeMusicFontsIterConst;
 

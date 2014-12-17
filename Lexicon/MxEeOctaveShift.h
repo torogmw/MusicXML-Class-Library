@@ -67,7 +67,7 @@ namespace lexicon
 
 	class MxEeOctaveShift;
 	typedef std::shared_ptr<MxEeOctaveShift> HMxEeOctaveShift;
-	typedef std::vector<MxEeOctaveShift> MxEeOctaveShifts;
+	typedef std::vector<HMxEeOctaveShift> MxEeOctaveShifts;
 	typedef MxEeOctaveShifts::iterator MxEeOctaveShiftsIter;
 	typedef MxEeOctaveShifts::const_iterator MxEeOctaveShiftsIterConst;
 

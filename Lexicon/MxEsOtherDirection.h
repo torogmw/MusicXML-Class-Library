@@ -67,7 +67,7 @@ namespace lexicon
 
 	class MxEsOtherDirection;
 	typedef std::shared_ptr<MxEsOtherDirection> HMxEsOtherDirection;
-	typedef std::vector<MxEsOtherDirection> MxEsOtherDirections;
+	typedef std::vector<HMxEsOtherDirection> MxEsOtherDirections;
 	typedef MxEsOtherDirections::iterator MxEsOtherDirectionsIter;
 	typedef MxEsOtherDirections::const_iterator MxEsOtherDirectionsIterConst;
 

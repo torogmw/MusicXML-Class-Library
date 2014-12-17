@@ -63,7 +63,7 @@ namespace lexicon
 
 	class MxEsOffset;
 	typedef std::shared_ptr<MxEsOffset> HMxEsOffset;
-	typedef std::vector<MxEsOffset> MxEsOffsets;
+	typedef std::vector<HMxEsOffset> MxEsOffsets;
 	typedef MxEsOffsets::iterator MxEsOffsetsIter;
 	typedef MxEsOffsets::const_iterator MxEsOffsetsIterConst;
 

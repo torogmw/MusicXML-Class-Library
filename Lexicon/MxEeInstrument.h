@@ -54,7 +54,7 @@ namespace lexicon
 
 	class MxEeInstrument;
 	typedef std::shared_ptr<MxEeInstrument> HMxEeInstrument;
-	typedef std::vector<MxEeInstrument> MxEeInstruments;
+	typedef std::vector<HMxEeInstrument> MxEeInstruments;
 	typedef MxEeInstruments::iterator MxEeInstrumentsIter;
 	typedef MxEeInstruments::const_iterator MxEeInstrumentsIterConst;
 

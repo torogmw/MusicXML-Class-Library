@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEsTupletType;
 	typedef std::shared_ptr<MxEsTupletType> HMxEsTupletType;
-	typedef std::vector<MxEsTupletType> MxEsTupletTypes;
+	typedef std::vector<HMxEsTupletType> MxEsTupletTypes;
 	typedef MxEsTupletTypes::iterator MxEsTupletTypesIter;
 	typedef MxEsTupletTypes::const_iterator MxEsTupletTypesIterConst;
 

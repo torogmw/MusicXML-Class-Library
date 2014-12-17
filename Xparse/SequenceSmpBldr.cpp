@@ -330,7 +330,7 @@ namespace XsdClasses
         getMinOccursDocumentation << " i.e. MinOccurs > 0 means the element is required, MinOccurs == 0 means the element is optional.";
         getMinOccurs.setDocumentation( getMinOccursDocumentation.str() );
         std::stringstream getMinOccursCode;
-        getMinOccursCode << "return my" << elementName << "->getMinOccurs();";
+        getMinOccursCode << "return " << minOccurs << ";";
         getMinOccurs.setCode( getMinOccursCode );
         fgrp.addFunction( getMinOccurs );
         
@@ -352,7 +352,7 @@ namespace XsdClasses
         getMaxOccursDocumentation << "'getIs" << elementName << "Unbounded' will return 'true' and the return value of '" << getMaxOccurs.getName() << "' should be ignored.";
         getMaxOccurs.setDocumentation( getMaxOccursDocumentation.str() );
         std::stringstream getMaxOccursCode;
-        getMaxOccursCode << "return my" << elementName << "->getMaxOccurs();";
+        getMaxOccursCode << "return " << maxOccurs << ";";
         getMaxOccurs.setCode( getMaxOccursCode );
         fgrp.addFunction( getMaxOccurs );
         
@@ -373,7 +373,7 @@ namespace XsdClasses
         getUnboundedDocumentation << "When this function returns 'true', the value returned by '" << getMaxOccurs.getName() << "' should be ignored.";
         getUnbounded.setDocumentation( getUnboundedDocumentation.str() );
         std::stringstream getUnboundedCode;
-        getUnboundedCode << "return my" << elementName << "->getIsMaxOccursUnbounded();";
+        getUnboundedCode << "return " << std::boolalpha << isUnbounded << ";";
         getUnbounded.setCode( getUnboundedCode );
         fgrp.addFunction( getUnbounded );
         
@@ -524,11 +524,15 @@ namespace XsdClasses
         
         Function AddElement;
         std::stringstream AddElementCode;
-        AddElementCode << "if( " << dmValue.getName() << ".size() >= ( get" << elementName << "MaxOccurs() - 1 ) )" << end();
+        AddElementCode << "if( ! getIs" << elementName << "Unbounded() )" << end();
         AddElementCode << "{" << end();
-        AddElementCode << tab( 1 ) << "return false;" << end();
+        AddElementCode << tab( 1 ) << "if( " << dmValue.getName() << ".size() >= ( get" << elementName << "MaxOccurs() - 1 ) )" << end();
+        AddElementCode << tab( 1 ) << "{" << end();
+        AddElementCode << tab( 2 ) << "return false;" << end();
+        AddElementCode << tab( 1 ) << "}" << end();
         AddElementCode << "}" << end();
-        AddElementCode << "else if( value_in->get() == nullptr )" << end();
+        
+        AddElementCode << "else if( value_in )" << end();
         AddElementCode << "{" << end();
         AddElementCode << tab( 1 ) << "return false;" << end();
         AddElementCode << "}" << end();
@@ -538,7 +542,7 @@ namespace XsdClasses
         AddElementName << "add" << elementName;
         Parameter AddElementParameter;
         AddElementParameter.setName( "value_in" );
-        AddElementParameter.setDataType( GetElementsIterType );
+        AddElementParameter.setDataType( "H" + bldr->getName() );
         AddElementParameter.isConst( true );
         AddElement.setName( AddElementName.str() );
         AddElement.addParameter( AddElementParameter );

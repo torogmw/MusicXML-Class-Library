@@ -49,7 +49,7 @@ namespace lexicon
 
 	class MxEeTimpani;
 	typedef std::shared_ptr<MxEeTimpani> HMxEeTimpani;
-	typedef std::vector<MxEeTimpani> MxEeTimpanis;
+	typedef std::vector<HMxEeTimpani> MxEeTimpanis;
 	typedef MxEeTimpanis::iterator MxEeTimpanisIter;
 	typedef MxEeTimpanis::const_iterator MxEeTimpanisIterConst;
 

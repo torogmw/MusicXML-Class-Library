@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEsTupletNumber;
 	typedef std::shared_ptr<MxEsTupletNumber> HMxEsTupletNumber;
-	typedef std::vector<MxEsTupletNumber> MxEsTupletNumbers;
+	typedef std::vector<HMxEsTupletNumber> MxEsTupletNumbers;
 	typedef MxEsTupletNumbers::iterator MxEsTupletNumbersIter;
 	typedef MxEsTupletNumbers::const_iterator MxEsTupletNumbersIterConst;
 

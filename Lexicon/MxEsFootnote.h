@@ -71,7 +71,7 @@ namespace lexicon
 
 	class MxEsFootnote;
 	typedef std::shared_ptr<MxEsFootnote> HMxEsFootnote;
-	typedef std::vector<MxEsFootnote> MxEsFootnotes;
+	typedef std::vector<HMxEsFootnote> MxEsFootnotes;
 	typedef MxEsFootnotes::iterator MxEsFootnotesIter;
 	typedef MxEsFootnotes::const_iterator MxEsFootnotesIterConst;
 

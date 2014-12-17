@@ -59,7 +59,7 @@ namespace lexicon
 
 	class MxEsGroupSymbol;
 	typedef std::shared_ptr<MxEsGroupSymbol> HMxEsGroupSymbol;
-	typedef std::vector<MxEsGroupSymbol> MxEsGroupSymbols;
+	typedef std::vector<HMxEsGroupSymbol> MxEsGroupSymbols;
 	typedef MxEsGroupSymbols::iterator MxEsGroupSymbolsIter;
 	typedef MxEsGroupSymbols::const_iterator MxEsGroupSymbolsIterConst;
 

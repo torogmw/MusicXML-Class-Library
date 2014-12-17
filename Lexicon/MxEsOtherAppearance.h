@@ -59,7 +59,7 @@ namespace lexicon
 
 	class MxEsOtherAppearance;
 	typedef std::shared_ptr<MxEsOtherAppearance> HMxEsOtherAppearance;
-	typedef std::vector<MxEsOtherAppearance> MxEsOtherAppearances;
+	typedef std::vector<HMxEsOtherAppearance> MxEsOtherAppearances;
 	typedef MxEsOtherAppearances::iterator MxEsOtherAppearancesIter;
 	typedef MxEsOtherAppearances::const_iterator MxEsOtherAppearancesIterConst;
 

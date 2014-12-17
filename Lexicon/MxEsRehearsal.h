@@ -79,7 +79,7 @@ namespace lexicon
 
 	class MxEsRehearsal;
 	typedef std::shared_ptr<MxEsRehearsal> HMxEsRehearsal;
-	typedef std::vector<MxEsRehearsal> MxEsRehearsals;
+	typedef std::vector<HMxEsRehearsal> MxEsRehearsals;
 	typedef MxEsRehearsals::iterator MxEsRehearsalsIter;
 	typedef MxEsRehearsals::const_iterator MxEsRehearsalsIterConst;
 

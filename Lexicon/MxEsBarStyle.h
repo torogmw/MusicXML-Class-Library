@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEsBarStyle;
 	typedef std::shared_ptr<MxEsBarStyle> HMxEsBarStyle;
-	typedef std::vector<MxEsBarStyle> MxEsBarStyles;
+	typedef std::vector<HMxEsBarStyle> MxEsBarStyles;
 	typedef MxEsBarStyles::iterator MxEsBarStylesIter;
 	typedef MxEsBarStyles::const_iterator MxEsBarStylesIterConst;
 

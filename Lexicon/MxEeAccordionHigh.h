@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeAccordionHigh;
 	typedef std::shared_ptr<MxEeAccordionHigh> HMxEeAccordionHigh;
-	typedef std::vector<MxEeAccordionHigh> MxEeAccordionHighs;
+	typedef std::vector<HMxEeAccordionHigh> MxEeAccordionHighs;
 	typedef MxEeAccordionHighs::iterator MxEeAccordionHighsIter;
 	typedef MxEeAccordionHighs::const_iterator MxEeAccordionHighsIterConst;
 

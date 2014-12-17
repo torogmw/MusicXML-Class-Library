@@ -56,7 +56,7 @@ namespace lexicon
 
 	class MxEsBeater;
 	typedef std::shared_ptr<MxEsBeater> HMxEsBeater;
-	typedef std::vector<MxEsBeater> MxEsBeaters;
+	typedef std::vector<HMxEsBeater> MxEsBeaters;
 	typedef MxEsBeaters::iterator MxEsBeatersIter;
 	typedef MxEsBeaters::const_iterator MxEsBeatersIterConst;
 

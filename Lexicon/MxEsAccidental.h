@@ -70,7 +70,7 @@ namespace lexicon
 
 	class MxEsAccidental;
 	typedef std::shared_ptr<MxEsAccidental> HMxEsAccidental;
-	typedef std::vector<MxEsAccidental> MxEsAccidentals;
+	typedef std::vector<HMxEsAccidental> MxEsAccidentals;
 	typedef MxEsAccidentals::iterator MxEsAccidentalsIter;
 	typedef MxEsAccidentals::const_iterator MxEsAccidentalsIterConst;
 

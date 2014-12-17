@@ -60,7 +60,7 @@ namespace lexicon
 
 	class MxEsMultipleRest;
 	typedef std::shared_ptr<MxEsMultipleRest> HMxEsMultipleRest;
-	typedef std::vector<MxEsMultipleRest> MxEsMultipleRests;
+	typedef std::vector<HMxEsMultipleRest> MxEsMultipleRests;
 	typedef MxEsMultipleRests::iterator MxEsMultipleRestsIter;
 	typedef MxEsMultipleRests::const_iterator MxEsMultipleRestsIterConst;
 

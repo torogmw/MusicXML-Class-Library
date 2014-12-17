@@ -75,7 +75,7 @@ namespace lexicon
 
 	class MxEsCreator;
 	typedef std::shared_ptr<MxEsCreator> HMxEsCreator;
-	typedef std::vector<MxEsCreator> MxEsCreators;
+	typedef std::vector<HMxEsCreator> MxEsCreators;
 	typedef MxEsCreators::iterator MxEsCreatorsIter;
 	typedef MxEsCreators::const_iterator MxEsCreatorsIterConst;
 

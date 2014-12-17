@@ -73,7 +73,7 @@ namespace lexicon
 
 	class MxEsPluck;
 	typedef std::shared_ptr<MxEsPluck> HMxEsPluck;
-	typedef std::vector<MxEsPluck> MxEsPlucks;
+	typedef std::vector<HMxEsPluck> MxEsPlucks;
 	typedef MxEsPlucks::iterator MxEsPlucksIter;
 	typedef MxEsPlucks::const_iterator MxEsPlucksIterConst;
 

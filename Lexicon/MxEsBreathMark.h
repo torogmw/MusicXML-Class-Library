@@ -63,7 +63,7 @@ namespace lexicon
 
 	class MxEsBreathMark;
 	typedef std::shared_ptr<MxEsBreathMark> HMxEsBreathMark;
-	typedef std::vector<MxEsBreathMark> MxEsBreathMarks;
+	typedef std::vector<HMxEsBreathMark> MxEsBreathMarks;
 	typedef MxEsBreathMarks::iterator MxEsBreathMarksIter;
 	typedef MxEsBreathMarks::const_iterator MxEsBreathMarksIterConst;
 

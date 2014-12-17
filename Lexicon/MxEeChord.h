@@ -60,7 +60,7 @@ namespace lexicon
 
 	class MxEeChord;
 	typedef std::shared_ptr<MxEeChord> HMxEeChord;
-	typedef std::vector<MxEeChord> MxEeChords;
+	typedef std::vector<HMxEeChord> MxEeChords;
 	typedef MxEeChords::iterator MxEeChordsIter;
 	typedef MxEeChords::const_iterator MxEeChordsIterConst;
 

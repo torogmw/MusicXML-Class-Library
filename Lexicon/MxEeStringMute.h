@@ -61,7 +61,7 @@ namespace lexicon
 
 	class MxEeStringMute;
 	typedef std::shared_ptr<MxEeStringMute> HMxEeStringMute;
-	typedef std::vector<MxEeStringMute> MxEeStringMutes;
+	typedef std::vector<HMxEeStringMute> MxEeStringMutes;
 	typedef MxEeStringMutes::iterator MxEeStringMutesIter;
 	typedef MxEeStringMutes::const_iterator MxEeStringMutesIterConst;
 

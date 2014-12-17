@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEsGroupAbbreviation;
 	typedef std::shared_ptr<MxEsGroupAbbreviation> HMxEsGroupAbbreviation;
-	typedef std::vector<MxEsGroupAbbreviation> MxEsGroupAbbreviations;
+	typedef std::vector<HMxEsGroupAbbreviation> MxEsGroupAbbreviations;
 	typedef MxEsGroupAbbreviations::iterator MxEsGroupAbbreviationsIter;
 	typedef MxEsGroupAbbreviations::const_iterator MxEsGroupAbbreviationsIterConst;
 

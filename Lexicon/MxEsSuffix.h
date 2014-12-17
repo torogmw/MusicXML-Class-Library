@@ -77,7 +77,7 @@ namespace lexicon
 
 	class MxEsSuffix;
 	typedef std::shared_ptr<MxEsSuffix> HMxEsSuffix;
-	typedef std::vector<MxEsSuffix> MxEsSuffixs;
+	typedef std::vector<HMxEsSuffix> MxEsSuffixs;
 	typedef MxEsSuffixs::iterator MxEsSuffixsIter;
 	typedef MxEsSuffixs::const_iterator MxEsSuffixsIterConst;
 

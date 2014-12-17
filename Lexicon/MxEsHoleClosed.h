@@ -58,7 +58,7 @@ namespace lexicon
 
 	class MxEsHoleClosed;
 	typedef std::shared_ptr<MxEsHoleClosed> HMxEsHoleClosed;
-	typedef std::vector<MxEsHoleClosed> MxEsHoleCloseds;
+	typedef std::vector<HMxEsHoleClosed> MxEsHoleCloseds;
 	typedef MxEsHoleCloseds::iterator MxEsHoleClosedsIter;
 	typedef MxEsHoleCloseds::const_iterator MxEsHoleClosedsIterConst;
 

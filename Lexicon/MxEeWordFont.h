@@ -55,7 +55,7 @@ namespace lexicon
 
 	class MxEeWordFont;
 	typedef std::shared_ptr<MxEeWordFont> HMxEeWordFont;
-	typedef std::vector<MxEeWordFont> MxEeWordFonts;
+	typedef std::vector<HMxEeWordFont> MxEeWordFonts;
 	typedef MxEeWordFonts::iterator MxEeWordFontsIter;
 	typedef MxEeWordFonts::const_iterator MxEeWordFontsIterConst;
 

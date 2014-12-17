@@ -62,7 +62,7 @@ namespace lexicon
 
 	class MxEeStress;
 	typedef std::shared_ptr<MxEeStress> HMxEeStress;
-	typedef std::vector<MxEeStress> MxEeStresss;
+	typedef std::vector<HMxEeStress> MxEeStresss;
 	typedef MxEeStresss::iterator MxEeStresssIter;
 	typedef MxEeStresss::const_iterator MxEeStresssIterConst;
 

@@ -71,7 +71,7 @@ namespace lexicon
 
 	class MxEsFingering;
 	typedef std::shared_ptr<MxEsFingering> HMxEsFingering;
-	typedef std::vector<MxEsFingering> MxEsFingerings;
+	typedef std::vector<HMxEsFingering> MxEsFingerings;
 	typedef MxEsFingerings::iterator MxEsFingeringsIter;
 	typedef MxEsFingerings::const_iterator MxEsFingeringsIterConst;
 

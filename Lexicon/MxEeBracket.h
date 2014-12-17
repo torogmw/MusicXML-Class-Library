@@ -67,7 +67,7 @@ namespace lexicon
 
 	class MxEeBracket;
 	typedef std::shared_ptr<MxEeBracket> HMxEeBracket;
-	typedef std::vector<MxEeBracket> MxEeBrackets;
+	typedef std::vector<HMxEeBracket> MxEeBrackets;
 	typedef MxEeBrackets::iterator MxEeBracketsIter;
 	typedef MxEeBrackets::const_iterator MxEeBracketsIterConst;
 

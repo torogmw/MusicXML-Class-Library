@@ -56,7 +56,7 @@ namespace lexicon
 
 	class MxEeDouble;
 	typedef std::shared_ptr<MxEeDouble> HMxEeDouble;
-	typedef std::vector<MxEeDouble> MxEeDoubles;
+	typedef std::vector<HMxEeDouble> MxEeDoubles;
 	typedef MxEeDoubles::iterator MxEeDoublesIter;
 	typedef MxEeDoubles::const_iterator MxEeDoublesIterConst;
 

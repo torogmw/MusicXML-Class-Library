@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEeBookmark;
 	typedef std::shared_ptr<MxEeBookmark> HMxEeBookmark;
-	typedef std::vector<MxEeBookmark> MxEeBookmarks;
+	typedef std::vector<HMxEeBookmark> MxEeBookmarks;
 	typedef MxEeBookmarks::iterator MxEeBookmarksIter;
 	typedef MxEeBookmarks::const_iterator MxEeBookmarksIterConst;
 

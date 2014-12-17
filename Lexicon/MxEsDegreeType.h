@@ -67,7 +67,7 @@ namespace lexicon
 
 	class MxEsDegreeType;
 	typedef std::shared_ptr<MxEsDegreeType> HMxEsDegreeType;
-	typedef std::vector<MxEsDegreeType> MxEsDegreeTypes;
+	typedef std::vector<HMxEsDegreeType> MxEsDegreeTypes;
 	typedef MxEsDegreeTypes::iterator MxEsDegreeTypesIter;
 	typedef MxEsDegreeTypes::const_iterator MxEsDegreeTypesIterConst;
 

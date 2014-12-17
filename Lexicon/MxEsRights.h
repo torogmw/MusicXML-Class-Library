@@ -70,7 +70,7 @@ namespace lexicon
 
 	class MxEsRights;
 	typedef std::shared_ptr<MxEsRights> HMxEsRights;
-	typedef std::vector<MxEsRights> MxEsRightss;
+	typedef std::vector<HMxEsRights> MxEsRightss;
 	typedef MxEsRightss::iterator MxEsRightssIter;
 	typedef MxEsRightss::const_iterator MxEsRightssIterConst;
 

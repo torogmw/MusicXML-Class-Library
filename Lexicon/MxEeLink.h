@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeLink;
 	typedef std::shared_ptr<MxEeLink> HMxEeLink;
-	typedef std::vector<MxEeLink> MxEeLinks;
+	typedef std::vector<HMxEeLink> MxEeLinks;
 	typedef MxEeLinks::iterator MxEeLinksIter;
 	typedef MxEeLinks::const_iterator MxEeLinksIterConst;
 

@@ -59,7 +59,7 @@ namespace lexicon
 
 	class MxEeLyricFont;
 	typedef std::shared_ptr<MxEeLyricFont> HMxEeLyricFont;
-	typedef std::vector<MxEeLyricFont> MxEeLyricFonts;
+	typedef std::vector<HMxEeLyricFont> MxEeLyricFonts;
 	typedef MxEeLyricFonts::iterator MxEeLyricFontsIter;
 	typedef MxEeLyricFonts::const_iterator MxEeLyricFontsIterConst;
 

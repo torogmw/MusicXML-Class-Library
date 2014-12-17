@@ -58,7 +58,7 @@ namespace lexicon
 
 	class MxEsType;
 	typedef std::shared_ptr<MxEsType> HMxEsType;
-	typedef std::vector<MxEsType> MxEsTypes;
+	typedef std::vector<HMxEsType> MxEsTypes;
 	typedef MxEsTypes::iterator MxEsTypesIter;
 	typedef MxEsTypes::const_iterator MxEsTypesIterConst;
 

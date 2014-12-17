@@ -63,7 +63,7 @@ namespace lexicon
 
 	class MxEsPerMinute;
 	typedef std::shared_ptr<MxEsPerMinute> HMxEsPerMinute;
-	typedef std::vector<MxEsPerMinute> MxEsPerMinutes;
+	typedef std::vector<HMxEsPerMinute> MxEsPerMinutes;
 	typedef MxEsPerMinutes::iterator MxEsPerMinutesIter;
 	typedef MxEsPerMinutes::const_iterator MxEsPerMinutesIterConst;
 

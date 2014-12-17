@@ -68,7 +68,7 @@ namespace lexicon
 
 	class MxEsFigureNumber;
 	typedef std::shared_ptr<MxEsFigureNumber> HMxEsFigureNumber;
-	typedef std::vector<MxEsFigureNumber> MxEsFigureNumbers;
+	typedef std::vector<HMxEsFigureNumber> MxEsFigureNumbers;
 	typedef MxEsFigureNumbers::iterator MxEsFigureNumbersIter;
 	typedef MxEsFigureNumbers::const_iterator MxEsFigureNumbersIterConst;
 

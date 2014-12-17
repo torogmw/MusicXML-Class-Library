@@ -63,7 +63,7 @@ namespace lexicon
 
 	class MxEsInversion;
 	typedef std::shared_ptr<MxEsInversion> HMxEsInversion;
-	typedef std::vector<MxEsInversion> MxEsInversions;
+	typedef std::vector<HMxEsInversion> MxEsInversions;
 	typedef MxEsInversions::iterator MxEsInversionsIter;
 	typedef MxEsInversions::const_iterator MxEsInversionsIterConst;
 

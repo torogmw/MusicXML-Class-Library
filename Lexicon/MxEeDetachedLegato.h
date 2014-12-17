@@ -65,7 +65,7 @@ namespace lexicon
 
 	class MxEeDetachedLegato;
 	typedef std::shared_ptr<MxEeDetachedLegato> HMxEeDetachedLegato;
-	typedef std::vector<MxEeDetachedLegato> MxEeDetachedLegatos;
+	typedef std::vector<HMxEeDetachedLegato> MxEeDetachedLegatos;
 	typedef MxEeDetachedLegatos::iterator MxEeDetachedLegatosIter;
 	typedef MxEeDetachedLegatos::const_iterator MxEeDetachedLegatosIterConst;
 

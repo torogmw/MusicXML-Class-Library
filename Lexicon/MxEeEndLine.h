@@ -57,7 +57,7 @@ namespace lexicon
 
 	class MxEeEndLine;
 	typedef std::shared_ptr<MxEeEndLine> HMxEeEndLine;
-	typedef std::vector<MxEeEndLine> MxEeEndLines;
+	typedef std::vector<HMxEeEndLine> MxEeEndLines;
 	typedef MxEeEndLines::iterator MxEeEndLinesIter;
 	typedef MxEeEndLines::const_iterator MxEeEndLinesIterConst;
 

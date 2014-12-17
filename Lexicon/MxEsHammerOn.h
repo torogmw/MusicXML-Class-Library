@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsHammerOn;
 	typedef std::shared_ptr<MxEsHammerOn> HMxEsHammerOn;
-	typedef std::vector<MxEsHammerOn> MxEsHammerOns;
+	typedef std::vector<HMxEsHammerOn> MxEsHammerOns;
 	typedef MxEsHammerOns::iterator MxEsHammerOnsIter;
 	typedef MxEsHammerOns::const_iterator MxEsHammerOnsIterConst;
 

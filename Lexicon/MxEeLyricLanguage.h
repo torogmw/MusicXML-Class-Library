@@ -56,7 +56,7 @@ namespace lexicon
 
 	class MxEeLyricLanguage;
 	typedef std::shared_ptr<MxEeLyricLanguage> HMxEeLyricLanguage;
-	typedef std::vector<MxEeLyricLanguage> MxEeLyricLanguages;
+	typedef std::vector<HMxEeLyricLanguage> MxEeLyricLanguages;
 	typedef MxEeLyricLanguages::iterator MxEeLyricLanguagesIter;
 	typedef MxEeLyricLanguages::const_iterator MxEeLyricLanguagesIterConst;
 

@@ -72,7 +72,7 @@ namespace lexicon
 
 	class MxEsOtherArticulation;
 	typedef std::shared_ptr<MxEsOtherArticulation> HMxEsOtherArticulation;
-	typedef std::vector<MxEsOtherArticulation> MxEsOtherArticulations;
+	typedef std::vector<HMxEsOtherArticulation> MxEsOtherArticulations;
 	typedef MxEsOtherArticulations::iterator MxEsOtherArticulationsIter;
 	typedef MxEsOtherArticulations::const_iterator MxEsOtherArticulationsIterConst;
 
