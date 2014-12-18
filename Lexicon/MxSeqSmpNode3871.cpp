@@ -139,7 +139,6 @@ namespace lexicon
 		HMxEsRootAlter getRootAlter() const
 		{
 			return myRootAlter;
-			
 		}
 
 		/** Sets the internal shared pointer handle for the <RootAlter> element.

@@ -44,7 +44,7 @@ namespace lexicon
 
 /* Constructor, Destructor, Copy, Assignment ------------------------------------------ */
 
-		MxNumberSemitones( long double value_in = 1 );
+		MxNumberSemitones( long double value_in = 0 );
 		virtual ~MxNumberSemitones();
 /* Getters ---------------------------------------------------------------------------- */
 
