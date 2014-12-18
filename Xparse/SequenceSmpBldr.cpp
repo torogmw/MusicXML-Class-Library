@@ -532,7 +532,7 @@ namespace XsdClasses
         AddElementCode << tab( 1 ) << "}" << end();
         AddElementCode << "}" << end();
         
-        AddElementCode << "else if( value_in )" << end();
+        AddElementCode << "else if( ! value_in )" << end();
         AddElementCode << "{" << end();
         AddElementCode << tab( 1 ) << "return false;" << end();
         AddElementCode << "}" << end();

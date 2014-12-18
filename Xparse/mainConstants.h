@@ -21,7 +21,8 @@ namespace constants
     }
     inline std::string getOutputDirectory()
     {
-        return "/Volumes/MusikPlatz/output/";
+        //return "/Volumes/MusikPlatz/output/";
+        return "/Users/mjb/Desktop/lexput/";
     }
     inline std::string getXsdFilePath()
     {
