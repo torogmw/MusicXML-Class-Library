@@ -3252,11 +3252,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tests/MxSeqSmpNode3499Test.cpp"
-            timestampString = "440553006.192954"
+            timestampString = "440555201.068055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "TEST( Test0004_getFeatureCount, MxSeqSmpNode3499 )"
             landmarkType = "7">
          </BreakpointContent>

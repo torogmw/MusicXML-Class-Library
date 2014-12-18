@@ -895,6 +895,7 @@
 		2972E67E1A3289BA0018E453 /* MxEeWavyLineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEeWavyLineTest.cpp; sourceTree = "<group>"; };
 		2972E67F1A3289BA0018E453 /* MxEeWedgeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEeWedgeTest.cpp; sourceTree = "<group>"; };
 		2972E6801A3289BA0018E453 /* MxEeWordFontTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEeWordFontTest.cpp; sourceTree = "<group>"; };
+		29754CDA1A4255D6004C7999 /* streamLinesTestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = streamLinesTestHelper.h; sourceTree = "<group>"; };
 		299CCF1D1A32C49F00D0E0CD /* MxEsAccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEsAccidentalMarkTest.cpp; sourceTree = "<group>"; };
 		299CCF1E1A32C49F00D0E0CD /* MxEsAccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEsAccidentalTest.cpp; sourceTree = "<group>"; };
 		299CCF1F1A32C49F00D0E0CD /* MxEsBarStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEsBarStyleTest.cpp; sourceTree = "<group>"; };
@@ -1399,6 +1400,7 @@
 				297143C21A3D3B120073E8A6 /* MxSeqSmpNode6156Test.cpp */,
 				297143C31A3D3B120073E8A6 /* MxSeqSmpNode6250Test.cpp */,
 				297143C41A3D3B120073E8A6 /* MxSeqSmpNode6271Test.cpp */,
+				29754CDA1A4255D6004C7999 /* streamLinesTestHelper.h */,
 			);
 			name = MxSeqSmp;
 			sourceTree = "<group>";

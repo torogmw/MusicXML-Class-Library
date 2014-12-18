@@ -2,6 +2,8 @@
 
 #include "TestHarness.h"
 #include "MxSeqSmpNode3499.h"
+#include "streamLinesTestHelper.h"
+
 using namespace lexicon;
 
 TEST( Test0000_DefaultCtor, MxSeqSmpNode3499 )
@@ -120,5 +122,70 @@ TEST( Test0011_getIsFeatureUnbounded, MxSeqSmpNode3499 )
 
 TEST( toString, MxSeqSmpNode3499 )
 {
-    CHECK( false )
+    MxSeqSmpNode3499 object;
+    std::string expected;
+    std::string actual;
+    
+    object.addFeature( std::make_shared<MxEsFeature>( XsString( "Hello" ) ) );
+    object.addFeature( std::make_shared<MxEsFeature>( XsString( "World" ) ) );
+    object.addFeature( std::make_shared<MxEsFeature>( XsString( "!" ) ) );
+    
+    std::vector<std::string> expectedStrings;
+    expectedStrings.push_back( "<feature>Hello</feature>" );
+    expectedStrings.push_back( "<feature>World</feature>" );
+    expectedStrings.push_back( "<feature>!</feature>" );
+    
+    std::stringstream acss;
+    object.stream( acss, 2 );
+    std::stringstream exss;
+    std::string whitespace = "\t\t";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+	actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss, 1, "\t" );
+    whitespace = "\t";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss, 3, ".-" );
+    whitespace = ".-.-.-";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss );
+    exss.str( "" );
+    whitespace = "";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    acss << object;
+    exss.str( "" );
+    whitespace = "";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+
+    exss.str( "" );
+    whitespace = "";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = object.toString();
+	CHECK_EQUAL( expected, actual )
 }
