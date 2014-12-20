@@ -141,49 +141,117 @@ TEST( Test0012_getRootAlter, MxSeqSmpNode3871 )
 	actual = object.getRootAlter()->toString();
 	CHECK_EQUAL( expected, actual )
 }
-//TEST( Test0013_setRootAlter, MxSeqSmpNode3871 )
-//{
-//	MxSeqSmpNode3871 object;
-//	std::string expected;
-//	std::string actual;
-//	HMxEsRootAlter element;
-//	expected = "";
-//	actual = object.getRootAlter()->toString();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0014_getRootAlterMinOccurs, MxSeqSmpNode3871 )
-//{
-//	MxSeqSmpNode3871 object;
-//	int expected;
-//	int actual;
-//	expected = 0;
-//	actual = object.getRootAlterMinOccurs();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0015_getRootAlterMaxOccurs, MxSeqSmpNode3871 )
-//{
-//	MxSeqSmpNode3871 object;
-//	int expected;
-//	int actual;
-//	expected = 1;
-//	actual = object.getRootAlterMaxOccurs();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0016_getIsRootAlterUnbounded, MxSeqSmpNode3871 )
-//{
-//	MxSeqSmpNode3871 object;
-//	bool expected;
-//	bool actual;
-//	expected = false;
-//	actual = object.getIsRootAlterUnbounded();
-//	CHECK_EQUAL( expected, actual )
-//}
-//
-///* End: RootAlter Functions ------------------------------------------------- */
-//
-//
-//TEST( toString, MxSeqSmpNode3871 )
-//{
-//    CHECK( false )
-//}
+TEST( Test0013_setRootAlter, MxSeqSmpNode3871 )
+{
+	MxSeqSmpNode3871 object;
+	std::string expected;
+	std::string actual;
+	expected = "<root-alter>0</root-alter>";
+	actual = object.getRootAlter()->toString();
+	CHECK_EQUAL( expected, actual )
+    HMxEsRootAlter element = std::make_shared<MxEsRootAlter>( MxNumberSemitones(2) );
+    object.setRootAlter( element );
+	expected = "<root-alter>2</root-alter>";
+	actual = object.getRootAlter()->toString();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0014_getRootAlterMinOccurs, MxSeqSmpNode3871 )
+{
+	MxSeqSmpNode3871 object;
+	int expected;
+	int actual;
+	expected = 0;
+	actual = object.getRootAlterMinOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0015_getRootAlterMaxOccurs, MxSeqSmpNode3871 )
+{
+	MxSeqSmpNode3871 object;
+	int expected;
+	int actual;
+	expected = 1;
+	actual = object.getRootAlterMaxOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0016_getIsRootAlterUnbounded, MxSeqSmpNode3871 )
+{
+	MxSeqSmpNode3871 object;
+	bool expected;
+	bool actual;
+	expected = false;
+	actual = object.getIsRootAlterUnbounded();
+	CHECK_EQUAL( expected, actual )
+}
+
+/* End: RootAlter Functions ------------------------------------------------- */
+
+
+TEST( toString, MxSeqSmpNode3871 )
+{
+    MxSeqSmpNode3871 object;
+    std::string expected;
+    std::string actual;
+    
+    object.setIsRootAlterPresent( true );
+    object.getRootAlter()->setValue( MxNumberSemitones( -0.75 ) );
+    object.getRootStep()->setValue( enums::Step::b );
+    
+    std::vector<std::string> expectedStrings;
+    expectedStrings.push_back( "<root-step>B</root-step>" );
+    expectedStrings.push_back( "<root-alter>-0.75</root-alter>" );
+    
+    std::stringstream acss;
+    object.stream( acss, 2 );
+    std::stringstream exss;
+    std::string whitespace = "\t\t";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+	actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss, 1, "\t" );
+    whitespace = "\t";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss, 3, ".-" );
+    whitespace = ".-.-.-";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    object.stream( acss );
+    exss.str( "" );
+    whitespace = "";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    acss.str( "" );
+    exss.str( "" );
+    acss << object;
+    exss.str( "" );
+    whitespace = "";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = acss.str();
+	CHECK_EQUAL( expected, actual )
+    
+    exss.str( "" );
+    whitespace = "";
+    streamLinesTestHelper( whitespace, expectedStrings, exss );
+    expected = exss.str();
+    actual = object.toString();
+	CHECK_EQUAL( expected, actual )
+}
 
