@@ -73,13 +73,13 @@ TEST( Test0007_addMiscellaneousField, MxSeqSmpNode4104 )
     object.addMiscellaneousField( std::make_shared<MxEsMiscellaneousField>( XsString( "Hello" ) ) );
     object.addMiscellaneousField( std::make_shared<MxEsMiscellaneousField>( XsString( "World" ) ) );
     object.addMiscellaneousField( std::make_shared<MxEsMiscellaneousField>( XsString( "!" ) ) );
-	std::string expected = "<feature>World</feature>";
+	std::string expected = "<miscellaneous-field name=\"\">World</miscellaneous-field>";
     auto it = object.getMiscellaneousFieldBegin();
     ++it;
 	std::string actual( (*it)->toString() );
 	CHECK_EQUAL( expected, actual )
     CHECK( object.removeMiscellaneousField( it ) );
-    expected = "<feature>!</feature>";
+    expected = "<miscellaneous-field name=\"\">!</miscellaneous-field>";
     it = object.getMiscellaneousFieldBegin();
     ++it;
 	actual = (*it)->toString();
@@ -125,10 +125,17 @@ TEST( toString, MxSeqSmpNode4104 )
     object.addMiscellaneousField( std::make_shared<MxEsMiscellaneousField>( XsString( "World" ) ) );
     object.addMiscellaneousField( std::make_shared<MxEsMiscellaneousField>( XsString( "!" ) ) );
     
+    auto it = object.getMiscellaneousFieldBegin();
+    (*it)->setName( XsToken( "one" ) );
+    ++it;
+    (*it)->setName( XsToken( "two" ) );
+    ++it;
+    (*it)->setName( XsToken( "three" ) );
+    
     std::vector<std::string> expectedStrings;
-    expectedStrings.push_back( "<feature>Hello</feature>" );
-    expectedStrings.push_back( "<feature>World</feature>" );
-    expectedStrings.push_back( "<feature>!</feature>" );
+    expectedStrings.push_back( "<miscellaneous-field name=\"one\">Hello</miscellaneous-field>" );
+    expectedStrings.push_back( "<miscellaneous-field name=\"two\">World</miscellaneous-field>" );
+    expectedStrings.push_back( "<miscellaneous-field name=\"three\">!</miscellaneous-field>" );
     
     std::stringstream acss;
     object.stream( acss, 2 );
