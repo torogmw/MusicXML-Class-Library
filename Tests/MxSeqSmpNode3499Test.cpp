@@ -66,8 +66,8 @@ TEST( Test0005_getFeatureBegin, MxSeqSmpNode3499 )
 TEST( Test0006_getFeatureBeginConst, MxSeqSmpNode3499 )
 {
 	MxSeqSmpNode3499 object;
-	MxEsFeaturesIter expected;
-	MxEsFeaturesIter actual;
+	MxEsFeaturesIterConst expected;
+	MxEsFeaturesIterConst actual;
 	CHECK( object.getFeatureBeginConst() == object.getFeatureEndConst() )
     object.addFeature( std::make_shared<MxEsFeature>( XsString() ) );
     CHECK( object.getFeatureBeginConst() != object.getFeatureEndConst() )
