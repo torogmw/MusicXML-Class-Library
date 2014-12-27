@@ -46,136 +46,166 @@ TEST( Test0004_getLineWidthCount, MxSeqSmpNode4143 )
 	actual = object.getLineWidthCount();
 	CHECK_EQUAL( expected, actual )
 }
-//TEST( Test0005_getLineWidthBegin, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	MxEsLineWidthsIter expected;
-//	MxEsLineWidthsIter actual;
-//}
-//TEST( Test0006_getLineWidthBeginConst, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	MxEsLineWidthsIterConst expected;
-//	MxEsLineWidthsIterConst actual;
-//}
-//TEST( Test0007_addLineWidth, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	std::size_t expected;
-//	std::size_t actual;
-//}
-//TEST( Test0008_removeLineWidth, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	std::size_t expected;
-//	std::size_t actual;
-//	expected = 0;
-//	// actual = object.removeLineWidth();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0009_getLineWidthMinOccurs, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	int expected;
-//	int actual;
-//}
-//TEST( Test0010_getLineWidthMaxOccurs, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	int expected;
-//	int actual;
-//	expected = 32767;
-//	actual = object.getLineWidthMaxOccurs();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0011_getIsLineWidthUnbounded, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	bool expected;
-//	bool actual;
-//	expected = true;
-//	actual = object.getIsLineWidthUnbounded();
-//	CHECK_EQUAL( expected, actual )
-//}
-//
-///* End: LineWidth Functions ------------------------------------------------- */
-//
-///* NoteSize Functions ------------------------------------------------------- */
-//
-//TEST( Test0012_getNoteSizeCount, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	std::size_t expected;
-//	std::size_t actual;
-//	expected = 0;
-//	actual = object.getNoteSizeCount();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0013_getNoteSizeBegin, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	MxEsNoteSizesIter expected;
-//	MxEsNoteSizesIter actual;
-//}
-//TEST( Test0014_getNoteSizeBeginConst, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	MxEsNoteSizesIterConst expected;
-//	MxEsNoteSizesIterConst actual;
-//}
-//TEST( Test0015_addNoteSize, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	std::size_t expected;
-//	std::size_t actual;
-//}
-//TEST( Test0016_removeNoteSize, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	std::size_t expected;
-//	std::size_t actual;
-//	expected = 0;
-//	// actual = object.removeNoteSize();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0017_getNoteSizeMinOccurs, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	int expected;
-//	int actual;
-//}
-//TEST( Test0018_getNoteSizeMaxOccurs, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	int expected;
-//	int actual;
-//	expected = 32767;
-//	actual = object.getNoteSizeMaxOccurs();
-//	CHECK_EQUAL( expected, actual )
-//}
-//TEST( Test0019_getIsNoteSizeUnbounded, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	bool expected;
-//	bool actual;
-//	expected = true;
-//	actual = object.getIsNoteSizeUnbounded();
-//	CHECK_EQUAL( expected, actual )
-//}
-//
-///* End: NoteSize Functions -------------------------------------------------- */
-//
-///* Distance Functions ------------------------------------------------------- */
-//
-//TEST( Test0020_getDistanceCount, MxSeqSmpNode4143 )
-//{
-//	MxSeqSmpNode4143 object;
-//	std::size_t expected;
-//	std::size_t actual;
-//	expected = 0;
-//	actual = object.getDistanceCount();
-//	CHECK_EQUAL( expected, actual )
-//}
+TEST( Test0005_getLineWidthBegin, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	MxEsLineWidthsIter expected;
+	MxEsLineWidthsIter actual;
+	CHECK( object.getLineWidthBegin() == object.getLineWidthEnd() )
+    object.addLineWidth( std::make_shared<MxEsLineWidth>( MxNumberTenths( 1.1 ) ) );
+    CHECK( object.getLineWidthBegin() != object.getLineWidthEnd() )
+}
+TEST( Test0006_getLineWidthBeginConst, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	MxEsLineWidthsIter expected;
+	MxEsLineWidthsIter actual;
+	CHECK( object.getLineWidthBeginConst() == object.getLineWidthEndConst() )
+    object.addLineWidth( std::make_shared<MxEsLineWidth>( MxNumberTenths( 1.1 ) ) );
+    CHECK( object.getLineWidthBeginConst() != object.getLineWidthEndConst() )
+}
+TEST( Test0007_addLineWidth, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+    object.addLineWidth( std::make_shared<MxEsLineWidth>( MxNumberTenths( 1.2 ) ) );
+    object.addLineWidth( std::make_shared<MxEsLineWidth>( MxNumberTenths( -3 ) ) );
+    object.addLineWidth( std::make_shared<MxEsLineWidth>( MxNumberTenths( 0 ) ));
+	std::string expected = "<line-width type=\"beam\">-3</line-width>";
+    auto it = object.getLineWidthBegin();
+    ++it;
+	std::string actual( (*it)->toString() );
+	CHECK_EQUAL( expected, actual )
+    CHECK( object.removeLineWidth( it ) );
+    it = object.getLineWidthBegin();
+    ++it;
+    expected = "<line-width type=\"beam\">0</line-width>";
+	actual = (*it)->toString();
+	CHECK_EQUAL( expected, actual )
+    it = object.getLineWidthEnd();
+    CHECK( ! object.removeLineWidth( it ) );
+}
+TEST( Test0009_getLineWidthMinOccurs, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	int expected;
+	int actual;
+	expected = 0;
+	actual = object.getLineWidthMinOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0010_getLineWidthMaxOccurs, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	int expected;
+	int actual;
+	expected = 32767;
+	actual = object.getLineWidthMaxOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0011_getIsLineWidthUnbounded, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	bool expected;
+	bool actual;
+	expected = true;
+	actual = object.getIsLineWidthUnbounded();
+	CHECK_EQUAL( expected, actual )
+}
+
+/* End: LineWidth Functions ------------------------------------------------- */
+
+/* NoteSize Functions ------------------------------------------------------- */
+
+TEST( Test0012_getNoteSizeCount, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	std::size_t expected;
+	std::size_t actual;
+	expected = 0;
+	actual = object.getNoteSizeCount();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0013_getNoteSizeBegin, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	MxEsNoteSizesIter expected;
+	MxEsNoteSizesIter actual;
+	CHECK( object.getNoteSizeBegin() == object.getNoteSizeEnd() )
+    object.addNoteSize( std::make_shared<MxEsNoteSize>( MxNumberNonNegativeDecimal( 0.01 ) ) );
+    CHECK( object.getNoteSizeBegin() != object.getNoteSizeEnd() )
+}
+TEST( Test0014_getNoteSizeBeginConst, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	MxEsNoteSizesIter expected;
+	MxEsNoteSizesIter actual;
+	CHECK( object.getNoteSizeBeginConst() == object.getNoteSizeEndConst() )
+    object.addNoteSize( std::make_shared<MxEsNoteSize>( MxNumberNonNegativeDecimal( 0.01 ) ) );
+    CHECK( object.getNoteSizeBeginConst() != object.getNoteSizeEndConst() )
+}
+TEST( Test0015_addNoteSize, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+    std::string expected;
+	std::string actual;
+    object.addNoteSize( std::make_shared<MxEsNoteSize>( MxNumberNonNegativeDecimal( 0.01 ) ) );
+    object.addNoteSize( std::make_shared<MxEsNoteSize>( MxNumberNonNegativeDecimal( 0.02 ) ) );
+    object.addNoteSize( std::make_shared<MxEsNoteSize>( MxNumberNonNegativeDecimal( 0.03 ) ) );
+    auto it = object.getNoteSizeBegin();
+    ++it;
+	expected = "<note-size type=\"cue\">0.02</note-size>";
+    actual = (*it)->toString();
+	CHECK_EQUAL( expected, actual )
+    CHECK( object.removeNoteSize( it ) );
+    it = object.getNoteSizeBegin();
+    ++it;
+    expected = "<note-size type=\"cue\">0.03</note-size>";
+	actual = (*it)->toString();
+	CHECK_EQUAL( expected, actual )
+    it = object.getNoteSizeEnd();
+    CHECK( ! object.removeNoteSize( it ) );
+}
+TEST( Test0017_getNoteSizeMinOccurs, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	int expected;
+	int actual;
+    expected = 0;
+    actual = object.getNoteSizeMinOccurs();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( Test0018_getNoteSizeMaxOccurs, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	int expected;
+	int actual;
+	expected = 32767;
+	actual = object.getNoteSizeMaxOccurs();
+	CHECK_EQUAL( expected, actual )
+}
+TEST( Test0019_getIsNoteSizeUnbounded, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	bool expected;
+	bool actual;
+	expected = true;
+	actual = object.getIsNoteSizeUnbounded();
+	CHECK_EQUAL( expected, actual )
+}
+
+/* End: NoteSize Functions -------------------------------------------------- */
+
+/* Distance Functions ------------------------------------------------------- */
+
+TEST( Test0020_getDistanceCount, MxSeqSmpNode4143 )
+{
+	MxSeqSmpNode4143 object;
+	std::size_t expected;
+	std::size_t actual;
+	expected = 0;
+	actual = object.getDistanceCount();
+	CHECK_EQUAL( expected, actual )
+}
 //TEST( Test0021_getDistanceBegin, MxSeqSmpNode4143 )
 //{
 //	MxSeqSmpNode4143 object;
