@@ -1388,6 +1388,7 @@
 		2937C9311A18771300B09E2D /* XmlSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlSpace.h; sourceTree = "<group>"; };
 		2937C9341A187E3400B09E2D /* XsString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsString.cpp; sourceTree = "<group>"; };
 		2937C9351A187E3400B09E2D /* XsString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XsString.h; sourceTree = "<group>"; };
+		293DE6EF1A511286006E1C7B /* MxElementCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MxElementCollection.h; sourceTree = "<group>"; };
 		2942628D1A172269003282BA /* XlinkType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XlinkType.cpp; sourceTree = "<group>"; };
 		2942628E1A172269003282BA /* XlinkType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XlinkType.h; sourceTree = "<group>"; };
 		294262911A172851003282BA /* XlinkShow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XlinkShow.cpp; sourceTree = "<group>"; };
@@ -2357,6 +2358,7 @@
 			children = (
 				293590961A16AA590022BAAA /* LexiconBaseObjects.cpp */,
 				293590971A16AA590022BAAA /* LexiconBaseObjects.h */,
+				293DE6EF1A511286006E1C7B /* MxElementCollection.h */,
 			);
 			name = Base;
 			sourceTree = "<group>";
