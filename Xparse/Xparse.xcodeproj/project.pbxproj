@@ -181,6 +181,8 @@
 		2937C9271A180DDF00B09E2D /* getSimpleTypeIdFromXmlName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getSimpleTypeIdFromXmlName.h; sourceTree = "<group>"; };
 		2937EAB01A2EAB7E0094C5F3 /* CxCategorize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CxCategorize.cpp; sourceTree = "<group>"; };
 		2937EAB11A2EAB7E0094C5F3 /* CxCategorize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxCategorize.h; sourceTree = "<group>"; };
+		293DE6F71A51203D006E1C7B /* mainDoCreateMxSeqSmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoCreateMxSeqSmp.h; sourceTree = "<group>"; };
+		293DE6F81A5120F2006E1C7B /* mainDoMarkImplemented.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainDoMarkImplemented.h; sourceTree = "<group>"; };
 		294091F81A16E2E900386E3A /* FileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileInfo.cpp; sourceTree = "<group>"; };
 		294091F91A16E2E900386E3A /* FileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
 		294091FC1A16FCAC00386E3A /* mainDoLoadSimpleTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainDoLoadSimpleTypes.h; sourceTree = "<group>"; };
@@ -754,6 +756,8 @@
 				294091FC1A16FCAC00386E3A /* mainDoLoadSimpleTypes.h */,
 				29A01BB71A3B7CDB006050A8 /* mainDoRegex.h */,
 				294CB7181A35313600CA2734 /* mainDoResearch.h */,
+				293DE6F71A51203D006E1C7B /* mainDoCreateMxSeqSmp.h */,
+				293DE6F81A5120F2006E1C7B /* mainDoMarkImplemented.h */,
 			);
 			name = main;
 			sourceTree = "<group>";

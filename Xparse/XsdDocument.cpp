@@ -83,6 +83,14 @@ namespace XsdClasses
         return output;
     }
     
+    xparse::ElementPtr XsdDocument::getElementNodeByID( int ID )
+    {
+        XsdDocument xsd;
+        xparse::ElementPtr output;
+        output = getElementNodeByID( ID, xsd.getDocument()->root_element() );
+        return output;
+    }
+    
     void XsdDocument::findElementByID( int ID, const xparse::ElementPtr& e, xparse::ElementPtr& foundElement )
     {
         if ( e )

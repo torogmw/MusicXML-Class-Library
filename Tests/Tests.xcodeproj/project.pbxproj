@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2929BA2D1A30E78800179298 /* MxCxSmpDirectiveTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2929BA2C1A30E78800179298 /* MxCxSmpDirectiveTest.cpp */; };
+		293DE6F61A511E3E006E1C7B /* MxEmEnsembleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293DE6F41A511E3E006E1C7B /* MxEmEnsembleTest.cpp */; };
 		294090ED1A16D29200386E3A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294090EC1A16D29200386E3A /* main.cpp */; };
 		294090FC1A16D2A800386E3A /* MxColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294090EE1A16D2A800386E3A /* MxColorTest.cpp */; };
 		294090FD1A16D2A800386E3A /* MxCommaSeparatedText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294090EF1A16D2A800386E3A /* MxCommaSeparatedText.cpp */; };
@@ -565,6 +566,7 @@
 
 /* Begin PBXFileReference section */
 		2929BA2C1A30E78800179298 /* MxCxSmpDirectiveTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxCxSmpDirectiveTest.cpp; sourceTree = "<group>"; };
+		293DE6F41A511E3E006E1C7B /* MxEmEnsembleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmEnsembleTest.cpp; sourceTree = "<group>"; };
 		294090D41A16D1F700386E3A /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		294090EC1A16D29200386E3A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		294090EE1A16D2A800386E3A /* MxColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxColorTest.cpp; sourceTree = "<group>"; };
@@ -1598,6 +1600,7 @@
 				294CB69F1A35280100CA2734 /* MxEmWorkTitleTest.cpp */,
 				29A01CFB1A3BB7BB006050A8 /* MxEmPageHeightTest.cpp */,
 				29A01D021A3BBA86006050A8 /* MxEmPageWidthTest.cpp */,
+				293DE6F41A511E3E006E1C7B /* MxEmEnsembleTest.cpp */,
 			);
 			name = ElementMx;
 			sourceTree = "<group>";
@@ -2227,6 +2230,7 @@
 				2940916C1A16D2BF00386E3A /* MxEnumDegreeTypeValueTest.cpp in Sources */,
 				299CCF781A32C49F00D0E0CD /* MxEsFermataTest.cpp in Sources */,
 				294091931A16D2BF00386E3A /* MxEnumStaffTypeTest.cpp in Sources */,
+				293DE6F61A511E3E006E1C7B /* MxEmEnsembleTest.cpp in Sources */,
 				2972E6CC1A3289BA0018E453 /* MxEeStringMuteTest.cpp in Sources */,
 				294CB6E71A35280100CA2734 /* MxEmStaffTypeTest.cpp in Sources */,
 				299CCF871A32C49F00D0E0CD /* MxEsKindTest.cpp in Sources */,

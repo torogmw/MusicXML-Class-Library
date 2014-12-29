@@ -116,6 +116,7 @@
 #include "MxEmElevation.h"
 #include "MxEmEncodingDate.h"
 #include "MxEmEncodingDescription.h"
+#include "MxEmEnsemble.h"
 #include "MxEmFifths.h"
 #include "MxEmFrameFrets.h"
 #include "MxEmFrameStrings.h"
@@ -383,6 +384,7 @@ namespace lexicon
         mlist.push_back( std::make_shared<MxEmElevation>() );
         mlist.push_back( std::make_shared<MxEmEncodingDate>() );
         mlist.push_back( std::make_shared<MxEmEncodingDescription>() );
+        mlist.push_back( std::make_shared<MxEmEnsemble>() );
         mlist.push_back( std::make_shared<MxEmFifths>() );
         mlist.push_back( std::make_shared<MxEmFrameFrets>() );
         mlist.push_back( std::make_shared<MxEmFrameStrings>() );

@@ -278,6 +278,8 @@
 		2937C9331A18771300B09E2D /* XmlSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 2937C9311A18771300B09E2D /* XmlSpace.h */; };
 		2937C9361A187E3400B09E2D /* XsString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2937C9341A187E3400B09E2D /* XsString.cpp */; };
 		2937C9371A187E3400B09E2D /* XsString.h in Headers */ = {isa = PBXBuildFile; fileRef = 2937C9351A187E3400B09E2D /* XsString.h */; };
+		293DE6F21A511CA9006E1C7B /* MxEmEnsemble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293DE6F01A511CA9006E1C7B /* MxEmEnsemble.cpp */; };
+		293DE6F31A511CA9006E1C7B /* MxEmEnsemble.h in Headers */ = {isa = PBXBuildFile; fileRef = 293DE6F11A511CA9006E1C7B /* MxEmEnsemble.h */; };
 		2942628F1A172269003282BA /* XlinkType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2942628D1A172269003282BA /* XlinkType.cpp */; };
 		294262901A172269003282BA /* XlinkType.h in Headers */ = {isa = PBXBuildFile; fileRef = 2942628E1A172269003282BA /* XlinkType.h */; };
 		294262931A172851003282BA /* XlinkShow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294262911A172851003282BA /* XlinkShow.cpp */; };
@@ -1389,6 +1391,8 @@
 		2937C9341A187E3400B09E2D /* XsString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsString.cpp; sourceTree = "<group>"; };
 		2937C9351A187E3400B09E2D /* XsString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XsString.h; sourceTree = "<group>"; };
 		293DE6EF1A511286006E1C7B /* MxElementCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MxElementCollection.h; sourceTree = "<group>"; };
+		293DE6F01A511CA9006E1C7B /* MxEmEnsemble.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEmEnsemble.cpp; sourceTree = "<group>"; };
+		293DE6F11A511CA9006E1C7B /* MxEmEnsemble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxEmEnsemble.h; sourceTree = "<group>"; };
 		2942628D1A172269003282BA /* XlinkType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XlinkType.cpp; sourceTree = "<group>"; };
 		2942628E1A172269003282BA /* XlinkType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XlinkType.h; sourceTree = "<group>"; };
 		294262911A172851003282BA /* XlinkShow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XlinkShow.cpp; sourceTree = "<group>"; };
@@ -3078,6 +3082,8 @@
 				294CB5861A3527E000CA2734 /* MxEmWorkNumber.h */,
 				294CB5871A3527E000CA2734 /* MxEmWorkTitle.cpp */,
 				294CB5881A3527E000CA2734 /* MxEmWorkTitle.h */,
+				293DE6F01A511CA9006E1C7B /* MxEmEnsemble.cpp */,
+				293DE6F11A511CA9006E1C7B /* MxEmEnsemble.h */,
 			);
 			name = ElementMx;
 			sourceTree = "<group>";
@@ -3984,6 +3990,7 @@
 				294CB5BA1A3527E000CA2734 /* MxEmFrameStrings.h in Headers */,
 				293591C11A16AA840022BAAA /* MxEnumStartStop.h in Headers */,
 				2935908F1A16A9F60022BAAA /* _hidden_AttributeRemoveSpaces.h in Headers */,
+				293DE6F31A511CA9006E1C7B /* MxEmEnsemble.h in Headers */,
 				29BBA2641A2FE303004BEAC2 /* MxCxEmptyEmptyLine.h in Headers */,
 				2972E6121A3289A40018E453 /* MxEeSupports.h in Headers */,
 				293591BF1A16AA840022BAAA /* MxEnumStartNote.h in Headers */,
@@ -4160,6 +4167,7 @@
 				29A1F9C01A2E9FBA00B69133 /* MxCxSmpPerMinute.cpp in Sources */,
 				29A1F9961A2E9FBA00B69133 /* MxCxSmpInversion.cpp in Sources */,
 				294CB58D1A3527E000CA2734 /* MxEmAlter.cpp in Sources */,
+				293DE6F21A511CA9006E1C7B /* MxEmEnsemble.cpp in Sources */,
 				299CD09D1A32C4FE00D0E0CD /* MxEsOtherTechnical.cpp in Sources */,
 				299CD03D1A32C4FE00D0E0CD /* MxEsAccidental.cpp in Sources */,
 				299CD0531A32C4FE00D0E0CD /* MxEsDegreeAlter.cpp in Sources */,

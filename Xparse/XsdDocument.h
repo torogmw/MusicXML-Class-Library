@@ -23,6 +23,7 @@ namespace XsdClasses
         xparse::HDocument getDocument() const;
         bool isImplemented( const xparse::ElementPtr& e ) const;
         static xparse::ElementPtr getElementNodeByID( int ID, const xparse::ElementPtr& e );
+        static xparse::ElementPtr getElementNodeByID( int ID );
         
     private:
         void LoadXsdDom( const std::string& xsdFilePath );

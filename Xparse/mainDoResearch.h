@@ -15,79 +15,8 @@ inline void mainDoResearch()
     using namespace XsdClasses;
     using namespace xparse;
     
-#if 0
-    
-    FileList flist = FileInfo::getDir( constants::getPathLexiconSourceCode() );
-    for ( auto f : flist )
-    {
-        if ( f.getExtension() == "h" )
-        {
-            if ( f.getFileName().substr( 0, 4) == "MxEs" )
-            {
-                std::cout << "mlist.push_back( std::make_shared<";
-                std::cout << f.getNameWithoutExtension();
-                std::cout << ">() );";
-                std::cout << std::endl;
-            }
-        }
-    }
-#endif
-    
-#if 1
-    Elements sequenceNodes = SequenceParser::getSequenceNodes();
-    Elements simpleSequences;
-    Elements implementedSequences;
-    mjb::ClassBldrs bldrs;
-    int counts = 1;
-    for ( xparse::ElementPtr e : sequenceNodes )
-    {
-        if ( SequenceParser::getIsSequenceComposedOfElementsOnly( e ) )
-        {
-            if ( SequenceParser::getIsSequenceComposedOfRefElementsOnly( e ) )
-            {
-                simpleSequences.push_back( e );
-                if ( SequenceParser::getIsSequenceComposedOfImplementedElementsOnly( e ) )
-                {
-                    std::shared_ptr<SequenceSmpBldr> bldr = std::make_shared<SequenceSmpBldr>( e );
-                    bldrs.push_back( bldr );
-                    implementedSequences.push_back( e );
-                    
-                    
-                    std::stringstream cppFileContents;
-                    cppFileContents << bldr->getCppFile();
-                    
-                    std::stringstream hFileContents;
-                    hFileContents << bldr->getHFile();
-                    
-                    std::stringstream testFileContents;
-                    testFileContents << bldr->getTestFile();
-                    
-                    FileInfo cppFileInfo = bldr->getCppFileInfo();
-                    FileInfo hFileInfo = bldr->getHFileInfo();
-                    FileInfo testFileInfo = bldr->getTestFileInfo();
-                    
-                    fileStream( hFileInfo.getFullpath(), hFileContents );
-                    fileStream( cppFileInfo.getFullpath(), cppFileContents );
-                    fileStream( testFileInfo.getFullpath(), testFileContents );
-                    std::cout << "created " << counts << ": " << bldr->getName() << std::endl;
-                    ++ counts;
-                }
-                
 
-            }
-        }
-        
-        //std::cout << "--------------------------------------------------------------------------------------" << std::endl;
-        //std::cout << e->str() << std::endl << std:: endl;
-        int a = 1;
-        int x = 0;
-        int y = x + 1;
-    }
-#endif
-    
-    int a = 1;
-    int x = 0;
-    int y = x + 1;
+
 }
 
 
