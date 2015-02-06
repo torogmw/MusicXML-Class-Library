@@ -2402,11 +2402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xparse/ElementStaticParser.cpp"
-            timestampString = "439518754.0758"
+            timestampString = "444887639.309337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337">
+            startingLineNumber = "341"
+            endingLineNumber = "341">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2756,11 +2756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xparse/ElementStaticParser.cpp"
-            timestampString = "439617094.69648"
+            timestampString = "444887639.309337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344">
+            startingLineNumber = "348"
+            endingLineNumber = "348">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3416,11 +3416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xparse/ElementAnalysis.cpp"
-            timestampString = "444875535.834356"
+            timestampString = "444887639.309337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "ElementAnalysis::setIsImplemented()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3464,12 +3464,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xparse/ElementAnalysis.cpp"
-            timestampString = "444875535.834356"
+            timestampString = "444888111.694166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "buildElementAnalyses( const ElementPtr&amp; root )"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "buildElementAnalyses( const ElementPtr&amp; root, bool includeRootInResults )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3480,13 +3480,109 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xparse/ElementAnalysis.cpp"
-            timestampString = "444875535.834356"
+            timestampString = "444888111.694166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "buildElementAnalyses( const ElementPtr&amp; root )"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "buildElementAnalyses( const ElementPtr&amp; root, bool includeRootInResults )"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/ElementAnalysis.cpp"
+            timestampString = "444888515.612494"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "ElementAnalysis::setSubGroups()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/ElementAnalysis.cpp"
+            timestampString = "444888515.612494"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "ElementAnalysis::setSubGroups()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/ElementAnalysis.cpp"
+            timestampString = "444888194.39023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "ElementAnalysis::setSubSequences()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/ElementAnalysis.cpp"
+            timestampString = "444888315.468859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "ElementAnalysis::findAllMatchingRecursive( const std::string&amp; XsTag, const ElementPtr&amp; root, ElementPtrs output, bool includeRootInResults )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/ElementAnalysis.cpp"
+            timestampString = "444888511.830632"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "ElementAnalysis::setSubSequences()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xparse/ElementAnalysis.cpp"
+            timestampString = "444888876.67032"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "ElementAnalysis::findAllMatchingRecursive( const std::string&amp; XsTag, const ElementPtr&amp; root, ElementPtrs output, bool includeRootInResults )"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -14,26 +14,36 @@ namespace xparse
     ElementAnalysis::ElementAnalysis( const ElementPtr& e )
     :myNode( e )
     ,myIsElement( false )
-    ,myId( -1 )
+    ,myID( -1 )
     ,myXsdName( "" )
     ,myIsImplemented( false )
-    ,myDependencyElements()
+    ,myReferencesAnotherType( false )
+    ,mySubElements()
+    ,mySubGroups()
+    ,mySubSequences()
+    ,mySubComplexTypes()
     {
         setIsElement();
-        setId();
+        setID();
         setXsdName();
         setIsImplemented();
-        setDependencyElements();
+        setReferencesAnotherType();
+        setSubElements();
+        setSubGroups();
+        setSubSequences();
+        setSubComplexTypes();
     }
     
-    
+    /**********************************************
+     SETTERS
+     *********************************************/
     void ElementAnalysis::setIsElement()
     {
         myIsElement = ElementStaticParser::isElement( myNode );
     }
-    void ElementAnalysis::setId()
+    void ElementAnalysis::setID()
     {
-        myId = myNode->getIndex();
+        myID = myNode->getIndex();
     }
     void ElementAnalysis::setXsdName()
     {
@@ -43,27 +53,51 @@ namespace xparse
     {
         myIsImplemented = ourXsdDocument.isImplemented( myNode );
     }
-    void ElementAnalysis::setDependencyElements()
+    void ElementAnalysis::setReferencesAnotherType()
     {
-        std::vector<ElementPtr> children;
-        for ( int i = 0; i < myNode->count_children(); ++i )
+        myReferencesAnotherType = false;
+        if ( myNode )
         {
-            ElementPtr child = myNode->get_child( i );
-            if ( child )
+            for ( int i=0; i < myNode->count_attributes(); ++i )
             {
-                ElementStaticParser::findAllXsElementsRecursiveImpl( child, children );
+                AttributePtr a = myNode->get_attribute( i );
+                if ( a->name() == "ref" || a->name() == "type" )
+                {
+                    if ( myNode->name() == "xs:element" )
+                    {
+                        myReferencesAnotherType = true;
+                        return;
+                    }
+                }
             }
         }
-        myDependencyElements.clear();
-        for ( auto c : children )
-        {
-            myDependencyElements.push_back( ElementAnalysis( c ) );
-        }
+    }
+    void ElementAnalysis::setSubElements()
+    {
+        mySubElements.clear();
+        mySubElements = buildElementAnalyses( myNode, false );
     }
     
-    ElementAnalyses buildElementAnalyses( const ElementPtr& root )
+    void ElementAnalysis::setSubGroups()
     {
-        std::vector<ElementPtr> nodes = ElementStaticParser::findAllXsElements( root );
+        mySubGroups = findAllMatching( "xs:group", myNode, false );
+    }
+    void ElementAnalysis::setSubSequences()
+    {
+        if (getSubElementsCount() > 1)
+        {
+            int stop = 1;
+        }
+        mySubSequences = findAllMatching( "xs:sequence", myNode, false );
+    }
+    void ElementAnalysis::setSubComplexTypes()
+    {
+        mySubComplexTypes = findAllMatching( "xs:complexType", myNode, false );
+    }
+    
+    ElementAnalyses buildElementAnalyses( const ElementPtr& root, bool includeRootInResults )
+    {
+        std::vector<ElementPtr> nodes = ElementStaticParser::findAllXsElements( root, includeRootInResults );
         ElementAnalyses output;
         for ( ElementPtr e : nodes )
         {
@@ -73,5 +107,77 @@ namespace xparse
             }
         }
         return output;
+    }
+    
+    /**********************************************
+     GETTERS
+     *********************************************/
+    ElementPtr ElementAnalysis::getNode() const
+    {
+        return myNode;
+    }
+    bool ElementAnalysis::getIsElement() const
+    {
+        return myIsElement;
+    }
+    int ElementAnalysis::getID() const
+    {
+        return myID;
+    }
+    std::string ElementAnalysis::getXsdName() const
+    {
+        return myXsdName;
+    }
+    bool ElementAnalysis::getIsImplemented() const
+    {
+        return myIsImplemented;
+    }
+    
+    ElementAnalyses::size_type ElementAnalysis::getSubElementsCount() const
+    {
+        return mySubElements.size();
+    }
+    ElementAnalysesIterConst ElementAnalysis::getSubElementsBegin() const
+    {
+        return mySubElements.cbegin();
+    }
+    ElementAnalysesIterConst ElementAnalysis::getSubElementsEnd() const
+    {
+        return mySubElements.cend();
+    }
+    
+    /**********************************************
+     PARSING FUNCTIONS
+     *********************************************/
+    void ElementAnalysis::findAllMatchingRecursive( const std::string& XsTag, const ElementPtr& root, ElementPtrs& outputt, bool includeRootInResults ) const
+    {
+        if ( root )
+        {
+            if ( includeRootInResults )
+            {
+                if ( root->name() == XsTag )
+                {
+                    outputt.push_back( root );
+                }
+            }
+            if ( root->has_children() )
+            {
+                for( int i = 0; i < root->count_children(); ++i )
+                {
+                    ElementPtr c = root->get_child( i );
+                    if ( c )
+                    {
+                        findAllMatchingRecursive( XsTag, c, outputt, true );
+                    }
+                }
+            }
+        }
+    }
+    
+    ElementPtrs ElementAnalysis::findAllMatching( const std::string& XsTag, const ElementPtr& root, bool includeRootInResults  ) const
+    {
+        ElementPtrs o;
+        findAllMatchingRecursive( XsTag, root, o, includeRootInResults );
+        return o;
     }
 }

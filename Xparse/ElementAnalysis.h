@@ -13,7 +13,11 @@ namespace xparse
     using ElementAnalysesIter = ElementAnalyses::iterator;
     using ElementAnalysesIterConst = ElementAnalyses::const_iterator;
     
-    ElementAnalyses buildElementAnalyses( const ElementPtr& root );
+    using ElementPtrs = std::vector<ElementPtr>;
+    using ElementPtrsIter = ElementPtrs::iterator;
+    using ElementPtrsIterConst = ElementPtrs::const_iterator;
+    
+    ElementAnalyses buildElementAnalyses( const ElementPtr& root, bool includeRootInResults );
     
     class ElementAnalysis
     {
@@ -21,21 +25,46 @@ namespace xparse
     public:
         ElementAnalysis( const ElementPtr& e );
         
+        ElementPtr getNode() const;
+        bool getIsElement() const;
+        int getID() const;
+        std::string getXsdName() const;
+        bool getIsImplemented() const;
+        
+        ElementAnalyses::size_type getSubElementsCount() const;
+        ElementAnalysesIterConst getSubElementsBegin() const;
+        ElementAnalysesIterConst getSubElementsEnd() const;
+        
+        
     private:
         /* DATA */
         static XsdClasses::XsdDocument ourXsdDocument;
         ElementPtr myNode;
         bool myIsElement;
-        int myId;
+        int myID;
         std::string myXsdName;
         bool myIsImplemented;
-        ElementAnalyses myDependencyElements;
+        bool myReferencesAnotherType;
+        
+        ElementAnalyses mySubElements;
+        ElementPtrs mySubGroups;
+        ElementPtrs mySubSequences;
+        ElementPtrs mySubComplexTypes;
+        
         
         /* FUNCTIONS */
         void setIsElement();
-        void setId();
+        void setID();
         void setXsdName();
         void setIsImplemented();
-        void setDependencyElements();
+        void setReferencesAnotherType();
+        void setSubElements();
+        void setSubGroups();
+        void setSubSequences();
+        void setSubComplexTypes();
+        
+        ElementPtrs findAllMatching( const std::string& XsTag, const ElementPtr& root, bool includeRootInResults  ) const;
+        void findAllMatchingRecursive( const std::string& XsTag, const ElementPtr& root, ElementPtrs& outputt, bool includeRootInResults ) const;
+        
     };
 }

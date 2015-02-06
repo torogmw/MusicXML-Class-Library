@@ -21,7 +21,7 @@ inline void mainDoResearch()
     XsdDocument xdoc;
     ElementPtr root = xdoc.getDocument()->root_element();
     //std::vector<ElementPtr> elements = ElementStaticParser::findAllXsElements( root );
-    ElementAnalyses elements = buildElementAnalyses( root );
+    ElementAnalyses elements = buildElementAnalyses( root, true );
     int pause = 0;
 }
 

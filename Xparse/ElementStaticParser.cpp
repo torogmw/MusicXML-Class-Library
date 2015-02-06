@@ -177,6 +177,10 @@ namespace XsdClasses
                         {
                             output = current->value();
                         }
+                        else if ( current->name() == "ref" )
+                        {
+                            output = current->value();
+                        }
                     }
                 }
             }
@@ -401,9 +405,9 @@ namespace XsdClasses
         return "not found";
     }
     
-    void ElementStaticParser::findAllXsElementsRecursiveImpl( const xparse::ElementPtr& e, std::vector<xparse::ElementPtr>& output )
+    void ElementStaticParser::findAllXsElementsRecursiveImpl( const xparse::ElementPtr& e, std::vector<xparse::ElementPtr>& output, bool includeRootInResults )
     {
-        if ( ElementStaticParser::isElement( e ) )
+        if ( ElementStaticParser::isElement( e ) && includeRootInResults )
         {
             output.push_back( e );
         }
@@ -414,18 +418,18 @@ namespace XsdClasses
                 ElementPtr child = e->get_child( i );
                 if ( child )
                 {
-                    ElementStaticParser::findAllXsElementsRecursiveImpl( child, output );
+                    ElementStaticParser::findAllXsElementsRecursiveImpl( child, output, true );
                 }
             }
         }
     }
     
-    std::vector<xparse::ElementPtr> ElementStaticParser::findAllXsElements( const xparse::ElementPtr& root )
+    std::vector<xparse::ElementPtr> ElementStaticParser::findAllXsElements( const xparse::ElementPtr& root, bool includeRootInResults )
     {
         std::vector<ElementPtr> foundItems;
         if ( root )
         {
-            ElementStaticParser::findAllXsElementsRecursiveImpl( root, foundItems );
+            ElementStaticParser::findAllXsElementsRecursiveImpl( root, foundItems, includeRootInResults );
         }
         return foundItems;
     }
