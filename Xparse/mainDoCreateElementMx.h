@@ -1,7 +1,7 @@
 /* See MusicXML License at the bottom of this code page. */
 
 #pragma once
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "FileInfo.h"
 #include "mainConstants.h"
 #include "ElementMxBldr.h"
@@ -36,9 +36,9 @@ inline void mainDoCreateElementMx()
     std::cin >> answer;
     if ( answer == "YES" )
     {
-//        Elements elementNodes = ElementCategorize::getElementNodes();
-//        Elements elementsMx = ElementCategorize::getElementNodesOfType( ElementType::MxSimpleTypeRef );
-//        Elements elementsXs = ElementCategorize::getElementNodesOfType( ElementType::XsTypeRef );
+//        Elements elementNodes = ElementStaticParser::getElementNodes();
+//        Elements elementsMx = ElementStaticParser::getElementNodesOfType( ElementType::MxSimpleTypeRef );
+//        Elements elementsXs = ElementStaticParser::getElementNodesOfType( ElementType::XsTypeRef );
 //        Elements elements;
 //        for ( ElementPtr e : elementsMx )
 //        {

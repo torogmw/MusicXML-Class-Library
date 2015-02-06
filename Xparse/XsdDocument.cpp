@@ -65,14 +65,14 @@ namespace XsdClasses
     {
         if ( e )
         {
-            for ( auto it = ourIsImplemented.begin(); it != ourIsImplemented.end(); ++it )
+            auto it = std::find_if(ourIsImplemented.begin(), ourIsImplemented.end(), [e](const IntBool& insideItem)
+                                { return e->getIndex() == insideItem.ID;});
+            if ( it != ourIsImplemented.end() )
             {
-                if ( it->ID == e->getIndex() )
-                {
-                    return it->IsImplemented;
-                }
+                return it->IsImplemented;
             }
         }
+        
         return false;
     }
     

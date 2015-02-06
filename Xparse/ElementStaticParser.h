@@ -19,7 +19,7 @@ namespace XsdClasses
         MxSimpleTypeRef = 3
     };
     
-    class ElementCategorize
+    class ElementStaticParser
     {
         
     public:
@@ -27,6 +27,8 @@ namespace XsdClasses
         static xparse::Elements getElementNodesOfType( ElementType type );
         
         static bool isElement( const xparse::ElementPtr& e );
+        static std::vector<xparse::ElementPtr> findAllXsElements( const xparse::ElementPtr& root );
+        static void findAllXsElementsRecursiveImpl( const xparse::ElementPtr& e, std::vector<xparse::ElementPtr>& output );
         static bool isTop( const xparse::ElementPtr& e );
         static ElementType getType( const xparse::ElementPtr& e );
         static xparse::Elements getElementNodes();

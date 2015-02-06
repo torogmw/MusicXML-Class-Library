@@ -1,7 +1,7 @@
 /* See MusicXML License at the bottom of this code page. */
 
 #pragma once
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "FileInfo.h"
 #include "mainConstants.h"
 #include "ElementEmptyBldr.h"
@@ -13,12 +13,12 @@ inline void mainDoElementResearch()
     using namespace xparse;
     using namespace XsdClasses;
     
-    Elements elementNodes = ElementCategorize::getElementNodes();
-    Elements elementsOfType = ElementCategorize::getElementNodesOfType( ElementType::XsTypeRef );
+    Elements elementNodes = ElementStaticParser::getElementNodes();
+    Elements elementsOfType = ElementStaticParser::getElementNodesOfType( ElementType::XsTypeRef );
     std::set<std::string> types;
     for ( ElementPtr e : elementsOfType )
     {
-        types.insert( ElementCategorize::getReferencedTypeString( e ) );
+        types.insert( ElementStaticParser::getReferencedTypeString( e ) );
     }
     for ( std::string s : types )
     {

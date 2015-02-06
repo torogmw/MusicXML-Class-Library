@@ -2,7 +2,7 @@
 
 #include "SequenceSmpBldr.h"
 #include "SequenceParser.h"
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "ElementSmpBldr.h"
 #include "ElementSmpParser.h"
 #include "ElementEmptyBldr.h"
@@ -57,7 +57,7 @@ namespace XsdClasses
         xparse::Elements elements = SequenceParser::getElementNodesFromSequenceComposedOfElementsOnly( IClassBldr::getXsdNode() );
         for ( auto e : elements )
         {
-            ElementType etype = ElementCategorize::getType( e );
+            ElementType etype = ElementStaticParser::getType( e );
             switch ( etype )
             {
                 case ElementType::CxSmpRef:
@@ -142,11 +142,11 @@ namespace XsdClasses
         /* For each element, add appropriate data member, functions, and include */
         for ( HClassBldr h : myElementBldrs )
         {
-            ElementType etype = ElementCategorize::getType( h->getXsdNode() );
-            int minOccurs = ElementCategorize::getMinOccurs( h->getXsdNode() );
-            int maxOccurs = ElementCategorize::getMaxOccurs( h->getXsdNode() );
-            bool isUnBounded = ElementCategorize::isMaxOccursUnbounded( h->getXsdNode() );
-            std::string elementName = ElementCategorize::getCppName( h->getXsdNode() );
+            ElementType etype = ElementStaticParser::getType( h->getXsdNode() );
+            int minOccurs = ElementStaticParser::getMinOccurs( h->getXsdNode() );
+            int maxOccurs = ElementStaticParser::getMaxOccurs( h->getXsdNode() );
+            bool isUnBounded = ElementStaticParser::isMaxOccursUnbounded( h->getXsdNode() );
+            std::string elementName = ElementStaticParser::getCppName( h->getXsdNode() );
             bool isRequired = ( minOccurs > 0 );
             bool isVector = ( maxOccurs > 1 );
             

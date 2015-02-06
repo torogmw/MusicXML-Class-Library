@@ -1,7 +1,7 @@
 /* See MusicXML License at the bottom of this code page. */
 
 #pragma once
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "FileInfo.h"
 #include "mainConstants.h"
 #include "ElementEmptyBldr.h"
@@ -36,8 +36,8 @@ inline void mainDoCreateElementEmpties()
     std::cin >> answer;
     if ( answer == "YES" )
     {
-        Elements elementNodes = ElementCategorize::getElementNodes();
-        Elements elementsOfType = ElementCategorize::getElementNodesOfType( ElementType::CxEmptyRef );
+        Elements elementNodes = ElementStaticParser::getElementNodes();
+        Elements elementsOfType = ElementStaticParser::getElementNodesOfType( ElementType::CxEmptyRef );
         
         ElementEmptyBldrs bldrs = ElementEmptyBldr::createElementEmptyBldrs();
         int counts = 1;

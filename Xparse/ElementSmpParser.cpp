@@ -7,7 +7,7 @@
 #include "removesymbols.h"
 #include "XparseHelperFunctions.h"
 #include "LexiconBaseObjects.h"
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "CxSmpParser.h"
 
 namespace XsdClasses
@@ -19,7 +19,7 @@ namespace XsdClasses
     :myXsd( new XsdDocument() )
     ,myElementSmpNodes()
     {
-        myElementSmpNodes = ElementCategorize::getElementNodesOfType( ElementType::CxSmpRef );
+        myElementSmpNodes = ElementStaticParser::getElementNodesOfType( ElementType::CxSmpRef );
 //        ElementPtr root = myXsd->getDocument()->root_element();
 //        for ( int i = 0; i < root->count_children(); ++i )
 //        {
@@ -46,19 +46,19 @@ namespace XsdClasses
     {
         HElementSmpInfo info = ElementSmpInfo::create();
         info->setID( e->getIndex() );
-        info->setXmlName( ElementCategorize::getXmlName( e ) );
-        info->setCppName( ElementCategorize::getCppName( e ) );
+        info->setXmlName( ElementStaticParser::getXmlName( e ) );
+        info->setCppName( ElementStaticParser::getCppName( e ) );
         info->setElement( e );
         info->setXsdDocument( myXsd );
         info->setReferencesComplexType( referencesComplexType( e, info ) );
-        info->setDocumentation( ElementCategorize::getDocumentation( e ) );
+        info->setDocumentation( ElementStaticParser::getDocumentation( e ) );
         info->setSchemaXml( getSchemaXml( e ) );
         info->setCxType( getType( e ) );
         info->setAttributePods( getAttributePods( e ) );
         info->setCxSmpBldr( createCxSmpBldr( e ) );
-        info->setMinOccurs( ElementCategorize::getMinOccurs( e ) );
-        info->setMaxOccurs( ElementCategorize::getMaxOccurs( e ) );
-        info->setIsMaxOccursUnbounded( ElementCategorize::isMaxOccursUnbounded( e ) );
+        info->setMinOccurs( ElementStaticParser::getMinOccurs( e ) );
+        info->setMaxOccurs( ElementStaticParser::getMaxOccurs( e ) );
+        info->setIsMaxOccursUnbounded( ElementStaticParser::isMaxOccursUnbounded( e ) );
         return info;
     }
     void ElementSmpParser::retreiveAllUnderlyingAttributes( const ElementPtr& e, xparse::Attributes& attributes ) const
@@ -214,7 +214,7 @@ namespace XsdClasses
     
     ElementSmpInfo::AttributePods ElementSmpParser::getAttributePods( const ElementPtr& input ) const
     {
-        ElementPtr e = ElementCategorize::getReferencedNode( input );
+        ElementPtr e = ElementStaticParser::getReferencedNode( input );
         ElementSmpInfo::AttributePods output;
         CxSmpParser parser;
         
@@ -242,9 +242,9 @@ namespace XsdClasses
     {
         ElementPtr input;
         HCxSmpBldr output;
-        if ( ElementCategorize::isElement( e ) )
+        if ( ElementStaticParser::isElement( e ) )
         {
-            input = ElementCategorize::getReferencedNode( e );
+            input = ElementStaticParser::getReferencedNode( e );
         }
         else if ( CxCategorize::isComplexType( e ) )
         {

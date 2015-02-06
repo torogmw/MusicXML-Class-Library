@@ -7,7 +7,7 @@
 #include "removesymbols.h"
 #include "XparseHelperFunctions.h"
 #include "LexiconBaseObjects.h"
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "CxSmpParser.h"
 
 namespace XsdClasses
@@ -19,9 +19,9 @@ namespace XsdClasses
     :myXsd( new XsdDocument() )
     ,myElementMxNodes()
     {
-        Elements elementNodes = ElementCategorize::getElementNodes();
-        Elements elementsMx = ElementCategorize::getElementNodesOfType( ElementType::MxSimpleTypeRef );
-        Elements elementsXs = ElementCategorize::getElementNodesOfType( ElementType::XsTypeRef );
+        Elements elementNodes = ElementStaticParser::getElementNodes();
+        Elements elementsMx = ElementStaticParser::getElementNodesOfType( ElementType::MxSimpleTypeRef );
+        Elements elementsXs = ElementStaticParser::getElementNodesOfType( ElementType::XsTypeRef );
         Elements elements;
         for ( ElementPtr e : elementsMx )
         {
@@ -49,20 +49,20 @@ namespace XsdClasses
     {
         HElementMxInfo info = ElementMxInfo::create();
         info->setID( e->getIndex() );
-        info->setXmlName( ElementCategorize::getXmlName( e ) );
-        info->setCppName( ElementCategorize::getCppName( e ) );
+        info->setXmlName( ElementStaticParser::getXmlName( e ) );
+        info->setCppName( ElementStaticParser::getCppName( e ) );
         info->setElement( e );
         info->setXsdDocument( myXsd );
         // info->setReferencesMxType( referencesMxType( e, info ) );
-        info->setDocumentation( ElementCategorize::getDocumentation( e ) );
+        info->setDocumentation( ElementStaticParser::getDocumentation( e ) );
         info->setSchemaXml( getSchemaXml( e ) );
         // info->setCxType( getType( e ) );
         info->setAttributePods( getAttributePods( e ) );
         // info->setCxSmpBldr( createCxSmpBldr( e ) );
-        info->setMinOccurs( ElementCategorize::getMinOccurs( e ) );
-        info->setMaxOccurs( ElementCategorize::getMaxOccurs( e ) );
-        info->setIsMaxOccursUnbounded( ElementCategorize::isMaxOccursUnbounded( e ) );
-        info->setSimpleContentXmlDataType( ElementCategorize::getSimpleContentXmlDataType( e ) );
+        info->setMinOccurs( ElementStaticParser::getMinOccurs( e ) );
+        info->setMaxOccurs( ElementStaticParser::getMaxOccurs( e ) );
+        info->setIsMaxOccursUnbounded( ElementStaticParser::isMaxOccursUnbounded( e ) );
+        info->setSimpleContentXmlDataType( ElementStaticParser::getSimpleContentXmlDataType( e ) );
         info->setSimpleContentCppDataType( lexicon::XparseHelperFunctions::getObjectByXmlName( info->getSimpleContentXmlDataType() )->getClassName() );
         return info;
     }
@@ -249,9 +249,9 @@ namespace XsdClasses
 //    {
 //        ElementPtr input;
 //        HCxSmpBldr output;
-//        if ( ElementCategorize::isElement( e ) )
+//        if ( ElementStaticParser::isElement( e ) )
 //        {
-//            input = ElementCategorize::getReferencedNode( e );
+//            input = ElementStaticParser::getReferencedNode( e );
 //        }
 //        else if ( CxCategorize::isMxType( e ) )
 //        {

@@ -1,7 +1,7 @@
 /* See MusicXML License at the bottom of this code page. */
 
 #pragma once
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 #include "FileInfo.h"
 #include "mainConstants.h"
 #include "ElementSmpBldr.h"
@@ -36,8 +36,8 @@ inline void mainDoCreateElementSmps()
     // std::cin >> answer;
     if ( true ) // ( answer == "YES" )
     {
-        Elements elementNodes = ElementCategorize::getElementNodes();
-        Elements elementsOfType = ElementCategorize::getElementNodesOfType( ElementType::CxSmpRef );
+        Elements elementNodes = ElementStaticParser::getElementNodes();
+        Elements elementsOfType = ElementStaticParser::getElementNodesOfType( ElementType::CxSmpRef );
         
         ElementSmpBldrs bldrs = ElementSmpBldr::createElementSmpBldrs();
         int counts = 1;

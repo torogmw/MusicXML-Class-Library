@@ -9,14 +9,20 @@
 #include "IClassBldr.h"
 #include "SequenceSmpBldr.h"
 #include "fileStream.h"
+#include "ElementStaticParser.h"
+#include "ElementAnalysis.h"
 
 inline void mainDoResearch()
 {
     using namespace XsdClasses;
     using namespace xparse;
+    using namespace lexicon;
     
-
-
+    XsdDocument xdoc;
+    ElementPtr root = xdoc.getDocument()->root_element();
+    //std::vector<ElementPtr> elements = ElementStaticParser::findAllXsElements( root );
+    ElementAnalyses elements = buildElementAnalyses( root );
+    int pause = 0;
 }
 
 

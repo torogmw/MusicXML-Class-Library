@@ -5,7 +5,7 @@
 #include "IClassBldr.h"
 #include "Element.h"
 #include "SequenceParser.h"
-#include "ElementCategorize.h"
+#include "ElementStaticParser.h"
 
 namespace XsdClasses
 {

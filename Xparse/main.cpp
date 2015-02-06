@@ -8,9 +8,9 @@
 int main(int argc, char **argv)
 {
 
-    //mainDoResearch();
+    mainDoResearch();
     //mainDoRegex();
-    mainDoMarkImplemented( 5903 );
+    //mainDoMarkImplemented( 5903 );
     return 0;
 }
 
