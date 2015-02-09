@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:globals.h">
+   </FileRef>
+   <FileRef
+      location = "group:Db/Db.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Xsd/Xsd.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
