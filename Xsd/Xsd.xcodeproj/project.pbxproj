@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		2980BDEE1A8853F0008B0329 /* libXsd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXsd.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +25,7 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
+				2980BE551A88574E008B0329 /* musicxml.xsd */,
 				2980BDEF1A8853F0008B0329 /* Products */,
 			);
 			sourceTree = "<group>";

@@ -6,8 +6,104 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2980BE521A88566A008B0329 /* libmysqlclient.18.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */; };
+		2980BE531A88566A008B0329 /* libmysqlpp_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
+		2980BE561A885782008B0329 /* libmysqlclient.18.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */; };
+		2980BE571A885786008B0329 /* libmysqlpp_d.dylib in Headers */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
+		2980BE581A88578F008B0329 /* libmysqlpp_d.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2980BE541A8856AE008B0329 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				2980BE561A885782008B0329 /* libmysqlclient.18.dylib in CopyFiles */,
+				2980BE581A88578F008B0329 /* libmysqlpp_d.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2980BDFE1A8854FF008B0329 /* libDb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDb.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2980BE071A88562A008B0329 /* autoflag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = autoflag.h; sourceTree = "<group>"; };
+		2980BE081A88562A008B0329 /* beemutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = beemutex.h; sourceTree = "<group>"; };
+		2980BE091A88562A008B0329 /* cmdline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmdline.h; sourceTree = "<group>"; };
+		2980BE0A1A88562A008B0329 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		2980BE0B1A88562A008B0329 /* comparable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comparable.h; sourceTree = "<group>"; };
+		2980BE0C1A88562A008B0329 /* connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = connection.h; sourceTree = "<group>"; };
+		2980BE0D1A88562A008B0329 /* cpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cpool.h; sourceTree = "<group>"; };
+		2980BE0E1A88562A008B0329 /* datetime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = datetime.h; sourceTree = "<group>"; };
+		2980BE0F1A88562A008B0329 /* dbdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbdriver.h; sourceTree = "<group>"; };
+		2980BE101A88562A008B0329 /* exceptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exceptions.h; sourceTree = "<group>"; };
+		2980BE111A88562A008B0329 /* field.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = field.h; sourceTree = "<group>"; };
+		2980BE121A88562A008B0329 /* field_names.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = field_names.h; sourceTree = "<group>"; };
+		2980BE131A88562A008B0329 /* field_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = field_types.h; sourceTree = "<group>"; };
+		2980BE141A88562A008B0329 /* insertpolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = insertpolicy.h; sourceTree = "<group>"; };
+		2980BE151A88562A008B0329 /* manip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = manip.h; sourceTree = "<group>"; };
+		2980BE161A88562A008B0329 /* myset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myset.h; sourceTree = "<group>"; };
+		2980BE171A88562A008B0329 /* mysql++.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mysql++.h"; sourceTree = "<group>"; };
+		2980BE181A88562A008B0329 /* mystring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mystring.h; sourceTree = "<group>"; };
+		2980BE191A88562A008B0329 /* noexceptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = noexceptions.h; sourceTree = "<group>"; };
+		2980BE1A1A88562A008B0329 /* null.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = null.h; sourceTree = "<group>"; };
+		2980BE1B1A88562A008B0329 /* options.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = options.h; sourceTree = "<group>"; };
+		2980BE1C1A88562A008B0329 /* qparms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qparms.h; sourceTree = "<group>"; };
+		2980BE1D1A88562A008B0329 /* query.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = query.h; sourceTree = "<group>"; };
+		2980BE1E1A88562A008B0329 /* querydef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = querydef.h; sourceTree = "<group>"; };
+		2980BE1F1A88562A008B0329 /* refcounted.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = refcounted.h; sourceTree = "<group>"; };
+		2980BE201A88562A008B0329 /* result.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = result.h; sourceTree = "<group>"; };
+		2980BE211A88562A008B0329 /* row.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = row.h; sourceTree = "<group>"; };
+		2980BE221A88562A008B0329 /* scopedconnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scopedconnection.h; sourceTree = "<group>"; };
+		2980BE231A88562A008B0329 /* sql_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sql_buffer.h; sourceTree = "<group>"; };
+		2980BE241A88562A008B0329 /* sql_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sql_types.h; sourceTree = "<group>"; };
+		2980BE251A88562A008B0329 /* sqlstream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlstream.h; sourceTree = "<group>"; };
+		2980BE261A88562A008B0329 /* ssqls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssqls.h; sourceTree = "<group>"; };
+		2980BE271A88562A008B0329 /* ssqls2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssqls2.h; sourceTree = "<group>"; };
+		2980BE281A88562A008B0329 /* stadapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stadapter.h; sourceTree = "<group>"; };
+		2980BE291A88562A008B0329 /* stream2string.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stream2string.h; sourceTree = "<group>"; };
+		2980BE2A1A88562A008B0329 /* tcp_connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tcp_connection.h; sourceTree = "<group>"; };
+		2980BE2B1A88562A008B0329 /* tiny_int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiny_int.h; sourceTree = "<group>"; };
+		2980BE2C1A88562A008B0329 /* transaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transaction.h; sourceTree = "<group>"; };
+		2980BE2D1A88562A008B0329 /* type_info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = type_info.h; sourceTree = "<group>"; };
+		2980BE2E1A88562A008B0329 /* uds_connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uds_connection.h; sourceTree = "<group>"; };
+		2980BE2F1A88562A008B0329 /* utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		2980BE301A88562A008B0329 /* vallist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vallist.h; sourceTree = "<group>"; };
+		2980BE311A88562A008B0329 /* wnp_connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wnp_connection.h; sourceTree = "<group>"; };
+		2980BE331A885641008B0329 /* cgi_jpeg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cgi_jpeg.cpp; sourceTree = "<group>"; };
+		2980BE341A885641008B0329 /* cpool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cpool.cpp; sourceTree = "<group>"; };
+		2980BE351A885641008B0329 /* dbinfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dbinfo.cpp; sourceTree = "<group>"; };
+		2980BE361A885641008B0329 /* deadlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deadlock.cpp; sourceTree = "<group>"; };
+		2980BE371A885641008B0329 /* fieldinf.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fieldinf.cpp; sourceTree = "<group>"; };
+		2980BE381A885641008B0329 /* for_each.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = for_each.cpp; sourceTree = "<group>"; };
+		2980BE391A885641008B0329 /* images.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = images.h; sourceTree = "<group>"; };
+		2980BE3A1A885641008B0329 /* load_jpeg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = load_jpeg.cpp; sourceTree = "<group>"; };
+		2980BE3B1A885641008B0329 /* multiquery.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = multiquery.cpp; sourceTree = "<group>"; };
+		2980BE3C1A885641008B0329 /* printdata.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = printdata.cpp; sourceTree = "<group>"; };
+		2980BE3D1A885641008B0329 /* printdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = printdata.h; sourceTree = "<group>"; };
+		2980BE3E1A885641008B0329 /* resetdb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resetdb.cpp; sourceTree = "<group>"; };
+		2980BE3F1A885641008B0329 /* simple1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simple1.cpp; sourceTree = "<group>"; };
+		2980BE401A885641008B0329 /* simple2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simple2.cpp; sourceTree = "<group>"; };
+		2980BE411A885641008B0329 /* simple3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simple3.cpp; sourceTree = "<group>"; };
+		2980BE421A885641008B0329 /* ssqls1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ssqls1.cpp; sourceTree = "<group>"; };
+		2980BE431A885641008B0329 /* ssqls2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ssqls2.cpp; sourceTree = "<group>"; };
+		2980BE441A885641008B0329 /* ssqls3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ssqls3.cpp; sourceTree = "<group>"; };
+		2980BE451A885641008B0329 /* ssqls4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ssqls4.cpp; sourceTree = "<group>"; };
+		2980BE461A885641008B0329 /* ssqls5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ssqls5.cpp; sourceTree = "<group>"; };
+		2980BE471A885641008B0329 /* ssqls6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ssqls6.cpp; sourceTree = "<group>"; };
+		2980BE481A885641008B0329 /* stock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stock.h; sourceTree = "<group>"; };
+		2980BE491A885641008B0329 /* store_if.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = store_if.cpp; sourceTree = "<group>"; };
+		2980BE4A1A885641008B0329 /* threads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = threads.h; sourceTree = "<group>"; };
+		2980BE4B1A885641008B0329 /* tquery1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery1.cpp; sourceTree = "<group>"; };
+		2980BE4C1A885641008B0329 /* tquery2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery2.cpp; sourceTree = "<group>"; };
+		2980BE4D1A885641008B0329 /* tquery3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery3.cpp; sourceTree = "<group>"; };
+		2980BE4E1A885641008B0329 /* tquery4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery4.cpp; sourceTree = "<group>"; };
+		2980BE4F1A885641008B0329 /* transaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transaction.cpp; sourceTree = "<group>"; };
+		2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.18.dylib; sourceTree = "<group>"; };
+		2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlpp_d.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2980BE531A88566A008B0329 /* libmysqlpp_d.dylib in Frameworks */,
+				2980BE521A88566A008B0329 /* libmysqlclient.18.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -24,6 +122,7 @@
 		2980BDF51A8854FF008B0329 = {
 			isa = PBXGroup;
 			children = (
+				2980BE051A885602008B0329 /* mysqlpp */,
 				2980BDFF1A8854FF008B0329 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,6 +135,103 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2980BE051A885602008B0329 /* mysqlpp */ = {
+			isa = PBXGroup;
+			children = (
+				2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */,
+				2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */,
+				2980BE321A885641008B0329 /* mysqlpp_examples */,
+				2980BE061A88562A008B0329 /* mysqlpp_includes */,
+			);
+			name = mysqlpp;
+			sourceTree = "<group>";
+		};
+		2980BE061A88562A008B0329 /* mysqlpp_includes */ = {
+			isa = PBXGroup;
+			children = (
+				2980BE071A88562A008B0329 /* autoflag.h */,
+				2980BE081A88562A008B0329 /* beemutex.h */,
+				2980BE091A88562A008B0329 /* cmdline.h */,
+				2980BE0A1A88562A008B0329 /* common.h */,
+				2980BE0B1A88562A008B0329 /* comparable.h */,
+				2980BE0C1A88562A008B0329 /* connection.h */,
+				2980BE0D1A88562A008B0329 /* cpool.h */,
+				2980BE0E1A88562A008B0329 /* datetime.h */,
+				2980BE0F1A88562A008B0329 /* dbdriver.h */,
+				2980BE101A88562A008B0329 /* exceptions.h */,
+				2980BE111A88562A008B0329 /* field.h */,
+				2980BE121A88562A008B0329 /* field_names.h */,
+				2980BE131A88562A008B0329 /* field_types.h */,
+				2980BE141A88562A008B0329 /* insertpolicy.h */,
+				2980BE151A88562A008B0329 /* manip.h */,
+				2980BE161A88562A008B0329 /* myset.h */,
+				2980BE171A88562A008B0329 /* mysql++.h */,
+				2980BE181A88562A008B0329 /* mystring.h */,
+				2980BE191A88562A008B0329 /* noexceptions.h */,
+				2980BE1A1A88562A008B0329 /* null.h */,
+				2980BE1B1A88562A008B0329 /* options.h */,
+				2980BE1C1A88562A008B0329 /* qparms.h */,
+				2980BE1D1A88562A008B0329 /* query.h */,
+				2980BE1E1A88562A008B0329 /* querydef.h */,
+				2980BE1F1A88562A008B0329 /* refcounted.h */,
+				2980BE201A88562A008B0329 /* result.h */,
+				2980BE211A88562A008B0329 /* row.h */,
+				2980BE221A88562A008B0329 /* scopedconnection.h */,
+				2980BE231A88562A008B0329 /* sql_buffer.h */,
+				2980BE241A88562A008B0329 /* sql_types.h */,
+				2980BE251A88562A008B0329 /* sqlstream.h */,
+				2980BE261A88562A008B0329 /* ssqls.h */,
+				2980BE271A88562A008B0329 /* ssqls2.h */,
+				2980BE281A88562A008B0329 /* stadapter.h */,
+				2980BE291A88562A008B0329 /* stream2string.h */,
+				2980BE2A1A88562A008B0329 /* tcp_connection.h */,
+				2980BE2B1A88562A008B0329 /* tiny_int.h */,
+				2980BE2C1A88562A008B0329 /* transaction.h */,
+				2980BE2D1A88562A008B0329 /* type_info.h */,
+				2980BE2E1A88562A008B0329 /* uds_connection.h */,
+				2980BE2F1A88562A008B0329 /* utility.h */,
+				2980BE301A88562A008B0329 /* vallist.h */,
+				2980BE311A88562A008B0329 /* wnp_connection.h */,
+			);
+			path = mysqlpp_includes;
+			sourceTree = "<group>";
+		};
+		2980BE321A885641008B0329 /* mysqlpp_examples */ = {
+			isa = PBXGroup;
+			children = (
+				2980BE331A885641008B0329 /* cgi_jpeg.cpp */,
+				2980BE341A885641008B0329 /* cpool.cpp */,
+				2980BE351A885641008B0329 /* dbinfo.cpp */,
+				2980BE361A885641008B0329 /* deadlock.cpp */,
+				2980BE371A885641008B0329 /* fieldinf.cpp */,
+				2980BE381A885641008B0329 /* for_each.cpp */,
+				2980BE391A885641008B0329 /* images.h */,
+				2980BE3A1A885641008B0329 /* load_jpeg.cpp */,
+				2980BE3B1A885641008B0329 /* multiquery.cpp */,
+				2980BE3C1A885641008B0329 /* printdata.cpp */,
+				2980BE3D1A885641008B0329 /* printdata.h */,
+				2980BE3E1A885641008B0329 /* resetdb.cpp */,
+				2980BE3F1A885641008B0329 /* simple1.cpp */,
+				2980BE401A885641008B0329 /* simple2.cpp */,
+				2980BE411A885641008B0329 /* simple3.cpp */,
+				2980BE421A885641008B0329 /* ssqls1.cpp */,
+				2980BE431A885641008B0329 /* ssqls2.cpp */,
+				2980BE441A885641008B0329 /* ssqls3.cpp */,
+				2980BE451A885641008B0329 /* ssqls4.cpp */,
+				2980BE461A885641008B0329 /* ssqls5.cpp */,
+				2980BE471A885641008B0329 /* ssqls6.cpp */,
+				2980BE481A885641008B0329 /* stock.h */,
+				2980BE491A885641008B0329 /* store_if.cpp */,
+				2980BE4A1A885641008B0329 /* threads.h */,
+				2980BE4B1A885641008B0329 /* tquery1.cpp */,
+				2980BE4C1A885641008B0329 /* tquery2.cpp */,
+				2980BE4D1A885641008B0329 /* tquery3.cpp */,
+				2980BE4E1A885641008B0329 /* tquery4.cpp */,
+				2980BE4F1A885641008B0329 /* transaction.cpp */,
+			);
+			path = mysqlpp_examples;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +239,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2980BE571A885786008B0329 /* libmysqlpp_d.dylib in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +251,7 @@
 			buildConfigurationList = 2980BE021A8854FF008B0329 /* Build configuration list for PBXNativeTarget "Db" */;
 			buildPhases = (
 				2980BDFA1A8854FF008B0329 /* Sources */,
+				2980BE541A8856AE008B0329 /* CopyFiles */,
 				2980BDFB1A8854FF008B0329 /* Frameworks */,
 				2980BDFC1A8854FF008B0329 /* Headers */,
 			);
@@ -177,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -185,6 +387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
