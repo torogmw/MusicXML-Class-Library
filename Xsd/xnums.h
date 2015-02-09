@@ -27,6 +27,6 @@ namespace xsd
         sequence = 18,
         simpleContent = 19,
         simpleType = 20,
-        onion = 21
+        onion = 21 /* union is a keyword */
     };
 }
