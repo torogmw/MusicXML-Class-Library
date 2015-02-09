@@ -2,7 +2,6 @@
 
 namespace xsd
 {
-
     enum class xntyp
     {
         unknown = -1,

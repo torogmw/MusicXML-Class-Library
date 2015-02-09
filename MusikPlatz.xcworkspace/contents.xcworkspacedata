@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:globals.h">
+   </FileRef>
+   <FileRef
+      location = "group:Go/Go.xcodeproj">
+   </FileRef>
    <Group
       location = "container:"
       name = "Documentation">
@@ -9,15 +15,12 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:globals.h">
+      location = "group:CppUnitLite/CppUnitLite.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Db/Db.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Xsd/Xsd.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:CppUnitLite/CppUnitLite.xcodeproj">
    </FileRef>
 </Workspace>

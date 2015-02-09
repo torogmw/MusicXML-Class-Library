@@ -12,6 +12,10 @@
 		2980BE561A885782008B0329 /* libmysqlclient.18.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */; };
 		2980BE571A885786008B0329 /* libmysqlpp_d.dylib in Headers */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
 		2980BE581A88578F008B0329 /* libmysqlpp_d.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
+		29AAB9A41A8897CE0027B7A1 /* ConnectionValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */; };
+		29AAB9A51A8897CE0027B7A1 /* ConnectionValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */; };
+		29AAB9A81A88988C0027B7A1 /* UserPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9A61A88988C0027B7A1 /* UserPass.cpp */; };
+		29AAB9A91A88988C0027B7A1 /* UserPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 29AAB9A71A88988C0027B7A1 /* UserPass.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,6 +108,11 @@
 		2980BE4F1A885641008B0329 /* transaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transaction.cpp; sourceTree = "<group>"; };
 		2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.18.dylib; sourceTree = "<group>"; };
 		2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlpp_d.dylib; sourceTree = "<group>"; };
+		29AAB99D1A8897460027B7A1 /* executeNonQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = executeNonQuery.h; sourceTree = "<group>"; };
+		29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectionValues.cpp; sourceTree = "<group>"; };
+		29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionValues.h; sourceTree = "<group>"; };
+		29AAB9A61A88988C0027B7A1 /* UserPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserPass.cpp; sourceTree = "<group>"; };
+		29AAB9A71A88988C0027B7A1 /* UserPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPass.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +131,11 @@
 		2980BDF51A8854FF008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29AAB9A61A88988C0027B7A1 /* UserPass.cpp */,
+				29AAB9A71A88988C0027B7A1 /* UserPass.h */,
+				29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */,
+				29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */,
+				29AAB99D1A8897460027B7A1 /* executeNonQuery.h */,
 				2980BE051A885602008B0329 /* mysqlpp */,
 				2980BDFF1A8854FF008B0329 /* Products */,
 			);
@@ -239,7 +253,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29AAB9A51A8897CE0027B7A1 /* ConnectionValues.h in Headers */,
 				2980BE571A885786008B0329 /* libmysqlpp_d.dylib in Headers */,
+				29AAB9A91A88988C0027B7A1 /* UserPass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29AAB9A41A8897CE0027B7A1 /* ConnectionValues.cpp in Sources */,
+				29AAB9A81A88988C0027B7A1 /* UserPass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +322,7 @@
 		2980BE001A8854FF008B0329 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -336,13 +354,14 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Debug;
 		};
 		2980BE011A8854FF008B0329 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -368,6 +387,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Release;
 		};
@@ -414,6 +434,7 @@
 				2980BE041A8854FF008B0329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
