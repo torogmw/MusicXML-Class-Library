@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>451E64A0-5E5D-427F-A011-A98C0C3D8CC7</string>
+	<string>0D2ADC98-0C22-44ED-8538-399C1E285FC3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MusikPlatz</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EFD18049-2BFF-4A6F-BD98-10D215656ADE</key>
-		<string>https://github.com/Webern/lexicon.git</string>
+		<key>EE59D027-DD66-4AC6-833E-4F6327CA4844</key>
+		<string>https://github.com/Webern/mxdom.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MusikPlatz.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EFD18049-2BFF-4A6F-BD98-10D215656ADE</key>
+		<key>EE59D027-DD66-4AC6-833E-4F6327CA4844</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Webern/lexicon.git</string>
+	<string>https://github.com/Webern/mxdom.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EFD18049-2BFF-4A6F-BD98-10D215656ADE</string>
+	<string>EE59D027-DD66-4AC6-833E-4F6327CA4844</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EFD18049-2BFF-4A6F-BD98-10D215656ADE</string>
+			<string>EE59D027-DD66-4AC6-833E-4F6327CA4844</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MusikPlatz</string>
 		</dict>
