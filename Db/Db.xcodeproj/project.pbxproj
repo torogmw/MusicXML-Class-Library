@@ -105,6 +105,7 @@
 		29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionValues.h; sourceTree = "<group>"; };
 		29AAB9A61A88988C0027B7A1 /* UserPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserPass.cpp; sourceTree = "<group>"; };
 		29AAB9A71A88988C0027B7A1 /* UserPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPass.h; sourceTree = "<group>"; };
+		29B368431A89DE8E00092133 /* executeQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = executeQuery.h; sourceTree = "<group>"; };
 		29D9215D1A89CDDA00AC4D60 /* liblibmysqlpp_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibmysqlpp_d.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +124,7 @@
 		2980BDF51A8854FF008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29B368431A89DE8E00092133 /* executeQuery.h */,
 				29AAB9A61A88988C0027B7A1 /* UserPass.cpp */,
 				29AAB9A71A88988C0027B7A1 /* UserPass.h */,
 				29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */,
