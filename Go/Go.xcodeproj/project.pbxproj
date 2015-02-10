@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		29AAB9951A8895E00027B7A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9941A8895E00027B7A1 /* main.cpp */; };
 		29AAB9AB1A889EC50027B7A1 /* libDb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AAB9AA1A889EC50027B7A1 /* libDb.a */; };
-		29E89A931A88A2310042416C /* libmysqlclient.18.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E89A911A88A2310042416C /* libmysqlclient.18.dylib */; };
-		29E89A941A88A2310042416C /* libmysqlpp_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E89A921A88A2310042416C /* libmysqlpp_d.dylib */; };
-		29E89A971A88A2640042416C /* libmysqlclient.18.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29E89A911A88A2310042416C /* libmysqlclient.18.dylib */; };
-		29E89A981A88A2700042416C /* libmysqlpp_d.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29E89A921A88A2310042416C /* libmysqlpp_d.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,8 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				29E89A971A88A2640042416C /* libmysqlclient.18.dylib in CopyFiles */,
-				29E89A981A88A2700042416C /* libmysqlpp_d.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +36,6 @@
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29AAB9AA1A889EC50027B7A1 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
-		29E89A911A88A2310042416C /* libmysqlclient.18.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.18.dylib; sourceTree = "<group>"; };
-		29E89A921A88A2310042416C /* libmysqlpp_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlpp_d.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E89A941A88A2310042416C /* libmysqlpp_d.dylib in Frameworks */,
-				29E89A931A88A2310042416C /* libmysqlclient.18.dylib in Frameworks */,
 				29AAB9AB1A889EC50027B7A1 /* libDb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,8 +53,6 @@
 		29AAB9881A8895E00027B7A1 = {
 			isa = PBXGroup;
 			children = (
-				29E89A911A88A2310042416C /* libmysqlclient.18.dylib */,
-				29E89A921A88A2310042416C /* libmysqlpp_d.dylib */,
 				29AAB9AA1A889EC50027B7A1 /* libDb.a */,
 				29AAB9931A8895E00027B7A1 /* Go */,
 				29AAB9921A8895E00027B7A1 /* Products */,

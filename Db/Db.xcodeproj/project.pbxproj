@@ -7,15 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2980BE521A88566A008B0329 /* libmysqlclient.18.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */; };
-		2980BE531A88566A008B0329 /* libmysqlpp_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
-		2980BE561A885782008B0329 /* libmysqlclient.18.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */; };
-		2980BE571A885786008B0329 /* libmysqlpp_d.dylib in Headers */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
-		2980BE581A88578F008B0329 /* libmysqlpp_d.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */; };
 		29AAB9A41A8897CE0027B7A1 /* ConnectionValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */; };
 		29AAB9A51A8897CE0027B7A1 /* ConnectionValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */; };
 		29AAB9A81A88988C0027B7A1 /* UserPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9A61A88988C0027B7A1 /* UserPass.cpp */; };
 		29AAB9A91A88988C0027B7A1 /* UserPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 29AAB9A71A88988C0027B7A1 /* UserPass.h */; };
+		29D9215E1A89CDDA00AC4D60 /* liblibmysqlpp_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D9215D1A89CDDA00AC4D60 /* liblibmysqlpp_d.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,8 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				2980BE561A885782008B0329 /* libmysqlclient.18.dylib in CopyFiles */,
-				2980BE581A88578F008B0329 /* libmysqlpp_d.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,13 +100,12 @@
 		2980BE4D1A885641008B0329 /* tquery3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery3.cpp; sourceTree = "<group>"; };
 		2980BE4E1A885641008B0329 /* tquery4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery4.cpp; sourceTree = "<group>"; };
 		2980BE4F1A885641008B0329 /* transaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transaction.cpp; sourceTree = "<group>"; };
-		2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlclient.18.dylib; sourceTree = "<group>"; };
-		2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libmysqlpp_d.dylib; sourceTree = "<group>"; };
 		29AAB99D1A8897460027B7A1 /* executeNonQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = executeNonQuery.h; sourceTree = "<group>"; };
 		29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectionValues.cpp; sourceTree = "<group>"; };
 		29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionValues.h; sourceTree = "<group>"; };
 		29AAB9A61A88988C0027B7A1 /* UserPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserPass.cpp; sourceTree = "<group>"; };
 		29AAB9A71A88988C0027B7A1 /* UserPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPass.h; sourceTree = "<group>"; };
+		29D9215D1A89CDDA00AC4D60 /* liblibmysqlpp_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibmysqlpp_d.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2980BE531A88566A008B0329 /* libmysqlpp_d.dylib in Frameworks */,
-				2980BE521A88566A008B0329 /* libmysqlclient.18.dylib in Frameworks */,
+				29D9215E1A89CDDA00AC4D60 /* liblibmysqlpp_d.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +144,7 @@
 		2980BE051A885602008B0329 /* mysqlpp */ = {
 			isa = PBXGroup;
 			children = (
-				2980BE501A88566A008B0329 /* libmysqlclient.18.dylib */,
-				2980BE511A88566A008B0329 /* libmysqlpp_d.dylib */,
+				29D9215D1A89CDDA00AC4D60 /* liblibmysqlpp_d.a */,
 				2980BE321A885641008B0329 /* mysqlpp_examples */,
 				2980BE061A88562A008B0329 /* mysqlpp_includes */,
 			);
@@ -254,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AAB9A51A8897CE0027B7A1 /* ConnectionValues.h in Headers */,
-				2980BE571A885786008B0329 /* libmysqlpp_d.dylib in Headers */,
 				29AAB9A91A88988C0027B7A1 /* UserPass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
