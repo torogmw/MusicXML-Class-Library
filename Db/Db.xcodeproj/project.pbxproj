@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		298575731A8A66BD0043322C /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298575711A8A66BD0043322C /* Field.cpp */; };
-		298575741A8A66BD0043322C /* Field.h in Headers */ = {isa = PBXBuildFile; fileRef = 298575721A8A66BD0043322C /* Field.h */; };
+		298575731A8A66BD0043322C /* DbField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298575711A8A66BD0043322C /* DbField.cpp */; };
+		298575741A8A66BD0043322C /* DbField.h in Headers */ = {isa = PBXBuildFile; fileRef = 298575721A8A66BD0043322C /* DbField.h */; };
 		29AAB9A41A8897CE0027B7A1 /* ConnectionValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */; };
 		29AAB9A51A8897CE0027B7A1 /* ConnectionValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 29AAB9A31A8897CE0027B7A1 /* ConnectionValues.h */; };
 		29AAB9A81A88988C0027B7A1 /* UserPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9A61A88988C0027B7A1 /* UserPass.cpp */; };
@@ -102,8 +102,8 @@
 		2980BE4D1A885641008B0329 /* tquery3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery3.cpp; sourceTree = "<group>"; };
 		2980BE4E1A885641008B0329 /* tquery4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tquery4.cpp; sourceTree = "<group>"; };
 		2980BE4F1A885641008B0329 /* transaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transaction.cpp; sourceTree = "<group>"; };
-		298575711A8A66BD0043322C /* Field.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Field.cpp; sourceTree = "<group>"; };
-		298575721A8A66BD0043322C /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		298575711A8A66BD0043322C /* DbField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DbField.cpp; sourceTree = "<group>"; };
+		298575721A8A66BD0043322C /* DbField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbField.h; sourceTree = "<group>"; };
 		298575751A8A68180043322C /* StringPtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringPtr.h; sourceTree = "<group>"; };
 		29AAB99D1A8897460027B7A1 /* executeNonQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = executeNonQuery.h; sourceTree = "<group>"; };
 		29AAB9A21A8897CE0027B7A1 /* ConnectionValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectionValues.cpp; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				298575751A8A68180043322C /* StringPtr.h */,
-				298575711A8A66BD0043322C /* Field.cpp */,
-				298575721A8A66BD0043322C /* Field.h */,
+				298575711A8A66BD0043322C /* DbField.cpp */,
+				298575721A8A66BD0043322C /* DbField.h */,
 				29B368431A89DE8E00092133 /* executeQuery.h */,
 				29AAB9A61A88988C0027B7A1 /* UserPass.cpp */,
 				29AAB9A71A88988C0027B7A1 /* UserPass.h */,
@@ -254,7 +254,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298575741A8A66BD0043322C /* Field.h in Headers */,
+				298575741A8A66BD0043322C /* DbField.h in Headers */,
 				29AAB9A51A8897CE0027B7A1 /* ConnectionValues.h in Headers */,
 				29AAB9A91A88988C0027B7A1 /* UserPass.h in Headers */,
 			);
@@ -313,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AAB9A41A8897CE0027B7A1 /* ConnectionValues.cpp in Sources */,
-				298575731A8A66BD0043322C /* Field.cpp in Sources */,
+				298575731A8A66BD0043322C /* DbField.cpp in Sources */,
 				29AAB9A81A88988C0027B7A1 /* UserPass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

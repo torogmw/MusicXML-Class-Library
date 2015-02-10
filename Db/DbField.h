@@ -9,23 +9,23 @@
 
 namespace db
 {
-    class Field;
-    using FieldPtr = std::shared_ptr<Field>;
+    class DbField;
+    using DbFieldPtr = std::shared_ptr<DbField>;
     
-    using Fields = std::vector<Field>;
-    using FieldsIter = Fields::iterator;
-    using FieldsIterConst = Fields::const_iterator;
+    using DbFields = std::vector<DbField>;
+    using DbFieldsIter = DbFields::iterator;
+    using DbFieldsIterConst = DbFields::const_iterator;
     
-    std::string writeField( const Field& field, bool isNumeric, char quotchar = '`' );
-    std::string writeFieldSqlSet( const Field& field, bool isNumeric, char quotchar = '`' );
+    std::string writeDbField( const DbField& field, bool isNumeric, char quotchar = '`' );
+    std::string writeDbFieldSqlSet( const DbField& field, bool isNumeric, char quotchar = '`' );
     
-    class Field
+    class DbField
     {
 
     public:
-        Field();
-        Field( const StringPtr& name, const std::string& value );
-        virtual ~Field();
+        DbField();
+        DbField( const StringPtr& name, const std::string& value );
+        virtual ~DbField();
         
         StringPtr getName() const;
         void setName( const StringPtr& value );

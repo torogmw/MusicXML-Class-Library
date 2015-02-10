@@ -1,19 +1,19 @@
 /* matthew james briggs */
 
-#include "Field.h"
+#include "DbField.h"
 #include <sstream>
 
 namespace db
 {
     /* ctor */
-    Field::Field()
+    DbField::DbField()
     :myName( std::make_shared<std::string>( "" ) )
     ,myValue( "" )
     ,myIsNull( true )
     {
         
     }
-    Field::Field( const StringPtr& name, const std::string& value )
+    DbField::DbField( const StringPtr& name, const std::string& value )
     :myName( name )
     ,myValue( value )
     ,myIsNull( true )
@@ -22,13 +22,13 @@ namespace db
     }
     
     /* dtor */
-    Field::~Field() {}
+    DbField::~DbField() {}
     
-    StringPtr Field::getName() const
+    StringPtr DbField::getName() const
     {
         return myName;
     }
-    void Field::setName( const StringPtr& value )
+    void DbField::setName( const StringPtr& value )
     {
         if ( value )
         {
@@ -40,18 +40,18 @@ namespace db
         }
     }
     
-    std::string Field::getValue() const
+    std::string DbField::getValue() const
     {
         return myValue;
     }
-    int Field::getValueInt() const
+    int DbField::getValueInt() const
     {
         int val = -1;
         std::stringstream temp( myValue );
         temp >> val;
         return val;
     }
-    bool Field::getValueBool() const
+    bool DbField::getValueBool() const
     {
         bool ret = false;
         std::stringstream temp( myValue );
@@ -59,7 +59,7 @@ namespace db
         temp >> std::boolalpha >>  ret;
         return ret;
     }
-    double Field::getValueDouble() const
+    double DbField::getValueDouble() const
     {
         double val = -1;
         std::stringstream temp( myValue );
@@ -67,7 +67,7 @@ namespace db
         return val;
     }
 
-    char Field::getValueChar() const
+    char DbField::getValueChar() const
     {
         char val = 0;
         if ( myValue.length() > 0 )
@@ -77,11 +77,11 @@ namespace db
         return val;
     }
     
-    bool Field::getIsNull() const
+    bool DbField::getIsNull() const
     {
         return myIsNull;
     }
-    void Field::setIsNull( bool value )
+    void DbField::setIsNull( bool value )
     {
         myIsNull = value;
         if ( myIsNull )
@@ -89,33 +89,33 @@ namespace db
             myValue = "";
         }
     }
-    void Field::setValue( const std::string& value )
+    void DbField::setValue( const std::string& value )
     {
         myValue = value;
         setIsNull( false );
     }
-    void Field::setValueInt( int value )
+    void DbField::setValueInt( int value )
     {
         std::stringstream temp;
         temp << value;
         myValue = temp.str();
         setIsNull( false );
     }
-    void Field::setValueBool( bool value )
+    void DbField::setValueBool( bool value )
     {
         std::stringstream temp;
         temp << std::boolalpha << value;
         myValue = temp.str();
         setIsNull( false );
     }
-    void Field::setValueChar( char value )
+    void DbField::setValueChar( char value )
     {
         std::stringstream temp;
         temp << value;
         myValue = temp.str();
         setIsNull( false );
     }
-    void Field::setValueDouble( double value )
+    void DbField::setValueDouble( double value )
     {
         std::stringstream temp;
         temp << value;
@@ -123,7 +123,7 @@ namespace db
         setIsNull( false );
     }
     
-    std::string writeField( const Field& field, bool isNumeric, char quotechar )
+    std::string writeDbField( const DbField& field, bool isNumeric, char quotechar )
     {
         std::stringstream temp;
         if ( field.getIsNull() )
@@ -140,11 +140,11 @@ namespace db
         }
         return temp.str();
     }
-    std::string writeFieldSqlSeq( const Field& field, bool isNumeric, char quotechar )
+    std::string writeDbFieldSqlSet( const DbField& field, bool isNumeric, char quotechar )
     {
         std::stringstream temp;
         temp << "set " << quotechar << *(field.getName()) << quotechar;
-        temp << " = " << writeField( field, isNumeric, quotechar );
+        temp << " = " << writeDbField( field, isNumeric, quotechar );
         return temp.str();
     }
 }
