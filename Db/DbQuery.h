@@ -21,8 +21,16 @@ namespace db
         DbQuery( const DbConnectionValues& conval, const std::string& sql );
         virtual ~DbQuery();
         
-    private:
-        DbRow myDbRowPrototype;
+        std::string getSql() const;
+        void setSql( const std::string& sql );
+        void appendSql( const std::string& addThisToEndOfSql );
         
+        bool execute();
+        
+    private:
+        DbRow myRowPrototype;
+        DbRowSet myRows;
+        DbConnectionValues myConnectionValues;
+        std::string mySql;
     };
 }

@@ -18,6 +18,8 @@
 		29EDE1D01A8BD91E00ED7558 /* DbQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EDE1CE1A8BD91E00ED7558 /* DbQuery.h */; };
 		29EDE1D31A8BE22F00ED7558 /* dbExecuteNonQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EDE1D21A8BE22F00ED7558 /* dbExecuteNonQuery.cpp */; };
 		29EDE1D51A8BE24900ED7558 /* dbExecuteQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EDE1D41A8BE24900ED7558 /* dbExecuteQuery.cpp */; };
+		29EDE1D91A8BEFF100ED7558 /* dbGetFieldNamesFromRow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EDE1D71A8BEFF100ED7558 /* dbGetFieldNamesFromRow.cpp */; };
+		29EDE1DA1A8BEFF100ED7558 /* dbGetFieldNamesFromRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EDE1D81A8BEFF100ED7558 /* dbGetFieldNamesFromRow.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +123,8 @@
 		29EDE1D11A8BDC2D00ED7558 /* DbRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbRow.h; sourceTree = "<group>"; };
 		29EDE1D21A8BE22F00ED7558 /* dbExecuteNonQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dbExecuteNonQuery.cpp; sourceTree = "<group>"; };
 		29EDE1D41A8BE24900ED7558 /* dbExecuteQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dbExecuteQuery.cpp; sourceTree = "<group>"; };
+		29EDE1D71A8BEFF100ED7558 /* dbGetFieldNamesFromRow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dbGetFieldNamesFromRow.cpp; sourceTree = "<group>"; };
+		29EDE1D81A8BEFF100ED7558 /* dbGetFieldNamesFromRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbGetFieldNamesFromRow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,12 +142,9 @@
 		2980BDF51A8854FF008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29EDE1D61A8BE2A700ED7558 /* private */,
 				29AAB9A21A8897CE0027B7A1 /* DbConnectionValues.cpp */,
 				29AAB9A31A8897CE0027B7A1 /* DbConnectionValues.h */,
-				29EDE1D21A8BE22F00ED7558 /* dbExecuteNonQuery.cpp */,
-				29AAB99D1A8897460027B7A1 /* dbExecuteNonQuery.h */,
-				29EDE1D41A8BE24900ED7558 /* dbExecuteQuery.cpp */,
-				29B368431A89DE8E00092133 /* dbExecuteQuery.h */,
 				298575711A8A66BD0043322C /* DbField.cpp */,
 				298575721A8A66BD0043322C /* DbField.h */,
 				29EDE1CD1A8BD91E00ED7558 /* DbQuery.cpp */,
@@ -261,6 +262,19 @@
 			path = mysqlpp_examples;
 			sourceTree = "<group>";
 		};
+		29EDE1D61A8BE2A700ED7558 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				29EDE1D21A8BE22F00ED7558 /* dbExecuteNonQuery.cpp */,
+				29AAB99D1A8897460027B7A1 /* dbExecuteNonQuery.h */,
+				29EDE1D41A8BE24900ED7558 /* dbExecuteQuery.cpp */,
+				29B368431A89DE8E00092133 /* dbExecuteQuery.h */,
+				29EDE1D71A8BEFF100ED7558 /* dbGetFieldNamesFromRow.cpp */,
+				29EDE1D81A8BEFF100ED7558 /* dbGetFieldNamesFromRow.h */,
+			);
+			name = private;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -268,6 +282,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EDE1DA1A8BEFF100ED7558 /* dbGetFieldNamesFromRow.h in Headers */,
 				298575741A8A66BD0043322C /* DbField.h in Headers */,
 				29AAB9A51A8897CE0027B7A1 /* DbConnectionValues.h in Headers */,
 				29AAB9A91A88988C0027B7A1 /* DbUserPass.h in Headers */,
@@ -333,6 +348,7 @@
 				298575731A8A66BD0043322C /* DbField.cpp in Sources */,
 				29AAB9A81A88988C0027B7A1 /* DbUserPass.cpp in Sources */,
 				29EDE1D51A8BE24900ED7558 /* dbExecuteQuery.cpp in Sources */,
+				29EDE1D91A8BEFF100ED7558 /* dbGetFieldNamesFromRow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
