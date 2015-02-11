@@ -4,5 +4,5 @@
 
 namespace db
 {
-    typedef std::shared_ptr<std::string> StringPtr;
+    typedef std::shared_ptr<std::string> DbStringPtr;
 }

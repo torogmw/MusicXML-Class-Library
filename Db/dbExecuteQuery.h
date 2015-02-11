@@ -3,14 +3,14 @@
 #include <mysql++.h>
 #include <iostream>
 #include <iomanip>
-#include "ConnectionValues.h"
+#include "DbConnectionValues.h"
 #include <sstream>
 
 using namespace std;
 
 namespace db
 {
-    inline mysqlpp::StoreQueryResult executeQuery( const ConnectionValues& connVal, const std::string& sql )
+    inline mysqlpp::StoreQueryResult dbExecuteQuery( const DbConnectionValues& connVal, const std::string& sql )
     {
         mysqlpp::StoreQueryResult res;
         
@@ -87,8 +87,8 @@ namespace db
         (row[ fieldName.c_str() ]).to_string( temp );
         return temp;
     }
-    inline mysqlpp::StoreQueryResult executeQuery( const std::string& sql )
+    inline mysqlpp::StoreQueryResult dbExecuteQuery( const std::string& sql )
     {
-        return executeQuery( ConnectionValues(), sql );
+        return dbExecuteQuery( DbConnectionValues(), sql );
     }
 }

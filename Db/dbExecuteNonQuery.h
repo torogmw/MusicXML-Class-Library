@@ -4,11 +4,11 @@
 
 #include <iostream>
 #include <iomanip>
-#include "ConnectionValues.h"
+#include "DbConnectionValues.h"
 
 namespace db
 {
-    inline bool executeNonQuery( const ConnectionValues& connVal, const std::string& sql )
+    inline bool dbExecuteNonQuery( const DbConnectionValues& connVal, const std::string& sql )
     {
         
         
@@ -22,7 +22,7 @@ namespace db
             mysqlpp::Query query = conn.query( sql );
             if ( mysqlpp::StoreQueryResult res = query.store() )
             {
-                std::cerr << "warning ExecuteNonQuery received a results set" << std::endl;
+                std::cerr << "warning dbExecuteNonQuery received a results set" << std::endl;
                 
             }
             else
@@ -49,8 +49,8 @@ namespace db
         }
     }
     
-    inline bool executeNonQuery( const std::string& sql )
+    inline bool dbExecuteNonQuery( const std::string& sql )
     {
-        return executeNonQuery( ConnectionValues(), sql );
+        return dbExecuteNonQuery( DbConnectionValues(), sql );
     }
 }

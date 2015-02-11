@@ -3,7 +3,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "StringPtr.h"
+#include "DbStringPtr.h"
 #include <memory.h>
 #include <vector>
 
@@ -12,23 +12,21 @@ namespace db
     class DbField;
     using DbFieldPtr = std::shared_ptr<DbField>;
     
-    using DbFields = std::vector<DbField>;
-    using DbFieldsIter = DbFields::iterator;
-    using DbFieldsIterConst = DbFields::const_iterator;
     
-    std::string writeDbField( const DbField& field, bool isNumeric, char quotchar = '`' );
-    std::string writeDbFieldSqlSet( const DbField& field, bool isNumeric, char quotchar = '`' );
+    
+    std::string writeDbFieldQuoted( const DbField& field, bool isNumeric, char quotchar = '`' );
+    std::string writeDbFieldSetStatement( const DbField& field, bool isNumeric, char quotchar = '`' );
     
     class DbField
     {
 
     public:
         DbField();
-        DbField( const StringPtr& name, const std::string& value );
+        DbField( const DbStringPtr& name, const std::string& value );
         virtual ~DbField();
         
-        StringPtr getName() const;
-        void setName( const StringPtr& value );
+        DbStringPtr getName() const;
+        void setName( const DbStringPtr& value );
         
         std::string getValue() const;
         int getValueInt() const;
@@ -47,7 +45,7 @@ namespace db
         
         
     private:
-        StringPtr myName;
+        DbStringPtr myName;
         std::string myValue;
         bool myIsNull;
         

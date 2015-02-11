@@ -1,11 +1,11 @@
 
 #include <iostream>
-#include "executeQuery.h"
+#include "dbExecuteQuery.h"
 #include "mysql++.h"
 
 int main(int argc, const char * argv[])
 {
-    mysqlpp::StoreQueryResult res =  db::executeQuery( "SELECT id,XsTag FROM xsd" );
+    mysqlpp::StoreQueryResult res =  db::dbExecuteQuery( "SELECT id,XsTag FROM xsd" );
     for ( auto it = res.begin(); it != res.end(); ++it )
     {
         int x = db::getFieldInt( *it, "id" );

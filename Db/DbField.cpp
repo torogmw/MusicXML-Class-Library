@@ -13,7 +13,7 @@ namespace db
     {
         
     }
-    DbField::DbField( const StringPtr& name, const std::string& value )
+    DbField::DbField( const DbStringPtr& name, const std::string& value )
     :myName( name )
     ,myValue( value )
     ,myIsNull( true )
@@ -24,11 +24,11 @@ namespace db
     /* dtor */
     DbField::~DbField() {}
     
-    StringPtr DbField::getName() const
+    DbStringPtr DbField::getName() const
     {
         return myName;
     }
-    void DbField::setName( const StringPtr& value )
+    void DbField::setName( const DbStringPtr& value )
     {
         if ( value )
         {
@@ -123,7 +123,7 @@ namespace db
         setIsNull( false );
     }
     
-    std::string writeDbField( const DbField& field, bool isNumeric, char quotechar )
+    std::string writeDbFieldQuoted( const DbField& field, bool isNumeric, char quotechar )
     {
         std::stringstream temp;
         if ( field.getIsNull() )
@@ -140,11 +140,11 @@ namespace db
         }
         return temp.str();
     }
-    std::string writeDbFieldSqlSet( const DbField& field, bool isNumeric, char quotechar )
+    std::string writeDbFieldSetStatement( const DbField& field, bool isNumeric, char quotechar )
     {
         std::stringstream temp;
         temp << "set " << quotechar << *(field.getName()) << quotechar;
-        temp << " = " << writeDbField( field, isNumeric, quotechar );
+        temp << " = " << writeDbFieldQuoted( field, isNumeric, quotechar );
         return temp.str();
     }
 }

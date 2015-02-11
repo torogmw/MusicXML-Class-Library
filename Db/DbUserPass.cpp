@@ -1,12 +1,12 @@
 /* matthew james briggs */
 
-#include "UserPass.h"
+#include "DbUserPass.h"
 #include "globals.h"
 
 namespace db
 {
     /* ctor */
-    UserPass::UserPass()
+    DbUserPass::DbUserPass()
     :myUser( "" )
     ,myPass( "" )
     {
@@ -15,17 +15,17 @@ namespace db
     }
     
     /* ctor */
-    UserPass::UserPass( const std::string& user, const std::string& password )
+    DbUserPass::DbUserPass( const std::string& user, const std::string& password )
     :myUser( user )
     ,myPass( password )
     { }
     
     
-    std::string UserPass::getUser() const
+    std::string DbUserPass::getUser() const
     {
         return myUser;
     }
-    std::string UserPass::getPass() const
+    std::string DbUserPass::getPass() const
     {
         return myPass;
     }

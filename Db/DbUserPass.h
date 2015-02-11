@@ -5,12 +5,12 @@
 
 namespace db
 {
-    class UserPass
+    class DbUserPass
     {
 
     public:
-        UserPass( const std::string& user, const std::string& password );
-        UserPass();
+        DbUserPass( const std::string& user, const std::string& password );
+        DbUserPass();
         
         std::string getUser() const;
         std::string getPass() const;

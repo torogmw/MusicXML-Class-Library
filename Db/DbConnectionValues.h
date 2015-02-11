@@ -2,26 +2,26 @@
 
 #pragma once
 #include <iostream>
-#include "UserPass.h"
+#include "DbUserPass.h"
 
 namespace db
 {
-    class ConnectionValues
+    class DbConnectionValues
     {
 
     public:
-        ConnectionValues();
-        ConnectionValues( std::string server, UserPass upass, std::string catelog );
+        DbConnectionValues();
+        DbConnectionValues( std::string server, DbUserPass upass, std::string catelog );
         
         std::string getServer() const;
         std::string getUser() const;
         std::string getPass() const;
         std::string getCatelog() const;
-        UserPass getUserPass() const;
+        DbUserPass getDbUserPass() const;
         
     private:
         std::string myServer;
-        UserPass myUserPass;
+        DbUserPass myDbUserPass;
         std::string myCatelog;
     };
 }
