@@ -3,8 +3,10 @@
 #pragma once
 #include <iostream>
 #include "mysql++.h"
+#include "DbStringPtr.h"
+#include <vector>
 
 namespace db
 {
-    void dbGetFieldNamesFromRow( const mysqlpp::Row& row, std::vector<std::string>& output );
+    void dbGetFieldNamesFromRow( const mysqlpp::Row& row, std::vector<DbStringPtr>& output );
 }
