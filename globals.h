@@ -33,4 +33,8 @@ namespace globals
     {
         return "mx";
     }
+    inline std::string getMusicXmlXsdFilePath()
+    {
+        return getInputDirectory() + "musicxmlxsd.h";
+    }
 }

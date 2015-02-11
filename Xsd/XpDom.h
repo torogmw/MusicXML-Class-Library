@@ -11,7 +11,7 @@
 namespace xsd
 {
     class XpDom;
-    typedef std::shared_ptr<XpDom> HXpDom;
+    typedef std::shared_ptr<XpDom> XpDomPtr;
     
     class XpDom
     {

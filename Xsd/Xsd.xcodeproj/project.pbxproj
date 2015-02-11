@@ -13,6 +13,12 @@
 		29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */; };
 		29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */; };
 		29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */; };
+		29E6D3D51A8C0C8F00C8B8E2 /* XpDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D31A8C0C8F00C8B8E2 /* XpDocument.cpp */; };
+		29E6D3D61A8C0C8F00C8B8E2 /* XpDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D41A8C0C8F00C8B8E2 /* XpDocument.h */; };
+		29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */; };
+		29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */; };
+		29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */; };
+		29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3DC1A8C0F4300C8B8E2 /* XpParse.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpDom.h; sourceTree = "<group>"; };
 		29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpItem.cpp; sourceTree = "<group>"; };
 		29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpItem.h; sourceTree = "<group>"; };
+		29E6D3D31A8C0C8F00C8B8E2 /* XpDocument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpDocument.cpp; sourceTree = "<group>"; };
+		29E6D3D41A8C0C8F00C8B8E2 /* XpDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpDocument.h; sourceTree = "<group>"; };
+		29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpReader.cpp; sourceTree = "<group>"; };
+		29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpReader.h; sourceTree = "<group>"; };
+		29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpParse.cpp; sourceTree = "<group>"; };
+		29E6D3DC1A8C0F4300C8B8E2 /* XpParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpParse.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,12 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */,
+				29E6D3DC1A8C0F4300C8B8E2 /* XpParse.h */,
+				29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */,
+				29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */,
+				29E6D3D31A8C0C8F00C8B8E2 /* XpDocument.cpp */,
+				29E6D3D41A8C0C8F00C8B8E2 /* XpDocument.h */,
 				29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */,
 				29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */,
 				29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */,
@@ -70,9 +88,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */,
 				29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */,
+				29E6D3D61A8C0C8F00C8B8E2 /* XpDocument.h in Headers */,
 				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
 				29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */,
+				29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +150,9 @@
 			files = (
 				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,
 				29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */,
+				29E6D3D51A8C0C8F00C8B8E2 /* XpDocument.cpp in Sources */,
+				29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */,
+				29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */,
 				29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +195,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = ../;
 			};
 			name = Debug;
 		};
@@ -203,6 +228,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = ../;
 			};
 			name = Release;
 		};
@@ -211,6 +237,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../ ../../";
 			};
 			name = Debug;
 		};
@@ -219,6 +246,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../ ../../";
 			};
 			name = Release;
 		};
