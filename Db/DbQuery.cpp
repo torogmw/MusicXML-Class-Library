@@ -2,6 +2,8 @@
 
 #include "DbQuery.h"
 #include "mysql++.h"
+#include "DbStringPtr.h"
+#include "dbGetFieldNamesFromRow.h"
 
 namespace db
 {
@@ -65,7 +67,35 @@ namespace db
             mysqlpp::Query query = conn.query( getSql() );
             if ( (res = query.store()) )
             {
-                return res;
+                myRowPrototype.clear();
+                myRows.clear();
+                if ( res.size() > 0 )
+                {
+                    auto firstrow = res.begin();
+                    std::vector<DbStringPtr> myfieldnames;
+                    dbGetFieldNamesFromRow( *firstrow, myfieldnames );
+                    for ( auto sptr : myfieldnames )
+                    {
+                        DbField mycurrentfield( sptr, "" );
+                        mycurrentfield.setIsNull( true );
+                        myRowPrototype.push_back( mycurrentfield );
+                    }
+                    for ( auto row = res.begin(); row != res.end(); ++row )
+                    {
+                        DbRow mynewrow = myRowPrototype;
+                        auto readIter = row->begin();
+                        auto writeIter = mynewrow.begin();
+                        
+                        for (; readIter != row->end() && writeIter != mynewrow.end(); ++readIter, ++writeIter )
+                        {
+                            std::string temp;
+                            readIter->to_string( temp );
+                            writeIter->setValue( temp );
+                        }
+                        myRows.push_back( mynewrow );
+                    }
+                }
+                return true;
             }
             else
             {
@@ -83,21 +113,24 @@ namespace db
             std::cerr << "DB connection error: " << conn.error() << std::endl;
             return false;
         }
-        
-        myRowPrototype.clear();
-        myRows.clear();
-        
-        for ( auto row = res.begin(); row != res.end(); ++row )
-        {
-//            DbRow newRow;
-//            for ( auto readfield = row->begin(); readfield != row->end(); ++readfield )
-//            {
-//                DbField writefield;
-//                writefield.setName( std::make_shared<std::string>( readfield-> ) );
-//            }
-//            myRows.push_back( newRow );
-        }
-        
-        return true;
+        return false;
     }
+    
+    DbRowSetIter DbQuery::rowsBegin()
+    {
+        return myRows.begin();
+    }
+    DbRowSetIter DbQuery::rowsEnd()
+    {
+        return myRows.end();
+    }
+    DbRowSetIterConst DbQuery::rowsBegin() const
+    {
+        return myRows.cbegin();
+    }
+    DbRowSetIterConst DbQuery::rowsEnd() const
+    {
+        return myRows.cend();
+    }
+    
 }

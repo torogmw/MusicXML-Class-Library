@@ -27,6 +27,12 @@ namespace db
         
         bool execute();
         
+        DbRowSetIter rowsBegin();
+        DbRowSetIter rowsEnd();
+        
+        DbRowSetIterConst rowsBegin() const;
+        DbRowSetIterConst rowsEnd() const;
+        
     private:
         DbRow myRowPrototype;
         DbRowSet myRows;

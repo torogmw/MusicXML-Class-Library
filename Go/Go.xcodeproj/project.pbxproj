@@ -36,6 +36,7 @@
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29AAB9AA1A889EC50027B7A1 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
+		29E6D3C61A8BFC3700C8B8E2 /* goDbQueryExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goDbQueryExample.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				29AAB9941A8895E00027B7A1 /* main.cpp */,
+				29E6D3C61A8BFC3700C8B8E2 /* goDbQueryExample.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";
