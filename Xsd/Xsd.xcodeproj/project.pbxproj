@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29E6D3CD1A8BFDBA00C8B8E2 /* XsdProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C71A8BFDBA00C8B8E2 /* XsdProperty.cpp */; };
-		29E6D3CE1A8BFDBA00C8B8E2 /* XsdProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3C81A8BFDBA00C8B8E2 /* XsdProperty.h */; };
-		29E6D3CF1A8BFDBA00C8B8E2 /* XsdDom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C91A8BFDBA00C8B8E2 /* XsdDom.cpp */; };
-		29E6D3D01A8BFDBA00C8B8E2 /* XsdDom.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CA1A8BFDBA00C8B8E2 /* XsdDom.h */; };
-		29E6D3D11A8BFDBA00C8B8E2 /* XsdItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3CB1A8BFDBA00C8B8E2 /* XsdItem.cpp */; };
-		29E6D3D21A8BFDBA00C8B8E2 /* XsdItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CC1A8BFDBA00C8B8E2 /* XsdItem.h */; };
+		29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */; };
+		29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */; };
+		29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */; };
+		29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */; };
+		29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */; };
+		29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +20,12 @@
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 		29AAB9391A888AF30027B7A1 /* xnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xnums.h; sourceTree = "<group>"; };
 		29AAB93A1A888D420027B7A1 /* naming.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = naming.md; sourceTree = "<group>"; };
-		29E6D3C71A8BFDBA00C8B8E2 /* XsdProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsdProperty.cpp; sourceTree = "<group>"; };
-		29E6D3C81A8BFDBA00C8B8E2 /* XsdProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XsdProperty.h; sourceTree = "<group>"; };
-		29E6D3C91A8BFDBA00C8B8E2 /* XsdDom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsdDom.cpp; sourceTree = "<group>"; };
-		29E6D3CA1A8BFDBA00C8B8E2 /* XsdDom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XsdDom.h; sourceTree = "<group>"; };
-		29E6D3CB1A8BFDBA00C8B8E2 /* XsdItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XsdItem.cpp; sourceTree = "<group>"; };
-		29E6D3CC1A8BFDBA00C8B8E2 /* XsdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XsdItem.h; sourceTree = "<group>"; };
+		29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpProperty.cpp; sourceTree = "<group>"; };
+		29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpProperty.h; sourceTree = "<group>"; };
+		29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpDom.cpp; sourceTree = "<group>"; };
+		29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpDom.h; sourceTree = "<group>"; };
+		29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpItem.cpp; sourceTree = "<group>"; };
+		29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,12 +42,12 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
-				29E6D3C71A8BFDBA00C8B8E2 /* XsdProperty.cpp */,
-				29E6D3C81A8BFDBA00C8B8E2 /* XsdProperty.h */,
-				29E6D3C91A8BFDBA00C8B8E2 /* XsdDom.cpp */,
-				29E6D3CA1A8BFDBA00C8B8E2 /* XsdDom.h */,
-				29E6D3CB1A8BFDBA00C8B8E2 /* XsdItem.cpp */,
-				29E6D3CC1A8BFDBA00C8B8E2 /* XsdItem.h */,
+				29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */,
+				29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */,
+				29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */,
+				29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */,
+				29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */,
+				29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */,
 				29AAB93A1A888D420027B7A1 /* naming.md */,
 				29AAB9391A888AF30027B7A1 /* xnums.h */,
 				2980BE551A88574E008B0329 /* musicxml.xsd */,
@@ -70,9 +70,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E6D3D21A8BFDBA00C8B8E2 /* XsdItem.h in Headers */,
-				29E6D3CE1A8BFDBA00C8B8E2 /* XsdProperty.h in Headers */,
-				29E6D3D01A8BFDBA00C8B8E2 /* XsdDom.h in Headers */,
+				29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */,
+				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
+				29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +127,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E6D3D11A8BFDBA00C8B8E2 /* XsdItem.cpp in Sources */,
-				29E6D3CF1A8BFDBA00C8B8E2 /* XsdDom.cpp in Sources */,
-				29E6D3CD1A8BFDBA00C8B8E2 /* XsdProperty.cpp in Sources */,
+				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,
+				29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */,
+				29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

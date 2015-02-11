@@ -4,23 +4,23 @@
 
 #pragma once
 #include <iostream>
-#include "XsdItem.h"
-#include "XsdProperty.h"
+#include "XpItem.h"
+#include "XpProperty.h"
 #include <memory>
 
-namespace xparse
+namespace xsd
 {
-    class XsdDom;
-    typedef std::shared_ptr<XsdDom> HXsdDom;
+    class XpDom;
+    typedef std::shared_ptr<XpDom> HXpDom;
     
-    class XsdDom
+    class XpDom
     {
 
     public:
-        XsdDom( const XsdItemPtr& root_element = XsdItemPtr(nullptr), const std::string& xml_version = "", const std::string& doctype="" );
-        virtual ~XsdDom();
+        XpDom( const XpItemPtr& root_element = XpItemPtr(nullptr), const std::string& xml_version = "", const std::string& doctype="" );
+        virtual ~XpDom();
 
-        XsdItemPtr root_element() const;
+        XpItemPtr root_element() const;
         std::string xml_version() const;
         std::string doc_type() const;
         
@@ -31,11 +31,11 @@ namespace xparse
         bool has_doctype() const;
         
     private:
-        XsdItemPtr m_root;
+        XpItemPtr m_root;
         std::string m_ver;
         std::string m_doc;
     
     };
 }
 
-std::ostream& operator<<( std::ostream& os, xparse::XsdDom& rhs );
+std::ostream& operator<<( std::ostream& os, xsd::XpDom& rhs );

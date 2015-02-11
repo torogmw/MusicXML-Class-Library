@@ -2,74 +2,73 @@
 
 /* matthew james briggs */
 
-#include "XsdProperty.h"
+#include "XpDom.h"
 
-namespace xparse
+namespace xsd
 {
-    
-    XsdProperty::XsdProperty( std::string name, std::string value, int nodeID )
-    :m_n( name )
-    ,m_v( value )
-    ,m_id( nodeID )
-    {}
-    
-    /* dtor */
-    XsdProperty::~XsdProperty() {}
-    
-    std::string XsdProperty::name() const
-    {
-        return m_n;
-    }
-    
-    void XsdProperty::name( const std::string& new_name )
-    {
-        m_n = new_name;
-    }
-    
-    std::string XsdProperty::value() const
-    {
-        return m_v;
-    }
+    /* ctor */
+    XpDom::XpDom( const XpItemPtr& root_element, const std::string& xml_version, const std::string& doctype )
+    :m_root( root_element )
+    ,m_ver( xml_version )
+    ,m_doc( doctype )
+    { }
 
-    void XsdProperty::value( const std::string& new_value )
+    /* dtor */
+    XpDom::~XpDom() {}
+    
+    XpItemPtr XpDom::root_element() const
     {
-        m_v = new_value;
+        return m_root;
     }
     
-    std::ostream& XsdProperty::stream( std::ostream& os ) const
+    std::string XpDom::xml_version() const
     {
-        os << m_n;
-        os << "=\"" << m_v << "\"";
+        return m_ver;
+    }
+    
+    std::string XpDom::doc_type() const
+    {
+        return m_doc;
+    }
+    
+    std::ostream& XpDom::stream( std::ostream& os ) const
+    {
+        if ( has_ver() )
+        {
+            os << "<?xml version=\"";
+            os << m_ver << "\"?>" << std::endl;
+        }
+        if ( has_doctype() )
+        {
+            os << "<!DOCTYPE ";
+            os << m_doc;
+            os << ">" << std::endl;
+        }
+        os << *m_root;
         return os;
     }
     
-    std::string XsdProperty::str() const
+    std::string XpDom::str() const
     {
         std::stringstream ss;
         stream( ss );
         return ss.str();
     }
     
-    int XsdProperty::getID() const
+    bool XpDom::has_ver() const
     {
-        return m_id;
-    }
-    void XsdProperty::setID( int ID )
-    {
-        m_id = ID;
+        return m_ver.length() > 0;
     }
     
-    XsdItem* XsdProperty::getParentXsdItem() const
+    bool XpDom::has_doctype() const
     {
-        return m_parentXsdItem;
+        return m_doc.length() > 0;
     }
-    void XsdProperty::setParentXsdItem( XsdItem* e )
-    {
-        m_parentXsdItem = e;
-    }
+    
 }
 
-std::ostream& operator<<( std::ostream& os, xparse::XsdProperty rhs )
+
+std::ostream& operator<<( std::ostream& os, xsd::XpDom& rhs )
 {
     return rhs.stream( os );
 }
