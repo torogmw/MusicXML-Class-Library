@@ -2,12 +2,12 @@
 
 /* matthew james briggs
  
- Reader.h   Takes an istream and parses the istream
+ XpReader.h   Takes an istream and parses the istream
             during construction.  Throws during
             construction if it cannot parse the
             xml.
  
-            Once Reader is constructed, it has only
+            Once XpReader is constructed, it has only
             one public function, document(), which
             returns the resulting xparse:Document
             object.
@@ -29,17 +29,17 @@
 
 namespace xsd
 {
-    class Reader
+    class XpReader
     {
 
     public:
 //-------------------------------------------------------------//
         /* ctor */
-        Reader( std::istream& input );
+        XpReader( std::istream& input );
         
 //-------------------------------------------------------------//
         /* dtor */
-        virtual ~Reader();
+        virtual ~XpReader();
 
 //-------------------------------------------------------------//
         /* returns the parsed xml document */
@@ -52,7 +52,7 @@ namespace xsd
         std::istream& m_is;
         
 //-------------------------------------------------------------//
-        /* Readers purpose is to construct this
+        /* XpReaders purpose is to construct this
          Document object from xml input */
         XpDomPtr m_doc;
         

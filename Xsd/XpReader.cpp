@@ -2,12 +2,12 @@
 
 /* matthew james briggs
  
- Reader.h   Takes an istream and parses the istream
+ XpReader.h   Takes an istream and parses the istream
             during construction.  Throws during
             construction if it cannot parse the
             xml.
  
-            Once Reader is constructed, it has only
+            Once XpReader is constructed, it has only
             one public function, document(), which
             returns the resulting xparse:XpDom
             object.
@@ -28,7 +28,7 @@ namespace xsd
     
 //-------------------------------------------------------------//
 /* ctor */
-    Reader::Reader( std::istream& input )
+    XpReader::XpReader( std::istream& input )
     :m_is( input )
     ,m_doc( new XpDom() )
     ,m_start_position( input.tellg() )
@@ -38,15 +38,15 @@ namespace xsd
     
 //-------------------------------------------------------------//
 /* dtor */
-    Reader::~Reader() {}
+    XpReader::~XpReader() {}
     
 //-------------------------------------------------------------//
     /* returns the parsed xml document */
-    XpDom Reader::document() const
+    XpDom XpReader::document() const
     {
         return *m_doc;
     }
-    XpDomPtr Reader::documentPtr() const
+    XpDomPtr XpReader::documentPtr() const
     {
         return m_doc;
     }
@@ -54,7 +54,7 @@ namespace xsd
 //-------------------------------------------------------------//
 	/* reads the entire istream and
 	 constructs a Docuement */
-    void Reader::parse( XpDom& doc )
+    void XpReader::parse( XpDom& doc )
     {
         // reset_stream()?
         std::string version = parse_xml_ver();
@@ -67,7 +67,7 @@ namespace xsd
 	/* sets the buffer position
 	 back to the beginning and clears
 	 all error flags from the istream */  
-    void Reader::reset_stream()
+    void XpReader::reset_stream()
     {
         m_is.clear();
         m_is.seekg( m_start_position );
@@ -77,7 +77,7 @@ namespace xsd
 //-------------------------------------------------------------//
 	/* sets the m_remembered_pos value
 	 to the current buffer position */
-    void Reader::remember_position()
+    void XpReader::remember_position()
     {
         m_remembered_pos = m_is.tellg();
     }
@@ -85,7 +85,7 @@ namespace xsd
  //-------------------------------------------------------------//
 	/* sets the buffer to m_remembered_pos
 	 and clears any istream error flags */
-    void Reader::rewind()
+    void XpReader::rewind()
     {
         m_is.clear();
         m_is.seekg( m_remembered_pos );
@@ -97,7 +97,7 @@ namespace xsd
 	 not match, a std::runtime_exception is throws.
 	 A custom message can be given, otherwise the message
 	 will state the expecte vs. found char values */
-    void Reader::expected( char expected, const std::string& message )
+    void XpReader::expected( char expected, const std::string& message )
     {
         char found = '\0';
         m_is.get( found );
@@ -150,7 +150,7 @@ namespace xsd
 	/* Checks each char in the expected string, calling
 	 the above char version for each position in the given
 	 string */    
-    void Reader::expected( const std::string& expected, const std::string& message )
+    void XpReader::expected( const std::string& expected, const std::string& message )
     {
         for ( char c : expected )
         {
@@ -161,7 +161,7 @@ namespace xsd
 //-------------------------------------------------------------//
 	/* moves the istream forward to the next non-
 	 whitespace position. */
-    void Reader::ignore_ws()
+    void XpReader::ignore_ws()
     {
         while ( isspace( m_is.peek() ) )
         {
@@ -176,7 +176,7 @@ namespace xsd
 	 Otherwise it returns false and returns the buffer
 	 to the position it was at when the function was
 	 called. */
-    bool Reader::ignore_comment()
+    bool XpReader::ignore_comment()
     {
         std::streamoff position = m_is.tellg();
         char c = '\0';
@@ -215,7 +215,7 @@ namespace xsd
 	/* moves the buffer forward to the first
 	 position that is neither whitespace nor
 	 an xml comment */   
-    void Reader::ignore_ws_and_comments()
+    void XpReader::ignore_ws_and_comments()
     {
         ignore_ws();
         while ( ignore_comment() )
@@ -227,7 +227,7 @@ namespace xsd
  //-------------------------------------------------------------//
 	/* checks the istreams eof bit and good bit.
 	 throws if eof is true or if good is false */       
-    void Reader::abort_check()
+    void XpReader::abort_check()
     {
         if ( m_is.eof() || !m_is.good() )
         {
@@ -241,7 +241,7 @@ namespace xsd
 	 throws if the xml is malformed.
 	 returns an empty string if the xml
 	 doesn't have a version tag */
-    std::string Reader::parse_xml_ver()
+    std::string XpReader::parse_xml_ver()
     {
         remember_position();
         char c = '\0';
@@ -295,7 +295,7 @@ namespace xsd
 	 malformed.  Returns an empty string
 	 if the xml does not have a Doctype
 	 tag. */
-    std::string Reader::parse_doc_type()
+    std::string XpReader::parse_doc_type()
     {
         remember_position();
         char c = '\0';
@@ -340,7 +340,7 @@ namespace xsd
 	 constructed attribute.  Will ignore
 	 whitespace and comments prior to the
 	 start of the attribute */
-    XpPropertyPtr Reader::parse_attribute()
+    XpPropertyPtr XpReader::parse_attribute()
     {
         ignore_ws_and_comments();
         std::stringstream attribute_name;
@@ -381,7 +381,7 @@ namespace xsd
 	/* advances the istream position to the first character
 	 after the found search token and returns true. Returns
 	 false if the search token is not found. */   
-    bool Reader::find( const std::string& token )
+    bool XpReader::find( const std::string& token )
     {
         int token_length = (int)token.length();
         std::streamoff pos = m_is.tellg();
@@ -423,7 +423,7 @@ namespace xsd
 	 the starting position. returns false if it is not
 	 found.  rewinds the istream position to where it
 	 was when the function was called */
-    bool Reader::find_and_rewind( const std::string& token )
+    bool XpReader::find_and_rewind( const std::string& token )
     {
         std::streamoff saved_position = m_is.tellg();
         bool found = find( token );
@@ -441,7 +441,7 @@ namespace xsd
 	 used with any token, but it's being used to see if a tag
 	 is about to be closed or if there is more text/attributes
 	 elements to parse */
-    bool Reader::check_for_closing_tag( std::string closing_tag )
+    bool XpReader::check_for_closing_tag( std::string closing_tag )
     {
         bool match = true;
         std::streamoff rewind_point = m_is.tellg();
@@ -471,12 +471,12 @@ namespace xsd
 	 Effectively this function gets called once on the root
 	 element and then calls itself recursively until the
 	 end of the root element has been found */
-    XpItemPtr Reader::parse_elements()
+    XpItemPtr XpReader::parse_elements()
     {
         int x = 0;
         return parse_elements( x );
     }
-    XpItemPtr Reader::parse_elements( int& firstItemIndex )
+    XpItemPtr XpReader::parse_elements( int& firstItemIndex )
     {
         ignore_ws_and_comments();
         expected('<');
