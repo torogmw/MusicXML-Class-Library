@@ -33,6 +33,8 @@ namespace xsd
         
         MsItemSetIter getMsItemSetBegin();
         MsItemSetIter getMsItemSetEnd();
+        MsItemSetIterConst getMsItemSetBeginConst() const;
+        MsItemSetIterConst getMsItemSetEndConst() const;
         
     private:
         

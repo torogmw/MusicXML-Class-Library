@@ -48,6 +48,24 @@ namespace xsd
         refreshDbQuery();
     }
     
+    
+    MsItemSetIter MsDocument::getMsItemSetBegin()
+    {
+        return myMsItemSet.begin();
+    }
+    MsItemSetIter MsDocument::getMsItemSetEnd()
+    {
+        return myMsItemSet.end();
+    }
+    MsItemSetIterConst MsDocument::getMsItemSetBeginConst() const
+    {
+        return myMsItemSet.cbegin();
+    }
+    MsItemSetIterConst MsDocument::getMsItemSetEndConst() const
+    {
+        return myMsItemSet.cend();
+    }
+    
     void MsDocument::recursivelyBuildMsItems( const xsd::XpItemPtr& i, xsd::MsItemSet& output )
     {
         using namespace xsd;
