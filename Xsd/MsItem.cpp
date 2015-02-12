@@ -10,9 +10,11 @@ namespace xsd
     ,myDtDef( "" )
     ,myMsItemKind( MsItemKind::unknown )
     ,myIsImplemented( false )
+    ,myIsFirstClassConcept( false )
     {
         parseDtDef();
         parseMsItemKind();
+        parseIsFirstClassConcept();
     }
     
     /* dtor */
@@ -34,6 +36,18 @@ namespace xsd
         }
         return -1;
     }
+    
+    void MsItem::parseIsFirstClassConcept()
+    {
+        myIsFirstClassConcept = false;
+        if ( myMsItemKind == MsItemKind::simpleType
+            || myMsItemKind == MsItemKind::attribute
+            || myMsItemKind == MsItemKind::element )
+        {
+            myIsFirstClassConcept = true;
+        }
+    }
+    
     void MsItem::parseDtDef()
     {
         if ( myDtDef.length() > 0 )
@@ -178,6 +192,11 @@ namespace xsd
     bool operator!=( const MsItem& lhs, const MsItem& rhs )
     {
         return ! operator==( lhs, rhs );
+    }
+    
+    bool MsItem::getIsFirstClassConcept() const
+    {
+        return myIsFirstClassConcept;
     }
     
     bool operator<( const MsItemPtr& lhs, const MsItemPtr& rhs )

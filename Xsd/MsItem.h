@@ -28,16 +28,19 @@ namespace xsd
         std::string getMsItemKindString() const;
         void setIsImplemented( bool isImplemented );
         bool getIsImplemented() const;
+        bool getIsFirstClassConcept() const;
         
     private:
         XpItemPtr myXpItemPtr;
         std::string myDtDef;
         MsItemKind myMsItemKind;
         bool myIsImplemented;
+        bool myIsFirstClassConcept;
         
         /* parsing functions */
         void parseDtDef();
         void parseMsItemKind();
+        void parseIsFirstClassConcept();
         
     };
 

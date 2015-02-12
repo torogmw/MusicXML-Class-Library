@@ -31,6 +31,9 @@ namespace xsd
 
         void refreshDbQuery();
         
+        MsItemSetIter getMsItemSetBegin();
+        MsItemSetIter getMsItemSetEnd();
+        
     private:
         
         /* Private Data */

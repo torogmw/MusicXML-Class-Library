@@ -12,8 +12,7 @@ namespace go
         MsDocument xdoc;
         XpItemPtr root = xdoc.getXpDom()->getRootItem();
 
-        int pause = 0;
-        ++pause;
+        
     }
 
 }
