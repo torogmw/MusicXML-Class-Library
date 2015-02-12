@@ -1,7 +1,3 @@
-/* See MusicXML License at the bottom of this code page. */
-
-/* matthew james briggs */
-
 #pragma once
 #include <iostream>
 #include <vector>
@@ -34,22 +30,24 @@ namespace xsd
         std::string getTag() const;
         void setTag( const std::string& value );
         
-        std::string text() const;
-        void text( const std::string& new_text );
+        std::string getText() const;
+        void setText( const std::string& new_text );
         
-        bool has_children() const;
-        bool has_text() const;
-        bool has_attributes() const;
+        bool hasChildren() const;
+        bool hasText() const;
+        bool hasProperties() const;
         
-        void add_child( const XpItemPtr& e );
-        void remove_child( int index );
-        XpItemPtr get_child( int index );
-        int count_children() const;
+        void addChild( const XpItemPtr& e );
+        void removeChild( int index );
+        XpItemPtr getChild( int index );
+        int countChildren() const;
+        const XpItemSet& getChildren() const;
         
-        void add_attribute( const XpPropertyPtr& a );
-        void remove_attribute( int index );
-        XpPropertyPtr get_attribute( int index );
-        int count_attributes() const;
+        void addProperty( const XpPropertyPtr& a );
+        void removeProperty( int index );
+        XpPropertyPtr getProperty( int index );
+        int countProperties() const;
+        const XpPropertySet& getProperties() const;
         
         std::ostream& stream( std::ostream& os, int indent ) const;
         std::string str() const;
@@ -57,8 +55,8 @@ namespace xsd
         void setParent ( XpItem* parent );
         XpItem* getParent() const;
         
-        int getIndex() const;
-        void setIndex( int index );
+        int getID() const;
+        void setID( int index );
         
     private:
         std::string myTag;
@@ -66,7 +64,7 @@ namespace xsd
         XpItemSet myChildItems;
         XpPropertySet myProperties;
         XpItem* myParentItem;
-        int m_index;
+        int myID;
     };
 }
 

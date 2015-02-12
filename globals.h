@@ -35,6 +35,6 @@ namespace globals
     }
     inline std::string getMusicXmlXsdFilePath()
     {
-        return getInputDirectory() + "musicxmlxsd.h";
+        return getInputDirectory() + "musicxml.xsd";
     }
 }

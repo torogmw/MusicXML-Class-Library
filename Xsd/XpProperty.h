@@ -1,6 +1,3 @@
-/* See MusicXML License at the bottom of this code page. */
-
-/* matthew james briggs */
 
 #pragma once
 #include <iostream>
@@ -23,14 +20,14 @@ namespace xsd
     {
 
     public:
-        XpProperty( std::string name = "", std::string value = "", int nodeID = 0 );
+        XpProperty( std::string label = "", std::string value = "", int ID = 0 );
         virtual ~XpProperty();
         
-        std::string name() const;
-        void name( const std::string& new_name );
+        std::string getLabel() const;
+        void setLabel( const std::string& label );
         
-        std::string value() const;
-        void value( const std::string& new_value );
+        std::string getValue() const;
+        void setValue( const std::string& new_value );
         
         std::ostream& stream( std::ostream& os ) const;
         std::string str() const;
@@ -39,13 +36,13 @@ namespace xsd
         void setID( int ID );
         
         XpItem* getParentXpItem() const;
-        void setParentXpItem( XpItem* e );
+        void setParentXpItem( XpItem* i );
         
     private:
-        std::string m_n;
-        std::string m_v;
-        int m_id;
-        XpItem* m_parentXpItem;
+        std::string myLabel;
+        std::string myValue;
+        int myID;
+        XpItem* myParent;
     };
 }
 

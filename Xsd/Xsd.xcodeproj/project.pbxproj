@@ -13,19 +13,21 @@
 		29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */; };
 		29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */; };
 		29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */; };
-		29E6D3D51A8C0C8F00C8B8E2 /* SchDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D31A8C0C8F00C8B8E2 /* SchDocument.cpp */; };
-		29E6D3D61A8C0C8F00C8B8E2 /* SchDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D41A8C0C8F00C8B8E2 /* SchDocument.h */; };
+		29E6D3D51A8C0C8F00C8B8E2 /* MsDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D31A8C0C8F00C8B8E2 /* MsDocument.cpp */; };
+		29E6D3D61A8C0C8F00C8B8E2 /* MsDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D41A8C0C8F00C8B8E2 /* MsDocument.h */; };
 		29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */; };
 		29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */; };
 		29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */; };
 		29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3DC1A8C0F4300C8B8E2 /* XpParse.h */; };
 		29E6D3E01A8C139E00C8B8E2 /* libDb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E6D3DF1A8C139E00C8B8E2 /* libDb.a */; };
+		29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */; };
+		29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2980BDEE1A8853F0008B0329 /* libXsd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXsd.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
-		29AAB9391A888AF30027B7A1 /* xnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xnums.h; sourceTree = "<group>"; };
+		29AAB9391A888AF30027B7A1 /* MsItemKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemKind.h; sourceTree = "<group>"; };
 		29AAB93A1A888D420027B7A1 /* naming.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = naming.md; sourceTree = "<group>"; };
 		29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpProperty.cpp; sourceTree = "<group>"; };
 		29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpProperty.h; sourceTree = "<group>"; };
@@ -33,13 +35,15 @@
 		29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpDom.h; sourceTree = "<group>"; };
 		29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpItem.cpp; sourceTree = "<group>"; };
 		29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpItem.h; sourceTree = "<group>"; };
-		29E6D3D31A8C0C8F00C8B8E2 /* SchDocument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SchDocument.cpp; sourceTree = "<group>"; };
-		29E6D3D41A8C0C8F00C8B8E2 /* SchDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchDocument.h; sourceTree = "<group>"; };
+		29E6D3D31A8C0C8F00C8B8E2 /* MsDocument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsDocument.cpp; sourceTree = "<group>"; };
+		29E6D3D41A8C0C8F00C8B8E2 /* MsDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsDocument.h; sourceTree = "<group>"; };
 		29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpReader.cpp; sourceTree = "<group>"; };
 		29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpReader.h; sourceTree = "<group>"; };
 		29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpParse.cpp; sourceTree = "<group>"; };
 		29E6D3DC1A8C0F4300C8B8E2 /* XpParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpParse.h; sourceTree = "<group>"; };
 		29E6D3DF1A8C139E00C8B8E2 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
+		29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItem.cpp; sourceTree = "<group>"; };
+		29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +61,13 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29E6D3D31A8C0C8F00C8B8E2 /* MsDocument.cpp */,
+				29E6D3D41A8C0C8F00C8B8E2 /* MsDocument.h */,
+				29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */,
+				29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */,
+				29AAB9391A888AF30027B7A1 /* MsItemKind.h */,
 				2980BDEF1A8853F0008B0329 /* Products */,
-				29E6D3D31A8C0C8F00C8B8E2 /* SchDocument.cpp */,
-				29E6D3D41A8C0C8F00C8B8E2 /* SchDocument.h */,
 				29E6D3E11A8C13C400C8B8E2 /* Stuff */,
-				29AAB9391A888AF30027B7A1 /* xnums.h */,
 				29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */,
 				29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */,
 				29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */,
@@ -101,8 +107,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */,
+				29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */,
 				29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */,
-				29E6D3D61A8C0C8F00C8B8E2 /* SchDocument.h in Headers */,
+				29E6D3D61A8C0C8F00C8B8E2 /* MsDocument.h in Headers */,
 				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
 				29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */,
 				29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */,
@@ -162,7 +169,8 @@
 			files = (
 				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,
 				29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */,
-				29E6D3D51A8C0C8F00C8B8E2 /* SchDocument.cpp in Sources */,
+				29E6D3D51A8C0C8F00C8B8E2 /* MsDocument.cpp in Sources */,
+				29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */,
 				29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */,
 				29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */,
 				29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */,

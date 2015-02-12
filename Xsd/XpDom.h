@@ -17,23 +17,23 @@ namespace xsd
     {
 
     public:
-        XpDom( const XpItemPtr& root_element = XpItemPtr(nullptr), const std::string& xml_version = "", const std::string& doctype="" );
+        XpDom( const XpItemPtr& root_item = XpItemPtr(nullptr), const std::string& xml_version = "", const std::string& doctype="" );
         virtual ~XpDom();
 
-        XpItemPtr root_element() const;
-        std::string xml_version() const;
-        std::string doc_type() const;
+        XpItemPtr getRootItem() const;
+        std::string getXmlVersion() const;
+        std::string getDocType() const;
         
         std::ostream& stream( std::ostream& os ) const;
-        std::string str() const;
+        std::string toString() const;
         
         bool has_ver() const;
         bool has_doctype() const;
         
     private:
-        XpItemPtr m_root;
-        std::string m_ver;
-        std::string m_doc;
+        XpItemPtr myRootItem;
+        std::string myXmlVersion;
+        std::string myXmlDocType;
     
     };
 }

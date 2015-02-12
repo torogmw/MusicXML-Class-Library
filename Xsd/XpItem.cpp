@@ -1,7 +1,3 @@
-/* See MusicXML License at the bottom of this code page. */
-
-/* matthew james briggs */
-
 #include "XpItem.h"
 #include <sstream>
 
@@ -15,7 +11,7 @@ namespace xsd
     ,myChildItems()
     ,myProperties()
     ,myParentItem( ParentXpItem )
-    ,m_index( index )
+    ,myID( index )
     {}
 
     /* dtor */
@@ -31,80 +27,80 @@ namespace xsd
         myTag = value;
     }
     
-    std::string XpItem::text() const
+    std::string XpItem::getText() const
     {
         return myText;
     }
    
-    void XpItem::text( const std::string& new_text )
+    void XpItem::setText( const std::string& new_text )
     {
-        if( has_children() )
+        if( hasChildren() )
         {
-            throw std::runtime_error( "An element cannot contain both text and child elements." );
+            throw std::runtime_error( "An item cannot contain both text and child items." );
         }
         myText = new_text;
     }
     
-    bool XpItem::has_children() const
+    bool XpItem::hasChildren() const
     {
         return !myChildItems.empty();
     }
     
-    bool XpItem::has_text() const
+    bool XpItem::hasText() const
     {
         return myText.length() > 0;
     }
     
-    bool XpItem::has_attributes() const
+    bool XpItem::hasProperties() const
     {
         return !myProperties.empty();
     }
   
-    void XpItem::add_child( const XpItemPtr& e )
+    void XpItem::addChild( const XpItemPtr& i )
     {
-        if ( has_text() )
+        if ( hasText() )
         {
-            throw std::runtime_error( "An element cannot contain both text and child elements." );
+            throw std::runtime_error( "An item cannot contain both text and child items." );
         }
-        e->setParent( this );
-        myChildItems.push_back( e );
+        i->setParent( this );
+        myChildItems.push_back( i );
     }
     
-    void XpItem::remove_child( int index )
+    void XpItem::removeChild( int index )
     {
         auto it = myChildItems.begin() + index;
         myChildItems.erase( it );
     }
     
-    XpItemPtr XpItem::get_child( int index )
+    XpItemPtr XpItem::getChild( int index )
     {
         auto it = myChildItems.begin() + index;
         return *it;
     }
-    int XpItem::count_children() const
+    int XpItem::countChildren() const
     {
         return (int)myChildItems.size();
     }
     
-    void XpItem::add_attribute( const XpPropertyPtr& a )
+    void XpItem::addProperty( const XpPropertyPtr& a )
     {
         a->setParentXpItem( this );
         myProperties.push_back( a );
     }
     
-    void XpItem::remove_attribute( int index )
+    void XpItem::removeProperty( int index )
     {
         auto it = myProperties.begin() + index;
         myProperties.erase( it );
     }
     
-    XpPropertyPtr XpItem::get_attribute( int index )
+    XpPropertyPtr XpItem::getProperty( int index )
     {
         auto it = myProperties.begin() + index;
         return *it;
     }
     
-    int XpItem::count_attributes() const
+    int XpItem::countProperties() const
     {
         return (int)myProperties.size();
     }
@@ -127,19 +123,19 @@ namespace xsd
         {
             os << " " << *a;
         }
-        if ( has_text() )
+        if ( hasText() )
         {
             os << ">" << myText;
             os << "</" << myTag << ">";
             os << std::endl;
         }
-        else if ( has_children() )
+        else if ( hasChildren() )
         {
             os << ">" << std::endl;
             ++indent;
-            for ( const XpItemPtr& e : myChildItems )
+            for ( const XpItemPtr& i : myChildItems )
             {
-                e->stream( os, indent );
+                i->stream( os, indent );
             }
             os << tabs.str() << "</";
             os << myTag << ">" << std::endl;
@@ -163,13 +159,21 @@ namespace xsd
         myParentItem = parent;
     }
     
-    int XpItem::getIndex() const
+    int XpItem::getID() const
     {
-        return m_index;
+        return myID;
     }
-    void XpItem::setIndex(int index)
+    void XpItem::setID(int index)
     {
-        m_index = index;
+        myID = index;
+    }
+    const XpPropertySet& XpItem::getProperties() const
+    {
+        return myProperties;
+    }
+    const XpItemSet& XpItem::getChildren() const
+    {
+        return myChildItems;
     }
 }
 

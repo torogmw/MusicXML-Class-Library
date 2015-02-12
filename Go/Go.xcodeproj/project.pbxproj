@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29AAB9951A8895E00027B7A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9941A8895E00027B7A1 /* main.cpp */; };
 		29AAB9AB1A889EC50027B7A1 /* libDb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AAB9AA1A889EC50027B7A1 /* libDb.a */; };
+		29E6D3E41A8C199A00C8B8E2 /* libXsd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E6D3E31A8C199A00C8B8E2 /* libXsd.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +25,8 @@
 		29AAB9AC1A88A1230027B7A1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstPath = /Volumes/MusikPlatz/input/musicxml.xsd;
+			dstSubfolderSpec = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +38,9 @@
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29AAB9AA1A889EC50027B7A1 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
 		29E6D3C61A8BFC3700C8B8E2 /* goDbQueryExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goDbQueryExample.h; sourceTree = "<group>"; };
+		29E6D3E21A8C18EF00C8B8E2 /* goMsDocumentExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsDocumentExample.h; sourceTree = "<group>"; };
+		29E6D3E31A8C199A00C8B8E2 /* libXsd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXsd.a; path = ../Build/Products/Debug/libXsd.a; sourceTree = "<group>"; };
+		29E6D3E91A8C352700C8B8E2 /* goMsItemTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AAB9AB1A889EC50027B7A1 /* libDb.a in Frameworks */,
+				29E6D3E41A8C199A00C8B8E2 /* libXsd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,7 @@
 		29AAB9881A8895E00027B7A1 = {
 			isa = PBXGroup;
 			children = (
+				29E6D3E31A8C199A00C8B8E2 /* libXsd.a */,
 				29AAB9AA1A889EC50027B7A1 /* libDb.a */,
 				29AAB9931A8895E00027B7A1 /* Go */,
 				29AAB9921A8895E00027B7A1 /* Products */,
@@ -73,6 +79,8 @@
 			children = (
 				29AAB9941A8895E00027B7A1 /* main.cpp */,
 				29E6D3C61A8BFC3700C8B8E2 /* goDbQueryExample.h */,
+				29E6D3E21A8C18EF00C8B8E2 /* goMsDocumentExample.h */,
+				29E6D3E91A8C352700C8B8E2 /* goMsItemTest.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";

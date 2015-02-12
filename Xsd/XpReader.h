@@ -8,7 +8,7 @@
             xml.
  
             Once XpReader is constructed, it has only
-            one public function, document(), which
+            one public function, getXpDom(), which
             returns the resulting xparse:Document
             object.
  
@@ -43,8 +43,8 @@ namespace xsd
 
 //-------------------------------------------------------------//
         /* returns the parsed xml document */
-        XpDom document() const;
-        XpDomPtr documentPtr() const;
+        XpDom getXpDom() const;
+        XpDomPtr getXpDomPtr() const;
         
     private:
 //-------------------------------------------------------------//
