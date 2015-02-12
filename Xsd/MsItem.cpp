@@ -37,6 +37,11 @@ namespace xsd
         return -1;
     }
     
+    std::string MsItem::getDtDef() const
+    {
+        return myDtDef;
+    }
+    
     void MsItem::parseIsFirstClassConcept()
     {
         myIsFirstClassConcept = false;

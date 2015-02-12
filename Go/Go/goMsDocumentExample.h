@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MsDocument.h"
+#include "MsItem.h"
 
 namespace go
 {
@@ -11,5 +12,7 @@ namespace go
         XpItemPtr root = musicxmlxsd.getXpDom()->getRootItem();
         int pause = 1;
         ++pause;
+        
     }
 }
+
