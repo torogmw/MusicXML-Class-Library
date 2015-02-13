@@ -13,8 +13,8 @@
 		29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */; };
 		29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */; };
 		29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */; };
-		29E6D3D51A8C0C8F00C8B8E2 /* MsDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D31A8C0C8F00C8B8E2 /* MsDocument.cpp */; };
-		29E6D3D61A8C0C8F00C8B8E2 /* MsDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D41A8C0C8F00C8B8E2 /* MsDocument.h */; };
+		29E6D3D51A8C0C8F00C8B8E2 /* MsItemWeb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D31A8C0C8F00C8B8E2 /* MsItemWeb.cpp */; };
+		29E6D3D61A8C0C8F00C8B8E2 /* MsitemWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D41A8C0C8F00C8B8E2 /* MsitemWeb.h */; };
 		29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */; };
 		29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */; };
 		29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */; };
@@ -35,8 +35,8 @@
 		29E6D3CA1A8BFDBA00C8B8E2 /* XpDom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpDom.h; sourceTree = "<group>"; };
 		29E6D3CB1A8BFDBA00C8B8E2 /* XpItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpItem.cpp; sourceTree = "<group>"; };
 		29E6D3CC1A8BFDBA00C8B8E2 /* XpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpItem.h; sourceTree = "<group>"; };
-		29E6D3D31A8C0C8F00C8B8E2 /* MsDocument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsDocument.cpp; sourceTree = "<group>"; };
-		29E6D3D41A8C0C8F00C8B8E2 /* MsDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsDocument.h; sourceTree = "<group>"; };
+		29E6D3D31A8C0C8F00C8B8E2 /* MsItemWeb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemWeb.cpp; sourceTree = "<group>"; };
+		29E6D3D41A8C0C8F00C8B8E2 /* MsitemWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsitemWeb.h; sourceTree = "<group>"; };
 		29E6D3D71A8C0CF100C8B8E2 /* XpReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpReader.cpp; sourceTree = "<group>"; };
 		29E6D3D81A8C0CF100C8B8E2 /* XpReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpReader.h; sourceTree = "<group>"; };
 		29E6D3DB1A8C0F4300C8B8E2 /* XpParse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpParse.cpp; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
-				29E6D3D31A8C0C8F00C8B8E2 /* MsDocument.cpp */,
-				29E6D3D41A8C0C8F00C8B8E2 /* MsDocument.h */,
+				29E6D3D31A8C0C8F00C8B8E2 /* MsItemWeb.cpp */,
+				29E6D3D41A8C0C8F00C8B8E2 /* MsitemWeb.h */,
 				29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */,
 				29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */,
 				29AAB9391A888AF30027B7A1 /* MsItemKind.h */,
@@ -109,7 +109,7 @@
 				29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */,
 				29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */,
 				29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */,
-				29E6D3D61A8C0C8F00C8B8E2 /* MsDocument.h in Headers */,
+				29E6D3D61A8C0C8F00C8B8E2 /* MsitemWeb.h in Headers */,
 				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
 				29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */,
 				29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */,
@@ -169,7 +169,7 @@
 			files = (
 				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,
 				29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */,
-				29E6D3D51A8C0C8F00C8B8E2 /* MsDocument.cpp in Sources */,
+				29E6D3D51A8C0C8F00C8B8E2 /* MsItemWeb.cpp in Sources */,
 				29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */,
 				29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */,
 				29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */,

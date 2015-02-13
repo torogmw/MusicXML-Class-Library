@@ -11,10 +11,14 @@ namespace xsd
     ,myMsItemKind( MsItemKind::unknown )
     ,myIsImplemented( false )
     ,myIsFirstClassConcept( false )
+    ,myParent( nullptr )
     {
-        parseDtDef();
-        parseMsItemKind();
-        parseIsFirstClassConcept();
+        if ( xpItemPtr )
+        {
+            parseDtDef();
+            parseMsItemKind();
+            parseIsFirstClassConcept();
+        }
     }
     
     /* dtor */
@@ -243,5 +247,98 @@ namespace xsd
     bool operator!=( const MsItemPtr& lhs, const MsItemPtr& rhs )
     {
         return ! operator==( lhs, rhs );
+    }
+    MsItemPtr MsItem::getParent() const
+    {
+        return myParent;
+    }
+    void MsItem::setParent( const MsItemPtr& parent )
+    {
+        if ( parent )
+        {
+            myParent = parent;
+        }
+    }
+    MsItemSetIter MsItem::getChildrenBegin()
+    {
+        return myChildren.begin();
+    }
+    MsItemSetIter MsItem::getChildrenEnd()
+    {
+        return myChildren.end();
+    }
+    MsItemSetIterConst MsItem::getChildrenBegin() const
+    {
+        return myChildren.cbegin();
+    }
+    MsItemSetIterConst MsItem::getChildrenEnd() const
+    {
+        return myChildren.cend();
+    }
+    const MsItemSet& MsItem::getChildren() const
+    {
+        return myChildren;
+    }
+    void MsItem::addChild( const MsItemPtr& child )
+    {
+        myChildren.push_back( child );
+    }
+    void MsItem::clearChildren()
+    {
+        myChildren.clear();
+    }
+    XpItemPtr MsItem::getXpItem() const
+    {
+        return myXpItemPtr;
+    }
+    MsItemSet MsItem::buildMsItemWeb( const XpItemPtr& root )
+    {
+        MsItemSet output;
+        constructMsItemWebScaffold( root, output );
+        if ( output.size() > 0 )
+        {
+            MsItemPtr msitemroot = *( output.begin() );
+            buildMsItemWebRecursive( msitemroot, output );
+        }
+        return output;
+    }
+    void MsItem::constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output )
+    {
+        output.push_back( std::make_shared<MsItem>( root ) );
+        for ( auto x : root->getChildren() )
+        {
+            constructMsItemWebScaffold( x, output );
+        }
+    }
+    void MsItem::buildMsItemWebRecursive( const MsItemPtr& current, MsItemSet& web )
+    {
+        if ( current )
+        {
+            //int parentID = -1; //current->getID();
+            if ( current->getXpItem()->getParent() )
+            {
+                int parentID = current->getXpItem()->getParent()->getID();
+                auto parentIter = std::find_if( web.begin(), web.end(), [parentID] (const MsItemPtr& x) { return x->getID() == parentID; });
+                if( parentIter != web.cend() )
+                {
+                    current->setParent( *parentIter );
+                }
+            }
+            else
+            {
+                current->setParent( nullptr );
+            }
+            
+            for ( auto childxp = current->getXpItem()->getChildrenBegin();
+                 childxp != current->getXpItem()->getChildrenEnd();
+                 ++childxp )
+            {
+                int childID = (*childxp)->getID();
+                auto childIter = std::find_if( web.begin(), web.end(), [childID] (const MsItemPtr& x) { return x->getID() == childID; });
+                auto child = *childIter;
+                current->addChild( child );
+                buildMsItemWebRecursive( child, web );
+            }
+        }
     }
 }

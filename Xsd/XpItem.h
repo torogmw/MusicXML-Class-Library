@@ -24,6 +24,7 @@ namespace xsd
     {
 
     public:
+        XpItem();
         XpItem( const std::string& tag, const std::string& text="", XpItem* ParentXpItem = nullptr, int index = 0 );
         virtual ~XpItem();
         
@@ -42,6 +43,10 @@ namespace xsd
         XpItemPtr getChild( int index );
         int countChildren() const;
         const XpItemSet& getChildren() const;
+        XpItemSetIter getChildrenBegin();
+        XpItemSetIter getChildrenEnd();
+        XpItemSetIterConst getChildrenBegin() const;
+        XpItemSetIterConst getChildrenEnd() const;
         
         void addProperty( const XpPropertyPtr& a );
         void removeProperty( int index );

@@ -16,16 +16,16 @@ namespace db
 
 namespace xsd
 {
-    class MsDocument;
-    typedef std::shared_ptr<MsDocument> MsDocumentPtr;
+    class MsItemWeb;
+    typedef std::shared_ptr<MsItemWeb> MsItemWebPtr;
     
-    class MsDocument
+    class MsItemWeb
     {
         
     public:
-        MsDocument( const std::string& xsdFilePath );
-        MsDocument();
-        virtual ~MsDocument();
+        MsItemWeb( const std::string& xsdFilePath );
+        MsItemWeb();
+        virtual ~MsItemWeb();
         
         XpDomPtr getXpDom() const;
 
@@ -48,7 +48,7 @@ namespace xsd
         void createMsItemSet();
         static void findItemByID( int ID, const XpItemPtr& e, XpItemPtr& foundItem );
         std::shared_ptr<db::DbQuery> myDbQueryPtr;
-        void recursivelyBuildMsItems( const XpItemPtr& i, MsItemSet& output );
+        //void recursivelyBuildMsItems( const XpItemPtr& i, MsItemSet& output );
     };
 }
 

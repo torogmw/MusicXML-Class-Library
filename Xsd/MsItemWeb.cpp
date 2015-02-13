@@ -7,13 +7,13 @@
 
 #include "globals.h"
 #include "DbQuery.h"
-#include "MsDocument.h"
+#include "MsItemWeb.h"
 #include "XpReader.h"
 
 namespace xsd
 {
     /* ctor */
-    MsDocument::MsDocument( const std::string& xsdFilePath )
+    MsItemWeb::MsItemWeb( const std::string& xsdFilePath )
     :myXpDomPtr( nullptr )
     ,myDbQueryPtr( nullptr )
     {
@@ -21,7 +21,7 @@ namespace xsd
         init();
     }
     
-    MsDocument::MsDocument()
+    MsItemWeb::MsItemWeb()
     :myXpDomPtr( nullptr )
     ,myDbQueryPtr( nullptr )
     {
@@ -30,7 +30,7 @@ namespace xsd
         
     }
     
-    void MsDocument::init()
+    void MsItemWeb::init()
     {
         myDbQueryPtr = std::make_shared<db::DbQuery>();
         myDbQueryPtr->setSql( "SELECT ID, IsImplemented FROM xsd" );
@@ -39,58 +39,59 @@ namespace xsd
     
     
     /* dtor */
-    MsDocument::~MsDocument() {}
+    MsItemWeb::~MsItemWeb() {}
     
-    void MsDocument::createMsItemSet()
+    void MsItemWeb::createMsItemSet()
     {
         myMsItemSet.clear();
-        recursivelyBuildMsItems( myXpDomPtr->getRootItem(), myMsItemSet );
+        myMsItemSet = MsItem::buildMsItemWeb( myXpDomPtr->getRootItem() );
+        //recursivelyBuildMsItems( myXpDomPtr->getRootItem(), myMsItemSet );
         refreshDbQuery();
     }
     
     
-    MsItemSetIter MsDocument::getMsItemSetBegin()
+    MsItemSetIter MsItemWeb::getMsItemSetBegin()
     {
         return myMsItemSet.begin();
     }
-    MsItemSetIter MsDocument::getMsItemSetEnd()
+    MsItemSetIter MsItemWeb::getMsItemSetEnd()
     {
         return myMsItemSet.end();
     }
-    MsItemSetIterConst MsDocument::getMsItemSetBeginConst() const
+    MsItemSetIterConst MsItemWeb::getMsItemSetBeginConst() const
     {
         return myMsItemSet.cbegin();
     }
-    MsItemSetIterConst MsDocument::getMsItemSetEndConst() const
+    MsItemSetIterConst MsItemWeb::getMsItemSetEndConst() const
     {
         return myMsItemSet.cend();
     }
     
-    void MsDocument::recursivelyBuildMsItems( const xsd::XpItemPtr& i, xsd::MsItemSet& output )
-    {
-        using namespace xsd;
-        if( i )
-        {
-            output.push_back( std::make_shared<MsItem>( i ) );
-            if ( i->hasChildren() )
-            {
-                for ( auto c : i->getChildren() )
-                {
-                    if ( c )
-                    {
-                        recursivelyBuildMsItems( c, output );
-                    }
-                }
-            }
-        }
-    }
+//    void MsItemWeb::recursivelyBuildMsItems( const xsd::XpItemPtr& i, xsd::MsItemSet& output )
+//    {
+//        using namespace xsd;
+//        if( i )
+//        {
+//            output.push_back( std::make_shared<MsItem>( i ) );
+//            if ( i->hasChildren() )
+//            {
+//                for ( auto c : i->getChildren() )
+//                {
+//                    if ( c )
+//                    {
+//                        recursivelyBuildMsItems( c, output );
+//                    }
+//                }
+//            }
+//        }
+//    }
     
-    XpDomPtr MsDocument::getXpDom() const
+    XpDomPtr MsItemWeb::getXpDom() const
     {
         return myXpDomPtr;
     }
     
-    void MsDocument::loadXpDom( const std::string& xsdFilePath )
+    void MsItemWeb::loadXpDom( const std::string& xsdFilePath )
     {
         std::ifstream inputfile( xsdFilePath, std::ios_base::binary );
         if ( inputfile.is_open() )
@@ -110,7 +111,7 @@ namespace xsd
     
     
     
-    void MsDocument::refreshDbQuery()
+    void MsItemWeb::refreshDbQuery()
     {
         myDbQueryPtr->execute();
         std::map<int,bool> implmap;
@@ -138,7 +139,7 @@ namespace xsd
     
 
     
-    void MsDocument::findItemByID( int ID, const XpItemPtr& e, XpItemPtr& foundItem )
+    void MsItemWeb::findItemByID( int ID, const XpItemPtr& e, XpItemPtr& foundItem )
     {
         if ( e )
         {

@@ -5,6 +5,15 @@ namespace xsd
 {
     /* ctor */
     
+    XpItem::XpItem()
+    :myTag( "" )
+    ,myText( "" )
+    ,myChildItems()
+    ,myProperties()
+    ,myParentItem( nullptr )
+    ,myID( -1 )
+    {}
+    
     XpItem::XpItem( const std::string& name, const std::string& text, XpItem* ParentXpItem, int index )
     :myTag( name )
     ,myText( text )
@@ -174,6 +183,23 @@ namespace xsd
     const XpItemSet& XpItem::getChildren() const
     {
         return myChildItems;
+    }
+    
+    XpItemSetIter XpItem::getChildrenBegin()
+    {
+        return myChildItems.begin();
+    }
+    XpItemSetIter XpItem::getChildrenEnd()
+    {
+        return myChildItems.end();
+    }
+    XpItemSetIterConst XpItem::getChildrenBegin() const
+    {
+        return myChildItems.cbegin();
+    }
+    XpItemSetIterConst XpItem::getChildrenEnd() const
+    {
+        return myChildItems.cend();
     }
 }
 

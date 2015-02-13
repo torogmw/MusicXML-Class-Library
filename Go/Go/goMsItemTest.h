@@ -1,5 +1,5 @@
 #include "MsItem.h"
-#include "MsDocument.h"
+#include "MsItemWeb.h"
 #include "XpItem.h"
 
 namespace go
@@ -9,7 +9,7 @@ namespace go
     inline void goMsItemTest()
     {
         using namespace xsd;
-        MsDocument xdoc;
+        MsItemWeb xdoc;
         XpItemPtr root = xdoc.getXpDom()->getRootItem();
 
         
