@@ -12,6 +12,7 @@ namespace xsd
     ,myIsImplemented( false )
     ,myIsFirstClassConcept( false )
     ,myParent( nullptr )
+    ,myIsSpecialCase( false )
     {
         if ( xpItemPtr )
         {
@@ -25,6 +26,10 @@ namespace xsd
     /* dtor */
     MsItem::~MsItem() {}
     
+    bool MsItem::getIsSpecialCase() const
+    {
+        return myIsSpecialCase;
+    }
     std::string MsItem::getMsItemKindString() const
     {
         if ( myXpItemPtr )
@@ -294,7 +299,14 @@ namespace xsd
     }
     MsItemSet MsItem::buildMsItemWeb( const XpItemPtr& root )
     {
+        /* Add fake items to the xsd to represent linked items such as xs:decimal */
+        XpItemPtr xsdecimal( std::make_shared<XpItem>( "xs:simpleTy[e", "", root.get(), -1 ) );
+        xsdecimal->addProperty( std::make_shared<XpProperty>( "name" "xs:decimal" ) );
+        root->addChild( xsdecimal );
+        throw std::runtime_error( "this is where I left off..." );
+        
         MsItemSet output;
+        
         constructMsItemWebScaffold( root, output );
         if ( output.size() > 0 )
         {
@@ -343,14 +355,136 @@ namespace xsd
         }
     }
     
+    MsItemKind MsItem::getMsItemKind() const
+    {
+        return myMsItemKind;
+    }
+    
     void MsItem::parseSpecialCases()
     {
         switch ( getID() )
         {
-            case -1:
-                ;
+            case 279:
+            {
+                // number-or-normal
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
                 break;
-                
+            case 283:
+            {
+                myDtDef = "xs:decimal";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case 285:
+            {
+                myDtDef = "xs:token";
+                myIsFirstClassConcept = true;
+                myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case 326:
+            {
+                // positive-integer-or-empty
+                myIsFirstClassConcept = true;
+                myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case 330:
+            {
+                myDtDef = "xs:positiveInteger";
+                myIsFirstClassConcept = true;
+                myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case 332:
+            {
+                myDtDef = "xs:string";
+                myIsFirstClassConcept = true;
+                myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case 2031:
+            {
+                myDtDef = "xml:lang";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2033:
+            {
+                myDtDef = "xml:space";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2168:
+            {
+                myDtDef = "xlink:href";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2171:
+            {
+                myDtDef = "xlink:type";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2174:
+            {
+                myDtDef = "xlink:role";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2176:
+            {
+                myDtDef = "xlink:title";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2178:
+            {
+                myDtDef = "xlink:show";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2181:
+            {
+                myDtDef = "xlink:actuate";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 2679:
+            {
+                myDtDef = "xml:lang";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 5452:
+            {
+                myDtDef = "xml:lang";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 5473:
+            {
+                myDtDef = "xml:lang";
+                myIsSpecialCase = true;
+            }
+                break;
+            case 5789:
+            {
+                myDtDef = "xml:lang";
+                myIsSpecialCase = true;
+            }
+                break;
+
             default:
                 break;
         }

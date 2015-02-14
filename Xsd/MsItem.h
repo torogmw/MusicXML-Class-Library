@@ -36,6 +36,7 @@ namespace xsd
         bool getIsImplemented() const;
         bool getIsFirstClassConcept() const;
         XpItemPtr getXpItem() const;
+        bool getIsSpecialCase() const;
         
         /* Parent MsItem */
         MsItemPtr getParent() const;
@@ -58,6 +59,7 @@ namespace xsd
         bool myIsFirstClassConcept;
         MsItemPtr myParent;
         MsItemSet myChildren;
+        bool myIsSpecialCase;
         
         /* parsing functions */
         void parseDtDef();
