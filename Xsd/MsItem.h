@@ -51,6 +51,9 @@ namespace xsd
         void addChild( const MsItemPtr& child );
         void clearChildren();
         
+        std::string csvHeaders() const;
+        std::string csv() const;
+        
     private:
         XpItemPtr myXpItemPtr;
         std::string myDtDef;
@@ -71,6 +74,8 @@ namespace xsd
         static void constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output );
         static void buildMsItemWebRecursive( const MsItemPtr& current, MsItemSet& web );
         
+        /* special functions */
+        static void addItemToXsd( const std::string& name, const std::string& tag, int& nodeid, const XpItemPtr& root );
     };
 
     bool operator<( const MsItem& lhs, const MsItem& rhs );

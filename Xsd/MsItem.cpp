@@ -299,11 +299,42 @@ namespace xsd
     }
     MsItemSet MsItem::buildMsItemWeb( const XpItemPtr& root )
     {
-        /* Add fake items to the xsd to represent linked items such as xs:decimal */
-        XpItemPtr xsdecimal( std::make_shared<XpItem>( "xs:simpleTy[e", "", root.get(), -1 ) );
-        xsdecimal->addProperty( std::make_shared<XpProperty>( "name" "xs:decimal" ) );
-        root->addChild( xsdecimal );
-        throw std::runtime_error( "this is where I left off..." );
+        /*
+         xlink:actuate
+         xlink:href
+         xlink:role
+         xlink:show
+         xlink:title
+         xlink:type
+         xml:lang
+         xml:space
+         xs:anyURI
+         xs:ID
+         xs:IDREF
+         xs:integer
+         xs:NMTOKEN
+         xs:nonNegativeInteger
+         xs:positiveInteger
+         xs:string
+         xs:token
+         */
+        int newnodeid = -1;
+        addItemToXsd( "xlink:href", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xlink:role", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xlink:show", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xlink:title", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xlink:type", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xml:lang", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xml:space", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:anyURI", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:ID", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:IDREF", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:integer", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:NMTOKEN", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:nonNegativeInteger", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:positiveInteger", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:string", "xs:simpleType", newnodeid, root );
+        addItemToXsd( "xs:token", "xs:simpleType", newnodeid, root );
         
         MsItemSet output;
         
@@ -314,6 +345,13 @@ namespace xsd
             buildMsItemWebRecursive( msitemroot, output );
         }
         return output;
+    }
+    void MsItem::addItemToXsd( const std::string& name, const std::string& tag, int& nodeid, const XpItemPtr& root )
+    {
+        XpItemPtr newitem( std::make_shared<XpItem>( tag, "", root.get(), nodeid ) );
+        newitem->addProperty( std::make_shared<XpProperty>( "name", name ) );
+        root->addChild( newitem );
+        --nodeid;
     }
     void MsItem::constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output )
     {
@@ -364,28 +402,156 @@ namespace xsd
     {
         switch ( getID() )
         {
+            case -1:
+            {
+                myDtDef = "xlink:href";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -2:
+            {
+                myDtDef = "xlink:role";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -3:
+            {
+                myDtDef = "xlink:show";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -4:
+            {
+                myDtDef = "xlink:title";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -5:
+            {
+                myDtDef = "xlink:type";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -6:
+            {
+                myDtDef = "xml:lang";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -7:
+            {
+                myDtDef = "xml:space";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -8:
+            {
+                myDtDef = "xs:anyURI";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -9:
+            {
+                myDtDef = "xs:ID";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -10:
+            {
+                myDtDef = "xs:IDREF";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -11:
+            {
+                myDtDef = "xs:integer";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -12:
+            {
+                myDtDef = "xs:NMTOKEN";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -13:
+            {
+                myDtDef = "xs:nonNegativeInteger";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -14:
+            {
+                myDtDef = "xs:positiveInteger";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -15:
+            {
+                myDtDef = "xs:string";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
+            case -16:
+            {
+                myDtDef = "xs:token";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                myMsItemKind =  MsItemKind::simpleType;
+            }
+                break;
             case 279:
             {
                 // number-or-normal
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 283:
             {
                 myDtDef = "xs:decimal";
                 myIsSpecialCase = true;
-                myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                myIsFirstClassConcept = false;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 285:
             {
                 myDtDef = "xs:token";
-                myIsFirstClassConcept = true;
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 326:
@@ -399,17 +565,17 @@ namespace xsd
             case 330:
             {
                 myDtDef = "xs:positiveInteger";
-                myIsFirstClassConcept = true;
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 332:
             {
                 myDtDef = "xs:string";
-                myIsFirstClassConcept = true;
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2031:
@@ -488,5 +654,28 @@ namespace xsd
             default:
                 break;
         }
+    }
+    
+    std::string MsItem::csv() const
+    {
+        char c = ',';
+        std::stringstream ss;
+        ss << getID() << c;
+        ss << getDtDef() << c;
+        ss << std::boolalpha << getIsFirstClassConcept() << c;
+        ss << std::boolalpha << getIsSpecialCase() << c;
+        ss << getMsItemKindString() << c;
+        return ss.str();
+    }
+    std::string MsItem::csvHeaders() const
+    {
+        char c = ',';
+        std::stringstream ss;
+        ss << "getID" << c;
+        ss << "getDtDef" << c;
+        ss << std::boolalpha << "getIsFirstClassConcept" << c;
+        ss << std::boolalpha << "getIsSpecialCase" << c;
+        ss << "getMsItemKindString" << c;
+        return ss.str();
     }
 }

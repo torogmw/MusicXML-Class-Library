@@ -29,7 +29,10 @@ namespace xsd
         init();
         
     }
-    
+    const MsItemSet& MsItemWeb::getMsItemSet() const
+    {
+        return myMsItemSet;
+    }
     void MsItemWeb::init()
     {
         myDbQueryPtr = std::make_shared<db::DbQuery>();
