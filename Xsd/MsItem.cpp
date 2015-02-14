@@ -18,6 +18,7 @@ namespace xsd
             parseDtDef();
             parseMsItemKind();
             parseIsFirstClassConcept();
+            parseSpecialCases();
         }
     }
     
@@ -339,6 +340,19 @@ namespace xsd
                 current->addChild( child );
                 buildMsItemWebRecursive( child, web );
             }
+        }
+    }
+    
+    void MsItem::parseSpecialCases()
+    {
+        switch ( getID() )
+        {
+            case -1:
+                ;
+                break;
+                
+            default:
+                break;
         }
     }
 }

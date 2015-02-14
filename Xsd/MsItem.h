@@ -63,11 +63,11 @@ namespace xsd
         void parseDtDef();
         void parseMsItemKind();
         void parseIsFirstClassConcept();
+        void parseSpecialCases();
         
         /* static web building functions */
         static void constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output );
         static void buildMsItemWebRecursive( const MsItemPtr& current, MsItemSet& web );
-        
         
     };
 
