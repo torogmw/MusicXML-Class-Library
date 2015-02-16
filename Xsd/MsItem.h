@@ -22,6 +22,7 @@ namespace xsd
         
         /* Static Builder */
         static MsItemSet buildMsItemWeb( const XpItemPtr& root );
+        static void resolveInheritenceInWeb( MsItemSet& web );
         
         /* Ctor, Dtor */
         MsItem( const XpItemPtr& xpItemPtr );
@@ -37,6 +38,11 @@ namespace xsd
         bool getIsFirstClassConcept() const;
         XpItemPtr getXpItem() const;
         bool getIsSpecialCase() const;
+        bool getInherits() const;
+        MsItemPtr getInheritedMsItem() const;
+        void setInheritedMsItem( const MsItemPtr& inheriteditem );
+        MsItemKind getInheritedMsItemKind() const;
+        std::string getInheritedMsItemKindString() const;
         
         /* Parent MsItem */
         MsItemPtr getParent() const;
@@ -63,12 +69,14 @@ namespace xsd
         MsItemPtr myParent;
         MsItemSet myChildren;
         bool myIsSpecialCase;
+        MsItemPtr myInheritedDt;
         
         /* parsing functions */
         void parseDtDef();
         void parseMsItemKind();
         void parseIsFirstClassConcept();
         void parseSpecialCases();
+        static void parseInheritence( MsItemSet& web, MsItemPtr item );
         
         /* static web building functions */
         static void constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output );

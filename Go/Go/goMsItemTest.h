@@ -13,9 +13,14 @@ namespace go
         MsItemWeb xdoc;
         XpItemPtr root = xdoc.getXpDom()->getRootItem();
         std::cout << (*(xdoc.getMsItemSetBeginConst()))->csvHeaders() << std::endl;
+        MsItemSet inheritenceitems;
         for ( auto i : xdoc.getMsItemSet() )
         {
             std::cout << i->csv() << std::endl;
+            if ( i->getInherits() )
+            {
+                inheritenceitems.push_back( i );
+            }
         }
         int wow = 1;
     }

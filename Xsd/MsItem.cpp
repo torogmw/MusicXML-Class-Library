@@ -581,73 +581,97 @@ namespace xsd
             case 2031:
             {
                 myDtDef = "xml:lang";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2033:
             {
                 myDtDef = "xml:space";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2168:
             {
                 myDtDef = "xlink:href";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2171:
             {
                 myDtDef = "xlink:type";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2174:
             {
                 myDtDef = "xlink:role";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2176:
             {
                 myDtDef = "xlink:title";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2178:
             {
                 myDtDef = "xlink:show";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2181:
             {
                 myDtDef = "xlink:actuate";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 2679:
             {
                 myDtDef = "xml:lang";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 5452:
             {
                 myDtDef = "xml:lang";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 5473:
             {
                 myDtDef = "xml:lang";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
             case 5789:
             {
                 myDtDef = "xml:lang";
+                myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
+                myMsItemKind =  MsItemKind::unknown;
             }
                 break;
 
@@ -655,7 +679,14 @@ namespace xsd
                 break;
         }
     }
-    
+    bool MsItem::getInherits() const
+    {
+        return bool(myInheritedDt);
+    }
+    MsItemPtr MsItem::getInheritedMsItem() const
+    {
+        return myInheritedDt;
+    }
     std::string MsItem::csv() const
     {
         char c = ',';
@@ -665,6 +696,13 @@ namespace xsd
         ss << std::boolalpha << getIsFirstClassConcept() << c;
         ss << std::boolalpha << getIsSpecialCase() << c;
         ss << getMsItemKindString() << c;
+        if ( getInherits() )
+        {
+            ss << ( getInheritedMsItem()->getDtDef() );
+        }
+        ss << c;
+        ss << getInheritedMsItemKindString() << c;
+        
         return ss.str();
     }
     std::string MsItem::csvHeaders() const
@@ -676,6 +714,63 @@ namespace xsd
         ss << std::boolalpha << "getIsFirstClassConcept" << c;
         ss << std::boolalpha << "getIsSpecialCase" << c;
         ss << "getMsItemKindString" << c;
+        ss << "getInheritedDtDef" << c;
+        ss << "getInheritedMsItemKindString()" << c;
         return ss.str();
+    }
+    void MsItem::parseInheritence( MsItemSet& web, MsItemPtr item )
+    {
+        if ( item->getXpItem() )
+        {
+            XpItemPtr xpitem = item->getXpItem();
+            if ( xpitem->hasProperties() )
+            {
+                for ( auto p : xpitem->getProperties() )
+                {
+                    if ( p )
+                    {
+                        if ( p->getLabel() == "ref" || p->getLabel() == "type" || p->getLabel() == "base" )
+                        {
+                            std::string supertype = p->getValue();
+                            
+                            auto found = std::find_if( web.begin(),
+                                                      web.end(),
+                                                      [ &supertype ](const MsItemPtr& predicateitem){ return predicateitem->getDtDef() == supertype && predicateitem->getMsItemKind() != MsItemKind::element; } );
+                            if ( found != web.end() )
+                            {
+                                item->setInheritedMsItem( *found );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    void MsItem::setInheritedMsItem( const MsItemPtr& inheriteditem )
+    {
+        myInheritedDt = inheriteditem;
+    }
+    void MsItem::resolveInheritenceInWeb( MsItemSet& web )
+    {
+        for ( auto i : web )
+        {
+            MsItem::parseInheritence( web, i );
+        }
+    }
+    MsItemKind MsItem::getInheritedMsItemKind() const
+    {
+        if ( myInheritedDt )
+        {
+            return myInheritedDt->getMsItemKind();
+        }
+        return MsItemKind::unknown;
+    }
+    std::string MsItem::getInheritedMsItemKindString() const
+    {
+        if ( myInheritedDt )
+        {
+            return myInheritedDt->getMsItemKindString();
+        }
+        return "unknown";
     }
 }

@@ -48,7 +48,7 @@ namespace xsd
     {
         myMsItemSet.clear();
         myMsItemSet = MsItem::buildMsItemWeb( myXpDomPtr->getRootItem() );
-        //recursivelyBuildMsItems( myXpDomPtr->getRootItem(), myMsItemSet );
+        MsItem::resolveInheritenceInWeb( myMsItemSet );
         refreshDbQuery();
     }
     
