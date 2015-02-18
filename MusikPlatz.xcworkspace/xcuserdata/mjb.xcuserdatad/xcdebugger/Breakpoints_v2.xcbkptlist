@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "445628611.199623"
+            timestampString = "445969764.078745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "489"
+            endingLineNumber = "489"
             landmarkName = "MsItem::buildMsItemWebRecursive( const MsItemPtr&amp; current, MsItemSet&amp; web )"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "445628611.199623"
+            timestampString = "445969764.078745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "MsItem::buildMsItemWeb( const XpItemPtr&amp; root )"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "445628611.199623"
+            timestampString = "445969764.078745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
             landmarkName = "MsItem::buildMsItemWebRecursive( const MsItemPtr&amp; current, MsItemSet&amp; web )"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "445628611.199623"
+            timestampString = "445969764.078745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "536"
-            endingLineNumber = "536"
+            startingLineNumber = "659"
+            endingLineNumber = "659"
             landmarkName = "MsItem::parseSpecialCases()"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "445757830.029366"
+            timestampString = "445969764.078745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "755"
-            endingLineNumber = "755"
+            startingLineNumber = "878"
+            endingLineNumber = "878"
             landmarkName = "MsItem::resolveInheritenceInWeb( MsItemSet&amp; web )"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "445757830.029366"
+            timestampString = "445969764.078745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "757"
-            endingLineNumber = "757"
+            startingLineNumber = "880"
+            endingLineNumber = "880"
             landmarkName = "MsItem::resolveInheritenceInWeb( MsItemSet&amp; web )"
             landmarkType = "5">
          </BreakpointContent>
@@ -144,6 +144,22 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "MsItemWeb::createMsItemSet()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/MsItem.cpp"
+            timestampString = "445969764.078745"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "669"
+            endingLineNumber = "669"
+            landmarkName = "MsItem::parseSpecialCases()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

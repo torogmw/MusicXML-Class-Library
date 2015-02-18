@@ -8,6 +8,7 @@ namespace xsd
     MsItem::MsItem( const XpItemPtr& xpItemPtr )
     :myXpItemPtr( xpItemPtr )
     ,myDtDef( "" )
+    ,myMsItemKindString( "unknown" )
     ,myMsItemKind( MsItemKind::unknown )
     ,myIsImplemented( false )
     ,myIsFirstClassConcept( false )
@@ -81,96 +82,218 @@ namespace xsd
             }
         }
     }
+    void MsItem::setMsItemKind( const xsd::MsItemKind& value )
+    {
+        if ( value == MsItemKind::annotation )
+        {
+            myMsItemKind = MsItemKind::annotation;
+            myMsItemKindString = "xs:annotation";
+        }
+        else if ( value == MsItemKind::documentation )
+        {
+            myMsItemKind = MsItemKind::documentation;
+            myMsItemKindString = "xs:documentation";
+        }
+        else if ( value == MsItemKind::enumeration )
+        {
+            myMsItemKind = MsItemKind::enumeration;
+            myMsItemKindString = "xs:enumeration";
+        }
+        else if ( value == MsItemKind::element )
+        {
+            myMsItemKind = MsItemKind::element;
+            myMsItemKindString = "xs:element";
+        }
+        else if ( value == MsItemKind::attribute )
+        {
+            myMsItemKind = MsItemKind::attribute;
+            myMsItemKindString = "xs:attribute";
+        }
+        else if ( value == MsItemKind::attributeGroup )
+        {
+            myMsItemKind = MsItemKind::attributeGroup;
+            myMsItemKindString = "xs:attributeGroup";
+        }
+        else if ( value == MsItemKind::complexType )
+        {
+            myMsItemKind = MsItemKind::complexType;
+            myMsItemKindString = "xs:complexType";
+        }
+        else if ( value == MsItemKind::simpleType )
+        {
+            myMsItemKind = MsItemKind::simpleType;
+            myMsItemKindString = "xs:simpleType";
+        }
+        else if ( value == MsItemKind::restriction )
+        {
+            myMsItemKind = MsItemKind::restriction;
+            myMsItemKindString = "xs:restriction";
+        }
+        else if ( value == MsItemKind::sequence )
+        {
+            myMsItemKind = MsItemKind::sequence;
+            myMsItemKindString = "xs:sequence";
+        }
+        else if ( value == MsItemKind::group )
+        {
+            myMsItemKind = MsItemKind::group;
+            myMsItemKindString = "xs:group";
+        }
+        else if ( value == MsItemKind::extension )
+        {
+            myMsItemKind = MsItemKind::extension;
+            myMsItemKindString = "xs:extension";
+        }
+        else if ( value == MsItemKind::simpleContent )
+        {
+            myMsItemKind = MsItemKind::simpleContent;
+            myMsItemKindString = "xs:simpleContent";
+        }
+        else if ( value == MsItemKind::choice )
+        {
+            myMsItemKind = MsItemKind::choice;
+            myMsItemKindString = "xs:choice";
+        }
+        else if ( value == MsItemKind::minInclusive )
+        {
+            myMsItemKind = MsItemKind::minInclusive;
+            myMsItemKindString = "xs:minInclusive";
+        }
+        else if ( value == MsItemKind::maxInclusive )
+        {
+            myMsItemKind = MsItemKind::maxInclusive;
+            myMsItemKindString = "xs:maxInclusive";
+        }
+        else if ( value == MsItemKind::pattern )
+        {
+            myMsItemKind = MsItemKind::pattern;
+            myMsItemKindString = "xs:pattern";
+        }
+        else if ( value == MsItemKind::complexContent )
+        {
+            myMsItemKind = MsItemKind::complexContent;
+            myMsItemKindString = "xs:complexContent";
+        }
+        else if ( value == MsItemKind::union_ )
+        {
+            myMsItemKind = MsItemKind::union_;
+            myMsItemKindString = "xs:union";
+        }
+        else if ( value == MsItemKind::import )
+        {
+            myMsItemKind = MsItemKind::import;
+            myMsItemKindString = "xs:import";
+        }
+        else if ( value == MsItemKind::minExclusive )
+        {
+            myMsItemKind = MsItemKind::minExclusive;
+            myMsItemKindString = "xs:minExclusive";
+        }
+        else if ( value == MsItemKind::schema )
+        {
+            myMsItemKind = MsItemKind::schema;
+            myMsItemKindString = "xs:schema";
+        }
+        else
+        {
+            myMsItemKind = MsItemKind::unknown;
+            myMsItemKindString = "unknown";
+        }
+    }
     void MsItem::parseMsItemKind()
     {
         std::string tag = myXpItemPtr->getTag();
         if ( tag == "xs:annotation" )
         {
-            myMsItemKind = MsItemKind::annotation;
+            setMsItemKind( MsItemKind::annotation );
         }
         else if ( tag == "xs:documentation" )
         {
-            myMsItemKind = MsItemKind::documentation;
+            setMsItemKind( MsItemKind::documentation );
         }
         else if ( tag == "xs:enumeration" )
         {
-            myMsItemKind = MsItemKind::enumeration;
+            setMsItemKind( MsItemKind::enumeration );
         }
         else if ( tag == "xs:element" )
         {
-            myMsItemKind = MsItemKind::element;
+            setMsItemKind( MsItemKind::element );
         }
         else if ( tag == "xs:attribute" )
         {
-            myMsItemKind = MsItemKind::attribute;
+            setMsItemKind( MsItemKind::attribute );
         }
         else if ( tag == "xs:attributeGroup" )
         {
-            myMsItemKind = MsItemKind::attributeGroup;
+            setMsItemKind( MsItemKind::attributeGroup );
         }
         else if ( tag == "xs:complexType" )
         {
-            myMsItemKind = MsItemKind::complexType;
+            setMsItemKind( MsItemKind::complexType );
         }
         else if ( tag == "xs:simpleType" )
         {
-            myMsItemKind = MsItemKind::simpleType;
+            setMsItemKind( MsItemKind::simpleType );
         }
         else if ( tag == "xs:restriction" )
         {
-            myMsItemKind = MsItemKind::restriction;
+            setMsItemKind( MsItemKind::restriction );
         }
         else if ( tag == "xs:sequence" )
         {
-            myMsItemKind = MsItemKind::sequence;
+            setMsItemKind( MsItemKind::sequence );
         }
         else if ( tag == "xs:group" )
         {
-            myMsItemKind = MsItemKind::group;
+            setMsItemKind( MsItemKind::group );
         }
         else if ( tag == "xs:extension" )
         {
-            myMsItemKind = MsItemKind::extension;
+            setMsItemKind( MsItemKind::extension );
         }
         else if ( tag == "xs:simpleContent" )
         {
-            myMsItemKind = MsItemKind::simpleContent;
+            setMsItemKind( MsItemKind::simpleContent );
         }
         else if ( tag == "xs:choice" )
         {
-            myMsItemKind = MsItemKind::choice;
+            setMsItemKind( MsItemKind::choice );
         }
         else if ( tag == "xs:minInclusive" )
         {
-            myMsItemKind = MsItemKind::minInclusive;
+            setMsItemKind( MsItemKind::minInclusive );
         }
         else if ( tag == "xs:maxInclusive" )
         {
-            myMsItemKind = MsItemKind::maxInclusive;
+            setMsItemKind( MsItemKind::maxInclusive );
         }
         else if ( tag == "xs:pattern" )
         {
-            myMsItemKind = MsItemKind::pattern;
+            setMsItemKind( MsItemKind::pattern );
         }
         else if ( tag == "xs:complexContent" )
         {
-            myMsItemKind = MsItemKind::complexContent;
+            setMsItemKind( MsItemKind::complexContent );
         }
         else if ( tag == "xs:union" )
         {
-            myMsItemKind = MsItemKind::union_;
+            setMsItemKind( MsItemKind::union_ );
         }
         else if ( tag == "xs:import" )
         {
-            myMsItemKind = MsItemKind::import;
+            setMsItemKind( MsItemKind::import );
         }
         else if ( tag == "xs:minExclusive" )
         {
-            myMsItemKind = MsItemKind::minExclusive;
+            setMsItemKind( MsItemKind::minExclusive );
         }
         else if ( tag == "xs:schema" )
         {
-            myMsItemKind = MsItemKind::schema;
+            setMsItemKind( MsItemKind::schema );
+        }
+        else
+        {
+            setMsItemKind( MsItemKind::unknown );
         }
     }
     
@@ -407,7 +530,7 @@ namespace xsd
                 myDtDef = "xlink:href";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind( MsItemKind::simpleType );
             }
                 break;
             case -2:
@@ -415,7 +538,7 @@ namespace xsd
                 myDtDef = "xlink:role";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind( MsItemKind::simpleType );
             }
                 break;
             case -3:
@@ -423,7 +546,7 @@ namespace xsd
                 myDtDef = "xlink:show";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -4:
@@ -431,7 +554,7 @@ namespace xsd
                 myDtDef = "xlink:title";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -5:
@@ -439,7 +562,7 @@ namespace xsd
                 myDtDef = "xlink:type";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -6:
@@ -447,7 +570,7 @@ namespace xsd
                 myDtDef = "xml:lang";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -7:
@@ -455,7 +578,7 @@ namespace xsd
                 myDtDef = "xml:space";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -8:
@@ -463,7 +586,7 @@ namespace xsd
                 myDtDef = "xs:anyURI";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -9:
@@ -471,7 +594,7 @@ namespace xsd
                 myDtDef = "xs:ID";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -10:
@@ -479,7 +602,7 @@ namespace xsd
                 myDtDef = "xs:IDREF";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -11:
@@ -487,7 +610,7 @@ namespace xsd
                 myDtDef = "xs:integer";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -12:
@@ -495,7 +618,7 @@ namespace xsd
                 myDtDef = "xs:NMTOKEN";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -13:
@@ -503,7 +626,7 @@ namespace xsd
                 myDtDef = "xs:nonNegativeInteger";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -14:
@@ -511,7 +634,7 @@ namespace xsd
                 myDtDef = "xs:positiveInteger";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -15:
@@ -519,7 +642,7 @@ namespace xsd
                 myDtDef = "xs:string";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -16:
@@ -527,7 +650,7 @@ namespace xsd
                 myDtDef = "xs:token";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case 279:
@@ -535,7 +658,7 @@ namespace xsd
                 // number-or-normal
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 283:
@@ -543,7 +666,7 @@ namespace xsd
                 myDtDef = "xs:decimal";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = false;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 285:
@@ -551,7 +674,7 @@ namespace xsd
                 myDtDef = "xs:token";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 326:
@@ -559,7 +682,7 @@ namespace xsd
                 // positive-integer-or-empty
                 myIsFirstClassConcept = true;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::simpleType;
+                // setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case 330:
@@ -567,7 +690,7 @@ namespace xsd
                 myDtDef = "xs:positiveInteger";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 332:
@@ -575,7 +698,7 @@ namespace xsd
                 myDtDef = "xs:string";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2031:
@@ -583,7 +706,7 @@ namespace xsd
                 myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2033:
@@ -591,7 +714,7 @@ namespace xsd
                 myDtDef = "xml:space";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2168:
@@ -599,7 +722,7 @@ namespace xsd
                 myDtDef = "xlink:href";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2171:
@@ -607,7 +730,7 @@ namespace xsd
                 myDtDef = "xlink:type";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2174:
@@ -615,7 +738,7 @@ namespace xsd
                 myDtDef = "xlink:role";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2176:
@@ -623,7 +746,7 @@ namespace xsd
                 myDtDef = "xlink:title";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2178:
@@ -631,7 +754,7 @@ namespace xsd
                 myDtDef = "xlink:show";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2181:
@@ -639,7 +762,7 @@ namespace xsd
                 myDtDef = "xlink:actuate";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                //  setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 2679:
@@ -647,7 +770,7 @@ namespace xsd
                 myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 5452:
@@ -655,7 +778,7 @@ namespace xsd
                 myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 5473:
@@ -663,7 +786,7 @@ namespace xsd
                 myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 5789:
@@ -671,7 +794,7 @@ namespace xsd
                 myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                myMsItemKind =  MsItemKind::unknown;
+                // setMsItemKind(  MsItemKind::unknown );
             }
                 break;
 

@@ -32,6 +32,7 @@ namespace xsd
         int getID() const;
         std::string getDtDef() const;
         MsItemKind getMsItemKind() const;
+        void setMsItemKind( const MsItemKind& value );
         std::string getMsItemKindString() const;
         void setIsImplemented( bool isImplemented );
         bool getIsImplemented() const;
@@ -64,6 +65,7 @@ namespace xsd
         XpItemPtr myXpItemPtr;
         std::string myDtDef;
         MsItemKind myMsItemKind;
+        std::string myMsItemKindString;
         bool myIsImplemented;
         bool myIsFirstClassConcept;
         MsItemPtr myParent;
