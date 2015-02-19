@@ -11,6 +11,10 @@
 		2983241F1A964144009ADAA5 /* FileInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2983241B1A964144009ADAA5 /* FileInfo.h */; };
 		298324201A964144009ADAA5 /* fileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2983241C1A964144009ADAA5 /* fileStream.h */; };
 		298324211A964144009ADAA5 /* FileToCharVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2983241D1A964144009ADAA5 /* FileToCharVector.h */; };
+		298324241A964426009ADAA5 /* Directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298324221A964426009ADAA5 /* Directory.cpp */; };
+		298324251A964426009ADAA5 /* Directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 298324231A964426009ADAA5 /* Directory.h */; };
+		298324281A9647F3009ADAA5 /* FileName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298324261A9647F3009ADAA5 /* FileName.cpp */; };
+		298324291A9647F3009ADAA5 /* FileName.h in Headers */ = {isa = PBXBuildFile; fileRef = 298324271A9647F3009ADAA5 /* FileName.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		2983241B1A964144009ADAA5 /* FileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInfo.h; path = ../../mpltzOther/Legacy/Xparse/FileInfo.h; sourceTree = "<group>"; };
 		2983241C1A964144009ADAA5 /* fileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fileStream.h; path = ../../mpltzOther/Legacy/Xparse/fileStream.h; sourceTree = "<group>"; };
 		2983241D1A964144009ADAA5 /* FileToCharVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileToCharVector.h; path = ../../mpltzOther/Legacy/Xparse/FileToCharVector.h; sourceTree = "<group>"; };
+		298324221A964426009ADAA5 /* Directory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Directory.cpp; sourceTree = "<group>"; };
+		298324231A964426009ADAA5 /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
+		298324261A9647F3009ADAA5 /* FileName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileName.cpp; sourceTree = "<group>"; };
+		298324271A9647F3009ADAA5 /* FileName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileName.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,10 @@
 		2983240A1A9640E6009ADAA5 = {
 			isa = PBXGroup;
 			children = (
+				298324261A9647F3009ADAA5 /* FileName.cpp */,
+				298324271A9647F3009ADAA5 /* FileName.h */,
+				298324221A964426009ADAA5 /* Directory.cpp */,
+				298324231A964426009ADAA5 /* Directory.h */,
 				2983241A1A964144009ADAA5 /* FileInfo.cpp */,
 				2983241B1A964144009ADAA5 /* FileInfo.h */,
 				2983241C1A964144009ADAA5 /* fileStream.h */,
@@ -58,8 +70,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298324291A9647F3009ADAA5 /* FileName.h in Headers */,
 				298324201A964144009ADAA5 /* fileStream.h in Headers */,
 				298324211A964144009ADAA5 /* FileToCharVector.h in Headers */,
+				298324251A964426009ADAA5 /* Directory.h in Headers */,
 				2983241F1A964144009ADAA5 /* FileInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298324281A9647F3009ADAA5 /* FileName.cpp in Sources */,
 				2983241E1A964144009ADAA5 /* FileInfo.cpp in Sources */,
+				298324241A964426009ADAA5 /* Directory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
