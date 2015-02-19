@@ -6,8 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2983241E1A964144009ADAA5 /* FileInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2983241A1A964144009ADAA5 /* FileInfo.cpp */; };
+		2983241F1A964144009ADAA5 /* FileInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2983241B1A964144009ADAA5 /* FileInfo.h */; };
+		298324201A964144009ADAA5 /* fileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2983241C1A964144009ADAA5 /* fileStream.h */; };
+		298324211A964144009ADAA5 /* FileToCharVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2983241D1A964144009ADAA5 /* FileToCharVector.h */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		298324131A9640E6009ADAA5 /* libFile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFile.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2983241A1A964144009ADAA5 /* FileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileInfo.cpp; path = ../../mpltzOther/Legacy/Xparse/FileInfo.cpp; sourceTree = "<group>"; };
+		2983241B1A964144009ADAA5 /* FileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInfo.h; path = ../../mpltzOther/Legacy/Xparse/FileInfo.h; sourceTree = "<group>"; };
+		2983241C1A964144009ADAA5 /* fileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fileStream.h; path = ../../mpltzOther/Legacy/Xparse/fileStream.h; sourceTree = "<group>"; };
+		2983241D1A964144009ADAA5 /* FileToCharVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileToCharVector.h; path = ../../mpltzOther/Legacy/Xparse/FileToCharVector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +35,10 @@
 		2983240A1A9640E6009ADAA5 = {
 			isa = PBXGroup;
 			children = (
+				2983241A1A964144009ADAA5 /* FileInfo.cpp */,
+				2983241B1A964144009ADAA5 /* FileInfo.h */,
+				2983241C1A964144009ADAA5 /* fileStream.h */,
+				2983241D1A964144009ADAA5 /* FileToCharVector.h */,
 				298324141A9640E6009ADAA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +58,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298324201A964144009ADAA5 /* fileStream.h in Headers */,
+				298324211A964144009ADAA5 /* FileToCharVector.h in Headers */,
+				2983241F1A964144009ADAA5 /* FileInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2983241E1A964144009ADAA5 /* FileInfo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
