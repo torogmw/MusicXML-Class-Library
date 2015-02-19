@@ -108,8 +108,6 @@ namespace xsd
             std::string errormsg = xsdFilePath + " failed to load.";
             throw std::runtime_error( errormsg.c_str() );
         }
-        
-        
     }
     
     
