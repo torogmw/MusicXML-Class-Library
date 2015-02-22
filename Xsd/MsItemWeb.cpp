@@ -159,5 +159,20 @@ namespace xsd
             }
         }
     }
+    
+    
+    MsItemSet MsItemWeb::getFilteredMsItemSet( MsItemKind kind ) const
+    {
+        MsItemSet output;
+        for ( auto it = this->getMsItemSetBeginConst();
+             it != this->getMsItemSetEndConst(); ++it )
+        {
+            if ( (*it)->getMsItemKind() == kind )
+            {
+                output.push_back( (*it) );
+            }
+        }
+        return output;
+    }
 }
 

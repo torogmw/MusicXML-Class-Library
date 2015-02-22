@@ -11,9 +11,15 @@ namespace fs
     {
         setNameWithExtension( fileNameWithExtension );
     }
+    
     FileName::FileName( const std::string& name, const std::string extension )
+    :myName( name )
+    ,myExtension( extension )
     {}
+    
     FileName::FileName()
+    :myName( "" )
+    ,myExtension( "" )
     {}
     
     std::string FileName::getNameWithoutExtension() const

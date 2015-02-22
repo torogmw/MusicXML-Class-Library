@@ -2,6 +2,8 @@
 #include "MsItemWeb.h"
 #include "XpItem.h"
 #include <set>
+#include "File.h"
+#include "globals.h"
 
 namespace go
 {
@@ -9,20 +11,30 @@ namespace go
     
     inline void goMsItemTest()
     {
-        using namespace xsd;
-        MsItemWeb xdoc;
-        XpItemPtr root = xdoc.getXpDom()->getRootItem();
-        std::cout << (*(xdoc.getMsItemSetBeginConst()))->csvHeaders() << std::endl;
-        MsItemSet inheritenceitems;
-        for ( auto i : xdoc.getMsItemSet() )
-        {
-            std::cout << i->csv() << std::endl;
-            if ( i->getInherits() )
-            {
-                inheritenceitems.push_back( i );
-            }
-        }
-        int wow = 1;
+        fs::Directory dir( globals::getOutputDirectory() );
+        
+        xsd::MsItemWeb xdoc;
+        xsd::XpItemPtr root = xdoc.getXpDom()->getRootItem();
+        
+        fs::writeStringToFile(globals::getOutputDirectory(),
+                              "xsd_allitems.csv",
+                              xsd::toString( xdoc.getMsItemSet() ) );
+        
+        xsd::MsItemKind kind = xsd::MsItemKind::simpleType;
+        fs::writeStringToFile(globals::getOutputDirectory(),
+                              "xsd_simpletypes.csv",
+                              xsd::toString( xdoc.getFilteredMsItemSet( kind ) ) );
+        
+        kind = xsd::MsItemKind::attribute;
+        fs::writeStringToFile(globals::getOutputDirectory(),
+                              "xsd_attributes.csv",
+                              xsd::toString( xdoc.getFilteredMsItemSet( kind ) ) );
+        
+        kind = xsd::MsItemKind::element;
+        fs::writeStringToFile(globals::getOutputDirectory(),
+                              "xsd_elements.csv",
+                              xsd::toString( xdoc.getFilteredMsItemSet( kind ) ) );
+        int breakhere = 1;
     }
 
 }

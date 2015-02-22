@@ -102,4 +102,6 @@ namespace xsd
     bool operator==( const MsItemPtr& lhs, const MsItemPtr& rhs );
     bool operator!=( const MsItemPtr& lhs, const MsItemPtr& rhs );
     
+    std::string toString( const MsItemSet& input );
+    
 }

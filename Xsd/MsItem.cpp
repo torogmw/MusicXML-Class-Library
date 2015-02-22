@@ -77,7 +77,37 @@ namespace xsd
                 if ( prop->getLabel() == "name" )
                 {
                     myDtDef = prop->getValue();
-                    return;
+                }
+            }
+        }
+        if ( myDtDef.length() == 0 )
+        {
+            std::string supertype ="";
+            for ( auto prop : myXpItemPtr->getProperties() )
+            {
+                if ( prop->getLabel() == "ref" ||
+                    prop->getLabel() == "type" ||
+                    prop->getLabel() == "base" )
+                {
+                    supertype = prop->getValue();
+                }
+                if ( supertype.length() > 0 )
+                {
+                    if ( supertype.substr( 0, 1 ) == "x" )
+                    {
+                        if ( supertype.substr(0,3) == "xs:" )
+                        {
+                            myDtDef = supertype.substr( 3 );
+                        }
+                        else if ( supertype.substr(0,4) == "xml:" )
+                        {
+                            myDtDef = supertype.substr( 4 );
+                        }
+                        else if ( supertype.substr(0,6) == "xlink:" )
+                        {
+                            myDtDef = supertype.substr( 6 );
+                        }
+                    }
                 }
             }
         }
@@ -442,6 +472,7 @@ namespace xsd
          xs:token
          */
         int newnodeid = -1;
+        addItemToXsd( "xlink:actuate", "xs:simpleType", newnodeid, root );
         addItemToXsd( "xlink:href", "xs:simpleType", newnodeid, root );
         addItemToXsd( "xlink:role", "xs:simpleType", newnodeid, root );
         addItemToXsd( "xlink:show", "xs:simpleType", newnodeid, root );
@@ -527,7 +558,7 @@ namespace xsd
         {
             case -1:
             {
-                myDtDef = "xlink:href";
+                myDtDef = "xlink:actuate";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind( MsItemKind::simpleType );
@@ -535,7 +566,7 @@ namespace xsd
                 break;
             case -2:
             {
-                myDtDef = "xlink:role";
+                myDtDef = "xlink:href";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind( MsItemKind::simpleType );
@@ -543,15 +574,15 @@ namespace xsd
                 break;
             case -3:
             {
-                myDtDef = "xlink:show";
+                myDtDef = "xlink:role";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
-                setMsItemKind(  MsItemKind::simpleType );
+                setMsItemKind( MsItemKind::simpleType );
             }
                 break;
             case -4:
             {
-                myDtDef = "xlink:title";
+                myDtDef = "xlink:show";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -559,7 +590,7 @@ namespace xsd
                 break;
             case -5:
             {
-                myDtDef = "xlink:type";
+                myDtDef = "xlink:title";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -567,7 +598,7 @@ namespace xsd
                 break;
             case -6:
             {
-                myDtDef = "xml:lang";
+                myDtDef = "xlink:type";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -575,7 +606,7 @@ namespace xsd
                 break;
             case -7:
             {
-                myDtDef = "xml:space";
+                myDtDef = "xml:lang";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -583,7 +614,7 @@ namespace xsd
                 break;
             case -8:
             {
-                myDtDef = "xs:anyURI";
+                myDtDef = "xml:space";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -591,7 +622,7 @@ namespace xsd
                 break;
             case -9:
             {
-                myDtDef = "xs:ID";
+                myDtDef = "xs:anyURI";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -599,7 +630,7 @@ namespace xsd
                 break;
             case -10:
             {
-                myDtDef = "xs:IDREF";
+                myDtDef = "xs:ID";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -607,7 +638,7 @@ namespace xsd
                 break;
             case -11:
             {
-                myDtDef = "xs:integer";
+                myDtDef = "xs:IDREF";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -615,7 +646,7 @@ namespace xsd
                 break;
             case -12:
             {
-                myDtDef = "xs:NMTOKEN";
+                myDtDef = "xs:integer";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -623,7 +654,7 @@ namespace xsd
                 break;
             case -13:
             {
-                myDtDef = "xs:nonNegativeInteger";
+                myDtDef = "xs:NMTOKEN";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -631,7 +662,7 @@ namespace xsd
                 break;
             case -14:
             {
-                myDtDef = "xs:positiveInteger";
+                myDtDef = "xs:nonNegativeInteger";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
@@ -639,13 +670,21 @@ namespace xsd
                 break;
             case -15:
             {
-                myDtDef = "xs:string";
+                myDtDef = "xs:positiveInteger";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
                 setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
             case -16:
+            {
+                myDtDef = "xs:string";
+                myIsSpecialCase = true;
+                myIsFirstClassConcept = true;
+                setMsItemKind(  MsItemKind::simpleType );
+            }
+                break;
+            case -17:
             {
                 myDtDef = "xs:token";
                 myIsSpecialCase = true;
@@ -663,7 +702,7 @@ namespace xsd
                 break;
             case 283:
             {
-                myDtDef = "xs:decimal";
+                // myDtDef = "xs:decimal";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = false;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -671,7 +710,7 @@ namespace xsd
                 break;
             case 285:
             {
-                myDtDef = "xs:token";
+                // myDtDef = "xs:token";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -687,7 +726,7 @@ namespace xsd
                 break;
             case 330:
             {
-                myDtDef = "xs:positiveInteger";
+                // myDtDef = "xs:positiveInteger";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -695,7 +734,7 @@ namespace xsd
                 break;
             case 332:
             {
-                myDtDef = "xs:string";
+                // myDtDef = "xs:string";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -703,7 +742,7 @@ namespace xsd
                 break;
             case 2031:
             {
-                myDtDef = "xml:lang";
+                // myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -711,7 +750,7 @@ namespace xsd
                 break;
             case 2033:
             {
-                myDtDef = "xml:space";
+                // myDtDef = "xml:space";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -719,7 +758,7 @@ namespace xsd
                 break;
             case 2168:
             {
-                myDtDef = "xlink:href";
+                // myDtDef = "xlink:href";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -727,7 +766,7 @@ namespace xsd
                 break;
             case 2171:
             {
-                myDtDef = "xlink:type";
+                // myDtDef = "xlink:type";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -735,7 +774,7 @@ namespace xsd
                 break;
             case 2174:
             {
-                myDtDef = "xlink:role";
+                // myDtDef = "xlink:role";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -743,7 +782,7 @@ namespace xsd
                 break;
             case 2176:
             {
-                myDtDef = "xlink:title";
+                // myDtDef = "xlink:title";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -751,7 +790,7 @@ namespace xsd
                 break;
             case 2178:
             {
-                myDtDef = "xlink:show";
+                // myDtDef = "xlink:show";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -759,7 +798,7 @@ namespace xsd
                 break;
             case 2181:
             {
-                myDtDef = "xlink:actuate";
+                // myDtDef = "xlink:actuate";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 //  setMsItemKind(  MsItemKind::unknown );
@@ -767,7 +806,7 @@ namespace xsd
                 break;
             case 2679:
             {
-                myDtDef = "xml:lang";
+                // myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -775,7 +814,7 @@ namespace xsd
                 break;
             case 5452:
             {
-                myDtDef = "xml:lang";
+                // myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -783,7 +822,7 @@ namespace xsd
                 break;
             case 5473:
             {
-                myDtDef = "xml:lang";
+                // myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -791,7 +830,7 @@ namespace xsd
                 break;
             case 5789:
             {
-                myDtDef = "xml:lang";
+                // myDtDef = "xml:lang";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
                 // setMsItemKind(  MsItemKind::unknown );
@@ -855,10 +894,26 @@ namespace xsd
                         if ( p->getLabel() == "ref" || p->getLabel() == "type" || p->getLabel() == "base" )
                         {
                             std::string supertype = p->getValue();
+                            auto found  = web.end();
+                            if ( supertype.length() > 4 &&
+                                    (
+                                        supertype.substr(0,3) == "xs:" ||
+                                        supertype.substr(0,4) == "xml:" ||
+                                        supertype.substr(0,5) == "xlink:"
+                                    )
+                                )
+                            {
+                                found = std::find_if( web.begin(),
+                                                     web.end(),
+                                                     [ &supertype ](const MsItemPtr& predicateitem){ return predicateitem->getID() < 0 && ( predicateitem->getDtDef() == supertype && predicateitem->getMsItemKind() != MsItemKind::element ); } );
+                            }
+                            else
+                            {
+                                found = std::find_if( web.begin(),
+                                                     web.end(),
+                                                     [ &supertype ](const MsItemPtr& predicateitem){ return predicateitem->getDtDef() == supertype && predicateitem->getMsItemKind() != MsItemKind::element; } );
+                            }
                             
-                            auto found = std::find_if( web.begin(),
-                                                      web.end(),
-                                                      [ &supertype ](const MsItemPtr& predicateitem){ return predicateitem->getDtDef() == supertype && predicateitem->getMsItemKind() != MsItemKind::element; } );
                             if ( found != web.end() )
                             {
                                 item->setInheritedMsItem( *found );
@@ -895,5 +950,24 @@ namespace xsd
             return myInheritedDt->getMsItemKindString();
         }
         return "unknown";
+    }
+    
+    std::string toString( const MsItemSet& input )
+    {
+        std::string output;
+        std::stringstream ss;
+        if ( input.size() > 0 )
+        {
+            auto it = input.cbegin();
+            auto endit = input.cend();
+            
+            ss << (*it)->csvHeaders() << std::endl;
+            for (; it != endit; ++it )
+            {
+                ss << (*it)->csv() << std::endl;
+            }
+        }
+        output = ss.str();
+        return output;
     }
 }

@@ -11,8 +11,10 @@ namespace fs
     {}
     
     Directory::Directory( const std::string directory )
-    :myDirectory( directory )
-    {}
+    :myDirectory( "" )
+    {
+        setDirectory( directory );
+    }
 
     
     bool Directory::isDirectoryEndingOk( const std::string& directory ) const

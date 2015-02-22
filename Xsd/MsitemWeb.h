@@ -37,6 +37,8 @@ namespace xsd
         MsItemSetIterConst getMsItemSetEndConst() const;
         const MsItemSet& getMsItemSet() const;
         
+        MsItemSet getFilteredMsItemSet( MsItemKind kind ) const;
+        
     private:
         
         /* Private Data */
