@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29546F051A9AA95D008C1E0E /* MsItemSimpleType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */; };
+		29546F061A9AA95D008C1E0E /* MsItemSimpleType.h in Headers */ = {isa = PBXBuildFile; fileRef = 29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */; };
 		29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */; };
 		29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */; };
 		29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */; };
@@ -25,10 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleType.cpp; sourceTree = "<group>"; };
+		29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleType.h; sourceTree = "<group>"; };
 		2980BDEE1A8853F0008B0329 /* libXsd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXsd.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 		29AAB9391A888AF30027B7A1 /* MsItemKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemKind.h; sourceTree = "<group>"; };
 		29AAB93A1A888D420027B7A1 /* naming.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = naming.md; sourceTree = "<group>"; };
+		29B1BA491A9AAB800058E7D8 /* MsItemSimpleTypeKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeKind.h; sourceTree = "<group>"; };
 		29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpProperty.cpp; sourceTree = "<group>"; };
 		29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpProperty.h; sourceTree = "<group>"; };
 		29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpDom.cpp; sourceTree = "<group>"; };
@@ -61,6 +66,9 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29B1BA491A9AAB800058E7D8 /* MsItemSimpleTypeKind.h */,
+				29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */,
+				29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */,
 				29E6D3D31A8C0C8F00C8B8E2 /* MsItemWeb.cpp */,
 				29E6D3D41A8C0C8F00C8B8E2 /* MsitemWeb.h */,
 				29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */,
@@ -109,6 +117,7 @@
 				29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */,
 				29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */,
 				29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */,
+				29546F061A9AA95D008C1E0E /* MsItemSimpleType.h in Headers */,
 				29E6D3D61A8C0C8F00C8B8E2 /* MsitemWeb.h in Headers */,
 				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
 				29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */,
@@ -167,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29546F051A9AA95D008C1E0E /* MsItemSimpleType.cpp in Sources */,
 				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,
 				29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */,
 				29E6D3D51A8C0C8F00C8B8E2 /* MsItemWeb.cpp in Sources */,

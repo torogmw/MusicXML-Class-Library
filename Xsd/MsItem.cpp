@@ -1,6 +1,7 @@
 /* matthew james briggs */
 
 #include "MsItem.h"
+#include "MsItemSimpleType.h"
 
 namespace xsd
 {
@@ -509,7 +510,16 @@ namespace xsd
     }
     void MsItem::constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output )
     {
-        output.push_back( std::make_shared<MsItem>( root ) );
+        MsItem temp( root );
+        if ( temp.getMsItemKind() == MsItemKind::simpleType )
+        {
+            output.push_back( std::make_shared<MsItemSimpleType>( root ) );
+        }
+        else
+        {
+            output.push_back( std::make_shared<MsItem>( root ) );
+        }
+        
         for ( auto x : root->getChildren() )
         {
             constructMsItemWebScaffold( x, output );
@@ -864,22 +874,10 @@ namespace xsd
         }
         ss << c;
         ss << getInheritedMsItemKindString() << c;
-        
+        ss << getXml() << c;
         return ss.str();
     }
-    std::string MsItem::csvHeaders() const
-    {
-        char c = ',';
-        std::stringstream ss;
-        ss << "getID" << c;
-        ss << "getDtDef" << c;
-        ss << std::boolalpha << "getIsFirstClassConcept" << c;
-        ss << std::boolalpha << "getIsSpecialCase" << c;
-        ss << "getMsItemKindString" << c;
-        ss << "getInheritedDtDef" << c;
-        ss << "getInheritedMsItemKindString()" << c;
-        return ss.str();
-    }
+    
     void MsItem::parseInheritence( MsItemSet& web, MsItemPtr item )
     {
         if ( item->getXpItem() )
@@ -943,6 +941,21 @@ namespace xsd
         }
         return MsItemKind::unknown;
     }
+    std::string MsItem::getXml() const
+    {
+        std::stringstream ss;
+        this->getXpItem()->stream( ss, 0 );
+        std::string rawXml = ss.str();
+        std::stringstream buffer;
+        for ( auto c : rawXml )
+        {
+            if ( c != ',' && c != '\n' && c != '\r' )
+            {
+                buffer << c;
+            }
+        }
+        return buffer.str();
+    }
     std::string MsItem::getInheritedMsItemKindString() const
     {
         if ( myInheritedDt )
@@ -951,7 +964,20 @@ namespace xsd
         }
         return "unknown";
     }
-    
+    std::string MsItem::csvHeaders() const
+    {
+        char c = ',';
+        std::stringstream ss;
+        ss << "getID" << c;
+        ss << "getDtDef" << c;
+        ss << std::boolalpha << "getIsFirstClassConcept" << c;
+        ss << std::boolalpha << "getIsSpecialCase" << c;
+        ss << "getMsItemKindString" << c;
+        ss << "getInheritedDtDef" << c;
+        ss << "getInheritedMsItemKindString" << c;
+        ss << "Xml" << c;
+        return ss.str();
+    }
     std::string toString( const MsItemSet& input )
     {
         std::string output;

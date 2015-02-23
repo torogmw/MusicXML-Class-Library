@@ -44,6 +44,7 @@ namespace xsd
         void setInheritedMsItem( const MsItemPtr& inheriteditem );
         MsItemKind getInheritedMsItemKind() const;
         std::string getInheritedMsItemKindString() const;
+        std::string getXml() const;
         
         /* Parent MsItem */
         MsItemPtr getParent() const;
@@ -58,8 +59,8 @@ namespace xsd
         void addChild( const MsItemPtr& child );
         void clearChildren();
         
-        std::string csvHeaders() const;
-        std::string csv() const;
+        virtual std::string csvHeaders() const;
+        virtual std::string csv() const;
         
     private:
         XpItemPtr myXpItemPtr;
