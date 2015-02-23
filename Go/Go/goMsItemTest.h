@@ -67,7 +67,7 @@ namespace go
         
         kind = xsd::MsItemKind::enumeration;
         fs::writeStringToFile(globals::getOutputDirectory(),
-                              "xsd_.csv",
+                              "xsd_enumeration.csv",
                               xsd::toString( xdoc.getFilteredMsItemSet( kind ) ) );
         
         kind = xsd::MsItemKind::extension;

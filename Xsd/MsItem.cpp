@@ -867,7 +867,9 @@ namespace xsd
             561,
             607,
             741,
-            1291 };
+            1291,
+            310,
+            318 };
         if ( std::find( ex.begin(), ex.end(), getID() ) != ex.end() )
         {
             myIsSpecialCase = true;

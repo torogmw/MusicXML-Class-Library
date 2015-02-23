@@ -17,7 +17,8 @@ namespace xsd
         positiveIntegerOrEmpty = 9,
         commaSeparatedIntegerList = 10,
         date = 11,
-        string = 12
+        string = 12,
+        positiveDecimal = 13
     };
     
     inline std::string toString( MsItemSimpleTypeKind value )
@@ -78,6 +79,10 @@ namespace xsd
                 
             case MsItemSimpleTypeKind::string:
                 return "string";
+                break;
+                
+            case MsItemSimpleTypeKind::positiveDecimal:
+                return "positiveDecimal";
                 break;
                 
             default:

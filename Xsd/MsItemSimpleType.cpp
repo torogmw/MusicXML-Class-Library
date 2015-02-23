@@ -5,7 +5,7 @@
 namespace xsd
 {
     /* ctor */
-    MsItemSimpleType::MsItemSimpleType( const XpItemPtr& item )
+    MsItemSimpleType::MsItemSimpleType( const MsItem& item )
     :MsItem( item )
     ,myMsItemSimpleTypeKind( MsItemSimpleTypeKind::unknown )
     {

@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		29546F051A9AA95D008C1E0E /* MsItemSimpleType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */; };
 		29546F061A9AA95D008C1E0E /* MsItemSimpleType.h in Headers */ = {isa = PBXBuildFile; fileRef = 29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */; };
+		298B475E1A9B9D000014CAED /* MsItemEnumValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */; };
+		298B475F1A9B9D000014CAED /* MsItemEnumValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B475D1A9B9D000014CAED /* MsItemEnumValue.h */; };
+		29D10B7E1A9B9EFE00F03CE6 /* isCppKeyword.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10B7D1A9B9EFE00F03CE6 /* isCppKeyword.cpp */; };
+		29D10B811A9BA3E200F03CE6 /* numcharToWord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10B7F1A9BA3E200F03CE6 /* numcharToWord.cpp */; };
+		29D10B821A9BA3E200F03CE6 /* numcharToWord.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D10B801A9BA3E200F03CE6 /* numcharToWord.h */; };
+		29D10B851A9BA5C800F03CE6 /* camelCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10B831A9BA5C800F03CE6 /* camelCase.cpp */; };
+		29D10B861A9BA5C800F03CE6 /* camelCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D10B841A9BA5C800F03CE6 /* camelCase.h */; };
+		29D10B8A1A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10B881A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.cpp */; };
+		29D10B8B1A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D10B891A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.h */; };
 		29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */; };
 		29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */; };
 		29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */; };
@@ -31,9 +40,19 @@
 		29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleType.h; sourceTree = "<group>"; };
 		2980BDEE1A8853F0008B0329 /* libXsd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXsd.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
+		298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemEnumValue.cpp; sourceTree = "<group>"; };
+		298B475D1A9B9D000014CAED /* MsItemEnumValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemEnumValue.h; sourceTree = "<group>"; };
 		29AAB9391A888AF30027B7A1 /* MsItemKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemKind.h; sourceTree = "<group>"; };
 		29AAB93A1A888D420027B7A1 /* naming.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = naming.md; sourceTree = "<group>"; };
 		29B1BA491A9AAB800058E7D8 /* MsItemSimpleTypeKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeKind.h; sourceTree = "<group>"; };
+		29D10B7C1A9B9ED100F03CE6 /* isCppKeyword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isCppKeyword.h; sourceTree = "<group>"; };
+		29D10B7D1A9B9EFE00F03CE6 /* isCppKeyword.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = isCppKeyword.cpp; sourceTree = "<group>"; };
+		29D10B7F1A9BA3E200F03CE6 /* numcharToWord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = numcharToWord.cpp; sourceTree = "<group>"; };
+		29D10B801A9BA3E200F03CE6 /* numcharToWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numcharToWord.h; sourceTree = "<group>"; };
+		29D10B831A9BA5C800F03CE6 /* camelCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camelCase.cpp; sourceTree = "<group>"; };
+		29D10B841A9BA5C800F03CE6 /* camelCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camelCase.h; sourceTree = "<group>"; };
+		29D10B881A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleTypeEnum.cpp; sourceTree = "<group>"; };
+		29D10B891A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeEnum.h; sourceTree = "<group>"; };
 		29E6D3C71A8BFDBA00C8B8E2 /* XpProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpProperty.cpp; sourceTree = "<group>"; };
 		29E6D3C81A8BFDBA00C8B8E2 /* XpProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpProperty.h; sourceTree = "<group>"; };
 		29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XpDom.cpp; sourceTree = "<group>"; };
@@ -66,14 +85,19 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
-				29B1BA491A9AAB800058E7D8 /* MsItemSimpleTypeKind.h */,
-				29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */,
-				29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */,
-				29E6D3D31A8C0C8F00C8B8E2 /* MsItemWeb.cpp */,
-				29E6D3D41A8C0C8F00C8B8E2 /* MsitemWeb.h */,
+				29D10B871A9BA8C100F03CE6 /* Functions */,
 				29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */,
 				29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */,
+				298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */,
+				298B475D1A9B9D000014CAED /* MsItemEnumValue.h */,
 				29AAB9391A888AF30027B7A1 /* MsItemKind.h */,
+				29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */,
+				29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */,
+				29D10B881A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.cpp */,
+				29D10B891A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.h */,
+				29B1BA491A9AAB800058E7D8 /* MsItemSimpleTypeKind.h */,
+				29E6D3D31A8C0C8F00C8B8E2 /* MsItemWeb.cpp */,
+				29E6D3D41A8C0C8F00C8B8E2 /* MsitemWeb.h */,
 				2980BDEF1A8853F0008B0329 /* Products */,
 				29E6D3E11A8C13C400C8B8E2 /* Stuff */,
 				29E6D3C91A8BFDBA00C8B8E2 /* XpDom.cpp */,
@@ -97,6 +121,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		29D10B871A9BA8C100F03CE6 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				29D10B831A9BA5C800F03CE6 /* camelCase.cpp */,
+				29D10B841A9BA5C800F03CE6 /* camelCase.h */,
+				29D10B7F1A9BA3E200F03CE6 /* numcharToWord.cpp */,
+				29D10B801A9BA3E200F03CE6 /* numcharToWord.h */,
+				29D10B7D1A9B9EFE00F03CE6 /* isCppKeyword.cpp */,
+				29D10B7C1A9B9ED100F03CE6 /* isCppKeyword.h */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
 		29E6D3E11A8C13C400C8B8E2 /* Stuff */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +153,13 @@
 			files = (
 				29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */,
 				29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */,
+				29D10B821A9BA3E200F03CE6 /* numcharToWord.h in Headers */,
 				29E6D3D21A8BFDBA00C8B8E2 /* XpItem.h in Headers */,
+				29D10B861A9BA5C800F03CE6 /* camelCase.h in Headers */,
 				29546F061A9AA95D008C1E0E /* MsItemSimpleType.h in Headers */,
+				29D10B8B1A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.h in Headers */,
 				29E6D3D61A8C0C8F00C8B8E2 /* MsitemWeb.h in Headers */,
+				298B475F1A9B9D000014CAED /* MsItemEnumValue.h in Headers */,
 				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
 				29E6D3D01A8BFDBA00C8B8E2 /* XpDom.h in Headers */,
 				29E6D3DA1A8C0CF100C8B8E2 /* XpReader.h in Headers */,
@@ -179,8 +220,13 @@
 				29546F051A9AA95D008C1E0E /* MsItemSimpleType.cpp in Sources */,
 				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,
 				29E6D3CF1A8BFDBA00C8B8E2 /* XpDom.cpp in Sources */,
+				29D10B811A9BA3E200F03CE6 /* numcharToWord.cpp in Sources */,
+				29D10B851A9BA5C800F03CE6 /* camelCase.cpp in Sources */,
 				29E6D3D51A8C0C8F00C8B8E2 /* MsItemWeb.cpp in Sources */,
+				29D10B8A1A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.cpp in Sources */,
+				298B475E1A9B9D000014CAED /* MsItemEnumValue.cpp in Sources */,
 				29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */,
+				29D10B7E1A9B9EFE00F03CE6 /* isCppKeyword.cpp in Sources */,
 				29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */,
 				29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */,
 				29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */,

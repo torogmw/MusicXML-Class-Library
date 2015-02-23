@@ -4,14 +4,22 @@
 #include <iostream>
 #include "MsItem.h"
 #include "MsItemSimpleTypeKind.h"
+#include <memory>
+#include <vector>
 
 namespace xsd
 {
+    class MsItemSimpleType;
+    using MsItemSimpleTypePtr = std::shared_ptr<MsItemSimpleType>;
+    using MsItemSimpleTypeSet = std::vector<MsItemSimpleTypePtr>;
+    using MsItemSimpleTypeSetIter = MsItemSimpleTypeSet::iterator;
+    using MsItemSimpleTypeSetIterConst = MsItemSimpleTypeSet::const_iterator;
+    
     class MsItemSimpleType : public MsItem
     {
 
     public:
-        MsItemSimpleType( const XpItemPtr& item );
+        MsItemSimpleType( const MsItem& item );
         virtual ~MsItemSimpleType();
         
         MsItemSimpleTypeKind getMsItemSimpleTypeKind() const;

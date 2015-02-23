@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "goMsItemTest.h"
+#include "goMsItemSimpleTypeEnumTest.h"
 
 int main(int argc, const char * argv[])
 {
-    go::goMsItemTest();
+    go::goMsItemSimpleTypeEnumTest();
     return 0;
 }
