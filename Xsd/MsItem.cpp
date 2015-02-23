@@ -2,6 +2,7 @@
 
 #include "MsItem.h"
 #include "MsItemSimpleType.h"
+#include <set>
 
 namespace xsd
 {
@@ -857,6 +858,19 @@ namespace xsd
 
             default:
                 break;
+        }
+        std::set<int> ex{ 35,
+            43,
+            113,
+            449,
+            555,
+            561,
+            607,
+            741,
+            1291 };
+        if ( std::find( ex.begin(), ex.end(), getID() ) != ex.end() )
+        {
+            myIsSpecialCase = true;
         }
     }
     bool MsItem::getInherits() const

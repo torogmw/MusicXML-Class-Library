@@ -15,7 +15,9 @@ namespace xsd
         enumOrInt = 7,
         numberOrNormal = 8,
         positiveIntegerOrEmpty = 9,
-        commaSeparatedIntegerList = 10
+        commaSeparatedIntegerList = 10,
+        date = 11,
+        string = 12
     };
     
     inline std::string toString( MsItemSimpleTypeKind value )
@@ -68,6 +70,14 @@ namespace xsd
                 
             case MsItemSimpleTypeKind::color:
                 return "color";
+                break;
+                
+            case MsItemSimpleTypeKind::date:
+                return "date";
+                break;
+                
+            case MsItemSimpleTypeKind::string:
+                return "string";
                 break;
                 
             default:

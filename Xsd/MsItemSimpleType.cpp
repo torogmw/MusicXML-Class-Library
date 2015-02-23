@@ -130,7 +130,8 @@ namespace xsd
         {
             return MsItemSimpleTypeKind::commaSeparatedText;
         }
-        else if ( dtDef == "font-size" )
+        else if ( dtDef == "font-size" ||
+                 dtDef == "yes-no-number" )
         {
             return MsItemSimpleTypeKind::enumOrDecimal;
         }
@@ -143,10 +144,40 @@ namespace xsd
             return MsItemSimpleTypeKind::numberOrNormal;
         }
         else if ( dtDef == "ending-number" ||
-                 dtDef == "timeO")
+                 dtDef == "time-only" )
         {
             return MsItemSimpleTypeKind::numberOrNormal;
         }
+        else if ( dtDef == "yyyy-mm-dd" )
+        {
+            return MsItemSimpleTypeKind::date;
+        }
+        else if ( dtDef == "xlink:actuate" ||
+                 dtDef == "xlink:href" ||
+                 dtDef == "xlink:role" ||
+                 dtDef == "xlink:show" ||
+                 dtDef == "xlink:title" ||
+                 dtDef == "xlink:type" ||
+                 dtDef == "xml:lang" ||
+                 dtDef == "xml:space" ||
+                 dtDef == "xs:anyURI" ||
+                 dtDef == "xs:ID" ||
+                 dtDef == "xs:IDREF" ||
+                 dtDef == "xs:integer" ||
+                 dtDef == "xs:NMTOKEN" ||
+                 dtDef == "xs:string" ||
+                 dtDef == "xs:token" )
+        {
+            return MsItemSimpleTypeKind::string;
+        }
+        else if ( dtDef == "xs:nonNegativeInteger" ||
+                 dtDef == "xs:positiveInteger" )
+        {
+            return MsItemSimpleTypeKind::integer;
+        }
+        
+    
+    
         return MsItemSimpleTypeKind::unknown;
     }
     bool MsItemSimpleType::parseIsDecimal() const
