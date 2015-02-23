@@ -1,0 +1,5 @@
+getID,getDtDef,getIsFirstClassConcept,getIsSpecialCase,getMsItemKindString,getInheritedDtDef,getInheritedMsItemKindString,Xml,
+3690,,false,false,xs:complexContent,,unknown,<xs:complexContent>	<xs:extension base="time-modification">		<xs:attribute name="type" type="start-stop" use="required"/>		<xs:attribute name="bracket" type="yes-no"/>		<xs:attribute name="show-number" type="show-tuplet"/>	</xs:extension></xs:complexContent>,
+4747,,false,false,xs:complexContent,,unknown,<xs:complexContent>	<xs:extension base="empty-placement">		<xs:attribute name="substitution" type="yes-no"/>	</xs:extension></xs:complexContent>,
+4875,,false,false,xs:complexContent,,unknown,<xs:complexContent>	<xs:extension base="empty-trill-sound">		<xs:attribute name="long" type="yes-no"/>		<xs:attribute name="approach" type="above-below"/>		<xs:attribute name="departure" type="above-below"/>	</xs:extension></xs:complexContent>,
+5316,,false,false,xs:complexContent,,unknown,<xs:complexContent>	<xs:extension base="empty-placement">		<xs:attribute name="type" type="up-down" default="up"/>	</xs:extension></xs:complexContent>,

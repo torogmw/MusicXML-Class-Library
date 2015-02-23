@@ -720,10 +720,10 @@ namespace xsd
                 break;
             case 285:
             {
-                // myDtDef = "xs:token";
+                myDtDef = "number-or-normal-enumeration";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                // setMsItemKind(  MsItemKind::unknown );
+                setMsItemKind(  MsItemKind::unknown );
             }
                 break;
             case 326:
@@ -744,10 +744,18 @@ namespace xsd
                 break;
             case 332:
             {
-                // myDtDef = "xs:string";
+                myDtDef = "positive-integer-or-empty-enumeration";
                 myIsFirstClassConcept = false;
                 myIsSpecialCase = true;
-                // setMsItemKind(  MsItemKind::unknown );
+                setMsItemKind(  MsItemKind::unknown );
+            }
+                break;
+            case 1297:
+            {
+                // myDtDef = "line-width-type";
+                myIsSpecialCase = true;
+                // setMsItemKind(  MsItemKind::simpleType );
+                /* this is a badly defined enum that can also take custom values */
             }
                 break;
             case 2031:

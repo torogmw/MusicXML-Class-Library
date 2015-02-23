@@ -24,5 +24,8 @@ namespace xsd
         /* parsing functions */
         void parseMsItemSimpleTypeKind();
         bool parseIsEnumeration() const;
+        bool parseIsDecimal() const;
+        bool parseIsInteger() const;
+        MsItemSimpleTypeKind parseSpecialCases() const;
     };
 }

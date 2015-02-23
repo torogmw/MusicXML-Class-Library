@@ -27,7 +27,23 @@ namespace xsd
         if ( parseIsEnumeration() )
         {
             myMsItemSimpleTypeKind = MsItemSimpleTypeKind::enumeration;
+            return;
         }
+        else if ( parseIsInteger() )
+        {
+            myMsItemSimpleTypeKind = MsItemSimpleTypeKind::integer;
+            return;
+        }
+        else if ( parseIsDecimal() )
+        {
+            myMsItemSimpleTypeKind = MsItemSimpleTypeKind::decimal;
+            return;
+        }
+        else
+        {
+            myMsItemSimpleTypeKind = parseSpecialCases();
+        }
+
     }
     
     bool MsItemSimpleType::parseIsEnumeration() const
@@ -61,6 +77,98 @@ namespace xsd
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    bool MsItemSimpleType::parseIsInteger() const
+    {
+        XpItemPtr restrictionBase;
+        for ( auto i : this->getXpItem()->getChildren() )
+        {
+            if ( i->getTag() == "xs:restriction" )
+            {
+                restrictionBase = i;
+                break;
+            }
+        }
+        if ( restrictionBase )
+        {
+            if ( restrictionBase->hasProperties() )
+            {
+                if ( restrictionBase->getProperty( 0 )->getLabel() == "base" )
+                {
+                    if ( restrictionBase->getProperty( 0 )->getValue() == "xs:positiveInteger" ||
+                        restrictionBase->getProperty( 0 )->getValue() == "xs:integer" ||
+                        restrictionBase->getProperty( 0 )->getValue() == "xs:nonNegativeInteger" ||
+                        restrictionBase->getProperty( 0 )->getValue() == "divisions" )
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    MsItemSimpleTypeKind MsItemSimpleType::parseSpecialCases() const
+    {
+        const std::string dtDef = getDtDef();
+        if ( dtDef == "mode" ||
+            dtDef == "line-width-type" ||
+            dtDef == "distance-type" )
+        {
+            return MsItemSimpleTypeKind::enumOrString;
+        }
+        else if ( dtDef == "color" )
+        {
+            return MsItemSimpleTypeKind::color;
+        }
+        else if ( dtDef == "comma-separated-text" )
+        {
+            return MsItemSimpleTypeKind::commaSeparatedText;
+        }
+        else if ( dtDef == "font-size" )
+        {
+            return MsItemSimpleTypeKind::enumOrDecimal;
+        }
+        else if ( dtDef == "positive-integer-or-empty" )
+        {
+            return MsItemSimpleTypeKind::positiveIntegerOrEmpty;
+        }
+        else if ( dtDef == "number-or-normal" )
+        {
+            return MsItemSimpleTypeKind::numberOrNormal;
+        }
+        else if ( dtDef == "ending-number" ||
+                 dtDef == "timeO")
+        {
+            return MsItemSimpleTypeKind::numberOrNormal;
+        }
+        return MsItemSimpleTypeKind::unknown;
+    }
+    bool MsItemSimpleType::parseIsDecimal() const
+    {
+        XpItemPtr restrictionBase;
+        for ( auto i : this->getXpItem()->getChildren() )
+        {
+            if ( i->getTag() == "xs:restriction" )
+            {
+                restrictionBase = i;
+                break;
+            }
+        }
+        if ( restrictionBase )
+        {
+            if ( restrictionBase->hasProperties() )
+            {
+                if ( restrictionBase->getProperty( 0 )->getLabel() == "base" )
+                {
+                    if ( restrictionBase->getProperty( 0 )->getValue() == "xs:decimal" )
+                    {
+                        return true;
                     }
                 }
             }

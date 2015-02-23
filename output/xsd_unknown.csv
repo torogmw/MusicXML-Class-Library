@@ -1,0 +1,3 @@
+getID,getDtDef,getIsFirstClassConcept,getIsSpecialCase,getMsItemKindString,getInheritedDtDef,getInheritedMsItemKindString,Xml,
+285,number-or-normal-enumeration,false,true,xs:simpleType,,unknown,<xs:simpleType>	<xs:restriction base="xs:token">		<xs:enumeration value="normal"/>	</xs:restriction></xs:simpleType>,
+332,positive-integer-or-empty-enumeration,false,true,xs:simpleType,,unknown,<xs:simpleType>	<xs:restriction base="xs:string">		<xs:enumeration value=""/>	</xs:restriction></xs:simpleType>,
