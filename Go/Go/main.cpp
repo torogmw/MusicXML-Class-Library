@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "goMsItemSimpleTypeEnumTest.h"
+#include "goCreateMxEnums.h"
 
 int main(int argc, const char * argv[])
 {
-    go::goMsItemSimpleTypeEnumTest();
+    go::goCreateMxEnums();
     return 0;
 }

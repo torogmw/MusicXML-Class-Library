@@ -21,10 +21,12 @@ namespace xsd
         MsItemEnumValue( const MsItem& value );
         virtual ~MsItemEnumValue();
         
-        std::string getCppName() const;
+        virtual std::string getCppName() const;
+        virtual std::string getXmlName() const;
         
     private:
         std::string myCppName;
+        std::string myXmlName;
         void parseCppName();
     };
 }

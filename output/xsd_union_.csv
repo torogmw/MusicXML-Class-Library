@@ -1,5 +1,0 @@
-getID,getDtDef,getIsFirstClassConcept,getIsSpecialCase,getMsItemKindString,getInheritedDtDef,getInheritedMsItemKindString,Xml,
-117,,false,false,xs:union,,unknown,<xs:union memberTypes="xs:decimal css-font-size"/>,
-283,,false,true,xs:union,,unknown,<xs:union memberTypes="xs:decimal">	<xs:simpleType>		<xs:restriction base="xs:token">			<xs:enumeration value="normal"/>		</xs:restriction>	</xs:simpleType></xs:union>,
-330,,false,true,xs:union,,unknown,<xs:union memberTypes="xs:positiveInteger">	<xs:simpleType>		<xs:restriction base="xs:string">			<xs:enumeration value=""/>		</xs:restriction>	</xs:simpleType></xs:union>,
-559,,false,false,xs:union,,unknown,<xs:union memberTypes="yes-no xs:decimal"/>,

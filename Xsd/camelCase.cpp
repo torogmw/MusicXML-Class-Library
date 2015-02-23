@@ -18,11 +18,11 @@ namespace xsd
             {
                 if ( nextLetterUpper )
                 {
-                    buffer << toupper( c );
+                    buffer << (char)toupper( c );
                 }
                 else
                 {
-                    buffer << tolower( c );
+                    buffer << (char)tolower( c );
                 }
                 nextLetterUpper = false;
                 isFirstLetter = false;
@@ -53,11 +53,11 @@ namespace xsd
             {
                 if ( firstLetterUpper )
                 {
-                    *it = toupper( *it );
+                    *it = (char)toupper( *it );
                 }
                 else
                 {
-                    *it = tolower( *it );
+                    *it = (char)tolower( *it );
                 }
             }
         }

@@ -1,18 +1,19 @@
-//
-//  main.cpp
-//  MxTest
-//
-//  Created by mjb on 2/23/15.
-//  Copyright (c) 2015 Matthew James Briggs. All rights reserved.
-//
-
+#include "TestHarness.h"
 #include <iostream>
 
-int main(int argc, const char * argv[])
+int main()
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+	// random number generator used in some tests
+	srand(::time_t(NULL));
+    
+    TestResult tr;
+    TestRegistry::runAllTests(tr);
+    
+	/* don't do this with Xcode
+     // force console screen to hold
+     char ch;
+     std::cin >> ch;
+     */
+    
     return 0;
 }
-

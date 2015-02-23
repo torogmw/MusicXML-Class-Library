@@ -1,3 +1,0 @@
-getID,getDtDef,getIsFirstClassConcept,getIsSpecialCase,getMsItemKindString,getInheritedDtDef,getInheritedMsItemKindString,Xml,
-316,,false,false,xs:minExclusive,,unknown,<xs:minExclusive value="0"/>,
-324,,false,false,xs:minExclusive,,unknown,<xs:minExclusive value="0"/>,

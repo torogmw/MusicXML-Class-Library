@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		298B47561A9B96060014CAED /* MxObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B47541A9B96060014CAED /* MxObject.cpp */; };
 		298B47571A9B96060014CAED /* MxObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B47551A9B96060014CAED /* MxObject.h */; };
+		29D10BB31A9BEF4E00F03CE6 /* MxEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BB11A9BEF4E00F03CE6 /* MxEnums.cpp */; };
+		29D10BB41A9BEF4E00F03CE6 /* MxEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D10BB21A9BEF4E00F03CE6 /* MxEnums.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		298B45D91A9B93FF0014CAED /* libMx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMx.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B47541A9B96060014CAED /* MxObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxObject.cpp; sourceTree = "<group>"; };
 		298B47551A9B96060014CAED /* MxObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxObject.h; sourceTree = "<group>"; };
+		29D10BB11A9BEF4E00F03CE6 /* MxEnums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEnums.cpp; sourceTree = "<group>"; };
+		29D10BB21A9BEF4E00F03CE6 /* MxEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxEnums.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				29D10BB11A9BEF4E00F03CE6 /* MxEnums.cpp */,
+				29D10BB21A9BEF4E00F03CE6 /* MxEnums.h */,
 				298B45DA1A9B93FF0014CAED /* Products */,
 				298B47541A9B96060014CAED /* MxObject.cpp */,
 				298B47551A9B96060014CAED /* MxObject.h */,
@@ -52,6 +58,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D10BB41A9BEF4E00F03CE6 /* MxEnums.h in Headers */,
 				298B47571A9B96060014CAED /* MxObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298B47561A9B96060014CAED /* MxObject.cpp in Sources */,
+				29D10BB31A9BEF4E00F03CE6 /* MxEnums.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +227,7 @@
 				298B45DF1A9B93FF0014CAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

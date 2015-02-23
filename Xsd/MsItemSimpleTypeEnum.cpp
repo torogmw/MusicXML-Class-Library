@@ -6,10 +6,10 @@
 namespace xsd
 {
     /* ctor */
-    MsItemSimpleTypeEnum::MsItemSimpleTypeEnum( const MsItemSimpleTypePtr& value )
-    :MsItemSimpleType( *value )
+    MsItemSimpleTypeEnum::MsItemSimpleTypeEnum( const MsItemSimpleType& value )
+    :MsItemSimpleType( value )
     {
-        if ( value->getMsItemSimpleTypeKind() != MsItemSimpleTypeKind::enumeration )
+        if ( value.getMsItemSimpleTypeKind() != MsItemSimpleTypeKind::enumeration )
         {
             throw std::runtime_error( "error constructing MsItemSimpleTypeEnum" );
         }
@@ -27,16 +27,16 @@ namespace xsd
     void MsItemSimpleTypeEnum::parseEnumValues()
     {
         myEnumValues.clear();
-        for ( auto a : MsItemSimpleType::getXpItem()->getChildren() )
+        for ( auto child : MsItemSimpleType::getChildren() )
         {
-            if ( a->getTag() == "xs:restriction" )
+            if ( child->getMsItemKind() == MsItemKind::restriction )
             {
-                for ( auto b : a->getChildren() )
+                for ( auto it : child->getChildren() )
                 {
-                    if ( b->getTag() == "xs:enumeration" )
+                    if ( it->getMsItemKind() == MsItemKind::enumeration )
                     {
-                        MsItemEnumValuePtr newval = std::make_shared<MsItemEnumValue>( std::make_shared<MsItem>( b ) );
-                        myEnumValues.push_back( newval );
+                        MsItemEnumValue val( *it );
+                        myEnumValues.push_back( std::make_shared<MsItemEnumValue>( val ) );
                     }
                 }
             }
@@ -52,11 +52,11 @@ namespace xsd
             {
                 if ( i->getIsFirstClassConcept() )
                 {
-                    MsItemSimpleTypePtr s = std::make_shared<MsItemSimpleType>( i );
-                    if ( s->getMsItemSimpleTypeKind() == MsItemSimpleTypeKind::enumeration )
+                    MsItemSimpleType simple( *i );
+                    if ( simple.getMsItemSimpleTypeKind() == MsItemSimpleTypeKind::enumeration )
                     {
-                        MsItemSimpleTypeEnumPtr e = std::make_shared<MsItemSimpleTypeEnum>( std::make_shared<MsItemSimpleType>( s ) );
-                        output.push_back( e );
+                        MsItemSimpleTypeEnum e( simple );
+                        output.push_back( std::make_shared<MsItemSimpleTypeEnum>( e ) );
                     }
                 }
             }

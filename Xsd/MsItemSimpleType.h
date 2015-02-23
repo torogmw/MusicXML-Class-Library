@@ -25,15 +25,18 @@ namespace xsd
         MsItemSimpleTypeKind getMsItemSimpleTypeKind() const;
         virtual std::string csv() const;
         virtual std::string csvHeaders() const;
+        virtual std::string getCppName() const;
         
     private:
         MsItemSimpleTypeKind myMsItemSimpleTypeKind;
+        std::string myCppName;
         
         /* parsing functions */
         void parseMsItemSimpleTypeKind();
         bool parseIsEnumeration() const;
         bool parseIsDecimal() const;
         bool parseIsInteger() const;
+        void parseCppName();
         MsItemSimpleTypeKind parseSpecialCases() const;
     };
 }

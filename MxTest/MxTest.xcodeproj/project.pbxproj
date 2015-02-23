@@ -10,6 +10,7 @@
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
+		29D10BBD1A9BF0BB00F03CE6 /* MxEnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
 		298B45FC1A9B94910014CAED /* libCppUnitLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCppUnitLite.a; path = ../Build/Products/Debug/libCppUnitLite.a; sourceTree = "<group>"; };
+		29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEnumsTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
+				29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */,
 				298B45FC1A9B94910014CAED /* libCppUnitLite.a */,
 				298B45FA1A9B948E0014CAED /* libMx.a */,
 				298B45EB1A9B942A0014CAED /* MxTest */,
@@ -122,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
+				29D10BBD1A9BF0BB00F03CE6 /* MxEnumsTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Debug;
 		};
@@ -195,6 +200,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Release;
 		};
@@ -239,6 +245,7 @@
 				298B45F41A9B942A0014CAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

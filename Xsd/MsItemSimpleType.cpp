@@ -1,12 +1,15 @@
 /* matthew james briggs */
 
 #include "MsItemSimpleType.h"
+#include "camelCase.h"
+#include "isCppKeyword.h"
 
 namespace xsd
 {
     /* ctor */
     MsItemSimpleType::MsItemSimpleType( const MsItem& item )
     :MsItem( item )
+    ,myCppName( "" )
     ,myMsItemSimpleTypeKind( MsItemSimpleTypeKind::unknown )
     {
         if ( MsItem::getMsItemKind() != MsItemKind::simpleType )
@@ -14,6 +17,7 @@ namespace xsd
             throw std::runtime_error("failed to construct MsItemSimpleType" );
         }
         parseMsItemSimpleTypeKind();
+        parseCppName();
     }
     
     /* dtor */
@@ -219,5 +223,26 @@ namespace xsd
         output += toString( getMsItemSimpleTypeKind() );
         output += ",";
         return output;
+    }
+    
+    void MsItemSimpleType::parseCppName()
+    {
+        std::string xmlName = MsItem::getDtDef();
+        if ( xmlName.length() == 0 )
+        {
+            std::stringstream ss;
+            ss << "Node" << MsItem::getID();
+            xmlName = ss.str();
+        }
+        std::string name = camelCase( xmlName, true );
+        if ( isCppKeyword( name ) )
+        {
+            name = name + "_";
+        }
+        myCppName = name;
+    }
+    std::string MsItemSimpleType::getCppName() const
+    {
+        return myCppName;
     }
 }

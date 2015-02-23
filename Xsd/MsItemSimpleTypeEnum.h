@@ -18,7 +18,7 @@ namespace xsd
     {
 
     public:
-        MsItemSimpleTypeEnum( const MsItemSimpleTypePtr& value );
+        MsItemSimpleTypeEnum( const MsItemSimpleType& value );
         virtual ~MsItemSimpleTypeEnum();
         const MsItemEnumValueSet& getEnumValues() const;
         static MsItemSimpleTypeEnumSet construct( const MsItemWeb& web );
