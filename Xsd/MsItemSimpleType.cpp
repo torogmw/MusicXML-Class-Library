@@ -150,7 +150,7 @@ namespace xsd
         else if ( dtDef == "ending-number" ||
                  dtDef == "time-only" )
         {
-            return MsItemSimpleTypeKind::numberOrNormal;
+            return MsItemSimpleTypeKind::commaSeparatedIntegerList;
         }
         else if ( dtDef == "yyyy-mm-dd" )
         {

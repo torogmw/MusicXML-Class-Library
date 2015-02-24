@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "goCreateMxEnums.h"
+#include "goMsItemTest.h"
 
 int main(int argc, const char * argv[])
 {
-    go::goCreateMxEnums();
+    go::goMsItemTest();
     return 0;
 }
