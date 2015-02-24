@@ -22,8 +22,17 @@ namespace xsd
         MsItemSimpleTypeInteger( const MsItemSimpleType& item );
         virtual ~MsItemSimpleTypeInteger();
         static MsItemSimpleTypeIntegerSet construct( const MsItemWeb& web );
-        
+        virtual std::string csvHeaders() const;
+        virtual std::string csv() const;
     private:
-        
+        bool myHasMinInclusive;
+        bool myHasMaxInclusive;
+        bool myHasMinExclusive;
+        bool myHasMaxExclusive;
+        int myMinInclusive;
+        int myMaxInclusive;
+        int myMinExclusive;
+        int myMaxExclusive;
+        void parseMinMax();
     };
 }

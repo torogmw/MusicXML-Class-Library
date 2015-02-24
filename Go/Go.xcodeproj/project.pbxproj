@@ -38,6 +38,7 @@
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29AAB9AA1A889EC50027B7A1 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
+		29AEC9231A9C4E6B00BF3DE0 /* goMsItemSimpleTypeIntegerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeIntegerTest.h; sourceTree = "<group>"; };
 		29D10B8C1A9BB14600F03CE6 /* goMsItemSimpleTypeEnumTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeEnumTest.h; sourceTree = "<group>"; };
 		29D10B9E1A9BD8E600F03CE6 /* goCreateMxEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateMxEnums.h; sourceTree = "<group>"; };
 		29D10B9F1A9BDB2C00F03CE6 /* libXsd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXsd.a; path = ../Build/Products/Debug/libXsd.a; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 				29E6D3E91A8C352700C8B8E2 /* goMsItemTest.h */,
 				29D10B8C1A9BB14600F03CE6 /* goMsItemSimpleTypeEnumTest.h */,
 				29D10B9E1A9BD8E600F03CE6 /* goCreateMxEnums.h */,
+				29AEC9231A9C4E6B00BF3DE0 /* goMsItemSimpleTypeIntegerTest.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";

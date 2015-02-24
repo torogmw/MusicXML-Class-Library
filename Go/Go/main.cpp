@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "goMsItemTest.h"
+#include "goMsItemSimpleTypeIntegerTest.h"
 
 int main(int argc, const char * argv[])
 {
-    go::goMsItemTest();
+    go::goMsItemSimpleTypeIntegerTest();
     return 0;
 }
