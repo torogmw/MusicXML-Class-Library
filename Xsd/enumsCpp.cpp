@@ -4,11 +4,11 @@
 #include <sstream>
 #include "globals.h"
 #include "File.h"
-
+#include "setIsImplemented.h"
 
 namespace xsd
 {
-    std::string enumCppstring( const MsItemSimpleTypeEnum& e )
+    std::string enumCppstring( const MsItemSimpleTypeEnum& e, bool setIsImplementedTrue )
     {
         int k = 2; // minimum indent level
         std::stringstream ss;
@@ -61,6 +61,10 @@ namespace xsd
         ss << tab( k+1 ) << "return toStream( os, value );" << end();
         ss << tab( k ) << "}" << end(2);
         
+        if ( setIsImplementedTrue )
+        {
+            setIsImplemented( e.getXpItem(), true );
+        }
         return ss.str();
     }
     
