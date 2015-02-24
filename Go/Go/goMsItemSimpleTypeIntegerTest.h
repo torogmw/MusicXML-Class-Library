@@ -26,6 +26,7 @@ namespace go
         xsd::MsItemSimpleTypeIntegerSet myset = xsd::MsItemSimpleTypeInteger::construct( web );
         std::stringstream ss;
         ss << (*myset.begin())->csvHeaders();
+        ss << std::endl;
         for ( auto x : myset )
         {
             ss << x->csv() << std::endl;

@@ -11,6 +11,10 @@ namespace xsd
     ,myHasMaxInclusive( false )
     ,myHasMinExclusive( false )
     ,myHasMaxExclusive( false )
+    ,myMinInclusive( 0 )
+    ,myMaxInclusive( 0 )
+    ,myMinExclusive( 0 )
+    ,myMaxExclusive( 0 )
     {
         if ( MsItemSimpleType::getMsItemSimpleTypeKind() != MsItemSimpleTypeKind::integer )
         {
@@ -24,6 +28,10 @@ namespace xsd
     
     void MsItemSimpleTypeInteger::parseMinMax()
     {
+        if ( getDtDef() == "fifths" )
+        {
+            int breakme = 0;
+        }
         for ( auto child : MsItemSimpleType::getXpItem()->getChildren() )
         {
             if ( child->getTag() == "xs:restriction" )
@@ -111,7 +119,8 @@ namespace xsd
     std::string MsItemSimpleTypeInteger::csvHeaders() const
     {
         std::string output = MsItemSimpleType::csvHeaders();
-        output += ",HasMinInclusive,HasMaxInclusive,HasMinExclusive,HasMaxExclusive,";
+        output += "HasMinInclusive,HasMaxInclusive,";
+        output += "Min,Max,";
         return output;
     }
     
@@ -121,8 +130,8 @@ namespace xsd
         ss << MsItemSimpleType::csv();
         ss << std::boolalpha << myHasMinInclusive << ",";
         ss << std::boolalpha << myHasMaxInclusive << ",";
-        ss << std::boolalpha << myHasMinExclusive << ",";
-        ss << std::boolalpha << myHasMaxExclusive << ",";
+        ss << myMinInclusive << ",";
+        ss << myMaxInclusive << ",";
         return ss.str();
     }
 }

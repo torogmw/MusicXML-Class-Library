@@ -486,7 +486,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go/Go/goMsItemSimpleTypeIntegerTest.h"
-            timestampString = "446453540.107027"
+            timestampString = "446494697.971032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -502,13 +502,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go/Go/goMsItemSimpleTypeIntegerTest.h"
-            timestampString = "446453540.107027"
+            timestampString = "446494697.971032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "goMsItemSimpleTypeIntegerTest()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/MsItemSimpleTypeInteger.cpp"
+            timestampString = "446495046.949471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "MsItemSimpleTypeInteger::parseMinMax()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -106,8 +106,7 @@ namespace xsd
                 {
                     if ( restrictionBase->getProperty( 0 )->getValue() == "xs:positiveInteger" ||
                         restrictionBase->getProperty( 0 )->getValue() == "xs:integer" ||
-                        restrictionBase->getProperty( 0 )->getValue() == "xs:nonNegativeInteger" ||
-                        restrictionBase->getProperty( 0 )->getValue() == "divisions" )
+                        restrictionBase->getProperty( 0 )->getValue() == "xs:nonNegativeInteger" )
                     {
                         return true;
                     }
@@ -201,7 +200,8 @@ namespace xsd
             {
                 if ( restrictionBase->getProperty( 0 )->getLabel() == "base" )
                 {
-                    if ( restrictionBase->getProperty( 0 )->getValue() == "xs:decimal" )
+                    if ( restrictionBase->getProperty( 0 )->getValue() == "xs:decimal" ||
+                        restrictionBase->getProperty( 0 )->getValue() == "divisions" )
                     {
                         return true;
                     }
