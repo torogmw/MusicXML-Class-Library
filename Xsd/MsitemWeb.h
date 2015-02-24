@@ -36,6 +36,7 @@ namespace xsd
         MsItemSetIterConst getMsItemSetBeginConst() const;
         MsItemSetIterConst getMsItemSetEndConst() const;
         const MsItemSet& getMsItemSet() const;
+        const MsItemPtr& getMsItemByID( int ID ) const;
         
         MsItemSet getFilteredMsItemSet( MsItemKind kind ) const;
         

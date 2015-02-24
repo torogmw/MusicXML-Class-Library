@@ -65,6 +65,36 @@ namespace mx
             setValue( temp );
         }
         
+        PositiveInteger::PositiveInteger( long value )
+        :Int( value )
+        {
+            setValue( value );
+        }
+        
+        PositiveInteger::PositiveInteger()
+        :Int( 1 ) {}
+        
+        PositiveInteger::~PositiveInteger() {}
+        
+        void PositiveInteger::setValue( long value )
+        {
+            if ( value < 1 )
+            {
+                Int::setValue( 1 );
+            }
+            else
+            {
+                Int::setValue( value );
+            }
+        }
+        void PositiveInteger::parse( const std::string& value )
+        {
+            std::stringstream ss( value );
+            long temp = 0;
+            ss >> temp;
+            setValue( temp );
+        }
+        
         std::string toString( const Int& value )
         {
             std::stringstream ss;
@@ -79,30 +109,6 @@ namespace mx
         {
             return toStream( os, value );
         }
-//        bool operator==( const Int& lhs, const Int& rhs )
-//        {
-//            return lhs.getValue() == rhs.getValue();
-//        }
-//        bool operator!=( const Int& lhs, const Int& rhs )
-//        {
-//            return lhs.getValue() != rhs.getValue();
-//        }
-//        bool operator>=( const Int& lhs, const Int& rhs )
-//        {
-//            return lhs.getValue() >= rhs.getValue();
-//        }
-//        bool operator<=( const Int& lhs, const Int& rhs )
-//        {
-//            return lhs.getValue() <= rhs.getValue();
-//        }
-//        bool operator<( const Int& lhs, const Int& rhs )
-//        {
-//            return lhs.getValue() < rhs.getValue();
-//        }
-//        bool operator>( const Int& lhs, const Int& rhs )
-//        {
-//            return lhs.getValue() > rhs.getValue();
-//        }
         
         AccordionMiddle::AccordionMiddle( long value )
         :IntRange( 1, 3, value ) {}
@@ -118,5 +124,46 @@ namespace mx
         :Int( value ) {}
         Fifths::Fifths()
         :Int( 0 ) {}
+        
+        Midi16::Midi16( long value )
+        :IntRange( 1, 16, value ) {}
+        Midi16::Midi16()
+        :IntRange( 1, 16, 1 ) {}
+        
+        Midi128::Midi128( long value )
+        :IntRange( 1, 128, value ) {}
+        Midi128::Midi128()
+        :IntRange( 1, 128, 1 ) {}
+        
+        Midi16384::Midi16384( long value )
+        :IntRange( 1, 16384, value ) {}
+        Midi16384::Midi16384()
+        :IntRange( 1, 16384, 1 ) {}
+        
+        NumberLevel::NumberLevel( long value )
+        :IntRange( 1, 6, value ) {}
+        NumberLevel::NumberLevel()
+        :IntRange( 1, 6, 1 ) {}
+        
+        NumberOfLines::NumberOfLines( long value )
+        :IntRange( 0, 3, value ) {}
+        NumberOfLines::NumberOfLines()
+        :IntRange( 0, 3, 0 ) {}
+        
+        Octave::Octave( long value )
+        :IntRange( 0, 9, value ) {}
+        Octave::Octave()
+        :IntRange( 0, 9, 0 ) {}
+        
+        StaffLine::StaffLine( long value )
+        :Int( value ) {}
+        StaffLine::StaffLine()
+        :Int( 0 ) {}
+        
+        TremoloMarks::TremoloMarks( long value )
+        :IntRange( 0, 8, value ) {}
+        TremoloMarks::TremoloMarks()
+        :IntRange( 0, 8, 0 ) {}
+        
     }
 }

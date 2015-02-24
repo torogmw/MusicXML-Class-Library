@@ -1,5 +1,6 @@
 #include "setIsImplemented.h"
 #include "DbQuery.h"
+#include "MsitemWeb.h"
 
 namespace xsd
 {
@@ -19,5 +20,12 @@ namespace xsd
                 setIsImplemented( child, true );
             }
         }
+    }
+    
+    void setIsImplemented( int ID, bool include_all_children )
+    {
+        MsItemWeb web;
+        MsItemPtr item = web.getMsItemByID( ID );
+        setIsImplemented( item->getXpItem(), include_all_children );
     }
 }

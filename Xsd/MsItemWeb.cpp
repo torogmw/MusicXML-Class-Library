@@ -174,5 +174,15 @@ namespace xsd
         }
         return output;
     }
+    
+    const MsItemPtr& MsItemWeb::getMsItemByID( int ID ) const
+    {
+        auto it = std::find_if( getMsItemSetBeginConst(), getMsItemSetEndConst(), [=](const MsItemPtr& current){ return current->getID() == ID; } );
+        if ( it != getMsItemSetEndConst() )
+        {
+            return *it;
+        }
+        return *(getMsItemSetBeginConst());
+    }
 }
 

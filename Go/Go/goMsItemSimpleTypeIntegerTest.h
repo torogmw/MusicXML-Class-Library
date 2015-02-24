@@ -7,6 +7,7 @@
 #include "File.h"
 #include "globals.h"
 #include "MsItemSimpleTypeInteger.h"
+#include "setIsImplemented.h"
 
 namespace go
 {
@@ -35,5 +36,19 @@ namespace go
                               "xsd_simpleTypeInteger.csv",
                               ss.str());
         int breakhere = 1;
+        
+        xsd::setIsImplemented( 789 );
+        xsd::setIsImplemented( 25 );
+        xsd::setIsImplemented( 601 );
+        xsd::setIsImplemented( 195 );
+        xsd::setIsImplemented( 185 );
+        xsd::setIsImplemented( 205 );
+        xsd::setIsImplemented( 259 );
+        xsd::setIsImplemented( 269 );
+        xsd::setIsImplemented( 1655 );
+        xsd::setIsImplemented( 623 );
+        xsd::setIsImplemented( 629 );
+        xsd::setIsImplemented( 411 );
+        xsd::setIsImplemented( 1731 );
     }
 }
