@@ -7,7 +7,7 @@ namespace mx
 {
     namespace types
     {
-        Int::Int( long value )
+        Int::Int( IntType value )
         :myValue( value )
         {}
         
@@ -17,18 +17,18 @@ namespace mx
         
         Int::~Int() {}
         
-        long Int::getValue() const
+        IntType Int::getValue() const
         {
             return myValue;
         }
-        void Int::setValue( long value )
+        void Int::setValue( IntType value )
         {
             myValue = value;
         }
         void Int::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 0;
+            IntType temp = 0;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -37,7 +37,7 @@ namespace mx
             setValue( temp );
         }
         
-        IntRange::IntRange( long min, long max, long value )
+        IntRange::IntRange( IntType min, IntType max, IntType value )
         :Int( value )
         ,myMin( min )
         ,myMax( max )
@@ -46,7 +46,7 @@ namespace mx
         }
         IntRange::~IntRange() {}
         
-        void IntRange::setValue( long value )
+        void IntRange::setValue( IntType value )
         {
             if ( value < myMin )
             {
@@ -64,7 +64,7 @@ namespace mx
         void IntRange::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 0;
+            IntType temp = 0;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -72,7 +72,7 @@ namespace mx
             setValue( temp );
         }
         
-        PositiveInteger::PositiveInteger( long value )
+        PositiveInteger::PositiveInteger( IntType value )
         :Int( value )
         {
             setValue( value );
@@ -83,7 +83,7 @@ namespace mx
         
         PositiveInteger::~PositiveInteger() {}
         
-        void PositiveInteger::setValue( long value )
+        void PositiveInteger::setValue( IntType value )
         {
             if ( value < 1 )
             {
@@ -97,7 +97,7 @@ namespace mx
         void PositiveInteger::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 1;
+            IntType temp = 1;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -105,13 +105,13 @@ namespace mx
             setValue( temp );
         }
         
-        NonNegativeInteger::NonNegativeInteger( long value )
+        NonNegativeInteger::NonNegativeInteger( IntType value )
         :Int( value )
         {
             setValue( value );
         }
         NonNegativeInteger::~NonNegativeInteger() {}
-        void NonNegativeInteger::setValue( long value )
+        void NonNegativeInteger::setValue( IntType value )
         {
             if ( value < 0 )
             {
@@ -125,7 +125,7 @@ namespace mx
         void NonNegativeInteger::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 0;
+            IntType temp = 0;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -148,57 +148,57 @@ namespace mx
             return toStream( os, value );
         }
         
-        AccordionMiddle::AccordionMiddle( long value )
+        AccordionMiddle::AccordionMiddle( IntType value )
         :IntRange( 1, 3, value ) {}
         AccordionMiddle::AccordionMiddle()
         :IntRange( 1, 3, 1 ) {}
         
-        BeamLevel::BeamLevel( long value )
+        BeamLevel::BeamLevel( IntType value )
         :IntRange( 1, 8, value ) {}
         BeamLevel::BeamLevel()
         :IntRange( 1, 8, 1 ) {}
         
-        Fifths::Fifths( long value )
+        Fifths::Fifths( IntType value )
         :Int( value ) {}
         Fifths::Fifths()
         :Int( 0 ) {}
         
-        Midi16::Midi16( long value )
+        Midi16::Midi16( IntType value )
         :IntRange( 1, 16, value ) {}
         Midi16::Midi16()
         :IntRange( 1, 16, 1 ) {}
         
-        Midi128::Midi128( long value )
+        Midi128::Midi128( IntType value )
         :IntRange( 1, 128, value ) {}
         Midi128::Midi128()
         :IntRange( 1, 128, 1 ) {}
         
-        Midi16384::Midi16384( long value )
+        Midi16384::Midi16384( IntType value )
         :IntRange( 1, 16384, value ) {}
         Midi16384::Midi16384()
         :IntRange( 1, 16384, 1 ) {}
         
-        NumberLevel::NumberLevel( long value )
+        NumberLevel::NumberLevel( IntType value )
         :IntRange( 1, 6, value ) {}
         NumberLevel::NumberLevel()
         :IntRange( 1, 6, 1 ) {}
         
-        NumberOfLines::NumberOfLines( long value )
+        NumberOfLines::NumberOfLines( IntType value )
         :IntRange( 0, 3, value ) {}
         NumberOfLines::NumberOfLines()
         :IntRange( 0, 3, 0 ) {}
         
-        Octave::Octave( long value )
+        Octave::Octave( IntType value )
         :IntRange( 0, 9, value ) {}
         Octave::Octave()
         :IntRange( 0, 9, 0 ) {}
         
-        StaffLine::StaffLine( long value )
+        StaffLine::StaffLine( IntType value )
         :Int( value ) {}
         StaffLine::StaffLine()
         :Int( 0 ) {}
         
-        TremoloMarks::TremoloMarks( long value )
+        TremoloMarks::TremoloMarks( IntType value )
         :IntRange( 0, 8, value ) {}
         TremoloMarks::TremoloMarks()
         :IntRange( 0, 8, 0 ) {}

@@ -8,47 +8,50 @@ namespace mx
 {
     namespace types
     {
+        /* alias for the int size used by this library */
+        using IntType = int;
+        
         class Int
         {
         public:
-            explicit Int( long value );
+            explicit Int( IntType value );
             Int();
             virtual ~Int();
-            long getValue() const;
-            virtual void setValue( long value );
+            IntType getValue() const;
+            virtual void setValue( IntType value );
             virtual void parse( const std::string& value );
         private:
-            long myValue;
+            IntType myValue;
         };
         
         class IntRange : public Int
         {
         public:
-            explicit IntRange( long min, long max, long value );
+            explicit IntRange( IntType min, IntType max, IntType value );
             virtual ~IntRange();
-            virtual void setValue( long value );
+            virtual void setValue( IntType value );
             virtual void parse( const std::string& value );
         private:
-            const long myMin;
-            const long myMax;
+            const IntType myMin;
+            const IntType myMax;
         };
         
         class PositiveInteger: public Int
         {
         public:
-            explicit PositiveInteger( long value );
+            explicit PositiveInteger( IntType value );
             PositiveInteger();
             virtual ~PositiveInteger();
-            virtual void setValue( long value );
+            virtual void setValue( IntType value );
             virtual void parse( const std::string& value );
         };
         
         class NonNegativeInteger: public Int
         {
         public:
-            explicit NonNegativeInteger( long value );
+            explicit NonNegativeInteger( IntType value );
             virtual ~NonNegativeInteger();
-            virtual void setValue( long value );
+            virtual void setValue( IntType value );
             virtual void parse( const std::string& value );
         };
         
@@ -59,70 +62,80 @@ namespace mx
         /* MIN = 1, MAX = 3, DEFAULT = 1 */
         class AccordionMiddle : public IntRange
         {
-            explicit AccordionMiddle( long value );
+        public:
+            explicit AccordionMiddle( IntType value );
             AccordionMiddle();
         };
         
         /* MIN = 1, MAX = 8, DEFAULT = 1 */
         class BeamLevel : public IntRange
         {
-            explicit BeamLevel( long value );
+        public:
+            explicit BeamLevel( IntType value );
             BeamLevel();
         };
         
         /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
         class Fifths : public Int
         {
-            explicit Fifths( long value );
+        public:
+            explicit Fifths( IntType value );
             Fifths();
         };
         
         /* MIN = 1, MAX = 16, DEFAULT = 1 */
         class Midi16 : public IntRange
         {
-            explicit Midi16( long value );
+        public:
+            explicit Midi16( IntType value );
             Midi16();
         };
         
         /* MIN = 1, MAX = 128, DEFAULT = 1 */
         class Midi128 : public IntRange
         {
-            explicit Midi128( long value );
+        public:
+            explicit Midi128( IntType value );
             Midi128();
         };
         
         /* MIN = 1, MAX = 16384, DEFAULT = 1 */
         class Midi16384 : public IntRange
         {
-            explicit Midi16384( long value );
+        public:
+            explicit Midi16384( IntType value );
             Midi16384();
         };
         
         /* MIN = 1, MAX = 6, DEFAULT = 1 */
         class NumberLevel : public IntRange
         {
-            explicit NumberLevel( long value );
+        public:
+            explicit NumberLevel( IntType value );
             NumberLevel();
         };
         
         /* MIN = 0, MAX = 3, DEFAULT = 0 */
         class NumberOfLines : public IntRange
         {
-            explicit NumberOfLines( long value );
+        public:
+            explicit NumberOfLines( IntType value );
             NumberOfLines();
         };
         
         /* MIN = 0, MAX = 9, DEFAULT = 0 */
         class Octave : public IntRange
         {
-            explicit Octave( long value );
+        public:
+            explicit Octave( IntType value );
             Octave();
         };
         
         /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
         class StaffLine : public Int
         {
-            explicit StaffLine( long value );
+        public:
+            explicit StaffLine( IntType value );
             StaffLine();
         };
         
@@ -135,7 +148,8 @@ namespace mx
         /* MIN = 0, MAX = 8, DEFAULT = 0 */
         class TremoloMarks : public IntRange
         {
-            explicit TremoloMarks( long value );
+        public:
+            explicit TremoloMarks( IntType value );
             TremoloMarks();
         };
     }

@@ -6,47 +6,51 @@ namespace mx
 {
     namespace types
     {
+        /* alias for the floating point size used by this library.
+         Note, "decimal" is synonymous with "float" in this context */
+        using DecimalType = double;
+        
         class Decimal
         {
         public:
-            explicit Decimal( double value );
+            explicit Decimal( DecimalType value );
             Decimal();
             virtual ~Decimal();
-            double getValue() const;
-            virtual void setValue( double value );
+            DecimalType getValue() const;
+            virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         private:
-            double myValue;
+            DecimalType myValue;
         };
         
         class DecimalRange : public Decimal
         {
         public:
-            explicit DecimalRange( double min, double max, double value );
+            explicit DecimalRange( DecimalType min, DecimalType max, DecimalType value );
             virtual ~DecimalRange();
-            virtual void setValue( double value );
+            virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         private:
-            const double myMin;
-            const double myMax;
+            const DecimalType myMin;
+            const DecimalType myMax;
         };
         
         class PositiveDecimal: public Decimal
         {
         public:
-            explicit PositiveDecimal( double value );
+            explicit PositiveDecimal( DecimalType value );
             PositiveDecimal();
             virtual ~PositiveDecimal();
-            virtual void setValue( double value );
+            virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };
         
         class NonNegativeDecimal: public Decimal
         {
         public:
-            explicit NonNegativeDecimal( double value );
+            explicit NonNegativeDecimal( DecimalType value );
             virtual ~NonNegativeDecimal ();
-            virtual void setValue( double value );
+            virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };
         
@@ -60,7 +64,8 @@ namespace mx
         /* MIN = 0, MAX = 100, DEFAULT = 0 */
         class Percent : DecimalRange
         {
-            explicit Percent( double value );
+        public:
+            explicit Percent( DecimalType value );
             Percent();
         };
         
@@ -69,7 +74,8 @@ namespace mx
         /* MIN = -180, MAX = 180, DEFAULT = 0 */
         class RotationalDegrees : DecimalRange
         {
-            explicit RotationalDegrees( double value );
+        public:
+            explicit RotationalDegrees( DecimalType value );
             RotationalDegrees();
         };
         
@@ -80,10 +86,10 @@ namespace mx
         class TrillBeats: public Decimal
         {
         public:
-            explicit TrillBeats( double value );
+            explicit TrillBeats( DecimalType value );
             TrillBeats();
             virtual ~TrillBeats();
-            virtual void setValue( double value );
+            virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };
     }

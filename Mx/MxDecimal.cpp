@@ -5,7 +5,7 @@ namespace mx
 {
     namespace types
     {
-        Decimal::Decimal( double value )
+        Decimal::Decimal( DecimalType value )
         :myValue( value )
         {}
         
@@ -15,23 +15,23 @@ namespace mx
         
         Decimal::~Decimal() {}
         
-        double Decimal::getValue() const
+        DecimalType Decimal::getValue() const
         {
             return myValue;
         }
-        void Decimal::setValue( double value )
+        void Decimal::setValue( DecimalType value )
         {
             myValue = value;
         }
         void Decimal::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            double temp = 0;
+            DecimalType temp = 0;
             ss >> temp;
             setValue( temp );
         }
         
-        DecimalRange::DecimalRange( double min, double max, double value )
+        DecimalRange::DecimalRange( DecimalType min, DecimalType max, DecimalType value )
         :Decimal( value )
         ,myMin( min )
         ,myMax( max )
@@ -40,7 +40,7 @@ namespace mx
         }
         DecimalRange::~DecimalRange() {}
         
-        void DecimalRange::setValue( double value )
+        void DecimalRange::setValue( DecimalType value )
         {
             if ( value < myMin )
             {
@@ -58,7 +58,7 @@ namespace mx
         void DecimalRange::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            double temp = 0;
+            DecimalType temp = 0;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -66,7 +66,7 @@ namespace mx
             setValue( temp );
         }
         
-        PositiveDecimal::PositiveDecimal( double value )
+        PositiveDecimal::PositiveDecimal( DecimalType value )
         :Decimal( value )
         {
             setValue( value );
@@ -77,7 +77,7 @@ namespace mx
         
         PositiveDecimal::~PositiveDecimal() {}
         
-        void PositiveDecimal::setValue( double value )
+        void PositiveDecimal::setValue( DecimalType value )
         {
             if ( value <= 0 )
             {
@@ -91,7 +91,7 @@ namespace mx
         void PositiveDecimal::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            double temp = 0.0000001;
+            DecimalType temp = 0.0000001;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -99,13 +99,13 @@ namespace mx
             setValue( temp );
         }
         
-        NonNegativeDecimal::NonNegativeDecimal( double value )
+        NonNegativeDecimal::NonNegativeDecimal( DecimalType value )
         :Decimal( value )
         {
             setValue( value );
         }
         NonNegativeDecimal::~NonNegativeDecimal() {}
-        void NonNegativeDecimal::setValue( double value )
+        void NonNegativeDecimal::setValue( DecimalType value )
         {
             if ( value < 0 )
             {
@@ -142,7 +142,7 @@ namespace mx
             return toStream( os, value );
         }
         
-        Percent::Percent( double value )
+        Percent::Percent( DecimalType value )
         :DecimalRange( 0, 100, value )
         {}
         
@@ -154,7 +154,7 @@ namespace mx
         :DecimalRange( -180, 180, 0 )
         {}
         
-        TrillBeats::TrillBeats( double value )
+        TrillBeats::TrillBeats( DecimalType value )
         :Decimal( value )
         {
             this->setValue( value );
@@ -165,7 +165,7 @@ namespace mx
 
         TrillBeats::~TrillBeats() {}
         
-        void TrillBeats::setValue( double value )
+        void TrillBeats::setValue( DecimalType value )
         {
             if ( value < 2 )
             {
