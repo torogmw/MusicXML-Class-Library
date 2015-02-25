@@ -11,6 +11,8 @@
 		29546F061A9AA95D008C1E0E /* MsItemSimpleType.h in Headers */ = {isa = PBXBuildFile; fileRef = 29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */; };
 		298B475E1A9B9D000014CAED /* MsItemEnumValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */; };
 		298B475F1A9B9D000014CAED /* MsItemEnumValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B475D1A9B9D000014CAED /* MsItemEnumValue.h */; };
+		29A884F61A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */; };
+		29A884F71A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */; };
 		29CA12651A9C3FCC008DCCFA /* setIsImplemented.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CA12631A9C3FCC008DCCFA /* setIsImplemented.cpp */; };
 		29CA12661A9C3FCC008DCCFA /* setIsImplemented.h in Headers */ = {isa = PBXBuildFile; fileRef = 29CA12641A9C3FCC008DCCFA /* setIsImplemented.h */; };
 		29CA12691A9C447B008DCCFA /* MsItemSimpleTypeInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CA12671A9C447B008DCCFA /* MsItemSimpleTypeInteger.cpp */; };
@@ -55,6 +57,8 @@
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 		298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemEnumValue.cpp; sourceTree = "<group>"; };
 		298B475D1A9B9D000014CAED /* MsItemEnumValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemEnumValue.h; sourceTree = "<group>"; };
+		29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleTypeDecimal.cpp; sourceTree = "<group>"; };
+		29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
 		29AAB9391A888AF30027B7A1 /* MsItemKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemKind.h; sourceTree = "<group>"; };
 		29AAB93A1A888D420027B7A1 /* naming.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = naming.md; sourceTree = "<group>"; };
 		29B1BA491A9AAB800058E7D8 /* MsItemSimpleTypeKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeKind.h; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
+				29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */,
+				29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */,
 				29D10B871A9BA8C100F03CE6 /* Functions */,
 				29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */,
 				29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */,
@@ -194,6 +200,7 @@
 			files = (
 				29E6D3DE1A8C0F4300C8B8E2 /* XpParse.h in Headers */,
 				29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */,
+				29A884F71A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h in Headers */,
 				29D10B9D1A9BD5BB00F03CE6 /* end.h in Headers */,
 				29D10B821A9BA3E200F03CE6 /* numcharToWord.h in Headers */,
 				29D10B991A9BCD4700F03CE6 /* tab.h in Headers */,
@@ -279,6 +286,7 @@
 				29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */,
 				29D10B7E1A9B9EFE00F03CE6 /* isCppKeyword.cpp in Sources */,
 				29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */,
+				29A884F61A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp in Sources */,
 				29D10BA31A9BE05200F03CE6 /* enumsCpp.cpp in Sources */,
 				29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */,
 				29E6D3CD1A8BFDBA00C8B8E2 /* XpProperty.cpp in Sources */,

@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "goMsItemSimpleTypeIntegerTest.h"
+#include "goMsItemSimpleTypeDecimal.h"
 
 int main(int argc, const char * argv[])
 {
-    go::goMsItemSimpleTypeIntegerTest();
+    go::goMsItemSimpleTypeDecimal();
     return 0;
 }

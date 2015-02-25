@@ -90,9 +90,34 @@ namespace mx
         void PositiveInteger::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 0;
+            long temp = 1;
             ss >> temp;
             setValue( temp );
+        }
+        
+        NonNegativeInteger::NonNegativeInteger( long value )
+        :Int( value )
+        {
+            setValue( value );
+        }
+        NonNegativeInteger::~NonNegativeInteger() {}
+        void NonNegativeInteger::setValue( long value )
+        {
+            if ( value < 0 )
+            {
+                Int::setValue( 0 );
+            }
+            else
+            {
+                Int::setValue( value );
+            }
+        }
+        void NonNegativeInteger::parse( const std::string& value )
+        {
+            std::stringstream ss( value );
+            long temp = 0;
+            ss >> temp;
+            this->setValue( temp );
         }
         
         std::string toString( const Int& value )

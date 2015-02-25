@@ -35,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29A884F31A9D5D2F00F417CE /* goMsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29AAB9AA1A889EC50027B7A1 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 				29D10B8C1A9BB14600F03CE6 /* goMsItemSimpleTypeEnumTest.h */,
 				29D10B9E1A9BD8E600F03CE6 /* goCreateMxEnums.h */,
 				29AEC9231A9C4E6B00BF3DE0 /* goMsItemSimpleTypeIntegerTest.h */,
+				29A884F31A9D5D2F00F417CE /* goMsItemSimpleTypeDecimal.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";
