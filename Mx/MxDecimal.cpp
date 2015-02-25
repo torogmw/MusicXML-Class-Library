@@ -59,7 +59,10 @@ namespace mx
         {
             std::stringstream ss( value );
             double temp = 0;
-            ss >> temp;
+            if ((ss >> temp).fail() || !(ss >> std::ws).eof())
+            {
+                return;
+            }
             setValue( temp );
         }
         
@@ -89,7 +92,10 @@ namespace mx
         {
             std::stringstream ss( value );
             double temp = 0.0000001;
-            ss >> temp;
+            if ((ss >> temp).fail() || !(ss >> std::ws).eof())
+            {
+                return;
+            }
             setValue( temp );
         }
         
@@ -114,7 +120,10 @@ namespace mx
         {
             std::stringstream ss( value );
             long temp = 0;
-            ss >> temp;
+            if ((ss >> temp).fail() || !(ss >> std::ws).eof())
+            {
+                return;
+            }
             this->setValue( temp );
         }
         
@@ -171,7 +180,10 @@ namespace mx
         {
             std::stringstream ss( value );
             long temp = 0;
-            ss >> temp;
+            if ((ss >> temp).fail() || !(ss >> std::ws).eof())
+            {
+                return;
+            }
             this->setValue( temp );
         }
     }
