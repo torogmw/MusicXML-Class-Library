@@ -1,35 +1,12 @@
-#include "MxDecimal.h"
+#include "MxDecimals.h"
 #include <sstream>
+#include <iomanip>
 
 namespace mx
 {
     namespace types
     {
-        Decimal::Decimal( DecimalType value )
-        :myValue( value )
-        {}
         
-        Decimal::Decimal()
-        :myValue( 0 )
-        {}
-        
-        Decimal::~Decimal() {}
-        
-        DecimalType Decimal::getValue() const
-        {
-            return myValue;
-        }
-        void Decimal::setValue( DecimalType value )
-        {
-            myValue = value;
-        }
-        void Decimal::parse( const std::string& value )
-        {
-            std::stringstream ss( value );
-            DecimalType temp = 0;
-            ss >> temp;
-            setValue( temp );
-        }
         
         DecimalRange::DecimalRange( DecimalType min, DecimalType max, DecimalType value )
         :Decimal( value )
@@ -135,6 +112,7 @@ namespace mx
         }
         std::ostream& toStream( std::ostream& os, const Decimal& value )
         {
+            os << std::setprecision( 20 );
             return os << value.getValue();
         }
         std::ostream& operator<<( std::ostream& os, const Decimal& value )

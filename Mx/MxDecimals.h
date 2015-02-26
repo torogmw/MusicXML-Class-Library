@@ -1,28 +1,13 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <memory>
+#include "Decimal.h"
 
 namespace mx
 {
     namespace types
     {
-        /* alias for the floating point size used by this library.
-         Note, "decimal" is synonymous with "float" in this context */
-        using DecimalType = double;
-        
-        class Decimal
-        {
-        public:
-            explicit Decimal( DecimalType value );
-            Decimal();
-            virtual ~Decimal();
-            DecimalType getValue() const;
-            virtual void setValue( DecimalType value );
-            virtual void parse( const std::string& value );
-        private:
-            DecimalType myValue;
-        };
-        
         class DecimalRange : public Decimal
         {
         public:
