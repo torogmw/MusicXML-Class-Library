@@ -161,6 +161,9 @@ namespace mx
         {
             setValue( value );
         }
+        NonNegativeDecimal::NonNegativeDecimal()
+        :Decimal( 0 ) {}
+        
         NonNegativeDecimal::~NonNegativeDecimal() {}
         void NonNegativeDecimal::setValue( DecimalType value )
         {
@@ -194,6 +197,10 @@ namespace mx
         
         RotationalDegrees::RotationalDegrees()
         :DecimalRange( -180, 180, 0 )
+        {}
+        
+        RotationalDegrees::RotationalDegrees( DecimalType value )
+        :DecimalRange( -180, 180, value )
         {}
         
         TrillBeats::TrillBeats( DecimalType value )

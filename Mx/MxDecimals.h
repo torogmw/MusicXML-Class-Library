@@ -40,6 +40,8 @@ namespace mx
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         private:
+            /* This pimpl is a remnant of me trying to implement
+             a fixed decimal solution, which didn't work out */
             class impl;
             std::unique_ptr<impl> myImpl;
         };
@@ -71,11 +73,12 @@ namespace mx
             virtual void parse( const std::string& value );
         };
         
-        /* MIN = 0, MAX = N/A, DEFAULT = kNonZeroAmount */
+        /* MIN = 0, MAX = N/A, DEFAULT = 0 */
         class NonNegativeDecimal: public Decimal
         {
         public:
             explicit NonNegativeDecimal( DecimalType value );
+            NonNegativeDecimal();
             virtual ~NonNegativeDecimal ();
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
@@ -86,7 +89,7 @@ namespace mx
         using Millimeters = Decimal;
         
         /* MIN = 0, MAX = 100, DEFAULT = 0 */
-        class Percent : DecimalRange
+        class Percent : public DecimalRange
         {
         public:
             explicit Percent( DecimalType value );
@@ -96,7 +99,7 @@ namespace mx
         using PositiveDivisions = PositiveDecimal;
         
         /* MIN = -180, MAX = 180, DEFAULT = 0 */
-        class RotationalDegrees : DecimalRange
+        class RotationalDegrees : public DecimalRange
         {
         public:
             explicit RotationalDegrees( DecimalType value );
