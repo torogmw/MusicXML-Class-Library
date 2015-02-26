@@ -2792,13 +2792,17 @@ namespace mx
                 myCustomValue = value;
             }
         }
+        Mode parseMode( const std::string& value )
+        {
+            return Mode( value );
+        }
         std::string toString( const Mode& value )
         {
             return value.getValueString();
         }
         std::ostream& toStream( std::ostream& os, const Mode& value )
         {
-            return os << value.getValueString();
+            return os << toString( value );
         }
         std::ostream& operator<<( std::ostream& os, const Mode& value )
         {

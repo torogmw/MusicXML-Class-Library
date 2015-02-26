@@ -10921,10 +10921,472 @@ TEST( GroupSymbolValue_square, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum, MxEnums )
+TEST( ModeEnum_major, MxEnums )
 {
-    std::string expected = "";
-    std::string actual = "test ModeEnum and Mode class";
-    CHECK_EQUAL( expected, actual )
+	mx::types::ModeEnum e = mx::types::ModeEnum::major;
+	std::string expected = "major";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
 }
 
+TEST( ModeEnum_minor, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::minor;
+	std::string expected = "minor";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_dorian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::dorian;
+	std::string expected = "dorian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_phrygian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::phrygian;
+	std::string expected = "phrygian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_lydian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::lydian;
+	std::string expected = "lydian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_mixolydian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::mixolydian;
+	std::string expected = "mixolydian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_aeolian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::aeolian;
+	std::string expected = "aeolian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_ionian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::ionian;
+	std::string expected = "ionian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_locrian, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::locrian;
+	std::string expected = "locrian";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_none, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::none;
+	std::string expected = "none";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( ModeEnum_other, MxEnums )
+{
+	mx::types::ModeEnum e = mx::types::ModeEnum::other;
+	std::string expected = "other";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( Mode_default, MxEnums )
+{
+	mx::types::Mode object;
+    mx::types::ModeEnum expected = mx::types::ModeEnum::major;
+    mx::types::ModeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( Mode_major, MxEnums )
+{
+    mx::types::ModeEnum enumval = mx::types::ModeEnum::major;
+    mx::types::ModeEnum diffval = mx::types::ModeEnum::other;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "none";
+    std::string badstr = "EORIUT";
+    mx::types::Mode object( enumval );
+    mx::types::ModeEnum expected = enumval;
+    mx::types::ModeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object3( diffval );
+    object3 = mx::types::parseMode( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object5( badstr );
+    expected = mx::types::ModeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseMode( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( Mode_lydian, MxEnums )
+{
+    mx::types::ModeEnum enumval = mx::types::ModeEnum::lydian;
+    mx::types::ModeEnum diffval = mx::types::ModeEnum::locrian;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "locrian";
+    std::string badstr = "Lydian";
+    mx::types::Mode object( enumval );
+    mx::types::ModeEnum expected = enumval;
+    mx::types::ModeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object3( diffval );
+    object3 = mx::types::parseMode( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object5( badstr );
+    expected = mx::types::ModeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseMode( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( Mode_locrian, MxEnums )
+{
+    mx::types::ModeEnum enumval = mx::types::ModeEnum::locrian;
+    mx::types::ModeEnum diffval = mx::types::ModeEnum::aeolian;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "aeolian";
+    std::string badstr = "pelog";
+    mx::types::Mode object( enumval );
+    mx::types::ModeEnum expected = enumval;
+    mx::types::ModeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object3( diffval );
+    object3 = mx::types::parseMode( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object5( badstr );
+    expected = mx::types::ModeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseMode( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( Mode_other, MxEnums )
+{
+    mx::types::ModeEnum enumval = mx::types::ModeEnum::other;
+    mx::types::ModeEnum diffval = mx::types::ModeEnum::aeolian;
+    std::string strval = ""; // mx::types::toString( enumval );
+    std::string difval = "aeolian";
+    std::string badstr = "pelog";
+    mx::types::Mode object( enumval );
+    mx::types::ModeEnum expected = enumval;
+    mx::types::ModeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object3( diffval );
+    object3 = mx::types::parseMode( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object5( badstr );
+    expected = mx::types::ModeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::Mode object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseMode( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}

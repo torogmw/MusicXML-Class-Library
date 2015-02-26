@@ -1181,7 +1181,7 @@ namespace mx
             ModeEnum myModeEnum;
             std::string myCustomValue;
         };
-        
+        Mode parseMode( const std::string& value );
 		std::string toString( const Mode& value );
 		std::ostream& toStream( std::ostream& os, const Mode& value );
 		std::ostream& operator<<( std::ostream& os, const Mode& value );
