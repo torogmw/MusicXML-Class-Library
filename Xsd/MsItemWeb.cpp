@@ -12,6 +12,26 @@
 
 namespace xsd
 {
+    const std::vector<int> MsItemWeb::ourImplementedOverrides
+    {
+        -1,
+        -2,
+        -3,
+        -4,
+        -5,
+        -6,
+        -7,
+        -8,
+        -9,
+        -10,
+        -11,
+        -12,
+        -13,
+        -14,
+        -15,
+        -16,
+        -17
+    };
     /* ctor */
     MsItemWeb::MsItemWeb( const std::string& xsdFilePath )
     :myXpDomPtr( nullptr )
@@ -125,6 +145,13 @@ namespace xsd
             implpair.first = field->getValueInt();
             implpair.second = (++field)->getValueBool();
             implmap.insert( implpair );
+        }
+        for ( auto ID : ourImplementedOverrides )
+        {
+            std::pair<int, bool> newpair;
+            newpair.first = ID;
+            newpair.second = true;
+            implmap.insert( newpair );
         }
         for ( auto i : myMsItemSet )
         {

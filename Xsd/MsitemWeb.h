@@ -53,6 +53,7 @@ namespace xsd
         static void findItemByID( int ID, const XpItemPtr& e, XpItemPtr& foundItem );
         std::shared_ptr<db::DbQuery> myDbQueryPtr;
         //void recursivelyBuildMsItems( const XpItemPtr& i, MsItemSet& output );
+        const static std::vector<int> ourImplementedOverrides;
     };
 }
 

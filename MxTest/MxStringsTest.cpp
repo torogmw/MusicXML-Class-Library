@@ -324,3 +324,63 @@ TEST( XlinkTitle03, MxStrings )
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
+
+TEST( CommaSeparatedText01, MxStrings )
+{
+    CommaSeparatedText x( " Hello , \nWorld$#&" );
+    StringType expected = "Hello,World$#&";
+    StringType actual = toString( x );
+    CHECK_EQUAL( expected, actual )
+}
+TEST( CommaSeparatedText02, MxStrings )
+{
+    CommaSeparatedText x;
+    x.parse( " One, two, Three,     \nFOUR" );
+    auto it = x.getValues().cbegin();
+    
+    StringType expected = "One";
+    StringType actual = toString( *it );
+    CHECK_EQUAL( expected, actual )
+    
+    ++it;
+    expected = "two";
+    actual = toString( *it );
+    CHECK_EQUAL( expected, actual )
+    
+    ++it;
+    expected = "Three";
+    actual = toString( *it );
+    CHECK_EQUAL( expected, actual )
+    
+    ++it;
+    expected = "FOUR";
+    actual = toString( *it );
+    CHECK_EQUAL( expected, actual )
+    
+    expected = "One,two,Three,FOUR";
+    actual = toString( x );
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( CommaSeparatedText03, MxStrings )
+{
+    CommaSeparatedText x;
+    x.parse( " One, two, Three,     \nFOUR" );
+    CHECK( x.getValuesBegin() != x.getValuesEnd() );
+    CHECK( x.getValuesBeginConst() != x.getValuesEndConst() );
+    
+    StringType expected = "One";
+    StringType actual = toString((*x.getValuesBegin()));
+    CHECK_EQUAL( expected, actual )
+    
+    expected = "two";
+    actual = toString((*(++x.getValuesBeginConst())));
+    CHECK_EQUAL( expected, actual )
+    
+    auto it = ++(x.getValuesBegin());
+    *it = XsToken( " Bones  &  Bish " );
+    expected = "Bones & Bish";
+    actual = toString((*(++x.getValuesBeginConst())));
+    CHECK_EQUAL( expected, actual )
+    
+}

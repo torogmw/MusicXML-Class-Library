@@ -155,26 +155,30 @@ namespace xsd
         {
             return MsItemSimpleTypeKind::date;
         }
-        else if ( dtDef == "xlink:actuate" ||
+        else if (
                  dtDef == "xlink:href" ||
                  dtDef == "xlink:role" ||
-                 dtDef == "xlink:show" ||
                  dtDef == "xlink:title" ||
-                 dtDef == "xlink:type" ||
                  dtDef == "xml:lang" ||
-                 dtDef == "xml:space" ||
                  dtDef == "xs:anyURI" ||
                  dtDef == "xs:ID" ||
                  dtDef == "xs:IDREF" ||
-                 dtDef == "xs:integer" ||
                  dtDef == "xs:NMTOKEN" ||
                  dtDef == "xs:string" ||
                  dtDef == "xs:token" )
         {
             return MsItemSimpleTypeKind::string;
         }
+        else if( dtDef == "xlink:actuate" ||
+                dtDef == "xlink:show" ||
+                dtDef == "xlink:type" ||
+                dtDef == "xml:space" )
+        {
+            return MsItemSimpleTypeKind::enumeration;
+        }
         else if ( dtDef == "xs:nonNegativeInteger" ||
-                 dtDef == "xs:positiveInteger" )
+                 dtDef == "xs:positiveInteger" ||
+                 dtDef == "xs:integer" )
         {
             return MsItemSimpleTypeKind::integer;
         }

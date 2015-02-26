@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 
 namespace mx
 {
@@ -50,11 +51,40 @@ namespace mx
         
         using XsIDREF = XsID;
         
-        /* Add restrictions to these later if deemed necessary */
+        /* Add restrictions to these later if needed */
         using XmlLang = XsString;
         using XsAnyUri = XsString;
         using XlinkHref = XsAnyUri;
         using XlinkRole = XsToken;
         using XlinkTitle = XsToken;
+        
+        using XsTokenSet = std::vector<XsToken>;
+        using XsTokenSetIter = XsTokenSet::iterator;
+        using XsTokenSetIterConst = XsTokenSet::const_iterator;
+        
+        class CommaSeparatedText
+        {
+        public:
+            CommaSeparatedText();
+            CommaSeparatedText( const StringType& value );
+            CommaSeparatedText( const XsTokenSet& values );
+            const XsTokenSet& getValues() const;
+            XsTokenSetIter getValuesBegin();
+            XsTokenSetIter getValuesEnd();
+            XsTokenSetIterConst getValuesBeginConst() const;
+            XsTokenSetIterConst getValuesEndConst() const;
+            
+            void setValues( const XsTokenSet& values );
+            void parse( const StringType& commaSeparatedText );
+            
+        private:
+            XsTokenSet myValues;
+        
+        };
+        
+        StringType toString( const CommaSeparatedText& value );
+        std::ostream& toStream( std::ostream& os, const CommaSeparatedText& value );
+        std::ostream& operator<<( std::ostream& os, const CommaSeparatedText& value );
+        
     }
 }

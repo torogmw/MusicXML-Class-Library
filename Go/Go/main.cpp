@@ -4,7 +4,7 @@
 #include "goMsItemTest.h"
 int main(int argc, const char * argv[])
 {
-    go::goSetIsImplemented();
+    //go::goSetIsImplemented();
     go::goMsItemTest();
     return 0;
 }
