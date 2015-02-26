@@ -1265,6 +1265,30 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const LineWidthType& value );
 		std::ostream& operator<<( std::ostream& os, const LineWidthType& value );
         
+        enum class XlinkActuate
+        {
+            onLoad = 0,
+			onRequest = 1,
+            other = 2,
+            none = 3
+        };
+        XlinkActuate parseXlinkActuate( const std::string& value );
+		std::string toString( const XlinkActuate value );
+		std::ostream& toStream( std::ostream& os, const XlinkActuate value );
+		std::ostream& operator<<( std::ostream& os, const XlinkActuate value );
+        
+        enum class XlinkShow
+        {
+            new_ = 0,
+			replace = 1,
+            embed = 2,
+            other = 3,
+            none = 4
+        };
+        XlinkShow parseXlinkShow( const std::string& value );
+		std::string toString( const XlinkShow value );
+		std::ostream& toStream( std::ostream& os, const XlinkShow value );
+		std::ostream& operator<<( std::ostream& os, const XlinkShow value );
 
 	} // namespace types
 } // namespace mx

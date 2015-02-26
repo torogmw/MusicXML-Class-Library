@@ -1,10 +1,11 @@
 #include "MxStrings.h"
 #include <sstream>
+#include <cctype>
 
 namespace
 {
     const mx::types::StringType kWhitespace = " \t\n\v\f\r";
-    
+    const mx::types::StringType kNCNameAllowed = "-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
     mx::types::StringType trim(const mx::types::StringType& str,
                      const mx::types::StringType& whitespace = kWhitespace )
     {
@@ -39,6 +40,19 @@ namespace
         }
         
         return result;
+    }
+    mx::types::StringType onlyAllow(const mx::types::StringType& input,
+                                    const mx::types::StringType& fill = "_",
+                                    const mx::types::StringType& onlyAllow = kNCNameAllowed)
+    {
+        std::string str = input;
+        auto firstBadChar = str.find_first_not_of( onlyAllow );
+        while ( firstBadChar != mx::types::StringType::npos )
+        {
+            str = str.replace( firstBadChar, 1, fill );
+            firstBadChar = str.find_first_not_of( onlyAllow );
+        }
+        return str;
     }
 }
 
@@ -88,5 +102,27 @@ namespace mx
             XsString::setValue( reduce( value ) );
         }
         
+        XsID::XsID()
+        :XsString( "ID" ) {}
+        
+        XsID::XsID( const StringType& value )
+        :XsString( value )
+        {
+            XsID::setValue( value );
+        }
+        
+        void XsID::setValue( const StringType& value )
+        {
+            std::string scrubbed = onlyAllow( value );
+            if ( scrubbed.length() == 0 )
+            {
+                scrubbed = "ID";
+            }
+            else if ( isdigit( scrubbed[0] ) )
+            {
+                scrubbed = "ID" + scrubbed;
+            }
+            XsString::setValue( scrubbed );
+        }
     }
 }

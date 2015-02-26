@@ -2920,18 +2920,18 @@ namespace mx
 			else if ( value == "enclosure" ) { return LineWidthTypeEnum::enclosure; }
 			else if ( value == "ending" ) { return LineWidthTypeEnum::ending; }
 			else if ( value == "extend" ) { return LineWidthTypeEnum::extend; }
-			else if ( value == "heavy-barline" ) { return LineWidthTypeEnum::heavyBarline; }
+			else if ( value == "heavy barline" ) { return LineWidthTypeEnum::heavyBarline; }
 			else if ( value == "leger" ) { return LineWidthTypeEnum::leger; }
-			else if ( value == "light-barline" ) { return LineWidthTypeEnum::lightBarline; }
-			else if ( value == "octave-shift" ) { return LineWidthTypeEnum::octaveShift; }
+			else if ( value == "light barline" ) { return LineWidthTypeEnum::lightBarline; }
+			else if ( value == "octave shift" ) { return LineWidthTypeEnum::octaveShift; }
 			else if ( value == "pedal" ) { return LineWidthTypeEnum::pedal; }
-			else if ( value == "slur-middle" ) { return LineWidthTypeEnum::slurMiddle; }
-			else if ( value == "slur-tip" ) { return LineWidthTypeEnum::slurTip; }
+			else if ( value == "slur middle" ) { return LineWidthTypeEnum::slurMiddle; }
+			else if ( value == "slur tip" ) { return LineWidthTypeEnum::slurTip; }
 			else if ( value == "staff" ) { return LineWidthTypeEnum::staff; }
 			else if ( value == "stem" ) { return LineWidthTypeEnum::stem; }
-			else if ( value == "tie-middle" ) { return LineWidthTypeEnum::tieMiddle; }
-			else if ( value == "tie-tip" ) { return LineWidthTypeEnum::tieTip; }
-			else if ( value == "tuplet-bracket" ) { return LineWidthTypeEnum::tupletBracket; }
+			else if ( value == "tie middle" ) { return LineWidthTypeEnum::tieMiddle; }
+			else if ( value == "tie tip" ) { return LineWidthTypeEnum::tieTip; }
+			else if ( value == "tuplet bracket" ) { return LineWidthTypeEnum::tupletBracket; }
 			else if ( value == "wedge" ) { return LineWidthTypeEnum::wedge; }
 			else if ( value == "other" ) { success = false; return LineWidthTypeEnum::other; }
             success = false;
@@ -2952,18 +2952,18 @@ namespace mx
 				case LineWidthTypeEnum::enclosure: return "enclosure"; break;
 				case LineWidthTypeEnum::ending: return "ending"; break;
 				case LineWidthTypeEnum::extend: return "extend"; break;
-				case LineWidthTypeEnum::heavyBarline: return "heavy-barline"; break;
+				case LineWidthTypeEnum::heavyBarline: return "heavy barline"; break;
 				case LineWidthTypeEnum::leger: return "leger"; break;
-				case LineWidthTypeEnum::lightBarline: return "light-barline"; break;
-				case LineWidthTypeEnum::octaveShift: return "octave-shift"; break;
+				case LineWidthTypeEnum::lightBarline: return "light barline"; break;
+				case LineWidthTypeEnum::octaveShift: return "octave shift"; break;
 				case LineWidthTypeEnum::pedal: return "pedal"; break;
-				case LineWidthTypeEnum::slurMiddle: return "slur-middle"; break;
-				case LineWidthTypeEnum::slurTip: return "slur-tip"; break;
+				case LineWidthTypeEnum::slurMiddle: return "slur middle"; break;
+				case LineWidthTypeEnum::slurTip: return "slur tip"; break;
 				case LineWidthTypeEnum::staff: return "staff"; break;
 				case LineWidthTypeEnum::stem: return "stem"; break;
-				case LineWidthTypeEnum::tieMiddle: return "tie-middle"; break;
-				case LineWidthTypeEnum::tieTip: return "tie-tip"; break;
-				case LineWidthTypeEnum::tupletBracket: return "tuplet-bracket"; break;
+				case LineWidthTypeEnum::tieMiddle: return "tie middle"; break;
+				case LineWidthTypeEnum::tieTip: return "tie tip"; break;
+				case LineWidthTypeEnum::tupletBracket: return "tuplet bracket"; break;
 				case LineWidthTypeEnum::wedge: return "wedge"; break;
 				case LineWidthTypeEnum::other: return "other"; break;
 				default: break;
@@ -3046,6 +3046,66 @@ namespace mx
         {
             return toStream( os, value );
         }
+
+        XlinkActuate parseXlinkActuate( const std::string& value )
+		{
+			if ( value == "onLoad" ) { return XlinkActuate::onLoad; }
+			else if ( value == "onRequest" ) { return XlinkActuate::onRequest; }
+			else if ( value == "other" ) { return XlinkActuate::other; }
+			else if ( value == "none" ) { return XlinkActuate::none; }
+			return XlinkActuate::onLoad;
+		}
+		std::string toString( const XlinkActuate value )
+		{
+			switch ( value )
+			{
+				case XlinkActuate::onLoad: return "onLoad"; break;
+				case XlinkActuate::onRequest: return "onRequest"; break;
+				case XlinkActuate::other: return "other"; break;
+				case XlinkActuate::none: return "none"; break;
+				default: break;
+			}
+			return "none";
+		}
+		std::ostream& toStream( std::ostream& os, const XlinkActuate value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const XlinkActuate value )
+		{
+			return toStream( os, value );
+		}
+        
+        XlinkShow parseXlinkShow( const std::string& value )
+		{
+			if ( value == "new" ) { return XlinkShow::new_; }
+			else if ( value == "replace" ) { return XlinkShow::replace; }
+			else if ( value == "embed" ) { return XlinkShow::embed; }
+			else if ( value == "other" ) { return XlinkShow::other; }
+			else if ( value == "none" ) { return XlinkShow::none; }
+			return XlinkShow::new_;
+		}
+		std::string toString( const XlinkShow value )
+		{
+			switch ( value )
+			{
+				case XlinkShow::new_: return "new"; break;
+				case XlinkShow::replace: return "replace"; break;
+				case XlinkShow::embed: return "embed"; break;
+				case XlinkShow::other: return "other"; break;
+				case XlinkShow::none: return "none"; break;
+				default: break;
+			}
+			return "none";
+		}
+		std::ostream& toStream( std::ostream& os, const XlinkShow value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const XlinkShow value )
+		{
+			return toStream( os, value );
+		}
 
 	} // namespace types
 

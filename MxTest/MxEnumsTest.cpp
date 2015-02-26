@@ -11758,7 +11758,7 @@ TEST( LineWidthTypeEnum_extend, MxEnums )
 TEST( LineWidthTypeEnum_heavyBarline, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::heavyBarline;
-	std::string expected = "heavy-barline";
+	std::string expected = "heavy barline";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -11800,7 +11800,7 @@ TEST( LineWidthTypeEnum_leger, MxEnums )
 TEST( LineWidthTypeEnum_lightBarline, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::lightBarline;
-	std::string expected = "light-barline";
+	std::string expected = "light barline";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -11821,7 +11821,7 @@ TEST( LineWidthTypeEnum_lightBarline, MxEnums )
 TEST( LineWidthTypeEnum_octaveShift, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::octaveShift;
-	std::string expected = "octave-shift";
+	std::string expected = "octave shift";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -11863,7 +11863,7 @@ TEST( LineWidthTypeEnum_pedal, MxEnums )
 TEST( LineWidthTypeEnum_slurMiddle, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurMiddle;
-	std::string expected = "slur-middle";
+	std::string expected = "slur middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -11905,7 +11905,7 @@ TEST( LineWidthTypeEnum_hyphen, MxEnums )
 TEST( LineWidthTypeEnum_slurTip, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurTip;
-	std::string expected = "slur-tip";
+	std::string expected = "slur tip";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -11968,7 +11968,7 @@ TEST( LineWidthTypeEnum_stem, MxEnums )
 TEST( LineWidthTypeEnum_tieMiddle, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieMiddle;
-	std::string expected = "tie-middle";
+	std::string expected = "tie middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -11989,7 +11989,7 @@ TEST( LineWidthTypeEnum_tieMiddle, MxEnums )
 TEST( LineWidthTypeEnum_tieTip, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieTip;
-	std::string expected = "tie-tip";
+	std::string expected = "tie tip";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -12010,7 +12010,7 @@ TEST( LineWidthTypeEnum_tieTip, MxEnums )
 TEST( LineWidthTypeEnum_tupletBracket, MxEnums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tupletBracket;
-	std::string expected = "tuplet-bracket";
+	std::string expected = "tuplet bracket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
@@ -12242,4 +12242,219 @@ TEST( LineWidthType_other, MxEnums )
     ss.str( "" );
     ss << object6;
     CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( XlinkActuate_BadParse, MxEnums )
+{
+	mx::types::XlinkActuate actual = mx::types::parseXlinkActuate( "onrequest" );
+	mx::types::XlinkActuate expected = mx::types::XlinkActuate::onLoad;
+	CHECK_EQUAL( expected, actual )
+}
+
+TEST( XlinkActuate_onLoad, MxEnums )
+{
+	mx::types::XlinkActuate e = mx::types::XlinkActuate::onLoad;
+	std::string expected = "onLoad";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkActuate_onRequest, MxEnums )
+{
+	mx::types::XlinkActuate e = mx::types::XlinkActuate::onRequest;
+	std::string expected = "onRequest";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkActuate_other, MxEnums )
+{
+	mx::types::XlinkActuate e = mx::types::XlinkActuate::other;
+	std::string expected = "other";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkActuate_none, MxEnums )
+{
+	mx::types::XlinkActuate e = mx::types::XlinkActuate::none;
+	std::string expected = "none";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( XlinkShow_BadParse, MxEnums )
+{
+	mx::types::XlinkShow actual = mx::types::parseXlinkShow( "xyz" );
+	mx::types::XlinkShow expected = mx::types::XlinkShow::new_;
+	CHECK_EQUAL( expected, actual )
+}
+TEST( XlinkShow_new_, MxEnums )
+{
+	mx::types::XlinkShow e = mx::types::XlinkShow::new_;
+	std::string expected = "new";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkShow_replace, MxEnums )
+{
+	mx::types::XlinkShow e = mx::types::XlinkShow::replace;
+	std::string expected = "replace";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkShow_, MxEnums )
+{
+	mx::types::XlinkShow e = mx::types::XlinkShow::new_;
+	std::string expected = "new";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkShow_embed, MxEnums )
+{
+	mx::types::XlinkShow e = mx::types::XlinkShow::embed;
+	std::string expected = "embed";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkShow_other, MxEnums )
+{
+	mx::types::XlinkShow e = mx::types::XlinkShow::other;
+	std::string expected = "other";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkShow_none, MxEnums )
+{
+	mx::types::XlinkShow e = mx::types::XlinkShow::none;
+	std::string expected = "none";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	CHECK_EQUAL( e, e2 )
 }

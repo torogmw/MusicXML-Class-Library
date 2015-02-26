@@ -35,5 +35,19 @@ namespace mx
             XsToken( const StringType& value );
             virtual void setValue( const StringType& value );
         };
+        
+        using XsNMToken = XsToken;
+        
+        using XsAnyUri = XsString;
+        
+        class XsID : public XsString
+        {
+        public:
+            XsID();
+            XsID( const StringType& value );
+            virtual void setValue( const StringType& value );
+        };
+        
+        using XsIDREF = XsID;
     }
 }
