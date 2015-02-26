@@ -594,7 +594,7 @@ TEST( RotationalDegrees04, MxDecimals )
     RotationalDegrees d( 1.234 );
     d.setValue( -999 );
     std::string expected = "-180"; // this sucks
-    // todo fix the floating stream bullshit
+    // todo fix the floating stream b.s.
     std::string actual = toString( d, 11 );
     CHECK_EQUAL( expected, actual )
     
@@ -772,3 +772,78 @@ TEST( Tenths06, MxDecimals )
 
 /* MIN = 2, MAX = N/A, DEFAULT = 2 */
 // class TrillBeats: public Decimal
+TEST( TrillBeats01, MxDecimals )
+{
+    TrillBeats d;
+    DecimalType expected = 2;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
+TEST( TrillBeats02, MxDecimals )
+{
+    TrillBeats d( 1.234 );
+    DecimalType expected = 2;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
+TEST( TrillBeats02b, MxDecimals )
+{
+    TrillBeats d( 123456789012.123456789012 );
+    DecimalType expected = 123456789012.123456789012;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
+TEST( TrillBeats03, MxDecimals )
+{
+    TrillBeats d( 1.234 );
+    d.setValue( 0.00000384 );
+    DecimalType expected = 2;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
+TEST( TrillBeats04, MxDecimals )
+{
+    TrillBeats d( 1.234 );
+    d.setValue( -999 );
+    std::string expected = "2"; // this sucks
+    // todo fix the floating stream b.s.
+    std::string actual = toString( d, 11 );
+    CHECK_EQUAL( expected, actual )
+    
+    std::stringstream ss;
+    toStream( ss, d, 11 );
+    actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+    
+    ss.str( "" );
+    ss << d;
+    actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( TrillBeats05, MxDecimals )
+{
+    TrillBeats d( 1.234 );
+    d.setValue( 0.00000384 );
+    d.parse( "4.249" );
+    DecimalType expected = 4.249;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
+TEST( TrillBeats05b, MxDecimals )
+{
+    TrillBeats d( 1.234 );
+    d.setValue( 0.00000384 );
+    d.parse( "-466.249" );
+    DecimalType expected = 2;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
+TEST( TrillBeats06, MxDecimals )
+{
+    TrillBeats d( 1.234 );
+    d.setValue( 0.00000384 );
+    d.parse( "- 435.249" );
+    DecimalType expected = 2;
+    DecimalType actual = d.getValue();
+    CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
+}
