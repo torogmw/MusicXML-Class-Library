@@ -12458,3 +12458,177 @@ TEST( XlinkShow_none, MxEnums )
 	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
+
+TEST( XlinkType_BadParse, MxEnums )
+{
+	mx::types::XlinkType actual = mx::types::parseXlinkType( "xyz" );
+	mx::types::XlinkType expected = mx::types::XlinkType::simple;
+	CHECK_EQUAL( expected, actual )
+}
+TEST( XlinkType_simple, MxEnums )
+{
+	mx::types::XlinkType e = mx::types::XlinkType::simple;
+	std::string expected = "simple";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkType_extended, MxEnums )
+{
+	mx::types::XlinkType e = mx::types::XlinkType::extended;
+	std::string expected = "extended";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkType_title, MxEnums )
+{
+	mx::types::XlinkType e = mx::types::XlinkType::title;
+	std::string expected = "title";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkType_resource, MxEnums )
+{
+	mx::types::XlinkType e = mx::types::XlinkType::resource;
+	std::string expected = "resource";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkType_locator, MxEnums )
+{
+	mx::types::XlinkType e = mx::types::XlinkType::locator;
+	std::string expected = "locator";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XlinkType_arc, MxEnums )
+{
+	mx::types::XlinkType e = mx::types::XlinkType::arc;
+	std::string expected = "arc";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( XmlSpace_BadParse, MxEnums )
+{
+	mx::types::XmlSpace actual = mx::types::parseXmlSpace( "xyz" );
+	mx::types::XmlSpace expected = mx::types::XmlSpace::default_;
+	CHECK_EQUAL( expected, actual )
+}
+TEST( XmlSpace_default_, MxEnums )
+{
+	mx::types::XmlSpace e = mx::types::XmlSpace::default_;
+	std::string expected = "default";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
+	CHECK_EQUAL( e, e2 )
+}
+TEST( XmlSpace_preserve, MxEnums )
+{
+	mx::types::XmlSpace e = mx::types::XmlSpace::preserve;
+	std::string expected = "preserve";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
+	CHECK_EQUAL( e, e2 )
+}

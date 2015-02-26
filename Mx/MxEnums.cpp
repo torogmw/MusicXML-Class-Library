@@ -3106,6 +3106,64 @@ namespace mx
 		{
 			return toStream( os, value );
 		}
+        
+        XlinkType parseXlinkType( const std::string& value )
+		{
+			if ( value == "simple" ) { return XlinkType::simple; }
+			else if ( value == "extended" ) { return XlinkType::extended; }
+			else if ( value == "title" ) { return XlinkType::title; }
+			else if ( value == "resource" ) { return XlinkType::resource; }
+			else if ( value == "locator" ) { return XlinkType::locator; }
+			else if ( value == "arc" ) { return XlinkType::arc; }
+			return XlinkType::simple;
+		}
+		std::string toString( const XlinkType value )
+		{
+			switch ( value )
+			{
+				case XlinkType::simple: return "simple"; break;
+				case XlinkType::extended: return "extended"; break;
+				case XlinkType::title: return "title"; break;
+				case XlinkType::resource: return "resource"; break;
+				case XlinkType::locator: return "locator"; break;
+				case XlinkType::arc: return "arc"; break;
+				default: break;
+			}
+			return "simple";
+		}
+		std::ostream& toStream( std::ostream& os, const XlinkType value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const XlinkType value )
+		{
+			return toStream( os, value );
+		}
+        
+        XmlSpace parseXmlSpace( const std::string& value )
+		{
+			if ( value == "default" ) { return XmlSpace::default_; }
+			else if ( value == "preserve" ) { return XmlSpace::preserve; }
+			return XmlSpace::default_;
+		}
+		std::string toString( const XmlSpace value )
+		{
+			switch ( value )
+			{
+				case XmlSpace::default_: return "default"; break;
+				case XmlSpace::preserve: return "preserve"; break;
+				default: break;
+			}
+			return "default";
+		}
+		std::ostream& toStream( std::ostream& os, const XmlSpace value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const XmlSpace value )
+		{
+			return toStream( os, value );
+		}
 
 	} // namespace types
 

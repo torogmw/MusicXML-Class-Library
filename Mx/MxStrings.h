@@ -49,5 +49,12 @@ namespace mx
         };
         
         using XsIDREF = XsID;
+        
+        /* Add restrictions to these later if deemed necessary */
+        using XmlLang = XsString;
+        using XsAnyUri = XsString;
+        using XlinkHref = XsAnyUri;
+        using XlinkRole = XsToken;
+        using XlinkTitle = XsToken;
     }
 }

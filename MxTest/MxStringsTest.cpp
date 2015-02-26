@@ -172,3 +172,155 @@ TEST(  XsIDREF05, MxStrings )
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
+
+TEST( XmlLang01, MxStrings )
+{
+    XmlLang x;
+    StringType expected = "";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XmlLang02, MxStrings )
+{
+    XmlLang x( "Test" );
+    StringType expected = "Test";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XmlLang03, MxStrings )
+{
+    XmlLang x( "Test" );
+    x.setValue( "Different" );
+    StringType expected = "Different";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XmlLang04, MxStrings )
+{
+    XmlLang x( "Test" );
+    x.setValue( "Think" );
+    std::stringstream ss;
+    toStream( ss, x );
+    StringType expected = "Think";
+    StringType actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XmlLang05, MxStrings )
+{
+    XmlLang x( "Test" );
+    x.setValue( "Hello" );
+    std::stringstream ss;
+    ss << x;
+    StringType expected = "Hello";
+    StringType actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XmlLang06, MxStrings )
+{
+    XmlLang x( "Test" );
+    x.setValue( "Hello" );
+    std::stringstream ss;
+    ss << x;
+    StringType expected = "Hello";
+    StringType actual = toString( x );
+    CHECK_EQUAL( expected, actual )
+}
+
+
+
+TEST( XsAnyUri01, MxStrings )
+{
+    XsAnyUri x;
+    StringType expected = "";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XsAnyUri02, MxStrings )
+{
+    XsAnyUri x( "Test" );
+    StringType expected = "Test";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XsAnyUri03, MxStrings )
+{
+    XsAnyUri x( "Test" );
+    x.setValue( "Different" );
+    StringType expected = "Different";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XsAnyUri04, MxStrings )
+{
+    XsAnyUri x( "Test" );
+    x.setValue( "Think" );
+    std::stringstream ss;
+    toStream( ss, x );
+    StringType expected = "Think";
+    StringType actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XsAnyUri05, MxStrings )
+{
+    XsAnyUri x( "Test" );
+    x.setValue( "Hello" );
+    std::stringstream ss;
+    ss << x;
+    StringType expected = "Hello";
+    StringType actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XsAnyUri06, MxStrings )
+{
+    XsAnyUri x( "Test" );
+    x.setValue( "Hello" );
+    std::stringstream ss;
+    ss << x;
+    StringType expected = "Hello";
+    StringType actual = toString( x );
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( XlinkRole01, MxStrings )
+{
+    XlinkRole x;
+    StringType expected = "";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XlinkRole02, MxStrings )
+{
+    XlinkRole x( "Test" );
+    StringType expected = "Test";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XlinkRole03, MxStrings )
+{
+    XlinkRole x( "\n\t  Test \r \t \n String  \t" );
+    StringType expected = "Test String";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( XlinkTitle01, MxStrings )
+{
+    XlinkTitle x;
+    StringType expected = "";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XlinkTitle02, MxStrings )
+{
+    XlinkTitle x( "Test" );
+    StringType expected = "Test";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( XlinkTitle03, MxStrings )
+{
+    XlinkTitle x( "\n\t  Test \r \t \n String  \t" );
+    StringType expected = "Test String";
+    StringType actual = x.getValue();
+    CHECK_EQUAL( expected, actual )
+}

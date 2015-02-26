@@ -1289,6 +1289,31 @@ namespace mx
 		std::string toString( const XlinkShow value );
 		std::ostream& toStream( std::ostream& os, const XlinkShow value );
 		std::ostream& operator<<( std::ostream& os, const XlinkShow value );
+        
+        enum class XlinkType
+        {
+            simple = 0,
+			extended = 1,
+            title = 2,
+            resource = 3,
+            locator = 4,
+            arc = 5
+        };
+        XlinkType parseXlinkType( const std::string& value );
+		std::string toString( const XlinkType value );
+		std::ostream& toStream( std::ostream& os, const XlinkType value );
+		std::ostream& operator<<( std::ostream& os, const XlinkType value );
+        
+        
+        enum class XmlSpace
+        {
+            default_ = 0,
+			preserve = 1
+        };
+        XmlSpace parseXmlSpace( const std::string& value );
+		std::string toString( const XmlSpace value );
+		std::ostream& toStream( std::ostream& os, const XmlSpace value );
+		std::ostream& operator<<( std::ostream& os, const XmlSpace value );
 
 	} // namespace types
 } // namespace mx

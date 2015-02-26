@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mx/MxEnums.h"
-            timestampString = "446674581.5185"
+            timestampString = "446679763.928067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1292"
-            endingLineNumber = "1292">
+            startingLineNumber = "1317"
+            endingLineNumber = "1317">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
