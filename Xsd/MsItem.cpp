@@ -676,6 +676,7 @@ namespace xsd
                 myDtDef = "xs:nonNegativeInteger";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
+                myIsImplemented = true;
                 setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
@@ -684,6 +685,7 @@ namespace xsd
                 myDtDef = "xs:positiveInteger";
                 myIsSpecialCase = true;
                 myIsFirstClassConcept = true;
+                myIsImplemented = true;
                 setMsItemKind(  MsItemKind::simpleType );
             }
                 break;
@@ -887,6 +889,7 @@ namespace xsd
     {
         char c = ',';
         std::stringstream ss;
+        ss << getIsImplemented() << c;
         ss << getID() << c;
         ss << getDtDef() << c;
         ss << std::boolalpha << getIsFirstClassConcept() << c;
@@ -992,6 +995,7 @@ namespace xsd
     {
         char c = ',';
         std::stringstream ss;
+        ss << "Implemented" << c;
         ss << "getID" << c;
         ss << "getDtDef" << c;
         ss << std::boolalpha << "getIsFirstClassConcept" << c;

@@ -1147,5 +1147,44 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const GroupSymbolValue value );
 		std::ostream& operator<<( std::ostream& os, const GroupSymbolValue value );
 
+        enum class ModeEnum
+		{
+			major = 0,
+			minor = 1,
+			dorian = 2,
+			phrygian = 3,
+			lydian = 4,
+			mixolydian = 5,
+			aeolian = 6,
+			ionian = 7,
+			locrian = 8,
+			none = 9,
+			other = 10
+		};
+        ModeEnum parseModeEnum( const std::string& value );
+        ModeEnum parseModeEnum( const std::string& value, bool& success );
+		std::string toString( const ModeEnum value );
+		std::ostream& toStream( std::ostream& os, const ModeEnum value );
+		std::ostream& operator<<( std::ostream& os, const ModeEnum value );
+        
+        class Mode
+        {
+        public:
+            explicit Mode( const ModeEnum value );
+            explicit Mode( const std::string& value );
+            Mode();
+            ModeEnum getValue() const;
+            std::string getValueString() const;
+            void setValue( const ModeEnum value );
+            void setValue( const std::string& value );
+        private:
+            ModeEnum myModeEnum;
+            std::string myCustomValue;
+        };
+        
+		std::string toString( const Mode& value );
+		std::ostream& toStream( std::ostream& os, const Mode& value );
+		std::ostream& operator<<( std::ostream& os, const Mode& value );
+        
 	} // namespace types
 } // namespace mx

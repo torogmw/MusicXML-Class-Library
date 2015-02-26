@@ -2690,6 +2690,120 @@ namespace mx
 		{
 			return toStream( os, value );
 		}
+        
+        ModeEnum parseModeEnum( const std::string& value, bool& success  )
+		{
+            success = true;
+			if ( value == "major" ) { return ModeEnum::major; }
+			else if ( value == "minor" ) { return ModeEnum::minor; }
+			else if ( value == "dorian" ) { return ModeEnum::dorian; }
+			else if ( value == "phrygian" ) { return ModeEnum::phrygian; }
+			else if ( value == "lydian" ) { return ModeEnum::lydian; }
+			else if ( value == "mixolydian" ) { return ModeEnum::mixolydian; }
+			else if ( value == "aeolian" ) { return ModeEnum::aeolian; }
+			else if ( value == "ionian" ) { return ModeEnum::ionian; }
+			else if ( value == "locrian" ) { return ModeEnum::locrian; }
+			else if ( value == "none" ) { return ModeEnum::none; }
+			else if ( value == "other" ) { success = false; return ModeEnum::other; }
+            success = false;
+			return ModeEnum::other;
+		}
+        ModeEnum parseModeEnum( const std::string& value )
+		{
+			bool temp;
+			return parseModeEnum( value, temp );
+		}
+		std::string toString( const ModeEnum value )
+		{
+			switch ( value )
+			{
+				case ModeEnum::major: return "major"; break;
+				case ModeEnum::minor: return "minor"; break;
+				case ModeEnum::dorian: return "dorian"; break;
+				case ModeEnum::phrygian: return "phrygian"; break;
+				case ModeEnum::lydian: return "lydian"; break;
+				case ModeEnum::mixolydian: return "mixolydian"; break;
+				case ModeEnum::aeolian: return "aeolian"; break;
+				case ModeEnum::ionian: return "ionian"; break;
+				case ModeEnum::locrian: return "locrian"; break;
+				case ModeEnum::none: return "none"; break;
+				case ModeEnum::other: return "other"; break;
+				default: break;
+			}
+			return "other";
+		}
+		std::ostream& toStream( std::ostream& os, const ModeEnum value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const ModeEnum value )
+		{
+			return toStream( os, value );
+		}
 
+        Mode::Mode( const ModeEnum value )
+        :myModeEnum( value )
+        ,myCustomValue( "" )
+        {
+            setValue( value );
+        }
+        Mode::Mode( const std::string& value )
+        :myModeEnum( ModeEnum::other )
+        ,myCustomValue( value )
+        {
+            setValue( value );
+        }
+        Mode::Mode()
+        :myModeEnum( ModeEnum::major )
+        ,myCustomValue( "" )
+        {
+            setValue( ModeEnum::major );
+        }
+        ModeEnum Mode::getValue() const
+        {
+            return myModeEnum;
+        }
+        std::string Mode::getValueString() const
+        {
+            if ( myModeEnum != ModeEnum::other )
+            {
+                return toString( myModeEnum );
+            }
+            else
+            {
+                return myCustomValue;
+            }
+        }
+        void Mode::setValue( const ModeEnum value )
+        {
+            myModeEnum = value;
+        }
+        void Mode::setValue( const std::string& value )
+        {
+            bool found = false;
+            ModeEnum temp = parseModeEnum( value, found );
+            if ( found )
+            {
+                myModeEnum = temp;
+            }
+            else
+            {
+                setValue( ModeEnum::other );
+                myCustomValue = value;
+            }
+        }
+        std::string toString( const Mode& value )
+        {
+            return value.getValueString();
+        }
+        std::ostream& toStream( std::ostream& os, const Mode& value )
+        {
+            return os << value.getValueString();
+        }
+        std::ostream& operator<<( std::ostream& os, const Mode& value )
+        {
+            return toStream( os, value );
+        }
 	} // namespace types
+
 } // namespace mx

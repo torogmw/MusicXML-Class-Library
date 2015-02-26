@@ -10921,3 +10921,10 @@ TEST( GroupSymbolValue_square, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
+TEST( ModeEnum, MxEnums )
+{
+    std::string expected = "";
+    std::string actual = "test ModeEnum and Mode class";
+    CHECK_EQUAL( expected, actual )
+}
+
