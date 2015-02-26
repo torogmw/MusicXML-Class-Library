@@ -11390,3 +11390,856 @@ TEST( Mode_other, MxEnums )
     ss << object6;
     CHECK_EQUAL( expected_str, actual_str )
 }
+
+TEST( DistanceTypeEnum_beam, MxEnums )
+{
+	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::beam;
+	std::string expected = "beam";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::DistanceTypeEnum e2 = mx::types::parseDistanceTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( DistanceTypeEnum_hyphen, MxEnums )
+{
+	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::hyphen;
+	std::string expected = "hyphen";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::DistanceTypeEnum e2 = mx::types::parseDistanceTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( DistanceTypeEnum_other, MxEnums )
+{
+	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::other;
+	std::string expected = "other";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::DistanceTypeEnum e2 = mx::types::parseDistanceTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( DistanceType_beam, MxEnums )
+{
+    mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::beam;
+    mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::hyphen;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "hyphen";
+    std::string badstr = "someothertype";
+    mx::types::DistanceType object( enumval );
+    mx::types::DistanceTypeEnum expected = enumval;
+    mx::types::DistanceTypeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object3( diffval );
+    object3 = mx::types::parseDistanceType( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object5( badstr );
+    expected = mx::types::DistanceTypeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseDistanceType( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( DistanceType_hyphen, MxEnums )
+{
+    mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::hyphen;
+    mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::beam;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "beam";
+    std::string badstr = "someothertype";
+    mx::types::DistanceType object( enumval );
+    mx::types::DistanceTypeEnum expected = enumval;
+    mx::types::DistanceTypeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object3( diffval );
+    object3 = mx::types::parseDistanceType( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object5( badstr );
+    expected = mx::types::DistanceTypeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseDistanceType( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+
+TEST( DistanceType_other, MxEnums )
+{
+    mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::other;
+    mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::beam;
+    std::string strval = ""; // mx::types::toString( enumval );
+    std::string difval = "beam";
+    std::string badstr = "someothertype";
+    mx::types::DistanceType object( enumval );
+    mx::types::DistanceTypeEnum expected = enumval;
+    mx::types::DistanceTypeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object3( diffval );
+    object3 = mx::types::parseDistanceType( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object5( badstr );
+    expected = mx::types::DistanceTypeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DistanceType object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseDistanceType( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( LineWidthTypeEnum_beam, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::beam;
+	std::string expected = "beam";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_bracket, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::bracket;
+	std::string expected = "bracket";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_dashes, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::dashes;
+	std::string expected = "dashes";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_enclosure, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::enclosure;
+	std::string expected = "enclosure";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_ending, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::ending;
+	std::string expected = "ending";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_extend, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::extend;
+	std::string expected = "extend";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_heavyBarline, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::heavyBarline;
+	std::string expected = "heavy-barline";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_leger, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::leger;
+	std::string expected = "leger";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_lightBarline, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::lightBarline;
+	std::string expected = "light-barline";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_octaveShift, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::octaveShift;
+	std::string expected = "octave-shift";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_pedal, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::pedal;
+	std::string expected = "pedal";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_slurMiddle, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurMiddle;
+	std::string expected = "slur-middle";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_hyphen, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::beam;
+	std::string expected = "beam";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_slurTip, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurTip;
+	std::string expected = "slur-tip";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_staff, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::staff;
+	std::string expected = "staff";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_stem, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::stem;
+	std::string expected = "stem";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_tieMiddle, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieMiddle;
+	std::string expected = "tie-middle";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_tieTip, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieTip;
+	std::string expected = "tie-tip";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_tupletBracket, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tupletBracket;
+	std::string expected = "tuplet-bracket";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_wedge, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::wedge;
+	std::string expected = "wedge";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthTypeEnum_other, MxEnums )
+{
+	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::other;
+	std::string expected = "other";
+	std::string actual = toString( e );
+	CHECK_EQUAL( expected, actual );
+    
+	std::stringstream sstr;
+	mx::types::toStream( sstr, e );
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	sstr.str( "" );
+	sstr << e;
+	actual = sstr.str();
+	CHECK_EQUAL( expected, actual );
+    
+	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	CHECK_EQUAL( e, e2 )
+}
+
+TEST( LineWidthType_beam, MxEnums )
+{
+    mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::beam;
+    mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::enclosure;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "enclosure";
+    std::string badstr = "someothertype";
+    mx::types::LineWidthType object( enumval );
+    mx::types::LineWidthTypeEnum expected = enumval;
+    mx::types::LineWidthTypeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object3( diffval );
+    object3 = mx::types::parseLineWidthType( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object5( badstr );
+    expected = mx::types::LineWidthTypeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseLineWidthType( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( LineWidthType_tieTip, MxEnums )
+{
+    mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::tieTip;
+    mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::leger;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "leger";
+    std::string badstr = "someothertype";
+    mx::types::LineWidthType object( enumval );
+    mx::types::LineWidthTypeEnum expected = enumval;
+    mx::types::LineWidthTypeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object3( diffval );
+    object3 = mx::types::parseLineWidthType( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object5( badstr );
+    expected = mx::types::LineWidthTypeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseLineWidthType( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( LineWidthType_other, MxEnums )
+{
+    mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::other;
+    mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::wedge;
+    std::string strval = ""; // mx::types::toString( enumval );
+    std::string difval = "enclosure";
+    std::string badstr = "someothertype";
+    mx::types::LineWidthType object( enumval );
+    mx::types::LineWidthTypeEnum expected = enumval;
+    mx::types::LineWidthTypeEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object3( diffval );
+    object3 = mx::types::parseLineWidthType( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object5( badstr );
+    expected = mx::types::LineWidthTypeEnum::other;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::LineWidthType object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseLineWidthType( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}

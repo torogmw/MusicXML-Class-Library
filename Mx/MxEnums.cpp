@@ -2742,32 +2742,32 @@ namespace mx
 		}
 
         Mode::Mode( const ModeEnum value )
-        :myModeEnum( value )
+        :myEnum( value )
         ,myCustomValue( "" )
         {
             setValue( value );
         }
         Mode::Mode( const std::string& value )
-        :myModeEnum( ModeEnum::other )
+        :myEnum( ModeEnum::other )
         ,myCustomValue( value )
         {
             setValue( value );
         }
         Mode::Mode()
-        :myModeEnum( ModeEnum::major )
+        :myEnum( ModeEnum::major )
         ,myCustomValue( "" )
         {
             setValue( ModeEnum::major );
         }
         ModeEnum Mode::getValue() const
         {
-            return myModeEnum;
+            return myEnum;
         }
         std::string Mode::getValueString() const
         {
-            if ( myModeEnum != ModeEnum::other )
+            if ( myEnum != ModeEnum::other )
             {
-                return toString( myModeEnum );
+                return toString( myEnum );
             }
             else
             {
@@ -2776,7 +2776,7 @@ namespace mx
         }
         void Mode::setValue( const ModeEnum value )
         {
-            myModeEnum = value;
+            myEnum = value;
         }
         void Mode::setValue( const std::string& value )
         {
@@ -2784,7 +2784,7 @@ namespace mx
             ModeEnum temp = parseModeEnum( value, found );
             if ( found )
             {
-                myModeEnum = temp;
+                myEnum = temp;
             }
             else
             {
@@ -2808,6 +2808,245 @@ namespace mx
         {
             return toStream( os, value );
         }
+        
+        DistanceTypeEnum parseDistanceTypeEnum( const std::string& value, bool& success  )
+		{
+            success = true;
+			if ( value == "beam" ) { return DistanceTypeEnum::beam; }
+			else if ( value == "hyphen" ) { return DistanceTypeEnum::hyphen; }
+			else if ( value == "other" ) { success = false; return DistanceTypeEnum::other; }
+            success = false;
+			return DistanceTypeEnum::other;
+		}
+        DistanceTypeEnum parseDistanceTypeEnum( const std::string& value )
+		{
+			bool temp;
+			return parseDistanceTypeEnum( value, temp );
+		}
+		std::string toString( const DistanceTypeEnum value )
+		{
+			switch ( value )
+			{
+				case DistanceTypeEnum::beam: return "beam"; break;
+				case DistanceTypeEnum::hyphen: return "hyphen"; break;
+				case DistanceTypeEnum::other: return "other"; break;
+				default: break;
+			}
+			return "other";
+		}
+		std::ostream& toStream( std::ostream& os, const DistanceTypeEnum value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const DistanceTypeEnum value )
+		{
+			return toStream( os, value );
+		}
+        
+        DistanceType::DistanceType( const DistanceTypeEnum value )
+        :myEnum( value )
+        ,myCustomValue( "" )
+        {
+            setValue( value );
+        }
+        DistanceType::DistanceType( const std::string& value )
+        :myEnum( DistanceTypeEnum::other )
+        ,myCustomValue( value )
+        {
+            setValue( value );
+        }
+        DistanceType::DistanceType()
+        :myEnum( DistanceTypeEnum::beam )
+        ,myCustomValue( "" )
+        {
+            setValue( DistanceTypeEnum::beam );
+        }
+        DistanceTypeEnum DistanceType::getValue() const
+        {
+            return myEnum;
+        }
+        std::string DistanceType::getValueString() const
+        {
+            if ( myEnum != DistanceTypeEnum::other )
+            {
+                return toString( myEnum );
+            }
+            else
+            {
+                return myCustomValue;
+            }
+        }
+        void DistanceType::setValue( const DistanceTypeEnum value )
+        {
+            myEnum = value;
+        }
+        void DistanceType::setValue( const std::string& value )
+        {
+            bool found = false;
+            DistanceTypeEnum temp = parseDistanceTypeEnum( value, found );
+            if ( found )
+            {
+                myEnum = temp;
+            }
+            else
+            {
+                setValue( DistanceTypeEnum::other );
+                myCustomValue = value;
+            }
+        }
+        DistanceType parseDistanceType( const std::string& value )
+        {
+            return DistanceType( value );
+        }
+        std::string toString( const DistanceType& value )
+        {
+            return value.getValueString();
+        }
+        std::ostream& toStream( std::ostream& os, const DistanceType& value )
+        {
+            return os << toString( value );
+        }
+        std::ostream& operator<<( std::ostream& os, const DistanceType& value )
+        {
+            return toStream( os, value );
+        }
+
+        LineWidthTypeEnum parseLineWidthTypeEnum( const std::string& value, bool& success  )
+		{
+            success = true;
+			if ( value == "beam" ) { return LineWidthTypeEnum::beam; }
+			else if ( value == "bracket" ) { return LineWidthTypeEnum::bracket; }
+			else if ( value == "dashes" ) { return LineWidthTypeEnum::dashes; }
+			else if ( value == "enclosure" ) { return LineWidthTypeEnum::enclosure; }
+			else if ( value == "ending" ) { return LineWidthTypeEnum::ending; }
+			else if ( value == "extend" ) { return LineWidthTypeEnum::extend; }
+			else if ( value == "heavy-barline" ) { return LineWidthTypeEnum::heavyBarline; }
+			else if ( value == "leger" ) { return LineWidthTypeEnum::leger; }
+			else if ( value == "light-barline" ) { return LineWidthTypeEnum::lightBarline; }
+			else if ( value == "octave-shift" ) { return LineWidthTypeEnum::octaveShift; }
+			else if ( value == "pedal" ) { return LineWidthTypeEnum::pedal; }
+			else if ( value == "slur-middle" ) { return LineWidthTypeEnum::slurMiddle; }
+			else if ( value == "slur-tip" ) { return LineWidthTypeEnum::slurTip; }
+			else if ( value == "staff" ) { return LineWidthTypeEnum::staff; }
+			else if ( value == "stem" ) { return LineWidthTypeEnum::stem; }
+			else if ( value == "tie-middle" ) { return LineWidthTypeEnum::tieMiddle; }
+			else if ( value == "tie-tip" ) { return LineWidthTypeEnum::tieTip; }
+			else if ( value == "tuplet-bracket" ) { return LineWidthTypeEnum::tupletBracket; }
+			else if ( value == "wedge" ) { return LineWidthTypeEnum::wedge; }
+			else if ( value == "other" ) { success = false; return LineWidthTypeEnum::other; }
+            success = false;
+			return LineWidthTypeEnum::other;
+		}
+        LineWidthTypeEnum parseLineWidthTypeEnum( const std::string& value )
+		{
+			bool temp;
+			return parseLineWidthTypeEnum( value, temp );
+		}
+		std::string toString( const LineWidthTypeEnum value )
+		{
+			switch ( value )
+			{
+				case LineWidthTypeEnum::beam: return "beam"; break;
+				case LineWidthTypeEnum::bracket: return "bracket"; break;
+				case LineWidthTypeEnum::dashes: return "dashes"; break;
+				case LineWidthTypeEnum::enclosure: return "enclosure"; break;
+				case LineWidthTypeEnum::ending: return "ending"; break;
+				case LineWidthTypeEnum::extend: return "extend"; break;
+				case LineWidthTypeEnum::heavyBarline: return "heavy-barline"; break;
+				case LineWidthTypeEnum::leger: return "leger"; break;
+				case LineWidthTypeEnum::lightBarline: return "light-barline"; break;
+				case LineWidthTypeEnum::octaveShift: return "octave-shift"; break;
+				case LineWidthTypeEnum::pedal: return "pedal"; break;
+				case LineWidthTypeEnum::slurMiddle: return "slur-middle"; break;
+				case LineWidthTypeEnum::slurTip: return "slur-tip"; break;
+				case LineWidthTypeEnum::staff: return "staff"; break;
+				case LineWidthTypeEnum::stem: return "stem"; break;
+				case LineWidthTypeEnum::tieMiddle: return "tie-middle"; break;
+				case LineWidthTypeEnum::tieTip: return "tie-tip"; break;
+				case LineWidthTypeEnum::tupletBracket: return "tuplet-bracket"; break;
+				case LineWidthTypeEnum::wedge: return "wedge"; break;
+				case LineWidthTypeEnum::other: return "other"; break;
+				default: break;
+			}
+			return "other";
+		}
+		std::ostream& toStream( std::ostream& os, const LineWidthTypeEnum value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const LineWidthTypeEnum value )
+		{
+			return toStream( os, value );
+		}
+        
+        LineWidthType::LineWidthType( const LineWidthTypeEnum value )
+        :myEnum( value )
+        ,myCustomValue( "" )
+        {
+            setValue( value );
+        }
+        LineWidthType::LineWidthType( const std::string& value )
+        :myEnum( LineWidthTypeEnum::other )
+        ,myCustomValue( value )
+        {
+            setValue( value );
+        }
+        LineWidthType::LineWidthType()
+        :myEnum( LineWidthTypeEnum::beam )
+        ,myCustomValue( "" )
+        {
+            setValue( LineWidthTypeEnum::beam );
+        }
+        LineWidthTypeEnum LineWidthType::getValue() const
+        {
+            return myEnum;
+        }
+        std::string LineWidthType::getValueString() const
+        {
+            if ( myEnum != LineWidthTypeEnum::other )
+            {
+                return toString( myEnum );
+            }
+            else
+            {
+                return myCustomValue;
+            }
+        }
+        void LineWidthType::setValue( const LineWidthTypeEnum value )
+        {
+            myEnum = value;
+        }
+        void LineWidthType::setValue( const std::string& value )
+        {
+            bool found = false;
+            LineWidthTypeEnum temp = parseLineWidthTypeEnum( value, found );
+            if ( found )
+            {
+                myEnum = temp;
+            }
+            else
+            {
+                setValue( LineWidthTypeEnum::other );
+                myCustomValue = value;
+            }
+        }
+        LineWidthType parseLineWidthType( const std::string& value )
+        {
+            return LineWidthType( value );
+        }
+        std::string toString( const LineWidthType& value )
+        {
+            return value.getValueString();
+        }
+        std::ostream& toStream( std::ostream& os, const LineWidthType& value )
+        {
+            return os << toString( value );
+        }
+        std::ostream& operator<<( std::ostream& os, const LineWidthType& value )
+        {
+            return toStream( os, value );
+        }
+
 	} // namespace types
 
 } // namespace mx

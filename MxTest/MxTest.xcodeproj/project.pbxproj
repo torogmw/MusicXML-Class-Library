@@ -13,6 +13,7 @@
 		29AFECAB1A9CED26008516EF /* MxIntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* MxIntegersTest.cpp */; };
 		29C59C711A9E814A00647187 /* MxDecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* MxDecimalsTest.cpp */; };
 		29D10BBD1A9BF0BB00F03CE6 /* MxEnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */; };
+		29E801BC1A9FA13800EDBE41 /* MxStringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* MxStringsTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		29AFECA91A9CED26008516EF /* MxIntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxIntegersTest.cpp; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* MxDecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxDecimalsTest.cpp; sourceTree = "<group>"; };
 		29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEnumsTest.cpp; sourceTree = "<group>"; };
+		29E801BA1A9FA13800EDBE41 /* MxStringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxStringsTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
+				29E801BA1A9FA13800EDBE41 /* MxStringsTest.cpp */,
 				29C59C6F1A9E814A00647187 /* MxDecimalsTest.cpp */,
 				29AFECA91A9CED26008516EF /* MxIntegersTest.cpp */,
 				29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E801BC1A9FA13800EDBE41 /* MxStringsTest.cpp in Sources */,
 				29AFECAB1A9CED26008516EF /* MxIntegersTest.cpp in Sources */,
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
 				29C59C711A9E814A00647187 /* MxDecimalsTest.cpp in Sources */,

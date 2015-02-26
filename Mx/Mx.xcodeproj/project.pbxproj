@@ -15,6 +15,8 @@
 		29A884FB1A9D5FD800F417CE /* MxDecimals.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A884F91A9D5FD800F417CE /* MxDecimals.h */; };
 		29D10BB31A9BEF4E00F03CE6 /* MxEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BB11A9BEF4E00F03CE6 /* MxEnums.cpp */; };
 		29D10BB41A9BEF4E00F03CE6 /* MxEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D10BB21A9BEF4E00F03CE6 /* MxEnums.h */; };
+		29E801B81A9F983800EDBE41 /* MxStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801B61A9F983800EDBE41 /* MxStrings.cpp */; };
+		29E801B91A9F983800EDBE41 /* MxStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E801B71A9F983800EDBE41 /* MxStrings.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		29A884F91A9D5FD800F417CE /* MxDecimals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxDecimals.h; sourceTree = "<group>"; };
 		29D10BB11A9BEF4E00F03CE6 /* MxEnums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEnums.cpp; sourceTree = "<group>"; };
 		29D10BB21A9BEF4E00F03CE6 /* MxEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxEnums.h; sourceTree = "<group>"; };
+		29E801B61A9F983800EDBE41 /* MxStrings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxStrings.cpp; sourceTree = "<group>"; };
+		29E801B71A9F983800EDBE41 /* MxStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxStrings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				29E801B61A9F983800EDBE41 /* MxStrings.cpp */,
+				29E801B71A9F983800EDBE41 /* MxStrings.h */,
 				29A884F81A9D5FD800F417CE /* MxDecimals.cpp */,
 				29A884F91A9D5FD800F417CE /* MxDecimals.h */,
 				298949C51A9CE9D60089D4F0 /* MxIntegers.cpp */,
@@ -71,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298949C81A9CE9D60089D4F0 /* MxIntegers.h in Headers */,
+				29E801B91A9F983800EDBE41 /* MxStrings.h in Headers */,
 				29A884FB1A9D5FD800F417CE /* MxDecimals.h in Headers */,
 				29D10BB41A9BEF4E00F03CE6 /* MxEnums.h in Headers */,
 				298B47571A9B96060014CAED /* MxObject.h in Headers */,
@@ -129,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298B47561A9B96060014CAED /* MxObject.cpp in Sources */,
+				29E801B81A9F983800EDBE41 /* MxStrings.cpp in Sources */,
 				298949C71A9CE9D60089D4F0 /* MxIntegers.cpp in Sources */,
 				29A884FA1A9D5FD800F417CE /* MxDecimals.cpp in Sources */,
 				29D10BB31A9BEF4E00F03CE6 /* MxEnums.cpp in Sources */,

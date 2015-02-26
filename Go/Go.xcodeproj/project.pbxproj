@@ -47,6 +47,7 @@
 		29E6D3C61A8BFC3700C8B8E2 /* goDbQueryExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goDbQueryExample.h; sourceTree = "<group>"; };
 		29E6D3E21A8C18EF00C8B8E2 /* goMsDocumentExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsDocumentExample.h; sourceTree = "<group>"; };
 		29E6D3E91A8C352700C8B8E2 /* goMsItemTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemTest.h; sourceTree = "<group>"; };
+		29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goSetIsImplemented.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 				29D10B9E1A9BD8E600F03CE6 /* goCreateMxEnums.h */,
 				29AEC9231A9C4E6B00BF3DE0 /* goMsItemSimpleTypeIntegerTest.h */,
 				29A884F31A9D5D2F00F417CE /* goMsItemSimpleTypeDecimal.h */,
+				29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";
