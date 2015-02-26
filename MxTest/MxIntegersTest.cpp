@@ -5,21 +5,21 @@ using namespace mx::types;
 
 TEST( Int01, MxIntegers )
 {
-    Int i( 5 );
+    Integer i( 5 );
     IntType expected = 5;
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Int02, MxIntegers )
 {
-    Int i;
+    Integer i;
     IntType expected = 0;
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Int03, MxIntegers )
 {
-    Int i;
+    Integer i;
     i.setValue( 51 );
     IntType expected = 51;
     IntType actual = i.getValue();
@@ -27,7 +27,7 @@ TEST( Int03, MxIntegers )
 }
 TEST( Int04, MxIntegers )
 {
-    Int i( 1 );
+    Integer i( 1 );
     i.parse( "32" );
     IntType expected = 32;
     IntType actual = i.getValue();
@@ -35,7 +35,7 @@ TEST( Int04, MxIntegers )
 }
 TEST( Int05, MxIntegers )
 {
-    Int i( 72 );
+    Integer i( 72 );
     i.parse( "xxx" );
     IntType expected = 72;
     IntType actual = i.getValue();
@@ -43,7 +43,7 @@ TEST( Int05, MxIntegers )
 }
 TEST( Int06, MxIntegers )
 {
-    Int i( 124 );
+    Integer i( 124 );
     std::stringstream ss1;
     ss1 << i;
     std::string expected = "124";
@@ -52,7 +52,7 @@ TEST( Int06, MxIntegers )
 }
 TEST( Int07, MxIntegers )
 {
-    Int i( 124 );
+    Integer i( 124 );
     std::stringstream ss1;
     toStream( ss1, i );
     std::string expected = "124";
@@ -61,7 +61,7 @@ TEST( Int07, MxIntegers )
 }
 TEST( Int08, MxIntegers )
 {
-    Int i( 124 );
+    Integer i( 124 );
     std::stringstream ss1;
     std::string expected = "124";
     std::string actual = toString( i );

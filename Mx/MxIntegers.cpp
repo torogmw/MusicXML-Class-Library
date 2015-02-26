@@ -7,25 +7,25 @@ namespace mx
 {
     namespace types
     {
-        Int::Int( IntType value )
+        Integer::Integer( IntType value )
         :myValue( value )
         {}
         
-        Int::Int()
+        Integer::Integer()
         :myValue( 0 )
         {}
         
-        Int::~Int() {}
+        Integer::~Integer() {}
         
-        IntType Int::getValue() const
+        IntType Integer::getValue() const
         {
             return myValue;
         }
-        void Int::setValue( IntType value )
+        void Integer::setValue( IntType value )
         {
             myValue = value;
         }
-        void Int::parse( const std::string& value )
+        void Integer::parse( const std::string& value )
         {
             std::stringstream ss( value );
             IntType temp = 0;
@@ -38,7 +38,7 @@ namespace mx
         }
         
         IntRange::IntRange( IntType min, IntType max, IntType value )
-        :Int( value )
+        :Integer( value )
         ,myMin( min )
         ,myMax( max )
         {
@@ -50,15 +50,15 @@ namespace mx
         {
             if ( value < myMin )
             {
-                Int::setValue( myMin );
+                Integer::setValue( myMin );
             }
             else if ( value > myMax )
             {
-                Int::setValue( myMax );
+                Integer::setValue( myMax );
             }
             else
             {
-                Int::setValue( value );
+                Integer::setValue( value );
             }
         }
         void IntRange::parse( const std::string& value )
@@ -73,13 +73,13 @@ namespace mx
         }
         
         PositiveInteger::PositiveInteger( IntType value )
-        :Int( value )
+        :Integer( value )
         {
             setValue( value );
         }
         
         PositiveInteger::PositiveInteger()
-        :Int( 1 ) {}
+        :Integer( 1 ) {}
         
         PositiveInteger::~PositiveInteger() {}
         
@@ -87,11 +87,11 @@ namespace mx
         {
             if ( value < 1 )
             {
-                Int::setValue( 1 );
+                Integer::setValue( 1 );
             }
             else
             {
-                Int::setValue( value );
+                Integer::setValue( value );
             }
         }
         void PositiveInteger::parse( const std::string& value )
@@ -106,7 +106,7 @@ namespace mx
         }
         
         NonNegativeInteger::NonNegativeInteger( IntType value )
-        :Int( value )
+        :Integer( value )
         {
             setValue( value );
         }
@@ -115,11 +115,11 @@ namespace mx
         {
             if ( value < 0 )
             {
-                Int::setValue( 0 );
+                Integer::setValue( 0 );
             }
             else
             {
-                Int::setValue( value );
+                Integer::setValue( value );
             }
         }
         void NonNegativeInteger::parse( const std::string& value )
@@ -133,17 +133,17 @@ namespace mx
             this->setValue( temp );
         }
         
-        std::string toString( const Int& value )
+        std::string toString( const Integer& value )
         {
             std::stringstream ss;
             toStream( ss, value );
             return ss.str();
         }
-        std::ostream& toStream( std::ostream& os, const Int& value )
+        std::ostream& toStream( std::ostream& os, const Integer& value )
         {
             return os << value.getValue();
         }
-        std::ostream& operator<<( std::ostream& os, const Int& value )
+        std::ostream& operator<<( std::ostream& os, const Integer& value )
         {
             return toStream( os, value );
         }
@@ -159,9 +159,9 @@ namespace mx
         :IntRange( 1, 8, 1 ) {}
         
         Fifths::Fifths( IntType value )
-        :Int( value ) {}
+        :Integer( value ) {}
         Fifths::Fifths()
-        :Int( 0 ) {}
+        :Integer( 0 ) {}
         
         Midi16::Midi16( IntType value )
         :IntRange( 1, 16, value ) {}
@@ -194,9 +194,9 @@ namespace mx
         :IntRange( 0, 9, 0 ) {}
         
         StaffLine::StaffLine( IntType value )
-        :Int( value ) {}
+        :Integer( value ) {}
         StaffLine::StaffLine()
-        :Int( 0 ) {}
+        :Integer( 0 ) {}
         
         TremoloMarks::TremoloMarks( IntType value )
         :IntRange( 0, 8, value ) {}

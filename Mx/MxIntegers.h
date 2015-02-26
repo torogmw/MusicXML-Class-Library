@@ -11,12 +11,12 @@ namespace mx
         /* alias for the int size used by this library */
         using IntType = int;
         
-        class Int
+        class Integer
         {
         public:
-            explicit Int( IntType value );
-            Int();
-            virtual ~Int();
+            explicit Integer( IntType value );
+            Integer();
+            virtual ~Integer();
             IntType getValue() const;
             virtual void setValue( IntType value );
             virtual void parse( const std::string& value );
@@ -24,7 +24,7 @@ namespace mx
             IntType myValue;
         };
         
-        class IntRange : public Int
+        class IntRange : public Integer
         {
         public:
             explicit IntRange( IntType min, IntType max, IntType value );
@@ -36,7 +36,7 @@ namespace mx
             const IntType myMax;
         };
         
-        class PositiveInteger: public Int
+        class PositiveInteger: public Integer
         {
         public:
             explicit PositiveInteger( IntType value );
@@ -46,7 +46,7 @@ namespace mx
             virtual void parse( const std::string& value );
         };
         
-        class NonNegativeInteger: public Int
+        class NonNegativeInteger: public Integer
         {
         public:
             explicit NonNegativeInteger( IntType value );
@@ -55,9 +55,9 @@ namespace mx
             virtual void parse( const std::string& value );
         };
         
-		std::string toString( const Int& value );
-		std::ostream& toStream( std::ostream& os, const Int& value );
-		std::ostream& operator<<( std::ostream& os, const Int& value );
+		std::string toString( const Integer& value );
+		std::ostream& toStream( std::ostream& os, const Integer& value );
+		std::ostream& operator<<( std::ostream& os, const Integer& value );
         
         /* MIN = 1, MAX = 3, DEFAULT = 1 */
         class AccordionMiddle : public IntRange
@@ -76,7 +76,7 @@ namespace mx
         };
         
         /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
-        class Fifths : public Int
+        class Fifths : public Integer
         {
         public:
             explicit Fifths( IntType value );
@@ -132,7 +132,7 @@ namespace mx
         };
         
         /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
-        class StaffLine : public Int
+        class StaffLine : public Integer
         {
         public:
             explicit StaffLine( IntType value );

@@ -6,7 +6,87 @@ namespace mx
 {
     namespace types
     {
+        class Decimal::impl
+        {
+        public:
+            impl( const DecimalType value )
+            :myValue( value ) {}
+            
+            void setValue( DecimalType value )
+            {
+                myValue = value;
+            }
+            DecimalType getValue() const
+            {
+                return myValue;
+            }
+        private:
+            DecimalType myValue;
+        };
         
+        
+        Decimal::Decimal( DecimalType value )
+        :myImpl( new Decimal::impl( value ) )
+        {}
+        
+        Decimal::Decimal()
+        :myImpl( new Decimal::impl( 0 ) )
+        {}
+        
+        Decimal::~Decimal() {}
+        
+        Decimal::Decimal( const Decimal& other )
+        :myImpl( new Decimal::impl( other.getValue() ) )
+        { }
+        
+        Decimal& Decimal::operator=( const Decimal& other )
+        {
+            this->myImpl = std::unique_ptr<Decimal::impl>( new Decimal::impl( other.getValue() ) );
+            return *this;
+        }
+        
+        
+        DecimalType Decimal::getValue() const
+        {
+            return myImpl->getValue();
+        }
+        void Decimal::setValue( DecimalType value )
+        {
+            myImpl->setValue( value );
+        }
+        void Decimal::parse( const std::string& value )
+        {
+            std::stringstream ss( value );
+            DecimalType temp = 0;
+            if ((ss >> temp).fail() || !(ss >> std::ws).eof())
+            {
+                return;
+            }
+            setValue( temp );
+        }
+        
+        std::string toString( const Decimal& value, unsigned int precision )
+        {
+            std::stringstream ss;
+            toStream( ss, value, precision );
+            return ss.str();
+        }
+        std::ostream& toStream( std::ostream& os, const Decimal& value, unsigned int precision )
+        {
+            auto flags = os.showbase;
+            auto preci = os.precision();
+            os << std::fixed;
+            os << std::setprecision( precision );
+            os << value.getValue();
+            os << std::setprecision( (int)preci );
+            os.setf( flags );
+            return os;
+            
+        }
+        std::ostream& operator<<( std::ostream& os, const Decimal& value )
+        {
+            return toStream( os, value );
+        }
         
         DecimalRange::DecimalRange( DecimalType min, DecimalType max, DecimalType value )
         :Decimal( value )
@@ -50,7 +130,7 @@ namespace mx
         }
         
         PositiveDecimal::PositiveDecimal()
-        :Decimal( 1 ) {}
+        :Decimal( kNonZeroAmount ) {}
         
         PositiveDecimal::~PositiveDecimal() {}
         
@@ -58,7 +138,7 @@ namespace mx
         {
             if ( value <= 0 )
             {
-                Decimal::setValue( 0.0000001 );
+                Decimal::setValue( kNonZeroAmount );
             }
             else
             {
@@ -68,7 +148,7 @@ namespace mx
         void PositiveDecimal::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            DecimalType temp = 0.0000001;
+            DecimalType temp = kNonZeroAmount;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
@@ -96,28 +176,12 @@ namespace mx
         void NonNegativeDecimal::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 0;
+            DecimalType temp = 0;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
             }
             this->setValue( temp );
-        }
-        
-        std::string toString( const Decimal& value )
-        {
-            std::stringstream ss;
-            toStream( ss, value );
-            return ss.str();
-        }
-        std::ostream& toStream( std::ostream& os, const Decimal& value )
-        {
-            os << std::setprecision( 20 );
-            return os << value.getValue();
-        }
-        std::ostream& operator<<( std::ostream& os, const Decimal& value )
-        {
-            return toStream( os, value );
         }
         
         Percent::Percent( DecimalType value )
@@ -157,7 +221,7 @@ namespace mx
         void TrillBeats::parse( const std::string& value )
         {
             std::stringstream ss( value );
-            long temp = 0;
+            DecimalType temp = 0;
             if ((ss >> temp).fail() || !(ss >> std::ws).eof())
             {
                 return;
