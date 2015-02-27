@@ -384,3 +384,64 @@ TEST( CommaSeparatedText03, MxStrings )
     CHECK_EQUAL( expected, actual )
     
 }
+
+TEST( EndingNumber01, MxStrings )
+{
+    EndingNumber x;
+    CHECK( x.getValuesBegin() == x.getValuesEnd() )
+    CHECK_EQUAL( "", toString( x ) )
+}
+TEST( EndingNumber02, MxStrings )
+{
+    EndingNumber x( "-2,-1,,,,XYZ, 0,  @#$@*&#^1,2,3,3,3,3,3" );
+    CHECK( x.getValuesBegin() != x.getValuesEnd() )
+    CHECK( x.getValuesBeginConst() != x.getValuesEndConst() )
+    StringType expected = "1,2,3";
+    StringType actual = toString( x );
+    CHECK_EQUAL( expected, actual );
+    CHECK_EQUAL( 1, *(x.getValues().begin()) )
+    CHECK_EQUAL( 2, *( ++( x.getValuesBegin() ) ) )
+    CHECK_EQUAL( 2, *( ++( x.getValuesBeginConst() ) ) )
+    CHECK_EQUAL( 3, *( --( x.getValuesEnd() ) ) )
+    CHECK_EQUAL( 3, *( --( x.getValuesEndConst() ) ) )
+    std::stringstream ss;
+    ss << x;
+    expected = "1,2,3";
+    actual = ss.str();
+    CHECK_EQUAL( expected, actual );
+    ss.str( "" );
+    toStream( ss, x );
+    expected = "1,2,3";
+    actual = ss.str();
+    CHECK_EQUAL( expected, actual );
+}
+TEST( TimeOnly01, MxStrings )
+{
+    TimeOnly x;
+    CHECK( x.getValuesBegin() == x.getValuesEnd() )
+    CHECK_EQUAL( "", toString( x ) )
+}
+TEST( TimeOnly02, MxStrings )
+{
+    TimeOnly x( "-2,-1,,,,XYZ, 0,  @#$@*&#^1,2,3,3,3,3,3" );
+    CHECK( x.getValuesBegin() != x.getValuesEnd() )
+    CHECK( x.getValuesBeginConst() != x.getValuesEndConst() )
+    StringType expected = "1,2,3";
+    StringType actual = toString( x );
+    CHECK_EQUAL( expected, actual );
+    CHECK_EQUAL( 1, *(x.getValues().begin()) )
+    CHECK_EQUAL( 2, *( ++( x.getValuesBegin() ) ) )
+    CHECK_EQUAL( 2, *( ++( x.getValuesBeginConst() ) ) )
+    CHECK_EQUAL( 3, *( --( x.getValuesEnd() ) ) )
+    CHECK_EQUAL( 3, *( --( x.getValuesEndConst() ) ) )
+    std::stringstream ss;
+    ss << x;
+    expected = "1,2,3";
+    actual = ss.str();
+    CHECK_EQUAL( expected, actual );
+    ss.str( "" );
+    toStream( ss, x );
+    expected = "1,2,3";
+    actual = ss.str();
+    CHECK_EQUAL( expected, actual );
+}

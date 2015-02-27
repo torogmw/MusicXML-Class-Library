@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
 
 namespace mx
 {
@@ -73,7 +74,6 @@ namespace mx
             XsTokenSetIter getValuesEnd();
             XsTokenSetIterConst getValuesBeginConst() const;
             XsTokenSetIterConst getValuesEndConst() const;
-            
             void setValues( const XsTokenSet& values );
             void parse( const StringType& commaSeparatedText );
             
@@ -86,5 +86,28 @@ namespace mx
         std::ostream& toStream( std::ostream& os, const CommaSeparatedText& value );
         std::ostream& operator<<( std::ostream& os, const CommaSeparatedText& value );
         
+        class CommaSeparatedListOfPositiveIntegers
+        {
+        public:
+            CommaSeparatedListOfPositiveIntegers();
+            CommaSeparatedListOfPositiveIntegers( const StringType& value );
+            CommaSeparatedListOfPositiveIntegers( const std::set<int>& values );
+            const std::set<int>& getValues() const;
+            std::set<int>::iterator getValuesBegin();
+            std::set<int>::iterator getValuesEnd();
+            std::set<int>::const_iterator getValuesBeginConst() const;
+            std::set<int>::const_iterator getValuesEndConst() const;
+            void setValues( const std::set<int>& values );
+            void parse( const StringType& commaSeparatedText );
+        private:
+            std::set<int> myValues;
+        };
+        
+        StringType toString( const CommaSeparatedListOfPositiveIntegers& value );
+        std::ostream& toStream( std::ostream& os, const CommaSeparatedListOfPositiveIntegers& value );
+        std::ostream& operator<<( std::ostream& os, const CommaSeparatedListOfPositiveIntegers& value );
+        
+        using EndingNumber = CommaSeparatedListOfPositiveIntegers;
+        using TimeOnly = CommaSeparatedListOfPositiveIntegers;
     }
 }
