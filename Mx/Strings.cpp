@@ -1,4 +1,4 @@
-#include "MxStrings.h"
+#include "Strings.h"
 #include <sstream>
 #include <cctype>
 

@@ -1,23 +1,23 @@
 #include "TestHarness.h"
-#include "MxIntegers.h"
+#include "Integers.h"
 
 using namespace mx::types;
 
-TEST( Int01, MxIntegers )
+TEST( Int01, Integers )
 {
     Integer i( 5 );
     IntType expected = 5;
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int02, MxIntegers )
+TEST( Int02, Integers )
 {
     Integer i;
     IntType expected = 0;
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int03, MxIntegers )
+TEST( Int03, Integers )
 {
     Integer i;
     i.setValue( 51 );
@@ -25,7 +25,7 @@ TEST( Int03, MxIntegers )
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int04, MxIntegers )
+TEST( Int04, Integers )
 {
     Integer i( 1 );
     i.parse( "32" );
@@ -33,7 +33,7 @@ TEST( Int04, MxIntegers )
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int05, MxIntegers )
+TEST( Int05, Integers )
 {
     Integer i( 72 );
     i.parse( "xxx" );
@@ -41,7 +41,7 @@ TEST( Int05, MxIntegers )
     IntType actual = i.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int06, MxIntegers )
+TEST( Int06, Integers )
 {
     Integer i( 124 );
     std::stringstream ss1;
@@ -50,7 +50,7 @@ TEST( Int06, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int07, MxIntegers )
+TEST( Int07, Integers )
 {
     Integer i( 124 );
     std::stringstream ss1;
@@ -59,7 +59,7 @@ TEST( Int07, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Int08, MxIntegers )
+TEST( Int08, Integers )
 {
     Integer i( 124 );
     std::stringstream ss1;
@@ -67,21 +67,21 @@ TEST( Int08, MxIntegers )
     std::string actual = toString( i );
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange01, MxIntegers )
+TEST( IntRange01, Integers )
 {
     IntRange x( 1, 6, 0 );
     IntType expected = 1;
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange02, MxIntegers )
+TEST( IntRange02, Integers )
 {
     IntRange x( 21, 25, 100 );
     IntType expected = 25;
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange03, MxIntegers )
+TEST( IntRange03, Integers )
 {
     IntRange x( -100, -50, 100 );
     x.parse( "-90" );
@@ -89,7 +89,7 @@ TEST( IntRange03, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange04, MxIntegers )
+TEST( IntRange04, Integers )
 {
     IntRange x( -1, -3, 100 );
     x.parse( "-2" );
@@ -97,7 +97,7 @@ TEST( IntRange04, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange05, MxIntegers )
+TEST( IntRange05, Integers )
 {
     IntRange x( -15, 15, 10 );
     x.parse( "-%sf" );
@@ -105,7 +105,7 @@ TEST( IntRange05, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange06, MxIntegers )
+TEST( IntRange06, Integers )
 {
     IntRange x( -15, 15, 10 );
     std::stringstream ss1;
@@ -114,7 +114,7 @@ TEST( IntRange06, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange07, MxIntegers )
+TEST( IntRange07, Integers )
 {
     IntRange x( -105, -15, 10 );
     std::stringstream ss1;
@@ -123,7 +123,7 @@ TEST( IntRange07, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( IntRange08, MxIntegers )
+TEST( IntRange08, Integers )
 {
     IntRange x( -105, -15, 10 );
     std::stringstream ss1;
@@ -131,21 +131,21 @@ TEST( IntRange08, MxIntegers )
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger01, MxIntegers )
+TEST( PositiveInteger01, Integers )
 {
     PositiveInteger x( 10 );
     IntType expected = 10;
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger02, MxIntegers )
+TEST( PositiveInteger02, Integers )
 {
     PositiveInteger x( 0 );
     IntType expected = 1;
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger03, MxIntegers )
+TEST( PositiveInteger03, Integers )
 {
     PositiveInteger x( 0 );
     x.parse( "21" );
@@ -153,7 +153,7 @@ TEST( PositiveInteger03, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger04, MxIntegers )
+TEST( PositiveInteger04, Integers )
 {
     PositiveInteger x( 33 );
     x.parse( "2 2" );
@@ -161,7 +161,7 @@ TEST( PositiveInteger04, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger05, MxIntegers )
+TEST( PositiveInteger05, Integers )
 {
     PositiveInteger x( 10 );
     std::stringstream ss1;
@@ -170,7 +170,7 @@ TEST( PositiveInteger05, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger06, MxIntegers )
+TEST( PositiveInteger06, Integers )
 {
     PositiveInteger x( 12 );
     std::stringstream ss1;
@@ -179,7 +179,7 @@ TEST( PositiveInteger06, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveInteger07, MxIntegers )
+TEST( PositiveInteger07, Integers )
 {
     PositiveInteger x( 16385000 );
     std::stringstream ss1;
@@ -187,21 +187,21 @@ TEST( PositiveInteger07, MxIntegers )
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger01, MxIntegers )
+TEST( NonNegativeInteger01, Integers )
 {
     NonNegativeInteger x( 10 );
     IntType expected = 10;
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger02, MxIntegers )
+TEST( NonNegativeInteger02, Integers )
 {
     NonNegativeInteger x( -1 );
     IntType expected = 0;
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger03, MxIntegers )
+TEST( NonNegativeInteger03, Integers )
 {
     NonNegativeInteger x( 0 );
     x.parse( "21" );
@@ -209,7 +209,7 @@ TEST( NonNegativeInteger03, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger04, MxIntegers )
+TEST( NonNegativeInteger04, Integers )
 {
     NonNegativeInteger x( 33 );
     x.parse( "2 2" );
@@ -217,7 +217,7 @@ TEST( NonNegativeInteger04, MxIntegers )
     IntType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger05, MxIntegers )
+TEST( NonNegativeInteger05, Integers )
 {
     NonNegativeInteger x( 10 );
     std::stringstream ss1;
@@ -226,7 +226,7 @@ TEST( NonNegativeInteger05, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger06, MxIntegers )
+TEST( NonNegativeInteger06, Integers )
 {
     NonNegativeInteger x( 12 );
     std::stringstream ss1;
@@ -235,7 +235,7 @@ TEST( NonNegativeInteger06, MxIntegers )
     std::string actual = ss1.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeInteger07, MxIntegers )
+TEST( NonNegativeInteger07, Integers )
 {
     NonNegativeInteger x( 16385000 );
     std::stringstream ss1;
@@ -246,7 +246,7 @@ TEST( NonNegativeInteger07, MxIntegers )
 
 /* MIN = 1, MAX = 3, DEFAULT = 1 */
 //class AccordionMiddle : public IntRange
-TEST( AccordionMiddle, MxIntegers )
+TEST( AccordionMiddle, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -274,7 +274,7 @@ TEST( AccordionMiddle, MxIntegers )
 
 /* MIN = 1, MAX = 8, DEFAULT = 1 */
 //class BeamLevel : public IntRange
-TEST( BeamLevel, MxIntegers )
+TEST( BeamLevel, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -301,7 +301,7 @@ TEST( BeamLevel, MxIntegers )
 
 /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
 //class Fifths : public Int
-TEST( Fifths, MxIntegers )
+TEST( Fifths, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -328,7 +328,7 @@ TEST( Fifths, MxIntegers )
 
 /* MIN = 1, MAX = 16, DEFAULT = 1 */
 //class Midi16 : public IntRange
-TEST( Midi16, MxIntegers )
+TEST( Midi16, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -355,7 +355,7 @@ TEST( Midi16, MxIntegers )
 
 /* MIN = 1, MAX = 128, DEFAULT = 1 */
 //class Midi128 : public IntRange
-TEST( Midi128, MxIntegers )
+TEST( Midi128, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -382,7 +382,7 @@ TEST( Midi128, MxIntegers )
 
 /* MIN = 1, MAX = 16384, DEFAULT = 1 */
 //class Midi16384 : public IntRange
-TEST( Midi16384, MxIntegers )
+TEST( Midi16384, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -409,7 +409,7 @@ TEST( Midi16384, MxIntegers )
 
 /* MIN = 1, MAX = 6, DEFAULT = 1 */
 //class NumberLevel : public IntRange
-TEST( NumberLevel, MxIntegers )
+TEST( NumberLevel, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -436,7 +436,7 @@ TEST( NumberLevel, MxIntegers )
 
 /* MIN = 0, MAX = 3, DEFAULT = 0 */
 //class NumberOfLines : public IntRange
-TEST( NumberOfLines, MxIntegers )
+TEST( NumberOfLines, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -463,7 +463,7 @@ TEST( NumberOfLines, MxIntegers )
 
 /* MIN = 0, MAX = 9, DEFAULT = 0 */
 //class Octave : public IntRange
-TEST( Octave, MxIntegers )
+TEST( Octave, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -490,7 +490,7 @@ TEST( Octave, MxIntegers )
 
 /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
 //class StaffLine : public Int
-TEST( StaffLine, MxIntegers )
+TEST( StaffLine, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -517,7 +517,7 @@ TEST( StaffLine, MxIntegers )
 
 /* MIN = 1, MAX = N/A, DEFAULT = 1 */
 //using StaffNumber = PositiveInteger;
-TEST( StaffNumber, MxIntegers )
+TEST( StaffNumber, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -544,7 +544,7 @@ TEST( StaffNumber, MxIntegers )
 
 /* MIN = 1, MAX = N/A, DEFAULT = 1 */
 //using StringNumber = PositiveInteger;
-TEST( StringNumber, MxIntegers )
+TEST( StringNumber, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
@@ -571,7 +571,7 @@ TEST( StringNumber, MxIntegers )
 
 /* MIN = 0, MAX = 8, DEFAULT = 0 */
 //class TremoloMarks : public IntRange
-TEST( TremoloMarks, MxIntegers )
+TEST( TremoloMarks, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;

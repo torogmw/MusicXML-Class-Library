@@ -1,14 +1,14 @@
 #include "TestHarness.h"
-#include "MxEnums.h"
+#include "Enums.h"
 
-TEST( AboveBelow_BadParse, MxEnums )
+TEST( AboveBelow_BadParse, Enums )
 {
 	mx::types::AboveBelow actual = mx::types::parseAboveBelow( "above" );
 	mx::types::AboveBelow expected = mx::types::AboveBelow::above;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( AboveBelow_above, MxEnums )
+TEST( AboveBelow_above, Enums )
 {
 	mx::types::AboveBelow e = mx::types::AboveBelow::above;
 	std::string expected = "above";
@@ -29,7 +29,7 @@ TEST( AboveBelow_above, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AboveBelow_below, MxEnums )
+TEST( AboveBelow_below, Enums )
 {
 	mx::types::AboveBelow e = mx::types::AboveBelow::below;
 	std::string expected = "below";
@@ -50,14 +50,14 @@ TEST( AboveBelow_below, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_BadParse, MxEnums )
+TEST( CssFontSize_BadParse, Enums )
 {
 	mx::types::CssFontSize actual = mx::types::parseCssFontSize( "xx-small" );
 	mx::types::CssFontSize expected = mx::types::CssFontSize::xxSmall;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( CssFontSize_xxSmall, MxEnums )
+TEST( CssFontSize_xxSmall, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::xxSmall;
 	std::string expected = "xx-small";
@@ -78,7 +78,7 @@ TEST( CssFontSize_xxSmall, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_xSmall, MxEnums )
+TEST( CssFontSize_xSmall, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::xSmall;
 	std::string expected = "x-small";
@@ -99,7 +99,7 @@ TEST( CssFontSize_xSmall, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_small, MxEnums )
+TEST( CssFontSize_small, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::small;
 	std::string expected = "small";
@@ -120,7 +120,7 @@ TEST( CssFontSize_small, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_medium, MxEnums )
+TEST( CssFontSize_medium, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::medium;
 	std::string expected = "medium";
@@ -141,7 +141,7 @@ TEST( CssFontSize_medium, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_large, MxEnums )
+TEST( CssFontSize_large, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::large;
 	std::string expected = "large";
@@ -162,7 +162,7 @@ TEST( CssFontSize_large, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_xLarge, MxEnums )
+TEST( CssFontSize_xLarge, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::xLarge;
 	std::string expected = "x-large";
@@ -183,7 +183,7 @@ TEST( CssFontSize_xLarge, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CssFontSize_xxLarge, MxEnums )
+TEST( CssFontSize_xxLarge, Enums )
 {
 	mx::types::CssFontSize e = mx::types::CssFontSize::xxLarge;
 	std::string expected = "xx-large";
@@ -204,14 +204,14 @@ TEST( CssFontSize_xxLarge, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_BadParse, MxEnums )
+TEST( EnclosureShape_BadParse, Enums )
 {
 	mx::types::EnclosureShape actual = mx::types::parseEnclosureShape( "rectangle" );
 	mx::types::EnclosureShape expected = mx::types::EnclosureShape::rectangle;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( EnclosureShape_rectangle, MxEnums )
+TEST( EnclosureShape_rectangle, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::rectangle;
 	std::string expected = "rectangle";
@@ -232,7 +232,7 @@ TEST( EnclosureShape_rectangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_square, MxEnums )
+TEST( EnclosureShape_square, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::square;
 	std::string expected = "square";
@@ -253,7 +253,7 @@ TEST( EnclosureShape_square, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_oval, MxEnums )
+TEST( EnclosureShape_oval, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::oval;
 	std::string expected = "oval";
@@ -274,7 +274,7 @@ TEST( EnclosureShape_oval, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_circle, MxEnums )
+TEST( EnclosureShape_circle, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::circle;
 	std::string expected = "circle";
@@ -295,7 +295,7 @@ TEST( EnclosureShape_circle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_bracket, MxEnums )
+TEST( EnclosureShape_bracket, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::bracket;
 	std::string expected = "bracket";
@@ -316,7 +316,7 @@ TEST( EnclosureShape_bracket, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_triangle, MxEnums )
+TEST( EnclosureShape_triangle, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::triangle;
 	std::string expected = "triangle";
@@ -337,7 +337,7 @@ TEST( EnclosureShape_triangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_diamond, MxEnums )
+TEST( EnclosureShape_diamond, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::diamond;
 	std::string expected = "diamond";
@@ -358,7 +358,7 @@ TEST( EnclosureShape_diamond, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( EnclosureShape_none, MxEnums )
+TEST( EnclosureShape_none, Enums )
 {
 	mx::types::EnclosureShape e = mx::types::EnclosureShape::none;
 	std::string expected = "none";
@@ -379,14 +379,14 @@ TEST( EnclosureShape_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FermataShape_BadParse, MxEnums )
+TEST( FermataShape_BadParse, Enums )
 {
 	mx::types::FermataShape actual = mx::types::parseFermataShape( "normal" );
 	mx::types::FermataShape expected = mx::types::FermataShape::normal;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( FermataShape_normal, MxEnums )
+TEST( FermataShape_normal, Enums )
 {
 	mx::types::FermataShape e = mx::types::FermataShape::normal;
 	std::string expected = "normal";
@@ -407,7 +407,7 @@ TEST( FermataShape_normal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FermataShape_angled, MxEnums )
+TEST( FermataShape_angled, Enums )
 {
 	mx::types::FermataShape e = mx::types::FermataShape::angled;
 	std::string expected = "angled";
@@ -428,7 +428,7 @@ TEST( FermataShape_angled, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FermataShape_square, MxEnums )
+TEST( FermataShape_square, Enums )
 {
 	mx::types::FermataShape e = mx::types::FermataShape::square;
 	std::string expected = "square";
@@ -449,7 +449,7 @@ TEST( FermataShape_square, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FermataShape_emptystring, MxEnums )
+TEST( FermataShape_emptystring, Enums )
 {
 	mx::types::FermataShape e = mx::types::FermataShape::emptystring;
 	std::string expected = "";
@@ -470,14 +470,14 @@ TEST( FermataShape_emptystring, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FontStyle_BadParse, MxEnums )
+TEST( FontStyle_BadParse, Enums )
 {
 	mx::types::FontStyle actual = mx::types::parseFontStyle( "normal" );
 	mx::types::FontStyle expected = mx::types::FontStyle::normal;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( FontStyle_normal, MxEnums )
+TEST( FontStyle_normal, Enums )
 {
 	mx::types::FontStyle e = mx::types::FontStyle::normal;
 	std::string expected = "normal";
@@ -498,7 +498,7 @@ TEST( FontStyle_normal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FontStyle_italic, MxEnums )
+TEST( FontStyle_italic, Enums )
 {
 	mx::types::FontStyle e = mx::types::FontStyle::italic;
 	std::string expected = "italic";
@@ -519,14 +519,14 @@ TEST( FontStyle_italic, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FontWeight_BadParse, MxEnums )
+TEST( FontWeight_BadParse, Enums )
 {
 	mx::types::FontWeight actual = mx::types::parseFontWeight( "normal" );
 	mx::types::FontWeight expected = mx::types::FontWeight::normal;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( FontWeight_normal, MxEnums )
+TEST( FontWeight_normal, Enums )
 {
 	mx::types::FontWeight e = mx::types::FontWeight::normal;
 	std::string expected = "normal";
@@ -547,7 +547,7 @@ TEST( FontWeight_normal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( FontWeight_bold, MxEnums )
+TEST( FontWeight_bold, Enums )
 {
 	mx::types::FontWeight e = mx::types::FontWeight::bold;
 	std::string expected = "bold";
@@ -568,14 +568,14 @@ TEST( FontWeight_bold, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LeftCenterRight_BadParse, MxEnums )
+TEST( LeftCenterRight_BadParse, Enums )
 {
 	mx::types::LeftCenterRight actual = mx::types::parseLeftCenterRight( "left" );
 	mx::types::LeftCenterRight expected = mx::types::LeftCenterRight::left;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( LeftCenterRight_left, MxEnums )
+TEST( LeftCenterRight_left, Enums )
 {
 	mx::types::LeftCenterRight e = mx::types::LeftCenterRight::left;
 	std::string expected = "left";
@@ -596,7 +596,7 @@ TEST( LeftCenterRight_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LeftCenterRight_center, MxEnums )
+TEST( LeftCenterRight_center, Enums )
 {
 	mx::types::LeftCenterRight e = mx::types::LeftCenterRight::center;
 	std::string expected = "center";
@@ -617,7 +617,7 @@ TEST( LeftCenterRight_center, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LeftCenterRight_right, MxEnums )
+TEST( LeftCenterRight_right, Enums )
 {
 	mx::types::LeftCenterRight e = mx::types::LeftCenterRight::right;
 	std::string expected = "right";
@@ -638,14 +638,14 @@ TEST( LeftCenterRight_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LeftRight_BadParse, MxEnums )
+TEST( LeftRight_BadParse, Enums )
 {
 	mx::types::LeftRight actual = mx::types::parseLeftRight( "left" );
 	mx::types::LeftRight expected = mx::types::LeftRight::left;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( LeftRight_left, MxEnums )
+TEST( LeftRight_left, Enums )
 {
 	mx::types::LeftRight e = mx::types::LeftRight::left;
 	std::string expected = "left";
@@ -666,7 +666,7 @@ TEST( LeftRight_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LeftRight_right, MxEnums )
+TEST( LeftRight_right, Enums )
 {
 	mx::types::LeftRight e = mx::types::LeftRight::right;
 	std::string expected = "right";
@@ -687,14 +687,14 @@ TEST( LeftRight_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineShape_BadParse, MxEnums )
+TEST( LineShape_BadParse, Enums )
 {
 	mx::types::LineShape actual = mx::types::parseLineShape( "straight" );
 	mx::types::LineShape expected = mx::types::LineShape::straight;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( LineShape_straight, MxEnums )
+TEST( LineShape_straight, Enums )
 {
 	mx::types::LineShape e = mx::types::LineShape::straight;
 	std::string expected = "straight";
@@ -715,7 +715,7 @@ TEST( LineShape_straight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineShape_curved, MxEnums )
+TEST( LineShape_curved, Enums )
 {
 	mx::types::LineShape e = mx::types::LineShape::curved;
 	std::string expected = "curved";
@@ -736,14 +736,14 @@ TEST( LineShape_curved, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineType_BadParse, MxEnums )
+TEST( LineType_BadParse, Enums )
 {
 	mx::types::LineType actual = mx::types::parseLineType( "solid" );
 	mx::types::LineType expected = mx::types::LineType::solid;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( LineType_solid, MxEnums )
+TEST( LineType_solid, Enums )
 {
 	mx::types::LineType e = mx::types::LineType::solid;
 	std::string expected = "solid";
@@ -764,7 +764,7 @@ TEST( LineType_solid, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineType_dashed, MxEnums )
+TEST( LineType_dashed, Enums )
 {
 	mx::types::LineType e = mx::types::LineType::dashed;
 	std::string expected = "dashed";
@@ -785,7 +785,7 @@ TEST( LineType_dashed, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineType_dotted, MxEnums )
+TEST( LineType_dotted, Enums )
 {
 	mx::types::LineType e = mx::types::LineType::dotted;
 	std::string expected = "dotted";
@@ -806,7 +806,7 @@ TEST( LineType_dotted, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineType_wavy, MxEnums )
+TEST( LineType_wavy, Enums )
 {
 	mx::types::LineType e = mx::types::LineType::wavy;
 	std::string expected = "wavy";
@@ -827,14 +827,14 @@ TEST( LineType_wavy, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_BadParse, MxEnums )
+TEST( Mute_BadParse, Enums )
 {
 	mx::types::Mute actual = mx::types::parseMute( "on" );
 	mx::types::Mute expected = mx::types::Mute::on;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Mute_on, MxEnums )
+TEST( Mute_on, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::on;
 	std::string expected = "on";
@@ -855,7 +855,7 @@ TEST( Mute_on, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_off, MxEnums )
+TEST( Mute_off, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::off;
 	std::string expected = "off";
@@ -876,7 +876,7 @@ TEST( Mute_off, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_straight, MxEnums )
+TEST( Mute_straight, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::straight;
 	std::string expected = "straight";
@@ -897,7 +897,7 @@ TEST( Mute_straight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_cup, MxEnums )
+TEST( Mute_cup, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::cup;
 	std::string expected = "cup";
@@ -918,7 +918,7 @@ TEST( Mute_cup, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_harmonNoStem, MxEnums )
+TEST( Mute_harmonNoStem, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::harmonNoStem;
 	std::string expected = "harmon-no-stem";
@@ -939,7 +939,7 @@ TEST( Mute_harmonNoStem, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_harmonStem, MxEnums )
+TEST( Mute_harmonStem, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::harmonStem;
 	std::string expected = "harmon-stem";
@@ -960,7 +960,7 @@ TEST( Mute_harmonStem, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_bucket, MxEnums )
+TEST( Mute_bucket, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::bucket;
 	std::string expected = "bucket";
@@ -981,7 +981,7 @@ TEST( Mute_bucket, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_plunger, MxEnums )
+TEST( Mute_plunger, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::plunger;
 	std::string expected = "plunger";
@@ -1002,7 +1002,7 @@ TEST( Mute_plunger, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_hat, MxEnums )
+TEST( Mute_hat, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::hat;
 	std::string expected = "hat";
@@ -1023,7 +1023,7 @@ TEST( Mute_hat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_solotone, MxEnums )
+TEST( Mute_solotone, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::solotone;
 	std::string expected = "solotone";
@@ -1044,7 +1044,7 @@ TEST( Mute_solotone, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_practice, MxEnums )
+TEST( Mute_practice, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::practice;
 	std::string expected = "practice";
@@ -1065,7 +1065,7 @@ TEST( Mute_practice, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_stopMute, MxEnums )
+TEST( Mute_stopMute, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::stopMute;
 	std::string expected = "stop-mute";
@@ -1086,7 +1086,7 @@ TEST( Mute_stopMute, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_stopHand, MxEnums )
+TEST( Mute_stopHand, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::stopHand;
 	std::string expected = "stop-hand";
@@ -1107,7 +1107,7 @@ TEST( Mute_stopHand, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_echo, MxEnums )
+TEST( Mute_echo, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::echo;
 	std::string expected = "echo";
@@ -1128,7 +1128,7 @@ TEST( Mute_echo, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mute_palm, MxEnums )
+TEST( Mute_palm, Enums )
 {
 	mx::types::Mute e = mx::types::Mute::palm;
 	std::string expected = "palm";
@@ -1149,14 +1149,14 @@ TEST( Mute_palm, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( OverUnder_BadParse, MxEnums )
+TEST( OverUnder_BadParse, Enums )
 {
 	mx::types::OverUnder actual = mx::types::parseOverUnder( "over" );
 	mx::types::OverUnder expected = mx::types::OverUnder::over;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( OverUnder_over, MxEnums )
+TEST( OverUnder_over, Enums )
 {
 	mx::types::OverUnder e = mx::types::OverUnder::over;
 	std::string expected = "over";
@@ -1177,7 +1177,7 @@ TEST( OverUnder_over, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( OverUnder_under, MxEnums )
+TEST( OverUnder_under, Enums )
 {
 	mx::types::OverUnder e = mx::types::OverUnder::under;
 	std::string expected = "under";
@@ -1198,14 +1198,14 @@ TEST( OverUnder_under, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SemiPitched_BadParse, MxEnums )
+TEST( SemiPitched_BadParse, Enums )
 {
 	mx::types::SemiPitched actual = mx::types::parseSemiPitched( "high" );
 	mx::types::SemiPitched expected = mx::types::SemiPitched::high;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( SemiPitched_high, MxEnums )
+TEST( SemiPitched_high, Enums )
 {
 	mx::types::SemiPitched e = mx::types::SemiPitched::high;
 	std::string expected = "high";
@@ -1226,7 +1226,7 @@ TEST( SemiPitched_high, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SemiPitched_mediumHigh, MxEnums )
+TEST( SemiPitched_mediumHigh, Enums )
 {
 	mx::types::SemiPitched e = mx::types::SemiPitched::mediumHigh;
 	std::string expected = "medium-high";
@@ -1247,7 +1247,7 @@ TEST( SemiPitched_mediumHigh, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SemiPitched_medium, MxEnums )
+TEST( SemiPitched_medium, Enums )
 {
 	mx::types::SemiPitched e = mx::types::SemiPitched::medium;
 	std::string expected = "medium";
@@ -1268,7 +1268,7 @@ TEST( SemiPitched_medium, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SemiPitched_mediumLow, MxEnums )
+TEST( SemiPitched_mediumLow, Enums )
 {
 	mx::types::SemiPitched e = mx::types::SemiPitched::mediumLow;
 	std::string expected = "medium-low";
@@ -1289,7 +1289,7 @@ TEST( SemiPitched_mediumLow, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SemiPitched_low, MxEnums )
+TEST( SemiPitched_low, Enums )
 {
 	mx::types::SemiPitched e = mx::types::SemiPitched::low;
 	std::string expected = "low";
@@ -1310,7 +1310,7 @@ TEST( SemiPitched_low, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SemiPitched_veryLow, MxEnums )
+TEST( SemiPitched_veryLow, Enums )
 {
 	mx::types::SemiPitched e = mx::types::SemiPitched::veryLow;
 	std::string expected = "very-low";
@@ -1331,14 +1331,14 @@ TEST( SemiPitched_veryLow, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartNote_BadParse, MxEnums )
+TEST( StartNote_BadParse, Enums )
 {
 	mx::types::StartNote actual = mx::types::parseStartNote( "upper" );
 	mx::types::StartNote expected = mx::types::StartNote::upper;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StartNote_upper, MxEnums )
+TEST( StartNote_upper, Enums )
 {
 	mx::types::StartNote e = mx::types::StartNote::upper;
 	std::string expected = "upper";
@@ -1359,7 +1359,7 @@ TEST( StartNote_upper, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartNote_main, MxEnums )
+TEST( StartNote_main, Enums )
 {
 	mx::types::StartNote e = mx::types::StartNote::main;
 	std::string expected = "main";
@@ -1380,7 +1380,7 @@ TEST( StartNote_main, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartNote_below, MxEnums )
+TEST( StartNote_below, Enums )
 {
 	mx::types::StartNote e = mx::types::StartNote::below;
 	std::string expected = "below";
@@ -1401,14 +1401,14 @@ TEST( StartNote_below, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStop_BadParse, MxEnums )
+TEST( StartStop_BadParse, Enums )
 {
 	mx::types::StartStop actual = mx::types::parseStartStop( "start" );
 	mx::types::StartStop expected = mx::types::StartStop::start;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StartStop_start, MxEnums )
+TEST( StartStop_start, Enums )
 {
 	mx::types::StartStop e = mx::types::StartStop::start;
 	std::string expected = "start";
@@ -1429,7 +1429,7 @@ TEST( StartStop_start, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStop_stop, MxEnums )
+TEST( StartStop_stop, Enums )
 {
 	mx::types::StartStop e = mx::types::StartStop::stop;
 	std::string expected = "stop";
@@ -1450,14 +1450,14 @@ TEST( StartStop_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopContinue_BadParse, MxEnums )
+TEST( StartStopContinue_BadParse, Enums )
 {
 	mx::types::StartStopContinue actual = mx::types::parseStartStopContinue( "start" );
 	mx::types::StartStopContinue expected = mx::types::StartStopContinue::start;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StartStopContinue_start, MxEnums )
+TEST( StartStopContinue_start, Enums )
 {
 	mx::types::StartStopContinue e = mx::types::StartStopContinue::start;
 	std::string expected = "start";
@@ -1478,7 +1478,7 @@ TEST( StartStopContinue_start, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopContinue_stop, MxEnums )
+TEST( StartStopContinue_stop, Enums )
 {
 	mx::types::StartStopContinue e = mx::types::StartStopContinue::stop;
 	std::string expected = "stop";
@@ -1499,7 +1499,7 @@ TEST( StartStopContinue_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopContinue_continue_, MxEnums )
+TEST( StartStopContinue_continue_, Enums )
 {
 	mx::types::StartStopContinue e = mx::types::StartStopContinue::continue_;
 	std::string expected = "continue";
@@ -1520,14 +1520,14 @@ TEST( StartStopContinue_continue_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopSingle_BadParse, MxEnums )
+TEST( StartStopSingle_BadParse, Enums )
 {
 	mx::types::StartStopSingle actual = mx::types::parseStartStopSingle( "start" );
 	mx::types::StartStopSingle expected = mx::types::StartStopSingle::start;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StartStopSingle_start, MxEnums )
+TEST( StartStopSingle_start, Enums )
 {
 	mx::types::StartStopSingle e = mx::types::StartStopSingle::start;
 	std::string expected = "start";
@@ -1548,7 +1548,7 @@ TEST( StartStopSingle_start, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopSingle_stop, MxEnums )
+TEST( StartStopSingle_stop, Enums )
 {
 	mx::types::StartStopSingle e = mx::types::StartStopSingle::stop;
 	std::string expected = "stop";
@@ -1569,7 +1569,7 @@ TEST( StartStopSingle_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopSingle_single, MxEnums )
+TEST( StartStopSingle_single, Enums )
 {
 	mx::types::StartStopSingle e = mx::types::StartStopSingle::single;
 	std::string expected = "single";
@@ -1590,14 +1590,14 @@ TEST( StartStopSingle_single, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SymbolSize_BadParse, MxEnums )
+TEST( SymbolSize_BadParse, Enums )
 {
 	mx::types::SymbolSize actual = mx::types::parseSymbolSize( "full" );
 	mx::types::SymbolSize expected = mx::types::SymbolSize::full;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( SymbolSize_full, MxEnums )
+TEST( SymbolSize_full, Enums )
 {
 	mx::types::SymbolSize e = mx::types::SymbolSize::full;
 	std::string expected = "full";
@@ -1618,7 +1618,7 @@ TEST( SymbolSize_full, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SymbolSize_cue, MxEnums )
+TEST( SymbolSize_cue, Enums )
 {
 	mx::types::SymbolSize e = mx::types::SymbolSize::cue;
 	std::string expected = "cue";
@@ -1639,7 +1639,7 @@ TEST( SymbolSize_cue, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( SymbolSize_large, MxEnums )
+TEST( SymbolSize_large, Enums )
 {
 	mx::types::SymbolSize e = mx::types::SymbolSize::large;
 	std::string expected = "large";
@@ -1660,14 +1660,14 @@ TEST( SymbolSize_large, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TextDirection_BadParse, MxEnums )
+TEST( TextDirection_BadParse, Enums )
 {
 	mx::types::TextDirection actual = mx::types::parseTextDirection( "ltr" );
 	mx::types::TextDirection expected = mx::types::TextDirection::ltr;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TextDirection_ltr, MxEnums )
+TEST( TextDirection_ltr, Enums )
 {
 	mx::types::TextDirection e = mx::types::TextDirection::ltr;
 	std::string expected = "ltr";
@@ -1688,7 +1688,7 @@ TEST( TextDirection_ltr, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TextDirection_rtl, MxEnums )
+TEST( TextDirection_rtl, Enums )
 {
 	mx::types::TextDirection e = mx::types::TextDirection::rtl;
 	std::string expected = "rtl";
@@ -1709,7 +1709,7 @@ TEST( TextDirection_rtl, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TextDirection_lro, MxEnums )
+TEST( TextDirection_lro, Enums )
 {
 	mx::types::TextDirection e = mx::types::TextDirection::lro;
 	std::string expected = "lro";
@@ -1730,7 +1730,7 @@ TEST( TextDirection_lro, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TextDirection_rlo, MxEnums )
+TEST( TextDirection_rlo, Enums )
 {
 	mx::types::TextDirection e = mx::types::TextDirection::rlo;
 	std::string expected = "rlo";
@@ -1751,14 +1751,14 @@ TEST( TextDirection_rlo, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TopBottom_BadParse, MxEnums )
+TEST( TopBottom_BadParse, Enums )
 {
 	mx::types::TopBottom actual = mx::types::parseTopBottom( "top" );
 	mx::types::TopBottom expected = mx::types::TopBottom::top;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TopBottom_top, MxEnums )
+TEST( TopBottom_top, Enums )
 {
 	mx::types::TopBottom e = mx::types::TopBottom::top;
 	std::string expected = "top";
@@ -1779,7 +1779,7 @@ TEST( TopBottom_top, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TopBottom_bottom, MxEnums )
+TEST( TopBottom_bottom, Enums )
 {
 	mx::types::TopBottom e = mx::types::TopBottom::bottom;
 	std::string expected = "bottom";
@@ -1800,14 +1800,14 @@ TEST( TopBottom_bottom, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TrillStep_BadParse, MxEnums )
+TEST( TrillStep_BadParse, Enums )
 {
 	mx::types::TrillStep actual = mx::types::parseTrillStep( "whole" );
 	mx::types::TrillStep expected = mx::types::TrillStep::whole;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TrillStep_whole, MxEnums )
+TEST( TrillStep_whole, Enums )
 {
 	mx::types::TrillStep e = mx::types::TrillStep::whole;
 	std::string expected = "whole";
@@ -1828,7 +1828,7 @@ TEST( TrillStep_whole, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TrillStep_half, MxEnums )
+TEST( TrillStep_half, Enums )
 {
 	mx::types::TrillStep e = mx::types::TrillStep::half;
 	std::string expected = "half";
@@ -1849,7 +1849,7 @@ TEST( TrillStep_half, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TrillStep_unison, MxEnums )
+TEST( TrillStep_unison, Enums )
 {
 	mx::types::TrillStep e = mx::types::TrillStep::unison;
 	std::string expected = "unison";
@@ -1870,14 +1870,14 @@ TEST( TrillStep_unison, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TwoNoteTurn_BadParse, MxEnums )
+TEST( TwoNoteTurn_BadParse, Enums )
 {
 	mx::types::TwoNoteTurn actual = mx::types::parseTwoNoteTurn( "whole" );
 	mx::types::TwoNoteTurn expected = mx::types::TwoNoteTurn::whole;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TwoNoteTurn_whole, MxEnums )
+TEST( TwoNoteTurn_whole, Enums )
 {
 	mx::types::TwoNoteTurn e = mx::types::TwoNoteTurn::whole;
 	std::string expected = "whole";
@@ -1898,7 +1898,7 @@ TEST( TwoNoteTurn_whole, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TwoNoteTurn_half, MxEnums )
+TEST( TwoNoteTurn_half, Enums )
 {
 	mx::types::TwoNoteTurn e = mx::types::TwoNoteTurn::half;
 	std::string expected = "half";
@@ -1919,7 +1919,7 @@ TEST( TwoNoteTurn_half, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TwoNoteTurn_none, MxEnums )
+TEST( TwoNoteTurn_none, Enums )
 {
 	mx::types::TwoNoteTurn e = mx::types::TwoNoteTurn::none;
 	std::string expected = "none";
@@ -1940,14 +1940,14 @@ TEST( TwoNoteTurn_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UpDown_BadParse, MxEnums )
+TEST( UpDown_BadParse, Enums )
 {
 	mx::types::UpDown actual = mx::types::parseUpDown( "up" );
 	mx::types::UpDown expected = mx::types::UpDown::up;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( UpDown_up, MxEnums )
+TEST( UpDown_up, Enums )
 {
 	mx::types::UpDown e = mx::types::UpDown::up;
 	std::string expected = "up";
@@ -1968,7 +1968,7 @@ TEST( UpDown_up, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UpDown_down, MxEnums )
+TEST( UpDown_down, Enums )
 {
 	mx::types::UpDown e = mx::types::UpDown::down;
 	std::string expected = "down";
@@ -1989,14 +1989,14 @@ TEST( UpDown_down, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UprightInverted_BadParse, MxEnums )
+TEST( UprightInverted_BadParse, Enums )
 {
 	mx::types::UprightInverted actual = mx::types::parseUprightInverted( "upright" );
 	mx::types::UprightInverted expected = mx::types::UprightInverted::upright;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( UprightInverted_upright, MxEnums )
+TEST( UprightInverted_upright, Enums )
 {
 	mx::types::UprightInverted e = mx::types::UprightInverted::upright;
 	std::string expected = "upright";
@@ -2017,7 +2017,7 @@ TEST( UprightInverted_upright, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UprightInverted_inverted, MxEnums )
+TEST( UprightInverted_inverted, Enums )
 {
 	mx::types::UprightInverted e = mx::types::UprightInverted::inverted;
 	std::string expected = "inverted";
@@ -2038,14 +2038,14 @@ TEST( UprightInverted_inverted, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Valign_BadParse, MxEnums )
+TEST( Valign_BadParse, Enums )
 {
 	mx::types::Valign actual = mx::types::parseValign( "top" );
 	mx::types::Valign expected = mx::types::Valign::top;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Valign_top, MxEnums )
+TEST( Valign_top, Enums )
 {
 	mx::types::Valign e = mx::types::Valign::top;
 	std::string expected = "top";
@@ -2066,7 +2066,7 @@ TEST( Valign_top, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Valign_middle, MxEnums )
+TEST( Valign_middle, Enums )
 {
 	mx::types::Valign e = mx::types::Valign::middle;
 	std::string expected = "middle";
@@ -2087,7 +2087,7 @@ TEST( Valign_middle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Valign_bottom, MxEnums )
+TEST( Valign_bottom, Enums )
 {
 	mx::types::Valign e = mx::types::Valign::bottom;
 	std::string expected = "bottom";
@@ -2108,7 +2108,7 @@ TEST( Valign_bottom, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Valign_baseline, MxEnums )
+TEST( Valign_baseline, Enums )
 {
 	mx::types::Valign e = mx::types::Valign::baseline;
 	std::string expected = "baseline";
@@ -2129,14 +2129,14 @@ TEST( Valign_baseline, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ValignImage_BadParse, MxEnums )
+TEST( ValignImage_BadParse, Enums )
 {
 	mx::types::ValignImage actual = mx::types::parseValignImage( "top" );
 	mx::types::ValignImage expected = mx::types::ValignImage::top;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( ValignImage_top, MxEnums )
+TEST( ValignImage_top, Enums )
 {
 	mx::types::ValignImage e = mx::types::ValignImage::top;
 	std::string expected = "top";
@@ -2157,7 +2157,7 @@ TEST( ValignImage_top, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ValignImage_middle, MxEnums )
+TEST( ValignImage_middle, Enums )
 {
 	mx::types::ValignImage e = mx::types::ValignImage::middle;
 	std::string expected = "middle";
@@ -2178,7 +2178,7 @@ TEST( ValignImage_middle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ValignImage_bottom, MxEnums )
+TEST( ValignImage_bottom, Enums )
 {
 	mx::types::ValignImage e = mx::types::ValignImage::bottom;
 	std::string expected = "bottom";
@@ -2199,14 +2199,14 @@ TEST( ValignImage_bottom, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( YesNo_BadParse, MxEnums )
+TEST( YesNo_BadParse, Enums )
 {
 	mx::types::YesNo actual = mx::types::parseYesNo( "yes" );
 	mx::types::YesNo expected = mx::types::YesNo::yes;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( YesNo_yes, MxEnums )
+TEST( YesNo_yes, Enums )
 {
 	mx::types::YesNo e = mx::types::YesNo::yes;
 	std::string expected = "yes";
@@ -2227,7 +2227,7 @@ TEST( YesNo_yes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( YesNo_no, MxEnums )
+TEST( YesNo_no, Enums )
 {
 	mx::types::YesNo e = mx::types::YesNo::no;
 	std::string expected = "no";
@@ -2248,14 +2248,14 @@ TEST( YesNo_no, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CancelLocation_BadParse, MxEnums )
+TEST( CancelLocation_BadParse, Enums )
 {
 	mx::types::CancelLocation actual = mx::types::parseCancelLocation( "left" );
 	mx::types::CancelLocation expected = mx::types::CancelLocation::left;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( CancelLocation_left, MxEnums )
+TEST( CancelLocation_left, Enums )
 {
 	mx::types::CancelLocation e = mx::types::CancelLocation::left;
 	std::string expected = "left";
@@ -2276,7 +2276,7 @@ TEST( CancelLocation_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CancelLocation_right, MxEnums )
+TEST( CancelLocation_right, Enums )
 {
 	mx::types::CancelLocation e = mx::types::CancelLocation::right;
 	std::string expected = "right";
@@ -2297,7 +2297,7 @@ TEST( CancelLocation_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CancelLocation_beforeBarline, MxEnums )
+TEST( CancelLocation_beforeBarline, Enums )
 {
 	mx::types::CancelLocation e = mx::types::CancelLocation::beforeBarline;
 	std::string expected = "before-barline";
@@ -2318,14 +2318,14 @@ TEST( CancelLocation_beforeBarline, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_BadParse, MxEnums )
+TEST( ClefSign_BadParse, Enums )
 {
 	mx::types::ClefSign actual = mx::types::parseClefSign( "G" );
 	mx::types::ClefSign expected = mx::types::ClefSign::g;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( ClefSign_g, MxEnums )
+TEST( ClefSign_g, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::g;
 	std::string expected = "G";
@@ -2346,7 +2346,7 @@ TEST( ClefSign_g, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_f, MxEnums )
+TEST( ClefSign_f, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::f;
 	std::string expected = "F";
@@ -2367,7 +2367,7 @@ TEST( ClefSign_f, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_c, MxEnums )
+TEST( ClefSign_c, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::c;
 	std::string expected = "C";
@@ -2388,7 +2388,7 @@ TEST( ClefSign_c, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_percussion, MxEnums )
+TEST( ClefSign_percussion, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::percussion;
 	std::string expected = "percussion";
@@ -2409,7 +2409,7 @@ TEST( ClefSign_percussion, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_tab, MxEnums )
+TEST( ClefSign_tab, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::tab;
 	std::string expected = "TAB";
@@ -2430,7 +2430,7 @@ TEST( ClefSign_tab, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_jianpu, MxEnums )
+TEST( ClefSign_jianpu, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::jianpu;
 	std::string expected = "jianpu";
@@ -2451,7 +2451,7 @@ TEST( ClefSign_jianpu, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ClefSign_none, MxEnums )
+TEST( ClefSign_none, Enums )
 {
 	mx::types::ClefSign e = mx::types::ClefSign::none;
 	std::string expected = "none";
@@ -2472,14 +2472,14 @@ TEST( ClefSign_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ShowFrets_BadParse, MxEnums )
+TEST( ShowFrets_BadParse, Enums )
 {
 	mx::types::ShowFrets actual = mx::types::parseShowFrets( "numbers" );
 	mx::types::ShowFrets expected = mx::types::ShowFrets::numbers;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( ShowFrets_numbers, MxEnums )
+TEST( ShowFrets_numbers, Enums )
 {
 	mx::types::ShowFrets e = mx::types::ShowFrets::numbers;
 	std::string expected = "numbers";
@@ -2500,7 +2500,7 @@ TEST( ShowFrets_numbers, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ShowFrets_letters, MxEnums )
+TEST( ShowFrets_letters, Enums )
 {
 	mx::types::ShowFrets e = mx::types::ShowFrets::letters;
 	std::string expected = "letters";
@@ -2521,14 +2521,14 @@ TEST( ShowFrets_letters, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StaffType_BadParse, MxEnums )
+TEST( StaffType_BadParse, Enums )
 {
 	mx::types::StaffType actual = mx::types::parseStaffType( "ossia" );
 	mx::types::StaffType expected = mx::types::StaffType::ossia;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StaffType_ossia, MxEnums )
+TEST( StaffType_ossia, Enums )
 {
 	mx::types::StaffType e = mx::types::StaffType::ossia;
 	std::string expected = "ossia";
@@ -2549,7 +2549,7 @@ TEST( StaffType_ossia, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StaffType_cue, MxEnums )
+TEST( StaffType_cue, Enums )
 {
 	mx::types::StaffType e = mx::types::StaffType::cue;
 	std::string expected = "cue";
@@ -2570,7 +2570,7 @@ TEST( StaffType_cue, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StaffType_editorial, MxEnums )
+TEST( StaffType_editorial, Enums )
 {
 	mx::types::StaffType e = mx::types::StaffType::editorial;
 	std::string expected = "editorial";
@@ -2591,7 +2591,7 @@ TEST( StaffType_editorial, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StaffType_regular, MxEnums )
+TEST( StaffType_regular, Enums )
 {
 	mx::types::StaffType e = mx::types::StaffType::regular;
 	std::string expected = "regular";
@@ -2612,7 +2612,7 @@ TEST( StaffType_regular, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StaffType_alternate, MxEnums )
+TEST( StaffType_alternate, Enums )
 {
 	mx::types::StaffType e = mx::types::StaffType::alternate;
 	std::string expected = "alternate";
@@ -2633,14 +2633,14 @@ TEST( StaffType_alternate, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeRelation_BadParse, MxEnums )
+TEST( TimeRelation_BadParse, Enums )
 {
 	mx::types::TimeRelation actual = mx::types::parseTimeRelation( "parentheses" );
 	mx::types::TimeRelation expected = mx::types::TimeRelation::parentheses;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TimeRelation_parentheses, MxEnums )
+TEST( TimeRelation_parentheses, Enums )
 {
 	mx::types::TimeRelation e = mx::types::TimeRelation::parentheses;
 	std::string expected = "parentheses";
@@ -2661,7 +2661,7 @@ TEST( TimeRelation_parentheses, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeRelation_bracket, MxEnums )
+TEST( TimeRelation_bracket, Enums )
 {
 	mx::types::TimeRelation e = mx::types::TimeRelation::bracket;
 	std::string expected = "bracket";
@@ -2682,7 +2682,7 @@ TEST( TimeRelation_bracket, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeRelation_equals, MxEnums )
+TEST( TimeRelation_equals, Enums )
 {
 	mx::types::TimeRelation e = mx::types::TimeRelation::equals;
 	std::string expected = "equals";
@@ -2703,7 +2703,7 @@ TEST( TimeRelation_equals, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeRelation_slash, MxEnums )
+TEST( TimeRelation_slash, Enums )
 {
 	mx::types::TimeRelation e = mx::types::TimeRelation::slash;
 	std::string expected = "slash";
@@ -2724,7 +2724,7 @@ TEST( TimeRelation_slash, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeRelation_space, MxEnums )
+TEST( TimeRelation_space, Enums )
 {
 	mx::types::TimeRelation e = mx::types::TimeRelation::space;
 	std::string expected = "space";
@@ -2745,7 +2745,7 @@ TEST( TimeRelation_space, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeRelation_hyphen, MxEnums )
+TEST( TimeRelation_hyphen, Enums )
 {
 	mx::types::TimeRelation e = mx::types::TimeRelation::hyphen;
 	std::string expected = "hyphen";
@@ -2766,14 +2766,14 @@ TEST( TimeRelation_hyphen, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSeparator_BadParse, MxEnums )
+TEST( TimeSeparator_BadParse, Enums )
 {
 	mx::types::TimeSeparator actual = mx::types::parseTimeSeparator( "none" );
 	mx::types::TimeSeparator expected = mx::types::TimeSeparator::none;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TimeSeparator_none, MxEnums )
+TEST( TimeSeparator_none, Enums )
 {
 	mx::types::TimeSeparator e = mx::types::TimeSeparator::none;
 	std::string expected = "none";
@@ -2794,7 +2794,7 @@ TEST( TimeSeparator_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSeparator_horizontal, MxEnums )
+TEST( TimeSeparator_horizontal, Enums )
 {
 	mx::types::TimeSeparator e = mx::types::TimeSeparator::horizontal;
 	std::string expected = "horizontal";
@@ -2815,7 +2815,7 @@ TEST( TimeSeparator_horizontal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSeparator_diagonal, MxEnums )
+TEST( TimeSeparator_diagonal, Enums )
 {
 	mx::types::TimeSeparator e = mx::types::TimeSeparator::diagonal;
 	std::string expected = "diagonal";
@@ -2836,7 +2836,7 @@ TEST( TimeSeparator_diagonal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSeparator_vertical, MxEnums )
+TEST( TimeSeparator_vertical, Enums )
 {
 	mx::types::TimeSeparator e = mx::types::TimeSeparator::vertical;
 	std::string expected = "vertical";
@@ -2857,7 +2857,7 @@ TEST( TimeSeparator_vertical, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSeparator_adjacent, MxEnums )
+TEST( TimeSeparator_adjacent, Enums )
 {
 	mx::types::TimeSeparator e = mx::types::TimeSeparator::adjacent;
 	std::string expected = "adjacent";
@@ -2878,14 +2878,14 @@ TEST( TimeSeparator_adjacent, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSymbol_BadParse, MxEnums )
+TEST( TimeSymbol_BadParse, Enums )
 {
 	mx::types::TimeSymbol actual = mx::types::parseTimeSymbol( "common" );
 	mx::types::TimeSymbol expected = mx::types::TimeSymbol::common;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TimeSymbol_common, MxEnums )
+TEST( TimeSymbol_common, Enums )
 {
 	mx::types::TimeSymbol e = mx::types::TimeSymbol::common;
 	std::string expected = "common";
@@ -2906,7 +2906,7 @@ TEST( TimeSymbol_common, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSymbol_cut, MxEnums )
+TEST( TimeSymbol_cut, Enums )
 {
 	mx::types::TimeSymbol e = mx::types::TimeSymbol::cut;
 	std::string expected = "cut";
@@ -2927,7 +2927,7 @@ TEST( TimeSymbol_cut, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSymbol_singleNumber, MxEnums )
+TEST( TimeSymbol_singleNumber, Enums )
 {
 	mx::types::TimeSymbol e = mx::types::TimeSymbol::singleNumber;
 	std::string expected = "single-number";
@@ -2948,7 +2948,7 @@ TEST( TimeSymbol_singleNumber, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSymbol_note, MxEnums )
+TEST( TimeSymbol_note, Enums )
 {
 	mx::types::TimeSymbol e = mx::types::TimeSymbol::note;
 	std::string expected = "note";
@@ -2969,7 +2969,7 @@ TEST( TimeSymbol_note, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSymbol_dottedNote, MxEnums )
+TEST( TimeSymbol_dottedNote, Enums )
 {
 	mx::types::TimeSymbol e = mx::types::TimeSymbol::dottedNote;
 	std::string expected = "dotted-note";
@@ -2990,7 +2990,7 @@ TEST( TimeSymbol_dottedNote, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TimeSymbol_normal, MxEnums )
+TEST( TimeSymbol_normal, Enums )
 {
 	mx::types::TimeSymbol e = mx::types::TimeSymbol::normal;
 	std::string expected = "normal";
@@ -3011,14 +3011,14 @@ TEST( TimeSymbol_normal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BackwardForward_BadParse, MxEnums )
+TEST( BackwardForward_BadParse, Enums )
 {
 	mx::types::BackwardForward actual = mx::types::parseBackwardForward( "backward" );
 	mx::types::BackwardForward expected = mx::types::BackwardForward::backward;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( BackwardForward_backward, MxEnums )
+TEST( BackwardForward_backward, Enums )
 {
 	mx::types::BackwardForward e = mx::types::BackwardForward::backward;
 	std::string expected = "backward";
@@ -3039,7 +3039,7 @@ TEST( BackwardForward_backward, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BackwardForward_forward, MxEnums )
+TEST( BackwardForward_forward, Enums )
 {
 	mx::types::BackwardForward e = mx::types::BackwardForward::forward;
 	std::string expected = "forward";
@@ -3060,14 +3060,14 @@ TEST( BackwardForward_forward, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_BadParse, MxEnums )
+TEST( BarStyle_BadParse, Enums )
 {
 	mx::types::BarStyle actual = mx::types::parseBarStyle( "regular" );
 	mx::types::BarStyle expected = mx::types::BarStyle::regular;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( BarStyle_regular, MxEnums )
+TEST( BarStyle_regular, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::regular;
 	std::string expected = "regular";
@@ -3088,7 +3088,7 @@ TEST( BarStyle_regular, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_dotted, MxEnums )
+TEST( BarStyle_dotted, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::dotted;
 	std::string expected = "dotted";
@@ -3109,7 +3109,7 @@ TEST( BarStyle_dotted, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_dashed, MxEnums )
+TEST( BarStyle_dashed, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::dashed;
 	std::string expected = "dashed";
@@ -3130,7 +3130,7 @@ TEST( BarStyle_dashed, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_heavy, MxEnums )
+TEST( BarStyle_heavy, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::heavy;
 	std::string expected = "heavy";
@@ -3151,7 +3151,7 @@ TEST( BarStyle_heavy, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_lightLight, MxEnums )
+TEST( BarStyle_lightLight, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::lightLight;
 	std::string expected = "light-light";
@@ -3172,7 +3172,7 @@ TEST( BarStyle_lightLight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_lightHeavy, MxEnums )
+TEST( BarStyle_lightHeavy, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::lightHeavy;
 	std::string expected = "light-heavy";
@@ -3193,7 +3193,7 @@ TEST( BarStyle_lightHeavy, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_heavyLight, MxEnums )
+TEST( BarStyle_heavyLight, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::heavyLight;
 	std::string expected = "heavy-light";
@@ -3214,7 +3214,7 @@ TEST( BarStyle_heavyLight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_heavyHeavy, MxEnums )
+TEST( BarStyle_heavyHeavy, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::heavyHeavy;
 	std::string expected = "heavy-heavy";
@@ -3235,7 +3235,7 @@ TEST( BarStyle_heavyHeavy, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_tick, MxEnums )
+TEST( BarStyle_tick, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::tick;
 	std::string expected = "tick";
@@ -3256,7 +3256,7 @@ TEST( BarStyle_tick, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_short_, MxEnums )
+TEST( BarStyle_short_, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::short_;
 	std::string expected = "short";
@@ -3277,7 +3277,7 @@ TEST( BarStyle_short_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_none, MxEnums )
+TEST( BarStyle_none, Enums )
 {
 	mx::types::BarStyle e = mx::types::BarStyle::none;
 	std::string expected = "none";
@@ -3298,14 +3298,14 @@ TEST( BarStyle_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( RightLeftMiddle_BadParse, MxEnums )
+TEST( RightLeftMiddle_BadParse, Enums )
 {
 	mx::types::RightLeftMiddle actual = mx::types::parseRightLeftMiddle( "right" );
 	mx::types::RightLeftMiddle expected = mx::types::RightLeftMiddle::right;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( RightLeftMiddle_right, MxEnums )
+TEST( RightLeftMiddle_right, Enums )
 {
 	mx::types::RightLeftMiddle e = mx::types::RightLeftMiddle::right;
 	std::string expected = "right";
@@ -3326,7 +3326,7 @@ TEST( RightLeftMiddle_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( RightLeftMiddle_left, MxEnums )
+TEST( RightLeftMiddle_left, Enums )
 {
 	mx::types::RightLeftMiddle e = mx::types::RightLeftMiddle::left;
 	std::string expected = "left";
@@ -3347,7 +3347,7 @@ TEST( RightLeftMiddle_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( RightLeftMiddle_middle, MxEnums )
+TEST( RightLeftMiddle_middle, Enums )
 {
 	mx::types::RightLeftMiddle e = mx::types::RightLeftMiddle::middle;
 	std::string expected = "middle";
@@ -3368,14 +3368,14 @@ TEST( RightLeftMiddle_middle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopDiscontinue_BadParse, MxEnums )
+TEST( StartStopDiscontinue_BadParse, Enums )
 {
 	mx::types::StartStopDiscontinue actual = mx::types::parseStartStopDiscontinue( "start" );
 	mx::types::StartStopDiscontinue expected = mx::types::StartStopDiscontinue::start;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StartStopDiscontinue_start, MxEnums )
+TEST( StartStopDiscontinue_start, Enums )
 {
 	mx::types::StartStopDiscontinue e = mx::types::StartStopDiscontinue::start;
 	std::string expected = "start";
@@ -3396,7 +3396,7 @@ TEST( StartStopDiscontinue_start, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopDiscontinue_stop, MxEnums )
+TEST( StartStopDiscontinue_stop, Enums )
 {
 	mx::types::StartStopDiscontinue e = mx::types::StartStopDiscontinue::stop;
 	std::string expected = "stop";
@@ -3417,7 +3417,7 @@ TEST( StartStopDiscontinue_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopDiscontinue_discontinue, MxEnums )
+TEST( StartStopDiscontinue_discontinue, Enums )
 {
 	mx::types::StartStopDiscontinue e = mx::types::StartStopDiscontinue::discontinue;
 	std::string expected = "discontinue";
@@ -3438,14 +3438,14 @@ TEST( StartStopDiscontinue_discontinue, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Winged_BadParse, MxEnums )
+TEST( Winged_BadParse, Enums )
 {
 	mx::types::Winged actual = mx::types::parseWinged( "none" );
 	mx::types::Winged expected = mx::types::Winged::none;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Winged_none, MxEnums )
+TEST( Winged_none, Enums )
 {
 	mx::types::Winged e = mx::types::Winged::none;
 	std::string expected = "none";
@@ -3466,7 +3466,7 @@ TEST( Winged_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Winged_straight, MxEnums )
+TEST( Winged_straight, Enums )
 {
 	mx::types::Winged e = mx::types::Winged::straight;
 	std::string expected = "straight";
@@ -3487,7 +3487,7 @@ TEST( Winged_straight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Winged_curved, MxEnums )
+TEST( Winged_curved, Enums )
 {
 	mx::types::Winged e = mx::types::Winged::curved;
 	std::string expected = "curved";
@@ -3508,7 +3508,7 @@ TEST( Winged_curved, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Winged_doubleStraight, MxEnums )
+TEST( Winged_doubleStraight, Enums )
 {
 	mx::types::Winged e = mx::types::Winged::doubleStraight;
 	std::string expected = "double-straight";
@@ -3529,7 +3529,7 @@ TEST( Winged_doubleStraight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Winged_doubleCurved, MxEnums )
+TEST( Winged_doubleCurved, Enums )
 {
 	mx::types::Winged e = mx::types::Winged::doubleCurved;
 	std::string expected = "double-curved";
@@ -3550,14 +3550,14 @@ TEST( Winged_doubleCurved, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_BadParse, MxEnums )
+TEST( BeaterValue_BadParse, Enums )
 {
 	mx::types::BeaterValue actual = mx::types::parseBeaterValue( "bow" );
 	mx::types::BeaterValue expected = mx::types::BeaterValue::bow;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( BeaterValue_bow, MxEnums )
+TEST( BeaterValue_bow, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::bow;
 	std::string expected = "bow";
@@ -3578,7 +3578,7 @@ TEST( BeaterValue_bow, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_chimeHammer, MxEnums )
+TEST( BeaterValue_chimeHammer, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::chimeHammer;
 	std::string expected = "chime hammer";
@@ -3599,7 +3599,7 @@ TEST( BeaterValue_chimeHammer, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_coin, MxEnums )
+TEST( BeaterValue_coin, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::coin;
 	std::string expected = "coin";
@@ -3620,7 +3620,7 @@ TEST( BeaterValue_coin, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_finger, MxEnums )
+TEST( BeaterValue_finger, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::finger;
 	std::string expected = "finger";
@@ -3641,7 +3641,7 @@ TEST( BeaterValue_finger, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_fingernail, MxEnums )
+TEST( BeaterValue_fingernail, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::fingernail;
 	std::string expected = "fingernail";
@@ -3662,7 +3662,7 @@ TEST( BeaterValue_fingernail, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_fist, MxEnums )
+TEST( BeaterValue_fist, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::fist;
 	std::string expected = "fist";
@@ -3683,7 +3683,7 @@ TEST( BeaterValue_fist, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_guiroScraper, MxEnums )
+TEST( BeaterValue_guiroScraper, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::guiroScraper;
 	std::string expected = "guiro scraper";
@@ -3704,7 +3704,7 @@ TEST( BeaterValue_guiroScraper, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_hammer, MxEnums )
+TEST( BeaterValue_hammer, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::hammer;
 	std::string expected = "hammer";
@@ -3725,7 +3725,7 @@ TEST( BeaterValue_hammer, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_hand, MxEnums )
+TEST( BeaterValue_hand, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::hand;
 	std::string expected = "hand";
@@ -3746,7 +3746,7 @@ TEST( BeaterValue_hand, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_jazzStick, MxEnums )
+TEST( BeaterValue_jazzStick, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::jazzStick;
 	std::string expected = "jazz stick";
@@ -3767,7 +3767,7 @@ TEST( BeaterValue_jazzStick, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_knittingNeedle, MxEnums )
+TEST( BeaterValue_knittingNeedle, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::knittingNeedle;
 	std::string expected = "knitting needle";
@@ -3788,7 +3788,7 @@ TEST( BeaterValue_knittingNeedle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_metalHammer, MxEnums )
+TEST( BeaterValue_metalHammer, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::metalHammer;
 	std::string expected = "metal hammer";
@@ -3809,7 +3809,7 @@ TEST( BeaterValue_metalHammer, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_snareStick, MxEnums )
+TEST( BeaterValue_snareStick, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::snareStick;
 	std::string expected = "snare stick";
@@ -3830,7 +3830,7 @@ TEST( BeaterValue_snareStick, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_spoonMallet, MxEnums )
+TEST( BeaterValue_spoonMallet, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::spoonMallet;
 	std::string expected = "spoon mallet";
@@ -3851,7 +3851,7 @@ TEST( BeaterValue_spoonMallet, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_triangleBeater, MxEnums )
+TEST( BeaterValue_triangleBeater, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::triangleBeater;
 	std::string expected = "triangle beater";
@@ -3872,7 +3872,7 @@ TEST( BeaterValue_triangleBeater, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_triangleBeaterPlain, MxEnums )
+TEST( BeaterValue_triangleBeaterPlain, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::triangleBeaterPlain;
 	std::string expected = "triangle beater plain";
@@ -3893,7 +3893,7 @@ TEST( BeaterValue_triangleBeaterPlain, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeaterValue_wireBrush, MxEnums )
+TEST( BeaterValue_wireBrush, Enums )
 {
 	mx::types::BeaterValue e = mx::types::BeaterValue::wireBrush;
 	std::string expected = "wire brush";
@@ -3914,14 +3914,14 @@ TEST( BeaterValue_wireBrush, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeSymbolValue_BadParse, MxEnums )
+TEST( DegreeSymbolValue_BadParse, Enums )
 {
 	mx::types::DegreeSymbolValue actual = mx::types::parseDegreeSymbolValue( "major" );
 	mx::types::DegreeSymbolValue expected = mx::types::DegreeSymbolValue::major;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( DegreeSymbolValue_major, MxEnums )
+TEST( DegreeSymbolValue_major, Enums )
 {
 	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::major;
 	std::string expected = "major";
@@ -3942,7 +3942,7 @@ TEST( DegreeSymbolValue_major, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeSymbolValue_minor, MxEnums )
+TEST( DegreeSymbolValue_minor, Enums )
 {
 	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::minor;
 	std::string expected = "minor";
@@ -3963,7 +3963,7 @@ TEST( DegreeSymbolValue_minor, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeSymbolValue_augmented, MxEnums )
+TEST( DegreeSymbolValue_augmented, Enums )
 {
 	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::augmented;
 	std::string expected = "augmented";
@@ -3984,7 +3984,7 @@ TEST( DegreeSymbolValue_augmented, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeSymbolValue_diminished, MxEnums )
+TEST( DegreeSymbolValue_diminished, Enums )
 {
 	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::diminished;
 	std::string expected = "diminished";
@@ -4005,7 +4005,7 @@ TEST( DegreeSymbolValue_diminished, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeSymbolValue_halfDiminished, MxEnums )
+TEST( DegreeSymbolValue_halfDiminished, Enums )
 {
 	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::halfDiminished;
 	std::string expected = "half-diminished";
@@ -4026,14 +4026,14 @@ TEST( DegreeSymbolValue_halfDiminished, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeTypeValue_BadParse, MxEnums )
+TEST( DegreeTypeValue_BadParse, Enums )
 {
 	mx::types::DegreeTypeValue actual = mx::types::parseDegreeTypeValue( "add" );
 	mx::types::DegreeTypeValue expected = mx::types::DegreeTypeValue::add;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( DegreeTypeValue_add, MxEnums )
+TEST( DegreeTypeValue_add, Enums )
 {
 	mx::types::DegreeTypeValue e = mx::types::DegreeTypeValue::add;
 	std::string expected = "add";
@@ -4054,7 +4054,7 @@ TEST( DegreeTypeValue_add, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeTypeValue_alter, MxEnums )
+TEST( DegreeTypeValue_alter, Enums )
 {
 	mx::types::DegreeTypeValue e = mx::types::DegreeTypeValue::alter;
 	std::string expected = "alter";
@@ -4075,7 +4075,7 @@ TEST( DegreeTypeValue_alter, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DegreeTypeValue_subtract, MxEnums )
+TEST( DegreeTypeValue_subtract, Enums )
 {
 	mx::types::DegreeTypeValue e = mx::types::DegreeTypeValue::subtract;
 	std::string expected = "subtract";
@@ -4096,14 +4096,14 @@ TEST( DegreeTypeValue_subtract, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_BadParse, MxEnums )
+TEST( Effect_BadParse, Enums )
 {
 	mx::types::Effect actual = mx::types::parseEffect( "anvil" );
 	mx::types::Effect expected = mx::types::Effect::anvil;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Effect_anvil, MxEnums )
+TEST( Effect_anvil, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::anvil;
 	std::string expected = "anvil";
@@ -4124,7 +4124,7 @@ TEST( Effect_anvil, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_autoHorn, MxEnums )
+TEST( Effect_autoHorn, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::autoHorn;
 	std::string expected = "auto horn";
@@ -4145,7 +4145,7 @@ TEST( Effect_autoHorn, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_birdWhistle, MxEnums )
+TEST( Effect_birdWhistle, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::birdWhistle;
 	std::string expected = "bird whistle";
@@ -4166,7 +4166,7 @@ TEST( Effect_birdWhistle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_cannon, MxEnums )
+TEST( Effect_cannon, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::cannon;
 	std::string expected = "cannon";
@@ -4187,7 +4187,7 @@ TEST( Effect_cannon, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_duckCall, MxEnums )
+TEST( Effect_duckCall, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::duckCall;
 	std::string expected = "duck call";
@@ -4208,7 +4208,7 @@ TEST( Effect_duckCall, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_gunShot, MxEnums )
+TEST( Effect_gunShot, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::gunShot;
 	std::string expected = "gun shot";
@@ -4229,7 +4229,7 @@ TEST( Effect_gunShot, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_klaxonHorn, MxEnums )
+TEST( Effect_klaxonHorn, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::klaxonHorn;
 	std::string expected = "klaxon horn";
@@ -4250,7 +4250,7 @@ TEST( Effect_klaxonHorn, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_lionsRoar, MxEnums )
+TEST( Effect_lionsRoar, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::lionsRoar;
 	std::string expected = "lions roar";
@@ -4271,7 +4271,7 @@ TEST( Effect_lionsRoar, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_policeWhistle, MxEnums )
+TEST( Effect_policeWhistle, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::policeWhistle;
 	std::string expected = "police whistle";
@@ -4292,7 +4292,7 @@ TEST( Effect_policeWhistle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_siren, MxEnums )
+TEST( Effect_siren, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::siren;
 	std::string expected = "siren";
@@ -4313,7 +4313,7 @@ TEST( Effect_siren, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_slideWhistle, MxEnums )
+TEST( Effect_slideWhistle, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::slideWhistle;
 	std::string expected = "slide whistle";
@@ -4334,7 +4334,7 @@ TEST( Effect_slideWhistle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_thunderSheet, MxEnums )
+TEST( Effect_thunderSheet, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::thunderSheet;
 	std::string expected = "thunder sheet";
@@ -4355,7 +4355,7 @@ TEST( Effect_thunderSheet, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_windMachine, MxEnums )
+TEST( Effect_windMachine, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::windMachine;
 	std::string expected = "wind machine";
@@ -4376,7 +4376,7 @@ TEST( Effect_windMachine, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Effect_windWhistle, MxEnums )
+TEST( Effect_windWhistle, Enums )
 {
 	mx::types::Effect e = mx::types::Effect::windWhistle;
 	std::string expected = "wind whistle";
@@ -4397,14 +4397,14 @@ TEST( Effect_windWhistle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Glass_BadParse, MxEnums )
+TEST( Glass_BadParse, Enums )
 {
 	mx::types::Glass actual = mx::types::parseGlass( "wind chimes" );
 	mx::types::Glass expected = mx::types::Glass::windChimes;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Glass_windChimes, MxEnums )
+TEST( Glass_windChimes, Enums )
 {
 	mx::types::Glass e = mx::types::Glass::windChimes;
 	std::string expected = "wind chimes";
@@ -4425,14 +4425,14 @@ TEST( Glass_windChimes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HarmonyType_BadParse, MxEnums )
+TEST( HarmonyType_BadParse, Enums )
 {
 	mx::types::HarmonyType actual = mx::types::parseHarmonyType( "explicit" );
 	mx::types::HarmonyType expected = mx::types::HarmonyType::explicit_;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( HarmonyType_explicit_, MxEnums )
+TEST( HarmonyType_explicit_, Enums )
 {
 	mx::types::HarmonyType e = mx::types::HarmonyType::explicit_;
 	std::string expected = "explicit";
@@ -4453,7 +4453,7 @@ TEST( HarmonyType_explicit_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HarmonyType_implied, MxEnums )
+TEST( HarmonyType_implied, Enums )
 {
 	mx::types::HarmonyType e = mx::types::HarmonyType::implied;
 	std::string expected = "implied";
@@ -4474,7 +4474,7 @@ TEST( HarmonyType_implied, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HarmonyType_alternate, MxEnums )
+TEST( HarmonyType_alternate, Enums )
 {
 	mx::types::HarmonyType e = mx::types::HarmonyType::alternate;
 	std::string expected = "alternate";
@@ -4495,14 +4495,14 @@ TEST( HarmonyType_alternate, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_BadParse, MxEnums )
+TEST( KindValue_BadParse, Enums )
 {
 	mx::types::KindValue actual = mx::types::parseKindValue( "major" );
 	mx::types::KindValue expected = mx::types::KindValue::major;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( KindValue_major, MxEnums )
+TEST( KindValue_major, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::major;
 	std::string expected = "major";
@@ -4523,7 +4523,7 @@ TEST( KindValue_major, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_minor, MxEnums )
+TEST( KindValue_minor, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::minor;
 	std::string expected = "minor";
@@ -4544,7 +4544,7 @@ TEST( KindValue_minor, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_augmented, MxEnums )
+TEST( KindValue_augmented, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::augmented;
 	std::string expected = "augmented";
@@ -4565,7 +4565,7 @@ TEST( KindValue_augmented, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_diminished, MxEnums )
+TEST( KindValue_diminished, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::diminished;
 	std::string expected = "diminished";
@@ -4586,7 +4586,7 @@ TEST( KindValue_diminished, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_dominant, MxEnums )
+TEST( KindValue_dominant, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::dominant;
 	std::string expected = "dominant";
@@ -4607,7 +4607,7 @@ TEST( KindValue_dominant, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_majorSeventh, MxEnums )
+TEST( KindValue_majorSeventh, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::majorSeventh;
 	std::string expected = "major-seventh";
@@ -4628,7 +4628,7 @@ TEST( KindValue_majorSeventh, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_minorSeventh, MxEnums )
+TEST( KindValue_minorSeventh, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::minorSeventh;
 	std::string expected = "minor-seventh";
@@ -4649,7 +4649,7 @@ TEST( KindValue_minorSeventh, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_diminishedSeventh, MxEnums )
+TEST( KindValue_diminishedSeventh, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::diminishedSeventh;
 	std::string expected = "diminished-seventh";
@@ -4670,7 +4670,7 @@ TEST( KindValue_diminishedSeventh, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_augmentedSeventh, MxEnums )
+TEST( KindValue_augmentedSeventh, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::augmentedSeventh;
 	std::string expected = "augmented-seventh";
@@ -4691,7 +4691,7 @@ TEST( KindValue_augmentedSeventh, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_halfDiminished, MxEnums )
+TEST( KindValue_halfDiminished, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::halfDiminished;
 	std::string expected = "half-diminished";
@@ -4712,7 +4712,7 @@ TEST( KindValue_halfDiminished, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_majorMinor, MxEnums )
+TEST( KindValue_majorMinor, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::majorMinor;
 	std::string expected = "major-minor";
@@ -4733,7 +4733,7 @@ TEST( KindValue_majorMinor, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_majorSixth, MxEnums )
+TEST( KindValue_majorSixth, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::majorSixth;
 	std::string expected = "major-sixth";
@@ -4754,7 +4754,7 @@ TEST( KindValue_majorSixth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_minorSixth, MxEnums )
+TEST( KindValue_minorSixth, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::minorSixth;
 	std::string expected = "minor-sixth";
@@ -4775,7 +4775,7 @@ TEST( KindValue_minorSixth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_dominantNinth, MxEnums )
+TEST( KindValue_dominantNinth, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::dominantNinth;
 	std::string expected = "dominant-ninth";
@@ -4796,7 +4796,7 @@ TEST( KindValue_dominantNinth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_majorNinth, MxEnums )
+TEST( KindValue_majorNinth, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::majorNinth;
 	std::string expected = "major-ninth";
@@ -4817,7 +4817,7 @@ TEST( KindValue_majorNinth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_minorNinth, MxEnums )
+TEST( KindValue_minorNinth, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::minorNinth;
 	std::string expected = "minor-ninth";
@@ -4838,7 +4838,7 @@ TEST( KindValue_minorNinth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_dominant11Th, MxEnums )
+TEST( KindValue_dominant11Th, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::dominant11Th;
 	std::string expected = "dominant-11th";
@@ -4859,7 +4859,7 @@ TEST( KindValue_dominant11Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_major11Th, MxEnums )
+TEST( KindValue_major11Th, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::major11Th;
 	std::string expected = "major-11th";
@@ -4880,7 +4880,7 @@ TEST( KindValue_major11Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_minor11Th, MxEnums )
+TEST( KindValue_minor11Th, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::minor11Th;
 	std::string expected = "minor-11th";
@@ -4901,7 +4901,7 @@ TEST( KindValue_minor11Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_dominant13Th, MxEnums )
+TEST( KindValue_dominant13Th, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::dominant13Th;
 	std::string expected = "dominant-13th";
@@ -4922,7 +4922,7 @@ TEST( KindValue_dominant13Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_major13Th, MxEnums )
+TEST( KindValue_major13Th, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::major13Th;
 	std::string expected = "major-13th";
@@ -4943,7 +4943,7 @@ TEST( KindValue_major13Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_minor13Th, MxEnums )
+TEST( KindValue_minor13Th, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::minor13Th;
 	std::string expected = "minor-13th";
@@ -4964,7 +4964,7 @@ TEST( KindValue_minor13Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_suspendedSecond, MxEnums )
+TEST( KindValue_suspendedSecond, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::suspendedSecond;
 	std::string expected = "suspended-second";
@@ -4985,7 +4985,7 @@ TEST( KindValue_suspendedSecond, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_suspendedFourth, MxEnums )
+TEST( KindValue_suspendedFourth, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::suspendedFourth;
 	std::string expected = "suspended-fourth";
@@ -5006,7 +5006,7 @@ TEST( KindValue_suspendedFourth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_neapolitan, MxEnums )
+TEST( KindValue_neapolitan, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::neapolitan;
 	std::string expected = "Neapolitan";
@@ -5027,7 +5027,7 @@ TEST( KindValue_neapolitan, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_italian, MxEnums )
+TEST( KindValue_italian, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::italian;
 	std::string expected = "Italian";
@@ -5048,7 +5048,7 @@ TEST( KindValue_italian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_french, MxEnums )
+TEST( KindValue_french, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::french;
 	std::string expected = "French";
@@ -5069,7 +5069,7 @@ TEST( KindValue_french, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_german, MxEnums )
+TEST( KindValue_german, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::german;
 	std::string expected = "German";
@@ -5090,7 +5090,7 @@ TEST( KindValue_german, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_pedal, MxEnums )
+TEST( KindValue_pedal, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::pedal;
 	std::string expected = "pedal";
@@ -5111,7 +5111,7 @@ TEST( KindValue_pedal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_power, MxEnums )
+TEST( KindValue_power, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::power;
 	std::string expected = "power";
@@ -5132,7 +5132,7 @@ TEST( KindValue_power, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_tristan, MxEnums )
+TEST( KindValue_tristan, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::tristan;
 	std::string expected = "Tristan";
@@ -5153,7 +5153,7 @@ TEST( KindValue_tristan, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_other, MxEnums )
+TEST( KindValue_other, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::other;
 	std::string expected = "other";
@@ -5174,7 +5174,7 @@ TEST( KindValue_other, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( KindValue_none, MxEnums )
+TEST( KindValue_none, Enums )
 {
 	mx::types::KindValue e = mx::types::KindValue::none;
 	std::string expected = "none";
@@ -5195,14 +5195,14 @@ TEST( KindValue_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineEnd_BadParse, MxEnums )
+TEST( LineEnd_BadParse, Enums )
 {
 	mx::types::LineEnd actual = mx::types::parseLineEnd( "up" );
 	mx::types::LineEnd expected = mx::types::LineEnd::up;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( LineEnd_up, MxEnums )
+TEST( LineEnd_up, Enums )
 {
 	mx::types::LineEnd e = mx::types::LineEnd::up;
 	std::string expected = "up";
@@ -5223,7 +5223,7 @@ TEST( LineEnd_up, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineEnd_down, MxEnums )
+TEST( LineEnd_down, Enums )
 {
 	mx::types::LineEnd e = mx::types::LineEnd::down;
 	std::string expected = "down";
@@ -5244,7 +5244,7 @@ TEST( LineEnd_down, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineEnd_both, MxEnums )
+TEST( LineEnd_both, Enums )
 {
 	mx::types::LineEnd e = mx::types::LineEnd::both;
 	std::string expected = "both";
@@ -5265,7 +5265,7 @@ TEST( LineEnd_both, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineEnd_arrow, MxEnums )
+TEST( LineEnd_arrow, Enums )
 {
 	mx::types::LineEnd e = mx::types::LineEnd::arrow;
 	std::string expected = "arrow";
@@ -5286,7 +5286,7 @@ TEST( LineEnd_arrow, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineEnd_none, MxEnums )
+TEST( LineEnd_none, Enums )
 {
 	mx::types::LineEnd e = mx::types::LineEnd::none;
 	std::string expected = "none";
@@ -5307,14 +5307,14 @@ TEST( LineEnd_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( MeasureNumberingValue_BadParse, MxEnums )
+TEST( MeasureNumberingValue_BadParse, Enums )
 {
 	mx::types::MeasureNumberingValue actual = mx::types::parseMeasureNumberingValue( "none" );
 	mx::types::MeasureNumberingValue expected = mx::types::MeasureNumberingValue::none;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( MeasureNumberingValue_none, MxEnums )
+TEST( MeasureNumberingValue_none, Enums )
 {
 	mx::types::MeasureNumberingValue e = mx::types::MeasureNumberingValue::none;
 	std::string expected = "none";
@@ -5335,7 +5335,7 @@ TEST( MeasureNumberingValue_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( MeasureNumberingValue_measure, MxEnums )
+TEST( MeasureNumberingValue_measure, Enums )
 {
 	mx::types::MeasureNumberingValue e = mx::types::MeasureNumberingValue::measure;
 	std::string expected = "measure";
@@ -5356,7 +5356,7 @@ TEST( MeasureNumberingValue_measure, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( MeasureNumberingValue_system, MxEnums )
+TEST( MeasureNumberingValue_system, Enums )
 {
 	mx::types::MeasureNumberingValue e = mx::types::MeasureNumberingValue::system;
 	std::string expected = "system";
@@ -5377,14 +5377,14 @@ TEST( MeasureNumberingValue_system, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_BadParse, MxEnums )
+TEST( Membrane_BadParse, Enums )
 {
 	mx::types::Membrane actual = mx::types::parseMembrane( "bass drum" );
 	mx::types::Membrane expected = mx::types::Membrane::bassDrum;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Membrane_bassDrum, MxEnums )
+TEST( Membrane_bassDrum, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::bassDrum;
 	std::string expected = "bass drum";
@@ -5405,7 +5405,7 @@ TEST( Membrane_bassDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_bassDrumOnSide, MxEnums )
+TEST( Membrane_bassDrumOnSide, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::bassDrumOnSide;
 	std::string expected = "bass drum on side";
@@ -5426,7 +5426,7 @@ TEST( Membrane_bassDrumOnSide, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_bongos, MxEnums )
+TEST( Membrane_bongos, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::bongos;
 	std::string expected = "bongos";
@@ -5447,7 +5447,7 @@ TEST( Membrane_bongos, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_congaDrum, MxEnums )
+TEST( Membrane_congaDrum, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::congaDrum;
 	std::string expected = "conga drum";
@@ -5468,7 +5468,7 @@ TEST( Membrane_congaDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_gobletDrum, MxEnums )
+TEST( Membrane_gobletDrum, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::gobletDrum;
 	std::string expected = "goblet drum";
@@ -5489,7 +5489,7 @@ TEST( Membrane_gobletDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_militaryDrum, MxEnums )
+TEST( Membrane_militaryDrum, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::militaryDrum;
 	std::string expected = "military drum";
@@ -5510,7 +5510,7 @@ TEST( Membrane_militaryDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_snareDrum, MxEnums )
+TEST( Membrane_snareDrum, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::snareDrum;
 	std::string expected = "snare drum";
@@ -5531,7 +5531,7 @@ TEST( Membrane_snareDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_snareDrumSnaresOff, MxEnums )
+TEST( Membrane_snareDrumSnaresOff, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::snareDrumSnaresOff;
 	std::string expected = "snare drum snares off";
@@ -5552,7 +5552,7 @@ TEST( Membrane_snareDrumSnaresOff, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_tambourine, MxEnums )
+TEST( Membrane_tambourine, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::tambourine;
 	std::string expected = "tambourine";
@@ -5573,7 +5573,7 @@ TEST( Membrane_tambourine, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_tenorDrum, MxEnums )
+TEST( Membrane_tenorDrum, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::tenorDrum;
 	std::string expected = "tenor drum";
@@ -5594,7 +5594,7 @@ TEST( Membrane_tenorDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_timbales, MxEnums )
+TEST( Membrane_timbales, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::timbales;
 	std::string expected = "timbales";
@@ -5615,7 +5615,7 @@ TEST( Membrane_timbales, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Membrane_tomtom, MxEnums )
+TEST( Membrane_tomtom, Enums )
 {
 	mx::types::Membrane e = mx::types::Membrane::tomtom;
 	std::string expected = "tomtom";
@@ -5636,14 +5636,14 @@ TEST( Membrane_tomtom, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_BadParse, MxEnums )
+TEST( Metal_BadParse, Enums )
 {
 	mx::types::Metal actual = mx::types::parseMetal( "almglocken" );
 	mx::types::Metal expected = mx::types::Metal::almglocken;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Metal_almglocken, MxEnums )
+TEST( Metal_almglocken, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::almglocken;
 	std::string expected = "almglocken";
@@ -5664,7 +5664,7 @@ TEST( Metal_almglocken, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_bell, MxEnums )
+TEST( Metal_bell, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::bell;
 	std::string expected = "bell";
@@ -5685,7 +5685,7 @@ TEST( Metal_bell, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_bellPlate, MxEnums )
+TEST( Metal_bellPlate, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::bellPlate;
 	std::string expected = "bell plate";
@@ -5706,7 +5706,7 @@ TEST( Metal_bellPlate, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_brakeDrum, MxEnums )
+TEST( Metal_brakeDrum, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::brakeDrum;
 	std::string expected = "brake drum";
@@ -5727,7 +5727,7 @@ TEST( Metal_brakeDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_chineseCymbal, MxEnums )
+TEST( Metal_chineseCymbal, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::chineseCymbal;
 	std::string expected = "Chinese cymbal";
@@ -5748,7 +5748,7 @@ TEST( Metal_chineseCymbal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_cowbell, MxEnums )
+TEST( Metal_cowbell, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::cowbell;
 	std::string expected = "cowbell";
@@ -5769,7 +5769,7 @@ TEST( Metal_cowbell, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_crashCymbals, MxEnums )
+TEST( Metal_crashCymbals, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::crashCymbals;
 	std::string expected = "crash cymbals";
@@ -5790,7 +5790,7 @@ TEST( Metal_crashCymbals, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_crotale, MxEnums )
+TEST( Metal_crotale, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::crotale;
 	std::string expected = "crotale";
@@ -5811,7 +5811,7 @@ TEST( Metal_crotale, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_cymbalTongs, MxEnums )
+TEST( Metal_cymbalTongs, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::cymbalTongs;
 	std::string expected = "cymbal tongs";
@@ -5832,7 +5832,7 @@ TEST( Metal_cymbalTongs, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_domedGong, MxEnums )
+TEST( Metal_domedGong, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::domedGong;
 	std::string expected = "domed gong";
@@ -5853,7 +5853,7 @@ TEST( Metal_domedGong, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_fingerCymbals, MxEnums )
+TEST( Metal_fingerCymbals, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::fingerCymbals;
 	std::string expected = "finger cymbals";
@@ -5874,7 +5874,7 @@ TEST( Metal_fingerCymbals, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_flexatone, MxEnums )
+TEST( Metal_flexatone, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::flexatone;
 	std::string expected = "flexatone";
@@ -5895,7 +5895,7 @@ TEST( Metal_flexatone, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_gong, MxEnums )
+TEST( Metal_gong, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::gong;
 	std::string expected = "gong";
@@ -5916,7 +5916,7 @@ TEST( Metal_gong, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_hiHat, MxEnums )
+TEST( Metal_hiHat, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::hiHat;
 	std::string expected = "hi-hat";
@@ -5937,7 +5937,7 @@ TEST( Metal_hiHat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_highHatCymbals, MxEnums )
+TEST( Metal_highHatCymbals, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::highHatCymbals;
 	std::string expected = "high-hat cymbals";
@@ -5958,7 +5958,7 @@ TEST( Metal_highHatCymbals, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_handbell, MxEnums )
+TEST( Metal_handbell, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::handbell;
 	std::string expected = "handbell";
@@ -5979,7 +5979,7 @@ TEST( Metal_handbell, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_sistrum, MxEnums )
+TEST( Metal_sistrum, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::sistrum;
 	std::string expected = "sistrum";
@@ -6000,7 +6000,7 @@ TEST( Metal_sistrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_sizzleCymbal, MxEnums )
+TEST( Metal_sizzleCymbal, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::sizzleCymbal;
 	std::string expected = "sizzle cymbal";
@@ -6021,7 +6021,7 @@ TEST( Metal_sizzleCymbal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_sleighBells, MxEnums )
+TEST( Metal_sleighBells, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::sleighBells;
 	std::string expected = "sleigh bells";
@@ -6042,7 +6042,7 @@ TEST( Metal_sleighBells, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_suspendedCymbal, MxEnums )
+TEST( Metal_suspendedCymbal, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::suspendedCymbal;
 	std::string expected = "suspended cymbal";
@@ -6063,7 +6063,7 @@ TEST( Metal_suspendedCymbal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_tamTam, MxEnums )
+TEST( Metal_tamTam, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::tamTam;
 	std::string expected = "tam tam";
@@ -6084,7 +6084,7 @@ TEST( Metal_tamTam, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_triangle, MxEnums )
+TEST( Metal_triangle, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::triangle;
 	std::string expected = "triangle";
@@ -6105,7 +6105,7 @@ TEST( Metal_triangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Metal_vietnameseHat, MxEnums )
+TEST( Metal_vietnameseHat, Enums )
 {
 	mx::types::Metal e = mx::types::Metal::vietnameseHat;
 	std::string expected = "Vietnamese hat";
@@ -6126,14 +6126,14 @@ TEST( Metal_vietnameseHat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( OnOff_BadParse, MxEnums )
+TEST( OnOff_BadParse, Enums )
 {
 	mx::types::OnOff actual = mx::types::parseOnOff( "on" );
 	mx::types::OnOff expected = mx::types::OnOff::on;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( OnOff_on, MxEnums )
+TEST( OnOff_on, Enums )
 {
 	mx::types::OnOff e = mx::types::OnOff::on;
 	std::string expected = "on";
@@ -6154,7 +6154,7 @@ TEST( OnOff_on, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( OnOff_off, MxEnums )
+TEST( OnOff_off, Enums )
 {
 	mx::types::OnOff e = mx::types::OnOff::off;
 	std::string expected = "off";
@@ -6175,14 +6175,14 @@ TEST( OnOff_off, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_BadParse, MxEnums )
+TEST( Pitched_BadParse, Enums )
 {
 	mx::types::Pitched actual = mx::types::parsePitched( "chimes" );
 	mx::types::Pitched expected = mx::types::Pitched::chimes;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Pitched_chimes, MxEnums )
+TEST( Pitched_chimes, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::chimes;
 	std::string expected = "chimes";
@@ -6203,7 +6203,7 @@ TEST( Pitched_chimes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_glockenspiel, MxEnums )
+TEST( Pitched_glockenspiel, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::glockenspiel;
 	std::string expected = "glockenspiel";
@@ -6224,7 +6224,7 @@ TEST( Pitched_glockenspiel, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_mallet, MxEnums )
+TEST( Pitched_mallet, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::mallet;
 	std::string expected = "mallet";
@@ -6245,7 +6245,7 @@ TEST( Pitched_mallet, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_marimba, MxEnums )
+TEST( Pitched_marimba, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::marimba;
 	std::string expected = "marimba";
@@ -6266,7 +6266,7 @@ TEST( Pitched_marimba, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_tubularChimes, MxEnums )
+TEST( Pitched_tubularChimes, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::tubularChimes;
 	std::string expected = "tubular chimes";
@@ -6287,7 +6287,7 @@ TEST( Pitched_tubularChimes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_vibraphone, MxEnums )
+TEST( Pitched_vibraphone, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::vibraphone;
 	std::string expected = "vibraphone";
@@ -6308,7 +6308,7 @@ TEST( Pitched_vibraphone, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Pitched_xylophone, MxEnums )
+TEST( Pitched_xylophone, Enums )
 {
 	mx::types::Pitched e = mx::types::Pitched::xylophone;
 	std::string expected = "xylophone";
@@ -6329,14 +6329,14 @@ TEST( Pitched_xylophone, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( PrincipalVoiceSymbol_BadParse, MxEnums )
+TEST( PrincipalVoiceSymbol_BadParse, Enums )
 {
 	mx::types::PrincipalVoiceSymbol actual = mx::types::parsePrincipalVoiceSymbol( "Hauptstimme" );
 	mx::types::PrincipalVoiceSymbol expected = mx::types::PrincipalVoiceSymbol::hauptstimme;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( PrincipalVoiceSymbol_hauptstimme, MxEnums )
+TEST( PrincipalVoiceSymbol_hauptstimme, Enums )
 {
 	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::hauptstimme;
 	std::string expected = "Hauptstimme";
@@ -6357,7 +6357,7 @@ TEST( PrincipalVoiceSymbol_hauptstimme, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( PrincipalVoiceSymbol_nebenstimme, MxEnums )
+TEST( PrincipalVoiceSymbol_nebenstimme, Enums )
 {
 	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::nebenstimme;
 	std::string expected = "Nebenstimme";
@@ -6378,7 +6378,7 @@ TEST( PrincipalVoiceSymbol_nebenstimme, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( PrincipalVoiceSymbol_plain, MxEnums )
+TEST( PrincipalVoiceSymbol_plain, Enums )
 {
 	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::plain;
 	std::string expected = "plain";
@@ -6399,7 +6399,7 @@ TEST( PrincipalVoiceSymbol_plain, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( PrincipalVoiceSymbol_none, MxEnums )
+TEST( PrincipalVoiceSymbol_none, Enums )
 {
 	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::none;
 	std::string expected = "none";
@@ -6420,14 +6420,14 @@ TEST( PrincipalVoiceSymbol_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopChangeContinue_BadParse, MxEnums )
+TEST( StartStopChangeContinue_BadParse, Enums )
 {
 	mx::types::StartStopChangeContinue actual = mx::types::parseStartStopChangeContinue( "start" );
 	mx::types::StartStopChangeContinue expected = mx::types::StartStopChangeContinue::start;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StartStopChangeContinue_start, MxEnums )
+TEST( StartStopChangeContinue_start, Enums )
 {
 	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::start;
 	std::string expected = "start";
@@ -6448,7 +6448,7 @@ TEST( StartStopChangeContinue_start, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopChangeContinue_stop, MxEnums )
+TEST( StartStopChangeContinue_stop, Enums )
 {
 	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::stop;
 	std::string expected = "stop";
@@ -6469,7 +6469,7 @@ TEST( StartStopChangeContinue_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopChangeContinue_change, MxEnums )
+TEST( StartStopChangeContinue_change, Enums )
 {
 	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::change;
 	std::string expected = "change";
@@ -6490,7 +6490,7 @@ TEST( StartStopChangeContinue_change, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StartStopChangeContinue_continue_, MxEnums )
+TEST( StartStopChangeContinue_continue_, Enums )
 {
 	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::continue_;
 	std::string expected = "continue";
@@ -6511,14 +6511,14 @@ TEST( StartStopChangeContinue_continue_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_BadParse, MxEnums )
+TEST( TipDirection_BadParse, Enums )
 {
 	mx::types::TipDirection actual = mx::types::parseTipDirection( "up" );
 	mx::types::TipDirection expected = mx::types::TipDirection::up;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( TipDirection_up, MxEnums )
+TEST( TipDirection_up, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::up;
 	std::string expected = "up";
@@ -6539,7 +6539,7 @@ TEST( TipDirection_up, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_down, MxEnums )
+TEST( TipDirection_down, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::down;
 	std::string expected = "down";
@@ -6560,7 +6560,7 @@ TEST( TipDirection_down, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_left, MxEnums )
+TEST( TipDirection_left, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::left;
 	std::string expected = "left";
@@ -6581,7 +6581,7 @@ TEST( TipDirection_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_right, MxEnums )
+TEST( TipDirection_right, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::right;
 	std::string expected = "right";
@@ -6602,7 +6602,7 @@ TEST( TipDirection_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_northwest, MxEnums )
+TEST( TipDirection_northwest, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::northwest;
 	std::string expected = "northwest";
@@ -6623,7 +6623,7 @@ TEST( TipDirection_northwest, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_northeast, MxEnums )
+TEST( TipDirection_northeast, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::northeast;
 	std::string expected = "northeast";
@@ -6644,7 +6644,7 @@ TEST( TipDirection_northeast, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_southeast, MxEnums )
+TEST( TipDirection_southeast, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::southeast;
 	std::string expected = "southeast";
@@ -6665,7 +6665,7 @@ TEST( TipDirection_southeast, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( TipDirection_southwest, MxEnums )
+TEST( TipDirection_southwest, Enums )
 {
 	mx::types::TipDirection e = mx::types::TipDirection::southwest;
 	std::string expected = "southwest";
@@ -6686,14 +6686,14 @@ TEST( TipDirection_southwest, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickLocation_BadParse, MxEnums )
+TEST( StickLocation_BadParse, Enums )
 {
 	mx::types::StickLocation actual = mx::types::parseStickLocation( "center" );
 	mx::types::StickLocation expected = mx::types::StickLocation::center;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StickLocation_center, MxEnums )
+TEST( StickLocation_center, Enums )
 {
 	mx::types::StickLocation e = mx::types::StickLocation::center;
 	std::string expected = "center";
@@ -6714,7 +6714,7 @@ TEST( StickLocation_center, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickLocation_rim, MxEnums )
+TEST( StickLocation_rim, Enums )
 {
 	mx::types::StickLocation e = mx::types::StickLocation::rim;
 	std::string expected = "rim";
@@ -6735,7 +6735,7 @@ TEST( StickLocation_rim, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickLocation_cymbalBell, MxEnums )
+TEST( StickLocation_cymbalBell, Enums )
 {
 	mx::types::StickLocation e = mx::types::StickLocation::cymbalBell;
 	std::string expected = "cymbal bell";
@@ -6756,7 +6756,7 @@ TEST( StickLocation_cymbalBell, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickLocation_cymbalEdge, MxEnums )
+TEST( StickLocation_cymbalEdge, Enums )
 {
 	mx::types::StickLocation e = mx::types::StickLocation::cymbalEdge;
 	std::string expected = "cymbal edge";
@@ -6777,14 +6777,14 @@ TEST( StickLocation_cymbalEdge, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickMaterial_BadParse, MxEnums )
+TEST( StickMaterial_BadParse, Enums )
 {
 	mx::types::StickMaterial actual = mx::types::parseStickMaterial( "soft" );
 	mx::types::StickMaterial expected = mx::types::StickMaterial::soft;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StickMaterial_soft, MxEnums )
+TEST( StickMaterial_soft, Enums )
 {
 	mx::types::StickMaterial e = mx::types::StickMaterial::soft;
 	std::string expected = "soft";
@@ -6805,7 +6805,7 @@ TEST( StickMaterial_soft, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickMaterial_medium, MxEnums )
+TEST( StickMaterial_medium, Enums )
 {
 	mx::types::StickMaterial e = mx::types::StickMaterial::medium;
 	std::string expected = "medium";
@@ -6826,7 +6826,7 @@ TEST( StickMaterial_medium, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickMaterial_hard, MxEnums )
+TEST( StickMaterial_hard, Enums )
 {
 	mx::types::StickMaterial e = mx::types::StickMaterial::hard;
 	std::string expected = "hard";
@@ -6847,7 +6847,7 @@ TEST( StickMaterial_hard, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickMaterial_shaded, MxEnums )
+TEST( StickMaterial_shaded, Enums )
 {
 	mx::types::StickMaterial e = mx::types::StickMaterial::shaded;
 	std::string expected = "shaded";
@@ -6868,7 +6868,7 @@ TEST( StickMaterial_shaded, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickMaterial_x, MxEnums )
+TEST( StickMaterial_x, Enums )
 {
 	mx::types::StickMaterial e = mx::types::StickMaterial::x;
 	std::string expected = "x";
@@ -6889,14 +6889,14 @@ TEST( StickMaterial_x, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickType_BadParse, MxEnums )
+TEST( StickType_BadParse, Enums )
 {
 	mx::types::StickType actual = mx::types::parseStickType( "bass drum" );
 	mx::types::StickType expected = mx::types::StickType::bassDrum;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StickType_bassDrum, MxEnums )
+TEST( StickType_bassDrum, Enums )
 {
 	mx::types::StickType e = mx::types::StickType::bassDrum;
 	std::string expected = "bass drum";
@@ -6917,7 +6917,7 @@ TEST( StickType_bassDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickType_doubleBassDrum, MxEnums )
+TEST( StickType_doubleBassDrum, Enums )
 {
 	mx::types::StickType e = mx::types::StickType::doubleBassDrum;
 	std::string expected = "double bass drum";
@@ -6938,7 +6938,7 @@ TEST( StickType_doubleBassDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickType_timpani, MxEnums )
+TEST( StickType_timpani, Enums )
 {
 	mx::types::StickType e = mx::types::StickType::timpani;
 	std::string expected = "timpani";
@@ -6959,7 +6959,7 @@ TEST( StickType_timpani, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickType_xylophone, MxEnums )
+TEST( StickType_xylophone, Enums )
 {
 	mx::types::StickType e = mx::types::StickType::xylophone;
 	std::string expected = "xylophone";
@@ -6980,7 +6980,7 @@ TEST( StickType_xylophone, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StickType_yarn, MxEnums )
+TEST( StickType_yarn, Enums )
 {
 	mx::types::StickType e = mx::types::StickType::yarn;
 	std::string expected = "yarn";
@@ -7001,14 +7001,14 @@ TEST( StickType_yarn, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UpDownStopContinue_BadParse, MxEnums )
+TEST( UpDownStopContinue_BadParse, Enums )
 {
 	mx::types::UpDownStopContinue actual = mx::types::parseUpDownStopContinue( "up" );
 	mx::types::UpDownStopContinue expected = mx::types::UpDownStopContinue::up;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( UpDownStopContinue_up, MxEnums )
+TEST( UpDownStopContinue_up, Enums )
 {
 	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::up;
 	std::string expected = "up";
@@ -7029,7 +7029,7 @@ TEST( UpDownStopContinue_up, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UpDownStopContinue_down, MxEnums )
+TEST( UpDownStopContinue_down, Enums )
 {
 	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::down;
 	std::string expected = "down";
@@ -7050,7 +7050,7 @@ TEST( UpDownStopContinue_down, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UpDownStopContinue_stop, MxEnums )
+TEST( UpDownStopContinue_stop, Enums )
 {
 	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::stop;
 	std::string expected = "stop";
@@ -7071,7 +7071,7 @@ TEST( UpDownStopContinue_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( UpDownStopContinue_continue_, MxEnums )
+TEST( UpDownStopContinue_continue_, Enums )
 {
 	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::continue_;
 	std::string expected = "continue";
@@ -7092,14 +7092,14 @@ TEST( UpDownStopContinue_continue_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( WedgeType_BadParse, MxEnums )
+TEST( WedgeType_BadParse, Enums )
 {
 	mx::types::WedgeType actual = mx::types::parseWedgeType( "crescendo" );
 	mx::types::WedgeType expected = mx::types::WedgeType::crescendo;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( WedgeType_crescendo, MxEnums )
+TEST( WedgeType_crescendo, Enums )
 {
 	mx::types::WedgeType e = mx::types::WedgeType::crescendo;
 	std::string expected = "crescendo";
@@ -7120,7 +7120,7 @@ TEST( WedgeType_crescendo, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( WedgeType_diminuendo, MxEnums )
+TEST( WedgeType_diminuendo, Enums )
 {
 	mx::types::WedgeType e = mx::types::WedgeType::diminuendo;
 	std::string expected = "diminuendo";
@@ -7141,7 +7141,7 @@ TEST( WedgeType_diminuendo, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( WedgeType_stop, MxEnums )
+TEST( WedgeType_stop, Enums )
 {
 	mx::types::WedgeType e = mx::types::WedgeType::stop;
 	std::string expected = "stop";
@@ -7162,7 +7162,7 @@ TEST( WedgeType_stop, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( WedgeType_continue_, MxEnums )
+TEST( WedgeType_continue_, Enums )
 {
 	mx::types::WedgeType e = mx::types::WedgeType::continue_;
 	std::string expected = "continue";
@@ -7183,14 +7183,14 @@ TEST( WedgeType_continue_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_BadParse, MxEnums )
+TEST( Wood_BadParse, Enums )
 {
 	mx::types::Wood actual = mx::types::parseWood( "board clapper" );
 	mx::types::Wood expected = mx::types::Wood::boardClapper;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Wood_boardClapper, MxEnums )
+TEST( Wood_boardClapper, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::boardClapper;
 	std::string expected = "board clapper";
@@ -7211,7 +7211,7 @@ TEST( Wood_boardClapper, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_cabasa, MxEnums )
+TEST( Wood_cabasa, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::cabasa;
 	std::string expected = "cabasa";
@@ -7232,7 +7232,7 @@ TEST( Wood_cabasa, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_castanets, MxEnums )
+TEST( Wood_castanets, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::castanets;
 	std::string expected = "castanets";
@@ -7253,7 +7253,7 @@ TEST( Wood_castanets, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_claves, MxEnums )
+TEST( Wood_claves, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::claves;
 	std::string expected = "claves";
@@ -7274,7 +7274,7 @@ TEST( Wood_claves, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_guiro, MxEnums )
+TEST( Wood_guiro, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::guiro;
 	std::string expected = "guiro";
@@ -7295,7 +7295,7 @@ TEST( Wood_guiro, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_logDrum, MxEnums )
+TEST( Wood_logDrum, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::logDrum;
 	std::string expected = "log drum";
@@ -7316,7 +7316,7 @@ TEST( Wood_logDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_maraca, MxEnums )
+TEST( Wood_maraca, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::maraca;
 	std::string expected = "maraca";
@@ -7337,7 +7337,7 @@ TEST( Wood_maraca, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_maracas, MxEnums )
+TEST( Wood_maracas, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::maracas;
 	std::string expected = "maracas";
@@ -7358,7 +7358,7 @@ TEST( Wood_maracas, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_ratchet, MxEnums )
+TEST( Wood_ratchet, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::ratchet;
 	std::string expected = "ratchet";
@@ -7379,7 +7379,7 @@ TEST( Wood_ratchet, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_sandpaperBlocks, MxEnums )
+TEST( Wood_sandpaperBlocks, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::sandpaperBlocks;
 	std::string expected = "sandpaper blocks";
@@ -7400,7 +7400,7 @@ TEST( Wood_sandpaperBlocks, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_slitDrum, MxEnums )
+TEST( Wood_slitDrum, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::slitDrum;
 	std::string expected = "slit drum";
@@ -7421,7 +7421,7 @@ TEST( Wood_slitDrum, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_templeBlock, MxEnums )
+TEST( Wood_templeBlock, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::templeBlock;
 	std::string expected = "temple block";
@@ -7442,7 +7442,7 @@ TEST( Wood_templeBlock, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_vibraslap, MxEnums )
+TEST( Wood_vibraslap, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::vibraslap;
 	std::string expected = "vibraslap";
@@ -7463,7 +7463,7 @@ TEST( Wood_vibraslap, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Wood_woodBlock, MxEnums )
+TEST( Wood_woodBlock, Enums )
 {
 	mx::types::Wood e = mx::types::Wood::woodBlock;
 	std::string expected = "wood block";
@@ -7484,14 +7484,14 @@ TEST( Wood_woodBlock, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( MarginType_BadParse, MxEnums )
+TEST( MarginType_BadParse, Enums )
 {
 	mx::types::MarginType actual = mx::types::parseMarginType( "odd" );
 	mx::types::MarginType expected = mx::types::MarginType::odd;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( MarginType_odd, MxEnums )
+TEST( MarginType_odd, Enums )
 {
 	mx::types::MarginType e = mx::types::MarginType::odd;
 	std::string expected = "odd";
@@ -7512,7 +7512,7 @@ TEST( MarginType_odd, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( MarginType_even, MxEnums )
+TEST( MarginType_even, Enums )
 {
 	mx::types::MarginType e = mx::types::MarginType::even;
 	std::string expected = "even";
@@ -7533,7 +7533,7 @@ TEST( MarginType_even, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( MarginType_both, MxEnums )
+TEST( MarginType_both, Enums )
 {
 	mx::types::MarginType e = mx::types::MarginType::both;
 	std::string expected = "both";
@@ -7554,14 +7554,14 @@ TEST( MarginType_both, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteSizeType_BadParse, MxEnums )
+TEST( NoteSizeType_BadParse, Enums )
 {
 	mx::types::NoteSizeType actual = mx::types::parseNoteSizeType( "cue" );
 	mx::types::NoteSizeType expected = mx::types::NoteSizeType::cue;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( NoteSizeType_cue, MxEnums )
+TEST( NoteSizeType_cue, Enums )
 {
 	mx::types::NoteSizeType e = mx::types::NoteSizeType::cue;
 	std::string expected = "cue";
@@ -7582,7 +7582,7 @@ TEST( NoteSizeType_cue, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteSizeType_grace, MxEnums )
+TEST( NoteSizeType_grace, Enums )
 {
 	mx::types::NoteSizeType e = mx::types::NoteSizeType::grace;
 	std::string expected = "grace";
@@ -7603,7 +7603,7 @@ TEST( NoteSizeType_grace, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteSizeType_large, MxEnums )
+TEST( NoteSizeType_large, Enums )
 {
 	mx::types::NoteSizeType e = mx::types::NoteSizeType::large;
 	std::string expected = "large";
@@ -7624,14 +7624,14 @@ TEST( NoteSizeType_large, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_BadParse, MxEnums )
+TEST( AccidentalValue_BadParse, Enums )
 {
 	mx::types::AccidentalValue actual = mx::types::parseAccidentalValue( "sharp" );
 	mx::types::AccidentalValue expected = mx::types::AccidentalValue::sharp;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( AccidentalValue_sharp, MxEnums )
+TEST( AccidentalValue_sharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp;
 	std::string expected = "sharp";
@@ -7652,7 +7652,7 @@ TEST( AccidentalValue_sharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_natural, MxEnums )
+TEST( AccidentalValue_natural, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::natural;
 	std::string expected = "natural";
@@ -7673,7 +7673,7 @@ TEST( AccidentalValue_natural, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flat, MxEnums )
+TEST( AccidentalValue_flat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat;
 	std::string expected = "flat";
@@ -7694,7 +7694,7 @@ TEST( AccidentalValue_flat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_doubleSharp, MxEnums )
+TEST( AccidentalValue_doubleSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::doubleSharp;
 	std::string expected = "double-sharp";
@@ -7715,7 +7715,7 @@ TEST( AccidentalValue_doubleSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharpSharp, MxEnums )
+TEST( AccidentalValue_sharpSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharpSharp;
 	std::string expected = "sharp-sharp";
@@ -7736,7 +7736,7 @@ TEST( AccidentalValue_sharpSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flatFlat, MxEnums )
+TEST( AccidentalValue_flatFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flatFlat;
 	std::string expected = "flat-flat";
@@ -7757,7 +7757,7 @@ TEST( AccidentalValue_flatFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_naturalSharp, MxEnums )
+TEST( AccidentalValue_naturalSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalSharp;
 	std::string expected = "natural-sharp";
@@ -7778,7 +7778,7 @@ TEST( AccidentalValue_naturalSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_naturalFlat, MxEnums )
+TEST( AccidentalValue_naturalFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalFlat;
 	std::string expected = "natural-flat";
@@ -7799,7 +7799,7 @@ TEST( AccidentalValue_naturalFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_quarterFlat, MxEnums )
+TEST( AccidentalValue_quarterFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::quarterFlat;
 	std::string expected = "quarter-flat";
@@ -7820,7 +7820,7 @@ TEST( AccidentalValue_quarterFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_quarterSharp, MxEnums )
+TEST( AccidentalValue_quarterSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::quarterSharp;
 	std::string expected = "quarter-sharp";
@@ -7841,7 +7841,7 @@ TEST( AccidentalValue_quarterSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_threeQuartersFlat, MxEnums )
+TEST( AccidentalValue_threeQuartersFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::threeQuartersFlat;
 	std::string expected = "three-quarters-flat";
@@ -7862,7 +7862,7 @@ TEST( AccidentalValue_threeQuartersFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_threeQuartersSharp, MxEnums )
+TEST( AccidentalValue_threeQuartersSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::threeQuartersSharp;
 	std::string expected = "three-quarters-sharp";
@@ -7883,7 +7883,7 @@ TEST( AccidentalValue_threeQuartersSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharpDown, MxEnums )
+TEST( AccidentalValue_sharpDown, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharpDown;
 	std::string expected = "sharp-down";
@@ -7904,7 +7904,7 @@ TEST( AccidentalValue_sharpDown, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharpUp, MxEnums )
+TEST( AccidentalValue_sharpUp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharpUp;
 	std::string expected = "sharp-up";
@@ -7925,7 +7925,7 @@ TEST( AccidentalValue_sharpUp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_naturalDown, MxEnums )
+TEST( AccidentalValue_naturalDown, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalDown;
 	std::string expected = "natural-down";
@@ -7946,7 +7946,7 @@ TEST( AccidentalValue_naturalDown, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_naturalUp, MxEnums )
+TEST( AccidentalValue_naturalUp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalUp;
 	std::string expected = "natural-up";
@@ -7967,7 +7967,7 @@ TEST( AccidentalValue_naturalUp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flatDown, MxEnums )
+TEST( AccidentalValue_flatDown, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flatDown;
 	std::string expected = "flat-down";
@@ -7988,7 +7988,7 @@ TEST( AccidentalValue_flatDown, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flatUp, MxEnums )
+TEST( AccidentalValue_flatUp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flatUp;
 	std::string expected = "flat-up";
@@ -8009,7 +8009,7 @@ TEST( AccidentalValue_flatUp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_tripleSharp, MxEnums )
+TEST( AccidentalValue_tripleSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::tripleSharp;
 	std::string expected = "triple-sharp";
@@ -8030,7 +8030,7 @@ TEST( AccidentalValue_tripleSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_tripleFlat, MxEnums )
+TEST( AccidentalValue_tripleFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::tripleFlat;
 	std::string expected = "triple-flat";
@@ -8051,7 +8051,7 @@ TEST( AccidentalValue_tripleFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_slashQuarterSharp, MxEnums )
+TEST( AccidentalValue_slashQuarterSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::slashQuarterSharp;
 	std::string expected = "slash-quarter-sharp";
@@ -8072,7 +8072,7 @@ TEST( AccidentalValue_slashQuarterSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_slashSharp, MxEnums )
+TEST( AccidentalValue_slashSharp, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::slashSharp;
 	std::string expected = "slash-sharp";
@@ -8093,7 +8093,7 @@ TEST( AccidentalValue_slashSharp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_slashFlat, MxEnums )
+TEST( AccidentalValue_slashFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::slashFlat;
 	std::string expected = "slash-flat";
@@ -8114,7 +8114,7 @@ TEST( AccidentalValue_slashFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_doubleSlashFlat, MxEnums )
+TEST( AccidentalValue_doubleSlashFlat, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::doubleSlashFlat;
 	std::string expected = "double-slash-flat";
@@ -8135,7 +8135,7 @@ TEST( AccidentalValue_doubleSlashFlat, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharp1, MxEnums )
+TEST( AccidentalValue_sharp1, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp1;
 	std::string expected = "sharp-1";
@@ -8156,7 +8156,7 @@ TEST( AccidentalValue_sharp1, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharp2, MxEnums )
+TEST( AccidentalValue_sharp2, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp2;
 	std::string expected = "sharp-2";
@@ -8177,7 +8177,7 @@ TEST( AccidentalValue_sharp2, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharp3, MxEnums )
+TEST( AccidentalValue_sharp3, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp3;
 	std::string expected = "sharp-3";
@@ -8198,7 +8198,7 @@ TEST( AccidentalValue_sharp3, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sharp5, MxEnums )
+TEST( AccidentalValue_sharp5, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp5;
 	std::string expected = "sharp-5";
@@ -8219,7 +8219,7 @@ TEST( AccidentalValue_sharp5, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flat1, MxEnums )
+TEST( AccidentalValue_flat1, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat1;
 	std::string expected = "flat-1";
@@ -8240,7 +8240,7 @@ TEST( AccidentalValue_flat1, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flat2, MxEnums )
+TEST( AccidentalValue_flat2, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat2;
 	std::string expected = "flat-2";
@@ -8261,7 +8261,7 @@ TEST( AccidentalValue_flat2, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flat3, MxEnums )
+TEST( AccidentalValue_flat3, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat3;
 	std::string expected = "flat-3";
@@ -8282,7 +8282,7 @@ TEST( AccidentalValue_flat3, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_flat4, MxEnums )
+TEST( AccidentalValue_flat4, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat4;
 	std::string expected = "flat-4";
@@ -8303,7 +8303,7 @@ TEST( AccidentalValue_flat4, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_sori, MxEnums )
+TEST( AccidentalValue_sori, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::sori;
 	std::string expected = "sori";
@@ -8324,7 +8324,7 @@ TEST( AccidentalValue_sori, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( AccidentalValue_koron, MxEnums )
+TEST( AccidentalValue_koron, Enums )
 {
 	mx::types::AccidentalValue e = mx::types::AccidentalValue::koron;
 	std::string expected = "koron";
@@ -8345,14 +8345,14 @@ TEST( AccidentalValue_koron, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_BadParse, MxEnums )
+TEST( ArrowDirection_BadParse, Enums )
 {
 	mx::types::ArrowDirection actual = mx::types::parseArrowDirection( "left" );
 	mx::types::ArrowDirection expected = mx::types::ArrowDirection::left;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( ArrowDirection_left, MxEnums )
+TEST( ArrowDirection_left, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::left;
 	std::string expected = "left";
@@ -8373,7 +8373,7 @@ TEST( ArrowDirection_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_up, MxEnums )
+TEST( ArrowDirection_up, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::up;
 	std::string expected = "up";
@@ -8394,7 +8394,7 @@ TEST( ArrowDirection_up, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_right, MxEnums )
+TEST( ArrowDirection_right, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::right;
 	std::string expected = "right";
@@ -8415,7 +8415,7 @@ TEST( ArrowDirection_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_down, MxEnums )
+TEST( ArrowDirection_down, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::down;
 	std::string expected = "down";
@@ -8436,7 +8436,7 @@ TEST( ArrowDirection_down, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_northwest, MxEnums )
+TEST( ArrowDirection_northwest, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::northwest;
 	std::string expected = "northwest";
@@ -8457,7 +8457,7 @@ TEST( ArrowDirection_northwest, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_northeast, MxEnums )
+TEST( ArrowDirection_northeast, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::northeast;
 	std::string expected = "northeast";
@@ -8478,7 +8478,7 @@ TEST( ArrowDirection_northeast, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_southeast, MxEnums )
+TEST( ArrowDirection_southeast, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::southeast;
 	std::string expected = "southeast";
@@ -8499,7 +8499,7 @@ TEST( ArrowDirection_southeast, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_southwest, MxEnums )
+TEST( ArrowDirection_southwest, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::southwest;
 	std::string expected = "southwest";
@@ -8520,7 +8520,7 @@ TEST( ArrowDirection_southwest, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_leftRight, MxEnums )
+TEST( ArrowDirection_leftRight, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::leftRight;
 	std::string expected = "left right";
@@ -8541,7 +8541,7 @@ TEST( ArrowDirection_leftRight, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_upDown, MxEnums )
+TEST( ArrowDirection_upDown, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::upDown;
 	std::string expected = "up down";
@@ -8562,7 +8562,7 @@ TEST( ArrowDirection_upDown, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_northwestSoutheast, MxEnums )
+TEST( ArrowDirection_northwestSoutheast, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::northwestSoutheast;
 	std::string expected = "northwest southeast";
@@ -8583,7 +8583,7 @@ TEST( ArrowDirection_northwestSoutheast, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_northeastSouthwest, MxEnums )
+TEST( ArrowDirection_northeastSouthwest, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::northeastSouthwest;
 	std::string expected = "northeast southwest";
@@ -8604,7 +8604,7 @@ TEST( ArrowDirection_northeastSouthwest, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowDirection_other, MxEnums )
+TEST( ArrowDirection_other, Enums )
 {
 	mx::types::ArrowDirection e = mx::types::ArrowDirection::other;
 	std::string expected = "other";
@@ -8625,14 +8625,14 @@ TEST( ArrowDirection_other, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_BadParse, MxEnums )
+TEST( ArrowStyle_BadParse, Enums )
 {
 	mx::types::ArrowStyle actual = mx::types::parseArrowStyle( "single" );
 	mx::types::ArrowStyle expected = mx::types::ArrowStyle::single;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( ArrowStyle_single, MxEnums )
+TEST( ArrowStyle_single, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::single;
 	std::string expected = "single";
@@ -8653,7 +8653,7 @@ TEST( ArrowStyle_single, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_double_, MxEnums )
+TEST( ArrowStyle_double_, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::double_;
 	std::string expected = "double";
@@ -8674,7 +8674,7 @@ TEST( ArrowStyle_double_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_filled, MxEnums )
+TEST( ArrowStyle_filled, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::filled;
 	std::string expected = "filled";
@@ -8695,7 +8695,7 @@ TEST( ArrowStyle_filled, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_hollow, MxEnums )
+TEST( ArrowStyle_hollow, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::hollow;
 	std::string expected = "hollow";
@@ -8716,7 +8716,7 @@ TEST( ArrowStyle_hollow, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_paired, MxEnums )
+TEST( ArrowStyle_paired, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::paired;
 	std::string expected = "paired";
@@ -8737,7 +8737,7 @@ TEST( ArrowStyle_paired, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_combined, MxEnums )
+TEST( ArrowStyle_combined, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::combined;
 	std::string expected = "combined";
@@ -8758,7 +8758,7 @@ TEST( ArrowStyle_combined, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ArrowStyle_other, MxEnums )
+TEST( ArrowStyle_other, Enums )
 {
 	mx::types::ArrowStyle e = mx::types::ArrowStyle::other;
 	std::string expected = "other";
@@ -8779,14 +8779,14 @@ TEST( ArrowStyle_other, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeamValue_BadParse, MxEnums )
+TEST( BeamValue_BadParse, Enums )
 {
 	mx::types::BeamValue actual = mx::types::parseBeamValue( "begin" );
 	mx::types::BeamValue expected = mx::types::BeamValue::begin;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( BeamValue_begin, MxEnums )
+TEST( BeamValue_begin, Enums )
 {
 	mx::types::BeamValue e = mx::types::BeamValue::begin;
 	std::string expected = "begin";
@@ -8807,7 +8807,7 @@ TEST( BeamValue_begin, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeamValue_continue_, MxEnums )
+TEST( BeamValue_continue_, Enums )
 {
 	mx::types::BeamValue e = mx::types::BeamValue::continue_;
 	std::string expected = "continue";
@@ -8828,7 +8828,7 @@ TEST( BeamValue_continue_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeamValue_end, MxEnums )
+TEST( BeamValue_end, Enums )
 {
 	mx::types::BeamValue e = mx::types::BeamValue::end;
 	std::string expected = "end";
@@ -8849,7 +8849,7 @@ TEST( BeamValue_end, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeamValue_forwardHook, MxEnums )
+TEST( BeamValue_forwardHook, Enums )
 {
 	mx::types::BeamValue e = mx::types::BeamValue::forwardHook;
 	std::string expected = "forward hook";
@@ -8870,7 +8870,7 @@ TEST( BeamValue_forwardHook, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BeamValue_backwardHook, MxEnums )
+TEST( BeamValue_backwardHook, Enums )
 {
 	mx::types::BeamValue e = mx::types::BeamValue::backwardHook;
 	std::string expected = "backward hook";
@@ -8891,14 +8891,14 @@ TEST( BeamValue_backwardHook, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BreathMarkValue_BadParse, MxEnums )
+TEST( BreathMarkValue_BadParse, Enums )
 {
 	mx::types::BreathMarkValue actual = mx::types::parseBreathMarkValue( "" );
 	mx::types::BreathMarkValue expected = mx::types::BreathMarkValue::emptystring;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( BreathMarkValue_emptystring, MxEnums )
+TEST( BreathMarkValue_emptystring, Enums )
 {
 	mx::types::BreathMarkValue e = mx::types::BreathMarkValue::emptystring;
 	std::string expected = "";
@@ -8919,7 +8919,7 @@ TEST( BreathMarkValue_emptystring, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BreathMarkValue_comma, MxEnums )
+TEST( BreathMarkValue_comma, Enums )
 {
 	mx::types::BreathMarkValue e = mx::types::BreathMarkValue::comma;
 	std::string expected = "comma";
@@ -8940,7 +8940,7 @@ TEST( BreathMarkValue_comma, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BreathMarkValue_tick, MxEnums )
+TEST( BreathMarkValue_tick, Enums )
 {
 	mx::types::BreathMarkValue e = mx::types::BreathMarkValue::tick;
 	std::string expected = "tick";
@@ -8961,14 +8961,14 @@ TEST( BreathMarkValue_tick, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CircularArrow_BadParse, MxEnums )
+TEST( CircularArrow_BadParse, Enums )
 {
 	mx::types::CircularArrow actual = mx::types::parseCircularArrow( "clockwise" );
 	mx::types::CircularArrow expected = mx::types::CircularArrow::clockwise;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( CircularArrow_clockwise, MxEnums )
+TEST( CircularArrow_clockwise, Enums )
 {
 	mx::types::CircularArrow e = mx::types::CircularArrow::clockwise;
 	std::string expected = "clockwise";
@@ -8989,7 +8989,7 @@ TEST( CircularArrow_clockwise, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( CircularArrow_anticlockwise, MxEnums )
+TEST( CircularArrow_anticlockwise, Enums )
 {
 	mx::types::CircularArrow e = mx::types::CircularArrow::anticlockwise;
 	std::string expected = "anticlockwise";
@@ -9010,14 +9010,14 @@ TEST( CircularArrow_anticlockwise, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Fan_BadParse, MxEnums )
+TEST( Fan_BadParse, Enums )
 {
 	mx::types::Fan actual = mx::types::parseFan( "accel" );
 	mx::types::Fan expected = mx::types::Fan::accel;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Fan_accel, MxEnums )
+TEST( Fan_accel, Enums )
 {
 	mx::types::Fan e = mx::types::Fan::accel;
 	std::string expected = "accel";
@@ -9038,7 +9038,7 @@ TEST( Fan_accel, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Fan_rit, MxEnums )
+TEST( Fan_rit, Enums )
 {
 	mx::types::Fan e = mx::types::Fan::rit;
 	std::string expected = "rit";
@@ -9059,7 +9059,7 @@ TEST( Fan_rit, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Fan_none, MxEnums )
+TEST( Fan_none, Enums )
 {
 	mx::types::Fan e = mx::types::Fan::none;
 	std::string expected = "none";
@@ -9080,14 +9080,14 @@ TEST( Fan_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_BadParse, MxEnums )
+TEST( HandbellValue_BadParse, Enums )
 {
 	mx::types::HandbellValue actual = mx::types::parseHandbellValue( "damp" );
 	mx::types::HandbellValue expected = mx::types::HandbellValue::damp;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( HandbellValue_damp, MxEnums )
+TEST( HandbellValue_damp, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::damp;
 	std::string expected = "damp";
@@ -9108,7 +9108,7 @@ TEST( HandbellValue_damp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_echo, MxEnums )
+TEST( HandbellValue_echo, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::echo;
 	std::string expected = "echo";
@@ -9129,7 +9129,7 @@ TEST( HandbellValue_echo, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_gyro, MxEnums )
+TEST( HandbellValue_gyro, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::gyro;
 	std::string expected = "gyro";
@@ -9150,7 +9150,7 @@ TEST( HandbellValue_gyro, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_handMartellato, MxEnums )
+TEST( HandbellValue_handMartellato, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::handMartellato;
 	std::string expected = "hand martellato";
@@ -9171,7 +9171,7 @@ TEST( HandbellValue_handMartellato, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_malletLift, MxEnums )
+TEST( HandbellValue_malletLift, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::malletLift;
 	std::string expected = "mallet lift";
@@ -9192,7 +9192,7 @@ TEST( HandbellValue_malletLift, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_malletTable, MxEnums )
+TEST( HandbellValue_malletTable, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::malletTable;
 	std::string expected = "mallet table";
@@ -9213,7 +9213,7 @@ TEST( HandbellValue_malletTable, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_martellato, MxEnums )
+TEST( HandbellValue_martellato, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::martellato;
 	std::string expected = "martellato";
@@ -9234,7 +9234,7 @@ TEST( HandbellValue_martellato, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_martellatoLift, MxEnums )
+TEST( HandbellValue_martellatoLift, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::martellatoLift;
 	std::string expected = "martellato lift";
@@ -9255,7 +9255,7 @@ TEST( HandbellValue_martellatoLift, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_mutedMartellato, MxEnums )
+TEST( HandbellValue_mutedMartellato, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::mutedMartellato;
 	std::string expected = "muted martellato";
@@ -9276,7 +9276,7 @@ TEST( HandbellValue_mutedMartellato, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_pluckLift, MxEnums )
+TEST( HandbellValue_pluckLift, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::pluckLift;
 	std::string expected = "pluck lift";
@@ -9297,7 +9297,7 @@ TEST( HandbellValue_pluckLift, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HandbellValue_swing, MxEnums )
+TEST( HandbellValue_swing, Enums )
 {
 	mx::types::HandbellValue e = mx::types::HandbellValue::swing;
 	std::string expected = "swing";
@@ -9318,14 +9318,14 @@ TEST( HandbellValue_swing, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedLocation_BadParse, MxEnums )
+TEST( HoleClosedLocation_BadParse, Enums )
 {
 	mx::types::HoleClosedLocation actual = mx::types::parseHoleClosedLocation( "right" );
 	mx::types::HoleClosedLocation expected = mx::types::HoleClosedLocation::right;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( HoleClosedLocation_right, MxEnums )
+TEST( HoleClosedLocation_right, Enums )
 {
 	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::right;
 	std::string expected = "right";
@@ -9346,7 +9346,7 @@ TEST( HoleClosedLocation_right, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedLocation_bottom, MxEnums )
+TEST( HoleClosedLocation_bottom, Enums )
 {
 	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::bottom;
 	std::string expected = "bottom";
@@ -9367,7 +9367,7 @@ TEST( HoleClosedLocation_bottom, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedLocation_left, MxEnums )
+TEST( HoleClosedLocation_left, Enums )
 {
 	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::left;
 	std::string expected = "left";
@@ -9388,7 +9388,7 @@ TEST( HoleClosedLocation_left, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedLocation_top, MxEnums )
+TEST( HoleClosedLocation_top, Enums )
 {
 	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::top;
 	std::string expected = "top";
@@ -9409,14 +9409,14 @@ TEST( HoleClosedLocation_top, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedValue_BadParse, MxEnums )
+TEST( HoleClosedValue_BadParse, Enums )
 {
 	mx::types::HoleClosedValue actual = mx::types::parseHoleClosedValue( "yes" );
 	mx::types::HoleClosedValue expected = mx::types::HoleClosedValue::yes;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( HoleClosedValue_yes, MxEnums )
+TEST( HoleClosedValue_yes, Enums )
 {
 	mx::types::HoleClosedValue e = mx::types::HoleClosedValue::yes;
 	std::string expected = "yes";
@@ -9437,7 +9437,7 @@ TEST( HoleClosedValue_yes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedValue_no, MxEnums )
+TEST( HoleClosedValue_no, Enums )
 {
 	mx::types::HoleClosedValue e = mx::types::HoleClosedValue::no;
 	std::string expected = "no";
@@ -9458,7 +9458,7 @@ TEST( HoleClosedValue_no, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( HoleClosedValue_half, MxEnums )
+TEST( HoleClosedValue_half, Enums )
 {
 	mx::types::HoleClosedValue e = mx::types::HoleClosedValue::half;
 	std::string expected = "half";
@@ -9479,14 +9479,14 @@ TEST( HoleClosedValue_half, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_BadParse, MxEnums )
+TEST( NoteTypeValue_BadParse, Enums )
 {
 	mx::types::NoteTypeValue actual = mx::types::parseNoteTypeValue( "1024th" );
 	mx::types::NoteTypeValue expected = mx::types::NoteTypeValue::one024Th;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( NoteTypeValue_one024Th, MxEnums )
+TEST( NoteTypeValue_one024Th, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::one024Th;
 	std::string expected = "1024th";
@@ -9507,7 +9507,7 @@ TEST( NoteTypeValue_one024Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_five12Th, MxEnums )
+TEST( NoteTypeValue_five12Th, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::five12Th;
 	std::string expected = "512th";
@@ -9528,7 +9528,7 @@ TEST( NoteTypeValue_five12Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_two56Th, MxEnums )
+TEST( NoteTypeValue_two56Th, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::two56Th;
 	std::string expected = "256th";
@@ -9549,7 +9549,7 @@ TEST( NoteTypeValue_two56Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_one28Th, MxEnums )
+TEST( NoteTypeValue_one28Th, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::one28Th;
 	std::string expected = "128th";
@@ -9570,7 +9570,7 @@ TEST( NoteTypeValue_one28Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_six4Th, MxEnums )
+TEST( NoteTypeValue_six4Th, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::six4Th;
 	std::string expected = "64th";
@@ -9591,7 +9591,7 @@ TEST( NoteTypeValue_six4Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_three2Nd, MxEnums )
+TEST( NoteTypeValue_three2Nd, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::three2Nd;
 	std::string expected = "32nd";
@@ -9612,7 +9612,7 @@ TEST( NoteTypeValue_three2Nd, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_one6Th, MxEnums )
+TEST( NoteTypeValue_one6Th, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::one6Th;
 	std::string expected = "16th";
@@ -9633,7 +9633,7 @@ TEST( NoteTypeValue_one6Th, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_eighth, MxEnums )
+TEST( NoteTypeValue_eighth, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::eighth;
 	std::string expected = "eighth";
@@ -9654,7 +9654,7 @@ TEST( NoteTypeValue_eighth, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_quarter, MxEnums )
+TEST( NoteTypeValue_quarter, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::quarter;
 	std::string expected = "quarter";
@@ -9675,7 +9675,7 @@ TEST( NoteTypeValue_quarter, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_half, MxEnums )
+TEST( NoteTypeValue_half, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::half;
 	std::string expected = "half";
@@ -9696,7 +9696,7 @@ TEST( NoteTypeValue_half, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_whole, MxEnums )
+TEST( NoteTypeValue_whole, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::whole;
 	std::string expected = "whole";
@@ -9717,7 +9717,7 @@ TEST( NoteTypeValue_whole, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_breve, MxEnums )
+TEST( NoteTypeValue_breve, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::breve;
 	std::string expected = "breve";
@@ -9738,7 +9738,7 @@ TEST( NoteTypeValue_breve, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_long_, MxEnums )
+TEST( NoteTypeValue_long_, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::long_;
 	std::string expected = "long";
@@ -9759,7 +9759,7 @@ TEST( NoteTypeValue_long_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_maxima, MxEnums )
+TEST( NoteTypeValue_maxima, Enums )
 {
 	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::maxima;
 	std::string expected = "maxima";
@@ -9780,14 +9780,14 @@ TEST( NoteTypeValue_maxima, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_BadParse, MxEnums )
+TEST( NoteheadValue_BadParse, Enums )
 {
 	mx::types::NoteheadValue actual = mx::types::parseNoteheadValue( "slash" );
 	mx::types::NoteheadValue expected = mx::types::NoteheadValue::slash;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( NoteheadValue_slash, MxEnums )
+TEST( NoteheadValue_slash, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::slash;
 	std::string expected = "slash";
@@ -9808,7 +9808,7 @@ TEST( NoteheadValue_slash, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_triangle, MxEnums )
+TEST( NoteheadValue_triangle, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::triangle;
 	std::string expected = "triangle";
@@ -9829,7 +9829,7 @@ TEST( NoteheadValue_triangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_diamond, MxEnums )
+TEST( NoteheadValue_diamond, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::diamond;
 	std::string expected = "diamond";
@@ -9850,7 +9850,7 @@ TEST( NoteheadValue_diamond, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_square, MxEnums )
+TEST( NoteheadValue_square, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::square;
 	std::string expected = "square";
@@ -9871,7 +9871,7 @@ TEST( NoteheadValue_square, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_cross, MxEnums )
+TEST( NoteheadValue_cross, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::cross;
 	std::string expected = "cross";
@@ -9892,7 +9892,7 @@ TEST( NoteheadValue_cross, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_x, MxEnums )
+TEST( NoteheadValue_x, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::x;
 	std::string expected = "x";
@@ -9913,7 +9913,7 @@ TEST( NoteheadValue_x, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_circleX, MxEnums )
+TEST( NoteheadValue_circleX, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::circleX;
 	std::string expected = "circle-x";
@@ -9934,7 +9934,7 @@ TEST( NoteheadValue_circleX, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_invertedTriangle, MxEnums )
+TEST( NoteheadValue_invertedTriangle, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::invertedTriangle;
 	std::string expected = "inverted triangle";
@@ -9955,7 +9955,7 @@ TEST( NoteheadValue_invertedTriangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_arrowDown, MxEnums )
+TEST( NoteheadValue_arrowDown, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::arrowDown;
 	std::string expected = "arrow down";
@@ -9976,7 +9976,7 @@ TEST( NoteheadValue_arrowDown, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_arrowUp, MxEnums )
+TEST( NoteheadValue_arrowUp, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::arrowUp;
 	std::string expected = "arrow up";
@@ -9997,7 +9997,7 @@ TEST( NoteheadValue_arrowUp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_slashed, MxEnums )
+TEST( NoteheadValue_slashed, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::slashed;
 	std::string expected = "slashed";
@@ -10018,7 +10018,7 @@ TEST( NoteheadValue_slashed, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_backSlashed, MxEnums )
+TEST( NoteheadValue_backSlashed, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::backSlashed;
 	std::string expected = "back slashed";
@@ -10039,7 +10039,7 @@ TEST( NoteheadValue_backSlashed, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_normal, MxEnums )
+TEST( NoteheadValue_normal, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::normal;
 	std::string expected = "normal";
@@ -10060,7 +10060,7 @@ TEST( NoteheadValue_normal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_cluster, MxEnums )
+TEST( NoteheadValue_cluster, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::cluster;
 	std::string expected = "cluster";
@@ -10081,7 +10081,7 @@ TEST( NoteheadValue_cluster, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_circleDot, MxEnums )
+TEST( NoteheadValue_circleDot, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::circleDot;
 	std::string expected = "circle dot";
@@ -10102,7 +10102,7 @@ TEST( NoteheadValue_circleDot, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_leftTriangle, MxEnums )
+TEST( NoteheadValue_leftTriangle, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::leftTriangle;
 	std::string expected = "left triangle";
@@ -10123,7 +10123,7 @@ TEST( NoteheadValue_leftTriangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_rectangle, MxEnums )
+TEST( NoteheadValue_rectangle, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::rectangle;
 	std::string expected = "rectangle";
@@ -10144,7 +10144,7 @@ TEST( NoteheadValue_rectangle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_none, MxEnums )
+TEST( NoteheadValue_none, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::none;
 	std::string expected = "none";
@@ -10165,7 +10165,7 @@ TEST( NoteheadValue_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_do_, MxEnums )
+TEST( NoteheadValue_do_, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::do_;
 	std::string expected = "do";
@@ -10186,7 +10186,7 @@ TEST( NoteheadValue_do_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_re, MxEnums )
+TEST( NoteheadValue_re, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::re;
 	std::string expected = "re";
@@ -10207,7 +10207,7 @@ TEST( NoteheadValue_re, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_mi, MxEnums )
+TEST( NoteheadValue_mi, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::mi;
 	std::string expected = "mi";
@@ -10228,7 +10228,7 @@ TEST( NoteheadValue_mi, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_fa, MxEnums )
+TEST( NoteheadValue_fa, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::fa;
 	std::string expected = "fa";
@@ -10249,7 +10249,7 @@ TEST( NoteheadValue_fa, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_faUp, MxEnums )
+TEST( NoteheadValue_faUp, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::faUp;
 	std::string expected = "fa up";
@@ -10270,7 +10270,7 @@ TEST( NoteheadValue_faUp, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_so, MxEnums )
+TEST( NoteheadValue_so, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::so;
 	std::string expected = "so";
@@ -10291,7 +10291,7 @@ TEST( NoteheadValue_so, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_la, MxEnums )
+TEST( NoteheadValue_la, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::la;
 	std::string expected = "la";
@@ -10312,7 +10312,7 @@ TEST( NoteheadValue_la, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteheadValue_ti, MxEnums )
+TEST( NoteheadValue_ti, Enums )
 {
 	mx::types::NoteheadValue e = mx::types::NoteheadValue::ti;
 	std::string expected = "ti";
@@ -10333,14 +10333,14 @@ TEST( NoteheadValue_ti, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ShowTuplet_BadParse, MxEnums )
+TEST( ShowTuplet_BadParse, Enums )
 {
 	mx::types::ShowTuplet actual = mx::types::parseShowTuplet( "actual" );
 	mx::types::ShowTuplet expected = mx::types::ShowTuplet::actual;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( ShowTuplet_actual, MxEnums )
+TEST( ShowTuplet_actual, Enums )
 {
 	mx::types::ShowTuplet e = mx::types::ShowTuplet::actual;
 	std::string expected = "actual";
@@ -10361,7 +10361,7 @@ TEST( ShowTuplet_actual, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ShowTuplet_both, MxEnums )
+TEST( ShowTuplet_both, Enums )
 {
 	mx::types::ShowTuplet e = mx::types::ShowTuplet::both;
 	std::string expected = "both";
@@ -10382,7 +10382,7 @@ TEST( ShowTuplet_both, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ShowTuplet_none, MxEnums )
+TEST( ShowTuplet_none, Enums )
 {
 	mx::types::ShowTuplet e = mx::types::ShowTuplet::none;
 	std::string expected = "none";
@@ -10403,14 +10403,14 @@ TEST( ShowTuplet_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StemValue_BadParse, MxEnums )
+TEST( StemValue_BadParse, Enums )
 {
 	mx::types::StemValue actual = mx::types::parseStemValue( "down" );
 	mx::types::StemValue expected = mx::types::StemValue::down;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( StemValue_down, MxEnums )
+TEST( StemValue_down, Enums )
 {
 	mx::types::StemValue e = mx::types::StemValue::down;
 	std::string expected = "down";
@@ -10431,7 +10431,7 @@ TEST( StemValue_down, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StemValue_up, MxEnums )
+TEST( StemValue_up, Enums )
 {
 	mx::types::StemValue e = mx::types::StemValue::up;
 	std::string expected = "up";
@@ -10452,7 +10452,7 @@ TEST( StemValue_up, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StemValue_double_, MxEnums )
+TEST( StemValue_double_, Enums )
 {
 	mx::types::StemValue e = mx::types::StemValue::double_;
 	std::string expected = "double";
@@ -10473,7 +10473,7 @@ TEST( StemValue_double_, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( StemValue_none, MxEnums )
+TEST( StemValue_none, Enums )
 {
 	mx::types::StemValue e = mx::types::StemValue::none;
 	std::string expected = "none";
@@ -10494,14 +10494,14 @@ TEST( StemValue_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_BadParse, MxEnums )
+TEST( Step_BadParse, Enums )
 {
 	mx::types::Step actual = mx::types::parseStep( "A" );
 	mx::types::Step expected = mx::types::Step::a;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Step_a, MxEnums )
+TEST( Step_a, Enums )
 {
 	mx::types::Step e = mx::types::Step::a;
 	std::string expected = "A";
@@ -10522,7 +10522,7 @@ TEST( Step_a, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_b, MxEnums )
+TEST( Step_b, Enums )
 {
 	mx::types::Step e = mx::types::Step::b;
 	std::string expected = "B";
@@ -10543,7 +10543,7 @@ TEST( Step_b, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_c, MxEnums )
+TEST( Step_c, Enums )
 {
 	mx::types::Step e = mx::types::Step::c;
 	std::string expected = "C";
@@ -10564,7 +10564,7 @@ TEST( Step_c, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_d, MxEnums )
+TEST( Step_d, Enums )
 {
 	mx::types::Step e = mx::types::Step::d;
 	std::string expected = "D";
@@ -10585,7 +10585,7 @@ TEST( Step_d, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_e, MxEnums )
+TEST( Step_e, Enums )
 {
 	mx::types::Step e = mx::types::Step::e;
 	std::string expected = "E";
@@ -10606,7 +10606,7 @@ TEST( Step_e, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_f, MxEnums )
+TEST( Step_f, Enums )
 {
 	mx::types::Step e = mx::types::Step::f;
 	std::string expected = "F";
@@ -10627,7 +10627,7 @@ TEST( Step_f, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Step_g, MxEnums )
+TEST( Step_g, Enums )
 {
 	mx::types::Step e = mx::types::Step::g;
 	std::string expected = "G";
@@ -10648,14 +10648,14 @@ TEST( Step_g, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Syllabic_BadParse, MxEnums )
+TEST( Syllabic_BadParse, Enums )
 {
 	mx::types::Syllabic actual = mx::types::parseSyllabic( "single" );
 	mx::types::Syllabic expected = mx::types::Syllabic::single;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( Syllabic_single, MxEnums )
+TEST( Syllabic_single, Enums )
 {
 	mx::types::Syllabic e = mx::types::Syllabic::single;
 	std::string expected = "single";
@@ -10676,7 +10676,7 @@ TEST( Syllabic_single, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Syllabic_begin, MxEnums )
+TEST( Syllabic_begin, Enums )
 {
 	mx::types::Syllabic e = mx::types::Syllabic::begin;
 	std::string expected = "begin";
@@ -10697,7 +10697,7 @@ TEST( Syllabic_begin, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Syllabic_end, MxEnums )
+TEST( Syllabic_end, Enums )
 {
 	mx::types::Syllabic e = mx::types::Syllabic::end;
 	std::string expected = "end";
@@ -10718,7 +10718,7 @@ TEST( Syllabic_end, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Syllabic_middle, MxEnums )
+TEST( Syllabic_middle, Enums )
 {
 	mx::types::Syllabic e = mx::types::Syllabic::middle;
 	std::string expected = "middle";
@@ -10739,14 +10739,14 @@ TEST( Syllabic_middle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupBarlineValue_BadParse, MxEnums )
+TEST( GroupBarlineValue_BadParse, Enums )
 {
 	mx::types::GroupBarlineValue actual = mx::types::parseGroupBarlineValue( "yes" );
 	mx::types::GroupBarlineValue expected = mx::types::GroupBarlineValue::yes;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( GroupBarlineValue_yes, MxEnums )
+TEST( GroupBarlineValue_yes, Enums )
 {
 	mx::types::GroupBarlineValue e = mx::types::GroupBarlineValue::yes;
 	std::string expected = "yes";
@@ -10767,7 +10767,7 @@ TEST( GroupBarlineValue_yes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupBarlineValue_no, MxEnums )
+TEST( GroupBarlineValue_no, Enums )
 {
 	mx::types::GroupBarlineValue e = mx::types::GroupBarlineValue::no;
 	std::string expected = "no";
@@ -10788,7 +10788,7 @@ TEST( GroupBarlineValue_no, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupBarlineValue_mensurstrich, MxEnums )
+TEST( GroupBarlineValue_mensurstrich, Enums )
 {
 	mx::types::GroupBarlineValue e = mx::types::GroupBarlineValue::mensurstrich;
 	std::string expected = "Mensurstrich";
@@ -10809,14 +10809,14 @@ TEST( GroupBarlineValue_mensurstrich, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupSymbolValue_BadParse, MxEnums )
+TEST( GroupSymbolValue_BadParse, Enums )
 {
 	mx::types::GroupSymbolValue actual = mx::types::parseGroupSymbolValue( "none" );
 	mx::types::GroupSymbolValue expected = mx::types::GroupSymbolValue::none;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( GroupSymbolValue_none, MxEnums )
+TEST( GroupSymbolValue_none, Enums )
 {
 	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::none;
 	std::string expected = "none";
@@ -10837,7 +10837,7 @@ TEST( GroupSymbolValue_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupSymbolValue_brace, MxEnums )
+TEST( GroupSymbolValue_brace, Enums )
 {
 	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::brace;
 	std::string expected = "brace";
@@ -10858,7 +10858,7 @@ TEST( GroupSymbolValue_brace, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupSymbolValue_line, MxEnums )
+TEST( GroupSymbolValue_line, Enums )
 {
 	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::line;
 	std::string expected = "line";
@@ -10879,7 +10879,7 @@ TEST( GroupSymbolValue_line, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupSymbolValue_bracket, MxEnums )
+TEST( GroupSymbolValue_bracket, Enums )
 {
 	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::bracket;
 	std::string expected = "bracket";
@@ -10900,7 +10900,7 @@ TEST( GroupSymbolValue_bracket, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( GroupSymbolValue_square, MxEnums )
+TEST( GroupSymbolValue_square, Enums )
 {
 	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::square;
 	std::string expected = "square";
@@ -10921,7 +10921,7 @@ TEST( GroupSymbolValue_square, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_major, MxEnums )
+TEST( ModeEnum_major, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::major;
 	std::string expected = "major";
@@ -10942,7 +10942,7 @@ TEST( ModeEnum_major, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_minor, MxEnums )
+TEST( ModeEnum_minor, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::minor;
 	std::string expected = "minor";
@@ -10963,7 +10963,7 @@ TEST( ModeEnum_minor, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_dorian, MxEnums )
+TEST( ModeEnum_dorian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::dorian;
 	std::string expected = "dorian";
@@ -10984,7 +10984,7 @@ TEST( ModeEnum_dorian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_phrygian, MxEnums )
+TEST( ModeEnum_phrygian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::phrygian;
 	std::string expected = "phrygian";
@@ -11005,7 +11005,7 @@ TEST( ModeEnum_phrygian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_lydian, MxEnums )
+TEST( ModeEnum_lydian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::lydian;
 	std::string expected = "lydian";
@@ -11026,7 +11026,7 @@ TEST( ModeEnum_lydian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_mixolydian, MxEnums )
+TEST( ModeEnum_mixolydian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::mixolydian;
 	std::string expected = "mixolydian";
@@ -11047,7 +11047,7 @@ TEST( ModeEnum_mixolydian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_aeolian, MxEnums )
+TEST( ModeEnum_aeolian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::aeolian;
 	std::string expected = "aeolian";
@@ -11068,7 +11068,7 @@ TEST( ModeEnum_aeolian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_ionian, MxEnums )
+TEST( ModeEnum_ionian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::ionian;
 	std::string expected = "ionian";
@@ -11089,7 +11089,7 @@ TEST( ModeEnum_ionian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_locrian, MxEnums )
+TEST( ModeEnum_locrian, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::locrian;
 	std::string expected = "locrian";
@@ -11110,7 +11110,7 @@ TEST( ModeEnum_locrian, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_none, MxEnums )
+TEST( ModeEnum_none, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::none;
 	std::string expected = "none";
@@ -11131,7 +11131,7 @@ TEST( ModeEnum_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( ModeEnum_other, MxEnums )
+TEST( ModeEnum_other, Enums )
 {
 	mx::types::ModeEnum e = mx::types::ModeEnum::other;
 	std::string expected = "other";
@@ -11152,14 +11152,14 @@ TEST( ModeEnum_other, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( Mode_default, MxEnums )
+TEST( Mode_default, Enums )
 {
 	mx::types::Mode object;
     mx::types::ModeEnum expected = mx::types::ModeEnum::major;
     mx::types::ModeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Mode_major, MxEnums )
+TEST( Mode_major, Enums )
 {
     mx::types::ModeEnum enumval = mx::types::ModeEnum::major;
     mx::types::ModeEnum diffval = mx::types::ModeEnum::other;
@@ -11217,7 +11217,7 @@ TEST( Mode_major, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( Mode_lydian, MxEnums )
+TEST( Mode_lydian, Enums )
 {
     mx::types::ModeEnum enumval = mx::types::ModeEnum::lydian;
     mx::types::ModeEnum diffval = mx::types::ModeEnum::locrian;
@@ -11275,7 +11275,7 @@ TEST( Mode_lydian, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( Mode_locrian, MxEnums )
+TEST( Mode_locrian, Enums )
 {
     mx::types::ModeEnum enumval = mx::types::ModeEnum::locrian;
     mx::types::ModeEnum diffval = mx::types::ModeEnum::aeolian;
@@ -11333,7 +11333,7 @@ TEST( Mode_locrian, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( Mode_other, MxEnums )
+TEST( Mode_other, Enums )
 {
     mx::types::ModeEnum enumval = mx::types::ModeEnum::other;
     mx::types::ModeEnum diffval = mx::types::ModeEnum::aeolian;
@@ -11391,7 +11391,7 @@ TEST( Mode_other, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( DistanceTypeEnum_beam, MxEnums )
+TEST( DistanceTypeEnum_beam, Enums )
 {
 	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::beam;
 	std::string expected = "beam";
@@ -11412,7 +11412,7 @@ TEST( DistanceTypeEnum_beam, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DistanceTypeEnum_hyphen, MxEnums )
+TEST( DistanceTypeEnum_hyphen, Enums )
 {
 	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::hyphen;
 	std::string expected = "hyphen";
@@ -11433,7 +11433,7 @@ TEST( DistanceTypeEnum_hyphen, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DistanceTypeEnum_other, MxEnums )
+TEST( DistanceTypeEnum_other, Enums )
 {
 	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::other;
 	std::string expected = "other";
@@ -11454,7 +11454,7 @@ TEST( DistanceTypeEnum_other, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( DistanceType_beam, MxEnums )
+TEST( DistanceType_beam, Enums )
 {
     mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::beam;
     mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::hyphen;
@@ -11512,7 +11512,7 @@ TEST( DistanceType_beam, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( DistanceType_hyphen, MxEnums )
+TEST( DistanceType_hyphen, Enums )
 {
     mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::hyphen;
     mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::beam;
@@ -11571,7 +11571,7 @@ TEST( DistanceType_hyphen, MxEnums )
 }
 
 
-TEST( DistanceType_other, MxEnums )
+TEST( DistanceType_other, Enums )
 {
     mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::other;
     mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::beam;
@@ -11629,7 +11629,7 @@ TEST( DistanceType_other, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( LineWidthTypeEnum_beam, MxEnums )
+TEST( LineWidthTypeEnum_beam, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::beam;
 	std::string expected = "beam";
@@ -11650,7 +11650,7 @@ TEST( LineWidthTypeEnum_beam, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_bracket, MxEnums )
+TEST( LineWidthTypeEnum_bracket, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::bracket;
 	std::string expected = "bracket";
@@ -11671,7 +11671,7 @@ TEST( LineWidthTypeEnum_bracket, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_dashes, MxEnums )
+TEST( LineWidthTypeEnum_dashes, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::dashes;
 	std::string expected = "dashes";
@@ -11692,7 +11692,7 @@ TEST( LineWidthTypeEnum_dashes, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_enclosure, MxEnums )
+TEST( LineWidthTypeEnum_enclosure, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::enclosure;
 	std::string expected = "enclosure";
@@ -11713,7 +11713,7 @@ TEST( LineWidthTypeEnum_enclosure, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_ending, MxEnums )
+TEST( LineWidthTypeEnum_ending, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::ending;
 	std::string expected = "ending";
@@ -11734,7 +11734,7 @@ TEST( LineWidthTypeEnum_ending, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_extend, MxEnums )
+TEST( LineWidthTypeEnum_extend, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::extend;
 	std::string expected = "extend";
@@ -11755,7 +11755,7 @@ TEST( LineWidthTypeEnum_extend, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_heavyBarline, MxEnums )
+TEST( LineWidthTypeEnum_heavyBarline, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::heavyBarline;
 	std::string expected = "heavy barline";
@@ -11776,7 +11776,7 @@ TEST( LineWidthTypeEnum_heavyBarline, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_leger, MxEnums )
+TEST( LineWidthTypeEnum_leger, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::leger;
 	std::string expected = "leger";
@@ -11797,7 +11797,7 @@ TEST( LineWidthTypeEnum_leger, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_lightBarline, MxEnums )
+TEST( LineWidthTypeEnum_lightBarline, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::lightBarline;
 	std::string expected = "light barline";
@@ -11818,7 +11818,7 @@ TEST( LineWidthTypeEnum_lightBarline, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_octaveShift, MxEnums )
+TEST( LineWidthTypeEnum_octaveShift, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::octaveShift;
 	std::string expected = "octave shift";
@@ -11839,7 +11839,7 @@ TEST( LineWidthTypeEnum_octaveShift, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_pedal, MxEnums )
+TEST( LineWidthTypeEnum_pedal, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::pedal;
 	std::string expected = "pedal";
@@ -11860,7 +11860,7 @@ TEST( LineWidthTypeEnum_pedal, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_slurMiddle, MxEnums )
+TEST( LineWidthTypeEnum_slurMiddle, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurMiddle;
 	std::string expected = "slur middle";
@@ -11881,7 +11881,7 @@ TEST( LineWidthTypeEnum_slurMiddle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_hyphen, MxEnums )
+TEST( LineWidthTypeEnum_hyphen, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::beam;
 	std::string expected = "beam";
@@ -11902,7 +11902,7 @@ TEST( LineWidthTypeEnum_hyphen, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_slurTip, MxEnums )
+TEST( LineWidthTypeEnum_slurTip, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurTip;
 	std::string expected = "slur tip";
@@ -11923,7 +11923,7 @@ TEST( LineWidthTypeEnum_slurTip, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_staff, MxEnums )
+TEST( LineWidthTypeEnum_staff, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::staff;
 	std::string expected = "staff";
@@ -11944,7 +11944,7 @@ TEST( LineWidthTypeEnum_staff, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_stem, MxEnums )
+TEST( LineWidthTypeEnum_stem, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::stem;
 	std::string expected = "stem";
@@ -11965,7 +11965,7 @@ TEST( LineWidthTypeEnum_stem, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_tieMiddle, MxEnums )
+TEST( LineWidthTypeEnum_tieMiddle, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieMiddle;
 	std::string expected = "tie middle";
@@ -11986,7 +11986,7 @@ TEST( LineWidthTypeEnum_tieMiddle, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_tieTip, MxEnums )
+TEST( LineWidthTypeEnum_tieTip, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieTip;
 	std::string expected = "tie tip";
@@ -12007,7 +12007,7 @@ TEST( LineWidthTypeEnum_tieTip, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_tupletBracket, MxEnums )
+TEST( LineWidthTypeEnum_tupletBracket, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tupletBracket;
 	std::string expected = "tuplet bracket";
@@ -12028,7 +12028,7 @@ TEST( LineWidthTypeEnum_tupletBracket, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_wedge, MxEnums )
+TEST( LineWidthTypeEnum_wedge, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::wedge;
 	std::string expected = "wedge";
@@ -12049,7 +12049,7 @@ TEST( LineWidthTypeEnum_wedge, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthTypeEnum_other, MxEnums )
+TEST( LineWidthTypeEnum_other, Enums )
 {
 	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::other;
 	std::string expected = "other";
@@ -12070,7 +12070,7 @@ TEST( LineWidthTypeEnum_other, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( LineWidthType_beam, MxEnums )
+TEST( LineWidthType_beam, Enums )
 {
     mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::beam;
     mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::enclosure;
@@ -12128,7 +12128,7 @@ TEST( LineWidthType_beam, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( LineWidthType_tieTip, MxEnums )
+TEST( LineWidthType_tieTip, Enums )
 {
     mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::tieTip;
     mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::leger;
@@ -12186,7 +12186,7 @@ TEST( LineWidthType_tieTip, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( LineWidthType_other, MxEnums )
+TEST( LineWidthType_other, Enums )
 {
     mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::other;
     mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::wedge;
@@ -12244,14 +12244,14 @@ TEST( LineWidthType_other, MxEnums )
     CHECK_EQUAL( expected_str, actual_str )
 }
 
-TEST( XlinkActuate_BadParse, MxEnums )
+TEST( XlinkActuate_BadParse, Enums )
 {
 	mx::types::XlinkActuate actual = mx::types::parseXlinkActuate( "onrequest" );
 	mx::types::XlinkActuate expected = mx::types::XlinkActuate::onLoad;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( XlinkActuate_onLoad, MxEnums )
+TEST( XlinkActuate_onLoad, Enums )
 {
 	mx::types::XlinkActuate e = mx::types::XlinkActuate::onLoad;
 	std::string expected = "onLoad";
@@ -12271,7 +12271,7 @@ TEST( XlinkActuate_onLoad, MxEnums )
 	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkActuate_onRequest, MxEnums )
+TEST( XlinkActuate_onRequest, Enums )
 {
 	mx::types::XlinkActuate e = mx::types::XlinkActuate::onRequest;
 	std::string expected = "onRequest";
@@ -12291,7 +12291,7 @@ TEST( XlinkActuate_onRequest, MxEnums )
 	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkActuate_other, MxEnums )
+TEST( XlinkActuate_other, Enums )
 {
 	mx::types::XlinkActuate e = mx::types::XlinkActuate::other;
 	std::string expected = "other";
@@ -12311,7 +12311,7 @@ TEST( XlinkActuate_other, MxEnums )
 	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkActuate_none, MxEnums )
+TEST( XlinkActuate_none, Enums )
 {
 	mx::types::XlinkActuate e = mx::types::XlinkActuate::none;
 	std::string expected = "none";
@@ -12332,13 +12332,13 @@ TEST( XlinkActuate_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( XlinkShow_BadParse, MxEnums )
+TEST( XlinkShow_BadParse, Enums )
 {
 	mx::types::XlinkShow actual = mx::types::parseXlinkShow( "xyz" );
 	mx::types::XlinkShow expected = mx::types::XlinkShow::new_;
 	CHECK_EQUAL( expected, actual )
 }
-TEST( XlinkShow_new_, MxEnums )
+TEST( XlinkShow_new_, Enums )
 {
 	mx::types::XlinkShow e = mx::types::XlinkShow::new_;
 	std::string expected = "new";
@@ -12358,7 +12358,7 @@ TEST( XlinkShow_new_, MxEnums )
 	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkShow_replace, MxEnums )
+TEST( XlinkShow_replace, Enums )
 {
 	mx::types::XlinkShow e = mx::types::XlinkShow::replace;
 	std::string expected = "replace";
@@ -12378,7 +12378,7 @@ TEST( XlinkShow_replace, MxEnums )
 	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkShow_, MxEnums )
+TEST( XlinkShow_, Enums )
 {
 	mx::types::XlinkShow e = mx::types::XlinkShow::new_;
 	std::string expected = "new";
@@ -12398,7 +12398,7 @@ TEST( XlinkShow_, MxEnums )
 	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkShow_embed, MxEnums )
+TEST( XlinkShow_embed, Enums )
 {
 	mx::types::XlinkShow e = mx::types::XlinkShow::embed;
 	std::string expected = "embed";
@@ -12418,7 +12418,7 @@ TEST( XlinkShow_embed, MxEnums )
 	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkShow_other, MxEnums )
+TEST( XlinkShow_other, Enums )
 {
 	mx::types::XlinkShow e = mx::types::XlinkShow::other;
 	std::string expected = "other";
@@ -12438,7 +12438,7 @@ TEST( XlinkShow_other, MxEnums )
 	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkShow_none, MxEnums )
+TEST( XlinkShow_none, Enums )
 {
 	mx::types::XlinkShow e = mx::types::XlinkShow::none;
 	std::string expected = "none";
@@ -12459,13 +12459,13 @@ TEST( XlinkShow_none, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( XlinkType_BadParse, MxEnums )
+TEST( XlinkType_BadParse, Enums )
 {
 	mx::types::XlinkType actual = mx::types::parseXlinkType( "xyz" );
 	mx::types::XlinkType expected = mx::types::XlinkType::simple;
 	CHECK_EQUAL( expected, actual )
 }
-TEST( XlinkType_simple, MxEnums )
+TEST( XlinkType_simple, Enums )
 {
 	mx::types::XlinkType e = mx::types::XlinkType::simple;
 	std::string expected = "simple";
@@ -12485,7 +12485,7 @@ TEST( XlinkType_simple, MxEnums )
 	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkType_extended, MxEnums )
+TEST( XlinkType_extended, Enums )
 {
 	mx::types::XlinkType e = mx::types::XlinkType::extended;
 	std::string expected = "extended";
@@ -12505,7 +12505,7 @@ TEST( XlinkType_extended, MxEnums )
 	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkType_title, MxEnums )
+TEST( XlinkType_title, Enums )
 {
 	mx::types::XlinkType e = mx::types::XlinkType::title;
 	std::string expected = "title";
@@ -12525,7 +12525,7 @@ TEST( XlinkType_title, MxEnums )
 	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkType_resource, MxEnums )
+TEST( XlinkType_resource, Enums )
 {
 	mx::types::XlinkType e = mx::types::XlinkType::resource;
 	std::string expected = "resource";
@@ -12545,7 +12545,7 @@ TEST( XlinkType_resource, MxEnums )
 	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkType_locator, MxEnums )
+TEST( XlinkType_locator, Enums )
 {
 	mx::types::XlinkType e = mx::types::XlinkType::locator;
 	std::string expected = "locator";
@@ -12565,7 +12565,7 @@ TEST( XlinkType_locator, MxEnums )
 	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XlinkType_arc, MxEnums )
+TEST( XlinkType_arc, Enums )
 {
 	mx::types::XlinkType e = mx::types::XlinkType::arc;
 	std::string expected = "arc";
@@ -12586,13 +12586,13 @@ TEST( XlinkType_arc, MxEnums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( XmlSpace_BadParse, MxEnums )
+TEST( XmlSpace_BadParse, Enums )
 {
 	mx::types::XmlSpace actual = mx::types::parseXmlSpace( "xyz" );
 	mx::types::XmlSpace expected = mx::types::XmlSpace::default_;
 	CHECK_EQUAL( expected, actual )
 }
-TEST( XmlSpace_default_, MxEnums )
+TEST( XmlSpace_default_, Enums )
 {
 	mx::types::XmlSpace e = mx::types::XmlSpace::default_;
 	std::string expected = "default";
@@ -12612,7 +12612,7 @@ TEST( XmlSpace_default_, MxEnums )
 	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( XmlSpace_preserve, MxEnums )
+TEST( XmlSpace_preserve, Enums )
 {
 	mx::types::XmlSpace e = mx::types::XmlSpace::preserve;
 	std::string expected = "preserve";

@@ -1,24 +1,24 @@
 #include "TestHarness.h"
-#include "MxStrings.h"
+#include "Strings.h"
 #include <sstream>
 
 using namespace mx::types;
 
-TEST( XsString01, MxStrings )
+TEST( XsString01, Strings )
 {
     XsString x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsString02, MxStrings )
+TEST( XsString02, Strings )
 {
     XsString x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsString03, MxStrings )
+TEST( XsString03, Strings )
 {
     XsString x( "Test" );
     x.setValue( "Different" );
@@ -26,7 +26,7 @@ TEST( XsString03, MxStrings )
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsString04, MxStrings )
+TEST( XsString04, Strings )
 {
     XsString x( "Test" );
     x.setValue( "Think" );
@@ -36,7 +36,7 @@ TEST( XsString04, MxStrings )
     StringType actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsString05, MxStrings )
+TEST( XsString05, Strings )
 {
     XsString x( "Test" );
     x.setValue( "Hello" );
@@ -46,7 +46,7 @@ TEST( XsString05, MxStrings )
     StringType actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsString06, MxStrings )
+TEST( XsString06, Strings )
 {
     XsString x( "Test" );
     x.setValue( "Hello" );
@@ -56,42 +56,42 @@ TEST( XsString06, MxStrings )
     StringType actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsToken01, MxStrings )
+TEST( XsToken01, Strings )
 {
     XsToken x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsToken02, MxStrings )
+TEST( XsToken02, Strings )
 {
     XsToken x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsToken03, MxStrings )
+TEST( XsToken03, Strings )
 {
     XsToken x( "\n\t  Test \r \t \n String  \t" );
     StringType expected = "Test String";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsNMToken01, MxStrings )
+TEST( XsNMToken01, Strings )
 {
     XsNMToken x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsNMToken02, MxStrings )
+TEST( XsNMToken02, Strings )
 {
     XsNMToken x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsNMToken03, MxStrings )
+TEST( XsNMToken03, Strings )
 {
     XsNMToken x( "\n\t  Test \r \t \n String  \t" );
     StringType expected = "Test String";
@@ -99,28 +99,28 @@ TEST( XsNMToken03, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( XsID01, MxStrings )
+TEST( XsID01, Strings )
 {
     XsID x( "$%#1" );
     StringType expected = "___1";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsID02, MxStrings )
+TEST( XsID02, Strings )
 {
     XsID x( "" );
     StringType expected = "ID";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsID03, MxStrings )
+TEST( XsID03, Strings )
 {
     XsID x( "123" );
     StringType expected = "ID123";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsID04, MxStrings )
+TEST( XsID04, Strings )
 {
     XsID x( "ABC045" );
     StringType expected = "ABC045";
@@ -128,7 +128,7 @@ TEST( XsID04, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( XsID05, MxStrings )
+TEST( XsID05, Strings )
 {
     XsID x( "X 21" );
     StringType expected = "X_21";
@@ -136,28 +136,28 @@ TEST( XsID05, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST(  XsIDREF01, MxStrings )
+TEST(  XsIDREF01, Strings )
 {
      XsIDREF x( "$%#1" );
     StringType expected = "___1";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST(  XsIDREF02, MxStrings )
+TEST(  XsIDREF02, Strings )
 {
      XsIDREF x( "" );
     StringType expected = "ID";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST(  XsIDREF03, MxStrings )
+TEST(  XsIDREF03, Strings )
 {
      XsIDREF x( "123" );
     StringType expected = "ID123";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST(  XsIDREF04, MxStrings )
+TEST(  XsIDREF04, Strings )
 {
      XsIDREF x( "ABC045" );
     StringType expected = "ABC045";
@@ -165,7 +165,7 @@ TEST(  XsIDREF04, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST(  XsIDREF05, MxStrings )
+TEST(  XsIDREF05, Strings )
 {
      XsIDREF x( "X 21" );
     StringType expected = "X_21";
@@ -173,21 +173,21 @@ TEST(  XsIDREF05, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( XmlLang01, MxStrings )
+TEST( XmlLang01, Strings )
 {
     XmlLang x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XmlLang02, MxStrings )
+TEST( XmlLang02, Strings )
 {
     XmlLang x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XmlLang03, MxStrings )
+TEST( XmlLang03, Strings )
 {
     XmlLang x( "Test" );
     x.setValue( "Different" );
@@ -195,7 +195,7 @@ TEST( XmlLang03, MxStrings )
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XmlLang04, MxStrings )
+TEST( XmlLang04, Strings )
 {
     XmlLang x( "Test" );
     x.setValue( "Think" );
@@ -205,7 +205,7 @@ TEST( XmlLang04, MxStrings )
     StringType actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XmlLang05, MxStrings )
+TEST( XmlLang05, Strings )
 {
     XmlLang x( "Test" );
     x.setValue( "Hello" );
@@ -215,7 +215,7 @@ TEST( XmlLang05, MxStrings )
     StringType actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XmlLang06, MxStrings )
+TEST( XmlLang06, Strings )
 {
     XmlLang x( "Test" );
     x.setValue( "Hello" );
@@ -228,21 +228,21 @@ TEST( XmlLang06, MxStrings )
 
 
 
-TEST( XsAnyUri01, MxStrings )
+TEST( XsAnyUri01, Strings )
 {
     XsAnyUri x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsAnyUri02, MxStrings )
+TEST( XsAnyUri02, Strings )
 {
     XsAnyUri x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsAnyUri03, MxStrings )
+TEST( XsAnyUri03, Strings )
 {
     XsAnyUri x( "Test" );
     x.setValue( "Different" );
@@ -250,7 +250,7 @@ TEST( XsAnyUri03, MxStrings )
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsAnyUri04, MxStrings )
+TEST( XsAnyUri04, Strings )
 {
     XsAnyUri x( "Test" );
     x.setValue( "Think" );
@@ -260,7 +260,7 @@ TEST( XsAnyUri04, MxStrings )
     StringType actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsAnyUri05, MxStrings )
+TEST( XsAnyUri05, Strings )
 {
     XsAnyUri x( "Test" );
     x.setValue( "Hello" );
@@ -270,7 +270,7 @@ TEST( XsAnyUri05, MxStrings )
     StringType actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XsAnyUri06, MxStrings )
+TEST( XsAnyUri06, Strings )
 {
     XsAnyUri x( "Test" );
     x.setValue( "Hello" );
@@ -281,21 +281,21 @@ TEST( XsAnyUri06, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( XlinkRole01, MxStrings )
+TEST( XlinkRole01, Strings )
 {
     XlinkRole x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XlinkRole02, MxStrings )
+TEST( XlinkRole02, Strings )
 {
     XlinkRole x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XlinkRole03, MxStrings )
+TEST( XlinkRole03, Strings )
 {
     XlinkRole x( "\n\t  Test \r \t \n String  \t" );
     StringType expected = "Test String";
@@ -303,21 +303,21 @@ TEST( XlinkRole03, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( XlinkTitle01, MxStrings )
+TEST( XlinkTitle01, Strings )
 {
     XlinkTitle x;
     StringType expected = "";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XlinkTitle02, MxStrings )
+TEST( XlinkTitle02, Strings )
 {
     XlinkTitle x( "Test" );
     StringType expected = "Test";
     StringType actual = x.getValue();
     CHECK_EQUAL( expected, actual )
 }
-TEST( XlinkTitle03, MxStrings )
+TEST( XlinkTitle03, Strings )
 {
     XlinkTitle x( "\n\t  Test \r \t \n String  \t" );
     StringType expected = "Test String";
@@ -325,14 +325,14 @@ TEST( XlinkTitle03, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( CommaSeparatedText01, MxStrings )
+TEST( CommaSeparatedText01, Strings )
 {
     CommaSeparatedText x( " Hello , \nWorld$#&" );
     StringType expected = "Hello,World$#&";
     StringType actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( CommaSeparatedText02, MxStrings )
+TEST( CommaSeparatedText02, Strings )
 {
     CommaSeparatedText x;
     x.parse( " One, two, Three,     \nFOUR" );
@@ -362,7 +362,7 @@ TEST( CommaSeparatedText02, MxStrings )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( CommaSeparatedText03, MxStrings )
+TEST( CommaSeparatedText03, Strings )
 {
     CommaSeparatedText x;
     x.parse( " One, two, Three,     \nFOUR" );
@@ -385,13 +385,13 @@ TEST( CommaSeparatedText03, MxStrings )
     
 }
 
-TEST( EndingNumber01, MxStrings )
+TEST( EndingNumber01, Strings )
 {
     EndingNumber x;
     CHECK( x.getValuesBegin() == x.getValuesEnd() )
     CHECK_EQUAL( "", toString( x ) )
 }
-TEST( EndingNumber02, MxStrings )
+TEST( EndingNumber02, Strings )
 {
     EndingNumber x( "-2,-1,,,,XYZ, 0,  @#$@*&#^1,2,3,3,3,3,3" );
     CHECK( x.getValuesBegin() != x.getValuesEnd() )
@@ -415,13 +415,13 @@ TEST( EndingNumber02, MxStrings )
     actual = ss.str();
     CHECK_EQUAL( expected, actual );
 }
-TEST( TimeOnly01, MxStrings )
+TEST( TimeOnly01, Strings )
 {
     TimeOnly x;
     CHECK( x.getValuesBegin() == x.getValuesEnd() )
     CHECK_EQUAL( "", toString( x ) )
 }
-TEST( TimeOnly02, MxStrings )
+TEST( TimeOnly02, Strings )
 {
     TimeOnly x( "-2,-1,,,,XYZ, 0,  @#$@*&#^1,2,3,3,3,3,3" );
     CHECK( x.getValuesBegin() != x.getValuesEnd() )

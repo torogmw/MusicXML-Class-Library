@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "MxIntegers.h"
+#include "Integers.h"
 
 namespace mx
 {

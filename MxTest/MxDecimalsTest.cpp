@@ -1,40 +1,40 @@
 #include "TestHarness.h"
-#include "MxDecimals.h"
+#include "Decimals.h"
 
 using namespace mx::types;
 
 DecimalType kThreshold = 0.00000000000001;
 
 // using DecimalType = double;
-TEST( DecimalType, MxDecimals )
+TEST( DecimalType, Decimals )
 {
     DecimalType d = 0;
     CHECK_DOUBLES_EQUAL( 0, d, kThreshold )
 }
 
 // class Decimal
-TEST( Decimal01, MxDecimals )
+TEST( Decimal01, Decimals )
 {
     Decimal d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Decimal02, MxDecimals )
+TEST( Decimal02, Decimals )
 {
     Decimal d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Decimal02b, MxDecimals )
+TEST( Decimal02b, Decimals )
 {
     Decimal d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Decimal03, MxDecimals )
+TEST( Decimal03, Decimals )
 {
     Decimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -42,7 +42,7 @@ TEST( Decimal03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Decimal04, MxDecimals )
+TEST( Decimal04, Decimals )
 {
     Decimal d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -60,7 +60,7 @@ TEST( Decimal04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Decimal05, MxDecimals )
+TEST( Decimal05, Decimals )
 {
     Decimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -69,7 +69,7 @@ TEST( Decimal05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Decimal06, MxDecimals )
+TEST( Decimal06, Decimals )
 {
     Decimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -80,28 +80,28 @@ TEST( Decimal06, MxDecimals )
 }
 
 // class DecimalRange : public Decimal
-TEST( DecimalRange01, MxDecimals )
+TEST( DecimalRange01, Decimals )
 {
     DecimalRange d( -1, 1, 0 );
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( DecimalRange02, MxDecimals )
+TEST( DecimalRange02, Decimals )
 {
     DecimalRange d( -1, 1, 1.234 );
     DecimalType expected = 1;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( DecimalRange02b, MxDecimals )
+TEST( DecimalRange02b, Decimals )
 {
     DecimalRange d( -1, 123456789013, 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( DecimalRange03, MxDecimals )
+TEST( DecimalRange03, Decimals )
 {
     DecimalRange d( -100, 100, 1.234 );
     d.setValue( 0.00000384 );
@@ -109,7 +109,7 @@ TEST( DecimalRange03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( DecimalRange04, MxDecimals )
+TEST( DecimalRange04, Decimals )
 {
     DecimalRange d( -1, 1, 1.234 );
     d.setValue( 0.00000384109 );
@@ -127,7 +127,7 @@ TEST( DecimalRange04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( DecimalRange05, MxDecimals )
+TEST( DecimalRange05, Decimals )
 {
     DecimalRange d( -1, 1, 1.234 );
     d.setValue( 0.00000384 );
@@ -136,7 +136,7 @@ TEST( DecimalRange05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( DecimalRange06, MxDecimals )
+TEST( DecimalRange06, Decimals )
 {
     DecimalRange d( -1, 1, 1.234 );
     d.setValue( 0.00000384 );
@@ -147,28 +147,28 @@ TEST( DecimalRange06, MxDecimals )
 }
 
 // class PositiveDecimal: public Decimal
-TEST( PositiveDecimal01, MxDecimals )
+TEST( PositiveDecimal01, Decimals )
 {
     PositiveDecimal d;
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDecimal02, MxDecimals )
+TEST( PositiveDecimal02, Decimals )
 {
     PositiveDecimal d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDecimal02b, MxDecimals )
+TEST( PositiveDecimal02b, Decimals )
 {
     PositiveDecimal d( -123456789012.123456789012 );
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDecimal03, MxDecimals )
+TEST( PositiveDecimal03, Decimals )
 {
     PositiveDecimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -176,7 +176,7 @@ TEST( PositiveDecimal03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDecimal04, MxDecimals )
+TEST( PositiveDecimal04, Decimals )
 {
     PositiveDecimal d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -194,7 +194,7 @@ TEST( PositiveDecimal04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveDecimal05, MxDecimals )
+TEST( PositiveDecimal05, Decimals )
 {
     PositiveDecimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -203,7 +203,7 @@ TEST( PositiveDecimal05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDecimal06, MxDecimals )
+TEST( PositiveDecimal06, Decimals )
 {
     PositiveDecimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -214,28 +214,28 @@ TEST( PositiveDecimal06, MxDecimals )
 }
 
 // class NonNegativeDecimal: public Decimal
-TEST( NonNegativeDecimal01, MxDecimals )
+TEST( NonNegativeDecimal01, Decimals )
 {
     NonNegativeDecimal d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( NonNegativeDecimal02, MxDecimals )
+TEST( NonNegativeDecimal02, Decimals )
 {
     NonNegativeDecimal d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( NonNegativeDecimal02b, MxDecimals )
+TEST( NonNegativeDecimal02b, Decimals )
 {
     NonNegativeDecimal d( -123456789012.123456789012 );
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( NonNegativeDecimal03, MxDecimals )
+TEST( NonNegativeDecimal03, Decimals )
 {
     NonNegativeDecimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -243,7 +243,7 @@ TEST( NonNegativeDecimal03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( NonNegativeDecimal04, MxDecimals )
+TEST( NonNegativeDecimal04, Decimals )
 {
     NonNegativeDecimal d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -261,7 +261,7 @@ TEST( NonNegativeDecimal04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( NonNegativeDecimal05, MxDecimals )
+TEST( NonNegativeDecimal05, Decimals )
 {
     NonNegativeDecimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -270,7 +270,7 @@ TEST( NonNegativeDecimal05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( NonNegativeDecimal06, MxDecimals )
+TEST( NonNegativeDecimal06, Decimals )
 {
     NonNegativeDecimal d( 1.234 );
     d.setValue( 0.00000384 );
@@ -281,28 +281,28 @@ TEST( NonNegativeDecimal06, MxDecimals )
 }
 
 // using Divisions = Decimal;
-TEST( Divisions01, MxDecimals )
+TEST( Divisions01, Decimals )
 {
     Divisions d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions02, MxDecimals )
+TEST( Divisions02, Decimals )
 {
     Divisions d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions02b, MxDecimals )
+TEST( Divisions02b, Decimals )
 {
     Divisions d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions03, MxDecimals )
+TEST( Divisions03, Decimals )
 {
     Divisions d( 1.234 );
     d.setValue( 0.00000384 );
@@ -310,7 +310,7 @@ TEST( Divisions03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions04, MxDecimals )
+TEST( Divisions04, Decimals )
 {
     Divisions d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -328,7 +328,7 @@ TEST( Divisions04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Divisions05, MxDecimals )
+TEST( Divisions05, Decimals )
 {
     Divisions d( 1.234 );
     d.setValue( 0.00000384 );
@@ -337,7 +337,7 @@ TEST( Divisions05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions06, MxDecimals )
+TEST( Divisions06, Decimals )
 {
     Divisions d( 1.234 );
     d.setValue( 0.00000384 );
@@ -348,28 +348,28 @@ TEST( Divisions06, MxDecimals )
 }
 
 // using Millimeters = Decimal;
-TEST( Millimeters01, MxDecimals )
+TEST( Millimeters01, Decimals )
 {
     Millimeters d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters02, MxDecimals )
+TEST( Millimeters02, Decimals )
 {
     Millimeters d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters02b, MxDecimals )
+TEST( Millimeters02b, Decimals )
 {
     Millimeters d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters03, MxDecimals )
+TEST( Millimeters03, Decimals )
 {
     Millimeters d( 1.234 );
     d.setValue( 0.00000384 );
@@ -377,7 +377,7 @@ TEST( Millimeters03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters04, MxDecimals )
+TEST( Millimeters04, Decimals )
 {
     Millimeters d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -395,7 +395,7 @@ TEST( Millimeters04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Millimeters05, MxDecimals )
+TEST( Millimeters05, Decimals )
 {
     Millimeters d( 1.234 );
     d.setValue( 0.00000384 );
@@ -404,7 +404,7 @@ TEST( Millimeters05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters06, MxDecimals )
+TEST( Millimeters06, Decimals )
 {
     Millimeters d( 1.234 );
     d.setValue( 0.00000384 );
@@ -416,28 +416,28 @@ TEST( Millimeters06, MxDecimals )
 
 /* MIN = 0, MAX = 100, DEFAULT = 0 */
 // class Percent : DecimalRange
-TEST( Percent01, MxDecimals )
+TEST( Percent01, Decimals )
 {
     Percent d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Percent02, MxDecimals )
+TEST( Percent02, Decimals )
 {
     Percent d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Percent02b, MxDecimals )
+TEST( Percent02b, Decimals )
 {
     Percent d( 123456789012.123456789012 );
     DecimalType expected = 100;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Percent03, MxDecimals )
+TEST( Percent03, Decimals )
 {
     Percent d( 1.234 );
     d.setValue( 0.00000384 );
@@ -445,7 +445,7 @@ TEST( Percent03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Percent04, MxDecimals )
+TEST( Percent04, Decimals )
 {
     Percent d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -463,7 +463,7 @@ TEST( Percent04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Percent05, MxDecimals )
+TEST( Percent05, Decimals )
 {
     Percent d( 1.234 );
     d.setValue( 0.00000384 );
@@ -472,7 +472,7 @@ TEST( Percent05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Percent05b, MxDecimals )
+TEST( Percent05b, Decimals )
 {
     Percent d( 1.234 );
     d.setValue( 0.00000384 );
@@ -481,7 +481,7 @@ TEST( Percent05b, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Percent06, MxDecimals )
+TEST( Percent06, Decimals )
 {
     Percent d( 1.234 );
     d.setValue( 0.00000384 );
@@ -492,28 +492,28 @@ TEST( Percent06, MxDecimals )
 }
 
 // using PositiveDivisions = PositiveDecimal;
-TEST( PositiveDivisions01, MxDecimals )
+TEST( PositiveDivisions01, Decimals )
 {
     PositiveDivisions d;
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions02, MxDecimals )
+TEST( PositiveDivisions02, Decimals )
 {
     PositiveDivisions d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions02b, MxDecimals )
+TEST( PositiveDivisions02b, Decimals )
 {
     PositiveDivisions d( -123456789012.123456789012 );
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions03, MxDecimals )
+TEST( PositiveDivisions03, Decimals )
 {
     PositiveDivisions d( 1.234 );
     d.setValue( 0.00000384 );
@@ -521,7 +521,7 @@ TEST( PositiveDivisions03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions04, MxDecimals )
+TEST( PositiveDivisions04, Decimals )
 {
     PositiveDivisions d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -539,7 +539,7 @@ TEST( PositiveDivisions04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveDivisions05, MxDecimals )
+TEST( PositiveDivisions05, Decimals )
 {
     PositiveDivisions d( 1.234 );
     d.setValue( 0.00000384 );
@@ -548,7 +548,7 @@ TEST( PositiveDivisions05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions06, MxDecimals )
+TEST( PositiveDivisions06, Decimals )
 {
     PositiveDivisions d( 1.234 );
     d.setValue( 0.00000384 );
@@ -560,28 +560,28 @@ TEST( PositiveDivisions06, MxDecimals )
 
 /* MIN = -180, MAX = 180, DEFAULT = 0 */
 // class RotationalDegrees : DecimalRange
-TEST( RotationalDegrees01, MxDecimals )
+TEST( RotationalDegrees01, Decimals )
 {
     RotationalDegrees d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees02, MxDecimals )
+TEST( RotationalDegrees02, Decimals )
 {
     RotationalDegrees d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees02b, MxDecimals )
+TEST( RotationalDegrees02b, Decimals )
 {
     RotationalDegrees d( 123456789012.123456789012 );
     DecimalType expected = 180;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees03, MxDecimals )
+TEST( RotationalDegrees03, Decimals )
 {
     RotationalDegrees d( 1.234 );
     d.setValue( 0.00000384 );
@@ -589,7 +589,7 @@ TEST( RotationalDegrees03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees04, MxDecimals )
+TEST( RotationalDegrees04, Decimals )
 {
     RotationalDegrees d( 1.234 );
     d.setValue( -999 );
@@ -608,7 +608,7 @@ TEST( RotationalDegrees04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( RotationalDegrees05, MxDecimals )
+TEST( RotationalDegrees05, Decimals )
 {
     RotationalDegrees d( 1.234 );
     d.setValue( 0.00000384 );
@@ -617,7 +617,7 @@ TEST( RotationalDegrees05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees05b, MxDecimals )
+TEST( RotationalDegrees05b, Decimals )
 {
     RotationalDegrees d( 1.234 );
     d.setValue( 0.00000384 );
@@ -626,7 +626,7 @@ TEST( RotationalDegrees05b, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees06, MxDecimals )
+TEST( RotationalDegrees06, Decimals )
 {
     RotationalDegrees d( 1.234 );
     d.setValue( 0.00000384 );
@@ -637,28 +637,28 @@ TEST( RotationalDegrees06, MxDecimals )
 }
 
 // using Semitones = Decimal;
-TEST( Semitones01, MxDecimals )
+TEST( Semitones01, Decimals )
 {
     Semitones d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Semitones02, MxDecimals )
+TEST( Semitones02, Decimals )
 {
     Semitones d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Semitones02b, MxDecimals )
+TEST( Semitones02b, Decimals )
 {
     Semitones d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Semitones03, MxDecimals )
+TEST( Semitones03, Decimals )
 {
     Semitones d( 1.234 );
     d.setValue( 0.00000384 );
@@ -666,7 +666,7 @@ TEST( Semitones03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Semitones04, MxDecimals )
+TEST( Semitones04, Decimals )
 {
     Semitones d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -684,7 +684,7 @@ TEST( Semitones04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Semitones05, MxDecimals )
+TEST( Semitones05, Decimals )
 {
     Semitones d( 1.234 );
     d.setValue( 0.00000384 );
@@ -693,7 +693,7 @@ TEST( Semitones05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Semitones06, MxDecimals )
+TEST( Semitones06, Decimals )
 {
     Semitones d( 1.234 );
     d.setValue( 0.00000384 );
@@ -704,28 +704,28 @@ TEST( Semitones06, MxDecimals )
 }
 
 // using Tenths = Decimal;
-TEST( Tenths01, MxDecimals )
+TEST( Tenths01, Decimals )
 {
     Tenths d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths02, MxDecimals )
+TEST( Tenths02, Decimals )
 {
     Tenths d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths02b, MxDecimals )
+TEST( Tenths02b, Decimals )
 {
     Tenths d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths03, MxDecimals )
+TEST( Tenths03, Decimals )
 {
     Tenths d( 1.234 );
     d.setValue( 0.00000384 );
@@ -733,7 +733,7 @@ TEST( Tenths03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths04, MxDecimals )
+TEST( Tenths04, Decimals )
 {
     Tenths d( 1.234 );
     d.setValue( 0.00000384109 );
@@ -751,7 +751,7 @@ TEST( Tenths04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Tenths05, MxDecimals )
+TEST( Tenths05, Decimals )
 {
     Tenths d( 1.234 );
     d.setValue( 0.00000384 );
@@ -760,7 +760,7 @@ TEST( Tenths05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths06, MxDecimals )
+TEST( Tenths06, Decimals )
 {
     Tenths d( 1.234 );
     d.setValue( 0.00000384 );
@@ -772,28 +772,28 @@ TEST( Tenths06, MxDecimals )
 
 /* MIN = 2, MAX = N/A, DEFAULT = 2 */
 // class TrillBeats: public Decimal
-TEST( TrillBeats01, MxDecimals )
+TEST( TrillBeats01, Decimals )
 {
     TrillBeats d;
     DecimalType expected = 2;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( TrillBeats02, MxDecimals )
+TEST( TrillBeats02, Decimals )
 {
     TrillBeats d( 1.234 );
     DecimalType expected = 2;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( TrillBeats02b, MxDecimals )
+TEST( TrillBeats02b, Decimals )
 {
     TrillBeats d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( TrillBeats03, MxDecimals )
+TEST( TrillBeats03, Decimals )
 {
     TrillBeats d( 1.234 );
     d.setValue( 0.00000384 );
@@ -801,7 +801,7 @@ TEST( TrillBeats03, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( TrillBeats04, MxDecimals )
+TEST( TrillBeats04, Decimals )
 {
     TrillBeats d( 1.234 );
     d.setValue( -999 );
@@ -820,7 +820,7 @@ TEST( TrillBeats04, MxDecimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( TrillBeats05, MxDecimals )
+TEST( TrillBeats05, Decimals )
 {
     TrillBeats d( 1.234 );
     d.setValue( 0.00000384 );
@@ -829,7 +829,7 @@ TEST( TrillBeats05, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( TrillBeats05b, MxDecimals )
+TEST( TrillBeats05b, Decimals )
 {
     TrillBeats d( 1.234 );
     d.setValue( 0.00000384 );
@@ -838,7 +838,7 @@ TEST( TrillBeats05b, MxDecimals )
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( TrillBeats06, MxDecimals )
+TEST( TrillBeats06, Decimals )
 {
     TrillBeats d( 1.234 );
     d.setValue( 0.00000384 );

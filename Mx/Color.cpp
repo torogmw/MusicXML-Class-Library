@@ -1,6 +1,6 @@
 
-#include "MxColor.h"
-#include "MxIntegers.h"
+#include "Color.h"
+#include "Integers.h"
 #include <sstream>
 #include <iomanip>
 #include <string>

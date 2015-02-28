@@ -14,7 +14,7 @@ namespace xsd
         
         ss << "TEST( " << e.getCppName();
         ss << "_BadParse";
-        ss << ", MxEnums )" << end();
+        ss << ", Enums )" << end();
         ss << "{" << end();
         
         ss << tab(1) << "mx::types::" << e.getCppName() << " actual = ";
@@ -32,7 +32,7 @@ namespace xsd
         {
             ss << "TEST( " << e.getCppName();
             ss << "_" << v->getCppName();
-            ss << ", MxEnums )" << end();
+            ss << ", Enums )" << end();
             ss << "{" << end();
             ss << tab(1) << "mx::types::" << e.getCppName() << " e = mx::types::" << e.getCppName() << "::" << v->getCppName() << ";" << end();
             ss << tab(1) << "std::string expected = \"" << v->getXmlName() << "\";" << end();
@@ -62,12 +62,12 @@ namespace xsd
     {
         std::stringstream ss;
         ss << "#include \"TestHarness.h\"" << end();
-        ss << "#include \"MxEnums.h\"" << end(2);
+        ss << "#include \"Enums.h\"" << end(2);
                 MsItemSimpleTypeEnumSet eset = MsItemSimpleTypeEnum::construct( web );
         for ( auto e : eset )
         {
             ss << enumTestString( *e );
         }
-        fs::writeStringToFile( globals::getOutputDirectory(), "MxEnumsTest.cpp", ss.str() );
+        fs::writeStringToFile( globals::getOutputDirectory(), "EnumsTest.cpp", ss.str() );
     }
 }

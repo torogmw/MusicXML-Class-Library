@@ -5,7 +5,7 @@
 #include "enumsTest.h"
 namespace go
 {
-    void goCreateMxEnums()
+    void goCreateEnums()
     {
         xsd::MsItemWeb web;
         xsd::writeEnumHFile( web );

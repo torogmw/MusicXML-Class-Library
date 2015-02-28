@@ -71,7 +71,7 @@ namespace xsd
     void writeEnumCppFile( const MsItemWeb& web )
     {
         std::stringstream ss;
-        ss << "#include \"MxEnums.h\"" << end(2);
+        ss << "#include \"Enums.h\"" << end(2);
         ss << "namespace mx" << end();
         ss << "{" << end();
         ss << tab(1) << "namespace types" << end();
@@ -83,6 +83,6 @@ namespace xsd
         }
         ss << tab(1) << "} // namespace types" << end();
         ss << "} // namespace mx";
-        fs::writeStringToFile( globals::getOutputDirectory(), "MxEnums.cpp", ss.str() );
+        fs::writeStringToFile( globals::getOutputDirectory(), "Enums.cpp", ss.str() );
     }
 }

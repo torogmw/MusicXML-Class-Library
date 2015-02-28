@@ -1,24 +1,24 @@
 #include "TestHarness.h"
-#include "MxColor.h"
+#include "Color.h"
 #include <sstream>
 
 using namespace mx::types;
 
-TEST( Color01, MxStrings )
+TEST( Color01, Strings )
 {
     Color x;
     std::string expected = "#FFFFFF";
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( Color02, MxStrings )
+TEST( Color02, Strings )
 {
     Color x( 1, 2, 3, 4 );
     std::string expected = "#01020304";
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( Color03, MxStrings )
+TEST( Color03, Strings )
 {
     Color x( 98, 97, 95 );
     std::string expected = "#62615F";
@@ -30,7 +30,7 @@ TEST( Color03, MxStrings )
     CHECK_EQUAL( 95, x.getBlue() )
 }
 
-TEST( Color04, MxStrings )
+TEST( Color04, Strings )
 {
     Color x( 98, 97, 200 );
     x.setColorType( Color::ColorType::ARGB );
@@ -58,7 +58,7 @@ TEST( Color04, MxStrings )
     actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( Color05, MxStrings )
+TEST( Color05, Strings )
 {
     Color x;
     x.parse( "#AB00CDEF" );
@@ -70,7 +70,7 @@ TEST( Color05, MxStrings )
     CHECK_EQUAL( 205, x.getGreen() )
     CHECK_EQUAL( 239, x.getBlue() )
 }
-TEST( Color06, MxStrings )
+TEST( Color06, Strings )
 {
     Color x;
     x.parse( "#00CDEF11" );
@@ -84,7 +84,7 @@ TEST( Color06, MxStrings )
     CHECK( Color::ColorType::ARGB == x.getColorType() );
 }
 
-TEST( Color07, MxStrings )
+TEST( Color07, Strings )
 {
     Color x;
     x.parse( "#CDEF11" );
@@ -99,7 +99,7 @@ TEST( Color07, MxStrings )
     CHECK( Color::ColorType::ARGB == x.getColorType() );
 }
 
-TEST( Color08, MxStrings )
+TEST( Color08, Strings )
 {
     Color x;
     x.parse( "#00CDEF11" );
@@ -116,7 +116,7 @@ TEST( Color08, MxStrings )
     CHECK_EQUAL( 0, x.getBlue() )
     CHECK( Color::ColorType::ARGB == x.getColorType() );
 }
-TEST( Color09, MxStrings )
+TEST( Color09, Strings )
 {
     Color x;
     x.parse( "#ABCDEF" );
@@ -135,7 +135,7 @@ TEST( Color09, MxStrings )
     CHECK( Color::ColorType::ARGB == x.getColorType() );
 }
 
-TEST( Color10, MxStrings )
+TEST( Color10, Strings )
 {
     Color x;
     x.parse( "#ABCDEF99" );

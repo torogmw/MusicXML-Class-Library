@@ -51,6 +51,6 @@ namespace xsd
         }
         ss << tab(1) << "} // namespace types" << end();
         ss << "} // namespace mx";
-        fs::writeStringToFile( globals::getOutputDirectory(), "MxEnums.h", ss.str() );
+        fs::writeStringToFile( globals::getOutputDirectory(), "Enums.h", ss.str() );
     }
 }

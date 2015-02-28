@@ -1,6 +1,6 @@
 /* matthew james briggs */
 
-#include "MxIntegers.h"
+#include "Integers.h"
 #include <sstream>
 
 namespace mx

@@ -1,4 +1,4 @@
-#include "MxEnums.h"
+#include "Enums.h"
 
 namespace mx
 {
