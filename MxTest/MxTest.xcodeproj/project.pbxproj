@@ -10,11 +10,11 @@
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
-		29AFECAB1A9CED26008516EF /* MxIntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* MxIntegersTest.cpp */; };
-		29C59C711A9E814A00647187 /* MxDecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* MxDecimalsTest.cpp */; };
-		29D10BBD1A9BF0BB00F03CE6 /* MxEnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */; };
-		29E801BC1A9FA13800EDBE41 /* MxStringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* MxStringsTest.cpp */; };
-		29ED3EC11AA138EB009FAF55 /* MxColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* MxColorTest.cpp */; };
+		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
+		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
+		29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */; };
+		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
+		29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,11 +34,11 @@
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
 		298B45FC1A9B94910014CAED /* libCppUnitLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCppUnitLite.a; path = ../Build/Products/Debug/libCppUnitLite.a; sourceTree = "<group>"; };
-		29AFECA91A9CED26008516EF /* MxIntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxIntegersTest.cpp; sourceTree = "<group>"; };
-		29C59C6F1A9E814A00647187 /* MxDecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxDecimalsTest.cpp; sourceTree = "<group>"; };
-		29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxEnumsTest.cpp; sourceTree = "<group>"; };
-		29E801BA1A9FA13800EDBE41 /* MxStringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxStringsTest.cpp; sourceTree = "<group>"; };
-		29ED3EBF1AA138EB009FAF55 /* MxColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MxColorTest.cpp; sourceTree = "<group>"; };
+		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
+		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
+		29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumsTest.cpp; sourceTree = "<group>"; };
+		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
+		29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +57,11 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
-				29ED3EBF1AA138EB009FAF55 /* MxColorTest.cpp */,
-				29E801BA1A9FA13800EDBE41 /* MxStringsTest.cpp */,
-				29C59C6F1A9E814A00647187 /* MxDecimalsTest.cpp */,
-				29AFECA91A9CED26008516EF /* MxIntegersTest.cpp */,
-				29D10BBC1A9BF0BB00F03CE6 /* MxEnumsTest.cpp */,
+				29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */,
+				29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */,
+				29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */,
+				29AFECA91A9CED26008516EF /* IntegersTest.cpp */,
+				29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */,
 				298B45FC1A9B94910014CAED /* libCppUnitLite.a */,
 				298B45FA1A9B948E0014CAED /* libMx.a */,
 				298B45EB1A9B942A0014CAED /* MxTest */,
@@ -136,12 +136,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E801BC1A9FA13800EDBE41 /* MxStringsTest.cpp in Sources */,
-				29AFECAB1A9CED26008516EF /* MxIntegersTest.cpp in Sources */,
+				29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */,
+				29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */,
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
-				29ED3EC11AA138EB009FAF55 /* MxColorTest.cpp in Sources */,
-				29C59C711A9E814A00647187 /* MxDecimalsTest.cpp in Sources */,
-				29D10BBD1A9BF0BB00F03CE6 /* MxEnumsTest.cpp in Sources */,
+				29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */,
+				29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */,
+				29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

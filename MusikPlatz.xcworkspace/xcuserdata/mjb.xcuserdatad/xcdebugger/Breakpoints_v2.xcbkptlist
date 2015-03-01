@@ -701,13 +701,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446778257.170964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "TEST( Color02, MxStrings )"
+            landmarkName = "TEST( Color02, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -717,13 +717,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446778381.977351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "TEST( Color03, MxStrings )"
+            landmarkName = "TEST( Color03, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -733,13 +733,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446778460.540674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "TEST( Color03, MxStrings )"
+            landmarkName = "TEST( Color03, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -749,13 +749,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446779177.304144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "TEST( Color05, MxStrings )"
+            landmarkName = "TEST( Color05, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -765,13 +765,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446779340.998305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "TEST( Color04, MxStrings )"
+            landmarkName = "TEST( Color04, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -797,13 +797,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446779729.644492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "TEST( Color07, MxStrings )"
+            landmarkName = "TEST( Color07, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -813,13 +813,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/MxColorTest.cpp"
+            filePath = "MxTest/ColorTest.cpp"
             timestampString = "446779887.777804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "TEST( Color08, MxStrings )"
+            landmarkName = "TEST( Color08, Strings )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
