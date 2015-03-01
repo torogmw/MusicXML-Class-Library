@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290D7C171AA397950081FBB5 /* MsItemAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C151AA397950081FBB5 /* MsItemAttribute.cpp */; };
+		290D7C181AA397950081FBB5 /* MsItemAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 290D7C161AA397950081FBB5 /* MsItemAttribute.h */; };
 		29546F051A9AA95D008C1E0E /* MsItemSimpleType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */; };
 		29546F061A9AA95D008C1E0E /* MsItemSimpleType.h in Headers */ = {isa = PBXBuildFile; fileRef = 29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */; };
 		298B475E1A9B9D000014CAED /* MsItemEnumValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */; };
@@ -51,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290D7C151AA397950081FBB5 /* MsItemAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemAttribute.cpp; sourceTree = "<group>"; };
+		290D7C161AA397950081FBB5 /* MsItemAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemAttribute.h; sourceTree = "<group>"; };
 		29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleType.cpp; sourceTree = "<group>"; };
 		29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleType.h; sourceTree = "<group>"; };
 		2980BDEE1A8853F0008B0329 /* libXsd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXsd.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,8 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
+				290D7C151AA397950081FBB5 /* MsItemAttribute.cpp */,
+				290D7C161AA397950081FBB5 /* MsItemAttribute.h */,
 				29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */,
 				29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */,
 				29D10B871A9BA8C100F03CE6 /* Functions */,
@@ -212,6 +218,7 @@
 				29D10BA81A9BE9D800F03CE6 /* enumsTest.h in Headers */,
 				29E6D3D61A8C0C8F00C8B8E2 /* MsitemWeb.h in Headers */,
 				29D10BA41A9BE05200F03CE6 /* enumsCpp.h in Headers */,
+				290D7C181AA397950081FBB5 /* MsItemAttribute.h in Headers */,
 				298B475F1A9B9D000014CAED /* MsItemEnumValue.h in Headers */,
 				29CA126A1A9C447B008DCCFA /* MsItemSimpleTypeInteger.h in Headers */,
 				29E6D3CE1A8BFDBA00C8B8E2 /* XpProperty.h in Headers */,
@@ -286,6 +293,7 @@
 				29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */,
 				29D10B7E1A9B9EFE00F03CE6 /* isCppKeyword.cpp in Sources */,
 				29E6D3DD1A8C0F4300C8B8E2 /* XpParse.cpp in Sources */,
+				290D7C171AA397950081FBB5 /* MsItemAttribute.cpp in Sources */,
 				29A884F61A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp in Sources */,
 				29D10BA31A9BE05200F03CE6 /* enumsCpp.cpp in Sources */,
 				29E6D3D91A8C0CF100C8B8E2 /* XpReader.cpp in Sources */,
