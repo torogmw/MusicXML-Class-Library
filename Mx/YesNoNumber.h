@@ -20,11 +20,11 @@ namespace mx
             YesNoNumber& operator=( YesNoNumber&& other );
             
             bool getIsYesNo() const;
-            bool getIsDecimal() const;
+            bool getIsNumber() const;
             void setValue( const YesNo value );
             void setValue( const Decimal& value );
             YesNo getValueYesNo() const;
-            Decimal getValueDecimal() const;
+            Decimal getValueNumber() const;
             void parse( const std::string& value );
             
         private:

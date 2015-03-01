@@ -1,72 +1,72 @@
 #include "TestHarness.h"
-#include "FontSize.h"
+#include "NumberOrNormal.h"
 #include <sstream>
 
 using namespace mx::types;
 
-TEST( FontSize01, FontSize )
+TEST( NumberOrNormal01, NumberOrNormal )
 {
-    FontSize x;
-    std::string expected = "medium";
-    CHECK( x.getIsCssFontSize() )
+    NumberOrNormal x;
+    std::string expected = "normal";
+    CHECK( x.getIsNormal() )
     CHECK( !x.getIsNumber() )
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( FontSize02, FontSize )
+TEST( NumberOrNormal02, NumberOrNormal )
 {
-    FontSize x( Decimal( 31.2 ) );
-    CHECK( !x.getIsCssFontSize() )
+    NumberOrNormal x( Decimal( 31.2 ) );
+    CHECK( !x.getIsNormal() )
     CHECK( x.getIsNumber() )
     std::string expected = "31.2";
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( FontSize03, FontSize )
+TEST( NumberOrNormal03, NumberOrNormal )
 {
-    FontSize x( CssFontSize::xSmall );
-    CHECK( x.getIsCssFontSize() )
+    NumberOrNormal x( "normal" );
+    CHECK( x.getIsNormal() )
     CHECK( !x.getIsNumber() )
-    std::string expected = "x-small";
+    std::string expected = "normal";
     std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( FontSize04, FontSize )
+TEST( NumberOrNormal04, NumberOrNormal )
 {
-    FontSize x( "x-large" );
-    CHECK( x.getIsCssFontSize() )
-    CHECK( !x.getIsNumber() )
-    CssFontSize expected = CssFontSize::xLarge;
-    CssFontSize actual = x.getValueCssFontSize();
+    NumberOrNormal x( "XXX" );
+    CHECK( !x.getIsNormal() )
+    CHECK( x.getIsNumber() )
+    std::string expected = "0";
+    std::string actual = toString( x );
     CHECK_EQUAL( expected, actual )
 }
-TEST( FontSize05, FontSize )
+TEST( NumberOrNormal05, NumberOrNormal )
 {
-    FontSize x( "24.0" );
-    CHECK( ! x.getIsCssFontSize() )
+    NumberOrNormal x( "24.0" );
+    CHECK( ! x.getIsNormal() )
     CHECK( x.getIsNumber() )
     DecimalType expected = 24;
     DecimalType actual = x.getValueNumber().getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kDefaultPrecision )
 }
-TEST( FontSize06, FontSize )
+TEST( NumberOrNormal06, NumberOrNormal )
 {
-    FontSize x( "24.0" );
-    x.setValue( CssFontSize::xxLarge );
-    CHECK( x.getIsCssFontSize() )
+    NumberOrNormal x( "24.0" );
+    x.setValueNormal();
+    CHECK( x.getIsNormal() )
     CHECK( ! x.getIsNumber() )
-    std::string expected = "xx-large";
+    std::string expected = "normal";
     std::stringstream ss;
     ss << x;
     std::string actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( FontSize07, FontSize )
+TEST( NumberOrNormal07, NumberOrNormal )
 {
-    FontSize x( "xx-small" );
+    NumberOrNormal x( "yes" );
     x.setValue( Decimal( 30.9 ) );
-    CHECK( ! x.getIsCssFontSize() )
+    CHECK( ! x.getIsNormal() )
     CHECK( x.getIsNumber() )
     std::string expected = "30.9";
     std::stringstream ss;

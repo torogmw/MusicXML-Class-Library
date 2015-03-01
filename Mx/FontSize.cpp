@@ -41,7 +41,7 @@ namespace mx
             {
                 return !myIsDecimal;
             }
-            bool getIsDecimal() const
+            bool getIsNumber() const
             {
                 return myIsDecimal;
             }
@@ -59,7 +59,7 @@ namespace mx
             {
                 return myCssFontSize;
             }
-            Decimal getValueDecimal() const
+            Decimal getValueNumber() const
             {
                 return myDecimal;
             }
@@ -129,9 +129,9 @@ namespace mx
         {
             return myImpl->getIsCssFontSize();
         }
-        bool FontSize::getIsDecimal() const
+        bool FontSize::getIsNumber() const
         {
-            return myImpl->getIsDecimal();
+            return myImpl->getIsNumber();
         }
         void FontSize::setValue( const CssFontSize value )
         {
@@ -146,9 +146,9 @@ namespace mx
         {
             return myImpl->getValueCssFontSize();
         }
-        Decimal FontSize::getValueDecimal() const
+        Decimal FontSize::getValueNumber() const
         {
-            return Decimal( myImpl->getValueDecimal().getValue() );
+            return Decimal( myImpl->getValueNumber().getValue() );
         }
   
         void FontSize::parse( const std::string& value )
@@ -164,9 +164,9 @@ namespace mx
         }
 		std::ostream& toStream( std::ostream& os, const FontSize& value )
         {
-            if ( value.getIsDecimal() )
+            if ( value.getIsNumber() )
             {
-                toStream( os, value.getValueDecimal() );
+                toStream( os, value.getValueNumber() );
             }
             else
             {

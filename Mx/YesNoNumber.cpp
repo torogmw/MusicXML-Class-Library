@@ -41,7 +41,7 @@ namespace mx
             {
                 return !myIsDecimal;
             }
-            bool getIsDecimal() const
+            bool getIsNumber() const
             {
                 return myIsDecimal;
             }
@@ -59,7 +59,7 @@ namespace mx
             {
                 return myYesNo;
             }
-            Decimal getValueDecimal() const
+            Decimal getValueNumber() const
             {
                 return myDecimal;
             }
@@ -129,9 +129,9 @@ namespace mx
         {
             return myImpl->getIsYesNo();
         }
-        bool YesNoNumber::getIsDecimal() const
+        bool YesNoNumber::getIsNumber() const
         {
-            return myImpl->getIsDecimal();
+            return myImpl->getIsNumber();
         }
         void YesNoNumber::setValue( const YesNo value )
         {
@@ -146,9 +146,9 @@ namespace mx
         {
             return myImpl->getValueYesNo();
         }
-        Decimal YesNoNumber::getValueDecimal() const
+        Decimal YesNoNumber::getValueNumber() const
         {
-            return Decimal( myImpl->getValueDecimal().getValue() );
+            return Decimal( myImpl->getValueNumber().getValue() );
         }
         
         void YesNoNumber::parse( const std::string& value )
@@ -164,9 +164,9 @@ namespace mx
         }
 		std::ostream& toStream( std::ostream& os, const YesNoNumber& value )
         {
-            if ( value.getIsDecimal() )
+            if ( value.getIsNumber() )
             {
-                toStream( os, value.getValueDecimal() );
+                toStream( os, value.getValueNumber() );
             }
             else
             {

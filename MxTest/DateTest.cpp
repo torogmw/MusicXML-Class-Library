@@ -7468,6 +7468,7 @@ TEST( stream01, Date )
 	object.setValue( 2014, 2, 1 );
 	std::stringstream ss2;
 	toStream( ss2, object );
+	toStream( ss2, object );
 	expected = "2014-02-012014-02-01";
 	actual = ss2.str();
 	CHECK_EQUAL( expected, actual )
@@ -7488,7 +7489,7 @@ TEST( stream02, Date )
 	CHECK_EQUAL( expected, actual )
 	object.setValue( 13, 12, 1 );
 	std::stringstream ss2;
-	toStream( ss2, object );
+	ss2 << object << object;
 	expected = "0013-12-010013-12-01";
 	actual = ss2.str();
 	CHECK_EQUAL( expected, actual )

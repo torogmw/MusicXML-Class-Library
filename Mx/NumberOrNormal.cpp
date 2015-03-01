@@ -12,13 +12,13 @@ namespace mx
         {
         public:
             explicit impl()
-            :myDecimal()
-            ,myIsNormal( false )
+            :myDecimal( 0 )
+            ,myIsNormal( true )
             {}
             
             explicit impl( const Decimal& value )
             :myDecimal( value )
-            ,myIsNormal( true )
+            ,myIsNormal( false )
             {}
             
             explicit impl( const std::string& value )

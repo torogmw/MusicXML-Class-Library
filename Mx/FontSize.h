@@ -20,11 +20,11 @@ namespace mx
             FontSize& operator=( FontSize&& other );
             
             bool getIsCssFontSize() const;
-            bool getIsDecimal() const;
+            bool getIsNumber() const;
             void setValue( const CssFontSize value );
             void setValue( const Decimal& value );
             CssFontSize getValueCssFontSize() const;
-            Decimal getValueDecimal() const;
+            Decimal getValueNumber() const;
             void parse( const std::string& value );
             
         private:
