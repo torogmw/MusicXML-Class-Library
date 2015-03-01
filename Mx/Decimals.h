@@ -23,7 +23,7 @@ namespace mx
          out-of-range, this amount will be added to the exclusive minimum.
          For example if a Decimal is constrainted to be a positive number,
          and you try to assign the value 0, the value will by set to 
-         kNonZeroAmount */
+         kNonZeroAmount instead */
         const DecimalType kNonZeroAmount = 0.00000000001;
         
         class Decimal
@@ -33,8 +33,9 @@ namespace mx
             Decimal();
             virtual ~Decimal();
             Decimal( const Decimal& other );
-            Decimal( Decimal&& other ) = default;
+            Decimal( Decimal&& other );
             Decimal& operator=( const Decimal& other );
+            Decimal& operator=( Decimal&& other );
             
             DecimalType getValue() const;
             virtual void setValue( DecimalType value );
@@ -54,7 +55,7 @@ namespace mx
         {
         public:
             explicit DecimalRange( DecimalType min, DecimalType max, DecimalType value );
-            virtual ~DecimalRange();
+            // virtual ~DecimalRange();
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         private:
@@ -68,7 +69,7 @@ namespace mx
         public:
             explicit PositiveDecimal( DecimalType value );
             PositiveDecimal();
-            virtual ~PositiveDecimal();
+            // virtual ~PositiveDecimal();
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };
@@ -79,7 +80,7 @@ namespace mx
         public:
             explicit NonNegativeDecimal( DecimalType value );
             NonNegativeDecimal();
-            virtual ~NonNegativeDecimal ();
+            // virtual ~NonNegativeDecimal ();
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };
@@ -115,7 +116,7 @@ namespace mx
         public:
             explicit TrillBeats( DecimalType value );
             TrillBeats();
-            virtual ~TrillBeats();
+            // virtual ~TrillBeats();
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };

@@ -11,6 +11,7 @@ namespace mx
         public:
             impl( const DecimalType value )
             :myValue( value ) {}
+            ~impl () {}
             
             void setValue( DecimalType value )
             {
@@ -38,13 +39,14 @@ namespace mx
         Decimal::Decimal( const Decimal& other )
         :myImpl( new Decimal::impl( other.getValue() ) )
         { }
+        Decimal::Decimal( Decimal&& other ) = default;
         
         Decimal& Decimal::operator=( const Decimal& other )
         {
             this->myImpl = std::unique_ptr<Decimal::impl>( new Decimal::impl( other.getValue() ) );
             return *this;
         }
-        
+        Decimal& Decimal::operator=( Decimal&& other ) = default;
         
         DecimalType Decimal::getValue() const
         {
@@ -58,7 +60,7 @@ namespace mx
         {
             std::stringstream ss( value );
             DecimalType temp = 0;
-            if ((ss >> temp).fail() || !(ss >> std::ws).eof())
+            if ( ( ss >> temp).fail() || !( ss >> std::ws).eof())
             {
                 return;
             }
@@ -95,7 +97,7 @@ namespace mx
         {
             setValue( value );
         }
-        DecimalRange::~DecimalRange() {}
+        // DecimalRange::~DecimalRange() {}
         
         void DecimalRange::setValue( DecimalType value )
         {
@@ -132,7 +134,7 @@ namespace mx
         PositiveDecimal::PositiveDecimal()
         :Decimal( kNonZeroAmount ) {}
         
-        PositiveDecimal::~PositiveDecimal() {}
+        // PositiveDecimal::~PositiveDecimal() {}
         
         void PositiveDecimal::setValue( DecimalType value )
         {
@@ -164,7 +166,7 @@ namespace mx
         NonNegativeDecimal::NonNegativeDecimal()
         :Decimal( 0 ) {}
         
-        NonNegativeDecimal::~NonNegativeDecimal() {}
+        // NonNegativeDecimal::~NonNegativeDecimal() {}
         void NonNegativeDecimal::setValue( DecimalType value )
         {
             if ( value < 0 )
@@ -212,7 +214,7 @@ namespace mx
         TrillBeats::TrillBeats()
         :Decimal( 2 ) {}
 
-        TrillBeats::~TrillBeats() {}
+        // TrillBeats::~TrillBeats() {}
         
         void TrillBeats::setValue( DecimalType value )
         {

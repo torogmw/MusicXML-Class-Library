@@ -55,21 +55,21 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
-				295BAFB61AA23C5B002CAB3F /* FontSize.cpp */,
-				295BAFB71AA23C5B002CAB3F /* FontSize.h */,
 				29ED3EBB1AA1319E009FAF55 /* Color.cpp */,
 				29ED3EBC1AA1319E009FAF55 /* Color.h */,
-				29E801B61A9F983800EDBE41 /* Strings.cpp */,
-				29E801B71A9F983800EDBE41 /* Strings.h */,
 				29A884F81A9D5FD800F417CE /* Decimals.cpp */,
 				29A884F91A9D5FD800F417CE /* Decimals.h */,
-				298949C51A9CE9D60089D4F0 /* Integers.cpp */,
-				298949C61A9CE9D60089D4F0 /* Integers.h */,
 				29D10BB11A9BEF4E00F03CE6 /* Enums.cpp */,
 				29D10BB21A9BEF4E00F03CE6 /* Enums.h */,
-				298B45DA1A9B93FF0014CAED /* Products */,
+				295BAFB61AA23C5B002CAB3F /* FontSize.cpp */,
+				295BAFB71AA23C5B002CAB3F /* FontSize.h */,
+				298949C51A9CE9D60089D4F0 /* Integers.cpp */,
+				298949C61A9CE9D60089D4F0 /* Integers.h */,
 				298B47541A9B96060014CAED /* MxObject.cpp */,
 				298B47551A9B96060014CAED /* MxObject.h */,
+				298B45DA1A9B93FF0014CAED /* Products */,
+				29E801B61A9F983800EDBE41 /* Strings.cpp */,
+				29E801B71A9F983800EDBE41 /* Strings.h */,
 			);
 			sourceTree = "<group>";
 		};
