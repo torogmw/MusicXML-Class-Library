@@ -70,24 +70,25 @@ namespace mx
         std::string toString( const Decimal& value, unsigned int precision )
         {
             std::stringstream ss;
-            toStream( ss, value, precision );
-            return ss.str();
+            ss << std::fixed;
+            ss << std::setprecision( precision );
+            ss << value.getValue();
+            /* remove trailing zeros */
+            std::string s = ss.str();
+            s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+            if(s[s.size()-1] == '.')
+            {
+                s.erase(s.end()-1);
+            }
+            return s;
         }
         std::ostream& toStream( std::ostream& os, const Decimal& value, unsigned int precision )
         {
-            auto flags = os.showbase;
-            auto preci = os.precision();
-            os << std::fixed;
-            os << std::setprecision( precision );
-            os << value.getValue();
-            os << std::setprecision( (int)preci );
-            os.setf( flags );
-            return os;
-            
+            return os << toString( value, precision );
         }
         std::ostream& operator<<( std::ostream& os, const Decimal& value )
         {
-            return toStream( os, value );
+            return os << toString( value );
         }
         
         DecimalRange::DecimalRange( DecimalType min, DecimalType max, DecimalType value )

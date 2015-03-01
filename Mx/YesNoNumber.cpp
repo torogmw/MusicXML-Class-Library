@@ -1,5 +1,5 @@
 
-#include "FontSize.h"
+#include "YesNoNumber.h"
 #include <string>
 #include <sstream>
 
@@ -7,37 +7,37 @@ namespace mx
 {
     namespace types
     {
-
-        class FontSize::impl
+        
+        class YesNoNumber::impl
         {
         public:
             explicit impl()
-            :myCssFontSize( CssFontSize::medium )
+            :myYesNo( YesNo::no )
             ,myDecimal( 0 )
             ,myIsDecimal( false )
             {}
             
             explicit impl( const Decimal& value )
-            :myCssFontSize( CssFontSize::medium )
+            :myYesNo( YesNo::no )
             ,myDecimal( value )
             ,myIsDecimal( true )
             {}
             
-            explicit impl( const CssFontSize value )
-            :myCssFontSize( value )
+            explicit impl( const YesNo value )
+            :myYesNo( value )
             ,myDecimal( 0 )
             ,myIsDecimal( false )
             {}
             
             explicit impl( const std::string& value )
-            :myCssFontSize( CssFontSize::medium )
+            :myYesNo( YesNo::no )
             ,myDecimal( 0 )
             ,myIsDecimal( false )
             {
                 parse( value );
             }
             
-            bool getIsCssFontSize() const
+            bool getIsYesNo() const
             {
                 return !myIsDecimal;
             }
@@ -45,9 +45,9 @@ namespace mx
             {
                 return myIsDecimal;
             }
-            void setValue( const CssFontSize value )
+            void setValue( const YesNo value )
             {
-                myCssFontSize = value;
+                myYesNo = value;
                 myIsDecimal = false;
             }
             void setValue( const Decimal& value )
@@ -55,9 +55,9 @@ namespace mx
                 myDecimal = Decimal( value );
                 myIsDecimal = true;
             }
-            CssFontSize getValueCssFontSize() const
+            YesNo getValueYesNo() const
             {
-                return myCssFontSize;
+                return myYesNo;
             }
             Decimal getValueDecimal() const
             {
@@ -66,14 +66,14 @@ namespace mx
             void parse( const std::string& value )
             {
                 Decimal d( 0 );
-                CssFontSize e = CssFontSize::medium;
+                YesNo e = YesNo::no;
                 if ( value.find_first_not_of( "-.0123456789" ) != std::string::npos )
                 {
-                    if ( value.find_first_not_of( "-xsmalrgemdiu" ) == std::string::npos )
+                    if ( value.find_first_not_of( "yesno" ) == std::string::npos )
                     {
                         /* it must be an enum if it has
                          non numeric characters */
-                        e = parseCssFontSize( value );
+                        e = parseYesNo( value );
                         this->setValue( e );
                     }
                 }
@@ -87,82 +87,82 @@ namespace mx
             }
             
         private:
-            CssFontSize myCssFontSize;
+            YesNo myYesNo;
             Decimal myDecimal;
             bool myIsDecimal;
         };
-
         
-        FontSize::FontSize()
+        
+        YesNoNumber::YesNoNumber()
         :myImpl( new impl() )
         {}
         
-        FontSize::FontSize( const Decimal& value )
+        YesNoNumber::YesNoNumber( const Decimal& value )
         :myImpl( new impl( value ) )
         {}
         
-        FontSize::FontSize( const CssFontSize value )
+        YesNoNumber::YesNoNumber( const YesNo value )
         :myImpl( new impl( value ) )
         {}
         
-        FontSize::FontSize( const std::string& value )
+        YesNoNumber::YesNoNumber( const std::string& value )
         :myImpl( new impl( value ) )
         {}
         
-        FontSize::~FontSize() {}
+        YesNoNumber::~YesNoNumber() {}
         
-        FontSize::FontSize( const FontSize& other )
-        :myImpl( new FontSize::impl( *myImpl ) )
+        YesNoNumber::YesNoNumber( const YesNoNumber& other )
+        :myImpl( new YesNoNumber::impl( *myImpl ) )
         {}
         
-        FontSize::FontSize( FontSize&& other ) = default;
+        YesNoNumber::YesNoNumber( YesNoNumber&& other ) = default;
         
-        FontSize& FontSize::operator=( FontSize&& other ) = default;
+        YesNoNumber& YesNoNumber::operator=( YesNoNumber&& other ) = default;
         
-        FontSize& FontSize::operator=( const FontSize& other )
+        YesNoNumber& YesNoNumber::operator=( const YesNoNumber& other )
         {
-            this->myImpl = std::unique_ptr<FontSize::impl>( new FontSize::impl( *myImpl ) );
+            this->myImpl = std::unique_ptr<YesNoNumber::impl>( new YesNoNumber::impl( *myImpl ) );
             return *this;
         }
-
-        bool FontSize::getIsCssFontSize() const
+        
+        bool YesNoNumber::getIsYesNo() const
         {
-            return myImpl->getIsCssFontSize();
+            return myImpl->getIsYesNo();
         }
-        bool FontSize::getIsDecimal() const
+        bool YesNoNumber::getIsDecimal() const
         {
             return myImpl->getIsDecimal();
         }
-        void FontSize::setValue( const CssFontSize value )
+        void YesNoNumber::setValue( const YesNo value )
         {
             myImpl->setValue( value );
         }
-        void FontSize::setValue( const Decimal& value )
+        void YesNoNumber::setValue( const Decimal& value )
         {
             myImpl->setValue( value );
         }
-
-        CssFontSize FontSize::getValueCssFontSize() const
+        
+        YesNo YesNoNumber::getValueYesNo() const
         {
-            return myImpl->getValueCssFontSize();
+            return myImpl->getValueYesNo();
         }
-        Decimal FontSize::getValueDecimal() const
+        Decimal YesNoNumber::getValueDecimal() const
         {
             return Decimal( myImpl->getValueDecimal().getValue() );
         }
-  
-        void FontSize::parse( const std::string& value )
+        
+        void YesNoNumber::parse( const std::string& value )
         {
             myImpl->parse( value );
         }
-
-        std::string toString( const FontSize& value )
+        
+        std::string toString( const YesNoNumber& value )
         {
             std::stringstream ss;
             toStream( ss, value );
             return ss.str();
         }
-		std::ostream& toStream( std::ostream& os, const FontSize& value )
+		std::ostream& toStream( std::ostream& os, const YesNoNumber& value )
         {
             if ( value.getIsDecimal() )
             {
@@ -170,15 +170,15 @@ namespace mx
             }
             else
             {
-                toStream( os, value.getValueCssFontSize() );
+                toStream( os, value.getValueYesNo() );
             }
             return os;
         }
-		std::ostream& operator<<( std::ostream& os, const FontSize& value )
+		std::ostream& operator<<( std::ostream& os, const YesNoNumber& value )
         {
             return toStream( os, value );
         }
         
-
+        
     }
 }

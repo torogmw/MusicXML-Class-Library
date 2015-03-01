@@ -1,9 +1,6 @@
-
 #include <iostream>
 #include "Decimals.h"
 #include "Enums.h"
-
-#if 0 == 0
 
 namespace mx
 {
@@ -40,5 +37,3 @@ namespace mx
 		std::ostream& operator<<( std::ostream& os, const FontSize& value );
     }
 }
-
-#endif

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */; };
+		292D126E1AA2A2740079EF22 /* YesNoNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D126C1AA2A2740079EF22 /* YesNoNumber.h */; };
+		292D12741AA2A3FA0079EF22 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12721AA2A3FA0079EF22 /* Date.cpp */; };
+		292D12751AA2A3FA0079EF22 /* Date.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D12731AA2A3FA0079EF22 /* Date.h */; };
+		292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12791AA2ACE80079EF22 /* NumberOrNormal.cpp */; };
+		292D127C1AA2ACE80079EF22 /* NumberOrNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D127A1AA2ACE80079EF22 /* NumberOrNormal.h */; };
 		295BAFB81AA23C5B002CAB3F /* FontSize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295BAFB61AA23C5B002CAB3F /* FontSize.cpp */; };
 		295BAFB91AA23C5B002CAB3F /* FontSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 295BAFB71AA23C5B002CAB3F /* FontSize.h */; };
 		298949C71A9CE9D60089D4F0 /* Integers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298949C51A9CE9D60089D4F0 /* Integers.cpp */; };
@@ -24,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoNumber.cpp; sourceTree = "<group>"; };
+		292D126C1AA2A2740079EF22 /* YesNoNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoNumber.h; sourceTree = "<group>"; };
+		292D12721AA2A3FA0079EF22 /* Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Date.cpp; sourceTree = "<group>"; };
+		292D12731AA2A3FA0079EF22 /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
+		292D12791AA2ACE80079EF22 /* NumberOrNormal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NumberOrNormal.cpp; sourceTree = "<group>"; };
+		292D127A1AA2ACE80079EF22 /* NumberOrNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberOrNormal.h; sourceTree = "<group>"; };
 		295BAFB61AA23C5B002CAB3F /* FontSize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontSize.cpp; sourceTree = "<group>"; };
 		295BAFB71AA23C5B002CAB3F /* FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSize.h; sourceTree = "<group>"; };
 		298949C51A9CE9D60089D4F0 /* Integers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Integers.cpp; sourceTree = "<group>"; };
@@ -55,6 +67,12 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				292D12791AA2ACE80079EF22 /* NumberOrNormal.cpp */,
+				292D127A1AA2ACE80079EF22 /* NumberOrNormal.h */,
+				292D12721AA2A3FA0079EF22 /* Date.cpp */,
+				292D12731AA2A3FA0079EF22 /* Date.h */,
+				292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */,
+				292D126C1AA2A2740079EF22 /* YesNoNumber.h */,
 				29ED3EBB1AA1319E009FAF55 /* Color.cpp */,
 				29ED3EBC1AA1319E009FAF55 /* Color.h */,
 				29A884F81A9D5FD800F417CE /* Decimals.cpp */,
@@ -88,13 +106,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292D12751AA2A3FA0079EF22 /* Date.h in Headers */,
 				29ED3EBE1AA1319E009FAF55 /* Color.h in Headers */,
 				298949C81A9CE9D60089D4F0 /* Integers.h in Headers */,
+				292D126E1AA2A2740079EF22 /* YesNoNumber.h in Headers */,
 				29E801B91A9F983800EDBE41 /* Strings.h in Headers */,
 				29A884FB1A9D5FD800F417CE /* Decimals.h in Headers */,
 				29D10BB41A9BEF4E00F03CE6 /* Enums.h in Headers */,
 				298B47571A9B96060014CAED /* MxObject.h in Headers */,
 				295BAFB91AA23C5B002CAB3F /* FontSize.h in Headers */,
+				292D127C1AA2ACE80079EF22 /* NumberOrNormal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,13 +170,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292D12741AA2A3FA0079EF22 /* Date.cpp in Sources */,
 				298B47561A9B96060014CAED /* MxObject.cpp in Sources */,
 				29ED3EBD1AA1319E009FAF55 /* Color.cpp in Sources */,
 				29E801B81A9F983800EDBE41 /* Strings.cpp in Sources */,
 				295BAFB81AA23C5B002CAB3F /* FontSize.cpp in Sources */,
 				298949C71A9CE9D60089D4F0 /* Integers.cpp in Sources */,
+				292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */,
 				29A884FA1A9D5FD800F417CE /* Decimals.cpp in Sources */,
 				29D10BB31A9BEF4E00F03CE6 /* Enums.cpp in Sources */,
+				292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
