@@ -67,7 +67,7 @@ namespace mx
             }
         private:
             Decimal myDecimal;
-            bool myIsNormal;            
+            bool myIsNormal;
         };
         
         
