@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */; };
+		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
 		292D12711AA2A3270079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */; };
 		292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12761AA2A7260079EF22 /* DateTest.cpp */; };
 		2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2939CD411AA2999500556D00 /* FontSizeTest.cpp */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NumberOrNormal.cpp; sourceTree = "<group>"; };
+		290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositiveIntegerOrEmptyTest.cpp; sourceTree = "<group>"; };
 		292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoNumber.cpp; sourceTree = "<group>"; };
 		292D12761AA2A7260079EF22 /* DateTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DateTest.cpp; sourceTree = "<group>"; };
 		2939CD411AA2999500556D00 /* FontSizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontSizeTest.cpp; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
+				290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */,
 				290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */,
 				292D12761AA2A7260079EF22 /* DateTest.cpp */,
 				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
@@ -154,6 +157,7 @@
 				29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */,
 				292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */,
 				29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */,
+				290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */,
 				290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */,
 				2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */,
 				29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */,

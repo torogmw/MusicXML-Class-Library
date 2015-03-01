@@ -64,7 +64,7 @@ TEST( NumberOrNormal06, NumberOrNormal )
 
 TEST( NumberOrNormal07, NumberOrNormal )
 {
-    NumberOrNormal x( "yes" );
+    NumberOrNormal x( "normal" );
     x.setValue( Decimal( 30.9 ) );
     CHECK( ! x.getIsNormal() )
     CHECK( x.getIsNumber() )

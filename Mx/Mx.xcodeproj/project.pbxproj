@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290D7C101AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C0E1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp */; };
+		290D7C111AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 290D7C0F1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h */; };
 		292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */; };
 		292D126E1AA2A2740079EF22 /* YesNoNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D126C1AA2A2740079EF22 /* YesNoNumber.h */; };
 		292D12741AA2A3FA0079EF22 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12721AA2A3FA0079EF22 /* Date.cpp */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290D7C0E1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositiveIntegerOrEmpty.cpp; sourceTree = "<group>"; };
+		290D7C0F1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositiveIntegerOrEmpty.h; sourceTree = "<group>"; };
 		292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoNumber.cpp; sourceTree = "<group>"; };
 		292D126C1AA2A2740079EF22 /* YesNoNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoNumber.h; sourceTree = "<group>"; };
 		292D12721AA2A3FA0079EF22 /* Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Date.cpp; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				290D7C0E1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp */,
+				290D7C0F1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h */,
 				29ED3EBB1AA1319E009FAF55 /* Color.cpp */,
 				29ED3EBC1AA1319E009FAF55 /* Color.h */,
 				292D12721AA2A3FA0079EF22 /* Date.cpp */,
@@ -116,6 +122,7 @@
 				298B47571A9B96060014CAED /* MxObject.h in Headers */,
 				295BAFB91AA23C5B002CAB3F /* FontSize.h in Headers */,
 				292D127C1AA2ACE80079EF22 /* NumberOrNormal.h in Headers */,
+				290D7C111AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +185,7 @@
 				298949C71A9CE9D60089D4F0 /* Integers.cpp in Sources */,
 				292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */,
 				29A884FA1A9D5FD800F417CE /* Decimals.cpp in Sources */,
+				290D7C101AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp in Sources */,
 				29D10BB31A9BEF4E00F03CE6 /* Enums.cpp in Sources */,
 				292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */,
 			);
