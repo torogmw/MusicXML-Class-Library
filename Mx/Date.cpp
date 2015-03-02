@@ -19,7 +19,7 @@ namespace mx
 {
     namespace types
     {
-        struct Date::impl
+        class Date::impl
         {
         public:
             impl( int year_in, int month_in, int day_in )
