@@ -6,6 +6,8 @@
 #include <set>
 #include "File.h"
 #include "globals.h"
+#include "MsItemElement.h"
+
 namespace go
 {
     inline void goMsItemElementTest()
@@ -18,15 +20,12 @@ namespace go
         XpItemPtr root = xdoc.getXpDom()->getRootItem();
         
         MsItemKind kind = MsItemKind::element;
-        MsItemSet eset = xdoc.getFilteredMsItemSet( kind );
-        for ( auto e : eset )
+        MsItemSet filteredset = xdoc.getFilteredMsItemSet( kind );
+        MsItemElementSet eset;
+        for ( auto e : filteredset )
         {
-//            if ( e->getDtDef() == "display-text" )
-//            {
-//                int breakme = 0;
-//            }
-            MsItemAttributeSet aset = MsItemAttribute::findAllAttributes( e );
-            auto stop = aset.size();
+            MsItemElementPtr element = std::make_shared<MsItemElement>( *e );
+            eset.push_back( element );
         }
         
         

@@ -3164,6 +3164,150 @@ namespace mx
 		{
 			return toStream( os, value );
 		}
+        
+        DynamicsEnum parseDynamicsEnum( const std::string& value, bool& success )
+		{
+            success = true;
+			if ( value == "p" ) { return DynamicsEnum::p; }
+			else if ( value == "pp" ) { return DynamicsEnum::pp; }
+			else if ( value == "ppp" ) { return DynamicsEnum::ppp; }
+			else if ( value == "pppp" ) { return DynamicsEnum::pppp; }
+			else if ( value == "ppppp" ) { return DynamicsEnum::ppppp; }
+			else if ( value == "pppppp" ) { return DynamicsEnum::pppppp; }
+			else if ( value == "f" ) { return DynamicsEnum::f; }
+			else if ( value == "ff" ) { return DynamicsEnum::ff; }
+			else if ( value == "fff" ) { return DynamicsEnum::fff; }
+			else if ( value == "ffff" ) { return DynamicsEnum::ffff; }
+			else if ( value == "fffff" ) { return DynamicsEnum::fffff; }
+			else if ( value == "ffffff" ) { return DynamicsEnum::ffffff; }
+			else if ( value == "mp" ) { return DynamicsEnum::mp; }
+			else if ( value == "mf" ) { return DynamicsEnum::mf; }
+			else if ( value == "sf" ) { return DynamicsEnum::sf; }
+			else if ( value == "sfp" ) { return DynamicsEnum::sfp; }
+			else if ( value == "sfpp" ) { return DynamicsEnum::sfpp; }
+			else if ( value == "fp" ) { return DynamicsEnum::fp; }
+			else if ( value == "rf" ) { return DynamicsEnum::rf; }
+			else if ( value == "rfz" ) { return DynamicsEnum::rfz; }
+			else if ( value == "sfz" ) { return DynamicsEnum::sfz; }
+			else if ( value == "sffz" ) { return DynamicsEnum::sffz; }
+			else if ( value == "fz" ) { return DynamicsEnum::fz; }
+			else if ( value == "other-dynamics" ) { return DynamicsEnum::otherDynamics; }
+			success = false;
+            return DynamicsEnum::otherDynamics;
+		}
+        DynamicsEnum parseDynamicsEnum( const std::string& value )
+        {
+            bool success = true;
+            return parseDynamicsEnum( value, success );
+        }
+		std::string toString( const DynamicsEnum value )
+		{
+			switch ( value )
+			{
+				case DynamicsEnum::p: { return "p"; }
+                case DynamicsEnum::pp: { return "pp"; }
+                case DynamicsEnum::ppp: { return "ppp"; }
+                case DynamicsEnum::pppp: { return "pppp"; }
+                case DynamicsEnum::ppppp: { return "ppppp"; }
+                case DynamicsEnum::pppppp: { return "pppppp"; }
+                case DynamicsEnum::f: { return "f"; }
+                case DynamicsEnum::ff: { return "ff"; }
+                case DynamicsEnum::fff: { return "fff"; }
+                case DynamicsEnum::ffff: { return "ffff"; }
+                case DynamicsEnum::fffff: { return "fffff"; }
+                case DynamicsEnum::ffffff: { return "ffffff"; }
+                case DynamicsEnum::mp: { return "mp"; }
+                case DynamicsEnum::mf: { return "mf"; }
+                case DynamicsEnum::sf: { return "sf"; }
+                case DynamicsEnum::sfp: { return "sfp"; }
+                case DynamicsEnum::sfpp: { return "sfpp"; }
+                case DynamicsEnum::fp: { return "fp"; }
+                case DynamicsEnum::rf: { return "rf"; }
+                case DynamicsEnum::rfz: { return "rfz"; }
+                case DynamicsEnum::sfz: { return "sfz"; }
+                case DynamicsEnum::sffz: { return "sffz"; }
+                case DynamicsEnum::fz: { return "fz"; }
+                case DynamicsEnum::otherDynamics: { return "other-dynamics"; }
+				default: break;
+			}
+			return "default";
+		}
+		std::ostream& toStream( std::ostream& os, const DynamicsEnum value )
+		{
+			return os << toString( value );
+		}
+		std::ostream& operator<<( std::ostream& os, const DynamicsEnum value )
+		{
+			return toStream( os, value );
+		}
+        
+        DynamicsValue::DynamicsValue( const DynamicsEnum value )
+        :myEnum( value )
+        ,myCustomValue( "" )
+        {
+            setValue( value );
+        }
+        DynamicsValue::DynamicsValue( const std::string& value )
+        :myEnum( DynamicsEnum::otherDynamics )
+        ,myCustomValue( value )
+        {
+            setValue( value );
+        }
+        DynamicsValue::DynamicsValue()
+        :myEnum( DynamicsEnum::mf )
+        ,myCustomValue( "" )
+        {
+            setValue( DynamicsEnum::mf );
+        }
+        DynamicsEnum DynamicsValue::getValue() const
+        {
+            return myEnum;
+        }
+        std::string DynamicsValue::getValueString() const
+        {
+            if ( myEnum != DynamicsEnum::otherDynamics )
+            {
+                return toString( myEnum );
+            }
+            else
+            {
+                return myCustomValue;
+            }
+        }
+        void DynamicsValue::setValue( const DynamicsEnum value )
+        {
+            myEnum = value;
+        }
+        void DynamicsValue::setValue( const std::string& value )
+        {
+            bool found = false;
+            DynamicsEnum temp = parseDynamicsEnum( value, found );
+            if ( found )
+            {
+                myEnum = temp;
+            }
+            else
+            {
+                setValue( DynamicsEnum::otherDynamics );
+                myCustomValue = value;
+            }
+        }
+        DynamicsValue parseDynamicsValue( const std::string& value )
+        {
+            return DynamicsValue( value );
+        }
+        std::string toString( const DynamicsValue& value )
+        {
+            return value.getValueString();
+        }
+        std::ostream& toStream( std::ostream& os, const DynamicsValue& value )
+        {
+            return os << toString( value );
+        }
+        std::ostream& operator<<( std::ostream& os, const DynamicsValue& value )
+        {
+            return toStream( os, value );
+        }
 
 	} // namespace types
 

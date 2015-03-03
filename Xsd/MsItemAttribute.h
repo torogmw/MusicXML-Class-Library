@@ -25,16 +25,16 @@ namespace xsd
         std::string getCppName() const;
         virtual std::string csv() const;
         virtual std::string csvHeaders() const;
-        static MsItemAttributeSet findAllAttributes( const MsItemPtr& item );
+        static MsItemAttributeSet findAllAttributes( const MsItem* item );
+        static void findItemRecursively( const std::string& ref, MsItemPtr& output, const MsItem* cur, bool& found );
+        static void findAllAttributesRecursively( const MsItem* item, MsItemAttributeSet& output );
+        static MsItemPtr findItem( const MsItemKind kind, const std::string& ref, const MsItem* top );
         
     private:
         MsItemSimpleTypePtr myMsItemSimpleType;
         std::string myCppName;
         void parseMsItemSimpleType();
         void parseCppName();
-        static MsItemPtr findItem( const MsItemKind kind, const std::string& ref, const MsItemPtr& top );
-        static void findItemRecursively( const std::string& ref, MsItemPtr& output, const MsItemPtr& cur, bool& found );
-        static void findAllAttributesRecursively( const MsItemPtr& item, MsItemAttributeSet& output );
     };
     
     

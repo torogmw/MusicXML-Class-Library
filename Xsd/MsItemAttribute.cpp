@@ -105,7 +105,7 @@ namespace xsd
     }
     void MsItemAttribute::findItemRecursively( const std::string& ref,
                                               MsItemPtr& output,
-                                              const MsItemPtr& cur,
+                                              const MsItem* cur,
                                               bool& found )
     {
         if ( ! found )
@@ -127,7 +127,7 @@ namespace xsd
                  cur->getMsItemKind() == MsItemKind::simpleType ||
                  cur->getMsItemKind() == MsItemKind::union_ ))
             {
-                output = cur;
+                output = std::make_shared<MsItem>( *cur );
                 found = true;
                 return;
             }
@@ -139,7 +139,7 @@ namespace xsd
 //                    {
 //                        int beaj = 0;
 //                    }
-                    findItemRecursively( ref, output, i, found );
+                    findItemRecursively( ref, output, i.get(), found );
                     if ( found )
                     {
                         return;
@@ -149,7 +149,7 @@ namespace xsd
         }
 
     }
-    MsItemPtr MsItemAttribute::findItem( const MsItemKind kind, const std::string& ref, const MsItemPtr& top )
+    MsItemPtr MsItemAttribute::findItem( const MsItemKind kind, const std::string& ref, const MsItem* top )
     {
         MsItemPtr output;
         bool found = false;
@@ -157,7 +157,7 @@ namespace xsd
         return output;
     }
     
-    void MsItemAttribute::findAllAttributesRecursively( const MsItemPtr& item, MsItemAttributeSet& output )
+    void MsItemAttribute::findAllAttributesRecursively( const MsItem* item, MsItemAttributeSet& output )
     {
         if ( item )
         {
@@ -191,21 +191,21 @@ namespace xsd
                         top = current->getParent();
                         current = current->getParent();
                     }
-                    MsItemPtr refptr = findItem( kind, ref, top );
-                    findAllAttributesRecursively( refptr, output );
+                    MsItemPtr refptr = findItem( kind, ref, top.get() );
+                    findAllAttributesRecursively( refptr.get(), output );
                 }
                 
                 
                 /* parse all children */
                 for ( auto x : item->getChildren() )
                 {
-                    findAllAttributesRecursively( x, output );
+                    findAllAttributesRecursively( x.get(), output );
                 }
             }
         }
     }
     
-    MsItemAttributeSet MsItemAttribute::findAllAttributes( const MsItemPtr& item )
+    MsItemAttributeSet MsItemAttribute::findAllAttributes( const MsItem* item )
     {
         MsItemAttributeSet output;
         findAllAttributesRecursively( item, output );

@@ -10,11 +10,30 @@ namespace xsd
 {
     enum class MsItemElementKind
     {
-        emptyempty = 0,
-        emptyattributes = 1,
+        unknown = -1,
+        empty = 0,
         valuetype = 2,
         composite = 3
     };
+    inline std::string toString( MsItemElementKind value )
+    {
+        if (value == MsItemElementKind::empty )
+        {
+            return "empty";
+        }
+        else if (value == MsItemElementKind::composite )
+        {
+            return "composite";
+        }
+        else if (value == MsItemElementKind::valuetype )
+        {
+            return "valuetype";
+        }
+        else
+        {
+            return "unknown";
+        }
+    }
     
     class MsItemElement;
     using MsItemElementPtr = std::shared_ptr<MsItemElement>;
@@ -30,12 +49,16 @@ namespace xsd
         std::string getXmlName() const;
         std::string getCppName() const;
         const MsItemAttributeSet& getAttributes() const;
+        MsItemElementKind getMsItemElementKind() const;
+        MsItemPtr myReferencedItem;
     
     private:
         MsItemAttributeSet myAttributes;
-        std::string myCppName();
-        
+        std::string myCppName;
+        MsItemElementKind myMsItemElementKind;
         void parseAttributes();
         void parseCppName();
+        void parseMsElementItemKind();
+        void parseReferencedType();
     };
 }

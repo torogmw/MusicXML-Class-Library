@@ -12632,3 +12632,8 @@ TEST( XmlSpace_preserve, Enums )
 	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
 	CHECK_EQUAL( e, e2 )
 }
+TEST( DynamicsValue, Enums )
+{
+    throw std::runtime_error( "write tests for DynaicsValue" );
+	CHECK( true )
+}

@@ -1315,5 +1315,59 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const XmlSpace value );
 		std::ostream& operator<<( std::ostream& os, const XmlSpace value );
 
+        enum class DynamicsEnum
+        {
+            p = 0,
+            pp = 1,
+            ppp = 2,
+            pppp = 3,
+            ppppp = 4,
+            pppppp = 5,
+            f = 6,
+            ff = 7,
+            fff = 8,
+            ffff = 9,
+            fffff = 10,
+            ffffff = 11,
+            mp = 12,
+            mf = 13,
+            sf = 14,
+            sfp = 15,
+            sfpp = 16,
+            fp = 17,
+            rf = 18,
+            rfz = 19,
+            sfz = 20,
+            sffz = 21,
+            fz = 22,
+            otherDynamics = 23
+        };
+        
+        
+        DynamicsEnum parseDynamicsEnum( const std::string& value );
+        DynamicsEnum parseDynamicsEnum( const std::string& value, bool& success );
+		std::string toString( const XmlSpace value );
+		std::ostream& toStream( std::ostream& os, const XmlSpace value );
+		std::ostream& operator<<( std::ostream& os, const XmlSpace value );
+        
+        class DynamicsValue
+        {
+        public:
+            explicit DynamicsValue( const DynamicsEnum value );
+            explicit DynamicsValue( const std::string& value );
+            DynamicsValue();
+            DynamicsEnum getValue() const;
+            std::string getValueString() const;
+            void setValue( const DynamicsEnum value );
+            void setValue( const std::string& value );
+        private:
+            DynamicsEnum myEnum;
+            std::string myCustomValue;
+        };
+        DynamicsValue parseDynamicsValue( const std::string& value );
+		std::string toString( const DynamicsValue& value );
+		std::ostream& toStream( std::ostream& os, const DynamicsValue& value );
+		std::ostream& operator<<( std::ostream& os, const DynamicsValue& value );
+        
 	} // namespace types
 } // namespace mx

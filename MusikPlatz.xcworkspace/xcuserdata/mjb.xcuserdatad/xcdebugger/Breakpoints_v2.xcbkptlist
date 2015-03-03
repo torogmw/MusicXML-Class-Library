@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mx/Enums.h"
-            timestampString = "446679763.928067"
+            timestampString = "447042871.505866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1317"
-            endingLineNumber = "1317">
+            startingLineNumber = "1352"
+            endingLineNumber = "1352">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -921,29 +921,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Go/Go/goMsItemElementTest.h"
-            timestampString = "446963932.656577"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "goMsItemElementTest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemAttribute.cpp"
             timestampString = "446965306.878466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "MsItemAttribute::findAllAttributesRecursively( const MsItemPtr&amp; item, MsItemAttributeSet&amp; output )"
+            landmarkName = "MsItemAttribute::findAllAttributesRecursively( const MsItem* item, MsItemAttributeSet&amp; output )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -961,6 +945,52 @@
             endingLineNumber = "63"
             landmarkName = "MsItemAttribute::parseCppName()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goMsItemElementTest.h"
+            timestampString = "447040775.04744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "goMsItemElementTest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "go::goMsItemElementTest()"
+                  moduleName = "Go"
+                  urlString = "file:///Volumes/MusikPlatz/Go/../Go/Go/goMsItemElementTest.h"
+                  timestampString = "447040778.350984"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1521">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "go::goMsItemElementTest()"
+                  moduleName = "Go"
+                  urlString = "file:///Volumes/MusikPlatz/Go/../Go/Go/goMsItemElementTest.h"
+                  timestampString = "447040778.351145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1533">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
