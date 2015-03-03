@@ -26,6 +26,15 @@ namespace go
         {
             MsItemElementPtr element = std::make_shared<MsItemElement>( *e );
             eset.push_back( element );
+            if ( element->getDtDef() == "dynamics" )
+            {
+                
+                for( auto a : element->getAttributes() )
+                {
+                    std::cout << a->csv() << std::endl;
+                }
+                int x = 0;
+            }
         }
         
         

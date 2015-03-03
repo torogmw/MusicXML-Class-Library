@@ -12632,8 +12632,178 @@ TEST( XmlSpace_preserve, Enums )
 	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
 	CHECK_EQUAL( e, e2 )
 }
-TEST( DynamicsValue, Enums )
+
+
+TEST( DynamicsValue_beam, Enums )
 {
-    throw std::runtime_error( "write tests for DynaicsValue" );
-	CHECK( true )
+    mx::types::DynamicsEnum enumval = mx::types::DynamicsEnum::ppppp;
+    mx::types::DynamicsEnum diffval = mx::types::DynamicsEnum::pp;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "enclosure";
+    std::string badstr = "someothertype";
+    mx::types::DynamicsValue object( enumval );
+    mx::types::DynamicsEnum expected = enumval;
+    mx::types::DynamicsEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object3( diffval );
+    object3 = mx::types::parseDynamicsValue( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object5( badstr );
+    expected = mx::types::DynamicsEnum::otherDynamics;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseDynamicsValue( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( DynamicsValue_tieTip, Enums )
+{
+    mx::types::DynamicsEnum enumval = mx::types::DynamicsEnum::ff;
+    mx::types::DynamicsEnum diffval = mx::types::DynamicsEnum::sffz;
+    std::string strval = mx::types::toString( enumval );
+    std::string difval = "leger";
+    std::string badstr = "someothertype";
+    mx::types::DynamicsValue object( enumval );
+    mx::types::DynamicsEnum expected = enumval;
+    mx::types::DynamicsEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object3( diffval );
+    object3 = mx::types::parseDynamicsValue( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object5( badstr );
+    expected = mx::types::DynamicsEnum::otherDynamics;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseDynamicsValue( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
+}
+
+TEST( DynamicsValue_other, Enums )
+{
+    mx::types::DynamicsEnum enumval = mx::types::DynamicsEnum::otherDynamics;
+    mx::types::DynamicsEnum diffval = mx::types::DynamicsEnum::rfz;
+    std::string strval = ""; // mx::types::toString( enumval );
+    std::string difval = "enclosure";
+    std::string badstr = "someothertype";
+    mx::types::DynamicsValue object( enumval );
+    mx::types::DynamicsEnum expected = enumval;
+    mx::types::DynamicsEnum actual = object.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object2( diffval );
+    expected = diffval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    object2.setValue( enumval );
+    expected = enumval;
+    actual = object2.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object3( diffval );
+    object3 = mx::types::parseDynamicsValue( strval );
+    expected = enumval;
+    actual = object3.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object4( strval );
+    expected = enumval;
+    actual = object4.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object5( badstr );
+    expected = mx::types::DynamicsEnum::otherDynamics;
+    actual = object5.getValue();
+    CHECK_EQUAL( expected, actual )
+    
+    mx::types::DynamicsValue object6( enumval );
+    std::string expected_str = strval;
+    std::string actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    std::stringstream ss;
+    mx::types::toStream( ss, object6 );
+    expected_str = strval;
+    actual_str = ss.str();
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    object6 = mx::types::parseDynamicsValue( badstr );
+    expected_str = badstr;
+    actual_str = mx::types::toString( object6 );
+    CHECK_EQUAL( expected_str, actual_str )
+    
+    ss.str( "" );
+    ss << object6;
+    CHECK_EQUAL( expected_str, actual_str )
 }

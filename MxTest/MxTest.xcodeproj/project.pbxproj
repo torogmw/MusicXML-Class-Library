@@ -12,6 +12,7 @@
 		292D12711AA2A3270079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */; };
 		292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12761AA2A7260079EF22 /* DateTest.cpp */; };
 		2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2939CD411AA2999500556D00 /* FontSizeTest.cpp */; };
+		295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -40,6 +41,7 @@
 		292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoNumber.cpp; sourceTree = "<group>"; };
 		292D12761AA2A7260079EF22 /* DateTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DateTest.cpp; sourceTree = "<group>"; };
 		2939CD411AA2999500556D00 /* FontSizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontSizeTest.cpp; sourceTree = "<group>"; };
+		295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicsTest.cpp; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
+				295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */,
 				290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */,
 				290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */,
 				292D12761AA2A7260079EF22 /* DateTest.cpp */,
@@ -156,6 +159,7 @@
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
 				29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */,
 				292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */,
+				295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */,
 				29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */,
 				290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */,
 				290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */,

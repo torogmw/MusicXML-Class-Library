@@ -1346,9 +1346,9 @@ namespace mx
         
         DynamicsEnum parseDynamicsEnum( const std::string& value );
         DynamicsEnum parseDynamicsEnum( const std::string& value, bool& success );
-		std::string toString( const XmlSpace value );
-		std::ostream& toStream( std::ostream& os, const XmlSpace value );
-		std::ostream& operator<<( std::ostream& os, const XmlSpace value );
+		std::string toString( const DynamicsEnum value );
+		std::ostream& toStream( std::ostream& os, const DynamicsEnum value );
+		std::ostream& operator<<( std::ostream& os, const DynamicsEnum value );
         
         class DynamicsValue
         {
