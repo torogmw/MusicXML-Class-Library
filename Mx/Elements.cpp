@@ -44,20 +44,20 @@ namespace mx
             if ( hasValues() )
             {
                 bool isFirst = true;
-                streamAttribute( os, defaultX, "default-x", isFirst );
-                streamAttribute( os, defaultY, "default-y", isFirst );
-                streamAttribute( os, relativeX, "relative-x", isFirst );
-                streamAttribute( os, relativeY, "relative-y", isFirst );
-                streamAttribute( os, fontFamily, "font-family", isFirst );
-                streamAttribute( os, fontStyle, "font-style", isFirst );
-                streamAttribute( os, fontSize, "font-size", isFirst );
-                streamAttribute( os, fontWeight, "font-weight", isFirst );
-                streamAttribute( os, halign, "halign", isFirst );
-                streamAttribute( os, placement, "placement", isFirst );
-                streamAttribute( os, underline, "underline", isFirst );
-                streamAttribute( os, overline, "overline", isFirst );
-                streamAttribute( os, lineThrough, "line-through", isFirst );
-                streamAttribute( os, enclosure, "enclosure", isFirst );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, underline, "underline", hasUnderline );
+                streamAttribute( os, overline, "overline", hasOverline );
+                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
+                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
         }
@@ -86,9 +86,9 @@ namespace mx
                 types::toStream( os, myValue.getValue() );
                 os << ">";
                 os << myValue;
-                os << "<";
+                os << "</";
                 types::toStream( os, myValue.getValue() );
-                os << "/>";
+                os << ">";
             }
             else
             {
@@ -100,9 +100,17 @@ namespace mx
             os << std::endl;
             return os;
         }
-        AttributesPtr Dynamics::getAttributes() const
+        DynamicsAttributesPtr Dynamics::getAttributes() const
         {
             return myAttributes;
+        }
+        bool Dynamics::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        std::ostream& Dynamics::streamAttributes( std::ostream& os ) const
+        {
+            return myAttributes->toStream( os );
         }
     }
 }

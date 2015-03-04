@@ -26,7 +26,7 @@ namespace go
         {
             MsItemElementPtr element = std::make_shared<MsItemElement>( *e );
             eset.push_back( element );
-            if ( element->getDtDef() == "dynamics" )
+            if ( element->getDtDef() == "accidental-text" )
             {
                 
                 for( auto a : element->getAttributes() )

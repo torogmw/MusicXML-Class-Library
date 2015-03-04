@@ -946,6 +946,33 @@ namespace xsd
                         }
                     }
                 }
+                if ( item->getInheritedMsItem()->getXpItem().get() == nullptr ) /* it was not found
+                                                   try complex type ref */
+                {
+                    if ( item->getMsItemKind() == MsItemKind::complexType )
+                    {
+                        for ( auto cmplxChild : item->getChildren() )
+                        {
+                            if ( cmplxChild->getMsItemKind() == MsItemKind::simpleContent )
+                            {
+                                for ( auto smplcChild : item->getChildren() )
+                                {
+                                    if ( smplcChild->getMsItemKind() == MsItemKind::extension )
+                                    {
+                                        for ( auto smplcProp : smplcChild->getXpItem()->getProperties() )
+                                        {
+                                            if ( smplcProp->getLabel() == "base" )
+                                            {
+                                                std::string exbase = smplcProp->getValue();
+                                                throw std::runtime_error( "todo: find the simple type item and assign via item->setInheritedMsItem( x )" );
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

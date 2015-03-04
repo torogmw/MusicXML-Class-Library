@@ -21,7 +21,8 @@ namespace mx
         public:
             ElementInterface();
             virtual ~ElementInterface();
-            virtual AttributesPtr getAttributes() const = 0;
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const = 0;
             virtual std::ostream& streamName( std::ostream& os ) const = 0;
             virtual std::ostream& streamContents( std::ostream& os, const int indent_level ) const = 0;
             virtual std::ostream& streamOpenTag( std::ostream& os ) const;

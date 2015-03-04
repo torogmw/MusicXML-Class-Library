@@ -996,7 +996,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go/Go/goMsItemElementTest.h"
@@ -1077,14 +1077,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MxTest/DynamicsTest.cpp"
-            timestampString = "447061678.861517"
+            filePath = "Xsd/MsItem.cpp"
+            timestampString = "447129925.506816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "TEST( Test01, Dynamics )"
-            landmarkType = "7">
+            startingLineNumber = "949"
+            endingLineNumber = "949"
+            landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, MsItemPtr item )"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

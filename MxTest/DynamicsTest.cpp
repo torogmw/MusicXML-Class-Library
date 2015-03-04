@@ -6,12 +6,43 @@ using namespace mx::e;
 
 TEST( Test01, Dynamics )
 {
-    DynamicsValue pp( DynamicsEnum::pp );
-    Dynamics x( pp );
-    AttributesPtr da = x.getAttributes();
-    Tenths relativeX( 1.1 );
-    da->relativeX = relativeX;
-    da->hasRelativeX = true;
-    x.stream( std::cout, 0 );
-    std::cout << std::endl << std::endl;
+    Dynamics x( (DynamicsValue( DynamicsEnum::p )) );
+    DynamicsAttributesPtr da = x.getAttributes();
+    da->defaultX = Tenths( 66 );
+    da->hasDefaultX = true;
+    da->defaultY = Tenths( -68 );
+    da->hasDefaultY = true;
+    da->halign = LeftCenterRight::center;
+    da->hasHalign = true;
+    // x.stream( std::cout, 0 );
+    std::stringstream expected;
+    expected << "<dynamics default-x=\"66\" default-y=\"-68\" halign=\"center\">" << std::endl;
+    expected << INDENT << "<p/>" << std::endl;
+    expected << "</dynamics>";
+    // std::cout << std::endl << std::endl;
+    // std::cout << expected.str() << std::endl << std::endl;
+    std::stringstream actual;
+    x.stream( actual, 0 );
+    CHECK_EQUAL( expected.str(), actual.str() )
+}
+TEST( Test02, Dynamics )
+{
+    Dynamics x( (DynamicsValue( "purple" )) );
+    DynamicsAttributesPtr da = x.getAttributes();
+    da->defaultX = Tenths( 66 );
+    da->hasDefaultX = true;
+    da->defaultY = Tenths( -68 );
+    da->hasDefaultY = true;
+    da->halign = LeftCenterRight::center;
+    da->hasHalign = true;
+    // x.stream( std::cout, 0 );
+    std::stringstream expected;
+    expected << "<dynamics default-x=\"66\" default-y=\"-68\" halign=\"center\">" << std::endl;
+    expected << INDENT << "<other-dynamics>purple</other-dynamics>" << std::endl;
+    expected << "</dynamics>";
+    // std::cout << std::endl << std::endl;
+    // std::cout << expected.str() << std::endl << std::endl;
+    std::stringstream actual;
+    x.stream( actual, 0 );
+    CHECK_EQUAL( expected.str(), actual.str() )
 }

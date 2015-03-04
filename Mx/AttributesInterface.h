@@ -23,17 +23,16 @@ namespace mx
         template<class T>
         std::ostream& streamAttribute( std::ostream& os,
                                        const T& value,
-                                       const char* attribute_name,
-                                       bool& is_first )
+                                       const char* attributeName,
+                                       const bool isPresent )
         {
-            os << attribute_name;
-            os << "=\"";
-            os << value;
-            os <<"\"";
-            if ( ! is_first )
+            if ( isPresent )
             {
                 os << " ";
-                is_first = false;
+                os << attributeName;
+                os << "=\"";
+                os << value;
+                os <<"\"";
             }
             return os;
         }

@@ -15,10 +15,9 @@ namespace mx
         {
             os << "<";
             this->streamName( os );
-            if ( getAttributes()->hasValues() )
+            if ( hasAttributes() )
             {
-                os << " ";
-                getAttributes()->toStream( os );
+                streamAttributes( os );
             }
             os << ">";
             return os;
@@ -34,10 +33,9 @@ namespace mx
         {
             os << "<";
             this->streamName( os );
-            if ( getAttributes()->hasValues() )
+            if ( hasAttributes() )
             {
-                os << " ";
-                getAttributes()->toStream( os );
+                streamAttributes( os );
             }
             os << "/>";
             return os;
@@ -58,6 +56,10 @@ namespace mx
                 os << INDENT;
             }
             return os;
+        }
+        bool ElementInterface::hasAttributes() const
+        {
+            return false;
         }
     }
 }

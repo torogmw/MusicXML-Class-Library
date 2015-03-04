@@ -54,9 +54,11 @@ namespace mx
         public:
             Dynamics( const types::DynamicsValue& value );
             Dynamics();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indent_level ) const;
-            AttributesPtr getAttributes() const;
+            DynamicsAttributesPtr getAttributes() const;
             void setAttributes( const DynamicsAttributes& attributes );
         private:
             types::DynamicsValue myValue;
