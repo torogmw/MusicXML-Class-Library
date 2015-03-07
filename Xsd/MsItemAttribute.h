@@ -25,6 +25,9 @@ namespace xsd
         std::string getCppName() const;
         virtual std::string csv() const;
         virtual std::string csvHeaders() const;
+        bool getIsRequired() const;
+        bool getHasDefault() const;
+        std::string getDefault() const;
         static MsItemAttributeSet findAllAttributes( const MsItem* item );
         static void findItemRecursively( const std::string& ref, MsItemPtr& output, const MsItem* cur, bool& found );
         static void findAllAttributesRecursively( const MsItem* item, MsItemAttributeSet& output );
@@ -33,6 +36,9 @@ namespace xsd
     private:
         MsItemSimpleTypePtr myMsItemSimpleType;
         std::string myCppName;
+        bool myHasDefault;
+        std::string myDefaultValue;
+        bool myIsRequired;
         void parseMsItemSimpleType();
         void parseCppName();
     };

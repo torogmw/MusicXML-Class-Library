@@ -7,6 +7,7 @@
 #include "File.h"
 #include "globals.h"
 #include "MsItemElement.h"
+#include "codegenAccidentalText.h"
 
 namespace go
 {
@@ -24,16 +25,14 @@ namespace go
         MsItemElementSet eset;
         for ( auto e : filteredset )
         {
+            MsItemElement x( *e );
             MsItemElementPtr element = std::make_shared<MsItemElement>( *e );
             eset.push_back( element );
-            if ( element->getDtDef() == "accidental-text" )
+            if ( e->getDtDef() == "accidental-text" )
             {
-                
-                for( auto a : element->getAttributes() )
-                {
-                    std::cout << a->csv() << std::endl;
-                }
+                codegenAccidentalText( element );
                 int x = 0;
+                return;
             }
         }
         

@@ -559,39 +559,39 @@ TEST( PositiveDivisions06, Decimals )
 }
 
 /* MIN = -180, MAX = 180, DEFAULT = 0 */
-// class RotationalDegrees : DecimalRange
-TEST( RotationalDegrees01, Decimals )
+// class RotationDegrees : DecimalRange
+TEST( RotationDegrees01, Decimals )
 {
-    RotationalDegrees d;
+    RotationDegrees d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees02, Decimals )
+TEST( RotationDegrees02, Decimals )
 {
-    RotationalDegrees d( 1.234 );
+    RotationDegrees d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees02b, Decimals )
+TEST( RotationDegrees02b, Decimals )
 {
-    RotationalDegrees d( 123456789012.123456789012 );
+    RotationDegrees d( 123456789012.123456789012 );
     DecimalType expected = 180;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees03, Decimals )
+TEST( RotationDegrees03, Decimals )
 {
-    RotationalDegrees d( 1.234 );
+    RotationDegrees d( 1.234 );
     d.setValue( 0.00000384 );
     DecimalType expected = 0.00000384;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees04, Decimals )
+TEST( RotationDegrees04, Decimals )
 {
-    RotationalDegrees d( 1.234 );
+    RotationDegrees d( 1.234 );
     d.setValue( -999 );
     std::string expected = "-180"; // this sucks
     // todo fix the floating stream b.s.
@@ -608,27 +608,27 @@ TEST( RotationalDegrees04, Decimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( RotationalDegrees05, Decimals )
+TEST( RotationDegrees05, Decimals )
 {
-    RotationalDegrees d( 1.234 );
+    RotationDegrees d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "4.249" );
     DecimalType expected = 4.249;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees05b, Decimals )
+TEST( RotationDegrees05b, Decimals )
 {
-    RotationalDegrees d( 1.234 );
+    RotationDegrees d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "-466.249" );
     DecimalType expected = -180;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( RotationalDegrees06, Decimals )
+TEST( RotationDegrees06, Decimals )
 {
-    RotationalDegrees d( 1.234 );
+    RotationDegrees d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "- 435.249" );
     DecimalType expected = 0.00000384;

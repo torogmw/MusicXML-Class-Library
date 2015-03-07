@@ -211,5 +211,34 @@ namespace xsd
         }
         return *(getMsItemSetBeginConst());
     }
+    void findItemByNameAndKindRecursive( const std::string& name, const MsItemKind kind, MsItemPtr& output, bool& isFound, const MsItemPtr& itemToCheck )
+    {
+        if ( !isFound )
+        {
+            if ( itemToCheck )
+            {
+                if ( itemToCheck->getMsItemKind() == kind )
+                {
+                    if ( itemToCheck->getDtDef() == name )
+                    {
+                        output = itemToCheck;
+                        isFound = true;
+                        return;
+                    }
+                }
+                for ( auto child : itemToCheck->getChildren() )
+                {
+                    findItemByNameAndKindRecursive( name, kind, output, isFound, child );
+                }
+            }
+        }
+    }
+    MsItemPtr findItemByNameAndKind( const std::string& name, const MsItemKind kind, const MsItemPtr& anyItemWithinTheWeb )
+    {
+        MsItemPtr output;
+        bool localIsFound = false;
+        findItemByNameAndKindRecursive( name, kind, output, localIsFound, anyItemWithinTheWeb->getRoot() );
+        return output;
+    }
 }
 

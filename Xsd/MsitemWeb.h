@@ -37,8 +37,9 @@ namespace xsd
         MsItemSetIterConst getMsItemSetEndConst() const;
         const MsItemSet& getMsItemSet() const;
         const MsItemPtr& getMsItemByID( int ID ) const;
-        
         MsItemSet getFilteredMsItemSet( MsItemKind kind ) const;
+        
+        
         
     private:
         
@@ -55,5 +56,10 @@ namespace xsd
         //void recursivelyBuildMsItems( const XpItemPtr& i, MsItemSet& output );
         const static std::vector<int> ourImplementedOverrides;
     };
+    
+    void findItemByNameAndKindRecursive( const std::string& name, const MsItemKind kind, MsItemPtr& output, bool& isFound, const MsItemPtr& itemToCheck );
+    MsItemPtr findItemByNameAndKind( const std::string& name, const MsItemKind kind, const MsItemPtr& anyItemWithinTheWebRootWillBeFound );
+    
+    
 }
 

@@ -198,11 +198,11 @@ namespace mx
         :DecimalRange( 0, 100, 0 )
         {}
         
-        RotationalDegrees::RotationalDegrees()
+        RotationDegrees::RotationDegrees()
         :DecimalRange( -180, 180, 0 )
         {}
         
-        RotationalDegrees::RotationalDegrees( DecimalType value )
+        RotationDegrees::RotationDegrees( DecimalType value )
         :DecimalRange( -180, 180, value )
         {}
         

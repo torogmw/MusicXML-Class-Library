@@ -26,6 +26,9 @@ namespace xsd
     
     void MsItemAttribute::parseMsItemSimpleType()
     {
+        bool hasDefault = false;
+        bool isRequired = false;
+        std::string defaultValue;
         for ( auto p : MsItem::getXpItem()->getProperties() )
         {
             std::string ref = p->getValue();
@@ -49,14 +52,27 @@ namespace xsd
                             if ( child->getDtDef() == ref )
                             {
                                 myMsItemSimpleType = std::make_shared<MsItemSimpleType>( *child );
-                                return;
                             }
                         }
                     }
                 }
             }
-            
+            if ( p->getLabel() == "use" )
+            {
+                if ( p->getValue() == "required" )
+                {
+                    isRequired = true;
+                }
+            }
+            if ( p->getLabel() == "default" )
+            {
+                hasDefault = true;
+                defaultValue = p->getValue();
+            }
         }
+        myHasDefault = hasDefault;
+        myDefaultValue = defaultValue;
+        myIsRequired = isRequired;
     }
     void MsItemAttribute::parseCppName()
     {
@@ -211,4 +227,24 @@ namespace xsd
         findAllAttributesRecursively( item, output );
         return output;
     }
+    bool MsItemAttribute::getIsRequired() const
+    {
+        return myIsRequired;
+    }
+    bool MsItemAttribute::getHasDefault() const
+    {
+        return myHasDefault;
+    }
+    std::string MsItemAttribute::getDefault() const
+    {
+        if ( myHasDefault )
+        {
+            return myDefaultValue;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    
 }

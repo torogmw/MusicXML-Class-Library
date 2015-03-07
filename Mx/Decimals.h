@@ -100,11 +100,11 @@ namespace mx
         using PositiveDivisions = PositiveDecimal;
         
         /* MIN = -180, MAX = 180, DEFAULT = 0 */
-        class RotationalDegrees : public DecimalRange
+        class RotationDegrees : public DecimalRange
         {
         public:
-            explicit RotationalDegrees( DecimalType value );
-            RotationalDegrees();
+            explicit RotationDegrees( DecimalType value );
+            RotationDegrees();
         };
         
         using Semitones = Decimal;

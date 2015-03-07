@@ -65,6 +65,7 @@
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 		298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemEnumValue.cpp; sourceTree = "<group>"; };
 		298B475D1A9B9D000014CAED /* MsItemEnumValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemEnumValue.h; sourceTree = "<group>"; };
+		299CFC121AA78918009881B9 /* codegenAccidentalText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenAccidentalText.h; sourceTree = "<group>"; };
 		29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleTypeDecimal.cpp; sourceTree = "<group>"; };
 		29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
 		29AAB9391A888AF30027B7A1 /* MsItemKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsItemKind.h; sourceTree = "<group>"; };
@@ -124,20 +125,20 @@
 		2980BDE51A8853F0008B0329 = {
 			isa = PBXGroup;
 			children = (
-				29200EB71AA43582000E3E37 /* MsItemElement.cpp */,
-				29200EB81AA43582000E3E37 /* MsItemElement.h */,
-				290D7C151AA397950081FBB5 /* MsItemAttribute.cpp */,
-				290D7C161AA397950081FBB5 /* MsItemAttribute.h */,
-				29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */,
-				29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */,
 				29D10B871A9BA8C100F03CE6 /* Functions */,
 				29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */,
 				29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */,
+				290D7C151AA397950081FBB5 /* MsItemAttribute.cpp */,
+				290D7C161AA397950081FBB5 /* MsItemAttribute.h */,
+				29200EB71AA43582000E3E37 /* MsItemElement.cpp */,
+				29200EB81AA43582000E3E37 /* MsItemElement.h */,
 				298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */,
 				298B475D1A9B9D000014CAED /* MsItemEnumValue.h */,
 				29AAB9391A888AF30027B7A1 /* MsItemKind.h */,
 				29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */,
 				29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */,
+				29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */,
+				29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */,
 				29D10B881A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.cpp */,
 				29D10B891A9BA8EA00F03CE6 /* MsItemSimpleTypeEnum.h */,
 				29CA12671A9C447B008DCCFA /* MsItemSimpleTypeInteger.cpp */,
@@ -171,24 +172,25 @@
 		29D10B871A9BA8C100F03CE6 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				29CA12631A9C3FCC008DCCFA /* setIsImplemented.cpp */,
-				29CA12641A9C3FCC008DCCFA /* setIsImplemented.h */,
-				29D10BA51A9BE9D800F03CE6 /* enumsTest.cpp */,
-				29D10BA61A9BE9D800F03CE6 /* enumsTest.h */,
-				29D10BA11A9BE05200F03CE6 /* enumsCpp.cpp */,
-				29D10BA21A9BE05200F03CE6 /* enumsCpp.h */,
-				29D10B9A1A9BD5BB00F03CE6 /* end.cpp */,
-				29D10B9B1A9BD5BB00F03CE6 /* end.h */,
-				29D10B961A9BCD4700F03CE6 /* tab.cpp */,
-				29D10B971A9BCD4700F03CE6 /* tab.h */,
-				29D10B941A9BCCBE00F03CE6 /* enumsH.cpp */,
-				29D10B931A9BCCB500F03CE6 /* enumsH.h */,
 				29D10B831A9BA5C800F03CE6 /* camelCase.cpp */,
 				29D10B841A9BA5C800F03CE6 /* camelCase.h */,
-				29D10B7F1A9BA3E200F03CE6 /* numcharToWord.cpp */,
-				29D10B801A9BA3E200F03CE6 /* numcharToWord.h */,
+				299CFC121AA78918009881B9 /* codegenAccidentalText.h */,
+				29D10B9A1A9BD5BB00F03CE6 /* end.cpp */,
+				29D10B9B1A9BD5BB00F03CE6 /* end.h */,
+				29D10BA11A9BE05200F03CE6 /* enumsCpp.cpp */,
+				29D10BA21A9BE05200F03CE6 /* enumsCpp.h */,
+				29D10B941A9BCCBE00F03CE6 /* enumsH.cpp */,
+				29D10B931A9BCCB500F03CE6 /* enumsH.h */,
+				29D10BA51A9BE9D800F03CE6 /* enumsTest.cpp */,
+				29D10BA61A9BE9D800F03CE6 /* enumsTest.h */,
 				29D10B7D1A9B9EFE00F03CE6 /* isCppKeyword.cpp */,
 				29D10B7C1A9B9ED100F03CE6 /* isCppKeyword.h */,
+				29D10B7F1A9BA3E200F03CE6 /* numcharToWord.cpp */,
+				29D10B801A9BA3E200F03CE6 /* numcharToWord.h */,
+				29CA12631A9C3FCC008DCCFA /* setIsImplemented.cpp */,
+				29CA12641A9C3FCC008DCCFA /* setIsImplemented.h */,
+				29D10B961A9BCD4700F03CE6 /* tab.cpp */,
+				29D10B971A9BCD4700F03CE6 /* tab.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -318,7 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -331,6 +333,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -357,7 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -369,11 +372,12 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

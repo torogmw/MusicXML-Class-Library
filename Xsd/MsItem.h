@@ -46,6 +46,11 @@ namespace xsd
         std::string getInheritedMsItemKindString() const;
         std::string getXml() const;
         
+        /* returns the top level root for the ItemWeb,
+         i.e. it starts at this->getParent() and traverses upwards
+         until it finds the root MsItemPrt (xs:schema) */
+        MsItemPtr getRoot() const;
+        
         /* Parent MsItem */
         MsItemPtr getParent() const;
         void setParent( const MsItemPtr& parent );
@@ -58,6 +63,7 @@ namespace xsd
         const MsItemSet& getChildren() const;
         void addChild( const MsItemPtr& child );
         void clearChildren();
+        std::string getCppName() const;
         
         virtual std::string csvHeaders() const;
         virtual std::string csv() const;
@@ -79,7 +85,7 @@ namespace xsd
         void parseMsItemKind();
         void parseIsFirstClassConcept();
         void parseSpecialCases();
-        static void parseInheritence( MsItemSet& web, MsItemPtr item );
+        static void parseInheritence( MsItemSet& web, const MsItemPtr& itemToParse );
         
         /* static web building functions */
         static void constructMsItemWebScaffold( const XpItemPtr& root, MsItemSet& output );

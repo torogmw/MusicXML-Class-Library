@@ -3,6 +3,9 @@
 #include "MsItem.h"
 #include "MsItemSimpleType.h"
 #include <set>
+#include "MsitemWeb.h"
+#include "camelCase.h"
+#include "isCppKeyword.h"
 
 namespace xsd
 {
@@ -905,8 +908,9 @@ namespace xsd
         return ss.str();
     }
     
-    void MsItem::parseInheritence( MsItemSet& web, MsItemPtr item )
+    void MsItem::parseInheritence( MsItemSet& web, const MsItemPtr& itemToParse )
     {
+        MsItemPtr item = itemToParse;
         if ( item->getXpItem() )
         {
             XpItemPtr xpitem = item->getXpItem();
@@ -946,7 +950,7 @@ namespace xsd
                         }
                     }
                 }
-                if ( item->getInheritedMsItem()->getXpItem().get() == nullptr ) /* it was not found
+                if ( item->getInheritedMsItem().get() == nullptr ) /* it was not found
                                                    try complex type ref */
                 {
                     if ( item->getMsItemKind() == MsItemKind::complexType )
@@ -955,7 +959,7 @@ namespace xsd
                         {
                             if ( cmplxChild->getMsItemKind() == MsItemKind::simpleContent )
                             {
-                                for ( auto smplcChild : item->getChildren() )
+                                for ( auto smplcChild : cmplxChild->getChildren() )
                                 {
                                     if ( smplcChild->getMsItemKind() == MsItemKind::extension )
                                     {
@@ -964,7 +968,11 @@ namespace xsd
                                             if ( smplcProp->getLabel() == "base" )
                                             {
                                                 std::string exbase = smplcProp->getValue();
-                                                throw std::runtime_error( "todo: find the simple type item and assign via item->setInheritedMsItem( x )" );
+                                                MsItemPtr refMsItemPtr = findItemByNameAndKind( exbase, MsItemKind::simpleType, item );
+                                                if ( refMsItemPtr )
+                                                {
+                                                    return;
+                                                }
                                             }
                                         }
                                     }
@@ -1049,6 +1057,30 @@ namespace xsd
             }
         }
         output = ss.str();
+        return output;
+    }
+    MsItemPtr MsItem::getRoot() const
+    {
+        MsItemPtr top = std::make_shared<MsItem>( *this );
+        MsItemPtr current = std::make_shared<MsItem>( *this );
+        if ( this->getParent() )
+        {
+
+            while ( current->getParent() )
+            {
+                top = current->getParent();
+                current = current->getParent();
+            }
+        }
+        return top;
+    }
+    std::string MsItem::getCppName() const
+    {
+        std::string output = camelCase( myDtDef, true );
+        if ( isCppKeyword( output ) )
+        {
+            output = output + "_";
+        }
         return output;
     }
 }

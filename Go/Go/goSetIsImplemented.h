@@ -5,6 +5,7 @@ namespace go
 {
     inline void goSetIsImplemented()
     {
-        xsd::setIsImplemented( 35 );
+        xsd::setIsImplemented( 3354 );
+                xsd::setIsImplemented( 4938 );
     }
 }
