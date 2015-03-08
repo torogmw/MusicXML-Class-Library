@@ -61,4 +61,7 @@ namespace xsd
         void parseMsElementItemKind();
         void parseReferencedType();
     };
+    
+    MsItemElementSet findEquivalentElements( const MsItemElementPtr& pattern );
+    void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );
 }

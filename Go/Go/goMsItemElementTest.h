@@ -7,7 +7,7 @@
 #include "File.h"
 #include "globals.h"
 #include "MsItemElement.h"
-#include "codegenAccidentalText.h"
+#include "codegenValueElement.h"
 
 namespace go
 {
@@ -30,7 +30,7 @@ namespace go
             eset.push_back( element );
             if ( e->getDtDef() == "accidental-text" )
             {
-                codegenAccidentalText( element );
+                codegenValueElement( element );
                 int x = 0;
                 return;
             }

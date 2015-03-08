@@ -75,12 +75,13 @@ namespace mx
         {
             return os << "dynamics";
         }
-        std::ostream& Dynamics::streamContents( std::ostream& os, const int indent_level ) const
+        std::ostream& Dynamics::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
+            isOneLineOnly = false;
             os << std::endl;
             if ( myValue.getValue() == types::DynamicsEnum::otherDynamics )
             {
-                indent( os, indent_level + 1 );
+                indent( os, indentLevel + 1 );
                 os << "<";
                 types::toStream( os, myValue.getValue() );
                 os << ">";
@@ -91,7 +92,7 @@ namespace mx
             }
             else
             {
-                indent( os, indent_level + 1 );
+                indent( os, indentLevel + 1 );
                 os << "<";
                 types::toStream( os, myValue.getValue() );
                 os << "/>";
@@ -110,6 +111,14 @@ namespace mx
         std::ostream& Dynamics::streamAttributes( std::ostream& os ) const
         {
             return myAttributes->toStream( os );
+        }
+        types::DynamicsValue Dynamics::getValue() const
+        {
+            return myValue;
+        }
+        void Dynamics::setValue( const types::DynamicsValue& value )
+        {
+            myValue = value;
         }
         
         /**************** AccidentalText ****************/
@@ -130,7 +139,7 @@ namespace mx
         ,rotation()
         ,letterSpacing()
         ,lineHeight()
-        ,lang()
+        ,lang( "it" )
         ,space()
         ,enclosure()
         ,hasJustify( false )
@@ -203,6 +212,58 @@ namespace mx
             }
             return os;
         }
-
+        
+        AccidentalText::AccidentalText()
+        :myValue( types::AccidentalValue::natural )
+        ,myAttributes( std::make_shared<AccidentalTextAttributes>() )
+        {}
+        AccidentalText::AccidentalText( const types::AccidentalValue& value )
+        :myValue( value )
+        ,myAttributes( std::make_shared<AccidentalTextAttributes>() )
+        {}
+        bool AccidentalText::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        std::ostream& AccidentalText::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& AccidentalText::streamName( std::ostream& os ) const
+        {
+            os << "accidental-text";
+            return os;
+        }
+        std::ostream& AccidentalText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        AccidentalTextAttributesPtr AccidentalText::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void AccidentalText::setAttributes( const AccidentalTextAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        types::AccidentalValue AccidentalText::getValue() const
+        {
+            return myValue;
+        }
+        void AccidentalText::setValue( const types::AccidentalValue& value )
+        {
+            myValue = value;
+        }
     }
 }

@@ -40,18 +40,22 @@ namespace mx
             os << "/>";
             return os;
         }
-        std::ostream& ElementInterface::stream( std::ostream& os, const int indent_level ) const
+        std::ostream& ElementInterface::toStream( std::ostream& os, const int indentLevel ) const
         {
-            indent( os, indent_level );
+            indent( os, indentLevel );
             streamOpenTag( os );
-            streamContents( os, indent_level );
-            indent( os, indent_level );
+            bool isOneLineOnly = false;
+            streamContents( os, indentLevel, isOneLineOnly );
+            if ( !isOneLineOnly )
+            {
+                indent( os, indentLevel );
+            }
             streamCloseTag( os );
             return os;
         }
-        std::ostream& indent( std::ostream& os, const int indent_level )
+        std::ostream& indent( std::ostream& os, const int indentLevel )
         {
-            for ( int i = 0; i < indent_level; ++i )
+            for ( int i = 0; i < indentLevel; ++i )
             {
                 os << INDENT;
             }

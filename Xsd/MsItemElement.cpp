@@ -101,4 +101,26 @@ namespace xsd
         }
         myReferencedItem = MsItemAttribute::findItem( MsItemKind::complexType, ref, top.get() );
     }
+    
+    MsItemElementSet findEquivalentElements( const MsItemElementPtr& pattern )
+    {
+        MsItemElementSet output;
+        auto r = pattern->getRoot();
+        findEquivalentElementsRecursively( pattern, r, output );
+        return output;
+    }
+    void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output )
+    {
+        if ( searchHere->getMsItemKind() == MsItemKind::element )
+        {
+            if ( searchHere->getDtDef() == pattern->getDtDef() )
+            {
+                output.push_back( std::make_shared<MsItemElement>( * searchHere ) );
+            }
+        }
+        for ( auto c : searchHere->getChildren() )
+        {
+            findEquivalentElementsRecursively( pattern, c, output );
+        }
+    }
 }

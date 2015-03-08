@@ -14,15 +14,13 @@ TEST( Test01, Dynamics )
     da->hasDefaultY = true;
     da->halign = LeftCenterRight::center;
     da->hasHalign = true;
-    // x.stream( std::cout, 0 );
+    // x.toStream( std::cout, 0 );
     std::stringstream expected;
     expected << "<dynamics default-x=\"66\" default-y=\"-68\" halign=\"center\">" << std::endl;
     expected << INDENT << "<p/>" << std::endl;
     expected << "</dynamics>";
-    // std::cout << std::endl << std::endl;
-    // std::cout << expected.str() << std::endl << std::endl;
     std::stringstream actual;
-    x.stream( actual, 0 );
+    x.toStream( actual, 0 );
     CHECK_EQUAL( expected.str(), actual.str() )
 }
 TEST( Test02, Dynamics )
@@ -35,14 +33,11 @@ TEST( Test02, Dynamics )
     da->hasDefaultY = true;
     da->halign = LeftCenterRight::center;
     da->hasHalign = true;
-    // x.stream( std::cout, 0 );
     std::stringstream expected;
     expected << "<dynamics default-x=\"66\" default-y=\"-68\" halign=\"center\">" << std::endl;
     expected << INDENT << "<other-dynamics>purple</other-dynamics>" << std::endl;
     expected << "</dynamics>";
-    // std::cout << std::endl << std::endl;
-    // std::cout << expected.str() << std::endl << std::endl;
     std::stringstream actual;
-    x.stream( actual, 0 );
+    x.toStream( actual, 0 );
     CHECK_EQUAL( expected.str(), actual.str() )
 }
