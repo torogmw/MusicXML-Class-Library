@@ -71,6 +71,7 @@ namespace mx
         };
         
         /**************** AccidentalText ****************
+         2520, 5117
          <xs:element name="accidental-text" type="accidental-text"/>
          <xs:complexType name="accidental-text">
          <xs:annotation>
@@ -190,5 +191,88 @@ namespace mx
             types::AccidentalValue myValue;
             AccidentalTextAttributesPtr myAttributes;
         };
+        
+        /**************** DisplayText ****************
+         2517, 5114
+         <xs:element name="display-text" type="formatted-text"/>
+         <xs:complexType name="formatted-text">
+         <xs:annotation>
+         <xs:documentation>The formatted-text type represents a text element with text-formatting attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:simpleContent>
+         <xs:extension base="xs:string">
+         <xs:attributeGroup ref="text-formatting"/>
+         </xs:extension>
+         </xs:simpleContent>
+         </xs:complexType>
+         <xs:simpleType name="xs:string"/>
+         */
+        struct DisplayTextAttributes;
+        using DisplayTextAttributesPtr = std::shared_ptr<DisplayTextAttributes>;
+        
+        struct DisplayTextAttributes : public AttributesInterface
+        {
+        public:
+            DisplayTextAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::LeftCenterRight justify;
+            types::Tenths defaultX;
+            types::Tenths defaultY;
+            types::Tenths relativeX;
+            types::Tenths relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::LeftCenterRight halign;
+            types::NumberOfLines underline;
+            types::NumberOfLines overline;
+            types::NumberOfLines lineThrough;
+            types::RotationDegrees rotation;
+            types::NumberOrNormal letterSpacing;
+            types::NumberOrNormal lineHeight;
+            types::XmlLang lang;
+            types::XmlSpace space;
+            types::EnclosureShape enclosure;
+            bool hasJustify;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasHalign;
+            bool hasUnderline;
+            bool hasOverline;
+            bool hasLineThrough;
+            bool hasRotation;
+            bool hasLetterSpacing;
+            bool hasLineHeight;
+            bool hasLang;
+            bool hasSpace;
+            bool hasEnclosure;
+        };
+        
+        class DisplayText : public ElementInterface
+        {
+        public:
+            DisplayText();
+            DisplayText( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DisplayTextAttributesPtr getAttributes() const;
+            void setAttributes( const DisplayTextAttributesPtr& attributes );
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+            DisplayTextAttributesPtr myAttributes;
+        };
+
     }
 }

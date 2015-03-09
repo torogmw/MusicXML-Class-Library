@@ -3,9 +3,11 @@
 
 namespace go
 {
-    inline void goSetIsImplemented()
+    inline void goSetIsImplemented( const std::vector<int>& IDs )
     {
-        xsd::setIsImplemented( 3354 );
-                xsd::setIsImplemented( 4938 );
+        for (auto i : IDs )
+        {
+            xsd::setIsImplemented( i );
+        }
     }
 }

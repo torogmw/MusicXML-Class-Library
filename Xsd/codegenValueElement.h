@@ -5,6 +5,9 @@
 #include "end.h"
 #include "tab.h"
 #include <iostream>
+#include "File.h"
+#include "globals.h"
+#include "setIsImplemented.h"
 
 namespace xsd
 {
@@ -13,25 +16,46 @@ namespace xsd
         try
         {
             MsItemPtr complextype = e->getInheritedMsItem();
-            MsItemPtr simpleContent = *( ++( complextype->getChildrenBegin() ) );
-            MsItemPtr extensionBase = *( ( simpleContent->getChildrenBegin() ) );
-            MsItemPtr inheritedTypeMsItem = extensionBase->getInheritedMsItem();
-            MsItemSimpleTypePtr inheritedSimpleType = std::make_shared<MsItemSimpleType>( *inheritedTypeMsItem );
-            MsItemElementSet equivalentElements = findEquivalentElements( e );
             if( ! complextype ) return false;
-            if( ! simpleContent ) return false;
-            if( ! extensionBase ) return false;
+            
+            MsItemPtr simpleContent;
+            if ( complextype->getChildren().size() > 0 )
+            {
+                simpleContent = *( ++( complextype->getChildrenBegin() ) );
+                if( ! simpleContent ) return false;
+            }
+            else
+            {
+                return false;
+            }
+            
+            
+            MsItemPtr extensionBase;
+            if ( simpleContent->getChildren().size() > 0 )
+            {
+                extensionBase = *( ( simpleContent->getChildrenBegin() ) );
+                if( ! extensionBase ) return false;
+            }
+            else
+            {
+                return false;
+            }
+            
+            
+            MsItemPtr inheritedTypeMsItem = extensionBase->getInheritedMsItem();
             if( ! inheritedTypeMsItem ) return false;
+            MsItemSimpleTypePtr inheritedSimpleType = std::make_shared<MsItemSimpleType>( *inheritedTypeMsItem );
             if( ! inheritedSimpleType ) return false;
+            MsItemElementSet equivalentElements = findEquivalentElements( e );
             if( equivalentElements.size() == 0 ) return false;
         }
         catch (...)
         {
             return false;
         }
-        return false;
+        return true;
     }
-    inline void codegenValueElement( MsItemElementPtr& e )
+    inline void codegenValueElement( MsItemElementPtr& e, bool append = false, bool setImplemented = false )
     {
         std::stringstream h;
         std::stringstream cpp;
@@ -46,7 +70,7 @@ namespace xsd
         MsItemPtr inheritedTypeMsItem = extensionBase->getInheritedMsItem();
         MsItemSimpleTypePtr inheritedSimpleType = std::make_shared<MsItemSimpleType>( *inheritedTypeMsItem );
         MsItemElementSet equivalentElements = findEquivalentElements( e );
-        h << "/**************** " << e->getCppName() << " ****************" << end();
+        h << end(2) << "/**************** " << e->getCppName() << " ****************" << end();
         for ( auto eq = equivalentElements.cbegin();
                 eq != equivalentElements.cend();
               ++eq )
@@ -107,7 +131,7 @@ namespace xsd
         h << tab(1) << "virtual bool hasAttributes() const;" << end();
         h << tab(1) << "virtual std::ostream& streamAttributes( std::ostream& os ) const;" << end();
         h << tab(1) << "virtual std::ostream& streamName( std::ostream& os ) const;" << end();
-        h << tab(1) << "virtual std::ostream& streamContents( std::ostream& os, const int indentLevel ) const;" << end();
+        h << tab(1) << "virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;" << end();
         h << tab(1) << attStructPtrName << " getAttributes() const;" << end();
         h << tab(1) << "void setAttributes( const " << attStructPtrName << "& attributes );" << end();
         h << tab(1) << "types::" << inheritedSimpleType->getCppName() << " getValue() const;" << end();
@@ -118,7 +142,7 @@ namespace xsd
         h << "};" << end();
         
         /* CPP STTRIBUTES STRUCT */
-        cpp << "/**************** " << e->getCppName() << " ****************/" << end();
+        cpp << end(2) << "/**************** " << e->getCppName() << " ****************/" << end();
         cpp << attStructName << "::" << attStructName << "()" << end();
         
         for ( auto it = attBegin; it != attEnd; ++it)
@@ -145,7 +169,7 @@ namespace xsd
             std::string curattName = (*it)->getCppName();
             curattName[0] = tolower( curattName[0] );
             cpp << ",has" << (*it)->getCppName() << "( ";
-            cpp << std::boolalpha << (*it)->getHasDefault() << " )" << end();
+            cpp << std::boolalpha << (*it)->getIsRequired() << " )" << end();
         }
         cpp << "{}" << end(2);
         
@@ -218,8 +242,9 @@ namespace xsd
         cpp << "return os;" << end();
         cpp << "}" << end();
         
-        cpp << "std::ostream& " << e->getCppName() << "::streamContents( std::ostream& os, const int indentLevel  ) const" << end();
+        cpp << "std::ostream& " << e->getCppName() << "::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const" << end();
         cpp << "{" << end();
+        cpp << "isOneLineOnly = true;" << end();
         cpp << "os << myValue;" << end();
         cpp << "return os;" << end();
         cpp << "}" << end();
@@ -288,6 +313,37 @@ namespace xsd
         test << tab(1) << "CHECK_EQUAL( o1.str(), o2.str() )" << end();
         test << "}" << end();
         
-        std::cout << end() << test.str() << end(2);
+        std::string hstring;
+        std::string cppstring;
+        
+        fs::FileName hfilename( "h", "h" );
+        fs::FileName cppfilename( "cpp", "cpp" );
+        fs::Directory dir( globals::getOutputDirectory() );
+        fs::File hFile{ fs::FileInfo{ hfilename, dir } };
+        fs::File cppFile{ fs::FileInfo{ cppfilename, dir } };
+        
+        if ( append )
+        {
+            hFile.readIntoMemory();
+            cppFile.readIntoMemory();
+            hFile.setContents( hFile.getContents()+h.str() );
+            cppFile.setContents( cppFile.getContents()+cpp.str() );
+        }
+        else
+        {
+            hFile.setContents( h.str() );
+            cppFile.setContents( cpp.str() );
+        }
+        std::string testFileName = e->getCppName() + "Test.cpp";
+        fs::writeStringToFile( globals::getOutputDirectory(), testFileName, test.str() );
+        hFile.writeToDisk();
+        cppFile.writeToDisk();
+        if ( setImplemented )
+        {
+            for ( auto equiv : equivalentElements )
+            {
+                setIsImplemented( equiv->getID() );
+            }
+        }
     }
 }

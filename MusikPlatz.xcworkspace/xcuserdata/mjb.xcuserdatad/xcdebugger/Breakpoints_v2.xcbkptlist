@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/codegenValueElement.h"
-            timestampString = "447542162.189249"
+            timestampString = "447573078.972253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "codegenValueElement( MsItemElementPtr&amp; e )"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "codegenValueElement( MsItemElementPtr&amp; e, bool append = false, bool setImplemented = false )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/codegenValueElement.h"
+            timestampString = "447573570.878791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "codegenValueElement( MsItemElementPtr&amp; e, bool append = false, bool setImplemented = false )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

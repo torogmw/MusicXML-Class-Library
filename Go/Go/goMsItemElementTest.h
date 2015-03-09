@@ -11,7 +11,17 @@
 
 namespace go
 {
+    bool goMsItemElementTestImplementOne();
+    
     inline void goMsItemElementTest()
+    {
+        while ( goMsItemElementTestImplementOne() )
+        {
+            ;
+        }
+    }
+    
+    inline bool goMsItemElementTestImplementOne()
     {
         using namespace xsd;
         
@@ -23,30 +33,21 @@ namespace go
         MsItemKind kind = MsItemKind::element;
         MsItemSet filteredset = xdoc.getFilteredMsItemSet( kind );
         MsItemElementSet eset;
+        int total{ 0 };
         for ( auto e : filteredset )
         {
             MsItemElement x( *e );
             MsItemElementPtr element = std::make_shared<MsItemElement>( *e );
             eset.push_back( element );
-            if ( e->getDtDef() == "accidental-text" )
+            if ( element->getIsImplemented() == false )
             {
-                codegenValueElement( element );
-                int x = 0;
-                return;
+                if ( codegenIsValueElement( element ) )
+                {
+                    codegenValueElement( element, true, false );
+                    return true;
+                }
             }
         }
-        
-        
-        
-//        MsItemAttributeSet attributes;
-//        MsItemSet slicedattributes;
-//        for ( auto i : aset )
-//        {
-//            attributes.push_back( std::make_shared<MsItemAttribute>( *i ) );
-//        }
-//        std::copy(attributes.begin(), attributes.end(), std::back_inserter( slicedattributes ) );
-//        fs::writeStringToFile(globals::getOutputDirectory(),
-//                              "xsd_attribute.csv",
-//                              toString( slicedattributes ) );
+        return false;
     }
 }
