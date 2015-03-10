@@ -56,12 +56,15 @@ namespace xsd
         MsItemAttributeSet myAttributes;
         std::string myCppName;
         MsItemElementKind myMsItemElementKind;
+        MsItemElementSet mySubElements;
         void parseAttributes();
         void parseCppName();
         void parseMsElementItemKind();
         void parseReferencedType();
+        void parseSubElements();
     };
-    
     MsItemElementSet findEquivalentElements( const MsItemElementPtr& pattern );
     void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );
+    void findSubElementsRecursively( const MsItemPtr& e, MsItemSet& output, const int topElementID );
+    MsItemElementSet findSubElements( const MsItemPtr& i );
 }

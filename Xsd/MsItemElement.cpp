@@ -9,6 +9,7 @@ namespace xsd
     ,myAttributes()
     ,myCppName( "" )
     ,myMsItemElementKind( MsItemElementKind::unknown )
+    ,mySubElements()
     {
         if ( item.getMsItemKind() != MsItemKind::element )
         {
@@ -18,6 +19,7 @@ namespace xsd
         parseCppName();
         parseMsElementItemKind();
         parseReferencedType();
+        parseSubElements();
     }
     
     MsItemElement::~MsItemElement() {}
@@ -122,5 +124,10 @@ namespace xsd
         {
             findEquivalentElementsRecursively( pattern, c, output );
         }
+    }
+    void MsItemElement::parseSubElements()
+    {
+//        MsItemElementPtr input = std::make_shared<MsItemElement>( *this );
+//        mySubElements = findSubElements( input );
     }
 }

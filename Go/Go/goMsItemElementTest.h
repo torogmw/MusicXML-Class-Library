@@ -33,20 +33,27 @@ namespace go
         MsItemKind kind = MsItemKind::element;
         MsItemSet filteredset = xdoc.getFilteredMsItemSet( kind );
         MsItemElementSet eset;
-        int total{ 0 };
+
         for ( auto e : filteredset )
         {
             MsItemElement x( *e );
             MsItemElementPtr element = std::make_shared<MsItemElement>( *e );
             eset.push_back( element );
+            if ( element->getDtDef() == "measure-style" )
+            {
+                int total{ 0 };
+                ++total;
+            }
             if ( element->getIsImplemented() == false )
             {
                 if ( codegenIsValueElement( element ) )
                 {
-                    codegenValueElement( element, true, false );
-                    return true;
+                    codegenValueElement( element, true, true );
+                    int xyz = 0;
+                    ++xyz;
                 }
             }
+            
         }
         return false;
     }

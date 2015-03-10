@@ -15,6 +15,8 @@ namespace mx
         :myValue( 0 )
         {}
         
+        //Integer& operator=( const Integer& );
+        
         Integer::~Integer() {}
         
         IntType Integer::getValue() const
@@ -45,6 +47,17 @@ namespace mx
             setValue( value );
         }
         IntRange::~IntRange() {}
+        
+        IntRange& IntRange::operator=( const IntRange& other )
+        {
+            this->setValue( other.getValue() );
+            return *this;
+        }
+        IntRange& IntRange::operator=( IntRange&& other )
+        {
+            this->setValue( other.getValue() );
+            return *this;
+        }
         
         void IntRange::setValue( IntType value )
         {
@@ -109,6 +122,11 @@ namespace mx
         :Integer( value )
         {
             setValue( value );
+        }
+        NonNegativeInteger::NonNegativeInteger()
+        :Integer( 1 )
+        {
+            setValue( 1 );
         }
         NonNegativeInteger::~NonNegativeInteger() {}
         void NonNegativeInteger::setValue( IntType value )

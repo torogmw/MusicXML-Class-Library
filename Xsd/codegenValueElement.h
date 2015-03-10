@@ -13,47 +13,45 @@ namespace xsd
 {
     inline bool codegenIsValueElement( MsItemElementPtr& e )
     {
-        try
+        bool returnvalue = false;
+        MsItemPtr cmplx = e->getInheritedMsItem();
+        if ( cmplx )
         {
-            MsItemPtr complextype = e->getInheritedMsItem();
-            if( ! complextype ) return false;
-            
-            MsItemPtr simpleContent;
-            if ( complextype->getChildren().size() > 0 )
+            XpItemPtr xp = cmplx->getXpItem();
+            if ( xp )
             {
-                simpleContent = *( ++( complextype->getChildrenBegin() ) );
-                if( ! simpleContent ) return false;
+                if ( xp->getChildren().size() == 2 )
+                {
+                    auto xpIt = xp->getChildrenBegin();
+                    if ( (*xpIt)->getTag() == "xs:annotation" )
+                    {
+                        ++xpIt;
+                        if ( (*xpIt)->getTag() == "xs:simpleContent" )
+                        {
+                            auto simpleIt = (*xpIt)->getChildrenBegin();
+                            if ( simpleIt != (*xpIt)->getChildrenEnd() )
+                            {
+                                if ( (*simpleIt)->getTag() == "xs:extension" )
+                                {
+                                    auto baseIt = (*simpleIt)->getProperties().begin();
+                                    if ( baseIt != (*simpleIt)->getProperties().end() )
+                                    {
+                                        if ( (*baseIt)->getLabel() == "base" )
+                                        {
+                                            std::string baseName = (*baseIt)->getValue();
+                                            MsItemPtr i = std::static_pointer_cast<MsItem>( e );
+                                            MsItemPtr simple = findItemByNameAndKind( baseName, MsItemKind::simpleType, i );
+                                            returnvalue = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            else
-            {
-                return false;
-            }
-            
-            
-            MsItemPtr extensionBase;
-            if ( simpleContent->getChildren().size() > 0 )
-            {
-                extensionBase = *( ( simpleContent->getChildrenBegin() ) );
-                if( ! extensionBase ) return false;
-            }
-            else
-            {
-                return false;
-            }
-            
-            
-            MsItemPtr inheritedTypeMsItem = extensionBase->getInheritedMsItem();
-            if( ! inheritedTypeMsItem ) return false;
-            MsItemSimpleTypePtr inheritedSimpleType = std::make_shared<MsItemSimpleType>( *inheritedTypeMsItem );
-            if( ! inheritedSimpleType ) return false;
-            MsItemElementSet equivalentElements = findEquivalentElements( e );
-            if( equivalentElements.size() == 0 ) return false;
         }
-        catch (...)
-        {
-            return false;
-        }
-        return true;
+        return returnvalue;
     }
     inline void codegenValueElement( MsItemElementPtr& e, bool append = false, bool setImplemented = false )
     {
@@ -64,8 +62,8 @@ namespace xsd
         std::string attStructName = e->getCppName() + "Attributes";
         std::string attStructPtrName = attStructName + "Ptr";
         
-        MsItemPtr complextype = e->getInheritedMsItem();
-        MsItemPtr simpleContent = *( ++( complextype->getChildrenBegin() ) );
+        const MsItemPtr complextypeYYY = e->getInheritedMsItem();
+        MsItemPtr simpleContent = *( ++( complextypeYYY->getChildrenBegin() ) );
         MsItemPtr extensionBase = *( ( simpleContent->getChildrenBegin() ) );
         MsItemPtr inheritedTypeMsItem = extensionBase->getInheritedMsItem();
         MsItemSimpleTypePtr inheritedSimpleType = std::make_shared<MsItemSimpleType>( *inheritedTypeMsItem );
@@ -86,7 +84,7 @@ namespace xsd
             }
         }
         h << e->getXml() << end();
-        complextype->getXpItem()->stream( h, 0 );
+        complextypeYYY->getXpItem()->stream( h, 0 );
         //h << end();
         inheritedTypeMsItem->getXpItem()->stream( h, 0 );
         //h << end();

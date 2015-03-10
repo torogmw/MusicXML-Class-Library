@@ -29,6 +29,11 @@ namespace mx
         public:
             explicit IntRange( IntType min, IntType max, IntType value );
             virtual ~IntRange();
+            IntRange( const IntRange& ) = default;
+            IntRange( IntRange&& ) = default;
+            IntRange& operator=( const IntRange& );
+            IntRange& operator=( IntRange&& );
+            
             virtual void setValue( IntType value );
             virtual void parse( const std::string& value );
         private:
@@ -50,6 +55,7 @@ namespace mx
         {
         public:
             explicit NonNegativeInteger( IntType value );
+            NonNegativeInteger();
             virtual ~NonNegativeInteger();
             virtual void setValue( IntType value );
             virtual void parse( const std::string& value );

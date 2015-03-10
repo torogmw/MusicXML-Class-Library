@@ -1083,4 +1083,29 @@ namespace xsd
         }
         return output;
     }
+    void findSubElementsRecursively( const MsItemPtr& searchthis, MsItemSet& output, const int parentMsItemID )
+    {
+        if ( searchthis->getDtDef() == "measure-style" )
+        {
+            int stophere = 0;
+            ++stophere;
+        }
+        if ( searchthis->getMsItemKind() == MsItemKind::element )
+        {
+            if ( searchthis->getID() != parentMsItemID )
+            {
+                output.push_back( searchthis );
+            }
+        }
+        for ( auto child : searchthis->getChildren() )
+        {
+            findSubElementsRecursively( child, output, parentMsItemID );
+        }
+    }
+    MsItemSet findSubElements( const MsItemPtr& parent )
+    {
+        MsItemSet output;
+        findSubElementsRecursively( parent, output, parent->getID() );
+        return output;
+    }
 }
