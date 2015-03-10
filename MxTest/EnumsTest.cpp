@@ -3060,16 +3060,16 @@ TEST( BackwardForward_forward, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_BadParse, Enums )
+TEST( BarStyleEnum_BadParse, Enums )
 {
-	mx::types::BarStyle actual = mx::types::parseBarStyle( "regular" );
-	mx::types::BarStyle expected = mx::types::BarStyle::regular;
+	mx::types::BarStyleEnum actual = mx::types::parseBarStyleEnum( "regular" );
+	mx::types::BarStyleEnum expected = mx::types::BarStyleEnum::regular;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( BarStyle_regular, Enums )
+TEST( BarStyleEnum_regular, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::regular;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::regular;
 	std::string expected = "regular";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3084,13 +3084,13 @@ TEST( BarStyle_regular, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_dotted, Enums )
+TEST( BarStyleEnum_dotted, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::dotted;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::dotted;
 	std::string expected = "dotted";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3105,13 +3105,13 @@ TEST( BarStyle_dotted, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_dashed, Enums )
+TEST( BarStyleEnum_dashed, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::dashed;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::dashed;
 	std::string expected = "dashed";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3126,13 +3126,13 @@ TEST( BarStyle_dashed, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_heavy, Enums )
+TEST( BarStyleEnum_heavy, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::heavy;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::heavy;
 	std::string expected = "heavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3147,13 +3147,13 @@ TEST( BarStyle_heavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_lightLight, Enums )
+TEST( BarStyleEnum_lightLight, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::lightLight;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::lightLight;
 	std::string expected = "light-light";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3168,13 +3168,13 @@ TEST( BarStyle_lightLight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_lightHeavy, Enums )
+TEST( BarStyleEnum_lightHeavy, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::lightHeavy;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::lightHeavy;
 	std::string expected = "light-heavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3189,13 +3189,13 @@ TEST( BarStyle_lightHeavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_heavyLight, Enums )
+TEST( BarStyleEnum_heavyLight, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::heavyLight;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::heavyLight;
 	std::string expected = "heavy-light";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3210,13 +3210,13 @@ TEST( BarStyle_heavyLight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_heavyHeavy, Enums )
+TEST( BarStyleEnum_heavyHeavy, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::heavyHeavy;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::heavyHeavy;
 	std::string expected = "heavy-heavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3231,13 +3231,13 @@ TEST( BarStyle_heavyHeavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_tick, Enums )
+TEST( BarStyleEnum_tick, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::tick;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::tick;
 	std::string expected = "tick";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3252,13 +3252,13 @@ TEST( BarStyle_tick, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_short_, Enums )
+TEST( BarStyleEnum_short_, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::short_;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::short_;
 	std::string expected = "short";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3273,13 +3273,13 @@ TEST( BarStyle_short_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( BarStyle_none, Enums )
+TEST( BarStyleEnum_none, Enums )
 {
-	mx::types::BarStyle e = mx::types::BarStyle::none;
+	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -3294,7 +3294,7 @@ TEST( BarStyle_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyle e2 = mx::types::parseBarStyle( expected );
+	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 

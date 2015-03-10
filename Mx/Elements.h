@@ -704,17 +704,17 @@ namespace mx
         {
         public:
             BarStyle();
-            BarStyle( const types::BarStyle& value );
+            BarStyle( const types::BarStyleEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             BarStyleAttributesPtr getAttributes() const;
             void setAttributes( const BarStyleAttributesPtr& attributes );
-            types::BarStyle getValue() const;
-            void setValue( const types::BarStyle& value );
+            types::BarStyleEnum getValue() const;
+            void setValue( const types::BarStyleEnum& value );
         private:
-            types::BarStyle myValue;
+            types::BarStyleEnum myValue;
             BarStyleAttributesPtr myAttributes;
         };
         

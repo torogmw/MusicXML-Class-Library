@@ -420,7 +420,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const BackwardForward value );
 		std::ostream& operator<<( std::ostream& os, const BackwardForward value );
 
-		enum class BarStyle
+		enum class BarStyleEnum
 		{
 			regular = 0,
 			dotted = 1,
@@ -434,10 +434,10 @@ namespace mx
 			short_ = 9,
 			none = 10
 		};
-		BarStyle parseBarStyle( const std::string& value );
-		std::string toString( const BarStyle value );
-		std::ostream& toStream( std::ostream& os, const BarStyle value );
-		std::ostream& operator<<( std::ostream& os, const BarStyle value );
+		BarStyleEnum parseBarStyleEnum( const std::string& value );
+		std::string toString( const BarStyleEnum value );
+		std::ostream& toStream( std::ostream& os, const BarStyleEnum value );
+		std::ostream& operator<<( std::ostream& os, const BarStyleEnum value );
 
 		enum class RightLeftMiddle
 		{

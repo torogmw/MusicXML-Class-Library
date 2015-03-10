@@ -1007,45 +1007,45 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		BarStyle parseBarStyle( const std::string& value )
+		BarStyleEnum parseBarStyleEnum( const std::string& value )
 		{
-			if ( value == "regular" ) { return BarStyle::regular; }
-			else if ( value == "dotted" ) { return BarStyle::dotted; }
-			else if ( value == "dashed" ) { return BarStyle::dashed; }
-			else if ( value == "heavy" ) { return BarStyle::heavy; }
-			else if ( value == "light-light" ) { return BarStyle::lightLight; }
-			else if ( value == "light-heavy" ) { return BarStyle::lightHeavy; }
-			else if ( value == "heavy-light" ) { return BarStyle::heavyLight; }
-			else if ( value == "heavy-heavy" ) { return BarStyle::heavyHeavy; }
-			else if ( value == "tick" ) { return BarStyle::tick; }
-			else if ( value == "short" ) { return BarStyle::short_; }
-			else if ( value == "none" ) { return BarStyle::none; }
-			return BarStyle::regular;
+			if ( value == "regular" ) { return BarStyleEnum::regular; }
+			else if ( value == "dotted" ) { return BarStyleEnum::dotted; }
+			else if ( value == "dashed" ) { return BarStyleEnum::dashed; }
+			else if ( value == "heavy" ) { return BarStyleEnum::heavy; }
+			else if ( value == "light-light" ) { return BarStyleEnum::lightLight; }
+			else if ( value == "light-heavy" ) { return BarStyleEnum::lightHeavy; }
+			else if ( value == "heavy-light" ) { return BarStyleEnum::heavyLight; }
+			else if ( value == "heavy-heavy" ) { return BarStyleEnum::heavyHeavy; }
+			else if ( value == "tick" ) { return BarStyleEnum::tick; }
+			else if ( value == "short" ) { return BarStyleEnum::short_; }
+			else if ( value == "none" ) { return BarStyleEnum::none; }
+			return BarStyleEnum::regular;
 		}
-		std::string toString( const BarStyle value )
+		std::string toString( const BarStyleEnum value )
 		{
 			switch ( value ) 
 			{
-				case BarStyle::regular: return "regular"; break;
-				case BarStyle::dotted: return "dotted"; break;
-				case BarStyle::dashed: return "dashed"; break;
-				case BarStyle::heavy: return "heavy"; break;
-				case BarStyle::lightLight: return "light-light"; break;
-				case BarStyle::lightHeavy: return "light-heavy"; break;
-				case BarStyle::heavyLight: return "heavy-light"; break;
-				case BarStyle::heavyHeavy: return "heavy-heavy"; break;
-				case BarStyle::tick: return "tick"; break;
-				case BarStyle::short_: return "short"; break;
-				case BarStyle::none: return "none"; break;
+				case BarStyleEnum::regular: return "regular"; break;
+				case BarStyleEnum::dotted: return "dotted"; break;
+				case BarStyleEnum::dashed: return "dashed"; break;
+				case BarStyleEnum::heavy: return "heavy"; break;
+				case BarStyleEnum::lightLight: return "light-light"; break;
+				case BarStyleEnum::lightHeavy: return "light-heavy"; break;
+				case BarStyleEnum::heavyLight: return "heavy-light"; break;
+				case BarStyleEnum::heavyHeavy: return "heavy-heavy"; break;
+				case BarStyleEnum::tick: return "tick"; break;
+				case BarStyleEnum::short_: return "short"; break;
+				case BarStyleEnum::none: return "none"; break;
 				default: break;
 			}
 			return "regular";
 		}
-		std::ostream& toStream( std::ostream& os, const BarStyle value )
+		std::ostream& toStream( std::ostream& os, const BarStyleEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const BarStyle value )
+		std::ostream& operator<<( std::ostream& os, const BarStyleEnum value )
 		{
 			return toStream( os, value );
 		}

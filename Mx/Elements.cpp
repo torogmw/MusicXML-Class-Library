@@ -977,7 +977,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<BarStyleAttributes>() )
         {}
-        BarStyle::BarStyle( const types::BarStyle& value )
+        BarStyle::BarStyle( const types::BarStyleEnum& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BarStyleAttributes>() )
         {}
@@ -1017,11 +1017,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::BarStyle BarStyle::getValue() const
+        types::BarStyleEnum BarStyle::getValue() const
         {
             return myValue;
         }
-        void BarStyle::setValue( const types::BarStyle& value )
+        void BarStyle::setValue( const types::BarStyleEnum& value )
         {
             myValue = value;
         }

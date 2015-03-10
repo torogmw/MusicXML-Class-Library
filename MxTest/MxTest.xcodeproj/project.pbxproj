@@ -18,6 +18,14 @@
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
 		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
+		29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */; };
+		29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */; };
+		29C0B96C1AAE9209004F86FA /* BarStyleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9661AAE9209004F86FA /* BarStyleTest.cpp */; };
+		29C0B96D1AAE9209004F86FA /* BassAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9671AAE9209004F86FA /* BassAlterTest.cpp */; };
+		29C0B96E1AAE9209004F86FA /* BassStepTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9681AAE9209004F86FA /* BassStepTest.cpp */; };
+		29C0B96F1AAE9209004F86FA /* BeamTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9691AAE9209004F86FA /* BeamTest.cpp */; };
+		29C0B9701AAE9209004F86FA /* BeaterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */; };
+		29C0B9711AAE9209004F86FA /* BreathMarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */; };
 		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
 		29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
@@ -50,6 +58,14 @@
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
 		298B45FC1A9B94910014CAED /* libCppUnitLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCppUnitLite.a; path = ../Build/Products/Debug/libCppUnitLite.a; sourceTree = "<group>"; };
 		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
+		29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalMarkTest.cpp; sourceTree = "<group>"; };
+		29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTest.cpp; sourceTree = "<group>"; };
+		29C0B9661AAE9209004F86FA /* BarStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BarStyleTest.cpp; sourceTree = "<group>"; };
+		29C0B9671AAE9209004F86FA /* BassAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BassAlterTest.cpp; sourceTree = "<group>"; };
+		29C0B9681AAE9209004F86FA /* BassStepTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BassStepTest.cpp; sourceTree = "<group>"; };
+		29C0B9691AAE9209004F86FA /* BeamTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeamTest.cpp; sourceTree = "<group>"; };
+		29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeaterTest.cpp; sourceTree = "<group>"; };
+		29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BreathMarkTest.cpp; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
 		29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumsTest.cpp; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
@@ -73,23 +89,31 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
-				29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */,
+				29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */,
+				29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */,
 				297597E11AACF9930055E101 /* AccidentalTextTest.cpp */,
-				295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */,
-				290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */,
-				290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */,
-				292D12761AA2A7260079EF22 /* DateTest.cpp */,
-				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
-				2939CD411AA2999500556D00 /* FontSizeTest.cpp */,
+				29C0B9661AAE9209004F86FA /* BarStyleTest.cpp */,
+				29C0B9671AAE9209004F86FA /* BassAlterTest.cpp */,
+				29C0B9681AAE9209004F86FA /* BassStepTest.cpp */,
+				29C0B9691AAE9209004F86FA /* BeamTest.cpp */,
+				29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */,
+				29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */,
 				29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */,
-				29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */,
+				292D12761AA2A7260079EF22 /* DateTest.cpp */,
 				29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */,
-				29AFECA91A9CED26008516EF /* IntegersTest.cpp */,
+				29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */,
+				295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */,
 				29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */,
+				2939CD411AA2999500556D00 /* FontSizeTest.cpp */,
+				29AFECA91A9CED26008516EF /* IntegersTest.cpp */,
 				298B45FC1A9B94910014CAED /* libCppUnitLite.a */,
 				298B45FA1A9B948E0014CAED /* libMx.a */,
 				298B45EB1A9B942A0014CAED /* MxTest */,
+				290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */,
+				290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */,
 				298B45EA1A9B942A0014CAED /* Products */,
+				29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */,
+				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,13 +190,21 @@
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
 				29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */,
 				29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */,
+				29C0B96C1AAE9209004F86FA /* BarStyleTest.cpp in Sources */,
 				292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */,
 				295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */,
+				29C0B96D1AAE9209004F86FA /* BassAlterTest.cpp in Sources */,
+				29C0B9711AAE9209004F86FA /* BreathMarkTest.cpp in Sources */,
+				29C0B96F1AAE9209004F86FA /* BeamTest.cpp in Sources */,
 				29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */,
+				29C0B96E1AAE9209004F86FA /* BassStepTest.cpp in Sources */,
+				29C0B9701AAE9209004F86FA /* BeaterTest.cpp in Sources */,
 				290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */,
 				290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */,
+				29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */,
 				2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */,
 				29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */,
+				29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */,
 				292D12711AA2A3270079EF22 /* YesNoNumber.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
