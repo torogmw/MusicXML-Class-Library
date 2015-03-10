@@ -86,7 +86,7 @@ namespace mx
         PositiveIntegerOrEmpty::~PositiveIntegerOrEmpty() {}
         
         PositiveIntegerOrEmpty::PositiveIntegerOrEmpty( const PositiveIntegerOrEmpty& other )
-        :myImpl( new PositiveIntegerOrEmpty::impl( *myImpl ) )
+        :myImpl( new PositiveIntegerOrEmpty::impl( *other.myImpl ) )
         {}
         
         PositiveIntegerOrEmpty::PositiveIntegerOrEmpty( PositiveIntegerOrEmpty&& other ) = default;

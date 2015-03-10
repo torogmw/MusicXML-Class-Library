@@ -26,6 +26,77 @@
 		29C0B96F1AAE9209004F86FA /* BeamTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9691AAE9209004F86FA /* BeamTest.cpp */; };
 		29C0B9701AAE9209004F86FA /* BeaterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */; };
 		29C0B9711AAE9209004F86FA /* BreathMarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */; };
+		29C0B9791AAE9337004F86FA /* CancelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9721AAE9337004F86FA /* CancelTest.cpp */; };
+		29C0B97A1AAE9337004F86FA /* CreatorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9731AAE9337004F86FA /* CreatorTest.cpp */; };
+		29C0B97B1AAE9337004F86FA /* CreditWordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9741AAE9337004F86FA /* CreditWordsTest.cpp */; };
+		29C0B97C1AAE9337004F86FA /* DegreeAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9751AAE9337004F86FA /* DegreeAlterTest.cpp */; };
+		29C0B97D1AAE9337004F86FA /* DegreeTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9761AAE9337004F86FA /* DegreeTypeTest.cpp */; };
+		29C0B97E1AAE9337004F86FA /* DegreeValueTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9771AAE9337004F86FA /* DegreeValueTest.cpp */; };
+		29C0B97F1AAE9337004F86FA /* DistanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9781AAE9337004F86FA /* DistanceTest.cpp */; };
+		29C0B9C01AAE9398004F86FA /* ElisionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9801AAE9398004F86FA /* ElisionTest.cpp */; };
+		29C0B9C11AAE9398004F86FA /* EncoderTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9811AAE9398004F86FA /* EncoderTest.cpp */; };
+		29C0B9C21AAE9398004F86FA /* EndingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9821AAE9398004F86FA /* EndingTest.cpp */; };
+		29C0B9C31AAE9398004F86FA /* FeatureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9831AAE9398004F86FA /* FeatureTest.cpp */; };
+		29C0B9C41AAE9398004F86FA /* FermataTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9841AAE9398004F86FA /* FermataTest.cpp */; };
+		29C0B9C51AAE9398004F86FA /* FigureNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9851AAE9398004F86FA /* FigureNumberTest.cpp */; };
+		29C0B9C61AAE9398004F86FA /* FingeringTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9861AAE9398004F86FA /* FingeringTest.cpp */; };
+		29C0B9C71AAE9398004F86FA /* FirstFretTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9871AAE9398004F86FA /* FirstFretTest.cpp */; };
+		29C0B9C81AAE9398004F86FA /* FootnoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9881AAE9398004F86FA /* FootnoteTest.cpp */; };
+		29C0B9C91AAE9398004F86FA /* FretTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9891AAE9398004F86FA /* FretTest.cpp */; };
+		29C0B9CA1AAE9398004F86FA /* FunctionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B98A1AAE9398004F86FA /* FunctionTest.cpp */; };
+		29C0B9CB1AAE9398004F86FA /* GlissandoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B98B1AAE9398004F86FA /* GlissandoTest.cpp */; };
+		29C0B9CC1AAE9398004F86FA /* GroupAbbreviationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B98C1AAE9398004F86FA /* GroupAbbreviationTest.cpp */; };
+		29C0B9CD1AAE9398004F86FA /* GroupBarlineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B98D1AAE9398004F86FA /* GroupBarlineTest.cpp */; };
+		29C0B9CE1AAE9398004F86FA /* GroupNameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B98E1AAE9398004F86FA /* GroupNameTest.cpp */; };
+		29C0B9CF1AAE9398004F86FA /* GroupSymbolTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B98F1AAE9398004F86FA /* GroupSymbolTest.cpp */; };
+		29C0B9D01AAE9398004F86FA /* HammerOnTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9901AAE9398004F86FA /* HammerOnTest.cpp */; };
+		29C0B9D11AAE9398004F86FA /* HandbellTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9911AAE9398004F86FA /* HandbellTest.cpp */; };
+		29C0B9D21AAE9398004F86FA /* HoleClosedTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9921AAE9398004F86FA /* HoleClosedTest.cpp */; };
+		29C0B9D31AAE9398004F86FA /* InversionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9931AAE9398004F86FA /* InversionTest.cpp */; };
+		29C0B9D41AAE9398004F86FA /* KeyOctaveTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9941AAE9398004F86FA /* KeyOctaveTest.cpp */; };
+		29C0B9D51AAE9398004F86FA /* KindTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9951AAE9398004F86FA /* KindTest.cpp */; };
+		29C0B9D61AAE9398004F86FA /* LevelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9961AAE9398004F86FA /* LevelTest.cpp */; };
+		29C0B9D71AAE9398004F86FA /* LineWidthTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9971AAE9398004F86FA /* LineWidthTest.cpp */; };
+		29C0B9D81AAE9398004F86FA /* MeasureNumberingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9981AAE9398004F86FA /* MeasureNumberingTest.cpp */; };
+		29C0B9D91AAE9398004F86FA /* MeasureRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9991AAE9398004F86FA /* MeasureRepeatTest.cpp */; };
+		29C0B9DA1AAE9398004F86FA /* MetronomeBeamTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B99A1AAE9398004F86FA /* MetronomeBeamTest.cpp */; };
+		29C0B9DB1AAE9398004F86FA /* MidiDeviceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B99B1AAE9398004F86FA /* MidiDeviceTest.cpp */; };
+		29C0B9DC1AAE9398004F86FA /* MiscellaneousFieldTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B99C1AAE9398004F86FA /* MiscellaneousFieldTest.cpp */; };
+		29C0B9DD1AAE9398004F86FA /* MultipleRestTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B99D1AAE9398004F86FA /* MultipleRestTest.cpp */; };
+		29C0B9DE1AAE9398004F86FA /* NoteheadTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B99E1AAE9398004F86FA /* NoteheadTest.cpp */; };
+		29C0B9DF1AAE9398004F86FA /* NoteSizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B99F1AAE9398004F86FA /* NoteSizeTest.cpp */; };
+		29C0B9E01AAE9398004F86FA /* OffsetTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A01AAE9398004F86FA /* OffsetTest.cpp */; };
+		29C0B9E11AAE9398004F86FA /* OtherAppearanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A11AAE9398004F86FA /* OtherAppearanceTest.cpp */; };
+		29C0B9E21AAE9398004F86FA /* OtherArticulationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A21AAE9398004F86FA /* OtherArticulationTest.cpp */; };
+		29C0B9E31AAE9398004F86FA /* OtherDirectionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A31AAE9398004F86FA /* OtherDirectionTest.cpp */; };
+		29C0B9E41AAE9398004F86FA /* OtherNotationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A41AAE9398004F86FA /* OtherNotationTest.cpp */; };
+		29C0B9E51AAE9398004F86FA /* OtherOrnamentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A51AAE9398004F86FA /* OtherOrnamentTest.cpp */; };
+		29C0B9E61AAE9398004F86FA /* OtherPlayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A61AAE9398004F86FA /* OtherPlayTest.cpp */; };
+		29C0B9E71AAE9398004F86FA /* OtherTechnicalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A71AAE9398004F86FA /* OtherTechnicalTest.cpp */; };
+		29C0B9E81AAE9398004F86FA /* PartAbbreviationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A81AAE9398004F86FA /* PartAbbreviationTest.cpp */; };
+		29C0B9E91AAE9398004F86FA /* PartNameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9A91AAE9398004F86FA /* PartNameTest.cpp */; };
+		29C0B9EA1AAE9398004F86FA /* PartSymbolTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9AA1AAE9398004F86FA /* PartSymbolTest.cpp */; };
+		29C0B9EB1AAE9398004F86FA /* PerMinuteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9AB1AAE9398004F86FA /* PerMinuteTest.cpp */; };
+		29C0B9EC1AAE9398004F86FA /* PluckTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9AC1AAE9398004F86FA /* PluckTest.cpp */; };
+		29C0B9ED1AAE9398004F86FA /* PrefixTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9AD1AAE9398004F86FA /* PrefixTest.cpp */; };
+		29C0B9EE1AAE9398004F86FA /* PrincipalVoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9AE1AAE9398004F86FA /* PrincipalVoiceTest.cpp */; };
+		29C0B9EF1AAE9398004F86FA /* PullOffTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9AF1AAE9398004F86FA /* PullOffTest.cpp */; };
+		29C0B9F01AAE9398004F86FA /* RehearsalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B01AAE9398004F86FA /* RehearsalTest.cpp */; };
+		29C0B9F11AAE9398004F86FA /* RelationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B11AAE9398004F86FA /* RelationTest.cpp */; };
+		29C0B9F21AAE9398004F86FA /* RightsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B21AAE9398004F86FA /* RightsTest.cpp */; };
+		29C0B9F31AAE9398004F86FA /* RootAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B31AAE9398004F86FA /* RootAlterTest.cpp */; };
+		29C0B9F41AAE9398004F86FA /* RootStepTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B41AAE9398004F86FA /* RootStepTest.cpp */; };
+		29C0B9F51AAE9398004F86FA /* SlideTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B51AAE9398004F86FA /* SlideTest.cpp */; };
+		29C0B9F61AAE9398004F86FA /* StemTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B61AAE9398004F86FA /* StemTest.cpp */; };
+		29C0B9F71AAE9398004F86FA /* SuffixTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B71AAE9398004F86FA /* SuffixTest.cpp */; };
+		29C0B9F81AAE9398004F86FA /* TapTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B81AAE9398004F86FA /* TapTest.cpp */; };
+		29C0B9F91AAE9398004F86FA /* TextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B91AAE9398004F86FA /* TextTest.cpp */; };
+		29C0B9FA1AAE9398004F86FA /* TremoloTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */; };
+		29C0B9FB1AAE9398004F86FA /* TupletNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */; };
+		29C0B9FC1AAE9398004F86FA /* TupletTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */; };
+		29C0B9FD1AAE9398004F86FA /* TypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */; };
+		29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */; };
+		29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */; };
 		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
 		29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
@@ -66,6 +137,77 @@
 		29C0B9691AAE9209004F86FA /* BeamTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeamTest.cpp; sourceTree = "<group>"; };
 		29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeaterTest.cpp; sourceTree = "<group>"; };
 		29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BreathMarkTest.cpp; sourceTree = "<group>"; };
+		29C0B9721AAE9337004F86FA /* CancelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CancelTest.cpp; sourceTree = "<group>"; };
+		29C0B9731AAE9337004F86FA /* CreatorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreatorTest.cpp; sourceTree = "<group>"; };
+		29C0B9741AAE9337004F86FA /* CreditWordsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditWordsTest.cpp; sourceTree = "<group>"; };
+		29C0B9751AAE9337004F86FA /* DegreeAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DegreeAlterTest.cpp; sourceTree = "<group>"; };
+		29C0B9761AAE9337004F86FA /* DegreeTypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DegreeTypeTest.cpp; sourceTree = "<group>"; };
+		29C0B9771AAE9337004F86FA /* DegreeValueTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DegreeValueTest.cpp; sourceTree = "<group>"; };
+		29C0B9781AAE9337004F86FA /* DistanceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistanceTest.cpp; sourceTree = "<group>"; };
+		29C0B9801AAE9398004F86FA /* ElisionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElisionTest.cpp; sourceTree = "<group>"; };
+		29C0B9811AAE9398004F86FA /* EncoderTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EncoderTest.cpp; sourceTree = "<group>"; };
+		29C0B9821AAE9398004F86FA /* EndingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EndingTest.cpp; sourceTree = "<group>"; };
+		29C0B9831AAE9398004F86FA /* FeatureTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FeatureTest.cpp; sourceTree = "<group>"; };
+		29C0B9841AAE9398004F86FA /* FermataTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FermataTest.cpp; sourceTree = "<group>"; };
+		29C0B9851AAE9398004F86FA /* FigureNumberTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FigureNumberTest.cpp; sourceTree = "<group>"; };
+		29C0B9861AAE9398004F86FA /* FingeringTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FingeringTest.cpp; sourceTree = "<group>"; };
+		29C0B9871AAE9398004F86FA /* FirstFretTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FirstFretTest.cpp; sourceTree = "<group>"; };
+		29C0B9881AAE9398004F86FA /* FootnoteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FootnoteTest.cpp; sourceTree = "<group>"; };
+		29C0B9891AAE9398004F86FA /* FretTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FretTest.cpp; sourceTree = "<group>"; };
+		29C0B98A1AAE9398004F86FA /* FunctionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FunctionTest.cpp; sourceTree = "<group>"; };
+		29C0B98B1AAE9398004F86FA /* GlissandoTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlissandoTest.cpp; sourceTree = "<group>"; };
+		29C0B98C1AAE9398004F86FA /* GroupAbbreviationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GroupAbbreviationTest.cpp; sourceTree = "<group>"; };
+		29C0B98D1AAE9398004F86FA /* GroupBarlineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GroupBarlineTest.cpp; sourceTree = "<group>"; };
+		29C0B98E1AAE9398004F86FA /* GroupNameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GroupNameTest.cpp; sourceTree = "<group>"; };
+		29C0B98F1AAE9398004F86FA /* GroupSymbolTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GroupSymbolTest.cpp; sourceTree = "<group>"; };
+		29C0B9901AAE9398004F86FA /* HammerOnTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HammerOnTest.cpp; sourceTree = "<group>"; };
+		29C0B9911AAE9398004F86FA /* HandbellTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HandbellTest.cpp; sourceTree = "<group>"; };
+		29C0B9921AAE9398004F86FA /* HoleClosedTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HoleClosedTest.cpp; sourceTree = "<group>"; };
+		29C0B9931AAE9398004F86FA /* InversionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InversionTest.cpp; sourceTree = "<group>"; };
+		29C0B9941AAE9398004F86FA /* KeyOctaveTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyOctaveTest.cpp; sourceTree = "<group>"; };
+		29C0B9951AAE9398004F86FA /* KindTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KindTest.cpp; sourceTree = "<group>"; };
+		29C0B9961AAE9398004F86FA /* LevelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelTest.cpp; sourceTree = "<group>"; };
+		29C0B9971AAE9398004F86FA /* LineWidthTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineWidthTest.cpp; sourceTree = "<group>"; };
+		29C0B9981AAE9398004F86FA /* MeasureNumberingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureNumberingTest.cpp; sourceTree = "<group>"; };
+		29C0B9991AAE9398004F86FA /* MeasureRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureRepeatTest.cpp; sourceTree = "<group>"; };
+		29C0B99A1AAE9398004F86FA /* MetronomeBeamTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeBeamTest.cpp; sourceTree = "<group>"; };
+		29C0B99B1AAE9398004F86FA /* MidiDeviceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiDeviceTest.cpp; sourceTree = "<group>"; };
+		29C0B99C1AAE9398004F86FA /* MiscellaneousFieldTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MiscellaneousFieldTest.cpp; sourceTree = "<group>"; };
+		29C0B99D1AAE9398004F86FA /* MultipleRestTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultipleRestTest.cpp; sourceTree = "<group>"; };
+		29C0B99E1AAE9398004F86FA /* NoteheadTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoteheadTest.cpp; sourceTree = "<group>"; };
+		29C0B99F1AAE9398004F86FA /* NoteSizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoteSizeTest.cpp; sourceTree = "<group>"; };
+		29C0B9A01AAE9398004F86FA /* OffsetTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetTest.cpp; sourceTree = "<group>"; };
+		29C0B9A11AAE9398004F86FA /* OtherAppearanceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherAppearanceTest.cpp; sourceTree = "<group>"; };
+		29C0B9A21AAE9398004F86FA /* OtherArticulationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherArticulationTest.cpp; sourceTree = "<group>"; };
+		29C0B9A31AAE9398004F86FA /* OtherDirectionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherDirectionTest.cpp; sourceTree = "<group>"; };
+		29C0B9A41AAE9398004F86FA /* OtherNotationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherNotationTest.cpp; sourceTree = "<group>"; };
+		29C0B9A51AAE9398004F86FA /* OtherOrnamentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherOrnamentTest.cpp; sourceTree = "<group>"; };
+		29C0B9A61AAE9398004F86FA /* OtherPlayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherPlayTest.cpp; sourceTree = "<group>"; };
+		29C0B9A71AAE9398004F86FA /* OtherTechnicalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherTechnicalTest.cpp; sourceTree = "<group>"; };
+		29C0B9A81AAE9398004F86FA /* PartAbbreviationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartAbbreviationTest.cpp; sourceTree = "<group>"; };
+		29C0B9A91AAE9398004F86FA /* PartNameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartNameTest.cpp; sourceTree = "<group>"; };
+		29C0B9AA1AAE9398004F86FA /* PartSymbolTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartSymbolTest.cpp; sourceTree = "<group>"; };
+		29C0B9AB1AAE9398004F86FA /* PerMinuteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PerMinuteTest.cpp; sourceTree = "<group>"; };
+		29C0B9AC1AAE9398004F86FA /* PluckTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluckTest.cpp; sourceTree = "<group>"; };
+		29C0B9AD1AAE9398004F86FA /* PrefixTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrefixTest.cpp; sourceTree = "<group>"; };
+		29C0B9AE1AAE9398004F86FA /* PrincipalVoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrincipalVoiceTest.cpp; sourceTree = "<group>"; };
+		29C0B9AF1AAE9398004F86FA /* PullOffTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PullOffTest.cpp; sourceTree = "<group>"; };
+		29C0B9B01AAE9398004F86FA /* RehearsalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RehearsalTest.cpp; sourceTree = "<group>"; };
+		29C0B9B11AAE9398004F86FA /* RelationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RelationTest.cpp; sourceTree = "<group>"; };
+		29C0B9B21AAE9398004F86FA /* RightsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RightsTest.cpp; sourceTree = "<group>"; };
+		29C0B9B31AAE9398004F86FA /* RootAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootAlterTest.cpp; sourceTree = "<group>"; };
+		29C0B9B41AAE9398004F86FA /* RootStepTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootStepTest.cpp; sourceTree = "<group>"; };
+		29C0B9B51AAE9398004F86FA /* SlideTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlideTest.cpp; sourceTree = "<group>"; };
+		29C0B9B61AAE9398004F86FA /* StemTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StemTest.cpp; sourceTree = "<group>"; };
+		29C0B9B71AAE9398004F86FA /* SuffixTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuffixTest.cpp; sourceTree = "<group>"; };
+		29C0B9B81AAE9398004F86FA /* TapTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TapTest.cpp; sourceTree = "<group>"; };
+		29C0B9B91AAE9398004F86FA /* TextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextTest.cpp; sourceTree = "<group>"; };
+		29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TremoloTest.cpp; sourceTree = "<group>"; };
+		29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletNumberTest.cpp; sourceTree = "<group>"; };
+		29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletTypeTest.cpp; sourceTree = "<group>"; };
+		29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypeTest.cpp; sourceTree = "<group>"; };
+		29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WithBarTest.cpp; sourceTree = "<group>"; };
+		29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordsTest.cpp; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
 		29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumsTest.cpp; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
@@ -98,21 +240,92 @@
 				29C0B9691AAE9209004F86FA /* BeamTest.cpp */,
 				29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */,
 				29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */,
+				29C0B9721AAE9337004F86FA /* CancelTest.cpp */,
 				29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */,
+				29C0B9731AAE9337004F86FA /* CreatorTest.cpp */,
+				29C0B9741AAE9337004F86FA /* CreditWordsTest.cpp */,
 				292D12761AA2A7260079EF22 /* DateTest.cpp */,
 				29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */,
+				29C0B9751AAE9337004F86FA /* DegreeAlterTest.cpp */,
+				29C0B9761AAE9337004F86FA /* DegreeTypeTest.cpp */,
+				29C0B9771AAE9337004F86FA /* DegreeValueTest.cpp */,
 				29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */,
+				29C0B9781AAE9337004F86FA /* DistanceTest.cpp */,
 				295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */,
+				29C0B9801AAE9398004F86FA /* ElisionTest.cpp */,
+				29C0B9811AAE9398004F86FA /* EncoderTest.cpp */,
+				29C0B9821AAE9398004F86FA /* EndingTest.cpp */,
 				29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */,
+				29C0B9831AAE9398004F86FA /* FeatureTest.cpp */,
+				29C0B9841AAE9398004F86FA /* FermataTest.cpp */,
+				29C0B9851AAE9398004F86FA /* FigureNumberTest.cpp */,
+				29C0B9861AAE9398004F86FA /* FingeringTest.cpp */,
+				29C0B9871AAE9398004F86FA /* FirstFretTest.cpp */,
 				2939CD411AA2999500556D00 /* FontSizeTest.cpp */,
+				29C0B9881AAE9398004F86FA /* FootnoteTest.cpp */,
+				29C0B9891AAE9398004F86FA /* FretTest.cpp */,
+				29C0B98A1AAE9398004F86FA /* FunctionTest.cpp */,
+				29C0B98B1AAE9398004F86FA /* GlissandoTest.cpp */,
+				29C0B98C1AAE9398004F86FA /* GroupAbbreviationTest.cpp */,
+				29C0B98D1AAE9398004F86FA /* GroupBarlineTest.cpp */,
+				29C0B98E1AAE9398004F86FA /* GroupNameTest.cpp */,
+				29C0B98F1AAE9398004F86FA /* GroupSymbolTest.cpp */,
+				29C0B9901AAE9398004F86FA /* HammerOnTest.cpp */,
+				29C0B9911AAE9398004F86FA /* HandbellTest.cpp */,
+				29C0B9921AAE9398004F86FA /* HoleClosedTest.cpp */,
 				29AFECA91A9CED26008516EF /* IntegersTest.cpp */,
+				29C0B9931AAE9398004F86FA /* InversionTest.cpp */,
+				29C0B9941AAE9398004F86FA /* KeyOctaveTest.cpp */,
+				29C0B9951AAE9398004F86FA /* KindTest.cpp */,
+				29C0B9961AAE9398004F86FA /* LevelTest.cpp */,
 				298B45FC1A9B94910014CAED /* libCppUnitLite.a */,
 				298B45FA1A9B948E0014CAED /* libMx.a */,
+				29C0B9971AAE9398004F86FA /* LineWidthTest.cpp */,
+				29C0B9981AAE9398004F86FA /* MeasureNumberingTest.cpp */,
+				29C0B9991AAE9398004F86FA /* MeasureRepeatTest.cpp */,
+				29C0B99A1AAE9398004F86FA /* MetronomeBeamTest.cpp */,
+				29C0B99B1AAE9398004F86FA /* MidiDeviceTest.cpp */,
+				29C0B99C1AAE9398004F86FA /* MiscellaneousFieldTest.cpp */,
+				29C0B99D1AAE9398004F86FA /* MultipleRestTest.cpp */,
 				298B45EB1A9B942A0014CAED /* MxTest */,
+				29C0B99E1AAE9398004F86FA /* NoteheadTest.cpp */,
+				29C0B99F1AAE9398004F86FA /* NoteSizeTest.cpp */,
 				290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */,
+				29C0B9A01AAE9398004F86FA /* OffsetTest.cpp */,
+				29C0B9A11AAE9398004F86FA /* OtherAppearanceTest.cpp */,
+				29C0B9A21AAE9398004F86FA /* OtherArticulationTest.cpp */,
+				29C0B9A31AAE9398004F86FA /* OtherDirectionTest.cpp */,
+				29C0B9A41AAE9398004F86FA /* OtherNotationTest.cpp */,
+				29C0B9A51AAE9398004F86FA /* OtherOrnamentTest.cpp */,
+				29C0B9A61AAE9398004F86FA /* OtherPlayTest.cpp */,
+				29C0B9A71AAE9398004F86FA /* OtherTechnicalTest.cpp */,
+				29C0B9A81AAE9398004F86FA /* PartAbbreviationTest.cpp */,
+				29C0B9A91AAE9398004F86FA /* PartNameTest.cpp */,
+				29C0B9AA1AAE9398004F86FA /* PartSymbolTest.cpp */,
+				29C0B9AB1AAE9398004F86FA /* PerMinuteTest.cpp */,
+				29C0B9AC1AAE9398004F86FA /* PluckTest.cpp */,
 				290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */,
+				29C0B9AD1AAE9398004F86FA /* PrefixTest.cpp */,
+				29C0B9AE1AAE9398004F86FA /* PrincipalVoiceTest.cpp */,
 				298B45EA1A9B942A0014CAED /* Products */,
+				29C0B9AF1AAE9398004F86FA /* PullOffTest.cpp */,
+				29C0B9B01AAE9398004F86FA /* RehearsalTest.cpp */,
+				29C0B9B11AAE9398004F86FA /* RelationTest.cpp */,
+				29C0B9B21AAE9398004F86FA /* RightsTest.cpp */,
+				29C0B9B31AAE9398004F86FA /* RootAlterTest.cpp */,
+				29C0B9B41AAE9398004F86FA /* RootStepTest.cpp */,
+				29C0B9B51AAE9398004F86FA /* SlideTest.cpp */,
+				29C0B9B61AAE9398004F86FA /* StemTest.cpp */,
 				29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */,
+				29C0B9B71AAE9398004F86FA /* SuffixTest.cpp */,
+				29C0B9B81AAE9398004F86FA /* TapTest.cpp */,
+				29C0B9B91AAE9398004F86FA /* TextTest.cpp */,
+				29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */,
+				29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */,
+				29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */,
+				29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */,
+				29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */,
+				29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */,
 				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
 			);
 			sourceTree = "<group>";
@@ -184,28 +397,99 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C0B9DD1AAE9398004F86FA /* MultipleRestTest.cpp in Sources */,
+				29C0B9D51AAE9398004F86FA /* KindTest.cpp in Sources */,
+				29C0B9F31AAE9398004F86FA /* RootAlterTest.cpp in Sources */,
+				29C0B9C41AAE9398004F86FA /* FermataTest.cpp in Sources */,
+				29C0B9C91AAE9398004F86FA /* FretTest.cpp in Sources */,
 				29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */,
+				29C0B9C01AAE9398004F86FA /* ElisionTest.cpp in Sources */,
+				29C0B9C61AAE9398004F86FA /* FingeringTest.cpp in Sources */,
+				29C0B9EE1AAE9398004F86FA /* PrincipalVoiceTest.cpp in Sources */,
+				29C0B9D21AAE9398004F86FA /* HoleClosedTest.cpp in Sources */,
+				29C0B9C71AAE9398004F86FA /* FirstFretTest.cpp in Sources */,
+				29C0B9C81AAE9398004F86FA /* FootnoteTest.cpp in Sources */,
+				29C0B9DA1AAE9398004F86FA /* MetronomeBeamTest.cpp in Sources */,
+				29C0B97E1AAE9337004F86FA /* DegreeValueTest.cpp in Sources */,
 				29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */,
+				29C0B9E91AAE9398004F86FA /* PartNameTest.cpp in Sources */,
 				297597E31AACF9930055E101 /* AccidentalTextTest.cpp in Sources */,
+				29C0B9E61AAE9398004F86FA /* OtherPlayTest.cpp in Sources */,
+				29C0B9F01AAE9398004F86FA /* RehearsalTest.cpp in Sources */,
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
+				29C0B9CB1AAE9398004F86FA /* GlissandoTest.cpp in Sources */,
+				29C0B9D31AAE9398004F86FA /* InversionTest.cpp in Sources */,
 				29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */,
 				29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */,
 				29C0B96C1AAE9209004F86FA /* BarStyleTest.cpp in Sources */,
 				292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */,
+				29C0B97A1AAE9337004F86FA /* CreatorTest.cpp in Sources */,
 				295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */,
+				29C0B9C31AAE9398004F86FA /* FeatureTest.cpp in Sources */,
+				29C0B9EB1AAE9398004F86FA /* PerMinuteTest.cpp in Sources */,
+				29C0B9EF1AAE9398004F86FA /* PullOffTest.cpp in Sources */,
+				29C0B9DF1AAE9398004F86FA /* NoteSizeTest.cpp in Sources */,
+				29C0B97B1AAE9337004F86FA /* CreditWordsTest.cpp in Sources */,
+				29C0B9F11AAE9398004F86FA /* RelationTest.cpp in Sources */,
+				29C0B9F61AAE9398004F86FA /* StemTest.cpp in Sources */,
+				29C0B9E41AAE9398004F86FA /* OtherNotationTest.cpp in Sources */,
 				29C0B96D1AAE9209004F86FA /* BassAlterTest.cpp in Sources */,
+				29C0B9E21AAE9398004F86FA /* OtherArticulationTest.cpp in Sources */,
+				29C0B9CC1AAE9398004F86FA /* GroupAbbreviationTest.cpp in Sources */,
 				29C0B9711AAE9209004F86FA /* BreathMarkTest.cpp in Sources */,
+				29C0B9D81AAE9398004F86FA /* MeasureNumberingTest.cpp in Sources */,
+				29C0B9D91AAE9398004F86FA /* MeasureRepeatTest.cpp in Sources */,
+				29C0B9D61AAE9398004F86FA /* LevelTest.cpp in Sources */,
 				29C0B96F1AAE9209004F86FA /* BeamTest.cpp in Sources */,
+				29C0B9FD1AAE9398004F86FA /* TypeTest.cpp in Sources */,
+				29C0B9D01AAE9398004F86FA /* HammerOnTest.cpp in Sources */,
+				29C0B9C51AAE9398004F86FA /* FigureNumberTest.cpp in Sources */,
 				29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */,
 				29C0B96E1AAE9209004F86FA /* BassStepTest.cpp in Sources */,
+				29C0B9E31AAE9398004F86FA /* OtherDirectionTest.cpp in Sources */,
+				29C0B9F91AAE9398004F86FA /* TextTest.cpp in Sources */,
+				29C0B9DC1AAE9398004F86FA /* MiscellaneousFieldTest.cpp in Sources */,
+				29C0B9F51AAE9398004F86FA /* SlideTest.cpp in Sources */,
+				29C0B9F41AAE9398004F86FA /* RootStepTest.cpp in Sources */,
+				29C0B9CD1AAE9398004F86FA /* GroupBarlineTest.cpp in Sources */,
+				29C0B9D41AAE9398004F86FA /* KeyOctaveTest.cpp in Sources */,
+				29C0B9FB1AAE9398004F86FA /* TupletNumberTest.cpp in Sources */,
+				29C0B97C1AAE9337004F86FA /* DegreeAlterTest.cpp in Sources */,
+				29C0B9ED1AAE9398004F86FA /* PrefixTest.cpp in Sources */,
+				29C0B9EC1AAE9398004F86FA /* PluckTest.cpp in Sources */,
 				29C0B9701AAE9209004F86FA /* BeaterTest.cpp in Sources */,
+				29C0B9C21AAE9398004F86FA /* EndingTest.cpp in Sources */,
+				29C0B9F71AAE9398004F86FA /* SuffixTest.cpp in Sources */,
+				29C0B9E11AAE9398004F86FA /* OtherAppearanceTest.cpp in Sources */,
 				290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */,
 				290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */,
+				29C0B9E71AAE9398004F86FA /* OtherTechnicalTest.cpp in Sources */,
+				29C0B9791AAE9337004F86FA /* CancelTest.cpp in Sources */,
+				29C0B9FC1AAE9398004F86FA /* TupletTypeTest.cpp in Sources */,
+				29C0B9FA1AAE9398004F86FA /* TremoloTest.cpp in Sources */,
+				29C0B9F81AAE9398004F86FA /* TapTest.cpp in Sources */,
+				29C0B9CA1AAE9398004F86FA /* FunctionTest.cpp in Sources */,
 				29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */,
+				29C0B9CE1AAE9398004F86FA /* GroupNameTest.cpp in Sources */,
+				29C0B9EA1AAE9398004F86FA /* PartSymbolTest.cpp in Sources */,
+				29C0B9F21AAE9398004F86FA /* RightsTest.cpp in Sources */,
+				29C0B97F1AAE9337004F86FA /* DistanceTest.cpp in Sources */,
+				29C0B9DB1AAE9398004F86FA /* MidiDeviceTest.cpp in Sources */,
 				2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */,
+				29C0B9E01AAE9398004F86FA /* OffsetTest.cpp in Sources */,
+				29C0B9D11AAE9398004F86FA /* HandbellTest.cpp in Sources */,
+				29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */,
+				29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */,
+				29C0B97D1AAE9337004F86FA /* DegreeTypeTest.cpp in Sources */,
+				29C0B9DE1AAE9398004F86FA /* NoteheadTest.cpp in Sources */,
+				29C0B9C11AAE9398004F86FA /* EncoderTest.cpp in Sources */,
 				29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */,
+				29C0B9E81AAE9398004F86FA /* PartAbbreviationTest.cpp in Sources */,
 				29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */,
+				29C0B9D71AAE9398004F86FA /* LineWidthTest.cpp in Sources */,
 				292D12711AA2A3270079EF22 /* YesNoNumber.cpp in Sources */,
+				29C0B9CF1AAE9398004F86FA /* GroupSymbolTest.cpp in Sources */,
+				29C0B9E51AAE9398004F86FA /* OtherOrnamentTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

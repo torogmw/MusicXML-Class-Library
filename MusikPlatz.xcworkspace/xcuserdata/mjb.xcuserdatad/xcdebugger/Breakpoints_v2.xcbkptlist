@@ -211,5 +211,67 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mx/Elements.cpp"
+            timestampString = "447648899.801129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "910"
+            endingLineNumber = "910"
+            landmarkName = "MeasureRepeat::MeasureRepeat( const types::PositiveIntegerOrEmpty&amp; value )"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mx::e::MeasureRepeat::MeasureRepeat(mx::types::PositiveIntegerOrEmpty const&amp;)"
+                  moduleName = "MxTest"
+                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
+                  timestampString = "447648902.152893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "912"
+                  endingLineNumber = "912"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mx::e::MeasureRepeat::MeasureRepeat(mx::types::PositiveIntegerOrEmpty const&amp;)"
+                  moduleName = "MxTest"
+                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
+                  timestampString = "447648902.153191"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "912"
+                  endingLineNumber = "912"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MxTest/MeasureRepeatTest.cpp"
+            timestampString = "447648926.37882"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "TEST( Test01, MeasureRepeat )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
