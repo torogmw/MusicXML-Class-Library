@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, AccidentalMark )
 {
 	std::string indentString( INDENT );
-	AccidentalValue value1;
-	AccidentalValue value2;
+	AccidentalValue value1 = AccidentalValue::doubleSharp;
+	AccidentalValue value2 = AccidentalValue::koron;
 	AccidentalMark object1;
 	AccidentalMark object2( value2 );
 	AccidentalMarkAttributesPtr attributes1 = std::make_shared<AccidentalMarkAttributes>();
 	AccidentalMarkAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-	object2.setAttributes( attributes1 );
-	std::stringstream default_constructed;
+	attributes1->hasFontWeight = true;
+    attributes1->fontWeight = FontWeight::bold;
+    object2.setAttributes( attributes1 );
+    std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<accidental-mark>natural</accidental-mark>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<accidental-mark font-weight="bold">koron</accidental-mark>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

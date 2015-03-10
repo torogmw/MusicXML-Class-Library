@@ -1744,7 +1744,7 @@ namespace mx
         }
         
         DegreeType::DegreeType()
-        :myValue()
+        :myValue( types::DegreeTypeValue::add )
         ,myAttributes( std::make_shared<DegreeTypeAttributes>() )
         {}
         DegreeType::DegreeType( const types::DegreeTypeValue& value )
@@ -2035,7 +2035,7 @@ namespace mx
         ,rotation()
         ,letterSpacing()
         ,lineHeight()
-        ,lang()
+        ,lang( "it" )
         ,space()
         ,enclosure()
         ,hasJustify( false )
@@ -5626,7 +5626,7 @@ namespace mx
         }
         
         AccidentalMark::AccidentalMark()
-        :myValue()
+        :myValue( types::AccidentalValue::natural )
         ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
         {}
         AccidentalMark::AccidentalMark( const types::AccidentalValue& value )
@@ -6120,7 +6120,7 @@ namespace mx
         }
         
         Notehead::Notehead()
-        :myValue()
+        :myValue( types::NoteheadValue::normal )
         ,myAttributes( std::make_shared<NoteheadAttributes>() )
         {}
         Notehead::Notehead( const types::NoteheadValue& value )
@@ -7417,7 +7417,7 @@ namespace mx
         }
         
         Handbell::Handbell()
-        :myValue()
+        :myValue( types::HandbellValue::damp )
         ,myAttributes( std::make_shared<HandbellAttributes>() )
         {}
         Handbell::Handbell( const types::HandbellValue& value )

@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, DegreeType )
 {
 	std::string indentString( INDENT );
-	DegreeTypeValue value1;
-	DegreeTypeValue value2;
+	DegreeTypeValue value1 = DegreeTypeValue::add;
+	DegreeTypeValue value2 = DegreeTypeValue::subtract;
 	DegreeType object1;
 	DegreeType object2( value2 );
 	DegreeTypeAttributesPtr attributes1 = std::make_shared<DegreeTypeAttributes>();
 	DegreeTypeAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasText = true;
+    attributes1->text = XsToken{ "Some Text" };
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<degree-type>add</degree-type>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<degree-type text="Some Text">subtract</degree-type>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
