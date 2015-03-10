@@ -8,22 +8,27 @@ using namespace mx::e;
 TEST( Test01, GroupSymbol )
 {
 	std::string indentString( INDENT );
-	GroupSymbolValue value1;
-	GroupSymbolValue value2;
+	GroupSymbolValue value1 = GroupSymbolValue::brace;
+	GroupSymbolValue value2 = GroupSymbolValue::bracket;
 	GroupSymbol object1;
 	GroupSymbol object2( value2 );
 	GroupSymbolAttributesPtr attributes1 = std::make_shared<GroupSymbolAttributes>();
 	GroupSymbolAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasRelativeX = true;
+    attributes1->relativeX = Tenths( 2.3 );
+    attributes1->hasDefaultY = true;
+    attributes1->defaultY = Tenths( -9.9 );
+    
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = "hello";
+	std::string expected = R"(<group-symbol>none</group-symbol>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+"hello2";
+	expected = indentString+indentString+R"(<group-symbol default-y="-9.9" relative-x="2.3">bracket</group-symbol>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

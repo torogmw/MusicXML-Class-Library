@@ -2629,7 +2629,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LineWidthType type;
-            const 	bool hasType;
+            const bool hasType;
         };
         
         class LineWidth : public ElementInterface

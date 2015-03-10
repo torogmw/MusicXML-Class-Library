@@ -8,22 +8,23 @@ using namespace mx::e;
 TEST( Test01, LineWidth )
 {
 	std::string indentString( INDENT );
-	Tenths value1;
-	Tenths value2;
+	Tenths value1( -0.1 );
+	Tenths value2( 1.091236 );
 	LineWidth object1;
 	LineWidth object2( value2 );
 	LineWidthAttributesPtr attributes1 = std::make_shared<LineWidthAttributes>();
 	LineWidthAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->type = LineWidthType( LineWidthTypeEnum::enclosure );
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = "hello";
+	std::string expected = R"(<line-width type="beam">0</line-width>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+"hello2";
+	expected = indentString+indentString+R"(<line-width type="enclosure">1.091236</line-width>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

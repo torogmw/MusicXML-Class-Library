@@ -3893,7 +3893,7 @@ namespace mx
         
         /**************** LineWidth ****************/
         LineWidthAttributes::LineWidthAttributes()
-        :type()
+        :type( types::LineWidthTypeEnum::beam )
         ,hasType( true )
         {}
         
@@ -8285,7 +8285,7 @@ namespace mx
         }
         
         GroupSymbol::GroupSymbol()
-        :myValue()
+        :myValue( types::GroupSymbolValue::none )
         ,myAttributes( std::make_shared<GroupSymbolAttributes>() )
         {}
         GroupSymbol::GroupSymbol( const types::GroupSymbolValue& value )
@@ -9188,7 +9188,7 @@ namespace mx
         }
         
         Kind::Kind()
-        :myValue()
+        :myValue( types::KindValue::major )
         ,myAttributes( std::make_shared<KindAttributes>() )
         {}
         Kind::Kind( const types::KindValue& value )

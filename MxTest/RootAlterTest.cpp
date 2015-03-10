@@ -8,22 +8,26 @@ using namespace mx::e;
 TEST( Test01, RootAlter )
 {
 	std::string indentString( INDENT );
-	Semitones value1;
-	Semitones value2;
+	Semitones value1( -1.1 );
+	Semitones value2( 2.3 );
 	RootAlter object1;
 	RootAlter object2( value2 );
 	RootAlterAttributesPtr attributes1 = std::make_shared<RootAlterAttributes>();
 	RootAlterAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasLocation = true;
+    attributes1->location = LeftRight::right;
+    attributes1->hasPrintObject = true;
+    attributes1->printObject = YesNo::yes;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = "hello";
+	std::string expected = "<root-alter>0</root-alter>";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+"hello2";
+	expected = indentString+indentString+"<root-alter print-object=\"yes\" location=\"right\">2.3</root-alter>";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

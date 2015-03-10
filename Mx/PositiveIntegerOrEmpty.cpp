@@ -95,7 +95,7 @@ namespace mx
         
         PositiveIntegerOrEmpty& PositiveIntegerOrEmpty::operator=( const PositiveIntegerOrEmpty& other )
         {
-            this->myImpl = std::unique_ptr<PositiveIntegerOrEmpty::impl>( new PositiveIntegerOrEmpty::impl( *myImpl ) );
+            this->myImpl = std::unique_ptr<PositiveIntegerOrEmpty::impl>( new PositiveIntegerOrEmpty::impl( *other.myImpl ) );
             return *this;
         }
         

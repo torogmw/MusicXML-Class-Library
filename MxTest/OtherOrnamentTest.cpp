@@ -8,22 +8,25 @@ using namespace mx::e;
 TEST( Test01, OtherOrnament )
 {
 	std::string indentString( INDENT );
-	XsString value1;
-	XsString value2;
+	XsString value1( "Stravinsky" );
+	XsString value2( "Webern" );
 	OtherOrnament object1;
 	OtherOrnament object2( value2 );
 	OtherOrnamentAttributesPtr attributes1 = std::make_shared<OtherOrnamentAttributes>();
 	OtherOrnamentAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-	object2.setAttributes( attributes1 );
-	std::stringstream default_constructed;
+	attributes1->hasFontSize = true;
+    attributes1->fontSize = FontSize( CssFontSize::xLarge );
+    object2.setAttributes( attributes1 );
+    object2.setAttributes( attributesNull );
+    std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = "hello";
+	std::string expected = "<other-ornament></other-ornament>";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+"hello2";
+	expected = indentString+indentString+R"(<other-ornament font-size="x-large">Webern</other-ornament>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

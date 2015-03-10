@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, MultipleRest )
 {
 	std::string indentString( INDENT );
-	PositiveIntegerOrEmpty value1;
-	PositiveIntegerOrEmpty value2;
+	PositiveIntegerOrEmpty value1( PositiveInteger( 1 ) );
+	PositiveIntegerOrEmpty value2( PositiveInteger( 2 ) );
 	MultipleRest object1;
 	MultipleRest object2( value2 );
 	MultipleRestAttributesPtr attributes1 = std::make_shared<MultipleRestAttributes>();
 	MultipleRestAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasUseSymbols = true;
+    attributes1->useSymbols = YesNo::no;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = "hello";
+	std::string expected = "<multiple-rest></multiple-rest>";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+"hello2";
+	expected = indentString+indentString+"<multiple-rest use-symbols=\"no\">2</multiple-rest>";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
