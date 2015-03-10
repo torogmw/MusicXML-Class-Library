@@ -728,8 +728,8 @@ namespace mx
         
         /**************** KeyOctave ****************/
         KeyOctaveAttributes::KeyOctaveAttributes()
-        :number()
-        ,cancel()
+        :number( types::PositiveInteger{ 1 } )
+        ,cancel( types::YesNo::no )
         ,hasNumber( true )
         ,hasCancel( false )
         {}
@@ -1135,8 +1135,8 @@ namespace mx
         
         /**************** Ending ****************/
         EndingAttributes::EndingAttributes()
-        :number()
-        ,type()
+        :number( "1" )
+        ,type( types::StartStopDiscontinue::start )
         ,printObject()
         ,defaultX()
         ,defaultY()
@@ -1595,7 +1595,7 @@ namespace mx
         ,fontStyle( types::FontStyle::normal )
         ,fontSize( types::FontSize{ types::CssFontSize::medium } )
         ,fontWeight( types::FontWeight::normal )
-        ,plusMinus()
+        ,plusMinus( types::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -2994,7 +2994,7 @@ namespace mx
         }
         
         Beater::Beater()
-        :myValue()
+        :myValue( types::BeaterValue::snareStick )
         ,myAttributes( std::make_shared<BeaterAttributes>() )
         {}
         Beater::Beater( const types::BeaterValue& value )
@@ -8340,23 +8340,26 @@ namespace mx
         
         /**************** GroupBarline ****************/
         GroupBarlineAttributes::GroupBarlineAttributes()
+        :color( "#FFFFFF" )
+        ,hasColor( false )
         {}
         
         bool GroupBarlineAttributes::hasValues() const
         {
-            throw std::runtime_error( "some issue here" );
+            return hasColor;
         }
         
         std::ostream& GroupBarlineAttributes::toStream( std::ostream& os ) const
         {
             if ( hasValues() )
             {
+                streamAttribute( os, color, "color", hasColor );
             }
             return os;
         }
         
         GroupBarline::GroupBarline()
-        :myValue()
+        :myValue( types::GroupBarlineValue::yes )
         ,myAttributes( std::make_shared<GroupBarlineAttributes>() )
         {}
         GroupBarline::GroupBarline( const types::GroupBarlineValue& value )

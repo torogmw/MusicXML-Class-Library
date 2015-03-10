@@ -174,12 +174,12 @@ namespace mx
         Color::~Color() {}
         
         Color::Color( const Color& other )
-        :myImpl( new Color::impl( *myImpl ) )
+        :myImpl( new Color::impl( *other.myImpl ) )
         {}
         
         Color& Color::operator=( const Color& other )
         {
-            this->myImpl = std::unique_ptr<Color::impl>( new Color::impl( *myImpl ) );
+            this->myImpl = std::unique_ptr<Color::impl>( new Color::impl( *other.myImpl ) );
             return *this;
         }
         

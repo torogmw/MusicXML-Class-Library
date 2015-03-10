@@ -112,7 +112,7 @@ namespace mx
         FontSize::~FontSize() {}
         
         FontSize::FontSize( const FontSize& other )
-        :myImpl( new FontSize::impl( *myImpl ) )
+        :myImpl( new FontSize::impl( *other.myImpl ) )
         {}
         
         FontSize::FontSize( FontSize&& other ) = default;
@@ -121,7 +121,7 @@ namespace mx
         
         FontSize& FontSize::operator=( const FontSize& other )
         {
-            this->myImpl = std::unique_ptr<FontSize::impl>( new FontSize::impl( *myImpl ) );
+            this->myImpl = std::unique_ptr<FontSize::impl>( new FontSize::impl( *other.myImpl ) );
             return *this;
         }
 

@@ -86,7 +86,7 @@ namespace mx
         NumberOrNormal::~NumberOrNormal() {}
         
         NumberOrNormal::NumberOrNormal( const NumberOrNormal& other )
-        :myImpl( new NumberOrNormal::impl( *myImpl ) )
+        :myImpl( new NumberOrNormal::impl( *other.myImpl ) )
         {}
         
         NumberOrNormal::NumberOrNormal( NumberOrNormal&& other ) = default;
@@ -95,7 +95,7 @@ namespace mx
         
         NumberOrNormal& NumberOrNormal::operator=( const NumberOrNormal& other )
         {
-            this->myImpl = std::unique_ptr<NumberOrNormal::impl>( new NumberOrNormal::impl( *myImpl ) );
+            this->myImpl = std::unique_ptr<NumberOrNormal::impl>( new NumberOrNormal::impl( *other.myImpl ) );
             return *this;
         }
         

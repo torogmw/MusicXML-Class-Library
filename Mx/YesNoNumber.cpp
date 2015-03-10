@@ -112,7 +112,7 @@ namespace mx
         YesNoNumber::~YesNoNumber() {}
         
         YesNoNumber::YesNoNumber( const YesNoNumber& other )
-        :myImpl( new YesNoNumber::impl( *myImpl ) )
+        :myImpl( new YesNoNumber::impl( *other.myImpl ) )
         {}
         
         YesNoNumber::YesNoNumber( YesNoNumber&& other ) = default;
@@ -121,7 +121,7 @@ namespace mx
         
         YesNoNumber& YesNoNumber::operator=( const YesNoNumber& other )
         {
-            this->myImpl = std::unique_ptr<YesNoNumber::impl>( new YesNoNumber::impl( *myImpl ) );
+            this->myImpl = std::unique_ptr<YesNoNumber::impl>( new YesNoNumber::impl( *other.myImpl ) );
             return *this;
         }
         

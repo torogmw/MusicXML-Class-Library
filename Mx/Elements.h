@@ -7,6 +7,7 @@
 #include "Decimals.h"
 #include "NumberOrNormal.h"
 #include "PositiveIntegerOrEmpty.h"
+#include "Color.h"
 #include <memory>
 
 namespace mx
@@ -5664,6 +5665,8 @@ namespace mx
             GroupBarlineAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
+            types::Color color;
+            bool hasColor;
         };
         
         class GroupBarline : public ElementInterface

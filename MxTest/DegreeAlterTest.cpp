@@ -8,22 +8,23 @@ using namespace mx::e;
 TEST( Test01, DegreeAlter )
 {
 	std::string indentString( INDENT );
-	Semitones value1;
-	Semitones value2;
+	Semitones value1 = Semitones{ 1 };
+	Semitones value2 = Semitones{ -2 };
 	DegreeAlter object1;
 	DegreeAlter object2( value2 );
 	DegreeAlterAttributesPtr attributes1 = std::make_shared<DegreeAlterAttributes>();
 	DegreeAlterAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasPlusMinus = true;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<degree-alter>0</degree-alter>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<degree-alter plus-minus="no">-2</degree-alter>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
