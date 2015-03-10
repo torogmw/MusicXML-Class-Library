@@ -1019,13 +1019,13 @@ namespace mx
 
 		enum class NoteTypeValue
 		{
-			one024Th = 0,
-			five12Th = 1,
-			two56Th = 2,
-			one28Th = 3,
-			six4Th = 4,
-			three2Nd = 5,
-			one6Th = 6,
+			oneThousandTwentyFourth = 0,
+			fiveHundredTwelfth = 1,
+			twoHundredFifthySixth = 2,
+			oneHundredTwentyEighth = 3,
+			sixtyFourth = 4,
+			thirtySecond = 5,
+			sixteenth = 6,
 			eighth = 7,
 			quarter = 8,
 			half = 9,

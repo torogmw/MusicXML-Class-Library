@@ -9482,13 +9482,13 @@ TEST( HoleClosedValue_half, Enums )
 TEST( NoteTypeValue_BadParse, Enums )
 {
 	mx::types::NoteTypeValue actual = mx::types::parseNoteTypeValue( "1024th" );
-	mx::types::NoteTypeValue expected = mx::types::NoteTypeValue::one024Th;
+	mx::types::NoteTypeValue expected = mx::types::NoteTypeValue::oneThousandTwentyFourth;
 	CHECK_EQUAL( expected, actual )
 }
 
-TEST( NoteTypeValue_one024Th, Enums )
+TEST( NoteTypeValue_oneThousandTwentyFourth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::one024Th;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::oneThousandTwentyFourth;
 	std::string expected = "1024th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -9507,9 +9507,9 @@ TEST( NoteTypeValue_one024Th, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_five12Th, Enums )
+TEST( NoteTypeValue_fiveHundredTwelfth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::five12Th;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::fiveHundredTwelfth;
 	std::string expected = "512th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -9528,9 +9528,9 @@ TEST( NoteTypeValue_five12Th, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_two56Th, Enums )
+TEST( NoteTypeValue_twoHundredFifthySixth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::two56Th;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::twoHundredFifthySixth;
 	std::string expected = "256th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -9549,9 +9549,9 @@ TEST( NoteTypeValue_two56Th, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_one28Th, Enums )
+TEST( NoteTypeValue_oneHundredTwentyEighth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::one28Th;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::oneHundredTwentyEighth;
 	std::string expected = "128th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -9570,9 +9570,9 @@ TEST( NoteTypeValue_one28Th, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_six4Th, Enums )
+TEST( NoteTypeValue_sixtyFourth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::six4Th;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::sixtyFourth;
 	std::string expected = "64th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -9591,9 +9591,9 @@ TEST( NoteTypeValue_six4Th, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_three2Nd, Enums )
+TEST( NoteTypeValue_thirtySecond, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::three2Nd;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::thirtySecond;
 	std::string expected = "32nd";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
@@ -9612,9 +9612,9 @@ TEST( NoteTypeValue_three2Nd, Enums )
 	CHECK_EQUAL( e, e2 )
 }
 
-TEST( NoteTypeValue_one6Th, Enums )
+TEST( NoteTypeValue_sixteenth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::one6Th;
+	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::sixteenth;
 	std::string expected = "16th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );

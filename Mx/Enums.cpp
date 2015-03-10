@@ -2393,13 +2393,13 @@ namespace mx
 
 		NoteTypeValue parseNoteTypeValue( const std::string& value )
 		{
-			if ( value == "1024th" ) { return NoteTypeValue::one024Th; }
-			else if ( value == "512th" ) { return NoteTypeValue::five12Th; }
-			else if ( value == "256th" ) { return NoteTypeValue::two56Th; }
-			else if ( value == "128th" ) { return NoteTypeValue::one28Th; }
-			else if ( value == "64th" ) { return NoteTypeValue::six4Th; }
-			else if ( value == "32nd" ) { return NoteTypeValue::three2Nd; }
-			else if ( value == "16th" ) { return NoteTypeValue::one6Th; }
+			if ( value == "1024th" ) { return NoteTypeValue::oneThousandTwentyFourth; }
+			else if ( value == "512th" ) { return NoteTypeValue::fiveHundredTwelfth; }
+			else if ( value == "256th" ) { return NoteTypeValue::twoHundredFifthySixth; }
+			else if ( value == "128th" ) { return NoteTypeValue::oneHundredTwentyEighth; }
+			else if ( value == "64th" ) { return NoteTypeValue::sixtyFourth; }
+			else if ( value == "32nd" ) { return NoteTypeValue::thirtySecond; }
+			else if ( value == "16th" ) { return NoteTypeValue::sixteenth; }
 			else if ( value == "eighth" ) { return NoteTypeValue::eighth; }
 			else if ( value == "quarter" ) { return NoteTypeValue::quarter; }
 			else if ( value == "half" ) { return NoteTypeValue::half; }
@@ -2407,19 +2407,19 @@ namespace mx
 			else if ( value == "breve" ) { return NoteTypeValue::breve; }
 			else if ( value == "long" ) { return NoteTypeValue::long_; }
 			else if ( value == "maxima" ) { return NoteTypeValue::maxima; }
-			return NoteTypeValue::one024Th;
+			return NoteTypeValue::oneThousandTwentyFourth;
 		}
 		std::string toString( const NoteTypeValue value )
 		{
 			switch ( value ) 
 			{
-				case NoteTypeValue::one024Th: return "1024th"; break;
-				case NoteTypeValue::five12Th: return "512th"; break;
-				case NoteTypeValue::two56Th: return "256th"; break;
-				case NoteTypeValue::one28Th: return "128th"; break;
-				case NoteTypeValue::six4Th: return "64th"; break;
-				case NoteTypeValue::three2Nd: return "32nd"; break;
-				case NoteTypeValue::one6Th: return "16th"; break;
+				case NoteTypeValue::oneThousandTwentyFourth: return "1024th"; break;
+				case NoteTypeValue::fiveHundredTwelfth: return "512th"; break;
+				case NoteTypeValue::twoHundredFifthySixth: return "256th"; break;
+				case NoteTypeValue::oneHundredTwentyEighth: return "128th"; break;
+				case NoteTypeValue::sixtyFourth: return "64th"; break;
+				case NoteTypeValue::thirtySecond: return "32nd"; break;
+				case NoteTypeValue::sixteenth: return "16th"; break;
 				case NoteTypeValue::eighth: return "eighth"; break;
 				case NoteTypeValue::quarter: return "quarter"; break;
 				case NoteTypeValue::half: return "half"; break;

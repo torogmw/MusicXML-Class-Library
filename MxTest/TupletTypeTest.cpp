@@ -8,22 +8,25 @@ using namespace mx::e;
 TEST( Test01, TupletType )
 {
 	std::string indentString( INDENT );
-	NoteTypeValue value1;
-	NoteTypeValue value2;
+	NoteTypeValue value1 = NoteTypeValue::quarter;
+	NoteTypeValue value2 = NoteTypeValue::sixtyFourth;
 	TupletType object1;
 	TupletType object2( value2 );
 	TupletTypeAttributesPtr attributes1 = std::make_shared<TupletTypeAttributes>();
 	TupletTypeAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasFontSize = true;
+    attributes1->hasFontWeight = true;
+    attributes1->hasFontStyle = true;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<tuplet-type>eighth</tuplet-type>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<tuplet-type font-style="normal" font-size="medium" font-weight="normal">64th</tuplet-type>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

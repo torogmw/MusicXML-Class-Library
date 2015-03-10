@@ -305,5 +305,51 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mx/Elements.cpp"
+            timestampString = "447703968.610652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4118"
+            endingLineNumber = "4118"
+            landmarkName = "OtherAppearanceAttributes::OtherAppearanceAttributes()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mx::e::OtherAppearanceAttributes::OtherAppearanceAttributes()"
+                  moduleName = "MxTest"
+                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
+                  timestampString = "447703969.507732"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4120"
+                  endingLineNumber = "4120"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mx::e::OtherAppearanceAttributes::OtherAppearanceAttributes()"
+                  moduleName = "MxTest"
+                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
+                  timestampString = "447703969.507926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4120"
+                  endingLineNumber = "4120"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

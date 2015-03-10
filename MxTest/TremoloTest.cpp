@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, Tremolo )
 {
 	std::string indentString( INDENT );
-	TremoloMarks value1;
-	TremoloMarks value2;
+	TremoloMarks value1{ 2 };
+	TremoloMarks value2{ 3 };
 	Tremolo object1;
 	Tremolo object2( value2 );
 	TremoloAttributesPtr attributes1 = std::make_shared<TremoloAttributes>();
 	TremoloAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-	object2.setAttributes( attributes1 );
-	std::stringstream default_constructed;
+	//object2.setAttributes( attributes1 );
+	object2.getAttributes()->hasPlacement = true;
+    object2.getAttributes()->placement = AboveBelow::below;
+    std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<tremolo>0</tremolo>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<tremolo placement="below">3</tremolo>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
