@@ -11,17 +11,17 @@
 
 namespace go
 {
-    bool goMsItemElementTestImplementOne();
+    bool goCreateValueElementsImplementOne();
     
-    inline void goMsItemElementTest()
+    inline void goCreateValueElements()
     {
-        while ( goMsItemElementTestImplementOne() )
+        while ( goCreateValueElementsImplementOne() )
         {
             ;
         }
     }
     
-    inline bool goMsItemElementTestImplementOne()
+    inline bool goCreateValueElementsImplementOne()
     {
         using namespace xsd;
         
