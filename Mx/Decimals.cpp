@@ -99,6 +99,16 @@ namespace mx
             setValue( value );
         }
         // DecimalRange::~DecimalRange() {}
+        DecimalRange& DecimalRange::operator=( const DecimalRange& other )
+        {
+            setValue( other.getValue() );
+            return *this;
+        }
+        DecimalRange& DecimalRange::operator=( DecimalRange&& other )
+        {
+            setValue( other.getValue() );
+            return *this;
+        }
         
         void DecimalRange::setValue( DecimalType value )
         {

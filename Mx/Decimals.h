@@ -56,6 +56,10 @@ namespace mx
         public:
             explicit DecimalRange( DecimalType min, DecimalType max, DecimalType value );
             // virtual ~DecimalRange();
+            DecimalRange( const DecimalRange& other ) = default;
+            DecimalRange( DecimalRange&& other ) = default;
+            DecimalRange& operator=( const DecimalRange& other );
+            DecimalRange& operator=( DecimalRange&& other );
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         private:

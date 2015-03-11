@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, BassStep )
 {
 	std::string indentString( INDENT );
-	Step value1;
-	Step value2;
+	Step value1 = Step::g;
+	Step value2 = Step::b;
 	BassStep object1;
 	BassStep object2( value2 );
 	BassStepAttributesPtr attributes1 = std::make_shared<BassStepAttributes>();
 	BassStepAttributesPtr attributesNull;
 	/* set some attribute1 values here */
 	object2.setAttributes( attributes1 );
+    attributes1->hasText = true;
+    attributes1->text = XsToken{ "HelloThere" };
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<bass-step>A</bass-step>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<bass-step text="HelloThere">B</bass-step>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

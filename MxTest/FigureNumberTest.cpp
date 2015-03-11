@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, FigureNumber )
 {
 	std::string indentString( INDENT );
-	XsString value1;
-	XsString value2;
+	XsString value1{ "Figure 1" };
+	XsString value2{ "Figure 2" };
 	FigureNumber object1;
 	FigureNumber object2( value2 );
 	FigureNumberAttributesPtr attributes1 = std::make_shared<FigureNumberAttributes>();
 	FigureNumberAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasFontWeight = true;
+    attributes1->fontWeight = FontWeight::bold;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<figure-number></figure-number>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<figure-number font-weight="bold">Figure 2</figure-number>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

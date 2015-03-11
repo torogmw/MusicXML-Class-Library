@@ -880,7 +880,7 @@ namespace mx
         
         /**************** MeasureRepeat ****************/
         MeasureRepeatAttributes::MeasureRepeatAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,slashes()
         ,hasType( true )
         ,hasSlashes( false )
@@ -1312,7 +1312,7 @@ namespace mx
         }
         
         BassStep::BassStep()
-        :myValue()
+        :myValue( types::Step::a )
         ,myAttributes( std::make_shared<BassStepAttributes>() )
         {}
         BassStep::BassStep( const types::Step& value )
@@ -3206,7 +3206,7 @@ namespace mx
         }
         
         RootStep::RootStep()
-        :myValue()
+        :myValue( types::Step::a )
         ,myAttributes( std::make_shared<RootStepAttributes>() )
         {}
         RootStep::RootStep( const types::Step& value )
@@ -5335,7 +5335,7 @@ namespace mx
         
         /**************** Slide ****************/
         SlideAttributes::SlideAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,number( 1 )
         ,dashLength()
         ,spaceLength()
@@ -5818,7 +5818,7 @@ namespace mx
         }
         
         Type::Type()
-        :myValue()
+        :myValue( types::NoteTypeValue::quarter )
         ,myAttributes( std::make_shared<TypeAttributes>() )
         {}
         Type::Type( const types::NoteTypeValue& value )
@@ -6202,7 +6202,7 @@ namespace mx
         }
         
         Beam::Beam()
-        :myValue()
+        :myValue( types::BeamValue::begin )
         ,myAttributes( std::make_shared<BeamAttributes>() )
         {}
         Beam::Beam( const types::BeamValue& value )
@@ -7032,7 +7032,7 @@ namespace mx
         
         /**************** HammerOn ****************/
         HammerOnAttributes::HammerOnAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,number( 1 )
         ,defaultX()
         ,defaultY()
