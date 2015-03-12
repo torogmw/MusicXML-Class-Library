@@ -356,7 +356,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const ShowFrets value );
 		std::ostream& operator<<( std::ostream& os, const ShowFrets value );
 
-		enum class StaffType
+		enum class StaffTypeEnum
 		{
 			ossia = 0,
 			cue = 1,
@@ -364,10 +364,10 @@ namespace mx
 			regular = 3,
 			alternate = 4
 		};
-		StaffType parseStaffType( const std::string& value );
-		std::string toString( const StaffType value );
-		std::ostream& toStream( std::ostream& os, const StaffType value );
-		std::ostream& operator<<( std::ostream& os, const StaffType value );
+		StaffTypeEnum parseStaffType( const std::string& value );
+		std::string toString( const StaffTypeEnum value );
+		std::ostream& toStream( std::ostream& os, const StaffTypeEnum value );
+		std::ostream& operator<<( std::ostream& os, const StaffTypeEnum value );
 
 		enum class TimeRelation
 		{
@@ -545,14 +545,14 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const Effect value );
 		std::ostream& operator<<( std::ostream& os, const Effect value );
 
-		enum class Glass
+		enum class GlassEnum
 		{
 			windChimes = 0
 		};
-		Glass parseGlass( const std::string& value );
-		std::string toString( const Glass value );
-		std::ostream& toStream( std::ostream& os, const Glass value );
-		std::ostream& operator<<( std::ostream& os, const Glass value );
+		GlassEnum parseGlassEnum( const std::string& value );
+		std::string toString( const GlassEnum value );
+		std::ostream& toStream( std::ostream& os, const GlassEnum value );
+		std::ostream& operator<<( std::ostream& os, const GlassEnum value );
 
 		enum class HarmonyType
 		{
@@ -1096,7 +1096,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const StemValue value );
 		std::ostream& operator<<( std::ostream& os, const StemValue value );
 
-		enum class Step
+		enum class StepEnum
 		{
 			a = 0,
 			b = 1,
@@ -1106,10 +1106,10 @@ namespace mx
 			f = 5,
 			g = 6
 		};
-		Step parseStep( const std::string& value );
-		std::string toString( const Step value );
-		std::ostream& toStream( std::ostream& os, const Step value );
-		std::ostream& operator<<( std::ostream& os, const Step value );
+		StepEnum parseStepEnum( const std::string& value );
+		std::string toString( const StepEnum value );
+		std::ostream& toStream( std::ostream& os, const StepEnum value );
+		std::ostream& operator<<( std::ostream& os, const StepEnum value );
 
 		enum class Syllabic
 		{

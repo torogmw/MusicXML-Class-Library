@@ -940,17 +940,17 @@ namespace mx
         {
         public:
             BassStep();
-            BassStep( const types::Step& value );
+            BassStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             BassStepAttributesPtr getAttributes() const;
             void setAttributes( const BassStepAttributesPtr& attributes );
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
             BassStepAttributesPtr myAttributes;
         };
         
@@ -2177,17 +2177,17 @@ namespace mx
         {
         public:
             RootStep();
-            RootStep( const types::Step& value );
+            RootStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             RootStepAttributesPtr getAttributes() const;
             void setAttributes( const RootStepAttributesPtr& attributes );
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
             RootStepAttributesPtr myAttributes;
         };
         
@@ -7048,15 +7048,15 @@ namespace mx
         {
         public:
             StaffType();
-            StaffType( const types::StaffType& value );
+            StaffType( const types::StaffTypeEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::StaffType getValue() const;
-            void setValue( const types::StaffType& value );
+            types::StaffTypeEnum getValue() const;
+            void setValue( const types::StaffTypeEnum& value );
         private:
-            types::StaffType myValue;
+            types::StaffTypeEnum myValue;
         };
         
         
@@ -7440,15 +7440,15 @@ namespace mx
         {
         public:
             PedalStep();
-            PedalStep( const types::Step& value );
+            PedalStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
         };
         
         
@@ -7508,15 +7508,15 @@ namespace mx
         {
         public:
             Glass();
-            Glass( const types::Glass& value );
+            Glass( const types::GlassEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Glass getValue() const;
-            void setValue( const types::Glass& value );
+            types::GlassEnum getValue() const;
+            void setValue( const types::GlassEnum& value );
         private:
-            types::Glass myValue;
+            types::GlassEnum myValue;
         };
         
         
@@ -8246,11 +8246,11 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class Tenths : public ElementInterface
+        class TenthsElement : public ElementInterface
         {
         public:
-            Tenths();
-            Tenths( const types::Tenths& value );
+            TenthsElement();
+            TenthsElement( const types::Tenths& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
@@ -8712,15 +8712,15 @@ namespace mx
         {
         public:
             Step();
-            Step( const types::Step& value );
+            Step( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
         };
         
         
@@ -9200,15 +9200,15 @@ namespace mx
         {
         public:
             TuningStep();
-            TuningStep( const types::Step& value );
+            TuningStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
         };
         
         
@@ -9340,15 +9340,15 @@ namespace mx
         {
         public:
             KeyStep();
-            KeyStep( const types::Step& value );
+            KeyStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
         };
         
         
@@ -9934,15 +9934,15 @@ namespace mx
         {
         public:
             DisplayStep();
-            DisplayStep( const types::Step& value );
+            DisplayStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Step getValue() const;
-            void setValue( const types::Step& value );
+            types::StepEnum getValue() const;
+            void setValue( const types::StepEnum& value );
         private:
-            types::Step myValue;
+            types::StepEnum myValue;
         };
         
         

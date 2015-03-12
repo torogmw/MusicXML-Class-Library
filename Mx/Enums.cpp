@@ -854,33 +854,33 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		StaffType parseStaffType( const std::string& value )
+		StaffTypeEnum parseStaffType( const std::string& value )
 		{
-			if ( value == "ossia" ) { return StaffType::ossia; }
-			else if ( value == "cue" ) { return StaffType::cue; }
-			else if ( value == "editorial" ) { return StaffType::editorial; }
-			else if ( value == "regular" ) { return StaffType::regular; }
-			else if ( value == "alternate" ) { return StaffType::alternate; }
-			return StaffType::ossia;
+			if ( value == "ossia" ) { return StaffTypeEnum::ossia; }
+			else if ( value == "cue" ) { return StaffTypeEnum::cue; }
+			else if ( value == "editorial" ) { return StaffTypeEnum::editorial; }
+			else if ( value == "regular" ) { return StaffTypeEnum::regular; }
+			else if ( value == "alternate" ) { return StaffTypeEnum::alternate; }
+			return StaffTypeEnum::ossia;
 		}
-		std::string toString( const StaffType value )
+		std::string toString( const StaffTypeEnum value )
 		{
 			switch ( value ) 
 			{
-				case StaffType::ossia: return "ossia"; break;
-				case StaffType::cue: return "cue"; break;
-				case StaffType::editorial: return "editorial"; break;
-				case StaffType::regular: return "regular"; break;
-				case StaffType::alternate: return "alternate"; break;
+				case StaffTypeEnum::ossia: return "ossia"; break;
+				case StaffTypeEnum::cue: return "cue"; break;
+				case StaffTypeEnum::editorial: return "editorial"; break;
+				case StaffTypeEnum::regular: return "regular"; break;
+				case StaffTypeEnum::alternate: return "alternate"; break;
 				default: break;
 			}
 			return "ossia";
 		}
-		std::ostream& toStream( std::ostream& os, const StaffType value )
+		std::ostream& toStream( std::ostream& os, const StaffTypeEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const StaffType value )
+		std::ostream& operator<<( std::ostream& os, const StaffTypeEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -1297,25 +1297,25 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Glass parseGlass( const std::string& value )
+		GlassEnum parseGlassEnum( const std::string& value )
 		{
-			if ( value == "wind chimes" ) { return Glass::windChimes; }
-			return Glass::windChimes;
+			if ( value == "wind chimes" ) { return GlassEnum::windChimes; }
+			return GlassEnum::windChimes;
 		}
-		std::string toString( const Glass value )
+		std::string toString( const GlassEnum value )
 		{
 			switch ( value ) 
 			{
-				case Glass::windChimes: return "wind chimes"; break;
+				case GlassEnum::windChimes: return "wind chimes"; break;
 				default: break;
 			}
 			return "wind chimes";
 		}
-		std::ostream& toStream( std::ostream& os, const Glass value )
+		std::ostream& toStream( std::ostream& os, const GlassEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Glass value )
+		std::ostream& operator<<( std::ostream& os, const GlassEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -2569,37 +2569,37 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Step parseStep( const std::string& value )
+		StepEnum parseStepEnum( const std::string& value )
 		{
-			if ( value == "A" ) { return Step::a; }
-			else if ( value == "B" ) { return Step::b; }
-			else if ( value == "C" ) { return Step::c; }
-			else if ( value == "D" ) { return Step::d; }
-			else if ( value == "E" ) { return Step::e; }
-			else if ( value == "F" ) { return Step::f; }
-			else if ( value == "G" ) { return Step::g; }
-			return Step::a;
+			if ( value == "A" ) { return StepEnum::a; }
+			else if ( value == "B" ) { return StepEnum::b; }
+			else if ( value == "C" ) { return StepEnum::c; }
+			else if ( value == "D" ) { return StepEnum::d; }
+			else if ( value == "E" ) { return StepEnum::e; }
+			else if ( value == "F" ) { return StepEnum::f; }
+			else if ( value == "G" ) { return StepEnum::g; }
+			return StepEnum::a;
 		}
-		std::string toString( const Step value )
+		std::string toString( const StepEnum value )
 		{
 			switch ( value ) 
 			{
-				case Step::a: return "A"; break;
-				case Step::b: return "B"; break;
-				case Step::c: return "C"; break;
-				case Step::d: return "D"; break;
-				case Step::e: return "E"; break;
-				case Step::f: return "F"; break;
-				case Step::g: return "G"; break;
+				case StepEnum::a: return "A"; break;
+				case StepEnum::b: return "B"; break;
+				case StepEnum::c: return "C"; break;
+				case StepEnum::d: return "D"; break;
+				case StepEnum::e: return "E"; break;
+				case StepEnum::f: return "F"; break;
+				case StepEnum::g: return "G"; break;
 				default: break;
 			}
 			return "A";
 		}
-		std::ostream& toStream( std::ostream& os, const Step value )
+		std::ostream& toStream( std::ostream& os, const StepEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Step value )
+		std::ostream& operator<<( std::ostream& os, const StepEnum value )
 		{
 			return toStream( os, value );
 		}

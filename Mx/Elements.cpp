@@ -1315,10 +1315,10 @@ namespace mx
         }
         
         BassStep::BassStep()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         ,myAttributes( std::make_shared<BassStepAttributes>() )
         {}
-        BassStep::BassStep( const types::Step& value )
+        BassStep::BassStep( const types::StepEnum& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BassStepAttributes>() )
         {}
@@ -1358,11 +1358,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Step BassStep::getValue() const
+        types::StepEnum BassStep::getValue() const
         {
             return myValue;
         }
-        void BassStep::setValue( const types::Step& value )
+        void BassStep::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
@@ -3209,10 +3209,10 @@ namespace mx
         }
         
         RootStep::RootStep()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         ,myAttributes( std::make_shared<RootStepAttributes>() )
         {}
-        RootStep::RootStep( const types::Step& value )
+        RootStep::RootStep( const types::StepEnum& value )
         :myValue( value )
         ,myAttributes( std::make_shared<RootStepAttributes>() )
         {}
@@ -3252,11 +3252,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Step RootStep::getValue() const
+        types::StepEnum RootStep::getValue() const
         {
             return myValue;
         }
-        void RootStep::setValue( const types::Step& value )
+        void RootStep::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
@@ -9953,9 +9953,9 @@ namespace mx
             myValue = value;
         }
         StaffType::StaffType()
-        :myValue( types::StaffType::regular )
+        :myValue( types::StaffTypeEnum::regular )
         {}
-        StaffType::StaffType( const types::StaffType& value )
+        StaffType::StaffType( const types::StaffTypeEnum& value )
         :myValue( value )
         {}
         bool StaffType::hasAttributes() const
@@ -9977,11 +9977,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StaffType StaffType::getValue() const
+        types::StaffTypeEnum StaffType::getValue() const
         {
             return myValue;
         }
-        void StaffType::setValue( const types::StaffType& value )
+        void StaffType::setValue( const types::StaffTypeEnum& value )
         {
             myValue = value;
         }
@@ -10382,9 +10382,9 @@ namespace mx
             myValue = value;
         }
         PedalStep::PedalStep()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         {}
-        PedalStep::PedalStep( const types::Step& value )
+        PedalStep::PedalStep( const types::StepEnum& value )
         :myValue( value )
         {}
         bool PedalStep::hasAttributes() const
@@ -10406,11 +10406,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Step PedalStep::getValue() const
+        types::StepEnum PedalStep::getValue() const
         {
             return myValue;
         }
-        void PedalStep::setValue( const types::Step& value )
+        void PedalStep::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
@@ -10448,9 +10448,9 @@ namespace mx
             myValue = value;
         }
         Glass::Glass()
-        :myValue( types::Glass::windChimes )
+        :myValue( types::GlassEnum::windChimes )
         {}
-        Glass::Glass( const types::Glass& value )
+        Glass::Glass( const types::GlassEnum& value )
         :myValue( value )
         {}
         bool Glass::hasAttributes() const
@@ -10472,11 +10472,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Glass Glass::getValue() const
+        types::GlassEnum Glass::getValue() const
         {
             return myValue;
         }
-        void Glass::setValue( const types::Glass& value )
+        void Glass::setValue( const types::GlassEnum& value )
         {
             myValue = value;
         }
@@ -11041,36 +11041,36 @@ namespace mx
         {
             myValue = value;
         }
-        Tenths::Tenths()
+        TenthsElement::TenthsElement()
         :myValue()
         {}
-        Tenths::Tenths( const types::Tenths& value )
+        TenthsElement::TenthsElement( const types::Tenths& value )
         :myValue( value )
         {}
-        bool Tenths::hasAttributes() const
+        bool TenthsElement::hasAttributes() const
         {
             return false;
         }
-        std::ostream& Tenths::streamAttributes( std::ostream& os ) const
+        std::ostream& TenthsElement::streamAttributes( std::ostream& os ) const
         {
             return os;
         }
-        std::ostream& Tenths::streamName( std::ostream& os ) const
+        std::ostream& TenthsElement::streamName( std::ostream& os ) const
         {
             os << "tenths";
             return os;
         }
-        std::ostream& Tenths::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        std::ostream& TenthsElement::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
         {
             isOneLineOnly = true;
             os << myValue;
             return os;
         }
-        types::Tenths Tenths::getValue() const
+        types::Tenths TenthsElement::getValue() const
         {
             return myValue;
         }
-        void Tenths::setValue( const types::Tenths& value )
+        void TenthsElement::setValue( const types::Tenths& value )
         {
             myValue = value;
         }
@@ -11438,9 +11438,9 @@ namespace mx
 //            myValue = value;
 //        }
         Step::Step()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         {}
-        Step::Step( const types::Step& value )
+        Step::Step( const types::StepEnum& value )
         :myValue( value )
         {}
         bool Step::hasAttributes() const
@@ -11462,11 +11462,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Step Step::getValue() const
+        types::StepEnum Step::getValue() const
         {
             return myValue;
         }
-        void Step::setValue( const types::Step& value )
+        void Step::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
@@ -11999,9 +11999,9 @@ namespace mx
             myValue = value;
         }
         TuningStep::TuningStep()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         {}
-        TuningStep::TuningStep( const types::Step& value )
+        TuningStep::TuningStep( const types::StepEnum& value )
         :myValue( value )
         {}
         bool TuningStep::hasAttributes() const
@@ -12023,11 +12023,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Step TuningStep::getValue() const
+        types::StepEnum TuningStep::getValue() const
         {
             return myValue;
         }
-        void TuningStep::setValue( const types::Step& value )
+        void TuningStep::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
@@ -12131,9 +12131,9 @@ namespace mx
             myValue = value;
         }
         KeyStep::KeyStep()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         {}
-        KeyStep::KeyStep( const types::Step& value )
+        KeyStep::KeyStep( const types::StepEnum& value )
         :myValue( value )
         {}
         bool KeyStep::hasAttributes() const
@@ -12155,11 +12155,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Step KeyStep::getValue() const
+        types::StepEnum KeyStep::getValue() const
         {
             return myValue;
         }
-        void KeyStep::setValue( const types::Step& value )
+        void KeyStep::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
@@ -12593,9 +12593,9 @@ namespace mx
             myValue = value;
         }
         DisplayStep::DisplayStep()
-        :myValue( types::Step::a )
+        :myValue( types::StepEnum::a )
         {}
-        DisplayStep::DisplayStep( const types::Step& value )
+        DisplayStep::DisplayStep( const types::StepEnum& value )
         :myValue( value )
         {}
         bool DisplayStep::hasAttributes() const
@@ -12617,11 +12617,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Step DisplayStep::getValue() const
+        types::StepEnum DisplayStep::getValue() const
         {
             return myValue;
         }
-        void DisplayStep::setValue( const types::Step& value )
+        void DisplayStep::setValue( const types::StepEnum& value )
         {
             myValue = value;
         }
