@@ -364,7 +364,7 @@ namespace mx
 			regular = 3,
 			alternate = 4
 		};
-		StaffTypeEnum parseStaffType( const std::string& value );
+		StaffTypeEnum parseStaffTypeEnum( const std::string& value );
 		std::string toString( const StaffTypeEnum value );
 		std::ostream& toStream( std::ostream& os, const StaffTypeEnum value );
 		std::ostream& operator<<( std::ostream& os, const StaffTypeEnum value );
