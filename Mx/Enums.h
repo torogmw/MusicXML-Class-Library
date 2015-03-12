@@ -1167,12 +1167,12 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const ModeEnum value );
 		std::ostream& operator<<( std::ostream& os, const ModeEnum value );
         
-        class MxdeValue
+        class ModeValue
         {
         public:
-            explicit MxdeValue( const ModeEnum value );
-            explicit MxdeValue( const std::string& value );
-            MxdeValue();
+            explicit ModeValue( const ModeEnum value );
+            explicit ModeValue( const std::string& value );
+            ModeValue();
             ModeEnum getValue() const;
             std::string getValueString() const;
             void setValue( const ModeEnum value );
@@ -1181,10 +1181,10 @@ namespace mx
             ModeEnum myEnum;
             std::string myCustomValue;
         };
-        MxdeValue parseMxdeValue( const std::string& value );
-		std::string toString( const MxdeValue& value );
-		std::ostream& toStream( std::ostream& os, const MxdeValue& value );
-		std::ostream& operator<<( std::ostream& os, const MxdeValue& value );
+        ModeValue parseModeValue( const std::string& value );
+		std::string toString( const ModeValue& value );
+		std::ostream& toStream( std::ostream& os, const ModeValue& value );
+		std::ostream& operator<<( std::ostream& os, const ModeValue& value );
         
         enum class DistanceTypeEnum
 		{

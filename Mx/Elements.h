@@ -9644,15 +9644,15 @@ namespace mx
         {
         public:
             Mode();
-            Mode( const types::MxdeValue& value );
+            Mode( const types::ModeValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::MxdeValue getValue() const;
-            void setValue( const types::MxdeValue& value );
+            types::ModeValue getValue() const;
+            void setValue( const types::ModeValue& value );
         private:
-            types::MxdeValue myValue;
+            types::ModeValue myValue;
         };
         
         

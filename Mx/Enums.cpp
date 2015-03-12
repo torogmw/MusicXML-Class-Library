@@ -854,7 +854,7 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		StaffTypeEnum parseStaffType( const std::string& value )
+		StaffTypeEnum parseStaffTypeEnum( const std::string& value )
 		{
 			if ( value == "ossia" ) { return StaffTypeEnum::ossia; }
 			else if ( value == "cue" ) { return StaffTypeEnum::cue; }
@@ -2741,29 +2741,29 @@ namespace mx
 			return toStream( os, value );
 		}
 
-        MxdeValue::MxdeValue( const ModeEnum value )
+        ModeValue::ModeValue( const ModeEnum value )
         :myEnum( value )
         ,myCustomValue( "" )
         {
             setValue( value );
         }
-        MxdeValue::MxdeValue( const std::string& value )
+        ModeValue::ModeValue( const std::string& value )
         :myEnum( ModeEnum::other )
         ,myCustomValue( value )
         {
             setValue( value );
         }
-        MxdeValue::MxdeValue()
+        ModeValue::ModeValue()
         :myEnum( ModeEnum::major )
         ,myCustomValue( "" )
         {
             setValue( ModeEnum::major );
         }
-        ModeEnum MxdeValue::getValue() const
+        ModeEnum ModeValue::getValue() const
         {
             return myEnum;
         }
-        std::string MxdeValue::getValueString() const
+        std::string ModeValue::getValueString() const
         {
             if ( myEnum != ModeEnum::other )
             {
@@ -2774,11 +2774,11 @@ namespace mx
                 return myCustomValue;
             }
         }
-        void MxdeValue::setValue( const ModeEnum value )
+        void ModeValue::setValue( const ModeEnum value )
         {
             myEnum = value;
         }
-        void MxdeValue::setValue( const std::string& value )
+        void ModeValue::setValue( const std::string& value )
         {
             bool found = false;
             ModeEnum temp = parseModeEnum( value, found );
@@ -2792,19 +2792,19 @@ namespace mx
                 myCustomValue = value;
             }
         }
-        MxdeValue parseMxdeValue( const std::string& value )
+        ModeValue parseModeValue( const std::string& value )
         {
-            return MxdeValue( value );
+            return ModeValue( value );
         }
-        std::string toString( const MxdeValue& value )
+        std::string toString( const ModeValue& value )
         {
             return value.getValueString();
         }
-        std::ostream& toStream( std::ostream& os, const MxdeValue& value )
+        std::ostream& toStream( std::ostream& os, const ModeValue& value )
         {
             return os << toString( value );
         }
-        std::ostream& operator<<( std::ostream& os, const MxdeValue& value )
+        std::ostream& operator<<( std::ostream& os, const ModeValue& value )
         {
             return toStream( os, value );
         }

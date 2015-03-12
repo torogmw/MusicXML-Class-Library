@@ -12364,7 +12364,7 @@ namespace mx
         Mode::Mode()
         :myValue()
         {}
-        Mode::Mode( const types::MxdeValue& value )
+        Mode::Mode( const types::ModeValue& value )
         :myValue( value )
         {}
         bool Mode::hasAttributes() const
@@ -12386,11 +12386,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::MxdeValue Mode::getValue() const
+        types::ModeValue Mode::getValue() const
         {
             return myValue;
         }
-        void Mode::setValue( const types::MxdeValue& value )
+        void Mode::setValue( const types::ModeValue& value )
         {
             myValue = value;
         }
