@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Millimeters )
 {
 	std::string indentString( INDENT );
-	Millimeters value1;
-	Millimeters value2;
+	MillimetersValue value1;
+	MillimetersValue value2;
 	Millimeters object1;
 	Millimeters object2( value2 );
 	std::stringstream default_constructed;

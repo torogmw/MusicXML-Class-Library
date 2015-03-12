@@ -16,9 +16,9 @@ TEST( Test01, GroupSymbol )
 	GroupSymbolAttributesPtr attributesNull;
 	/* set some attribute1 values here */
     attributes1->hasRelativeX = true;
-    attributes1->relativeX = Tenths( 2.3 );
+    attributes1->relativeX = TenthsValue( 2.3 );
     attributes1->hasDefaultY = true;
-    attributes1->defaultY = Tenths( -9.9 );
+    attributes1->defaultY = TenthsValue( -9.9 );
     
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;

@@ -286,53 +286,53 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Mute parseMute( const std::string& value )
+		MuteEnum parseMuteEnum( const std::string& value )
 		{
-			if ( value == "on" ) { return Mute::on; }
-			else if ( value == "off" ) { return Mute::off; }
-			else if ( value == "straight" ) { return Mute::straight; }
-			else if ( value == "cup" ) { return Mute::cup; }
-			else if ( value == "harmon-no-stem" ) { return Mute::harmonNoStem; }
-			else if ( value == "harmon-stem" ) { return Mute::harmonStem; }
-			else if ( value == "bucket" ) { return Mute::bucket; }
-			else if ( value == "plunger" ) { return Mute::plunger; }
-			else if ( value == "hat" ) { return Mute::hat; }
-			else if ( value == "solotone" ) { return Mute::solotone; }
-			else if ( value == "practice" ) { return Mute::practice; }
-			else if ( value == "stop-mute" ) { return Mute::stopMute; }
-			else if ( value == "stop-hand" ) { return Mute::stopHand; }
-			else if ( value == "echo" ) { return Mute::echo; }
-			else if ( value == "palm" ) { return Mute::palm; }
-			return Mute::on;
+			if ( value == "on" ) { return MuteEnum::on; }
+			else if ( value == "off" ) { return MuteEnum::off; }
+			else if ( value == "straight" ) { return MuteEnum::straight; }
+			else if ( value == "cup" ) { return MuteEnum::cup; }
+			else if ( value == "harmon-no-stem" ) { return MuteEnum::harmonNoStem; }
+			else if ( value == "harmon-stem" ) { return MuteEnum::harmonStem; }
+			else if ( value == "bucket" ) { return MuteEnum::bucket; }
+			else if ( value == "plunger" ) { return MuteEnum::plunger; }
+			else if ( value == "hat" ) { return MuteEnum::hat; }
+			else if ( value == "solotone" ) { return MuteEnum::solotone; }
+			else if ( value == "practice" ) { return MuteEnum::practice; }
+			else if ( value == "stop-mute" ) { return MuteEnum::stopMute; }
+			else if ( value == "stop-hand" ) { return MuteEnum::stopHand; }
+			else if ( value == "echo" ) { return MuteEnum::echo; }
+			else if ( value == "palm" ) { return MuteEnum::palm; }
+			return MuteEnum::on;
 		}
-		std::string toString( const Mute value )
+		std::string toString( const MuteEnum value )
 		{
 			switch ( value ) 
 			{
-				case Mute::on: return "on"; break;
-				case Mute::off: return "off"; break;
-				case Mute::straight: return "straight"; break;
-				case Mute::cup: return "cup"; break;
-				case Mute::harmonNoStem: return "harmon-no-stem"; break;
-				case Mute::harmonStem: return "harmon-stem"; break;
-				case Mute::bucket: return "bucket"; break;
-				case Mute::plunger: return "plunger"; break;
-				case Mute::hat: return "hat"; break;
-				case Mute::solotone: return "solotone"; break;
-				case Mute::practice: return "practice"; break;
-				case Mute::stopMute: return "stop-mute"; break;
-				case Mute::stopHand: return "stop-hand"; break;
-				case Mute::echo: return "echo"; break;
-				case Mute::palm: return "palm"; break;
+				case MuteEnum::on: return "on"; break;
+				case MuteEnum::off: return "off"; break;
+				case MuteEnum::straight: return "straight"; break;
+				case MuteEnum::cup: return "cup"; break;
+				case MuteEnum::harmonNoStem: return "harmon-no-stem"; break;
+				case MuteEnum::harmonStem: return "harmon-stem"; break;
+				case MuteEnum::bucket: return "bucket"; break;
+				case MuteEnum::plunger: return "plunger"; break;
+				case MuteEnum::hat: return "hat"; break;
+				case MuteEnum::solotone: return "solotone"; break;
+				case MuteEnum::practice: return "practice"; break;
+				case MuteEnum::stopMute: return "stop-mute"; break;
+				case MuteEnum::stopHand: return "stop-hand"; break;
+				case MuteEnum::echo: return "echo"; break;
+				case MuteEnum::palm: return "palm"; break;
 				default: break;
 			}
 			return "on";
 		}
-		std::ostream& toStream( std::ostream& os, const Mute value )
+		std::ostream& toStream( std::ostream& os, const MuteEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Mute value )
+		std::ostream& operator<<( std::ostream& os, const MuteEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -362,35 +362,35 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		SemiPitched parseSemiPitched( const std::string& value )
+		SemiPitchedEnum parseSemiPitchedEnum( const std::string& value )
 		{
-			if ( value == "high" ) { return SemiPitched::high; }
-			else if ( value == "medium-high" ) { return SemiPitched::mediumHigh; }
-			else if ( value == "medium" ) { return SemiPitched::medium; }
-			else if ( value == "medium-low" ) { return SemiPitched::mediumLow; }
-			else if ( value == "low" ) { return SemiPitched::low; }
-			else if ( value == "very-low" ) { return SemiPitched::veryLow; }
-			return SemiPitched::high;
+			if ( value == "high" ) { return SemiPitchedEnum::high; }
+			else if ( value == "medium-high" ) { return SemiPitchedEnum::mediumHigh; }
+			else if ( value == "medium" ) { return SemiPitchedEnum::medium; }
+			else if ( value == "medium-low" ) { return SemiPitchedEnum::mediumLow; }
+			else if ( value == "low" ) { return SemiPitchedEnum::low; }
+			else if ( value == "very-low" ) { return SemiPitchedEnum::veryLow; }
+			return SemiPitchedEnum::high;
 		}
-		std::string toString( const SemiPitched value )
+		std::string toString( const SemiPitchedEnum value )
 		{
 			switch ( value ) 
 			{
-				case SemiPitched::high: return "high"; break;
-				case SemiPitched::mediumHigh: return "medium-high"; break;
-				case SemiPitched::medium: return "medium"; break;
-				case SemiPitched::mediumLow: return "medium-low"; break;
-				case SemiPitched::low: return "low"; break;
-				case SemiPitched::veryLow: return "very-low"; break;
+				case SemiPitchedEnum::high: return "high"; break;
+				case SemiPitchedEnum::mediumHigh: return "medium-high"; break;
+				case SemiPitchedEnum::medium: return "medium"; break;
+				case SemiPitchedEnum::mediumLow: return "medium-low"; break;
+				case SemiPitchedEnum::low: return "low"; break;
+				case SemiPitchedEnum::veryLow: return "very-low"; break;
 				default: break;
 			}
 			return "high";
 		}
-		std::ostream& toStream( std::ostream& os, const SemiPitched value )
+		std::ostream& toStream( std::ostream& os, const SemiPitchedEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const SemiPitched value )
+		std::ostream& operator<<( std::ostream& os, const SemiPitchedEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -885,35 +885,35 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		TimeRelation parseTimeRelation( const std::string& value )
+		TimeRelationEnum parseTimeRelationEnum( const std::string& value )
 		{
-			if ( value == "parentheses" ) { return TimeRelation::parentheses; }
-			else if ( value == "bracket" ) { return TimeRelation::bracket; }
-			else if ( value == "equals" ) { return TimeRelation::equals; }
-			else if ( value == "slash" ) { return TimeRelation::slash; }
-			else if ( value == "space" ) { return TimeRelation::space; }
-			else if ( value == "hyphen" ) { return TimeRelation::hyphen; }
-			return TimeRelation::parentheses;
+			if ( value == "parentheses" ) { return TimeRelationEnum::parentheses; }
+			else if ( value == "bracket" ) { return TimeRelationEnum::bracket; }
+			else if ( value == "equals" ) { return TimeRelationEnum::equals; }
+			else if ( value == "slash" ) { return TimeRelationEnum::slash; }
+			else if ( value == "space" ) { return TimeRelationEnum::space; }
+			else if ( value == "hyphen" ) { return TimeRelationEnum::hyphen; }
+			return TimeRelationEnum::parentheses;
 		}
-		std::string toString( const TimeRelation value )
+		std::string toString( const TimeRelationEnum value )
 		{
 			switch ( value ) 
 			{
-				case TimeRelation::parentheses: return "parentheses"; break;
-				case TimeRelation::bracket: return "bracket"; break;
-				case TimeRelation::equals: return "equals"; break;
-				case TimeRelation::slash: return "slash"; break;
-				case TimeRelation::space: return "space"; break;
-				case TimeRelation::hyphen: return "hyphen"; break;
+				case TimeRelationEnum::parentheses: return "parentheses"; break;
+				case TimeRelationEnum::bracket: return "bracket"; break;
+				case TimeRelationEnum::equals: return "equals"; break;
+				case TimeRelationEnum::slash: return "slash"; break;
+				case TimeRelationEnum::space: return "space"; break;
+				case TimeRelationEnum::hyphen: return "hyphen"; break;
 				default: break;
 			}
 			return "parentheses";
 		}
-		std::ostream& toStream( std::ostream& os, const TimeRelation value )
+		std::ostream& toStream( std::ostream& os, const TimeRelationEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const TimeRelation value )
+		std::ostream& operator<<( std::ostream& os, const TimeRelationEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -1248,51 +1248,51 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Effect parseEffect( const std::string& value )
+		EffectEnum parseEffectEnum( const std::string& value )
 		{
-			if ( value == "anvil" ) { return Effect::anvil; }
-			else if ( value == "auto horn" ) { return Effect::autoHorn; }
-			else if ( value == "bird whistle" ) { return Effect::birdWhistle; }
-			else if ( value == "cannon" ) { return Effect::cannon; }
-			else if ( value == "duck call" ) { return Effect::duckCall; }
-			else if ( value == "gun shot" ) { return Effect::gunShot; }
-			else if ( value == "klaxon horn" ) { return Effect::klaxonHorn; }
-			else if ( value == "lions roar" ) { return Effect::lionsRoar; }
-			else if ( value == "police whistle" ) { return Effect::policeWhistle; }
-			else if ( value == "siren" ) { return Effect::siren; }
-			else if ( value == "slide whistle" ) { return Effect::slideWhistle; }
-			else if ( value == "thunder sheet" ) { return Effect::thunderSheet; }
-			else if ( value == "wind machine" ) { return Effect::windMachine; }
-			else if ( value == "wind whistle" ) { return Effect::windWhistle; }
-			return Effect::anvil;
+			if ( value == "anvil" ) { return EffectEnum::anvil; }
+			else if ( value == "auto horn" ) { return EffectEnum::autoHorn; }
+			else if ( value == "bird whistle" ) { return EffectEnum::birdWhistle; }
+			else if ( value == "cannon" ) { return EffectEnum::cannon; }
+			else if ( value == "duck call" ) { return EffectEnum::duckCall; }
+			else if ( value == "gun shot" ) { return EffectEnum::gunShot; }
+			else if ( value == "klaxon horn" ) { return EffectEnum::klaxonHorn; }
+			else if ( value == "lions roar" ) { return EffectEnum::lionsRoar; }
+			else if ( value == "police whistle" ) { return EffectEnum::policeWhistle; }
+			else if ( value == "siren" ) { return EffectEnum::siren; }
+			else if ( value == "slide whistle" ) { return EffectEnum::slideWhistle; }
+			else if ( value == "thunder sheet" ) { return EffectEnum::thunderSheet; }
+			else if ( value == "wind machine" ) { return EffectEnum::windMachine; }
+			else if ( value == "wind whistle" ) { return EffectEnum::windWhistle; }
+			return EffectEnum::anvil;
 		}
-		std::string toString( const Effect value )
+		std::string toString( const EffectEnum value )
 		{
 			switch ( value ) 
 			{
-				case Effect::anvil: return "anvil"; break;
-				case Effect::autoHorn: return "auto horn"; break;
-				case Effect::birdWhistle: return "bird whistle"; break;
-				case Effect::cannon: return "cannon"; break;
-				case Effect::duckCall: return "duck call"; break;
-				case Effect::gunShot: return "gun shot"; break;
-				case Effect::klaxonHorn: return "klaxon horn"; break;
-				case Effect::lionsRoar: return "lions roar"; break;
-				case Effect::policeWhistle: return "police whistle"; break;
-				case Effect::siren: return "siren"; break;
-				case Effect::slideWhistle: return "slide whistle"; break;
-				case Effect::thunderSheet: return "thunder sheet"; break;
-				case Effect::windMachine: return "wind machine"; break;
-				case Effect::windWhistle: return "wind whistle"; break;
+				case EffectEnum::anvil: return "anvil"; break;
+				case EffectEnum::autoHorn: return "auto horn"; break;
+				case EffectEnum::birdWhistle: return "bird whistle"; break;
+				case EffectEnum::cannon: return "cannon"; break;
+				case EffectEnum::duckCall: return "duck call"; break;
+				case EffectEnum::gunShot: return "gun shot"; break;
+				case EffectEnum::klaxonHorn: return "klaxon horn"; break;
+				case EffectEnum::lionsRoar: return "lions roar"; break;
+				case EffectEnum::policeWhistle: return "police whistle"; break;
+				case EffectEnum::siren: return "siren"; break;
+				case EffectEnum::slideWhistle: return "slide whistle"; break;
+				case EffectEnum::thunderSheet: return "thunder sheet"; break;
+				case EffectEnum::windMachine: return "wind machine"; break;
+				case EffectEnum::windWhistle: return "wind whistle"; break;
 				default: break;
 			}
 			return "anvil";
 		}
-		std::ostream& toStream( std::ostream& os, const Effect value )
+		std::ostream& toStream( std::ostream& os, const EffectEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Effect value )
+		std::ostream& operator<<( std::ostream& os, const EffectEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -1492,114 +1492,114 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Membrane parseMembrane( const std::string& value )
+		MembraneEnum parseMembraneEnum( const std::string& value )
 		{
-			if ( value == "bass drum" ) { return Membrane::bassDrum; }
-			else if ( value == "bass drum on side" ) { return Membrane::bassDrumOnSide; }
-			else if ( value == "bongos" ) { return Membrane::bongos; }
-			else if ( value == "conga drum" ) { return Membrane::congaDrum; }
-			else if ( value == "goblet drum" ) { return Membrane::gobletDrum; }
-			else if ( value == "military drum" ) { return Membrane::militaryDrum; }
-			else if ( value == "snare drum" ) { return Membrane::snareDrum; }
-			else if ( value == "snare drum snares off" ) { return Membrane::snareDrumSnaresOff; }
-			else if ( value == "tambourine" ) { return Membrane::tambourine; }
-			else if ( value == "tenor drum" ) { return Membrane::tenorDrum; }
-			else if ( value == "timbales" ) { return Membrane::timbales; }
-			else if ( value == "tomtom" ) { return Membrane::tomtom; }
-			return Membrane::bassDrum;
+			if ( value == "bass drum" ) { return MembraneEnum::bassDrum; }
+			else if ( value == "bass drum on side" ) { return MembraneEnum::bassDrumOnSide; }
+			else if ( value == "bongos" ) { return MembraneEnum::bongos; }
+			else if ( value == "conga drum" ) { return MembraneEnum::congaDrum; }
+			else if ( value == "goblet drum" ) { return MembraneEnum::gobletDrum; }
+			else if ( value == "military drum" ) { return MembraneEnum::militaryDrum; }
+			else if ( value == "snare drum" ) { return MembraneEnum::snareDrum; }
+			else if ( value == "snare drum snares off" ) { return MembraneEnum::snareDrumSnaresOff; }
+			else if ( value == "tambourine" ) { return MembraneEnum::tambourine; }
+			else if ( value == "tenor drum" ) { return MembraneEnum::tenorDrum; }
+			else if ( value == "timbales" ) { return MembraneEnum::timbales; }
+			else if ( value == "tomtom" ) { return MembraneEnum::tomtom; }
+			return MembraneEnum::bassDrum;
 		}
-		std::string toString( const Membrane value )
+		std::string toString( const MembraneEnum value )
 		{
 			switch ( value ) 
 			{
-				case Membrane::bassDrum: return "bass drum"; break;
-				case Membrane::bassDrumOnSide: return "bass drum on side"; break;
-				case Membrane::bongos: return "bongos"; break;
-				case Membrane::congaDrum: return "conga drum"; break;
-				case Membrane::gobletDrum: return "goblet drum"; break;
-				case Membrane::militaryDrum: return "military drum"; break;
-				case Membrane::snareDrum: return "snare drum"; break;
-				case Membrane::snareDrumSnaresOff: return "snare drum snares off"; break;
-				case Membrane::tambourine: return "tambourine"; break;
-				case Membrane::tenorDrum: return "tenor drum"; break;
-				case Membrane::timbales: return "timbales"; break;
-				case Membrane::tomtom: return "tomtom"; break;
+				case MembraneEnum::bassDrum: return "bass drum"; break;
+				case MembraneEnum::bassDrumOnSide: return "bass drum on side"; break;
+				case MembraneEnum::bongos: return "bongos"; break;
+				case MembraneEnum::congaDrum: return "conga drum"; break;
+				case MembraneEnum::gobletDrum: return "goblet drum"; break;
+				case MembraneEnum::militaryDrum: return "military drum"; break;
+				case MembraneEnum::snareDrum: return "snare drum"; break;
+				case MembraneEnum::snareDrumSnaresOff: return "snare drum snares off"; break;
+				case MembraneEnum::tambourine: return "tambourine"; break;
+				case MembraneEnum::tenorDrum: return "tenor drum"; break;
+				case MembraneEnum::timbales: return "timbales"; break;
+				case MembraneEnum::tomtom: return "tomtom"; break;
 				default: break;
 			}
 			return "bass drum";
 		}
-		std::ostream& toStream( std::ostream& os, const Membrane value )
+		std::ostream& toStream( std::ostream& os, const MembraneEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Membrane value )
+		std::ostream& operator<<( std::ostream& os, const MembraneEnum value )
 		{
 			return toStream( os, value );
 		}
 
-		Metal parseMetal( const std::string& value )
+		MetalEnum parseMetalEnum( const std::string& value )
 		{
-			if ( value == "almglocken" ) { return Metal::almglocken; }
-			else if ( value == "bell" ) { return Metal::bell; }
-			else if ( value == "bell plate" ) { return Metal::bellPlate; }
-			else if ( value == "brake drum" ) { return Metal::brakeDrum; }
-			else if ( value == "Chinese cymbal" ) { return Metal::chineseCymbal; }
-			else if ( value == "cowbell" ) { return Metal::cowbell; }
-			else if ( value == "crash cymbals" ) { return Metal::crashCymbals; }
-			else if ( value == "crotale" ) { return Metal::crotale; }
-			else if ( value == "cymbal tongs" ) { return Metal::cymbalTongs; }
-			else if ( value == "domed gong" ) { return Metal::domedGong; }
-			else if ( value == "finger cymbals" ) { return Metal::fingerCymbals; }
-			else if ( value == "flexatone" ) { return Metal::flexatone; }
-			else if ( value == "gong" ) { return Metal::gong; }
-			else if ( value == "hi-hat" ) { return Metal::hiHat; }
-			else if ( value == "high-hat cymbals" ) { return Metal::highHatCymbals; }
-			else if ( value == "handbell" ) { return Metal::handbell; }
-			else if ( value == "sistrum" ) { return Metal::sistrum; }
-			else if ( value == "sizzle cymbal" ) { return Metal::sizzleCymbal; }
-			else if ( value == "sleigh bells" ) { return Metal::sleighBells; }
-			else if ( value == "suspended cymbal" ) { return Metal::suspendedCymbal; }
-			else if ( value == "tam tam" ) { return Metal::tamTam; }
-			else if ( value == "triangle" ) { return Metal::triangle; }
-			else if ( value == "Vietnamese hat" ) { return Metal::vietnameseHat; }
-			return Metal::almglocken;
+			if ( value == "almglocken" ) { return MetalEnum::almglocken; }
+			else if ( value == "bell" ) { return MetalEnum::bell; }
+			else if ( value == "bell plate" ) { return MetalEnum::bellPlate; }
+			else if ( value == "brake drum" ) { return MetalEnum::brakeDrum; }
+			else if ( value == "Chinese cymbal" ) { return MetalEnum::chineseCymbal; }
+			else if ( value == "cowbell" ) { return MetalEnum::cowbell; }
+			else if ( value == "crash cymbals" ) { return MetalEnum::crashCymbals; }
+			else if ( value == "crotale" ) { return MetalEnum::crotale; }
+			else if ( value == "cymbal tongs" ) { return MetalEnum::cymbalTongs; }
+			else if ( value == "domed gong" ) { return MetalEnum::domedGong; }
+			else if ( value == "finger cymbals" ) { return MetalEnum::fingerCymbals; }
+			else if ( value == "flexatone" ) { return MetalEnum::flexatone; }
+			else if ( value == "gong" ) { return MetalEnum::gong; }
+			else if ( value == "hi-hat" ) { return MetalEnum::hiHat; }
+			else if ( value == "high-hat cymbals" ) { return MetalEnum::highHatCymbals; }
+			else if ( value == "handbell" ) { return MetalEnum::handbell; }
+			else if ( value == "sistrum" ) { return MetalEnum::sistrum; }
+			else if ( value == "sizzle cymbal" ) { return MetalEnum::sizzleCymbal; }
+			else if ( value == "sleigh bells" ) { return MetalEnum::sleighBells; }
+			else if ( value == "suspended cymbal" ) { return MetalEnum::suspendedCymbal; }
+			else if ( value == "tam tam" ) { return MetalEnum::tamTam; }
+			else if ( value == "triangle" ) { return MetalEnum::triangle; }
+			else if ( value == "Vietnamese hat" ) { return MetalEnum::vietnameseHat; }
+			return MetalEnum::almglocken;
 		}
-		std::string toString( const Metal value )
+		std::string toString( const MetalEnum value )
 		{
 			switch ( value ) 
 			{
-				case Metal::almglocken: return "almglocken"; break;
-				case Metal::bell: return "bell"; break;
-				case Metal::bellPlate: return "bell plate"; break;
-				case Metal::brakeDrum: return "brake drum"; break;
-				case Metal::chineseCymbal: return "Chinese cymbal"; break;
-				case Metal::cowbell: return "cowbell"; break;
-				case Metal::crashCymbals: return "crash cymbals"; break;
-				case Metal::crotale: return "crotale"; break;
-				case Metal::cymbalTongs: return "cymbal tongs"; break;
-				case Metal::domedGong: return "domed gong"; break;
-				case Metal::fingerCymbals: return "finger cymbals"; break;
-				case Metal::flexatone: return "flexatone"; break;
-				case Metal::gong: return "gong"; break;
-				case Metal::hiHat: return "hi-hat"; break;
-				case Metal::highHatCymbals: return "high-hat cymbals"; break;
-				case Metal::handbell: return "handbell"; break;
-				case Metal::sistrum: return "sistrum"; break;
-				case Metal::sizzleCymbal: return "sizzle cymbal"; break;
-				case Metal::sleighBells: return "sleigh bells"; break;
-				case Metal::suspendedCymbal: return "suspended cymbal"; break;
-				case Metal::tamTam: return "tam tam"; break;
-				case Metal::triangle: return "triangle"; break;
-				case Metal::vietnameseHat: return "Vietnamese hat"; break;
+				case MetalEnum::almglocken: return "almglocken"; break;
+				case MetalEnum::bell: return "bell"; break;
+				case MetalEnum::bellPlate: return "bell plate"; break;
+				case MetalEnum::brakeDrum: return "brake drum"; break;
+				case MetalEnum::chineseCymbal: return "Chinese cymbal"; break;
+				case MetalEnum::cowbell: return "cowbell"; break;
+				case MetalEnum::crashCymbals: return "crash cymbals"; break;
+				case MetalEnum::crotale: return "crotale"; break;
+				case MetalEnum::cymbalTongs: return "cymbal tongs"; break;
+				case MetalEnum::domedGong: return "domed gong"; break;
+				case MetalEnum::fingerCymbals: return "finger cymbals"; break;
+				case MetalEnum::flexatone: return "flexatone"; break;
+				case MetalEnum::gong: return "gong"; break;
+				case MetalEnum::hiHat: return "hi-hat"; break;
+				case MetalEnum::highHatCymbals: return "high-hat cymbals"; break;
+				case MetalEnum::handbell: return "handbell"; break;
+				case MetalEnum::sistrum: return "sistrum"; break;
+				case MetalEnum::sizzleCymbal: return "sizzle cymbal"; break;
+				case MetalEnum::sleighBells: return "sleigh bells"; break;
+				case MetalEnum::suspendedCymbal: return "suspended cymbal"; break;
+				case MetalEnum::tamTam: return "tam tam"; break;
+				case MetalEnum::triangle: return "triangle"; break;
+				case MetalEnum::vietnameseHat: return "Vietnamese hat"; break;
 				default: break;
 			}
 			return "almglocken";
 		}
-		std::ostream& toStream( std::ostream& os, const Metal value )
+		std::ostream& toStream( std::ostream& os, const MetalEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Metal value )
+		std::ostream& operator<<( std::ostream& os, const MetalEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -1629,37 +1629,37 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Pitched parsePitched( const std::string& value )
+		PitchedEnum parsePitchedEnum( const std::string& value )
 		{
-			if ( value == "chimes" ) { return Pitched::chimes; }
-			else if ( value == "glockenspiel" ) { return Pitched::glockenspiel; }
-			else if ( value == "mallet" ) { return Pitched::mallet; }
-			else if ( value == "marimba" ) { return Pitched::marimba; }
-			else if ( value == "tubular chimes" ) { return Pitched::tubularChimes; }
-			else if ( value == "vibraphone" ) { return Pitched::vibraphone; }
-			else if ( value == "xylophone" ) { return Pitched::xylophone; }
-			return Pitched::chimes;
+			if ( value == "chimes" ) { return PitchedEnum::chimes; }
+			else if ( value == "glockenspiel" ) { return PitchedEnum::glockenspiel; }
+			else if ( value == "mallet" ) { return PitchedEnum::mallet; }
+			else if ( value == "marimba" ) { return PitchedEnum::marimba; }
+			else if ( value == "tubular chimes" ) { return PitchedEnum::tubularChimes; }
+			else if ( value == "vibraphone" ) { return PitchedEnum::vibraphone; }
+			else if ( value == "xylophone" ) { return PitchedEnum::xylophone; }
+			return PitchedEnum::chimes;
 		}
-		std::string toString( const Pitched value )
+		std::string toString( const PitchedEnum value )
 		{
 			switch ( value ) 
 			{
-				case Pitched::chimes: return "chimes"; break;
-				case Pitched::glockenspiel: return "glockenspiel"; break;
-				case Pitched::mallet: return "mallet"; break;
-				case Pitched::marimba: return "marimba"; break;
-				case Pitched::tubularChimes: return "tubular chimes"; break;
-				case Pitched::vibraphone: return "vibraphone"; break;
-				case Pitched::xylophone: return "xylophone"; break;
+				case PitchedEnum::chimes: return "chimes"; break;
+				case PitchedEnum::glockenspiel: return "glockenspiel"; break;
+				case PitchedEnum::mallet: return "mallet"; break;
+				case PitchedEnum::marimba: return "marimba"; break;
+				case PitchedEnum::tubularChimes: return "tubular chimes"; break;
+				case PitchedEnum::vibraphone: return "vibraphone"; break;
+				case PitchedEnum::xylophone: return "xylophone"; break;
 				default: break;
 			}
 			return "chimes";
 		}
-		std::ostream& toStream( std::ostream& os, const Pitched value )
+		std::ostream& toStream( std::ostream& os, const PitchedEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Pitched value )
+		std::ostream& operator<<( std::ostream& os, const PitchedEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -1759,93 +1759,93 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		StickLocation parseStickLocation( const std::string& value )
+		StickLocationEnum parseStickLocationEnum( const std::string& value )
 		{
-			if ( value == "center" ) { return StickLocation::center; }
-			else if ( value == "rim" ) { return StickLocation::rim; }
-			else if ( value == "cymbal bell" ) { return StickLocation::cymbalBell; }
-			else if ( value == "cymbal edge" ) { return StickLocation::cymbalEdge; }
-			return StickLocation::center;
+			if ( value == "center" ) { return StickLocationEnum::center; }
+			else if ( value == "rim" ) { return StickLocationEnum::rim; }
+			else if ( value == "cymbal bell" ) { return StickLocationEnum::cymbalBell; }
+			else if ( value == "cymbal edge" ) { return StickLocationEnum::cymbalEdge; }
+			return StickLocationEnum::center;
 		}
-		std::string toString( const StickLocation value )
+		std::string toString( const StickLocationEnum value )
 		{
 			switch ( value ) 
 			{
-				case StickLocation::center: return "center"; break;
-				case StickLocation::rim: return "rim"; break;
-				case StickLocation::cymbalBell: return "cymbal bell"; break;
-				case StickLocation::cymbalEdge: return "cymbal edge"; break;
+				case StickLocationEnum::center: return "center"; break;
+				case StickLocationEnum::rim: return "rim"; break;
+				case StickLocationEnum::cymbalBell: return "cymbal bell"; break;
+				case StickLocationEnum::cymbalEdge: return "cymbal edge"; break;
 				default: break;
 			}
 			return "center";
 		}
-		std::ostream& toStream( std::ostream& os, const StickLocation value )
+		std::ostream& toStream( std::ostream& os, const StickLocationEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const StickLocation value )
+		std::ostream& operator<<( std::ostream& os, const StickLocationEnum value )
 		{
 			return toStream( os, value );
 		}
 
-		StickMaterial parseStickMaterial( const std::string& value )
+		StickMaterialEnum parseStickMaterialEnum( const std::string& value )
 		{
-			if ( value == "soft" ) { return StickMaterial::soft; }
-			else if ( value == "medium" ) { return StickMaterial::medium; }
-			else if ( value == "hard" ) { return StickMaterial::hard; }
-			else if ( value == "shaded" ) { return StickMaterial::shaded; }
-			else if ( value == "x" ) { return StickMaterial::x; }
-			return StickMaterial::soft;
+			if ( value == "soft" ) { return StickMaterialEnum::soft; }
+			else if ( value == "medium" ) { return StickMaterialEnum::medium; }
+			else if ( value == "hard" ) { return StickMaterialEnum::hard; }
+			else if ( value == "shaded" ) { return StickMaterialEnum::shaded; }
+			else if ( value == "x" ) { return StickMaterialEnum::x; }
+			return StickMaterialEnum::soft;
 		}
-		std::string toString( const StickMaterial value )
+		std::string toString( const StickMaterialEnum value )
 		{
 			switch ( value ) 
 			{
-				case StickMaterial::soft: return "soft"; break;
-				case StickMaterial::medium: return "medium"; break;
-				case StickMaterial::hard: return "hard"; break;
-				case StickMaterial::shaded: return "shaded"; break;
-				case StickMaterial::x: return "x"; break;
+				case StickMaterialEnum::soft: return "soft"; break;
+				case StickMaterialEnum::medium: return "medium"; break;
+				case StickMaterialEnum::hard: return "hard"; break;
+				case StickMaterialEnum::shaded: return "shaded"; break;
+				case StickMaterialEnum::x: return "x"; break;
 				default: break;
 			}
 			return "soft";
 		}
-		std::ostream& toStream( std::ostream& os, const StickMaterial value )
+		std::ostream& toStream( std::ostream& os, const StickMaterialEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const StickMaterial value )
+		std::ostream& operator<<( std::ostream& os, const StickMaterialEnum value )
 		{
 			return toStream( os, value );
 		}
 
-		StickType parseStickType( const std::string& value )
+		StickTypeEnum parseStickTypeEnum( const std::string& value )
 		{
-			if ( value == "bass drum" ) { return StickType::bassDrum; }
-			else if ( value == "double bass drum" ) { return StickType::doubleBassDrum; }
-			else if ( value == "timpani" ) { return StickType::timpani; }
-			else if ( value == "xylophone" ) { return StickType::xylophone; }
-			else if ( value == "yarn" ) { return StickType::yarn; }
-			return StickType::bassDrum;
+			if ( value == "bass drum" ) { return StickTypeEnum::bassDrum; }
+			else if ( value == "double bass drum" ) { return StickTypeEnum::doubleBassDrum; }
+			else if ( value == "timpani" ) { return StickTypeEnum::timpani; }
+			else if ( value == "xylophone" ) { return StickTypeEnum::xylophone; }
+			else if ( value == "yarn" ) { return StickTypeEnum::yarn; }
+			return StickTypeEnum::bassDrum;
 		}
-		std::string toString( const StickType value )
+		std::string toString( const StickTypeEnum value )
 		{
 			switch ( value ) 
 			{
-				case StickType::bassDrum: return "bass drum"; break;
-				case StickType::doubleBassDrum: return "double bass drum"; break;
-				case StickType::timpani: return "timpani"; break;
-				case StickType::xylophone: return "xylophone"; break;
-				case StickType::yarn: return "yarn"; break;
+				case StickTypeEnum::bassDrum: return "bass drum"; break;
+				case StickTypeEnum::doubleBassDrum: return "double bass drum"; break;
+				case StickTypeEnum::timpani: return "timpani"; break;
+				case StickTypeEnum::xylophone: return "xylophone"; break;
+				case StickTypeEnum::yarn: return "yarn"; break;
 				default: break;
 			}
 			return "bass drum";
 		}
-		std::ostream& toStream( std::ostream& os, const StickType value )
+		std::ostream& toStream( std::ostream& os, const StickTypeEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const StickType value )
+		std::ostream& operator<<( std::ostream& os, const StickTypeEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -1908,51 +1908,51 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Wood parseWood( const std::string& value )
+		WoodEnum parseWoodEnum( const std::string& value )
 		{
-			if ( value == "board clapper" ) { return Wood::boardClapper; }
-			else if ( value == "cabasa" ) { return Wood::cabasa; }
-			else if ( value == "castanets" ) { return Wood::castanets; }
-			else if ( value == "claves" ) { return Wood::claves; }
-			else if ( value == "guiro" ) { return Wood::guiro; }
-			else if ( value == "log drum" ) { return Wood::logDrum; }
-			else if ( value == "maraca" ) { return Wood::maraca; }
-			else if ( value == "maracas" ) { return Wood::maracas; }
-			else if ( value == "ratchet" ) { return Wood::ratchet; }
-			else if ( value == "sandpaper blocks" ) { return Wood::sandpaperBlocks; }
-			else if ( value == "slit drum" ) { return Wood::slitDrum; }
-			else if ( value == "temple block" ) { return Wood::templeBlock; }
-			else if ( value == "vibraslap" ) { return Wood::vibraslap; }
-			else if ( value == "wood block" ) { return Wood::woodBlock; }
-			return Wood::boardClapper;
+			if ( value == "board clapper" ) { return WoodEnum::boardClapper; }
+			else if ( value == "cabasa" ) { return WoodEnum::cabasa; }
+			else if ( value == "castanets" ) { return WoodEnum::castanets; }
+			else if ( value == "claves" ) { return WoodEnum::claves; }
+			else if ( value == "guiro" ) { return WoodEnum::guiro; }
+			else if ( value == "log drum" ) { return WoodEnum::logDrum; }
+			else if ( value == "maraca" ) { return WoodEnum::maraca; }
+			else if ( value == "maracas" ) { return WoodEnum::maracas; }
+			else if ( value == "ratchet" ) { return WoodEnum::ratchet; }
+			else if ( value == "sandpaper blocks" ) { return WoodEnum::sandpaperBlocks; }
+			else if ( value == "slit drum" ) { return WoodEnum::slitDrum; }
+			else if ( value == "temple block" ) { return WoodEnum::templeBlock; }
+			else if ( value == "vibraslap" ) { return WoodEnum::vibraslap; }
+			else if ( value == "wood block" ) { return WoodEnum::woodBlock; }
+			return WoodEnum::boardClapper;
 		}
-		std::string toString( const Wood value )
+		std::string toString( const WoodEnum value )
 		{
 			switch ( value ) 
 			{
-				case Wood::boardClapper: return "board clapper"; break;
-				case Wood::cabasa: return "cabasa"; break;
-				case Wood::castanets: return "castanets"; break;
-				case Wood::claves: return "claves"; break;
-				case Wood::guiro: return "guiro"; break;
-				case Wood::logDrum: return "log drum"; break;
-				case Wood::maraca: return "maraca"; break;
-				case Wood::maracas: return "maracas"; break;
-				case Wood::ratchet: return "ratchet"; break;
-				case Wood::sandpaperBlocks: return "sandpaper blocks"; break;
-				case Wood::slitDrum: return "slit drum"; break;
-				case Wood::templeBlock: return "temple block"; break;
-				case Wood::vibraslap: return "vibraslap"; break;
-				case Wood::woodBlock: return "wood block"; break;
+				case WoodEnum::boardClapper: return "board clapper"; break;
+				case WoodEnum::cabasa: return "cabasa"; break;
+				case WoodEnum::castanets: return "castanets"; break;
+				case WoodEnum::claves: return "claves"; break;
+				case WoodEnum::guiro: return "guiro"; break;
+				case WoodEnum::logDrum: return "log drum"; break;
+				case WoodEnum::maraca: return "maraca"; break;
+				case WoodEnum::maracas: return "maracas"; break;
+				case WoodEnum::ratchet: return "ratchet"; break;
+				case WoodEnum::sandpaperBlocks: return "sandpaper blocks"; break;
+				case WoodEnum::slitDrum: return "slit drum"; break;
+				case WoodEnum::templeBlock: return "temple block"; break;
+				case WoodEnum::vibraslap: return "vibraslap"; break;
+				case WoodEnum::woodBlock: return "wood block"; break;
 				default: break;
 			}
 			return "board clapper";
 		}
-		std::ostream& toStream( std::ostream& os, const Wood value )
+		std::ostream& toStream( std::ostream& os, const WoodEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Wood value )
+		std::ostream& operator<<( std::ostream& os, const WoodEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -2100,84 +2100,84 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		ArrowDirection parseArrowDirection( const std::string& value )
+		ArrowDirectionEnum parseArrowDirectionEnum( const std::string& value )
 		{
-			if ( value == "left" ) { return ArrowDirection::left; }
-			else if ( value == "up" ) { return ArrowDirection::up; }
-			else if ( value == "right" ) { return ArrowDirection::right; }
-			else if ( value == "down" ) { return ArrowDirection::down; }
-			else if ( value == "northwest" ) { return ArrowDirection::northwest; }
-			else if ( value == "northeast" ) { return ArrowDirection::northeast; }
-			else if ( value == "southeast" ) { return ArrowDirection::southeast; }
-			else if ( value == "southwest" ) { return ArrowDirection::southwest; }
-			else if ( value == "left right" ) { return ArrowDirection::leftRight; }
-			else if ( value == "up down" ) { return ArrowDirection::upDown; }
-			else if ( value == "northwest southeast" ) { return ArrowDirection::northwestSoutheast; }
-			else if ( value == "northeast southwest" ) { return ArrowDirection::northeastSouthwest; }
-			else if ( value == "other" ) { return ArrowDirection::other; }
-			return ArrowDirection::left;
+			if ( value == "left" ) { return ArrowDirectionEnum::left; }
+			else if ( value == "up" ) { return ArrowDirectionEnum::up; }
+			else if ( value == "right" ) { return ArrowDirectionEnum::right; }
+			else if ( value == "down" ) { return ArrowDirectionEnum::down; }
+			else if ( value == "northwest" ) { return ArrowDirectionEnum::northwest; }
+			else if ( value == "northeast" ) { return ArrowDirectionEnum::northeast; }
+			else if ( value == "southeast" ) { return ArrowDirectionEnum::southeast; }
+			else if ( value == "southwest" ) { return ArrowDirectionEnum::southwest; }
+			else if ( value == "left right" ) { return ArrowDirectionEnum::leftRight; }
+			else if ( value == "up down" ) { return ArrowDirectionEnum::upDown; }
+			else if ( value == "northwest southeast" ) { return ArrowDirectionEnum::northwestSoutheast; }
+			else if ( value == "northeast southwest" ) { return ArrowDirectionEnum::northeastSouthwest; }
+			else if ( value == "other" ) { return ArrowDirectionEnum::other; }
+			return ArrowDirectionEnum::left;
 		}
-		std::string toString( const ArrowDirection value )
+		std::string toString( const ArrowDirectionEnum value )
 		{
 			switch ( value ) 
 			{
-				case ArrowDirection::left: return "left"; break;
-				case ArrowDirection::up: return "up"; break;
-				case ArrowDirection::right: return "right"; break;
-				case ArrowDirection::down: return "down"; break;
-				case ArrowDirection::northwest: return "northwest"; break;
-				case ArrowDirection::northeast: return "northeast"; break;
-				case ArrowDirection::southeast: return "southeast"; break;
-				case ArrowDirection::southwest: return "southwest"; break;
-				case ArrowDirection::leftRight: return "left right"; break;
-				case ArrowDirection::upDown: return "up down"; break;
-				case ArrowDirection::northwestSoutheast: return "northwest southeast"; break;
-				case ArrowDirection::northeastSouthwest: return "northeast southwest"; break;
-				case ArrowDirection::other: return "other"; break;
+				case ArrowDirectionEnum::left: return "left"; break;
+				case ArrowDirectionEnum::up: return "up"; break;
+				case ArrowDirectionEnum::right: return "right"; break;
+				case ArrowDirectionEnum::down: return "down"; break;
+				case ArrowDirectionEnum::northwest: return "northwest"; break;
+				case ArrowDirectionEnum::northeast: return "northeast"; break;
+				case ArrowDirectionEnum::southeast: return "southeast"; break;
+				case ArrowDirectionEnum::southwest: return "southwest"; break;
+				case ArrowDirectionEnum::leftRight: return "left right"; break;
+				case ArrowDirectionEnum::upDown: return "up down"; break;
+				case ArrowDirectionEnum::northwestSoutheast: return "northwest southeast"; break;
+				case ArrowDirectionEnum::northeastSouthwest: return "northeast southwest"; break;
+				case ArrowDirectionEnum::other: return "other"; break;
 				default: break;
 			}
 			return "left";
 		}
-		std::ostream& toStream( std::ostream& os, const ArrowDirection value )
+		std::ostream& toStream( std::ostream& os, const ArrowDirectionEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const ArrowDirection value )
+		std::ostream& operator<<( std::ostream& os, const ArrowDirectionEnum value )
 		{
 			return toStream( os, value );
 		}
 
-		ArrowStyle parseArrowStyle( const std::string& value )
+		ArrowStyleEnum parseArrowStyleEnum( const std::string& value )
 		{
-			if ( value == "single" ) { return ArrowStyle::single; }
-			else if ( value == "double" ) { return ArrowStyle::double_; }
-			else if ( value == "filled" ) { return ArrowStyle::filled; }
-			else if ( value == "hollow" ) { return ArrowStyle::hollow; }
-			else if ( value == "paired" ) { return ArrowStyle::paired; }
-			else if ( value == "combined" ) { return ArrowStyle::combined; }
-			else if ( value == "other" ) { return ArrowStyle::other; }
-			return ArrowStyle::single;
+			if ( value == "single" ) { return ArrowStyleEnum::single; }
+			else if ( value == "double" ) { return ArrowStyleEnum::double_; }
+			else if ( value == "filled" ) { return ArrowStyleEnum::filled; }
+			else if ( value == "hollow" ) { return ArrowStyleEnum::hollow; }
+			else if ( value == "paired" ) { return ArrowStyleEnum::paired; }
+			else if ( value == "combined" ) { return ArrowStyleEnum::combined; }
+			else if ( value == "other" ) { return ArrowStyleEnum::other; }
+			return ArrowStyleEnum::single;
 		}
-		std::string toString( const ArrowStyle value )
+		std::string toString( const ArrowStyleEnum value )
 		{
 			switch ( value ) 
 			{
-				case ArrowStyle::single: return "single"; break;
-				case ArrowStyle::double_: return "double"; break;
-				case ArrowStyle::filled: return "filled"; break;
-				case ArrowStyle::hollow: return "hollow"; break;
-				case ArrowStyle::paired: return "paired"; break;
-				case ArrowStyle::combined: return "combined"; break;
-				case ArrowStyle::other: return "other"; break;
+				case ArrowStyleEnum::single: return "single"; break;
+				case ArrowStyleEnum::double_: return "double"; break;
+				case ArrowStyleEnum::filled: return "filled"; break;
+				case ArrowStyleEnum::hollow: return "hollow"; break;
+				case ArrowStyleEnum::paired: return "paired"; break;
+				case ArrowStyleEnum::combined: return "combined"; break;
+				case ArrowStyleEnum::other: return "other"; break;
 				default: break;
 			}
 			return "single";
 		}
-		std::ostream& toStream( std::ostream& os, const ArrowStyle value )
+		std::ostream& toStream( std::ostream& os, const ArrowStyleEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const ArrowStyle value )
+		std::ostream& operator<<( std::ostream& os, const ArrowStyleEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -2240,27 +2240,27 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		CircularArrow parseCircularArrow( const std::string& value )
+		CircularArrowEnum parseCircularArrowEnum( const std::string& value )
 		{
-			if ( value == "clockwise" ) { return CircularArrow::clockwise; }
-			else if ( value == "anticlockwise" ) { return CircularArrow::anticlockwise; }
-			return CircularArrow::clockwise;
+			if ( value == "clockwise" ) { return CircularArrowEnum::clockwise; }
+			else if ( value == "anticlockwise" ) { return CircularArrowEnum::anticlockwise; }
+			return CircularArrowEnum::clockwise;
 		}
-		std::string toString( const CircularArrow value )
+		std::string toString( const CircularArrowEnum value )
 		{
 			switch ( value ) 
 			{
-				case CircularArrow::clockwise: return "clockwise"; break;
-				case CircularArrow::anticlockwise: return "anticlockwise"; break;
+				case CircularArrowEnum::clockwise: return "clockwise"; break;
+				case CircularArrowEnum::anticlockwise: return "anticlockwise"; break;
 				default: break;
 			}
 			return "clockwise";
 		}
-		std::ostream& toStream( std::ostream& os, const CircularArrow value )
+		std::ostream& toStream( std::ostream& os, const CircularArrowEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const CircularArrow value )
+		std::ostream& operator<<( std::ostream& os, const CircularArrowEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -2604,31 +2604,31 @@ namespace mx
 			return toStream( os, value );
 		}
 
-		Syllabic parseSyllabic( const std::string& value )
+		SyllabicEnum parseSyllabicEnum( const std::string& value )
 		{
-			if ( value == "single" ) { return Syllabic::single; }
-			else if ( value == "begin" ) { return Syllabic::begin; }
-			else if ( value == "end" ) { return Syllabic::end; }
-			else if ( value == "middle" ) { return Syllabic::middle; }
-			return Syllabic::single;
+			if ( value == "single" ) { return SyllabicEnum::single; }
+			else if ( value == "begin" ) { return SyllabicEnum::begin; }
+			else if ( value == "end" ) { return SyllabicEnum::end; }
+			else if ( value == "middle" ) { return SyllabicEnum::middle; }
+			return SyllabicEnum::single;
 		}
-		std::string toString( const Syllabic value )
+		std::string toString( const SyllabicEnum value )
 		{
 			switch ( value ) 
 			{
-				case Syllabic::single: return "single"; break;
-				case Syllabic::begin: return "begin"; break;
-				case Syllabic::end: return "end"; break;
-				case Syllabic::middle: return "middle"; break;
+				case SyllabicEnum::single: return "single"; break;
+				case SyllabicEnum::begin: return "begin"; break;
+				case SyllabicEnum::end: return "end"; break;
+				case SyllabicEnum::middle: return "middle"; break;
 				default: break;
 			}
 			return "single";
 		}
-		std::ostream& toStream( std::ostream& os, const Syllabic value )
+		std::ostream& toStream( std::ostream& os, const SyllabicEnum value )
 		{
 			return os << toString( value );
 		}
-		std::ostream& operator<<( std::ostream& os, const Syllabic value )
+		std::ostream& operator<<( std::ostream& os, const SyllabicEnum value )
 		{
 			return toStream( os, value );
 		}
@@ -2741,29 +2741,29 @@ namespace mx
 			return toStream( os, value );
 		}
 
-        Mode::Mode( const ModeEnum value )
+        MxdeValue::MxdeValue( const ModeEnum value )
         :myEnum( value )
         ,myCustomValue( "" )
         {
             setValue( value );
         }
-        Mode::Mode( const std::string& value )
+        MxdeValue::MxdeValue( const std::string& value )
         :myEnum( ModeEnum::other )
         ,myCustomValue( value )
         {
             setValue( value );
         }
-        Mode::Mode()
+        MxdeValue::MxdeValue()
         :myEnum( ModeEnum::major )
         ,myCustomValue( "" )
         {
             setValue( ModeEnum::major );
         }
-        ModeEnum Mode::getValue() const
+        ModeEnum MxdeValue::getValue() const
         {
             return myEnum;
         }
-        std::string Mode::getValueString() const
+        std::string MxdeValue::getValueString() const
         {
             if ( myEnum != ModeEnum::other )
             {
@@ -2774,11 +2774,11 @@ namespace mx
                 return myCustomValue;
             }
         }
-        void Mode::setValue( const ModeEnum value )
+        void MxdeValue::setValue( const ModeEnum value )
         {
             myEnum = value;
         }
-        void Mode::setValue( const std::string& value )
+        void MxdeValue::setValue( const std::string& value )
         {
             bool found = false;
             ModeEnum temp = parseModeEnum( value, found );
@@ -2792,19 +2792,19 @@ namespace mx
                 myCustomValue = value;
             }
         }
-        Mode parseMode( const std::string& value )
+        MxdeValue parseMxdeValue( const std::string& value )
         {
-            return Mode( value );
+            return MxdeValue( value );
         }
-        std::string toString( const Mode& value )
+        std::string toString( const MxdeValue& value )
         {
             return value.getValueString();
         }
-        std::ostream& toStream( std::ostream& os, const Mode& value )
+        std::ostream& toStream( std::ostream& os, const MxdeValue& value )
         {
             return os << toString( value );
         }
-        std::ostream& operator<<( std::ostream& os, const Mode& value )
+        std::ostream& operator<<( std::ostream& os, const MxdeValue& value )
         {
             return toStream( os, value );
         }

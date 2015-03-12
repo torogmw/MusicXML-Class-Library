@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, TimeRelation )
 {
 	std::string indentString( INDENT );
-	TimeRelation value1;
-	TimeRelation value2;
+	TimeRelationEnum value1;
+	TimeRelationEnum value2;
 	TimeRelation object1;
 	TimeRelation object2( value2 );
 	std::stringstream default_constructed;

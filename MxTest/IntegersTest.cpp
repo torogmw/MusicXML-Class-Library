@@ -245,20 +245,20 @@ TEST( NonNegativeInteger07, Integers )
 }
 
 /* MIN = 1, MAX = 3, DEFAULT = 1 */
-//class AccordionMiddle : public IntRange
-TEST( AccordionMiddle, Integers )
+//class AccordionMiddleValue : public IntRange
+TEST( AccordionMiddleValue, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
-    AccordionMiddle x;
+    AccordionMiddleValue x;
     expected = 1;
     actual = x.getValue();
     CHECK_EQUAL( expected, actual )
-    AccordionMiddle y( 0 );
+    AccordionMiddleValue y( 0 );
     expected = 1;
     actual = y.getValue();
     CHECK_EQUAL( expected, actual )
-    AccordionMiddle z( 4 );
+    AccordionMiddleValue z( 4 );
     expected = 3;
     actual = z.getValue();
     CHECK_EQUAL( expected, actual )
@@ -300,20 +300,20 @@ TEST( BeamLevel, Integers )
 }
 
 /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
-//class Fifths : public Int
-TEST( Fifths, Integers )
+//class FifthsValue : public Int
+TEST( FifthsValue, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
-    Fifths x;
+    FifthsValue x;
     expected = 0;
     actual = x.getValue();
     CHECK_EQUAL( expected, actual )
-    Fifths y( -1 );
+    FifthsValue y( -1 );
     expected = -1;
     actual = y.getValue();
     CHECK_EQUAL( expected, actual )
-    Fifths z( 9 );
+    FifthsValue z( 9 );
     expected = 9;
     actual = z.getValue();
     CHECK_EQUAL( expected, actual )
@@ -462,20 +462,20 @@ TEST( NumberOfLines, Integers )
 }
 
 /* MIN = 0, MAX = 9, DEFAULT = 0 */
-//class Octave : public IntRange
-TEST( Octave, Integers )
+//class OctaveValue : public IntRange
+TEST( OctaveValue, Integers )
 {
     IntType expected = 0;
     IntType actual = 0;
-    Octave x;
+    OctaveValue x;
     expected = 0;
     actual = x.getValue();
     CHECK_EQUAL( expected, actual )
-    Octave y( -1 );
+    OctaveValue y( -1 );
     expected = 0;
     actual = y.getValue();
     CHECK_EQUAL( expected, actual )
-    Octave z( 16385 );
+    OctaveValue z( 16385 );
     expected = 9;
     actual = z.getValue();
     CHECK_EQUAL( expected, actual )

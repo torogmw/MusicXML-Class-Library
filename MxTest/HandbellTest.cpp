@@ -18,7 +18,7 @@ TEST( Test01, Handbell )
     attributes1->hasFontStyle = true;
     attributes1->fontStyle = FontStyle::italic;
     attributes1->hasRelativeX = true;
-    attributes1->relativeX = Tenths{ -0.0001 };
+    attributes1->relativeX = TenthsValue{ -0.0001 };
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );

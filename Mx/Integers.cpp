@@ -166,9 +166,9 @@ namespace mx
             return toStream( os, value );
         }
         
-        AccordionMiddle::AccordionMiddle( IntType value )
+        AccordionMiddleValue::AccordionMiddleValue( IntType value )
         :IntRange( 1, 3, value ) {}
-        AccordionMiddle::AccordionMiddle()
+        AccordionMiddleValue::AccordionMiddleValue()
         :IntRange( 1, 3, 1 ) {}
         
         BeamLevel::BeamLevel( IntType value )
@@ -176,9 +176,9 @@ namespace mx
         BeamLevel::BeamLevel()
         :IntRange( 1, 8, 1 ) {}
         
-        Fifths::Fifths( IntType value )
+        FifthsValue::FifthsValue( IntType value )
         :Integer( value ) {}
-        Fifths::Fifths()
+        FifthsValue::FifthsValue()
         :Integer( 0 ) {}
         
         Midi16::Midi16( IntType value )
@@ -206,9 +206,9 @@ namespace mx
         NumberOfLines::NumberOfLines()
         :IntRange( 0, 3, 0 ) {}
         
-        Octave::Octave( IntType value )
+        OctaveValue::OctaveValue( IntType value )
         :IntRange( 0, 9, value ) {}
-        Octave::Octave()
+        OctaveValue::OctaveValue()
         :IntRange( 0, 9, 0 ) {}
         
         StaffLine::StaffLine( IntType value )

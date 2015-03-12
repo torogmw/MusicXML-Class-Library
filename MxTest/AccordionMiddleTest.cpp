@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, AccordionMiddle )
 {
 	std::string indentString( INDENT );
-	AccordionMiddle value1;
-	AccordionMiddle value2;
+	AccordionMiddleValue value1;
+	AccordionMiddleValue value2;
 	AccordionMiddle object1;
 	AccordionMiddle object2( value2 );
 	std::stringstream default_constructed;

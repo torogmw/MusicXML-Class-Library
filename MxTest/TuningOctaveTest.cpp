@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, TuningOctave )
 {
 	std::string indentString( INDENT );
-	Octave value1;
-	Octave value2;
+	OctaveValue value1;
+	OctaveValue value2;
 	TuningOctave object1;
 	TuningOctave object2( value2 );
 	std::stringstream default_constructed;

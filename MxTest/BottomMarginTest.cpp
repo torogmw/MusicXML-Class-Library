@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, BottomMargin )
 {
 	std::string indentString( INDENT );
-	Tenths value1;
-	Tenths value2;
+	TenthsValue value1;
+	TenthsValue value2;
 	BottomMargin object1;
 	BottomMargin object2( value2 );
 	std::stringstream default_constructed;

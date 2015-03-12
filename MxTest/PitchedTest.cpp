@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Pitched )
 {
 	std::string indentString( INDENT );
-	Pitched value1;
-	Pitched value2;
+	PitchedEnum value1;
+	PitchedEnum value2;
 	Pitched object1;
 	Pitched object2( value2 );
 	std::stringstream default_constructed;

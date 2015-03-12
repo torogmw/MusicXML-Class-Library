@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, RightMargin )
 {
 	std::string indentString( INDENT );
-    mx::types::Tenths value1;
-	mx::types::Tenths value2;
+    mx::types::TenthsValue value1;
+	mx::types::TenthsValue value2;
 	RightMargin object1;
 	RightMargin object2( value2 );
 	std::stringstream default_constructed;

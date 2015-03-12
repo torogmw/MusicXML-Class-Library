@@ -122,7 +122,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const LineType value );
 		std::ostream& operator<<( std::ostream& os, const LineType value );
 
-		enum class Mute
+		enum class MuteEnum
 		{
 			on = 0,
 			off = 1,
@@ -140,10 +140,10 @@ namespace mx
 			echo = 13,
 			palm = 14
 		};
-		Mute parseMute( const std::string& value );
-		std::string toString( const Mute value );
-		std::ostream& toStream( std::ostream& os, const Mute value );
-		std::ostream& operator<<( std::ostream& os, const Mute value );
+		MuteEnum parseMuteEnum( const std::string& value );
+		std::string toString( const MuteEnum value );
+		std::ostream& toStream( std::ostream& os, const MuteEnum value );
+		std::ostream& operator<<( std::ostream& os, const MuteEnum value );
 
 		enum class OverUnder
 		{
@@ -155,7 +155,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const OverUnder value );
 		std::ostream& operator<<( std::ostream& os, const OverUnder value );
 
-		enum class SemiPitched
+		enum class SemiPitchedEnum
 		{
 			high = 0,
 			mediumHigh = 1,
@@ -164,10 +164,10 @@ namespace mx
 			low = 4,
 			veryLow = 5
 		};
-		SemiPitched parseSemiPitched( const std::string& value );
-		std::string toString( const SemiPitched value );
-		std::ostream& toStream( std::ostream& os, const SemiPitched value );
-		std::ostream& operator<<( std::ostream& os, const SemiPitched value );
+		SemiPitchedEnum parseSemiPitchedEnum( const std::string& value );
+		std::string toString( const SemiPitchedEnum value );
+		std::ostream& toStream( std::ostream& os, const SemiPitchedEnum value );
+		std::ostream& operator<<( std::ostream& os, const SemiPitchedEnum value );
 
 		enum class StartNote
 		{
@@ -369,7 +369,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const StaffTypeEnum value );
 		std::ostream& operator<<( std::ostream& os, const StaffTypeEnum value );
 
-		enum class TimeRelation
+		enum class TimeRelationEnum
 		{
 			parentheses = 0,
 			bracket = 1,
@@ -378,10 +378,10 @@ namespace mx
 			space = 4,
 			hyphen = 5
 		};
-		TimeRelation parseTimeRelation( const std::string& value );
-		std::string toString( const TimeRelation value );
-		std::ostream& toStream( std::ostream& os, const TimeRelation value );
-		std::ostream& operator<<( std::ostream& os, const TimeRelation value );
+		TimeRelationEnum parseTimeRelationEnum( const std::string& value );
+		std::string toString( const TimeRelationEnum value );
+		std::ostream& toStream( std::ostream& os, const TimeRelationEnum value );
+		std::ostream& operator<<( std::ostream& os, const TimeRelationEnum value );
 
 		enum class TimeSeparator
 		{
@@ -523,7 +523,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const DegreeTypeValue value );
 		std::ostream& operator<<( std::ostream& os, const DegreeTypeValue value );
 
-		enum class Effect
+		enum class EffectEnum
 		{
 			anvil = 0,
 			autoHorn = 1,
@@ -540,10 +540,10 @@ namespace mx
 			windMachine = 12,
 			windWhistle = 13
 		};
-		Effect parseEffect( const std::string& value );
-		std::string toString( const Effect value );
-		std::ostream& toStream( std::ostream& os, const Effect value );
-		std::ostream& operator<<( std::ostream& os, const Effect value );
+		EffectEnum parseEffectEnum( const std::string& value );
+		std::string toString( const EffectEnum value );
+		std::ostream& toStream( std::ostream& os, const EffectEnum value );
+		std::ostream& operator<<( std::ostream& os, const EffectEnum value );
 
 		enum class GlassEnum
 		{
@@ -630,7 +630,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const MeasureNumberingValue value );
 		std::ostream& operator<<( std::ostream& os, const MeasureNumberingValue value );
 
-		enum class Membrane
+		enum class MembraneEnum
 		{
 			bassDrum = 0,
 			bassDrumOnSide = 1,
@@ -645,12 +645,12 @@ namespace mx
 			timbales = 10,
 			tomtom = 11
 		};
-		Membrane parseMembrane( const std::string& value );
-		std::string toString( const Membrane value );
-		std::ostream& toStream( std::ostream& os, const Membrane value );
-		std::ostream& operator<<( std::ostream& os, const Membrane value );
+		MembraneEnum parseMembraneEnum( const std::string& value );
+		std::string toString( const MembraneEnum value );
+		std::ostream& toStream( std::ostream& os, const MembraneEnum value );
+		std::ostream& operator<<( std::ostream& os, const MembraneEnum value );
 
-		enum class Metal
+		enum class MetalEnum
 		{
 			almglocken = 0,
 			bell = 1,
@@ -676,10 +676,10 @@ namespace mx
 			triangle = 21,
 			vietnameseHat = 22
 		};
-		Metal parseMetal( const std::string& value );
-		std::string toString( const Metal value );
-		std::ostream& toStream( std::ostream& os, const Metal value );
-		std::ostream& operator<<( std::ostream& os, const Metal value );
+		MetalEnum parseMetalEnum( const std::string& value );
+		std::string toString( const MetalEnum value );
+		std::ostream& toStream( std::ostream& os, const MetalEnum value );
+		std::ostream& operator<<( std::ostream& os, const MetalEnum value );
 
 		enum class OnOff
 		{
@@ -691,7 +691,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const OnOff value );
 		std::ostream& operator<<( std::ostream& os, const OnOff value );
 
-		enum class Pitched
+		enum class PitchedEnum
 		{
 			chimes = 0,
 			glockenspiel = 1,
@@ -701,10 +701,10 @@ namespace mx
 			vibraphone = 5,
 			xylophone = 6
 		};
-		Pitched parsePitched( const std::string& value );
-		std::string toString( const Pitched value );
-		std::ostream& toStream( std::ostream& os, const Pitched value );
-		std::ostream& operator<<( std::ostream& os, const Pitched value );
+		PitchedEnum parsePitchedEnum( const std::string& value );
+		std::string toString( const PitchedEnum value );
+		std::ostream& toStream( std::ostream& os, const PitchedEnum value );
+		std::ostream& operator<<( std::ostream& os, const PitchedEnum value );
 
 		enum class PrincipalVoiceSymbol
 		{
@@ -746,19 +746,19 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const TipDirection value );
 		std::ostream& operator<<( std::ostream& os, const TipDirection value );
 
-		enum class StickLocation
+		enum class StickLocationEnum
 		{
 			center = 0,
 			rim = 1,
 			cymbalBell = 2,
 			cymbalEdge = 3
 		};
-		StickLocation parseStickLocation( const std::string& value );
-		std::string toString( const StickLocation value );
-		std::ostream& toStream( std::ostream& os, const StickLocation value );
-		std::ostream& operator<<( std::ostream& os, const StickLocation value );
+		StickLocationEnum parseStickLocationEnum( const std::string& value );
+		std::string toString( const StickLocationEnum value );
+		std::ostream& toStream( std::ostream& os, const StickLocationEnum value );
+		std::ostream& operator<<( std::ostream& os, const StickLocationEnum value );
 
-		enum class StickMaterial
+		enum class StickMaterialEnum
 		{
 			soft = 0,
 			medium = 1,
@@ -766,12 +766,12 @@ namespace mx
 			shaded = 3,
 			x = 4
 		};
-		StickMaterial parseStickMaterial( const std::string& value );
-		std::string toString( const StickMaterial value );
-		std::ostream& toStream( std::ostream& os, const StickMaterial value );
-		std::ostream& operator<<( std::ostream& os, const StickMaterial value );
+		StickMaterialEnum parseStickMaterialEnum( const std::string& value );
+		std::string toString( const StickMaterialEnum value );
+		std::ostream& toStream( std::ostream& os, const StickMaterialEnum value );
+		std::ostream& operator<<( std::ostream& os, const StickMaterialEnum value );
 
-		enum class StickType
+		enum class StickTypeEnum
 		{
 			bassDrum = 0,
 			doubleBassDrum = 1,
@@ -779,10 +779,10 @@ namespace mx
 			xylophone = 3,
 			yarn = 4
 		};
-		StickType parseStickType( const std::string& value );
-		std::string toString( const StickType value );
-		std::ostream& toStream( std::ostream& os, const StickType value );
-		std::ostream& operator<<( std::ostream& os, const StickType value );
+		StickTypeEnum parseStickTypeEnum( const std::string& value );
+		std::string toString( const StickTypeEnum value );
+		std::ostream& toStream( std::ostream& os, const StickTypeEnum value );
+		std::ostream& operator<<( std::ostream& os, const StickTypeEnum value );
 
 		enum class UpDownStopContinue
 		{
@@ -808,7 +808,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const WedgeType value );
 		std::ostream& operator<<( std::ostream& os, const WedgeType value );
 
-		enum class Wood
+		enum class WoodEnum
 		{
 			boardClapper = 0,
 			cabasa = 1,
@@ -825,10 +825,10 @@ namespace mx
 			vibraslap = 12,
 			woodBlock = 13
 		};
-		Wood parseWood( const std::string& value );
-		std::string toString( const Wood value );
-		std::ostream& toStream( std::ostream& os, const Wood value );
-		std::ostream& operator<<( std::ostream& os, const Wood value );
+		WoodEnum parseWoodEnum( const std::string& value );
+		std::string toString( const WoodEnum value );
+		std::ostream& toStream( std::ostream& os, const WoodEnum value );
+		std::ostream& operator<<( std::ostream& os, const WoodEnum value );
 
 		enum class MarginType
 		{
@@ -894,7 +894,7 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const AccidentalValue value );
 		std::ostream& operator<<( std::ostream& os, const AccidentalValue value );
 
-		enum class ArrowDirection
+		enum class ArrowDirectionEnum
 		{
 			left = 0,
 			up = 1,
@@ -910,12 +910,12 @@ namespace mx
 			northeastSouthwest = 11,
 			other = 12
 		};
-		ArrowDirection parseArrowDirection( const std::string& value );
-		std::string toString( const ArrowDirection value );
-		std::ostream& toStream( std::ostream& os, const ArrowDirection value );
-		std::ostream& operator<<( std::ostream& os, const ArrowDirection value );
+		ArrowDirectionEnum parseArrowDirectionEnum( const std::string& value );
+		std::string toString( const ArrowDirectionEnum value );
+		std::ostream& toStream( std::ostream& os, const ArrowDirectionEnum value );
+		std::ostream& operator<<( std::ostream& os, const ArrowDirectionEnum value );
 
-		enum class ArrowStyle
+		enum class ArrowStyleEnum
 		{
 			single = 0,
 			double_ = 1,
@@ -925,10 +925,10 @@ namespace mx
 			combined = 5,
 			other = 6
 		};
-		ArrowStyle parseArrowStyle( const std::string& value );
-		std::string toString( const ArrowStyle value );
-		std::ostream& toStream( std::ostream& os, const ArrowStyle value );
-		std::ostream& operator<<( std::ostream& os, const ArrowStyle value );
+		ArrowStyleEnum parseArrowStyleEnum( const std::string& value );
+		std::string toString( const ArrowStyleEnum value );
+		std::ostream& toStream( std::ostream& os, const ArrowStyleEnum value );
+		std::ostream& operator<<( std::ostream& os, const ArrowStyleEnum value );
 
 		enum class BeamValue
 		{
@@ -954,15 +954,15 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const BreathMarkValue value );
 		std::ostream& operator<<( std::ostream& os, const BreathMarkValue value );
 
-		enum class CircularArrow
+		enum class CircularArrowEnum
 		{
 			clockwise = 0,
 			anticlockwise = 1
 		};
-		CircularArrow parseCircularArrow( const std::string& value );
-		std::string toString( const CircularArrow value );
-		std::ostream& toStream( std::ostream& os, const CircularArrow value );
-		std::ostream& operator<<( std::ostream& os, const CircularArrow value );
+		CircularArrowEnum parseCircularArrowEnum( const std::string& value );
+		std::string toString( const CircularArrowEnum value );
+		std::ostream& toStream( std::ostream& os, const CircularArrowEnum value );
+		std::ostream& operator<<( std::ostream& os, const CircularArrowEnum value );
 
 		enum class Fan
 		{
@@ -1111,17 +1111,17 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const StepEnum value );
 		std::ostream& operator<<( std::ostream& os, const StepEnum value );
 
-		enum class Syllabic
+		enum class SyllabicEnum
 		{
 			single = 0,
 			begin = 1,
 			end = 2,
 			middle = 3
 		};
-		Syllabic parseSyllabic( const std::string& value );
-		std::string toString( const Syllabic value );
-		std::ostream& toStream( std::ostream& os, const Syllabic value );
-		std::ostream& operator<<( std::ostream& os, const Syllabic value );
+		SyllabicEnum parseSyllabicEnum( const std::string& value );
+		std::string toString( const SyllabicEnum value );
+		std::ostream& toStream( std::ostream& os, const SyllabicEnum value );
+		std::ostream& operator<<( std::ostream& os, const SyllabicEnum value );
 
 		enum class GroupBarlineValue
 		{
@@ -1167,12 +1167,12 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const ModeEnum value );
 		std::ostream& operator<<( std::ostream& os, const ModeEnum value );
         
-        class Mode
+        class MxdeValue
         {
         public:
-            explicit Mode( const ModeEnum value );
-            explicit Mode( const std::string& value );
-            Mode();
+            explicit MxdeValue( const ModeEnum value );
+            explicit MxdeValue( const std::string& value );
+            MxdeValue();
             ModeEnum getValue() const;
             std::string getValueString() const;
             void setValue( const ModeEnum value );
@@ -1181,10 +1181,10 @@ namespace mx
             ModeEnum myEnum;
             std::string myCustomValue;
         };
-        Mode parseMode( const std::string& value );
-		std::string toString( const Mode& value );
-		std::ostream& toStream( std::ostream& os, const Mode& value );
-		std::ostream& operator<<( std::ostream& os, const Mode& value );
+        MxdeValue parseMxdeValue( const std::string& value );
+		std::string toString( const MxdeValue& value );
+		std::ostream& toStream( std::ostream& os, const MxdeValue& value );
+		std::ostream& operator<<( std::ostream& os, const MxdeValue& value );
         
         enum class DistanceTypeEnum
 		{

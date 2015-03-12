@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Distance )
 {
 	std::string indentString( INDENT );
-	Tenths value1{ 1.2 };
-	Tenths value2{ 9.735271627 };
+	TenthsValue value1{ 1.2 };
+	TenthsValue value2{ 9.735271627 };
 	Distance object1;
 	Distance object2( value2 );
 	DistanceAttributesPtr attributes1 = std::make_shared<DistanceAttributes>();

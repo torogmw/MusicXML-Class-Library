@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Fifths )
 {
 	std::string indentString( INDENT );
-	Fifths value1;
-	Fifths value2;
+	FifthsValue value1;
+	FifthsValue value2;
 	Fifths object1;
 	Fifths object2( value2 );
 	std::stringstream default_constructed;

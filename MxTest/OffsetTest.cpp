@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Offset )
 {
 	std::string indentString( INDENT );
-	Divisions value1{ -1.1 };
-	Divisions value2{ 3.33333 };
+	DivisionsValue value1{ -1.1 };
+	DivisionsValue value2{ 3.33333 };
 	Offset object1;
 	Offset object2( value2 );
 	OffsetAttributesPtr attributes1 = std::make_shared<OffsetAttributes>();

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Effect )
 {
 	std::string indentString( INDENT );
-	Effect value1;
-	Effect value2;
+	EffectEnum value1;
+	EffectEnum value2;
 	Effect object1;
 	Effect object2( value2 );
 	std::stringstream default_constructed;

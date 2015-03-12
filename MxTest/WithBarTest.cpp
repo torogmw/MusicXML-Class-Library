@@ -16,7 +16,7 @@ TEST( Test01, WithBar )
 	WithBarAttributesPtr attributesNull;
 	/* set some attribute1 values here */
     attributes1->hasDefaultY = true;
-    attributes1->defaultY = Tenths{ 0.391 };
+    attributes1->defaultY = TenthsValue{ 0.391 };
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );

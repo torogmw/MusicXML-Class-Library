@@ -8,9 +8,9 @@ TEST( Test01, Dynamics )
 {
     Dynamics x( (DynamicsValue( DynamicsEnum::p )) );
     DynamicsAttributesPtr da = x.getAttributes();
-    da->defaultX = Tenths( 66 );
+    da->defaultX = TenthsValue( 66 );
     da->hasDefaultX = true;
-    da->defaultY = Tenths( -68 );
+    da->defaultY = TenthsValue( -68 );
     da->hasDefaultY = true;
     da->halign = LeftCenterRight::center;
     da->hasHalign = true;
@@ -27,9 +27,9 @@ TEST( Test02, Dynamics )
 {
     Dynamics x( (DynamicsValue( "purple" )) );
     DynamicsAttributesPtr da = x.getAttributes();
-    da->defaultX = Tenths( 66 );
+    da->defaultX = TenthsValue( 66 );
     da->hasDefaultX = true;
-    da->defaultY = Tenths( -68 );
+    da->defaultY = TenthsValue( -68 );
     da->hasDefaultY = true;
     da->halign = LeftCenterRight::center;
     da->hasHalign = true;

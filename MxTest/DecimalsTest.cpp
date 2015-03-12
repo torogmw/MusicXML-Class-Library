@@ -280,39 +280,39 @@ TEST( NonNegativeDecimal06, Decimals )
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
 
-// using Divisions = Decimal;
-TEST( Divisions01, Decimals )
+// using DivisionsValue = Decimal;
+TEST( DivisionsValue01, Decimals )
 {
-    Divisions d;
+    DivisionsValue d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions02, Decimals )
+TEST( DivisionsValue02, Decimals )
 {
-    Divisions d( 1.234 );
+    DivisionsValue d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions02b, Decimals )
+TEST( DivisionsValue02b, Decimals )
 {
-    Divisions d( 123456789012.123456789012 );
+    DivisionsValue d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions03, Decimals )
+TEST( DivisionsValue03, Decimals )
 {
-    Divisions d( 1.234 );
+    DivisionsValue d( 1.234 );
     d.setValue( 0.00000384 );
     DecimalType expected = 0.00000384;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions04, Decimals )
+TEST( DivisionsValue04, Decimals )
 {
-    Divisions d( 1.234 );
+    DivisionsValue d( 1.234 );
     d.setValue( 0.00000384109 );
     std::string expected = "0.00000384109";
     std::string actual = toString( d, 11 );
@@ -328,18 +328,18 @@ TEST( Divisions04, Decimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Divisions05, Decimals )
+TEST( DivisionsValue05, Decimals )
 {
-    Divisions d( 1.234 );
+    DivisionsValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "-435.249" );
     DecimalType expected = -435.249;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Divisions06, Decimals )
+TEST( DivisionsValue06, Decimals )
 {
-    Divisions d( 1.234 );
+    DivisionsValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "- 435.249" );
     DecimalType expected = 0.00000384;
@@ -347,39 +347,39 @@ TEST( Divisions06, Decimals )
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
 
-// using Millimeters = Decimal;
-TEST( Millimeters01, Decimals )
+// using MillimetersValue = Decimal;
+TEST( MillimetersValue01, Decimals )
 {
-    Millimeters d;
+    MillimetersValue d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters02, Decimals )
+TEST( MillimetersValue02, Decimals )
 {
-    Millimeters d( 1.234 );
+    MillimetersValue d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters02b, Decimals )
+TEST( MillimetersValue02b, Decimals )
 {
-    Millimeters d( 123456789012.123456789012 );
+    MillimetersValue d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters03, Decimals )
+TEST( MillimetersValue03, Decimals )
 {
-    Millimeters d( 1.234 );
+    MillimetersValue d( 1.234 );
     d.setValue( 0.00000384 );
     DecimalType expected = 0.00000384;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters04, Decimals )
+TEST( MillimetersValue04, Decimals )
 {
-    Millimeters d( 1.234 );
+    MillimetersValue d( 1.234 );
     d.setValue( 0.00000384109 );
     std::string expected = "0.00000384109";
     std::string actual = toString( d, 11 );
@@ -395,18 +395,18 @@ TEST( Millimeters04, Decimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Millimeters05, Decimals )
+TEST( MillimetersValue05, Decimals )
 {
-    Millimeters d( 1.234 );
+    MillimetersValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "-435.249" );
     DecimalType expected = -435.249;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Millimeters06, Decimals )
+TEST( MillimetersValue06, Decimals )
 {
-    Millimeters d( 1.234 );
+    MillimetersValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "- 435.249" );
     DecimalType expected = 0.00000384;
@@ -491,39 +491,39 @@ TEST( Percent06, Decimals )
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
 
-// using PositiveDivisions = PositiveDecimal;
-TEST( PositiveDivisions01, Decimals )
+// using PositiveDivisionsValue = PositiveDecimal;
+TEST( PositiveDivisionsValue01, Decimals )
 {
-    PositiveDivisions d;
+    PositiveDivisionsValue d;
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions02, Decimals )
+TEST( PositiveDivisionsValue02, Decimals )
 {
-    PositiveDivisions d( 1.234 );
+    PositiveDivisionsValue d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions02b, Decimals )
+TEST( PositiveDivisionsValue02b, Decimals )
 {
-    PositiveDivisions d( -123456789012.123456789012 );
+    PositiveDivisionsValue d( -123456789012.123456789012 );
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions03, Decimals )
+TEST( PositiveDivisionsValue03, Decimals )
 {
-    PositiveDivisions d( 1.234 );
+    PositiveDivisionsValue d( 1.234 );
     d.setValue( 0.00000384 );
     DecimalType expected = 0.00000384;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions04, Decimals )
+TEST( PositiveDivisionsValue04, Decimals )
 {
-    PositiveDivisions d( 1.234 );
+    PositiveDivisionsValue d( 1.234 );
     d.setValue( 0.00000384109 );
     std::string expected = "0.00000384109";
     std::string actual = toString( d, 11 );
@@ -539,18 +539,18 @@ TEST( PositiveDivisions04, Decimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( PositiveDivisions05, Decimals )
+TEST( PositiveDivisionsValue05, Decimals )
 {
-    PositiveDivisions d( 1.234 );
+    PositiveDivisionsValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "-0.3164978546312" );
     DecimalType expected = kNonZeroAmount;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( PositiveDivisions06, Decimals )
+TEST( PositiveDivisionsValue06, Decimals )
 {
-    PositiveDivisions d( 1.234 );
+    PositiveDivisionsValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "- 435.249" );
     DecimalType expected = 0.00000384;
@@ -703,39 +703,39 @@ TEST( Semitones06, Decimals )
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
 
-// using Tenths = Decimal;
-TEST( Tenths01, Decimals )
+// using TenthsValue = Decimal;
+TEST( TenthsValue01, Decimals )
 {
-    Tenths d;
+    TenthsValue d;
     DecimalType expected = 0;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths02, Decimals )
+TEST( TenthsValue02, Decimals )
 {
-    Tenths d( 1.234 );
+    TenthsValue d( 1.234 );
     DecimalType expected = 1.234;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths02b, Decimals )
+TEST( TenthsValue02b, Decimals )
 {
-    Tenths d( 123456789012.123456789012 );
+    TenthsValue d( 123456789012.123456789012 );
     DecimalType expected = 123456789012.123456789012;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths03, Decimals )
+TEST( TenthsValue03, Decimals )
 {
-    Tenths d( 1.234 );
+    TenthsValue d( 1.234 );
     d.setValue( 0.00000384 );
     DecimalType expected = 0.00000384;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths04, Decimals )
+TEST( TenthsValue04, Decimals )
 {
-    Tenths d( 1.234 );
+    TenthsValue d( 1.234 );
     d.setValue( 0.00000384109 );
     std::string expected = "0.00000384109";
     std::string actual = toString( d, 11 );
@@ -751,18 +751,18 @@ TEST( Tenths04, Decimals )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( Tenths05, Decimals )
+TEST( TenthsValue05, Decimals )
 {
-    Tenths d( 1.234 );
+    TenthsValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "-435.249" );
     DecimalType expected = -435.249;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
-TEST( Tenths06, Decimals )
+TEST( TenthsValue06, Decimals )
 {
-    Tenths d( 1.234 );
+    TenthsValue d( 1.234 );
     d.setValue( 0.00000384 );
     d.parse( "- 435.249" );
     DecimalType expected = 0.00000384;

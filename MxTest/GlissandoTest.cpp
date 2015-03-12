@@ -17,7 +17,7 @@ TEST( Test01, Glissando )
 	/* set some attribute1 values here */
 	object2.setAttributes( attributes1 );
     attributes1->hasDashLength = true;
-    attributes1->dashLength = Tenths{ 2.1 };
+    attributes1->dashLength = TenthsValue{ 2.1 };
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;

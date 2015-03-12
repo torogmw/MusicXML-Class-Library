@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Syllabic )
 {
 	std::string indentString( INDENT );
-	Syllabic value1;
-	Syllabic value2;
+	SyllabicEnum value1;
+	SyllabicEnum value2;
 	Syllabic object1;
 	Syllabic object2( value2 );
 	std::stringstream default_constructed;

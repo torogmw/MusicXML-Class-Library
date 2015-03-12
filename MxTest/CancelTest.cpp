@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Cancel )
 {
 	std::string indentString( INDENT );
-	Fifths value1{ 2 };
-	Fifths value2{ 10 };
+	FifthsValue value1{ 2 };
+	FifthsValue value2{ 10 };
 	Cancel object1;
 	Cancel object2( value2 );
 	CancelAttributesPtr attributes1 = std::make_shared<CancelAttributes>();

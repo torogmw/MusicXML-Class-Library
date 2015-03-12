@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, StickType )
 {
 	std::string indentString( INDENT );
-	StickType value1;
-	StickType value2;
+	StickTypeEnum value1;
+	StickTypeEnum value2;
 	StickType object1;
 	StickType object2( value2 );
 	std::stringstream default_constructed;

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, KeyOctave )
 {
 	std::string indentString( INDENT );
-	Octave value1{ 2 };
-	Octave value2{ 4 };
+	OctaveValue value1{ 2 };
+	OctaveValue value2{ 4 };
 	KeyOctave object1;
 	KeyOctave object2( value2 );
 	KeyOctaveAttributesPtr attributes1 = std::make_shared<KeyOctaveAttributes>();

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, EncodingDate )
 {
 	std::string indentString( INDENT );
-	YyyyMmDd value1;
-	YyyyMmDd value2;
+	Date value1;
+	Date value2;
 	EncodingDate object1;
 	EncodingDate object2( value2 );
 	std::stringstream default_constructed;

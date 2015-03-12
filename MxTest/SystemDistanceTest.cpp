@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, SystemDistance )
 {
 	std::string indentString( INDENT );
-	Tenths value1;
-	Tenths value2;
+	TenthsValue value1;
+	TenthsValue value2;
 	SystemDistance object1;
 	SystemDistance object2( value2 );
 	std::stringstream default_constructed;

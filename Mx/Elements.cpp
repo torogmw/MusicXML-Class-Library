@@ -754,7 +754,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<KeyOctaveAttributes>() )
         {}
-        KeyOctave::KeyOctave( const types::Octave& value )
+        KeyOctave::KeyOctave( const types::OctaveValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<KeyOctaveAttributes>() )
         {}
@@ -794,11 +794,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Octave KeyOctave::getValue() const
+        types::OctaveValue KeyOctave::getValue() const
         {
             return myValue;
         }
-        void KeyOctave::setValue( const types::Octave& value )
+        void KeyOctave::setValue( const types::OctaveValue& value )
         {
             myValue = value;
         }
@@ -1824,7 +1824,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OffsetAttributes>() )
         {}
-        Offset::Offset( const types::Divisions& value )
+        Offset::Offset( const types::DivisionsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OffsetAttributes>() )
         {}
@@ -1864,11 +1864,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Divisions Offset::getValue() const
+        types::DivisionsValue Offset::getValue() const
         {
             return myValue;
         }
-        void Offset::setValue( const types::Divisions& value )
+        void Offset::setValue( const types::DivisionsValue& value )
         {
             myValue = value;
         }
@@ -2766,7 +2766,7 @@ namespace mx
 //        :myValue()
 //        ,myAttributes( std::make_shared<OffsetAttributes>() )
 //        {}
-//        Offset::Offset( const types::Divisions& value )
+//        Offset::Offset( const types::DivisionsValue& value )
 //        :myValue( value )
 //        ,myAttributes( std::make_shared<OffsetAttributes>() )
 //        {}
@@ -2806,11 +2806,11 @@ namespace mx
 //                myAttributes = value;
 //            }
 //        }
-//        types::Divisions Offset::getValue() const
+//        types::DivisionsValue Offset::getValue() const
 //        {
 //            return myValue;
 //        }
-//        void Offset::setValue( const types::Divisions& value )
+//        void Offset::setValue( const types::DivisionsValue& value )
 //        {
 //            myValue = value;
 //        }
@@ -3474,7 +3474,7 @@ namespace mx
 //        :myValue()
 //        ,myAttributes( std::make_shared<OffsetAttributes>() )
 //        {}
-//        Offset::Offset( const types::Divisions& value )
+//        Offset::Offset( const types::DivisionsValue& value )
 //        :myValue( value )
 //        ,myAttributes( std::make_shared<OffsetAttributes>() )
 //        {}
@@ -3514,11 +3514,11 @@ namespace mx
 //                myAttributes = value;
 //            }
 //        }
-//        types::Divisions Offset::getValue() const
+//        types::DivisionsValue Offset::getValue() const
 //        {
 //            return myValue;
 //        }
-//        void Offset::setValue( const types::Divisions& value )
+//        void Offset::setValue( const types::DivisionsValue& value )
 //        {
 //            myValue = value;
 //        }
@@ -3918,7 +3918,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<LineWidthAttributes>() )
         {}
-        LineWidth::LineWidth( const types::Tenths& value )
+        LineWidth::LineWidth( const types::TenthsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<LineWidthAttributes>() )
         {}
@@ -3958,11 +3958,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Tenths LineWidth::getValue() const
+        types::TenthsValue LineWidth::getValue() const
         {
             return myValue;
         }
-        void LineWidth::setValue( const types::Tenths& value )
+        void LineWidth::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
@@ -4066,7 +4066,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<DistanceAttributes>() )
         {}
-        Distance::Distance( const types::Tenths& value )
+        Distance::Distance( const types::TenthsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DistanceAttributes>() )
         {}
@@ -4106,11 +4106,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Tenths Distance::getValue() const
+        types::TenthsValue Distance::getValue() const
         {
             return myValue;
         }
-        void Distance::setValue( const types::Tenths& value )
+        void Distance::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
@@ -8969,7 +8969,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<CancelAttributes>() )
         {}
-        Cancel::Cancel( const types::Fifths& value )
+        Cancel::Cancel( const types::FifthsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<CancelAttributes>() )
         {}
@@ -9009,11 +9009,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Fifths Cancel::getValue() const
+        types::FifthsValue Cancel::getValue() const
         {
             return myValue;
         }
-        void Cancel::setValue( const types::Fifths& value )
+        void Cancel::setValue( const types::FifthsValue& value )
         {
             myValue = value;
         }
@@ -9656,9 +9656,9 @@ namespace mx
             myValue = value;
         }
         Mute::Mute()
-        :myValue( types::Mute::off )
+        :myValue( types::MuteEnum::off )
         {}
-        Mute::Mute( const types::Mute& value )
+        Mute::Mute( const types::MuteEnum& value )
         :myValue( value )
         {}
         bool Mute::hasAttributes() const
@@ -9680,18 +9680,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Mute Mute::getValue() const
+        types::MuteEnum Mute::getValue() const
         {
             return myValue;
         }
-        void Mute::setValue( const types::Mute& value )
+        void Mute::setValue( const types::MuteEnum& value )
         {
             myValue = value;
         }
         SemiPitched::SemiPitched()
-        :myValue( types::SemiPitched::medium )
+        :myValue( types::SemiPitchedEnum::medium )
         {}
-        SemiPitched::SemiPitched( const types::SemiPitched& value )
+        SemiPitched::SemiPitched( const types::SemiPitchedEnum& value )
         :myValue( value )
         {}
         bool SemiPitched::hasAttributes() const
@@ -9713,18 +9713,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::SemiPitched SemiPitched::getValue() const
+        types::SemiPitchedEnum SemiPitched::getValue() const
         {
             return myValue;
         }
-        void SemiPitched::setValue( const types::SemiPitched& value )
+        void SemiPitched::setValue( const types::SemiPitchedEnum& value )
         {
             myValue = value;
         }
         Divisions::Divisions()
         :myValue()
         {}
-        Divisions::Divisions( const types::PositiveDivisions& value )
+        Divisions::Divisions( const types::PositiveDivisionsValue& value )
         :myValue( value )
         {}
         bool Divisions::hasAttributes() const
@@ -9746,11 +9746,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveDivisions Divisions::getValue() const
+        types::PositiveDivisionsValue Divisions::getValue() const
         {
             return myValue;
         }
-        void Divisions::setValue( const types::PositiveDivisions& value )
+        void Divisions::setValue( const types::PositiveDivisionsValue& value )
         {
             myValue = value;
         }
@@ -9920,9 +9920,9 @@ namespace mx
             myValue = value;
         }
         TimeRelation::TimeRelation()
-        :myValue( types::TimeRelation::equals )
+        :myValue( types::TimeRelationEnum::equals )
         {}
-        TimeRelation::TimeRelation( const types::TimeRelation& value )
+        TimeRelation::TimeRelation( const types::TimeRelationEnum& value )
         :myValue( value )
         {}
         bool TimeRelation::hasAttributes() const
@@ -9944,11 +9944,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TimeRelation TimeRelation::getValue() const
+        types::TimeRelationEnum TimeRelation::getValue() const
         {
             return myValue;
         }
-        void TimeRelation::setValue( const types::TimeRelation& value )
+        void TimeRelation::setValue( const types::TimeRelationEnum& value )
         {
             myValue = value;
         }
@@ -10219,7 +10219,7 @@ namespace mx
         AccordionMiddle::AccordionMiddle()
         :myValue()
         {}
-        AccordionMiddle::AccordionMiddle( const types::AccordionMiddle& value )
+        AccordionMiddle::AccordionMiddle( const types::AccordionMiddleValue& value )
         :myValue( value )
         {}
         bool AccordionMiddle::hasAttributes() const
@@ -10241,11 +10241,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::AccordionMiddle AccordionMiddle::getValue() const
+        types::AccordionMiddleValue AccordionMiddle::getValue() const
         {
             return myValue;
         }
-        void AccordionMiddle::setValue( const types::AccordionMiddle& value )
+        void AccordionMiddle::setValue( const types::AccordionMiddleValue& value )
         {
             myValue = value;
         }
@@ -10481,9 +10481,9 @@ namespace mx
             myValue = value;
         }
         Metal::Metal()
-        :myValue( types::Metal::bell )
+        :myValue( types::MetalEnum::bell )
         {}
-        Metal::Metal( const types::Metal& value )
+        Metal::Metal( const types::MetalEnum& value )
         :myValue( value )
         {}
         bool Metal::hasAttributes() const
@@ -10505,18 +10505,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Metal Metal::getValue() const
+        types::MetalEnum Metal::getValue() const
         {
             return myValue;
         }
-        void Metal::setValue( const types::Metal& value )
+        void Metal::setValue( const types::MetalEnum& value )
         {
             myValue = value;
         }
         Wood::Wood()
-        :myValue( types::Wood::claves )
+        :myValue( types::WoodEnum::claves )
         {}
-        Wood::Wood( const types::Wood& value )
+        Wood::Wood( const types::WoodEnum& value )
         :myValue( value )
         {}
         bool Wood::hasAttributes() const
@@ -10538,18 +10538,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Wood Wood::getValue() const
+        types::WoodEnum Wood::getValue() const
         {
             return myValue;
         }
-        void Wood::setValue( const types::Wood& value )
+        void Wood::setValue( const types::WoodEnum& value )
         {
             myValue = value;
         }
         Pitched::Pitched()
-        :myValue( types::Pitched::xylophone )
+        :myValue( types::PitchedEnum::xylophone )
         {}
-        Pitched::Pitched( const types::Pitched& value )
+        Pitched::Pitched( const types::PitchedEnum& value )
         :myValue( value )
         {}
         bool Pitched::hasAttributes() const
@@ -10571,18 +10571,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Pitched Pitched::getValue() const
+        types::PitchedEnum Pitched::getValue() const
         {
             return myValue;
         }
-        void Pitched::setValue( const types::Pitched& value )
+        void Pitched::setValue( const types::PitchedEnum& value )
         {
             myValue = value;
         }
         Membrane::Membrane()
-        :myValue( types::Membrane::snareDrum )
+        :myValue( types::MembraneEnum::snareDrum )
         {}
-        Membrane::Membrane( const types::Membrane& value )
+        Membrane::Membrane( const types::MembraneEnum& value )
         :myValue( value )
         {}
         bool Membrane::hasAttributes() const
@@ -10604,18 +10604,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Membrane Membrane::getValue() const
+        types::MembraneEnum Membrane::getValue() const
         {
             return myValue;
         }
-        void Membrane::setValue( const types::Membrane& value )
+        void Membrane::setValue( const types::MembraneEnum& value )
         {
             myValue = value;
         }
         Effect::Effect()
-        :myValue( types::Effect::anvil )
+        :myValue( types::EffectEnum::anvil )
         {}
-        Effect::Effect( const types::Effect& value )
+        Effect::Effect( const types::EffectEnum& value )
         :myValue( value )
         {}
         bool Effect::hasAttributes() const
@@ -10637,18 +10637,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Effect Effect::getValue() const
+        types::EffectEnum Effect::getValue() const
         {
             return myValue;
         }
-        void Effect::setValue( const types::Effect& value )
+        void Effect::setValue( const types::EffectEnum& value )
         {
             myValue = value;
         }
         StickLocation::StickLocation()
-        :myValue( types::StickLocation::center )
+        :myValue( types::StickLocationEnum::center )
         {}
-        StickLocation::StickLocation( const types::StickLocation& value )
+        StickLocation::StickLocation( const types::StickLocationEnum& value )
         :myValue( value )
         {}
         bool StickLocation::hasAttributes() const
@@ -10670,11 +10670,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StickLocation StickLocation::getValue() const
+        types::StickLocationEnum StickLocation::getValue() const
         {
             return myValue;
         }
-        void StickLocation::setValue( const types::StickLocation& value )
+        void StickLocation::setValue( const types::StickLocationEnum& value )
         {
             myValue = value;
         }
@@ -10712,9 +10712,9 @@ namespace mx
             myValue = value;
         }
         StickType::StickType()
-        :myValue( types::StickType::yarn )
+        :myValue( types::StickTypeEnum::yarn )
         {}
-        StickType::StickType( const types::StickType& value )
+        StickType::StickType( const types::StickTypeEnum& value )
         :myValue( value )
         {}
         bool StickType::hasAttributes() const
@@ -10736,18 +10736,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StickType StickType::getValue() const
+        types::StickTypeEnum StickType::getValue() const
         {
             return myValue;
         }
-        void StickType::setValue( const types::StickType& value )
+        void StickType::setValue( const types::StickTypeEnum& value )
         {
             myValue = value;
         }
         StickMaterial::StickMaterial()
-        :myValue( types::StickMaterial::medium )
+        :myValue( types::StickMaterialEnum::medium )
         {}
-        StickMaterial::StickMaterial( const types::StickMaterial& value )
+        StickMaterial::StickMaterial( const types::StickMaterialEnum& value )
         :myValue( value )
         {}
         bool StickMaterial::hasAttributes() const
@@ -10769,11 +10769,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StickMaterial StickMaterial::getValue() const
+        types::StickMaterialEnum StickMaterial::getValue() const
         {
             return myValue;
         }
-        void StickMaterial::setValue( const types::StickMaterial& value )
+        void StickMaterial::setValue( const types::StickMaterialEnum& value )
         {
             myValue = value;
         }
@@ -10912,7 +10912,7 @@ namespace mx
         MeasureDistance::MeasureDistance()
         :myValue()
         {}
-        MeasureDistance::MeasureDistance( const types::Tenths& value )
+        MeasureDistance::MeasureDistance( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool MeasureDistance::hasAttributes() const
@@ -10934,18 +10934,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths MeasureDistance::getValue() const
+        types::TenthsValue MeasureDistance::getValue() const
         {
             return myValue;
         }
-        void MeasureDistance::setValue( const types::Tenths& value )
+        void MeasureDistance::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         PageHeight::PageHeight()
         :myValue()
         {}
-        PageHeight::PageHeight( const types::Tenths& value )
+        PageHeight::PageHeight( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool PageHeight::hasAttributes() const
@@ -10967,18 +10967,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths PageHeight::getValue() const
+        types::TenthsValue PageHeight::getValue() const
         {
             return myValue;
         }
-        void PageHeight::setValue( const types::Tenths& value )
+        void PageHeight::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         PageWidth::PageWidth()
         :myValue()
         {}
-        PageWidth::PageWidth( const types::Tenths& value )
+        PageWidth::PageWidth( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool PageWidth::hasAttributes() const
@@ -11000,18 +11000,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths PageWidth::getValue() const
+        types::TenthsValue PageWidth::getValue() const
         {
             return myValue;
         }
-        void PageWidth::setValue( const types::Tenths& value )
+        void PageWidth::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         Millimeters::Millimeters()
         :myValue()
         {}
-        Millimeters::Millimeters( const types::Millimeters& value )
+        Millimeters::Millimeters( const types::MillimetersValue& value )
         :myValue( value )
         {}
         bool Millimeters::hasAttributes() const
@@ -11033,51 +11033,51 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Millimeters Millimeters::getValue() const
+        types::MillimetersValue Millimeters::getValue() const
         {
             return myValue;
         }
-        void Millimeters::setValue( const types::Millimeters& value )
+        void Millimeters::setValue( const types::MillimetersValue& value )
         {
             myValue = value;
         }
-        TenthsElement::TenthsElement()
+        Tenths::Tenths()
         :myValue()
         {}
-        TenthsElement::TenthsElement( const types::Tenths& value )
+        Tenths::Tenths( const types::TenthsValue& value )
         :myValue( value )
         {}
-        bool TenthsElement::hasAttributes() const
+        bool Tenths::hasAttributes() const
         {
             return false;
         }
-        std::ostream& TenthsElement::streamAttributes( std::ostream& os ) const
+        std::ostream& Tenths::streamAttributes( std::ostream& os ) const
         {
             return os;
         }
-        std::ostream& TenthsElement::streamName( std::ostream& os ) const
+        std::ostream& Tenths::streamName( std::ostream& os ) const
         {
             os << "tenths";
             return os;
         }
-        std::ostream& TenthsElement::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        std::ostream& Tenths::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
         {
             isOneLineOnly = true;
             os << myValue;
             return os;
         }
-        types::Tenths TenthsElement::getValue() const
+        types::TenthsValue Tenths::getValue() const
         {
             return myValue;
         }
-        void TenthsElement::setValue( const types::Tenths& value )
+        void Tenths::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         StaffDistance::StaffDistance()
         :myValue()
         {}
-        StaffDistance::StaffDistance( const types::Tenths& value )
+        StaffDistance::StaffDistance( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool StaffDistance::hasAttributes() const
@@ -11099,18 +11099,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths StaffDistance::getValue() const
+        types::TenthsValue StaffDistance::getValue() const
         {
             return myValue;
         }
-        void StaffDistance::setValue( const types::Tenths& value )
+        void StaffDistance::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         SystemDistance::SystemDistance()
         :myValue()
         {}
-        SystemDistance::SystemDistance( const types::Tenths& value )
+        SystemDistance::SystemDistance( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool SystemDistance::hasAttributes() const
@@ -11132,18 +11132,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths SystemDistance::getValue() const
+        types::TenthsValue SystemDistance::getValue() const
         {
             return myValue;
         }
-        void SystemDistance::setValue( const types::Tenths& value )
+        void SystemDistance::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         TopSystemDistance::TopSystemDistance()
         :myValue()
         {}
-        TopSystemDistance::TopSystemDistance( const types::Tenths& value )
+        TopSystemDistance::TopSystemDistance( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool TopSystemDistance::hasAttributes() const
@@ -11165,18 +11165,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths TopSystemDistance::getValue() const
+        types::TenthsValue TopSystemDistance::getValue() const
         {
             return myValue;
         }
-        void TopSystemDistance::setValue( const types::Tenths& value )
+        void TopSystemDistance::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         ArrowDirection::ArrowDirection()
-        :myValue( types::ArrowDirection::up )
+        :myValue( types::ArrowDirectionEnum::up )
         {}
-        ArrowDirection::ArrowDirection( const types::ArrowDirection& value )
+        ArrowDirection::ArrowDirection( const types::ArrowDirectionEnum& value )
         :myValue( value )
         {}
         bool ArrowDirection::hasAttributes() const
@@ -11198,18 +11198,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::ArrowDirection ArrowDirection::getValue() const
+        types::ArrowDirectionEnum ArrowDirection::getValue() const
         {
             return myValue;
         }
-        void ArrowDirection::setValue( const types::ArrowDirection& value )
+        void ArrowDirection::setValue( const types::ArrowDirectionEnum& value )
         {
             myValue = value;
         }
         ArrowStyle::ArrowStyle()
-        :myValue( types::ArrowStyle::single )
+        :myValue( types::ArrowStyleEnum::single )
         {}
-        ArrowStyle::ArrowStyle( const types::ArrowStyle& value )
+        ArrowStyle::ArrowStyle( const types::ArrowStyleEnum& value )
         :myValue( value )
         {}
         bool ArrowStyle::hasAttributes() const
@@ -11231,18 +11231,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::ArrowStyle ArrowStyle::getValue() const
+        types::ArrowStyleEnum ArrowStyle::getValue() const
         {
             return myValue;
         }
-        void ArrowStyle::setValue( const types::ArrowStyle& value )
+        void ArrowStyle::setValue( const types::ArrowStyleEnum& value )
         {
             myValue = value;
         }
         CircularArrow::CircularArrow()
-        :myValue( types::CircularArrow::clockwise )
+        :myValue( types::CircularArrowEnum::clockwise )
         {}
-        CircularArrow::CircularArrow( const types::CircularArrow& value )
+        CircularArrow::CircularArrow( const types::CircularArrowEnum& value )
         :myValue( value )
         {}
         bool CircularArrow::hasAttributes() const
@@ -11264,11 +11264,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::CircularArrow CircularArrow::getValue() const
+        types::CircularArrowEnum CircularArrow::getValue() const
         {
             return myValue;
         }
-        void CircularArrow::setValue( const types::CircularArrow& value )
+        void CircularArrow::setValue( const types::CircularArrowEnum& value )
         {
             myValue = value;
         }
@@ -11372,9 +11372,9 @@ namespace mx
             myValue = value;
         }
         Syllabic::Syllabic()
-        :myValue( types::Syllabic::begin )
+        :myValue( types::SyllabicEnum::begin )
         {}
-        Syllabic::Syllabic( const types::Syllabic& value )
+        Syllabic::Syllabic( const types::SyllabicEnum& value )
         :myValue( value )
         {}
         bool Syllabic::hasAttributes() const
@@ -11396,18 +11396,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Syllabic Syllabic::getValue() const
+        types::SyllabicEnum Syllabic::getValue() const
         {
             return myValue;
         }
-        void Syllabic::setValue( const types::Syllabic& value )
+        void Syllabic::setValue( const types::SyllabicEnum& value )
         {
             myValue = value;
         }
 //        Syllabic::Syllabic()
-//        :myValue( types::Syllabic:: )
+//        :myValue( types::SyllabicEnum:: )
 //        {}
-//        Syllabic::Syllabic( const types::Syllabic& value )
+//        Syllabic::Syllabic( const types::SyllabicEnum& value )
 //        :myValue( value )
 //        {}
 //        bool Syllabic::hasAttributes() const
@@ -11429,11 +11429,11 @@ namespace mx
 //            os << myValue;
 //            return os;
 //        }
-//        types::Syllabic Syllabic::getValue() const
+//        types::SyllabicEnum Syllabic::getValue() const
 //        {
 //            return myValue;
 //        }
-//        void Syllabic::setValue( const types::Syllabic& value )
+//        void Syllabic::setValue( const types::SyllabicEnum& value )
 //        {
 //            myValue = value;
 //        }
@@ -11506,7 +11506,7 @@ namespace mx
         Octave::Octave()
         :myValue()
         {}
-        Octave::Octave( const types::Octave& value )
+        Octave::Octave( const types::OctaveValue& value )
         :myValue( value )
         {}
         bool Octave::hasAttributes() const
@@ -11528,11 +11528,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Octave Octave::getValue() const
+        types::OctaveValue Octave::getValue() const
         {
             return myValue;
         }
-        void Octave::setValue( const types::Octave& value )
+        void Octave::setValue( const types::OctaveValue& value )
         {
             myValue = value;
         }
@@ -12067,7 +12067,7 @@ namespace mx
         TuningOctave::TuningOctave()
         :myValue()
         {}
-        TuningOctave::TuningOctave( const types::Octave& value )
+        TuningOctave::TuningOctave( const types::OctaveValue& value )
         :myValue( value )
         {}
         bool TuningOctave::hasAttributes() const
@@ -12089,11 +12089,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Octave TuningOctave::getValue() const
+        types::OctaveValue TuningOctave::getValue() const
         {
             return myValue;
         }
-        void TuningOctave::setValue( const types::Octave& value )
+        void TuningOctave::setValue( const types::OctaveValue& value )
         {
             myValue = value;
         }
@@ -12331,7 +12331,7 @@ namespace mx
         Fifths::Fifths()
         :myValue()
         {}
-        Fifths::Fifths( const types::Fifths& value )
+        Fifths::Fifths( const types::FifthsValue& value )
         :myValue( value )
         {}
         bool Fifths::hasAttributes() const
@@ -12353,18 +12353,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Fifths Fifths::getValue() const
+        types::FifthsValue Fifths::getValue() const
         {
             return myValue;
         }
-        void Fifths::setValue( const types::Fifths& value )
+        void Fifths::setValue( const types::FifthsValue& value )
         {
             myValue = value;
         }
         Mode::Mode()
         :myValue()
         {}
-        Mode::Mode( const types::Mode& value )
+        Mode::Mode( const types::MxdeValue& value )
         :myValue( value )
         {}
         bool Mode::hasAttributes() const
@@ -12386,11 +12386,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Mode Mode::getValue() const
+        types::MxdeValue Mode::getValue() const
         {
             return myValue;
         }
-        void Mode::setValue( const types::Mode& value )
+        void Mode::setValue( const types::MxdeValue& value )
         {
             myValue = value;
         }
@@ -12430,7 +12430,7 @@ namespace mx
         TopMargin::TopMargin()
         :myValue()
         {}
-        TopMargin::TopMargin( const types::Tenths& value )
+        TopMargin::TopMargin( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool TopMargin::hasAttributes() const
@@ -12452,18 +12452,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths TopMargin::getValue() const
+        types::TenthsValue TopMargin::getValue() const
         {
             return myValue;
         }
-        void TopMargin::setValue( const types::Tenths& value )
+        void TopMargin::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         BottomMargin::BottomMargin()
         :myValue()
         {}
-        BottomMargin::BottomMargin( const types::Tenths& value )
+        BottomMargin::BottomMargin( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool BottomMargin::hasAttributes() const
@@ -12485,18 +12485,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths BottomMargin::getValue() const
+        types::TenthsValue BottomMargin::getValue() const
         {
             return myValue;
         }
-        void BottomMargin::setValue( const types::Tenths& value )
+        void BottomMargin::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         LeftMargin::LeftMargin()
         :myValue()
         {}
-        LeftMargin::LeftMargin( const types::Tenths& value )
+        LeftMargin::LeftMargin( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool LeftMargin::hasAttributes() const
@@ -12518,18 +12518,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths LeftMargin::getValue() const
+        types::TenthsValue LeftMargin::getValue() const
         {
             return myValue;
         }
-        void LeftMargin::setValue( const types::Tenths& value )
+        void LeftMargin::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         RightMargin::RightMargin()
         :myValue()
         {}
-        RightMargin::RightMargin( const types::Tenths& value )
+        RightMargin::RightMargin( const types::TenthsValue& value )
         :myValue( value )
         {}
         bool RightMargin::hasAttributes() const
@@ -12551,18 +12551,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Tenths RightMargin::getValue() const
+        types::TenthsValue RightMargin::getValue() const
         {
             return myValue;
         }
-        void RightMargin::setValue( const types::Tenths& value )
+        void RightMargin::setValue( const types::TenthsValue& value )
         {
             myValue = value;
         }
         Duration::Duration()
         :myValue()
         {}
-        Duration::Duration( const types::PositiveDivisions& value )
+        Duration::Duration( const types::PositiveDivisionsValue& value )
         :myValue( value )
         {}
         bool Duration::hasAttributes() const
@@ -12584,11 +12584,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveDivisions Duration::getValue() const
+        types::PositiveDivisionsValue Duration::getValue() const
         {
             return myValue;
         }
-        void Duration::setValue( const types::PositiveDivisions& value )
+        void Duration::setValue( const types::PositiveDivisionsValue& value )
         {
             myValue = value;
         }
@@ -12628,7 +12628,7 @@ namespace mx
         DisplayOctave::DisplayOctave()
         :myValue()
         {}
-        DisplayOctave::DisplayOctave( const types::Octave& value )
+        DisplayOctave::DisplayOctave( const types::OctaveValue& value )
         :myValue( value )
         {}
         bool DisplayOctave::hasAttributes() const
@@ -12650,11 +12650,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Octave DisplayOctave::getValue() const
+        types::OctaveValue DisplayOctave::getValue() const
         {
             return myValue;
         }
-        void DisplayOctave::setValue( const types::Octave& value )
+        void DisplayOctave::setValue( const types::OctaveValue& value )
         {
             myValue = value;
         }

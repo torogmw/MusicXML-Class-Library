@@ -5,13 +5,13 @@
 using namespace mx::types;
 using namespace mx::e;
 
-TEST( Test01, TenthsElement )
+TEST( Test01, Tenths )
 {
 	std::string indentString( INDENT );
-	Tenths value1;
-	Tenths value2;
-	TenthsElement object1;
-	TenthsElement object2( value2 );
+	TenthsValue value1;
+	TenthsValue value2;
+	Tenths object1;
+	Tenths object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;

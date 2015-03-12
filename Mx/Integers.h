@@ -66,11 +66,11 @@ namespace mx
 		std::ostream& operator<<( std::ostream& os, const Integer& value );
         
         /* MIN = 1, MAX = 3, DEFAULT = 1 */
-        class AccordionMiddle : public IntRange
+        class AccordionMiddleValue : public IntRange
         {
         public:
-            explicit AccordionMiddle( IntType value );
-            AccordionMiddle();
+            explicit AccordionMiddleValue( IntType value );
+            AccordionMiddleValue();
         };
         
         /* MIN = 1, MAX = 8, DEFAULT = 1 */
@@ -82,11 +82,11 @@ namespace mx
         };
         
         /* MIN = N/A, MAX = N/A, DEFAULT = 0 */
-        class Fifths : public Integer
+        class FifthsValue : public Integer
         {
         public:
-            explicit Fifths( IntType value );
-            Fifths();
+            explicit FifthsValue( IntType value );
+            FifthsValue();
         };
         
         /* MIN = 1, MAX = 16, DEFAULT = 1 */
@@ -130,11 +130,11 @@ namespace mx
         };
         
         /* MIN = 0, MAX = 9, DEFAULT = 0 */
-        class Octave : public IntRange
+        class OctaveValue : public IntRange
         {
         public:
-            explicit Octave( IntType value );
-            Octave();
+            explicit OctaveValue( IntType value );
+            OctaveValue();
         };
         
         /* MIN = N/A, MAX = N/A, DEFAULT = 0 */

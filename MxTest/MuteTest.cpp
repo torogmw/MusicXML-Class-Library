@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Mute )
 {
 	std::string indentString( INDENT );
-	Mute value1;
-	Mute value2;
+	MuteEnum value1;
+	MuteEnum value2;
 	Mute object1;
 	Mute object2( value2 );
 	std::stringstream default_constructed;

@@ -17,7 +17,7 @@ TEST( Test01, GroupName )
 	/* set some attribute1 values here */
     attributes1->hasFontSize = true;
     attributes1->fontSize = FontSize{ Decimal{ 12.1 } };
-    attributes1->defaultY = Tenths{ 8.1 };
+    attributes1->defaultY = TenthsValue{ 8.1 };
     attributes1->hasDefaultY = true;
 	object2.setAttributes( attributes1 );
     object2.setAttributes( attributesNull );

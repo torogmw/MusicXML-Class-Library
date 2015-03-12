@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, CircularArrow )
 {
 	std::string indentString( INDENT );
-	CircularArrow value1;
-	CircularArrow value2;
+	CircularArrowEnum value1;
+	CircularArrowEnum value2;
 	CircularArrow object1;
 	CircularArrow object2( value2 );
 	std::stringstream default_constructed;

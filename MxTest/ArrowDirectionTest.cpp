@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, ArrowDirection )
 {
 	std::string indentString( INDENT );
-	ArrowDirection value1;
-	ArrowDirection value2;
+	ArrowDirectionEnum value1;
+	ArrowDirectionEnum value2;
 	ArrowDirection object1;
 	ArrowDirection object2( value2 );
 	std::stringstream default_constructed;

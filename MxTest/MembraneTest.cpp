@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Membrane )
 {
 	std::string indentString( INDENT );
-	Membrane value1;
-	Membrane value2;
+	MembraneEnum value1;
+	MembraneEnum value2;
 	Membrane object1;
 	Membrane object2( value2 );
 	std::stringstream default_constructed;

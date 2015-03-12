@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, LineWidth )
 {
 	std::string indentString( INDENT );
-	Tenths value1( -0.1 );
-	Tenths value2( 1.091236 );
+	TenthsValue value1( -0.1 );
+	TenthsValue value2( 1.091236 );
 	LineWidth object1;
 	LineWidth object2( value2 );
 	LineWidthAttributesPtr attributes1 = std::make_shared<LineWidthAttributes>();

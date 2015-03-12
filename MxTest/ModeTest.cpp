@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Mode )
 {
 	std::string indentString( INDENT );
-	Mode value1;
-	Mode value2;
+	MxdeValue value1;
+	MxdeValue value2;
 	Mode object1;
 	Mode object2( value2 );
 	std::stringstream default_constructed;

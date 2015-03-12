@@ -15,7 +15,7 @@ TEST( Test01, Function )
 	FunctionAttributesPtr attributes1 = std::make_shared<FunctionAttributes>();
 	FunctionAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-    attributes1->defaultY = Tenths{ 2.1 };
+    attributes1->defaultY = TenthsValue{ 2.1 };
     attributes1->hasDefaultY = true;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, BassStep )
 {
 	std::string indentString( INDENT );
-	Step value1 = Step::g;
-	Step value2 = Step::b;
+	StepEnum value1 = StepEnum::g;
+	StepEnum value2 = StepEnum::b;
 	BassStep object1;
 	BassStep object2( value2 );
 	BassStepAttributesPtr attributes1 = std::make_shared<BassStepAttributes>();

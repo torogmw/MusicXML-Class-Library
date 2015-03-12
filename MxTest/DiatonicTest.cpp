@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Diatonic )
 {
 	std::string indentString( INDENT );
-	XsInteger value1;
-	XsInteger value2;
+	Integer value1;
+	Integer value2;
 	Diatonic object1;
 	Diatonic object2( value2 );
 	std::stringstream default_constructed;

@@ -16,7 +16,7 @@ TEST( Test01, Stem )
 	StemAttributesPtr attributesNull;
 	/* set some attribute1 values here */
     attributes1->hasRelativeX = true;
-    attributes1->relativeX = Tenths{ -1.83028 };
+    attributes1->relativeX = TenthsValue{ -1.83028 };
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );

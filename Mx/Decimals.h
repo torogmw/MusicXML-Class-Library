@@ -90,8 +90,8 @@ namespace mx
         };
         
         /* MIN = 0, MAX = N/A, DEFAULT = 0 */
-        using Divisions = Decimal;
-        using Millimeters = Decimal;
+        using DivisionsValue = Decimal;
+        using MillimetersValue = Decimal;
         
         /* MIN = 0, MAX = 100, DEFAULT = 0 */
         class Percent : public DecimalRange
@@ -101,7 +101,7 @@ namespace mx
             Percent();
         };
         
-        using PositiveDivisions = PositiveDecimal;
+        using PositiveDivisionsValue = PositiveDecimal;
         
         /* MIN = -180, MAX = 180, DEFAULT = 0 */
         class RotationDegrees : public DecimalRange
@@ -112,7 +112,7 @@ namespace mx
         };
         
         using Semitones = Decimal;
-        using Tenths = Decimal;
+        using TenthsValue = Decimal;
         
         /* MIN = 2, MAX = N/A, DEFAULT = 2 */
         class TrillBeats: public Decimal

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, SemiPitched )
 {
 	std::string indentString( INDENT );
-	SemiPitched value1;
-	SemiPitched value2;
+	SemiPitchedEnum value1;
+	SemiPitchedEnum value2;
 	SemiPitched object1;
 	SemiPitched object2( value2 );
 	std::stringstream default_constructed;

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Wood )
 {
 	std::string indentString( INDENT );
-	Wood value1;
-	Wood value2;
+	WoodEnum value1;
+	WoodEnum value2;
 	Wood object1;
 	Wood object2( value2 );
 	std::stringstream default_constructed;

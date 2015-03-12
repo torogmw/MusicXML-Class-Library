@@ -24,10 +24,10 @@ namespace mx
             DynamicsAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -138,10 +138,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LeftCenterRight justify;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -220,10 +220,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LeftCenterRight justify;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -304,10 +304,10 @@ namespace mx
 //            virtual bool hasValues() const;
 //            virtual std::ostream& toStream( std::ostream& os ) const;
 //            types::LeftCenterRight justify;
-//            types::Tenths defaultX;
-//            types::Tenths defaultY;
-//            types::Tenths relativeX;
-//            types::Tenths relativeY;
+//            types::TenthsValue defaultX;
+//            types::TenthsValue defaultY;
+//            types::TenthsValue relativeX;
+//            types::TenthsValue relativeY;
 //            types::CommaSeparatedText fontFamily;
 //            types::FontStyle fontStyle;
 //            types::FontSize fontSize;
@@ -449,10 +449,10 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StaffNumber topStaff;
             types::StaffNumber bottomStaff;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             bool hasTopStaff;
             bool hasBottomStaff;
             bool hasDefaultX;
@@ -523,17 +523,17 @@ namespace mx
         {
         public:
             KeyOctave();
-            KeyOctave( const types::Octave& value );
+            KeyOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             KeyOctaveAttributesPtr getAttributes() const;
             void setAttributes( const KeyOctaveAttributesPtr& attributes );
-            types::Octave getValue() const;
-            void setValue( const types::Octave& value );
+            types::OctaveValue getValue() const;
+            void setValue( const types::OctaveValue& value );
         private:
-            types::Octave myValue;
+            types::OctaveValue myValue;
             KeyOctaveAttributesPtr myAttributes;
         };
         
@@ -759,10 +759,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::UprightInverted type;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -832,17 +832,17 @@ namespace mx
             types::EndingNumber number;
             types::StartStopDiscontinue type;
             types::YesNo printObject;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
             types::FontWeight fontWeight;
-            types::Tenths endLength;
-            types::Tenths textX;
-            types::Tenths textY;
+            types::TenthsValue endLength;
+            types::TenthsValue textX;
+            types::TenthsValue textY;
             const 	bool hasNumber;
             const 	bool hasType;
             bool hasPrintObject;
@@ -917,10 +917,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XsToken text;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -987,10 +987,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::YesNo printObject;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1055,10 +1055,10 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::DegreeSymbolValue symbol;
             types::XsToken text;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1124,10 +1124,10 @@ namespace mx
             DegreeAlterAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1198,10 +1198,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XsToken text;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1273,17 +1273,17 @@ namespace mx
         {
         public:
             Offset();
-            Offset( const types::Divisions& value );
+            Offset( const types::DivisionsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             OffsetAttributesPtr getAttributes() const;
             void setAttributes( const OffsetAttributesPtr& attributes );
-            types::Divisions getValue() const;
-            void setValue( const types::Divisions& value );
+            types::DivisionsValue getValue() const;
+            void setValue( const types::DivisionsValue& value );
         private:
-            types::Divisions myValue;
+            types::DivisionsValue myValue;
             OffsetAttributesPtr myAttributes;
         };
         
@@ -1313,10 +1313,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LeftCenterRight justify;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1396,10 +1396,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LeftCenterRight justify;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1482,10 +1482,10 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStop type;
             types::PrincipalVoiceSymbol symbol;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1549,10 +1549,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::YesNo printObject;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1722,10 +1722,10 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::YesNo substitution;
             types::YesNo alternate;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -1847,17 +1847,17 @@ namespace mx
 //        {
 //        public:
 //            Offset();
-//            Offset( const types::Divisions& value );
+//            Offset( const types::DivisionsValue& value );
 //            virtual bool hasAttributes() const;
 //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
 //            virtual std::ostream& streamName( std::ostream& os ) const;
 //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
 //            OffsetAttributesPtr getAttributes() const;
 //            void setAttributes( const OffsetAttributesPtr& attributes );
-//            types::Divisions getValue() const;
-//            void setValue( const types::Divisions& value );
+//            types::DivisionsValue getValue() const;
+//            void setValue( const types::DivisionsValue& value );
 //        private:
-//            types::Divisions myValue;
+//            types::DivisionsValue myValue;
 //            OffsetAttributesPtr myAttributes;
 //        };
         
@@ -2076,10 +2076,10 @@ namespace mx
             MeasureNumberingAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -2154,10 +2154,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XsToken text;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -2224,10 +2224,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::YesNo printObject;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -2351,17 +2351,17 @@ namespace mx
 //        {
 //        public:
 //            Offset();
-//            Offset( const types::Divisions& value );
+//            Offset( const types::DivisionsValue& value );
 //            virtual bool hasAttributes() const;
 //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
 //            virtual std::ostream& streamName( std::ostream& os ) const;
 //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
 //            OffsetAttributesPtr getAttributes() const;
 //            void setAttributes( const OffsetAttributesPtr& attributes );
-//            types::Divisions getValue() const;
-//            void setValue( const types::Divisions& value );
+//            types::DivisionsValue getValue() const;
+//            void setValue( const types::DivisionsValue& value );
 //        private:
-//            types::Divisions myValue;
+//            types::DivisionsValue myValue;
 //            OffsetAttributesPtr myAttributes;
 //        };
         
@@ -2618,7 +2618,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -2640,17 +2640,17 @@ namespace mx
         {
         public:
             LineWidth();
-            LineWidth( const types::Tenths& value );
+            LineWidth( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             LineWidthAttributesPtr getAttributes() const;
             void setAttributes( const LineWidthAttributesPtr& attributes );
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
             LineWidthAttributesPtr myAttributes;
         };
         
@@ -2726,7 +2726,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -2748,17 +2748,17 @@ namespace mx
         {
         public:
             Distance();
-            Distance( const types::Tenths& value );
+            Distance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             DistanceAttributesPtr getAttributes() const;
             void setAttributes( const DistanceAttributesPtr& attributes );
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
             DistanceAttributesPtr myAttributes;
         };
         
@@ -2844,10 +2844,10 @@ namespace mx
             BreathMarkAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -2908,10 +2908,10 @@ namespace mx
             OtherArticulationAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -2972,10 +2972,10 @@ namespace mx
             WithBarAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3035,10 +3035,10 @@ namespace mx
             PrefixAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3096,10 +3096,10 @@ namespace mx
             FigureNumberAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3157,10 +3157,10 @@ namespace mx
             SuffixAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3493,12 +3493,12 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStop type;
             types::NumberLevel number;
-            types::Tenths dashLength;
-            types::Tenths spaceLength;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3567,12 +3567,12 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStop type;
             types::NumberLevel number;
-            types::Tenths dashLength;
-            types::Tenths spaceLength;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3654,10 +3654,10 @@ namespace mx
 //            virtual bool hasValues() const;
 //            virtual std::ostream& toStream( std::ostream& os ) const;
 //            types::UprightInverted type;
-//            types::Tenths defaultX;
-//            types::Tenths defaultY;
-//            types::Tenths relativeX;
-//            types::Tenths relativeY;
+//            types::TenthsValue defaultX;
+//            types::TenthsValue defaultY;
+//            types::TenthsValue relativeX;
+//            types::TenthsValue relativeY;
 //            types::CommaSeparatedText fontFamily;
 //            types::FontStyle fontStyle;
 //            types::FontSize fontSize;
@@ -3757,10 +3757,10 @@ namespace mx
             AccidentalMarkAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -3827,10 +3827,10 @@ namespace mx
             types::StartStopSingle type;
             types::NumberLevel number;
             types::YesNo printObject;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4008,10 +4008,10 @@ namespace mx
             types::YesNo parentheses;
             types::YesNo bracket;
             types::SymbolSize size;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4085,10 +4085,10 @@ namespace mx
             StemAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             bool hasDefaultX;
             bool hasDefaultY;
             bool hasRelativeX;
@@ -4308,10 +4308,10 @@ namespace mx
 //            virtual bool hasValues() const;
 //            virtual std::ostream& toStream( std::ostream& os ) const;
 //            types::LeftCenterRight justify;
-//            types::Tenths defaultX;
-//            types::Tenths defaultY;
-//            types::Tenths relativeX;
-//            types::Tenths relativeY;
+//            types::TenthsValue defaultX;
+//            types::TenthsValue defaultY;
+//            types::TenthsValue relativeX;
+//            types::TenthsValue relativeY;
 //            types::CommaSeparatedText fontFamily;
 //            types::FontStyle fontStyle;
 //            types::FontSize fontSize;
@@ -4405,10 +4405,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStopSingle type;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4470,10 +4470,10 @@ namespace mx
             OtherOrnamentAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4574,10 +4574,10 @@ namespace mx
 //            AccidentalMarkAttributes();
 //            virtual bool hasValues() const;
 //            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::Tenths defaultX;
-//            types::Tenths defaultY;
-//            types::Tenths relativeX;
-//            types::Tenths relativeY;
+//            types::TenthsValue defaultX;
+//            types::TenthsValue defaultY;
+//            types::TenthsValue relativeX;
+//            types::TenthsValue relativeY;
 //            types::CommaSeparatedText fontFamily;
 //            types::FontStyle fontStyle;
 //            types::FontSize fontSize;
@@ -4642,10 +4642,10 @@ namespace mx
 //            virtual std::ostream& toStream( std::ostream& os ) const;
 //            types::YesNo substitution;
 //            types::YesNo alternate;
-//            types::Tenths defaultX;
-//            types::Tenths defaultY;
-//            types::Tenths relativeX;
-//            types::Tenths relativeY;
+//            types::TenthsValue defaultX;
+//            types::TenthsValue defaultY;
+//            types::TenthsValue relativeX;
+//            types::TenthsValue relativeY;
 //            types::CommaSeparatedText fontFamily;
 //            types::FontStyle fontStyle;
 //            types::FontSize fontSize;
@@ -4708,10 +4708,10 @@ namespace mx
             PluckAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4830,10 +4830,10 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStop type;
             types::NumberLevel number;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4900,10 +4900,10 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStop type;
             types::NumberLevel number;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -4966,10 +4966,10 @@ namespace mx
             TapAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5047,10 +5047,10 @@ namespace mx
             HandbellAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5111,10 +5111,10 @@ namespace mx
             OtherTechnicalAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5303,10 +5303,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LeftCenterRight justify;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5386,10 +5386,10 @@ namespace mx
 //            virtual bool hasValues() const;
 //            virtual std::ostream& toStream( std::ostream& os ) const;
 //            types::LeftCenterRight justify;
-//            types::Tenths defaultX;
-//            types::Tenths defaultY;
-//            types::Tenths relativeX;
-//            types::Tenths relativeY;
+//            types::TenthsValue defaultX;
+//            types::TenthsValue defaultY;
+//            types::TenthsValue relativeX;
+//            types::TenthsValue relativeY;
 //            types::CommaSeparatedText fontFamily;
 //            types::FontStyle fontStyle;
 //            types::FontSize fontSize;
@@ -5468,10 +5468,10 @@ namespace mx
             GroupNameAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5531,10 +5531,10 @@ namespace mx
             GroupAbbreviationAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5606,10 +5606,10 @@ namespace mx
             GroupSymbolAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             bool hasDefaultX;
             bool hasDefaultY;
             bool hasRelativeX;
@@ -5715,10 +5715,10 @@ namespace mx
             PartNameAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5780,10 +5780,10 @@ namespace mx
             PartAbbreviationAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -5896,10 +5896,10 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::LeftCenterRight justify;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -6045,17 +6045,17 @@ namespace mx
         {
         public:
             Cancel();
-            Cancel( const types::Fifths& value );
+            Cancel( const types::FifthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             CancelAttributesPtr getAttributes() const;
             void setAttributes( const CancelAttributesPtr& attributes );
-            types::Fifths getValue() const;
-            void setValue( const types::Fifths& value );
+            types::FifthsValue getValue() const;
+            void setValue( const types::FifthsValue& value );
         private:
-            types::Fifths myValue;
+            types::FifthsValue myValue;
             CancelAttributesPtr myAttributes;
         };
         
@@ -6084,10 +6084,10 @@ namespace mx
             FunctionAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -6253,10 +6253,10 @@ namespace mx
             types::YesNo stackDegrees;
             types::YesNo parenthesesDegrees;
             types::YesNo bracketDegrees;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -6321,10 +6321,10 @@ namespace mx
             InversionAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::Tenths defaultX;
-            types::Tenths defaultY;
-            types::Tenths relativeX;
-            types::Tenths relativeY;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
             types::CommaSeparatedText fontFamily;
             types::FontStyle fontStyle;
             types::FontSize fontSize;
@@ -6730,15 +6730,15 @@ namespace mx
         {
         public:
             Mute();
-            Mute( const types::Mute& value );
+            Mute( const types::MuteEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Mute getValue() const;
-            void setValue( const types::Mute& value );
+            types::MuteEnum getValue() const;
+            void setValue( const types::MuteEnum& value );
         private:
-            types::Mute myValue;
+            types::MuteEnum myValue;
         };
         
         
@@ -6776,15 +6776,15 @@ namespace mx
         {
         public:
             SemiPitched();
-            SemiPitched( const types::SemiPitched& value );
+            SemiPitched( const types::SemiPitchedEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::SemiPitched getValue() const;
-            void setValue( const types::SemiPitched& value );
+            types::SemiPitchedEnum getValue() const;
+            void setValue( const types::SemiPitchedEnum& value );
         private:
-            types::SemiPitched myValue;
+            types::SemiPitchedEnum myValue;
         };
         
         
@@ -6812,15 +6812,15 @@ namespace mx
         {
         public:
             Divisions();
-            Divisions( const types::PositiveDivisions& value );
+            Divisions( const types::PositiveDivisionsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::PositiveDivisions getValue() const;
-            void setValue( const types::PositiveDivisions& value );
+            types::PositiveDivisionsValue getValue() const;
+            void setValue( const types::PositiveDivisionsValue& value );
         private:
-            types::PositiveDivisions myValue;
+            types::PositiveDivisionsValue myValue;
         };
         
         
@@ -7004,15 +7004,15 @@ namespace mx
         {
         public:
             TimeRelation();
-            TimeRelation( const types::TimeRelation& value );
+            TimeRelation( const types::TimeRelationEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::TimeRelation getValue() const;
-            void setValue( const types::TimeRelation& value );
+            types::TimeRelationEnum getValue() const;
+            void setValue( const types::TimeRelationEnum& value );
         private:
-            types::TimeRelation myValue;
+            types::TimeRelationEnum myValue;
         };
         
         
@@ -7264,15 +7264,15 @@ namespace mx
         {
         public:
             AccordionMiddle();
-            AccordionMiddle( const types::AccordionMiddle& value );
+            AccordionMiddle( const types::AccordionMiddleValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::AccordionMiddle getValue() const;
-            void setValue( const types::AccordionMiddle& value );
+            types::AccordionMiddleValue getValue() const;
+            void setValue( const types::AccordionMiddleValue& value );
         private:
-            types::AccordionMiddle myValue;
+            types::AccordionMiddleValue myValue;
         };
         
         
@@ -7588,15 +7588,15 @@ namespace mx
         {
         public:
             Metal();
-            Metal( const types::Metal& value );
+            Metal( const types::MetalEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Metal getValue() const;
-            void setValue( const types::Metal& value );
+            types::MetalEnum getValue() const;
+            void setValue( const types::MetalEnum& value );
         private:
-            types::Metal myValue;
+            types::MetalEnum myValue;
         };
         
         
@@ -7650,15 +7650,15 @@ namespace mx
         {
         public:
             Wood();
-            Wood( const types::Wood& value );
+            Wood( const types::WoodEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Wood getValue() const;
-            void setValue( const types::Wood& value );
+            types::WoodEnum getValue() const;
+            void setValue( const types::WoodEnum& value );
         private:
-            types::Wood myValue;
+            types::WoodEnum myValue;
         };
         
         
@@ -7698,15 +7698,15 @@ namespace mx
         {
         public:
             Pitched();
-            Pitched( const types::Pitched& value );
+            Pitched( const types::PitchedEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Pitched getValue() const;
-            void setValue( const types::Pitched& value );
+            types::PitchedEnum getValue() const;
+            void setValue( const types::PitchedEnum& value );
         private:
-            types::Pitched myValue;
+            types::PitchedEnum myValue;
         };
         
         
@@ -7756,15 +7756,15 @@ namespace mx
         {
         public:
             Membrane();
-            Membrane( const types::Membrane& value );
+            Membrane( const types::MembraneEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Membrane getValue() const;
-            void setValue( const types::Membrane& value );
+            types::MembraneEnum getValue() const;
+            void setValue( const types::MembraneEnum& value );
         private:
-            types::Membrane myValue;
+            types::MembraneEnum myValue;
         };
         
         
@@ -7818,15 +7818,15 @@ namespace mx
         {
         public:
             Effect();
-            Effect( const types::Effect& value );
+            Effect( const types::EffectEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Effect getValue() const;
-            void setValue( const types::Effect& value );
+            types::EffectEnum getValue() const;
+            void setValue( const types::EffectEnum& value );
         private:
-            types::Effect myValue;
+            types::EffectEnum myValue;
         };
         
         
@@ -7860,15 +7860,15 @@ namespace mx
         {
         public:
             StickLocation();
-            StickLocation( const types::StickLocation& value );
+            StickLocation( const types::StickLocationEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::StickLocation getValue() const;
-            void setValue( const types::StickLocation& value );
+            types::StickLocationEnum getValue() const;
+            void setValue( const types::StickLocationEnum& value );
         private:
-            types::StickLocation myValue;
+            types::StickLocationEnum myValue;
         };
         
         
@@ -7928,15 +7928,15 @@ namespace mx
         {
         public:
             StickType();
-            StickType( const types::StickType& value );
+            StickType( const types::StickTypeEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::StickType getValue() const;
-            void setValue( const types::StickType& value );
+            types::StickTypeEnum getValue() const;
+            void setValue( const types::StickTypeEnum& value );
         private:
-            types::StickType myValue;
+            types::StickTypeEnum myValue;
         };
         
         
@@ -7972,15 +7972,15 @@ namespace mx
         {
         public:
             StickMaterial();
-            StickMaterial( const types::StickMaterial& value );
+            StickMaterial( const types::StickMaterialEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::StickMaterial getValue() const;
-            void setValue( const types::StickMaterial& value );
+            types::StickMaterialEnum getValue() const;
+            void setValue( const types::StickMaterialEnum& value );
         private:
-            types::StickMaterial myValue;
+            types::StickMaterialEnum myValue;
         };
         
         
@@ -8093,7 +8093,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8101,7 +8101,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8110,15 +8110,15 @@ namespace mx
         {
         public:
             MeasureDistance();
-            MeasureDistance( const types::Tenths& value );
+            MeasureDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8129,7 +8129,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8137,7 +8137,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8146,15 +8146,15 @@ namespace mx
         {
         public:
             PageHeight();
-            PageHeight( const types::Tenths& value );
+            PageHeight( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8165,7 +8165,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8173,7 +8173,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8182,15 +8182,15 @@ namespace mx
         {
         public:
             PageWidth();
-            PageWidth( const types::Tenths& value );
+            PageWidth( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8214,26 +8214,26 @@ namespace mx
         {
         public:
             Millimeters();
-            Millimeters( const types::Millimeters& value );
+            Millimeters( const types::MillimetersValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Millimeters getValue() const;
-            void setValue( const types::Millimeters& value );
+            types::MillimetersValue getValue() const;
+            void setValue( const types::MillimetersValue& value );
         private:
-            types::Millimeters myValue;
+            types::MillimetersValue myValue;
         };
         
         
-        /**************** Tenths ****************
+        /**************** TenthsValue ****************
          4254
          <xs:element name="tenths" type="tenths"/>
          <xs:simpleType name="tenths">
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8241,24 +8241,24 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class TenthsElement : public ElementInterface
+        class Tenths : public ElementInterface
         {
         public:
-            TenthsElement();
-            TenthsElement( const types::Tenths& value );
+            Tenths();
+            Tenths( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8269,7 +8269,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8277,7 +8277,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8286,15 +8286,15 @@ namespace mx
         {
         public:
             StaffDistance();
-            StaffDistance( const types::Tenths& value );
+            StaffDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8305,7 +8305,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8313,7 +8313,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8322,15 +8322,15 @@ namespace mx
         {
         public:
             SystemDistance();
-            SystemDistance( const types::Tenths& value );
+            SystemDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8341,7 +8341,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8349,7 +8349,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -8358,15 +8358,15 @@ namespace mx
         {
         public:
             TopSystemDistance();
-            TopSystemDistance( const types::Tenths& value );
+            TopSystemDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -8418,15 +8418,15 @@ namespace mx
         {
         public:
             ArrowDirection();
-            ArrowDirection( const types::ArrowDirection& value );
+            ArrowDirection( const types::ArrowDirectionEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::ArrowDirection getValue() const;
-            void setValue( const types::ArrowDirection& value );
+            types::ArrowDirectionEnum getValue() const;
+            void setValue( const types::ArrowDirectionEnum& value );
         private:
-            types::ArrowDirection myValue;
+            types::ArrowDirectionEnum myValue;
         };
         
         
@@ -8466,15 +8466,15 @@ namespace mx
         {
         public:
             ArrowStyle();
-            ArrowStyle( const types::ArrowStyle& value );
+            ArrowStyle( const types::ArrowStyleEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::ArrowStyle getValue() const;
-            void setValue( const types::ArrowStyle& value );
+            types::ArrowStyleEnum getValue() const;
+            void setValue( const types::ArrowStyleEnum& value );
         private:
-            types::ArrowStyle myValue;
+            types::ArrowStyleEnum myValue;
         };
         
         
@@ -8504,15 +8504,15 @@ namespace mx
         {
         public:
             CircularArrow();
-            CircularArrow( const types::CircularArrow& value );
+            CircularArrow( const types::CircularArrowEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::CircularArrow getValue() const;
-            void setValue( const types::CircularArrow& value );
+            types::CircularArrowEnum getValue() const;
+            void setValue( const types::CircularArrowEnum& value );
         private:
-            types::CircularArrow myValue;
+            types::CircularArrowEnum myValue;
         };
         
         
@@ -8622,15 +8622,15 @@ namespace mx
         {
         public:
             Syllabic();
-            Syllabic( const types::Syllabic& value );
+            Syllabic( const types::SyllabicEnum& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Syllabic getValue() const;
-            void setValue( const types::Syllabic& value );
+            types::SyllabicEnum getValue() const;
+            void setValue( const types::SyllabicEnum& value );
         private:
-            types::Syllabic myValue;
+            types::SyllabicEnum myValue;
         };
         
         
@@ -8664,15 +8664,15 @@ namespace mx
 //        {
 //        public:
 //            Syllabic();
-//            Syllabic( const types::Syllabic& value );
+//            Syllabic( const types::SyllabicEnum& value );
 //            virtual bool hasAttributes() const;
 //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
 //            virtual std::ostream& streamName( std::ostream& os ) const;
 //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            types::Syllabic getValue() const;
-//            void setValue( const types::Syllabic& value );
+//            types::SyllabicEnum getValue() const;
+//            void setValue( const types::SyllabicEnum& value );
 //        private:
-//            types::Syllabic myValue;
+//            types::SyllabicEnum myValue;
 //        };
         
         
@@ -8782,15 +8782,15 @@ namespace mx
         {
         public:
             Octave();
-            Octave( const types::Octave& value );
+            Octave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Octave getValue() const;
-            void setValue( const types::Octave& value );
+            types::OctaveValue getValue() const;
+            void setValue( const types::OctaveValue& value );
         private:
-            types::Octave myValue;
+            types::OctaveValue myValue;
         };
         
         
@@ -9270,15 +9270,15 @@ namespace mx
         {
         public:
             TuningOctave();
-            TuningOctave( const types::Octave& value );
+            TuningOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Octave getValue() const;
-            void setValue( const types::Octave& value );
+            types::OctaveValue getValue() const;
+            void setValue( const types::OctaveValue& value );
         private:
-            types::Octave myValue;
+            types::OctaveValue myValue;
         };
         
         
@@ -9612,15 +9612,15 @@ namespace mx
         {
         public:
             Fifths();
-            Fifths( const types::Fifths& value );
+            Fifths( const types::FifthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Fifths getValue() const;
-            void setValue( const types::Fifths& value );
+            types::FifthsValue getValue() const;
+            void setValue( const types::FifthsValue& value );
         private:
-            types::Fifths myValue;
+            types::FifthsValue myValue;
         };
         
         
@@ -9644,15 +9644,15 @@ namespace mx
         {
         public:
             Mode();
-            Mode( const types::Mode& value );
+            Mode( const types::MxdeValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Mode getValue() const;
-            void setValue( const types::Mode& value );
+            types::MxdeValue getValue() const;
+            void setValue( const types::MxdeValue& value );
         private:
-            types::Mode myValue;
+            types::MxdeValue myValue;
         };
         
         
@@ -9725,7 +9725,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9733,7 +9733,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9742,15 +9742,15 @@ namespace mx
         {
         public:
             TopMargin();
-            TopMargin( const types::Tenths& value );
+            TopMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -9761,7 +9761,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9769,7 +9769,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9778,15 +9778,15 @@ namespace mx
         {
         public:
             BottomMargin();
-            BottomMargin( const types::Tenths& value );
+            BottomMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -9797,7 +9797,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9805,7 +9805,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9814,15 +9814,15 @@ namespace mx
         {
         public:
             LeftMargin();
-            LeftMargin( const types::Tenths& value );
+            LeftMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -9833,7 +9833,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9841,7 +9841,7 @@ namespace mx
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
          
-         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         Distances in a MusicXML file are measured in tenths of staff space. TenthsValue are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
          </xs:annotation>
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
@@ -9850,15 +9850,15 @@ namespace mx
         {
         public:
             RightMargin();
-            RightMargin( const types::Tenths& value );
+            RightMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Tenths getValue() const;
-            void setValue( const types::Tenths& value );
+            types::TenthsValue getValue() const;
+            void setValue( const types::TenthsValue& value );
         private:
-            types::Tenths myValue;
+            types::TenthsValue myValue;
         };
         
         
@@ -9886,15 +9886,15 @@ namespace mx
         {
         public:
             Duration();
-            Duration( const types::PositiveDivisions& value );
+            Duration( const types::PositiveDivisionsValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::PositiveDivisions getValue() const;
-            void setValue( const types::PositiveDivisions& value );
+            types::PositiveDivisionsValue getValue() const;
+            void setValue( const types::PositiveDivisionsValue& value );
         private:
-            types::PositiveDivisions myValue;
+            types::PositiveDivisionsValue myValue;
         };
         
         
@@ -9972,15 +9972,15 @@ namespace mx
         {
         public:
             DisplayOctave();
-            DisplayOctave( const types::Octave& value );
+            DisplayOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            types::Octave getValue() const;
-            void setValue( const types::Octave& value );
+            types::OctaveValue getValue() const;
+            void setValue( const types::OctaveValue& value );
         private:
-            types::Octave myValue;
+            types::OctaveValue myValue;
         };
         
         

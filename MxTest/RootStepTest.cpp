@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, RootStep )
 {
 	std::string indentString( INDENT );
-	Step value1 = Step::f;
-	Step value2 = Step::c;
+	StepEnum value1 = StepEnum::f;
+	StepEnum value2 = StepEnum::c;
 	RootStep object1;
 	RootStep object2( value2 );
 	RootStepAttributesPtr attributes1 = std::make_shared<RootStepAttributes>();
