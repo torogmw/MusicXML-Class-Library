@@ -61,6 +61,7 @@
 		29200EB81AA43582000E3E37 /* MsItemElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemElement.h; sourceTree = "<group>"; };
 		29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleType.cpp; sourceTree = "<group>"; };
 		29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleType.h; sourceTree = "<group>"; };
+		2977496A1AB211F400BF2205 /* codegenValueElementNoAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenValueElementNoAttributes.h; sourceTree = "<group>"; };
 		2980BDEE1A8853F0008B0329 /* libXsd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXsd.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 		298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemEnumValue.cpp; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 				29CA12641A9C3FCC008DCCFA /* setIsImplemented.h */,
 				29D10B961A9BCD4700F03CE6 /* tab.cpp */,
 				29D10B971A9BCD4700F03CE6 /* tab.h */,
+				2977496A1AB211F400BF2205 /* codegenValueElementNoAttributes.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";

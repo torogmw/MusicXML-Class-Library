@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		2900C30D1AA3EE170011D789 /* goCreateValueElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateValueElements.h; sourceTree = "<group>"; };
 		290D7C191AA3A0920081FBB5 /* goMsItemAttributeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemAttributeTest.h; sourceTree = "<group>"; };
+		297749691AB20CBA00BF2205 /* goCreateValueNoAttributeElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateValueNoAttributeElements.h; sourceTree = "<group>"; };
 		29A884F31A9D5D2F00F417CE /* goMsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 				29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */,
 				290D7C191AA3A0920081FBB5 /* goMsItemAttributeTest.h */,
 				2900C30D1AA3EE170011D789 /* goCreateValueElements.h */,
+				297749691AB20CBA00BF2205 /* goCreateValueNoAttributeElements.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";

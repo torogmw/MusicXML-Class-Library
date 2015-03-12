@@ -8,6 +8,7 @@
 #include "NumberOrNormal.h"
 #include "PositiveIntegerOrEmpty.h"
 #include "Color.h"
+#include "Date.h"
 #include <memory>
 
 namespace mx
@@ -6354,6 +6355,3676 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
             InversionAttributesPtr myAttributes;
+        };
+        
+        /***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         **********************      Value Elements with NO Attributes *************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************/
+        
+        
+        /**************** MidiChannel ****************
+         2457
+         <xs:element name="midi-channel" type="midi-16" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-channel element specifies a MIDI 1.0 channel numbers ranging from 1 to 16.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="midi-16">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="16"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="midi-16">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="16"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class MidiChannel : public ElementInterface
+        {
+        public:
+            MidiChannel();
+            MidiChannel( const types::Midi16& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Midi16 getValue() const;
+            void setValue( const types::Midi16& value );
+        private:
+            types::Midi16 myValue;
+        };
+        
+        
+        /**************** MidiName ****************
+         2463
+         <xs:element name="midi-name" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-name element corresponds to a ProgramName meta-event within a Standard MIDI File.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class MidiName : public ElementInterface
+        {
+        public:
+            MidiName();
+            MidiName( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** MidiBank ****************
+         2469
+         <xs:element name="midi-bank" type="midi-16384" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-bank element specified a MIDI 1.0 bank number ranging from 1 to 16384.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="midi-16384">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16,384.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="16384"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="midi-16384">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16,384.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="16384"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class MidiBank : public ElementInterface
+        {
+        public:
+            MidiBank();
+            MidiBank( const types::Midi16384& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Midi16384 getValue() const;
+            void setValue( const types::Midi16384& value );
+        private:
+            types::Midi16384 myValue;
+        };
+        
+        
+        /**************** MidiProgram ****************
+         2475
+         <xs:element name="midi-program" type="midi-128" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-program element specifies a MIDI 1.0 program number ranging from 1 to 128.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="midi-128">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="128"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="midi-128">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="128"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class MidiProgram : public ElementInterface
+        {
+        public:
+            MidiProgram();
+            MidiProgram( const types::Midi128& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Midi128 getValue() const;
+            void setValue( const types::Midi128& value );
+        private:
+            types::Midi128 myValue;
+        };
+        
+        
+        /**************** MidiUnpitched ****************
+         2481
+         <xs:element name="midi-unpitched" type="midi-128" minOccurs="0">	<xs:annotation>		<xs:documentation>For unpitched instruments the midi-unpitched element specifies a MIDI 1.0 note number ranging from 1 to 128. It is usually used with MIDI banks for percussion. Note that MIDI 1.0 note numbers are generally specified from 0 to 127 rather than the 1 to 128 numbering used in this element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="midi-128">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="128"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="midi-128">
+         <xs:annotation>
+         <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="128"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class MidiUnpitched : public ElementInterface
+        {
+        public:
+            MidiUnpitched();
+            MidiUnpitched( const types::Midi128& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Midi128 getValue() const;
+            void setValue( const types::Midi128& value );
+        private:
+            types::Midi128 myValue;
+        };
+        
+        
+        /**************** Volume ****************
+         2487
+         <xs:element name="volume" type="percent" minOccurs="0">	<xs:annotation>		<xs:documentation>The volume element value is a percentage of the maximum ranging from 0 to 100 with decimal values allowed. This corresponds to a scaling value for the MIDI 1.0 channel volume controller.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="percent">
+         <xs:annotation>
+         <xs:documentation>The percent type specifies a percentage from 0 to 100.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="100"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="percent">
+         <xs:annotation>
+         <xs:documentation>The percent type specifies a percentage from 0 to 100.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="100"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Volume : public ElementInterface
+        {
+        public:
+            Volume();
+            Volume( const types::Percent& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Percent getValue() const;
+            void setValue( const types::Percent& value );
+        private:
+            types::Percent myValue;
+        };
+        
+        
+        /**************** Pan ****************
+         2493
+         <xs:element name="pan" type="rotation-degrees" minOccurs="0">	<xs:annotation>		<xs:documentation>The pan and elevation elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan 0 is straight ahead -90 is hard left 90 is hard right and -180 and 180 are directly behind the listener.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="rotation-degrees">
+         <xs:annotation>
+         <xs:documentation>The rotation-degrees type specifies rotation, pan, and elevation values in degrees. Values range from -180 to 180.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="-180"/>
+         <xs:maxInclusive value="180"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="rotation-degrees">
+         <xs:annotation>
+         <xs:documentation>The rotation-degrees type specifies rotation, pan, and elevation values in degrees. Values range from -180 to 180.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="-180"/>
+         <xs:maxInclusive value="180"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Pan : public ElementInterface
+        {
+        public:
+            Pan();
+            Pan( const types::RotationDegrees& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::RotationDegrees getValue() const;
+            void setValue( const types::RotationDegrees& value );
+        private:
+            types::RotationDegrees myValue;
+        };
+        
+        
+        /**************** Elevation ****************
+         2499
+         <xs:element name="elevation" type="rotation-degrees" minOccurs="0">	<xs:annotation>		<xs:documentation>The elevation and pan elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For elevation 0 is level with the listener 90 is directly above and -90 is directly below.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="rotation-degrees">
+         <xs:annotation>
+         <xs:documentation>The rotation-degrees type specifies rotation, pan, and elevation values in degrees. Values range from -180 to 180.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="-180"/>
+         <xs:maxInclusive value="180"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="rotation-degrees">
+         <xs:annotation>
+         <xs:documentation>The rotation-degrees type specifies rotation, pan, and elevation values in degrees. Values range from -180 to 180.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="-180"/>
+         <xs:maxInclusive value="180"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Elevation : public ElementInterface
+        {
+        public:
+            Elevation();
+            Elevation( const types::RotationDegrees& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::RotationDegrees getValue() const;
+            void setValue( const types::RotationDegrees& value );
+        private:
+            types::RotationDegrees myValue;
+        };
+        
+        
+        /**************** Ipa ****************
+         2544
+         <xs:element name="ipa" type="xs:string">	<xs:annotation>		<xs:documentation>The ipa element represents International Phonetic Alphabet (IPA) sounds for vocal music. String content is limited to IPA 2005 symbols represented in Unicode 6.0.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class Ipa : public ElementInterface
+        {
+        public:
+            Ipa();
+            Ipa( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Mute ****************
+         2549
+         <xs:element name="mute" type="mute"/>
+         <xs:simpleType name="mute">
+         <xs:annotation>
+         <xs:documentation>The mute type represents muting for different instruments, including brass, winds, and strings. The on and off values are used for undifferentiated mutes. The remaining values represent specific mutes.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="on"/>
+         <xs:enumeration value="off"/>
+         <xs:enumeration value="straight"/>
+         <xs:enumeration value="cup"/>
+         <xs:enumeration value="harmon-no-stem"/>
+         <xs:enumeration value="harmon-stem"/>
+         <xs:enumeration value="bucket"/>
+         <xs:enumeration value="plunger"/>
+         <xs:enumeration value="hat"/>
+         <xs:enumeration value="solotone"/>
+         <xs:enumeration value="practice"/>
+         <xs:enumeration value="stop-mute"/>
+         <xs:enumeration value="stop-hand"/>
+         <xs:enumeration value="echo"/>
+         <xs:enumeration value="palm"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="mute">
+         <xs:annotation>
+         <xs:documentation>The mute type represents muting for different instruments, including brass, winds, and strings. The on and off values are used for undifferentiated mutes. The remaining values represent specific mutes.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="on"/>
+         <xs:enumeration value="off"/>
+         <xs:enumeration value="straight"/>
+         <xs:enumeration value="cup"/>
+         <xs:enumeration value="harmon-no-stem"/>
+         <xs:enumeration value="harmon-stem"/>
+         <xs:enumeration value="bucket"/>
+         <xs:enumeration value="plunger"/>
+         <xs:enumeration value="hat"/>
+         <xs:enumeration value="solotone"/>
+         <xs:enumeration value="practice"/>
+         <xs:enumeration value="stop-mute"/>
+         <xs:enumeration value="stop-hand"/>
+         <xs:enumeration value="echo"/>
+         <xs:enumeration value="palm"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Mute : public ElementInterface
+        {
+        public:
+            Mute();
+            Mute( const types::Mute& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Mute getValue() const;
+            void setValue( const types::Mute& value );
+        private:
+            types::Mute myValue;
+        };
+        
+        
+        /**************** SemiPitched ****************
+         2552
+         <xs:element name="semi-pitched" type="semi-pitched"/>
+         <xs:simpleType name="semi-pitched">
+         <xs:annotation>
+         <xs:documentation>The semi-pitched type represents categories of indefinite pitch for percussion instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="high"/>
+         <xs:enumeration value="medium-high"/>
+         <xs:enumeration value="medium"/>
+         <xs:enumeration value="medium-low"/>
+         <xs:enumeration value="low"/>
+         <xs:enumeration value="very-low"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="semi-pitched">
+         <xs:annotation>
+         <xs:documentation>The semi-pitched type represents categories of indefinite pitch for percussion instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="high"/>
+         <xs:enumeration value="medium-high"/>
+         <xs:enumeration value="medium"/>
+         <xs:enumeration value="medium-low"/>
+         <xs:enumeration value="low"/>
+         <xs:enumeration value="very-low"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class SemiPitched : public ElementInterface
+        {
+        public:
+            SemiPitched();
+            SemiPitched( const types::SemiPitched& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::SemiPitched getValue() const;
+            void setValue( const types::SemiPitched& value );
+        private:
+            types::SemiPitched myValue;
+        };
+        
+        
+        /**************** Divisions ****************
+         2608
+         <xs:element name="divisions" type="positive-divisions" minOccurs="0">	<xs:annotation>		<xs:documentation>Musical notation duration is commonly represented as fractions. The divisions element indicates how many divisions per quarter note are used to indicate a note's duration. For example if duration = 1 and divisions = 2 this is an eighth note duration. Duration and divisions are used directly for generating sound output so they must be chosen to take tuplets into account. Using a divisions element lets us use just one number to represent a duration for each note in the score while retaining the full power of a fractional representation. If maximum compatibility with Standard MIDI 1.0 files is important do not have the divisions value exceed 16383.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>The positive-divisions type restricts divisions values to positive numbers.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="divisions">
+         <xs:minExclusive value="0"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>The positive-divisions type restricts divisions values to positive numbers.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="divisions">
+         <xs:minExclusive value="0"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Divisions : public ElementInterface
+        {
+        public:
+            Divisions();
+            Divisions( const types::PositiveDivisions& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::PositiveDivisions getValue() const;
+            void setValue( const types::PositiveDivisions& value );
+        private:
+            types::PositiveDivisions myValue;
+        };
+        
+        
+        /**************** Staves ****************
+         2628
+         <xs:element name="staves" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The staves element is used if there is more than one staff represented in the given part (e.g. 2 staves for typical piano parts). If absent a value of 1 is assumed. Staves are ordered from top to bottom in a part in numerical order with staff 1 above staff 2.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         */
+        class Staves : public ElementInterface
+        {
+        public:
+            Staves();
+            Staves( const types::NonNegativeInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeInteger getValue() const;
+            void setValue( const types::NonNegativeInteger& value );
+        private:
+            types::NonNegativeInteger myValue;
+        };
+        
+        
+        /**************** Instruments ****************
+         2640
+         <xs:element name="instruments" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The instruments element is only used if more than one instrument is represented in the part (e.g. oboe I and II where they play together most of the time). If absent a value of 1 is assumed.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         */
+        class Instruments : public ElementInterface
+        {
+        public:
+            Instruments();
+            Instruments( const types::NonNegativeInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeInteger getValue() const;
+            void setValue( const types::NonNegativeInteger& value );
+        private:
+            types::NonNegativeInteger myValue;
+        };
+        
+        
+        /**************** Sign ****************
+         2720
+         <xs:element name="sign" type="clef-sign">	<xs:annotation>		<xs:documentation>The sign element represents the clef symbol.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="clef-sign">
+         <xs:annotation>
+         <xs:documentation>The clef-sign element represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="G"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="percussion"/>
+         <xs:enumeration value="TAB"/>
+         <xs:enumeration value="jianpu"/>
+         <xs:enumeration value="none"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="clef-sign">
+         <xs:annotation>
+         <xs:documentation>The clef-sign element represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="G"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="percussion"/>
+         <xs:enumeration value="TAB"/>
+         <xs:enumeration value="jianpu"/>
+         <xs:enumeration value="none"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Sign : public ElementInterface
+        {
+        public:
+            Sign();
+            Sign( const types::ClefSign& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::ClefSign getValue() const;
+            void setValue( const types::ClefSign& value );
+        private:
+            types::ClefSign myValue;
+        };
+        
+        
+        /**************** Line ****************
+         2725
+         <xs:element name="line" type="staff-line" minOccurs="0">	<xs:annotation>		<xs:documentation>Line numbers are counted from the bottom of the staff. Standard values are 2 for the G sign (treble clef) 4 for the F sign (bass clef) 3 for the C sign (alto clef) and 5 for TAB (on a 6-line staff).</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="staff-line">
+         <xs:annotation>
+         <xs:documentation>The staff-line type indicates the line on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff. Staff line values can be used to specify positions outside the staff, such as a C clef positioned in the middle of a grand staff.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer"/>
+         </xs:simpleType>
+         <xs:simpleType name="staff-line">
+         <xs:annotation>
+         <xs:documentation>The staff-line type indicates the line on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff. Staff line values can be used to specify positions outside the staff, such as a C clef positioned in the middle of a grand staff.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer"/>
+         </xs:simpleType>
+         */
+        class Line : public ElementInterface
+        {
+        public:
+            Line();
+            Line( const types::StaffLine& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::StaffLine getValue() const;
+            void setValue( const types::StaffLine& value );
+        private:
+            types::StaffLine myValue;
+        };
+        
+        
+        /**************** ClefOctaveChange ****************
+         2731
+         <xs:element name="clef-octave-change" type="xs:integer" minOccurs="0">	<xs:annotation>		<xs:documentation>The clef-octave-change element is used for transposing clefs. A treble clef for tenors would have a value of -1.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:integer"/>
+         <xs:simpleType name="xs:integer"/>
+         */
+        class ClefOctaveChange : public ElementInterface
+        {
+        public:
+            ClefOctaveChange();
+            ClefOctaveChange( const types::Integer& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Integer getValue() const;
+            void setValue( const types::Integer& value );
+        private:
+            types::Integer myValue;
+        };
+        
+        
+        /**************** TimeRelation ****************
+         2758
+         <xs:element name="time-relation" type="time-relation" minOccurs="0"/>
+         <xs:simpleType name="time-relation">
+         <xs:annotation>
+         <xs:documentation>The time-relation type indicates the symbol used to represent the interchangeable aspect of dual time signatures.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="parentheses"/>
+         <xs:enumeration value="bracket"/>
+         <xs:enumeration value="equals"/>
+         <xs:enumeration value="slash"/>
+         <xs:enumeration value="space"/>
+         <xs:enumeration value="hyphen"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="time-relation">
+         <xs:annotation>
+         <xs:documentation>The time-relation type indicates the symbol used to represent the interchangeable aspect of dual time signatures.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="parentheses"/>
+         <xs:enumeration value="bracket"/>
+         <xs:enumeration value="equals"/>
+         <xs:enumeration value="slash"/>
+         <xs:enumeration value="space"/>
+         <xs:enumeration value="hyphen"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class TimeRelation : public ElementInterface
+        {
+        public:
+            TimeRelation();
+            TimeRelation( const types::TimeRelation& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::TimeRelation getValue() const;
+            void setValue( const types::TimeRelation& value );
+        private:
+            types::TimeRelation myValue;
+        };
+        
+        
+        /**************** StaffType ****************
+         2898
+         <xs:element name="staff-type" type="staff-type" minOccurs="0"/>
+         <xs:simpleType name="staff-type">
+         <xs:annotation>
+         <xs:documentation>The staff-type value can be ossia, cue, editorial, regular, or alternate. An alternate staff indicates one that shares the same musical data as the prior staff, but displayed differently (e.g., treble and bass clef, standard notation and tab).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="ossia"/>
+         <xs:enumeration value="cue"/>
+         <xs:enumeration value="editorial"/>
+         <xs:enumeration value="regular"/>
+         <xs:enumeration value="alternate"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="staff-type">
+         <xs:annotation>
+         <xs:documentation>The staff-type value can be ossia, cue, editorial, regular, or alternate. An alternate staff indicates one that shares the same musical data as the prior staff, but displayed differently (e.g., treble and bass clef, standard notation and tab).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="ossia"/>
+         <xs:enumeration value="cue"/>
+         <xs:enumeration value="editorial"/>
+         <xs:enumeration value="regular"/>
+         <xs:enumeration value="alternate"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class StaffType : public ElementInterface
+        {
+        public:
+            StaffType();
+            StaffType( const types::StaffType& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::StaffType getValue() const;
+            void setValue( const types::StaffType& value );
+        private:
+            types::StaffType myValue;
+        };
+        
+        
+        /**************** StaffLines ****************
+         2902
+         <xs:element name="staff-lines" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The staff-lines element specifies the number of lines for a non 5-line staff.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         */
+        class StaffLines : public ElementInterface
+        {
+        public:
+            StaffLines();
+            StaffLines( const types::NonNegativeInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeInteger getValue() const;
+            void setValue( const types::NonNegativeInteger& value );
+        private:
+            types::NonNegativeInteger myValue;
+        };
+        
+        
+        /**************** Capo ****************
+         2913
+         <xs:element name="capo" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The capo element indicates at which fret a capo should be placed on a fretted instrument. This changes the open tuning of the strings specified by staff-tuning by the specified number of half-steps.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         */
+        class Capo : public ElementInterface
+        {
+        public:
+            Capo();
+            Capo( const types::NonNegativeInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeInteger getValue() const;
+            void setValue( const types::NonNegativeInteger& value );
+        private:
+            types::NonNegativeInteger myValue;
+        };
+        
+        
+        /**************** StaffSize ****************
+         2919
+         <xs:element name="staff-size" type="non-negative-decimal" minOccurs="0">	<xs:annotation>		<xs:documentation>The staff-size element indicates how large a staff space is on this staff expressed as a percentage of the work's default scaling. Values less than 100 make the staff space smaller while values over 100 make the staff space larger. A staff-type of cue ossia or editorial implies a staff-size of less than 100 but the exact value is implementation-dependent unless specified here. Staff size affects staff height only not the relationship of the staff to the left and right margins.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="non-negative-decimal">
+         <xs:annotation>
+         <xs:documentation>The non-negative-decimal type specifies a non-negative decimal value.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="0"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="non-negative-decimal">
+         <xs:annotation>
+         <xs:documentation>The non-negative-decimal type specifies a non-negative decimal value.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="0"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class StaffSize : public ElementInterface
+        {
+        public:
+            StaffSize();
+            StaffSize( const types::NonNegativeDecimal& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeDecimal getValue() const;
+            void setValue( const types::NonNegativeDecimal& value );
+        private:
+            types::NonNegativeDecimal myValue;
+        };
+        
+        
+        /**************** SenzaMisura ****************
+         2957
+         <xs:element name="senza-misura" type="xs:string">	<xs:annotation>		<xs:documentation>A senza-misura element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used if any such as an X. The time element's symbol attribute is not used when a senza-misura element is present.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class SenzaMisura : public ElementInterface
+        {
+        public:
+            SenzaMisura();
+            SenzaMisura( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Diatonic ****************
+         2980
+         <xs:element name="diatonic" type="xs:integer" minOccurs="0">	<xs:annotation>		<xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:integer"/>
+         <xs:simpleType name="xs:integer"/>
+         */
+        class Diatonic : public ElementInterface
+        {
+        public:
+            Diatonic();
+            Diatonic( const types::Integer& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Integer getValue() const;
+            void setValue( const types::Integer& value );
+        private:
+            types::Integer myValue;
+        };
+        
+        
+        /**************** Chromatic ****************
+         2986
+         <xs:element name="chromatic" type="semitones">	<xs:annotation>		<xs:documentation>The chromatic element represents the number of semitones needed to get from written to sounding pitch. This value does not include octave-change values; the values for both elements need to be added to the written pitch to get the correct sounding pitch.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class Chromatic : public ElementInterface
+        {
+        public:
+            Chromatic();
+            Chromatic( const types::Semitones& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Semitones getValue() const;
+            void setValue( const types::Semitones& value );
+        private:
+            types::Semitones myValue;
+        };
+        
+        
+        /**************** OctaveChange ****************
+         2991
+         <xs:element name="octave-change" type="xs:integer" minOccurs="0">	<xs:annotation>		<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:integer"/>
+         <xs:simpleType name="xs:integer"/>
+         */
+        class OctaveChange : public ElementInterface
+        {
+        public:
+            OctaveChange();
+            OctaveChange( const types::Integer& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Integer getValue() const;
+            void setValue( const types::Integer& value );
+        private:
+            types::Integer myValue;
+        };
+        
+        
+        /**************** AccordionMiddle ****************
+         3126
+         <xs:element name="accordion-middle" type="accordion-middle" minOccurs="0">	<xs:annotation>		<xs:documentation>The accordion-middle element indicates the presence of 1 to 3 dots in the middle (8') section of the registration symbol.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="accordion-middle">
+         <xs:annotation>
+         <xs:documentation>The accordion-middle type may have values of 1, 2, or 3, corresponding to having 1 to 3 dots in the middle section of the accordion registration symbol.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="3"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="accordion-middle">
+         <xs:annotation>
+         <xs:documentation>The accordion-middle type may have values of 1, 2, or 3, corresponding to having 1 to 3 dots in the middle section of the accordion registration symbol.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="3"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class AccordionMiddle : public ElementInterface
+        {
+        public:
+            AccordionMiddle();
+            AccordionMiddle( const types::AccordionMiddle& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::AccordionMiddle getValue() const;
+            void setValue( const types::AccordionMiddle& value );
+        private:
+            types::AccordionMiddle myValue;
+        };
+        
+        
+        /**************** FrameStrings ****************
+         3441
+         <xs:element name="frame-strings" type="xs:positiveInteger">	<xs:annotation>		<xs:documentation>The frame-strings element gives the overall size of the frame in vertical lines (strings).</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:positiveInteger"/>
+         <xs:simpleType name="xs:positiveInteger"/>
+         */
+        class FrameStrings : public ElementInterface
+        {
+        public:
+            FrameStrings();
+            FrameStrings( const types::PositiveInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::PositiveInteger getValue() const;
+            void setValue( const types::PositiveInteger& value );
+        private:
+            types::PositiveInteger myValue;
+        };
+        
+        
+        /**************** FrameFrets ****************
+         3446
+         <xs:element name="frame-frets" type="xs:positiveInteger">	<xs:annotation>		<xs:documentation>The frame-frets element gives the overall size of the frame in horizontal spaces (frets).</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:positiveInteger"/>
+         <xs:simpleType name="xs:positiveInteger"/>
+         */
+        class FrameFrets : public ElementInterface
+        {
+        public:
+            FrameFrets();
+            FrameFrets( const types::PositiveInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::PositiveInteger getValue() const;
+            void setValue( const types::PositiveInteger& value );
+        private:
+            types::PositiveInteger myValue;
+        };
+        
+        
+        /**************** MetronomeRelation ****************
+         3633
+         <xs:element name="metronome-relation" type="xs:string">	<xs:annotation>		<xs:documentation>The metronome-relation element describes the relationship symbol that goes between the two sets of metronome-note elements. The currently allowed value is equals but this may expand in future versions. If the element is empty the equals value is used.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class MetronomeRelation : public ElementInterface
+        {
+        public:
+            MetronomeRelation();
+            MetronomeRelation( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** MetronomeType ****************
+         3665
+         <xs:element name="metronome-type" type="note-type-value">	<xs:annotation>		<xs:documentation>The metronome-type element works like the type element in defining metric relationships.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class MetronomeType : public ElementInterface
+        {
+        public:
+            MetronomeType();
+            MetronomeType( const types::NoteTypeValue& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NoteTypeValue getValue() const;
+            void setValue( const types::NoteTypeValue& value );
+        private:
+            types::NoteTypeValue myValue;
+        };
+        
+        
+        /**************** PedalStep ****************
+         3764
+         <xs:element name="pedal-step" type="step">	<xs:annotation>		<xs:documentation>The pedal-step element defines the pitch step for a single harp pedal.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class PedalStep : public ElementInterface
+        {
+        public:
+            PedalStep();
+            PedalStep( const types::Step& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Step getValue() const;
+            void setValue( const types::Step& value );
+        private:
+            types::Step myValue;
+        };
+        
+        
+        /**************** PedalAlter ****************
+         3769
+         <xs:element name="pedal-alter" type="semitones">	<xs:annotation>		<xs:documentation>The pedal-alter element defines the chromatic alteration for a single harp pedal.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class PedalAlter : public ElementInterface
+        {
+        public:
+            PedalAlter();
+            PedalAlter( const types::Semitones& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Semitones getValue() const;
+            void setValue( const types::Semitones& value );
+        private:
+            types::Semitones myValue;
+        };
+        
+        
+        /**************** Glass ****************
+         3788
+         <xs:element name="glass" type="glass"/>
+         <xs:simpleType name="glass">
+         <xs:annotation>
+         <xs:documentation>The glass type represents pictograms for glass percussion instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="wind chimes"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="glass">
+         <xs:annotation>
+         <xs:documentation>The glass type represents pictograms for glass percussion instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="wind chimes"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Glass : public ElementInterface
+        {
+        public:
+            Glass();
+            Glass( const types::Glass& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Glass getValue() const;
+            void setValue( const types::Glass& value );
+        private:
+            types::Glass myValue;
+        };
+        
+        
+        /**************** Metal ****************
+         3791
+         <xs:element name="metal" type="metal"/>
+         <xs:simpleType name="metal">
+         <xs:annotation>
+         <xs:documentation>The metal type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like Stone's high-hat cymbals but without the long vertical line at the bottom.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="almglocken"/>
+         <xs:enumeration value="bell"/>
+         <xs:enumeration value="bell plate"/>
+         <xs:enumeration value="brake drum"/>
+         <xs:enumeration value="Chinese cymbal"/>
+         <xs:enumeration value="cowbell"/>
+         <xs:enumeration value="crash cymbals"/>
+         <xs:enumeration value="crotale"/>
+         <xs:enumeration value="cymbal tongs"/>
+         <xs:enumeration value="domed gong"/>
+         <xs:enumeration value="finger cymbals"/>
+         <xs:enumeration value="flexatone"/>
+         <xs:enumeration value="gong"/>
+         <xs:enumeration value="hi-hat"/>
+         <xs:enumeration value="high-hat cymbals"/>
+         <xs:enumeration value="handbell"/>
+         <xs:enumeration value="sistrum"/>
+         <xs:enumeration value="sizzle cymbal"/>
+         <xs:enumeration value="sleigh bells"/>
+         <xs:enumeration value="suspended cymbal"/>
+         <xs:enumeration value="tam tam"/>
+         <xs:enumeration value="triangle"/>
+         <xs:enumeration value="Vietnamese hat"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="metal">
+         <xs:annotation>
+         <xs:documentation>The metal type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like Stone's high-hat cymbals but without the long vertical line at the bottom.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="almglocken"/>
+         <xs:enumeration value="bell"/>
+         <xs:enumeration value="bell plate"/>
+         <xs:enumeration value="brake drum"/>
+         <xs:enumeration value="Chinese cymbal"/>
+         <xs:enumeration value="cowbell"/>
+         <xs:enumeration value="crash cymbals"/>
+         <xs:enumeration value="crotale"/>
+         <xs:enumeration value="cymbal tongs"/>
+         <xs:enumeration value="domed gong"/>
+         <xs:enumeration value="finger cymbals"/>
+         <xs:enumeration value="flexatone"/>
+         <xs:enumeration value="gong"/>
+         <xs:enumeration value="hi-hat"/>
+         <xs:enumeration value="high-hat cymbals"/>
+         <xs:enumeration value="handbell"/>
+         <xs:enumeration value="sistrum"/>
+         <xs:enumeration value="sizzle cymbal"/>
+         <xs:enumeration value="sleigh bells"/>
+         <xs:enumeration value="suspended cymbal"/>
+         <xs:enumeration value="tam tam"/>
+         <xs:enumeration value="triangle"/>
+         <xs:enumeration value="Vietnamese hat"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Metal : public ElementInterface
+        {
+        public:
+            Metal();
+            Metal( const types::Metal& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Metal getValue() const;
+            void setValue( const types::Metal& value );
+        private:
+            types::Metal myValue;
+        };
+        
+        
+        /**************** Wood ****************
+         3794
+         <xs:element name="wood" type="wood"/>
+         <xs:simpleType name="wood">
+         <xs:annotation>
+         <xs:documentation>The wood type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram. The vibraslap and castanets values are in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="board clapper"/>
+         <xs:enumeration value="cabasa"/>
+         <xs:enumeration value="castanets"/>
+         <xs:enumeration value="claves"/>
+         <xs:enumeration value="guiro"/>
+         <xs:enumeration value="log drum"/>
+         <xs:enumeration value="maraca"/>
+         <xs:enumeration value="maracas"/>
+         <xs:enumeration value="ratchet"/>
+         <xs:enumeration value="sandpaper blocks"/>
+         <xs:enumeration value="slit drum"/>
+         <xs:enumeration value="temple block"/>
+         <xs:enumeration value="vibraslap"/>
+         <xs:enumeration value="wood block"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="wood">
+         <xs:annotation>
+         <xs:documentation>The wood type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram. The vibraslap and castanets values are in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="board clapper"/>
+         <xs:enumeration value="cabasa"/>
+         <xs:enumeration value="castanets"/>
+         <xs:enumeration value="claves"/>
+         <xs:enumeration value="guiro"/>
+         <xs:enumeration value="log drum"/>
+         <xs:enumeration value="maraca"/>
+         <xs:enumeration value="maracas"/>
+         <xs:enumeration value="ratchet"/>
+         <xs:enumeration value="sandpaper blocks"/>
+         <xs:enumeration value="slit drum"/>
+         <xs:enumeration value="temple block"/>
+         <xs:enumeration value="vibraslap"/>
+         <xs:enumeration value="wood block"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Wood : public ElementInterface
+        {
+        public:
+            Wood();
+            Wood( const types::Wood& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Wood getValue() const;
+            void setValue( const types::Wood& value );
+        private:
+            types::Wood myValue;
+        };
+        
+        
+        /**************** Pitched ****************
+         3797
+         <xs:element name="pitched" type="pitched"/>
+         <xs:simpleType name="pitched">
+         <xs:annotation>
+         <xs:documentation>The pitched type represents pictograms for pitched percussion instruments. The chimes and tubular chimes values distinguish the single-line and double-line versions of the pictogram. The mallet value is in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="chimes"/>
+         <xs:enumeration value="glockenspiel"/>
+         <xs:enumeration value="mallet"/>
+         <xs:enumeration value="marimba"/>
+         <xs:enumeration value="tubular chimes"/>
+         <xs:enumeration value="vibraphone"/>
+         <xs:enumeration value="xylophone"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="pitched">
+         <xs:annotation>
+         <xs:documentation>The pitched type represents pictograms for pitched percussion instruments. The chimes and tubular chimes values distinguish the single-line and double-line versions of the pictogram. The mallet value is in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="chimes"/>
+         <xs:enumeration value="glockenspiel"/>
+         <xs:enumeration value="mallet"/>
+         <xs:enumeration value="marimba"/>
+         <xs:enumeration value="tubular chimes"/>
+         <xs:enumeration value="vibraphone"/>
+         <xs:enumeration value="xylophone"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Pitched : public ElementInterface
+        {
+        public:
+            Pitched();
+            Pitched( const types::Pitched& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Pitched getValue() const;
+            void setValue( const types::Pitched& value );
+        private:
+            types::Pitched myValue;
+        };
+        
+        
+        /**************** Membrane ****************
+         3800
+         <xs:element name="membrane" type="membrane"/>
+         <xs:simpleType name="membrane">
+         <xs:annotation>
+         <xs:documentation>The membrane type represents pictograms for membrane percussion instruments. The goblet drum value is in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="bass drum"/>
+         <xs:enumeration value="bass drum on side"/>
+         <xs:enumeration value="bongos"/>
+         <xs:enumeration value="conga drum"/>
+         <xs:enumeration value="goblet drum"/>
+         <xs:enumeration value="military drum"/>
+         <xs:enumeration value="snare drum"/>
+         <xs:enumeration value="snare drum snares off"/>
+         <xs:enumeration value="tambourine"/>
+         <xs:enumeration value="tenor drum"/>
+         <xs:enumeration value="timbales"/>
+         <xs:enumeration value="tomtom"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="membrane">
+         <xs:annotation>
+         <xs:documentation>The membrane type represents pictograms for membrane percussion instruments. The goblet drum value is in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="bass drum"/>
+         <xs:enumeration value="bass drum on side"/>
+         <xs:enumeration value="bongos"/>
+         <xs:enumeration value="conga drum"/>
+         <xs:enumeration value="goblet drum"/>
+         <xs:enumeration value="military drum"/>
+         <xs:enumeration value="snare drum"/>
+         <xs:enumeration value="snare drum snares off"/>
+         <xs:enumeration value="tambourine"/>
+         <xs:enumeration value="tenor drum"/>
+         <xs:enumeration value="timbales"/>
+         <xs:enumeration value="tomtom"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Membrane : public ElementInterface
+        {
+        public:
+            Membrane();
+            Membrane( const types::Membrane& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Membrane getValue() const;
+            void setValue( const types::Membrane& value );
+        private:
+            types::Membrane myValue;
+        };
+        
+        
+        /**************** Effect ****************
+         3803
+         <xs:element name="effect" type="effect"/>
+         <xs:simpleType name="effect">
+         <xs:annotation>
+         <xs:documentation>The effect type represents pictograms for sound effect percussion instruments. The cannon value is in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="anvil"/>
+         <xs:enumeration value="auto horn"/>
+         <xs:enumeration value="bird whistle"/>
+         <xs:enumeration value="cannon"/>
+         <xs:enumeration value="duck call"/>
+         <xs:enumeration value="gun shot"/>
+         <xs:enumeration value="klaxon horn"/>
+         <xs:enumeration value="lions roar"/>
+         <xs:enumeration value="police whistle"/>
+         <xs:enumeration value="siren"/>
+         <xs:enumeration value="slide whistle"/>
+         <xs:enumeration value="thunder sheet"/>
+         <xs:enumeration value="wind machine"/>
+         <xs:enumeration value="wind whistle"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="effect">
+         <xs:annotation>
+         <xs:documentation>The effect type represents pictograms for sound effect percussion instruments. The cannon value is in addition to Stone's list.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="anvil"/>
+         <xs:enumeration value="auto horn"/>
+         <xs:enumeration value="bird whistle"/>
+         <xs:enumeration value="cannon"/>
+         <xs:enumeration value="duck call"/>
+         <xs:enumeration value="gun shot"/>
+         <xs:enumeration value="klaxon horn"/>
+         <xs:enumeration value="lions roar"/>
+         <xs:enumeration value="police whistle"/>
+         <xs:enumeration value="siren"/>
+         <xs:enumeration value="slide whistle"/>
+         <xs:enumeration value="thunder sheet"/>
+         <xs:enumeration value="wind machine"/>
+         <xs:enumeration value="wind whistle"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Effect : public ElementInterface
+        {
+        public:
+            Effect();
+            Effect( const types::Effect& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Effect getValue() const;
+            void setValue( const types::Effect& value );
+        private:
+            types::Effect myValue;
+        };
+        
+        
+        /**************** StickLocation ****************
+         3815
+         <xs:element name="stick-location" type="stick-location"/>
+         <xs:simpleType name="stick-location">
+         <xs:annotation>
+         <xs:documentation>The stick-location type represents pictograms for the location of sticks, beaters, or mallets on cymbals, gongs, drums, and other instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="center"/>
+         <xs:enumeration value="rim"/>
+         <xs:enumeration value="cymbal bell"/>
+         <xs:enumeration value="cymbal edge"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="stick-location">
+         <xs:annotation>
+         <xs:documentation>The stick-location type represents pictograms for the location of sticks, beaters, or mallets on cymbals, gongs, drums, and other instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="center"/>
+         <xs:enumeration value="rim"/>
+         <xs:enumeration value="cymbal bell"/>
+         <xs:enumeration value="cymbal edge"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class StickLocation : public ElementInterface
+        {
+        public:
+            StickLocation();
+            StickLocation( const types::StickLocation& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::StickLocation getValue() const;
+            void setValue( const types::StickLocation& value );
+        private:
+            types::StickLocation myValue;
+        };
+        
+        
+        /**************** OtherPercussion ****************
+         3818
+         <xs:element name="other-percussion" type="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class OtherPercussion : public ElementInterface
+        {
+        public:
+            OtherPercussion();
+            OtherPercussion( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** StickType ****************
+         3994
+         <xs:element name="stick-type" type="stick-type"/>
+         <xs:simpleType name="stick-type">
+         <xs:annotation>
+         <xs:documentation>The stick-type type represents the shape of pictograms where the material
+         in the stick, mallet, or beater is represented in the pictogram.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="bass drum"/>
+         <xs:enumeration value="double bass drum"/>
+         <xs:enumeration value="timpani"/>
+         <xs:enumeration value="xylophone"/>
+         <xs:enumeration value="yarn"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="stick-type">
+         <xs:annotation>
+         <xs:documentation>The stick-type type represents the shape of pictograms where the material
+         in the stick, mallet, or beater is represented in the pictogram.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="bass drum"/>
+         <xs:enumeration value="double bass drum"/>
+         <xs:enumeration value="timpani"/>
+         <xs:enumeration value="xylophone"/>
+         <xs:enumeration value="yarn"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class StickType : public ElementInterface
+        {
+        public:
+            StickType();
+            StickType( const types::StickType& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::StickType getValue() const;
+            void setValue( const types::StickType& value );
+        private:
+            types::StickType myValue;
+        };
+        
+        
+        /**************** StickMaterial ****************
+         3997
+         <xs:element name="stick-material" type="stick-material"/>
+         <xs:simpleType name="stick-material">
+         <xs:annotation>
+         <xs:documentation>The stick-material type represents the material being displayed in a stick pictogram.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="soft"/>
+         <xs:enumeration value="medium"/>
+         <xs:enumeration value="hard"/>
+         <xs:enumeration value="shaded"/>
+         <xs:enumeration value="x"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="stick-material">
+         <xs:annotation>
+         <xs:documentation>The stick-material type represents the material being displayed in a stick pictogram.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="soft"/>
+         <xs:enumeration value="medium"/>
+         <xs:enumeration value="hard"/>
+         <xs:enumeration value="shaded"/>
+         <xs:enumeration value="x"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class StickMaterial : public ElementInterface
+        {
+        public:
+            StickMaterial();
+            StickMaterial( const types::StickMaterial& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::StickMaterial getValue() const;
+            void setValue( const types::StickMaterial& value );
+        private:
+            types::StickMaterial myValue;
+        };
+        
+        
+        /**************** EncodingDate ****************
+         4045
+         <xs:element name="encoding-date" type="yyyy-mm-dd"/>
+         <xs:simpleType name="yyyy-mm-dd">
+         <xs:annotation>
+         <xs:documentation>Calendar dates are represented yyyy-mm-dd format, following ISO 8601. This is a W3C XML Schema date type, but without the optional timezone data.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:date">
+         <xs:pattern value="[^:Z]*"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="yyyy-mm-dd">
+         <xs:annotation>
+         <xs:documentation>Calendar dates are represented yyyy-mm-dd format, following ISO 8601. This is a W3C XML Schema date type, but without the optional timezone data.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:date">
+         <xs:pattern value="[^:Z]*"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class EncodingDate : public ElementInterface
+        {
+        public:
+            EncodingDate();
+            EncodingDate( const types::Date& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Date getValue() const;
+            void setValue( const types::Date& value );
+        private:
+            types::Date myValue;
+        };
+        
+        
+        /**************** Software ****************
+         4051
+         <xs:element name="software" type="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class Software : public ElementInterface
+        {
+        public:
+            Software();
+            Software( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** EncodingDescription ****************
+         4054
+         <xs:element name="encoding-description" type="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class EncodingDescription : public ElementInterface
+        {
+        public:
+            EncodingDescription();
+            EncodingDescription( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Source ****************
+         4083
+         <xs:element name="source" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The source for the music that is encoded. This is similar to the Dublin Core source element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class Source : public ElementInterface
+        {
+        public:
+            Source();
+            Source( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** MeasureDistance ****************
+         4191
+         <xs:element name="measure-distance" type="tenths" minOccurs="0">	<xs:annotation>		<xs:documentation>The measure-distance element specifies the horizontal distance from the previous measure. This value is only used for systems where there is horizontal whitespace in the middle of a system as in systems with codas. To specify the measure width use the width attribute of the measure element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class MeasureDistance : public ElementInterface
+        {
+        public:
+            MeasureDistance();
+            MeasureDistance( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** PageHeight ****************
+         4226
+         <xs:element name="page-height" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class PageHeight : public ElementInterface
+        {
+        public:
+            PageHeight();
+            PageHeight( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** PageWidth ****************
+         4229
+         <xs:element name="page-width" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class PageWidth : public ElementInterface
+        {
+        public:
+            PageWidth();
+            PageWidth( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** Millimeters ****************
+         4251
+         <xs:element name="millimeters" type="millimeters"/>
+         <xs:simpleType name="millimeters">
+         <xs:annotation>
+         <xs:documentation>The millimeters type is a number representing millimeters. This is used in the scaling element to provide a default scaling from tenths to physical units.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="millimeters">
+         <xs:annotation>
+         <xs:documentation>The millimeters type is a number representing millimeters. This is used in the scaling element to provide a default scaling from tenths to physical units.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class Millimeters : public ElementInterface
+        {
+        public:
+            Millimeters();
+            Millimeters( const types::Millimeters& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Millimeters getValue() const;
+            void setValue( const types::Millimeters& value );
+        private:
+            types::Millimeters myValue;
+        };
+        
+        
+        /**************** Tenths ****************
+         4254
+         <xs:element name="tenths" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class Tenths : public ElementInterface
+        {
+        public:
+            Tenths();
+            Tenths( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** StaffDistance ****************
+         4262
+         <xs:element name="staff-distance" type="tenths" minOccurs="0"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class StaffDistance : public ElementInterface
+        {
+        public:
+            StaffDistance();
+            StaffDistance( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** SystemDistance ****************
+         4289
+         <xs:element name="system-distance" type="tenths" minOccurs="0"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class SystemDistance : public ElementInterface
+        {
+        public:
+            SystemDistance();
+            SystemDistance( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** TopSystemDistance ****************
+         4293
+         <xs:element name="top-system-distance" type="tenths" minOccurs="0"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class TopSystemDistance : public ElementInterface
+        {
+        public:
+            TopSystemDistance();
+            TopSystemDistance( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** ArrowDirection ****************
+         4468
+         <xs:element name="arrow-direction" type="arrow-direction"/>
+         <xs:simpleType name="arrow-direction">
+         <xs:annotation>
+         <xs:documentation>The arrow-direction type represents the direction in which an arrow points, using Unicode arrow terminology.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="left"/>
+         <xs:enumeration value="up"/>
+         <xs:enumeration value="right"/>
+         <xs:enumeration value="down"/>
+         <xs:enumeration value="northwest"/>
+         <xs:enumeration value="northeast"/>
+         <xs:enumeration value="southeast"/>
+         <xs:enumeration value="southwest"/>
+         <xs:enumeration value="left right"/>
+         <xs:enumeration value="up down"/>
+         <xs:enumeration value="northwest southeast"/>
+         <xs:enumeration value="northeast southwest"/>
+         <xs:enumeration value="other"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="arrow-direction">
+         <xs:annotation>
+         <xs:documentation>The arrow-direction type represents the direction in which an arrow points, using Unicode arrow terminology.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="left"/>
+         <xs:enumeration value="up"/>
+         <xs:enumeration value="right"/>
+         <xs:enumeration value="down"/>
+         <xs:enumeration value="northwest"/>
+         <xs:enumeration value="northeast"/>
+         <xs:enumeration value="southeast"/>
+         <xs:enumeration value="southwest"/>
+         <xs:enumeration value="left right"/>
+         <xs:enumeration value="up down"/>
+         <xs:enumeration value="northwest southeast"/>
+         <xs:enumeration value="northeast southwest"/>
+         <xs:enumeration value="other"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class ArrowDirection : public ElementInterface
+        {
+        public:
+            ArrowDirection();
+            ArrowDirection( const types::ArrowDirection& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::ArrowDirection getValue() const;
+            void setValue( const types::ArrowDirection& value );
+        private:
+            types::ArrowDirection myValue;
+        };
+        
+        
+        /**************** ArrowStyle ****************
+         4471
+         <xs:element name="arrow-style" type="arrow-style" minOccurs="0"/>
+         <xs:simpleType name="arrow-style">
+         <xs:annotation>
+         <xs:documentation>The arrow-style type represents the style of an arrow, using Unicode arrow terminology. Filled and hollow arrows indicate polygonal single arrows. Paired arrows are duplicate single arrows in the same direction. Combined arrows apply to double direction arrows like left right, indicating that an arrow in one direction should be combined with an arrow in the other direction.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="single"/>
+         <xs:enumeration value="double"/>
+         <xs:enumeration value="filled"/>
+         <xs:enumeration value="hollow"/>
+         <xs:enumeration value="paired"/>
+         <xs:enumeration value="combined"/>
+         <xs:enumeration value="other"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="arrow-style">
+         <xs:annotation>
+         <xs:documentation>The arrow-style type represents the style of an arrow, using Unicode arrow terminology. Filled and hollow arrows indicate polygonal single arrows. Paired arrows are duplicate single arrows in the same direction. Combined arrows apply to double direction arrows like left right, indicating that an arrow in one direction should be combined with an arrow in the other direction.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="single"/>
+         <xs:enumeration value="double"/>
+         <xs:enumeration value="filled"/>
+         <xs:enumeration value="hollow"/>
+         <xs:enumeration value="paired"/>
+         <xs:enumeration value="combined"/>
+         <xs:enumeration value="other"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class ArrowStyle : public ElementInterface
+        {
+        public:
+            ArrowStyle();
+            ArrowStyle( const types::ArrowStyle& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::ArrowStyle getValue() const;
+            void setValue( const types::ArrowStyle& value );
+        private:
+            types::ArrowStyle myValue;
+        };
+        
+        
+        /**************** CircularArrow ****************
+         4475
+         <xs:element name="circular-arrow" type="circular-arrow"/>
+         <xs:simpleType name="circular-arrow">
+         <xs:annotation>
+         <xs:documentation>The circular-arrow type represents the direction in which a circular arrow points, using Unicode arrow terminology.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="clockwise"/>
+         <xs:enumeration value="anticlockwise"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="circular-arrow">
+         <xs:annotation>
+         <xs:documentation>The circular-arrow type represents the direction in which a circular arrow points, using Unicode arrow terminology.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="clockwise"/>
+         <xs:enumeration value="anticlockwise"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class CircularArrow : public ElementInterface
+        {
+        public:
+            CircularArrow();
+            CircularArrow( const types::CircularArrow& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::CircularArrow getValue() const;
+            void setValue( const types::CircularArrow& value );
+        private:
+            types::CircularArrow myValue;
+        };
+        
+        
+        /**************** BendAlter ****************
+         4515
+         <xs:element name="bend-alter" type="semitones">	<xs:annotation>		<xs:documentation>The bend-alter element indicates the number of steps in the bend similar to the alter element. As with the alter element numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class BendAlter : public ElementInterface
+        {
+        public:
+            BendAlter();
+            BendAlter( const types::Semitones& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Semitones getValue() const;
+            void setValue( const types::Semitones& value );
+        private:
+            types::Semitones myValue;
+        };
+        
+        
+        /**************** HoleType ****************
+         4758
+         <xs:element name="hole-type" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The content of the optional hole-type element indicates what the hole symbol represents in terms of instrument fingering or other techniques.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class HoleType : public ElementInterface
+        {
+        public:
+            HoleType();
+            HoleType( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** HoleShape ****************
+         4767
+         <xs:element name="hole-shape" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The optional hole-shape element indicates the shape of the hole symbol; the default is a circle.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class HoleShape : public ElementInterface
+        {
+        public:
+            HoleShape();
+            HoleShape( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Syllabic ****************
+         4802, 4817
+         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
+         <xs:simpleType name="syllabic">
+         <xs:annotation>
+         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="single"/>
+         <xs:enumeration value="begin"/>
+         <xs:enumeration value="end"/>
+         <xs:enumeration value="middle"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="syllabic">
+         <xs:annotation>
+         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="single"/>
+         <xs:enumeration value="begin"/>
+         <xs:enumeration value="end"/>
+         <xs:enumeration value="middle"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Syllabic : public ElementInterface
+        {
+        public:
+            Syllabic();
+            Syllabic( const types::Syllabic& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Syllabic getValue() const;
+            void setValue( const types::Syllabic& value );
+        private:
+            types::Syllabic myValue;
+        };
+        
+        
+//        /**************** Syllabic ****************
+//         4802, 4817
+//         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
+//         <xs:simpleType name="syllabic">
+//         <xs:annotation>
+//         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
+//         </xs:annotation>
+//         <xs:restriction base="xs:string">
+//         <xs:enumeration value="single"/>
+//         <xs:enumeration value="begin"/>
+//         <xs:enumeration value="end"/>
+//         <xs:enumeration value="middle"/>
+//         </xs:restriction>
+//         </xs:simpleType>
+//         <xs:simpleType name="syllabic">
+//         <xs:annotation>
+//         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
+//         </xs:annotation>
+//         <xs:restriction base="xs:string">
+//         <xs:enumeration value="single"/>
+//         <xs:enumeration value="begin"/>
+//         <xs:enumeration value="end"/>
+//         <xs:enumeration value="middle"/>
+//         </xs:restriction>
+//         </xs:simpleType>
+//         */
+//        class Syllabic : public ElementInterface
+//        {
+//        public:
+//            Syllabic();
+//            Syllabic( const types::Syllabic& value );
+//            virtual bool hasAttributes() const;
+//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+//            virtual std::ostream& streamName( std::ostream& os ) const;
+//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+//            types::Syllabic getValue() const;
+//            void setValue( const types::Syllabic& value );
+//        private:
+//            types::Syllabic myValue;
+//        };
+        
+        
+        /**************** Step ****************
+         5220
+         <xs:element name="step" type="step"/>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Step : public ElementInterface
+        {
+        public:
+            Step();
+            Step( const types::Step& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Step getValue() const;
+            void setValue( const types::Step& value );
+        private:
+            types::Step myValue;
+        };
+        
+        
+        /**************** Alter ****************
+         5223
+         <xs:element name="alter" type="semitones" minOccurs="0"/>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class Alter : public ElementInterface
+        {
+        public:
+            Alter();
+            Alter( const types::Semitones& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Semitones getValue() const;
+            void setValue( const types::Semitones& value );
+        private:
+            types::Semitones myValue;
+        };
+        
+        
+        /**************** Octave ****************
+         5227
+         <xs:element name="octave" type="octave"/>
+         <xs:simpleType name="octave">
+         <xs:annotation>
+         <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="9"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="octave">
+         <xs:annotation>
+         <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="9"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Octave : public ElementInterface
+        {
+        public:
+            Octave();
+            Octave( const types::Octave& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Octave getValue() const;
+            void setValue( const types::Octave& value );
+        private:
+            types::Octave myValue;
+        };
+        
+        
+        /**************** ActualNotes ****************
+         5518
+         <xs:element name="actual-notes" type="xs:nonNegativeInteger">	<xs:annotation>		<xs:documentation>The actual-notes element describes how many notes are played in the time usually occupied by the number in the normal-notes element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         */
+        class ActualNotes : public ElementInterface
+        {
+        public:
+            ActualNotes();
+            ActualNotes( const types::NonNegativeInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeInteger getValue() const;
+            void setValue( const types::NonNegativeInteger& value );
+        private:
+            types::NonNegativeInteger myValue;
+        };
+        
+        
+        /**************** NormalNotes ****************
+         5523
+         <xs:element name="normal-notes" type="xs:nonNegativeInteger">	<xs:annotation>		<xs:documentation>The normal-notes element describes how many notes are usually played in the time occupied by the number in the actual-notes element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         <xs:simpleType name="xs:nonNegativeInteger"/>
+         */
+        class NormalNotes : public ElementInterface
+        {
+        public:
+            NormalNotes();
+            NormalNotes( const types::NonNegativeInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NonNegativeInteger getValue() const;
+            void setValue( const types::NonNegativeInteger& value );
+        private:
+            types::NonNegativeInteger myValue;
+        };
+        
+        
+        /**************** NormalType ****************
+         5530
+         <xs:element name="normal-type" type="note-type-value">	<xs:annotation>		<xs:documentation>If the type associated with the number in the normal-notes element is different than the current note type (e.g. a quarter note within an eighth note triplet) then the normal-notes type (e.g. eighth) is specified in the normal-type and normal-dot elements.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class NormalType : public ElementInterface
+        {
+        public:
+            NormalType();
+            NormalType( const types::NoteTypeValue& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NoteTypeValue getValue() const;
+            void setValue( const types::NoteTypeValue& value );
+        private:
+            types::NoteTypeValue myValue;
+        };
+        
+        
+        /**************** CreditType ****************
+         5657
+         <xs:element name="credit-type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class CreditType : public ElementInterface
+        {
+        public:
+            CreditType();
+            CreditType( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** InstrumentName ****************
+         5879
+         <xs:element name="instrument-name" type="xs:string">	<xs:annotation>		<xs:documentation>The instrument-name element is typically used within a software application rather than appearing on the printed page of a score.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class InstrumentName : public ElementInterface
+        {
+        public:
+            InstrumentName();
+            InstrumentName( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** InstrumentAbbreviation ****************
+         5884
+         <xs:element name="instrument-abbreviation" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The optional instrument-abbreviation element is typically used within a software application rather than appearing on the printed page of a score.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class InstrumentAbbreviation : public ElementInterface
+        {
+        public:
+            InstrumentAbbreviation();
+            InstrumentAbbreviation( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** InstrumentSound ****************
+         5890
+         <xs:element name="instrument-sound" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The instrument-sound element describes the default timbre of the score-instrument. This description is independent of a particular virtual or MIDI instrument specification and allows playback to be shared more easily between applications and libraries.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class InstrumentSound : public ElementInterface
+        {
+        public:
+            InstrumentSound();
+            InstrumentSound( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Ensemble ****************
+         5903
+         <xs:element name="ensemble" type="positive-integer-or-empty">	<xs:annotation>		<xs:documentation>The ensemble element was added in Version 2.0. It is present if performance is intended by an ensemble such as an orchestral section. The text of the ensemble element contains the size of the section or is empty if the ensemble size is not specified.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="positive-integer-or-empty">
+         <xs:annotation>
+         <xs:documentation>The positive-integer-or-empty values can be either a positive integer or an empty string.</xs:documentation>
+         </xs:annotation>
+         <xs:union memberTypes="xs:positiveInteger">
+         <xs:simpleType>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value=""/>
+         </xs:restriction>
+         </xs:simpleType>
+         </xs:union>
+         </xs:simpleType>
+         <xs:simpleType name="positive-integer-or-empty">
+         <xs:annotation>
+         <xs:documentation>The positive-integer-or-empty values can be either a positive integer or an empty string.</xs:documentation>
+         </xs:annotation>
+         <xs:union memberTypes="xs:positiveInteger">
+         <xs:simpleType>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value=""/>
+         </xs:restriction>
+         </xs:simpleType>
+         </xs:union>
+         </xs:simpleType>
+         */
+        class Ensemble : public ElementInterface
+        {
+        public:
+            Ensemble();
+            Ensemble( const types::PositiveIntegerOrEmpty& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::PositiveIntegerOrEmpty getValue() const;
+            void setValue( const types::PositiveIntegerOrEmpty& value );
+        private:
+            types::PositiveIntegerOrEmpty myValue;
+        };
+        
+        
+        /**************** Group ****************
+         5940
+         <xs:element name="group" type="xs:string" minOccurs="0" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The group element allows the use of different versions of the part for different purposes. Typical values include score parts sound and data. Ordering information that is directly encoded in MuseData can be derived from the ordering within a MusicXML score or opus.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class Group : public ElementInterface
+        {
+        public:
+            Group();
+            Group( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** VirtualLibrary ****************
+         5972
+         <xs:element name="virtual-library" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The virtual-library element indicates the virtual instrument library name.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class VirtualLibrary : public ElementInterface
+        {
+        public:
+            VirtualLibrary();
+            VirtualLibrary( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** VirtualName ****************
+         5978
+         <xs:element name="virtual-name" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The virtual-name element indicates the library-specific name for the virtual instrument.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class VirtualName : public ElementInterface
+        {
+        public:
+            VirtualName();
+            VirtualName( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** WorkNumber ****************
+         5989
+         <xs:element name="work-number" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The work-number element specifies the number of a work such as its opus number.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class WorkNumber : public ElementInterface
+        {
+        public:
+            WorkNumber();
+            WorkNumber( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** WorkTitle ****************
+         5995
+         <xs:element name="work-title" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The work-title element specifies the title of a work not including its opus or other work number.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class WorkTitle : public ElementInterface
+        {
+        public:
+            WorkTitle();
+            WorkTitle( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Staff ****************
+         6065
+         <xs:element name="staff" type="xs:positiveInteger">	<xs:annotation>		<xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers with 1 referring to the top-most staff in a part.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:positiveInteger"/>
+         <xs:simpleType name="xs:positiveInteger"/>
+         */
+        class Staff : public ElementInterface
+        {
+        public:
+            Staff();
+            Staff( const types::PositiveInteger& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::PositiveInteger getValue() const;
+            void setValue( const types::PositiveInteger& value );
+        private:
+            types::PositiveInteger myValue;
+        };
+        
+        
+        /**************** TuningStep ****************
+         6075
+         <xs:element name="tuning-step" type="step">	<xs:annotation>		<xs:documentation>The tuning-step element is represented like the step element with a different name to reflect is different function.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class TuningStep : public ElementInterface
+        {
+        public:
+            TuningStep();
+            TuningStep( const types::Step& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Step getValue() const;
+            void setValue( const types::Step& value );
+        private:
+            types::Step myValue;
+        };
+        
+        
+        /**************** TuningAlter ****************
+         6080
+         <xs:element name="tuning-alter" type="semitones" minOccurs="0">	<xs:annotation>		<xs:documentation>The tuning-alter element is represented like the alter element with a different name to reflect is different function.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class TuningAlter : public ElementInterface
+        {
+        public:
+            TuningAlter();
+            TuningAlter( const types::Semitones& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Semitones getValue() const;
+            void setValue( const types::Semitones& value );
+        private:
+            types::Semitones myValue;
+        };
+        
+        
+        /**************** TuningOctave ****************
+         6086
+         <xs:element name="tuning-octave" type="octave">	<xs:annotation>		<xs:documentation>The tuning-octave element is represented like the octave element with a different name to reflect is different function.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="octave">
+         <xs:annotation>
+         <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="9"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="octave">
+         <xs:annotation>
+         <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="9"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class TuningOctave : public ElementInterface
+        {
+        public:
+            TuningOctave();
+            TuningOctave( const types::Octave& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Octave getValue() const;
+            void setValue( const types::Octave& value );
+        private:
+            types::Octave myValue;
+        };
+        
+        
+        /**************** Voice ****************
+         6096
+         <xs:element name="voice" type="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class Voice : public ElementInterface
+        {
+        public:
+            Voice();
+            Voice( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** KeyStep ****************
+         6104
+         <xs:element name="key-step" type="step">	<xs:annotation>		<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-step element indicates the pitch step to be altered represented using the same names as in the step element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class KeyStep : public ElementInterface
+        {
+        public:
+            KeyStep();
+            KeyStep( const types::Step& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Step getValue() const;
+            void setValue( const types::Step& value );
+        private:
+            types::Step myValue;
+        };
+        
+        
+        /**************** KeyAlter ****************
+         6109
+         <xs:element name="key-alter" type="semitones">	<xs:annotation>		<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-alter element represents the alteration for a given pitch step represented with semitones in the same manner as the alter element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="semitones">
+         <xs:annotation>
+         <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class KeyAlter : public ElementInterface
+        {
+        public:
+            KeyAlter();
+            KeyAlter( const types::Semitones& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Semitones getValue() const;
+            void setValue( const types::Semitones& value );
+        private:
+            types::Semitones myValue;
+        };
+        
+        
+        /**************** KeyAccidental ****************
+         6114
+         <xs:element name="key-accidental" type="accidental-value" minOccurs="0">	<xs:annotation>		<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-accidental element indicates the accidental to be displayed in the key signature represented in the same manner as the accidental element. It is used for disambiguating microtonal accidentals.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="accidental-value">
+         <xs:annotation>
+         <xs:documentation>The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="sharp"/>
+         <xs:enumeration value="natural"/>
+         <xs:enumeration value="flat"/>
+         <xs:enumeration value="double-sharp"/>
+         <xs:enumeration value="sharp-sharp"/>
+         <xs:enumeration value="flat-flat"/>
+         <xs:enumeration value="natural-sharp"/>
+         <xs:enumeration value="natural-flat"/>
+         <xs:enumeration value="quarter-flat"/>
+         <xs:enumeration value="quarter-sharp"/>
+         <xs:enumeration value="three-quarters-flat"/>
+         <xs:enumeration value="three-quarters-sharp"/>
+         <xs:enumeration value="sharp-down"/>
+         <xs:enumeration value="sharp-up"/>
+         <xs:enumeration value="natural-down"/>
+         <xs:enumeration value="natural-up"/>
+         <xs:enumeration value="flat-down"/>
+         <xs:enumeration value="flat-up"/>
+         <xs:enumeration value="triple-sharp"/>
+         <xs:enumeration value="triple-flat"/>
+         <xs:enumeration value="slash-quarter-sharp"/>
+         <xs:enumeration value="slash-sharp"/>
+         <xs:enumeration value="slash-flat"/>
+         <xs:enumeration value="double-slash-flat"/>
+         <xs:enumeration value="sharp-1"/>
+         <xs:enumeration value="sharp-2"/>
+         <xs:enumeration value="sharp-3"/>
+         <xs:enumeration value="sharp-5"/>
+         <xs:enumeration value="flat-1"/>
+         <xs:enumeration value="flat-2"/>
+         <xs:enumeration value="flat-3"/>
+         <xs:enumeration value="flat-4"/>
+         <xs:enumeration value="sori"/>
+         <xs:enumeration value="koron"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="accidental-value">
+         <xs:annotation>
+         <xs:documentation>The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="sharp"/>
+         <xs:enumeration value="natural"/>
+         <xs:enumeration value="flat"/>
+         <xs:enumeration value="double-sharp"/>
+         <xs:enumeration value="sharp-sharp"/>
+         <xs:enumeration value="flat-flat"/>
+         <xs:enumeration value="natural-sharp"/>
+         <xs:enumeration value="natural-flat"/>
+         <xs:enumeration value="quarter-flat"/>
+         <xs:enumeration value="quarter-sharp"/>
+         <xs:enumeration value="three-quarters-flat"/>
+         <xs:enumeration value="three-quarters-sharp"/>
+         <xs:enumeration value="sharp-down"/>
+         <xs:enumeration value="sharp-up"/>
+         <xs:enumeration value="natural-down"/>
+         <xs:enumeration value="natural-up"/>
+         <xs:enumeration value="flat-down"/>
+         <xs:enumeration value="flat-up"/>
+         <xs:enumeration value="triple-sharp"/>
+         <xs:enumeration value="triple-flat"/>
+         <xs:enumeration value="slash-quarter-sharp"/>
+         <xs:enumeration value="slash-sharp"/>
+         <xs:enumeration value="slash-flat"/>
+         <xs:enumeration value="double-slash-flat"/>
+         <xs:enumeration value="sharp-1"/>
+         <xs:enumeration value="sharp-2"/>
+         <xs:enumeration value="sharp-3"/>
+         <xs:enumeration value="sharp-5"/>
+         <xs:enumeration value="flat-1"/>
+         <xs:enumeration value="flat-2"/>
+         <xs:enumeration value="flat-3"/>
+         <xs:enumeration value="flat-4"/>
+         <xs:enumeration value="sori"/>
+         <xs:enumeration value="koron"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class KeyAccidental : public ElementInterface
+        {
+        public:
+            KeyAccidental();
+            KeyAccidental( const types::AccidentalValue& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::AccidentalValue getValue() const;
+            void setValue( const types::AccidentalValue& value );
+        private:
+            types::AccidentalValue myValue;
+        };
+        
+        
+        /**************** SlashType ****************
+         6125
+         <xs:element name="slash-type" type="note-type-value">	<xs:annotation>		<xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class SlashType : public ElementInterface
+        {
+        public:
+            SlashType();
+            SlashType( const types::NoteTypeValue& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NoteTypeValue getValue() const;
+            void setValue( const types::NoteTypeValue& value );
+        private:
+            types::NoteTypeValue myValue;
+        };
+        
+        
+        /**************** Beats ****************
+         6142
+         <xs:element name="beats" type="xs:string">	<xs:annotation>		<xs:documentation>The beats element indicates the number of beats as found in the numerator of a time signature.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class Beats : public ElementInterface
+        {
+        public:
+            Beats();
+            Beats( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** BeatType ****************
+         6147
+         <xs:element name="beat-type" type="xs:string">	<xs:annotation>		<xs:documentation>The beat-type element indicates the beat unit as found in the denominator of a time signature.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class BeatType : public ElementInterface
+        {
+        public:
+            BeatType();
+            BeatType( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** Fifths ****************
+         6161
+         <xs:element name="fifths" type="fifths"/>
+         <xs:simpleType name="fifths">
+         <xs:annotation>
+         <xs:documentation>The fifths type represents the number of flats or sharps in a traditional key signature. Negative numbers are used for flats and positive numbers for sharps, reflecting the key's placement within the circle of fifths (hence the type name).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer"/>
+         </xs:simpleType>
+         <xs:simpleType name="fifths">
+         <xs:annotation>
+         <xs:documentation>The fifths type represents the number of flats or sharps in a traditional key signature. Negative numbers are used for flats and positive numbers for sharps, reflecting the key's placement within the circle of fifths (hence the type name).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer"/>
+         </xs:simpleType>
+         */
+        class Fifths : public ElementInterface
+        {
+        public:
+            Fifths();
+            Fifths( const types::Fifths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Fifths getValue() const;
+            void setValue( const types::Fifths& value );
+        private:
+            types::Fifths myValue;
+        };
+        
+        
+        /**************** Mode ****************
+         6164
+         <xs:element name="mode" type="mode" minOccurs="0"/>
+         <xs:simpleType name="mode">
+         <xs:annotation>
+         <xs:documentation>The mode type is used to specify major/minor and other mode distinctions. Valid mode values include major, minor, dorian, phrygian, lydian, mixolydian, aeolian, ionian, locrian, and none.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+         <xs:simpleType name="mode">
+         <xs:annotation>
+         <xs:documentation>The mode type is used to specify major/minor and other mode distinctions. Valid mode values include major, minor, dorian, phrygian, lydian, mixolydian, aeolian, ionian, locrian, and none.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+         */
+        class Mode : public ElementInterface
+        {
+        public:
+            Mode();
+            Mode( const types::Mode& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Mode getValue() const;
+            void setValue( const types::Mode& value );
+        private:
+            types::Mode myValue;
+        };
+        
+        
+        /**************** BeatUnit ****************
+         6173
+         <xs:element name="beat-unit" type="note-type-value">	<xs:annotation>		<xs:documentation>The beat-unit element indicates the graphical note type to use in a metronome mark.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="1024th"/>
+         <xs:enumeration value="512th"/>
+         <xs:enumeration value="256th"/>
+         <xs:enumeration value="128th"/>
+         <xs:enumeration value="64th"/>
+         <xs:enumeration value="32nd"/>
+         <xs:enumeration value="16th"/>
+         <xs:enumeration value="eighth"/>
+         <xs:enumeration value="quarter"/>
+         <xs:enumeration value="half"/>
+         <xs:enumeration value="whole"/>
+         <xs:enumeration value="breve"/>
+         <xs:enumeration value="long"/>
+         <xs:enumeration value="maxima"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class BeatUnit : public ElementInterface
+        {
+        public:
+            BeatUnit();
+            BeatUnit( const types::NoteTypeValue& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::NoteTypeValue getValue() const;
+            void setValue( const types::NoteTypeValue& value );
+        private:
+            types::NoteTypeValue myValue;
+        };
+        
+        
+        /**************** TopMargin ****************
+         6222
+         <xs:element name="top-margin" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class TopMargin : public ElementInterface
+        {
+        public:
+            TopMargin();
+            TopMargin( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** BottomMargin ****************
+         6225
+         <xs:element name="bottom-margin" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class BottomMargin : public ElementInterface
+        {
+        public:
+            BottomMargin();
+            BottomMargin( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** LeftMargin ****************
+         6251
+         <xs:element name="left-margin" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class LeftMargin : public ElementInterface
+        {
+        public:
+            LeftMargin();
+            LeftMargin( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** RightMargin ****************
+         6254
+         <xs:element name="right-margin" type="tenths"/>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         <xs:simpleType name="tenths">
+         <xs:annotation>
+         <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
+         
+         Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:decimal"/>
+         </xs:simpleType>
+         */
+        class RightMargin : public ElementInterface
+        {
+        public:
+            RightMargin();
+            RightMargin( const types::Tenths& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Tenths getValue() const;
+            void setValue( const types::Tenths& value );
+        private:
+            types::Tenths myValue;
+        };
+        
+        
+        /**************** Duration ****************
+         6262
+         <xs:element name="duration" type="positive-divisions">	<xs:annotation>		<xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance swing eighths vs. even eighths or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>The positive-divisions type restricts divisions values to positive numbers.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="divisions">
+         <xs:minExclusive value="0"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>The positive-divisions type restricts divisions values to positive numbers.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="divisions">
+         <xs:minExclusive value="0"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class Duration : public ElementInterface
+        {
+        public:
+            Duration();
+            Duration( const types::PositiveDivisions& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::PositiveDivisions getValue() const;
+            void setValue( const types::PositiveDivisions& value );
+        private:
+            types::PositiveDivisions myValue;
+        };
+        
+        
+        /**************** DisplayStep ****************
+         6272
+         <xs:element name="display-step" type="step"/>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="step">
+         <xs:annotation>
+         <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:string">
+         <xs:enumeration value="A"/>
+         <xs:enumeration value="B"/>
+         <xs:enumeration value="C"/>
+         <xs:enumeration value="D"/>
+         <xs:enumeration value="E"/>
+         <xs:enumeration value="F"/>
+         <xs:enumeration value="G"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class DisplayStep : public ElementInterface
+        {
+        public:
+            DisplayStep();
+            DisplayStep( const types::Step& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Step getValue() const;
+            void setValue( const types::Step& value );
+        private:
+            types::Step myValue;
+        };
+        
+        
+        /**************** DisplayOctave ****************
+         6275
+         <xs:element name="display-octave" type="octave"/>
+         <xs:simpleType name="octave">
+         <xs:annotation>
+         <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="9"/>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="octave">
+         <xs:annotation>
+         <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
+         </xs:annotation>
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="9"/>
+         </xs:restriction>
+         </xs:simpleType>
+         */
+        class DisplayOctave : public ElementInterface
+        {
+        public:
+            DisplayOctave();
+            DisplayOctave( const types::Octave& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::Octave getValue() const;
+            void setValue( const types::Octave& value );
+        private:
+            types::Octave myValue;
+        };
+        
+        
+        /**************** MovementNumber ****************
+         6363
+         <xs:element name="movement-number" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The movement-number element specifies the number of a movement.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class MovementNumber : public ElementInterface
+        {
+        public:
+            MovementNumber();
+            MovementNumber( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
+        };
+        
+        
+        /**************** MovementTitle ****************
+         6369
+         <xs:element name="movement-title" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The movement-title element specifies the title of a movement not including its number.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:simpleType name="xs:string"/>
+         <xs:simpleType name="xs:string"/>
+         */
+        class MovementTitle : public ElementInterface
+        {
+        public:
+            MovementTitle();
+            MovementTitle( const types::XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            types::XsString getValue() const;
+            void setValue( const types::XsString& value );
+        private:
+            types::XsString myValue;
         };
     }
 }

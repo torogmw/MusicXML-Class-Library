@@ -9347,6 +9347,3383 @@ namespace mx
         {
             myValue = value;
         }
+        
+        /***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         **********************      Value Elements with NO Attributes *************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************
+         ***************************************************************************************************************************/
+        
+        MidiChannel::MidiChannel()
+        :myValue()
+        {}
+        MidiChannel::MidiChannel( const types::Midi16& value )
+        :myValue( value )
+        {}
+        bool MidiChannel::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MidiChannel::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MidiChannel::streamName( std::ostream& os ) const
+        {
+            os << "midi-channel";
+            return os;
+        }
+        std::ostream& MidiChannel::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Midi16 MidiChannel::getValue() const
+        {
+            return myValue;
+        }
+        void MidiChannel::setValue( const types::Midi16& value )
+        {
+            myValue = value;
+        }
+        MidiName::MidiName()
+        :myValue()
+        {}
+        MidiName::MidiName( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool MidiName::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MidiName::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MidiName::streamName( std::ostream& os ) const
+        {
+            os << "midi-name";
+            return os;
+        }
+        std::ostream& MidiName::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString MidiName::getValue() const
+        {
+            return myValue;
+        }
+        void MidiName::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        MidiBank::MidiBank()
+        :myValue()
+        {}
+        MidiBank::MidiBank( const types::Midi16384& value )
+        :myValue( value )
+        {}
+        bool MidiBank::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MidiBank::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MidiBank::streamName( std::ostream& os ) const
+        {
+            os << "midi-bank";
+            return os;
+        }
+        std::ostream& MidiBank::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Midi16384 MidiBank::getValue() const
+        {
+            return myValue;
+        }
+        void MidiBank::setValue( const types::Midi16384& value )
+        {
+            myValue = value;
+        }
+        MidiProgram::MidiProgram()
+        :myValue()
+        {}
+        MidiProgram::MidiProgram( const types::Midi128& value )
+        :myValue( value )
+        {}
+        bool MidiProgram::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MidiProgram::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MidiProgram::streamName( std::ostream& os ) const
+        {
+            os << "midi-program";
+            return os;
+        }
+        std::ostream& MidiProgram::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Midi128 MidiProgram::getValue() const
+        {
+            return myValue;
+        }
+        void MidiProgram::setValue( const types::Midi128& value )
+        {
+            myValue = value;
+        }
+        MidiUnpitched::MidiUnpitched()
+        :myValue()
+        {}
+        MidiUnpitched::MidiUnpitched( const types::Midi128& value )
+        :myValue( value )
+        {}
+        bool MidiUnpitched::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MidiUnpitched::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MidiUnpitched::streamName( std::ostream& os ) const
+        {
+            os << "midi-unpitched";
+            return os;
+        }
+        std::ostream& MidiUnpitched::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Midi128 MidiUnpitched::getValue() const
+        {
+            return myValue;
+        }
+        void MidiUnpitched::setValue( const types::Midi128& value )
+        {
+            myValue = value;
+        }
+        Volume::Volume()
+        :myValue()
+        {}
+        Volume::Volume( const types::Percent& value )
+        :myValue( value )
+        {}
+        bool Volume::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Volume::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Volume::streamName( std::ostream& os ) const
+        {
+            os << "volume";
+            return os;
+        }
+        std::ostream& Volume::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Percent Volume::getValue() const
+        {
+            return myValue;
+        }
+        void Volume::setValue( const types::Percent& value )
+        {
+            myValue = value;
+        }
+        Pan::Pan()
+        :myValue()
+        {}
+        Pan::Pan( const types::RotationDegrees& value )
+        :myValue( value )
+        {}
+        bool Pan::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Pan::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Pan::streamName( std::ostream& os ) const
+        {
+            os << "pan";
+            return os;
+        }
+        std::ostream& Pan::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::RotationDegrees Pan::getValue() const
+        {
+            return myValue;
+        }
+        void Pan::setValue( const types::RotationDegrees& value )
+        {
+            myValue = value;
+        }
+        Elevation::Elevation()
+        :myValue()
+        {}
+        Elevation::Elevation( const types::RotationDegrees& value )
+        :myValue( value )
+        {}
+        bool Elevation::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Elevation::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Elevation::streamName( std::ostream& os ) const
+        {
+            os << "elevation";
+            return os;
+        }
+        std::ostream& Elevation::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::RotationDegrees Elevation::getValue() const
+        {
+            return myValue;
+        }
+        void Elevation::setValue( const types::RotationDegrees& value )
+        {
+            myValue = value;
+        }
+        Ipa::Ipa()
+        :myValue()
+        {}
+        Ipa::Ipa( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool Ipa::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Ipa::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Ipa::streamName( std::ostream& os ) const
+        {
+            os << "ipa";
+            return os;
+        }
+        std::ostream& Ipa::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString Ipa::getValue() const
+        {
+            return myValue;
+        }
+        void Ipa::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Mute::Mute()
+        :myValue( types::Mute::off )
+        {}
+        Mute::Mute( const types::Mute& value )
+        :myValue( value )
+        {}
+        bool Mute::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Mute::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Mute::streamName( std::ostream& os ) const
+        {
+            os << "mute";
+            return os;
+        }
+        std::ostream& Mute::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Mute Mute::getValue() const
+        {
+            return myValue;
+        }
+        void Mute::setValue( const types::Mute& value )
+        {
+            myValue = value;
+        }
+        SemiPitched::SemiPitched()
+        :myValue( types::SemiPitched::medium )
+        {}
+        SemiPitched::SemiPitched( const types::SemiPitched& value )
+        :myValue( value )
+        {}
+        bool SemiPitched::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& SemiPitched::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& SemiPitched::streamName( std::ostream& os ) const
+        {
+            os << "semi-pitched";
+            return os;
+        }
+        std::ostream& SemiPitched::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::SemiPitched SemiPitched::getValue() const
+        {
+            return myValue;
+        }
+        void SemiPitched::setValue( const types::SemiPitched& value )
+        {
+            myValue = value;
+        }
+        Divisions::Divisions()
+        :myValue()
+        {}
+        Divisions::Divisions( const types::PositiveDivisions& value )
+        :myValue( value )
+        {}
+        bool Divisions::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Divisions::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Divisions::streamName( std::ostream& os ) const
+        {
+            os << "divisions";
+            return os;
+        }
+        std::ostream& Divisions::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::PositiveDivisions Divisions::getValue() const
+        {
+            return myValue;
+        }
+        void Divisions::setValue( const types::PositiveDivisions& value )
+        {
+            myValue = value;
+        }
+        Staves::Staves()
+        :myValue()
+        {}
+        Staves::Staves( const types::NonNegativeInteger& value )
+        :myValue( value )
+        {}
+        bool Staves::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Staves::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Staves::streamName( std::ostream& os ) const
+        {
+            os << "staves";
+            return os;
+        }
+        std::ostream& Staves::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeInteger Staves::getValue() const
+        {
+            return myValue;
+        }
+        void Staves::setValue( const types::NonNegativeInteger& value )
+        {
+            myValue = value;
+        }
+        Instruments::Instruments()
+        :myValue()
+        {}
+        Instruments::Instruments( const types::NonNegativeInteger& value )
+        :myValue( value )
+        {}
+        bool Instruments::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Instruments::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Instruments::streamName( std::ostream& os ) const
+        {
+            os << "instruments";
+            return os;
+        }
+        std::ostream& Instruments::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeInteger Instruments::getValue() const
+        {
+            return myValue;
+        }
+        void Instruments::setValue( const types::NonNegativeInteger& value )
+        {
+            myValue = value;
+        }
+        Sign::Sign()
+        :myValue( types::ClefSign::g )
+        {}
+        Sign::Sign( const types::ClefSign& value )
+        :myValue( value )
+        {}
+        bool Sign::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Sign::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Sign::streamName( std::ostream& os ) const
+        {
+            os << "sign";
+            return os;
+        }
+        std::ostream& Sign::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::ClefSign Sign::getValue() const
+        {
+            return myValue;
+        }
+        void Sign::setValue( const types::ClefSign& value )
+        {
+            myValue = value;
+        }
+        Line::Line()
+        :myValue()
+        {}
+        Line::Line( const types::StaffLine& value )
+        :myValue( value )
+        {}
+        bool Line::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Line::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Line::streamName( std::ostream& os ) const
+        {
+            os << "line";
+            return os;
+        }
+        std::ostream& Line::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::StaffLine Line::getValue() const
+        {
+            return myValue;
+        }
+        void Line::setValue( const types::StaffLine& value )
+        {
+            myValue = value;
+        }
+        ClefOctaveChange::ClefOctaveChange()
+        :myValue()
+        {}
+        ClefOctaveChange::ClefOctaveChange( const types::Integer& value )
+        :myValue( value )
+        {}
+        bool ClefOctaveChange::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& ClefOctaveChange::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& ClefOctaveChange::streamName( std::ostream& os ) const
+        {
+            os << "clef-octave-change";
+            return os;
+        }
+        std::ostream& ClefOctaveChange::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Integer ClefOctaveChange::getValue() const
+        {
+            return myValue;
+        }
+        void ClefOctaveChange::setValue( const types::Integer& value )
+        {
+            myValue = value;
+        }
+        TimeRelation::TimeRelation()
+        :myValue( types::TimeRelation::equals )
+        {}
+        TimeRelation::TimeRelation( const types::TimeRelation& value )
+        :myValue( value )
+        {}
+        bool TimeRelation::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TimeRelation::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TimeRelation::streamName( std::ostream& os ) const
+        {
+            os << "time-relation";
+            return os;
+        }
+        std::ostream& TimeRelation::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::TimeRelation TimeRelation::getValue() const
+        {
+            return myValue;
+        }
+        void TimeRelation::setValue( const types::TimeRelation& value )
+        {
+            myValue = value;
+        }
+        StaffType::StaffType()
+        :myValue( types::StaffType::regular )
+        {}
+        StaffType::StaffType( const types::StaffType& value )
+        :myValue( value )
+        {}
+        bool StaffType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StaffType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StaffType::streamName( std::ostream& os ) const
+        {
+            os << "staff-type";
+            return os;
+        }
+        std::ostream& StaffType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::StaffType StaffType::getValue() const
+        {
+            return myValue;
+        }
+        void StaffType::setValue( const types::StaffType& value )
+        {
+            myValue = value;
+        }
+        StaffLines::StaffLines()
+        :myValue()
+        {}
+        StaffLines::StaffLines( const types::NonNegativeInteger& value )
+        :myValue( value )
+        {}
+        bool StaffLines::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StaffLines::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StaffLines::streamName( std::ostream& os ) const
+        {
+            os << "staff-lines";
+            return os;
+        }
+        std::ostream& StaffLines::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeInteger StaffLines::getValue() const
+        {
+            return myValue;
+        }
+        void StaffLines::setValue( const types::NonNegativeInteger& value )
+        {
+            myValue = value;
+        }
+        Capo::Capo()
+        :myValue()
+        {}
+        Capo::Capo( const types::NonNegativeInteger& value )
+        :myValue( value )
+        {}
+        bool Capo::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Capo::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Capo::streamName( std::ostream& os ) const
+        {
+            os << "capo";
+            return os;
+        }
+        std::ostream& Capo::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeInteger Capo::getValue() const
+        {
+            return myValue;
+        }
+        void Capo::setValue( const types::NonNegativeInteger& value )
+        {
+            myValue = value;
+        }
+        StaffSize::StaffSize()
+        :myValue()
+        {}
+        StaffSize::StaffSize( const types::NonNegativeDecimal& value )
+        :myValue( value )
+        {}
+        bool StaffSize::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StaffSize::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StaffSize::streamName( std::ostream& os ) const
+        {
+            os << "staff-size";
+            return os;
+        }
+        std::ostream& StaffSize::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeDecimal StaffSize::getValue() const
+        {
+            return myValue;
+        }
+        void StaffSize::setValue( const types::NonNegativeDecimal& value )
+        {
+            myValue = value;
+        }
+        SenzaMisura::SenzaMisura()
+        :myValue()
+        {}
+        SenzaMisura::SenzaMisura( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool SenzaMisura::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& SenzaMisura::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& SenzaMisura::streamName( std::ostream& os ) const
+        {
+            os << "senza-misura";
+            return os;
+        }
+        std::ostream& SenzaMisura::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString SenzaMisura::getValue() const
+        {
+            return myValue;
+        }
+        void SenzaMisura::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Diatonic::Diatonic()
+        :myValue()
+        {}
+        Diatonic::Diatonic( const types::Integer& value )
+        :myValue( value )
+        {}
+        bool Diatonic::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Diatonic::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Diatonic::streamName( std::ostream& os ) const
+        {
+            os << "diatonic";
+            return os;
+        }
+        std::ostream& Diatonic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Integer Diatonic::getValue() const
+        {
+            return myValue;
+        }
+        void Diatonic::setValue( const types::Integer& value )
+        {
+            myValue = value;
+        }
+        Chromatic::Chromatic()
+        :myValue()
+        {}
+        Chromatic::Chromatic( const types::Semitones& value )
+        :myValue( value )
+        {}
+        bool Chromatic::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Chromatic::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Chromatic::streamName( std::ostream& os ) const
+        {
+            os << "chromatic";
+            return os;
+        }
+        std::ostream& Chromatic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Semitones Chromatic::getValue() const
+        {
+            return myValue;
+        }
+        void Chromatic::setValue( const types::Semitones& value )
+        {
+            myValue = value;
+        }
+        OctaveChange::OctaveChange()
+        :myValue()
+        {}
+        OctaveChange::OctaveChange( const types::Integer& value )
+        :myValue( value )
+        {}
+        bool OctaveChange::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& OctaveChange::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& OctaveChange::streamName( std::ostream& os ) const
+        {
+            os << "octave-change";
+            return os;
+        }
+        std::ostream& OctaveChange::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Integer OctaveChange::getValue() const
+        {
+            return myValue;
+        }
+        void OctaveChange::setValue( const types::Integer& value )
+        {
+            myValue = value;
+        }
+        AccordionMiddle::AccordionMiddle()
+        :myValue()
+        {}
+        AccordionMiddle::AccordionMiddle( const types::AccordionMiddle& value )
+        :myValue( value )
+        {}
+        bool AccordionMiddle::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& AccordionMiddle::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& AccordionMiddle::streamName( std::ostream& os ) const
+        {
+            os << "accordion-middle";
+            return os;
+        }
+        std::ostream& AccordionMiddle::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::AccordionMiddle AccordionMiddle::getValue() const
+        {
+            return myValue;
+        }
+        void AccordionMiddle::setValue( const types::AccordionMiddle& value )
+        {
+            myValue = value;
+        }
+        FrameStrings::FrameStrings()
+        :myValue()
+        {}
+        FrameStrings::FrameStrings( const types::PositiveInteger& value )
+        :myValue( value )
+        {}
+        bool FrameStrings::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& FrameStrings::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& FrameStrings::streamName( std::ostream& os ) const
+        {
+            os << "frame-strings";
+            return os;
+        }
+        std::ostream& FrameStrings::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::PositiveInteger FrameStrings::getValue() const
+        {
+            return myValue;
+        }
+        void FrameStrings::setValue( const types::PositiveInteger& value )
+        {
+            myValue = value;
+        }
+        FrameFrets::FrameFrets()
+        :myValue()
+        {}
+        FrameFrets::FrameFrets( const types::PositiveInteger& value )
+        :myValue( value )
+        {}
+        bool FrameFrets::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& FrameFrets::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& FrameFrets::streamName( std::ostream& os ) const
+        {
+            os << "frame-frets";
+            return os;
+        }
+        std::ostream& FrameFrets::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::PositiveInteger FrameFrets::getValue() const
+        {
+            return myValue;
+        }
+        void FrameFrets::setValue( const types::PositiveInteger& value )
+        {
+            myValue = value;
+        }
+        MetronomeRelation::MetronomeRelation()
+        :myValue()
+        {}
+        MetronomeRelation::MetronomeRelation( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool MetronomeRelation::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MetronomeRelation::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MetronomeRelation::streamName( std::ostream& os ) const
+        {
+            os << "metronome-relation";
+            return os;
+        }
+        std::ostream& MetronomeRelation::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString MetronomeRelation::getValue() const
+        {
+            return myValue;
+        }
+        void MetronomeRelation::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        MetronomeType::MetronomeType()
+        :myValue( types::NoteTypeValue::eighth )
+        {}
+        MetronomeType::MetronomeType( const types::NoteTypeValue& value )
+        :myValue( value )
+        {}
+        bool MetronomeType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MetronomeType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MetronomeType::streamName( std::ostream& os ) const
+        {
+            os << "metronome-type";
+            return os;
+        }
+        std::ostream& MetronomeType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NoteTypeValue MetronomeType::getValue() const
+        {
+            return myValue;
+        }
+        void MetronomeType::setValue( const types::NoteTypeValue& value )
+        {
+            myValue = value;
+        }
+        PedalStep::PedalStep()
+        :myValue( types::Step::a )
+        {}
+        PedalStep::PedalStep( const types::Step& value )
+        :myValue( value )
+        {}
+        bool PedalStep::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& PedalStep::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& PedalStep::streamName( std::ostream& os ) const
+        {
+            os << "pedal-step";
+            return os;
+        }
+        std::ostream& PedalStep::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Step PedalStep::getValue() const
+        {
+            return myValue;
+        }
+        void PedalStep::setValue( const types::Step& value )
+        {
+            myValue = value;
+        }
+        PedalAlter::PedalAlter()
+        :myValue()
+        {}
+        PedalAlter::PedalAlter( const types::Semitones& value )
+        :myValue( value )
+        {}
+        bool PedalAlter::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& PedalAlter::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& PedalAlter::streamName( std::ostream& os ) const
+        {
+            os << "pedal-alter";
+            return os;
+        }
+        std::ostream& PedalAlter::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Semitones PedalAlter::getValue() const
+        {
+            return myValue;
+        }
+        void PedalAlter::setValue( const types::Semitones& value )
+        {
+            myValue = value;
+        }
+        Glass::Glass()
+        :myValue( types::Glass::windChimes )
+        {}
+        Glass::Glass( const types::Glass& value )
+        :myValue( value )
+        {}
+        bool Glass::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Glass::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Glass::streamName( std::ostream& os ) const
+        {
+            os << "glass";
+            return os;
+        }
+        std::ostream& Glass::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Glass Glass::getValue() const
+        {
+            return myValue;
+        }
+        void Glass::setValue( const types::Glass& value )
+        {
+            myValue = value;
+        }
+        Metal::Metal()
+        :myValue( types::Metal::bell )
+        {}
+        Metal::Metal( const types::Metal& value )
+        :myValue( value )
+        {}
+        bool Metal::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Metal::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Metal::streamName( std::ostream& os ) const
+        {
+            os << "metal";
+            return os;
+        }
+        std::ostream& Metal::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Metal Metal::getValue() const
+        {
+            return myValue;
+        }
+        void Metal::setValue( const types::Metal& value )
+        {
+            myValue = value;
+        }
+        Wood::Wood()
+        :myValue( types::Wood::claves )
+        {}
+        Wood::Wood( const types::Wood& value )
+        :myValue( value )
+        {}
+        bool Wood::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Wood::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Wood::streamName( std::ostream& os ) const
+        {
+            os << "wood";
+            return os;
+        }
+        std::ostream& Wood::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Wood Wood::getValue() const
+        {
+            return myValue;
+        }
+        void Wood::setValue( const types::Wood& value )
+        {
+            myValue = value;
+        }
+        Pitched::Pitched()
+        :myValue( types::Pitched::xylophone )
+        {}
+        Pitched::Pitched( const types::Pitched& value )
+        :myValue( value )
+        {}
+        bool Pitched::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Pitched::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Pitched::streamName( std::ostream& os ) const
+        {
+            os << "pitched";
+            return os;
+        }
+        std::ostream& Pitched::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Pitched Pitched::getValue() const
+        {
+            return myValue;
+        }
+        void Pitched::setValue( const types::Pitched& value )
+        {
+            myValue = value;
+        }
+        Membrane::Membrane()
+        :myValue( types::Membrane::snareDrum )
+        {}
+        Membrane::Membrane( const types::Membrane& value )
+        :myValue( value )
+        {}
+        bool Membrane::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Membrane::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Membrane::streamName( std::ostream& os ) const
+        {
+            os << "membrane";
+            return os;
+        }
+        std::ostream& Membrane::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Membrane Membrane::getValue() const
+        {
+            return myValue;
+        }
+        void Membrane::setValue( const types::Membrane& value )
+        {
+            myValue = value;
+        }
+        Effect::Effect()
+        :myValue( types::Effect::anvil )
+        {}
+        Effect::Effect( const types::Effect& value )
+        :myValue( value )
+        {}
+        bool Effect::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Effect::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Effect::streamName( std::ostream& os ) const
+        {
+            os << "effect";
+            return os;
+        }
+        std::ostream& Effect::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Effect Effect::getValue() const
+        {
+            return myValue;
+        }
+        void Effect::setValue( const types::Effect& value )
+        {
+            myValue = value;
+        }
+        StickLocation::StickLocation()
+        :myValue( types::StickLocation::center )
+        {}
+        StickLocation::StickLocation( const types::StickLocation& value )
+        :myValue( value )
+        {}
+        bool StickLocation::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StickLocation::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StickLocation::streamName( std::ostream& os ) const
+        {
+            os << "stick-location";
+            return os;
+        }
+        std::ostream& StickLocation::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::StickLocation StickLocation::getValue() const
+        {
+            return myValue;
+        }
+        void StickLocation::setValue( const types::StickLocation& value )
+        {
+            myValue = value;
+        }
+        OtherPercussion::OtherPercussion()
+        :myValue()
+        {}
+        OtherPercussion::OtherPercussion( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool OtherPercussion::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& OtherPercussion::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& OtherPercussion::streamName( std::ostream& os ) const
+        {
+            os << "other-percussion";
+            return os;
+        }
+        std::ostream& OtherPercussion::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString OtherPercussion::getValue() const
+        {
+            return myValue;
+        }
+        void OtherPercussion::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        StickType::StickType()
+        :myValue( types::StickType::yarn )
+        {}
+        StickType::StickType( const types::StickType& value )
+        :myValue( value )
+        {}
+        bool StickType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StickType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StickType::streamName( std::ostream& os ) const
+        {
+            os << "stick-type";
+            return os;
+        }
+        std::ostream& StickType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::StickType StickType::getValue() const
+        {
+            return myValue;
+        }
+        void StickType::setValue( const types::StickType& value )
+        {
+            myValue = value;
+        }
+        StickMaterial::StickMaterial()
+        :myValue( types::StickMaterial::medium )
+        {}
+        StickMaterial::StickMaterial( const types::StickMaterial& value )
+        :myValue( value )
+        {}
+        bool StickMaterial::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StickMaterial::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StickMaterial::streamName( std::ostream& os ) const
+        {
+            os << "stick-material";
+            return os;
+        }
+        std::ostream& StickMaterial::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::StickMaterial StickMaterial::getValue() const
+        {
+            return myValue;
+        }
+        void StickMaterial::setValue( const types::StickMaterial& value )
+        {
+            myValue = value;
+        }
+        EncodingDate::EncodingDate()
+        :myValue()
+        {}
+        EncodingDate::EncodingDate( const types::Date& value )
+        :myValue( value )
+        {}
+        bool EncodingDate::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& EncodingDate::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& EncodingDate::streamName( std::ostream& os ) const
+        {
+            os << "encoding-date";
+            return os;
+        }
+        std::ostream& EncodingDate::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Date EncodingDate::getValue() const
+        {
+            return myValue;
+        }
+        void EncodingDate::setValue( const types::Date& value )
+        {
+            myValue = value;
+        }
+        Software::Software()
+        :myValue()
+        {}
+        Software::Software( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool Software::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Software::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Software::streamName( std::ostream& os ) const
+        {
+            os << "software";
+            return os;
+        }
+        std::ostream& Software::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString Software::getValue() const
+        {
+            return myValue;
+        }
+        void Software::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        EncodingDescription::EncodingDescription()
+        :myValue()
+        {}
+        EncodingDescription::EncodingDescription( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool EncodingDescription::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& EncodingDescription::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& EncodingDescription::streamName( std::ostream& os ) const
+        {
+            os << "encoding-description";
+            return os;
+        }
+        std::ostream& EncodingDescription::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString EncodingDescription::getValue() const
+        {
+            return myValue;
+        }
+        void EncodingDescription::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Source::Source()
+        :myValue()
+        {}
+        Source::Source( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool Source::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Source::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Source::streamName( std::ostream& os ) const
+        {
+            os << "source";
+            return os;
+        }
+        std::ostream& Source::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString Source::getValue() const
+        {
+            return myValue;
+        }
+        void Source::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        MeasureDistance::MeasureDistance()
+        :myValue()
+        {}
+        MeasureDistance::MeasureDistance( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool MeasureDistance::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MeasureDistance::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MeasureDistance::streamName( std::ostream& os ) const
+        {
+            os << "measure-distance";
+            return os;
+        }
+        std::ostream& MeasureDistance::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths MeasureDistance::getValue() const
+        {
+            return myValue;
+        }
+        void MeasureDistance::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        PageHeight::PageHeight()
+        :myValue()
+        {}
+        PageHeight::PageHeight( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool PageHeight::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& PageHeight::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& PageHeight::streamName( std::ostream& os ) const
+        {
+            os << "page-height";
+            return os;
+        }
+        std::ostream& PageHeight::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths PageHeight::getValue() const
+        {
+            return myValue;
+        }
+        void PageHeight::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        PageWidth::PageWidth()
+        :myValue()
+        {}
+        PageWidth::PageWidth( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool PageWidth::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& PageWidth::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& PageWidth::streamName( std::ostream& os ) const
+        {
+            os << "page-width";
+            return os;
+        }
+        std::ostream& PageWidth::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths PageWidth::getValue() const
+        {
+            return myValue;
+        }
+        void PageWidth::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        Millimeters::Millimeters()
+        :myValue()
+        {}
+        Millimeters::Millimeters( const types::Millimeters& value )
+        :myValue( value )
+        {}
+        bool Millimeters::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Millimeters::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Millimeters::streamName( std::ostream& os ) const
+        {
+            os << "millimeters";
+            return os;
+        }
+        std::ostream& Millimeters::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Millimeters Millimeters::getValue() const
+        {
+            return myValue;
+        }
+        void Millimeters::setValue( const types::Millimeters& value )
+        {
+            myValue = value;
+        }
+        Tenths::Tenths()
+        :myValue()
+        {}
+        Tenths::Tenths( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool Tenths::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Tenths::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Tenths::streamName( std::ostream& os ) const
+        {
+            os << "tenths";
+            return os;
+        }
+        std::ostream& Tenths::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths Tenths::getValue() const
+        {
+            return myValue;
+        }
+        void Tenths::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        StaffDistance::StaffDistance()
+        :myValue()
+        {}
+        StaffDistance::StaffDistance( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool StaffDistance::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& StaffDistance::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& StaffDistance::streamName( std::ostream& os ) const
+        {
+            os << "staff-distance";
+            return os;
+        }
+        std::ostream& StaffDistance::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths StaffDistance::getValue() const
+        {
+            return myValue;
+        }
+        void StaffDistance::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        SystemDistance::SystemDistance()
+        :myValue()
+        {}
+        SystemDistance::SystemDistance( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool SystemDistance::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& SystemDistance::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& SystemDistance::streamName( std::ostream& os ) const
+        {
+            os << "system-distance";
+            return os;
+        }
+        std::ostream& SystemDistance::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths SystemDistance::getValue() const
+        {
+            return myValue;
+        }
+        void SystemDistance::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        TopSystemDistance::TopSystemDistance()
+        :myValue()
+        {}
+        TopSystemDistance::TopSystemDistance( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool TopSystemDistance::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TopSystemDistance::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TopSystemDistance::streamName( std::ostream& os ) const
+        {
+            os << "top-system-distance";
+            return os;
+        }
+        std::ostream& TopSystemDistance::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths TopSystemDistance::getValue() const
+        {
+            return myValue;
+        }
+        void TopSystemDistance::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        ArrowDirection::ArrowDirection()
+        :myValue( types::ArrowDirection::up )
+        {}
+        ArrowDirection::ArrowDirection( const types::ArrowDirection& value )
+        :myValue( value )
+        {}
+        bool ArrowDirection::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& ArrowDirection::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& ArrowDirection::streamName( std::ostream& os ) const
+        {
+            os << "arrow-direction";
+            return os;
+        }
+        std::ostream& ArrowDirection::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::ArrowDirection ArrowDirection::getValue() const
+        {
+            return myValue;
+        }
+        void ArrowDirection::setValue( const types::ArrowDirection& value )
+        {
+            myValue = value;
+        }
+        ArrowStyle::ArrowStyle()
+        :myValue( types::ArrowStyle::single )
+        {}
+        ArrowStyle::ArrowStyle( const types::ArrowStyle& value )
+        :myValue( value )
+        {}
+        bool ArrowStyle::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& ArrowStyle::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& ArrowStyle::streamName( std::ostream& os ) const
+        {
+            os << "arrow-style";
+            return os;
+        }
+        std::ostream& ArrowStyle::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::ArrowStyle ArrowStyle::getValue() const
+        {
+            return myValue;
+        }
+        void ArrowStyle::setValue( const types::ArrowStyle& value )
+        {
+            myValue = value;
+        }
+        CircularArrow::CircularArrow()
+        :myValue( types::CircularArrow::clockwise )
+        {}
+        CircularArrow::CircularArrow( const types::CircularArrow& value )
+        :myValue( value )
+        {}
+        bool CircularArrow::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& CircularArrow::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& CircularArrow::streamName( std::ostream& os ) const
+        {
+            os << "circular-arrow";
+            return os;
+        }
+        std::ostream& CircularArrow::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::CircularArrow CircularArrow::getValue() const
+        {
+            return myValue;
+        }
+        void CircularArrow::setValue( const types::CircularArrow& value )
+        {
+            myValue = value;
+        }
+        BendAlter::BendAlter()
+        :myValue()
+        {}
+        BendAlter::BendAlter( const types::Semitones& value )
+        :myValue( value )
+        {}
+        bool BendAlter::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& BendAlter::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& BendAlter::streamName( std::ostream& os ) const
+        {
+            os << "bend-alter";
+            return os;
+        }
+        std::ostream& BendAlter::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Semitones BendAlter::getValue() const
+        {
+            return myValue;
+        }
+        void BendAlter::setValue( const types::Semitones& value )
+        {
+            myValue = value;
+        }
+        HoleType::HoleType()
+        :myValue()
+        {}
+        HoleType::HoleType( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool HoleType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& HoleType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& HoleType::streamName( std::ostream& os ) const
+        {
+            os << "hole-type";
+            return os;
+        }
+        std::ostream& HoleType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString HoleType::getValue() const
+        {
+            return myValue;
+        }
+        void HoleType::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        HoleShape::HoleShape()
+        :myValue()
+        {}
+        HoleShape::HoleShape( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool HoleShape::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& HoleShape::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& HoleShape::streamName( std::ostream& os ) const
+        {
+            os << "hole-shape";
+            return os;
+        }
+        std::ostream& HoleShape::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString HoleShape::getValue() const
+        {
+            return myValue;
+        }
+        void HoleShape::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Syllabic::Syllabic()
+        :myValue( types::Syllabic::begin )
+        {}
+        Syllabic::Syllabic( const types::Syllabic& value )
+        :myValue( value )
+        {}
+        bool Syllabic::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Syllabic::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Syllabic::streamName( std::ostream& os ) const
+        {
+            os << "syllabic";
+            return os;
+        }
+        std::ostream& Syllabic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Syllabic Syllabic::getValue() const
+        {
+            return myValue;
+        }
+        void Syllabic::setValue( const types::Syllabic& value )
+        {
+            myValue = value;
+        }
+//        Syllabic::Syllabic()
+//        :myValue( types::Syllabic:: )
+//        {}
+//        Syllabic::Syllabic( const types::Syllabic& value )
+//        :myValue( value )
+//        {}
+//        bool Syllabic::hasAttributes() const
+//        {
+//            return false;
+//        }
+//        std::ostream& Syllabic::streamAttributes( std::ostream& os ) const
+//        {
+//            return os;
+//        }
+//        std::ostream& Syllabic::streamName( std::ostream& os ) const
+//        {
+//            os << "syllabic";
+//            return os;
+//        }
+//        std::ostream& Syllabic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+//        {
+//            isOneLineOnly = true;
+//            os << myValue;
+//            return os;
+//        }
+//        types::Syllabic Syllabic::getValue() const
+//        {
+//            return myValue;
+//        }
+//        void Syllabic::setValue( const types::Syllabic& value )
+//        {
+//            myValue = value;
+//        }
+        Step::Step()
+        :myValue( types::Step::a )
+        {}
+        Step::Step( const types::Step& value )
+        :myValue( value )
+        {}
+        bool Step::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Step::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Step::streamName( std::ostream& os ) const
+        {
+            os << "step";
+            return os;
+        }
+        std::ostream& Step::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Step Step::getValue() const
+        {
+            return myValue;
+        }
+        void Step::setValue( const types::Step& value )
+        {
+            myValue = value;
+        }
+        Alter::Alter()
+        :myValue()
+        {}
+        Alter::Alter( const types::Semitones& value )
+        :myValue( value )
+        {}
+        bool Alter::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Alter::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Alter::streamName( std::ostream& os ) const
+        {
+            os << "alter";
+            return os;
+        }
+        std::ostream& Alter::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Semitones Alter::getValue() const
+        {
+            return myValue;
+        }
+        void Alter::setValue( const types::Semitones& value )
+        {
+            myValue = value;
+        }
+        Octave::Octave()
+        :myValue()
+        {}
+        Octave::Octave( const types::Octave& value )
+        :myValue( value )
+        {}
+        bool Octave::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Octave::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Octave::streamName( std::ostream& os ) const
+        {
+            os << "octave";
+            return os;
+        }
+        std::ostream& Octave::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Octave Octave::getValue() const
+        {
+            return myValue;
+        }
+        void Octave::setValue( const types::Octave& value )
+        {
+            myValue = value;
+        }
+        ActualNotes::ActualNotes()
+        :myValue()
+        {}
+        ActualNotes::ActualNotes( const types::NonNegativeInteger& value )
+        :myValue( value )
+        {}
+        bool ActualNotes::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& ActualNotes::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& ActualNotes::streamName( std::ostream& os ) const
+        {
+            os << "actual-notes";
+            return os;
+        }
+        std::ostream& ActualNotes::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeInteger ActualNotes::getValue() const
+        {
+            return myValue;
+        }
+        void ActualNotes::setValue( const types::NonNegativeInteger& value )
+        {
+            myValue = value;
+        }
+        NormalNotes::NormalNotes()
+        :myValue()
+        {}
+        NormalNotes::NormalNotes( const types::NonNegativeInteger& value )
+        :myValue( value )
+        {}
+        bool NormalNotes::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& NormalNotes::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& NormalNotes::streamName( std::ostream& os ) const
+        {
+            os << "normal-notes";
+            return os;
+        }
+        std::ostream& NormalNotes::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NonNegativeInteger NormalNotes::getValue() const
+        {
+            return myValue;
+        }
+        void NormalNotes::setValue( const types::NonNegativeInteger& value )
+        {
+            myValue = value;
+        }
+        NormalType::NormalType()
+        :myValue( types::NoteTypeValue::eighth )
+        {}
+        NormalType::NormalType( const types::NoteTypeValue& value )
+        :myValue( value )
+        {}
+        bool NormalType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& NormalType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& NormalType::streamName( std::ostream& os ) const
+        {
+            os << "normal-type";
+            return os;
+        }
+        std::ostream& NormalType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NoteTypeValue NormalType::getValue() const
+        {
+            return myValue;
+        }
+        void NormalType::setValue( const types::NoteTypeValue& value )
+        {
+            myValue = value;
+        }
+        CreditType::CreditType()
+        :myValue()
+        {}
+        CreditType::CreditType( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool CreditType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& CreditType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& CreditType::streamName( std::ostream& os ) const
+        {
+            os << "credit-type";
+            return os;
+        }
+        std::ostream& CreditType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString CreditType::getValue() const
+        {
+            return myValue;
+        }
+        void CreditType::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        InstrumentName::InstrumentName()
+        :myValue()
+        {}
+        InstrumentName::InstrumentName( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool InstrumentName::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& InstrumentName::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& InstrumentName::streamName( std::ostream& os ) const
+        {
+            os << "instrument-name";
+            return os;
+        }
+        std::ostream& InstrumentName::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString InstrumentName::getValue() const
+        {
+            return myValue;
+        }
+        void InstrumentName::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        InstrumentAbbreviation::InstrumentAbbreviation()
+        :myValue()
+        {}
+        InstrumentAbbreviation::InstrumentAbbreviation( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool InstrumentAbbreviation::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& InstrumentAbbreviation::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& InstrumentAbbreviation::streamName( std::ostream& os ) const
+        {
+            os << "instrument-abbreviation";
+            return os;
+        }
+        std::ostream& InstrumentAbbreviation::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString InstrumentAbbreviation::getValue() const
+        {
+            return myValue;
+        }
+        void InstrumentAbbreviation::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        InstrumentSound::InstrumentSound()
+        :myValue()
+        {}
+        InstrumentSound::InstrumentSound( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool InstrumentSound::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& InstrumentSound::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& InstrumentSound::streamName( std::ostream& os ) const
+        {
+            os << "instrument-sound";
+            return os;
+        }
+        std::ostream& InstrumentSound::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString InstrumentSound::getValue() const
+        {
+            return myValue;
+        }
+        void InstrumentSound::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Ensemble::Ensemble()
+        :myValue()
+        {}
+        Ensemble::Ensemble( const types::PositiveIntegerOrEmpty& value )
+        :myValue( value )
+        {}
+        bool Ensemble::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Ensemble::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Ensemble::streamName( std::ostream& os ) const
+        {
+            os << "ensemble";
+            return os;
+        }
+        std::ostream& Ensemble::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::PositiveIntegerOrEmpty Ensemble::getValue() const
+        {
+            return myValue;
+        }
+        void Ensemble::setValue( const types::PositiveIntegerOrEmpty& value )
+        {
+            myValue = value;
+        }
+        Group::Group()
+        :myValue()
+        {}
+        Group::Group( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool Group::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Group::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Group::streamName( std::ostream& os ) const
+        {
+            os << "group";
+            return os;
+        }
+        std::ostream& Group::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString Group::getValue() const
+        {
+            return myValue;
+        }
+        void Group::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        VirtualLibrary::VirtualLibrary()
+        :myValue()
+        {}
+        VirtualLibrary::VirtualLibrary( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool VirtualLibrary::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& VirtualLibrary::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& VirtualLibrary::streamName( std::ostream& os ) const
+        {
+            os << "virtual-library";
+            return os;
+        }
+        std::ostream& VirtualLibrary::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString VirtualLibrary::getValue() const
+        {
+            return myValue;
+        }
+        void VirtualLibrary::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        VirtualName::VirtualName()
+        :myValue()
+        {}
+        VirtualName::VirtualName( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool VirtualName::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& VirtualName::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& VirtualName::streamName( std::ostream& os ) const
+        {
+            os << "virtual-name";
+            return os;
+        }
+        std::ostream& VirtualName::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString VirtualName::getValue() const
+        {
+            return myValue;
+        }
+        void VirtualName::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        WorkNumber::WorkNumber()
+        :myValue()
+        {}
+        WorkNumber::WorkNumber( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool WorkNumber::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& WorkNumber::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& WorkNumber::streamName( std::ostream& os ) const
+        {
+            os << "work-number";
+            return os;
+        }
+        std::ostream& WorkNumber::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString WorkNumber::getValue() const
+        {
+            return myValue;
+        }
+        void WorkNumber::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        WorkTitle::WorkTitle()
+        :myValue()
+        {}
+        WorkTitle::WorkTitle( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool WorkTitle::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& WorkTitle::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& WorkTitle::streamName( std::ostream& os ) const
+        {
+            os << "work-title";
+            return os;
+        }
+        std::ostream& WorkTitle::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString WorkTitle::getValue() const
+        {
+            return myValue;
+        }
+        void WorkTitle::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Staff::Staff()
+        :myValue()
+        {}
+        Staff::Staff( const types::PositiveInteger& value )
+        :myValue( value )
+        {}
+        bool Staff::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Staff::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Staff::streamName( std::ostream& os ) const
+        {
+            os << "staff";
+            return os;
+        }
+        std::ostream& Staff::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::PositiveInteger Staff::getValue() const
+        {
+            return myValue;
+        }
+        void Staff::setValue( const types::PositiveInteger& value )
+        {
+            myValue = value;
+        }
+        TuningStep::TuningStep()
+        :myValue( types::Step::a )
+        {}
+        TuningStep::TuningStep( const types::Step& value )
+        :myValue( value )
+        {}
+        bool TuningStep::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TuningStep::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TuningStep::streamName( std::ostream& os ) const
+        {
+            os << "tuning-step";
+            return os;
+        }
+        std::ostream& TuningStep::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Step TuningStep::getValue() const
+        {
+            return myValue;
+        }
+        void TuningStep::setValue( const types::Step& value )
+        {
+            myValue = value;
+        }
+        TuningAlter::TuningAlter()
+        :myValue()
+        {}
+        TuningAlter::TuningAlter( const types::Semitones& value )
+        :myValue( value )
+        {}
+        bool TuningAlter::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TuningAlter::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TuningAlter::streamName( std::ostream& os ) const
+        {
+            os << "tuning-alter";
+            return os;
+        }
+        std::ostream& TuningAlter::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Semitones TuningAlter::getValue() const
+        {
+            return myValue;
+        }
+        void TuningAlter::setValue( const types::Semitones& value )
+        {
+            myValue = value;
+        }
+        TuningOctave::TuningOctave()
+        :myValue()
+        {}
+        TuningOctave::TuningOctave( const types::Octave& value )
+        :myValue( value )
+        {}
+        bool TuningOctave::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TuningOctave::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TuningOctave::streamName( std::ostream& os ) const
+        {
+            os << "tuning-octave";
+            return os;
+        }
+        std::ostream& TuningOctave::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Octave TuningOctave::getValue() const
+        {
+            return myValue;
+        }
+        void TuningOctave::setValue( const types::Octave& value )
+        {
+            myValue = value;
+        }
+        Voice::Voice()
+        :myValue()
+        {}
+        Voice::Voice( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool Voice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Voice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Voice::streamName( std::ostream& os ) const
+        {
+            os << "voice";
+            return os;
+        }
+        std::ostream& Voice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString Voice::getValue() const
+        {
+            return myValue;
+        }
+        void Voice::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        KeyStep::KeyStep()
+        :myValue( types::Step::a )
+        {}
+        KeyStep::KeyStep( const types::Step& value )
+        :myValue( value )
+        {}
+        bool KeyStep::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& KeyStep::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& KeyStep::streamName( std::ostream& os ) const
+        {
+            os << "key-step";
+            return os;
+        }
+        std::ostream& KeyStep::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Step KeyStep::getValue() const
+        {
+            return myValue;
+        }
+        void KeyStep::setValue( const types::Step& value )
+        {
+            myValue = value;
+        }
+        KeyAlter::KeyAlter()
+        :myValue()
+        {}
+        KeyAlter::KeyAlter( const types::Semitones& value )
+        :myValue( value )
+        {}
+        bool KeyAlter::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& KeyAlter::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& KeyAlter::streamName( std::ostream& os ) const
+        {
+            os << "key-alter";
+            return os;
+        }
+        std::ostream& KeyAlter::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Semitones KeyAlter::getValue() const
+        {
+            return myValue;
+        }
+        void KeyAlter::setValue( const types::Semitones& value )
+        {
+            myValue = value;
+        }
+        KeyAccidental::KeyAccidental()
+        :myValue( types::AccidentalValue::natural )
+        {}
+        KeyAccidental::KeyAccidental( const types::AccidentalValue& value )
+        :myValue( value )
+        {}
+        bool KeyAccidental::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& KeyAccidental::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& KeyAccidental::streamName( std::ostream& os ) const
+        {
+            os << "key-accidental";
+            return os;
+        }
+        std::ostream& KeyAccidental::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::AccidentalValue KeyAccidental::getValue() const
+        {
+            return myValue;
+        }
+        void KeyAccidental::setValue( const types::AccidentalValue& value )
+        {
+            myValue = value;
+        }
+        SlashType::SlashType()
+        :myValue( types::NoteTypeValue::eighth )
+        {}
+        SlashType::SlashType( const types::NoteTypeValue& value )
+        :myValue( value )
+        {}
+        bool SlashType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& SlashType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& SlashType::streamName( std::ostream& os ) const
+        {
+            os << "slash-type";
+            return os;
+        }
+        std::ostream& SlashType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NoteTypeValue SlashType::getValue() const
+        {
+            return myValue;
+        }
+        void SlashType::setValue( const types::NoteTypeValue& value )
+        {
+            myValue = value;
+        }
+        Beats::Beats()
+        :myValue()
+        {}
+        Beats::Beats( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool Beats::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Beats::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Beats::streamName( std::ostream& os ) const
+        {
+            os << "beats";
+            return os;
+        }
+        std::ostream& Beats::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString Beats::getValue() const
+        {
+            return myValue;
+        }
+        void Beats::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        BeatType::BeatType()
+        :myValue()
+        {}
+        BeatType::BeatType( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool BeatType::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& BeatType::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& BeatType::streamName( std::ostream& os ) const
+        {
+            os << "beat-type";
+            return os;
+        }
+        std::ostream& BeatType::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString BeatType::getValue() const
+        {
+            return myValue;
+        }
+        void BeatType::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        Fifths::Fifths()
+        :myValue()
+        {}
+        Fifths::Fifths( const types::Fifths& value )
+        :myValue( value )
+        {}
+        bool Fifths::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Fifths::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Fifths::streamName( std::ostream& os ) const
+        {
+            os << "fifths";
+            return os;
+        }
+        std::ostream& Fifths::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Fifths Fifths::getValue() const
+        {
+            return myValue;
+        }
+        void Fifths::setValue( const types::Fifths& value )
+        {
+            myValue = value;
+        }
+        Mode::Mode()
+        :myValue()
+        {}
+        Mode::Mode( const types::Mode& value )
+        :myValue( value )
+        {}
+        bool Mode::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Mode::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Mode::streamName( std::ostream& os ) const
+        {
+            os << "mode";
+            return os;
+        }
+        std::ostream& Mode::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Mode Mode::getValue() const
+        {
+            return myValue;
+        }
+        void Mode::setValue( const types::Mode& value )
+        {
+            myValue = value;
+        }
+        BeatUnit::BeatUnit()
+        :myValue( types::NoteTypeValue::eighth )
+        {}
+        BeatUnit::BeatUnit( const types::NoteTypeValue& value )
+        :myValue( value )
+        {}
+        bool BeatUnit::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& BeatUnit::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& BeatUnit::streamName( std::ostream& os ) const
+        {
+            os << "beat-unit";
+            return os;
+        }
+        std::ostream& BeatUnit::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::NoteTypeValue BeatUnit::getValue() const
+        {
+            return myValue;
+        }
+        void BeatUnit::setValue( const types::NoteTypeValue& value )
+        {
+            myValue = value;
+        }
+        TopMargin::TopMargin()
+        :myValue()
+        {}
+        TopMargin::TopMargin( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool TopMargin::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TopMargin::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TopMargin::streamName( std::ostream& os ) const
+        {
+            os << "top-margin";
+            return os;
+        }
+        std::ostream& TopMargin::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths TopMargin::getValue() const
+        {
+            return myValue;
+        }
+        void TopMargin::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        BottomMargin::BottomMargin()
+        :myValue()
+        {}
+        BottomMargin::BottomMargin( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool BottomMargin::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& BottomMargin::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& BottomMargin::streamName( std::ostream& os ) const
+        {
+            os << "bottom-margin";
+            return os;
+        }
+        std::ostream& BottomMargin::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths BottomMargin::getValue() const
+        {
+            return myValue;
+        }
+        void BottomMargin::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        LeftMargin::LeftMargin()
+        :myValue()
+        {}
+        LeftMargin::LeftMargin( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool LeftMargin::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& LeftMargin::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& LeftMargin::streamName( std::ostream& os ) const
+        {
+            os << "left-margin";
+            return os;
+        }
+        std::ostream& LeftMargin::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths LeftMargin::getValue() const
+        {
+            return myValue;
+        }
+        void LeftMargin::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        RightMargin::RightMargin()
+        :myValue()
+        {}
+        RightMargin::RightMargin( const types::Tenths& value )
+        :myValue( value )
+        {}
+        bool RightMargin::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& RightMargin::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& RightMargin::streamName( std::ostream& os ) const
+        {
+            os << "right-margin";
+            return os;
+        }
+        std::ostream& RightMargin::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Tenths RightMargin::getValue() const
+        {
+            return myValue;
+        }
+        void RightMargin::setValue( const types::Tenths& value )
+        {
+            myValue = value;
+        }
+        Duration::Duration()
+        :myValue()
+        {}
+        Duration::Duration( const types::PositiveDivisions& value )
+        :myValue( value )
+        {}
+        bool Duration::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Duration::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Duration::streamName( std::ostream& os ) const
+        {
+            os << "duration";
+            return os;
+        }
+        std::ostream& Duration::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::PositiveDivisions Duration::getValue() const
+        {
+            return myValue;
+        }
+        void Duration::setValue( const types::PositiveDivisions& value )
+        {
+            myValue = value;
+        }
+        DisplayStep::DisplayStep()
+        :myValue( types::Step::a )
+        {}
+        DisplayStep::DisplayStep( const types::Step& value )
+        :myValue( value )
+        {}
+        bool DisplayStep::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& DisplayStep::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& DisplayStep::streamName( std::ostream& os ) const
+        {
+            os << "display-step";
+            return os;
+        }
+        std::ostream& DisplayStep::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Step DisplayStep::getValue() const
+        {
+            return myValue;
+        }
+        void DisplayStep::setValue( const types::Step& value )
+        {
+            myValue = value;
+        }
+        DisplayOctave::DisplayOctave()
+        :myValue()
+        {}
+        DisplayOctave::DisplayOctave( const types::Octave& value )
+        :myValue( value )
+        {}
+        bool DisplayOctave::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& DisplayOctave::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& DisplayOctave::streamName( std::ostream& os ) const
+        {
+            os << "display-octave";
+            return os;
+        }
+        std::ostream& DisplayOctave::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::Octave DisplayOctave::getValue() const
+        {
+            return myValue;
+        }
+        void DisplayOctave::setValue( const types::Octave& value )
+        {
+            myValue = value;
+        }
+        MovementNumber::MovementNumber()
+        :myValue()
+        {}
+        MovementNumber::MovementNumber( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool MovementNumber::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MovementNumber::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MovementNumber::streamName( std::ostream& os ) const
+        {
+            os << "movement-number";
+            return os;
+        }
+        std::ostream& MovementNumber::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString MovementNumber::getValue() const
+        {
+            return myValue;
+        }
+        void MovementNumber::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
+        MovementTitle::MovementTitle()
+        :myValue()
+        {}
+        MovementTitle::MovementTitle( const types::XsString& value )
+        :myValue( value )
+        {}
+        bool MovementTitle::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MovementTitle::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MovementTitle::streamName( std::ostream& os ) const
+        {
+            os << "movement-title";
+            return os;
+        }
+        std::ostream& MovementTitle::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        {
+            isOneLineOnly = true;
+            os << myValue;
+            return os;
+        }
+        types::XsString MovementTitle::getValue() const
+        {
+            return myValue;
+        }
+        void MovementTitle::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
 
     }
 }
