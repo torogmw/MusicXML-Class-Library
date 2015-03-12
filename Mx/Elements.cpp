@@ -958,23 +958,26 @@ namespace mx
         
         /**************** BarStyle ****************/
         BarStyleAttributes::BarStyleAttributes()
+        :color()
+        ,hasColor( false )
         {}
         
         bool BarStyleAttributes::hasValues() const
         {
-            throw std::runtime_error( "some issue here" );
+            return hasColor;
         }
         
         std::ostream& BarStyleAttributes::toStream( std::ostream& os ) const
         {
             if ( hasValues() )
             {
+                streamAttribute( os, color, "color", hasColor );
             }
             return os;
         }
         
         BarStyle::BarStyle()
-        :myValue()
+        :myValue( types::BarStyleEnum::regular )
         ,myAttributes( std::make_shared<BarStyleAttributes>() )
         {}
         BarStyle::BarStyle( const types::BarStyleEnum& value )
@@ -5217,7 +5220,7 @@ namespace mx
         
         /**************** Glissando ****************/
         GlissandoAttributes::GlissandoAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,number( 1 )
         ,dashLength()
         ,spaceLength()

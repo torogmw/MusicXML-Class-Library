@@ -699,6 +699,8 @@ namespace mx
             BarStyleAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
+            types::Color color;
+            bool hasColor;
         };
         
         class BarStyle : public ElementInterface
