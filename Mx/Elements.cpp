@@ -2168,8 +2168,8 @@ namespace mx
         
         /**************** PrincipalVoice ****************/
         PrincipalVoiceAttributes::PrincipalVoiceAttributes()
-        :type()
-        ,symbol()
+        :type( types::StartStop::start )
+        ,symbol( types::PrincipalVoiceSymbol::none )
         ,defaultX()
         ,defaultY()
         ,relativeX()
@@ -2923,7 +2923,7 @@ namespace mx
         }
         
         MetronomeBeam::MetronomeBeam()
-        :myValue()
+        :myValue( types::BeamValue::begin )
         ,myAttributes( std::make_shared<MetronomeBeamAttributes>() )
         {}
         MetronomeBeam::MetronomeBeam( const types::BeamValue& value )
@@ -4816,7 +4816,7 @@ namespace mx
         
         /**************** HoleClosed ****************/
         HoleClosedAttributes::HoleClosedAttributes()
-        :location()
+        :location( types::HoleClosedLocation::top )
         ,hasLocation( false )
         {}
         
@@ -4835,7 +4835,7 @@ namespace mx
         }
         
         HoleClosed::HoleClosed()
-        :myValue()
+        :myValue( types::HoleClosedValue::no )
         ,myAttributes( std::make_shared<HoleClosedAttributes>() )
         {}
         HoleClosed::HoleClosed( const types::HoleClosedValue& value )
