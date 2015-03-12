@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, MeasureNumbering )
 {
 	std::string indentString( INDENT );
-	MeasureNumberingValue value1;
-	MeasureNumberingValue value2;
+	MeasureNumberingValue value1 = MeasureNumberingValue::measure;
+	MeasureNumberingValue value2 = MeasureNumberingValue::system;
 	MeasureNumbering object1;
 	MeasureNumbering object2( value2 );
 	MeasureNumberingAttributesPtr attributes1 = std::make_shared<MeasureNumberingAttributes>();
 	MeasureNumberingAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasHalign = true;
+    attributes1->halign = LeftCenterRight::right;
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<measure-numbering>none</measure-numbering>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<measure-numbering halign="right">system</measure-numbering>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

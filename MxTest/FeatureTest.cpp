@@ -8,22 +8,24 @@ using namespace mx::e;
 TEST( Test01, Feature )
 {
 	std::string indentString( INDENT );
-	XsString value1;
-	XsString value2;
+	XsString value1{ "Hoshi" };
+	XsString value2{ "Tu'pal" };
 	Feature object1;
 	Feature object2( value2 );
 	FeatureAttributesPtr attributes1 = std::make_shared<FeatureAttributes>();
 	FeatureAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasType = true;
+    attributes1->type = XsToken{ "bones" };
 	object2.setAttributes( attributes1 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<feature></feature>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<feature type="bones">Tu'pal</feature>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

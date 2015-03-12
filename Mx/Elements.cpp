@@ -3100,7 +3100,7 @@ namespace mx
         }
         
         MeasureNumbering::MeasureNumbering()
-        :myValue()
+        :myValue( types::MeasureNumberingValue::none )
         ,myAttributes( std::make_shared<MeasureNumberingAttributes>() )
         {}
         MeasureNumbering::MeasureNumbering( const types::MeasureNumberingValue& value )
@@ -3967,7 +3967,7 @@ namespace mx
         
         /**************** NoteSize ****************/
         NoteSizeAttributes::NoteSizeAttributes()
-        :type()
+        :type( types::NoteSizeType::large )
         ,hasType( true )
         {}
         
@@ -4240,7 +4240,7 @@ namespace mx
         }
         
         BreathMark::BreathMark()
-        :myValue()
+        :myValue( types::BreathMarkValue::emptystring )
         ,myAttributes( std::make_shared<BreathMarkAttributes>() )
         {}
         BreathMark::BreathMark( const types::BreathMarkValue& value )
@@ -5681,7 +5681,7 @@ namespace mx
         
         /**************** OtherNotation ****************/
         OtherNotationAttributes::OtherNotationAttributes()
-        :type()
+        :type( types::StartStopSingle::start )
         ,number( 1 )
         ,printObject()
         ,defaultX()
@@ -6026,7 +6026,7 @@ namespace mx
         }
         
         Stem::Stem()
-        :myValue()
+        :myValue( types::StemValue::none )
         ,myAttributes( std::make_shared<StemAttributes>() )
         {}
         Stem::Stem( const types::StemValue& value )
@@ -7146,7 +7146,7 @@ namespace mx
         
         /**************** PullOff ****************/
         PullOffAttributes::PullOffAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,number( 1 )
         ,defaultX()
         ,defaultY()
