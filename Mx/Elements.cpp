@@ -1032,7 +1032,7 @@ namespace mx
         
         /**************** Fermata ****************/
         FermataAttributes::FermataAttributes()
-        :type()
+        :type( types::UprightInverted::upright )
         ,defaultX()
         ,defaultY()
         ,relativeX()
@@ -1083,7 +1083,7 @@ namespace mx
         }
         
         Fermata::Fermata()
-        :myValue()
+        :myValue( types::FermataShape::normal )
         ,myAttributes( std::make_shared<FermataAttributes>() )
         {}
         Fermata::Fermata( const types::FermataShape& value )
@@ -2556,8 +2556,8 @@ namespace mx
         
         /**************** Fingering ****************/
         FingeringAttributes::FingeringAttributes()
-        :substitution()
-        ,alternate()
+        :substitution( types::YesNo::no )
+        ,alternate( types::YesNo::no )
         ,defaultX()
         ,defaultY()
         ,relativeX()
