@@ -7328,6 +7328,10 @@ namespace mx
          */
         class MetronomeRelation : public ElementInterface
         {
+            // This is weird, the only allowed value is "equals"
+            // per the specification, so the client cannot change
+            // the value.  No matter what you do here, MetronomeRelation's
+            // value will always be "equals"
         public:
             MetronomeRelation();
             MetronomeRelation( const types::XsString& value );

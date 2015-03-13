@@ -10316,10 +10316,10 @@ namespace mx
             myValue = value;
         }
         MetronomeRelation::MetronomeRelation()
-        :myValue()
+        :myValue( "equals" )
         {}
         MetronomeRelation::MetronomeRelation( const types::XsString& value )
-        :myValue( value )
+        :myValue( "equals" )
         {}
         bool MetronomeRelation::hasAttributes() const
         {
@@ -10346,7 +10346,10 @@ namespace mx
         }
         void MetronomeRelation::setValue( const types::XsString& value )
         {
-            myValue = value;
+            // No!  This is weird, the only allowed value is "equals"
+            // per the specification, so the client cannot change
+            // the value
+            // myValue = value;
         }
         MetronomeType::MetronomeType()
         :myValue( types::NoteTypeValue::eighth )

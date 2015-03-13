@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, ArrowDirection )
 {
 	std::string indentString( INDENT );
-	ArrowDirectionEnum value1;
-	ArrowDirectionEnum value2;
+	ArrowDirectionEnum value1 = ArrowDirectionEnum::northeast;
+	ArrowDirectionEnum value2 = ArrowDirectionEnum::down;
 	ArrowDirection object1;
 	ArrowDirection object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<arrow-direction>up</arrow-direction>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<arrow-direction>down</arrow-direction>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

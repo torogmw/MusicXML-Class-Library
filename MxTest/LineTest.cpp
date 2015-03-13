@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, Line )
 {
 	std::string indentString( INDENT );
-	StaffLine value1;
-	StaffLine value2;
+	StaffLine value1{ 2 };
+	StaffLine value2{ 5 };
 	Line object1;
 	Line object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<line>0</line>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<line>5</line>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
