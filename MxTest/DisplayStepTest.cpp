@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, DisplayStep )
 {
 	std::string indentString( INDENT );
-	StepEnum value1;
-	StepEnum value2;
+	StepEnum value1 = StepEnum::b;
+	StepEnum value2 = StepEnum::f;
 	DisplayStep object1;
 	DisplayStep object2( value2 );
 	std::stringstream default_constructed;

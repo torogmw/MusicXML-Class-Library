@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, PedalAlter )
 {
 	std::string indentString( INDENT );
-	Semitones value1;
-	Semitones value2;
+	Semitones value1{ -0.1 };
+	Semitones value2{ 2.02 };
 	PedalAlter object1;
 	PedalAlter object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<pedal-alter>0</pedal-alter>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<pedal-alter>2.02</pedal-alter>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, MetronomeType )
 {
 	std::string indentString( INDENT );
-	NoteTypeValue value1;
-	NoteTypeValue value2;
+	NoteTypeValue value1 = NoteTypeValue::quarter;
+	NoteTypeValue value2 = NoteTypeValue::whole;
 	MetronomeType object1;
 	MetronomeType object2( value2 );
 	std::stringstream default_constructed;

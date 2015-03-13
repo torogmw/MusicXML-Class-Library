@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Source )
 {
 	std::string indentString( INDENT );
-	XsString value1;
-	XsString value2;
+	XsString value1{ "ABC" };
+	XsString value2{ "XYZ" };
 	Source object1;
 	Source object2( value2 );
 	std::stringstream default_constructed;

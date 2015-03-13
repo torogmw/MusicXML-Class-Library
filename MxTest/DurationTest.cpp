@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Duration )
 {
 	std::string indentString( INDENT );
-	PositiveDivisionsValue value1;
-	PositiveDivisionsValue value2;
+	PositiveDivisionsValue value1{ 0.3333 };
+	PositiveDivisionsValue value2{ 4.1 };
 	Duration object1;
 	Duration object2( value2 );
 	std::stringstream default_constructed;

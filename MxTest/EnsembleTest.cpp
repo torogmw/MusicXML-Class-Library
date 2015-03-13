@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, Ensemble )
 {
 	std::string indentString( INDENT );
-	PositiveIntegerOrEmpty value1;
-	PositiveIntegerOrEmpty value2;
+	PositiveIntegerOrEmpty value1{ PositiveInteger{ 1 } };
+	PositiveIntegerOrEmpty value2{ PositiveInteger{ 3 } };
 	Ensemble object1;
 	Ensemble object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<ensemble></ensemble>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<ensemble>3</ensemble>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

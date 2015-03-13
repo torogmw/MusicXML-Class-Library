@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, ActualNotes )
 {
 	std::string indentString( INDENT );
-	NonNegativeInteger value1;
-	NonNegativeInteger value2;
+	NonNegativeInteger value1{ 2 };
+	NonNegativeInteger value2{ 3 };
 	ActualNotes object1;
 	ActualNotes object2( value2 );
 	std::stringstream default_constructed;

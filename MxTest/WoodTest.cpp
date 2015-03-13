@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, Wood )
 {
 	std::string indentString( INDENT );
-	WoodEnum value1;
-	WoodEnum value2;
+	WoodEnum value1 = WoodEnum::cabasa;
+	WoodEnum value2 = WoodEnum::logDrum;
 	Wood object1;
 	Wood object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<wood>claves</wood>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<wood>log drum</wood>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

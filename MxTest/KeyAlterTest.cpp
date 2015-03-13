@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, KeyAlter )
 {
 	std::string indentString( INDENT );
-	Semitones value1;
-	Semitones value2;
+	Semitones value1{ -0.1 };
+	Semitones value2{ 2.02 };
 	KeyAlter object1;
 	KeyAlter object2( value2 );
 	std::stringstream default_constructed;

@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, SlashType )
 {
 	std::string indentString( INDENT );
-	NoteTypeValue value1;
-	NoteTypeValue value2;
+	NoteTypeValue value1 = NoteTypeValue::quarter;
+	NoteTypeValue value2 = NoteTypeValue::whole;
 	SlashType object1;
 	SlashType object2( value2 );
 	std::stringstream default_constructed;

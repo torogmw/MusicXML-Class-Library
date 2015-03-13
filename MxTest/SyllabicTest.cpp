@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, Syllabic )
 {
 	std::string indentString( INDENT );
-	SyllabicEnum value1;
-	SyllabicEnum value2;
+	SyllabicEnum value1 = SyllabicEnum::middle;
+	SyllabicEnum value2 = SyllabicEnum::single;
 	Syllabic object1;
 	Syllabic object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<syllabic>begin</syllabic>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<syllabic>single</syllabic>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

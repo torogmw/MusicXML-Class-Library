@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, ClefOctaveChange )
 {
 	std::string indentString( INDENT );
-	Integer value1;
-	Integer value2;
+	Integer value1{ 2 };
+	Integer value2{ 3 };
 	ClefOctaveChange object1;
 	ClefOctaveChange object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<clef-octave-change>0</clef-octave-change>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<clef-octave-change>3</clef-octave-change>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, AccordionMiddle )
 {
 	std::string indentString( INDENT );
-	AccordionMiddleValue value1;
-	AccordionMiddleValue value2;
+	AccordionMiddleValue value1{ 2 };
+	AccordionMiddleValue value2{ 3 };
 	AccordionMiddle object1;
 	AccordionMiddle object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<accordion-middle>1</accordion-middle>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<accordion-middle>3</accordion-middle>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, TuningOctave )
 {
 	std::string indentString( INDENT );
-	OctaveValue value1;
-	OctaveValue value2;
+	OctaveValue value1{ 1 };
+	OctaveValue value2{ 2 };
 	TuningOctave object1;
 	TuningOctave object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<tuning-octave>0</tuning-octave>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<tuning-octave>2</tuning-octave>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

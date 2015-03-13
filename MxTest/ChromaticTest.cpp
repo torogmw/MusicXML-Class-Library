@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, Chromatic )
 {
 	std::string indentString( INDENT );
-	Semitones value1;
-	Semitones value2;
+	Semitones value1{ -0.1 };
+	Semitones value2{ 2.02 };
 	Chromatic object1;
 	Chromatic object2( value2 );
 	std::stringstream default_constructed;

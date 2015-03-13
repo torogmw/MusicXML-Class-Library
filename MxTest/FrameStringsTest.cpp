@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, FrameStrings )
 {
 	std::string indentString( INDENT );
-	PositiveInteger value1;
-	PositiveInteger value2;
+	PositiveInteger value1{ 2 };
+	PositiveInteger value2{ 3 };
 	FrameStrings object1;
 	FrameStrings object2( value2 );
 	std::stringstream default_constructed;

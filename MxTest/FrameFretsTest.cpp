@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, FrameFrets )
 {
 	std::string indentString( INDENT );
-	PositiveInteger value1;
-	PositiveInteger value2;
+	PositiveInteger value1{ 2 };
+	PositiveInteger value2{ 3 };
 	FrameFrets object1;
 	FrameFrets object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<frame-frets>1</frame-frets>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<frame-frets>3</frame-frets>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

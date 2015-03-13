@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, PageHeight )
 {
 	std::string indentString( INDENT );
-	TenthsValue value1;
-	TenthsValue value2;
+	TenthsValue value1{ 1.23 };
+	TenthsValue value2{ 4.56 };
 	PageHeight object1;
 	PageHeight object2( value2 );
 	std::stringstream default_constructed;

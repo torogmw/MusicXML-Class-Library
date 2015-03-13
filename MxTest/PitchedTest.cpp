@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, Pitched )
 {
 	std::string indentString( INDENT );
-	PitchedEnum value1;
-	PitchedEnum value2;
+	PitchedEnum value1 = PitchedEnum::marimba;
+	PitchedEnum value2 = PitchedEnum::vibraphone;
 	Pitched object1;
 	Pitched object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<pitched>xylophone</pitched>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<pitched>vibraphone</pitched>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

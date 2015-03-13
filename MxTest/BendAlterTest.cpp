@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, BendAlter )
 {
 	std::string indentString( INDENT );
-	Semitones value1;
-	Semitones value2;
+	Semitones value1{ -0.1 };
+	Semitones value2{ 2.02 };
 	BendAlter object1;
 	BendAlter object2( value2 );
 	std::stringstream default_constructed;

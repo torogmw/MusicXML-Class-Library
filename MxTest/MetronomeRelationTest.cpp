@@ -8,8 +8,8 @@ using namespace mx::e;
 TEST( Test01, MetronomeRelation )
 {
 	std::string indentString( INDENT );
-	XsString value1;
-	XsString value2;
+	XsString value1{ "ABC" };
+	XsString value2{ "XYZ" };
 	MetronomeRelation object1;
 	MetronomeRelation object2( value2 );
 	std::stringstream default_constructed;
