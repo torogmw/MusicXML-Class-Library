@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, StickType )
 {
 	std::string indentString( INDENT );
-	StickTypeEnum value1;
-	StickTypeEnum value2;
+	StickTypeEnum value1 = StickTypeEnum::doubleBassDrum;
+	StickTypeEnum value2 = StickTypeEnum::xylophone;
 	StickType object1;
 	StickType object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<stick-type>yarn</stick-type>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<stick-type>xylophone</stick-type>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

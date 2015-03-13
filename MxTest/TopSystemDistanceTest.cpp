@@ -16,10 +16,10 @@ TEST( Test01, TopSystemDistance )
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<top-system-distance>0</top-system-distance>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<top-system-distance>4.56</top-system-distance>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
