@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, CircularArrow )
 {
 	std::string indentString( INDENT );
-	CircularArrowEnum value1;
-	CircularArrowEnum value2;
+	CircularArrowEnum value1 = CircularArrowEnum::clockwise;
+	CircularArrowEnum value2 = CircularArrowEnum::anticlockwise;
 	CircularArrow object1;
 	CircularArrow object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<circular-arrow>clockwise</circular-arrow>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<circular-arrow>anticlockwise</circular-arrow>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
