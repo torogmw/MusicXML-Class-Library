@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, KeyAccidental )
 {
 	std::string indentString( INDENT );
-	AccidentalValue value1;
-	AccidentalValue value2;
+	AccidentalValue value1 = AccidentalValue::quarterFlat;
+	AccidentalValue value2 = AccidentalValue::sori;
 	KeyAccidental object1;
 	KeyAccidental object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<key-accidental>natural</key-accidental>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<key-accidental>sori</key-accidental>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

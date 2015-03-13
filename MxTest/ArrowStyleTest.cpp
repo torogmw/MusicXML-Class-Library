@@ -8,18 +8,18 @@ using namespace mx::e;
 TEST( Test01, ArrowStyle )
 {
 	std::string indentString( INDENT );
-	ArrowStyleEnum value1;
-	ArrowStyleEnum value2;
+	ArrowStyleEnum value1 = ArrowStyleEnum::filled;
+	ArrowStyleEnum value2 = ArrowStyleEnum::paired;
 	ArrowStyle object1;
 	ArrowStyle object2( value2 );
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<arrow-style>single</arrow-style>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<arrow-style>paired</arrow-style>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
