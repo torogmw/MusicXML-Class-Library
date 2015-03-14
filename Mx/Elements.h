@@ -10213,5 +10213,424 @@ namespace mx
         private:
             types::XsString myValue;
         };
+        
+        
+        
+        
+        /***************************************************************
+         Empty Elements
+         ***************************************************************/
+         
+        /*
+         2997
+         <xs:element name="double" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>If the double element is present, it indicates that the music is doubled one octave down from what is currently written (as is the case for mixed cello / bass parts in orchestral literature).</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Double : public ElementInterface
+        {
+        public:
+            Double();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         3120
+         <xs:element name="accordion-high" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The accordion-high element indicates the presence of a dot in the high (4') section of the registration symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class AccordionHigh : public ElementInterface
+        {
+        public:
+            AccordionHigh();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         3132
+         <xs:element name="accordion-low" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The accordion-low element indicates the presence of a dot in the low (16') section of the registration symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class AccordionLow : public ElementInterface
+        {
+        public:
+            AccordionLow();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         3670
+         <xs:element name="metronome-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The metronome-dot element works like the dot element in defining metric relationships.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class MetronomeDot : public ElementInterface
+        {
+        public:
+            MetronomeDot();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         3806
+         <xs:element name="timpani" type="empty"/>
+         
+         */
+        class Timpani : public ElementInterface
+        {
+        public:
+            Timpani();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4522
+         <xs:element name="pre-bend" type="empty">
+         <xs:annotation>
+         <xs:documentation>The pre-bend element indicates that this is a pre-bend rather than a normal bend or a release.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class PreBend : public ElementInterface
+        {
+        public:
+            PreBend();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4527
+         <xs:element name="release" type="empty">
+         <xs:annotation>
+         <xs:documentation>The release element indicates that this is a release rather than a normal bend or pre-bend.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Release : public ElementInterface
+        {
+        public:
+            Release();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4710
+         <xs:element name="natural" type="empty">
+         <xs:annotation>
+         <xs:documentation>The natural element indicates that this is a natural harmonic. These are usually notated at base pitch rather than sounding pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Natural : public ElementInterface
+        {
+        public:
+            Natural();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4715
+         <xs:element name="artificial" type="empty">
+         <xs:annotation>
+         <xs:documentation>The artificial element indicates that this is an artificial harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Artificial : public ElementInterface
+        {
+        public:
+            Artificial();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4722
+         <xs:element name="base-pitch" type="empty">
+         <xs:annotation>
+         <xs:documentation>The base pitch is the pitch at which the string is played before touching to create the harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class BasePitch : public ElementInterface
+        {
+        public:
+            BasePitch();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4727
+         <xs:element name="touching-pitch" type="empty">
+         <xs:annotation>
+         <xs:documentation>The touching-pitch is the pitch at which the string is touched lightly to produce the harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class TouchingPitch : public ElementInterface
+        {
+        public:
+            TouchingPitch();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4732
+         <xs:element name="sounding-pitch" type="empty">
+         <xs:annotation>
+         <xs:documentation>The sounding-pitch is the pitch which is heard when playing the harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class SoundingPitch : public ElementInterface
+        {
+        public:
+            SoundingPitch();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4831
+         <xs:element name="laughing" type="empty">
+         <xs:annotation>
+         <xs:documentation>The laughing element is taken from Humdrum.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Laughing : public ElementInterface
+        {
+        public:
+            Laughing();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4836
+         <xs:element name="humming" type="empty">
+         <xs:annotation>
+         <xs:documentation>The humming element is taken from Humdrum.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Humming : public ElementInterface
+        {
+        public:
+            Humming();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4841
+         <xs:element name="end-line" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The end-line element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class EndLine : public ElementInterface
+        {
+        public:
+            EndLine();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4847
+         <xs:element name="end-paragraph" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The end-paragraph element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class EndParagraph : public ElementInterface
+        {
+        public:
+            EndParagraph();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         4976
+         <xs:element name="cue" type="empty">
+         <xs:annotation>
+         <xs:documentation>The cue element indicates the presence of a cue note.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Cue : public ElementInterface
+        {
+        public:
+            Cue();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         5535
+         <xs:element name="normal-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The normal-dot element is used to specify dotted normal tuplet types.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class NormalDot : public ElementInterface
+        {
+        public:
+            NormalDot();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         5831
+         <xs:element name="group-time" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The group-time element indicates that the displayed time signatures should stretch across all parts and staves in the group.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class GroupTime : public ElementInterface
+        {
+        public:
+            GroupTime();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         5898
+         <xs:element name="solo" type="empty">
+         <xs:annotation>
+         <xs:documentation>The solo element was added in Version 2.0. It is present if performance is intended by a solo instrument.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Solo : public ElementInterface
+        {
+        public:
+            Solo();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         6130
+         <xs:element name="slash-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class SlashDot : public ElementInterface
+        {
+        public:
+            SlashDot();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         6178
+         <xs:element name="beat-unit-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The beat-unit-dot element is used to specify any augmentation dots for a metronome mark note.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class BeatUnitDot : public ElementInterface
+        {
+        public:
+            BeatUnitDot();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
+        
+        /*
+         6283
+         <xs:element name="chord" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The chord element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note. In MuseData, a missing duration indicates the same length as the previous note, but the MusicXML format requires a duration for chord notes too.</xs:documentation>
+         </xs:annotation>
+         </xs:element> */
+        class Chord : public ElementInterface
+        {
+        public:
+            Chord();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        };
     }
 }

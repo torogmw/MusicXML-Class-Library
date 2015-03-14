@@ -13508,5 +13508,263 @@ namespace mx
             myValue = value;
         }
         
-    }
-}
+        
+        /***************************************************************
+         Empty Elements
+         ***************************************************************/
+        Double::Double() : ElementInterface() {}
+        bool Double::hasAttributes() const { return false; }
+        bool Double::hasContents() const  { return false; }
+        std::ostream& Double::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Double::streamName( std::ostream& os ) const  { os << "double"; return os; }
+        std::ostream& Double::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        AccordionHigh::AccordionHigh() : ElementInterface() {}
+        bool AccordionHigh::hasAttributes() const { return false; }
+        bool AccordionHigh::hasContents() const  { return false; }
+        std::ostream& AccordionHigh::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& AccordionHigh::streamName( std::ostream& os ) const  { os << "accordion-high"; return os; }
+        std::ostream& AccordionHigh::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        AccordionLow::AccordionLow() : ElementInterface() {}
+        bool AccordionLow::hasAttributes() const { return false; }
+        bool AccordionLow::hasContents() const  { return false; }
+        std::ostream& AccordionLow::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& AccordionLow::streamName( std::ostream& os ) const  { os << "accordion-low"; return os; }
+        std::ostream& AccordionLow::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        MetronomeDot::MetronomeDot() : ElementInterface() {}
+        bool MetronomeDot::hasAttributes() const { return false; }
+        bool MetronomeDot::hasContents() const  { return false; }
+        std::ostream& MetronomeDot::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& MetronomeDot::streamName( std::ostream& os ) const  { os << "metronome-dot"; return os; }
+        std::ostream& MetronomeDot::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Timpani::Timpani() : ElementInterface() {}
+        bool Timpani::hasAttributes() const { return false; }
+        bool Timpani::hasContents() const  { return false; }
+        std::ostream& Timpani::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Timpani::streamName( std::ostream& os ) const  { os << "timpani"; return os; }
+        std::ostream& Timpani::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        PreBend::PreBend() : ElementInterface() {}
+        bool PreBend::hasAttributes() const { return false; }
+        bool PreBend::hasContents() const  { return false; }
+        std::ostream& PreBend::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& PreBend::streamName( std::ostream& os ) const  { os << "pre-bend"; return os; }
+        std::ostream& PreBend::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Release::Release() : ElementInterface() {}
+        bool Release::hasAttributes() const { return false; }
+        bool Release::hasContents() const  { return false; }
+        std::ostream& Release::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Release::streamName( std::ostream& os ) const  { os << "release"; return os; }
+        std::ostream& Release::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Natural::Natural() : ElementInterface() {}
+        bool Natural::hasAttributes() const { return false; }
+        bool Natural::hasContents() const  { return false; }
+        std::ostream& Natural::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Natural::streamName( std::ostream& os ) const  { os << "natural"; return os; }
+        std::ostream& Natural::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Artificial::Artificial() : ElementInterface() {}
+        bool Artificial::hasAttributes() const { return false; }
+        bool Artificial::hasContents() const  { return false; }
+        std::ostream& Artificial::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Artificial::streamName( std::ostream& os ) const  { os << "artificial"; return os; }
+        std::ostream& Artificial::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        BasePitch::BasePitch() : ElementInterface() {}
+        bool BasePitch::hasAttributes() const { return false; }
+        bool BasePitch::hasContents() const  { return false; }
+        std::ostream& BasePitch::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& BasePitch::streamName( std::ostream& os ) const  { os << "base-pitch"; return os; }
+        std::ostream& BasePitch::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        TouchingPitch::TouchingPitch() : ElementInterface() {}
+        bool TouchingPitch::hasAttributes() const { return false; }
+        bool TouchingPitch::hasContents() const  { return false; }
+        std::ostream& TouchingPitch::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& TouchingPitch::streamName( std::ostream& os ) const  { os << "touching-pitch"; return os; }
+        std::ostream& TouchingPitch::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        SoundingPitch::SoundingPitch() : ElementInterface() {}
+        bool SoundingPitch::hasAttributes() const { return false; }
+        bool SoundingPitch::hasContents() const  { return false; }
+        std::ostream& SoundingPitch::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& SoundingPitch::streamName( std::ostream& os ) const  { os << "sounding-pitch"; return os; }
+        std::ostream& SoundingPitch::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Laughing::Laughing() : ElementInterface() {}
+        bool Laughing::hasAttributes() const { return false; }
+        bool Laughing::hasContents() const  { return false; }
+        std::ostream& Laughing::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Laughing::streamName( std::ostream& os ) const  { os << "laughing"; return os; }
+        std::ostream& Laughing::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Humming::Humming() : ElementInterface() {}
+        bool Humming::hasAttributes() const { return false; }
+        bool Humming::hasContents() const  { return false; }
+        std::ostream& Humming::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Humming::streamName( std::ostream& os ) const  { os << "humming"; return os; }
+        std::ostream& Humming::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EndLine::EndLine() : ElementInterface() {}
+        bool EndLine::hasAttributes() const { return false; }
+        bool EndLine::hasContents() const  { return false; }
+        std::ostream& EndLine::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& EndLine::streamName( std::ostream& os ) const  { os << "end-line"; return os; }
+        std::ostream& EndLine::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EndParagraph::EndParagraph() : ElementInterface() {}
+        bool EndParagraph::hasAttributes() const { return false; }
+        bool EndParagraph::hasContents() const  { return false; }
+        std::ostream& EndParagraph::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& EndParagraph::streamName( std::ostream& os ) const  { os << "end-paragraph"; return os; }
+        std::ostream& EndParagraph::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Cue::Cue() : ElementInterface() {}
+        bool Cue::hasAttributes() const { return false; }
+        bool Cue::hasContents() const  { return false; }
+        std::ostream& Cue::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Cue::streamName( std::ostream& os ) const  { os << "cue"; return os; }
+        std::ostream& Cue::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        NormalDot::NormalDot() : ElementInterface() {}
+        bool NormalDot::hasAttributes() const { return false; }
+        bool NormalDot::hasContents() const  { return false; }
+        std::ostream& NormalDot::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& NormalDot::streamName( std::ostream& os ) const  { os << "normal-dot"; return os; }
+        std::ostream& NormalDot::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        GroupTime::GroupTime() : ElementInterface() {}
+        bool GroupTime::hasAttributes() const { return false; }
+        bool GroupTime::hasContents() const  { return false; }
+        std::ostream& GroupTime::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& GroupTime::streamName( std::ostream& os ) const  { os << "group-time"; return os; }
+        std::ostream& GroupTime::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Solo::Solo() : ElementInterface() {}
+        bool Solo::hasAttributes() const { return false; }
+        bool Solo::hasContents() const  { return false; }
+        std::ostream& Solo::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Solo::streamName( std::ostream& os ) const  { os << "solo"; return os; }
+        std::ostream& Solo::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        SlashDot::SlashDot() : ElementInterface() {}
+        bool SlashDot::hasAttributes() const { return false; }
+        bool SlashDot::hasContents() const  { return false; }
+        std::ostream& SlashDot::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& SlashDot::streamName( std::ostream& os ) const  { os << "slash-dot"; return os; }
+        std::ostream& SlashDot::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        BeatUnitDot::BeatUnitDot() : ElementInterface() {}
+        bool BeatUnitDot::hasAttributes() const { return false; }
+        bool BeatUnitDot::hasContents() const  { return false; }
+        std::ostream& BeatUnitDot::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& BeatUnitDot::streamName( std::ostream& os ) const  { os << "beat-unit-dot"; return os; }
+        std::ostream& BeatUnitDot::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        Chord::Chord() : ElementInterface() {}
+        bool Chord::hasAttributes() const { return false; }
+        bool Chord::hasContents() const  { return false; }
+        std::ostream& Chord::streamAttributes( std::ostream& os ) const { return os; }
+        std::ostream& Chord::streamName( std::ostream& os ) const  { os << "chord"; return os; }
+        std::ostream& Chord::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+
+    } // namespace e
+
+} // namespace mx
