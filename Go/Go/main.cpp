@@ -7,7 +7,8 @@
 // #include "goCreateOneSequenceElements.h"
 // #include <iomanip>
 // #include "goRxAddHasContentsCpp.h"
-#include "goCreateEmptyElements.h"
+// #include "goCreateEmptyElements.h"
+#include "goCreateEmptyElementsWithAttributes.h"
 
 int main(int argc, const char * argv[])
 {
@@ -17,6 +18,7 @@ int main(int argc, const char * argv[])
     // go::goCreateValueNoAttributeElementsImplementOne();
     // go::goSDKJGFHSDLFJKGH();
     // go::goRxAddHasContentsCpp();
-    go::goCreateEmptyElements();
+    // go::goCreateEmptyElements();
+    go::goCreateEmptyElementsWithAttributes();
     return 0;
 }

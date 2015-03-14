@@ -47,6 +47,7 @@
 		29C628321AB3F14400BACA96 /* goRxAddHasContentsH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goRxAddHasContentsH.h; sourceTree = "<group>"; };
 		29C628331AB3F5BC00BACA96 /* goRxAddHasContentsCpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goRxAddHasContentsCpp.h; sourceTree = "<group>"; };
 		29CEB47B1AB4ABB100D6AEFC /* goCreateEmptyElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateEmptyElements.h; sourceTree = "<group>"; };
+		29CEB4B11AB4E2BB00D6AEFC /* goCreateEmptyElementsWithAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateEmptyElementsWithAttributes.h; sourceTree = "<group>"; };
 		29D10B8C1A9BB14600F03CE6 /* goMsItemSimpleTypeEnumTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeEnumTest.h; sourceTree = "<group>"; };
 		29D10B9E1A9BD8E600F03CE6 /* goCreateMxEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateMxEnums.h; sourceTree = "<group>"; };
 		29D10B9F1A9BDB2C00F03CE6 /* libXsd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXsd.a; path = ../Build/Products/Debug/libXsd.a; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 				29C628321AB3F14400BACA96 /* goRxAddHasContentsH.h */,
 				29C628331AB3F5BC00BACA96 /* goRxAddHasContentsCpp.h */,
 				29CEB47B1AB4ABB100D6AEFC /* goCreateEmptyElements.h */,
+				29CEB4B11AB4E2BB00D6AEFC /* goCreateEmptyElementsWithAttributes.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";

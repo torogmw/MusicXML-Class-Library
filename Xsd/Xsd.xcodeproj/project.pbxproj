@@ -76,6 +76,8 @@
 		29CA12641A9C3FCC008DCCFA /* setIsImplemented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setIsImplemented.h; sourceTree = "<group>"; };
 		29CA12671A9C447B008DCCFA /* MsItemSimpleTypeInteger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleTypeInteger.cpp; sourceTree = "<group>"; };
 		29CA12681A9C447B008DCCFA /* MsItemSimpleTypeInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeInteger.h; sourceTree = "<group>"; };
+		29CEB4B21AB4EE3B00D6AEFC /* codegenAttributesStructH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenAttributesStructH.h; sourceTree = "<group>"; };
+		29CEB4B31AB4EFEF00D6AEFC /* codegenAttributesStructCpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenAttributesStructCpp.h; sourceTree = "<group>"; };
 		29D10B7C1A9B9ED100F03CE6 /* isCppKeyword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isCppKeyword.h; sourceTree = "<group>"; };
 		29D10B7D1A9B9EFE00F03CE6 /* isCppKeyword.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = isCppKeyword.cpp; sourceTree = "<group>"; };
 		29D10B7F1A9BA3E200F03CE6 /* numcharToWord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = numcharToWord.cpp; sourceTree = "<group>"; };
@@ -193,6 +195,8 @@
 				29D10B961A9BCD4700F03CE6 /* tab.cpp */,
 				29D10B971A9BCD4700F03CE6 /* tab.h */,
 				2977496A1AB211F400BF2205 /* codegenValueElementNoAttributes.h */,
+				29CEB4B21AB4EE3B00D6AEFC /* codegenAttributesStructH.h */,
+				29CEB4B31AB4EFEF00D6AEFC /* codegenAttributesStructCpp.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";

@@ -142,14 +142,12 @@ namespace go
             fs::Directory d{ globals::getOutputDirectory() };
             fs::FileInfo fo{ fn, d };
             fs::File f{ fo };
-                                                                                     f.setContents( test.str() );
-                                                                                     test.str( "" );
-                                                                                     f.writeToDisk();
-                                                                                     std::vector<int> impls;
-                                                                                     impls.push_back( e->getID() );
-                                                                                     // go::goSetIsImplemented( impls );
-                                                                                     
-            
+            f.setContents( test.str() );
+            test.str( "" );
+            f.writeToDisk();
+            std::vector<int> impls;
+            impls.push_back( e->getID() );
+            // go::goSetIsImplemented( impls );
         }
         cout << test.str() << endl;
     }

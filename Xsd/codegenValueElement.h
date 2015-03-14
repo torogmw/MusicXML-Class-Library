@@ -210,6 +210,7 @@ namespace xsd
         cpp << "return os;" << end();
         cpp << "}" << end(2);
 
+        /* CPP CLASS */
         cpp << e->getCppName() << "::" << e->getCppName() << "()" << end();
         cpp << ":myValue()" << end();
         cpp << ",myAttributes( std::make_shared<" << attStructName << ">() )" << end();
