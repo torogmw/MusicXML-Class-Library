@@ -217,52 +217,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mx/Elements.cpp"
-            timestampString = "447648899.801129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "910"
-            endingLineNumber = "910"
-            landmarkName = "MeasureRepeat::MeasureRepeat( const types::PositiveIntegerOrEmpty&amp; value )"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mx::e::MeasureRepeat::MeasureRepeat(mx::types::PositiveIntegerOrEmpty const&amp;)"
-                  moduleName = "MxTest"
-                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
-                  timestampString = "447648902.152893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "912"
-                  endingLineNumber = "912"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mx::e::MeasureRepeat::MeasureRepeat(mx::types::PositiveIntegerOrEmpty const&amp;)"
-                  moduleName = "MxTest"
-                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
-                  timestampString = "447648902.153191"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "912"
-                  endingLineNumber = "912"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MxTest/MeasureRepeatTest.cpp"
             timestampString = "447648926.37882"
             startingColumnNumber = "9223372036854775807"
@@ -303,98 +257,6 @@
             endingLineNumber = "46"
             landmarkName = "setValue( const PositiveInteger&amp; value )"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Mx/Elements.cpp"
-            timestampString = "447834749.413492"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4121"
-            endingLineNumber = "4121"
-            landmarkName = "OtherAppearanceAttributes::OtherAppearanceAttributes()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mx::e::OtherAppearanceAttributes::OtherAppearanceAttributes()"
-                  moduleName = "MxTest"
-                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
-                  timestampString = "447703969.507732"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4120"
-                  endingLineNumber = "4120"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mx::e::OtherAppearanceAttributes::OtherAppearanceAttributes()"
-                  moduleName = "MxTest"
-                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
-                  timestampString = "447703969.507926"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4120"
-                  endingLineNumber = "4120"
-                  offsetFromSymbolStart = "18">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Mx/Elements.cpp"
-            timestampString = "447834749.413492"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1141"
-            endingLineNumber = "1141"
-            landmarkName = "EndingAttributes::EndingAttributes()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mx::e::EndingAttributes::EndingAttributes()"
-                  moduleName = "MxTest"
-                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
-                  timestampString = "447704767.409342"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1166"
-                  endingLineNumber = "1166"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mx::e::EndingAttributes::EndingAttributes()"
-                  moduleName = "MxTest"
-                  urlString = "file:///Volumes/MusikPlatz/Mx/Elements.cpp"
-                  timestampString = "447704767.409499"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1166"
-                  endingLineNumber = "1166"
-                  offsetFromSymbolStart = "18">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -506,6 +368,118 @@
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "goSDKJGFHSDLFJKGH()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsH.h"
+            timestampString = "448001130.62368"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "goRxAddHasContentsCpp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsH.h"
+            timestampString = "448001130.62368"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "goRxAddHasContentsCpp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsCpp.h"
+            timestampString = "448003870.032149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "goRxAddHasContentsCpp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsCpp.h"
+            timestampString = "448003870.032149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "goRxAddHasContentsCpp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsCpp.h"
+            timestampString = "448002834.993581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "goRxAddHasContentsCpp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsCpp.h"
+            timestampString = "448002906.571395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "goRxAddHasContentsCpp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goRxAddHasContentsCpp.h"
+            timestampString = "448003870.032149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "goRxAddHasContentsCpp()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

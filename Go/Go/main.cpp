@@ -1,12 +1,12 @@
 
 #include <iostream>
-#include "goSetIsImplemented.h"
-#include "goMsItemAttributeTest.h"
+// #include "goSetIsImplemented.h"
+// #include "goMsItemAttributeTest.h"
 // #include "goCreateValueElements.h"
 // #include "goCreateValueNoAttributeElements.h"
-#include "goCreateOneSequenceElements.h"
-#include <iomanip>
-
+// #include "goCreateOneSequenceElements.h"
+// #include <iomanip>
+#include "goRxAddHasContentsCpp.h"
 
 int main(int argc, const char * argv[])
 {
@@ -14,6 +14,8 @@ int main(int argc, const char * argv[])
     // go::goMsItemAttributeTest();
     // go::goCreateValueElements();
     // go::goCreateValueNoAttributeElementsImplementOne();
-    go::goSDKJGFHSDLFJKGH();
+    // go::goSDKJGFHSDLFJKGH();
+    go::goRxAddHasContentsCpp();
+    
     return 0;
 }

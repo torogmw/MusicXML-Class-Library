@@ -108,6 +108,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Dynamics::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Dynamics::streamAttributes( std::ostream& os ) const
         {
             return myAttributes->toStream( os );
@@ -224,6 +228,10 @@ namespace mx
         bool AccidentalText::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool AccidentalText::hasContents() const
+        {
+            return true;
         }
         std::ostream& AccidentalText::streamAttributes( std::ostream& os ) const
         {
@@ -370,6 +378,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool DisplayText::hasContents() const
+        {
+            return true;
+        }
         std::ostream& DisplayText::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -413,149 +425,153 @@ namespace mx
         
         
         /**************** DisplayText ****************/
-//        DisplayTextAttributes::DisplayTextAttributes()
-//        :justify( types::LeftCenterRight::center )
-//        ,defaultX()
-//        ,defaultY()
-//        ,relativeX()
-//        ,relativeY()
-//        ,fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,halign()
-//        ,underline()
-//        ,overline()
-//        ,lineThrough()
-//        ,rotation()
-//        ,letterSpacing()
-//        ,lineHeight()
-//        ,lang( types::XmlLang{ "it" } )
-//        ,space( types::XmlSpace::default_ )
-//        ,enclosure( types::EnclosureShape::rectangle )
-//        ,hasJustify( false )
-//        ,hasDefaultX( false )
-//        ,hasDefaultY( false )
-//        ,hasRelativeX( false )
-//        ,hasRelativeY( false )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        ,hasHalign( false )
-//        ,hasUnderline( false )
-//        ,hasOverline( false )
-//        ,hasLineThrough( false )
-//        ,hasRotation( false )
-//        ,hasLetterSpacing( false )
-//        ,hasLineHeight( false )
-//        ,hasLang( false )
-//        ,hasSpace( false )
-//        ,hasEnclosure( false )
-//        {}
-//        
-//        bool DisplayTextAttributes::hasValues() const
+        //        DisplayTextAttributes::DisplayTextAttributes()
+        //        :justify( types::LeftCenterRight::center )
+        //        ,defaultX()
+        //        ,defaultY()
+        //        ,relativeX()
+        //        ,relativeY()
+        //        ,fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,halign()
+        //        ,underline()
+        //        ,overline()
+        //        ,lineThrough()
+        //        ,rotation()
+        //        ,letterSpacing()
+        //        ,lineHeight()
+        //        ,lang( types::XmlLang{ "it" } )
+        //        ,space( types::XmlSpace::default_ )
+        //        ,enclosure( types::EnclosureShape::rectangle )
+        //        ,hasJustify( false )
+        //        ,hasDefaultX( false )
+        //        ,hasDefaultY( false )
+        //        ,hasRelativeX( false )
+        //        ,hasRelativeY( false )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        ,hasHalign( false )
+        //        ,hasUnderline( false )
+        //        ,hasOverline( false )
+        //        ,hasLineThrough( false )
+        //        ,hasRotation( false )
+        //        ,hasLetterSpacing( false )
+        //        ,hasLineHeight( false )
+        //        ,hasLang( false )
+        //        ,hasSpace( false )
+        //        ,hasEnclosure( false )
+        //        {}
+        //
+        //        bool DisplayTextAttributes::hasValues() const
+        //        {
+        //            return hasJustify ||
+        //            hasDefaultX ||
+        //            hasDefaultY ||
+        //            hasRelativeX ||
+        //            hasRelativeY ||
+        //            hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight ||
+        //            hasHalign ||
+        //            hasUnderline ||
+        //            hasOverline ||
+        //            hasLineThrough ||
+        //            hasRotation ||
+        //            hasLetterSpacing ||
+        //            hasLineHeight ||
+        //            hasLang ||
+        //            hasSpace ||
+        //            hasEnclosure;
+        //        }
+        //
+        //        std::ostream& DisplayTextAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, justify, "justify", hasJustify );
+        //                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+        //                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+        //                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+        //                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //                streamAttribute( os, halign, "halign", hasHalign );
+        //                streamAttribute( os, underline, "underline", hasUnderline );
+        //                streamAttribute( os, overline, "overline", hasOverline );
+        //                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
+        //                streamAttribute( os, rotation, "rotation", hasRotation );
+        //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
+        //                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
+        //                streamAttribute( os, lang, "lang", hasLang );
+        //                streamAttribute( os, space, "space", hasSpace );
+        //                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        DisplayText::DisplayText()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
+        //        {}
+        //        DisplayText::DisplayText( const types::XsString& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
+        //        {}
+        //        bool DisplayText::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool DisplayText::hasContents() const
 //        {
-//            return hasJustify ||
-//            hasDefaultX ||
-//            hasDefaultY ||
-//            hasRelativeX ||
-//            hasRelativeY ||
-//            hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight ||
-//            hasHalign ||
-//            hasUnderline ||
-//            hasOverline ||
-//            hasLineThrough ||
-//            hasRotation ||
-//            hasLetterSpacing ||
-//            hasLineHeight ||
-//            hasLang ||
-//            hasSpace ||
-//            hasEnclosure;
+//            return true;
 //        }
-//        
-//        std::ostream& DisplayTextAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, justify, "justify", hasJustify );
-//                streamAttribute( os, defaultX, "default-x", hasDefaultX );
-//                streamAttribute( os, defaultY, "default-y", hasDefaultY );
-//                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
-//                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//                streamAttribute( os, halign, "halign", hasHalign );
-//                streamAttribute( os, underline, "underline", hasUnderline );
-//                streamAttribute( os, overline, "overline", hasOverline );
-//                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
-//                streamAttribute( os, rotation, "rotation", hasRotation );
-//                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-//                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-//                streamAttribute( os, lang, "lang", hasLang );
-//                streamAttribute( os, space, "space", hasSpace );
-//                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
-//            }
-//            return os;
-//        }
-//        
-//        DisplayText::DisplayText()
-//        :myValue()
-//        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
-//        {}
-//        DisplayText::DisplayText( const types::XsString& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
-//        {}
-//        bool DisplayText::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& DisplayText::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& DisplayText::streamName( std::ostream& os ) const
-//        {
-//            os << "display-text";
-//            return os;
-//        }
-//        std::ostream& DisplayText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        DisplayTextAttributesPtr DisplayText::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void DisplayText::setAttributes( const DisplayTextAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::XsString DisplayText::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void DisplayText::setValue( const types::XsString& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& DisplayText::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& DisplayText::streamName( std::ostream& os ) const
+        //        {
+        //            os << "display-text";
+        //            return os;
+        //        }
+        //        std::ostream& DisplayText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        DisplayTextAttributesPtr DisplayText::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void DisplayText::setAttributes( const DisplayTextAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::XsString DisplayText::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void DisplayText::setValue( const types::XsString& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** OtherPlay ****************/
@@ -589,6 +605,10 @@ namespace mx
         bool OtherPlay::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool OtherPlay::hasContents() const
+        {
+            return true;
         }
         std::ostream& OtherPlay::streamAttributes( std::ostream& os ) const
         {
@@ -684,6 +704,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool PartSymbol::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PartSymbol::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -762,6 +786,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool KeyOctave::hasContents() const
+        {
+            return true;
+        }
         std::ostream& KeyOctave::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -835,6 +863,10 @@ namespace mx
         bool MultipleRest::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool MultipleRest::hasContents() const
+        {
+            return true;
         }
         std::ostream& MultipleRest::streamAttributes( std::ostream& os ) const
         {
@@ -914,6 +946,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool MeasureRepeat::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MeasureRepeat::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -987,6 +1023,10 @@ namespace mx
         bool BarStyle::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool BarStyle::hasContents() const
+        {
+            return true;
         }
         std::ostream& BarStyle::streamAttributes( std::ostream& os ) const
         {
@@ -1093,6 +1133,10 @@ namespace mx
         bool Fermata::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Fermata::hasContents() const
+        {
+            return true;
         }
         std::ostream& Fermata::streamAttributes( std::ostream& os ) const
         {
@@ -1220,6 +1264,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Ending::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Ending::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -1325,6 +1373,10 @@ namespace mx
         bool BassStep::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool BassStep::hasContents() const
+        {
+            return true;
         }
         std::ostream& BassStep::streamAttributes( std::ostream& os ) const
         {
@@ -1436,6 +1488,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool BassAlter::hasContents() const
+        {
+            return true;
+        }
         std::ostream& BassAlter::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -1546,6 +1602,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool DegreeValue::hasContents() const
+        {
+            return true;
+        }
         std::ostream& DegreeValue::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -1651,6 +1711,10 @@ namespace mx
         bool DegreeAlter::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool DegreeAlter::hasContents() const
+        {
+            return true;
         }
         std::ostream& DegreeAlter::streamAttributes( std::ostream& os ) const
         {
@@ -1758,6 +1822,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool DegreeType::hasContents() const
+        {
+            return true;
+        }
         std::ostream& DegreeType::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -1831,6 +1899,10 @@ namespace mx
         bool Offset::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Offset::hasContents() const
+        {
+            return true;
         }
         std::ostream& Offset::streamAttributes( std::ostream& os ) const
         {
@@ -1978,6 +2050,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Rehearsal::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Rehearsal::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -2124,6 +2200,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Words::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Words::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -2238,6 +2318,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool PrincipalVoice::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PrincipalVoice::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -2348,6 +2432,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool OtherDirection::hasContents() const
+        {
+            return true;
+        }
         std::ostream& OtherDirection::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -2425,6 +2513,10 @@ namespace mx
         bool FirstFret::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool FirstFret::hasContents() const
+        {
+            return true;
         }
         std::ostream& FirstFret::streamAttributes( std::ostream& os ) const
         {
@@ -2511,6 +2603,10 @@ namespace mx
         bool Fret::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Fret::hasContents() const
+        {
+            return true;
         }
         std::ostream& Fret::streamAttributes( std::ostream& os ) const
         {
@@ -2626,6 +2722,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Fingering::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Fingering::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -2700,6 +2800,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Feature::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Feature::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -2743,77 +2847,81 @@ namespace mx
         
         
         /**************** Offset ****************/
-//        OffsetAttributes::OffsetAttributes()
-//        :sound()
-//        ,hasSound( false )
-//        {}
-//        
-//        bool OffsetAttributes::hasValues() const
+        //        OffsetAttributes::OffsetAttributes()
+        //        :sound()
+        //        ,hasSound( false )
+        //        {}
+        //
+        //        bool OffsetAttributes::hasValues() const
+        //        {
+        //            return hasSound;
+        //        }
+        //
+        //        std::ostream& OffsetAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, sound, "sound", hasSound );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        Offset::Offset()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<OffsetAttributes>() )
+        //        {}
+        //        Offset::Offset( const types::DivisionsValue& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<OffsetAttributes>() )
+        //        {}
+        //        bool Offset::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool Offset::hasContents() const
 //        {
-//            return hasSound;
+//            return true;
 //        }
-//        
-//        std::ostream& OffsetAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, sound, "sound", hasSound );
-//            }
-//            return os;
-//        }
-//        
-//        Offset::Offset()
-//        :myValue()
-//        ,myAttributes( std::make_shared<OffsetAttributes>() )
-//        {}
-//        Offset::Offset( const types::DivisionsValue& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<OffsetAttributes>() )
-//        {}
-//        bool Offset::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& Offset::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& Offset::streamName( std::ostream& os ) const
-//        {
-//            os << "offset";
-//            return os;
-//        }
-//        std::ostream& Offset::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        OffsetAttributesPtr Offset::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void Offset::setAttributes( const OffsetAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::DivisionsValue Offset::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Offset::setValue( const types::DivisionsValue& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Offset::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& Offset::streamName( std::ostream& os ) const
+        //        {
+        //            os << "offset";
+        //            return os;
+        //        }
+        //        std::ostream& Offset::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        OffsetAttributesPtr Offset::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void Offset::setAttributes( const OffsetAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::DivisionsValue Offset::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Offset::setValue( const types::DivisionsValue& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** PerMinute ****************/
@@ -2859,6 +2967,10 @@ namespace mx
         bool PerMinute::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool PerMinute::hasContents() const
+        {
+            return true;
         }
         std::ostream& PerMinute::streamAttributes( std::ostream& os ) const
         {
@@ -2934,6 +3046,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool MetronomeBeam::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MetronomeBeam::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3007,6 +3123,10 @@ namespace mx
         bool Beater::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Beater::hasContents() const
+        {
+            return true;
         }
         std::ostream& Beater::streamAttributes( std::ostream& os ) const
         {
@@ -3114,6 +3234,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool MeasureNumbering::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MeasureNumbering::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3219,6 +3343,10 @@ namespace mx
         bool RootStep::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool RootStep::hasContents() const
+        {
+            return true;
         }
         std::ostream& RootStep::streamAttributes( std::ostream& os ) const
         {
@@ -3330,6 +3458,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool RootAlter::hasContents() const
+        {
+            return true;
+        }
         std::ostream& RootAlter::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3408,6 +3540,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool MidiDevice::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MidiDevice::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3451,77 +3587,81 @@ namespace mx
         
         
         /**************** Offset ****************/
-//        OffsetAttributes::OffsetAttributes()
-//        :sound()
-//        ,hasSound( false )
-//        {}
-//        
-//        bool OffsetAttributes::hasValues() const
+        //        OffsetAttributes::OffsetAttributes()
+        //        :sound()
+        //        ,hasSound( false )
+        //        {}
+        //
+        //        bool OffsetAttributes::hasValues() const
+        //        {
+        //            return hasSound;
+        //        }
+        //
+        //        std::ostream& OffsetAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, sound, "sound", hasSound );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        Offset::Offset()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<OffsetAttributes>() )
+        //        {}
+        //        Offset::Offset( const types::DivisionsValue& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<OffsetAttributes>() )
+        //        {}
+        //        bool Offset::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool Offset::hasContents() const
 //        {
-//            return hasSound;
+//            return true;
 //        }
-//        
-//        std::ostream& OffsetAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, sound, "sound", hasSound );
-//            }
-//            return os;
-//        }
-//        
-//        Offset::Offset()
-//        :myValue()
-//        ,myAttributes( std::make_shared<OffsetAttributes>() )
-//        {}
-//        Offset::Offset( const types::DivisionsValue& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<OffsetAttributes>() )
-//        {}
-//        bool Offset::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& Offset::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& Offset::streamName( std::ostream& os ) const
-//        {
-//            os << "offset";
-//            return os;
-//        }
-//        std::ostream& Offset::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        OffsetAttributesPtr Offset::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void Offset::setAttributes( const OffsetAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::DivisionsValue Offset::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Offset::setValue( const types::DivisionsValue& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Offset::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& Offset::streamName( std::ostream& os ) const
+        //        {
+        //            os << "offset";
+        //            return os;
+        //        }
+        //        std::ostream& Offset::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        OffsetAttributesPtr Offset::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void Offset::setAttributes( const OffsetAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::DivisionsValue Offset::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Offset::setValue( const types::DivisionsValue& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** Encoder ****************/
@@ -3555,6 +3695,10 @@ namespace mx
         bool Encoder::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Encoder::hasContents() const
+        {
+            return true;
         }
         std::ostream& Encoder::streamAttributes( std::ostream& os ) const
         {
@@ -3630,6 +3774,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Creator::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Creator::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3703,6 +3851,10 @@ namespace mx
         bool Rights::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Rights::hasContents() const
+        {
+            return true;
         }
         std::ostream& Rights::streamAttributes( std::ostream& os ) const
         {
@@ -3778,6 +3930,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Relation::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Relation::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3851,6 +4007,10 @@ namespace mx
         bool MiscellaneousField::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool MiscellaneousField::hasContents() const
+        {
+            return true;
         }
         std::ostream& MiscellaneousField::streamAttributes( std::ostream& os ) const
         {
@@ -3926,6 +4086,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool LineWidth::hasContents() const
+        {
+            return true;
+        }
         std::ostream& LineWidth::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -3999,6 +4163,10 @@ namespace mx
         bool NoteSize::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool NoteSize::hasContents() const
+        {
+            return true;
         }
         std::ostream& NoteSize::streamAttributes( std::ostream& os ) const
         {
@@ -4074,6 +4242,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Distance::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Distance::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -4147,6 +4319,10 @@ namespace mx
         bool OtherAppearance::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool OtherAppearance::hasContents() const
+        {
+            return true;
         }
         std::ostream& OtherAppearance::streamAttributes( std::ostream& os ) const
         {
@@ -4254,6 +4430,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool BreathMark::hasContents() const
+        {
+            return true;
+        }
         std::ostream& BreathMark::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -4359,6 +4539,10 @@ namespace mx
         bool OtherArticulation::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool OtherArticulation::hasContents() const
+        {
+            return true;
         }
         std::ostream& OtherArticulation::streamAttributes( std::ostream& os ) const
         {
@@ -4466,6 +4650,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool WithBar::hasContents() const
+        {
+            return true;
+        }
         std::ostream& WithBar::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -4567,6 +4755,10 @@ namespace mx
         bool Prefix::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Prefix::hasContents() const
+        {
+            return true;
         }
         std::ostream& Prefix::streamAttributes( std::ostream& os ) const
         {
@@ -4670,6 +4862,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool FigureNumber::hasContents() const
+        {
+            return true;
+        }
         std::ostream& FigureNumber::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -4772,6 +4968,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Suffix::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Suffix::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -4845,6 +5045,10 @@ namespace mx
         bool HoleClosed::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool HoleClosed::hasContents() const
+        {
+            return true;
         }
         std::ostream& HoleClosed::streamAttributes( std::ostream& os ) const
         {
@@ -4956,6 +5160,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Text::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Text::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -5066,6 +5274,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Elision::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Elision::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -5109,113 +5321,117 @@ namespace mx
         
         
         /**************** Text ****************/
-//        TextAttributes::TextAttributes()
-//        :fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,underline()
-//        ,overline()
-//        ,lineThrough()
-//        ,rotation()
-//        ,letterSpacing()
-//        ,lang( types::XmlLang{ "it" } )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        ,hasUnderline( false )
-//        ,hasOverline( false )
-//        ,hasLineThrough( false )
-//        ,hasRotation( false )
-//        ,hasLetterSpacing( false )
-//        ,hasLang( false )
-//        {}
-//        
-//        bool TextAttributes::hasValues() const
+        //        TextAttributes::TextAttributes()
+        //        :fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,underline()
+        //        ,overline()
+        //        ,lineThrough()
+        //        ,rotation()
+        //        ,letterSpacing()
+        //        ,lang( types::XmlLang{ "it" } )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        ,hasUnderline( false )
+        //        ,hasOverline( false )
+        //        ,hasLineThrough( false )
+        //        ,hasRotation( false )
+        //        ,hasLetterSpacing( false )
+        //        ,hasLang( false )
+        //        {}
+        //
+        //        bool TextAttributes::hasValues() const
+        //        {
+        //            return hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight ||
+        //            hasUnderline ||
+        //            hasOverline ||
+        //            hasLineThrough ||
+        //            hasRotation ||
+        //            hasLetterSpacing ||
+        //            hasLang;
+        //        }
+        //
+        //        std::ostream& TextAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //                streamAttribute( os, underline, "underline", hasUnderline );
+        //                streamAttribute( os, overline, "overline", hasOverline );
+        //                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
+        //                streamAttribute( os, rotation, "rotation", hasRotation );
+        //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
+        //                streamAttribute( os, lang, "lang", hasLang );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        Text::Text()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<TextAttributes>() )
+        //        {}
+        //        Text::Text( const types::XsString& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<TextAttributes>() )
+        //        {}
+        //        bool Text::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool Text::hasContents() const
 //        {
-//            return hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight ||
-//            hasUnderline ||
-//            hasOverline ||
-//            hasLineThrough ||
-//            hasRotation ||
-//            hasLetterSpacing ||
-//            hasLang;
+//            return true;
 //        }
-//        
-//        std::ostream& TextAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//                streamAttribute( os, underline, "underline", hasUnderline );
-//                streamAttribute( os, overline, "overline", hasOverline );
-//                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
-//                streamAttribute( os, rotation, "rotation", hasRotation );
-//                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-//                streamAttribute( os, lang, "lang", hasLang );
-//            }
-//            return os;
-//        }
-//        
-//        Text::Text()
-//        :myValue()
-//        ,myAttributes( std::make_shared<TextAttributes>() )
-//        {}
-//        Text::Text( const types::XsString& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<TextAttributes>() )
-//        {}
-//        bool Text::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& Text::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& Text::streamName( std::ostream& os ) const
-//        {
-//            os << "text";
-//            return os;
-//        }
-//        std::ostream& Text::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        TextAttributesPtr Text::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void Text::setAttributes( const TextAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::XsString Text::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Text::setValue( const types::XsString& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Text::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& Text::streamName( std::ostream& os ) const
+        //        {
+        //            os << "text";
+        //            return os;
+        //        }
+        //        std::ostream& Text::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        TextAttributesPtr Text::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void Text::setAttributes( const TextAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::XsString Text::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Text::setValue( const types::XsString& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** Glissando ****************/
@@ -5293,6 +5509,10 @@ namespace mx
         bool Glissando::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Glissando::hasContents() const
+        {
+            return true;
         }
         std::ostream& Glissando::streamAttributes( std::ostream& os ) const
         {
@@ -5428,6 +5648,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Slide::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Slide::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -5471,109 +5695,113 @@ namespace mx
         
         
         /**************** Fermata ****************/
-//        FermataAttributes::FermataAttributes()
-//        :type()
-//        ,defaultX()
-//        ,defaultY()
-//        ,relativeX()
-//        ,relativeY()
-//        ,fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,hasType( false )
-//        ,hasDefaultX( false )
-//        ,hasDefaultY( false )
-//        ,hasRelativeX( false )
-//        ,hasRelativeY( false )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        {}
-//        
-//        bool FermataAttributes::hasValues() const
+        //        FermataAttributes::FermataAttributes()
+        //        :type()
+        //        ,defaultX()
+        //        ,defaultY()
+        //        ,relativeX()
+        //        ,relativeY()
+        //        ,fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,hasType( false )
+        //        ,hasDefaultX( false )
+        //        ,hasDefaultY( false )
+        //        ,hasRelativeX( false )
+        //        ,hasRelativeY( false )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        {}
+        //
+        //        bool FermataAttributes::hasValues() const
+        //        {
+        //            return hasType ||
+        //            hasDefaultX ||
+        //            hasDefaultY ||
+        //            hasRelativeX ||
+        //            hasRelativeY ||
+        //            hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight;
+        //        }
+        //
+        //        std::ostream& FermataAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, type, "type", hasType );
+        //                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+        //                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+        //                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+        //                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        Fermata::Fermata()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<FermataAttributes>() )
+        //        {}
+        //        Fermata::Fermata( const types::FermataShape& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<FermataAttributes>() )
+        //        {}
+        //        bool Fermata::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool Fermata::hasContents() const
 //        {
-//            return hasType ||
-//            hasDefaultX ||
-//            hasDefaultY ||
-//            hasRelativeX ||
-//            hasRelativeY ||
-//            hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight;
+//            return true;
 //        }
-//        
-//        std::ostream& FermataAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, type, "type", hasType );
-//                streamAttribute( os, defaultX, "default-x", hasDefaultX );
-//                streamAttribute( os, defaultY, "default-y", hasDefaultY );
-//                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
-//                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//            }
-//            return os;
-//        }
-//        
-//        Fermata::Fermata()
-//        :myValue()
-//        ,myAttributes( std::make_shared<FermataAttributes>() )
-//        {}
-//        Fermata::Fermata( const types::FermataShape& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<FermataAttributes>() )
-//        {}
-//        bool Fermata::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& Fermata::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& Fermata::streamName( std::ostream& os ) const
-//        {
-//            os << "fermata";
-//            return os;
-//        }
-//        std::ostream& Fermata::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        FermataAttributesPtr Fermata::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void Fermata::setAttributes( const FermataAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::FermataShape Fermata::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Fermata::setValue( const types::FermataShape& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Fermata::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& Fermata::streamName( std::ostream& os ) const
+        //        {
+        //            os << "fermata";
+        //            return os;
+        //        }
+        //        std::ostream& Fermata::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        FermataAttributesPtr Fermata::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void Fermata::setAttributes( const FermataAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::FermataShape Fermata::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Fermata::setValue( const types::FermataShape& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** AccidentalMark ****************/
@@ -5639,6 +5867,10 @@ namespace mx
         bool AccidentalMark::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool AccidentalMark::hasContents() const
+        {
+            return true;
         }
         std::ostream& AccidentalMark::streamAttributes( std::ostream& os ) const
         {
@@ -5758,6 +5990,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool OtherNotation::hasContents() const
+        {
+            return true;
+        }
         std::ostream& OtherNotation::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -5831,6 +6067,10 @@ namespace mx
         bool Type::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Type::hasContents() const
+        {
+            return true;
         }
         std::ostream& Type::streamAttributes( std::ostream& os ) const
         {
@@ -5954,6 +6194,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Accidental::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Accidental::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -6039,6 +6283,10 @@ namespace mx
         bool Stem::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Stem::hasContents() const
+        {
+            return true;
         }
         std::ostream& Stem::streamAttributes( std::ostream& os ) const
         {
@@ -6134,6 +6382,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Notehead::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Notehead::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -6216,6 +6468,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Beam::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Beam::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -6259,149 +6515,153 @@ namespace mx
         
         
         /**************** DisplayText ****************/
-//        DisplayTextAttributes::DisplayTextAttributes()
-//        :justify( types::LeftCenterRight::center )
-//        ,defaultX()
-//        ,defaultY()
-//        ,relativeX()
-//        ,relativeY()
-//        ,fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,halign()
-//        ,underline()
-//        ,overline()
-//        ,lineThrough()
-//        ,rotation()
-//        ,letterSpacing()
-//        ,lineHeight()
-//        ,lang( types::XmlLang{ "it" } )
-//        ,space( types::XmlSpace::default_ )
-//        ,enclosure( types::EnclosureShape::rectangle )
-//        ,hasJustify( false )
-//        ,hasDefaultX( false )
-//        ,hasDefaultY( false )
-//        ,hasRelativeX( false )
-//        ,hasRelativeY( false )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        ,hasHalign( false )
-//        ,hasUnderline( false )
-//        ,hasOverline( false )
-//        ,hasLineThrough( false )
-//        ,hasRotation( false )
-//        ,hasLetterSpacing( false )
-//        ,hasLineHeight( false )
-//        ,hasLang( false )
-//        ,hasSpace( false )
-//        ,hasEnclosure( false )
-//        {}
-//        
-//        bool DisplayTextAttributes::hasValues() const
+        //        DisplayTextAttributes::DisplayTextAttributes()
+        //        :justify( types::LeftCenterRight::center )
+        //        ,defaultX()
+        //        ,defaultY()
+        //        ,relativeX()
+        //        ,relativeY()
+        //        ,fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,halign()
+        //        ,underline()
+        //        ,overline()
+        //        ,lineThrough()
+        //        ,rotation()
+        //        ,letterSpacing()
+        //        ,lineHeight()
+        //        ,lang( types::XmlLang{ "it" } )
+        //        ,space( types::XmlSpace::default_ )
+        //        ,enclosure( types::EnclosureShape::rectangle )
+        //        ,hasJustify( false )
+        //        ,hasDefaultX( false )
+        //        ,hasDefaultY( false )
+        //        ,hasRelativeX( false )
+        //        ,hasRelativeY( false )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        ,hasHalign( false )
+        //        ,hasUnderline( false )
+        //        ,hasOverline( false )
+        //        ,hasLineThrough( false )
+        //        ,hasRotation( false )
+        //        ,hasLetterSpacing( false )
+        //        ,hasLineHeight( false )
+        //        ,hasLang( false )
+        //        ,hasSpace( false )
+        //        ,hasEnclosure( false )
+        //        {}
+        //
+        //        bool DisplayTextAttributes::hasValues() const
+        //        {
+        //            return hasJustify ||
+        //            hasDefaultX ||
+        //            hasDefaultY ||
+        //            hasRelativeX ||
+        //            hasRelativeY ||
+        //            hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight ||
+        //            hasHalign ||
+        //            hasUnderline ||
+        //            hasOverline ||
+        //            hasLineThrough ||
+        //            hasRotation ||
+        //            hasLetterSpacing ||
+        //            hasLineHeight ||
+        //            hasLang ||
+        //            hasSpace ||
+        //            hasEnclosure;
+        //        }
+        //
+        //        std::ostream& DisplayTextAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, justify, "justify", hasJustify );
+        //                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+        //                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+        //                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+        //                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //                streamAttribute( os, halign, "halign", hasHalign );
+        //                streamAttribute( os, underline, "underline", hasUnderline );
+        //                streamAttribute( os, overline, "overline", hasOverline );
+        //                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
+        //                streamAttribute( os, rotation, "rotation", hasRotation );
+        //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
+        //                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
+        //                streamAttribute( os, lang, "lang", hasLang );
+        //                streamAttribute( os, space, "space", hasSpace );
+        //                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        DisplayText::DisplayText()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
+        //        {}
+        //        DisplayText::DisplayText( const types::XsString& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
+        //        {}
+        //        bool DisplayText::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool DisplayText::hasContents() const
 //        {
-//            return hasJustify ||
-//            hasDefaultX ||
-//            hasDefaultY ||
-//            hasRelativeX ||
-//            hasRelativeY ||
-//            hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight ||
-//            hasHalign ||
-//            hasUnderline ||
-//            hasOverline ||
-//            hasLineThrough ||
-//            hasRotation ||
-//            hasLetterSpacing ||
-//            hasLineHeight ||
-//            hasLang ||
-//            hasSpace ||
-//            hasEnclosure;
+//            return true;
 //        }
-//        
-//        std::ostream& DisplayTextAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, justify, "justify", hasJustify );
-//                streamAttribute( os, defaultX, "default-x", hasDefaultX );
-//                streamAttribute( os, defaultY, "default-y", hasDefaultY );
-//                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
-//                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//                streamAttribute( os, halign, "halign", hasHalign );
-//                streamAttribute( os, underline, "underline", hasUnderline );
-//                streamAttribute( os, overline, "overline", hasOverline );
-//                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
-//                streamAttribute( os, rotation, "rotation", hasRotation );
-//                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-//                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-//                streamAttribute( os, lang, "lang", hasLang );
-//                streamAttribute( os, space, "space", hasSpace );
-//                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
-//            }
-//            return os;
-//        }
-//        
-//        DisplayText::DisplayText()
-//        :myValue()
-//        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
-//        {}
-//        DisplayText::DisplayText( const types::XsString& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
-//        {}
-//        bool DisplayText::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& DisplayText::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& DisplayText::streamName( std::ostream& os ) const
-//        {
-//            os << "display-text";
-//            return os;
-//        }
-//        std::ostream& DisplayText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        DisplayTextAttributesPtr DisplayText::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void DisplayText::setAttributes( const DisplayTextAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::XsString DisplayText::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void DisplayText::setValue( const types::XsString& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& DisplayText::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& DisplayText::streamName( std::ostream& os ) const
+        //        {
+        //            os << "display-text";
+        //            return os;
+        //        }
+        //        std::ostream& DisplayText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        DisplayTextAttributesPtr DisplayText::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void DisplayText::setAttributes( const DisplayTextAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::XsString DisplayText::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void DisplayText::setValue( const types::XsString& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** Tremolo ****************/
@@ -6471,6 +6731,10 @@ namespace mx
         bool Tremolo::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Tremolo::hasContents() const
+        {
+            return true;
         }
         std::ostream& Tremolo::streamAttributes( std::ostream& os ) const
         {
@@ -6579,6 +6843,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool OtherOrnament::hasContents() const
+        {
+            return true;
+        }
         std::ostream& OtherOrnament::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -6622,223 +6890,231 @@ namespace mx
         
         
         /**************** AccidentalMark ****************/
-//        AccidentalMarkAttributes::AccidentalMarkAttributes()
-//        :defaultX()
-//        ,defaultY()
-//        ,relativeX()
-//        ,relativeY()
-//        ,fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,placement()
-//        ,hasDefaultX( false )
-//        ,hasDefaultY( false )
-//        ,hasRelativeX( false )
-//        ,hasRelativeY( false )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        ,hasPlacement( false )
-//        {}
-//        
-//        bool AccidentalMarkAttributes::hasValues() const
+        //        AccidentalMarkAttributes::AccidentalMarkAttributes()
+        //        :defaultX()
+        //        ,defaultY()
+        //        ,relativeX()
+        //        ,relativeY()
+        //        ,fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,placement()
+        //        ,hasDefaultX( false )
+        //        ,hasDefaultY( false )
+        //        ,hasRelativeX( false )
+        //        ,hasRelativeY( false )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        ,hasPlacement( false )
+        //        {}
+        //
+        //        bool AccidentalMarkAttributes::hasValues() const
+        //        {
+        //            return hasDefaultX ||
+        //            hasDefaultY ||
+        //            hasRelativeX ||
+        //            hasRelativeY ||
+        //            hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight ||
+        //            hasPlacement;
+        //        }
+        //
+        //        std::ostream& AccidentalMarkAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+        //                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+        //                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+        //                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //                streamAttribute( os, placement, "placement", hasPlacement );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        AccidentalMark::AccidentalMark()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
+        //        {}
+        //        AccidentalMark::AccidentalMark( const types::AccidentalValue& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
+        //        {}
+        //        bool AccidentalMark::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool AccidentalMark::hasContents() const
 //        {
-//            return hasDefaultX ||
-//            hasDefaultY ||
-//            hasRelativeX ||
-//            hasRelativeY ||
-//            hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight ||
-//            hasPlacement;
+//            return true;
 //        }
-//        
-//        std::ostream& AccidentalMarkAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, defaultX, "default-x", hasDefaultX );
-//                streamAttribute( os, defaultY, "default-y", hasDefaultY );
-//                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
-//                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//                streamAttribute( os, placement, "placement", hasPlacement );
-//            }
-//            return os;
-//        }
-//        
-//        AccidentalMark::AccidentalMark()
-//        :myValue()
-//        ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
-//        {}
-//        AccidentalMark::AccidentalMark( const types::AccidentalValue& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
-//        {}
-//        bool AccidentalMark::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& AccidentalMark::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& AccidentalMark::streamName( std::ostream& os ) const
-//        {
-//            os << "accidental-mark";
-//            return os;
-//        }
-//        std::ostream& AccidentalMark::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        AccidentalMarkAttributesPtr AccidentalMark::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void AccidentalMark::setAttributes( const AccidentalMarkAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::AccidentalValue AccidentalMark::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void AccidentalMark::setValue( const types::AccidentalValue& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& AccidentalMark::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& AccidentalMark::streamName( std::ostream& os ) const
+        //        {
+        //            os << "accidental-mark";
+        //            return os;
+        //        }
+        //        std::ostream& AccidentalMark::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        AccidentalMarkAttributesPtr AccidentalMark::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void AccidentalMark::setAttributes( const AccidentalMarkAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::AccidentalValue AccidentalMark::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void AccidentalMark::setValue( const types::AccidentalValue& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** Fingering ****************/
-//        FingeringAttributes::FingeringAttributes()
-//        :substitution()
-//        ,alternate()
-//        ,defaultX()
-//        ,defaultY()
-//        ,relativeX()
-//        ,relativeY()
-//        ,fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,placement()
-//        ,hasSubstitution( false )
-//        ,hasAlternate( false )
-//        ,hasDefaultX( false )
-//        ,hasDefaultY( false )
-//        ,hasRelativeX( false )
-//        ,hasRelativeY( false )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        ,hasPlacement( false )
-//        {}
-//        
-//        bool FingeringAttributes::hasValues() const
+        //        FingeringAttributes::FingeringAttributes()
+        //        :substitution()
+        //        ,alternate()
+        //        ,defaultX()
+        //        ,defaultY()
+        //        ,relativeX()
+        //        ,relativeY()
+        //        ,fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,placement()
+        //        ,hasSubstitution( false )
+        //        ,hasAlternate( false )
+        //        ,hasDefaultX( false )
+        //        ,hasDefaultY( false )
+        //        ,hasRelativeX( false )
+        //        ,hasRelativeY( false )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        ,hasPlacement( false )
+        //        {}
+        //
+        //        bool FingeringAttributes::hasValues() const
+        //        {
+        //            return hasSubstitution ||
+        //            hasAlternate ||
+        //            hasDefaultX ||
+        //            hasDefaultY ||
+        //            hasRelativeX ||
+        //            hasRelativeY ||
+        //            hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight ||
+        //            hasPlacement;
+        //        }
+        //
+        //        std::ostream& FingeringAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, substitution, "substitution", hasSubstitution );
+        //                streamAttribute( os, alternate, "alternate", hasAlternate );
+        //                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+        //                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+        //                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+        //                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //                streamAttribute( os, placement, "placement", hasPlacement );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        Fingering::Fingering()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<FingeringAttributes>() )
+        //        {}
+        //        Fingering::Fingering( const types::XsString& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<FingeringAttributes>() )
+        //        {}
+        //        bool Fingering::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool Fingering::hasContents() const
 //        {
-//            return hasSubstitution ||
-//            hasAlternate ||
-//            hasDefaultX ||
-//            hasDefaultY ||
-//            hasRelativeX ||
-//            hasRelativeY ||
-//            hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight ||
-//            hasPlacement;
+//            return true;
 //        }
-//        
-//        std::ostream& FingeringAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, substitution, "substitution", hasSubstitution );
-//                streamAttribute( os, alternate, "alternate", hasAlternate );
-//                streamAttribute( os, defaultX, "default-x", hasDefaultX );
-//                streamAttribute( os, defaultY, "default-y", hasDefaultY );
-//                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
-//                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//                streamAttribute( os, placement, "placement", hasPlacement );
-//            }
-//            return os;
-//        }
-//        
-//        Fingering::Fingering()
-//        :myValue()
-//        ,myAttributes( std::make_shared<FingeringAttributes>() )
-//        {}
-//        Fingering::Fingering( const types::XsString& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<FingeringAttributes>() )
-//        {}
-//        bool Fingering::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& Fingering::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& Fingering::streamName( std::ostream& os ) const
-//        {
-//            os << "fingering";
-//            return os;
-//        }
-//        std::ostream& Fingering::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        FingeringAttributesPtr Fingering::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void Fingering::setAttributes( const FingeringAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::XsString Fingering::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Fingering::setValue( const types::XsString& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Fingering::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& Fingering::streamName( std::ostream& os ) const
+        //        {
+        //            os << "fingering";
+        //            return os;
+        //        }
+        //        std::ostream& Fingering::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        FingeringAttributesPtr Fingering::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void Fingering::setAttributes( const FingeringAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::XsString Fingering::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Fingering::setValue( const types::XsString& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** Pluck ****************/
@@ -6905,6 +7181,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Pluck::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Pluck::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -6948,89 +7228,93 @@ namespace mx
         
         
         /**************** Fret ****************/
-//        FretAttributes::FretAttributes()
-//        :fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        {}
-//        
-//        bool FretAttributes::hasValues() const
+        //        FretAttributes::FretAttributes()
+        //        :fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        {}
+        //
+        //        bool FretAttributes::hasValues() const
+        //        {
+        //            return hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight;
+        //        }
+        //
+        //        std::ostream& FretAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        Fret::Fret()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<FretAttributes>() )
+        //        {}
+        //        Fret::Fret( const types::NonNegativeInteger& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<FretAttributes>() )
+        //        {}
+        //        bool Fret::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool Fret::hasContents() const
 //        {
-//            return hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight;
+//            return true;
 //        }
-//        
-//        std::ostream& FretAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//            }
-//            return os;
-//        }
-//        
-//        Fret::Fret()
-//        :myValue()
-//        ,myAttributes( std::make_shared<FretAttributes>() )
-//        {}
-//        Fret::Fret( const types::NonNegativeInteger& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<FretAttributes>() )
-//        {}
-//        bool Fret::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& Fret::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& Fret::streamName( std::ostream& os ) const
-//        {
-//            os << "fret";
-//            return os;
-//        }
-//        std::ostream& Fret::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        FretAttributesPtr Fret::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void Fret::setAttributes( const FretAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::NonNegativeInteger Fret::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Fret::setValue( const types::NonNegativeInteger& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Fret::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& Fret::streamName( std::ostream& os ) const
+        //        {
+        //            os << "fret";
+        //            return os;
+        //        }
+        //        std::ostream& Fret::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        FretAttributesPtr Fret::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void Fret::setAttributes( const FretAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::NonNegativeInteger Fret::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Fret::setValue( const types::NonNegativeInteger& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** HammerOn ****************/
@@ -7104,6 +7388,10 @@ namespace mx
         bool HammerOn::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool HammerOn::hasContents() const
+        {
+            return true;
         }
         std::ostream& HammerOn::streamAttributes( std::ostream& os ) const
         {
@@ -7219,6 +7507,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool PullOff::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PullOff::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -7324,6 +7616,10 @@ namespace mx
         bool Tap::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Tap::hasContents() const
+        {
+            return true;
         }
         std::ostream& Tap::streamAttributes( std::ostream& os ) const
         {
@@ -7431,6 +7727,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Handbell::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Handbell::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -7537,6 +7837,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool OtherTechnical::hasContents() const
+        {
+            return true;
+        }
         std::ostream& OtherTechnical::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -7623,6 +7927,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool TupletNumber::hasContents() const
+        {
+            return true;
+        }
         std::ostream& TupletNumber::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -7708,6 +8016,10 @@ namespace mx
         bool TupletType::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool TupletType::hasContents() const
+        {
+            return true;
         }
         std::ostream& TupletType::streamAttributes( std::ostream& os ) const
         {
@@ -7855,6 +8167,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool CreditWords::hasContents() const
+        {
+            return true;
+        }
         std::ostream& CreditWords::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -7898,149 +8214,153 @@ namespace mx
         
         
         /**************** CreditWords ****************/
-//        CreditWordsAttributes::CreditWordsAttributes()
-//        :justify( types::LeftCenterRight::center )
-//        ,defaultX()
-//        ,defaultY()
-//        ,relativeX()
-//        ,relativeY()
-//        ,fontFamily()
-//        ,fontStyle( types::FontStyle::normal )
-//        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-//        ,fontWeight( types::FontWeight::normal )
-//        ,halign()
-//        ,underline()
-//        ,overline()
-//        ,lineThrough()
-//        ,rotation()
-//        ,letterSpacing()
-//        ,lineHeight()
-//        ,lang( types::XmlLang{ "it" } )
-//        ,space( types::XmlSpace::default_ )
-//        ,enclosure( types::EnclosureShape::rectangle )
-//        ,hasJustify( false )
-//        ,hasDefaultX( false )
-//        ,hasDefaultY( false )
-//        ,hasRelativeX( false )
-//        ,hasRelativeY( false )
-//        ,hasFontFamily( false )
-//        ,hasFontStyle( false )
-//        ,hasFontSize( false )
-//        ,hasFontWeight( false )
-//        ,hasHalign( false )
-//        ,hasUnderline( false )
-//        ,hasOverline( false )
-//        ,hasLineThrough( false )
-//        ,hasRotation( false )
-//        ,hasLetterSpacing( false )
-//        ,hasLineHeight( false )
-//        ,hasLang( false )
-//        ,hasSpace( false )
-//        ,hasEnclosure( false )
-//        {}
-//        
-//        bool CreditWordsAttributes::hasValues() const
+        //        CreditWordsAttributes::CreditWordsAttributes()
+        //        :justify( types::LeftCenterRight::center )
+        //        ,defaultX()
+        //        ,defaultY()
+        //        ,relativeX()
+        //        ,relativeY()
+        //        ,fontFamily()
+        //        ,fontStyle( types::FontStyle::normal )
+        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
+        //        ,fontWeight( types::FontWeight::normal )
+        //        ,halign()
+        //        ,underline()
+        //        ,overline()
+        //        ,lineThrough()
+        //        ,rotation()
+        //        ,letterSpacing()
+        //        ,lineHeight()
+        //        ,lang( types::XmlLang{ "it" } )
+        //        ,space( types::XmlSpace::default_ )
+        //        ,enclosure( types::EnclosureShape::rectangle )
+        //        ,hasJustify( false )
+        //        ,hasDefaultX( false )
+        //        ,hasDefaultY( false )
+        //        ,hasRelativeX( false )
+        //        ,hasRelativeY( false )
+        //        ,hasFontFamily( false )
+        //        ,hasFontStyle( false )
+        //        ,hasFontSize( false )
+        //        ,hasFontWeight( false )
+        //        ,hasHalign( false )
+        //        ,hasUnderline( false )
+        //        ,hasOverline( false )
+        //        ,hasLineThrough( false )
+        //        ,hasRotation( false )
+        //        ,hasLetterSpacing( false )
+        //        ,hasLineHeight( false )
+        //        ,hasLang( false )
+        //        ,hasSpace( false )
+        //        ,hasEnclosure( false )
+        //        {}
+        //
+        //        bool CreditWordsAttributes::hasValues() const
+        //        {
+        //            return hasJustify ||
+        //            hasDefaultX ||
+        //            hasDefaultY ||
+        //            hasRelativeX ||
+        //            hasRelativeY ||
+        //            hasFontFamily ||
+        //            hasFontStyle ||
+        //            hasFontSize ||
+        //            hasFontWeight ||
+        //            hasHalign ||
+        //            hasUnderline ||
+        //            hasOverline ||
+        //            hasLineThrough ||
+        //            hasRotation ||
+        //            hasLetterSpacing ||
+        //            hasLineHeight ||
+        //            hasLang ||
+        //            hasSpace ||
+        //            hasEnclosure;
+        //        }
+        //
+        //        std::ostream& CreditWordsAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, justify, "justify", hasJustify );
+        //                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+        //                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+        //                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+        //                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+        //                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+        //                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+        //                streamAttribute( os, fontSize, "font-size", hasFontSize );
+        //                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+        //                streamAttribute( os, halign, "halign", hasHalign );
+        //                streamAttribute( os, underline, "underline", hasUnderline );
+        //                streamAttribute( os, overline, "overline", hasOverline );
+        //                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
+        //                streamAttribute( os, rotation, "rotation", hasRotation );
+        //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
+        //                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
+        //                streamAttribute( os, lang, "lang", hasLang );
+        //                streamAttribute( os, space, "space", hasSpace );
+        //                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        CreditWords::CreditWords()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<CreditWordsAttributes>() )
+        //        {}
+        //        CreditWords::CreditWords( const types::XsString& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<CreditWordsAttributes>() )
+        //        {}
+        //        bool CreditWords::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool CreditWords::hasContents() const
 //        {
-//            return hasJustify ||
-//            hasDefaultX ||
-//            hasDefaultY ||
-//            hasRelativeX ||
-//            hasRelativeY ||
-//            hasFontFamily ||
-//            hasFontStyle ||
-//            hasFontSize ||
-//            hasFontWeight ||
-//            hasHalign ||
-//            hasUnderline ||
-//            hasOverline ||
-//            hasLineThrough ||
-//            hasRotation ||
-//            hasLetterSpacing ||
-//            hasLineHeight ||
-//            hasLang ||
-//            hasSpace ||
-//            hasEnclosure;
+//            return true;
 //        }
-//        
-//        std::ostream& CreditWordsAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, justify, "justify", hasJustify );
-//                streamAttribute( os, defaultX, "default-x", hasDefaultX );
-//                streamAttribute( os, defaultY, "default-y", hasDefaultY );
-//                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
-//                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
-//                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
-//                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
-//                streamAttribute( os, fontSize, "font-size", hasFontSize );
-//                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-//                streamAttribute( os, halign, "halign", hasHalign );
-//                streamAttribute( os, underline, "underline", hasUnderline );
-//                streamAttribute( os, overline, "overline", hasOverline );
-//                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
-//                streamAttribute( os, rotation, "rotation", hasRotation );
-//                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-//                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-//                streamAttribute( os, lang, "lang", hasLang );
-//                streamAttribute( os, space, "space", hasSpace );
-//                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
-//            }
-//            return os;
-//        }
-//        
-//        CreditWords::CreditWords()
-//        :myValue()
-//        ,myAttributes( std::make_shared<CreditWordsAttributes>() )
-//        {}
-//        CreditWords::CreditWords( const types::XsString& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<CreditWordsAttributes>() )
-//        {}
-//        bool CreditWords::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& CreditWords::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& CreditWords::streamName( std::ostream& os ) const
-//        {
-//            os << "credit-words";
-//            return os;
-//        }
-//        std::ostream& CreditWords::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        CreditWordsAttributesPtr CreditWords::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void CreditWords::setAttributes( const CreditWordsAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::XsString CreditWords::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void CreditWords::setValue( const types::XsString& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& CreditWords::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& CreditWords::streamName( std::ostream& os ) const
+        //        {
+        //            os << "credit-words";
+        //            return os;
+        //        }
+        //        std::ostream& CreditWords::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        CreditWordsAttributesPtr CreditWords::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void CreditWords::setAttributes( const CreditWordsAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::XsString CreditWords::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void CreditWords::setValue( const types::XsString& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** GroupName ****************/
@@ -8106,6 +8426,10 @@ namespace mx
         bool GroupName::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool GroupName::hasContents() const
+        {
+            return true;
         }
         std::ostream& GroupName::streamAttributes( std::ostream& os ) const
         {
@@ -8213,6 +8537,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool GroupAbbreviation::hasContents() const
+        {
+            return true;
+        }
         std::ostream& GroupAbbreviation::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -8299,6 +8627,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool GroupSymbol::hasContents() const
+        {
+            return true;
+        }
         std::ostream& GroupSymbol::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -8372,6 +8704,10 @@ namespace mx
         bool GroupBarline::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool GroupBarline::hasContents() const
+        {
+            return true;
         }
         std::ostream& GroupBarline::streamAttributes( std::ostream& os ) const
         {
@@ -8483,6 +8819,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool PartName::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PartName::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -8593,6 +8933,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool PartAbbreviation::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PartAbbreviation::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -8636,81 +8980,85 @@ namespace mx
         
         
         /**************** MidiDevice ****************/
-//        MidiDeviceAttributes::MidiDeviceAttributes()
-//        :port()
-//        ,id()
-//        ,hasPort( false )
-//        ,hasId( false )
-//        {}
-//        
-//        bool MidiDeviceAttributes::hasValues() const
+        //        MidiDeviceAttributes::MidiDeviceAttributes()
+        //        :port()
+        //        ,id()
+        //        ,hasPort( false )
+        //        ,hasId( false )
+        //        {}
+        //
+        //        bool MidiDeviceAttributes::hasValues() const
+        //        {
+        //            return hasPort ||
+        //            hasId;
+        //        }
+        //
+        //        std::ostream& MidiDeviceAttributes::toStream( std::ostream& os ) const
+        //        {
+        //            if ( hasValues() )
+        //            {
+        //                streamAttribute( os, port, "port", hasPort );
+        //                streamAttribute( os, id, "id", hasId );
+        //            }
+        //            return os;
+        //        }
+        //
+        //        MidiDevice::MidiDevice()
+        //        :myValue()
+        //        ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
+        //        {}
+        //        MidiDevice::MidiDevice( const types::XsString& value )
+        //        :myValue( value )
+        //        ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
+        //        {}
+        //        bool MidiDevice::hasAttributes() const
+        //        {
+        //            return myAttributes->hasValues();
+        //        }
+//        bool MidiDevice::hasContents() const
 //        {
-//            return hasPort ||
-//            hasId;
+//            return true;
 //        }
-//        
-//        std::ostream& MidiDeviceAttributes::toStream( std::ostream& os ) const
-//        {
-//            if ( hasValues() )
-//            {
-//                streamAttribute( os, port, "port", hasPort );
-//                streamAttribute( os, id, "id", hasId );
-//            }
-//            return os;
-//        }
-//        
-//        MidiDevice::MidiDevice()
-//        :myValue()
-//        ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
-//        {}
-//        MidiDevice::MidiDevice( const types::XsString& value )
-//        :myValue( value )
-//        ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
-//        {}
-//        bool MidiDevice::hasAttributes() const
-//        {
-//            return myAttributes->hasValues();
-//        }
-//        std::ostream& MidiDevice::streamAttributes( std::ostream& os ) const
-//        {
-//            if ( myAttributes )
-//            {
-//                myAttributes->toStream( os );
-//            }
-//            return os;
-//        }
-//        std::ostream& MidiDevice::streamName( std::ostream& os ) const
-//        {
-//            os << "midi-device";
-//            return os;
-//        }
-//        std::ostream& MidiDevice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        MidiDeviceAttributesPtr MidiDevice::getAttributes() const
-//        {
-//            return myAttributes;
-//        }
-//        /* if value.get()==nullptr then this is a no-op
-//         i.e. this function guards against setting Attributes to nullptr */
-//        void MidiDevice::setAttributes( const MidiDeviceAttributesPtr& value )
-//        {
-//            if ( value )
-//            {
-//                myAttributes = value;
-//            }
-//        }
-//        types::XsString MidiDevice::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void MidiDevice::setValue( const types::XsString& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& MidiDevice::streamAttributes( std::ostream& os ) const
+        //        {
+        //            if ( myAttributes )
+        //            {
+        //                myAttributes->toStream( os );
+        //            }
+        //            return os;
+        //        }
+        //        std::ostream& MidiDevice::streamName( std::ostream& os ) const
+        //        {
+        //            os << "midi-device";
+        //            return os;
+        //        }
+        //        std::ostream& MidiDevice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        MidiDeviceAttributesPtr MidiDevice::getAttributes() const
+        //        {
+        //            return myAttributes;
+        //        }
+        //        /* if value.get()==nullptr then this is a no-op
+        //         i.e. this function guards against setting Attributes to nullptr */
+        //        void MidiDevice::setAttributes( const MidiDeviceAttributesPtr& value )
+        //        {
+        //            if ( value )
+        //            {
+        //                myAttributes = value;
+        //            }
+        //        }
+        //        types::XsString MidiDevice::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void MidiDevice::setValue( const types::XsString& value )
+        //        {
+        //            myValue = value;
+        //        }
         
         
         /**************** Footnote ****************/
@@ -8817,6 +9165,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Footnote::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Footnote::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -8903,6 +9255,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Level::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Level::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -8976,6 +9332,10 @@ namespace mx
         bool Cancel::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Cancel::hasContents() const
+        {
+            return true;
         }
         std::ostream& Cancel::streamAttributes( std::ostream& os ) const
         {
@@ -9078,6 +9438,10 @@ namespace mx
         bool Function::hasAttributes() const
         {
             return myAttributes->hasValues();
+        }
+        bool Function::hasContents() const
+        {
+            return true;
         }
         std::ostream& Function::streamAttributes( std::ostream& os ) const
         {
@@ -9205,6 +9569,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Kind::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Kind::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -9307,6 +9675,10 @@ namespace mx
         {
             return myAttributes->hasValues();
         }
+        bool Inversion::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Inversion::streamAttributes( std::ostream& os ) const
         {
             if ( myAttributes )
@@ -9368,6 +9740,10 @@ namespace mx
         {
             return false;
         }
+        bool MidiChannel::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MidiChannel::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9400,6 +9776,10 @@ namespace mx
         bool MidiName::hasAttributes() const
         {
             return false;
+        }
+        bool MidiName::hasContents() const
+        {
+            return true;
         }
         std::ostream& MidiName::streamAttributes( std::ostream& os ) const
         {
@@ -9434,6 +9814,10 @@ namespace mx
         {
             return false;
         }
+        bool MidiBank::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MidiBank::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9466,6 +9850,10 @@ namespace mx
         bool MidiProgram::hasAttributes() const
         {
             return false;
+        }
+        bool MidiProgram::hasContents() const
+        {
+            return true;
         }
         std::ostream& MidiProgram::streamAttributes( std::ostream& os ) const
         {
@@ -9500,6 +9888,10 @@ namespace mx
         {
             return false;
         }
+        bool MidiUnpitched::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MidiUnpitched::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9532,6 +9924,10 @@ namespace mx
         bool Volume::hasAttributes() const
         {
             return false;
+        }
+        bool Volume::hasContents() const
+        {
+            return true;
         }
         std::ostream& Volume::streamAttributes( std::ostream& os ) const
         {
@@ -9566,6 +9962,10 @@ namespace mx
         {
             return false;
         }
+        bool Pan::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Pan::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9598,6 +9998,10 @@ namespace mx
         bool Elevation::hasAttributes() const
         {
             return false;
+        }
+        bool Elevation::hasContents() const
+        {
+            return true;
         }
         std::ostream& Elevation::streamAttributes( std::ostream& os ) const
         {
@@ -9632,6 +10036,10 @@ namespace mx
         {
             return false;
         }
+        bool Ipa::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Ipa::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9664,6 +10072,10 @@ namespace mx
         bool Mute::hasAttributes() const
         {
             return false;
+        }
+        bool Mute::hasContents() const
+        {
+            return true;
         }
         std::ostream& Mute::streamAttributes( std::ostream& os ) const
         {
@@ -9698,6 +10110,10 @@ namespace mx
         {
             return false;
         }
+        bool SemiPitched::hasContents() const
+        {
+            return true;
+        }
         std::ostream& SemiPitched::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9730,6 +10146,10 @@ namespace mx
         bool Divisions::hasAttributes() const
         {
             return false;
+        }
+        bool Divisions::hasContents() const
+        {
+            return true;
         }
         std::ostream& Divisions::streamAttributes( std::ostream& os ) const
         {
@@ -9764,6 +10184,10 @@ namespace mx
         {
             return false;
         }
+        bool Staves::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Staves::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9796,6 +10220,10 @@ namespace mx
         bool Instruments::hasAttributes() const
         {
             return false;
+        }
+        bool Instruments::hasContents() const
+        {
+            return true;
         }
         std::ostream& Instruments::streamAttributes( std::ostream& os ) const
         {
@@ -9830,6 +10258,10 @@ namespace mx
         {
             return false;
         }
+        bool Sign::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Sign::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9862,6 +10294,10 @@ namespace mx
         bool Line::hasAttributes() const
         {
             return false;
+        }
+        bool Line::hasContents() const
+        {
+            return true;
         }
         std::ostream& Line::streamAttributes( std::ostream& os ) const
         {
@@ -9896,6 +10332,10 @@ namespace mx
         {
             return false;
         }
+        bool ClefOctaveChange::hasContents() const
+        {
+            return true;
+        }
         std::ostream& ClefOctaveChange::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9928,6 +10368,10 @@ namespace mx
         bool TimeRelation::hasAttributes() const
         {
             return false;
+        }
+        bool TimeRelation::hasContents() const
+        {
+            return true;
         }
         std::ostream& TimeRelation::streamAttributes( std::ostream& os ) const
         {
@@ -9962,6 +10406,10 @@ namespace mx
         {
             return false;
         }
+        bool StaffType::hasContents() const
+        {
+            return true;
+        }
         std::ostream& StaffType::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -9994,6 +10442,10 @@ namespace mx
         bool StaffLines::hasAttributes() const
         {
             return false;
+        }
+        bool StaffLines::hasContents() const
+        {
+            return true;
         }
         std::ostream& StaffLines::streamAttributes( std::ostream& os ) const
         {
@@ -10028,6 +10480,10 @@ namespace mx
         {
             return false;
         }
+        bool Capo::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Capo::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10060,6 +10516,10 @@ namespace mx
         bool StaffSize::hasAttributes() const
         {
             return false;
+        }
+        bool StaffSize::hasContents() const
+        {
+            return true;
         }
         std::ostream& StaffSize::streamAttributes( std::ostream& os ) const
         {
@@ -10094,6 +10554,10 @@ namespace mx
         {
             return false;
         }
+        bool SenzaMisura::hasContents() const
+        {
+            return true;
+        }
         std::ostream& SenzaMisura::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10126,6 +10590,10 @@ namespace mx
         bool Diatonic::hasAttributes() const
         {
             return false;
+        }
+        bool Diatonic::hasContents() const
+        {
+            return true;
         }
         std::ostream& Diatonic::streamAttributes( std::ostream& os ) const
         {
@@ -10160,6 +10628,10 @@ namespace mx
         {
             return false;
         }
+        bool Chromatic::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Chromatic::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10192,6 +10664,10 @@ namespace mx
         bool OctaveChange::hasAttributes() const
         {
             return false;
+        }
+        bool OctaveChange::hasContents() const
+        {
+            return true;
         }
         std::ostream& OctaveChange::streamAttributes( std::ostream& os ) const
         {
@@ -10226,6 +10702,10 @@ namespace mx
         {
             return false;
         }
+        bool AccordionMiddle::hasContents() const
+        {
+            return true;
+        }
         std::ostream& AccordionMiddle::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10258,6 +10738,10 @@ namespace mx
         bool FrameStrings::hasAttributes() const
         {
             return false;
+        }
+        bool FrameStrings::hasContents() const
+        {
+            return true;
         }
         std::ostream& FrameStrings::streamAttributes( std::ostream& os ) const
         {
@@ -10292,6 +10776,10 @@ namespace mx
         {
             return false;
         }
+        bool FrameFrets::hasContents() const
+        {
+            return true;
+        }
         std::ostream& FrameFrets::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10324,6 +10812,10 @@ namespace mx
         bool MetronomeRelation::hasAttributes() const
         {
             return false;
+        }
+        bool MetronomeRelation::hasContents() const
+        {
+            return true;
         }
         std::ostream& MetronomeRelation::streamAttributes( std::ostream& os ) const
         {
@@ -10361,6 +10853,10 @@ namespace mx
         {
             return false;
         }
+        bool MetronomeType::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MetronomeType::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10393,6 +10889,10 @@ namespace mx
         bool PedalStep::hasAttributes() const
         {
             return false;
+        }
+        bool PedalStep::hasContents() const
+        {
+            return true;
         }
         std::ostream& PedalStep::streamAttributes( std::ostream& os ) const
         {
@@ -10427,6 +10927,10 @@ namespace mx
         {
             return false;
         }
+        bool PedalAlter::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PedalAlter::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10459,6 +10963,10 @@ namespace mx
         bool Glass::hasAttributes() const
         {
             return false;
+        }
+        bool Glass::hasContents() const
+        {
+            return true;
         }
         std::ostream& Glass::streamAttributes( std::ostream& os ) const
         {
@@ -10493,6 +11001,10 @@ namespace mx
         {
             return false;
         }
+        bool Metal::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Metal::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10525,6 +11037,10 @@ namespace mx
         bool Wood::hasAttributes() const
         {
             return false;
+        }
+        bool Wood::hasContents() const
+        {
+            return true;
         }
         std::ostream& Wood::streamAttributes( std::ostream& os ) const
         {
@@ -10559,6 +11075,10 @@ namespace mx
         {
             return false;
         }
+        bool Pitched::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Pitched::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10591,6 +11111,10 @@ namespace mx
         bool Membrane::hasAttributes() const
         {
             return false;
+        }
+        bool Membrane::hasContents() const
+        {
+            return true;
         }
         std::ostream& Membrane::streamAttributes( std::ostream& os ) const
         {
@@ -10625,6 +11149,10 @@ namespace mx
         {
             return false;
         }
+        bool Effect::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Effect::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10657,6 +11185,10 @@ namespace mx
         bool StickLocation::hasAttributes() const
         {
             return false;
+        }
+        bool StickLocation::hasContents() const
+        {
+            return true;
         }
         std::ostream& StickLocation::streamAttributes( std::ostream& os ) const
         {
@@ -10691,6 +11223,10 @@ namespace mx
         {
             return false;
         }
+        bool OtherPercussion::hasContents() const
+        {
+            return true;
+        }
         std::ostream& OtherPercussion::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10723,6 +11259,10 @@ namespace mx
         bool StickType::hasAttributes() const
         {
             return false;
+        }
+        bool StickType::hasContents() const
+        {
+            return true;
         }
         std::ostream& StickType::streamAttributes( std::ostream& os ) const
         {
@@ -10757,6 +11297,10 @@ namespace mx
         {
             return false;
         }
+        bool StickMaterial::hasContents() const
+        {
+            return true;
+        }
         std::ostream& StickMaterial::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10789,6 +11333,10 @@ namespace mx
         bool EncodingDate::hasAttributes() const
         {
             return false;
+        }
+        bool EncodingDate::hasContents() const
+        {
+            return true;
         }
         std::ostream& EncodingDate::streamAttributes( std::ostream& os ) const
         {
@@ -10823,6 +11371,10 @@ namespace mx
         {
             return false;
         }
+        bool Software::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Software::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10855,6 +11407,10 @@ namespace mx
         bool EncodingDescription::hasAttributes() const
         {
             return false;
+        }
+        bool EncodingDescription::hasContents() const
+        {
+            return true;
         }
         std::ostream& EncodingDescription::streamAttributes( std::ostream& os ) const
         {
@@ -10889,6 +11445,10 @@ namespace mx
         {
             return false;
         }
+        bool Source::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Source::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10921,6 +11481,10 @@ namespace mx
         bool MeasureDistance::hasAttributes() const
         {
             return false;
+        }
+        bool MeasureDistance::hasContents() const
+        {
+            return true;
         }
         std::ostream& MeasureDistance::streamAttributes( std::ostream& os ) const
         {
@@ -10955,6 +11519,10 @@ namespace mx
         {
             return false;
         }
+        bool PageHeight::hasContents() const
+        {
+            return true;
+        }
         std::ostream& PageHeight::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -10987,6 +11555,10 @@ namespace mx
         bool PageWidth::hasAttributes() const
         {
             return false;
+        }
+        bool PageWidth::hasContents() const
+        {
+            return true;
         }
         std::ostream& PageWidth::streamAttributes( std::ostream& os ) const
         {
@@ -11021,6 +11593,10 @@ namespace mx
         {
             return false;
         }
+        bool Millimeters::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Millimeters::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11053,6 +11629,10 @@ namespace mx
         bool Tenths::hasAttributes() const
         {
             return false;
+        }
+        bool Tenths::hasContents() const
+        {
+            return true;
         }
         std::ostream& Tenths::streamAttributes( std::ostream& os ) const
         {
@@ -11087,6 +11667,10 @@ namespace mx
         {
             return false;
         }
+        bool StaffDistance::hasContents() const
+        {
+            return true;
+        }
         std::ostream& StaffDistance::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11119,6 +11703,10 @@ namespace mx
         bool SystemDistance::hasAttributes() const
         {
             return false;
+        }
+        bool SystemDistance::hasContents() const
+        {
+            return true;
         }
         std::ostream& SystemDistance::streamAttributes( std::ostream& os ) const
         {
@@ -11153,6 +11741,10 @@ namespace mx
         {
             return false;
         }
+        bool TopSystemDistance::hasContents() const
+        {
+            return true;
+        }
         std::ostream& TopSystemDistance::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11185,6 +11777,10 @@ namespace mx
         bool ArrowDirection::hasAttributes() const
         {
             return false;
+        }
+        bool ArrowDirection::hasContents() const
+        {
+            return true;
         }
         std::ostream& ArrowDirection::streamAttributes( std::ostream& os ) const
         {
@@ -11219,6 +11815,10 @@ namespace mx
         {
             return false;
         }
+        bool ArrowStyle::hasContents() const
+        {
+            return true;
+        }
         std::ostream& ArrowStyle::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11251,6 +11851,10 @@ namespace mx
         bool CircularArrow::hasAttributes() const
         {
             return false;
+        }
+        bool CircularArrow::hasContents() const
+        {
+            return true;
         }
         std::ostream& CircularArrow::streamAttributes( std::ostream& os ) const
         {
@@ -11285,6 +11889,10 @@ namespace mx
         {
             return false;
         }
+        bool BendAlter::hasContents() const
+        {
+            return true;
+        }
         std::ostream& BendAlter::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11317,6 +11925,10 @@ namespace mx
         bool HoleType::hasAttributes() const
         {
             return false;
+        }
+        bool HoleType::hasContents() const
+        {
+            return true;
         }
         std::ostream& HoleType::streamAttributes( std::ostream& os ) const
         {
@@ -11351,6 +11963,10 @@ namespace mx
         {
             return false;
         }
+        bool HoleShape::hasContents() const
+        {
+            return true;
+        }
         std::ostream& HoleShape::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11384,6 +12000,10 @@ namespace mx
         {
             return false;
         }
+        bool Syllabic::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Syllabic::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11407,39 +12027,43 @@ namespace mx
         {
             myValue = value;
         }
-//        Syllabic::Syllabic()
-//        :myValue( types::SyllabicEnum:: )
-//        {}
-//        Syllabic::Syllabic( const types::SyllabicEnum& value )
-//        :myValue( value )
-//        {}
-//        bool Syllabic::hasAttributes() const
+        //        Syllabic::Syllabic()
+        //        :myValue( types::SyllabicEnum:: )
+        //        {}
+        //        Syllabic::Syllabic( const types::SyllabicEnum& value )
+        //        :myValue( value )
+        //        {}
+        //        bool Syllabic::hasAttributes() const
+        //        {
+        //            return false;
+        //        }
+//        bool Syllabic::hasContents() const
 //        {
-//            return false;
+//            return true;
 //        }
-//        std::ostream& Syllabic::streamAttributes( std::ostream& os ) const
-//        {
-//            return os;
-//        }
-//        std::ostream& Syllabic::streamName( std::ostream& os ) const
-//        {
-//            os << "syllabic";
-//            return os;
-//        }
-//        std::ostream& Syllabic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
-//        {
-//            isOneLineOnly = true;
-//            os << myValue;
-//            return os;
-//        }
-//        types::SyllabicEnum Syllabic::getValue() const
-//        {
-//            return myValue;
-//        }
-//        void Syllabic::setValue( const types::SyllabicEnum& value )
-//        {
-//            myValue = value;
-//        }
+        //        std::ostream& Syllabic::streamAttributes( std::ostream& os ) const
+        //        {
+        //            return os;
+        //        }
+        //        std::ostream& Syllabic::streamName( std::ostream& os ) const
+        //        {
+        //            os << "syllabic";
+        //            return os;
+        //        }
+        //        std::ostream& Syllabic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly  ) const
+        //        {
+        //            isOneLineOnly = true;
+        //            os << myValue;
+        //            return os;
+        //        }
+        //        types::SyllabicEnum Syllabic::getValue() const
+        //        {
+        //            return myValue;
+        //        }
+        //        void Syllabic::setValue( const types::SyllabicEnum& value )
+        //        {
+        //            myValue = value;
+        //        }
         Step::Step()
         :myValue( types::StepEnum::a )
         {}
@@ -11449,6 +12073,10 @@ namespace mx
         bool Step::hasAttributes() const
         {
             return false;
+        }
+        bool Step::hasContents() const
+        {
+            return true;
         }
         std::ostream& Step::streamAttributes( std::ostream& os ) const
         {
@@ -11483,6 +12111,10 @@ namespace mx
         {
             return false;
         }
+        bool Alter::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Alter::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11515,6 +12147,10 @@ namespace mx
         bool Octave::hasAttributes() const
         {
             return false;
+        }
+        bool Octave::hasContents() const
+        {
+            return true;
         }
         std::ostream& Octave::streamAttributes( std::ostream& os ) const
         {
@@ -11549,6 +12185,10 @@ namespace mx
         {
             return false;
         }
+        bool ActualNotes::hasContents() const
+        {
+            return true;
+        }
         std::ostream& ActualNotes::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11581,6 +12221,10 @@ namespace mx
         bool NormalNotes::hasAttributes() const
         {
             return false;
+        }
+        bool NormalNotes::hasContents() const
+        {
+            return true;
         }
         std::ostream& NormalNotes::streamAttributes( std::ostream& os ) const
         {
@@ -11615,6 +12259,10 @@ namespace mx
         {
             return false;
         }
+        bool NormalType::hasContents() const
+        {
+            return true;
+        }
         std::ostream& NormalType::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11647,6 +12295,10 @@ namespace mx
         bool CreditType::hasAttributes() const
         {
             return false;
+        }
+        bool CreditType::hasContents() const
+        {
+            return true;
         }
         std::ostream& CreditType::streamAttributes( std::ostream& os ) const
         {
@@ -11681,6 +12333,10 @@ namespace mx
         {
             return false;
         }
+        bool InstrumentName::hasContents() const
+        {
+            return true;
+        }
         std::ostream& InstrumentName::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11713,6 +12369,10 @@ namespace mx
         bool InstrumentAbbreviation::hasAttributes() const
         {
             return false;
+        }
+        bool InstrumentAbbreviation::hasContents() const
+        {
+            return true;
         }
         std::ostream& InstrumentAbbreviation::streamAttributes( std::ostream& os ) const
         {
@@ -11747,6 +12407,10 @@ namespace mx
         {
             return false;
         }
+        bool InstrumentSound::hasContents() const
+        {
+            return true;
+        }
         std::ostream& InstrumentSound::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11779,6 +12443,10 @@ namespace mx
         bool Ensemble::hasAttributes() const
         {
             return false;
+        }
+        bool Ensemble::hasContents() const
+        {
+            return true;
         }
         std::ostream& Ensemble::streamAttributes( std::ostream& os ) const
         {
@@ -11813,6 +12481,10 @@ namespace mx
         {
             return false;
         }
+        bool Group::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Group::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11845,6 +12517,10 @@ namespace mx
         bool VirtualLibrary::hasAttributes() const
         {
             return false;
+        }
+        bool VirtualLibrary::hasContents() const
+        {
+            return true;
         }
         std::ostream& VirtualLibrary::streamAttributes( std::ostream& os ) const
         {
@@ -11879,6 +12555,10 @@ namespace mx
         {
             return false;
         }
+        bool VirtualName::hasContents() const
+        {
+            return true;
+        }
         std::ostream& VirtualName::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11911,6 +12591,10 @@ namespace mx
         bool WorkNumber::hasAttributes() const
         {
             return false;
+        }
+        bool WorkNumber::hasContents() const
+        {
+            return true;
         }
         std::ostream& WorkNumber::streamAttributes( std::ostream& os ) const
         {
@@ -11945,6 +12629,10 @@ namespace mx
         {
             return false;
         }
+        bool WorkTitle::hasContents() const
+        {
+            return true;
+        }
         std::ostream& WorkTitle::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -11977,6 +12665,10 @@ namespace mx
         bool Staff::hasAttributes() const
         {
             return false;
+        }
+        bool Staff::hasContents() const
+        {
+            return true;
         }
         std::ostream& Staff::streamAttributes( std::ostream& os ) const
         {
@@ -12011,6 +12703,10 @@ namespace mx
         {
             return false;
         }
+        bool TuningStep::hasContents() const
+        {
+            return true;
+        }
         std::ostream& TuningStep::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12043,6 +12739,10 @@ namespace mx
         bool TuningAlter::hasAttributes() const
         {
             return false;
+        }
+        bool TuningAlter::hasContents() const
+        {
+            return true;
         }
         std::ostream& TuningAlter::streamAttributes( std::ostream& os ) const
         {
@@ -12077,6 +12777,10 @@ namespace mx
         {
             return false;
         }
+        bool TuningOctave::hasContents() const
+        {
+            return true;
+        }
         std::ostream& TuningOctave::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12109,6 +12813,10 @@ namespace mx
         bool Voice::hasAttributes() const
         {
             return false;
+        }
+        bool Voice::hasContents() const
+        {
+            return true;
         }
         std::ostream& Voice::streamAttributes( std::ostream& os ) const
         {
@@ -12143,6 +12851,10 @@ namespace mx
         {
             return false;
         }
+        bool KeyStep::hasContents() const
+        {
+            return true;
+        }
         std::ostream& KeyStep::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12175,6 +12887,10 @@ namespace mx
         bool KeyAlter::hasAttributes() const
         {
             return false;
+        }
+        bool KeyAlter::hasContents() const
+        {
+            return true;
         }
         std::ostream& KeyAlter::streamAttributes( std::ostream& os ) const
         {
@@ -12209,6 +12925,10 @@ namespace mx
         {
             return false;
         }
+        bool KeyAccidental::hasContents() const
+        {
+            return true;
+        }
         std::ostream& KeyAccidental::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12241,6 +12961,10 @@ namespace mx
         bool SlashType::hasAttributes() const
         {
             return false;
+        }
+        bool SlashType::hasContents() const
+        {
+            return true;
         }
         std::ostream& SlashType::streamAttributes( std::ostream& os ) const
         {
@@ -12275,6 +12999,10 @@ namespace mx
         {
             return false;
         }
+        bool Beats::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Beats::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12307,6 +13035,10 @@ namespace mx
         bool BeatType::hasAttributes() const
         {
             return false;
+        }
+        bool BeatType::hasContents() const
+        {
+            return true;
         }
         std::ostream& BeatType::streamAttributes( std::ostream& os ) const
         {
@@ -12341,6 +13073,10 @@ namespace mx
         {
             return false;
         }
+        bool Fifths::hasContents() const
+        {
+            return true;
+        }
         std::ostream& Fifths::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12373,6 +13109,10 @@ namespace mx
         bool Mode::hasAttributes() const
         {
             return false;
+        }
+        bool Mode::hasContents() const
+        {
+            return true;
         }
         std::ostream& Mode::streamAttributes( std::ostream& os ) const
         {
@@ -12407,6 +13147,10 @@ namespace mx
         {
             return false;
         }
+        bool BeatUnit::hasContents() const
+        {
+            return true;
+        }
         std::ostream& BeatUnit::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12439,6 +13183,10 @@ namespace mx
         bool TopMargin::hasAttributes() const
         {
             return false;
+        }
+        bool TopMargin::hasContents() const
+        {
+            return true;
         }
         std::ostream& TopMargin::streamAttributes( std::ostream& os ) const
         {
@@ -12473,6 +13221,10 @@ namespace mx
         {
             return false;
         }
+        bool BottomMargin::hasContents() const
+        {
+            return true;
+        }
         std::ostream& BottomMargin::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12505,6 +13257,10 @@ namespace mx
         bool LeftMargin::hasAttributes() const
         {
             return false;
+        }
+        bool LeftMargin::hasContents() const
+        {
+            return true;
         }
         std::ostream& LeftMargin::streamAttributes( std::ostream& os ) const
         {
@@ -12539,6 +13295,10 @@ namespace mx
         {
             return false;
         }
+        bool RightMargin::hasContents() const
+        {
+            return true;
+        }
         std::ostream& RightMargin::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12571,6 +13331,10 @@ namespace mx
         bool Duration::hasAttributes() const
         {
             return false;
+        }
+        bool Duration::hasContents() const
+        {
+            return true;
         }
         std::ostream& Duration::streamAttributes( std::ostream& os ) const
         {
@@ -12605,6 +13369,10 @@ namespace mx
         {
             return false;
         }
+        bool DisplayStep::hasContents() const
+        {
+            return true;
+        }
         std::ostream& DisplayStep::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12637,6 +13405,10 @@ namespace mx
         bool DisplayOctave::hasAttributes() const
         {
             return false;
+        }
+        bool DisplayOctave::hasContents() const
+        {
+            return true;
         }
         std::ostream& DisplayOctave::streamAttributes( std::ostream& os ) const
         {
@@ -12671,6 +13443,10 @@ namespace mx
         {
             return false;
         }
+        bool MovementNumber::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MovementNumber::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12704,6 +13480,10 @@ namespace mx
         {
             return false;
         }
+        bool MovementTitle::hasContents() const
+        {
+            return true;
+        }
         std::ostream& MovementTitle::streamAttributes( std::ostream& os ) const
         {
             return os;
@@ -12727,6 +13507,6 @@ namespace mx
         {
             myValue = value;
         }
-
+        
     }
 }

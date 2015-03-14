@@ -1,5 +1,6 @@
 
 #include "ElementInterface.h"
+#include <sstream>
 
 namespace mx
 {
@@ -40,17 +41,31 @@ namespace mx
             os << "/>";
             return os;
         }
+        bool ElementInterface::hasContents() const
+        {
+            std::stringstream ss;
+            bool discard;
+            streamContents( ss, 0, discard );
+            return ( ss.str() ).length() > 0;
+        }
         std::ostream& ElementInterface::toStream( std::ostream& os, const int indentLevel ) const
         {
             indent( os, indentLevel );
-            streamOpenTag( os );
-            bool isOneLineOnly = false;
-            streamContents( os, indentLevel, isOneLineOnly );
-            if ( !isOneLineOnly )
+            if ( hasContents() )
             {
-                indent( os, indentLevel );
+                streamOpenTag( os );
+                bool isOneLineOnly = false;
+                streamContents( os, indentLevel, isOneLineOnly );
+                if ( !isOneLineOnly )
+                {
+                    indent( os, indentLevel );
+                }
+                streamCloseTag( os );
             }
-            streamCloseTag( os );
+            else
+            {
+                streamSelfCloseTag( os );
+            }
             return os;
         }
         std::ostream& indent( std::ostream& os, const int indentLevel )

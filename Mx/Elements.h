@@ -60,6 +60,7 @@ namespace mx
             Dynamics( const types::DynamicsValue& value );
             Dynamics();
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -183,6 +184,7 @@ namespace mx
             AccidentalText();
             AccidentalText( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -265,6 +267,7 @@ namespace mx
             DisplayText();
             DisplayText( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -297,69 +300,69 @@ namespace mx
         struct DisplayTextAttributes;
         using DisplayTextAttributesPtr = std::shared_ptr<DisplayTextAttributes>;
         
-//        struct DisplayTextAttributes : public AttributesInterface
-//        {
-//        public:
-//            DisplayTextAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::LeftCenterRight justify;
-//            types::TenthsValue defaultX;
-//            types::TenthsValue defaultY;
-//            types::TenthsValue relativeX;
-//            types::TenthsValue relativeY;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            types::LeftCenterRight halign;
-//            types::NumberOfLines underline;
-//            types::NumberOfLines overline;
-//            types::NumberOfLines lineThrough;
-//            types::RotationDegrees rotation;
-//            types::NumberOrNormal letterSpacing;
-//            types::NumberOrNormal lineHeight;
-//            types::XmlLang lang;
-//            types::XmlSpace space;
-//            types::EnclosureShape enclosure;
-//            bool hasJustify;
-//            bool hasDefaultX;
-//            bool hasDefaultY;
-//            bool hasRelativeX;
-//            bool hasRelativeY;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//            bool hasHalign;
-//            bool hasUnderline;
-//            bool hasOverline;
-//            bool hasLineThrough;
-//            bool hasRotation;
-//            bool hasLetterSpacing;
-//            bool hasLineHeight;
-//            bool hasLang;
-//            bool hasSpace;
-//            bool hasEnclosure;
-//        };
+        //        struct DisplayTextAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            DisplayTextAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::LeftCenterRight justify;
+        //            types::TenthsValue defaultX;
+        //            types::TenthsValue defaultY;
+        //            types::TenthsValue relativeX;
+        //            types::TenthsValue relativeY;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            types::LeftCenterRight halign;
+        //            types::NumberOfLines underline;
+        //            types::NumberOfLines overline;
+        //            types::NumberOfLines lineThrough;
+        //            types::RotationDegrees rotation;
+        //            types::NumberOrNormal letterSpacing;
+        //            types::NumberOrNormal lineHeight;
+        //            types::XmlLang lang;
+        //            types::XmlSpace space;
+        //            types::EnclosureShape enclosure;
+        //            bool hasJustify;
+        //            bool hasDefaultX;
+        //            bool hasDefaultY;
+        //            bool hasRelativeX;
+        //            bool hasRelativeY;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //            bool hasHalign;
+        //            bool hasUnderline;
+        //            bool hasOverline;
+        //            bool hasLineThrough;
+        //            bool hasRotation;
+        //            bool hasLetterSpacing;
+        //            bool hasLineHeight;
+        //            bool hasLang;
+        //            bool hasSpace;
+        //            bool hasEnclosure;
+        //        };
         
-//        class DisplayText : public ElementInterface
-//        {
-//        public:
-//            DisplayText();
-//            DisplayText( const types::XsString& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            DisplayTextAttributesPtr getAttributes() const;
-//            void setAttributes( const DisplayTextAttributesPtr& attributes );
-//            types::XsString getValue() const;
-//            void setValue( const types::XsString& value );
-//        private:
-//            types::XsString myValue;
-//            DisplayTextAttributesPtr myAttributes;
-//        };
+        //        class DisplayText : public ElementInterface
+        //        {
+        //        public:
+        //            DisplayText();
+        //            DisplayText( const types::XsString& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            DisplayTextAttributesPtr getAttributes() const;
+        //            void setAttributes( const DisplayTextAttributesPtr& attributes );
+        //            types::XsString getValue() const;
+        //            void setValue( const types::XsString& value );
+        //        private:
+        //            types::XsString myValue;
+        //            DisplayTextAttributesPtr myAttributes;
+        //        };
         
         
         /**************** OtherPlay ****************
@@ -387,7 +390,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XsToken type;
-            const 	bool hasType;
+            const   bool hasType;
         };
         
         class OtherPlay : public ElementInterface
@@ -396,6 +399,7 @@ namespace mx
             OtherPlay();
             OtherPlay( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -411,7 +415,7 @@ namespace mx
         
         /**************** PartSymbol ****************
          2634
-         <xs:element name="part-symbol" type="part-symbol" minOccurs="0">	<xs:annotation>		<xs:documentation>The part-symbol element indicates how a symbol for a multi-staff part is indicated in the score.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="part-symbol" type="part-symbol" minOccurs="0">   <xs:annotation>     <xs:documentation>The part-symbol element indicates how a symbol for a multi-staff part is indicated in the score.</xs:documentation>   </xs:annotation></xs:element>
          <xs:complexType name="part-symbol">
          <xs:annotation>
          <xs:documentation>The part-symbol type indicates how a symbol for a multi-staff part is indicated in the score; brace is the default value. The top-staff and bottom-staff elements are used when the brace does not extend across the entire part. For example, in a 3-staff organ part, the top-staff will typically be 1 for the right hand, while the bottom-staff will typically be 2 for the left hand. Staff 3 for the pedals is usually outside the brace.</xs:documentation>
@@ -467,6 +471,7 @@ namespace mx
             PartSymbol();
             PartSymbol( const types::GroupSymbolValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -482,7 +487,7 @@ namespace mx
         
         /**************** KeyOctave ****************
          2783
-         <xs:element name="key-octave" type="key-octave" minOccurs="0" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The optional list of key-octave elements is used to specify in which octave each element of the key signature appears.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="key-octave" type="key-octave" minOccurs="0" maxOccurs="unbounded">   <xs:annotation>     <xs:documentation>The optional list of key-octave elements is used to specify in which octave each element of the key signature appears.</xs:documentation> </xs:annotation></xs:element>
          <xs:complexType name="key-octave">
          <xs:annotation>
          <xs:documentation>The key-octave element specifies in which octave an element of a key signature appears. The content specifies the octave value using the same values as the display-octave element. The number attribute is a positive integer that refers to the key signature element in left-to-right order. If the cancel attribute is set to yes, then this number refers to an element specified by the cancel element. It is no by default.</xs:documentation>
@@ -515,7 +520,7 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::PositiveInteger number;
             types::YesNo cancel;
-            const 	bool hasNumber;
+            const   bool hasNumber;
             bool hasCancel;
         };
         
@@ -525,6 +530,7 @@ namespace mx
             KeyOctave();
             KeyOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -583,6 +589,7 @@ namespace mx
             MultipleRest();
             MultipleRest( const types::PositiveIntegerOrEmpty& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -636,7 +643,7 @@ namespace mx
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::StartStop type;
             types::PositiveInteger slashes;
-            const 	bool hasType;
+            const   bool hasType;
             bool hasSlashes;
         };
         
@@ -646,6 +653,7 @@ namespace mx
             MeasureRepeat();
             MeasureRepeat( const types::PositiveIntegerOrEmpty& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -710,6 +718,7 @@ namespace mx
             BarStyle();
             BarStyle( const types::BarStyleEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -784,6 +793,7 @@ namespace mx
             Fermata();
             Fermata( const types::FermataShape& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -843,8 +853,8 @@ namespace mx
             types::TenthsValue endLength;
             types::TenthsValue textX;
             types::TenthsValue textY;
-            const 	bool hasNumber;
-            const 	bool hasType;
+            const   bool hasNumber;
+            const   bool hasType;
             bool hasPrintObject;
             bool hasDefaultX;
             bool hasDefaultY;
@@ -865,6 +875,7 @@ namespace mx
             Ending();
             Ending( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -942,6 +953,7 @@ namespace mx
             BassStep();
             BassStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1014,6 +1026,7 @@ namespace mx
             BassAlter();
             BassAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1081,6 +1094,7 @@ namespace mx
             DegreeValue();
             DegreeValue( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1150,6 +1164,7 @@ namespace mx
             DegreeAlter();
             DegreeAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1223,6 +1238,7 @@ namespace mx
             DegreeType();
             DegreeType( const types::DegreeTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1275,6 +1291,7 @@ namespace mx
             Offset();
             Offset( const types::DivisionsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1290,7 +1307,7 @@ namespace mx
         
         /**************** Rehearsal ****************
          3327
-         <xs:element name="rehearsal" type="formatted-text" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The rehearsal type specifies a rehearsal mark. Language is Italian ("it") by default. Enclosure is square by default. Left justification is assumed if not specified.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="rehearsal" type="formatted-text" maxOccurs="unbounded">  <xs:annotation>     <xs:documentation>The rehearsal type specifies a rehearsal mark. Language is Italian ("it") by default. Enclosure is square by default. Left justification is assumed if not specified.</xs:documentation>  </xs:annotation></xs:element>
          <xs:complexType name="formatted-text">
          <xs:annotation>
          <xs:documentation>The formatted-text type represents a text element with text-formatting attributes.</xs:documentation>
@@ -1358,6 +1375,7 @@ namespace mx
             Rehearsal();
             Rehearsal( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1373,7 +1391,7 @@ namespace mx
         
         /**************** Words ****************
          3339
-         <xs:element name="words" type="formatted-text" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="words" type="formatted-text" maxOccurs="unbounded">  <xs:annotation>     <xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="formatted-text">
          <xs:annotation>
          <xs:documentation>The formatted-text type represents a text element with text-formatting attributes.</xs:documentation>
@@ -1441,6 +1459,7 @@ namespace mx
             Words();
             Words( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1491,8 +1510,8 @@ namespace mx
             types::FontSize fontSize;
             types::FontWeight fontWeight;
             types::LeftCenterRight halign;
-            const 	bool hasType;
-            const 	bool hasSymbol;
+            const   bool hasType;
+            const   bool hasSymbol;
             bool hasDefaultX;
             bool hasDefaultY;
             bool hasRelativeX;
@@ -1510,6 +1529,7 @@ namespace mx
             PrincipalVoice();
             PrincipalVoice( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1576,6 +1596,7 @@ namespace mx
             OtherDirection();
             OtherDirection( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1626,6 +1647,7 @@ namespace mx
             FirstFret();
             FirstFret( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1680,6 +1702,7 @@ namespace mx
             Fret();
             Fret( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1750,6 +1773,7 @@ namespace mx
             Fingering();
             Fingering( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1797,6 +1821,7 @@ namespace mx
             Feature();
             Feature( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1830,36 +1855,36 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-//        struct OffsetAttributes;
-//        using OffsetAttributesPtr = std::shared_ptr<OffsetAttributes>;
+        //        struct OffsetAttributes;
+        //        using OffsetAttributesPtr = std::shared_ptr<OffsetAttributes>;
         
-//        struct OffsetAttributes : public AttributesInterface
-//        {
-//        public:
-//            OffsetAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::YesNo sound;
-//            bool hasSound;
-//        };
-//        
-//        class Offset : public ElementInterface
-//        {
-//        public:
-//            Offset();
-//            Offset( const types::DivisionsValue& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            OffsetAttributesPtr getAttributes() const;
-//            void setAttributes( const OffsetAttributesPtr& attributes );
-//            types::DivisionsValue getValue() const;
-//            void setValue( const types::DivisionsValue& value );
-//        private:
-//            types::DivisionsValue myValue;
-//            OffsetAttributesPtr myAttributes;
-//        };
+        //        struct OffsetAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            OffsetAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::YesNo sound;
+        //            bool hasSound;
+        //        };
+        //
+        //        class Offset : public ElementInterface
+        //        {
+        //        public:
+        //            Offset();
+        //            Offset( const types::DivisionsValue& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            OffsetAttributesPtr getAttributes() const;
+        //            void setAttributes( const OffsetAttributesPtr& attributes );
+        //            types::DivisionsValue getValue() const;
+        //            void setValue( const types::DivisionsValue& value );
+        //        private:
+        //            types::DivisionsValue myValue;
+        //            OffsetAttributesPtr myAttributes;
+        //        };
         
         
         /**************** PerMinute ****************
@@ -1902,6 +1927,7 @@ namespace mx
             PerMinute();
             PerMinute( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -1960,6 +1986,7 @@ namespace mx
             MetronomeBeam();
             MetronomeBeam( const types::BeamValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2030,6 +2057,7 @@ namespace mx
             Beater();
             Beater( const types::BeaterValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2102,6 +2130,7 @@ namespace mx
             MeasureNumbering();
             MeasureNumbering( const types::MeasureNumberingValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2179,6 +2208,7 @@ namespace mx
             RootStep();
             RootStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2251,6 +2281,7 @@ namespace mx
             RootAlter();
             RootAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2301,6 +2332,7 @@ namespace mx
             MidiDevice();
             MidiDevice( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2334,36 +2366,36 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-//        struct OffsetAttributes;
-//        using OffsetAttributesPtr = std::shared_ptr<OffsetAttributes>;
-//        
-//        struct OffsetAttributes : public AttributesInterface
-//        {
-//        public:
-//            OffsetAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::YesNo sound;
-//            bool hasSound;
-//        };
-//        
-//        class Offset : public ElementInterface
-//        {
-//        public:
-//            Offset();
-//            Offset( const types::DivisionsValue& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            OffsetAttributesPtr getAttributes() const;
-//            void setAttributes( const OffsetAttributesPtr& attributes );
-//            types::DivisionsValue getValue() const;
-//            void setValue( const types::DivisionsValue& value );
-//        private:
-//            types::DivisionsValue myValue;
-//            OffsetAttributesPtr myAttributes;
-//        };
+        //        struct OffsetAttributes;
+        //        using OffsetAttributesPtr = std::shared_ptr<OffsetAttributes>;
+        //
+        //        struct OffsetAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            OffsetAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::YesNo sound;
+        //            bool hasSound;
+        //        };
+        //
+        //        class Offset : public ElementInterface
+        //        {
+        //        public:
+        //            Offset();
+        //            Offset( const types::DivisionsValue& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            OffsetAttributesPtr getAttributes() const;
+        //            void setAttributes( const OffsetAttributesPtr& attributes );
+        //            types::DivisionsValue getValue() const;
+        //            void setValue( const types::DivisionsValue& value );
+        //        private:
+        //            types::DivisionsValue myValue;
+        //            OffsetAttributesPtr myAttributes;
+        //        };
         
         
         /**************** Encoder ****************
@@ -2400,6 +2432,7 @@ namespace mx
             Encoder();
             Encoder( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2415,7 +2448,7 @@ namespace mx
         
         /**************** Creator ****************
          4065
-         <xs:element name="creator" type="typed-text" minOccurs="0" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The creator element is borrowed from Dublin Core. It is used for the creators of the score. The type attribute is used to distinguish different creative contributions. Thus there can be multiple creators within an identification. Standard type values are composer lyricist and arranger. Other type values may be used for different types of creative roles. The type attribute should usually be used even if there is just a single creator element. The MusicXML format does not use the creator / contributor distinction from Dublin Core.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="creator" type="typed-text" minOccurs="0" maxOccurs="unbounded">  <xs:annotation>     <xs:documentation>The creator element is borrowed from Dublin Core. It is used for the creators of the score. The type attribute is used to distinguish different creative contributions. Thus there can be multiple creators within an identification. Standard type values are composer lyricist and arranger. Other type values may be used for different types of creative roles. The type attribute should usually be used even if there is just a single creator element. The MusicXML format does not use the creator / contributor distinction from Dublin Core.</xs:documentation> </xs:annotation></xs:element>
          <xs:complexType name="typed-text">
          <xs:annotation>
          <xs:documentation>The typed-text type represents a text element with a type attributes.</xs:documentation>
@@ -2447,6 +2480,7 @@ namespace mx
             Creator();
             Creator( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2462,7 +2496,7 @@ namespace mx
         
         /**************** Rights ****************
          4072
-         <xs:element name="rights" type="typed-text" minOccurs="0" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The rights element is borrowed from Dublin Core. It contains copyright and other intellectual property notices. Words music and derivatives can have different types so multiple rights tags with different type attributes are supported. Standard type values are music words and arrangement but other types may be used. The type attribute is only needed when there are multiple rights elements.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="rights" type="typed-text" minOccurs="0" maxOccurs="unbounded">   <xs:annotation>     <xs:documentation>The rights element is borrowed from Dublin Core. It contains copyright and other intellectual property notices. Words music and derivatives can have different types so multiple rights tags with different type attributes are supported. Standard type values are music words and arrangement but other types may be used. The type attribute is only needed when there are multiple rights elements.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="typed-text">
          <xs:annotation>
          <xs:documentation>The typed-text type represents a text element with a type attributes.</xs:documentation>
@@ -2494,6 +2528,7 @@ namespace mx
             Rights();
             Rights( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2509,7 +2544,7 @@ namespace mx
         
         /**************** Relation ****************
          4089
-         <xs:element name="relation" type="typed-text" minOccurs="0" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>A related resource for the music that is encoded. This is similar to the Dublin Core relation element. Standard type values are music words and arrangement but other types may be used.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="relation" type="typed-text" minOccurs="0" maxOccurs="unbounded"> <xs:annotation>     <xs:documentation>A related resource for the music that is encoded. This is similar to the Dublin Core relation element. Standard type values are music words and arrangement but other types may be used.</xs:documentation>   </xs:annotation></xs:element>
          <xs:complexType name="typed-text">
          <xs:annotation>
          <xs:documentation>The typed-text type represents a text element with a type attributes.</xs:documentation>
@@ -2541,6 +2576,7 @@ namespace mx
             Relation();
             Relation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2579,7 +2615,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XsToken name;
-            const 	bool hasName;
+            const   bool hasName;
         };
         
         class MiscellaneousField : public ElementInterface
@@ -2588,6 +2624,7 @@ namespace mx
             MiscellaneousField();
             MiscellaneousField( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2642,6 +2679,7 @@ namespace mx
             LineWidth();
             LineWidth( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2687,7 +2725,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::NoteSizeType type;
-            const 	bool hasType;
+            const   bool hasType;
         };
         
         class NoteSize : public ElementInterface
@@ -2696,6 +2734,7 @@ namespace mx
             NoteSize();
             NoteSize( const types::NonNegativeDecimal& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2741,7 +2780,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::DistanceType type;
-            const 	bool hasType;
+            const   bool hasType;
         };
         
         class Distance : public ElementInterface
@@ -2750,6 +2789,7 @@ namespace mx
             Distance();
             Distance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2788,7 +2828,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XsToken type;
-            const 	bool hasType;
+            const   bool hasType;
         };
         
         class OtherAppearance : public ElementInterface
@@ -2797,6 +2837,7 @@ namespace mx
             OtherAppearance();
             OtherAppearance( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2870,6 +2911,7 @@ namespace mx
             BreathMark();
             BreathMark( const types::BreathMarkValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2885,7 +2927,7 @@ namespace mx
         
         /**************** OtherArticulation ****************
          4457
-         <xs:element name="other-articulation" type="placement-text">	<xs:annotation>		<xs:documentation>The other-articulation element is used to define any articulations not yet in the MusicXML format. This allows extended representation though without application interoperability.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="other-articulation" type="placement-text">   <xs:annotation>     <xs:documentation>The other-articulation element is used to define any articulations not yet in the MusicXML format. This allows extended representation though without application interoperability.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="placement-text">
          <xs:annotation>
          <xs:documentation>The placement-text type represents a text element with print-style and placement attribute groups.</xs:documentation>
@@ -2934,6 +2976,7 @@ namespace mx
             OtherArticulation();
             OtherArticulation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -2949,7 +2992,7 @@ namespace mx
         
         /**************** WithBar ****************
          4532
-         <xs:element name="with-bar" type="placement-text" minOccurs="0">	<xs:annotation>		<xs:documentation>The with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="with-bar" type="placement-text" minOccurs="0">   <xs:annotation>     <xs:documentation>The with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="placement-text">
          <xs:annotation>
          <xs:documentation>The placement-text type represents a text element with print-style and placement attribute groups.</xs:documentation>
@@ -2998,6 +3041,7 @@ namespace mx
             WithBar();
             WithBar( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3013,7 +3057,7 @@ namespace mx
         
         /**************** Prefix ****************
          4581
-         <xs:element name="prefix" type="style-text" minOccurs="0">	<xs:annotation>		<xs:documentation>Values for the prefix element include the accidental values sharp flat natural double-sharp flat-flat and sharp-sharp. The prefix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="prefix" type="style-text" minOccurs="0"> <xs:annotation>     <xs:documentation>Values for the prefix element include the accidental values sharp flat natural double-sharp flat-flat and sharp-sharp. The prefix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="style-text">
          <xs:annotation>
          <xs:documentation>The style-text type represents a text element with a print-style attribute group.</xs:documentation>
@@ -3059,6 +3103,7 @@ namespace mx
             Prefix();
             Prefix( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3074,7 +3119,7 @@ namespace mx
         
         /**************** FigureNumber ****************
          4587
-         <xs:element name="figure-number" type="style-text" minOccurs="0">	<xs:annotation>		<xs:documentation>A figure-number is a number. Overstrikes of the figure number are represented in the suffix element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="figure-number" type="style-text" minOccurs="0">  <xs:annotation>     <xs:documentation>A figure-number is a number. Overstrikes of the figure number are represented in the suffix element.</xs:documentation>   </xs:annotation></xs:element>
          <xs:complexType name="style-text">
          <xs:annotation>
          <xs:documentation>The style-text type represents a text element with a print-style attribute group.</xs:documentation>
@@ -3120,6 +3165,7 @@ namespace mx
             FigureNumber();
             FigureNumber( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3135,7 +3181,7 @@ namespace mx
         
         /**************** Suffix ****************
          4593
-         <xs:element name="suffix" type="style-text" minOccurs="0">	<xs:annotation>		<xs:documentation>Values for the suffix element include the accidental values sharp flat natural double-sharp flat-flat and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The suffix value slash is used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The suffix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="suffix" type="style-text" minOccurs="0"> <xs:annotation>     <xs:documentation>Values for the suffix element include the accidental values sharp flat natural double-sharp flat-flat and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The suffix value slash is used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The suffix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="style-text">
          <xs:annotation>
          <xs:documentation>The style-text type represents a text element with a print-style attribute group.</xs:documentation>
@@ -3181,6 +3227,7 @@ namespace mx
             Suffix();
             Suffix( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3237,6 +3284,7 @@ namespace mx
             HoleClosed();
             HoleClosed( const types::HoleClosedValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3308,6 +3356,7 @@ namespace mx
             Text();
             Text( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3379,6 +3428,7 @@ namespace mx
             Elision();
             Elision( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3413,54 +3463,54 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-//        struct TextAttributes;
-//        using TextAttributesPtr = std::shared_ptr<TextAttributes>;
-//        
-//        struct TextAttributes : public AttributesInterface
-//        {
-//        public:
-//            TextAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            types::NumberOfLines underline;
-//            types::NumberOfLines overline;
-//            types::NumberOfLines lineThrough;
-//            types::RotationDegrees rotation;
-//            types::NumberOrNormal letterSpacing;
-//            types::XmlLang lang;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//            bool hasUnderline;
-//            bool hasOverline;
-//            bool hasLineThrough;
-//            bool hasRotation;
-//            bool hasLetterSpacing;
-//            bool hasLang;
-//        };
-//        
-//        class Text : public ElementInterface
-//        {
-//        public:
-//            Text();
-//            Text( const types::XsString& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            TextAttributesPtr getAttributes() const;
-//            void setAttributes( const TextAttributesPtr& attributes );
-//            types::XsString getValue() const;
-//            void setValue( const types::XsString& value );
-//        private:
-//            types::XsString myValue;
-//            TextAttributesPtr myAttributes;
-//        };
+        //        struct TextAttributes;
+        //        using TextAttributesPtr = std::shared_ptr<TextAttributes>;
+        //
+        //        struct TextAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            TextAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            types::NumberOfLines underline;
+        //            types::NumberOfLines overline;
+        //            types::NumberOfLines lineThrough;
+        //            types::RotationDegrees rotation;
+        //            types::NumberOrNormal letterSpacing;
+        //            types::XmlLang lang;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //            bool hasUnderline;
+        //            bool hasOverline;
+        //            bool hasLineThrough;
+        //            bool hasRotation;
+        //            bool hasLetterSpacing;
+        //            bool hasLang;
+        //        };
+        //
+        //        class Text : public ElementInterface
+        //        {
+        //        public:
+        //            Text();
+        //            Text( const types::XsString& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            TextAttributesPtr getAttributes() const;
+        //            void setAttributes( const TextAttributesPtr& attributes );
+        //            types::XsString getValue() const;
+        //            void setValue( const types::XsString& value );
+        //        private:
+        //            types::XsString myValue;
+        //            TextAttributesPtr myAttributes;
+        //        };
         
         
         /**************** Glissando ****************
@@ -3503,7 +3553,7 @@ namespace mx
             types::FontStyle fontStyle;
             types::FontSize fontSize;
             types::FontWeight fontWeight;
-            const 	bool hasType;
+            const   bool hasType;
             bool hasNumber;
             bool hasDashLength;
             bool hasSpaceLength;
@@ -3523,6 +3573,7 @@ namespace mx
             Glissando();
             Glissando( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3581,7 +3632,7 @@ namespace mx
             types::TrillBeats beats;
             types::Percent firstBeat;
             types::Percent lastBeat;
-            const 	bool hasType;
+            const   bool hasType;
             bool hasNumber;
             bool hasDashLength;
             bool hasSpaceLength;
@@ -3605,6 +3656,7 @@ namespace mx
             Slide();
             Slide( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3644,52 +3696,52 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-//        struct FermataAttributes;
-//        using FermataAttributesPtr = std::shared_ptr<FermataAttributes>;
-//        
-//        struct FermataAttributes : public AttributesInterface
-//        {
-//        public:
-//            FermataAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::UprightInverted type;
-//            types::TenthsValue defaultX;
-//            types::TenthsValue defaultY;
-//            types::TenthsValue relativeX;
-//            types::TenthsValue relativeY;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            bool hasType;
-//            bool hasDefaultX;
-//            bool hasDefaultY;
-//            bool hasRelativeX;
-//            bool hasRelativeY;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//        };
+        //        struct FermataAttributes;
+        //        using FermataAttributesPtr = std::shared_ptr<FermataAttributes>;
+        //
+        //        struct FermataAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            FermataAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::UprightInverted type;
+        //            types::TenthsValue defaultX;
+        //            types::TenthsValue defaultY;
+        //            types::TenthsValue relativeX;
+        //            types::TenthsValue relativeY;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            bool hasType;
+        //            bool hasDefaultX;
+        //            bool hasDefaultY;
+        //            bool hasRelativeX;
+        //            bool hasRelativeY;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //        };
         
-//        class Fermata : public ElementInterface
-//        {
-//        public:
-//            Fermata();
-//            Fermata( const types::FermataShape& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            FermataAttributesPtr getAttributes() const;
-//            void setAttributes( const FermataAttributesPtr& attributes );
-//            types::FermataShape getValue() const;
-//            void setValue( const types::FermataShape& value );
-//        private:
-//            types::FermataShape myValue;
-//            FermataAttributesPtr myAttributes;
-//        };
+        //        class Fermata : public ElementInterface
+        //        {
+        //        public:
+        //            Fermata();
+        //            Fermata( const types::FermataShape& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            FermataAttributesPtr getAttributes() const;
+        //            void setAttributes( const FermataAttributesPtr& attributes );
+        //            types::FermataShape getValue() const;
+        //            void setValue( const types::FermataShape& value );
+        //        private:
+        //            types::FermataShape myValue;
+        //            FermataAttributesPtr myAttributes;
+        //        };
         
         
         /**************** AccidentalMark ****************
@@ -3783,6 +3835,7 @@ namespace mx
             AccidentalMark();
             AccidentalMark( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3836,7 +3889,7 @@ namespace mx
             types::FontSize fontSize;
             types::FontWeight fontWeight;
             types::AboveBelow placement;
-            const 	bool hasType;
+            const   bool hasType;
             bool hasNumber;
             bool hasPrintObject;
             bool hasDefaultX;
@@ -3856,6 +3909,7 @@ namespace mx
             OtherNotation();
             OtherNotation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -3923,6 +3977,7 @@ namespace mx
             Type();
             Type( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4037,6 +4092,7 @@ namespace mx
             Accidental();
             Accidental( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4101,6 +4157,7 @@ namespace mx
             Stem();
             Stem( const types::StemValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4199,6 +4256,7 @@ namespace mx
             Notehead();
             Notehead( const types::NoteheadValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4270,6 +4328,7 @@ namespace mx
             Beam();
             Beam( const types::BeamValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4298,72 +4357,72 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-//        struct DisplayTextAttributes;
-//        using DisplayTextAttributesPtr = std::shared_ptr<DisplayTextAttributes>;
-//        
-//        struct DisplayTextAttributes : public AttributesInterface
-//        {
-//        public:
-//            DisplayTextAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::LeftCenterRight justify;
-//            types::TenthsValue defaultX;
-//            types::TenthsValue defaultY;
-//            types::TenthsValue relativeX;
-//            types::TenthsValue relativeY;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            types::LeftCenterRight halign;
-//            types::NumberOfLines underline;
-//            types::NumberOfLines overline;
-//            types::NumberOfLines lineThrough;
-//            types::RotationDegrees rotation;
-//            types::NumberOrNormal letterSpacing;
-//            types::NumberOrNormal lineHeight;
-//            types::XmlLang lang;
-//            types::XmlSpace space;
-//            types::EnclosureShape enclosure;
-//            bool hasJustify;
-//            bool hasDefaultX;
-//            bool hasDefaultY;
-//            bool hasRelativeX;
-//            bool hasRelativeY;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//            bool hasHalign;
-//            bool hasUnderline;
-//            bool hasOverline;
-//            bool hasLineThrough;
-//            bool hasRotation;
-//            bool hasLetterSpacing;
-//            bool hasLineHeight;
-//            bool hasLang;
-//            bool hasSpace;
-//            bool hasEnclosure;
-//        };
+        //        struct DisplayTextAttributes;
+        //        using DisplayTextAttributesPtr = std::shared_ptr<DisplayTextAttributes>;
+        //
+        //        struct DisplayTextAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            DisplayTextAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::LeftCenterRight justify;
+        //            types::TenthsValue defaultX;
+        //            types::TenthsValue defaultY;
+        //            types::TenthsValue relativeX;
+        //            types::TenthsValue relativeY;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            types::LeftCenterRight halign;
+        //            types::NumberOfLines underline;
+        //            types::NumberOfLines overline;
+        //            types::NumberOfLines lineThrough;
+        //            types::RotationDegrees rotation;
+        //            types::NumberOrNormal letterSpacing;
+        //            types::NumberOrNormal lineHeight;
+        //            types::XmlLang lang;
+        //            types::XmlSpace space;
+        //            types::EnclosureShape enclosure;
+        //            bool hasJustify;
+        //            bool hasDefaultX;
+        //            bool hasDefaultY;
+        //            bool hasRelativeX;
+        //            bool hasRelativeY;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //            bool hasHalign;
+        //            bool hasUnderline;
+        //            bool hasOverline;
+        //            bool hasLineThrough;
+        //            bool hasRotation;
+        //            bool hasLetterSpacing;
+        //            bool hasLineHeight;
+        //            bool hasLang;
+        //            bool hasSpace;
+        //            bool hasEnclosure;
+        //        };
         
-//        class DisplayText : public ElementInterface
-//        {
-//        public:
-//            DisplayText();
-//            DisplayText( const types::XsString& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            DisplayTextAttributesPtr getAttributes() const;
-//            void setAttributes( const DisplayTextAttributesPtr& attributes );
-//            types::XsString getValue() const;
-//            void setValue( const types::XsString& value );
-//        private:
-//            types::XsString myValue;
-//            DisplayTextAttributesPtr myAttributes;
-//        };
+        //        class DisplayText : public ElementInterface
+        //        {
+        //        public:
+        //            DisplayText();
+        //            DisplayText( const types::XsString& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            DisplayTextAttributesPtr getAttributes() const;
+        //            void setAttributes( const DisplayTextAttributesPtr& attributes );
+        //            types::XsString getValue() const;
+        //            void setValue( const types::XsString& value );
+        //        private:
+        //            types::XsString myValue;
+        //            DisplayTextAttributesPtr myAttributes;
+        //        };
         
         
         /**************** Tremolo ****************
@@ -4432,6 +4491,7 @@ namespace mx
             Tremolo();
             Tremolo( const types::TremoloMarks& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4447,7 +4507,7 @@ namespace mx
         
         /**************** OtherOrnament ****************
          5184
-         <xs:element name="other-ornament" type="placement-text">	<xs:annotation>		<xs:documentation>The other-ornament element is used to define any ornaments not yet in the MusicXML format. This allows extended representation though without application interoperability.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="other-ornament" type="placement-text">   <xs:annotation>     <xs:documentation>The other-ornament element is used to define any ornaments not yet in the MusicXML format. This allows extended representation though without application interoperability.</xs:documentation>    </xs:annotation></xs:element>
          <xs:complexType name="placement-text">
          <xs:annotation>
          <xs:documentation>The placement-text type represents a text element with print-style and placement attribute groups.</xs:documentation>
@@ -4496,6 +4556,7 @@ namespace mx
             OtherOrnament();
             OtherOrnament( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4565,52 +4626,52 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-//        struct AccidentalMarkAttributes;
-//        using AccidentalMarkAttributesPtr = std::shared_ptr<AccidentalMarkAttributes>;
-//        
-//        struct AccidentalMarkAttributes : public AttributesInterface
-//        {
-//        public:
-//            AccidentalMarkAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::TenthsValue defaultX;
-//            types::TenthsValue defaultY;
-//            types::TenthsValue relativeX;
-//            types::TenthsValue relativeY;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            types::AboveBelow placement;
-//            bool hasDefaultX;
-//            bool hasDefaultY;
-//            bool hasRelativeX;
-//            bool hasRelativeY;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//            bool hasPlacement;
-//        };
-//        
-//        class AccidentalMark : public ElementInterface
-//        {
-//        public:
-//            AccidentalMark();
-//            AccidentalMark( const types::AccidentalValue& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            AccidentalMarkAttributesPtr getAttributes() const;
-//            void setAttributes( const AccidentalMarkAttributesPtr& attributes );
-//            types::AccidentalValue getValue() const;
-//            void setValue( const types::AccidentalValue& value );
-//        private:
-//            types::AccidentalValue myValue;
-//            AccidentalMarkAttributesPtr myAttributes;
-//        };
+        //        struct AccidentalMarkAttributes;
+        //        using AccidentalMarkAttributesPtr = std::shared_ptr<AccidentalMarkAttributes>;
+        //
+        //        struct AccidentalMarkAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            AccidentalMarkAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::TenthsValue defaultX;
+        //            types::TenthsValue defaultY;
+        //            types::TenthsValue relativeX;
+        //            types::TenthsValue relativeY;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            types::AboveBelow placement;
+        //            bool hasDefaultX;
+        //            bool hasDefaultY;
+        //            bool hasRelativeX;
+        //            bool hasRelativeY;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //            bool hasPlacement;
+        //        };
+        //
+        //        class AccidentalMark : public ElementInterface
+        //        {
+        //        public:
+        //            AccidentalMark();
+        //            AccidentalMark( const types::AccidentalValue& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            AccidentalMarkAttributesPtr getAttributes() const;
+        //            void setAttributes( const AccidentalMarkAttributesPtr& attributes );
+        //            types::AccidentalValue getValue() const;
+        //            void setValue( const types::AccidentalValue& value );
+        //        private:
+        //            types::AccidentalValue myValue;
+        //            AccidentalMarkAttributesPtr myAttributes;
+        //        };
         
         
         /**************** Fingering ****************
@@ -4631,61 +4692,61 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-//        struct FingeringAttributes;
-//        using FingeringAttributesPtr = std::shared_ptr<FingeringAttributes>;
-//        
-//        struct FingeringAttributes : public AttributesInterface
-//        {
-//        public:
-//            FingeringAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::YesNo substitution;
-//            types::YesNo alternate;
-//            types::TenthsValue defaultX;
-//            types::TenthsValue defaultY;
-//            types::TenthsValue relativeX;
-//            types::TenthsValue relativeY;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            types::AboveBelow placement;
-//            bool hasSubstitution;
-//            bool hasAlternate;
-//            bool hasDefaultX;
-//            bool hasDefaultY;
-//            bool hasRelativeX;
-//            bool hasRelativeY;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//            bool hasPlacement;
-//        };
-//        
-//        class Fingering : public ElementInterface
-//        {
-//        public:
-//            Fingering();
-//            Fingering( const types::XsString& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            FingeringAttributesPtr getAttributes() const;
-//            void setAttributes( const FingeringAttributesPtr& attributes );
-//            types::XsString getValue() const;
-//            void setValue( const types::XsString& value );
-//        private:
-//            types::XsString myValue;
-//            FingeringAttributesPtr myAttributes;
-//        };
+        //        struct FingeringAttributes;
+        //        using FingeringAttributesPtr = std::shared_ptr<FingeringAttributes>;
+        //
+        //        struct FingeringAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            FingeringAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::YesNo substitution;
+        //            types::YesNo alternate;
+        //            types::TenthsValue defaultX;
+        //            types::TenthsValue defaultY;
+        //            types::TenthsValue relativeX;
+        //            types::TenthsValue relativeY;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            types::AboveBelow placement;
+        //            bool hasSubstitution;
+        //            bool hasAlternate;
+        //            bool hasDefaultX;
+        //            bool hasDefaultY;
+        //            bool hasRelativeX;
+        //            bool hasRelativeY;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //            bool hasPlacement;
+        //        };
+        //
+        //        class Fingering : public ElementInterface
+        //        {
+        //        public:
+        //            Fingering();
+        //            Fingering( const types::XsString& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            FingeringAttributesPtr getAttributes() const;
+        //            void setAttributes( const FingeringAttributesPtr& attributes );
+        //            types::XsString getValue() const;
+        //            void setValue( const types::XsString& value );
+        //        private:
+        //            types::XsString myValue;
+        //            FingeringAttributesPtr myAttributes;
+        //        };
         
         
         /**************** Pluck ****************
          5365
-         <xs:element name="pluck" type="placement-text">	<xs:annotation>		<xs:documentation>The pluck element is used to specify the plucking fingering on a fretted instrument where the fingering element refers to the fretting fingering. Typical values are p i m a for pulgar/thumb indicio/index medio/middle and anular/ring fingers.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="pluck" type="placement-text">    <xs:annotation>     <xs:documentation>The pluck element is used to specify the plucking fingering on a fretted instrument where the fingering element refers to the fretting fingering. Typical values are p i m a for pulgar/thumb indicio/index medio/middle and anular/ring fingers.</xs:documentation>  </xs:annotation></xs:element>
          <xs:complexType name="placement-text">
          <xs:annotation>
          <xs:documentation>The placement-text type represents a text element with print-style and placement attribute groups.</xs:documentation>
@@ -4734,6 +4795,7 @@ namespace mx
             Pluck();
             Pluck( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4763,42 +4825,42 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-//        struct FretAttributes;
-//        using FretAttributesPtr = std::shared_ptr<FretAttributes>;
-//        
-//        struct FretAttributes : public AttributesInterface
-//        {
-//        public:
-//            FretAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//        };
-//        
-//        class Fret : public ElementInterface
-//        {
-//        public:
-//            Fret();
-//            Fret( const types::NonNegativeInteger& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            FretAttributesPtr getAttributes() const;
-//            void setAttributes( const FretAttributesPtr& attributes );
-//            types::NonNegativeInteger getValue() const;
-//            void setValue( const types::NonNegativeInteger& value );
-//        private:
-//            types::NonNegativeInteger myValue;
-//            FretAttributesPtr myAttributes;
-//        };
+        //        struct FretAttributes;
+        //        using FretAttributesPtr = std::shared_ptr<FretAttributes>;
+        //
+        //        struct FretAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            FretAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //        };
+        //
+        //        class Fret : public ElementInterface
+        //        {
+        //        public:
+        //            Fret();
+        //            Fret( const types::NonNegativeInteger& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            FretAttributesPtr getAttributes() const;
+        //            void setAttributes( const FretAttributesPtr& attributes );
+        //            types::NonNegativeInteger getValue() const;
+        //            void setValue( const types::NonNegativeInteger& value );
+        //        private:
+        //            types::NonNegativeInteger myValue;
+        //            FretAttributesPtr myAttributes;
+        //        };
         
         
         /**************** HammerOn ****************
@@ -4839,7 +4901,7 @@ namespace mx
             types::FontSize fontSize;
             types::FontWeight fontWeight;
             types::AboveBelow placement;
-            const 	bool hasType;
+            const   bool hasType;
             bool hasNumber;
             bool hasDefaultX;
             bool hasDefaultY;
@@ -4858,6 +4920,7 @@ namespace mx
             HammerOn();
             HammerOn( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4909,7 +4972,7 @@ namespace mx
             types::FontSize fontSize;
             types::FontWeight fontWeight;
             types::AboveBelow placement;
-            const 	bool hasType;
+            const   bool hasType;
             bool hasNumber;
             bool hasDefaultX;
             bool hasDefaultY;
@@ -4928,6 +4991,7 @@ namespace mx
             PullOff();
             PullOff( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -4943,7 +5007,7 @@ namespace mx
         
         /**************** Tap ****************
          5405
-         <xs:element name="tap" type="placement-text">	<xs:annotation>		<xs:documentation>The tap element indicates a tap on the fretboard. The element content allows specification of the notation; + and T are common choices. If empty the display is application-specific.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="tap" type="placement-text">  <xs:annotation>     <xs:documentation>The tap element indicates a tap on the fretboard. The element content allows specification of the notation; + and T are common choices. If empty the display is application-specific.</xs:documentation>  </xs:annotation></xs:element>
          <xs:complexType name="placement-text">
          <xs:annotation>
          <xs:documentation>The placement-text type represents a text element with print-style and placement attribute groups.</xs:documentation>
@@ -4992,6 +5056,7 @@ namespace mx
             Tap();
             Tap( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5073,6 +5138,7 @@ namespace mx
             Handbell();
             Handbell( const types::HandbellValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5088,7 +5154,7 @@ namespace mx
         
         /**************** OtherTechnical ****************
          5430
-         <xs:element name="other-technical" type="placement-text">	<xs:annotation>		<xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. This allows extended representation though without application interoperability.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="other-technical" type="placement-text">  <xs:annotation>     <xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. This allows extended representation though without application interoperability.</xs:documentation>   </xs:annotation></xs:element>
          <xs:complexType name="placement-text">
          <xs:annotation>
          <xs:documentation>The placement-text type represents a text element with print-style and placement attribute groups.</xs:documentation>
@@ -5137,6 +5203,7 @@ namespace mx
             OtherTechnical();
             OtherTechnical( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5191,6 +5258,7 @@ namespace mx
             TupletNumber();
             TupletNumber( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5265,6 +5333,7 @@ namespace mx
             TupletType();
             TupletType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5348,6 +5417,7 @@ namespace mx
             CreditWords();
             CreditWords( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5376,72 +5446,72 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-//        struct CreditWordsAttributes;
-//        using CreditWordsAttributesPtr = std::shared_ptr<CreditWordsAttributes>;
-//        
-//        struct CreditWordsAttributes : public AttributesInterface
-//        {
-//        public:
-//            CreditWordsAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::LeftCenterRight justify;
-//            types::TenthsValue defaultX;
-//            types::TenthsValue defaultY;
-//            types::TenthsValue relativeX;
-//            types::TenthsValue relativeY;
-//            types::CommaSeparatedText fontFamily;
-//            types::FontStyle fontStyle;
-//            types::FontSize fontSize;
-//            types::FontWeight fontWeight;
-//            types::LeftCenterRight halign;
-//            types::NumberOfLines underline;
-//            types::NumberOfLines overline;
-//            types::NumberOfLines lineThrough;
-//            types::RotationDegrees rotation;
-//            types::NumberOrNormal letterSpacing;
-//            types::NumberOrNormal lineHeight;
-//            types::XmlLang lang;
-//            types::XmlSpace space;
-//            types::EnclosureShape enclosure;
-//            bool hasJustify;
-//            bool hasDefaultX;
-//            bool hasDefaultY;
-//            bool hasRelativeX;
-//            bool hasRelativeY;
-//            bool hasFontFamily;
-//            bool hasFontStyle;
-//            bool hasFontSize;
-//            bool hasFontWeight;
-//            bool hasHalign;
-//            bool hasUnderline;
-//            bool hasOverline;
-//            bool hasLineThrough;
-//            bool hasRotation;
-//            bool hasLetterSpacing;
-//            bool hasLineHeight;
-//            bool hasLang;
-//            bool hasSpace;
-//            bool hasEnclosure;
-//        };
-//        
-//        class CreditWords : public ElementInterface
-//        {
-//        public:
-//            CreditWords();
-//            CreditWords( const types::XsString& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            CreditWordsAttributesPtr getAttributes() const;
-//            void setAttributes( const CreditWordsAttributesPtr& attributes );
-//            types::XsString getValue() const;
-//            void setValue( const types::XsString& value );
-//        private:
-//            types::XsString myValue;
-//            CreditWordsAttributesPtr myAttributes;
-//        };
+        //        struct CreditWordsAttributes;
+        //        using CreditWordsAttributesPtr = std::shared_ptr<CreditWordsAttributes>;
+        //
+        //        struct CreditWordsAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            CreditWordsAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::LeftCenterRight justify;
+        //            types::TenthsValue defaultX;
+        //            types::TenthsValue defaultY;
+        //            types::TenthsValue relativeX;
+        //            types::TenthsValue relativeY;
+        //            types::CommaSeparatedText fontFamily;
+        //            types::FontStyle fontStyle;
+        //            types::FontSize fontSize;
+        //            types::FontWeight fontWeight;
+        //            types::LeftCenterRight halign;
+        //            types::NumberOfLines underline;
+        //            types::NumberOfLines overline;
+        //            types::NumberOfLines lineThrough;
+        //            types::RotationDegrees rotation;
+        //            types::NumberOrNormal letterSpacing;
+        //            types::NumberOrNormal lineHeight;
+        //            types::XmlLang lang;
+        //            types::XmlSpace space;
+        //            types::EnclosureShape enclosure;
+        //            bool hasJustify;
+        //            bool hasDefaultX;
+        //            bool hasDefaultY;
+        //            bool hasRelativeX;
+        //            bool hasRelativeY;
+        //            bool hasFontFamily;
+        //            bool hasFontStyle;
+        //            bool hasFontSize;
+        //            bool hasFontWeight;
+        //            bool hasHalign;
+        //            bool hasUnderline;
+        //            bool hasOverline;
+        //            bool hasLineThrough;
+        //            bool hasRotation;
+        //            bool hasLetterSpacing;
+        //            bool hasLineHeight;
+        //            bool hasLang;
+        //            bool hasSpace;
+        //            bool hasEnclosure;
+        //        };
+        //
+        //        class CreditWords : public ElementInterface
+        //        {
+        //        public:
+        //            CreditWords();
+        //            CreditWords( const types::XsString& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            CreditWordsAttributesPtr getAttributes() const;
+        //            void setAttributes( const CreditWordsAttributesPtr& attributes );
+        //            types::XsString getValue() const;
+        //            void setValue( const types::XsString& value );
+        //        private:
+        //            types::XsString myValue;
+        //            CreditWordsAttributesPtr myAttributes;
+        //        };
         
         
         /**************** GroupName ****************
@@ -5494,6 +5564,7 @@ namespace mx
             GroupName();
             GroupName( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5557,6 +5628,7 @@ namespace mx
             GroupAbbreviation();
             GroupAbbreviation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5622,6 +5694,7 @@ namespace mx
             GroupSymbol();
             GroupSymbol( const types::GroupSymbolValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5678,6 +5751,7 @@ namespace mx
             GroupBarline();
             GroupBarline( const types::GroupBarlineValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5743,6 +5817,7 @@ namespace mx
             PartName();
             PartName( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5808,6 +5883,7 @@ namespace mx
             PartAbbreviation();
             PartAbbreviation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5837,38 +5913,38 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-//        struct MidiDeviceAttributes;
-//        using MidiDeviceAttributesPtr = std::shared_ptr<MidiDeviceAttributes>;
-//        
-//        struct MidiDeviceAttributes : public AttributesInterface
-//        {
-//        public:
-//            MidiDeviceAttributes();
-//            virtual bool hasValues() const;
-//            virtual std::ostream& toStream( std::ostream& os ) const;
-//            types::Midi16 port;
-//            types::XsIDREF id;
-//            bool hasPort;
-//            bool hasId;
-//        };
-//        
-//        class MidiDevice : public ElementInterface
-//        {
-//        public:
-//            MidiDevice();
-//            MidiDevice( const types::XsString& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            MidiDeviceAttributesPtr getAttributes() const;
-//            void setAttributes( const MidiDeviceAttributesPtr& attributes );
-//            types::XsString getValue() const;
-//            void setValue( const types::XsString& value );
-//        private:
-//            types::XsString myValue;
-//            MidiDeviceAttributesPtr myAttributes;
-//        };
+        //        struct MidiDeviceAttributes;
+        //        using MidiDeviceAttributesPtr = std::shared_ptr<MidiDeviceAttributes>;
+        //
+        //        struct MidiDeviceAttributes : public AttributesInterface
+        //        {
+        //        public:
+        //            MidiDeviceAttributes();
+        //            virtual bool hasValues() const;
+        //            virtual std::ostream& toStream( std::ostream& os ) const;
+        //            types::Midi16 port;
+        //            types::XsIDREF id;
+        //            bool hasPort;
+        //            bool hasId;
+        //        };
+        //
+        //        class MidiDevice : public ElementInterface
+        //        {
+        //        public:
+        //            MidiDevice();
+        //            MidiDevice( const types::XsString& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            MidiDeviceAttributesPtr getAttributes() const;
+        //            void setAttributes( const MidiDeviceAttributesPtr& attributes );
+        //            types::XsString getValue() const;
+        //            void setValue( const types::XsString& value );
+        //        private:
+        //            types::XsString myValue;
+        //            MidiDeviceAttributesPtr myAttributes;
+        //        };
         
         
         /**************** Footnote ****************
@@ -5941,6 +6017,7 @@ namespace mx
             Footnote();
             Footnote( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -5995,6 +6072,7 @@ namespace mx
             Level();
             Level( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6047,6 +6125,7 @@ namespace mx
             Cancel();
             Cancel( const types::FifthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6062,7 +6141,7 @@ namespace mx
         
         /**************** Function ****************
          6194
-         <xs:element name="function" type="style-text">	<xs:annotation>		<xs:documentation>The function element is used to represent classical functional harmony with an indication like I II III rather than C D E. It is relative to the key that is specified in the MusicXML encoding.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="function" type="style-text"> <xs:annotation>     <xs:documentation>The function element is used to represent classical functional harmony with an indication like I II III rather than C D E. It is relative to the key that is specified in the MusicXML encoding.</xs:documentation>   </xs:annotation></xs:element>
          <xs:complexType name="style-text">
          <xs:annotation>
          <xs:documentation>The style-text type represents a text element with a print-style attribute group.</xs:documentation>
@@ -6108,6 +6187,7 @@ namespace mx
             Function();
             Function( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6284,6 +6364,7 @@ namespace mx
             Kind();
             Kind( const types::KindValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6345,6 +6426,7 @@ namespace mx
             Inversion();
             Inversion( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6370,7 +6452,7 @@ namespace mx
         
         /**************** MidiChannel ****************
          2457
-         <xs:element name="midi-channel" type="midi-16" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-channel element specifies a MIDI 1.0 channel numbers ranging from 1 to 16.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="midi-channel" type="midi-16" minOccurs="0">  <xs:annotation>     <xs:documentation>The midi-channel element specifies a MIDI 1.0 channel numbers ranging from 1 to 16.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="midi-16">
          <xs:annotation>
          <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16.</xs:documentation>
@@ -6396,6 +6478,7 @@ namespace mx
             MidiChannel();
             MidiChannel( const types::Midi16& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6408,7 +6491,7 @@ namespace mx
         
         /**************** MidiName ****************
          2463
-         <xs:element name="midi-name" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-name element corresponds to a ProgramName meta-event within a Standard MIDI File.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="midi-name" type="xs:string" minOccurs="0">   <xs:annotation>     <xs:documentation>The midi-name element corresponds to a ProgramName meta-event within a Standard MIDI File.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -6418,6 +6501,7 @@ namespace mx
             MidiName();
             MidiName( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6430,7 +6514,7 @@ namespace mx
         
         /**************** MidiBank ****************
          2469
-         <xs:element name="midi-bank" type="midi-16384" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-bank element specified a MIDI 1.0 bank number ranging from 1 to 16384.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="midi-bank" type="midi-16384" minOccurs="0">  <xs:annotation>     <xs:documentation>The midi-bank element specified a MIDI 1.0 bank number ranging from 1 to 16384.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="midi-16384">
          <xs:annotation>
          <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16,384.</xs:documentation>
@@ -6456,6 +6540,7 @@ namespace mx
             MidiBank();
             MidiBank( const types::Midi16384& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6468,7 +6553,7 @@ namespace mx
         
         /**************** MidiProgram ****************
          2475
-         <xs:element name="midi-program" type="midi-128" minOccurs="0">	<xs:annotation>		<xs:documentation>The midi-program element specifies a MIDI 1.0 program number ranging from 1 to 128.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="midi-program" type="midi-128" minOccurs="0"> <xs:annotation>     <xs:documentation>The midi-program element specifies a MIDI 1.0 program number ranging from 1 to 128.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="midi-128">
          <xs:annotation>
          <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
@@ -6494,6 +6579,7 @@ namespace mx
             MidiProgram();
             MidiProgram( const types::Midi128& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6506,7 +6592,7 @@ namespace mx
         
         /**************** MidiUnpitched ****************
          2481
-         <xs:element name="midi-unpitched" type="midi-128" minOccurs="0">	<xs:annotation>		<xs:documentation>For unpitched instruments the midi-unpitched element specifies a MIDI 1.0 note number ranging from 1 to 128. It is usually used with MIDI banks for percussion. Note that MIDI 1.0 note numbers are generally specified from 0 to 127 rather than the 1 to 128 numbering used in this element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="midi-unpitched" type="midi-128" minOccurs="0">   <xs:annotation>     <xs:documentation>For unpitched instruments the midi-unpitched element specifies a MIDI 1.0 note number ranging from 1 to 128. It is usually used with MIDI banks for percussion. Note that MIDI 1.0 note numbers are generally specified from 0 to 127 rather than the 1 to 128 numbering used in this element.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="midi-128">
          <xs:annotation>
          <xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
@@ -6532,6 +6618,7 @@ namespace mx
             MidiUnpitched();
             MidiUnpitched( const types::Midi128& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6544,7 +6631,7 @@ namespace mx
         
         /**************** Volume ****************
          2487
-         <xs:element name="volume" type="percent" minOccurs="0">	<xs:annotation>		<xs:documentation>The volume element value is a percentage of the maximum ranging from 0 to 100 with decimal values allowed. This corresponds to a scaling value for the MIDI 1.0 channel volume controller.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="volume" type="percent" minOccurs="0">    <xs:annotation>     <xs:documentation>The volume element value is a percentage of the maximum ranging from 0 to 100 with decimal values allowed. This corresponds to a scaling value for the MIDI 1.0 channel volume controller.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="percent">
          <xs:annotation>
          <xs:documentation>The percent type specifies a percentage from 0 to 100.</xs:documentation>
@@ -6570,6 +6657,7 @@ namespace mx
             Volume();
             Volume( const types::Percent& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6582,7 +6670,7 @@ namespace mx
         
         /**************** Pan ****************
          2493
-         <xs:element name="pan" type="rotation-degrees" minOccurs="0">	<xs:annotation>		<xs:documentation>The pan and elevation elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan 0 is straight ahead -90 is hard left 90 is hard right and -180 and 180 are directly behind the listener.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="pan" type="rotation-degrees" minOccurs="0">  <xs:annotation>     <xs:documentation>The pan and elevation elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan 0 is straight ahead -90 is hard left 90 is hard right and -180 and 180 are directly behind the listener.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="rotation-degrees">
          <xs:annotation>
          <xs:documentation>The rotation-degrees type specifies rotation, pan, and elevation values in degrees. Values range from -180 to 180.</xs:documentation>
@@ -6608,6 +6696,7 @@ namespace mx
             Pan();
             Pan( const types::RotationDegrees& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6620,7 +6709,7 @@ namespace mx
         
         /**************** Elevation ****************
          2499
-         <xs:element name="elevation" type="rotation-degrees" minOccurs="0">	<xs:annotation>		<xs:documentation>The elevation and pan elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For elevation 0 is level with the listener 90 is directly above and -90 is directly below.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="elevation" type="rotation-degrees" minOccurs="0">    <xs:annotation>     <xs:documentation>The elevation and pan elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For elevation 0 is level with the listener 90 is directly above and -90 is directly below.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="rotation-degrees">
          <xs:annotation>
          <xs:documentation>The rotation-degrees type specifies rotation, pan, and elevation values in degrees. Values range from -180 to 180.</xs:documentation>
@@ -6646,6 +6735,7 @@ namespace mx
             Elevation();
             Elevation( const types::RotationDegrees& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6658,7 +6748,7 @@ namespace mx
         
         /**************** Ipa ****************
          2544
-         <xs:element name="ipa" type="xs:string">	<xs:annotation>		<xs:documentation>The ipa element represents International Phonetic Alphabet (IPA) sounds for vocal music. String content is limited to IPA 2005 symbols represented in Unicode 6.0.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="ipa" type="xs:string">   <xs:annotation>     <xs:documentation>The ipa element represents International Phonetic Alphabet (IPA) sounds for vocal music. String content is limited to IPA 2005 symbols represented in Unicode 6.0.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -6668,6 +6758,7 @@ namespace mx
             Ipa();
             Ipa( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6732,6 +6823,7 @@ namespace mx
             Mute();
             Mute( const types::MuteEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6778,6 +6870,7 @@ namespace mx
             SemiPitched();
             SemiPitched( const types::SemiPitchedEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6790,7 +6883,7 @@ namespace mx
         
         /**************** Divisions ****************
          2608
-         <xs:element name="divisions" type="positive-divisions" minOccurs="0">	<xs:annotation>		<xs:documentation>Musical notation duration is commonly represented as fractions. The divisions element indicates how many divisions per quarter note are used to indicate a note's duration. For example if duration = 1 and divisions = 2 this is an eighth note duration. Duration and divisions are used directly for generating sound output so they must be chosen to take tuplets into account. Using a divisions element lets us use just one number to represent a duration for each note in the score while retaining the full power of a fractional representation. If maximum compatibility with Standard MIDI 1.0 files is important do not have the divisions value exceed 16383.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="divisions" type="positive-divisions" minOccurs="0">  <xs:annotation>     <xs:documentation>Musical notation duration is commonly represented as fractions. The divisions element indicates how many divisions per quarter note are used to indicate a note's duration. For example if duration = 1 and divisions = 2 this is an eighth note duration. Duration and divisions are used directly for generating sound output so they must be chosen to take tuplets into account. Using a divisions element lets us use just one number to represent a duration for each note in the score while retaining the full power of a fractional representation. If maximum compatibility with Standard MIDI 1.0 files is important do not have the divisions value exceed 16383.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="positive-divisions">
          <xs:annotation>
          <xs:documentation>The positive-divisions type restricts divisions values to positive numbers.</xs:documentation>
@@ -6814,6 +6907,7 @@ namespace mx
             Divisions();
             Divisions( const types::PositiveDivisionsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6826,7 +6920,7 @@ namespace mx
         
         /**************** Staves ****************
          2628
-         <xs:element name="staves" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The staves element is used if there is more than one staff represented in the given part (e.g. 2 staves for typical piano parts). If absent a value of 1 is assumed. Staves are ordered from top to bottom in a part in numerical order with staff 1 above staff 2.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="staves" type="xs:nonNegativeInteger" minOccurs="0">  <xs:annotation>     <xs:documentation>The staves element is used if there is more than one staff represented in the given part (e.g. 2 staves for typical piano parts). If absent a value of 1 is assumed. Staves are ordered from top to bottom in a part in numerical order with staff 1 above staff 2.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
@@ -6836,6 +6930,7 @@ namespace mx
             Staves();
             Staves( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6848,7 +6943,7 @@ namespace mx
         
         /**************** Instruments ****************
          2640
-         <xs:element name="instruments" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The instruments element is only used if more than one instrument is represented in the part (e.g. oboe I and II where they play together most of the time). If absent a value of 1 is assumed.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="instruments" type="xs:nonNegativeInteger" minOccurs="0"> <xs:annotation>     <xs:documentation>The instruments element is only used if more than one instrument is represented in the part (e.g. oboe I and II where they play together most of the time). If absent a value of 1 is assumed.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
@@ -6858,6 +6953,7 @@ namespace mx
             Instruments();
             Instruments( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6870,7 +6966,7 @@ namespace mx
         
         /**************** Sign ****************
          2720
-         <xs:element name="sign" type="clef-sign">	<xs:annotation>		<xs:documentation>The sign element represents the clef symbol.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="sign" type="clef-sign">  <xs:annotation>     <xs:documentation>The sign element represents the clef symbol.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="clef-sign">
          <xs:annotation>
          <xs:documentation>The clef-sign element represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.</xs:documentation>
@@ -6906,6 +7002,7 @@ namespace mx
             Sign();
             Sign( const types::ClefSign& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6918,7 +7015,7 @@ namespace mx
         
         /**************** Line ****************
          2725
-         <xs:element name="line" type="staff-line" minOccurs="0">	<xs:annotation>		<xs:documentation>Line numbers are counted from the bottom of the staff. Standard values are 2 for the G sign (treble clef) 4 for the F sign (bass clef) 3 for the C sign (alto clef) and 5 for TAB (on a 6-line staff).</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="line" type="staff-line" minOccurs="0">   <xs:annotation>     <xs:documentation>Line numbers are counted from the bottom of the staff. Standard values are 2 for the G sign (treble clef) 4 for the F sign (bass clef) 3 for the C sign (alto clef) and 5 for TAB (on a 6-line staff).</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="staff-line">
          <xs:annotation>
          <xs:documentation>The staff-line type indicates the line on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff. Staff line values can be used to specify positions outside the staff, such as a C clef positioned in the middle of a grand staff.</xs:documentation>
@@ -6938,6 +7035,7 @@ namespace mx
             Line();
             Line( const types::StaffLine& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -6950,7 +7048,7 @@ namespace mx
         
         /**************** ClefOctaveChange ****************
          2731
-         <xs:element name="clef-octave-change" type="xs:integer" minOccurs="0">	<xs:annotation>		<xs:documentation>The clef-octave-change element is used for transposing clefs. A treble clef for tenors would have a value of -1.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="clef-octave-change" type="xs:integer" minOccurs="0"> <xs:annotation>     <xs:documentation>The clef-octave-change element is used for transposing clefs. A treble clef for tenors would have a value of -1.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:integer"/>
          <xs:simpleType name="xs:integer"/>
          */
@@ -6960,6 +7058,7 @@ namespace mx
             ClefOctaveChange();
             ClefOctaveChange( const types::Integer& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7006,6 +7105,7 @@ namespace mx
             TimeRelation();
             TimeRelation( const types::TimeRelationEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7050,6 +7150,7 @@ namespace mx
             StaffType();
             StaffType( const types::StaffTypeEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7062,7 +7163,7 @@ namespace mx
         
         /**************** StaffLines ****************
          2902
-         <xs:element name="staff-lines" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The staff-lines element specifies the number of lines for a non 5-line staff.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="staff-lines" type="xs:nonNegativeInteger" minOccurs="0"> <xs:annotation>     <xs:documentation>The staff-lines element specifies the number of lines for a non 5-line staff.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
@@ -7072,6 +7173,7 @@ namespace mx
             StaffLines();
             StaffLines( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7084,7 +7186,7 @@ namespace mx
         
         /**************** Capo ****************
          2913
-         <xs:element name="capo" type="xs:nonNegativeInteger" minOccurs="0">	<xs:annotation>		<xs:documentation>The capo element indicates at which fret a capo should be placed on a fretted instrument. This changes the open tuning of the strings specified by staff-tuning by the specified number of half-steps.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="capo" type="xs:nonNegativeInteger" minOccurs="0">    <xs:annotation>     <xs:documentation>The capo element indicates at which fret a capo should be placed on a fretted instrument. This changes the open tuning of the strings specified by staff-tuning by the specified number of half-steps.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
@@ -7094,6 +7196,7 @@ namespace mx
             Capo();
             Capo( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7106,7 +7209,7 @@ namespace mx
         
         /**************** StaffSize ****************
          2919
-         <xs:element name="staff-size" type="non-negative-decimal" minOccurs="0">	<xs:annotation>		<xs:documentation>The staff-size element indicates how large a staff space is on this staff expressed as a percentage of the work's default scaling. Values less than 100 make the staff space smaller while values over 100 make the staff space larger. A staff-type of cue ossia or editorial implies a staff-size of less than 100 but the exact value is implementation-dependent unless specified here. Staff size affects staff height only not the relationship of the staff to the left and right margins.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="staff-size" type="non-negative-decimal" minOccurs="0">   <xs:annotation>     <xs:documentation>The staff-size element indicates how large a staff space is on this staff expressed as a percentage of the work's default scaling. Values less than 100 make the staff space smaller while values over 100 make the staff space larger. A staff-type of cue ossia or editorial implies a staff-size of less than 100 but the exact value is implementation-dependent unless specified here. Staff size affects staff height only not the relationship of the staff to the left and right margins.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="non-negative-decimal">
          <xs:annotation>
          <xs:documentation>The non-negative-decimal type specifies a non-negative decimal value.</xs:documentation>
@@ -7130,6 +7233,7 @@ namespace mx
             StaffSize();
             StaffSize( const types::NonNegativeDecimal& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7142,7 +7246,7 @@ namespace mx
         
         /**************** SenzaMisura ****************
          2957
-         <xs:element name="senza-misura" type="xs:string">	<xs:annotation>		<xs:documentation>A senza-misura element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used if any such as an X. The time element's symbol attribute is not used when a senza-misura element is present.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="senza-misura" type="xs:string">  <xs:annotation>     <xs:documentation>A senza-misura element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used if any such as an X. The time element's symbol attribute is not used when a senza-misura element is present.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -7152,6 +7256,7 @@ namespace mx
             SenzaMisura();
             SenzaMisura( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7164,7 +7269,7 @@ namespace mx
         
         /**************** Diatonic ****************
          2980
-         <xs:element name="diatonic" type="xs:integer" minOccurs="0">	<xs:annotation>		<xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="diatonic" type="xs:integer" minOccurs="0">   <xs:annotation>     <xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:integer"/>
          <xs:simpleType name="xs:integer"/>
          */
@@ -7174,6 +7279,7 @@ namespace mx
             Diatonic();
             Diatonic( const types::Integer& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7186,7 +7292,7 @@ namespace mx
         
         /**************** Chromatic ****************
          2986
-         <xs:element name="chromatic" type="semitones">	<xs:annotation>		<xs:documentation>The chromatic element represents the number of semitones needed to get from written to sounding pitch. This value does not include octave-change values; the values for both elements need to be added to the written pitch to get the correct sounding pitch.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="chromatic" type="semitones"> <xs:annotation>     <xs:documentation>The chromatic element represents the number of semitones needed to get from written to sounding pitch. This value does not include octave-change values; the values for both elements need to be added to the written pitch to get the correct sounding pitch.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="semitones">
          <xs:annotation>
          <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
@@ -7206,6 +7312,7 @@ namespace mx
             Chromatic();
             Chromatic( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7218,7 +7325,7 @@ namespace mx
         
         /**************** OctaveChange ****************
          2991
-         <xs:element name="octave-change" type="xs:integer" minOccurs="0">	<xs:annotation>		<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="octave-change" type="xs:integer" minOccurs="0">  <xs:annotation>     <xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:integer"/>
          <xs:simpleType name="xs:integer"/>
          */
@@ -7228,6 +7335,7 @@ namespace mx
             OctaveChange();
             OctaveChange( const types::Integer& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7240,7 +7348,7 @@ namespace mx
         
         /**************** AccordionMiddle ****************
          3126
-         <xs:element name="accordion-middle" type="accordion-middle" minOccurs="0">	<xs:annotation>		<xs:documentation>The accordion-middle element indicates the presence of 1 to 3 dots in the middle (8') section of the registration symbol.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="accordion-middle" type="accordion-middle" minOccurs="0"> <xs:annotation>     <xs:documentation>The accordion-middle element indicates the presence of 1 to 3 dots in the middle (8') section of the registration symbol.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="accordion-middle">
          <xs:annotation>
          <xs:documentation>The accordion-middle type may have values of 1, 2, or 3, corresponding to having 1 to 3 dots in the middle section of the accordion registration symbol.</xs:documentation>
@@ -7266,6 +7374,7 @@ namespace mx
             AccordionMiddle();
             AccordionMiddle( const types::AccordionMiddleValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7278,7 +7387,7 @@ namespace mx
         
         /**************** FrameStrings ****************
          3441
-         <xs:element name="frame-strings" type="xs:positiveInteger">	<xs:annotation>		<xs:documentation>The frame-strings element gives the overall size of the frame in vertical lines (strings).</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="frame-strings" type="xs:positiveInteger">    <xs:annotation>     <xs:documentation>The frame-strings element gives the overall size of the frame in vertical lines (strings).</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:positiveInteger"/>
          <xs:simpleType name="xs:positiveInteger"/>
          */
@@ -7288,6 +7397,7 @@ namespace mx
             FrameStrings();
             FrameStrings( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7300,7 +7410,7 @@ namespace mx
         
         /**************** FrameFrets ****************
          3446
-         <xs:element name="frame-frets" type="xs:positiveInteger">	<xs:annotation>		<xs:documentation>The frame-frets element gives the overall size of the frame in horizontal spaces (frets).</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="frame-frets" type="xs:positiveInteger">  <xs:annotation>     <xs:documentation>The frame-frets element gives the overall size of the frame in horizontal spaces (frets).</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="xs:positiveInteger"/>
          <xs:simpleType name="xs:positiveInteger"/>
          */
@@ -7310,6 +7420,7 @@ namespace mx
             FrameFrets();
             FrameFrets( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7322,7 +7433,7 @@ namespace mx
         
         /**************** MetronomeRelation ****************
          3633
-         <xs:element name="metronome-relation" type="xs:string">	<xs:annotation>		<xs:documentation>The metronome-relation element describes the relationship symbol that goes between the two sets of metronome-note elements. The currently allowed value is equals but this may expand in future versions. If the element is empty the equals value is used.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="metronome-relation" type="xs:string">    <xs:annotation>     <xs:documentation>The metronome-relation element describes the relationship symbol that goes between the two sets of metronome-note elements. The currently allowed value is equals but this may expand in future versions. If the element is empty the equals value is used.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -7336,6 +7447,7 @@ namespace mx
             MetronomeRelation();
             MetronomeRelation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7348,7 +7460,7 @@ namespace mx
         
         /**************** MetronomeType ****************
          3665
-         <xs:element name="metronome-type" type="note-type-value">	<xs:annotation>		<xs:documentation>The metronome-type element works like the type element in defining metric relationships.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="metronome-type" type="note-type-value">  <xs:annotation>     <xs:documentation>The metronome-type element works like the type element in defining metric relationships.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="note-type-value">
          <xs:annotation>
          <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
@@ -7398,6 +7510,7 @@ namespace mx
             MetronomeType();
             MetronomeType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7410,7 +7523,7 @@ namespace mx
         
         /**************** PedalStep ****************
          3764
-         <xs:element name="pedal-step" type="step">	<xs:annotation>		<xs:documentation>The pedal-step element defines the pitch step for a single harp pedal.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="pedal-step" type="step"> <xs:annotation>     <xs:documentation>The pedal-step element defines the pitch step for a single harp pedal.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="step">
          <xs:annotation>
          <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
@@ -7446,6 +7559,7 @@ namespace mx
             PedalStep();
             PedalStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7458,7 +7572,7 @@ namespace mx
         
         /**************** PedalAlter ****************
          3769
-         <xs:element name="pedal-alter" type="semitones">	<xs:annotation>		<xs:documentation>The pedal-alter element defines the chromatic alteration for a single harp pedal.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="pedal-alter" type="semitones">   <xs:annotation>     <xs:documentation>The pedal-alter element defines the chromatic alteration for a single harp pedal.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="semitones">
          <xs:annotation>
          <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
@@ -7478,6 +7592,7 @@ namespace mx
             PedalAlter();
             PedalAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7514,6 +7629,7 @@ namespace mx
             Glass();
             Glass( const types::GlassEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7594,6 +7710,7 @@ namespace mx
             Metal();
             Metal( const types::MetalEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7656,6 +7773,7 @@ namespace mx
             Wood();
             Wood( const types::WoodEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7704,6 +7822,7 @@ namespace mx
             Pitched();
             Pitched( const types::PitchedEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7762,6 +7881,7 @@ namespace mx
             Membrane();
             Membrane( const types::MembraneEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7824,6 +7944,7 @@ namespace mx
             Effect();
             Effect( const types::EffectEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7866,6 +7987,7 @@ namespace mx
             StickLocation();
             StickLocation( const types::StickLocationEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7888,6 +8010,7 @@ namespace mx
             OtherPercussion();
             OtherPercussion( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7934,6 +8057,7 @@ namespace mx
             StickType();
             StickType( const types::StickTypeEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -7978,6 +8102,7 @@ namespace mx
             StickMaterial();
             StickMaterial( const types::StickMaterialEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8014,6 +8139,7 @@ namespace mx
             EncodingDate();
             EncodingDate( const types::Date& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8036,6 +8162,7 @@ namespace mx
             Software();
             Software( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8058,6 +8185,7 @@ namespace mx
             EncodingDescription();
             EncodingDescription( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8070,7 +8198,7 @@ namespace mx
         
         /**************** Source ****************
          4083
-         <xs:element name="source" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The source for the music that is encoded. This is similar to the Dublin Core source element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="source" type="xs:string" minOccurs="0">  <xs:annotation>     <xs:documentation>The source for the music that is encoded. This is similar to the Dublin Core source element.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -8080,6 +8208,7 @@ namespace mx
             Source();
             Source( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8092,7 +8221,7 @@ namespace mx
         
         /**************** MeasureDistance ****************
          4191
-         <xs:element name="measure-distance" type="tenths" minOccurs="0">	<xs:annotation>		<xs:documentation>The measure-distance element specifies the horizontal distance from the previous measure. This value is only used for systems where there is horizontal whitespace in the middle of a system as in systems with codas. To specify the measure width use the width attribute of the measure element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="measure-distance" type="tenths" minOccurs="0">   <xs:annotation>     <xs:documentation>The measure-distance element specifies the horizontal distance from the previous measure. This value is only used for systems where there is horizontal whitespace in the middle of a system as in systems with codas. To specify the measure width use the width attribute of the measure element.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="tenths">
          <xs:annotation>
          <xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
@@ -8116,6 +8245,7 @@ namespace mx
             MeasureDistance();
             MeasureDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8152,6 +8282,7 @@ namespace mx
             PageHeight();
             PageHeight( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8188,6 +8319,7 @@ namespace mx
             PageWidth();
             PageWidth( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8220,6 +8352,7 @@ namespace mx
             Millimeters();
             Millimeters( const types::MillimetersValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8256,6 +8389,7 @@ namespace mx
             Tenths();
             Tenths( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8292,6 +8426,7 @@ namespace mx
             StaffDistance();
             StaffDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8328,6 +8463,7 @@ namespace mx
             SystemDistance();
             SystemDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8364,6 +8500,7 @@ namespace mx
             TopSystemDistance();
             TopSystemDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8424,6 +8561,7 @@ namespace mx
             ArrowDirection();
             ArrowDirection( const types::ArrowDirectionEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8472,6 +8610,7 @@ namespace mx
             ArrowStyle();
             ArrowStyle( const types::ArrowStyleEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8510,6 +8649,7 @@ namespace mx
             CircularArrow();
             CircularArrow( const types::CircularArrowEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8522,7 +8662,7 @@ namespace mx
         
         /**************** BendAlter ****************
          4515
-         <xs:element name="bend-alter" type="semitones">	<xs:annotation>		<xs:documentation>The bend-alter element indicates the number of steps in the bend similar to the alter element. As with the alter element numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="bend-alter" type="semitones">    <xs:annotation>     <xs:documentation>The bend-alter element indicates the number of steps in the bend similar to the alter element. As with the alter element numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="semitones">
          <xs:annotation>
          <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
@@ -8542,6 +8682,7 @@ namespace mx
             BendAlter();
             BendAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8554,7 +8695,7 @@ namespace mx
         
         /**************** HoleType ****************
          4758
-         <xs:element name="hole-type" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The content of the optional hole-type element indicates what the hole symbol represents in terms of instrument fingering or other techniques.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="hole-type" type="xs:string" minOccurs="0">   <xs:annotation>     <xs:documentation>The content of the optional hole-type element indicates what the hole symbol represents in terms of instrument fingering or other techniques.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -8564,6 +8705,7 @@ namespace mx
             HoleType();
             HoleType( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8576,7 +8718,7 @@ namespace mx
         
         /**************** HoleShape ****************
          4767
-         <xs:element name="hole-shape" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The optional hole-shape element indicates the shape of the hole symbol; the default is a circle.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="hole-shape" type="xs:string" minOccurs="0">  <xs:annotation>     <xs:documentation>The optional hole-shape element indicates the shape of the hole symbol; the default is a circle.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -8586,6 +8728,7 @@ namespace mx
             HoleShape();
             HoleShape( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8628,6 +8771,7 @@ namespace mx
             Syllabic();
             Syllabic( const types::SyllabicEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8638,46 +8782,46 @@ namespace mx
         };
         
         
-//        /**************** Syllabic ****************
-//         4802, 4817
-//         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
-//         <xs:simpleType name="syllabic">
-//         <xs:annotation>
-//         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
-//         </xs:annotation>
-//         <xs:restriction base="xs:string">
-//         <xs:enumeration value="single"/>
-//         <xs:enumeration value="begin"/>
-//         <xs:enumeration value="end"/>
-//         <xs:enumeration value="middle"/>
-//         </xs:restriction>
-//         </xs:simpleType>
-//         <xs:simpleType name="syllabic">
-//         <xs:annotation>
-//         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
-//         </xs:annotation>
-//         <xs:restriction base="xs:string">
-//         <xs:enumeration value="single"/>
-//         <xs:enumeration value="begin"/>
-//         <xs:enumeration value="end"/>
-//         <xs:enumeration value="middle"/>
-//         </xs:restriction>
-//         </xs:simpleType>
-//         */
-//        class Syllabic : public ElementInterface
-//        {
-//        public:
-//            Syllabic();
-//            Syllabic( const types::SyllabicEnum& value );
-//            virtual bool hasAttributes() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            types::SyllabicEnum getValue() const;
-//            void setValue( const types::SyllabicEnum& value );
-//        private:
-//            types::SyllabicEnum myValue;
-//        };
+        //        /**************** Syllabic ****************
+        //         4802, 4817
+        //         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
+        //         <xs:simpleType name="syllabic">
+        //         <xs:annotation>
+        //         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
+        //         </xs:annotation>
+        //         <xs:restriction base="xs:string">
+        //         <xs:enumeration value="single"/>
+        //         <xs:enumeration value="begin"/>
+        //         <xs:enumeration value="end"/>
+        //         <xs:enumeration value="middle"/>
+        //         </xs:restriction>
+        //         </xs:simpleType>
+        //         <xs:simpleType name="syllabic">
+        //         <xs:annotation>
+        //         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
+        //         </xs:annotation>
+        //         <xs:restriction base="xs:string">
+        //         <xs:enumeration value="single"/>
+        //         <xs:enumeration value="begin"/>
+        //         <xs:enumeration value="end"/>
+        //         <xs:enumeration value="middle"/>
+        //         </xs:restriction>
+        //         </xs:simpleType>
+        //         */
+        //        class Syllabic : public ElementInterface
+        //        {
+        //        public:
+        //            Syllabic();
+        //            Syllabic( const types::SyllabicEnum& value );
+        //            virtual bool hasAttributes() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            types::SyllabicEnum getValue() const;
+        //            void setValue( const types::SyllabicEnum& value );
+        //        private:
+        //            types::SyllabicEnum myValue;
+        //        };
         
         
         /**************** Step ****************
@@ -8718,6 +8862,7 @@ namespace mx
             Step();
             Step( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8750,6 +8895,7 @@ namespace mx
             Alter();
             Alter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8788,6 +8934,7 @@ namespace mx
             Octave();
             Octave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8800,7 +8947,7 @@ namespace mx
         
         /**************** ActualNotes ****************
          5518
-         <xs:element name="actual-notes" type="xs:nonNegativeInteger">	<xs:annotation>		<xs:documentation>The actual-notes element describes how many notes are played in the time usually occupied by the number in the normal-notes element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="actual-notes" type="xs:nonNegativeInteger">  <xs:annotation>     <xs:documentation>The actual-notes element describes how many notes are played in the time usually occupied by the number in the normal-notes element.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
@@ -8810,6 +8957,7 @@ namespace mx
             ActualNotes();
             ActualNotes( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8822,7 +8970,7 @@ namespace mx
         
         /**************** NormalNotes ****************
          5523
-         <xs:element name="normal-notes" type="xs:nonNegativeInteger">	<xs:annotation>		<xs:documentation>The normal-notes element describes how many notes are usually played in the time occupied by the number in the actual-notes element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="normal-notes" type="xs:nonNegativeInteger">  <xs:annotation>     <xs:documentation>The normal-notes element describes how many notes are usually played in the time occupied by the number in the actual-notes element.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
@@ -8832,6 +8980,7 @@ namespace mx
             NormalNotes();
             NormalNotes( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8844,7 +8993,7 @@ namespace mx
         
         /**************** NormalType ****************
          5530
-         <xs:element name="normal-type" type="note-type-value">	<xs:annotation>		<xs:documentation>If the type associated with the number in the normal-notes element is different than the current note type (e.g. a quarter note within an eighth note triplet) then the normal-notes type (e.g. eighth) is specified in the normal-type and normal-dot elements.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="normal-type" type="note-type-value"> <xs:annotation>     <xs:documentation>If the type associated with the number in the normal-notes element is different than the current note type (e.g. a quarter note within an eighth note triplet) then the normal-notes type (e.g. eighth) is specified in the normal-type and normal-dot elements.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="note-type-value">
          <xs:annotation>
          <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
@@ -8894,6 +9043,7 @@ namespace mx
             NormalType();
             NormalType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8916,6 +9066,7 @@ namespace mx
             CreditType();
             CreditType( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8928,7 +9079,7 @@ namespace mx
         
         /**************** InstrumentName ****************
          5879
-         <xs:element name="instrument-name" type="xs:string">	<xs:annotation>		<xs:documentation>The instrument-name element is typically used within a software application rather than appearing on the printed page of a score.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="instrument-name" type="xs:string">   <xs:annotation>     <xs:documentation>The instrument-name element is typically used within a software application rather than appearing on the printed page of a score.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -8938,6 +9089,7 @@ namespace mx
             InstrumentName();
             InstrumentName( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8950,7 +9102,7 @@ namespace mx
         
         /**************** InstrumentAbbreviation ****************
          5884
-         <xs:element name="instrument-abbreviation" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The optional instrument-abbreviation element is typically used within a software application rather than appearing on the printed page of a score.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="instrument-abbreviation" type="xs:string" minOccurs="0"> <xs:annotation>     <xs:documentation>The optional instrument-abbreviation element is typically used within a software application rather than appearing on the printed page of a score.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -8960,6 +9112,7 @@ namespace mx
             InstrumentAbbreviation();
             InstrumentAbbreviation( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8972,7 +9125,7 @@ namespace mx
         
         /**************** InstrumentSound ****************
          5890
-         <xs:element name="instrument-sound" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The instrument-sound element describes the default timbre of the score-instrument. This description is independent of a particular virtual or MIDI instrument specification and allows playback to be shared more easily between applications and libraries.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="instrument-sound" type="xs:string" minOccurs="0">    <xs:annotation>     <xs:documentation>The instrument-sound element describes the default timbre of the score-instrument. This description is independent of a particular virtual or MIDI instrument specification and allows playback to be shared more easily between applications and libraries.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -8982,6 +9135,7 @@ namespace mx
             InstrumentSound();
             InstrumentSound( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -8994,7 +9148,7 @@ namespace mx
         
         /**************** Ensemble ****************
          5903
-         <xs:element name="ensemble" type="positive-integer-or-empty">	<xs:annotation>		<xs:documentation>The ensemble element was added in Version 2.0. It is present if performance is intended by an ensemble such as an orchestral section. The text of the ensemble element contains the size of the section or is empty if the ensemble size is not specified.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="ensemble" type="positive-integer-or-empty">  <xs:annotation>     <xs:documentation>The ensemble element was added in Version 2.0. It is present if performance is intended by an ensemble such as an orchestral section. The text of the ensemble element contains the size of the section or is empty if the ensemble size is not specified.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="positive-integer-or-empty">
          <xs:annotation>
          <xs:documentation>The positive-integer-or-empty values can be either a positive integer or an empty string.</xs:documentation>
@@ -9026,6 +9180,7 @@ namespace mx
             Ensemble();
             Ensemble( const types::PositiveIntegerOrEmpty& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9038,7 +9193,7 @@ namespace mx
         
         /**************** Group ****************
          5940
-         <xs:element name="group" type="xs:string" minOccurs="0" maxOccurs="unbounded">	<xs:annotation>		<xs:documentation>The group element allows the use of different versions of the part for different purposes. Typical values include score parts sound and data. Ordering information that is directly encoded in MuseData can be derived from the ordering within a MusicXML score or opus.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="group" type="xs:string" minOccurs="0" maxOccurs="unbounded"> <xs:annotation>     <xs:documentation>The group element allows the use of different versions of the part for different purposes. Typical values include score parts sound and data. Ordering information that is directly encoded in MuseData can be derived from the ordering within a MusicXML score or opus.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9048,6 +9203,7 @@ namespace mx
             Group();
             Group( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9060,7 +9216,7 @@ namespace mx
         
         /**************** VirtualLibrary ****************
          5972
-         <xs:element name="virtual-library" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The virtual-library element indicates the virtual instrument library name.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="virtual-library" type="xs:string" minOccurs="0"> <xs:annotation>     <xs:documentation>The virtual-library element indicates the virtual instrument library name.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9070,6 +9226,7 @@ namespace mx
             VirtualLibrary();
             VirtualLibrary( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9082,7 +9239,7 @@ namespace mx
         
         /**************** VirtualName ****************
          5978
-         <xs:element name="virtual-name" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The virtual-name element indicates the library-specific name for the virtual instrument.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="virtual-name" type="xs:string" minOccurs="0">    <xs:annotation>     <xs:documentation>The virtual-name element indicates the library-specific name for the virtual instrument.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9092,6 +9249,7 @@ namespace mx
             VirtualName();
             VirtualName( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9104,7 +9262,7 @@ namespace mx
         
         /**************** WorkNumber ****************
          5989
-         <xs:element name="work-number" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The work-number element specifies the number of a work such as its opus number.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="work-number" type="xs:string" minOccurs="0"> <xs:annotation>     <xs:documentation>The work-number element specifies the number of a work such as its opus number.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9114,6 +9272,7 @@ namespace mx
             WorkNumber();
             WorkNumber( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9126,7 +9285,7 @@ namespace mx
         
         /**************** WorkTitle ****************
          5995
-         <xs:element name="work-title" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The work-title element specifies the title of a work not including its opus or other work number.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="work-title" type="xs:string" minOccurs="0">  <xs:annotation>     <xs:documentation>The work-title element specifies the title of a work not including its opus or other work number.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9136,6 +9295,7 @@ namespace mx
             WorkTitle();
             WorkTitle( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9148,7 +9308,7 @@ namespace mx
         
         /**************** Staff ****************
          6065
-         <xs:element name="staff" type="xs:positiveInteger">	<xs:annotation>		<xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers with 1 referring to the top-most staff in a part.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="staff" type="xs:positiveInteger">    <xs:annotation>     <xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers with 1 referring to the top-most staff in a part.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="xs:positiveInteger"/>
          <xs:simpleType name="xs:positiveInteger"/>
          */
@@ -9158,6 +9318,7 @@ namespace mx
             Staff();
             Staff( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9170,7 +9331,7 @@ namespace mx
         
         /**************** TuningStep ****************
          6075
-         <xs:element name="tuning-step" type="step">	<xs:annotation>		<xs:documentation>The tuning-step element is represented like the step element with a different name to reflect is different function.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="tuning-step" type="step">    <xs:annotation>     <xs:documentation>The tuning-step element is represented like the step element with a different name to reflect is different function.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="step">
          <xs:annotation>
          <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
@@ -9206,6 +9367,7 @@ namespace mx
             TuningStep();
             TuningStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9218,7 +9380,7 @@ namespace mx
         
         /**************** TuningAlter ****************
          6080
-         <xs:element name="tuning-alter" type="semitones" minOccurs="0">	<xs:annotation>		<xs:documentation>The tuning-alter element is represented like the alter element with a different name to reflect is different function.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="tuning-alter" type="semitones" minOccurs="0">    <xs:annotation>     <xs:documentation>The tuning-alter element is represented like the alter element with a different name to reflect is different function.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="semitones">
          <xs:annotation>
          <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
@@ -9238,6 +9400,7 @@ namespace mx
             TuningAlter();
             TuningAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9250,7 +9413,7 @@ namespace mx
         
         /**************** TuningOctave ****************
          6086
-         <xs:element name="tuning-octave" type="octave">	<xs:annotation>		<xs:documentation>The tuning-octave element is represented like the octave element with a different name to reflect is different function.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="tuning-octave" type="octave">    <xs:annotation>     <xs:documentation>The tuning-octave element is represented like the octave element with a different name to reflect is different function.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="octave">
          <xs:annotation>
          <xs:documentation>Octaves are represented by the numbers 0 to 9, where 4 indicates the octave started by middle C.</xs:documentation>
@@ -9276,6 +9439,7 @@ namespace mx
             TuningOctave();
             TuningOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9298,6 +9462,7 @@ namespace mx
             Voice();
             Voice( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9310,7 +9475,7 @@ namespace mx
         
         /**************** KeyStep ****************
          6104
-         <xs:element name="key-step" type="step">	<xs:annotation>		<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-step element indicates the pitch step to be altered represented using the same names as in the step element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="key-step" type="step">   <xs:annotation>     <xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-step element indicates the pitch step to be altered represented using the same names as in the step element.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="step">
          <xs:annotation>
          <xs:documentation>The step type represents a step of the diatonic scale, represented using the English letters A through G.</xs:documentation>
@@ -9346,6 +9511,7 @@ namespace mx
             KeyStep();
             KeyStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9358,7 +9524,7 @@ namespace mx
         
         /**************** KeyAlter ****************
          6109
-         <xs:element name="key-alter" type="semitones">	<xs:annotation>		<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-alter element represents the alteration for a given pitch step represented with semitones in the same manner as the alter element.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="key-alter" type="semitones"> <xs:annotation>     <xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-alter element represents the alteration for a given pitch step represented with semitones in the same manner as the alter element.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="semitones">
          <xs:annotation>
          <xs:documentation>The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.</xs:documentation>
@@ -9378,6 +9544,7 @@ namespace mx
             KeyAlter();
             KeyAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9390,7 +9557,7 @@ namespace mx
         
         /**************** KeyAccidental ****************
          6114
-         <xs:element name="key-accidental" type="accidental-value" minOccurs="0">	<xs:annotation>		<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-accidental element indicates the accidental to be displayed in the key signature represented in the same manner as the accidental element. It is used for disambiguating microtonal accidentals.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="key-accidental" type="accidental-value" minOccurs="0">   <xs:annotation>     <xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-accidental element indicates the accidental to be displayed in the key signature represented in the same manner as the accidental element. It is used for disambiguating microtonal accidentals.</xs:documentation>  </xs:annotation></xs:element>
          <xs:simpleType name="accidental-value">
          <xs:annotation>
          <xs:documentation>The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music.</xs:documentation>
@@ -9480,6 +9647,7 @@ namespace mx
             KeyAccidental();
             KeyAccidental( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9492,7 +9660,7 @@ namespace mx
         
         /**************** SlashType ****************
          6125
-         <xs:element name="slash-type" type="note-type-value">	<xs:annotation>		<xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="slash-type" type="note-type-value">  <xs:annotation>     <xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>   </xs:annotation></xs:element>
          <xs:simpleType name="note-type-value">
          <xs:annotation>
          <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
@@ -9542,6 +9710,7 @@ namespace mx
             SlashType();
             SlashType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9554,7 +9723,7 @@ namespace mx
         
         /**************** Beats ****************
          6142
-         <xs:element name="beats" type="xs:string">	<xs:annotation>		<xs:documentation>The beats element indicates the number of beats as found in the numerator of a time signature.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="beats" type="xs:string"> <xs:annotation>     <xs:documentation>The beats element indicates the number of beats as found in the numerator of a time signature.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9564,6 +9733,7 @@ namespace mx
             Beats();
             Beats( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9576,7 +9746,7 @@ namespace mx
         
         /**************** BeatType ****************
          6147
-         <xs:element name="beat-type" type="xs:string">	<xs:annotation>		<xs:documentation>The beat-type element indicates the beat unit as found in the denominator of a time signature.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="beat-type" type="xs:string"> <xs:annotation>     <xs:documentation>The beat-type element indicates the beat unit as found in the denominator of a time signature.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -9586,6 +9756,7 @@ namespace mx
             BeatType();
             BeatType( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9618,6 +9789,7 @@ namespace mx
             Fifths();
             Fifths( const types::FifthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9650,6 +9822,7 @@ namespace mx
             Mode();
             Mode( const types::ModeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9662,7 +9835,7 @@ namespace mx
         
         /**************** BeatUnit ****************
          6173
-         <xs:element name="beat-unit" type="note-type-value">	<xs:annotation>		<xs:documentation>The beat-unit element indicates the graphical note type to use in a metronome mark.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="beat-unit" type="note-type-value">   <xs:annotation>     <xs:documentation>The beat-unit element indicates the graphical note type to use in a metronome mark.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="note-type-value">
          <xs:annotation>
          <xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
@@ -9712,6 +9885,7 @@ namespace mx
             BeatUnit();
             BeatUnit( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9748,6 +9922,7 @@ namespace mx
             TopMargin();
             TopMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9784,6 +9959,7 @@ namespace mx
             BottomMargin();
             BottomMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9820,6 +9996,7 @@ namespace mx
             LeftMargin();
             LeftMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9856,6 +10033,7 @@ namespace mx
             RightMargin();
             RightMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9868,7 +10046,7 @@ namespace mx
         
         /**************** Duration ****************
          6262
-         <xs:element name="duration" type="positive-divisions">	<xs:annotation>		<xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance swing eighths vs. even eighths or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="duration" type="positive-divisions"> <xs:annotation>     <xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance swing eighths vs. even eighths or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="positive-divisions">
          <xs:annotation>
          <xs:documentation>The positive-divisions type restricts divisions values to positive numbers.</xs:documentation>
@@ -9892,6 +10070,7 @@ namespace mx
             Duration();
             Duration( const types::PositiveDivisionsValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9940,6 +10119,7 @@ namespace mx
             DisplayStep();
             DisplayStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9978,6 +10158,7 @@ namespace mx
             DisplayOctave();
             DisplayOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -9990,7 +10171,7 @@ namespace mx
         
         /**************** MovementNumber ****************
          6363
-         <xs:element name="movement-number" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The movement-number element specifies the number of a movement.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="movement-number" type="xs:string" minOccurs="0"> <xs:annotation>     <xs:documentation>The movement-number element specifies the number of a movement.</xs:documentation>    </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -10000,6 +10181,7 @@ namespace mx
             MovementNumber();
             MovementNumber( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
@@ -10012,7 +10194,7 @@ namespace mx
         
         /**************** MovementTitle ****************
          6369
-         <xs:element name="movement-title" type="xs:string" minOccurs="0">	<xs:annotation>		<xs:documentation>The movement-title element specifies the title of a movement not including its number.</xs:documentation>	</xs:annotation></xs:element>
+         <xs:element name="movement-title" type="xs:string" minOccurs="0">  <xs:annotation>     <xs:documentation>The movement-title element specifies the title of a movement not including its number.</xs:documentation> </xs:annotation></xs:element>
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
@@ -10022,6 +10204,7 @@ namespace mx
             MovementTitle();
             MovementTitle( const types::XsString& value );
             virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;

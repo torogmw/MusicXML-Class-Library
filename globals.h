@@ -13,6 +13,10 @@ namespace globals
     {
         return "/Volumes/MusikPlatz/output/";
     }
+    inline std::string getMxSourceDirectory()
+    {
+        return "/Volumes/MusikPlatz/Mx/";
+    }
     inline std::string getMusicXmlXpPath()
     {
         return getInputDirectory() + "musicxml.xsd";
