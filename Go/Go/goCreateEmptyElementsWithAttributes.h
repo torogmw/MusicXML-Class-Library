@@ -15,6 +15,7 @@
 #include "codegenAttributesStructCpp.h"
 #include "codegenEmptyElementWithAttributesH.h"
 #include "codegenEmptyElementWithAttributesCpp.h"
+#include "codegenEmptyElementWithAttributesTest.h"
 
 namespace go
 {
@@ -176,8 +177,18 @@ namespace go
             }
             codegenEmptyElementWithAttributesH( h, attStructName, current );
             codegenEmptyElementWithAttributesCpp( cpp, attStructName, current );
+            codegenEmptyElementWithAttributesTest( test, attStructName, current );
+            
+            Directory d{ globals::getOutputDirectory() };
+            FileName fn{ className+"Test", "cpp" };
+            FileInfo fo{ fn, d };
+            File f{ fo };
+            f.setContents( test.str() );
+            f.writeToDisk();
+            cout << test.str() << endl;
+            test.str("");
         }
         // cout << h.str() << endl;
-        cout << cpp.str() << endl;
+        cout << test.str() << endl;
     }
 }

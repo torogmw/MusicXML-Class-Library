@@ -59,6 +59,7 @@
 		290D7C161AA397950081FBB5 /* MsItemAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemAttribute.h; sourceTree = "<group>"; };
 		29200EB71AA43582000E3E37 /* MsItemElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemElement.cpp; sourceTree = "<group>"; };
 		29200EB81AA43582000E3E37 /* MsItemElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemElement.h; sourceTree = "<group>"; };
+		2935A6F41AB5F76F002859CA /* codegenEmptyElementWithAttributesTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenEmptyElementWithAttributesTest.h; sourceTree = "<group>"; };
 		29546F031A9AA95D008C1E0E /* MsItemSimpleType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleType.cpp; sourceTree = "<group>"; };
 		29546F041A9AA95D008C1E0E /* MsItemSimpleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleType.h; sourceTree = "<group>"; };
 		2977496A1AB211F400BF2205 /* codegenValueElementNoAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenValueElementNoAttributes.h; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 				29CEB4B31AB4EFEF00D6AEFC /* codegenAttributesStructCpp.h */,
 				29AFF26F1AB54A90005E0E3D /* codegenEmptyElementWithAttributesH.h */,
 				29AFF2701AB54AAB005E0E3D /* codegenEmptyElementWithAttributesCpp.h */,
+				2935A6F41AB5F76F002859CA /* codegenEmptyElementWithAttributesTest.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
