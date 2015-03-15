@@ -13,6 +13,8 @@
 #include "tab.h"
 #include "codegenAttributesStructH.h"
 #include "codegenAttributesStructCpp.h"
+#include "codegenEmptyElementWithAttributesH.h"
+#include "codegenEmptyElementWithAttributesCpp.h"
 
 namespace go
 {
@@ -172,8 +174,10 @@ namespace go
             {
                 throw std::runtime_error( "uh oh" );
             }
+            codegenEmptyElementWithAttributesH( h, attStructName, current );
+            codegenEmptyElementWithAttributesCpp( cpp, attStructName, current );
         }
-        cout << h.str() << endl;
+        // cout << h.str() << endl;
         cout << cpp.str() << endl;
     }
 }

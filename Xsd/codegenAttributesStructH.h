@@ -22,9 +22,14 @@ namespace xsd
         for ( auto it = attBegin; it != attEnd; ++it)
         {
             MsItemPtr typeitem = (*it)->getInheritedMsItem();
+            std::string typeItemName = typeitem->getCppName();
+            if ( typeItemName == "Tenths" )
+            {
+                typeItemName = "TenthsValue";
+            }
             std::string curattName = (*it)->getCppName();
             curattName[0] = tolower( curattName[0] );
-            h << tab(1) << "types::" << typeitem->getCppName() << " " << curattName << ";" << end();
+            h << tab(1) << "types::" << typeItemName << " " << curattName << ";" << end();
         }
         for ( auto it = attBegin; it != attEnd; ++it)
         {

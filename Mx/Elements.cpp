@@ -13764,6 +13764,1742 @@ namespace mx
             isOneLineOnly = true;
             return os;
         }
+        
+        /***************************************************************
+         Empty Elements with Attributes
+         ***************************************************************/
+        
+        
+        /**************** Segno ****************/
+        EmptyPrintObjectStyleAlignAttributes::EmptyPrintObjectStyleAlignAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,halign( types::LeftCenterRight::center )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasHalign( false )
+        {}
+        
+        bool EmptyPrintObjectStyleAlignAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasHalign;
+        }
+        
+        std::ostream& EmptyPrintObjectStyleAlignAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, halign, "halign", hasHalign );
+            }
+            return os;
+        }
+        
+        Segno::Segno()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool Segno::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Segno::hasContents() const  { return false; }
+        std::ostream& Segno::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Segno::streamName( std::ostream& os ) const  { os << "segno"; return os; }
+        std::ostream& Segno::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr Segno::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Segno::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Coda::Coda()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool Coda::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Coda::hasContents() const  { return false; }
+        std::ostream& Coda::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Coda::streamName( std::ostream& os ) const  { os << "coda"; return os; }
+        std::ostream& Coda::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr Coda::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Coda::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+//        Segno::Segno()
+//        :ElementInterface()
+//        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+//        {}
+//        bool Segno::hasAttributes() const
+//        {
+//            return myAttributes->hasValues();
+//        }
+//        bool Segno::hasContents() const  { return false; }
+//        std::ostream& Segno::streamAttributes( std::ostream& os ) const
+//        {
+//            if ( myAttributes )
+//            {
+//                myAttributes->toStream( os );
+//            }
+//            return os;
+//        }
+//        std::ostream& Segno::streamName( std::ostream& os ) const  { os << "segno"; return os; }
+//        std::ostream& Segno::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+//        {
+//            isOneLineOnly = true;
+//            return os;
+//        }
+//        
+//        EmptyPrintObjectStyleAlignAttributesPtr Segno::getAttributes() const
+//        {
+//            return myAttributes;
+//        }
+//        /* if value.get()==nullptr then this is a no-op
+//         i.e. this function guards against setting Attributes to nullptr */
+//        void Segno::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+//        {
+//            if ( value )
+//            {
+//                myAttributes = value;
+//            }
+//        }
+        
+//        Coda::Coda()
+//        :ElementInterface()
+//        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+//        {}
+//        bool Coda::hasAttributes() const
+//        {
+//            return myAttributes->hasValues();
+//        }
+//        bool Coda::hasContents() const  { return false; }
+//        std::ostream& Coda::streamAttributes( std::ostream& os ) const
+//        {
+//            if ( myAttributes )
+//            {
+//                myAttributes->toStream( os );
+//            }
+//            return os;
+//        }
+//        std::ostream& Coda::streamName( std::ostream& os ) const  { os << "coda"; return os; }
+//        std::ostream& Coda::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+//        {
+//            isOneLineOnly = true;
+//            return os;
+//        }
+//        
+//        EmptyPrintObjectStyleAlignAttributesPtr Coda::getAttributes() const
+//        {
+//            return myAttributes;
+//        }
+//        /* if value.get()==nullptr then this is a no-op
+//         i.e. this function guards against setting Attributes to nullptr */
+//        void Coda::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+//        {
+//            if ( value )
+//            {
+//                myAttributes = value;
+//            }
+//        }
+        
+        Damp::Damp()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool Damp::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Damp::hasContents() const  { return false; }
+        std::ostream& Damp::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Damp::streamName( std::ostream& os ) const  { os << "damp"; return os; }
+        std::ostream& Damp::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr Damp::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Damp::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        DampAll::DampAll()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool DampAll::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool DampAll::hasContents() const  { return false; }
+        std::ostream& DampAll::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& DampAll::streamName( std::ostream& os ) const  { os << "damp-all"; return os; }
+        std::ostream& DampAll::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr DampAll::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void DampAll::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Eyeglasses::Eyeglasses()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool Eyeglasses::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Eyeglasses::hasContents() const  { return false; }
+        std::ostream& Eyeglasses::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Eyeglasses::streamName( std::ostream& os ) const  { os << "eyeglasses"; return os; }
+        std::ostream& Eyeglasses::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr Eyeglasses::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Eyeglasses::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        LeftDivider::LeftDivider()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool LeftDivider::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool LeftDivider::hasContents() const  { return false; }
+        std::ostream& LeftDivider::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& LeftDivider::streamName( std::ostream& os ) const  { os << "left-divider"; return os; }
+        std::ostream& LeftDivider::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr LeftDivider::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void LeftDivider::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        RightDivider::RightDivider()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPrintObjectStyleAlignAttributes>() )
+        {}
+        bool RightDivider::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool RightDivider::hasContents() const  { return false; }
+        std::ostream& RightDivider::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& RightDivider::streamName( std::ostream& os ) const  { os << "right-divider"; return os; }
+        std::ostream& RightDivider::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPrintObjectStyleAlignAttributesPtr RightDivider::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void RightDivider::setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** Accent ****************/
+        EmptyPlacementAttributes::EmptyPlacementAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool EmptyPlacementAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement;
+        }
+        
+        std::ostream& EmptyPlacementAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+        Accent::Accent()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Accent::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Accent::hasContents() const  { return false; }
+        std::ostream& Accent::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Accent::streamName( std::ostream& os ) const  { os << "accent"; return os; }
+        std::ostream& Accent::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Accent::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Accent::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Staccato::Staccato()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Staccato::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Staccato::hasContents() const  { return false; }
+        std::ostream& Staccato::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Staccato::streamName( std::ostream& os ) const  { os << "staccato"; return os; }
+        std::ostream& Staccato::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Staccato::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Staccato::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Tenuto::Tenuto()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Tenuto::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Tenuto::hasContents() const  { return false; }
+        std::ostream& Tenuto::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Tenuto::streamName( std::ostream& os ) const  { os << "tenuto"; return os; }
+        std::ostream& Tenuto::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Tenuto::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Tenuto::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        DetachedLegato::DetachedLegato()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool DetachedLegato::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool DetachedLegato::hasContents() const  { return false; }
+        std::ostream& DetachedLegato::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& DetachedLegato::streamName( std::ostream& os ) const  { os << "detached-legato"; return os; }
+        std::ostream& DetachedLegato::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr DetachedLegato::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void DetachedLegato::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Staccatissimo::Staccatissimo()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Staccatissimo::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Staccatissimo::hasContents() const  { return false; }
+        std::ostream& Staccatissimo::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Staccatissimo::streamName( std::ostream& os ) const  { os << "staccatissimo"; return os; }
+        std::ostream& Staccatissimo::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Staccatissimo::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Staccatissimo::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Spiccato::Spiccato()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Spiccato::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Spiccato::hasContents() const  { return false; }
+        std::ostream& Spiccato::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Spiccato::streamName( std::ostream& os ) const  { os << "spiccato"; return os; }
+        std::ostream& Spiccato::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Spiccato::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Spiccato::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** Scoop ****************/
+        EmptyLineAttributes::EmptyLineAttributes()
+        :dashLength()
+        ,spaceLength()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,hasDashLength( false )
+        ,hasSpaceLength( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool EmptyLineAttributes::hasValues() const
+        {
+            return hasDashLength ||
+            hasSpaceLength ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement;
+        }
+        
+        std::ostream& EmptyLineAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, dashLength, "dash-length", hasDashLength );
+                streamAttribute( os, spaceLength, "space-length", hasSpaceLength );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+        Scoop::Scoop()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyLineAttributes>() )
+        {}
+        bool Scoop::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Scoop::hasContents() const  { return false; }
+        std::ostream& Scoop::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Scoop::streamName( std::ostream& os ) const  { os << "scoop"; return os; }
+        std::ostream& Scoop::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyLineAttributesPtr Scoop::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Scoop::setAttributes( const EmptyLineAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Plop::Plop()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyLineAttributes>() )
+        {}
+        bool Plop::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Plop::hasContents() const  { return false; }
+        std::ostream& Plop::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Plop::streamName( std::ostream& os ) const  { os << "plop"; return os; }
+        std::ostream& Plop::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyLineAttributesPtr Plop::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Plop::setAttributes( const EmptyLineAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Doit::Doit()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyLineAttributes>() )
+        {}
+        bool Doit::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Doit::hasContents() const  { return false; }
+        std::ostream& Doit::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Doit::streamName( std::ostream& os ) const  { os << "doit"; return os; }
+        std::ostream& Doit::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyLineAttributesPtr Doit::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Doit::setAttributes( const EmptyLineAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Falloff::Falloff()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyLineAttributes>() )
+        {}
+        bool Falloff::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Falloff::hasContents() const  { return false; }
+        std::ostream& Falloff::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Falloff::streamName( std::ostream& os ) const  { os << "falloff"; return os; }
+        std::ostream& Falloff::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyLineAttributesPtr Falloff::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Falloff::setAttributes( const EmptyLineAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Caesura::Caesura()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Caesura::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Caesura::hasContents() const  { return false; }
+        std::ostream& Caesura::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Caesura::streamName( std::ostream& os ) const  { os << "caesura"; return os; }
+        std::ostream& Caesura::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Caesura::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Caesura::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Stress::Stress()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Stress::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Stress::hasContents() const  { return false; }
+        std::ostream& Stress::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Stress::streamName( std::ostream& os ) const  { os << "stress"; return os; }
+        std::ostream& Stress::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Stress::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Stress::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Unstress::Unstress()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Unstress::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Unstress::hasContents() const  { return false; }
+        std::ostream& Unstress::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Unstress::streamName( std::ostream& os ) const  { os << "unstress"; return os; }
+        std::ostream& Unstress::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Unstress::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Unstress::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Dot::Dot()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Dot::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Dot::hasContents() const  { return false; }
+        std::ostream& Dot::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Dot::streamName( std::ostream& os ) const  { os << "dot"; return os; }
+        std::ostream& Dot::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Dot::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Dot::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** TrillMark ****************/
+        EmptyTrillSoundAttributes::EmptyTrillSoundAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep()
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        {}
+        
+        bool EmptyTrillSoundAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat;
+        }
+        
+        std::ostream& EmptyTrillSoundAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+            }
+            return os;
+        }
+        
+        TrillMark::TrillMark()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyTrillSoundAttributes>() )
+        {}
+        bool TrillMark::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool TrillMark::hasContents() const  { return false; }
+        std::ostream& TrillMark::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& TrillMark::streamName( std::ostream& os ) const  { os << "trill-mark"; return os; }
+        std::ostream& TrillMark::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyTrillSoundAttributesPtr TrillMark::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void TrillMark::setAttributes( const EmptyTrillSoundAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        VerticalTurn::VerticalTurn()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyTrillSoundAttributes>() )
+        {}
+        bool VerticalTurn::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool VerticalTurn::hasContents() const  { return false; }
+        std::ostream& VerticalTurn::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& VerticalTurn::streamName( std::ostream& os ) const  { os << "vertical-turn"; return os; }
+        std::ostream& VerticalTurn::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyTrillSoundAttributesPtr VerticalTurn::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void VerticalTurn::setAttributes( const EmptyTrillSoundAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Shake::Shake()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyTrillSoundAttributes>() )
+        {}
+        bool Shake::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Shake::hasContents() const  { return false; }
+        std::ostream& Shake::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Shake::streamName( std::ostream& os ) const  { os << "shake"; return os; }
+        std::ostream& Shake::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyTrillSoundAttributesPtr Shake::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Shake::setAttributes( const EmptyTrillSoundAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Schleifer::Schleifer()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Schleifer::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Schleifer::hasContents() const  { return false; }
+        std::ostream& Schleifer::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Schleifer::streamName( std::ostream& os ) const  { os << "schleifer"; return os; }
+        std::ostream& Schleifer::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Schleifer::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Schleifer::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        UpBow::UpBow()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool UpBow::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool UpBow::hasContents() const  { return false; }
+        std::ostream& UpBow::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& UpBow::streamName( std::ostream& os ) const  { os << "up-bow"; return os; }
+        std::ostream& UpBow::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr UpBow::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void UpBow::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        DownBow::DownBow()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool DownBow::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool DownBow::hasContents() const  { return false; }
+        std::ostream& DownBow::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& DownBow::streamName( std::ostream& os ) const  { os << "down-bow"; return os; }
+        std::ostream& DownBow::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr DownBow::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void DownBow::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        OpenString::OpenString()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool OpenString::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool OpenString::hasContents() const  { return false; }
+        std::ostream& OpenString::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& OpenString::streamName( std::ostream& os ) const  { os << "open-string"; return os; }
+        std::ostream& OpenString::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr OpenString::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void OpenString::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        ThumbPosition::ThumbPosition()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool ThumbPosition::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool ThumbPosition::hasContents() const  { return false; }
+        std::ostream& ThumbPosition::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& ThumbPosition::streamName( std::ostream& os ) const  { os << "thumb-position"; return os; }
+        std::ostream& ThumbPosition::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr ThumbPosition::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void ThumbPosition::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        DoubleTongue::DoubleTongue()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool DoubleTongue::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool DoubleTongue::hasContents() const  { return false; }
+        std::ostream& DoubleTongue::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& DoubleTongue::streamName( std::ostream& os ) const  { os << "double-tongue"; return os; }
+        std::ostream& DoubleTongue::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr DoubleTongue::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void DoubleTongue::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        TripleTongue::TripleTongue()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool TripleTongue::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool TripleTongue::hasContents() const  { return false; }
+        std::ostream& TripleTongue::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& TripleTongue::streamName( std::ostream& os ) const  { os << "triple-tongue"; return os; }
+        std::ostream& TripleTongue::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr TripleTongue::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void TripleTongue::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Stopped::Stopped()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Stopped::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Stopped::hasContents() const  { return false; }
+        std::ostream& Stopped::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Stopped::streamName( std::ostream& os ) const  { os << "stopped"; return os; }
+        std::ostream& Stopped::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Stopped::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Stopped::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        SnapPizzicato::SnapPizzicato()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool SnapPizzicato::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool SnapPizzicato::hasContents() const  { return false; }
+        std::ostream& SnapPizzicato::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& SnapPizzicato::streamName( std::ostream& os ) const  { os << "snap-pizzicato"; return os; }
+        std::ostream& SnapPizzicato::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr SnapPizzicato::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void SnapPizzicato::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        Fingernails::Fingernails()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyPlacementAttributes>() )
+        {}
+        bool Fingernails::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Fingernails::hasContents() const  { return false; }
+        std::ostream& Fingernails::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Fingernails::streamName( std::ostream& os ) const  { os << "fingernails"; return os; }
+        std::ostream& Fingernails::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyPlacementAttributesPtr Fingernails::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Fingernails::setAttributes( const EmptyPlacementAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** MusicFont ****************/
+        EmptyFontAttributes::EmptyFontAttributes()
+        :fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        {}
+        
+        bool EmptyFontAttributes::hasValues() const
+        {
+            return hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight;
+        }
+        
+        std::ostream& EmptyFontAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+            }
+            return os;
+        }
+        
+        MusicFont::MusicFont()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyFontAttributes>() )
+        {}
+        bool MusicFont::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool MusicFont::hasContents() const  { return false; }
+        std::ostream& MusicFont::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& MusicFont::streamName( std::ostream& os ) const  { os << "music-font"; return os; }
+        std::ostream& MusicFont::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyFontAttributesPtr MusicFont::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void MusicFont::setAttributes( const EmptyFontAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        WordFont::WordFont()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<EmptyFontAttributes>() )
+        {}
+        bool WordFont::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool WordFont::hasContents() const  { return false; }
+        std::ostream& WordFont::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& WordFont::streamName( std::ostream& os ) const  { os << "word-font"; return os; }
+        std::ostream& WordFont::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        EmptyFontAttributesPtr WordFont::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void WordFont::setAttributes( const EmptyFontAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+
 
     } // namespace e
 

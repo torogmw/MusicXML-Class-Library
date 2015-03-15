@@ -10632,5 +10632,1286 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
         };
+        
+        /***************************************************************
+         Empty Elements with Attributes
+         ***************************************************************/
+        
+        struct EmptyPrintObjectStyleAlignAttributes;
+        using EmptyPrintObjectStyleAlignAttributesPtr = std::shared_ptr<EmptyPrintObjectStyleAlignAttributes>;
+        
+        struct EmptyPrintObjectStyleAlignAttributes : public AttributesInterface
+        {
+        public:
+            EmptyPrintObjectStyleAlignAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::LeftCenterRight halign;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasHalign;
+        };
+        
+        /*
+         3030
+         <xs:element name="segno" type="empty-print-style-align" minOccurs="0"/>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class Segno : public ElementInterface
+        {
+        public:
+            Segno();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        /*
+         3034
+         <xs:element name="coda" type="empty-print-style-align" minOccurs="0"/>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class Coda : public ElementInterface
+        {
+        public:
+            Coda();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        /*
+         3333
+         <xs:element name="segno" type="empty-print-style-align" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+//        class Segno : public ElementInterface
+//        {
+//        public:
+//            Segno();
+//            virtual bool hasAttributes() const;
+//            virtual bool hasContents() const;
+//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+//            virtual std::ostream& streamName( std::ostream& os ) const;
+//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+//            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+//            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+//        private:
+//            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+//        };
+        
+        /*
+         3345
+         <xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+//        class Coda : public ElementInterface
+//        {
+//        public:
+//            Coda();
+//            virtual bool hasAttributes() const;
+//            virtual bool hasContents() const;
+//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+//            virtual std::ostream& streamName( std::ostream& os ) const;
+//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+//            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+//            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+//        private:
+//            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+//        };
+        
+        /*
+         3376
+         <xs:element name="damp" type="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The damp element specifies a harp damping mark.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class Damp : public ElementInterface
+        {
+        public:
+            Damp();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        /*
+         3381
+         <xs:element name="damp-all" type="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The damp-all element specifies a harp damping mark for all strings.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class DampAll : public ElementInterface
+        {
+        public:
+            DampAll();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        /*
+         3386
+         <xs:element name="eyeglasses" type="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The eyeglasses element specifies the eyeglasses symbol, common in commercial music.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-print-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class Eyeglasses : public ElementInterface
+        {
+        public:
+            Eyeglasses();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        /*
+         4274
+         <xs:element name="left-divider" type="empty-print-object-style-align"/>
+         <xs:complexType name="empty-print-object-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align-object type represents an empty element with print-object and print-style-align attribute groups.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-object"/>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class LeftDivider : public ElementInterface
+        {
+        public:
+            LeftDivider();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        /*
+         4277
+         <xs:element name="right-divider" type="empty-print-object-style-align"/>
+         <xs:complexType name="empty-print-object-style-align">
+         <xs:annotation>
+         <xs:documentation>The empty-print-style-align-object type represents an empty element with print-object and print-style-align attribute groups.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-object"/>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        class RightDivider : public ElementInterface
+        {
+        public:
+            RightDivider();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        private:
+            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        };
+        
+        struct EmptyPlacementAttributes;
+        using EmptyPlacementAttributesPtr = std::shared_ptr<EmptyPlacementAttributes>;
+        
+        struct EmptyPlacementAttributes : public AttributesInterface
+        {
+        public:
+            EmptyPlacementAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+        };
+        
+        /*
+         4384
+         <xs:element name="accent" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The accent element indicates a regular horizontal accent mark.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Accent : public ElementInterface
+        {
+        public:
+            Accent();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4394
+         <xs:element name="staccato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The staccato element is used for a dot articulation, as opposed to a stroke or a wedge.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Staccato : public ElementInterface
+        {
+        public:
+            Staccato();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4399
+         <xs:element name="tenuto" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The tenuto element indicates a tenuto line symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Tenuto : public ElementInterface
+        {
+        public:
+            Tenuto();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4404
+         <xs:element name="detached-legato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The detached-legato element indicates the combination of a tenuto line and staccato dot symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class DetachedLegato : public ElementInterface
+        {
+        public:
+            DetachedLegato();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4409
+         <xs:element name="staccatissimo" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The staccatissimo element is used for a wedge articulation, as opposed to a dot or a stroke.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Staccatissimo : public ElementInterface
+        {
+        public:
+            Staccatissimo();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4414
+         <xs:element name="spiccato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The spiccato element is used for a stroke articulation, as opposed to a dot or a wedge.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Spiccato : public ElementInterface
+        {
+        public:
+            Spiccato();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        struct EmptyLineAttributes;
+        using EmptyLineAttributesPtr = std::shared_ptr<EmptyLineAttributes>;
+        
+        struct EmptyLineAttributes : public AttributesInterface
+        {
+        public:
+            EmptyLineAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            bool hasDashLength;
+            bool hasSpaceLength;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+        };
+        
+        /*
+         4419
+         <xs:element name="scoop" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The scoop element is an indeterminate slide attached to a single note. The scoop element appears before the main note and comes from below the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-line">
+         <xs:annotation>
+         <xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="line-shape"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Scoop : public ElementInterface
+        {
+        public:
+            Scoop();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyLineAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyLineAttributesPtr& attributes );
+        private:
+            EmptyLineAttributesPtr myAttributes;
+        };
+        
+        /*
+         4424
+         <xs:element name="plop" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The plop element is an indeterminate slide attached to a single note. The plop element appears before the main note and comes from above the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-line">
+         <xs:annotation>
+         <xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="line-shape"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Plop : public ElementInterface
+        {
+        public:
+            Plop();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyLineAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyLineAttributesPtr& attributes );
+        private:
+            EmptyLineAttributesPtr myAttributes;
+        };
+        
+        /*
+         4429
+         <xs:element name="doit" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The doit element is an indeterminate slide attached to a single note. The doit element appears after the main note and goes above the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-line">
+         <xs:annotation>
+         <xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="line-shape"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Doit : public ElementInterface
+        {
+        public:
+            Doit();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyLineAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyLineAttributesPtr& attributes );
+        private:
+            EmptyLineAttributesPtr myAttributes;
+        };
+        
+        /*
+         4434
+         <xs:element name="falloff" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The falloff element is an indeterminate slide attached to a single note. The falloff element appears before the main note and goes below the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-line">
+         <xs:annotation>
+         <xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="line-shape"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Falloff : public ElementInterface
+        {
+        public:
+            Falloff();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyLineAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyLineAttributesPtr& attributes );
+        private:
+            EmptyLineAttributesPtr myAttributes;
+        };
+        
+        /*
+         4442
+         <xs:element name="caesura" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The caesura element indicates a slight pause. It is notated using a "railroad tracks" symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Caesura : public ElementInterface
+        {
+        public:
+            Caesura();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4447
+         <xs:element name="stress" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The stress element indicates a stressed note.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Stress : public ElementInterface
+        {
+        public:
+            Stress();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         4452
+         <xs:element name="unstress" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The unstress element indicates an unstressed note. It is often notated using a u-shaped symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Unstress : public ElementInterface
+        {
+        public:
+            Unstress();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5005
+         <xs:element name="dot" type="empty-placement" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>One dot element is used for each dot of prolongation. The placement element is used to specify whether the dot should appear above or below the staff line. It is ignored for notes that appear on a staff space.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Dot : public ElementInterface
+        {
+        public:
+            Dot();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        struct EmptyTrillSoundAttributes;
+        using EmptyTrillSoundAttributesPtr = std::shared_ptr<EmptyTrillSoundAttributes>;
+        
+        struct EmptyTrillSoundAttributes : public AttributesInterface
+        {
+        public:
+            EmptyTrillSoundAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            types::StartNote startNote;
+            types::TrillStep trillStep;
+            types::TwoNoteTurn twoNoteTurn;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent secondBeat;
+            types::Percent lastBeat;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+            bool hasStartNote;
+            bool hasTrillStep;
+            bool hasTwoNoteTurn;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasSecondBeat;
+            bool hasLastBeat;
+        };
+        
+        /*
+         5128
+         <xs:element name="trill-mark" type="empty-trill-sound">
+         <xs:annotation>
+         <xs:documentation>The trill-mark element represents the trill-mark symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-trill-sound">
+         <xs:annotation>
+         <xs:documentation>The empty-trill-sound type represents an empty element with print-style, placement, and trill-sound attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         </xs:complexType>
+         */
+        class TrillMark : public ElementInterface
+        {
+        public:
+            TrillMark();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyTrillSoundAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyTrillSoundAttributesPtr& attributes );
+        private:
+            EmptyTrillSoundAttributesPtr myAttributes;
+        };
+        
+        /*
+         5153
+         <xs:element name="vertical-turn" type="empty-trill-sound">
+         <xs:annotation>
+         <xs:documentation>The vertical-turn element has the turn symbol shape arranged vertically going from upper left to lower right.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-trill-sound">
+         <xs:annotation>
+         <xs:documentation>The empty-trill-sound type represents an empty element with print-style, placement, and trill-sound attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         </xs:complexType>
+         */
+        class VerticalTurn : public ElementInterface
+        {
+        public:
+            VerticalTurn();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyTrillSoundAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyTrillSoundAttributesPtr& attributes );
+        private:
+            EmptyTrillSoundAttributesPtr myAttributes;
+        };
+        
+        /*
+         5158
+         <xs:element name="shake" type="empty-trill-sound">
+         <xs:annotation>
+         <xs:documentation>The shake element has a similar appearance to an inverted-mordent element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-trill-sound">
+         <xs:annotation>
+         <xs:documentation>The empty-trill-sound type represents an empty element with print-style, placement, and trill-sound attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         </xs:complexType>
+         */
+        class Shake : public ElementInterface
+        {
+        public:
+            Shake();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyTrillSoundAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyTrillSoundAttributesPtr& attributes );
+        private:
+            EmptyTrillSoundAttributesPtr myAttributes;
+        };
+        
+        /*
+         5176
+         <xs:element name="schleifer" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The name for this ornament is based on the German, to avoid confusion with the more common slide element defined earlier.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Schleifer : public ElementInterface
+        {
+        public:
+            Schleifer();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5339
+         <xs:element name="up-bow" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The up-bow element represents the symbol that is used both for up-bowing on bowed instruments, and up-stroke on plucked instruments.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class UpBow : public ElementInterface
+        {
+        public:
+            UpBow();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5344
+         <xs:element name="down-bow" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The down-bow element represents the symbol that is used both for down-bowing on bowed instruments, and down-stroke on plucked instruments.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class DownBow : public ElementInterface
+        {
+        public:
+            DownBow();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5352
+         <xs:element name="open-string" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The open-string element represents the zero-shaped open string symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class OpenString : public ElementInterface
+        {
+        public:
+            OpenString();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5357
+         <xs:element name="thumb-position" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The thumb-position element represents the thumb position symbol. This is a circle with a line, where the line does not come within the circle. It is distinct from the snap pizzicato symbol, where the line comes inside the circle.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class ThumbPosition : public ElementInterface
+        {
+        public:
+            ThumbPosition();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5370
+         <xs:element name="double-tongue" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The double-tongue element represents the double tongue symbol (two dots arranged horizontally).</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class DoubleTongue : public ElementInterface
+        {
+        public:
+            DoubleTongue();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5375
+         <xs:element name="triple-tongue" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The triple-tongue element represents the triple tongue symbol (three dots arranged horizontally).</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class TripleTongue : public ElementInterface
+        {
+        public:
+            TripleTongue();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5380
+         <xs:element name="stopped" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The stopped element represents the stopped symbol, which looks like a plus sign.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Stopped : public ElementInterface
+        {
+        public:
+            Stopped();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5385
+         <xs:element name="snap-pizzicato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The snap-pizzicato element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the thumb-position symbol, where the line does not come inside the circle.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class SnapPizzicato : public ElementInterface
+        {
+        public:
+            SnapPizzicato();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        /*
+         5416
+         <xs:element name="fingernails" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The fingernails element is used in notation for harp and other plucked string instruments.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         */
+        class Fingernails : public ElementInterface
+        {
+        public:
+            Fingernails();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyPlacementAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyPlacementAttributesPtr& attributes );
+        private:
+            EmptyPlacementAttributesPtr myAttributes;
+        };
+        
+        struct EmptyFontAttributes;
+        using EmptyFontAttributesPtr = std::shared_ptr<EmptyFontAttributes>;
+        
+        struct EmptyFontAttributes : public AttributesInterface
+        {
+        public:
+            EmptyFontAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+        };
+        
+        /*
+         5714
+         <xs:element name="music-font" type="empty-font" minOccurs="0"/>
+         <xs:complexType name="empty-font">
+         <xs:annotation>
+         <xs:documentation>The empty-font type represents an empty element with font attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="font"/>
+         </xs:complexType>
+         */
+        class MusicFont : public ElementInterface
+        {
+        public:
+            MusicFont();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyFontAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyFontAttributesPtr& attributes );
+        private:
+            EmptyFontAttributesPtr myAttributes;
+        };
+        
+        /*
+         5718
+         <xs:element name="word-font" type="empty-font" minOccurs="0"/>
+         <xs:complexType name="empty-font">
+         <xs:annotation>
+         <xs:documentation>The empty-font type represents an empty element with font attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="font"/>
+         </xs:complexType>
+         */
+        class WordFont : public ElementInterface
+        {
+        public:
+            WordFont();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            EmptyFontAttributesPtr getAttributes() const;
+            void setAttributes( const EmptyFontAttributesPtr& attributes );
+        private:
+            EmptyFontAttributesPtr myAttributes;
+        };
+        
+
     }
 }

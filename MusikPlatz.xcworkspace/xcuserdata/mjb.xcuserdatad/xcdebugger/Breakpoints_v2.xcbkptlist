@@ -634,7 +634,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go/Go/goCreateEmptyElementsWithAttributes.h"
-            timestampString = "448065738.598158"
+            timestampString = "448089077.65876"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "goCreateEmptyElementsWithAttributes()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Go/Go/goCreateEmptyElementsWithAttributes.h"
+            timestampString = "448089077.65876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -650,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go/Go/goCreateEmptyElementsWithAttributes.h"
-            timestampString = "448065738.598158"
+            timestampString = "448089077.65876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -666,12 +682,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go/Go/goCreateEmptyElementsWithAttributes.h"
-            timestampString = "448065738.598158"
+            timestampString = "448089077.65876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "goCreateEmptyElementsWithAttributes()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "goIsEmptyElementWithAttributes( const xsd::MsItemElementPtr&amp; e )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,13 +697,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Go/Go/goCreateEmptyElementsWithAttributes.h"
-            timestampString = "448065738.598158"
+            filePath = "Xsd/codegenEmptyElementWithAttributesH.h"
+            timestampString = "448089114.303108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "goIsEmptyElementWithAttributes( const xsd::MsItemElementPtr&amp; e )"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "codegenEmptyElementWithAttributesH( std::ostream&amp; h, const std::string&amp; attStructName, const MsItemElementPtr&amp; e )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
