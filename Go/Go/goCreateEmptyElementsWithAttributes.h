@@ -187,6 +187,7 @@ namespace go
             f.writeToDisk();
             cout << test.str() << endl;
             test.str("");
+            // setIsImplemented( current->getXpItem() );
         }
         // cout << h.str() << endl;
         cout << test.str() << endl;
