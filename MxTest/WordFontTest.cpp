@@ -23,6 +23,10 @@ TEST( Test01, WordFont )
 	EmptyFontAttributesPtr attributes1 = std::make_shared<EmptyFontAttributes>();
 	EmptyFontAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasFontStyle = true;
+    attributes1->hasFontWeight = true;
+    attributes1->fontStyle = FontStyle::italic;
+    attributes1->fontWeight = FontWeight::bold;
 
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */

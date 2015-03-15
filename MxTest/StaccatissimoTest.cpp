@@ -28,6 +28,12 @@ TEST( Test01, Staccatissimo )
 	EmptyPlacementAttributesPtr attributes1 = std::make_shared<EmptyPlacementAttributes>();
 	EmptyPlacementAttributesPtr attributesNull;
 	/* set some attribute1 values here */
+    attributes1->hasDefaultX = true;
+    attributes1->hasFontStyle = true;
+    attributes1->hasFontWeight = true;
+    attributes1->defaultX = TenthsValue{ 0.1 };
+    attributes1->fontStyle = FontStyle::italic;
+    attributes1->fontWeight = FontWeight::bold;
 
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
