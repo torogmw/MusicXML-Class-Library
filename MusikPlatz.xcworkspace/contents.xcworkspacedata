@@ -2,19 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MxTest/MxTest.xcodeproj">
+      location = "group:CppUnitLite/CppUnitLite.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Mx/Mx.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:File/File.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:globals.h">
-   </FileRef>
-   <FileRef
-      location = "group:Go/Go.xcodeproj">
+      location = "group:Db/Db.xcodeproj">
    </FileRef>
    <Group
       location = "container:"
@@ -24,10 +15,19 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:CppUnitLite/CppUnitLite.xcodeproj">
+      location = "group:File/File.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Db/Db.xcodeproj">
+      location = "group:globals.h">
+   </FileRef>
+   <FileRef
+      location = "group:Go/Go.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Mx/Mx.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MxTest/MxTest.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Xsd/Xsd.xcodeproj">

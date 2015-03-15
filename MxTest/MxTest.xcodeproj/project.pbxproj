@@ -553,43 +553,35 @@
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
-				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
-				2935A6F61AB5FC3B002859CA /* CaesuraTest.cpp */,
-				2935A6F71AB5FC3B002859CA /* CodaTest.cpp */,
-				2935A6F81AB5FC3B002859CA /* DampAllTest.cpp */,
-				2935A6F91AB5FC3B002859CA /* DampTest.cpp */,
-				2935A6FA1AB5FC3B002859CA /* DetachedLegatoTest.cpp */,
-				2935A6FB1AB5FC3B002859CA /* DoitTest.cpp */,
-				2935A6FC1AB5FC3B002859CA /* DotTest.cpp */,
-				2935A6FD1AB5FC3B002859CA /* DoubleTongueTest.cpp */,
-				2935A6FE1AB5FC3B002859CA /* DownBowTest.cpp */,
-				2935A6FF1AB5FC3B002859CA /* EyeglassesTest.cpp */,
-				2935A7001AB5FC3B002859CA /* FalloffTest.cpp */,
-				2935A7011AB5FC3B002859CA /* FingernailsTest.cpp */,
-				2935A7021AB5FC3B002859CA /* LeftDividerTest.cpp */,
-				2935A7031AB5FC3B002859CA /* MusicFontTest.cpp */,
-				2935A7041AB5FC3B002859CA /* OpenStringTest.cpp */,
-				2935A7051AB5FC3B002859CA /* PlopTest.cpp */,
-				2935A7061AB5FC3B002859CA /* RightDividerTest.cpp */,
-				2935A7071AB5FC3B002859CA /* SchleiferTest.cpp */,
-				2935A7081AB5FC3B002859CA /* ScoopTest.cpp */,
-				2935A7091AB5FC3B002859CA /* SegnoTest.cpp */,
-				2935A70A1AB5FC3B002859CA /* ShakeTest.cpp */,
-				2935A70B1AB5FC3B002859CA /* SnapPizzicatoTest.cpp */,
-				2935A70C1AB5FC3B002859CA /* SpiccatoTest.cpp */,
-				2935A70D1AB5FC3B002859CA /* StaccatissimoTest.cpp */,
-				2935A70E1AB5FC3B002859CA /* StaccatoTest.cpp */,
-				2935A70F1AB5FC3B002859CA /* StoppedTest.cpp */,
-				2935A7101AB5FC3B002859CA /* StressTest.cpp */,
-				2935A7111AB5FC3B002859CA /* TenutoTest.cpp */,
-				2935A7121AB5FC3B002859CA /* ThumbPositionTest.cpp */,
-				2935A7131AB5FC3B002859CA /* TrillMarkTest.cpp */,
-				2935A7141AB5FC3B002859CA /* TripleTongueTest.cpp */,
-				2935A7151AB5FC3B002859CA /* UnstressTest.cpp */,
-				2935A7161AB5FC3B002859CA /* UpBowTest.cpp */,
-				2935A7171AB5FC3B002859CA /* VerticalTurnTest.cpp */,
-				2935A7181AB5FC3B002859CA /* WordFontTest.cpp */,
+				29F8F0A01AB62EE300788785 /* Links */,
+				298B45EB1A9B942A0014CAED /* Main */,
+				298B45EA1A9B942A0014CAED /* Products */,
+				29F8F09F1AB62E9200788785 /* Tests */,
+			);
+			sourceTree = "<group>";
+		};
+		298B45EA1A9B942A0014CAED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				298B45E91A9B942A0014CAED /* MxTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		298B45EB1A9B942A0014CAED /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				298B45EC1A9B942A0014CAED /* main.cpp */,
+			);
+			name = Main;
+			path = MxTest;
+			sourceTree = "<group>";
+		};
+		29F8F09F1AB62E9200788785 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
 				29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */,
 				29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */,
 				297597E11AACF9930055E101 /* AccidentalTextTest.cpp */,
@@ -614,29 +606,38 @@
 				297749731AB21FA000BF2205 /* BendAlterTest.cpp */,
 				297749741AB21FA000BF2205 /* BottomMarginTest.cpp */,
 				29C0B96B1AAE9209004F86FA /* BreathMarkTest.cpp */,
+				2935A6F61AB5FC3B002859CA /* CaesuraTest.cpp */,
 				29C0B9721AAE9337004F86FA /* CancelTest.cpp */,
 				297749751AB21FA000BF2205 /* CapoTest.cpp */,
 				29CEB4881AB4C0F900D6AEFC /* ChordTest.cpp */,
 				297749761AB21FA000BF2205 /* ChromaticTest.cpp */,
 				297749771AB21FA000BF2205 /* CircularArrowTest.cpp */,
 				297749781AB21FA000BF2205 /* ClefOctaveChangeTest.cpp */,
+				2935A6F71AB5FC3B002859CA /* CodaTest.cpp */,
 				29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */,
 				29C0B9731AAE9337004F86FA /* CreatorTest.cpp */,
 				297749791AB21FA000BF2205 /* CreditTypeTest.cpp */,
 				29C0B9741AAE9337004F86FA /* CreditWordsTest.cpp */,
 				29CEB4891AB4C0F900D6AEFC /* CueTest.cpp */,
+				2935A6F81AB5FC3B002859CA /* DampAllTest.cpp */,
+				2935A6F91AB5FC3B002859CA /* DampTest.cpp */,
 				292D12761AA2A7260079EF22 /* DateTest.cpp */,
 				29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */,
 				29C0B9751AAE9337004F86FA /* DegreeAlterTest.cpp */,
 				29C0B9761AAE9337004F86FA /* DegreeTypeTest.cpp */,
 				29C0B9771AAE9337004F86FA /* DegreeValueTest.cpp */,
+				2935A6FA1AB5FC3B002859CA /* DetachedLegatoTest.cpp */,
 				2977497A1AB21FA000BF2205 /* DiatonicTest.cpp */,
 				2977497B1AB21FA000BF2205 /* DisplayOctaveTest.cpp */,
 				2977497C1AB21FA000BF2205 /* DisplayStepTest.cpp */,
 				29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */,
 				29C0B9781AAE9337004F86FA /* DistanceTest.cpp */,
 				2977497D1AB21FA000BF2205 /* DivisionsTest.cpp */,
+				2935A6FB1AB5FC3B002859CA /* DoitTest.cpp */,
+				2935A6FC1AB5FC3B002859CA /* DotTest.cpp */,
 				29CEB48A1AB4C0F900D6AEFC /* DoubleTest.cpp */,
+				2935A6FD1AB5FC3B002859CA /* DoubleTongueTest.cpp */,
+				2935A6FE1AB5FC3B002859CA /* DownBowTest.cpp */,
 				2977497E1AB21FA000BF2205 /* DurationTest.cpp */,
 				295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */,
 				2977497F1AB21FA000BF2205 /* EffectTest.cpp */,
@@ -650,11 +651,14 @@
 				29CEB48C1AB4C0FA00D6AEFC /* EndParagraphTest.cpp */,
 				297749831AB21FA000BF2205 /* EnsembleTest.cpp */,
 				29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */,
+				2935A6FF1AB5FC3B002859CA /* EyeglassesTest.cpp */,
+				2935A7001AB5FC3B002859CA /* FalloffTest.cpp */,
 				29C0B9831AAE9398004F86FA /* FeatureTest.cpp */,
 				29C0B9841AAE9398004F86FA /* FermataTest.cpp */,
 				297749841AB21FA000BF2205 /* FifthsTest.cpp */,
 				29C0B9851AAE9398004F86FA /* FigureNumberTest.cpp */,
 				29C0B9861AAE9398004F86FA /* FingeringTest.cpp */,
+				2935A7011AB5FC3B002859CA /* FingernailsTest.cpp */,
 				29C0B9871AAE9398004F86FA /* FirstFretTest.cpp */,
 				2939CD411AA2999500556D00 /* FontSizeTest.cpp */,
 				29C0B9881AAE9398004F86FA /* FootnoteTest.cpp */,
@@ -689,10 +693,9 @@
 				297749921AB21FA000BF2205 /* KeyStepTest.cpp */,
 				29C0B9951AAE9398004F86FA /* KindTest.cpp */,
 				29CEB48F1AB4C0FA00D6AEFC /* LaughingTest.cpp */,
+				2935A7021AB5FC3B002859CA /* LeftDividerTest.cpp */,
 				297749931AB21FA000BF2205 /* LeftMarginTest.cpp */,
 				29C0B9961AAE9398004F86FA /* LevelTest.cpp */,
-				298B45FC1A9B94910014CAED /* libCppUnitLite.a */,
-				298B45FA1A9B948E0014CAED /* libMx.a */,
 				297749941AB21FA000BF2205 /* LineTest.cpp */,
 				29C0B9971AAE9398004F86FA /* LineWidthTest.cpp */,
 				297749951AB21FA000BF2205 /* MeasureDistanceTest.cpp */,
@@ -716,8 +719,8 @@
 				297749A11AB21FA000BF2205 /* MovementNumberTest.cpp */,
 				297749A21AB21FA000BF2205 /* MovementTitleTest.cpp */,
 				29C0B99D1AAE9398004F86FA /* MultipleRestTest.cpp */,
+				2935A7031AB5FC3B002859CA /* MusicFontTest.cpp */,
 				297749A31AB21FA000BF2205 /* MuteTest.cpp */,
-				298B45EB1A9B942A0014CAED /* MxTest */,
 				29CEB4911AB4C0FA00D6AEFC /* NaturalTest.cpp */,
 				29CEB4921AB4C0FA00D6AEFC /* NormalDotTest.cpp */,
 				297749A41AB21FA000BF2205 /* NormalNotesTest.cpp */,
@@ -728,6 +731,7 @@
 				297749A61AB21FA000BF2205 /* OctaveChangeTest.cpp */,
 				297749A71AB21FA000BF2205 /* OctaveTest.cpp */,
 				29C0B9A01AAE9398004F86FA /* OffsetTest.cpp */,
+				2935A7041AB5FC3B002859CA /* OpenStringTest.cpp */,
 				29C0B9A11AAE9398004F86FA /* OtherAppearanceTest.cpp */,
 				29C0B9A21AAE9398004F86FA /* OtherArticulationTest.cpp */,
 				29C0B9A31AAE9398004F86FA /* OtherDirectionTest.cpp */,
@@ -746,30 +750,39 @@
 				297749AD1AB21FA000BF2205 /* PedalStepTest.cpp */,
 				29C0B9AB1AAE9398004F86FA /* PerMinuteTest.cpp */,
 				297749AE1AB21FA000BF2205 /* PitchedTest.cpp */,
+				2935A7051AB5FC3B002859CA /* PlopTest.cpp */,
 				29C0B9AC1AAE9398004F86FA /* PluckTest.cpp */,
 				290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */,
 				29CEB4931AB4C0FA00D6AEFC /* PreBendTest.cpp */,
 				29C0B9AD1AAE9398004F86FA /* PrefixTest.cpp */,
 				29C0B9AE1AAE9398004F86FA /* PrincipalVoiceTest.cpp */,
-				298B45EA1A9B942A0014CAED /* Products */,
 				29C0B9AF1AAE9398004F86FA /* PullOffTest.cpp */,
 				29C0B9B01AAE9398004F86FA /* RehearsalTest.cpp */,
 				29C0B9B11AAE9398004F86FA /* RelationTest.cpp */,
 				29CEB4941AB4C0FA00D6AEFC /* ReleaseTest.cpp */,
+				2935A7061AB5FC3B002859CA /* RightDividerTest.cpp */,
 				297749AF1AB21FA000BF2205 /* RightMarginTest.cpp */,
 				29C0B9B21AAE9398004F86FA /* RightsTest.cpp */,
 				29C0B9B31AAE9398004F86FA /* RootAlterTest.cpp */,
 				29C0B9B41AAE9398004F86FA /* RootStepTest.cpp */,
+				2935A7071AB5FC3B002859CA /* SchleiferTest.cpp */,
+				2935A7081AB5FC3B002859CA /* ScoopTest.cpp */,
+				2935A7091AB5FC3B002859CA /* SegnoTest.cpp */,
 				297749B01AB21FA000BF2205 /* SemiPitchedTest.cpp */,
 				297749B11AB21FA000BF2205 /* SenzaMisuraTest.cpp */,
+				2935A70A1AB5FC3B002859CA /* ShakeTest.cpp */,
 				297749B21AB21FA000BF2205 /* SignTest.cpp */,
 				29CEB4951AB4C0FA00D6AEFC /* SlashDotTest.cpp */,
 				297749B31AB21FA000BF2205 /* SlashTypeTest.cpp */,
 				29C0B9B51AAE9398004F86FA /* SlideTest.cpp */,
+				2935A70B1AB5FC3B002859CA /* SnapPizzicatoTest.cpp */,
 				297749B41AB21FA000BF2205 /* SoftwareTest.cpp */,
 				29CEB4961AB4C0FA00D6AEFC /* SoloTest.cpp */,
 				29CEB4971AB4C0FA00D6AEFC /* SoundingPitchTest.cpp */,
 				297749B51AB21FA000BF2205 /* SourceTest.cpp */,
+				2935A70C1AB5FC3B002859CA /* SpiccatoTest.cpp */,
+				2935A70D1AB5FC3B002859CA /* StaccatissimoTest.cpp */,
+				2935A70E1AB5FC3B002859CA /* StaccatoTest.cpp */,
 				297749B61AB21FA000BF2205 /* StaffDistanceTest.cpp */,
 				297749B71AB21FA000BF2205 /* StaffLinesTest.cpp */,
 				297749B81AB21FA000BF2205 /* StaffSizeTest.cpp */,
@@ -781,52 +794,56 @@
 				297749BD1AB21FA000BF2205 /* StickLocationTest.cpp */,
 				297749BE1AB21FA000BF2205 /* StickMaterialTest.cpp */,
 				297749BF1AB21FA000BF2205 /* StickTypeTest.cpp */,
+				2935A70F1AB5FC3B002859CA /* StoppedTest.cpp */,
+				2935A7101AB5FC3B002859CA /* StressTest.cpp */,
 				29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */,
 				29C0B9B71AAE9398004F86FA /* SuffixTest.cpp */,
 				297749C01AB21FA000BF2205 /* SyllabicTest.cpp */,
 				297749C11AB21FA000BF2205 /* SystemDistanceTest.cpp */,
 				29C0B9B81AAE9398004F86FA /* TapTest.cpp */,
 				297749C21AB21FA000BF2205 /* TenthsTest.cpp */,
+				2935A7111AB5FC3B002859CA /* TenutoTest.cpp */,
 				29C0B9B91AAE9398004F86FA /* TextTest.cpp */,
+				2935A7121AB5FC3B002859CA /* ThumbPositionTest.cpp */,
 				297749C31AB21FA000BF2205 /* TimeRelationTest.cpp */,
 				29CEB4981AB4C0FA00D6AEFC /* TimpaniTest.cpp */,
 				297749C41AB21FA000BF2205 /* TopMarginTest.cpp */,
 				297749C51AB21FA000BF2205 /* TopSystemDistanceTest.cpp */,
 				29CEB4991AB4C0FA00D6AEFC /* TouchingPitchTest.cpp */,
 				29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */,
+				2935A7131AB5FC3B002859CA /* TrillMarkTest.cpp */,
+				2935A7141AB5FC3B002859CA /* TripleTongueTest.cpp */,
 				297749C61AB21FA000BF2205 /* TuningAlterTest.cpp */,
 				297749C71AB21FA000BF2205 /* TuningOctaveTest.cpp */,
 				297749C81AB21FA000BF2205 /* TuningStepTest.cpp */,
 				29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */,
 				29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */,
 				29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */,
+				2935A7151AB5FC3B002859CA /* UnstressTest.cpp */,
+				2935A7161AB5FC3B002859CA /* UpBowTest.cpp */,
+				2935A7171AB5FC3B002859CA /* VerticalTurnTest.cpp */,
 				297749C91AB21FA000BF2205 /* VirtualLibraryTest.cpp */,
 				297749CA1AB21FA000BF2205 /* VirtualNameTest.cpp */,
 				297749CB1AB21FA000BF2205 /* VoiceTest.cpp */,
 				297749CC1AB21FA000BF2205 /* VolumeTest.cpp */,
 				29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */,
 				297749CD1AB21FA000BF2205 /* WoodTest.cpp */,
+				2935A7181AB5FC3B002859CA /* WordFontTest.cpp */,
 				29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */,
 				297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */,
 				297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */,
 				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
 			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
-		298B45EA1A9B942A0014CAED /* Products */ = {
+		29F8F0A01AB62EE300788785 /* Links */ = {
 			isa = PBXGroup;
 			children = (
-				298B45E91A9B942A0014CAED /* MxTest */,
+				298B45FC1A9B94910014CAED /* libCppUnitLite.a */,
+				298B45FA1A9B948E0014CAED /* libMx.a */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		298B45EB1A9B942A0014CAED /* MxTest */ = {
-			isa = PBXGroup;
-			children = (
-				298B45EC1A9B942A0014CAED /* main.cpp */,
-			);
-			path = MxTest;
+			name = Links;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
