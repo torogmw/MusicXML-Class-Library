@@ -67,4 +67,8 @@ namespace xsd
     void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );
     void findSubElementsRecursively( const MsItemPtr& e, MsItemSet& output, const int topElementID );
     MsItemElementSet findSubElements( const MsItemPtr& i );
+    
+    class MsItemWeb;
+    using MsItemWebPtr = std::shared_ptr<MsItemWeb>;
+    MsItemElementSet findUnimplementedElements( const MsItemWebPtr& web );
 }

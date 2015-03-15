@@ -52,6 +52,7 @@
 		29E6D3E01A8C139E00C8B8E2 /* libDb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E6D3DF1A8C139E00C8B8E2 /* libDb.a */; };
 		29E6D3E71A8C25DE00C8B8E2 /* MsItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */; };
 		29E6D3E81A8C25DE00C8B8E2 /* MsItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */; };
+		29F8F0A41AB6324400788785 /* MsItemElement_findUnimplementedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F8F0A21AB6324400788785 /* MsItemElement_findUnimplementedElements.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		29E6D3DF1A8C139E00C8B8E2 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
 		29E6D3E51A8C25DE00C8B8E2 /* MsItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItem.cpp; sourceTree = "<group>"; };
 		29E6D3E61A8C25DE00C8B8E2 /* MsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItem.h; sourceTree = "<group>"; };
+		29F8F0A21AB6324400788785 /* MsItemElement_findUnimplementedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemElement_findUnimplementedElements.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				290D7C161AA397950081FBB5 /* MsItemAttribute.h */,
 				29200EB71AA43582000E3E37 /* MsItemElement.cpp */,
 				29200EB81AA43582000E3E37 /* MsItemElement.h */,
+				29F8F0A21AB6324400788785 /* MsItemElement_findUnimplementedElements.cpp */,
 				298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */,
 				298B475D1A9B9D000014CAED /* MsItemEnumValue.h */,
 				29AAB9391A888AF30027B7A1 /* MsItemKind.h */,
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D10B951A9BCCBE00F03CE6 /* enumsH.cpp in Sources */,
+				29F8F0A41AB6324400788785 /* MsItemElement_findUnimplementedElements.cpp in Sources */,
 				29CA12651A9C3FCC008DCCFA /* setIsImplemented.cpp in Sources */,
 				29546F051A9AA95D008C1E0E /* MsItemSimpleType.cpp in Sources */,
 				29E6D3D11A8BFDBA00C8B8E2 /* XpItem.cpp in Sources */,

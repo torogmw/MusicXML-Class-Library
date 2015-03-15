@@ -56,6 +56,7 @@
 		29E6D3E21A8C18EF00C8B8E2 /* goMsDocumentExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsDocumentExample.h; sourceTree = "<group>"; };
 		29E6D3E91A8C352700C8B8E2 /* goMsItemTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemTest.h; sourceTree = "<group>"; };
 		29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goSetIsImplemented.h; sourceTree = "<group>"; };
+		29F8F0A11AB6308B00788785 /* goListNonImplementedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goListNonImplementedElements.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +112,7 @@
 				29C628331AB3F5BC00BACA96 /* goRxAddHasContentsCpp.h */,
 				29CEB47B1AB4ABB100D6AEFC /* goCreateEmptyElements.h */,
 				29CEB4B11AB4E2BB00D6AEFC /* goCreateEmptyElementsWithAttributes.h */,
+				29F8F0A11AB6308B00788785 /* goListNonImplementedElements.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";
