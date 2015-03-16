@@ -15498,8 +15498,2893 @@ namespace mx
             }
         }
         
-        
+        /****************************************************************************
+         MORE Empty Elements with Attributes
+         ****************************************************************************/
 
+        /**************** WavyLineAttributes ****************/
+        /* 3026 */
+        WavyLineAttributes::WavyLineAttributes()
+        :type()
+        ,number()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep()
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        {}
+        
+        bool WavyLineAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat;
+        }
+        
+        std::ostream& WavyLineAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** WavyLine ****************/
+        /* 3026 */
+        WavyLine::WavyLine()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<WavyLineAttributes>() )
+        {}
+        bool WavyLine::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool WavyLine::hasContents() const  { return false; }
+        std::ostream& WavyLine::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& WavyLine::streamName( std::ostream& os ) const  { os << "wavy-line"; return os; }
+        std::ostream& WavyLine::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        WavyLineAttributesPtr WavyLine::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void WavyLine::setAttributes( const WavyLineAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** RepeatAttributes ****************/
+        /* 3047 */
+        RepeatAttributes::RepeatAttributes()
+        :direction()
+        ,times()
+        ,winged()
+        ,hasDirection( true )
+        ,hasTimes( false )
+        ,hasWinged( false )
+        {}
+        
+        bool RepeatAttributes::hasValues() const
+        {
+            return hasDirection ||
+            hasTimes ||
+            hasWinged;
+        }
+        
+        std::ostream& RepeatAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, direction, "direction", hasDirection );
+                streamAttribute( os, times, "times", hasTimes );
+                streamAttribute( os, winged, "winged", hasWinged );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Repeat ****************/
+        /* 3047 */
+        Repeat::Repeat()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<RepeatAttributes>() )
+        {}
+        bool Repeat::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Repeat::hasContents() const  { return false; }
+        std::ostream& Repeat::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Repeat::streamName( std::ostream& os ) const  { os << "repeat"; return os; }
+        std::ostream& Repeat::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        RepeatAttributesPtr Repeat::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Repeat::setAttributes( const RepeatAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** WedgeAttributes ****************/
+        /* 3351 */
+        WedgeAttributes::WedgeAttributes()
+        :type()
+        ,number()
+        ,spread()
+        ,niente( types::YesNo::no )
+        ,dashLength()
+        ,spaceLength()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasSpread( false )
+        ,hasNiente( false )
+        ,hasDashLength( false )
+        ,hasSpaceLength( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        {}
+        
+        bool WedgeAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasSpread ||
+            hasNiente ||
+            hasDashLength ||
+            hasSpaceLength ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY;
+        }
+        
+        std::ostream& WedgeAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, spread, "spread", hasSpread );
+                streamAttribute( os, niente, "niente", hasNiente );
+                streamAttribute( os, dashLength, "dash-length", hasDashLength );
+                streamAttribute( os, spaceLength, "space-length", hasSpaceLength );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Wedge ****************/
+        /* 3351 */
+        Wedge::Wedge()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<WedgeAttributes>() )
+        {}
+        bool Wedge::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Wedge::hasContents() const  { return false; }
+        std::ostream& Wedge::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Wedge::streamName( std::ostream& os ) const  { os << "wedge"; return os; }
+        std::ostream& Wedge::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        WedgeAttributesPtr Wedge::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Wedge::setAttributes( const WedgeAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** DashesAttributes ****************/
+        /* 3358 */
+        DashesAttributes::DashesAttributes()
+        :type()
+        ,number()
+        ,dashLength()
+        ,spaceLength()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasDashLength( false )
+        ,hasSpaceLength( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        {}
+        
+        bool DashesAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasDashLength ||
+            hasSpaceLength ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY;
+        }
+        
+        std::ostream& DashesAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, dashLength, "dash-length", hasDashLength );
+                streamAttribute( os, spaceLength, "space-length", hasSpaceLength );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Dashes ****************/
+        /* 3358 */
+        Dashes::Dashes()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<DashesAttributes>() )
+        {}
+        bool Dashes::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Dashes::hasContents() const  { return false; }
+        std::ostream& Dashes::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Dashes::streamName( std::ostream& os ) const  { os << "dashes"; return os; }
+        std::ostream& Dashes::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        DashesAttributesPtr Dashes::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Dashes::setAttributes( const DashesAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** BracketAttributes ****************/
+        /* 3361 */
+        BracketAttributes::BracketAttributes()
+        :bracket( types::YesNo::no )
+        ,hasBracket( false )
+        {}
+        
+        bool BracketAttributes::hasValues() const
+        {
+            return hasBracket;
+        }
+        
+        std::ostream& BracketAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, bracket, "bracket", hasBracket );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Bracket ****************/
+        /* 3361 */
+        Bracket::Bracket()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<BracketAttributes>() )
+        {}
+        bool Bracket::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Bracket::hasContents() const  { return false; }
+        std::ostream& Bracket::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Bracket::streamName( std::ostream& os ) const  { os << "bracket"; return os; }
+        std::ostream& Bracket::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        BracketAttributesPtr Bracket::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Bracket::setAttributes( const BracketAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** PedalAttributes ****************/
+        /* 3364 */
+        PedalAttributes::PedalAttributes()
+        :type()
+        ,line( types::YesNo::no )
+        ,sign( types::YesNo::no )
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,halign( types::LeftCenterRight::center )
+        ,hasType( true )
+        ,hasLine( false )
+        ,hasSign( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasHalign( false )
+        {}
+        
+        bool PedalAttributes::hasValues() const
+        {
+            return hasType ||
+            hasLine ||
+            hasSign ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasHalign;
+        }
+        
+        std::ostream& PedalAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, line, "line", hasLine );
+                streamAttribute( os, sign, "sign", hasSign );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, halign, "halign", hasHalign );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Pedal ****************/
+        /* 3364 */
+        Pedal::Pedal()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<PedalAttributes>() )
+        {}
+        bool Pedal::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Pedal::hasContents() const  { return false; }
+        std::ostream& Pedal::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Pedal::streamName( std::ostream& os ) const  { os << "pedal"; return os; }
+        std::ostream& Pedal::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        PedalAttributesPtr Pedal::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Pedal::setAttributes( const PedalAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** OctaveShiftAttributes ****************/
+        /* 3370 */
+        OctaveShiftAttributes::OctaveShiftAttributes()
+        :type()
+        ,number()
+        ,size( 8 )
+        ,dashLength()
+        ,spaceLength()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasSize( false )
+        ,hasDashLength( false )
+        ,hasSpaceLength( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        {}
+        
+        bool OctaveShiftAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasSize ||
+            hasDashLength ||
+            hasSpaceLength ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight;
+        }
+        
+        std::ostream& OctaveShiftAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, size, "size", hasSize );
+                streamAttribute( os, dashLength, "dash-length", hasDashLength );
+                streamAttribute( os, spaceLength, "space-length", hasSpaceLength );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** OctaveShift ****************/
+        /* 3370 */
+        OctaveShift::OctaveShift()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<OctaveShiftAttributes>() )
+        {}
+        bool OctaveShift::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool OctaveShift::hasContents() const  { return false; }
+        std::ostream& OctaveShift::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& OctaveShift::streamName( std::ostream& os ) const  { os << "octave-shift"; return os; }
+        std::ostream& OctaveShift::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        OctaveShiftAttributesPtr OctaveShift::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void OctaveShift::setAttributes( const OctaveShiftAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** StringMuteAttributes ****************/
+        /* 3391 */
+        StringMuteAttributes::StringMuteAttributes()
+        :type()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,halign( types::LeftCenterRight::center )
+        ,hasType( true )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasHalign( false )
+        {}
+        
+        bool StringMuteAttributes::hasValues() const
+        {
+            return hasType ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasHalign;
+        }
+        
+        std::ostream& StringMuteAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, halign, "halign", hasHalign );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** StringMute ****************/
+        /* 3391 */
+        StringMute::StringMute()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<StringMuteAttributes>() )
+        {}
+        bool StringMute::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool StringMute::hasContents() const  { return false; }
+        std::ostream& StringMute::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& StringMute::streamName( std::ostream& os ) const  { os << "string-mute"; return os; }
+        std::ostream& StringMute::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        StringMuteAttributesPtr StringMute::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void StringMute::setAttributes( const StringMuteAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** ImageAttributes ****************/
+        /* 3397 */
+        ImageAttributes::ImageAttributes()
+        :source()
+        ,type()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,halign( types::LeftCenterRight::center )
+        ,hasSource( true )
+        ,hasType( true )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasHalign( false )
+        {}
+        
+        bool ImageAttributes::hasValues() const
+        {
+            return hasSource ||
+            hasType ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasHalign;
+        }
+        
+        std::ostream& ImageAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, source, "source", hasSource );
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, halign, "halign", hasHalign );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Image ****************/
+        /* 3397 */
+        Image::Image()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<ImageAttributes>() )
+        {}
+        bool Image::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Image::hasContents() const  { return false; }
+        std::ostream& Image::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Image::streamName( std::ostream& os ) const  { os << "image"; return os; }
+        std::ostream& Image::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        ImageAttributesPtr Image::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Image::setAttributes( const ImageAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** BarreAttributes ****************/
+        /* 3491 */
+        BarreAttributes::BarreAttributes()
+        :type()
+        ,hasType( true )
+        {}
+        
+        bool BarreAttributes::hasValues() const
+        {
+            return hasType;
+        }
+        
+        std::ostream& BarreAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Barre ****************/
+        /* 3491 */
+        Barre::Barre()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<BarreAttributes>() )
+        {}
+        bool Barre::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Barre::hasContents() const  { return false; }
+        std::ostream& Barre::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Barre::streamName( std::ostream& os ) const  { os << "barre"; return os; }
+        std::ostream& Barre::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        BarreAttributesPtr Barre::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Barre::setAttributes( const BarreAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** SupportsAttributes ****************/
+        /* 4057 */
+        SupportsAttributes::SupportsAttributes()
+        :type( types::YesNo::no )
+        ,element()
+        ,attribute()
+        ,value()
+        ,hasType( true )
+        ,hasElement( true )
+        ,hasAttribute( false )
+        ,hasValue( false )
+        {}
+        
+        bool SupportsAttributes::hasValues() const
+        {
+            return hasType ||
+            hasElement ||
+            hasAttribute ||
+            hasValue;
+        }
+        
+        std::ostream& SupportsAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, element, "element", hasElement );
+                streamAttribute( os, attribute, "attribute", hasAttribute );
+                streamAttribute( os, value, "value", hasValue );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Supports ****************/
+        /* 4057 */
+        Supports::Supports()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<SupportsAttributes>() )
+        {}
+        bool Supports::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Supports::hasContents() const  { return false; }
+        std::ostream& Supports::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Supports::streamName( std::ostream& os ) const  { os << "supports"; return os; }
+        std::ostream& Supports::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        SupportsAttributesPtr Supports::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Supports::setAttributes( const SupportsAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** ExtendAttributes ****************/
+        /* 4599 */
+        ExtendAttributes::ExtendAttributes()
+        :type()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,hasType( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        {}
+        
+        bool ExtendAttributes::hasValues() const
+        {
+            return hasType ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight;
+        }
+        
+        std::ostream& ExtendAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Extend ****************/
+        /* 4599 */
+        Extend::Extend()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<ExtendAttributes>() )
+        {}
+        bool Extend::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Extend::hasContents() const  { return false; }
+        std::ostream& Extend::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Extend::streamName( std::ostream& os ) const  { os << "extend"; return os; }
+        std::ostream& Extend::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        ExtendAttributesPtr Extend::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Extend::setAttributes( const ExtendAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        /* skipped 4824 ExtendAttributes */
+        
+        /* skipped 4824 Extend */
+        
+        /* skipped 4828 ExtendAttributes */
+        
+        /* skipped 4828 Extend */
+        
+        
+        
+        /**************** TiedAttributes ****************/
+        /* 4914 */
+        TiedAttributes::TiedAttributes()
+        :type()
+        ,number()
+        ,dashLength()
+        ,spaceLength()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,orientation()
+        ,bezierOffset()
+        ,bezierOffset2()
+        ,bezierX()
+        ,bezierY()
+        ,bezierX2()
+        ,bezierY2()
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasDashLength( false )
+        ,hasSpaceLength( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        ,hasOrientation( false )
+        ,hasBezierOffset( false )
+        ,hasBezierOffset2( false )
+        ,hasBezierX( false )
+        ,hasBezierY( false )
+        ,hasBezierX2( false )
+        ,hasBezierY2( false )
+        {}
+        
+        bool TiedAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasDashLength ||
+            hasSpaceLength ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement ||
+            hasOrientation ||
+            hasBezierOffset ||
+            hasBezierOffset2 ||
+            hasBezierX ||
+            hasBezierY ||
+            hasBezierX2 ||
+            hasBezierY2;
+        }
+        
+        std::ostream& TiedAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, dashLength, "dash-length", hasDashLength );
+                streamAttribute( os, spaceLength, "space-length", hasSpaceLength );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, orientation, "orientation", hasOrientation );
+                streamAttribute( os, bezierOffset, "bezier-offset", hasBezierOffset );
+                streamAttribute( os, bezierOffset2, "bezier-offset2", hasBezierOffset2 );
+                streamAttribute( os, bezierX, "bezier-x", hasBezierX );
+                streamAttribute( os, bezierY, "bezier-y", hasBezierY );
+                streamAttribute( os, bezierX2, "bezier-x2", hasBezierX2 );
+                streamAttribute( os, bezierY2, "bezier-y2", hasBezierY2 );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Tied ****************/
+        /* 4914 */
+        Tied::Tied()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<TiedAttributes>() )
+        {}
+        bool Tied::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Tied::hasContents() const  { return false; }
+        std::ostream& Tied::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Tied::streamName( std::ostream& os ) const  { os << "tied"; return os; }
+        std::ostream& Tied::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        TiedAttributesPtr Tied::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Tied::setAttributes( const TiedAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** SlurAttributes ****************/
+        /* 4917 */
+        SlurAttributes::SlurAttributes()
+        :type()
+        ,number( 1 )
+        ,dashLength()
+        ,spaceLength()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,orientation()
+        ,bezierOffset()
+        ,bezierOffset2()
+        ,bezierX()
+        ,bezierY()
+        ,bezierX2()
+        ,bezierY2()
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasDashLength( false )
+        ,hasSpaceLength( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        ,hasOrientation( false )
+        ,hasBezierOffset( false )
+        ,hasBezierOffset2( false )
+        ,hasBezierX( false )
+        ,hasBezierY( false )
+        ,hasBezierX2( false )
+        ,hasBezierY2( false )
+        {}
+        
+        bool SlurAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasDashLength ||
+            hasSpaceLength ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement ||
+            hasOrientation ||
+            hasBezierOffset ||
+            hasBezierOffset2 ||
+            hasBezierX ||
+            hasBezierY ||
+            hasBezierX2 ||
+            hasBezierY2;
+        }
+        
+        std::ostream& SlurAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, dashLength, "dash-length", hasDashLength );
+                streamAttribute( os, spaceLength, "space-length", hasSpaceLength );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, orientation, "orientation", hasOrientation );
+                streamAttribute( os, bezierOffset, "bezier-offset", hasBezierOffset );
+                streamAttribute( os, bezierOffset2, "bezier-offset2", hasBezierOffset2 );
+                streamAttribute( os, bezierX, "bezier-x", hasBezierX );
+                streamAttribute( os, bezierY, "bezier-y", hasBezierY );
+                streamAttribute( os, bezierX2, "bezier-x2", hasBezierX2 );
+                streamAttribute( os, bezierY2, "bezier-y2", hasBezierY2 );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Slur ****************/
+        /* 4917 */
+        Slur::Slur()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<SlurAttributes>() )
+        {}
+        bool Slur::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Slur::hasContents() const  { return false; }
+        std::ostream& Slur::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Slur::streamName( std::ostream& os ) const  { os << "slur"; return os; }
+        std::ostream& Slur::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        SlurAttributesPtr Slur::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Slur::setAttributes( const SlurAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** ArpeggiateAttributes ****************/
+        /* 4944 */
+        ArpeggiateAttributes::ArpeggiateAttributes()
+        :number()
+        ,direction()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,hasNumber( false )
+        ,hasDirection( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool ArpeggiateAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasDirection ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement;
+        }
+        
+        std::ostream& ArpeggiateAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, direction, "direction", hasDirection );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Arpeggiate ****************/
+        /* 4944 */
+        Arpeggiate::Arpeggiate()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<ArpeggiateAttributes>() )
+        {}
+        bool Arpeggiate::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Arpeggiate::hasContents() const  { return false; }
+        std::ostream& Arpeggiate::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Arpeggiate::streamName( std::ostream& os ) const  { os << "arpeggiate"; return os; }
+        std::ostream& Arpeggiate::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        ArpeggiateAttributesPtr Arpeggiate::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Arpeggiate::setAttributes( const ArpeggiateAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** NonArpeggiateAttributes ****************/
+        /* 4947 */
+        NonArpeggiateAttributes::NonArpeggiateAttributes()
+        :type()
+        ,number()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool NonArpeggiateAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement;
+        }
+        
+        std::ostream& NonArpeggiateAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** NonArpeggiate ****************/
+        /* 4947 */
+        NonArpeggiate::NonArpeggiate()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<NonArpeggiateAttributes>() )
+        {}
+        bool NonArpeggiate::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool NonArpeggiate::hasContents() const  { return false; }
+        std::ostream& NonArpeggiate::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& NonArpeggiate::streamName( std::ostream& os ) const  { os << "non-arpeggiate"; return os; }
+        std::ostream& NonArpeggiate::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        NonArpeggiateAttributesPtr NonArpeggiate::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void NonArpeggiate::setAttributes( const NonArpeggiateAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** GraceAttributes ****************/
+        /* 4965 */
+        GraceAttributes::GraceAttributes()
+        :stealTimePrevious()
+        ,stealTimeFollowing()
+        ,makeTime()
+        ,slash( types::YesNo::no )
+        ,hasStealTimePrevious( false )
+        ,hasStealTimeFollowing( false )
+        ,hasMakeTime( false )
+        ,hasSlash( false )
+        {}
+        
+        bool GraceAttributes::hasValues() const
+        {
+            return hasStealTimePrevious ||
+            hasStealTimeFollowing ||
+            hasMakeTime ||
+            hasSlash;
+        }
+        
+        std::ostream& GraceAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, stealTimePrevious, "steal-time-previous", hasStealTimePrevious );
+                streamAttribute( os, stealTimeFollowing, "steal-time-following", hasStealTimeFollowing );
+                streamAttribute( os, makeTime, "make-time", hasMakeTime );
+                streamAttribute( os, slash, "slash", hasSlash );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Grace ****************/
+        /* 4965 */
+        Grace::Grace()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<GraceAttributes>() )
+        {}
+        bool Grace::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Grace::hasContents() const  { return false; }
+        std::ostream& Grace::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Grace::streamName( std::ostream& os ) const  { os << "grace"; return os; }
+        std::ostream& Grace::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        GraceAttributesPtr Grace::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Grace::setAttributes( const GraceAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** TieAttributes ****************/
+        /* 4970 */
+        TieAttributes::TieAttributes()
+        :type()
+        ,timeOnly()
+        ,hasType( true )
+        ,hasTimeOnly( false )
+        {}
+        
+        bool TieAttributes::hasValues() const
+        {
+            return hasType ||
+            hasTimeOnly;
+        }
+        
+        std::ostream& TieAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, timeOnly, "time-only", hasTimeOnly );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Tie ****************/
+        /* 4970 */
+        Tie::Tie()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<TieAttributes>() )
+        {}
+        bool Tie::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Tie::hasContents() const  { return false; }
+        std::ostream& Tie::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Tie::streamName( std::ostream& os ) const  { os << "tie"; return os; }
+        std::ostream& Tie::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        TieAttributesPtr Tie::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Tie::setAttributes( const TieAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        /* skipped 4990 TieAttributes */
+        
+        /* skipped 4990 Tie */
+        
+        
+        
+        /**************** InstrumentAttributes ****************/
+        /* 4995 */
+        InstrumentAttributes::InstrumentAttributes()
+        :id()
+        ,hasId( true )
+        {}
+        
+        bool InstrumentAttributes::hasValues() const
+        {
+            return hasId;
+        }
+        
+        std::ostream& InstrumentAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Instrument ****************/
+        /* 4995 */
+        Instrument::Instrument()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<InstrumentAttributes>() )
+        {}
+        bool Instrument::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Instrument::hasContents() const  { return false; }
+        std::ostream& Instrument::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Instrument::streamName( std::ostream& os ) const  { os << "instrument"; return os; }
+        std::ostream& Instrument::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        InstrumentAttributesPtr Instrument::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Instrument::setAttributes( const InstrumentAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** TurnAttributes ****************/
+        /* 5133 */
+        TurnAttributes::TurnAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep()
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,slash( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        ,hasSlash( false )
+        {}
+        
+        bool TurnAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat ||
+            hasSlash;
+        }
+        
+        std::ostream& TurnAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+                streamAttribute( os, slash, "slash", hasSlash );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Turn ****************/
+        /* 5133 */
+        Turn::Turn()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<TurnAttributes>() )
+        {}
+        bool Turn::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Turn::hasContents() const  { return false; }
+        std::ostream& Turn::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Turn::streamName( std::ostream& os ) const  { os << "turn"; return os; }
+        std::ostream& Turn::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        TurnAttributesPtr Turn::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Turn::setAttributes( const TurnAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** DelayedTurnAttributes ****************/
+        /* 5138 */
+        DelayedTurnAttributes::DelayedTurnAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep()
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,slash( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        ,hasSlash( false )
+        {}
+        
+        bool DelayedTurnAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat ||
+            hasSlash;
+        }
+        
+        std::ostream& DelayedTurnAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+                streamAttribute( os, slash, "slash", hasSlash );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** DelayedTurn ****************/
+        /* 5138 */
+        DelayedTurn::DelayedTurn()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<DelayedTurnAttributes>() )
+        {}
+        bool DelayedTurn::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool DelayedTurn::hasContents() const  { return false; }
+        std::ostream& DelayedTurn::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& DelayedTurn::streamName( std::ostream& os ) const  { os << "delayed-turn"; return os; }
+        std::ostream& DelayedTurn::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        DelayedTurnAttributesPtr DelayedTurn::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void DelayedTurn::setAttributes( const DelayedTurnAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** InvertedTurnAttributes ****************/
+        /* 5143 */
+        InvertedTurnAttributes::InvertedTurnAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep()
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,slash( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        ,hasSlash( false )
+        {}
+        
+        bool InvertedTurnAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat ||
+            hasSlash;
+        }
+        
+        std::ostream& InvertedTurnAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+                streamAttribute( os, slash, "slash", hasSlash );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** InvertedTurn ****************/
+        /* 5143 */
+        InvertedTurn::InvertedTurn()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<InvertedTurnAttributes>() )
+        {}
+        bool InvertedTurn::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool InvertedTurn::hasContents() const  { return false; }
+        std::ostream& InvertedTurn::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& InvertedTurn::streamName( std::ostream& os ) const  { os << "inverted-turn"; return os; }
+        std::ostream& InvertedTurn::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        InvertedTurnAttributesPtr InvertedTurn::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void InvertedTurn::setAttributes( const InvertedTurnAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** DelayedInvertedTurnAttributes ****************/
+        /* 5148 */
+        DelayedInvertedTurnAttributes::DelayedInvertedTurnAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep()
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,slash( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        ,hasSlash( false )
+        {}
+        
+        bool DelayedInvertedTurnAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat ||
+            hasSlash;
+        }
+        
+        std::ostream& DelayedInvertedTurnAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+                streamAttribute( os, slash, "slash", hasSlash );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** DelayedInvertedTurn ****************/
+        /* 5148 */
+        DelayedInvertedTurn::DelayedInvertedTurn()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<DelayedInvertedTurnAttributes>() )
+        {}
+        bool DelayedInvertedTurn::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool DelayedInvertedTurn::hasContents() const  { return false; }
+        std::ostream& DelayedInvertedTurn::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& DelayedInvertedTurn::streamName( std::ostream& os ) const  { os << "delayed-inverted-turn"; return os; }
+        std::ostream& DelayedInvertedTurn::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        DelayedInvertedTurnAttributesPtr DelayedInvertedTurn::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void DelayedInvertedTurn::setAttributes( const DelayedInvertedTurnAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        /* skipped 5163 WavyLineAttributes */
+        
+        /* skipped 5163 WavyLine */
+        
+        
+        
+        /**************** TupletDotAttributes ****************/
+        /* 5628 */
+        TupletDotAttributes::TupletDotAttributes()
+        :fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        {}
+        
+        bool TupletDotAttributes::hasValues() const
+        {
+            return hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight;
+        }
+        
+        std::ostream& TupletDotAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** TupletDot ****************/
+        /* 5628 */
+        TupletDot::TupletDot()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<TupletDotAttributes>() )
+        {}
+        bool TupletDot::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool TupletDot::hasContents() const  { return false; }
+        std::ostream& TupletDot::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& TupletDot::streamName( std::ostream& os ) const  { os << "tuplet-dot"; return os; }
+        std::ostream& TupletDot::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        TupletDotAttributesPtr TupletDot::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void TupletDot::setAttributes( const TupletDotAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** LinkAttributes ****************/
+        /* 5662 */
+        LinkAttributes::LinkAttributes()
+        :href()
+        ,type()
+        ,role()
+        ,title()
+        ,show( types::XlinkShow::replace )
+        ,actuate( types::XlinkActuate::onRequest )
+        ,name()
+        ,element()
+        ,position()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,hasHref( true )
+        ,hasType( false )
+        ,hasRole( false )
+        ,hasTitle( false )
+        ,hasShow( false )
+        ,hasActuate( false )
+        ,hasName( false )
+        ,hasElement( false )
+        ,hasPosition( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        {}
+        
+        bool LinkAttributes::hasValues() const
+        {
+            return hasHref ||
+            hasType ||
+            hasRole ||
+            hasTitle ||
+            hasShow ||
+            hasActuate ||
+            hasName ||
+            hasElement ||
+            hasPosition ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY;
+        }
+        
+        std::ostream& LinkAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, href, "href", hasHref );
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, role, "role", hasRole );
+                streamAttribute( os, title, "title", hasTitle );
+                streamAttribute( os, show, "show", hasShow );
+                streamAttribute( os, actuate, "actuate", hasActuate );
+                streamAttribute( os, name, "name", hasName );
+                streamAttribute( os, element, "element", hasElement );
+                streamAttribute( os, position, "position", hasPosition );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Link ****************/
+        /* 5662 */
+        Link::Link()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<LinkAttributes>() )
+        {}
+        bool Link::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Link::hasContents() const  { return false; }
+        std::ostream& Link::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Link::streamName( std::ostream& os ) const  { os << "link"; return os; }
+        std::ostream& Link::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        LinkAttributesPtr Link::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Link::setAttributes( const LinkAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** BookmarkAttributes ****************/
+        /* 5667 */
+        BookmarkAttributes::BookmarkAttributes()
+        :id()
+        ,name()
+        ,element()
+        ,position()
+        ,hasId( true )
+        ,hasName( false )
+        ,hasElement( false )
+        ,hasPosition( false )
+        {}
+        
+        bool BookmarkAttributes::hasValues() const
+        {
+            return hasId ||
+            hasName ||
+            hasElement ||
+            hasPosition;
+        }
+        
+        std::ostream& BookmarkAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+                streamAttribute( os, name, "name", hasName );
+                streamAttribute( os, element, "element", hasElement );
+                streamAttribute( os, position, "position", hasPosition );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Bookmark ****************/
+        /* 5667 */
+        Bookmark::Bookmark()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<BookmarkAttributes>() )
+        {}
+        bool Bookmark::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Bookmark::hasContents() const  { return false; }
+        std::ostream& Bookmark::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Bookmark::streamName( std::ostream& os ) const  { os << "bookmark"; return os; }
+        std::ostream& Bookmark::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        BookmarkAttributesPtr Bookmark::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Bookmark::setAttributes( const BookmarkAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** CreditImageAttributes ****************/
+        /* 5673 */
+        CreditImageAttributes::CreditImageAttributes()
+        :source()
+        ,type()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,halign( types::LeftCenterRight::center )
+        ,hasSource( true )
+        ,hasType( true )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasHalign( false )
+        {}
+        
+        bool CreditImageAttributes::hasValues() const
+        {
+            return hasSource ||
+            hasType ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasHalign;
+        }
+        
+        std::ostream& CreditImageAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, source, "source", hasSource );
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, halign, "halign", hasHalign );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** CreditImage ****************/
+        /* 5673 */
+        CreditImage::CreditImage()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<CreditImageAttributes>() )
+        {}
+        bool CreditImage::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool CreditImage::hasContents() const  { return false; }
+        std::ostream& CreditImage::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& CreditImage::streamName( std::ostream& os ) const  { os << "credit-image"; return os; }
+        std::ostream& CreditImage::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        CreditImageAttributesPtr CreditImage::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void CreditImage::setAttributes( const CreditImageAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        /* skipped 5683 LinkAttributes */
+        
+        /* skipped 5683 Link */
+        
+        /* skipped 5688 BookmarkAttributes */
+        
+        /* skipped 5688 Bookmark */
+        
+        
+        
+        /**************** LyricFontAttributes ****************/
+        /* 5722 */
+        LyricFontAttributes::LyricFontAttributes()
+        :number()
+        ,name()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,hasNumber( false )
+        ,hasName( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        {}
+        
+        bool LyricFontAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasName ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight;
+        }
+        
+        std::ostream& LyricFontAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, name, "name", hasName );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** LyricFont ****************/
+        /* 5722 */
+        LyricFont::LyricFont()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<LyricFontAttributes>() )
+        {}
+        bool LyricFont::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool LyricFont::hasContents() const  { return false; }
+        std::ostream& LyricFont::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& LyricFont::streamName( std::ostream& os ) const  { os << "lyric-font"; return os; }
+        std::ostream& LyricFont::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        LyricFontAttributesPtr LyricFont::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void LyricFont::setAttributes( const LyricFontAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** LyricLanguageAttributes ****************/
+        /* 5727 */
+        LyricLanguageAttributes::LyricLanguageAttributes()
+        :number()
+        ,name()
+        ,lang()
+        ,hasNumber( false )
+        ,hasName( false )
+        ,hasLang( true )
+        {}
+        
+        bool LyricLanguageAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasName ||
+            hasLang;
+        }
+        
+        std::ostream& LyricLanguageAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, name, "name", hasName );
+                streamAttribute( os, lang, "lang", hasLang );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** LyricLanguage ****************/
+        /* 5727 */
+        LyricLanguage::LyricLanguage()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<LyricLanguageAttributes>() )
+        {}
+        bool LyricLanguage::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool LyricLanguage::hasContents() const  { return false; }
+        std::ostream& LyricLanguage::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& LyricLanguage::streamName( std::ostream& os ) const  { os << "lyric-language"; return os; }
+        std::ostream& LyricLanguage::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        LyricLanguageAttributesPtr LyricLanguage::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void LyricLanguage::setAttributes( const LyricLanguageAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        
+        
+        /**************** OpusAttributes ****************/
+        /* 6001 */
+        OpusAttributes::OpusAttributes()
+        :href()
+        ,type()
+        ,role()
+        ,title()
+        ,show( types::XlinkShow::replace )
+        ,actuate( types::XlinkActuate::onRequest )
+        ,hasHref( true )
+        ,hasType( false )
+        ,hasRole( false )
+        ,hasTitle( false )
+        ,hasShow( false )
+        ,hasActuate( false )
+        {}
+        
+        bool OpusAttributes::hasValues() const
+        {
+            return hasHref ||
+            hasType ||
+            hasRole ||
+            hasTitle ||
+            hasShow ||
+            hasActuate;
+        }
+        
+        std::ostream& OpusAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, href, "href", hasHref );
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, role, "role", hasRole );
+                streamAttribute( os, title, "title", hasTitle );
+                streamAttribute( os, show, "show", hasShow );
+                streamAttribute( os, actuate, "actuate", hasActuate );
+            }
+            return os;
+        }
+        
+        
+        
+        /**************** Opus ****************/
+        /* 6001 */
+        Opus::Opus()
+        :ElementInterface()
+        ,myAttributes( std::make_shared<OpusAttributes>() )
+        {}
+        bool Opus::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        bool Opus::hasContents() const  { return false; }
+        std::ostream& Opus::streamAttributes( std::ostream& os ) const
+        {
+            if ( myAttributes )
+            {
+                myAttributes->toStream( os );
+            }
+            return os;
+        }
+        std::ostream& Opus::streamName( std::ostream& os ) const  { os << "opus"; return os; }
+        std::ostream& Opus::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            return os;
+        }
+        
+        OpusAttributesPtr Opus::getAttributes() const
+        {
+            return myAttributes;
+        }
+        /* if value.get()==nullptr then this is a no-op
+         i.e. this function guards against setting Attributes to nullptr */
+        void Opus::setAttributes( const OpusAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
+        /* skipped 6340 LinkAttributes */
+        
+        /* skipped 6340 Link */
+        
+        /* skipped 6343 BookmarkAttributes */
+        
+        /* skipped 6343 Bookmark */
 
     } // namespace e
 

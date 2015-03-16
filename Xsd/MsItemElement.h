@@ -71,4 +71,6 @@ namespace xsd
     class MsItemWeb;
     using MsItemWebPtr = std::shared_ptr<MsItemWeb>;
     MsItemElementSet findUnimplementedElements( const MsItemWebPtr& web );
+    bool doesElementHaveTheLowestIDAmongPeers( const MsItemElementPtr& elementToCheck, const MsItemElementSet& peerElements );
+    MsItemElementSetIterConst findElementWithLowestID( const MsItemElementSet& elements );
 }

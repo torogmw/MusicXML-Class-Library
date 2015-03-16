@@ -130,4 +130,28 @@ namespace xsd
 //        MsItemElementPtr input = std::make_shared<MsItemElement>( *this );
 //        mySubElements = findSubElements( input );
     }
+    bool doesElementHaveTheLowestIDAmongPeers( const MsItemElementPtr& elementToCheck, const MsItemElementSet& peerElements )
+    {
+        auto min = findElementWithLowestID( peerElements );
+        return elementToCheck->getID() <= (*min)->getID();
+    }
+    MsItemElementSetIterConst findElementWithLowestID( const MsItemElementSet& elements )
+    {
+        
+        auto eqb = elements.cbegin();
+        auto eqe = elements.cend();
+        auto eqi = eqb;
+        auto min = eqb;
+        if ( eqb != eqe )
+        {
+            for (; eqi != eqe; ++eqi )
+            {
+                if ( (*eqi)->getID() < (*min)->getID() )
+                {
+                    min = eqi;
+                }
+            }
+        }
+        return min;
+    }
 }

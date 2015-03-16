@@ -11915,7 +11915,1840 @@ namespace mx
         /****************************************************************************
          MORE Empty Elements with Attributes
          ****************************************************************************/
+        /*
+         3026 [ equivalents 3026, 5163 ]
+         <xs:element name="wavy-line" type="wavy-line" minOccurs="0"/>
+         <xs:complexType name="wavy-line">
+         <xs:annotation>
+         <xs:documentation>Wavy lines are one way to indicate trills. When used with a measure element, they should always have type="continue" set.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="color"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         </xs:complexType>
+         */
         
+        struct WavyLineAttributes;
+        using WavyLineAttributesPtr = std::shared_ptr<WavyLineAttributes>;
+        
+        struct WavyLineAttributes : public AttributesInterface
+        {
+        public:
+            WavyLineAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopContinue type;
+            types::NumberLevel number;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            types::StartNote startNote;
+            types::TrillStep trillStep;
+            types::TwoNoteTurn twoNoteTurn;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent secondBeat;
+            types::Percent lastBeat;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+            bool hasStartNote;
+            bool hasTrillStep;
+            bool hasTwoNoteTurn;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasSecondBeat;
+            bool hasLastBeat;
+        };
+        
+        class WavyLine : public ElementInterface
+        {
+        public:
+            WavyLine();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            WavyLineAttributesPtr getAttributes() const;
+            void setAttributes( const WavyLineAttributesPtr& attributes );
+        private:
+            WavyLineAttributesPtr myAttributes;
+        };
+        
+        /*
+         3047
+         <xs:element name="repeat" type="repeat" minOccurs="0"/>
+         <xs:complexType name="repeat">
+         <xs:annotation>
+         <xs:documentation>The repeat type represents repeat marks. The start of the repeat has a forward direction while the end of the repeat has a backward direction. Backward repeats that are not part of an ending can use the times attribute to indicate the number of times the repeated section is played.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="direction" type="backward-forward" use="required"/>
+         <xs:attribute name="times" type="xs:nonNegativeInteger"/>
+         <xs:attribute name="winged" type="winged"/>
+         </xs:complexType>
+         */
+        
+        struct RepeatAttributes;
+        using RepeatAttributesPtr = std::shared_ptr<RepeatAttributes>;
+        
+        struct RepeatAttributes : public AttributesInterface
+        {
+        public:
+            RepeatAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::BackwardForward direction;
+            types::NonNegativeInteger times;
+            types::Winged winged;
+            const 	bool hasDirection;
+            bool hasTimes;
+            bool hasWinged;
+        };
+        
+        class Repeat : public ElementInterface
+        {
+        public:
+            Repeat();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            RepeatAttributesPtr getAttributes() const;
+            void setAttributes( const RepeatAttributesPtr& attributes );
+        private:
+            RepeatAttributesPtr myAttributes;
+        };
+        
+        /*
+         3351
+         <xs:element name="wedge" type="wedge"/>
+         <xs:complexType name="wedge">
+         <xs:annotation>
+         <xs:documentation>The wedge type represents crescendo and diminuendo wedge symbols. The type attribute is crescendo for the start of a wedge that is closed at the left side, and diminuendo for the start of a wedge that is closed on the right side. Spread values are measured in tenths; those at the start of a crescendo wedge or end of a diminuendo wedge are ignored. The niente attribute is yes if a circle appears at the point of the wedge, indicating a crescendo from nothing or diminuendo to nothing. It is no by default, and used only when the type is crescendo, or the type is stop for a wedge that began with a diminuendo type. The line-type is solid by default.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="wedge-type" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attribute name="spread" type="tenths"/>
+         <xs:attribute name="niente" type="yes-no"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct WedgeAttributes;
+        using WedgeAttributesPtr = std::shared_ptr<WedgeAttributes>;
+        
+        struct WedgeAttributes : public AttributesInterface
+        {
+        public:
+            WedgeAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::WedgeType type;
+            types::NumberLevel number;
+            types::TenthsValue spread;
+            types::YesNo niente;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasSpread;
+            bool hasNiente;
+            bool hasDashLength;
+            bool hasSpaceLength;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+        };
+        
+        class Wedge : public ElementInterface
+        {
+        public:
+            Wedge();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            WedgeAttributesPtr getAttributes() const;
+            void setAttributes( const WedgeAttributesPtr& attributes );
+        private:
+            WedgeAttributesPtr myAttributes;
+        };
+        
+        /*
+         3358
+         <xs:element name="dashes" type="dashes"/>
+         <xs:complexType name="dashes">
+         <xs:annotation>
+         <xs:documentation>The dashes type represents dashes, used for instance with cresc. and dim. marks.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct DashesAttributes;
+        using DashesAttributesPtr = std::shared_ptr<DashesAttributes>;
+        
+        struct DashesAttributes : public AttributesInterface
+        {
+        public:
+            DashesAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopContinue type;
+            types::NumberLevel number;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasDashLength;
+            bool hasSpaceLength;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+        };
+        
+        class Dashes : public ElementInterface
+        {
+        public:
+            Dashes();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DashesAttributesPtr getAttributes() const;
+            void setAttributes( const DashesAttributesPtr& attributes );
+        private:
+            DashesAttributesPtr myAttributes;
+        };
+        
+        /*
+         3361
+         <xs:element name="bracket" type="bracket"/>
+         <xs:complexType name="bracket">
+         <xs:annotation>
+         <xs:documentation>Brackets are combined with words in a variety of modern directions. The line-end attribute specifies if there is a jog up or down (or both), an arrow, or nothing at the start or end of the bracket. If the line-end is up or down, the length of the jog can be specified using the end-length attribute. The line-type is solid by default.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attribute name="line-end" type="line-end" use="required"/>
+         <xs:attribute name="end-length" type="tenths"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct BracketAttributes;
+        using BracketAttributesPtr = std::shared_ptr<BracketAttributes>;
+        
+        struct BracketAttributes : public AttributesInterface
+        {
+        public:
+            BracketAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo bracket;
+            bool hasBracket;
+        };
+        
+        class Bracket : public ElementInterface
+        {
+        public:
+            Bracket();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BracketAttributesPtr getAttributes() const;
+            void setAttributes( const BracketAttributesPtr& attributes );
+        private:
+            BracketAttributesPtr myAttributes;
+        };
+        
+        /*
+         3364
+         <xs:element name="pedal" type="pedal"/>
+         <xs:complexType name="pedal">
+         <xs:annotation>
+         <xs:documentation>The pedal type represents piano pedal marks. The line attribute is yes if pedal lines are used. The sign attribute is yes if Ped and * signs are used. For MusicXML 2.0 compatibility, the sign attribute is yes by default if the line attribute is no, and is no by default if the line attribute is yes. The change and continue types are used when the line attribute is yes. The change type indicates a pedal lift and retake indicated with an inverted V marking. The continue type allows more precise formatting across system breaks and for more complex pedaling lines. The alignment attributes are ignored if the line attribute is yes.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-change-continue" use="required"/>
+         <xs:attribute name="line" type="yes-no"/>
+         <xs:attribute name="sign" type="yes-no"/>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        
+        struct PedalAttributes;
+        using PedalAttributesPtr = std::shared_ptr<PedalAttributes>;
+        
+        struct PedalAttributes : public AttributesInterface
+        {
+        public:
+            PedalAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopChangeContinue type;
+            types::YesNo line;
+            types::YesNo sign;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::LeftCenterRight halign;
+            const 	bool hasType;
+            bool hasLine;
+            bool hasSign;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasHalign;
+        };
+        
+        class Pedal : public ElementInterface
+        {
+        public:
+            Pedal();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PedalAttributesPtr getAttributes() const;
+            void setAttributes( const PedalAttributesPtr& attributes );
+        private:
+            PedalAttributesPtr myAttributes;
+        };
+        
+        /*
+         3370
+         <xs:element name="octave-shift" type="octave-shift"/>
+         <xs:complexType name="octave-shift">
+         <xs:annotation>
+         <xs:documentation>The octave shift type indicates where notes are shifted up or down from their true pitched values because of printing difficulty. Thus a treble clef line noted with 8va will be indicated with an octave-shift down from the pitch data indicated in the notes. A size of 8 indicates one octave; a size of 15 indicates two octaves.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="up-down-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attribute name="size" type="xs:positiveInteger" default="8"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="print-style"/>
+         </xs:complexType>
+         */
+        
+        struct OctaveShiftAttributes;
+        using OctaveShiftAttributesPtr = std::shared_ptr<OctaveShiftAttributes>;
+        
+        struct OctaveShiftAttributes : public AttributesInterface
+        {
+        public:
+            OctaveShiftAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::UpDownStopContinue type;
+            types::NumberLevel number;
+            types::PositiveInteger size;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasSize;
+            bool hasDashLength;
+            bool hasSpaceLength;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+        };
+        
+        class OctaveShift : public ElementInterface
+        {
+        public:
+            OctaveShift();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            OctaveShiftAttributesPtr getAttributes() const;
+            void setAttributes( const OctaveShiftAttributesPtr& attributes );
+        private:
+            OctaveShiftAttributesPtr myAttributes;
+        };
+        
+        /*
+         3391
+         <xs:element name="string-mute" type="string-mute"/>
+         <xs:complexType name="string-mute">
+         <xs:annotation>
+         <xs:documentation>The string-mute type represents string mute on and mute off symbols.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="on-off" use="required"/>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        
+        struct StringMuteAttributes;
+        using StringMuteAttributesPtr = std::shared_ptr<StringMuteAttributes>;
+        
+        struct StringMuteAttributes : public AttributesInterface
+        {
+        public:
+            StringMuteAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::OnOff type;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::LeftCenterRight halign;
+            const 	bool hasType;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasHalign;
+        };
+        
+        class StringMute : public ElementInterface
+        {
+        public:
+            StringMute();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            StringMuteAttributesPtr getAttributes() const;
+            void setAttributes( const StringMuteAttributesPtr& attributes );
+        private:
+            StringMuteAttributesPtr myAttributes;
+        };
+        
+        /*
+         3397
+         <xs:element name="image" type="image"/>
+         <xs:complexType name="image">
+         <xs:annotation>
+         <xs:documentation>The image type is used to include graphical images in a score.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="image-attributes"/>
+         </xs:complexType>
+         */
+        
+        struct ImageAttributes;
+        using ImageAttributesPtr = std::shared_ptr<ImageAttributes>;
+        
+        struct ImageAttributes : public AttributesInterface
+        {
+        public:
+            ImageAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsAnyUri source;
+            types::XsToken type;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::LeftCenterRight halign;
+            const 	bool hasSource;
+            const 	bool hasType;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasHalign;
+        };
+        
+        class Image : public ElementInterface
+        {
+        public:
+            Image();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ImageAttributesPtr getAttributes() const;
+            void setAttributes( const ImageAttributesPtr& attributes );
+        private:
+            ImageAttributesPtr myAttributes;
+        };
+        
+        /*
+         3491
+         <xs:element name="barre" type="barre" minOccurs="0"/>
+         <xs:complexType name="barre">
+         <xs:annotation>
+         <xs:documentation>The barre element indicates placing a finger over multiple strings on a single fret. The type is "start" for the lowest pitched string (e.g., the string with the highest MusicXML number) and is "stop" for the highest pitched string.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct BarreAttributes;
+        using BarreAttributesPtr = std::shared_ptr<BarreAttributes>;
+        
+        struct BarreAttributes : public AttributesInterface
+        {
+        public:
+            BarreAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            const 	bool hasType;
+        };
+        
+        class Barre : public ElementInterface
+        {
+        public:
+            Barre();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BarreAttributesPtr getAttributes() const;
+            void setAttributes( const BarreAttributesPtr& attributes );
+        private:
+            BarreAttributesPtr myAttributes;
+        };
+        
+        /*
+         4057
+         <xs:element name="supports" type="supports"/>
+         <xs:complexType name="supports">
+         <xs:annotation>
+         <xs:documentation>The supports type indicates if a MusicXML encoding supports a particular MusicXML element. This is recommended for elements like beam, stem, and accidental, where the absence of an element is ambiguous if you do not know if the encoding supports that element. For Version 2.0, the supports element is expanded to allow programs to indicate support for particular attributes or particular values. This lets applications communicate, for example, that all system and/or page breaks are contained in the MusicXML file.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="yes-no" use="required"/>
+         <xs:attribute name="element" type="xs:NMTOKEN" use="required"/>
+         <xs:attribute name="attribute" type="xs:NMTOKEN"/>
+         <xs:attribute name="value" type="xs:token"/>
+         </xs:complexType>
+         */
+        
+        struct SupportsAttributes;
+        using SupportsAttributesPtr = std::shared_ptr<SupportsAttributes>;
+        
+        struct SupportsAttributes : public AttributesInterface
+        {
+        public:
+            SupportsAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo type;
+            types::XsNMToken element;
+            types::XsNMToken attribute;
+            types::XsToken value;
+            const 	bool hasType;
+            const 	bool hasElement;
+            bool hasAttribute;
+            bool hasValue;
+        };
+        
+        class Supports : public ElementInterface
+        {
+        public:
+            Supports();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            SupportsAttributesPtr getAttributes() const;
+            void setAttributes( const SupportsAttributesPtr& attributes );
+        private:
+            SupportsAttributesPtr myAttributes;
+        };
+        
+        /*
+         4599 [ equivalents 4599, 4824, 4828 ]
+         <xs:element name="extend" type="extend" minOccurs="0"/>
+         <xs:complexType name="extend">
+         <xs:annotation>
+         <xs:documentation>The extend type represents lyric word extension / melisma lines as well as figured bass extensions. The optional type and position attributes are added in Version 3.0 to provide better formatting control.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue"/>
+         <xs:attributeGroup ref="print-style"/>
+         </xs:complexType>
+         */
+        
+        struct ExtendAttributes;
+        using ExtendAttributesPtr = std::shared_ptr<ExtendAttributes>;
+        
+        struct ExtendAttributes : public AttributesInterface
+        {
+        public:
+            ExtendAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopContinue type;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            bool hasType;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+        };
+        
+        class Extend : public ElementInterface
+        {
+        public:
+            Extend();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ExtendAttributesPtr getAttributes() const;
+            void setAttributes( const ExtendAttributesPtr& attributes );
+        private:
+            ExtendAttributesPtr myAttributes;
+        };
+        
+        /*
+         4824 [ equivalents 4599, 4824, 4828 ]
+         <xs:element name="extend" type="extend" minOccurs="0"/>
+         <xs:complexType name="extend">
+         <xs:annotation>
+         <xs:documentation>The extend type represents lyric word extension / melisma lines as well as figured bass extensions. The optional type and position attributes are added in Version 3.0 to provide better formatting control.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue"/>
+         <xs:attributeGroup ref="print-style"/>
+         </xs:complexType>
+         */
+        
+        /*
+         4828 [ equivalents 4599, 4824, 4828 ]
+         <xs:element name="extend" type="extend"/>
+         <xs:complexType name="extend">
+         <xs:annotation>
+         <xs:documentation>The extend type represents lyric word extension / melisma lines as well as figured bass extensions. The optional type and position attributes are added in Version 3.0 to provide better formatting control.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue"/>
+         <xs:attributeGroup ref="print-style"/>
+         </xs:complexType>
+         */
+        
+        /*
+         4914
+         <xs:element name="tied" type="tied"/>
+         <xs:complexType name="tied">
+         <xs:annotation>
+         <xs:documentation>The tied type represents the notated tie. The tie element represents the tie sound.
+         
+         The number attribute is rarely needed to disambiguate ties, since note pitches will usually suffice. The attribute is implied rather than defaulting to 1 as with most elements. It is available for use in more complex tied notation situations.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="orientation"/>
+         <xs:attributeGroup ref="bezier"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct TiedAttributes;
+        using TiedAttributesPtr = std::shared_ptr<TiedAttributes>;
+        
+        struct TiedAttributes : public AttributesInterface
+        {
+        public:
+            TiedAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopContinue type;
+            types::NumberLevel number;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            types::OverUnder orientation;
+            types::DivisionsValue bezierOffset;
+            types::DivisionsValue bezierOffset2;
+            types::TenthsValue bezierX;
+            types::TenthsValue bezierY;
+            types::TenthsValue bezierX2;
+            types::TenthsValue bezierY2;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasDashLength;
+            bool hasSpaceLength;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+            bool hasOrientation;
+            bool hasBezierOffset;
+            bool hasBezierOffset2;
+            bool hasBezierX;
+            bool hasBezierY;
+            bool hasBezierX2;
+            bool hasBezierY2;
+        };
+        
+        class Tied : public ElementInterface
+        {
+        public:
+            Tied();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            TiedAttributesPtr getAttributes() const;
+            void setAttributes( const TiedAttributesPtr& attributes );
+        private:
+            TiedAttributesPtr myAttributes;
+        };
+        
+        /*
+         4917
+         <xs:element name="slur" type="slur"/>
+         <xs:complexType name="slur">
+         <xs:annotation>
+         <xs:documentation>Slur types are empty. Most slurs are represented with two elements: one with a start type, and one with a stop type. Slurs can add more elements using a continue type. This is typically used to specify the formatting of cross-system slurs, or to specify the shape of very complex slurs.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level" default="1"/>
+         <xs:attributeGroup ref="line-type"/>
+         <xs:attributeGroup ref="dashed-formatting"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="orientation"/>
+         <xs:attributeGroup ref="bezier"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct SlurAttributes;
+        using SlurAttributesPtr = std::shared_ptr<SlurAttributes>;
+        
+        struct SlurAttributes : public AttributesInterface
+        {
+        public:
+            SlurAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopContinue type;
+            types::NumberLevel number;
+            types::TenthsValue dashLength;
+            types::TenthsValue spaceLength;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            types::OverUnder orientation;
+            types::DivisionsValue bezierOffset;
+            types::DivisionsValue bezierOffset2;
+            types::TenthsValue bezierX;
+            types::TenthsValue bezierY;
+            types::TenthsValue bezierX2;
+            types::TenthsValue bezierY2;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasDashLength;
+            bool hasSpaceLength;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+            bool hasOrientation;
+            bool hasBezierOffset;
+            bool hasBezierOffset2;
+            bool hasBezierX;
+            bool hasBezierY;
+            bool hasBezierX2;
+            bool hasBezierY2;
+        };
+        
+        class Slur : public ElementInterface
+        {
+        public:
+            Slur();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            SlurAttributesPtr getAttributes() const;
+            void setAttributes( const SlurAttributesPtr& attributes );
+        private:
+            SlurAttributesPtr myAttributes;
+        };
+        
+        /*
+         4944
+         <xs:element name="arpeggiate" type="arpeggiate"/>
+         <xs:complexType name="arpeggiate">
+         <xs:annotation>
+         <xs:documentation>The arpeggiate type indicates that this note is part of an arpeggiated chord. The number attribute can be used to distinguish between two simultaneous chords arpeggiated separately (different numbers) or together (same number). The up-down attribute is used if there is an arrow on the arpeggio sign. By default, arpeggios go from the lowest to highest note.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attribute name="direction" type="up-down"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct ArpeggiateAttributes;
+        using ArpeggiateAttributesPtr = std::shared_ptr<ArpeggiateAttributes>;
+        
+        struct ArpeggiateAttributes : public AttributesInterface
+        {
+        public:
+            ArpeggiateAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::NumberLevel number;
+            types::UpDown direction;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            bool hasNumber;
+            bool hasDirection;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+        };
+        
+        class Arpeggiate : public ElementInterface
+        {
+        public:
+            Arpeggiate();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ArpeggiateAttributesPtr getAttributes() const;
+            void setAttributes( const ArpeggiateAttributesPtr& attributes );
+        private:
+            ArpeggiateAttributesPtr myAttributes;
+        };
+        
+        /*
+         4947
+         <xs:element name="non-arpeggiate" type="non-arpeggiate"/>
+         <xs:complexType name="non-arpeggiate">
+         <xs:annotation>
+         <xs:documentation>The non-arpeggiate type indicates that this note is at the top or bottom of a bracket indicating to not arpeggiate these notes. Since this does not involve playback, it is only used on the top or bottom notes, not on each note as for the arpeggiate type.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="top-bottom" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct NonArpeggiateAttributes;
+        using NonArpeggiateAttributesPtr = std::shared_ptr<NonArpeggiateAttributes>;
+        
+        struct NonArpeggiateAttributes : public AttributesInterface
+        {
+        public:
+            NonArpeggiateAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TopBottom type;
+            types::NumberLevel number;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+        };
+        
+        class NonArpeggiate : public ElementInterface
+        {
+        public:
+            NonArpeggiate();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            NonArpeggiateAttributesPtr getAttributes() const;
+            void setAttributes( const NonArpeggiateAttributesPtr& attributes );
+        private:
+            NonArpeggiateAttributesPtr myAttributes;
+        };
+        
+        /*
+         4965
+         <xs:element name="grace" type="grace"/>
+         <xs:complexType name="grace">
+         <xs:annotation>
+         <xs:documentation>The grace type indicates the presence of a grace note. The slash attribute for a grace note is yes for slashed eighth notes. The other grace note attributes come from MuseData sound suggestions. The steal-time-previous attribute indicates the percentage of time to steal from the previous note for the grace note. The steal-time-following attribute indicates the percentage of time to steal from the following note for the grace note, as for appoggiaturas. The make-time attribute indicates to make time, not steal time; the units are in real-time divisions for the grace note.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="steal-time-previous" type="percent"/>
+         <xs:attribute name="steal-time-following" type="percent"/>
+         <xs:attribute name="make-time" type="divisions"/>
+         <xs:attribute name="slash" type="yes-no"/>
+         </xs:complexType>
+         */
+        
+        struct GraceAttributes;
+        using GraceAttributesPtr = std::shared_ptr<GraceAttributes>;
+        
+        struct GraceAttributes : public AttributesInterface
+        {
+        public:
+            GraceAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::Percent stealTimePrevious;
+            types::Percent stealTimeFollowing;
+            types::DivisionsValue makeTime;
+            types::YesNo slash;
+            bool hasStealTimePrevious;
+            bool hasStealTimeFollowing;
+            bool hasMakeTime;
+            bool hasSlash;
+        };
+        
+        class Grace : public ElementInterface
+        {
+        public:
+            Grace();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            GraceAttributesPtr getAttributes() const;
+            void setAttributes( const GraceAttributesPtr& attributes );
+        private:
+            GraceAttributesPtr myAttributes;
+        };
+        
+        /*
+         4970 [ equivalents 4970, 4990 ]
+         <xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
+         <xs:complexType name="tie">
+         <xs:annotation>
+         <xs:documentation>The tie element indicates that a tie begins or ends with this note. If the tie element applies only particular times through a repeat, the time-only attribute indicates which times to apply it. The tie element indicates sound; the tied element indicates notation.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="time-only" type="time-only"/>
+         </xs:complexType>
+         */
+        
+        struct TieAttributes;
+        using TieAttributesPtr = std::shared_ptr<TieAttributes>;
+        
+        struct TieAttributes : public AttributesInterface
+        {
+        public:
+            TieAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            types::TimeOnly timeOnly;
+            const 	bool hasType;
+            bool hasTimeOnly;
+        };
+        
+        class Tie : public ElementInterface
+        {
+        public:
+            Tie();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            TieAttributesPtr getAttributes() const;
+            void setAttributes( const TieAttributesPtr& attributes );
+        private:
+            TieAttributesPtr myAttributes;
+        };
+        
+        /*
+         4990 [ equivalents 4970, 4990 ]
+         <xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
+         <xs:complexType name="tie">
+         <xs:annotation>
+         <xs:documentation>The tie element indicates that a tie begins or ends with this note. If the tie element applies only particular times through a repeat, the time-only attribute indicates which times to apply it. The tie element indicates sound; the tied element indicates notation.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="time-only" type="time-only"/>
+         </xs:complexType>
+         */
+        
+        /*
+         4995
+         <xs:element name="instrument" type="instrument" minOccurs="0"/>
+         <xs:complexType name="instrument">
+         <xs:annotation>
+         <xs:documentation>The instrument type distinguishes between score-instrument elements in a score-part. The id attribute is an IDREF back to the score-instrument ID. If multiple score-instruments are specified on a score-part, there should be an instrument element for each note in the part.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="id" type="xs:IDREF" use="required"/>
+         </xs:complexType>
+         */
+        
+        struct InstrumentAttributes;
+        using InstrumentAttributesPtr = std::shared_ptr<InstrumentAttributes>;
+        
+        struct InstrumentAttributes : public AttributesInterface
+        {
+        public:
+            InstrumentAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsIDREF id;
+            const 	bool hasId;
+        };
+        
+        class Instrument : public ElementInterface
+        {
+        public:
+            Instrument();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            InstrumentAttributesPtr getAttributes() const;
+            void setAttributes( const InstrumentAttributesPtr& attributes );
+        private:
+            InstrumentAttributesPtr myAttributes;
+        };
+        
+        /*
+         5133
+         <xs:element name="turn" type="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The turn element is the normal turn shape which goes up then down.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The horizontal-turn type represents turn elements that are horizontal rather than vertical. These are empty elements with print-style, placement, trill-sound, and slash attributes. If the slash attribute is yes, then a vertical line is used to slash the turn; it is no by default.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         <xs:attribute name="slash" type="yes-no"/>
+         </xs:complexType>
+         */
+        
+        struct TurnAttributes;
+        using TurnAttributesPtr = std::shared_ptr<TurnAttributes>;
+        
+        struct TurnAttributes : public AttributesInterface
+        {
+        public:
+            TurnAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            types::StartNote startNote;
+            types::TrillStep trillStep;
+            types::TwoNoteTurn twoNoteTurn;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent secondBeat;
+            types::Percent lastBeat;
+            types::YesNo slash;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+            bool hasStartNote;
+            bool hasTrillStep;
+            bool hasTwoNoteTurn;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasSecondBeat;
+            bool hasLastBeat;
+            bool hasSlash;
+        };
+        
+        class Turn : public ElementInterface
+        {
+        public:
+            Turn();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            TurnAttributesPtr getAttributes() const;
+            void setAttributes( const TurnAttributesPtr& attributes );
+        private:
+            TurnAttributesPtr myAttributes;
+        };
+        
+        /*
+         5138
+         <xs:element name="delayed-turn" type="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The delayed-turn element indicates a normal turn that is delayed until the end of the current note.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The horizontal-turn type represents turn elements that are horizontal rather than vertical. These are empty elements with print-style, placement, trill-sound, and slash attributes. If the slash attribute is yes, then a vertical line is used to slash the turn; it is no by default.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         <xs:attribute name="slash" type="yes-no"/>
+         </xs:complexType>
+         */
+        
+        struct DelayedTurnAttributes;
+        using DelayedTurnAttributesPtr = std::shared_ptr<DelayedTurnAttributes>;
+        
+        struct DelayedTurnAttributes : public AttributesInterface
+        {
+        public:
+            DelayedTurnAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            types::StartNote startNote;
+            types::TrillStep trillStep;
+            types::TwoNoteTurn twoNoteTurn;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent secondBeat;
+            types::Percent lastBeat;
+            types::YesNo slash;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+            bool hasStartNote;
+            bool hasTrillStep;
+            bool hasTwoNoteTurn;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasSecondBeat;
+            bool hasLastBeat;
+            bool hasSlash;
+        };
+        
+        class DelayedTurn : public ElementInterface
+        {
+        public:
+            DelayedTurn();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DelayedTurnAttributesPtr getAttributes() const;
+            void setAttributes( const DelayedTurnAttributesPtr& attributes );
+        private:
+            DelayedTurnAttributesPtr myAttributes;
+        };
+        
+        /*
+         5143
+         <xs:element name="inverted-turn" type="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The inverted-turn element has the shape which goes down and then up.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The horizontal-turn type represents turn elements that are horizontal rather than vertical. These are empty elements with print-style, placement, trill-sound, and slash attributes. If the slash attribute is yes, then a vertical line is used to slash the turn; it is no by default.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         <xs:attribute name="slash" type="yes-no"/>
+         </xs:complexType>
+         */
+        
+        struct InvertedTurnAttributes;
+        using InvertedTurnAttributesPtr = std::shared_ptr<InvertedTurnAttributes>;
+        
+        struct InvertedTurnAttributes : public AttributesInterface
+        {
+        public:
+            InvertedTurnAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            types::StartNote startNote;
+            types::TrillStep trillStep;
+            types::TwoNoteTurn twoNoteTurn;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent secondBeat;
+            types::Percent lastBeat;
+            types::YesNo slash;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+            bool hasStartNote;
+            bool hasTrillStep;
+            bool hasTwoNoteTurn;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasSecondBeat;
+            bool hasLastBeat;
+            bool hasSlash;
+        };
+        
+        class InvertedTurn : public ElementInterface
+        {
+        public:
+            InvertedTurn();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            InvertedTurnAttributesPtr getAttributes() const;
+            void setAttributes( const InvertedTurnAttributesPtr& attributes );
+        private:
+            InvertedTurnAttributesPtr myAttributes;
+        };
+        
+        /*
+         5148
+         <xs:element name="delayed-inverted-turn" type="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The delayed-inverted-turn element indicates an inverted turn that is delayed until the end of the current note.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="horizontal-turn">
+         <xs:annotation>
+         <xs:documentation>The horizontal-turn type represents turn elements that are horizontal rather than vertical. These are empty elements with print-style, placement, trill-sound, and slash attributes. If the slash attribute is yes, then a vertical line is used to slash the turn; it is no by default.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         <xs:attribute name="slash" type="yes-no"/>
+         </xs:complexType>
+         */
+        
+        struct DelayedInvertedTurnAttributes;
+        using DelayedInvertedTurnAttributesPtr = std::shared_ptr<DelayedInvertedTurnAttributes>;
+        
+        struct DelayedInvertedTurnAttributes : public AttributesInterface
+        {
+        public:
+            DelayedInvertedTurnAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::AboveBelow placement;
+            types::StartNote startNote;
+            types::TrillStep trillStep;
+            types::TwoNoteTurn twoNoteTurn;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent secondBeat;
+            types::Percent lastBeat;
+            types::YesNo slash;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPlacement;
+            bool hasStartNote;
+            bool hasTrillStep;
+            bool hasTwoNoteTurn;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasSecondBeat;
+            bool hasLastBeat;
+            bool hasSlash;
+        };
+        
+        class DelayedInvertedTurn : public ElementInterface
+        {
+        public:
+            DelayedInvertedTurn();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DelayedInvertedTurnAttributesPtr getAttributes() const;
+            void setAttributes( const DelayedInvertedTurnAttributesPtr& attributes );
+        private:
+            DelayedInvertedTurnAttributesPtr myAttributes;
+        };
+        
+        /*
+         5163 [ equivalents 3026, 5163 ]
+         <xs:element name="wavy-line" type="wavy-line"/>
+         <xs:complexType name="wavy-line">
+         <xs:annotation>
+         <xs:documentation>Wavy lines are one way to indicate trills. When used with a measure element, they should always have type="continue" set.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="type" type="start-stop-continue" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="color"/>
+         <xs:attributeGroup ref="trill-sound"/>
+         </xs:complexType>
+         */
+        
+        /*
+         5628
+         <xs:element name="tuplet-dot" type="tuplet-dot" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="tuplet-dot">
+         <xs:annotation>
+         <xs:documentation>The tuplet-dot type is used to specify dotted normal tuplet types.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="font"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:complexType>
+         */
+        
+        struct TupletDotAttributes;
+        using TupletDotAttributesPtr = std::shared_ptr<TupletDotAttributes>;
+        
+        struct TupletDotAttributes : public AttributesInterface
+        {
+        public:
+            TupletDotAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+        };
+        
+        class TupletDot : public ElementInterface
+        {
+        public:
+            TupletDot();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            TupletDotAttributesPtr getAttributes() const;
+            void setAttributes( const TupletDotAttributesPtr& attributes );
+        private:
+            TupletDotAttributesPtr myAttributes;
+        };
+        
+        /*
+         5662 [ equivalents 5662, 5683, 6340 ]
+         <xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="link">
+         <xs:annotation>
+         <xs:documentation>The link type serves as an outgoing simple XLink. It is also used to connect a MusicXML score with a MusicXML opus. If a relative link is used within a document that is part of a compressed MusicXML file, the link is relative to the  root folder of the zip file.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="link-attributes"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="element-position"/>
+         <xs:attributeGroup ref="position"/>
+         </xs:complexType>
+         */
+        
+        struct LinkAttributes;
+        using LinkAttributesPtr = std::shared_ptr<LinkAttributes>;
+        
+        struct LinkAttributes : public AttributesInterface
+        {
+        public:
+            LinkAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XlinkHref href;
+            types::XlinkType type;
+            types::XlinkRole role;
+            types::XlinkTitle title;
+            types::XlinkShow show;
+            types::XlinkActuate actuate;
+            types::XsToken name;
+            types::XsNMToken element;
+            types::PositiveInteger position;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            const 	bool hasHref;
+            bool hasType;
+            bool hasRole;
+            bool hasTitle;
+            bool hasShow;
+            bool hasActuate;
+            bool hasName;
+            bool hasElement;
+            bool hasPosition;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+        };
+        
+        class Link : public ElementInterface
+        {
+        public:
+            Link();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            LinkAttributesPtr getAttributes() const;
+            void setAttributes( const LinkAttributesPtr& attributes );
+        private:
+            LinkAttributesPtr myAttributes;
+        };
+        
+        /*
+         5667 [ equivalents 5667, 5688, 6343 ]
+         <xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="bookmark">
+         <xs:annotation>
+         <xs:documentation>The bookmark type serves as a well-defined target for an incoming simple XLink.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="id" type="xs:ID" use="required"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="element-position"/>
+         </xs:complexType>
+         */
+        
+        struct BookmarkAttributes;
+        using BookmarkAttributesPtr = std::shared_ptr<BookmarkAttributes>;
+        
+        struct BookmarkAttributes : public AttributesInterface
+        {
+        public:
+            BookmarkAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsID id;
+            types::XsToken name;
+            types::XsNMToken element;
+            types::PositiveInteger position;
+            const 	bool hasId;
+            bool hasName;
+            bool hasElement;
+            bool hasPosition;
+        };
+        
+        class Bookmark : public ElementInterface
+        {
+        public:
+            Bookmark();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BookmarkAttributesPtr getAttributes() const;
+            void setAttributes( const BookmarkAttributesPtr& attributes );
+        private:
+            BookmarkAttributesPtr myAttributes;
+        };
+        
+        /*
+         5673
+         <xs:element name="credit-image" type="image"/>
+         <xs:complexType name="image">
+         <xs:annotation>
+         <xs:documentation>The image type is used to include graphical images in a score.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="image-attributes"/>
+         </xs:complexType>
+         */
+        
+        struct CreditImageAttributes;
+        using CreditImageAttributesPtr = std::shared_ptr<CreditImageAttributes>;
+        
+        struct CreditImageAttributes : public AttributesInterface
+        {
+        public:
+            CreditImageAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsAnyUri source;
+            types::XsToken type;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::LeftCenterRight halign;
+            const 	bool hasSource;
+            const 	bool hasType;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasHalign;
+        };
+        
+        class CreditImage : public ElementInterface
+        {
+        public:
+            CreditImage();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            CreditImageAttributesPtr getAttributes() const;
+            void setAttributes( const CreditImageAttributesPtr& attributes );
+        private:
+            CreditImageAttributesPtr myAttributes;
+        };
+        
+        /*
+         5683 [ equivalents 5662, 5683, 6340 ]
+         <xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="link">
+         <xs:annotation>
+         <xs:documentation>The link type serves as an outgoing simple XLink. It is also used to connect a MusicXML score with a MusicXML opus. If a relative link is used within a document that is part of a compressed MusicXML file, the link is relative to the  root folder of the zip file.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="link-attributes"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="element-position"/>
+         <xs:attributeGroup ref="position"/>
+         </xs:complexType>
+         */
+        
+        /*
+         5688 [ equivalents 5667, 5688, 6343 ]
+         <xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="bookmark">
+         <xs:annotation>
+         <xs:documentation>The bookmark type serves as a well-defined target for an incoming simple XLink.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="id" type="xs:ID" use="required"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="element-position"/>
+         </xs:complexType>
+         */
+        
+        /*
+         5722
+         <xs:element name="lyric-font" type="lyric-font" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="lyric-font">
+         <xs:annotation>
+         <xs:documentation>The lyric-font type specifies the default font for a particular name and number of lyric.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="number" type="xs:NMTOKEN"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="font"/>
+         </xs:complexType>
+         */
+        
+        struct LyricFontAttributes;
+        using LyricFontAttributesPtr = std::shared_ptr<LyricFontAttributes>;
+        
+        struct LyricFontAttributes : public AttributesInterface
+        {
+        public:
+            LyricFontAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsNMToken number;
+            types::XsToken name;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            bool hasNumber;
+            bool hasName;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+        };
+        
+        class LyricFont : public ElementInterface
+        {
+        public:
+            LyricFont();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            LyricFontAttributesPtr getAttributes() const;
+            void setAttributes( const LyricFontAttributesPtr& attributes );
+        private:
+            LyricFontAttributesPtr myAttributes;
+        };
+        
+        /*
+         5727
+         <xs:element name="lyric-language" type="lyric-language" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="lyric-language">
+         <xs:annotation>
+         <xs:documentation>The lyric-language type specifies the default language for a particular name and number of lyric.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="number" type="xs:NMTOKEN"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attribute ref="xml:lang" use="required"/>
+         </xs:complexType>
+         */
+        
+        struct LyricLanguageAttributes;
+        using LyricLanguageAttributesPtr = std::shared_ptr<LyricLanguageAttributes>;
+        
+        struct LyricLanguageAttributes : public AttributesInterface
+        {
+        public:
+            LyricLanguageAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsNMToken number;
+            types::XsToken name;
+            types::XmlLang lang;
+            bool hasNumber;
+            bool hasName;
+            const 	bool hasLang;
+        };
+        
+        class LyricLanguage : public ElementInterface
+        {
+        public:
+            LyricLanguage();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            LyricLanguageAttributesPtr getAttributes() const;
+            void setAttributes( const LyricLanguageAttributesPtr& attributes );
+        private:
+            LyricLanguageAttributesPtr myAttributes;
+        };
+        
+        /*
+         6001
+         <xs:element name="opus" type="opus" minOccurs="0"/>
+         <xs:complexType name="opus">
+         <xs:annotation>
+         <xs:documentation>The opus type represents a link to a MusicXML opus document that composes multiple MusicXML scores into a collection.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="link-attributes"/>
+         </xs:complexType>
+         */
+        
+        struct OpusAttributes;
+        using OpusAttributesPtr = std::shared_ptr<OpusAttributes>;
+        
+        struct OpusAttributes : public AttributesInterface
+        {
+        public:
+            OpusAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XlinkHref href;
+            types::XlinkType type;
+            types::XlinkRole role;
+            types::XlinkTitle title;
+            types::XlinkShow show;
+            types::XlinkActuate actuate;
+            const 	bool hasHref;
+            bool hasType;
+            bool hasRole;
+            bool hasTitle;
+            bool hasShow;
+            bool hasActuate;
+        };
+        
+        class Opus : public ElementInterface
+        {
+        public:
+            Opus();
+            virtual bool hasAttributes() const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            OpusAttributesPtr getAttributes() const;
+            void setAttributes( const OpusAttributesPtr& attributes );
+        private:
+            OpusAttributesPtr myAttributes;
+        };
+        
+        /*
+         6340 [ equivalents 5662, 5683, 6340 ]
+         <xs:element name="link" type="link"/>
+         <xs:complexType name="link">
+         <xs:annotation>
+         <xs:documentation>The link type serves as an outgoing simple XLink. It is also used to connect a MusicXML score with a MusicXML opus. If a relative link is used within a document that is part of a compressed MusicXML file, the link is relative to the  root folder of the zip file.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="link-attributes"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="element-position"/>
+         <xs:attributeGroup ref="position"/>
+         </xs:complexType>
+         */
+        
+        /*
+         6343 [ equivalents 5667, 5688, 6343 ]
+         <xs:element name="bookmark" type="bookmark"/>
+         <xs:complexType name="bookmark">
+         <xs:annotation>
+         <xs:documentation>The bookmark type serves as a well-defined target for an incoming simple XLink.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="id" type="xs:ID" use="required"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="element-position"/>
+         </xs:complexType>
+         */
+
 
     }
 }

@@ -145,8 +145,8 @@ namespace go
             xmlName = current->getXmlName();
             attStructName = className+"Attributes";
             
-            codegenAttributesStructH( h, attStructName, current );
-            codegenAttributesStructCpp( cpp, attStructName, current );
+            codegenAttributesStructH( h, attStructName, current, true, true );
+            codegenAttributesStructCpp( cpp, attStructName, current, true );
             codegenEmptyElementWithAttributesH( h, attStructName, current );
             codegenEmptyElementWithAttributesCpp( cpp, attStructName, current );
             codegenEmptyElementWithAttributesTest( test, attStructName, current );
@@ -161,8 +161,8 @@ namespace go
             test.str("");
             // setIsImplemented( current->getXpItem() );
         }
-        cout << h.str() << endl;
-        // cout << test.str() << endl;
+        // cout << h.str() << endl;
+        cout << cpp.str() << endl;
     }
     inline void goCreateEmptyElementsWithAttributes()
     {
@@ -214,7 +214,7 @@ namespace go
                 if ( !emptyFontAttributesDefined )
                 {
                     emptyFontAttributesDefined = true;
-                    codegenAttributesStructH( h, attStructName, current );
+                    codegenAttributesStructH( h, attStructName, current, false, false );
                     codegenAttributesStructCpp( cpp, attStructName, current );
                 }
                 
@@ -225,7 +225,7 @@ namespace go
                 if ( !emptyPrintStyleAlignAttributesDefined )
                 {
                     emptyPrintStyleAlignAttributesDefined = true;
-                    codegenAttributesStructH( h, attStructName, current );
+                    codegenAttributesStructH( h, attStructName, current, false, false );
                     codegenAttributesStructCpp( cpp, attStructName, current );
                 }
             }
@@ -235,7 +235,7 @@ namespace go
                 if ( !emptyPrintObjectStyleAlignAttributesDefined )
                 {
                     emptyPrintObjectStyleAlignAttributesDefined = true;
-                    codegenAttributesStructH( h, attStructName, current );
+                    codegenAttributesStructH( h, attStructName, current, false, false );
                     codegenAttributesStructCpp( cpp, attStructName, current );
                 }
             }
@@ -245,7 +245,7 @@ namespace go
                 if ( !emptyPlacementAttributesDefined )
                 {
                     emptyPlacementAttributesDefined = true;
-                    codegenAttributesStructH( h, attStructName, current );
+                    codegenAttributesStructH( h, attStructName, current, false, false );
                     codegenAttributesStructCpp( cpp, attStructName, current );
                 }
             }
@@ -255,7 +255,7 @@ namespace go
                 if ( !emptyLineAttributesDefined )
                 {
                     emptyLineAttributesDefined = true;
-                    codegenAttributesStructH( h, attStructName, current );
+                    codegenAttributesStructH( h, attStructName, current, false, false );
                     codegenAttributesStructCpp( cpp, attStructName, current );
                 }
             }
@@ -265,7 +265,7 @@ namespace go
                 if ( !emptyTrillSoundAttributesDefined )
                 {
                     emptyTrillSoundAttributesDefined = true;
-                    codegenAttributesStructH( h, attStructName, current );
+                    codegenAttributesStructH( h, attStructName, current, false, false );
                     codegenAttributesStructCpp( cpp, attStructName, current );
                 }
             }
