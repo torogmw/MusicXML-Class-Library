@@ -1,6 +1,7 @@
 #include "MsItemElement.h"
 #include "isCppKeyword.h"
 #include "camelCase.h"
+#include <limits>
 
 namespace xsd
 {
@@ -10,6 +11,9 @@ namespace xsd
     ,myCppName( "" )
     ,myMsItemElementKind( MsItemElementKind::unknown )
     ,mySubElements()
+    ,myMinOccurs( 1 )
+    ,myMaxOccurs( 1 )
+    ,myCardinality( MsItemElementCardinality::Unidentified )
     {
         if ( item.getMsItemKind() != MsItemKind::element )
         {
@@ -20,6 +24,7 @@ namespace xsd
         parseMsElementItemKind();
         parseReferencedType();
         parseSubElements();
+        parseMinMaxOccurs();
     }
     
     MsItemElement::~MsItemElement() {}
@@ -153,5 +158,101 @@ namespace xsd
             }
         }
         return min;
+    }
+    unsigned int MsItemElement::getMinOccurs() const
+    {
+        return myMinOccurs;
+    }
+    unsigned int MsItemElement::getMaxOccurs() const
+    {
+        return myMaxOccurs;
+    }
+    void MsItemElement::parseMinMaxOccurs()
+    {
+        for ( auto p : getXpItem()->getProperties() )
+        {
+            if ( p->getLabel() == "minOccurs" )
+            {
+                if ( p->getValue() == "unbounded" )
+                {
+                    myMinOccurs = UINT_MAX;
+                }
+                else
+                {
+                    std::stringstream minss( p->getValue() );
+                    minss >> myMinOccurs;
+                }
+            }
+            else if ( p->getLabel() == "maxOccurs" )
+            {
+                if ( p->getValue() == "unbounded" )
+                {
+                    myMaxOccurs = UINT_MAX;
+                }
+                else
+                {
+                    std::stringstream maxss( p->getValue() );
+                    maxss >> myMaxOccurs;
+                }
+            }
+        }
+        if ( myMinOccurs == 0 )
+        {
+            if ( myMaxOccurs == 1 )
+            {
+                myCardinality = MsItemElementCardinality::OptionalSingleOccurrence;
+            }
+            else if ( myMaxOccurs > 1 && myMaxOccurs < UINT_MAX )
+            {
+                myCardinality = MsItemElementCardinality::RangeBound;
+            }
+            else if ( myMaxOccurs == UINT_MAX )
+            {
+                myCardinality = MsItemElementCardinality::ZeroOrMany;
+            }
+        }
+        if ( myMinOccurs == 1)
+        {
+            if ( myMaxOccurs == 1 )
+            {
+                myCardinality = MsItemElementCardinality::RequiredSingleOccurrence;
+            }
+            else if ( myMaxOccurs > 1 && myMaxOccurs < UINT_MAX )
+            {
+                myCardinality = MsItemElementCardinality::RangeBound;
+            }
+            else if ( myMaxOccurs == UINT_MAX )
+            {
+                myCardinality = MsItemElementCardinality::OneOrMMany;
+            }
+        }
+    }
+    MsItemElementCardinality MsItemElement::getCardinality() const
+    {
+        return myCardinality;
+    }
+    std::string toString( const MsItemElementCardinality v )
+    {
+        switch ( v )
+        {
+            case MsItemElementCardinality::RequiredSingleOccurrence:
+                return "RequiredSingleOccurence";
+                break;
+            case MsItemElementCardinality::OptionalSingleOccurrence:
+                return "OptionalSingleOccurrence";
+                break;
+            case MsItemElementCardinality::OneOrMMany:
+                return "OneOrMMany";
+                break;
+            case MsItemElementCardinality::ZeroOrMany:
+                return "ZeroOrMany";
+                break;
+            case MsItemElementCardinality::RangeBound:
+                return "RangeBound";
+                break;
+            default:
+                return "Unidentified";
+                break;
+        }
     }
 }

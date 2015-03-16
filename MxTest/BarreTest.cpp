@@ -43,6 +43,6 @@ TEST( Test01, Barre )
 	CHECK( isOneLineOnly )
 	CHECK_EQUAL( o1.str(), o2.str() )
 	CHECK( !object1.hasContents() )
-	CHECK( !object1.hasAttributes() )
+	CHECK( object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }

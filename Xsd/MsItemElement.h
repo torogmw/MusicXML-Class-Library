@@ -15,6 +15,16 @@ namespace xsd
         valuetype = 2,
         composite = 3
     };
+    enum class MsItemElementCardinality
+    {
+        Unidentified = -1,
+        RequiredSingleOccurrence = 0,
+        OptionalSingleOccurrence = 1,
+        OneOrMMany = 2,
+        ZeroOrMany = 3,
+        RangeBound = 4
+    };
+    std::string toString( const MsItemElementCardinality v );
     inline std::string toString( MsItemElementKind value )
     {
         if (value == MsItemElementKind::empty )
@@ -51,17 +61,24 @@ namespace xsd
         const MsItemAttributeSet& getAttributes() const;
         MsItemElementKind getMsItemElementKind() const;
         MsItemPtr myReferencedItem;
-    
+        unsigned int getMinOccurs() const;
+        unsigned int getMaxOccurs() const;
+        MsItemElementCardinality getCardinality() const;
+        
     private:
         MsItemAttributeSet myAttributes;
         std::string myCppName;
         MsItemElementKind myMsItemElementKind;
         MsItemElementSet mySubElements;
+        unsigned int myMinOccurs;
+        unsigned int myMaxOccurs;
+        MsItemElementCardinality myCardinality;
         void parseAttributes();
         void parseCppName();
         void parseMsElementItemKind();
         void parseReferencedType();
         void parseSubElements();
+        void parseMinMaxOccurs();
     };
     MsItemElementSet findEquivalentElements( const MsItemElementPtr& pattern );
     void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );

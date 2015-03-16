@@ -1,4 +1,4 @@
-#pragma once
+    #pragma once
 #include "MsItem.h"
 #include "MsItemWeb.h"
 #include "MsItemElement.h"
@@ -31,6 +31,7 @@ namespace go
                 ss << (*eq)->getID();
             }
             ss << "] ------------------------->" << end();
+            ss << "<!-- min=" << e->getMinOccurs() << " max=" << e->getMaxOccurs() << " " << toString(e->getCardinality())<< " " << " -->" << end();
             e->getXpItem()->stream( ss, 0 );
 //            if ( e->getDtDef() == "sound" )
 //            {
