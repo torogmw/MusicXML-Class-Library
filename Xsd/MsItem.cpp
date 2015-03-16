@@ -910,6 +910,12 @@ namespace xsd
     
     void MsItem::parseInheritence( MsItemSet& web, const MsItemPtr& itemToParse )
     {
+//        if ( (itemToParse->getDtDef() == "bracket" ||
+//              itemToParse->getDtDef() == "sound" ) && itemToParse->getMsItemKind() == MsItemKind::element )
+//        {
+//            int xyz = 0;
+//            ++xyz;
+//        }
         MsItemPtr item = itemToParse;
         if ( item->getXpItem() )
         {
@@ -938,9 +944,65 @@ namespace xsd
                             }
                             else
                             {
-                                found = std::find_if( web.begin(),
-                                                     web.end(),
-                                                     [ &supertype ](const MsItemPtr& predicateitem){ return predicateitem->getDtDef() == supertype && predicateitem->getMsItemKind() != MsItemKind::element; } );
+//                                found = std::find_if( web.begin(),
+//                                                     web.end(),
+//                                                     [ &supertype ](const MsItemPtr& predicateitem){ return predicateitem->getDtDef() == supertype && ( predicateitem->getMsItemKind() == MsItemKind::complexType
+//                                                                                                                                                       || predicateitem->getMsItemKind() != MsItemKind::simpleType
+//                                                                                                                                                       || predicateitem->getMsItemKind() != MsItemKind::group
+//                                                                                                                                                       || predicateitem->getMsItemKind() != MsItemKind::sequence
+//                                                                                                                                                       || predicateitem->getMsItemKind() != MsItemKind::choice
+//                                                                                                                                                       || predicateitem->getMsItemKind() != MsItemKind::pattern
+//                                                                                                                                                       || predicateitem->getMsItemKind() != MsItemKind::union_
+//                                                                                                                                                       ); } );
+                                auto b = web.begin();
+                                auto e = web.end();
+                                auto it = b;
+                                for( ; it != e; ++it )
+                                {
+                                    if ( (*it)->getDtDef() == supertype && (*it)->getMsItemKind() == MsItemKind::simpleType )
+                                    {
+                                        found = (it);
+                                        break;
+                                    }
+                                }
+                                if ( found == e )
+                                {
+                                    for( it = b; it != e; ++it )
+                                    {
+                                        if ( (*it)->getDtDef() == supertype && (*it)->getMsItemKind() == MsItemKind::complexType )
+                                        {
+                                            found = (it);
+                                            break;
+                                        }
+                                    }
+                                }
+                                if ( found == e )
+                                {
+                                    for( it = b; it != e; ++it )
+                                    {
+                                        if ( (*it)->getDtDef() == supertype && (*it)->getMsItemKind() == MsItemKind::group )
+                                        {
+                                            found = (it);
+                                            break;
+                                        }
+                                    }
+                                }
+                                if ( found == e )
+                                {
+                                    for( it = b; it != e; ++it )
+                                    {
+                                        if ( (*it)->getDtDef() == supertype &&
+                                            ( (*it)->getMsItemKind() == MsItemKind::sequence ||
+                                             (*it)->getMsItemKind() == MsItemKind::choice ||
+                                             (*it)->getMsItemKind() == MsItemKind::union_ ||
+                                             (*it)->getMsItemKind() == MsItemKind::pattern ||
+                                             (*it)->getMsItemKind() == MsItemKind::unknown ) )
+                                        {
+                                            found = (it);
+                                            break;
+                                        }
+                                    }
+                                }
                             }
                             
                             if ( found != web.end() )

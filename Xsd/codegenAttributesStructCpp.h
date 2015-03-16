@@ -4,6 +4,7 @@
 #include "MsItemElement.h"
 #include "tab.h"
 #include "end.h"
+#include "convertFunkyTypeName.h"
 
 namespace xsd
 {
@@ -20,7 +21,7 @@ namespace xsd
             std::string tempTypeName;
             if ( typeitem )
             {
-                tempTypeName = typeitem->getCppName();
+                tempTypeName = convertFunkyTypeName( typeitem->getCppName() );
             }
             if( it == attBegin )
             {

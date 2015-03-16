@@ -8,8 +8,8 @@
 // #include <iomanip>
 // #include "goRxAddHasContentsCpp.h"
 // #include "goCreateEmptyElements.h"
-// #include "goCreateEmptyElementsWithAttributes.h"
-#include "goListNonImplementedElements.h"
+#include "goCreateEmptyElementsWithAttributes.h"
+// #include "goListNonImplementedElements.h"
 
 int main(int argc, const char * argv[])
 {
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
     // go::goSDKJGFHSDLFJKGH();
     // go::goRxAddHasContentsCpp();
     // go::goCreateEmptyElements();
-    // go::goCreateEmptyElementsWithAttributes();
-    go::goListNonImplementedElements();
+    // go::goListNonImplementedElements();
+    go::goCreateEmptyElementsWithAttributes_v2();
     return 0;
 }

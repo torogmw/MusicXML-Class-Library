@@ -66,6 +66,104 @@ namespace go
         }
         return rval;
     }
+    inline bool goIsEmptyElementWithAttributes_v2( const xsd::MsItemElementPtr& e )
+    {
+        using namespace xsd;
+        using namespace fs;
+        using namespace std;
+        
+        bool rval = false;
+        MsItemPtr ref = e->getInheritedMsItem();
+        if ( ref )
+        {
+            if ( ref->getMsItemKind() == MsItemKind::complexType )
+            {
+                for ( auto c : ref->getChildren() )
+                {
+                    if ( c->getMsItemKind() == MsItemKind::annotation ||
+                        c->getMsItemKind() == MsItemKind::attribute ||
+                        c->getMsItemKind() == MsItemKind::attributeGroup )
+                    {
+                        ; // OK
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return rval;
+    }
+    inline xsd::MsItemElementSet goListUnimplementedEmptyElementWithAttributes_v2( const xsd::MsItemWebPtr& web )
+    {
+        using namespace xsd;
+        MsItemElementSet uelements;
+        MsItemElementSet temp = findUnimplementedElements( web );
+        for ( auto x : temp )
+        {
+            if ( goIsEmptyElementWithAttributes_v2(x) )
+            {
+                uelements.push_back( x );
+            }
+        }
+        return uelements;
+    }
+    inline void goCreateEmptyElementsWithAttributes_v2()
+    {
+        using namespace xsd;
+        using namespace fs;
+        using namespace std;
+        
+        MsItemWebPtr w = std::make_shared<MsItemWeb>();
+        MsItemElementSet xelements = findUnimplementedElements( w );
+        MsItemElementSet elements;
+        for ( auto ufufuf : xelements )
+        {
+            if ( goIsEmptyElementWithAttributes_v2( ufufuf ) )
+            {
+                elements.push_back( ufufuf );
+            }
+        }
+        
+        string tab1 = "   ";
+        string tab2 = tab1+tab1;
+        string tab3 = tab2+tab1;
+        string className = "";
+        string xmlName = "";
+        string attStructName;
+        string attStructPtrName;
+        EmptyElementType currentType = EmptyElementType::other;
+        stringstream h;
+        stringstream cpp;
+        stringstream test;
+        for ( auto current : elements )
+        {
+            currentType = goIsEmptyElementWithAttributes( current );
+            className = current->getCppName();
+            xmlName = current->getXmlName();
+            attStructName = className+"Attributes";
+            
+            codegenAttributesStructH( h, attStructName, current );
+            codegenAttributesStructCpp( cpp, attStructName, current );
+            codegenEmptyElementWithAttributesH( h, attStructName, current );
+            codegenEmptyElementWithAttributesCpp( cpp, attStructName, current );
+            codegenEmptyElementWithAttributesTest( test, attStructName, current );
+            
+            Directory d{ globals::getOutputDirectory() };
+            FileName fn{ className+"Test", "cpp" };
+            FileInfo fo{ fn, d };
+            File f{ fo };
+            f.setContents( test.str() );
+            f.writeToDisk();
+            // cout << test.str() << endl;
+            test.str("");
+            // setIsImplemented( current->getXpItem() );
+        }
+        cout << h.str() << endl;
+        // cout << test.str() << endl;
+    }
     inline void goCreateEmptyElementsWithAttributes()
     {
         using namespace xsd;
@@ -185,7 +283,7 @@ namespace go
             File f{ fo };
             f.setContents( test.str() );
             f.writeToDisk();
-            cout << test.str() << endl;
+            // cout << test.str() << endl;
             test.str("");
             // setIsImplemented( current->getXpItem() );
         }

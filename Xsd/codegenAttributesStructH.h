@@ -3,6 +3,7 @@
 #include "MsItemElement.h"
 #include "tab.h"
 #include "end.h"
+#include "convertFunkyTypeName.h"
 
 namespace xsd
 {
@@ -22,11 +23,7 @@ namespace xsd
         for ( auto it = attBegin; it != attEnd; ++it)
         {
             MsItemPtr typeitem = (*it)->getInheritedMsItem();
-            std::string typeItemName = typeitem->getCppName();
-            if ( typeItemName == "Tenths" )
-            {
-                typeItemName = "TenthsValue";
-            }
+            std::string typeItemName = convertFunkyTypeName( typeitem->getCppName() );
             std::string curattName = (*it)->getCppName();
             curattName[0] = tolower( curattName[0] );
             h << tab(1) << "types::" << typeItemName << " " << curattName << ";" << end();

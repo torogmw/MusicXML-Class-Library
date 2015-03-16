@@ -7,6 +7,15 @@ namespace xsd
 {
     MsItemElementSet findUnimplementedElements( const MsItemWebPtr& web )
     {
-        return MsItemElementSet();
+        MsItemElementSet output;
+        MsItemSet temp = web->getFilteredMsItemSet( MsItemKind::element );
+        for ( auto i : temp )
+        {
+            if ( i->getIsImplemented() == false )
+            {
+                output.push_back( std::make_shared<MsItemElement>( *i ) );
+            }
+        }
+        return output;
     }
 }

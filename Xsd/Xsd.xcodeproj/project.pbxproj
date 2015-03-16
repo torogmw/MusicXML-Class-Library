@@ -68,6 +68,7 @@
 		2980BE551A88574E008B0329 /* musicxml.xsd */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = musicxml.xsd; sourceTree = "<group>"; };
 		298B475C1A9B9D000014CAED /* MsItemEnumValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemEnumValue.cpp; sourceTree = "<group>"; };
 		298B475D1A9B9D000014CAED /* MsItemEnumValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemEnumValue.h; sourceTree = "<group>"; };
+		298C816A1AB6715A006619A9 /* convertFunkyTypeName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = convertFunkyTypeName.h; sourceTree = "<group>"; };
 		299CFC121AA78918009881B9 /* codegenValueElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenValueElement.h; sourceTree = "<group>"; };
 		29A884F41A9D5DA900F417CE /* MsItemSimpleTypeDecimal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemSimpleTypeDecimal.cpp; sourceTree = "<group>"; };
 		29A884F51A9D5DA900F417CE /* MsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 				29AFF26F1AB54A90005E0E3D /* codegenEmptyElementWithAttributesH.h */,
 				29AFF2701AB54AAB005E0E3D /* codegenEmptyElementWithAttributesCpp.h */,
 				2935A6F41AB5F76F002859CA /* codegenEmptyElementWithAttributesTest.h */,
+				298C816A1AB6715A006619A9 /* convertFunkyTypeName.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";

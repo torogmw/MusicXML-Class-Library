@@ -15,6 +15,7 @@ namespace xsd
 //            throw std::runtime_error( "error" );
 //        }
         h << "/*" << end();
+        throw std::runtime_error( "lookup equivilents" );
         h << e->getID() << end();
         e->getXpItem()->stream( h, 0 );
         if ( inheritedMsItem )
