@@ -16176,7 +16176,7 @@ namespace mx
         /**************** StringMuteAttributes ****************/
         /* 3391 */
         StringMuteAttributes::StringMuteAttributes()
-        :type()
+        :type( types::OnOff::on )
         ,defaultX()
         ,defaultY()
         ,relativeX()
@@ -16366,7 +16366,7 @@ namespace mx
         /**************** BarreAttributes ****************/
         /* 3491 */
         BarreAttributes::BarreAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,hasType( true )
         {}
         
@@ -16738,7 +16738,7 @@ namespace mx
         /**************** SlurAttributes ****************/
         /* 4917 */
         SlurAttributes::SlurAttributes()
-        :type()
+        :type( types::StartStopContinue::start )
         ,number( 1 )
         ,dashLength()
         ,spaceLength()
@@ -16952,7 +16952,7 @@ namespace mx
         /**************** NonArpeggiateAttributes ****************/
         /* 4947 */
         NonArpeggiateAttributes::NonArpeggiateAttributes()
-        :type()
+        :type( types::TopBottom::top )
         ,number()
         ,defaultX()
         ,defaultY()
@@ -17118,7 +17118,7 @@ namespace mx
         /**************** TieAttributes ****************/
         /* 4970 */
         TieAttributes::TieAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,timeOnly()
         ,hasType( true )
         ,hasTimeOnly( false )
@@ -17854,7 +17854,7 @@ namespace mx
         /* 5662 */
         LinkAttributes::LinkAttributes()
         :href()
-        ,type()
+        ,type( types::XlinkType::simple )
         ,role()
         ,title()
         ,show( types::XlinkShow::replace )
@@ -18298,7 +18298,7 @@ namespace mx
         /**************** OpusAttributes ****************/
         /* 6001 */
         OpusAttributes::OpusAttributes()
-        :href( "http://default.constructed" )
+        :href()
         ,type( types::XlinkType::simple )
         ,role()
         ,title()
