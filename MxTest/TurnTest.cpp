@@ -30,7 +30,9 @@ TEST( Test01, Turn )
 	TurnAttributesPtr attributes1 = std::make_shared<TurnAttributes>();
 	TurnAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasDefaultX = true;
+    attributes1->defaultX = TenthsValue{ 0.1 };
+    
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

@@ -23,7 +23,7 @@ TEST( Test01, Instrument )
 	InstrumentAttributesPtr attributes1 = std::make_shared<InstrumentAttributes>();
 	InstrumentAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->id = XsID{ "ID0023" };
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

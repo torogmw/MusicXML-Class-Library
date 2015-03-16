@@ -23,7 +23,13 @@ TEST( Test01, Opus )
 	OpusAttributesPtr attributes1 = std::make_shared<OpusAttributes>();
 	OpusAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasActuate = true;
+    attributes1->hasRole = true;
+    attributes1->hasTitle = true;
+    attributes1->hasType = true;
+    attributes1->title = XlinkTitle{ "Hello World" };
+    attributes1->role = XlinkRole{ "This is my role" };
+    attributes1->actuate = XlinkActuate::none;
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

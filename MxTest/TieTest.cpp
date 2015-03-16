@@ -24,7 +24,9 @@ TEST( Test01, Tie )
 	TieAttributesPtr attributes1 = std::make_shared<TieAttributes>();
 	TieAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasTimeOnly = true;
+    attributes1->timeOnly = TimeOnly{ "1,4,6" };
+    attributes1->type = StartStop::stop;
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

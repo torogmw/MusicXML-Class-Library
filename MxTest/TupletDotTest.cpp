@@ -24,7 +24,8 @@ TEST( Test01, TupletDot )
 	TupletDotAttributesPtr attributes1 = std::make_shared<TupletDotAttributes>();
 	TupletDotAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasFontSize = true;
+    attributes1->fontSize = FontSize{ Decimal{ 12 } };
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

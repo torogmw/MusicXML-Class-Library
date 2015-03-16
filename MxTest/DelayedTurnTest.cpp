@@ -30,7 +30,9 @@ TEST( Test01, DelayedTurn )
 	DelayedTurnAttributesPtr attributes1 = std::make_shared<DelayedTurnAttributes>();
 	DelayedTurnAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasDefaultX = true;
+    attributes1->defaultX = TenthsValue{ 0.1 };
+    
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

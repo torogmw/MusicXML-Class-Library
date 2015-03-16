@@ -30,7 +30,8 @@ TEST( Test01, Bracket )
 	BracketAttributesPtr attributes1 = std::make_shared<BracketAttributes>();
 	BracketAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasBracket = true;
+    attributes1->bracket = YesNo::yes;
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

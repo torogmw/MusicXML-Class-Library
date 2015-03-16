@@ -25,17 +25,19 @@ TEST( Test01, LyricLanguage )
 	LyricLanguageAttributesPtr attributes1 = std::make_shared<LyricLanguageAttributes>();
 	LyricLanguageAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasNumber = true;
+    attributes1->number = XsNMToken{ "ABC" };
+    
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(hello)";
+	std::string expected = R"(<lyric-language lang="it"/>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(hello2)";
+	expected = indentString+indentString+R"(<lyric-language number="ABC" lang="it"/>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	std::stringstream o1;	std::stringstream o2;	bool isOneLineOnly = false;
@@ -44,6 +46,6 @@ TEST( Test01, LyricLanguage )
 	CHECK( isOneLineOnly )
 	CHECK_EQUAL( o1.str(), o2.str() )
 	CHECK( !object1.hasContents() )
-	CHECK( !object1.hasAttributes() )
+	CHECK( object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }

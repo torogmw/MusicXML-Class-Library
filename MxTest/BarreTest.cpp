@@ -24,7 +24,7 @@ TEST( Test01, Barre )
 	BarreAttributesPtr attributes1 = std::make_shared<BarreAttributes>();
 	BarreAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;

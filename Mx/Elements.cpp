@@ -15505,7 +15505,7 @@ namespace mx
         /**************** WavyLineAttributes ****************/
         /* 3026 */
         WavyLineAttributes::WavyLineAttributes()
-        :type()
+        :type( types::StartStopContinue::start )
         ,number()
         ,defaultX()
         ,defaultY()
@@ -15622,9 +15622,9 @@ namespace mx
         /**************** RepeatAttributes ****************/
         /* 3047 */
         RepeatAttributes::RepeatAttributes()
-        :direction()
+        :direction( types::BackwardForward::backward )
         ,times()
-        ,winged()
+        ,winged( types::Winged::none )
         ,hasDirection( true )
         ,hasTimes( false )
         ,hasWinged( false )
@@ -15695,7 +15695,7 @@ namespace mx
         /**************** WedgeAttributes ****************/
         /* 3351 */
         WedgeAttributes::WedgeAttributes()
-        :type()
+        :type( types::WedgeType::crescendo )
         ,number()
         ,spread()
         ,niente( types::YesNo::no )
@@ -15796,7 +15796,7 @@ namespace mx
         /**************** DashesAttributes ****************/
         /* 3358 */
         DashesAttributes::DashesAttributes()
-        :type()
+        :type( types::StartStopContinue::start )
         ,number()
         ,dashLength()
         ,spaceLength()
@@ -15954,7 +15954,7 @@ namespace mx
         /**************** PedalAttributes ****************/
         /* 3364 */
         PedalAttributes::PedalAttributes()
-        :type()
+        :type( types::StartStopChangeContinue::start )
         ,line( types::YesNo::no )
         ,sign( types::YesNo::no )
         ,defaultX()
@@ -16063,7 +16063,7 @@ namespace mx
         /**************** OctaveShiftAttributes ****************/
         /* 3370 */
         OctaveShiftAttributes::OctaveShiftAttributes()
-        :type()
+        :type( types::UpDownStopContinue::up )
         ,number()
         ,size( 8 )
         ,dashLength()
@@ -16613,7 +16613,7 @@ namespace mx
         /**************** TiedAttributes ****************/
         /* 4914 */
         TiedAttributes::TiedAttributes()
-        :type()
+        :type( types::StartStopContinue::start )
         ,number()
         ,dashLength()
         ,spaceLength()
@@ -18227,7 +18227,7 @@ namespace mx
         LyricLanguageAttributes::LyricLanguageAttributes()
         :number()
         ,name()
-        ,lang()
+        ,lang( "it" )
         ,hasNumber( false )
         ,hasName( false )
         ,hasLang( true )
@@ -18298,8 +18298,8 @@ namespace mx
         /**************** OpusAttributes ****************/
         /* 6001 */
         OpusAttributes::OpusAttributes()
-        :href()
-        ,type()
+        :href( "http://default.constructed" )
+        ,type( types::XlinkType::simple )
         ,role()
         ,title()
         ,show( types::XlinkShow::replace )

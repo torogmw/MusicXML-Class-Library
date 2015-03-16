@@ -13694,7 +13694,7 @@ namespace mx
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::XlinkHref href;
-            types::XlinkType type;
+            const types::XlinkType type;
             types::XlinkRole role;
             types::XlinkTitle title;
             types::XlinkShow show;

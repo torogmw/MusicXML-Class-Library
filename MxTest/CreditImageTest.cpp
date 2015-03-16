@@ -23,8 +23,9 @@ TEST( Test01, CreditImage )
 	CreditImageAttributesPtr attributes1 = std::make_shared<CreditImageAttributes>();
 	CreditImageAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
-	object2.setAttributes( attributes1 );
+    attributes1->hasDefaultX = true;
+    attributes1->defaultX = TenthsValue{ 0.1 };
+    object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;
 	object1.toStream( default_constructed, 0 );

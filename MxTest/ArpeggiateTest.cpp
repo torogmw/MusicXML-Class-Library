@@ -27,7 +27,13 @@ TEST( Test01, Arpeggiate )
 	ArpeggiateAttributesPtr attributes1 = std::make_shared<ArpeggiateAttributes>();
 	ArpeggiateAttributesPtr attributesNull;
 	/* set some attribute1 values here */
-
+    attributes1->hasDefaultX = true;
+    attributes1->defaultX = TenthsValue{ 0.1 };
+    attributes1->hasDirection = true;
+    attributes1->direction = UpDown::up;
+    attributes1->hasNumber = true;
+    attributes1->number = NumberLevel{ 2 };
+    
 	object2.setAttributes( attributes1 );
 	object2.setAttributes( attributesNull ); /* should have no affect */
 	std::stringstream default_constructed;
