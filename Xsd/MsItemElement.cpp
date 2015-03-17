@@ -21,9 +21,9 @@ namespace xsd
         }
         parseAttributes();
         parseCppName();
-        parseMsElementItemKind();
         parseReferencedType();
         parseSubElements();
+        parseMsElementItemKind();
         parseMinMaxOccurs();
     }
     
@@ -59,23 +59,33 @@ namespace xsd
     }
     void MsItemElement::parseMsElementItemKind()
     {
-        myMsItemElementKind = MsItemElementKind::unknown;
-        std::string ref = "";
-        for ( auto p : MsItem::getXpItem()->getProperties() )
+        myMsItemElementKind = MsItemElementKind::simple;
+        if ( mySubElements.size() > 0 )
         {
-            if ( p->getLabel() == "type" ||
-                p->getLabel() == "base" ||
-                p->getLabel() == "ref" )
-            {
-                ref = p->getValue();
-            }
-            break;
-            if ( ref == "empty" )
-            {
-                myMsItemElementKind = MsItemElementKind::empty;
-                return;
-            }
+            myMsItemElementKind = MsItemElementKind::composite;
+            return;
         }
+//        std::string ref = "";
+//        for ( auto p : MsItem::getXpItem()->getProperties() )
+//        {
+//            
+//            if ( p->getLabel() == "type" ||
+//                p->getLabel() == "base" ||
+//                p->getLabel() == "ref" )
+//            {
+//                ref = p->getValue();
+//                break;
+//            }
+//            if ( ref.length() > 0 )
+//            {
+//                MsItemPtr copyOfThis = std::make_shared<MsItem>( *this );
+//                MsItemElementSet  tempSet = findSubElements( copyOfThis );
+//                if ( tempSet.size() > 0 )
+//                {
+//                    
+//                }
+//            }
+//        }
     }
     const MsItemAttributeSet& MsItemElement::getAttributes() const
     {
@@ -132,8 +142,8 @@ namespace xsd
     }
     void MsItemElement::parseSubElements()
     {
-//        MsItemElementPtr input = std::make_shared<MsItemElement>( *this );
-//        mySubElements = findSubElements( input );
+        MsItemElementPtr input = std::make_shared<MsItemElement>( *this );
+        mySubElements = findSubElements( input );
     }
     bool doesElementHaveTheLowestIDAmongPeers( const MsItemElementPtr& elementToCheck, const MsItemElementSet& peerElements )
     {
@@ -254,5 +264,13 @@ namespace xsd
                 return "Unidentified";
                 break;
         }
+    }
+    const MsItemElementSet& MsItemElement::getSubElements() const
+    {
+        return mySubElements;
+    }
+    MsItemElementKind MsItemElement::getMsItemElementKind() const
+    {
+        return myMsItemElementKind;
     }
 }

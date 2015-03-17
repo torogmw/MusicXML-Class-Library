@@ -112,5 +112,6 @@ namespace xsd
     std::string toString( const MsItemSet& input );
     
     void findSubElementsRecursively( const MsItemPtr& searchthis, MsItemSet& output, const int parentMsItemID );
+    bool isGroupDefinition( const MsItemPtr& item );
     
 }

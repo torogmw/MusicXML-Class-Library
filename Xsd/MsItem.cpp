@@ -1147,21 +1147,47 @@ namespace xsd
     }
     void findSubElementsRecursively( const MsItemPtr& searchthis, MsItemSet& output, const int parentMsItemID )
     {
-        if ( searchthis->getDtDef() == "measure-style" )
+        if ( searchthis->getMsItemKind() == MsItemKind::element && searchthis->getID() != parentMsItemID )
         {
-            int stophere = 0;
-            ++stophere;
+            output.push_back( searchthis );
         }
-        if ( searchthis->getMsItemKind() == MsItemKind::element )
+        if ( searchthis->getXpItem()->getProperties().size() > 0 )
         {
-            if ( searchthis->getID() != parentMsItemID )
+            std::string ref = "";
+            for ( auto prop : searchthis->getXpItem()->getProperties() )
             {
-                output.push_back( searchthis );
+                if ( prop->getLabel() == "ref" || prop->getLabel() == "type" || prop->getLabel() == "base" )
+                {
+                    ref = prop->getValue();
+                    break;
+                }
+            }
+            if ( ref.length() > 0 && !isGroupDefinition( searchthis ) )
+            {
+                MsItemPtr refItem;
+                if ( searchthis->getMsItemKind() == MsItemKind::group )
+                {
+                    if ( ! isGroupDefinition( searchthis ) )
+                    {
+                        refItem = findItemByNameAndKind( ref, MsItemKind::group, searchthis );
+                    }
+                }
+                if ( !refItem ) // && searchthis->getMsItemKind() != MsItemKind::complexType )
+                {
+                    refItem = findItemByNameAndKind( ref, MsItemKind::complexType, searchthis );
+                }
+                if ( refItem )
+                {
+                    findSubElementsRecursively( refItem, output, parentMsItemID );
+                }
             }
         }
-        for ( auto child : searchthis->getChildren() )
+        if ( searchthis->getChildren().size() > 0 )
         {
-            findSubElementsRecursively( child, output, parentMsItemID );
+            for ( auto child : searchthis->getChildren() )
+            {
+                findSubElementsRecursively( child, output, parentMsItemID );
+            }
         }
     }
     MsItemSet findSubElements( const MsItemPtr& parent )
@@ -1169,5 +1195,19 @@ namespace xsd
         MsItemSet output;
         findSubElementsRecursively( parent, output, parent->getID() );
         return output;
+    }
+    bool isGroupDefinition( const MsItemPtr& item )
+    {
+        if ( item->getMsItemKind() == MsItemKind::group )
+        {
+            if ( item->getXpItem()->getProperties().size() == 1 )
+            {
+                if ( (*(item->getXpItem()->getProperties().cbegin()))->getLabel() == "name" )
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

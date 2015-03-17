@@ -32,12 +32,9 @@ namespace go
             }
             ss << "] ------------------------->" << end();
             ss << "<!-- min=" << e->getMinOccurs() << " max=" << e->getMaxOccurs() << " " << toString(e->getCardinality())<< " " << " -->" << end();
+            ss << "<!-- MsItemElementKind::" << toString( e->getMsItemElementKind() ) << " -->" << end();
+            ss << "<!-- RecursiveSubElementCount = " << e->getSubElements().size() << " -->" << end();
             e->getXpItem()->stream( ss, 0 );
-//            if ( e->getDtDef() == "sound" )
-//            {
-//                int dsfgldkjfg = 0;
-//                dsfgldkjfg =1;
-//            }
             if ( e->getInheritedMsItem() )
             {
                 e->getInheritedMsItem()->getXpItem()->stream( ss, 0 );

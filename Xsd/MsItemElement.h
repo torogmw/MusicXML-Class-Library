@@ -11,9 +11,8 @@ namespace xsd
     enum class MsItemElementKind
     {
         unknown = -1,
-        empty = 0,
-        valuetype = 2,
-        composite = 3
+        simple,
+        composite
     };
     enum class MsItemElementCardinality
     {
@@ -27,17 +26,13 @@ namespace xsd
     std::string toString( const MsItemElementCardinality v );
     inline std::string toString( MsItemElementKind value )
     {
-        if (value == MsItemElementKind::empty )
+        if (value == MsItemElementKind::simple )
         {
-            return "empty";
+            return "simple";
         }
         else if (value == MsItemElementKind::composite )
         {
             return "composite";
-        }
-        else if (value == MsItemElementKind::valuetype )
-        {
-            return "valuetype";
         }
         else
         {
@@ -64,6 +59,7 @@ namespace xsd
         unsigned int getMinOccurs() const;
         unsigned int getMaxOccurs() const;
         MsItemElementCardinality getCardinality() const;
+        const MsItemElementSet& getSubElements() const;
         
     private:
         MsItemAttributeSet myAttributes;
