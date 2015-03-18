@@ -2,6 +2,7 @@
 #include "isCppKeyword.h"
 #include "camelCase.h"
 #include <limits>
+#include "end.h"
 
 namespace xsd
 {
@@ -272,5 +273,48 @@ namespace xsd
     MsItemElementKind MsItemElement::getMsItemElementKind() const
     {
         return myMsItemElementKind;
+    }
+    bool MsItemElement::getSubElementsImplemented() const
+    {
+        for ( auto e : this->getSubElements() )
+        {
+            if ( ! e->getIsImplemented() )
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    std::string MsItemElement::toString() const
+    {
+        std::stringstream ss;
+        this->toStream( ss );
+        return ss.str();
+    }
+    std::ostream& MsItemElement::toStream( std::ostream& os ) const
+    {
+        MsItemElementSet equivs = findEquivalentElements( std::make_shared<MsItemElement>( *this ) );
+        os << end(2) << "<!-- ";
+        os << " ID = " << this->getID() << " [";
+        for ( auto eq = equivs.cbegin(); eq != equivs.cend(); ++eq )
+        {
+            if ( eq != equivs.cbegin() )
+            {
+                os << ", ";
+            }
+            os << (*eq)->getID();
+        }
+        os << "] ------------------------->" << end();
+        os << "<!-- min=" << this->getMinOccurs() << " max=" << this->getMaxOccurs() << " " << ::xsd::toString(this->getCardinality())<< " " << " -->" << end();
+        os << "<!-- MsItemElementKind::" << ::xsd::toString( this->getMsItemElementKind() ) << " -->" << end();
+        os << "<!-- RecursiveSubElementCount = " << this->getSubElements().size() << " -->" << end();
+        os << "<!-- All Sub Elements Are Implemented: " << std::boolalpha << this->getSubElementsImplemented() << " -->" << end();
+        this->getXpItem()->stream( os, 0 );
+        if ( this->getInheritedMsItem() )
+        {
+            this->getInheritedMsItem()->getXpItem()->stream( os, 0 );
+            os << end();
+        }
+        return os;
     }
 }

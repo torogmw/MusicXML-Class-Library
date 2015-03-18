@@ -8,7 +8,7 @@
 
 namespace go
 {
-    inline void goListNonImplementedElements()
+    inline void goListNonImplementedElements( bool onlyIncludeThoseWithImplementedSubElements )
     {
         using namespace xsd;
         using namespace fs;
@@ -19,26 +19,9 @@ namespace go
         std::stringstream ss;
         for ( auto e : unimplemented )
         {
-            MsItemElementSet equivs = findEquivalentElements( e );
-            ss << end(2) << "<!-- ";
-            ss << " ID = " << e->getID() << " [";
-            for ( auto eq = equivs.cbegin(); eq != equivs.cend(); ++eq )
+            if ( !onlyIncludeThoseWithImplementedSubElements || e->getSubElementsImplemented() )
             {
-                if ( eq != equivs.cbegin() )
-                {
-                    ss << ", ";
-                }
-                ss << (*eq)->getID();
-            }
-            ss << "] ------------------------->" << end();
-            ss << "<!-- min=" << e->getMinOccurs() << " max=" << e->getMaxOccurs() << " " << toString(e->getCardinality())<< " " << " -->" << end();
-            ss << "<!-- MsItemElementKind::" << toString( e->getMsItemElementKind() ) << " -->" << end();
-            ss << "<!-- RecursiveSubElementCount = " << e->getSubElements().size() << " -->" << end();
-            e->getXpItem()->stream( ss, 0 );
-            if ( e->getInheritedMsItem() )
-            {
-                e->getInheritedMsItem()->getXpItem()->stream( ss, 0 );
-                ss << end();
+                e->toStream( ss );
             }
         }
         cout << ss.str() << end();
@@ -48,5 +31,10 @@ namespace go
         File f{ fo };
         f.setContents( ss.str() );
         f.writeToDisk();
+    }
+    
+    inline void goListNonImplementedElements()
+    {
+        goListNonImplementedElements( true );
     }
 }

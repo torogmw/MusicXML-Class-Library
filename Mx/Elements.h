@@ -1,4 +1,4 @@
-
+#pragma once
 #include "ElementInterface.h"
 #include "Enums.h"
 #include "Strings.h"

@@ -60,6 +60,9 @@ namespace xsd
         unsigned int getMaxOccurs() const;
         MsItemElementCardinality getCardinality() const;
         const MsItemElementSet& getSubElements() const;
+        bool getSubElementsImplemented() const;
+        std::string toString() const;
+        std::ostream& toStream( std::ostream& os ) const;
         
     private:
         MsItemAttributeSet myAttributes;
@@ -75,6 +78,7 @@ namespace xsd
         void parseReferencedType();
         void parseSubElements();
         void parseMinMaxOccurs();
+        
     };
     MsItemElementSet findEquivalentElements( const MsItemElementPtr& pattern );
     void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );

@@ -15,7 +15,7 @@ namespace xsd
             {
                 output.push_back( std::make_shared<MsItemElement>( *i ) );
             }
-            MsItemElementSet copyForDebugger = output;
+            // MsItemElementSet copyForDebugger = output;
         }
         return output;
     }

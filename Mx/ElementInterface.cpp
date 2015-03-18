@@ -80,5 +80,9 @@ namespace mx
         {
             return false;
         }
+        std::ostream& operator<<( std::ostream& os, const ElementInterface& value )
+        {
+            return value.toStream( os, 0 );
+        }
     }
 }
