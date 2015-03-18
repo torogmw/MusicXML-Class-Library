@@ -7,10 +7,10 @@ namespace mx
         TraditionalKey::TraditionalKey()
         :ElementInterface()
         ,myCancel()
-        ,myFifths()
+        ,myFifths( std::make_shared<Fifths>())
         ,myMode()
-        ,myHasCancel( false )
-        ,myHasMode( false )
+        // ,myHasCancel( false )
+        // ,myHasMode( false )
         {}
         bool TraditionalKey::hasAttributes() const
         {
@@ -30,58 +30,61 @@ namespace mx
         }
         std::ostream& TraditionalKey::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
-            if ( myHasCancel )
+            if ( myCancel )
             {
-                myCancel.toStream( os, indentLevel ) << std::endl;
+                myCancel->toStream( os, indentLevel ) << std::endl;
             }
-            myFifths.toStream( os, indentLevel );
-            if ( myHasMode )
+            myFifths->toStream( os, indentLevel );
+            if ( myMode )
             {
                 os << std::endl;
-                myMode.toStream( os, indentLevel );
+                myMode->toStream( os, indentLevel );
             }
-            isOneLineOnly = ( !myHasCancel && !myHasMode );
+            isOneLineOnly = ( !myCancel && !myMode );
             return os;
         }
-        Cancel TraditionalKey::getCancel() const
+        CancelPtr TraditionalKey::getCancel() const
         {
             return myCancel;
         }
-        void TraditionalKey::setCancel( const Cancel& value )
+        void TraditionalKey::setCancel( const CancelPtr& value )
         {
             myCancel = value;
         }
-        bool TraditionalKey::getHasCancel() const
-        {
-            return myHasCancel;
-        }
-        void TraditionalKey::setHasCancel( const bool value )
-        {
-            myHasCancel = true;
-        }
-        Fifths TraditionalKey::getFifths() const
+//        bool TraditionalKey::getHasCancel() const
+//        {
+//            return myHasCancel;
+//        }
+//        void TraditionalKey::setHasCancel( const bool value )
+//        {
+//            myHasCancel = true;
+//        }
+        FifthsPtr TraditionalKey::getFifths() const
         {
             return myFifths;
         }
-        void TraditionalKey::setFifths( const Fifths& value )
+        void TraditionalKey::setFifths( const FifthsPtr& value )
         {
-            myFifths = value;
+            if ( value )
+            {
+                myFifths = value;
+            }
         }
-        Mode TraditionalKey::getMode() const
+        ModePtr TraditionalKey::getMode() const
         {
             return myMode;
         }
-        void TraditionalKey::setMode( const Mode& value )
+        void TraditionalKey::setMode( const ModePtr& value )
         {
             myMode = value;
         }
-        bool TraditionalKey::getHasMode() const
-        {
-            return myHasMode;
-        }
-        void TraditionalKey::setHasMode( const bool value )
-        {
-            myHasMode = value;
-        }
+//        bool TraditionalKey::getHasMode() const
+//        {
+//            return myHasMode;
+//        }
+//        void TraditionalKey::setHasMode( const bool value )
+//        {
+//            myHasMode = value;
+//        }
     }
 }

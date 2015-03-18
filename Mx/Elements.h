@@ -54,8 +54,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class Dynamics : public ElementInterface
-        {
+		class Dynamics;
+		using DynamicsPtr = std::shared_ptr<Dynamics>;
+		using DynamicsUPtr = std::unique_ptr<Dynamics>;
+        class Dynamics : public ElementInterface        {
         public:
             Dynamics( const types::DynamicsValue& value );
             Dynamics();
@@ -178,8 +180,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class AccidentalText : public ElementInterface
-        {
+		class AccidentalText;
+		using AccidentalTextPtr = std::shared_ptr<AccidentalText>;
+		using AccidentalTextUPtr = std::unique_ptr<AccidentalText>;
+        class AccidentalText : public ElementInterface        {
         public:
             AccidentalText();
             AccidentalText( const types::AccidentalValue& value );
@@ -261,8 +265,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class DisplayText : public ElementInterface
-        {
+		class DisplayText;
+		using DisplayTextPtr = std::shared_ptr<DisplayText>;
+		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
+        class DisplayText : public ElementInterface        {
         public:
             DisplayText();
             DisplayText( const types::XsString& value );
@@ -346,8 +352,10 @@ namespace mx
         //            bool hasEnclosure;
         //        };
         
-        //        class DisplayText : public ElementInterface
-        //        {
+		class DisplayText;
+		using DisplayTextPtr = std::shared_ptr<DisplayText>;
+		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
+        //        class DisplayText : public ElementInterface        //        {
         //        public:
         //            DisplayText();
         //            DisplayText( const types::XsString& value );
@@ -393,8 +401,10 @@ namespace mx
             const   bool hasType;
         };
         
-        class OtherPlay : public ElementInterface
-        {
+		class OtherPlay;
+		using OtherPlayPtr = std::shared_ptr<OtherPlay>;
+		using OtherPlayUPtr = std::unique_ptr<OtherPlay>;
+        class OtherPlay : public ElementInterface        {
         public:
             OtherPlay();
             OtherPlay( const types::XsString& value );
@@ -465,8 +475,10 @@ namespace mx
             bool hasRelativeY;
         };
         
-        class PartSymbol : public ElementInterface
-        {
+		class PartSymbol;
+		using PartSymbolPtr = std::shared_ptr<PartSymbol>;
+		using PartSymbolUPtr = std::unique_ptr<PartSymbol>;
+        class PartSymbol : public ElementInterface        {
         public:
             PartSymbol();
             PartSymbol( const types::GroupSymbolValue& value );
@@ -524,8 +536,10 @@ namespace mx
             bool hasCancel;
         };
         
-        class KeyOctave : public ElementInterface
-        {
+		class KeyOctave;
+		using KeyOctavePtr = std::shared_ptr<KeyOctave>;
+		using KeyOctaveUPtr = std::unique_ptr<KeyOctave>;
+        class KeyOctave : public ElementInterface        {
         public:
             KeyOctave();
             KeyOctave( const types::OctaveValue& value );
@@ -583,8 +597,10 @@ namespace mx
             bool hasUseSymbols;
         };
         
-        class MultipleRest : public ElementInterface
-        {
+		class MultipleRest;
+		using MultipleRestPtr = std::shared_ptr<MultipleRest>;
+		using MultipleRestUPtr = std::unique_ptr<MultipleRest>;
+        class MultipleRest : public ElementInterface        {
         public:
             MultipleRest();
             MultipleRest( const types::PositiveIntegerOrEmpty& value );
@@ -647,8 +663,10 @@ namespace mx
             bool hasSlashes;
         };
         
-        class MeasureRepeat : public ElementInterface
-        {
+		class MeasureRepeat;
+		using MeasureRepeatPtr = std::shared_ptr<MeasureRepeat>;
+		using MeasureRepeatUPtr = std::unique_ptr<MeasureRepeat>;
+        class MeasureRepeat : public ElementInterface        {
         public:
             MeasureRepeat();
             MeasureRepeat( const types::PositiveIntegerOrEmpty& value );
@@ -712,8 +730,10 @@ namespace mx
             bool hasColor;
         };
         
-        class BarStyle : public ElementInterface
-        {
+		class BarStyle;
+		using BarStylePtr = std::shared_ptr<BarStyle>;
+		using BarStyleUPtr = std::unique_ptr<BarStyle>;
+        class BarStyle : public ElementInterface        {
         public:
             BarStyle();
             BarStyle( const types::BarStyleEnum& value );
@@ -787,8 +807,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Fermata : public ElementInterface
-        {
+		class Fermata;
+		using FermataPtr = std::shared_ptr<Fermata>;
+		using FermataUPtr = std::unique_ptr<Fermata>;
+        class Fermata : public ElementInterface        {
         public:
             Fermata();
             Fermata( const types::FermataShape& value );
@@ -869,8 +891,10 @@ namespace mx
             bool hasTextY;
         };
         
-        class Ending : public ElementInterface
-        {
+		class Ending;
+		using EndingPtr = std::shared_ptr<Ending>;
+		using EndingUPtr = std::unique_ptr<Ending>;
+        class Ending : public ElementInterface        {
         public:
             Ending();
             Ending( const types::XsString& value );
@@ -947,8 +971,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class BassStep : public ElementInterface
-        {
+		class BassStep;
+		using BassStepPtr = std::shared_ptr<BassStep>;
+		using BassStepUPtr = std::unique_ptr<BassStep>;
+        class BassStep : public ElementInterface        {
         public:
             BassStep();
             BassStep( const types::StepEnum& value );
@@ -1020,8 +1046,10 @@ namespace mx
             bool hasLocation;
         };
         
-        class BassAlter : public ElementInterface
-        {
+		class BassAlter;
+		using BassAlterPtr = std::shared_ptr<BassAlter>;
+		using BassAlterUPtr = std::unique_ptr<BassAlter>;
+        class BassAlter : public ElementInterface        {
         public:
             BassAlter();
             BassAlter( const types::Semitones& value );
@@ -1088,8 +1116,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class DegreeValue : public ElementInterface
-        {
+		class DegreeValue;
+		using DegreeValuePtr = std::shared_ptr<DegreeValue>;
+		using DegreeValueUPtr = std::unique_ptr<DegreeValue>;
+        class DegreeValue : public ElementInterface        {
         public:
             DegreeValue();
             DegreeValue( const types::PositiveInteger& value );
@@ -1158,8 +1188,10 @@ namespace mx
             bool hasPlusMinus;
         };
         
-        class DegreeAlter : public ElementInterface
-        {
+		class DegreeAlter;
+		using DegreeAlterPtr = std::shared_ptr<DegreeAlter>;
+		using DegreeAlterUPtr = std::unique_ptr<DegreeAlter>;
+        class DegreeAlter : public ElementInterface        {
         public:
             DegreeAlter();
             DegreeAlter( const types::Semitones& value );
@@ -1232,8 +1264,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class DegreeType : public ElementInterface
-        {
+		class DegreeType;
+		using DegreeTypePtr = std::shared_ptr<DegreeType>;
+		using DegreeTypeUPtr = std::unique_ptr<DegreeType>;
+        class DegreeType : public ElementInterface        {
         public:
             DegreeType();
             DegreeType( const types::DegreeTypeValue& value );
@@ -1285,8 +1319,10 @@ namespace mx
             bool hasSound;
         };
         
-        class Offset : public ElementInterface
-        {
+		class Offset;
+		using OffsetPtr = std::shared_ptr<Offset>;
+		using OffsetUPtr = std::unique_ptr<Offset>;
+        class Offset : public ElementInterface        {
         public:
             Offset();
             Offset( const types::DivisionsValue& value );
@@ -1369,8 +1405,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class Rehearsal : public ElementInterface
-        {
+		class Rehearsal;
+		using RehearsalPtr = std::shared_ptr<Rehearsal>;
+		using RehearsalUPtr = std::unique_ptr<Rehearsal>;
+        class Rehearsal : public ElementInterface        {
         public:
             Rehearsal();
             Rehearsal( const types::XsString& value );
@@ -1453,8 +1491,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class Words : public ElementInterface
-        {
+		class Words;
+		using WordsPtr = std::shared_ptr<Words>;
+		using WordsUPtr = std::unique_ptr<Words>;
+        class Words : public ElementInterface        {
         public:
             Words();
             Words( const types::XsString& value );
@@ -1523,8 +1563,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class PrincipalVoice : public ElementInterface
-        {
+		class PrincipalVoice;
+		using PrincipalVoicePtr = std::shared_ptr<PrincipalVoice>;
+		using PrincipalVoiceUPtr = std::unique_ptr<PrincipalVoice>;
+        class PrincipalVoice : public ElementInterface        {
         public:
             PrincipalVoice();
             PrincipalVoice( const types::XsString& value );
@@ -1590,8 +1632,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class OtherDirection : public ElementInterface
-        {
+		class OtherDirection;
+		using OtherDirectionPtr = std::shared_ptr<OtherDirection>;
+		using OtherDirectionUPtr = std::unique_ptr<OtherDirection>;
+        class OtherDirection : public ElementInterface        {
         public:
             OtherDirection();
             OtherDirection( const types::XsString& value );
@@ -1641,8 +1685,10 @@ namespace mx
             bool hasLocation;
         };
         
-        class FirstFret : public ElementInterface
-        {
+		class FirstFret;
+		using FirstFretPtr = std::shared_ptr<FirstFret>;
+		using FirstFretUPtr = std::unique_ptr<FirstFret>;
+        class FirstFret : public ElementInterface        {
         public:
             FirstFret();
             FirstFret( const types::PositiveInteger& value );
@@ -1696,8 +1742,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Fret : public ElementInterface
-        {
+		class Fret;
+		using FretPtr = std::shared_ptr<Fret>;
+		using FretUPtr = std::unique_ptr<Fret>;
+        class Fret : public ElementInterface        {
         public:
             Fret();
             Fret( const types::NonNegativeInteger& value );
@@ -1767,8 +1815,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class Fingering : public ElementInterface
-        {
+		class Fingering;
+		using FingeringPtr = std::shared_ptr<Fingering>;
+		using FingeringUPtr = std::unique_ptr<Fingering>;
+        class Fingering : public ElementInterface        {
         public:
             Fingering();
             Fingering( const types::XsString& value );
@@ -1815,8 +1865,10 @@ namespace mx
             bool hasType;
         };
         
-        class Feature : public ElementInterface
-        {
+		class Feature;
+		using FeaturePtr = std::shared_ptr<Feature>;
+		using FeatureUPtr = std::unique_ptr<Feature>;
+        class Feature : public ElementInterface        {
         public:
             Feature();
             Feature( const types::XsString& value );
@@ -1868,8 +1920,10 @@ namespace mx
         //            bool hasSound;
         //        };
         //
-        //        class Offset : public ElementInterface
-        //        {
+		class Offset;
+		using OffsetPtr = std::shared_ptr<Offset>;
+		using OffsetUPtr = std::unique_ptr<Offset>;
+        //        class Offset : public ElementInterface        //        {
         //        public:
         //            Offset();
         //            Offset( const types::DivisionsValue& value );
@@ -1921,8 +1975,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class PerMinute : public ElementInterface
-        {
+		class PerMinute;
+		using PerMinutePtr = std::shared_ptr<PerMinute>;
+		using PerMinuteUPtr = std::unique_ptr<PerMinute>;
+        class PerMinute : public ElementInterface        {
         public:
             PerMinute();
             PerMinute( const types::XsString& value );
@@ -1980,8 +2036,10 @@ namespace mx
             bool hasNumber;
         };
         
-        class MetronomeBeam : public ElementInterface
-        {
+		class MetronomeBeam;
+		using MetronomeBeamPtr = std::shared_ptr<MetronomeBeam>;
+		using MetronomeBeamUPtr = std::unique_ptr<MetronomeBeam>;
+        class MetronomeBeam : public ElementInterface        {
         public:
             MetronomeBeam();
             MetronomeBeam( const types::BeamValue& value );
@@ -2051,8 +2109,10 @@ namespace mx
             bool hasTip;
         };
         
-        class Beater : public ElementInterface
-        {
+		class Beater;
+		using BeaterPtr = std::shared_ptr<Beater>;
+		using BeaterUPtr = std::unique_ptr<Beater>;
+        class Beater : public ElementInterface        {
         public:
             Beater();
             Beater( const types::BeaterValue& value );
@@ -2124,8 +2184,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class MeasureNumbering : public ElementInterface
-        {
+		class MeasureNumbering;
+		using MeasureNumberingPtr = std::shared_ptr<MeasureNumbering>;
+		using MeasureNumberingUPtr = std::unique_ptr<MeasureNumbering>;
+        class MeasureNumbering : public ElementInterface        {
         public:
             MeasureNumbering();
             MeasureNumbering( const types::MeasureNumberingValue& value );
@@ -2202,8 +2264,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class RootStep : public ElementInterface
-        {
+		class RootStep;
+		using RootStepPtr = std::shared_ptr<RootStep>;
+		using RootStepUPtr = std::unique_ptr<RootStep>;
+        class RootStep : public ElementInterface        {
         public:
             RootStep();
             RootStep( const types::StepEnum& value );
@@ -2275,8 +2339,10 @@ namespace mx
             bool hasLocation;
         };
         
-        class RootAlter : public ElementInterface
-        {
+		class RootAlter;
+		using RootAlterPtr = std::shared_ptr<RootAlter>;
+		using RootAlterUPtr = std::unique_ptr<RootAlter>;
+        class RootAlter : public ElementInterface        {
         public:
             RootAlter();
             RootAlter( const types::Semitones& value );
@@ -2326,8 +2392,10 @@ namespace mx
             bool hasId;
         };
         
-        class MidiDevice : public ElementInterface
-        {
+		class MidiDevice;
+		using MidiDevicePtr = std::shared_ptr<MidiDevice>;
+		using MidiDeviceUPtr = std::unique_ptr<MidiDevice>;
+        class MidiDevice : public ElementInterface        {
         public:
             MidiDevice();
             MidiDevice( const types::XsString& value );
@@ -2379,8 +2447,10 @@ namespace mx
         //            bool hasSound;
         //        };
         //
-        //        class Offset : public ElementInterface
-        //        {
+		class Offset;
+		using OffsetPtr = std::shared_ptr<Offset>;
+		using OffsetUPtr = std::unique_ptr<Offset>;
+        //        class Offset : public ElementInterface        //        {
         //        public:
         //            Offset();
         //            Offset( const types::DivisionsValue& value );
@@ -2426,8 +2496,10 @@ namespace mx
             bool hasType;
         };
         
-        class Encoder : public ElementInterface
-        {
+		class Encoder;
+		using EncoderPtr = std::shared_ptr<Encoder>;
+		using EncoderUPtr = std::unique_ptr<Encoder>;
+        class Encoder : public ElementInterface        {
         public:
             Encoder();
             Encoder( const types::XsString& value );
@@ -2474,8 +2546,10 @@ namespace mx
             bool hasType;
         };
         
-        class Creator : public ElementInterface
-        {
+		class Creator;
+		using CreatorPtr = std::shared_ptr<Creator>;
+		using CreatorUPtr = std::unique_ptr<Creator>;
+        class Creator : public ElementInterface        {
         public:
             Creator();
             Creator( const types::XsString& value );
@@ -2522,8 +2596,10 @@ namespace mx
             bool hasType;
         };
         
-        class Rights : public ElementInterface
-        {
+		class Rights;
+		using RightsPtr = std::shared_ptr<Rights>;
+		using RightsUPtr = std::unique_ptr<Rights>;
+        class Rights : public ElementInterface        {
         public:
             Rights();
             Rights( const types::XsString& value );
@@ -2570,8 +2646,10 @@ namespace mx
             bool hasType;
         };
         
-        class Relation : public ElementInterface
-        {
+		class Relation;
+		using RelationPtr = std::shared_ptr<Relation>;
+		using RelationUPtr = std::unique_ptr<Relation>;
+        class Relation : public ElementInterface        {
         public:
             Relation();
             Relation( const types::XsString& value );
@@ -2618,8 +2696,10 @@ namespace mx
             const   bool hasName;
         };
         
-        class MiscellaneousField : public ElementInterface
-        {
+		class MiscellaneousField;
+		using MiscellaneousFieldPtr = std::shared_ptr<MiscellaneousField>;
+		using MiscellaneousFieldUPtr = std::unique_ptr<MiscellaneousField>;
+        class MiscellaneousField : public ElementInterface        {
         public:
             MiscellaneousField();
             MiscellaneousField( const types::XsString& value );
@@ -2673,8 +2753,10 @@ namespace mx
             const bool hasType;
         };
         
-        class LineWidth : public ElementInterface
-        {
+		class LineWidth;
+		using LineWidthPtr = std::shared_ptr<LineWidth>;
+		using LineWidthUPtr = std::unique_ptr<LineWidth>;
+        class LineWidth : public ElementInterface        {
         public:
             LineWidth();
             LineWidth( const types::TenthsValue& value );
@@ -2728,8 +2810,10 @@ namespace mx
             const   bool hasType;
         };
         
-        class NoteSize : public ElementInterface
-        {
+		class NoteSize;
+		using NoteSizePtr = std::shared_ptr<NoteSize>;
+		using NoteSizeUPtr = std::unique_ptr<NoteSize>;
+        class NoteSize : public ElementInterface        {
         public:
             NoteSize();
             NoteSize( const types::NonNegativeDecimal& value );
@@ -2783,8 +2867,10 @@ namespace mx
             const   bool hasType;
         };
         
-        class Distance : public ElementInterface
-        {
+		class Distance;
+		using DistancePtr = std::shared_ptr<Distance>;
+		using DistanceUPtr = std::unique_ptr<Distance>;
+        class Distance : public ElementInterface        {
         public:
             Distance();
             Distance( const types::TenthsValue& value );
@@ -2831,8 +2917,10 @@ namespace mx
             const   bool hasType;
         };
         
-        class OtherAppearance : public ElementInterface
-        {
+		class OtherAppearance;
+		using OtherAppearancePtr = std::shared_ptr<OtherAppearance>;
+		using OtherAppearanceUPtr = std::unique_ptr<OtherAppearance>;
+        class OtherAppearance : public ElementInterface        {
         public:
             OtherAppearance();
             OtherAppearance( const types::XsString& value );
@@ -2905,8 +2993,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class BreathMark : public ElementInterface
-        {
+		class BreathMark;
+		using BreathMarkPtr = std::shared_ptr<BreathMark>;
+		using BreathMarkUPtr = std::unique_ptr<BreathMark>;
+        class BreathMark : public ElementInterface        {
         public:
             BreathMark();
             BreathMark( const types::BreathMarkValue& value );
@@ -2970,8 +3060,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class OtherArticulation : public ElementInterface
-        {
+		class OtherArticulation;
+		using OtherArticulationPtr = std::shared_ptr<OtherArticulation>;
+		using OtherArticulationUPtr = std::unique_ptr<OtherArticulation>;
+        class OtherArticulation : public ElementInterface        {
         public:
             OtherArticulation();
             OtherArticulation( const types::XsString& value );
@@ -3035,8 +3127,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class WithBar : public ElementInterface
-        {
+		class WithBar;
+		using WithBarPtr = std::shared_ptr<WithBar>;
+		using WithBarUPtr = std::unique_ptr<WithBar>;
+        class WithBar : public ElementInterface        {
         public:
             WithBar();
             WithBar( const types::XsString& value );
@@ -3097,8 +3191,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Prefix : public ElementInterface
-        {
+		class Prefix;
+		using PrefixPtr = std::shared_ptr<Prefix>;
+		using PrefixUPtr = std::unique_ptr<Prefix>;
+        class Prefix : public ElementInterface        {
         public:
             Prefix();
             Prefix( const types::XsString& value );
@@ -3159,8 +3255,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class FigureNumber : public ElementInterface
-        {
+		class FigureNumber;
+		using FigureNumberPtr = std::shared_ptr<FigureNumber>;
+		using FigureNumberUPtr = std::unique_ptr<FigureNumber>;
+        class FigureNumber : public ElementInterface        {
         public:
             FigureNumber();
             FigureNumber( const types::XsString& value );
@@ -3221,8 +3319,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Suffix : public ElementInterface
-        {
+		class Suffix;
+		using SuffixPtr = std::shared_ptr<Suffix>;
+		using SuffixUPtr = std::unique_ptr<Suffix>;
+        class Suffix : public ElementInterface        {
         public:
             Suffix();
             Suffix( const types::XsString& value );
@@ -3278,8 +3378,10 @@ namespace mx
             bool hasLocation;
         };
         
-        class HoleClosed : public ElementInterface
-        {
+		class HoleClosed;
+		using HoleClosedPtr = std::shared_ptr<HoleClosed>;
+		using HoleClosedUPtr = std::unique_ptr<HoleClosed>;
+        class HoleClosed : public ElementInterface        {
         public:
             HoleClosed();
             HoleClosed( const types::HoleClosedValue& value );
@@ -3350,8 +3452,10 @@ namespace mx
             bool hasLang;
         };
         
-        class Text : public ElementInterface
-        {
+		class Text;
+		using TextPtr = std::shared_ptr<Text>;
+		using TextUPtr = std::unique_ptr<Text>;
+        class Text : public ElementInterface        {
         public:
             Text();
             Text( const types::XsString& value );
@@ -3422,8 +3526,10 @@ namespace mx
             bool hasLang;
         };
         
-        class Elision : public ElementInterface
-        {
+		class Elision;
+		using ElisionPtr = std::shared_ptr<Elision>;
+		using ElisionUPtr = std::unique_ptr<Elision>;
+        class Elision : public ElementInterface        {
         public:
             Elision();
             Elision( const types::XsString& value );
@@ -3494,8 +3600,10 @@ namespace mx
         //            bool hasLang;
         //        };
         //
-        //        class Text : public ElementInterface
-        //        {
+		class Text;
+		using TextPtr = std::shared_ptr<Text>;
+		using TextUPtr = std::unique_ptr<Text>;
+        //        class Text : public ElementInterface        //        {
         //        public:
         //            Text();
         //            Text( const types::XsString& value );
@@ -3567,8 +3675,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Glissando : public ElementInterface
-        {
+		class Glissando;
+		using GlissandoPtr = std::shared_ptr<Glissando>;
+		using GlissandoUPtr = std::unique_ptr<Glissando>;
+        class Glissando : public ElementInterface        {
         public:
             Glissando();
             Glissando( const types::XsString& value );
@@ -3650,8 +3760,10 @@ namespace mx
             bool hasLastBeat;
         };
         
-        class Slide : public ElementInterface
-        {
+		class Slide;
+		using SlidePtr = std::shared_ptr<Slide>;
+		using SlideUPtr = std::unique_ptr<Slide>;
+        class Slide : public ElementInterface        {
         public:
             Slide();
             Slide( const types::XsString& value );
@@ -3725,8 +3837,10 @@ namespace mx
         //            bool hasFontWeight;
         //        };
         
-        //        class Fermata : public ElementInterface
-        //        {
+		class Fermata;
+		using FermataPtr = std::shared_ptr<Fermata>;
+		using FermataUPtr = std::unique_ptr<Fermata>;
+        //        class Fermata : public ElementInterface        //        {
         //        public:
         //            Fermata();
         //            Fermata( const types::FermataShape& value );
@@ -3829,8 +3943,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class AccidentalMark : public ElementInterface
-        {
+		class AccidentalMark;
+		using AccidentalMarkPtr = std::shared_ptr<AccidentalMark>;
+		using AccidentalMarkUPtr = std::unique_ptr<AccidentalMark>;
+        class AccidentalMark : public ElementInterface        {
         public:
             AccidentalMark();
             AccidentalMark( const types::AccidentalValue& value );
@@ -3903,8 +4019,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class OtherNotation : public ElementInterface
-        {
+		class OtherNotation;
+		using OtherNotationPtr = std::shared_ptr<OtherNotation>;
+		using OtherNotationUPtr = std::unique_ptr<OtherNotation>;
+        class OtherNotation : public ElementInterface        {
         public:
             OtherNotation();
             OtherNotation( const types::XsString& value );
@@ -3971,8 +4089,10 @@ namespace mx
             bool hasSize;
         };
         
-        class Type : public ElementInterface
-        {
+		class Type;
+		using TypePtr = std::shared_ptr<Type>;
+		using TypeUPtr = std::unique_ptr<Type>;
+        class Type : public ElementInterface        {
         public:
             Type();
             Type( const types::NoteTypeValue& value );
@@ -4086,8 +4206,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Accidental : public ElementInterface
-        {
+		class Accidental;
+		using AccidentalPtr = std::shared_ptr<Accidental>;
+		using AccidentalUPtr = std::unique_ptr<Accidental>;
+        class Accidental : public ElementInterface        {
         public:
             Accidental();
             Accidental( const types::AccidentalValue& value );
@@ -4151,8 +4273,10 @@ namespace mx
             bool hasRelativeY;
         };
         
-        class Stem : public ElementInterface
-        {
+		class Stem;
+		using StemPtr = std::shared_ptr<Stem>;
+		using StemUPtr = std::unique_ptr<Stem>;
+        class Stem : public ElementInterface        {
         public:
             Stem();
             Stem( const types::StemValue& value );
@@ -4250,8 +4374,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Notehead : public ElementInterface
-        {
+		class Notehead;
+		using NoteheadPtr = std::shared_ptr<Notehead>;
+		using NoteheadUPtr = std::unique_ptr<Notehead>;
+        class Notehead : public ElementInterface        {
         public:
             Notehead();
             Notehead( const types::NoteheadValue& value );
@@ -4322,8 +4448,10 @@ namespace mx
             bool hasFan;
         };
         
-        class Beam : public ElementInterface
-        {
+		class Beam;
+		using BeamPtr = std::shared_ptr<Beam>;
+		using BeamUPtr = std::unique_ptr<Beam>;
+        class Beam : public ElementInterface        {
         public:
             Beam();
             Beam( const types::BeamValue& value );
@@ -4406,8 +4534,10 @@ namespace mx
         //            bool hasEnclosure;
         //        };
         
-        //        class DisplayText : public ElementInterface
-        //        {
+		class DisplayText;
+		using DisplayTextPtr = std::shared_ptr<DisplayText>;
+		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
+        //        class DisplayText : public ElementInterface        //        {
         //        public:
         //            DisplayText();
         //            DisplayText( const types::XsString& value );
@@ -4485,8 +4615,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class Tremolo : public ElementInterface
-        {
+		class Tremolo;
+		using TremoloPtr = std::shared_ptr<Tremolo>;
+		using TremoloUPtr = std::unique_ptr<Tremolo>;
+        class Tremolo : public ElementInterface        {
         public:
             Tremolo();
             Tremolo( const types::TremoloMarks& value );
@@ -4550,8 +4682,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class OtherOrnament : public ElementInterface
-        {
+		class OtherOrnament;
+		using OtherOrnamentPtr = std::shared_ptr<OtherOrnament>;
+		using OtherOrnamentUPtr = std::unique_ptr<OtherOrnament>;
+        class OtherOrnament : public ElementInterface        {
         public:
             OtherOrnament();
             OtherOrnament( const types::XsString& value );
@@ -4655,8 +4789,10 @@ namespace mx
         //            bool hasPlacement;
         //        };
         //
-        //        class AccidentalMark : public ElementInterface
-        //        {
+		class AccidentalMark;
+		using AccidentalMarkPtr = std::shared_ptr<AccidentalMark>;
+		using AccidentalMarkUPtr = std::unique_ptr<AccidentalMark>;
+        //        class AccidentalMark : public ElementInterface        //        {
         //        public:
         //            AccidentalMark();
         //            AccidentalMark( const types::AccidentalValue& value );
@@ -4725,8 +4861,10 @@ namespace mx
         //            bool hasPlacement;
         //        };
         //
-        //        class Fingering : public ElementInterface
-        //        {
+		class Fingering;
+		using FingeringPtr = std::shared_ptr<Fingering>;
+		using FingeringUPtr = std::unique_ptr<Fingering>;
+        //        class Fingering : public ElementInterface        //        {
         //        public:
         //            Fingering();
         //            Fingering( const types::XsString& value );
@@ -4789,8 +4927,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class Pluck : public ElementInterface
-        {
+		class Pluck;
+		using PluckPtr = std::shared_ptr<Pluck>;
+		using PluckUPtr = std::unique_ptr<Pluck>;
+        class Pluck : public ElementInterface        {
         public:
             Pluck();
             Pluck( const types::XsString& value );
@@ -4844,8 +4984,10 @@ namespace mx
         //            bool hasFontWeight;
         //        };
         //
-        //        class Fret : public ElementInterface
-        //        {
+		class Fret;
+		using FretPtr = std::shared_ptr<Fret>;
+		using FretUPtr = std::unique_ptr<Fret>;
+        //        class Fret : public ElementInterface        //        {
         //        public:
         //            Fret();
         //            Fret( const types::NonNegativeInteger& value );
@@ -4914,8 +5056,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class HammerOn : public ElementInterface
-        {
+		class HammerOn;
+		using HammerOnPtr = std::shared_ptr<HammerOn>;
+		using HammerOnUPtr = std::unique_ptr<HammerOn>;
+        class HammerOn : public ElementInterface        {
         public:
             HammerOn();
             HammerOn( const types::XsString& value );
@@ -4985,8 +5129,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class PullOff : public ElementInterface
-        {
+		class PullOff;
+		using PullOffPtr = std::shared_ptr<PullOff>;
+		using PullOffUPtr = std::unique_ptr<PullOff>;
+        class PullOff : public ElementInterface        {
         public:
             PullOff();
             PullOff( const types::XsString& value );
@@ -5050,8 +5196,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class Tap : public ElementInterface
-        {
+		class Tap;
+		using TapPtr = std::shared_ptr<Tap>;
+		using TapUPtr = std::unique_ptr<Tap>;
+        class Tap : public ElementInterface        {
         public:
             Tap();
             Tap( const types::XsString& value );
@@ -5132,8 +5280,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class Handbell : public ElementInterface
-        {
+		class Handbell;
+		using HandbellPtr = std::shared_ptr<Handbell>;
+		using HandbellUPtr = std::unique_ptr<Handbell>;
+        class Handbell : public ElementInterface        {
         public:
             Handbell();
             Handbell( const types::HandbellValue& value );
@@ -5197,8 +5347,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class OtherTechnical : public ElementInterface
-        {
+		class OtherTechnical;
+		using OtherTechnicalPtr = std::shared_ptr<OtherTechnical>;
+		using OtherTechnicalUPtr = std::unique_ptr<OtherTechnical>;
+        class OtherTechnical : public ElementInterface        {
         public:
             OtherTechnical();
             OtherTechnical( const types::XsString& value );
@@ -5252,8 +5404,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class TupletNumber : public ElementInterface
-        {
+		class TupletNumber;
+		using TupletNumberPtr = std::shared_ptr<TupletNumber>;
+		using TupletNumberUPtr = std::unique_ptr<TupletNumber>;
+        class TupletNumber : public ElementInterface        {
         public:
             TupletNumber();
             TupletNumber( const types::NonNegativeInteger& value );
@@ -5327,8 +5481,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class TupletType : public ElementInterface
-        {
+		class TupletType;
+		using TupletTypePtr = std::shared_ptr<TupletType>;
+		using TupletTypeUPtr = std::unique_ptr<TupletType>;
+        class TupletType : public ElementInterface        {
         public:
             TupletType();
             TupletType( const types::NoteTypeValue& value );
@@ -5411,8 +5567,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class CreditWords : public ElementInterface
-        {
+		class CreditWords;
+		using CreditWordsPtr = std::shared_ptr<CreditWords>;
+		using CreditWordsUPtr = std::unique_ptr<CreditWords>;
+        class CreditWords : public ElementInterface        {
         public:
             CreditWords();
             CreditWords( const types::XsString& value );
@@ -5495,8 +5653,10 @@ namespace mx
         //            bool hasEnclosure;
         //        };
         //
-        //        class CreditWords : public ElementInterface
-        //        {
+		class CreditWords;
+		using CreditWordsPtr = std::shared_ptr<CreditWords>;
+		using CreditWordsUPtr = std::unique_ptr<CreditWords>;
+        //        class CreditWords : public ElementInterface        //        {
         //        public:
         //            CreditWords();
         //            CreditWords( const types::XsString& value );
@@ -5558,8 +5718,10 @@ namespace mx
             bool hasJustify;
         };
         
-        class GroupName : public ElementInterface
-        {
+		class GroupName;
+		using GroupNamePtr = std::shared_ptr<GroupName>;
+		using GroupNameUPtr = std::unique_ptr<GroupName>;
+        class GroupName : public ElementInterface        {
         public:
             GroupName();
             GroupName( const types::XsString& value );
@@ -5622,8 +5784,10 @@ namespace mx
             bool hasJustify;
         };
         
-        class GroupAbbreviation : public ElementInterface
-        {
+		class GroupAbbreviation;
+		using GroupAbbreviationPtr = std::shared_ptr<GroupAbbreviation>;
+		using GroupAbbreviationUPtr = std::unique_ptr<GroupAbbreviation>;
+        class GroupAbbreviation : public ElementInterface        {
         public:
             GroupAbbreviation();
             GroupAbbreviation( const types::XsString& value );
@@ -5688,8 +5852,10 @@ namespace mx
             bool hasRelativeY;
         };
         
-        class GroupSymbol : public ElementInterface
-        {
+		class GroupSymbol;
+		using GroupSymbolPtr = std::shared_ptr<GroupSymbol>;
+		using GroupSymbolUPtr = std::unique_ptr<GroupSymbol>;
+        class GroupSymbol : public ElementInterface        {
         public:
             GroupSymbol();
             GroupSymbol( const types::GroupSymbolValue& value );
@@ -5745,8 +5911,10 @@ namespace mx
             bool hasColor;
         };
         
-        class GroupBarline : public ElementInterface
-        {
+		class GroupBarline;
+		using GroupBarlinePtr = std::shared_ptr<GroupBarline>;
+		using GroupBarlineUPtr = std::unique_ptr<GroupBarline>;
+        class GroupBarline : public ElementInterface        {
         public:
             GroupBarline();
             GroupBarline( const types::GroupBarlineValue& value );
@@ -5811,8 +5979,10 @@ namespace mx
             bool hasJustify;
         };
         
-        class PartName : public ElementInterface
-        {
+		class PartName;
+		using PartNamePtr = std::shared_ptr<PartName>;
+		using PartNameUPtr = std::unique_ptr<PartName>;
+        class PartName : public ElementInterface        {
         public:
             PartName();
             PartName( const types::XsString& value );
@@ -5877,8 +6047,10 @@ namespace mx
             bool hasJustify;
         };
         
-        class PartAbbreviation : public ElementInterface
-        {
+		class PartAbbreviation;
+		using PartAbbreviationPtr = std::shared_ptr<PartAbbreviation>;
+		using PartAbbreviationUPtr = std::unique_ptr<PartAbbreviation>;
+        class PartAbbreviation : public ElementInterface        {
         public:
             PartAbbreviation();
             PartAbbreviation( const types::XsString& value );
@@ -5928,8 +6100,10 @@ namespace mx
         //            bool hasId;
         //        };
         //
-        //        class MidiDevice : public ElementInterface
-        //        {
+		class MidiDevice;
+		using MidiDevicePtr = std::shared_ptr<MidiDevice>;
+		using MidiDeviceUPtr = std::unique_ptr<MidiDevice>;
+        //        class MidiDevice : public ElementInterface        //        {
         //        public:
         //            MidiDevice();
         //            MidiDevice( const types::XsString& value );
@@ -6011,8 +6185,10 @@ namespace mx
             bool hasEnclosure;
         };
         
-        class Footnote : public ElementInterface
-        {
+		class Footnote;
+		using FootnotePtr = std::shared_ptr<Footnote>;
+		using FootnoteUPtr = std::unique_ptr<Footnote>;
+        class Footnote : public ElementInterface        {
         public:
             Footnote();
             Footnote( const types::XsString& value );
@@ -6066,8 +6242,10 @@ namespace mx
             bool hasSize;
         };
         
-        class Level : public ElementInterface
-        {
+		class Level;
+		using LevelPtr = std::shared_ptr<Level>;
+		using LevelUPtr = std::unique_ptr<Level>;
+        class Level : public ElementInterface        {
         public:
             Level();
             Level( const types::XsString& value );
@@ -6119,8 +6297,10 @@ namespace mx
             bool hasLocation;
         };
         
-        class Cancel : public ElementInterface
-        {
+		class Cancel;
+		using CancelPtr = std::shared_ptr<Cancel>;
+		using CancelUPtr = std::unique_ptr<Cancel>;
+        class Cancel : public ElementInterface        {
         public:
             Cancel();
             Cancel( const types::FifthsValue& value );
@@ -6181,8 +6361,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Function : public ElementInterface
-        {
+		class Function;
+		using FunctionPtr = std::shared_ptr<Function>;
+		using FunctionUPtr = std::unique_ptr<Function>;
+        class Function : public ElementInterface        {
         public:
             Function();
             Function( const types::XsString& value );
@@ -6358,8 +6540,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class Kind : public ElementInterface
-        {
+		class Kind;
+		using KindPtr = std::shared_ptr<Kind>;
+		using KindUPtr = std::unique_ptr<Kind>;
+        class Kind : public ElementInterface        {
         public:
             Kind();
             Kind( const types::KindValue& value );
@@ -6420,8 +6604,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Inversion : public ElementInterface
-        {
+		class Inversion;
+		using InversionPtr = std::shared_ptr<Inversion>;
+		using InversionUPtr = std::unique_ptr<Inversion>;
+        class Inversion : public ElementInterface        {
         public:
             Inversion();
             Inversion( const types::NonNegativeInteger& value );
@@ -6472,8 +6658,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class MidiChannel : public ElementInterface
-        {
+		class MidiChannel;
+		using MidiChannelPtr = std::shared_ptr<MidiChannel>;
+		using MidiChannelUPtr = std::unique_ptr<MidiChannel>;
+        class MidiChannel : public ElementInterface        {
         public:
             MidiChannel();
             MidiChannel( const types::Midi16& value );
@@ -6495,8 +6683,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class MidiName : public ElementInterface
-        {
+		class MidiName;
+		using MidiNamePtr = std::shared_ptr<MidiName>;
+		using MidiNameUPtr = std::unique_ptr<MidiName>;
+        class MidiName : public ElementInterface        {
         public:
             MidiName();
             MidiName( const types::XsString& value );
@@ -6534,8 +6724,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class MidiBank : public ElementInterface
-        {
+		class MidiBank;
+		using MidiBankPtr = std::shared_ptr<MidiBank>;
+		using MidiBankUPtr = std::unique_ptr<MidiBank>;
+        class MidiBank : public ElementInterface        {
         public:
             MidiBank();
             MidiBank( const types::Midi16384& value );
@@ -6573,8 +6765,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class MidiProgram : public ElementInterface
-        {
+		class MidiProgram;
+		using MidiProgramPtr = std::shared_ptr<MidiProgram>;
+		using MidiProgramUPtr = std::unique_ptr<MidiProgram>;
+        class MidiProgram : public ElementInterface        {
         public:
             MidiProgram();
             MidiProgram( const types::Midi128& value );
@@ -6612,8 +6806,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class MidiUnpitched : public ElementInterface
-        {
+		class MidiUnpitched;
+		using MidiUnpitchedPtr = std::shared_ptr<MidiUnpitched>;
+		using MidiUnpitchedUPtr = std::unique_ptr<MidiUnpitched>;
+        class MidiUnpitched : public ElementInterface        {
         public:
             MidiUnpitched();
             MidiUnpitched( const types::Midi128& value );
@@ -6651,8 +6847,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Volume : public ElementInterface
-        {
+		class Volume;
+		using VolumePtr = std::shared_ptr<Volume>;
+		using VolumeUPtr = std::unique_ptr<Volume>;
+        class Volume : public ElementInterface        {
         public:
             Volume();
             Volume( const types::Percent& value );
@@ -6690,8 +6888,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Pan : public ElementInterface
-        {
+		class Pan;
+		using PanPtr = std::shared_ptr<Pan>;
+		using PanUPtr = std::unique_ptr<Pan>;
+        class Pan : public ElementInterface        {
         public:
             Pan();
             Pan( const types::RotationDegrees& value );
@@ -6729,8 +6929,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Elevation : public ElementInterface
-        {
+		class Elevation;
+		using ElevationPtr = std::shared_ptr<Elevation>;
+		using ElevationUPtr = std::unique_ptr<Elevation>;
+        class Elevation : public ElementInterface        {
         public:
             Elevation();
             Elevation( const types::RotationDegrees& value );
@@ -6752,8 +6954,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class Ipa : public ElementInterface
-        {
+		class Ipa;
+		using IpaPtr = std::shared_ptr<Ipa>;
+		using IpaUPtr = std::unique_ptr<Ipa>;
+        class Ipa : public ElementInterface        {
         public:
             Ipa();
             Ipa( const types::XsString& value );
@@ -6817,8 +7021,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Mute : public ElementInterface
-        {
+		class Mute;
+		using MutePtr = std::shared_ptr<Mute>;
+		using MuteUPtr = std::unique_ptr<Mute>;
+        class Mute : public ElementInterface        {
         public:
             Mute();
             Mute( const types::MuteEnum& value );
@@ -6864,8 +7070,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class SemiPitched : public ElementInterface
-        {
+		class SemiPitched;
+		using SemiPitchedPtr = std::shared_ptr<SemiPitched>;
+		using SemiPitchedUPtr = std::unique_ptr<SemiPitched>;
+        class SemiPitched : public ElementInterface        {
         public:
             SemiPitched();
             SemiPitched( const types::SemiPitchedEnum& value );
@@ -6901,8 +7109,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Divisions : public ElementInterface
-        {
+		class Divisions;
+		using DivisionsPtr = std::shared_ptr<Divisions>;
+		using DivisionsUPtr = std::unique_ptr<Divisions>;
+        class Divisions : public ElementInterface        {
         public:
             Divisions();
             Divisions( const types::PositiveDivisionsValue& value );
@@ -6924,8 +7134,10 @@ namespace mx
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        class Staves : public ElementInterface
-        {
+		class Staves;
+		using StavesPtr = std::shared_ptr<Staves>;
+		using StavesUPtr = std::unique_ptr<Staves>;
+        class Staves : public ElementInterface        {
         public:
             Staves();
             Staves( const types::NonNegativeInteger& value );
@@ -6947,8 +7159,10 @@ namespace mx
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        class Instruments : public ElementInterface
-        {
+		class Instruments;
+		using InstrumentsPtr = std::shared_ptr<Instruments>;
+		using InstrumentsUPtr = std::unique_ptr<Instruments>;
+        class Instruments : public ElementInterface        {
         public:
             Instruments();
             Instruments( const types::NonNegativeInteger& value );
@@ -6996,8 +7210,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Sign : public ElementInterface
-        {
+		class Sign;
+		using SignPtr = std::shared_ptr<Sign>;
+		using SignUPtr = std::unique_ptr<Sign>;
+        class Sign : public ElementInterface        {
         public:
             Sign();
             Sign( const types::ClefSign& value );
@@ -7029,8 +7245,10 @@ namespace mx
          <xs:restriction base="xs:integer"/>
          </xs:simpleType>
          */
-        class Line : public ElementInterface
-        {
+		class Line;
+		using LinePtr = std::shared_ptr<Line>;
+		using LineUPtr = std::unique_ptr<Line>;
+        class Line : public ElementInterface        {
         public:
             Line();
             Line( const types::StaffLine& value );
@@ -7052,8 +7270,10 @@ namespace mx
          <xs:simpleType name="xs:integer"/>
          <xs:simpleType name="xs:integer"/>
          */
-        class ClefOctaveChange : public ElementInterface
-        {
+		class ClefOctaveChange;
+		using ClefOctaveChangePtr = std::shared_ptr<ClefOctaveChange>;
+		using ClefOctaveChangeUPtr = std::unique_ptr<ClefOctaveChange>;
+        class ClefOctaveChange : public ElementInterface        {
         public:
             ClefOctaveChange();
             ClefOctaveChange( const types::Integer& value );
@@ -7099,8 +7319,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class TimeRelation : public ElementInterface
-        {
+		class TimeRelation;
+		using TimeRelationPtr = std::shared_ptr<TimeRelation>;
+		using TimeRelationUPtr = std::unique_ptr<TimeRelation>;
+        class TimeRelation : public ElementInterface        {
         public:
             TimeRelation();
             TimeRelation( const types::TimeRelationEnum& value );
@@ -7144,8 +7366,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class StaffType : public ElementInterface
-        {
+		class StaffType;
+		using StaffTypePtr = std::shared_ptr<StaffType>;
+		using StaffTypeUPtr = std::unique_ptr<StaffType>;
+        class StaffType : public ElementInterface        {
         public:
             StaffType();
             StaffType( const types::StaffTypeEnum& value );
@@ -7167,8 +7391,10 @@ namespace mx
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        class StaffLines : public ElementInterface
-        {
+		class StaffLines;
+		using StaffLinesPtr = std::shared_ptr<StaffLines>;
+		using StaffLinesUPtr = std::unique_ptr<StaffLines>;
+        class StaffLines : public ElementInterface        {
         public:
             StaffLines();
             StaffLines( const types::NonNegativeInteger& value );
@@ -7190,8 +7416,10 @@ namespace mx
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        class Capo : public ElementInterface
-        {
+		class Capo;
+		using CapoPtr = std::shared_ptr<Capo>;
+		using CapoUPtr = std::unique_ptr<Capo>;
+        class Capo : public ElementInterface        {
         public:
             Capo();
             Capo( const types::NonNegativeInteger& value );
@@ -7227,8 +7455,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class StaffSize : public ElementInterface
-        {
+		class StaffSize;
+		using StaffSizePtr = std::shared_ptr<StaffSize>;
+		using StaffSizeUPtr = std::unique_ptr<StaffSize>;
+        class StaffSize : public ElementInterface        {
         public:
             StaffSize();
             StaffSize( const types::NonNegativeDecimal& value );
@@ -7250,8 +7480,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class SenzaMisura : public ElementInterface
-        {
+		class SenzaMisura;
+		using SenzaMisuraPtr = std::shared_ptr<SenzaMisura>;
+		using SenzaMisuraUPtr = std::unique_ptr<SenzaMisura>;
+        class SenzaMisura : public ElementInterface        {
         public:
             SenzaMisura();
             SenzaMisura( const types::XsString& value );
@@ -7273,8 +7505,10 @@ namespace mx
          <xs:simpleType name="xs:integer"/>
          <xs:simpleType name="xs:integer"/>
          */
-        class Diatonic : public ElementInterface
-        {
+		class Diatonic;
+		using DiatonicPtr = std::shared_ptr<Diatonic>;
+		using DiatonicUPtr = std::unique_ptr<Diatonic>;
+        class Diatonic : public ElementInterface        {
         public:
             Diatonic();
             Diatonic( const types::Integer& value );
@@ -7306,8 +7540,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class Chromatic : public ElementInterface
-        {
+		class Chromatic;
+		using ChromaticPtr = std::shared_ptr<Chromatic>;
+		using ChromaticUPtr = std::unique_ptr<Chromatic>;
+        class Chromatic : public ElementInterface        {
         public:
             Chromatic();
             Chromatic( const types::Semitones& value );
@@ -7329,8 +7565,10 @@ namespace mx
          <xs:simpleType name="xs:integer"/>
          <xs:simpleType name="xs:integer"/>
          */
-        class OctaveChange : public ElementInterface
-        {
+		class OctaveChange;
+		using OctaveChangePtr = std::shared_ptr<OctaveChange>;
+		using OctaveChangeUPtr = std::unique_ptr<OctaveChange>;
+        class OctaveChange : public ElementInterface        {
         public:
             OctaveChange();
             OctaveChange( const types::Integer& value );
@@ -7368,8 +7606,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class AccordionMiddle : public ElementInterface
-        {
+		class AccordionMiddle;
+		using AccordionMiddlePtr = std::shared_ptr<AccordionMiddle>;
+		using AccordionMiddleUPtr = std::unique_ptr<AccordionMiddle>;
+        class AccordionMiddle : public ElementInterface        {
         public:
             AccordionMiddle();
             AccordionMiddle( const types::AccordionMiddleValue& value );
@@ -7391,8 +7631,10 @@ namespace mx
          <xs:simpleType name="xs:positiveInteger"/>
          <xs:simpleType name="xs:positiveInteger"/>
          */
-        class FrameStrings : public ElementInterface
-        {
+		class FrameStrings;
+		using FrameStringsPtr = std::shared_ptr<FrameStrings>;
+		using FrameStringsUPtr = std::unique_ptr<FrameStrings>;
+        class FrameStrings : public ElementInterface        {
         public:
             FrameStrings();
             FrameStrings( const types::PositiveInteger& value );
@@ -7414,8 +7656,10 @@ namespace mx
          <xs:simpleType name="xs:positiveInteger"/>
          <xs:simpleType name="xs:positiveInteger"/>
          */
-        class FrameFrets : public ElementInterface
-        {
+		class FrameFrets;
+		using FrameFretsPtr = std::shared_ptr<FrameFrets>;
+		using FrameFretsUPtr = std::unique_ptr<FrameFrets>;
+        class FrameFrets : public ElementInterface        {
         public:
             FrameFrets();
             FrameFrets( const types::PositiveInteger& value );
@@ -7437,8 +7681,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class MetronomeRelation : public ElementInterface
-        {
+		class MetronomeRelation;
+		using MetronomeRelationPtr = std::shared_ptr<MetronomeRelation>;
+		using MetronomeRelationUPtr = std::unique_ptr<MetronomeRelation>;
+        class MetronomeRelation : public ElementInterface        {
             // This is weird, the only allowed value is "equals"
             // per the specification, so the client cannot change
             // the value.  No matter what you do here, MetronomeRelation's
@@ -7504,8 +7750,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class MetronomeType : public ElementInterface
-        {
+		class MetronomeType;
+		using MetronomeTypePtr = std::shared_ptr<MetronomeType>;
+		using MetronomeTypeUPtr = std::unique_ptr<MetronomeType>;
+        class MetronomeType : public ElementInterface        {
         public:
             MetronomeType();
             MetronomeType( const types::NoteTypeValue& value );
@@ -7553,8 +7801,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class PedalStep : public ElementInterface
-        {
+		class PedalStep;
+		using PedalStepPtr = std::shared_ptr<PedalStep>;
+		using PedalStepUPtr = std::unique_ptr<PedalStep>;
+        class PedalStep : public ElementInterface        {
         public:
             PedalStep();
             PedalStep( const types::StepEnum& value );
@@ -7586,8 +7836,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class PedalAlter : public ElementInterface
-        {
+		class PedalAlter;
+		using PedalAlterPtr = std::shared_ptr<PedalAlter>;
+		using PedalAlterUPtr = std::unique_ptr<PedalAlter>;
+        class PedalAlter : public ElementInterface        {
         public:
             PedalAlter();
             PedalAlter( const types::Semitones& value );
@@ -7623,8 +7875,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Glass : public ElementInterface
-        {
+		class Glass;
+		using GlassPtr = std::shared_ptr<Glass>;
+		using GlassUPtr = std::unique_ptr<Glass>;
+        class Glass : public ElementInterface        {
         public:
             Glass();
             Glass( const types::GlassEnum& value );
@@ -7704,8 +7958,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Metal : public ElementInterface
-        {
+		class Metal;
+		using MetalPtr = std::shared_ptr<Metal>;
+		using MetalUPtr = std::unique_ptr<Metal>;
+        class Metal : public ElementInterface        {
         public:
             Metal();
             Metal( const types::MetalEnum& value );
@@ -7767,8 +8023,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Wood : public ElementInterface
-        {
+		class Wood;
+		using WoodPtr = std::shared_ptr<Wood>;
+		using WoodUPtr = std::unique_ptr<Wood>;
+        class Wood : public ElementInterface        {
         public:
             Wood();
             Wood( const types::WoodEnum& value );
@@ -7816,8 +8074,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Pitched : public ElementInterface
-        {
+		class Pitched;
+		using PitchedPtr = std::shared_ptr<Pitched>;
+		using PitchedUPtr = std::unique_ptr<Pitched>;
+        class Pitched : public ElementInterface        {
         public:
             Pitched();
             Pitched( const types::PitchedEnum& value );
@@ -7875,8 +8135,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Membrane : public ElementInterface
-        {
+		class Membrane;
+		using MembranePtr = std::shared_ptr<Membrane>;
+		using MembraneUPtr = std::unique_ptr<Membrane>;
+        class Membrane : public ElementInterface        {
         public:
             Membrane();
             Membrane( const types::MembraneEnum& value );
@@ -7938,8 +8200,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Effect : public ElementInterface
-        {
+		class Effect;
+		using EffectPtr = std::shared_ptr<Effect>;
+		using EffectUPtr = std::unique_ptr<Effect>;
+        class Effect : public ElementInterface        {
         public:
             Effect();
             Effect( const types::EffectEnum& value );
@@ -7981,8 +8245,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class StickLocation : public ElementInterface
-        {
+		class StickLocation;
+		using StickLocationPtr = std::shared_ptr<StickLocation>;
+		using StickLocationUPtr = std::unique_ptr<StickLocation>;
+        class StickLocation : public ElementInterface        {
         public:
             StickLocation();
             StickLocation( const types::StickLocationEnum& value );
@@ -8004,8 +8270,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class OtherPercussion : public ElementInterface
-        {
+		class OtherPercussion;
+		using OtherPercussionPtr = std::shared_ptr<OtherPercussion>;
+		using OtherPercussionUPtr = std::unique_ptr<OtherPercussion>;
+        class OtherPercussion : public ElementInterface        {
         public:
             OtherPercussion();
             OtherPercussion( const types::XsString& value );
@@ -8051,8 +8319,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class StickType : public ElementInterface
-        {
+		class StickType;
+		using StickTypePtr = std::shared_ptr<StickType>;
+		using StickTypeUPtr = std::unique_ptr<StickType>;
+        class StickType : public ElementInterface        {
         public:
             StickType();
             StickType( const types::StickTypeEnum& value );
@@ -8096,8 +8366,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class StickMaterial : public ElementInterface
-        {
+		class StickMaterial;
+		using StickMaterialPtr = std::shared_ptr<StickMaterial>;
+		using StickMaterialUPtr = std::unique_ptr<StickMaterial>;
+        class StickMaterial : public ElementInterface        {
         public:
             StickMaterial();
             StickMaterial( const types::StickMaterialEnum& value );
@@ -8133,8 +8405,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class EncodingDate : public ElementInterface
-        {
+		class EncodingDate;
+		using EncodingDatePtr = std::shared_ptr<EncodingDate>;
+		using EncodingDateUPtr = std::unique_ptr<EncodingDate>;
+        class EncodingDate : public ElementInterface        {
         public:
             EncodingDate();
             EncodingDate( const types::Date& value );
@@ -8156,8 +8430,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class Software : public ElementInterface
-        {
+		class Software;
+		using SoftwarePtr = std::shared_ptr<Software>;
+		using SoftwareUPtr = std::unique_ptr<Software>;
+        class Software : public ElementInterface        {
         public:
             Software();
             Software( const types::XsString& value );
@@ -8179,8 +8455,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class EncodingDescription : public ElementInterface
-        {
+		class EncodingDescription;
+		using EncodingDescriptionPtr = std::shared_ptr<EncodingDescription>;
+		using EncodingDescriptionUPtr = std::unique_ptr<EncodingDescription>;
+        class EncodingDescription : public ElementInterface        {
         public:
             EncodingDescription();
             EncodingDescription( const types::XsString& value );
@@ -8202,8 +8480,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class Source : public ElementInterface
-        {
+		class Source;
+		using SourcePtr = std::shared_ptr<Source>;
+		using SourceUPtr = std::unique_ptr<Source>;
+        class Source : public ElementInterface        {
         public:
             Source();
             Source( const types::XsString& value );
@@ -8239,8 +8519,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class MeasureDistance : public ElementInterface
-        {
+		class MeasureDistance;
+		using MeasureDistancePtr = std::shared_ptr<MeasureDistance>;
+		using MeasureDistanceUPtr = std::unique_ptr<MeasureDistance>;
+        class MeasureDistance : public ElementInterface        {
         public:
             MeasureDistance();
             MeasureDistance( const types::TenthsValue& value );
@@ -8276,8 +8558,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class PageHeight : public ElementInterface
-        {
+		class PageHeight;
+		using PageHeightPtr = std::shared_ptr<PageHeight>;
+		using PageHeightUPtr = std::unique_ptr<PageHeight>;
+        class PageHeight : public ElementInterface        {
         public:
             PageHeight();
             PageHeight( const types::TenthsValue& value );
@@ -8313,8 +8597,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class PageWidth : public ElementInterface
-        {
+		class PageWidth;
+		using PageWidthPtr = std::shared_ptr<PageWidth>;
+		using PageWidthUPtr = std::unique_ptr<PageWidth>;
+        class PageWidth : public ElementInterface        {
         public:
             PageWidth();
             PageWidth( const types::TenthsValue& value );
@@ -8346,8 +8632,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class Millimeters : public ElementInterface
-        {
+		class Millimeters;
+		using MillimetersPtr = std::shared_ptr<Millimeters>;
+		using MillimetersUPtr = std::unique_ptr<Millimeters>;
+        class Millimeters : public ElementInterface        {
         public:
             Millimeters();
             Millimeters( const types::MillimetersValue& value );
@@ -8383,8 +8671,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class Tenths : public ElementInterface
-        {
+		class Tenths;
+		using TenthsPtr = std::shared_ptr<Tenths>;
+		using TenthsUPtr = std::unique_ptr<Tenths>;
+        class Tenths : public ElementInterface        {
         public:
             Tenths();
             Tenths( const types::TenthsValue& value );
@@ -8420,8 +8710,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class StaffDistance : public ElementInterface
-        {
+		class StaffDistance;
+		using StaffDistancePtr = std::shared_ptr<StaffDistance>;
+		using StaffDistanceUPtr = std::unique_ptr<StaffDistance>;
+        class StaffDistance : public ElementInterface        {
         public:
             StaffDistance();
             StaffDistance( const types::TenthsValue& value );
@@ -8457,8 +8749,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class SystemDistance : public ElementInterface
-        {
+		class SystemDistance;
+		using SystemDistancePtr = std::shared_ptr<SystemDistance>;
+		using SystemDistanceUPtr = std::unique_ptr<SystemDistance>;
+        class SystemDistance : public ElementInterface        {
         public:
             SystemDistance();
             SystemDistance( const types::TenthsValue& value );
@@ -8494,8 +8788,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class TopSystemDistance : public ElementInterface
-        {
+		class TopSystemDistance;
+		using TopSystemDistancePtr = std::shared_ptr<TopSystemDistance>;
+		using TopSystemDistanceUPtr = std::unique_ptr<TopSystemDistance>;
+        class TopSystemDistance : public ElementInterface        {
         public:
             TopSystemDistance();
             TopSystemDistance( const types::TenthsValue& value );
@@ -8555,8 +8851,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class ArrowDirection : public ElementInterface
-        {
+		class ArrowDirection;
+		using ArrowDirectionPtr = std::shared_ptr<ArrowDirection>;
+		using ArrowDirectionUPtr = std::unique_ptr<ArrowDirection>;
+        class ArrowDirection : public ElementInterface        {
         public:
             ArrowDirection();
             ArrowDirection( const types::ArrowDirectionEnum& value );
@@ -8604,8 +8902,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class ArrowStyle : public ElementInterface
-        {
+		class ArrowStyle;
+		using ArrowStylePtr = std::shared_ptr<ArrowStyle>;
+		using ArrowStyleUPtr = std::unique_ptr<ArrowStyle>;
+        class ArrowStyle : public ElementInterface        {
         public:
             ArrowStyle();
             ArrowStyle( const types::ArrowStyleEnum& value );
@@ -8643,8 +8943,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class CircularArrow : public ElementInterface
-        {
+		class CircularArrow;
+		using CircularArrowPtr = std::shared_ptr<CircularArrow>;
+		using CircularArrowUPtr = std::unique_ptr<CircularArrow>;
+        class CircularArrow : public ElementInterface        {
         public:
             CircularArrow();
             CircularArrow( const types::CircularArrowEnum& value );
@@ -8676,8 +8978,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class BendAlter : public ElementInterface
-        {
+		class BendAlter;
+		using BendAlterPtr = std::shared_ptr<BendAlter>;
+		using BendAlterUPtr = std::unique_ptr<BendAlter>;
+        class BendAlter : public ElementInterface        {
         public:
             BendAlter();
             BendAlter( const types::Semitones& value );
@@ -8699,8 +9003,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class HoleType : public ElementInterface
-        {
+		class HoleType;
+		using HoleTypePtr = std::shared_ptr<HoleType>;
+		using HoleTypeUPtr = std::unique_ptr<HoleType>;
+        class HoleType : public ElementInterface        {
         public:
             HoleType();
             HoleType( const types::XsString& value );
@@ -8722,8 +9028,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class HoleShape : public ElementInterface
-        {
+		class HoleShape;
+		using HoleShapePtr = std::shared_ptr<HoleShape>;
+		using HoleShapeUPtr = std::unique_ptr<HoleShape>;
+        class HoleShape : public ElementInterface        {
         public:
             HoleShape();
             HoleShape( const types::XsString& value );
@@ -8765,8 +9073,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Syllabic : public ElementInterface
-        {
+		class Syllabic;
+		using SyllabicPtr = std::shared_ptr<Syllabic>;
+		using SyllabicUPtr = std::unique_ptr<Syllabic>;
+        class Syllabic : public ElementInterface        {
         public:
             Syllabic();
             Syllabic( const types::SyllabicEnum& value );
@@ -8808,8 +9118,10 @@ namespace mx
         //         </xs:restriction>
         //         </xs:simpleType>
         //         */
-        //        class Syllabic : public ElementInterface
-        //        {
+		class Syllabic;
+		using SyllabicPtr = std::shared_ptr<Syllabic>;
+		using SyllabicUPtr = std::unique_ptr<Syllabic>;
+        //        class Syllabic : public ElementInterface        //        {
         //        public:
         //            Syllabic();
         //            Syllabic( const types::SyllabicEnum& value );
@@ -8856,8 +9168,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Step : public ElementInterface
-        {
+		class Step;
+		using StepPtr = std::shared_ptr<Step>;
+		using StepUPtr = std::unique_ptr<Step>;
+        class Step : public ElementInterface        {
         public:
             Step();
             Step( const types::StepEnum& value );
@@ -8889,8 +9203,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class Alter : public ElementInterface
-        {
+		class Alter;
+		using AlterPtr = std::shared_ptr<Alter>;
+		using AlterUPtr = std::unique_ptr<Alter>;
+        class Alter : public ElementInterface        {
         public:
             Alter();
             Alter( const types::Semitones& value );
@@ -8928,8 +9244,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Octave : public ElementInterface
-        {
+		class Octave;
+		using OctavePtr = std::shared_ptr<Octave>;
+		using OctaveUPtr = std::unique_ptr<Octave>;
+        class Octave : public ElementInterface        {
         public:
             Octave();
             Octave( const types::OctaveValue& value );
@@ -8951,8 +9269,10 @@ namespace mx
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        class ActualNotes : public ElementInterface
-        {
+		class ActualNotes;
+		using ActualNotesPtr = std::shared_ptr<ActualNotes>;
+		using ActualNotesUPtr = std::unique_ptr<ActualNotes>;
+        class ActualNotes : public ElementInterface        {
         public:
             ActualNotes();
             ActualNotes( const types::NonNegativeInteger& value );
@@ -8974,8 +9294,10 @@ namespace mx
          <xs:simpleType name="xs:nonNegativeInteger"/>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        class NormalNotes : public ElementInterface
-        {
+		class NormalNotes;
+		using NormalNotesPtr = std::shared_ptr<NormalNotes>;
+		using NormalNotesUPtr = std::unique_ptr<NormalNotes>;
+        class NormalNotes : public ElementInterface        {
         public:
             NormalNotes();
             NormalNotes( const types::NonNegativeInteger& value );
@@ -9037,8 +9359,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class NormalType : public ElementInterface
-        {
+		class NormalType;
+		using NormalTypePtr = std::shared_ptr<NormalType>;
+		using NormalTypeUPtr = std::unique_ptr<NormalType>;
+        class NormalType : public ElementInterface        {
         public:
             NormalType();
             NormalType( const types::NoteTypeValue& value );
@@ -9060,8 +9384,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class CreditType : public ElementInterface
-        {
+		class CreditType;
+		using CreditTypePtr = std::shared_ptr<CreditType>;
+		using CreditTypeUPtr = std::unique_ptr<CreditType>;
+        class CreditType : public ElementInterface        {
         public:
             CreditType();
             CreditType( const types::XsString& value );
@@ -9083,8 +9409,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class InstrumentName : public ElementInterface
-        {
+		class InstrumentName;
+		using InstrumentNamePtr = std::shared_ptr<InstrumentName>;
+		using InstrumentNameUPtr = std::unique_ptr<InstrumentName>;
+        class InstrumentName : public ElementInterface        {
         public:
             InstrumentName();
             InstrumentName( const types::XsString& value );
@@ -9106,8 +9434,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class InstrumentAbbreviation : public ElementInterface
-        {
+		class InstrumentAbbreviation;
+		using InstrumentAbbreviationPtr = std::shared_ptr<InstrumentAbbreviation>;
+		using InstrumentAbbreviationUPtr = std::unique_ptr<InstrumentAbbreviation>;
+        class InstrumentAbbreviation : public ElementInterface        {
         public:
             InstrumentAbbreviation();
             InstrumentAbbreviation( const types::XsString& value );
@@ -9129,8 +9459,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class InstrumentSound : public ElementInterface
-        {
+		class InstrumentSound;
+		using InstrumentSoundPtr = std::shared_ptr<InstrumentSound>;
+		using InstrumentSoundUPtr = std::unique_ptr<InstrumentSound>;
+        class InstrumentSound : public ElementInterface        {
         public:
             InstrumentSound();
             InstrumentSound( const types::XsString& value );
@@ -9174,8 +9506,10 @@ namespace mx
          </xs:union>
          </xs:simpleType>
          */
-        class Ensemble : public ElementInterface
-        {
+		class Ensemble;
+		using EnsemblePtr = std::shared_ptr<Ensemble>;
+		using EnsembleUPtr = std::unique_ptr<Ensemble>;
+        class Ensemble : public ElementInterface        {
         public:
             Ensemble();
             Ensemble( const types::PositiveIntegerOrEmpty& value );
@@ -9197,8 +9531,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class Group : public ElementInterface
-        {
+		class Group;
+		using GroupPtr = std::shared_ptr<Group>;
+		using GroupUPtr = std::unique_ptr<Group>;
+        class Group : public ElementInterface        {
         public:
             Group();
             Group( const types::XsString& value );
@@ -9220,8 +9556,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class VirtualLibrary : public ElementInterface
-        {
+		class VirtualLibrary;
+		using VirtualLibraryPtr = std::shared_ptr<VirtualLibrary>;
+		using VirtualLibraryUPtr = std::unique_ptr<VirtualLibrary>;
+        class VirtualLibrary : public ElementInterface        {
         public:
             VirtualLibrary();
             VirtualLibrary( const types::XsString& value );
@@ -9243,8 +9581,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class VirtualName : public ElementInterface
-        {
+		class VirtualName;
+		using VirtualNamePtr = std::shared_ptr<VirtualName>;
+		using VirtualNameUPtr = std::unique_ptr<VirtualName>;
+        class VirtualName : public ElementInterface        {
         public:
             VirtualName();
             VirtualName( const types::XsString& value );
@@ -9266,8 +9606,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class WorkNumber : public ElementInterface
-        {
+		class WorkNumber;
+		using WorkNumberPtr = std::shared_ptr<WorkNumber>;
+		using WorkNumberUPtr = std::unique_ptr<WorkNumber>;
+        class WorkNumber : public ElementInterface        {
         public:
             WorkNumber();
             WorkNumber( const types::XsString& value );
@@ -9289,8 +9631,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class WorkTitle : public ElementInterface
-        {
+		class WorkTitle;
+		using WorkTitlePtr = std::shared_ptr<WorkTitle>;
+		using WorkTitleUPtr = std::unique_ptr<WorkTitle>;
+        class WorkTitle : public ElementInterface        {
         public:
             WorkTitle();
             WorkTitle( const types::XsString& value );
@@ -9312,8 +9656,10 @@ namespace mx
          <xs:simpleType name="xs:positiveInteger"/>
          <xs:simpleType name="xs:positiveInteger"/>
          */
-        class Staff : public ElementInterface
-        {
+		class Staff;
+		using StaffPtr = std::shared_ptr<Staff>;
+		using StaffUPtr = std::unique_ptr<Staff>;
+        class Staff : public ElementInterface        {
         public:
             Staff();
             Staff( const types::PositiveInteger& value );
@@ -9361,8 +9707,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class TuningStep : public ElementInterface
-        {
+		class TuningStep;
+		using TuningStepPtr = std::shared_ptr<TuningStep>;
+		using TuningStepUPtr = std::unique_ptr<TuningStep>;
+        class TuningStep : public ElementInterface        {
         public:
             TuningStep();
             TuningStep( const types::StepEnum& value );
@@ -9394,8 +9742,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class TuningAlter : public ElementInterface
-        {
+		class TuningAlter;
+		using TuningAlterPtr = std::shared_ptr<TuningAlter>;
+		using TuningAlterUPtr = std::unique_ptr<TuningAlter>;
+        class TuningAlter : public ElementInterface        {
         public:
             TuningAlter();
             TuningAlter( const types::Semitones& value );
@@ -9433,8 +9783,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class TuningOctave : public ElementInterface
-        {
+		class TuningOctave;
+		using TuningOctavePtr = std::shared_ptr<TuningOctave>;
+		using TuningOctaveUPtr = std::unique_ptr<TuningOctave>;
+        class TuningOctave : public ElementInterface        {
         public:
             TuningOctave();
             TuningOctave( const types::OctaveValue& value );
@@ -9456,8 +9808,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class Voice : public ElementInterface
-        {
+		class Voice;
+		using VoicePtr = std::shared_ptr<Voice>;
+		using VoiceUPtr = std::unique_ptr<Voice>;
+        class Voice : public ElementInterface        {
         public:
             Voice();
             Voice( const types::XsString& value );
@@ -9505,8 +9859,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class KeyStep : public ElementInterface
-        {
+		class KeyStep;
+		using KeyStepPtr = std::shared_ptr<KeyStep>;
+		using KeyStepUPtr = std::unique_ptr<KeyStep>;
+        class KeyStep : public ElementInterface        {
         public:
             KeyStep();
             KeyStep( const types::StepEnum& value );
@@ -9538,8 +9894,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class KeyAlter : public ElementInterface
-        {
+		class KeyAlter;
+		using KeyAlterPtr = std::shared_ptr<KeyAlter>;
+		using KeyAlterUPtr = std::unique_ptr<KeyAlter>;
+        class KeyAlter : public ElementInterface        {
         public:
             KeyAlter();
             KeyAlter( const types::Semitones& value );
@@ -9641,8 +9999,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class KeyAccidental : public ElementInterface
-        {
+		class KeyAccidental;
+		using KeyAccidentalPtr = std::shared_ptr<KeyAccidental>;
+		using KeyAccidentalUPtr = std::unique_ptr<KeyAccidental>;
+        class KeyAccidental : public ElementInterface        {
         public:
             KeyAccidental();
             KeyAccidental( const types::AccidentalValue& value );
@@ -9704,8 +10064,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class SlashType : public ElementInterface
-        {
+		class SlashType;
+		using SlashTypePtr = std::shared_ptr<SlashType>;
+		using SlashTypeUPtr = std::unique_ptr<SlashType>;
+        class SlashType : public ElementInterface        {
         public:
             SlashType();
             SlashType( const types::NoteTypeValue& value );
@@ -9727,8 +10089,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class Beats : public ElementInterface
-        {
+		class Beats;
+		using BeatsPtr = std::shared_ptr<Beats>;
+		using BeatsUPtr = std::unique_ptr<Beats>;
+        class Beats : public ElementInterface        {
         public:
             Beats();
             Beats( const types::XsString& value );
@@ -9750,8 +10114,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class BeatType : public ElementInterface
-        {
+		class BeatType;
+		using BeatTypePtr = std::shared_ptr<BeatType>;
+		using BeatTypeUPtr = std::unique_ptr<BeatType>;
+        class BeatType : public ElementInterface        {
         public:
             BeatType();
             BeatType( const types::XsString& value );
@@ -9783,8 +10149,10 @@ namespace mx
          <xs:restriction base="xs:integer"/>
          </xs:simpleType>
          */
-        class Fifths : public ElementInterface
-        {
+		class Fifths;
+		using FifthsPtr = std::shared_ptr<Fifths>;
+		using FifthsUPtr = std::unique_ptr<Fifths>;
+        class Fifths : public ElementInterface        {
         public:
             Fifths();
             Fifths( const types::FifthsValue& value );
@@ -9816,8 +10184,10 @@ namespace mx
          <xs:restriction base="xs:string"/>
          </xs:simpleType>
          */
-        class Mode : public ElementInterface
-        {
+		class Mode;
+		using ModePtr = std::shared_ptr<Mode>;
+		using ModeUPtr = std::unique_ptr<Mode>;
+        class Mode : public ElementInterface        {
         public:
             Mode();
             Mode( const types::ModeValue& value );
@@ -9879,8 +10249,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class BeatUnit : public ElementInterface
-        {
+		class BeatUnit;
+		using BeatUnitPtr = std::shared_ptr<BeatUnit>;
+		using BeatUnitUPtr = std::unique_ptr<BeatUnit>;
+        class BeatUnit : public ElementInterface        {
         public:
             BeatUnit();
             BeatUnit( const types::NoteTypeValue& value );
@@ -9916,8 +10288,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class TopMargin : public ElementInterface
-        {
+		class TopMargin;
+		using TopMarginPtr = std::shared_ptr<TopMargin>;
+		using TopMarginUPtr = std::unique_ptr<TopMargin>;
+        class TopMargin : public ElementInterface        {
         public:
             TopMargin();
             TopMargin( const types::TenthsValue& value );
@@ -9953,8 +10327,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class BottomMargin : public ElementInterface
-        {
+		class BottomMargin;
+		using BottomMarginPtr = std::shared_ptr<BottomMargin>;
+		using BottomMarginUPtr = std::unique_ptr<BottomMargin>;
+        class BottomMargin : public ElementInterface        {
         public:
             BottomMargin();
             BottomMargin( const types::TenthsValue& value );
@@ -9990,8 +10366,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class LeftMargin : public ElementInterface
-        {
+		class LeftMargin;
+		using LeftMarginPtr = std::shared_ptr<LeftMargin>;
+		using LeftMarginUPtr = std::unique_ptr<LeftMargin>;
+        class LeftMargin : public ElementInterface        {
         public:
             LeftMargin();
             LeftMargin( const types::TenthsValue& value );
@@ -10027,8 +10405,10 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        class RightMargin : public ElementInterface
-        {
+		class RightMargin;
+		using RightMarginPtr = std::shared_ptr<RightMargin>;
+		using RightMarginUPtr = std::unique_ptr<RightMargin>;
+        class RightMargin : public ElementInterface        {
         public:
             RightMargin();
             RightMargin( const types::TenthsValue& value );
@@ -10064,8 +10444,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class Duration : public ElementInterface
-        {
+		class Duration;
+		using DurationPtr = std::shared_ptr<Duration>;
+		using DurationUPtr = std::unique_ptr<Duration>;
+        class Duration : public ElementInterface        {
         public:
             Duration();
             Duration( const types::PositiveDivisionsValue& value );
@@ -10113,8 +10495,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class DisplayStep : public ElementInterface
-        {
+		class DisplayStep;
+		using DisplayStepPtr = std::shared_ptr<DisplayStep>;
+		using DisplayStepUPtr = std::unique_ptr<DisplayStep>;
+        class DisplayStep : public ElementInterface        {
         public:
             DisplayStep();
             DisplayStep( const types::StepEnum& value );
@@ -10152,8 +10536,10 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        class DisplayOctave : public ElementInterface
-        {
+		class DisplayOctave;
+		using DisplayOctavePtr = std::shared_ptr<DisplayOctave>;
+		using DisplayOctaveUPtr = std::unique_ptr<DisplayOctave>;
+        class DisplayOctave : public ElementInterface        {
         public:
             DisplayOctave();
             DisplayOctave( const types::OctaveValue& value );
@@ -10175,8 +10561,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class MovementNumber : public ElementInterface
-        {
+		class MovementNumber;
+		using MovementNumberPtr = std::shared_ptr<MovementNumber>;
+		using MovementNumberUPtr = std::unique_ptr<MovementNumber>;
+        class MovementNumber : public ElementInterface        {
         public:
             MovementNumber();
             MovementNumber( const types::XsString& value );
@@ -10198,8 +10586,10 @@ namespace mx
          <xs:simpleType name="xs:string"/>
          <xs:simpleType name="xs:string"/>
          */
-        class MovementTitle : public ElementInterface
-        {
+		class MovementTitle;
+		using MovementTitlePtr = std::shared_ptr<MovementTitle>;
+		using MovementTitleUPtr = std::unique_ptr<MovementTitle>;
+        class MovementTitle : public ElementInterface        {
         public:
             MovementTitle();
             MovementTitle( const types::XsString& value );
@@ -10220,7 +10610,7 @@ namespace mx
         /***************************************************************
          Empty Elements
          ***************************************************************/
-         
+        
         /*
          2997
          <xs:element name="double" type="empty" minOccurs="0">
@@ -10228,8 +10618,10 @@ namespace mx
          <xs:documentation>If the double element is present, it indicates that the music is doubled one octave down from what is currently written (as is the case for mixed cello / bass parts in orchestral literature).</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Double : public ElementInterface
-        {
+		class Double;
+		using DoublePtr = std::shared_ptr<Double>;
+		using DoubleUPtr = std::unique_ptr<Double>;
+        class Double : public ElementInterface        {
         public:
             Double();
             virtual bool hasAttributes() const;
@@ -10246,8 +10638,10 @@ namespace mx
          <xs:documentation>The accordion-high element indicates the presence of a dot in the high (4') section of the registration symbol.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class AccordionHigh : public ElementInterface
-        {
+		class AccordionHigh;
+		using AccordionHighPtr = std::shared_ptr<AccordionHigh>;
+		using AccordionHighUPtr = std::unique_ptr<AccordionHigh>;
+        class AccordionHigh : public ElementInterface        {
         public:
             AccordionHigh();
             virtual bool hasAttributes() const;
@@ -10264,8 +10658,10 @@ namespace mx
          <xs:documentation>The accordion-low element indicates the presence of a dot in the low (16') section of the registration symbol.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class AccordionLow : public ElementInterface
-        {
+		class AccordionLow;
+		using AccordionLowPtr = std::shared_ptr<AccordionLow>;
+		using AccordionLowUPtr = std::unique_ptr<AccordionLow>;
+        class AccordionLow : public ElementInterface        {
         public:
             AccordionLow();
             virtual bool hasAttributes() const;
@@ -10282,8 +10678,10 @@ namespace mx
          <xs:documentation>The metronome-dot element works like the dot element in defining metric relationships.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class MetronomeDot : public ElementInterface
-        {
+		class MetronomeDot;
+		using MetronomeDotPtr = std::shared_ptr<MetronomeDot>;
+		using MetronomeDotUPtr = std::unique_ptr<MetronomeDot>;
+        class MetronomeDot : public ElementInterface        {
         public:
             MetronomeDot();
             virtual bool hasAttributes() const;
@@ -10298,8 +10696,10 @@ namespace mx
          <xs:element name="timpani" type="empty"/>
          
          */
-        class Timpani : public ElementInterface
-        {
+		class Timpani;
+		using TimpaniPtr = std::shared_ptr<Timpani>;
+		using TimpaniUPtr = std::unique_ptr<Timpani>;
+        class Timpani : public ElementInterface        {
         public:
             Timpani();
             virtual bool hasAttributes() const;
@@ -10316,8 +10716,10 @@ namespace mx
          <xs:documentation>The pre-bend element indicates that this is a pre-bend rather than a normal bend or a release.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class PreBend : public ElementInterface
-        {
+		class PreBend;
+		using PreBendPtr = std::shared_ptr<PreBend>;
+		using PreBendUPtr = std::unique_ptr<PreBend>;
+        class PreBend : public ElementInterface        {
         public:
             PreBend();
             virtual bool hasAttributes() const;
@@ -10334,8 +10736,10 @@ namespace mx
          <xs:documentation>The release element indicates that this is a release rather than a normal bend or pre-bend.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Release : public ElementInterface
-        {
+		class Release;
+		using ReleasePtr = std::shared_ptr<Release>;
+		using ReleaseUPtr = std::unique_ptr<Release>;
+        class Release : public ElementInterface        {
         public:
             Release();
             virtual bool hasAttributes() const;
@@ -10352,8 +10756,10 @@ namespace mx
          <xs:documentation>The natural element indicates that this is a natural harmonic. These are usually notated at base pitch rather than sounding pitch.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Natural : public ElementInterface
-        {
+		class Natural;
+		using NaturalPtr = std::shared_ptr<Natural>;
+		using NaturalUPtr = std::unique_ptr<Natural>;
+        class Natural : public ElementInterface        {
         public:
             Natural();
             virtual bool hasAttributes() const;
@@ -10370,8 +10776,10 @@ namespace mx
          <xs:documentation>The artificial element indicates that this is an artificial harmonic.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Artificial : public ElementInterface
-        {
+		class Artificial;
+		using ArtificialPtr = std::shared_ptr<Artificial>;
+		using ArtificialUPtr = std::unique_ptr<Artificial>;
+        class Artificial : public ElementInterface        {
         public:
             Artificial();
             virtual bool hasAttributes() const;
@@ -10388,8 +10796,10 @@ namespace mx
          <xs:documentation>The base pitch is the pitch at which the string is played before touching to create the harmonic.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class BasePitch : public ElementInterface
-        {
+		class BasePitch;
+		using BasePitchPtr = std::shared_ptr<BasePitch>;
+		using BasePitchUPtr = std::unique_ptr<BasePitch>;
+        class BasePitch : public ElementInterface        {
         public:
             BasePitch();
             virtual bool hasAttributes() const;
@@ -10406,8 +10816,10 @@ namespace mx
          <xs:documentation>The touching-pitch is the pitch at which the string is touched lightly to produce the harmonic.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class TouchingPitch : public ElementInterface
-        {
+		class TouchingPitch;
+		using TouchingPitchPtr = std::shared_ptr<TouchingPitch>;
+		using TouchingPitchUPtr = std::unique_ptr<TouchingPitch>;
+        class TouchingPitch : public ElementInterface        {
         public:
             TouchingPitch();
             virtual bool hasAttributes() const;
@@ -10424,8 +10836,10 @@ namespace mx
          <xs:documentation>The sounding-pitch is the pitch which is heard when playing the harmonic.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class SoundingPitch : public ElementInterface
-        {
+		class SoundingPitch;
+		using SoundingPitchPtr = std::shared_ptr<SoundingPitch>;
+		using SoundingPitchUPtr = std::unique_ptr<SoundingPitch>;
+        class SoundingPitch : public ElementInterface        {
         public:
             SoundingPitch();
             virtual bool hasAttributes() const;
@@ -10442,8 +10856,10 @@ namespace mx
          <xs:documentation>The laughing element is taken from Humdrum.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Laughing : public ElementInterface
-        {
+		class Laughing;
+		using LaughingPtr = std::shared_ptr<Laughing>;
+		using LaughingUPtr = std::unique_ptr<Laughing>;
+        class Laughing : public ElementInterface        {
         public:
             Laughing();
             virtual bool hasAttributes() const;
@@ -10460,8 +10876,10 @@ namespace mx
          <xs:documentation>The humming element is taken from Humdrum.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Humming : public ElementInterface
-        {
+		class Humming;
+		using HummingPtr = std::shared_ptr<Humming>;
+		using HummingUPtr = std::unique_ptr<Humming>;
+        class Humming : public ElementInterface        {
         public:
             Humming();
             virtual bool hasAttributes() const;
@@ -10478,8 +10896,10 @@ namespace mx
          <xs:documentation>The end-line element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class EndLine : public ElementInterface
-        {
+		class EndLine;
+		using EndLinePtr = std::shared_ptr<EndLine>;
+		using EndLineUPtr = std::unique_ptr<EndLine>;
+        class EndLine : public ElementInterface        {
         public:
             EndLine();
             virtual bool hasAttributes() const;
@@ -10496,8 +10916,10 @@ namespace mx
          <xs:documentation>The end-paragraph element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class EndParagraph : public ElementInterface
-        {
+		class EndParagraph;
+		using EndParagraphPtr = std::shared_ptr<EndParagraph>;
+		using EndParagraphUPtr = std::unique_ptr<EndParagraph>;
+        class EndParagraph : public ElementInterface        {
         public:
             EndParagraph();
             virtual bool hasAttributes() const;
@@ -10514,8 +10936,10 @@ namespace mx
          <xs:documentation>The cue element indicates the presence of a cue note.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Cue : public ElementInterface
-        {
+		class Cue;
+		using CuePtr = std::shared_ptr<Cue>;
+		using CueUPtr = std::unique_ptr<Cue>;
+        class Cue : public ElementInterface        {
         public:
             Cue();
             virtual bool hasAttributes() const;
@@ -10532,8 +10956,10 @@ namespace mx
          <xs:documentation>The normal-dot element is used to specify dotted normal tuplet types.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class NormalDot : public ElementInterface
-        {
+		class NormalDot;
+		using NormalDotPtr = std::shared_ptr<NormalDot>;
+		using NormalDotUPtr = std::unique_ptr<NormalDot>;
+        class NormalDot : public ElementInterface        {
         public:
             NormalDot();
             virtual bool hasAttributes() const;
@@ -10550,8 +10976,10 @@ namespace mx
          <xs:documentation>The group-time element indicates that the displayed time signatures should stretch across all parts and staves in the group.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class GroupTime : public ElementInterface
-        {
+		class GroupTime;
+		using GroupTimePtr = std::shared_ptr<GroupTime>;
+		using GroupTimeUPtr = std::unique_ptr<GroupTime>;
+        class GroupTime : public ElementInterface        {
         public:
             GroupTime();
             virtual bool hasAttributes() const;
@@ -10568,8 +10996,10 @@ namespace mx
          <xs:documentation>The solo element was added in Version 2.0. It is present if performance is intended by a solo instrument.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Solo : public ElementInterface
-        {
+		class Solo;
+		using SoloPtr = std::shared_ptr<Solo>;
+		using SoloUPtr = std::unique_ptr<Solo>;
+        class Solo : public ElementInterface        {
         public:
             Solo();
             virtual bool hasAttributes() const;
@@ -10586,8 +11016,10 @@ namespace mx
          <xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class SlashDot : public ElementInterface
-        {
+		class SlashDot;
+		using SlashDotPtr = std::shared_ptr<SlashDot>;
+		using SlashDotUPtr = std::unique_ptr<SlashDot>;
+        class SlashDot : public ElementInterface        {
         public:
             SlashDot();
             virtual bool hasAttributes() const;
@@ -10604,8 +11036,10 @@ namespace mx
          <xs:documentation>The beat-unit-dot element is used to specify any augmentation dots for a metronome mark note.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class BeatUnitDot : public ElementInterface
-        {
+		class BeatUnitDot;
+		using BeatUnitDotPtr = std::shared_ptr<BeatUnitDot>;
+		using BeatUnitDotUPtr = std::unique_ptr<BeatUnitDot>;
+        class BeatUnitDot : public ElementInterface        {
         public:
             BeatUnitDot();
             virtual bool hasAttributes() const;
@@ -10622,8 +11056,10 @@ namespace mx
          <xs:documentation>The chord element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note. In MuseData, a missing duration indicates the same length as the previous note, but the MusicXML format requires a duration for chord notes too.</xs:documentation>
          </xs:annotation>
          </xs:element> */
-        class Chord : public ElementInterface
-        {
+		class Chord;
+		using ChordPtr = std::shared_ptr<Chord>;
+		using ChordUPtr = std::unique_ptr<Chord>;
+        class Chord : public ElementInterface        {
         public:
             Chord();
             virtual bool hasAttributes() const;
@@ -10676,8 +11112,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class Segno : public ElementInterface
-        {
+		class Segno;
+		using SegnoPtr = std::shared_ptr<Segno>;
+		using SegnoUPtr = std::unique_ptr<Segno>;
+        class Segno : public ElementInterface        {
         public:
             Segno();
             virtual bool hasAttributes() const;
@@ -10701,8 +11139,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class Coda : public ElementInterface
-        {
+		class Coda;
+		using CodaPtr = std::shared_ptr<Coda>;
+		using CodaUPtr = std::unique_ptr<Coda>;
+        class Coda : public ElementInterface        {
         public:
             Coda();
             virtual bool hasAttributes() const;
@@ -10730,20 +11170,22 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-//        class Segno : public ElementInterface
-//        {
-//        public:
-//            Segno();
-//            virtual bool hasAttributes() const;
-//            virtual bool hasContents() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
-//            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
-//        private:
-//            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
-//        };
+		class Segno;
+		using SegnoPtr = std::shared_ptr<Segno>;
+		using SegnoUPtr = std::unique_ptr<Segno>;
+        //        class Segno : public ElementInterface//        {
+        //        public:
+        //            Segno();
+        //            virtual bool hasAttributes() const;
+        //            virtual bool hasContents() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+        //            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        //        private:
+        //            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        //        };
         
         /*
          3345
@@ -10759,20 +11201,22 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-//        class Coda : public ElementInterface
-//        {
-//        public:
-//            Coda();
-//            virtual bool hasAttributes() const;
-//            virtual bool hasContents() const;
-//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-//            virtual std::ostream& streamName( std::ostream& os ) const;
-//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-//            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
-//            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
-//        private:
-//            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
-//        };
+		class Coda;
+		using CodaPtr = std::shared_ptr<Coda>;
+		using CodaUPtr = std::unique_ptr<Coda>;
+        //        class Coda : public ElementInterface//        {
+        //        public:
+        //            Coda();
+        //            virtual bool hasAttributes() const;
+        //            virtual bool hasContents() const;
+        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+        //            virtual std::ostream& streamName( std::ostream& os ) const;
+        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        //            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
+        //            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
+        //        private:
+        //            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
+        //        };
         
         /*
          3376
@@ -10788,8 +11232,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class Damp : public ElementInterface
-        {
+		class Damp;
+		using DampPtr = std::shared_ptr<Damp>;
+		using DampUPtr = std::unique_ptr<Damp>;
+        class Damp : public ElementInterface        {
         public:
             Damp();
             virtual bool hasAttributes() const;
@@ -10817,8 +11263,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class DampAll : public ElementInterface
-        {
+		class DampAll;
+		using DampAllPtr = std::shared_ptr<DampAll>;
+		using DampAllUPtr = std::unique_ptr<DampAll>;
+        class DampAll : public ElementInterface        {
         public:
             DampAll();
             virtual bool hasAttributes() const;
@@ -10846,8 +11294,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class Eyeglasses : public ElementInterface
-        {
+		class Eyeglasses;
+		using EyeglassesPtr = std::shared_ptr<Eyeglasses>;
+		using EyeglassesUPtr = std::unique_ptr<Eyeglasses>;
+        class Eyeglasses : public ElementInterface        {
         public:
             Eyeglasses();
             virtual bool hasAttributes() const;
@@ -10872,8 +11322,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class LeftDivider : public ElementInterface
-        {
+		class LeftDivider;
+		using LeftDividerPtr = std::shared_ptr<LeftDivider>;
+		using LeftDividerUPtr = std::unique_ptr<LeftDivider>;
+        class LeftDivider : public ElementInterface        {
         public:
             LeftDivider();
             virtual bool hasAttributes() const;
@@ -10898,8 +11350,10 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        class RightDivider : public ElementInterface
-        {
+		class RightDivider;
+		using RightDividerPtr = std::shared_ptr<RightDivider>;
+		using RightDividerUPtr = std::unique_ptr<RightDivider>;
+        class RightDivider : public ElementInterface        {
         public:
             RightDivider();
             virtual bool hasAttributes() const;
@@ -10957,8 +11411,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Accent : public ElementInterface
-        {
+		class Accent;
+		using AccentPtr = std::shared_ptr<Accent>;
+		using AccentUPtr = std::unique_ptr<Accent>;
+        class Accent : public ElementInterface        {
         public:
             Accent();
             virtual bool hasAttributes() const;
@@ -10987,8 +11443,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Staccato : public ElementInterface
-        {
+		class Staccato;
+		using StaccatoPtr = std::shared_ptr<Staccato>;
+		using StaccatoUPtr = std::unique_ptr<Staccato>;
+        class Staccato : public ElementInterface        {
         public:
             Staccato();
             virtual bool hasAttributes() const;
@@ -11017,8 +11475,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Tenuto : public ElementInterface
-        {
+		class Tenuto;
+		using TenutoPtr = std::shared_ptr<Tenuto>;
+		using TenutoUPtr = std::unique_ptr<Tenuto>;
+        class Tenuto : public ElementInterface        {
         public:
             Tenuto();
             virtual bool hasAttributes() const;
@@ -11047,8 +11507,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class DetachedLegato : public ElementInterface
-        {
+		class DetachedLegato;
+		using DetachedLegatoPtr = std::shared_ptr<DetachedLegato>;
+		using DetachedLegatoUPtr = std::unique_ptr<DetachedLegato>;
+        class DetachedLegato : public ElementInterface        {
         public:
             DetachedLegato();
             virtual bool hasAttributes() const;
@@ -11077,8 +11539,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Staccatissimo : public ElementInterface
-        {
+		class Staccatissimo;
+		using StaccatissimoPtr = std::shared_ptr<Staccatissimo>;
+		using StaccatissimoUPtr = std::unique_ptr<Staccatissimo>;
+        class Staccatissimo : public ElementInterface        {
         public:
             Staccatissimo();
             virtual bool hasAttributes() const;
@@ -11107,8 +11571,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Spiccato : public ElementInterface
-        {
+		class Spiccato;
+		using SpiccatoPtr = std::shared_ptr<Spiccato>;
+		using SpiccatoUPtr = std::unique_ptr<Spiccato>;
+        class Spiccato : public ElementInterface        {
         public:
             Spiccato();
             virtual bool hasAttributes() const;
@@ -11173,8 +11639,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Scoop : public ElementInterface
-        {
+		class Scoop;
+		using ScoopPtr = std::shared_ptr<Scoop>;
+		using ScoopUPtr = std::unique_ptr<Scoop>;
+        class Scoop : public ElementInterface        {
         public:
             Scoop();
             virtual bool hasAttributes() const;
@@ -11206,8 +11674,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Plop : public ElementInterface
-        {
+		class Plop;
+		using PlopPtr = std::shared_ptr<Plop>;
+		using PlopUPtr = std::unique_ptr<Plop>;
+        class Plop : public ElementInterface        {
         public:
             Plop();
             virtual bool hasAttributes() const;
@@ -11239,8 +11709,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Doit : public ElementInterface
-        {
+		class Doit;
+		using DoitPtr = std::shared_ptr<Doit>;
+		using DoitUPtr = std::unique_ptr<Doit>;
+        class Doit : public ElementInterface        {
         public:
             Doit();
             virtual bool hasAttributes() const;
@@ -11272,8 +11744,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Falloff : public ElementInterface
-        {
+		class Falloff;
+		using FalloffPtr = std::shared_ptr<Falloff>;
+		using FalloffUPtr = std::unique_ptr<Falloff>;
+        class Falloff : public ElementInterface        {
         public:
             Falloff();
             virtual bool hasAttributes() const;
@@ -11302,8 +11776,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Caesura : public ElementInterface
-        {
+		class Caesura;
+		using CaesuraPtr = std::shared_ptr<Caesura>;
+		using CaesuraUPtr = std::unique_ptr<Caesura>;
+        class Caesura : public ElementInterface        {
         public:
             Caesura();
             virtual bool hasAttributes() const;
@@ -11332,8 +11808,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Stress : public ElementInterface
-        {
+		class Stress;
+		using StressPtr = std::shared_ptr<Stress>;
+		using StressUPtr = std::unique_ptr<Stress>;
+        class Stress : public ElementInterface        {
         public:
             Stress();
             virtual bool hasAttributes() const;
@@ -11362,8 +11840,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Unstress : public ElementInterface
-        {
+		class Unstress;
+		using UnstressPtr = std::shared_ptr<Unstress>;
+		using UnstressUPtr = std::unique_ptr<Unstress>;
+        class Unstress : public ElementInterface        {
         public:
             Unstress();
             virtual bool hasAttributes() const;
@@ -11392,8 +11872,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Dot : public ElementInterface
-        {
+		class Dot;
+		using DotPtr = std::shared_ptr<Dot>;
+		using DotUPtr = std::unique_ptr<Dot>;
+        class Dot : public ElementInterface        {
         public:
             Dot();
             virtual bool hasAttributes() const;
@@ -11466,8 +11948,10 @@ namespace mx
          <xs:attributeGroup ref="trill-sound"/>
          </xs:complexType>
          */
-        class TrillMark : public ElementInterface
-        {
+		class TrillMark;
+		using TrillMarkPtr = std::shared_ptr<TrillMark>;
+		using TrillMarkUPtr = std::unique_ptr<TrillMark>;
+        class TrillMark : public ElementInterface        {
         public:
             TrillMark();
             virtual bool hasAttributes() const;
@@ -11497,8 +11981,10 @@ namespace mx
          <xs:attributeGroup ref="trill-sound"/>
          </xs:complexType>
          */
-        class VerticalTurn : public ElementInterface
-        {
+		class VerticalTurn;
+		using VerticalTurnPtr = std::shared_ptr<VerticalTurn>;
+		using VerticalTurnUPtr = std::unique_ptr<VerticalTurn>;
+        class VerticalTurn : public ElementInterface        {
         public:
             VerticalTurn();
             virtual bool hasAttributes() const;
@@ -11528,8 +12014,10 @@ namespace mx
          <xs:attributeGroup ref="trill-sound"/>
          </xs:complexType>
          */
-        class Shake : public ElementInterface
-        {
+		class Shake;
+		using ShakePtr = std::shared_ptr<Shake>;
+		using ShakeUPtr = std::unique_ptr<Shake>;
+        class Shake : public ElementInterface        {
         public:
             Shake();
             virtual bool hasAttributes() const;
@@ -11558,8 +12046,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Schleifer : public ElementInterface
-        {
+		class Schleifer;
+		using SchleiferPtr = std::shared_ptr<Schleifer>;
+		using SchleiferUPtr = std::unique_ptr<Schleifer>;
+        class Schleifer : public ElementInterface        {
         public:
             Schleifer();
             virtual bool hasAttributes() const;
@@ -11588,8 +12078,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class UpBow : public ElementInterface
-        {
+		class UpBow;
+		using UpBowPtr = std::shared_ptr<UpBow>;
+		using UpBowUPtr = std::unique_ptr<UpBow>;
+        class UpBow : public ElementInterface        {
         public:
             UpBow();
             virtual bool hasAttributes() const;
@@ -11618,8 +12110,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class DownBow : public ElementInterface
-        {
+		class DownBow;
+		using DownBowPtr = std::shared_ptr<DownBow>;
+		using DownBowUPtr = std::unique_ptr<DownBow>;
+        class DownBow : public ElementInterface        {
         public:
             DownBow();
             virtual bool hasAttributes() const;
@@ -11648,8 +12142,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class OpenString : public ElementInterface
-        {
+		class OpenString;
+		using OpenStringPtr = std::shared_ptr<OpenString>;
+		using OpenStringUPtr = std::unique_ptr<OpenString>;
+        class OpenString : public ElementInterface        {
         public:
             OpenString();
             virtual bool hasAttributes() const;
@@ -11678,8 +12174,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class ThumbPosition : public ElementInterface
-        {
+		class ThumbPosition;
+		using ThumbPositionPtr = std::shared_ptr<ThumbPosition>;
+		using ThumbPositionUPtr = std::unique_ptr<ThumbPosition>;
+        class ThumbPosition : public ElementInterface        {
         public:
             ThumbPosition();
             virtual bool hasAttributes() const;
@@ -11708,8 +12206,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class DoubleTongue : public ElementInterface
-        {
+		class DoubleTongue;
+		using DoubleTonguePtr = std::shared_ptr<DoubleTongue>;
+		using DoubleTongueUPtr = std::unique_ptr<DoubleTongue>;
+        class DoubleTongue : public ElementInterface        {
         public:
             DoubleTongue();
             virtual bool hasAttributes() const;
@@ -11738,8 +12238,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class TripleTongue : public ElementInterface
-        {
+		class TripleTongue;
+		using TripleTonguePtr = std::shared_ptr<TripleTongue>;
+		using TripleTongueUPtr = std::unique_ptr<TripleTongue>;
+        class TripleTongue : public ElementInterface        {
         public:
             TripleTongue();
             virtual bool hasAttributes() const;
@@ -11768,8 +12270,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Stopped : public ElementInterface
-        {
+		class Stopped;
+		using StoppedPtr = std::shared_ptr<Stopped>;
+		using StoppedUPtr = std::unique_ptr<Stopped>;
+        class Stopped : public ElementInterface        {
         public:
             Stopped();
             virtual bool hasAttributes() const;
@@ -11798,8 +12302,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class SnapPizzicato : public ElementInterface
-        {
+		class SnapPizzicato;
+		using SnapPizzicatoPtr = std::shared_ptr<SnapPizzicato>;
+		using SnapPizzicatoUPtr = std::unique_ptr<SnapPizzicato>;
+        class SnapPizzicato : public ElementInterface        {
         public:
             SnapPizzicato();
             virtual bool hasAttributes() const;
@@ -11828,8 +12334,10 @@ namespace mx
          <xs:attributeGroup ref="placement"/>
          </xs:complexType>
          */
-        class Fingernails : public ElementInterface
-        {
+		class Fingernails;
+		using FingernailsPtr = std::shared_ptr<Fingernails>;
+		using FingernailsUPtr = std::unique_ptr<Fingernails>;
+        class Fingernails : public ElementInterface        {
         public:
             Fingernails();
             virtual bool hasAttributes() const;
@@ -11872,8 +12380,10 @@ namespace mx
          <xs:attributeGroup ref="font"/>
          </xs:complexType>
          */
-        class MusicFont : public ElementInterface
-        {
+		class MusicFont;
+		using MusicFontPtr = std::shared_ptr<MusicFont>;
+		using MusicFontUPtr = std::unique_ptr<MusicFont>;
+        class MusicFont : public ElementInterface        {
         public:
             MusicFont();
             virtual bool hasAttributes() const;
@@ -11897,8 +12407,10 @@ namespace mx
          <xs:attributeGroup ref="font"/>
          </xs:complexType>
          */
-        class WordFont : public ElementInterface
-        {
+		class WordFont;
+		using WordFontPtr = std::shared_ptr<WordFont>;
+		using WordFontUPtr = std::unique_ptr<WordFont>;
+        class WordFont : public ElementInterface        {
         public:
             WordFont();
             virtual bool hasAttributes() const;
@@ -11970,8 +12482,10 @@ namespace mx
             bool hasLastBeat;
         };
         
-        class WavyLine : public ElementInterface
-        {
+		class WavyLine;
+		using WavyLinePtr = std::shared_ptr<WavyLine>;
+		using WavyLineUPtr = std::unique_ptr<WavyLine>;
+        class WavyLine : public ElementInterface        {
         public:
             WavyLine();
             virtual bool hasAttributes() const;
@@ -12015,8 +12529,10 @@ namespace mx
             bool hasWinged;
         };
         
-        class Repeat : public ElementInterface
-        {
+		class Repeat;
+		using RepeatPtr = std::shared_ptr<Repeat>;
+		using RepeatUPtr = std::unique_ptr<Repeat>;
+        class Repeat : public ElementInterface        {
         public:
             Repeat();
             virtual bool hasAttributes() const;
@@ -12079,8 +12595,10 @@ namespace mx
             bool hasRelativeY;
         };
         
-        class Wedge : public ElementInterface
-        {
+		class Wedge;
+		using WedgePtr = std::shared_ptr<Wedge>;
+		using WedgeUPtr = std::unique_ptr<Wedge>;
+        class Wedge : public ElementInterface        {
         public:
             Wedge();
             virtual bool hasAttributes() const;
@@ -12136,8 +12654,10 @@ namespace mx
             bool hasRelativeY;
         };
         
-        class Dashes : public ElementInterface
-        {
+		class Dashes;
+		using DashesPtr = std::shared_ptr<Dashes>;
+		using DashesUPtr = std::unique_ptr<Dashes>;
+        class Dashes : public ElementInterface        {
         public:
             Dashes();
             virtual bool hasAttributes() const;
@@ -12182,8 +12702,10 @@ namespace mx
             bool hasBracket;
         };
         
-        class Bracket : public ElementInterface
-        {
+		class Bracket;
+		using BracketPtr = std::shared_ptr<Bracket>;
+		using BracketUPtr = std::unique_ptr<Bracket>;
+        class Bracket : public ElementInterface        {
         public:
             Bracket();
             virtual bool hasAttributes() const;
@@ -12246,8 +12768,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class Pedal : public ElementInterface
-        {
+		class Pedal;
+		using PedalPtr = std::shared_ptr<Pedal>;
+		using PedalUPtr = std::unique_ptr<Pedal>;
+        class Pedal : public ElementInterface        {
         public:
             Pedal();
             virtual bool hasAttributes() const;
@@ -12313,8 +12837,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class OctaveShift : public ElementInterface
-        {
+		class OctaveShift;
+		using OctaveShiftPtr = std::shared_ptr<OctaveShift>;
+		using OctaveShiftUPtr = std::unique_ptr<OctaveShift>;
+        class OctaveShift : public ElementInterface        {
         public:
             OctaveShift();
             virtual bool hasAttributes() const;
@@ -12371,8 +12897,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class StringMute : public ElementInterface
-        {
+		class StringMute;
+		using StringMutePtr = std::shared_ptr<StringMute>;
+		using StringMuteUPtr = std::unique_ptr<StringMute>;
+        class StringMute : public ElementInterface        {
         public:
             StringMute();
             virtual bool hasAttributes() const;
@@ -12422,8 +12950,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class Image : public ElementInterface
-        {
+		class Image;
+		using ImagePtr = std::shared_ptr<Image>;
+		using ImageUPtr = std::unique_ptr<Image>;
+        class Image : public ElementInterface        {
         public:
             Image();
             virtual bool hasAttributes() const;
@@ -12462,8 +12992,10 @@ namespace mx
             const 	bool hasType;
         };
         
-        class Barre : public ElementInterface
-        {
+		class Barre;
+		using BarrePtr = std::shared_ptr<Barre>;
+		using BarreUPtr = std::unique_ptr<Barre>;
+        class Barre : public ElementInterface        {
         public:
             Barre();
             virtual bool hasAttributes() const;
@@ -12510,8 +13042,10 @@ namespace mx
             bool hasValue;
         };
         
-        class Supports : public ElementInterface
-        {
+		class Supports;
+		using SupportsPtr = std::shared_ptr<Supports>;
+		using SupportsUPtr = std::unique_ptr<Supports>;
+        class Supports : public ElementInterface        {
         public:
             Supports();
             virtual bool hasAttributes() const;
@@ -12566,8 +13100,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class Extend : public ElementInterface
-        {
+		class Extend;
+		using ExtendPtr = std::shared_ptr<Extend>;
+		using ExtendUPtr = std::unique_ptr<Extend>;
+        class Extend : public ElementInterface        {
         public:
             Extend();
             virtual bool hasAttributes() const;
@@ -12669,8 +13205,10 @@ namespace mx
             bool hasBezierY2;
         };
         
-        class Tied : public ElementInterface
-        {
+		class Tied;
+		using TiedPtr = std::shared_ptr<Tied>;
+		using TiedUPtr = std::unique_ptr<Tied>;
+        class Tied : public ElementInterface        {
         public:
             Tied();
             virtual bool hasAttributes() const;
@@ -12746,8 +13284,10 @@ namespace mx
             bool hasBezierY2;
         };
         
-        class Slur : public ElementInterface
-        {
+		class Slur;
+		using SlurPtr = std::shared_ptr<Slur>;
+		using SlurUPtr = std::unique_ptr<Slur>;
+        class Slur : public ElementInterface        {
         public:
             Slur();
             virtual bool hasAttributes() const;
@@ -12801,8 +13341,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class Arpeggiate : public ElementInterface
-        {
+		class Arpeggiate;
+		using ArpeggiatePtr = std::shared_ptr<Arpeggiate>;
+		using ArpeggiateUPtr = std::unique_ptr<Arpeggiate>;
+        class Arpeggiate : public ElementInterface        {
         public:
             Arpeggiate();
             virtual bool hasAttributes() const;
@@ -12856,8 +13398,10 @@ namespace mx
             bool hasPlacement;
         };
         
-        class NonArpeggiate : public ElementInterface
-        {
+		class NonArpeggiate;
+		using NonArpeggiatePtr = std::shared_ptr<NonArpeggiate>;
+		using NonArpeggiateUPtr = std::unique_ptr<NonArpeggiate>;
+        class NonArpeggiate : public ElementInterface        {
         public:
             NonArpeggiate();
             virtual bool hasAttributes() const;
@@ -12904,8 +13448,10 @@ namespace mx
             bool hasSlash;
         };
         
-        class Grace : public ElementInterface
-        {
+		class Grace;
+		using GracePtr = std::shared_ptr<Grace>;
+		using GraceUPtr = std::unique_ptr<Grace>;
+        class Grace : public ElementInterface        {
         public:
             Grace();
             virtual bool hasAttributes() const;
@@ -12946,8 +13492,10 @@ namespace mx
             bool hasTimeOnly;
         };
         
-        class Tie : public ElementInterface
-        {
+		class Tie;
+		using TiePtr = std::shared_ptr<Tie>;
+		using TieUPtr = std::unique_ptr<Tie>;
+        class Tie : public ElementInterface        {
         public:
             Tie();
             virtual bool hasAttributes() const;
@@ -12997,8 +13545,10 @@ namespace mx
             const 	bool hasId;
         };
         
-        class Instrument : public ElementInterface
-        {
+		class Instrument;
+		using InstrumentPtr = std::shared_ptr<Instrument>;
+		using InstrumentUPtr = std::unique_ptr<Instrument>;
+        class Instrument : public ElementInterface        {
         public:
             Instrument();
             virtual bool hasAttributes() const;
@@ -13075,8 +13625,10 @@ namespace mx
             bool hasSlash;
         };
         
-        class Turn : public ElementInterface
-        {
+		class Turn;
+		using TurnPtr = std::shared_ptr<Turn>;
+		using TurnUPtr = std::unique_ptr<Turn>;
+        class Turn : public ElementInterface        {
         public:
             Turn();
             virtual bool hasAttributes() const;
@@ -13153,8 +13705,10 @@ namespace mx
             bool hasSlash;
         };
         
-        class DelayedTurn : public ElementInterface
-        {
+		class DelayedTurn;
+		using DelayedTurnPtr = std::shared_ptr<DelayedTurn>;
+		using DelayedTurnUPtr = std::unique_ptr<DelayedTurn>;
+        class DelayedTurn : public ElementInterface        {
         public:
             DelayedTurn();
             virtual bool hasAttributes() const;
@@ -13231,8 +13785,10 @@ namespace mx
             bool hasSlash;
         };
         
-        class InvertedTurn : public ElementInterface
-        {
+		class InvertedTurn;
+		using InvertedTurnPtr = std::shared_ptr<InvertedTurn>;
+		using InvertedTurnUPtr = std::unique_ptr<InvertedTurn>;
+        class InvertedTurn : public ElementInterface        {
         public:
             InvertedTurn();
             virtual bool hasAttributes() const;
@@ -13309,8 +13865,10 @@ namespace mx
             bool hasSlash;
         };
         
-        class DelayedInvertedTurn : public ElementInterface
-        {
+		class DelayedInvertedTurn;
+		using DelayedInvertedTurnPtr = std::shared_ptr<DelayedInvertedTurn>;
+		using DelayedInvertedTurnUPtr = std::unique_ptr<DelayedInvertedTurn>;
+        class DelayedInvertedTurn : public ElementInterface        {
         public:
             DelayedInvertedTurn();
             virtual bool hasAttributes() const;
@@ -13371,8 +13929,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class TupletDot : public ElementInterface
-        {
+		class TupletDot;
+		using TupletDotPtr = std::shared_ptr<TupletDot>;
+		using TupletDotUPtr = std::unique_ptr<TupletDot>;
+        class TupletDot : public ElementInterface        {
         public:
             TupletDot();
             virtual bool hasAttributes() const;
@@ -13437,8 +13997,10 @@ namespace mx
             bool hasRelativeY;
         };
         
-        class Link : public ElementInterface
-        {
+		class Link;
+		using LinkPtr = std::shared_ptr<Link>;
+		using LinkUPtr = std::unique_ptr<Link>;
+        class Link : public ElementInterface        {
         public:
             Link();
             virtual bool hasAttributes() const;
@@ -13484,8 +14046,10 @@ namespace mx
             bool hasPosition;
         };
         
-        class Bookmark : public ElementInterface
-        {
+		class Bookmark;
+		using BookmarkPtr = std::shared_ptr<Bookmark>;
+		using BookmarkUPtr = std::unique_ptr<Bookmark>;
+        class Bookmark : public ElementInterface        {
         public:
             Bookmark();
             virtual bool hasAttributes() const;
@@ -13535,8 +14099,10 @@ namespace mx
             bool hasHalign;
         };
         
-        class CreditImage : public ElementInterface
-        {
+		class CreditImage;
+		using CreditImagePtr = std::shared_ptr<CreditImage>;
+		using CreditImageUPtr = std::unique_ptr<CreditImage>;
+        class CreditImage : public ElementInterface        {
         public:
             CreditImage();
             virtual bool hasAttributes() const;
@@ -13613,8 +14179,10 @@ namespace mx
             bool hasFontWeight;
         };
         
-        class LyricFont : public ElementInterface
-        {
+		class LyricFont;
+		using LyricFontPtr = std::shared_ptr<LyricFont>;
+		using LyricFontUPtr = std::unique_ptr<LyricFont>;
+        class LyricFont : public ElementInterface        {
         public:
             LyricFont();
             virtual bool hasAttributes() const;
@@ -13658,8 +14226,10 @@ namespace mx
             const 	bool hasLang;
         };
         
-        class LyricLanguage : public ElementInterface
-        {
+		class LyricLanguage;
+		using LyricLanguagePtr = std::shared_ptr<LyricLanguage>;
+		using LyricLanguageUPtr = std::unique_ptr<LyricLanguage>;
+        class LyricLanguage : public ElementInterface        {
         public:
             LyricLanguage();
             virtual bool hasAttributes() const;
@@ -13707,8 +14277,10 @@ namespace mx
             bool hasActuate;
         };
         
-        class Opus : public ElementInterface
-        {
+		class Opus;
+		using OpusPtr = std::shared_ptr<Opus>;
+		using OpusUPtr = std::unique_ptr<Opus>;
+        class Opus : public ElementInterface        {
         public:
             Opus();
             virtual bool hasAttributes() const;
@@ -13748,7 +14320,7 @@ namespace mx
          <xs:attributeGroup ref="element-position"/>
          </xs:complexType>
          */
-
-
+        
+        
     }
 }

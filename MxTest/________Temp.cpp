@@ -9,11 +9,9 @@ using namespace std;
 TEST( Test01, TraditionalKey )
 {
     TraditionalKey object;
-    object.setFifths( FifthsValue( 5 ) );
-    object.setHasCancel( true );
-    object.setCancel( Cancel( FifthsValue ( 2 ) ) );
-    object.setHasMode( true );
-    object.setMode( Mode( ModeValue( ModeEnum::dorian ) ) );
+    object.getFifths()->setValue( FifthsValue { 5 } );
+    object.setCancel( std::make_shared<Cancel>( FifthsValue ( 2 ) ) );
+    object.setMode( std::make_shared<Mode>( ModeValue( ModeEnum::dorian ) ) );
     bool isOneLineOnly = false;
     object.streamContents( std::cout, 2, isOneLineOnly );
     std::cout  << std::endl;
