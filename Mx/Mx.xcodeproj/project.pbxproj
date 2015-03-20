@@ -35,6 +35,8 @@
 		29E801B91A9F983800EDBE41 /* Strings.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E801B71A9F983800EDBE41 /* Strings.h */; };
 		29ED3EBD1AA1319E009FAF55 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBB1AA1319E009FAF55 /* Color.cpp */; };
 		29ED3EBE1AA1319E009FAF55 /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = 29ED3EBC1AA1319E009FAF55 /* Color.h */; };
+		29FAC31F1ABA732D00DD5B42 /* NonTraditionalKey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FAC31D1ABA732D00DD5B42 /* NonTraditionalKey.cpp */; };
+		29FAC3201ABA732D00DD5B42 /* NonTraditionalKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 29FAC31E1ABA732D00DD5B42 /* NonTraditionalKey.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		29E801B71A9F983800EDBE41 /* Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
 		29ED3EBB1AA1319E009FAF55 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Color.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		29ED3EBC1AA1319E009FAF55 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		29FAC31D1ABA732D00DD5B42 /* NonTraditionalKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NonTraditionalKey.cpp; sourceTree = "<group>"; };
+		29FAC31E1ABA732D00DD5B42 /* NonTraditionalKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonTraditionalKey.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				29FAC31D1ABA732D00DD5B42 /* NonTraditionalKey.cpp */,
+				29FAC31E1ABA732D00DD5B42 /* NonTraditionalKey.h */,
 				29E7A0291AB95F6800C3B2F3 /* TraditionalKey.cpp */,
 				29E7A02A1AB95F6800C3B2F3 /* TraditionalKey.h */,
 				2971FBEE1AA583D400547E82 /* ElementInterface.cpp */,
@@ -144,6 +150,7 @@
 				29D10BB41A9BEF4E00F03CE6 /* Enums.h in Headers */,
 				29D632181AA54E9100E6E28B /* Elements.h in Headers */,
 				295BAFB91AA23C5B002CAB3F /* FontSize.h in Headers */,
+				29FAC3201ABA732D00DD5B42 /* NonTraditionalKey.h in Headers */,
 				292D127C1AA2ACE80079EF22 /* NumberOrNormal.h in Headers */,
 				290D7C111AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h in Headers */,
 			);
@@ -212,6 +219,7 @@
 				2971FBF01AA583D400547E82 /* ElementInterface.cpp in Sources */,
 				29A884FA1A9D5FD800F417CE /* Decimals.cpp in Sources */,
 				290D7C101AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp in Sources */,
+				29FAC31F1ABA732D00DD5B42 /* NonTraditionalKey.cpp in Sources */,
 				29D10BB31A9BEF4E00F03CE6 /* Enums.cpp in Sources */,
 				292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */,
 			);
