@@ -5,9 +5,6 @@ namespace mx
     namespace e
     {
         Key::Key()
-        :myChoice( Choice::traditionalKey )
-        ,myTraditionalKey( std::make_shared<TraditionalKey>() )
-        ,myNonTraditionalKey( std::make_shared<NonTraditionalKey>() )
         {}
         bool Key::hasAttributes() const
         {

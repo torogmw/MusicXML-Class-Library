@@ -9,8 +9,9 @@
 // #include "goRxAddHasContentsCpp.h"
 // #include "goCreateEmptyElements.h"
 // #include "goCreateEmptyElementsWithAttributes.h"
-#include "goListNonImplementedElements.h"
-#include "goRxCreateSharedPtrsToElements.h"
+// #include "goListNonImplementedElements.h"
+// #include "goRxCreateSharedPtrsToElements.h"
+#include "goCreateAttributesForOne.h"
 
 int main(int argc, const char * argv[])
 {
@@ -23,6 +24,7 @@ int main(int argc, const char * argv[])
     // go::goCreateEmptyElements();
     // go::goListNonImplementedElements();
     // go::goCreateEmptyElementsWithAttributes_v2();
-    go::goRxCreateSharedPtrsToElements();
+    // go::goRxCreateSharedPtrsToElements();
+    go::goCreateAttributesForOne( 111110202 );
     return 0;
 }
