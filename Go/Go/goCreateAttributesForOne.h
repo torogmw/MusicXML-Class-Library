@@ -34,5 +34,12 @@ namespace go
         {
             throw std::runtime_error( "the element was not found" );
         }
+        std::stringstream h;
+        std::stringstream cpp;
+        codegenAttributesStructH( h, e->getCppName()+"Attributes", e, true, false );
+        codegenAttributesStructCpp( cpp, e->getCppName()+"Attributes", e, true );
+        std::cout << h.str();
+        std::cout << "/*******************************************************/" << std::endl;
+        std::cout << cpp.str();
     }
 }

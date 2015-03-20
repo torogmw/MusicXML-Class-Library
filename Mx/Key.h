@@ -11,19 +11,14 @@
 #include "Date.h"
 #include <memory>
 #include "Elements.h"
-#include "TraditionalKey.h"
-#include "NonTraditionalKey.h"
+#include "KeyChoice.h"
 
 namespace mx
 {
     namespace e
     {
         /*
-         <!--  ID = 2614 [2614] ------------------------->
-         <!-- min=0 max=4294967295 ZeroOrMany  -->
-         <!-- MsItemElementKind::composite -->
-         <!-- RecursiveSubElementCount = 7 -->
-         <!-- All Sub Elements Are Implemented: true -->
+         2614
          <xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The key element represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part.</xs:documentation>
@@ -49,6 +44,42 @@ namespace mx
          <xs:attributeGroup ref="print-object"/>
          </xs:complexType>
          */
+        
+        struct KeyAttributes;
+        using KeyAttributesPtr = std::shared_ptr<KeyAttributes>;
+        
+        using KeyOctaveSet = std::vector<KeyOctavePtr>;
+        using KeyOctaveSetIter = KeyOctaveSet::iterator;
+        using KeyOctaveSetIterConst = KeyOctaveSet::const_iterator;
+        
+        struct KeyAttributes : public AttributesInterface
+        {
+        public:
+            KeyAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StaffNumber number;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::YesNo printObject;
+            bool hasNumber;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPrintObject;
+        };
+
         class Key;
         using KeyPtr = std::shared_ptr<Key>;
         class Key : public ElementInterface
@@ -60,9 +91,18 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-
+            KeyAttributesPtr getAttributes() const;
+            void setAttributes( const KeyAttributesPtr& value );
+            KeyChoicePtr getKeyChoice() const;
+            void setKeyChoice( const KeyChoicePtr& value );
+            const KeyOctaveSet& getKeyOctaveSet() const;
+            void removeKeyOctave( const KeyOctaveSetIterConst& value );
+            void addKeyOctave( const KeyOctavePtr& value );
+            void clearKeyOctaveSet();
         private:
-
+            KeyAttributesPtr myAttributes;
+            KeyChoicePtr myKeyChoice;
+            KeyOctaveSet myKeyOctaveSet;
         };
     }
 }

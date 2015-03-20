@@ -39,6 +39,9 @@ namespace mx
          <xs:attributeGroup ref="print-object"/>
          </xs:complexType>
          */
+        using NonTraditionalKeySet = std::vector<NonTraditionalKeyPtr>;
+        using NonTraditionalKeySetIter = NonTraditionalKeySet::iterator;
+        using NonTraditionalKeySetIterConst = NonTraditionalKeySet::const_iterator;
         class KeyChoice;
         using KeyChoicePtr = std::shared_ptr<KeyChoice>;
         class KeyChoice : public ElementInterface
@@ -59,12 +62,16 @@ namespace mx
             void setChoice( const Choice value );
             TraditionalKeyPtr getTraditionalKey() const;
             void setTraditionalKey( const TraditionalKeyPtr& value );
-            NonTraditionalKeyPtr getNonTraditionalKey() const;
-            void setNonTraditionalkey( const NonTraditionalKeyPtr& value );
+            
+            const NonTraditionalKeySet& getNonTraditionalKeySet() const;
+            void removeNonTraditionalKey( const NonTraditionalKeySetIterConst& value );
+            void addNonTraditionalKey( const NonTraditionalKeyPtr& value );
+            void clearNonTraditionalKeySet();
+            
         private:
             Choice myChoice;
             TraditionalKeyPtr myTraditionalKey;
-            NonTraditionalKeyPtr myNonTraditionalKey;
+            NonTraditionalKeySet myNonTraditionalKeySet;
         };
     }
 }

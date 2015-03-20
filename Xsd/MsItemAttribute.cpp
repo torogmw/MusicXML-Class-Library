@@ -208,14 +208,20 @@ namespace xsd
                         current = current->getParent();
                     }
                     MsItemPtr refptr = findItem( kind, ref, top.get() );
-                    findAllAttributesRecursively( refptr.get(), output );
+                    if ( refptr->getMsItemKind() != MsItemKind::element )
+                    {
+                        findAllAttributesRecursively( refptr.get(), output );
+                    }
                 }
                 
                 
                 /* parse all children */
                 for ( auto x : item->getChildren() )
                 {
-                    findAllAttributesRecursively( x.get(), output );
+                    if ( x->getMsItemKind() != MsItemKind::element )
+                    {
+                        findAllAttributesRecursively( x.get(), output );
+                    }
                 }
             }
         }

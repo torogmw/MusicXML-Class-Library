@@ -1,5 +1,8 @@
 #include "TestHarness.h"
 #include "TraditionalKey.h"
+#include "NonTraditionalKey.h"
+#include "KeyChoice.h"
+#include "Key.h"
 
 using namespace mx;
 using namespace types;
@@ -8,11 +11,7 @@ using namespace std;
 
 TEST( Test01, TraditionalKey )
 {
-    TraditionalKey object;
-    object.getFifths()->setValue( FifthsValue { 5 } );
-    object.setCancel( std::make_shared<Cancel>( FifthsValue ( 2 ) ) );
-    object.setMode( std::make_shared<Mode>( ModeValue( ModeEnum::dorian ) ) );
-    bool isOneLineOnly = false;
-    object.streamContents( std::cout, 2, isOneLineOnly );
+    Key object;
+    object.toStream( std::cout, 1 );
     std::cout  << std::endl;
 }

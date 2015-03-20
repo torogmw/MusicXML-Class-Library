@@ -7,7 +7,7 @@ namespace mx
         KeyChoice::KeyChoice()
         :myChoice( Choice::traditionalKey )
         ,myTraditionalKey( std::make_shared<TraditionalKey>() )
-        ,myNonTraditionalKey( std::make_shared<NonTraditionalKey>() )
+        ,myNonTraditionalKeySet()
         {}
         bool KeyChoice::hasAttributes() const
         {
@@ -36,9 +36,19 @@ namespace mx
             }
             else if ( myChoice == Choice::nonTraditionalKey )
             {
-                if ( myNonTraditionalKey )
+                for ( auto it = myNonTraditionalKeySet.cbegin();
+                      it != myNonTraditionalKeySet.cend();
+                      ++it )
                 {
-                    myNonTraditionalKey->streamContents( os, indentLevel, isOneLineOnly );
+                    if ( it != myNonTraditionalKeySet.cbegin() )
+                    {
+                        os << std::endl;
+                    }
+                    (*it)->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                if ( myNonTraditionalKeySet.size() > 1 )
+                {
+                    isOneLineOnly = false;
                 }
             }
             return os;
@@ -62,16 +72,27 @@ namespace mx
                 myTraditionalKey = value;
             }
         }
-        NonTraditionalKeyPtr KeyChoice::getNonTraditionalKey() const
+        const NonTraditionalKeySet& KeyChoice::getNonTraditionalKeySet() const
         {
-            return myNonTraditionalKey;
+            return myNonTraditionalKeySet;
         }
-        void KeyChoice::setNonTraditionalkey( const NonTraditionalKeyPtr& value )
+        void KeyChoice::removeNonTraditionalKey( const NonTraditionalKeySetIterConst& value )
+        {
+            if ( value != myNonTraditionalKeySet.cend() )
+            {
+                myNonTraditionalKeySet.erase( value );
+            }
+        }
+        void KeyChoice::addNonTraditionalKey( const NonTraditionalKeyPtr& value )
         {
             if ( value )
             {
-                myNonTraditionalKey = value;
+                myNonTraditionalKeySet.push_back( value );
             }
+        }
+        void KeyChoice::clearNonTraditionalKeySet()
+        {
+            myNonTraditionalKeySet.clear();
         }
     }
 }
