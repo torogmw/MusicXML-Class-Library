@@ -15,6 +15,8 @@
 		292D12751AA2A3FA0079EF22 /* Date.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D12731AA2A3FA0079EF22 /* Date.h */; };
 		292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12791AA2ACE80079EF22 /* NumberOrNormal.cpp */; };
 		292D127C1AA2ACE80079EF22 /* NumberOrNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D127A1AA2ACE80079EF22 /* NumberOrNormal.h */; };
+		293FA86E1ABCC7F300E1CD67 /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293FA86C1ABCC7F300E1CD67 /* Key.cpp */; };
+		293FA86F1ABCC7F300E1CD67 /* Key.h in Headers */ = {isa = PBXBuildFile; fileRef = 293FA86D1ABCC7F300E1CD67 /* Key.h */; };
 		295522791ABCC25E00849962 /* KeyChoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295522771ABCC25E00849962 /* KeyChoice.cpp */; };
 		2955227A1ABCC25E00849962 /* KeyChoice.h in Headers */ = {isa = PBXBuildFile; fileRef = 295522781ABCC25E00849962 /* KeyChoice.h */; };
 		295BAFB81AA23C5B002CAB3F /* FontSize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295BAFB61AA23C5B002CAB3F /* FontSize.cpp */; };
@@ -50,6 +52,8 @@
 		292D12731AA2A3FA0079EF22 /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
 		292D12791AA2ACE80079EF22 /* NumberOrNormal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = NumberOrNormal.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		292D127A1AA2ACE80079EF22 /* NumberOrNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberOrNormal.h; sourceTree = "<group>"; };
+		293FA86C1ABCC7F300E1CD67 /* Key.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Key.cpp; sourceTree = "<group>"; };
+		293FA86D1ABCC7F300E1CD67 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		295522771ABCC25E00849962 /* KeyChoice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyChoice.cpp; sourceTree = "<group>"; };
 		295522781ABCC25E00849962 /* KeyChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChoice.h; sourceTree = "<group>"; };
 		295BAFB61AA23C5B002CAB3F /* FontSize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = FontSize.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -92,6 +96,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				293FA86C1ABCC7F300E1CD67 /* Key.cpp */,
+				293FA86D1ABCC7F300E1CD67 /* Key.h */,
 				295522771ABCC25E00849962 /* KeyChoice.cpp */,
 				295522781ABCC25E00849962 /* KeyChoice.h */,
 				29FAC31D1ABA732D00DD5B42 /* NonTraditionalKey.cpp */,
@@ -145,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				292D12751AA2A3FA0079EF22 /* Date.h in Headers */,
+				293FA86F1ABCC7F300E1CD67 /* Key.h in Headers */,
 				29ED3EBE1AA1319E009FAF55 /* Color.h in Headers */,
 				298949C81A9CE9D60089D4F0 /* Integers.h in Headers */,
 				2971FBED1AA580C600547E82 /* AttributesInterface.h in Headers */,
@@ -226,6 +233,7 @@
 				292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */,
 				2971FBF01AA583D400547E82 /* ElementInterface.cpp in Sources */,
 				29A884FA1A9D5FD800F417CE /* Decimals.cpp in Sources */,
+				293FA86E1ABCC7F300E1CD67 /* Key.cpp in Sources */,
 				290D7C101AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp in Sources */,
 				29FAC31F1ABA732D00DD5B42 /* NonTraditionalKey.cpp in Sources */,
 				29D10BB31A9BEF4E00F03CE6 /* Enums.cpp in Sources */,
