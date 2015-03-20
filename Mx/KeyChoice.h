@@ -59,8 +59,8 @@ namespace mx
             void setChoice( const Choice value );
             TraditionalKeyPtr getTraditionalKey() const;
             void setTraditionalKey( const TraditionalKeyPtr& value );
-            NonTraditionalKey getNonTraditionalKey() const;
-            void setNonTraditionalkey( const NonTraditionalKey& value );
+            NonTraditionalKeyPtr getNonTraditionalKey() const;
+            void setNonTraditionalkey( const NonTraditionalKeyPtr& value );
         private:
             Choice myChoice;
             TraditionalKeyPtr myTraditionalKey;

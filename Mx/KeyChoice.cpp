@@ -4,6 +4,11 @@ namespace mx
 {
     namespace e
     {
+        KeyChoice::KeyChoice()
+        :myChoice( Choice::traditionalKey )
+        ,myTraditionalKey( std::make_shared<TraditionalKey>() )
+        ,myNonTraditionalKey( std::make_shared<NonTraditionalKey>() )
+        {}
         bool KeyChoice::hasAttributes() const
         {
             return false;
@@ -37,6 +42,36 @@ namespace mx
                 }
             }
             return os;
+        }
+        KeyChoice::Choice KeyChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void KeyChoice::setChoice( const Choice value )
+        {
+            myChoice = value;
+        }
+        TraditionalKeyPtr KeyChoice::getTraditionalKey() const
+        {
+            return myTraditionalKey;
+        }
+        void KeyChoice::setTraditionalKey( const TraditionalKeyPtr& value )
+        {
+            if ( value )
+            {
+                myTraditionalKey = value;
+            }
+        }
+        NonTraditionalKeyPtr KeyChoice::getNonTraditionalKey() const
+        {
+            return myNonTraditionalKey;
+        }
+        void KeyChoice::setNonTraditionalkey( const NonTraditionalKeyPtr& value )
+        {
+            if ( value )
+            {
+                myNonTraditionalKey = value;
+            }
         }
     }
 }
