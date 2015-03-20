@@ -40,6 +40,8 @@ namespace mx
 		</xs:sequence>
         </xs:group>
         */
+        class NonTraditionalKey;
+        using NonTraditionalKeyPtr = std::shared_ptr<NonTraditionalKey>;
         class NonTraditionalKey : public ElementInterface
         {
         public:
@@ -49,11 +51,19 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            
+            KeyStepPtr getKeyStep() const;
+            void setKeyStep( const KeyStepPtr& value );
+            KeyAlterPtr getKeyAlter() const;
+            void setKeyAlter( const KeyAlterPtr& value );
+            KeyAccidentalPtr getKeyAccidental() const;
+            void setKeyAccidental( const KeyAccidentalPtr& value );
+            bool getHasKeyAccidental() const;
+            void setHasKeyAccivental( const bool value );
         private:
             KeyStepPtr myKeyStep;
             KeyAlterPtr myKeyAlter;
             KeyAccidentalPtr myKeyAccidental;
+            bool myHasKeyAccidental;
         };
     }
 }

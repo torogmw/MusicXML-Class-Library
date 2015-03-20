@@ -28,6 +28,8 @@ namespace mx
          </xs:sequence>
          </xs:group>
          */
+        class TraditionalKey;
+        using TraditionalKeyPtr = std::shared_ptr<TraditionalKey>;
         class TraditionalKey : public ElementInterface
         {
         public:
@@ -39,20 +41,20 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             CancelPtr getCancel() const;
             void setCancel( const CancelPtr& value );
-            // bool getHasCancel() const;
-            // void setHasCancel( const bool value );
+            bool getHasCancel() const;
+            void setHasCancel( const bool value );
             FifthsPtr getFifths() const;
             void setFifths( const FifthsPtr& value );
             ModePtr getMode() const;
             void setMode( const ModePtr& value );
-            // bool getHasMode() const;
-            // void setHasMode( const bool value );
+            bool getHasMode() const;
+            void setHasMode( const bool value );
         private:
             CancelPtr myCancel;
             FifthsPtr myFifths;
             ModePtr myMode;
-            // bool myHasCancel;
-            // bool myHasMode;
+            bool myHasCancel;
+            bool myHasMode;
         };
     }
 }
