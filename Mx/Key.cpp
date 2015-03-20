@@ -88,22 +88,29 @@ namespace mx
         {
             if ( myKeyChoice->hasContents() )
             {
+                os << std::endl;
                 if ( myKeyChoice )
                 {
                     myKeyChoice->streamContents( os, indentLevel+1, isOneLineOnly );
                 }
+                os << std::endl;
             }
             for ( auto it = myKeyOctaveSet.cbegin();
                   it != myKeyOctaveSet.cend();
                   ++it )
             {
+                if ( it == myKeyOctaveSet.cbegin() )
+                {
+                    os << std::endl;
+                }
                 (*it)->streamContents( os, indentLevel+1, isOneLineOnly );
+                os << std::endl;
             }
             if ( myKeyChoice->hasContents() )
             {
                 isOneLineOnly = false;
             }
-            if ( myKeyOctaveSet.size() > 1 )
+            if ( myKeyOctaveSet.size() > 0 )
             {
                 isOneLineOnly = false;
             }

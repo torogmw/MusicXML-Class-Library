@@ -6,9 +6,9 @@ namespace mx
     {
         TraditionalKey::TraditionalKey()
         :ElementInterface()
-        ,myCancel()
-        ,myFifths( std::make_shared<Fifths>())
-        ,myMode()
+        ,myCancel( std::make_shared<Cancel>() )
+        ,myFifths( std::make_shared<Fifths>() )
+        ,myMode( std::make_shared<Mode>() )
         ,myHasCancel( false )
         ,myHasMode( false )
         {}

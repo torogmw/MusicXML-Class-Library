@@ -36,7 +36,7 @@ namespace mx
             }
             if ( myKeyAlter )
             {
-                myKeyStep->toStream( os, indentLevel );
+                myKeyAlter->toStream( os, indentLevel );
             }
             if ( myKeyAccidental && myHasKeyAccidental )
             {
