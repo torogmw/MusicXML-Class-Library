@@ -44,9 +44,27 @@ namespace mx
         class KeyChoice : public ElementInterface
         {
         public:
-
+            enum class Choice
+            {
+                traditionalKey = 0,
+                nonTraditionalKey = 1
+            };
+            KeyChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            Choice getChoice() const;
+            void setChoice( const Choice value );
+            TraditionalKeyPtr getTraditionalKey() const;
+            void setTraditionalKey( const TraditionalKeyPtr& value );
+            NonTraditionalKey getNonTraditionalKey() const;
+            void setNonTraditionalkey( const NonTraditionalKey& value );
         private:
-
+            Choice myChoice;
+            TraditionalKeyPtr myTraditionalKey;
+            NonTraditionalKeyPtr myNonTraditionalKey;
         };
     }
 }
