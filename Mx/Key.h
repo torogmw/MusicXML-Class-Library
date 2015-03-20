@@ -39,32 +39,20 @@ namespace mx
          <xs:attributeGroup ref="print-object"/>
          </xs:complexType>
          */
-        class KeyChoice;
-        using KeyChoicePtr = std::shared_ptr<KeyChoice>;
-        class KeyChoice : public ElementInterface
+        class Key;
+        using KeyPtr = std::shared_ptr<Key>;
+        class Key : public ElementInterface
         {
         public:
-            enum class Choice
-            {
-                traditionalKey = 0,
-                nonTraditionalKey = 1
-            };
-            KeyChoice();
+            Key();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            Choice getChoice() const;
-            void setChoice( const Choice value );
-            TraditionalKeyPtr getTraditionalKey() const;
-            void setTraditionalKey( const TraditionalKeyPtr& value );
-            NonTraditionalKeyPtr getNonTraditionalKey() const;
-            void setNonTraditionalkey( const NonTraditionalKeyPtr& value );
+
         private:
-            Choice myChoice;
-            TraditionalKeyPtr myTraditionalKey;
-            NonTraditionalKeyPtr myNonTraditionalKey;
+
         };
     }
 }
