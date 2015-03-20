@@ -19,6 +19,16 @@ namespace mx
     namespace e
     {
         /*
+         <!--  ID = 2614 [2614] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 7 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The key element represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
          <xs:complexType name="key">
          <xs:annotation>
          <xs:documentation>The key type represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part. Key signatures appear at the start of each system unless the print-object attribute has been set to "no".</xs:documentation>

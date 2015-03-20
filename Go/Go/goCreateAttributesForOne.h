@@ -21,6 +21,18 @@ namespace go
         using namespace fs;
         using namespace std;
         MsItemWeb web;
-        MsItemElementSet elements = web.getFilteredMsItemSet( MsItemKind::element );
+        MsItemSet items = web.getFilteredMsItemSet( MsItemKind::element );
+        MsItemElementPtr e;
+        for ( auto i : items )
+        {
+            if ( i->getID() == ID )
+            {
+                e = std::make_shared<MsItemElement>( *i );
+            }
+        }
+        if ( !e )
+        {
+            throw std::runtime_error( "the element was not found" );
+        }
     }
 }
