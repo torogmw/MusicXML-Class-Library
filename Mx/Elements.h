@@ -60,7 +60,9 @@ namespace mx
 		using DynamicsSet = std::vector<DynamicsPtr>;
 		using DynamicsSetIter = DynamicsSet::iterator;
 		using DynamicsSetIterConst = DynamicsSet::const_iterator;
-        class Dynamics : public ElementInterface        {
+        class Dynamics : public ElementInterface
+        {
+        public:
         public:
             Dynamics( const types::DynamicsValue& value );
             Dynamics();
@@ -189,7 +191,9 @@ namespace mx
 		using AccidentalTextSet = std::vector<AccidentalTextPtr>;
 		using AccidentalTextSetIter = AccidentalTextSet::iterator;
 		using AccidentalTextSetIterConst = AccidentalTextSet::const_iterator;
-        class AccidentalText : public ElementInterface        {
+        class AccidentalText : public ElementInterface
+        {
+        public:
         public:
             AccidentalText();
             AccidentalText( const types::AccidentalValue& value );
@@ -277,7 +281,9 @@ namespace mx
 		using DisplayTextSet = std::vector<DisplayTextPtr>;
 		using DisplayTextSetIter = DisplayTextSet::iterator;
 		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
-        class DisplayText : public ElementInterface        {
+        class DisplayText : public ElementInterface
+        {
+        public:
         public:
             DisplayText();
             DisplayText( const types::XsString& value );
@@ -419,7 +425,9 @@ namespace mx
 		using OtherPlaySet = std::vector<OtherPlayPtr>;
 		using OtherPlaySetIter = OtherPlaySet::iterator;
 		using OtherPlaySetIterConst = OtherPlaySet::const_iterator;
-        class OtherPlay : public ElementInterface        {
+        class OtherPlay : public ElementInterface
+        {
+        public:
         public:
             OtherPlay();
             OtherPlay( const types::XsString& value );
@@ -496,7 +504,9 @@ namespace mx
 		using PartSymbolSet = std::vector<PartSymbolPtr>;
 		using PartSymbolSetIter = PartSymbolSet::iterator;
 		using PartSymbolSetIterConst = PartSymbolSet::const_iterator;
-        class PartSymbol : public ElementInterface        {
+        class PartSymbol : public ElementInterface
+        {
+        public:
         public:
             PartSymbol();
             PartSymbol( const types::GroupSymbolValue& value );
@@ -560,7 +570,9 @@ namespace mx
 		using KeyOctaveSet = std::vector<KeyOctavePtr>;
 		using KeyOctaveSetIter = KeyOctaveSet::iterator;
 		using KeyOctaveSetIterConst = KeyOctaveSet::const_iterator;
-        class KeyOctave : public ElementInterface        {
+        class KeyOctave : public ElementInterface
+        {
+        public:
         public:
             KeyOctave();
             KeyOctave( const types::OctaveValue& value );
@@ -624,7 +636,9 @@ namespace mx
 		using MultipleRestSet = std::vector<MultipleRestPtr>;
 		using MultipleRestSetIter = MultipleRestSet::iterator;
 		using MultipleRestSetIterConst = MultipleRestSet::const_iterator;
-        class MultipleRest : public ElementInterface        {
+        class MultipleRest : public ElementInterface
+        {
+        public:
         public:
             MultipleRest();
             MultipleRest( const types::PositiveIntegerOrEmpty& value );
@@ -693,7 +707,9 @@ namespace mx
 		using MeasureRepeatSet = std::vector<MeasureRepeatPtr>;
 		using MeasureRepeatSetIter = MeasureRepeatSet::iterator;
 		using MeasureRepeatSetIterConst = MeasureRepeatSet::const_iterator;
-        class MeasureRepeat : public ElementInterface        {
+        class MeasureRepeat : public ElementInterface
+        {
+        public:
         public:
             MeasureRepeat();
             MeasureRepeat( const types::PositiveIntegerOrEmpty& value );
@@ -763,7 +779,9 @@ namespace mx
 		using BarStyleSet = std::vector<BarStylePtr>;
 		using BarStyleSetIter = BarStyleSet::iterator;
 		using BarStyleSetIterConst = BarStyleSet::const_iterator;
-        class BarStyle : public ElementInterface        {
+        class BarStyle : public ElementInterface
+        {
+        public:
         public:
             BarStyle();
             BarStyle( const types::BarStyleEnum& value );
@@ -843,7 +861,9 @@ namespace mx
 		using FermataSet = std::vector<FermataPtr>;
 		using FermataSetIter = FermataSet::iterator;
 		using FermataSetIterConst = FermataSet::const_iterator;
-        class Fermata : public ElementInterface        {
+        class Fermata : public ElementInterface
+        {
+        public:
         public:
             Fermata();
             Fermata( const types::FermataShape& value );
@@ -930,7 +950,9 @@ namespace mx
 		using EndingSet = std::vector<EndingPtr>;
 		using EndingSetIter = EndingSet::iterator;
 		using EndingSetIterConst = EndingSet::const_iterator;
-        class Ending : public ElementInterface        {
+        class Ending : public ElementInterface
+        {
+        public:
         public:
             Ending();
             Ending( const types::XsString& value );
@@ -1013,7 +1035,9 @@ namespace mx
 		using BassStepSet = std::vector<BassStepPtr>;
 		using BassStepSetIter = BassStepSet::iterator;
 		using BassStepSetIterConst = BassStepSet::const_iterator;
-        class BassStep : public ElementInterface        {
+        class BassStep : public ElementInterface
+        {
+        public:
         public:
             BassStep();
             BassStep( const types::StepEnum& value );
@@ -1091,7 +1115,9 @@ namespace mx
 		using BassAlterSet = std::vector<BassAlterPtr>;
 		using BassAlterSetIter = BassAlterSet::iterator;
 		using BassAlterSetIterConst = BassAlterSet::const_iterator;
-        class BassAlter : public ElementInterface        {
+        class BassAlter : public ElementInterface
+        {
+        public:
         public:
             BassAlter();
             BassAlter( const types::Semitones& value );
@@ -1164,7 +1190,9 @@ namespace mx
 		using DegreeValueSet = std::vector<DegreeValuePtr>;
 		using DegreeValueSetIter = DegreeValueSet::iterator;
 		using DegreeValueSetIterConst = DegreeValueSet::const_iterator;
-        class DegreeValue : public ElementInterface        {
+        class DegreeValue : public ElementInterface
+        {
+        public:
         public:
             DegreeValue();
             DegreeValue( const types::PositiveInteger& value );
@@ -1239,7 +1267,9 @@ namespace mx
 		using DegreeAlterSet = std::vector<DegreeAlterPtr>;
 		using DegreeAlterSetIter = DegreeAlterSet::iterator;
 		using DegreeAlterSetIterConst = DegreeAlterSet::const_iterator;
-        class DegreeAlter : public ElementInterface        {
+        class DegreeAlter : public ElementInterface
+        {
+        public:
         public:
             DegreeAlter();
             DegreeAlter( const types::Semitones& value );
@@ -1318,7 +1348,9 @@ namespace mx
 		using DegreeTypeSet = std::vector<DegreeTypePtr>;
 		using DegreeTypeSetIter = DegreeTypeSet::iterator;
 		using DegreeTypeSetIterConst = DegreeTypeSet::const_iterator;
-        class DegreeType : public ElementInterface        {
+        class DegreeType : public ElementInterface
+        {
+        public:
         public:
             DegreeType();
             DegreeType( const types::DegreeTypeValue& value );
@@ -1376,7 +1408,9 @@ namespace mx
 		using OffsetSet = std::vector<OffsetPtr>;
 		using OffsetSetIter = OffsetSet::iterator;
 		using OffsetSetIterConst = OffsetSet::const_iterator;
-        class Offset : public ElementInterface        {
+        class Offset : public ElementInterface
+        {
+        public:
         public:
             Offset();
             Offset( const types::DivisionsValue& value );
@@ -1465,7 +1499,9 @@ namespace mx
 		using RehearsalSet = std::vector<RehearsalPtr>;
 		using RehearsalSetIter = RehearsalSet::iterator;
 		using RehearsalSetIterConst = RehearsalSet::const_iterator;
-        class Rehearsal : public ElementInterface        {
+        class Rehearsal : public ElementInterface
+        {
+        public:
         public:
             Rehearsal();
             Rehearsal( const types::XsString& value );
@@ -1554,7 +1590,9 @@ namespace mx
 		using WordsSet = std::vector<WordsPtr>;
 		using WordsSetIter = WordsSet::iterator;
 		using WordsSetIterConst = WordsSet::const_iterator;
-        class Words : public ElementInterface        {
+        class Words : public ElementInterface
+        {
+        public:
         public:
             Words();
             Words( const types::XsString& value );
@@ -1629,7 +1667,9 @@ namespace mx
 		using PrincipalVoiceSet = std::vector<PrincipalVoicePtr>;
 		using PrincipalVoiceSetIter = PrincipalVoiceSet::iterator;
 		using PrincipalVoiceSetIterConst = PrincipalVoiceSet::const_iterator;
-        class PrincipalVoice : public ElementInterface        {
+        class PrincipalVoice : public ElementInterface
+        {
+        public:
         public:
             PrincipalVoice();
             PrincipalVoice( const types::XsString& value );
@@ -1701,7 +1741,9 @@ namespace mx
 		using OtherDirectionSet = std::vector<OtherDirectionPtr>;
 		using OtherDirectionSetIter = OtherDirectionSet::iterator;
 		using OtherDirectionSetIterConst = OtherDirectionSet::const_iterator;
-        class OtherDirection : public ElementInterface        {
+        class OtherDirection : public ElementInterface
+        {
+        public:
         public:
             OtherDirection();
             OtherDirection( const types::XsString& value );
@@ -1757,7 +1799,9 @@ namespace mx
 		using FirstFretSet = std::vector<FirstFretPtr>;
 		using FirstFretSetIter = FirstFretSet::iterator;
 		using FirstFretSetIterConst = FirstFretSet::const_iterator;
-        class FirstFret : public ElementInterface        {
+        class FirstFret : public ElementInterface
+        {
+        public:
         public:
             FirstFret();
             FirstFret( const types::PositiveInteger& value );
@@ -1817,7 +1861,9 @@ namespace mx
 		using FretSet = std::vector<FretPtr>;
 		using FretSetIter = FretSet::iterator;
 		using FretSetIterConst = FretSet::const_iterator;
-        class Fret : public ElementInterface        {
+        class Fret : public ElementInterface
+        {
+        public:
         public:
             Fret();
             Fret( const types::NonNegativeInteger& value );
@@ -1893,7 +1939,9 @@ namespace mx
 		using FingeringSet = std::vector<FingeringPtr>;
 		using FingeringSetIter = FingeringSet::iterator;
 		using FingeringSetIterConst = FingeringSet::const_iterator;
-        class Fingering : public ElementInterface        {
+        class Fingering : public ElementInterface
+        {
+        public:
         public:
             Fingering();
             Fingering( const types::XsString& value );
@@ -1946,7 +1994,9 @@ namespace mx
 		using FeatureSet = std::vector<FeaturePtr>;
 		using FeatureSetIter = FeatureSet::iterator;
 		using FeatureSetIterConst = FeatureSet::const_iterator;
-        class Feature : public ElementInterface        {
+        class Feature : public ElementInterface
+        {
+        public:
         public:
             Feature();
             Feature( const types::XsString& value );
@@ -2062,7 +2112,9 @@ namespace mx
 		using PerMinuteSet = std::vector<PerMinutePtr>;
 		using PerMinuteSetIter = PerMinuteSet::iterator;
 		using PerMinuteSetIterConst = PerMinuteSet::const_iterator;
-        class PerMinute : public ElementInterface        {
+        class PerMinute : public ElementInterface
+        {
+        public:
         public:
             PerMinute();
             PerMinute( const types::XsString& value );
@@ -2126,7 +2178,9 @@ namespace mx
 		using MetronomeBeamSet = std::vector<MetronomeBeamPtr>;
 		using MetronomeBeamSetIter = MetronomeBeamSet::iterator;
 		using MetronomeBeamSetIterConst = MetronomeBeamSet::const_iterator;
-        class MetronomeBeam : public ElementInterface        {
+        class MetronomeBeam : public ElementInterface
+        {
+        public:
         public:
             MetronomeBeam();
             MetronomeBeam( const types::BeamValue& value );
@@ -2202,7 +2256,9 @@ namespace mx
 		using BeaterSet = std::vector<BeaterPtr>;
 		using BeaterSetIter = BeaterSet::iterator;
 		using BeaterSetIterConst = BeaterSet::const_iterator;
-        class Beater : public ElementInterface        {
+        class Beater : public ElementInterface
+        {
+        public:
         public:
             Beater();
             Beater( const types::BeaterValue& value );
@@ -2280,7 +2336,9 @@ namespace mx
 		using MeasureNumberingSet = std::vector<MeasureNumberingPtr>;
 		using MeasureNumberingSetIter = MeasureNumberingSet::iterator;
 		using MeasureNumberingSetIterConst = MeasureNumberingSet::const_iterator;
-        class MeasureNumbering : public ElementInterface        {
+        class MeasureNumbering : public ElementInterface
+        {
+        public:
         public:
             MeasureNumbering();
             MeasureNumbering( const types::MeasureNumberingValue& value );
@@ -2363,7 +2421,9 @@ namespace mx
 		using RootStepSet = std::vector<RootStepPtr>;
 		using RootStepSetIter = RootStepSet::iterator;
 		using RootStepSetIterConst = RootStepSet::const_iterator;
-        class RootStep : public ElementInterface        {
+        class RootStep : public ElementInterface
+        {
+        public:
         public:
             RootStep();
             RootStep( const types::StepEnum& value );
@@ -2441,7 +2501,9 @@ namespace mx
 		using RootAlterSet = std::vector<RootAlterPtr>;
 		using RootAlterSetIter = RootAlterSet::iterator;
 		using RootAlterSetIterConst = RootAlterSet::const_iterator;
-        class RootAlter : public ElementInterface        {
+        class RootAlter : public ElementInterface
+        {
+        public:
         public:
             RootAlter();
             RootAlter( const types::Semitones& value );
@@ -2497,7 +2559,9 @@ namespace mx
 		using MidiDeviceSet = std::vector<MidiDevicePtr>;
 		using MidiDeviceSetIter = MidiDeviceSet::iterator;
 		using MidiDeviceSetIterConst = MidiDeviceSet::const_iterator;
-        class MidiDevice : public ElementInterface        {
+        class MidiDevice : public ElementInterface
+        {
+        public:
         public:
             MidiDevice();
             MidiDevice( const types::XsString& value );
@@ -2607,7 +2671,9 @@ namespace mx
 		using EncoderSet = std::vector<EncoderPtr>;
 		using EncoderSetIter = EncoderSet::iterator;
 		using EncoderSetIterConst = EncoderSet::const_iterator;
-        class Encoder : public ElementInterface        {
+        class Encoder : public ElementInterface
+        {
+        public:
         public:
             Encoder();
             Encoder( const types::XsString& value );
@@ -2660,7 +2726,9 @@ namespace mx
 		using CreatorSet = std::vector<CreatorPtr>;
 		using CreatorSetIter = CreatorSet::iterator;
 		using CreatorSetIterConst = CreatorSet::const_iterator;
-        class Creator : public ElementInterface        {
+        class Creator : public ElementInterface
+        {
+        public:
         public:
             Creator();
             Creator( const types::XsString& value );
@@ -2713,7 +2781,9 @@ namespace mx
 		using RightsSet = std::vector<RightsPtr>;
 		using RightsSetIter = RightsSet::iterator;
 		using RightsSetIterConst = RightsSet::const_iterator;
-        class Rights : public ElementInterface        {
+        class Rights : public ElementInterface
+        {
+        public:
         public:
             Rights();
             Rights( const types::XsString& value );
@@ -2766,7 +2836,9 @@ namespace mx
 		using RelationSet = std::vector<RelationPtr>;
 		using RelationSetIter = RelationSet::iterator;
 		using RelationSetIterConst = RelationSet::const_iterator;
-        class Relation : public ElementInterface        {
+        class Relation : public ElementInterface
+        {
+        public:
         public:
             Relation();
             Relation( const types::XsString& value );
@@ -2819,7 +2891,9 @@ namespace mx
 		using MiscellaneousFieldSet = std::vector<MiscellaneousFieldPtr>;
 		using MiscellaneousFieldSetIter = MiscellaneousFieldSet::iterator;
 		using MiscellaneousFieldSetIterConst = MiscellaneousFieldSet::const_iterator;
-        class MiscellaneousField : public ElementInterface        {
+        class MiscellaneousField : public ElementInterface
+        {
+        public:
         public:
             MiscellaneousField();
             MiscellaneousField( const types::XsString& value );
@@ -2879,7 +2953,9 @@ namespace mx
 		using LineWidthSet = std::vector<LineWidthPtr>;
 		using LineWidthSetIter = LineWidthSet::iterator;
 		using LineWidthSetIterConst = LineWidthSet::const_iterator;
-        class LineWidth : public ElementInterface        {
+        class LineWidth : public ElementInterface
+        {
+        public:
         public:
             LineWidth();
             LineWidth( const types::TenthsValue& value );
@@ -2939,7 +3015,9 @@ namespace mx
 		using NoteSizeSet = std::vector<NoteSizePtr>;
 		using NoteSizeSetIter = NoteSizeSet::iterator;
 		using NoteSizeSetIterConst = NoteSizeSet::const_iterator;
-        class NoteSize : public ElementInterface        {
+        class NoteSize : public ElementInterface
+        {
+        public:
         public:
             NoteSize();
             NoteSize( const types::NonNegativeDecimal& value );
@@ -2999,7 +3077,9 @@ namespace mx
 		using DistanceSet = std::vector<DistancePtr>;
 		using DistanceSetIter = DistanceSet::iterator;
 		using DistanceSetIterConst = DistanceSet::const_iterator;
-        class Distance : public ElementInterface        {
+        class Distance : public ElementInterface
+        {
+        public:
         public:
             Distance();
             Distance( const types::TenthsValue& value );
@@ -3052,7 +3132,9 @@ namespace mx
 		using OtherAppearanceSet = std::vector<OtherAppearancePtr>;
 		using OtherAppearanceSetIter = OtherAppearanceSet::iterator;
 		using OtherAppearanceSetIterConst = OtherAppearanceSet::const_iterator;
-        class OtherAppearance : public ElementInterface        {
+        class OtherAppearance : public ElementInterface
+        {
+        public:
         public:
             OtherAppearance();
             OtherAppearance( const types::XsString& value );
@@ -3131,7 +3213,9 @@ namespace mx
 		using BreathMarkSet = std::vector<BreathMarkPtr>;
 		using BreathMarkSetIter = BreathMarkSet::iterator;
 		using BreathMarkSetIterConst = BreathMarkSet::const_iterator;
-        class BreathMark : public ElementInterface        {
+        class BreathMark : public ElementInterface
+        {
+        public:
         public:
             BreathMark();
             BreathMark( const types::BreathMarkValue& value );
@@ -3201,7 +3285,9 @@ namespace mx
 		using OtherArticulationSet = std::vector<OtherArticulationPtr>;
 		using OtherArticulationSetIter = OtherArticulationSet::iterator;
 		using OtherArticulationSetIterConst = OtherArticulationSet::const_iterator;
-        class OtherArticulation : public ElementInterface        {
+        class OtherArticulation : public ElementInterface
+        {
+        public:
         public:
             OtherArticulation();
             OtherArticulation( const types::XsString& value );
@@ -3271,7 +3357,9 @@ namespace mx
 		using WithBarSet = std::vector<WithBarPtr>;
 		using WithBarSetIter = WithBarSet::iterator;
 		using WithBarSetIterConst = WithBarSet::const_iterator;
-        class WithBar : public ElementInterface        {
+        class WithBar : public ElementInterface
+        {
+        public:
         public:
             WithBar();
             WithBar( const types::XsString& value );
@@ -3338,7 +3426,9 @@ namespace mx
 		using PrefixSet = std::vector<PrefixPtr>;
 		using PrefixSetIter = PrefixSet::iterator;
 		using PrefixSetIterConst = PrefixSet::const_iterator;
-        class Prefix : public ElementInterface        {
+        class Prefix : public ElementInterface
+        {
+        public:
         public:
             Prefix();
             Prefix( const types::XsString& value );
@@ -3405,7 +3495,9 @@ namespace mx
 		using FigureNumberSet = std::vector<FigureNumberPtr>;
 		using FigureNumberSetIter = FigureNumberSet::iterator;
 		using FigureNumberSetIterConst = FigureNumberSet::const_iterator;
-        class FigureNumber : public ElementInterface        {
+        class FigureNumber : public ElementInterface
+        {
+        public:
         public:
             FigureNumber();
             FigureNumber( const types::XsString& value );
@@ -3472,7 +3564,9 @@ namespace mx
 		using SuffixSet = std::vector<SuffixPtr>;
 		using SuffixSetIter = SuffixSet::iterator;
 		using SuffixSetIterConst = SuffixSet::const_iterator;
-        class Suffix : public ElementInterface        {
+        class Suffix : public ElementInterface
+        {
+        public:
         public:
             Suffix();
             Suffix( const types::XsString& value );
@@ -3534,7 +3628,9 @@ namespace mx
 		using HoleClosedSet = std::vector<HoleClosedPtr>;
 		using HoleClosedSetIter = HoleClosedSet::iterator;
 		using HoleClosedSetIterConst = HoleClosedSet::const_iterator;
-        class HoleClosed : public ElementInterface        {
+        class HoleClosed : public ElementInterface
+        {
+        public:
         public:
             HoleClosed();
             HoleClosed( const types::HoleClosedValue& value );
@@ -3611,7 +3707,9 @@ namespace mx
 		using TextSet = std::vector<TextPtr>;
 		using TextSetIter = TextSet::iterator;
 		using TextSetIterConst = TextSet::const_iterator;
-        class Text : public ElementInterface        {
+        class Text : public ElementInterface
+        {
+        public:
         public:
             Text();
             Text( const types::XsString& value );
@@ -3688,7 +3786,9 @@ namespace mx
 		using ElisionSet = std::vector<ElisionPtr>;
 		using ElisionSetIter = ElisionSet::iterator;
 		using ElisionSetIterConst = ElisionSet::const_iterator;
-        class Elision : public ElementInterface        {
+        class Elision : public ElementInterface
+        {
+        public:
         public:
             Elision();
             Elision( const types::XsString& value );
@@ -3843,7 +3943,9 @@ namespace mx
 		using GlissandoSet = std::vector<GlissandoPtr>;
 		using GlissandoSetIter = GlissandoSet::iterator;
 		using GlissandoSetIterConst = GlissandoSet::const_iterator;
-        class Glissando : public ElementInterface        {
+        class Glissando : public ElementInterface
+        {
+        public:
         public:
             Glissando();
             Glissando( const types::XsString& value );
@@ -3931,7 +4033,9 @@ namespace mx
 		using SlideSet = std::vector<SlidePtr>;
 		using SlideSetIter = SlideSet::iterator;
 		using SlideSetIterConst = SlideSet::const_iterator;
-        class Slide : public ElementInterface        {
+        class Slide : public ElementInterface
+        {
+        public:
         public:
             Slide();
             Slide( const types::XsString& value );
@@ -4120,7 +4224,9 @@ namespace mx
 		using AccidentalMarkSet = std::vector<AccidentalMarkPtr>;
 		using AccidentalMarkSetIter = AccidentalMarkSet::iterator;
 		using AccidentalMarkSetIterConst = AccidentalMarkSet::const_iterator;
-        class AccidentalMark : public ElementInterface        {
+        class AccidentalMark : public ElementInterface
+        {
+        public:
         public:
             AccidentalMark();
             AccidentalMark( const types::AccidentalValue& value );
@@ -4199,7 +4305,9 @@ namespace mx
 		using OtherNotationSet = std::vector<OtherNotationPtr>;
 		using OtherNotationSetIter = OtherNotationSet::iterator;
 		using OtherNotationSetIterConst = OtherNotationSet::const_iterator;
-        class OtherNotation : public ElementInterface        {
+        class OtherNotation : public ElementInterface
+        {
+        public:
         public:
             OtherNotation();
             OtherNotation( const types::XsString& value );
@@ -4272,7 +4380,9 @@ namespace mx
 		using TypeSet = std::vector<TypePtr>;
 		using TypeSetIter = TypeSet::iterator;
 		using TypeSetIterConst = TypeSet::const_iterator;
-        class Type : public ElementInterface        {
+        class Type : public ElementInterface
+        {
+        public:
         public:
             Type();
             Type( const types::NoteTypeValue& value );
@@ -4392,7 +4502,9 @@ namespace mx
 		using AccidentalSet = std::vector<AccidentalPtr>;
 		using AccidentalSetIter = AccidentalSet::iterator;
 		using AccidentalSetIterConst = AccidentalSet::const_iterator;
-        class Accidental : public ElementInterface        {
+        class Accidental : public ElementInterface
+        {
+        public:
         public:
             Accidental();
             Accidental( const types::AccidentalValue& value );
@@ -4462,7 +4574,9 @@ namespace mx
 		using StemSet = std::vector<StemPtr>;
 		using StemSetIter = StemSet::iterator;
 		using StemSetIterConst = StemSet::const_iterator;
-        class Stem : public ElementInterface        {
+        class Stem : public ElementInterface
+        {
+        public:
         public:
             Stem();
             Stem( const types::StemValue& value );
@@ -4566,7 +4680,9 @@ namespace mx
 		using NoteheadSet = std::vector<NoteheadPtr>;
 		using NoteheadSetIter = NoteheadSet::iterator;
 		using NoteheadSetIterConst = NoteheadSet::const_iterator;
-        class Notehead : public ElementInterface        {
+        class Notehead : public ElementInterface
+        {
+        public:
         public:
             Notehead();
             Notehead( const types::NoteheadValue& value );
@@ -4643,7 +4759,9 @@ namespace mx
 		using BeamSet = std::vector<BeamPtr>;
 		using BeamSetIter = BeamSet::iterator;
 		using BeamSetIterConst = BeamSet::const_iterator;
-        class Beam : public ElementInterface        {
+        class Beam : public ElementInterface
+        {
+        public:
         public:
             Beam();
             Beam( const types::BeamValue& value );
@@ -4816,7 +4934,9 @@ namespace mx
 		using TremoloSet = std::vector<TremoloPtr>;
 		using TremoloSetIter = TremoloSet::iterator;
 		using TremoloSetIterConst = TremoloSet::const_iterator;
-        class Tremolo : public ElementInterface        {
+        class Tremolo : public ElementInterface
+        {
+        public:
         public:
             Tremolo();
             Tremolo( const types::TremoloMarks& value );
@@ -4886,7 +5006,9 @@ namespace mx
 		using OtherOrnamentSet = std::vector<OtherOrnamentPtr>;
 		using OtherOrnamentSetIter = OtherOrnamentSet::iterator;
 		using OtherOrnamentSetIterConst = OtherOrnamentSet::const_iterator;
-        class OtherOrnament : public ElementInterface        {
+        class OtherOrnament : public ElementInterface
+        {
+        public:
         public:
             OtherOrnament();
             OtherOrnament( const types::XsString& value );
@@ -5140,7 +5262,9 @@ namespace mx
 		using PluckSet = std::vector<PluckPtr>;
 		using PluckSetIter = PluckSet::iterator;
 		using PluckSetIterConst = PluckSet::const_iterator;
-        class Pluck : public ElementInterface        {
+        class Pluck : public ElementInterface
+        {
+        public:
         public:
             Pluck();
             Pluck( const types::XsString& value );
@@ -5275,7 +5399,9 @@ namespace mx
 		using HammerOnSet = std::vector<HammerOnPtr>;
 		using HammerOnSetIter = HammerOnSet::iterator;
 		using HammerOnSetIterConst = HammerOnSet::const_iterator;
-        class HammerOn : public ElementInterface        {
+        class HammerOn : public ElementInterface
+        {
+        public:
         public:
             HammerOn();
             HammerOn( const types::XsString& value );
@@ -5351,7 +5477,9 @@ namespace mx
 		using PullOffSet = std::vector<PullOffPtr>;
 		using PullOffSetIter = PullOffSet::iterator;
 		using PullOffSetIterConst = PullOffSet::const_iterator;
-        class PullOff : public ElementInterface        {
+        class PullOff : public ElementInterface
+        {
+        public:
         public:
             PullOff();
             PullOff( const types::XsString& value );
@@ -5421,7 +5549,9 @@ namespace mx
 		using TapSet = std::vector<TapPtr>;
 		using TapSetIter = TapSet::iterator;
 		using TapSetIterConst = TapSet::const_iterator;
-        class Tap : public ElementInterface        {
+        class Tap : public ElementInterface
+        {
+        public:
         public:
             Tap();
             Tap( const types::XsString& value );
@@ -5508,7 +5638,9 @@ namespace mx
 		using HandbellSet = std::vector<HandbellPtr>;
 		using HandbellSetIter = HandbellSet::iterator;
 		using HandbellSetIterConst = HandbellSet::const_iterator;
-        class Handbell : public ElementInterface        {
+        class Handbell : public ElementInterface
+        {
+        public:
         public:
             Handbell();
             Handbell( const types::HandbellValue& value );
@@ -5578,7 +5710,9 @@ namespace mx
 		using OtherTechnicalSet = std::vector<OtherTechnicalPtr>;
 		using OtherTechnicalSetIter = OtherTechnicalSet::iterator;
 		using OtherTechnicalSetIterConst = OtherTechnicalSet::const_iterator;
-        class OtherTechnical : public ElementInterface        {
+        class OtherTechnical : public ElementInterface
+        {
+        public:
         public:
             OtherTechnical();
             OtherTechnical( const types::XsString& value );
@@ -5638,7 +5772,9 @@ namespace mx
 		using TupletNumberSet = std::vector<TupletNumberPtr>;
 		using TupletNumberSetIter = TupletNumberSet::iterator;
 		using TupletNumberSetIterConst = TupletNumberSet::const_iterator;
-        class TupletNumber : public ElementInterface        {
+        class TupletNumber : public ElementInterface
+        {
+        public:
         public:
             TupletNumber();
             TupletNumber( const types::NonNegativeInteger& value );
@@ -5718,7 +5854,9 @@ namespace mx
 		using TupletTypeSet = std::vector<TupletTypePtr>;
 		using TupletTypeSetIter = TupletTypeSet::iterator;
 		using TupletTypeSetIterConst = TupletTypeSet::const_iterator;
-        class TupletType : public ElementInterface        {
+        class TupletType : public ElementInterface
+        {
+        public:
         public:
             TupletType();
             TupletType( const types::NoteTypeValue& value );
@@ -5807,7 +5945,9 @@ namespace mx
 		using CreditWordsSet = std::vector<CreditWordsPtr>;
 		using CreditWordsSetIter = CreditWordsSet::iterator;
 		using CreditWordsSetIterConst = CreditWordsSet::const_iterator;
-        class CreditWords : public ElementInterface        {
+        class CreditWords : public ElementInterface
+        {
+        public:
         public:
             CreditWords();
             CreditWords( const types::XsString& value );
@@ -5964,7 +6104,9 @@ namespace mx
 		using GroupNameSet = std::vector<GroupNamePtr>;
 		using GroupNameSetIter = GroupNameSet::iterator;
 		using GroupNameSetIterConst = GroupNameSet::const_iterator;
-        class GroupName : public ElementInterface        {
+        class GroupName : public ElementInterface
+        {
+        public:
         public:
             GroupName();
             GroupName( const types::XsString& value );
@@ -6033,7 +6175,9 @@ namespace mx
 		using GroupAbbreviationSet = std::vector<GroupAbbreviationPtr>;
 		using GroupAbbreviationSetIter = GroupAbbreviationSet::iterator;
 		using GroupAbbreviationSetIterConst = GroupAbbreviationSet::const_iterator;
-        class GroupAbbreviation : public ElementInterface        {
+        class GroupAbbreviation : public ElementInterface
+        {
+        public:
         public:
             GroupAbbreviation();
             GroupAbbreviation( const types::XsString& value );
@@ -6104,7 +6248,9 @@ namespace mx
 		using GroupSymbolSet = std::vector<GroupSymbolPtr>;
 		using GroupSymbolSetIter = GroupSymbolSet::iterator;
 		using GroupSymbolSetIterConst = GroupSymbolSet::const_iterator;
-        class GroupSymbol : public ElementInterface        {
+        class GroupSymbol : public ElementInterface
+        {
+        public:
         public:
             GroupSymbol();
             GroupSymbol( const types::GroupSymbolValue& value );
@@ -6166,7 +6312,9 @@ namespace mx
 		using GroupBarlineSet = std::vector<GroupBarlinePtr>;
 		using GroupBarlineSetIter = GroupBarlineSet::iterator;
 		using GroupBarlineSetIterConst = GroupBarlineSet::const_iterator;
-        class GroupBarline : public ElementInterface        {
+        class GroupBarline : public ElementInterface
+        {
+        public:
         public:
             GroupBarline();
             GroupBarline( const types::GroupBarlineValue& value );
@@ -6237,7 +6385,9 @@ namespace mx
 		using PartNameSet = std::vector<PartNamePtr>;
 		using PartNameSetIter = PartNameSet::iterator;
 		using PartNameSetIterConst = PartNameSet::const_iterator;
-        class PartName : public ElementInterface        {
+        class PartName : public ElementInterface
+        {
+        public:
         public:
             PartName();
             PartName( const types::XsString& value );
@@ -6308,7 +6458,9 @@ namespace mx
 		using PartAbbreviationSet = std::vector<PartAbbreviationPtr>;
 		using PartAbbreviationSetIter = PartAbbreviationSet::iterator;
 		using PartAbbreviationSetIterConst = PartAbbreviationSet::const_iterator;
-        class PartAbbreviation : public ElementInterface        {
+        class PartAbbreviation : public ElementInterface
+        {
+        public:
         public:
             PartAbbreviation();
             PartAbbreviation( const types::XsString& value );
@@ -6452,7 +6604,9 @@ namespace mx
 		using FootnoteSet = std::vector<FootnotePtr>;
 		using FootnoteSetIter = FootnoteSet::iterator;
 		using FootnoteSetIterConst = FootnoteSet::const_iterator;
-        class Footnote : public ElementInterface        {
+        class Footnote : public ElementInterface
+        {
+        public:
         public:
             Footnote();
             Footnote( const types::XsString& value );
@@ -6512,7 +6666,9 @@ namespace mx
 		using LevelSet = std::vector<LevelPtr>;
 		using LevelSetIter = LevelSet::iterator;
 		using LevelSetIterConst = LevelSet::const_iterator;
-        class Level : public ElementInterface        {
+        class Level : public ElementInterface
+        {
+        public:
         public:
             Level();
             Level( const types::XsString& value );
@@ -6570,7 +6726,9 @@ namespace mx
 		using CancelSet = std::vector<CancelPtr>;
 		using CancelSetIter = CancelSet::iterator;
 		using CancelSetIterConst = CancelSet::const_iterator;
-        class Cancel : public ElementInterface        {
+        class Cancel : public ElementInterface
+        {
+        public:
         public:
             Cancel();
             Cancel( const types::FifthsValue& value );
@@ -6637,7 +6795,9 @@ namespace mx
 		using FunctionSet = std::vector<FunctionPtr>;
 		using FunctionSetIter = FunctionSet::iterator;
 		using FunctionSetIterConst = FunctionSet::const_iterator;
-        class Function : public ElementInterface        {
+        class Function : public ElementInterface
+        {
+        public:
         public:
             Function();
             Function( const types::XsString& value );
@@ -6819,7 +6979,9 @@ namespace mx
 		using KindSet = std::vector<KindPtr>;
 		using KindSetIter = KindSet::iterator;
 		using KindSetIterConst = KindSet::const_iterator;
-        class Kind : public ElementInterface        {
+        class Kind : public ElementInterface
+        {
+        public:
         public:
             Kind();
             Kind( const types::KindValue& value );
@@ -6886,7 +7048,9 @@ namespace mx
 		using InversionSet = std::vector<InversionPtr>;
 		using InversionSetIter = InversionSet::iterator;
 		using InversionSetIterConst = InversionSet::const_iterator;
-        class Inversion : public ElementInterface        {
+        class Inversion : public ElementInterface
+        {
+        public:
         public:
             Inversion();
             Inversion( const types::NonNegativeInteger& value );
@@ -6943,7 +7107,9 @@ namespace mx
 		using MidiChannelSet = std::vector<MidiChannelPtr>;
 		using MidiChannelSetIter = MidiChannelSet::iterator;
 		using MidiChannelSetIterConst = MidiChannelSet::const_iterator;
-        class MidiChannel : public ElementInterface        {
+        class MidiChannel : public ElementInterface
+        {
+        public:
         public:
             MidiChannel();
             MidiChannel( const types::Midi16& value );
@@ -6971,7 +7137,9 @@ namespace mx
 		using MidiNameSet = std::vector<MidiNamePtr>;
 		using MidiNameSetIter = MidiNameSet::iterator;
 		using MidiNameSetIterConst = MidiNameSet::const_iterator;
-        class MidiName : public ElementInterface        {
+        class MidiName : public ElementInterface
+        {
+        public:
         public:
             MidiName();
             MidiName( const types::XsString& value );
@@ -7015,7 +7183,9 @@ namespace mx
 		using MidiBankSet = std::vector<MidiBankPtr>;
 		using MidiBankSetIter = MidiBankSet::iterator;
 		using MidiBankSetIterConst = MidiBankSet::const_iterator;
-        class MidiBank : public ElementInterface        {
+        class MidiBank : public ElementInterface
+        {
+        public:
         public:
             MidiBank();
             MidiBank( const types::Midi16384& value );
@@ -7059,7 +7229,9 @@ namespace mx
 		using MidiProgramSet = std::vector<MidiProgramPtr>;
 		using MidiProgramSetIter = MidiProgramSet::iterator;
 		using MidiProgramSetIterConst = MidiProgramSet::const_iterator;
-        class MidiProgram : public ElementInterface        {
+        class MidiProgram : public ElementInterface
+        {
+        public:
         public:
             MidiProgram();
             MidiProgram( const types::Midi128& value );
@@ -7103,7 +7275,9 @@ namespace mx
 		using MidiUnpitchedSet = std::vector<MidiUnpitchedPtr>;
 		using MidiUnpitchedSetIter = MidiUnpitchedSet::iterator;
 		using MidiUnpitchedSetIterConst = MidiUnpitchedSet::const_iterator;
-        class MidiUnpitched : public ElementInterface        {
+        class MidiUnpitched : public ElementInterface
+        {
+        public:
         public:
             MidiUnpitched();
             MidiUnpitched( const types::Midi128& value );
@@ -7147,7 +7321,9 @@ namespace mx
 		using VolumeSet = std::vector<VolumePtr>;
 		using VolumeSetIter = VolumeSet::iterator;
 		using VolumeSetIterConst = VolumeSet::const_iterator;
-        class Volume : public ElementInterface        {
+        class Volume : public ElementInterface
+        {
+        public:
         public:
             Volume();
             Volume( const types::Percent& value );
@@ -7191,7 +7367,9 @@ namespace mx
 		using PanSet = std::vector<PanPtr>;
 		using PanSetIter = PanSet::iterator;
 		using PanSetIterConst = PanSet::const_iterator;
-        class Pan : public ElementInterface        {
+        class Pan : public ElementInterface
+        {
+        public:
         public:
             Pan();
             Pan( const types::RotationDegrees& value );
@@ -7235,7 +7413,9 @@ namespace mx
 		using ElevationSet = std::vector<ElevationPtr>;
 		using ElevationSetIter = ElevationSet::iterator;
 		using ElevationSetIterConst = ElevationSet::const_iterator;
-        class Elevation : public ElementInterface        {
+        class Elevation : public ElementInterface
+        {
+        public:
         public:
             Elevation();
             Elevation( const types::RotationDegrees& value );
@@ -7263,7 +7443,9 @@ namespace mx
 		using IpaSet = std::vector<IpaPtr>;
 		using IpaSetIter = IpaSet::iterator;
 		using IpaSetIterConst = IpaSet::const_iterator;
-        class Ipa : public ElementInterface        {
+        class Ipa : public ElementInterface
+        {
+        public:
         public:
             Ipa();
             Ipa( const types::XsString& value );
@@ -7333,7 +7515,9 @@ namespace mx
 		using MuteSet = std::vector<MutePtr>;
 		using MuteSetIter = MuteSet::iterator;
 		using MuteSetIterConst = MuteSet::const_iterator;
-        class Mute : public ElementInterface        {
+        class Mute : public ElementInterface
+        {
+        public:
         public:
             Mute();
             Mute( const types::MuteEnum& value );
@@ -7385,7 +7569,9 @@ namespace mx
 		using SemiPitchedSet = std::vector<SemiPitchedPtr>;
 		using SemiPitchedSetIter = SemiPitchedSet::iterator;
 		using SemiPitchedSetIterConst = SemiPitchedSet::const_iterator;
-        class SemiPitched : public ElementInterface        {
+        class SemiPitched : public ElementInterface
+        {
+        public:
         public:
             SemiPitched();
             SemiPitched( const types::SemiPitchedEnum& value );
@@ -7427,7 +7613,9 @@ namespace mx
 		using DivisionsSet = std::vector<DivisionsPtr>;
 		using DivisionsSetIter = DivisionsSet::iterator;
 		using DivisionsSetIterConst = DivisionsSet::const_iterator;
-        class Divisions : public ElementInterface        {
+        class Divisions : public ElementInterface
+        {
+        public:
         public:
             Divisions();
             Divisions( const types::PositiveDivisionsValue& value );
@@ -7455,7 +7643,9 @@ namespace mx
 		using StavesSet = std::vector<StavesPtr>;
 		using StavesSetIter = StavesSet::iterator;
 		using StavesSetIterConst = StavesSet::const_iterator;
-        class Staves : public ElementInterface        {
+        class Staves : public ElementInterface
+        {
+        public:
         public:
             Staves();
             Staves( const types::NonNegativeInteger& value );
@@ -7483,7 +7673,9 @@ namespace mx
 		using InstrumentsSet = std::vector<InstrumentsPtr>;
 		using InstrumentsSetIter = InstrumentsSet::iterator;
 		using InstrumentsSetIterConst = InstrumentsSet::const_iterator;
-        class Instruments : public ElementInterface        {
+        class Instruments : public ElementInterface
+        {
+        public:
         public:
             Instruments();
             Instruments( const types::NonNegativeInteger& value );
@@ -7537,7 +7729,9 @@ namespace mx
 		using SignSet = std::vector<SignPtr>;
 		using SignSetIter = SignSet::iterator;
 		using SignSetIterConst = SignSet::const_iterator;
-        class Sign : public ElementInterface        {
+        class Sign : public ElementInterface
+        {
+        public:
         public:
             Sign();
             Sign( const types::ClefSign& value );
@@ -7575,7 +7769,9 @@ namespace mx
 		using LineSet = std::vector<LinePtr>;
 		using LineSetIter = LineSet::iterator;
 		using LineSetIterConst = LineSet::const_iterator;
-        class Line : public ElementInterface        {
+        class Line : public ElementInterface
+        {
+        public:
         public:
             Line();
             Line( const types::StaffLine& value );
@@ -7603,7 +7799,9 @@ namespace mx
 		using ClefOctaveChangeSet = std::vector<ClefOctaveChangePtr>;
 		using ClefOctaveChangeSetIter = ClefOctaveChangeSet::iterator;
 		using ClefOctaveChangeSetIterConst = ClefOctaveChangeSet::const_iterator;
-        class ClefOctaveChange : public ElementInterface        {
+        class ClefOctaveChange : public ElementInterface
+        {
+        public:
         public:
             ClefOctaveChange();
             ClefOctaveChange( const types::Integer& value );
@@ -7655,7 +7853,9 @@ namespace mx
 		using TimeRelationSet = std::vector<TimeRelationPtr>;
 		using TimeRelationSetIter = TimeRelationSet::iterator;
 		using TimeRelationSetIterConst = TimeRelationSet::const_iterator;
-        class TimeRelation : public ElementInterface        {
+        class TimeRelation : public ElementInterface
+        {
+        public:
         public:
             TimeRelation();
             TimeRelation( const types::TimeRelationEnum& value );
@@ -7705,7 +7905,9 @@ namespace mx
 		using StaffTypeSet = std::vector<StaffTypePtr>;
 		using StaffTypeSetIter = StaffTypeSet::iterator;
 		using StaffTypeSetIterConst = StaffTypeSet::const_iterator;
-        class StaffType : public ElementInterface        {
+        class StaffType : public ElementInterface
+        {
+        public:
         public:
             StaffType();
             StaffType( const types::StaffTypeEnum& value );
@@ -7733,7 +7935,9 @@ namespace mx
 		using StaffLinesSet = std::vector<StaffLinesPtr>;
 		using StaffLinesSetIter = StaffLinesSet::iterator;
 		using StaffLinesSetIterConst = StaffLinesSet::const_iterator;
-        class StaffLines : public ElementInterface        {
+        class StaffLines : public ElementInterface
+        {
+        public:
         public:
             StaffLines();
             StaffLines( const types::NonNegativeInteger& value );
@@ -7761,7 +7965,9 @@ namespace mx
 		using CapoSet = std::vector<CapoPtr>;
 		using CapoSetIter = CapoSet::iterator;
 		using CapoSetIterConst = CapoSet::const_iterator;
-        class Capo : public ElementInterface        {
+        class Capo : public ElementInterface
+        {
+        public:
         public:
             Capo();
             Capo( const types::NonNegativeInteger& value );
@@ -7803,7 +8009,9 @@ namespace mx
 		using StaffSizeSet = std::vector<StaffSizePtr>;
 		using StaffSizeSetIter = StaffSizeSet::iterator;
 		using StaffSizeSetIterConst = StaffSizeSet::const_iterator;
-        class StaffSize : public ElementInterface        {
+        class StaffSize : public ElementInterface
+        {
+        public:
         public:
             StaffSize();
             StaffSize( const types::NonNegativeDecimal& value );
@@ -7831,7 +8039,9 @@ namespace mx
 		using SenzaMisuraSet = std::vector<SenzaMisuraPtr>;
 		using SenzaMisuraSetIter = SenzaMisuraSet::iterator;
 		using SenzaMisuraSetIterConst = SenzaMisuraSet::const_iterator;
-        class SenzaMisura : public ElementInterface        {
+        class SenzaMisura : public ElementInterface
+        {
+        public:
         public:
             SenzaMisura();
             SenzaMisura( const types::XsString& value );
@@ -7859,7 +8069,9 @@ namespace mx
 		using DiatonicSet = std::vector<DiatonicPtr>;
 		using DiatonicSetIter = DiatonicSet::iterator;
 		using DiatonicSetIterConst = DiatonicSet::const_iterator;
-        class Diatonic : public ElementInterface        {
+        class Diatonic : public ElementInterface
+        {
+        public:
         public:
             Diatonic();
             Diatonic( const types::Integer& value );
@@ -7897,7 +8109,9 @@ namespace mx
 		using ChromaticSet = std::vector<ChromaticPtr>;
 		using ChromaticSetIter = ChromaticSet::iterator;
 		using ChromaticSetIterConst = ChromaticSet::const_iterator;
-        class Chromatic : public ElementInterface        {
+        class Chromatic : public ElementInterface
+        {
+        public:
         public:
             Chromatic();
             Chromatic( const types::Semitones& value );
@@ -7925,7 +8139,9 @@ namespace mx
 		using OctaveChangeSet = std::vector<OctaveChangePtr>;
 		using OctaveChangeSetIter = OctaveChangeSet::iterator;
 		using OctaveChangeSetIterConst = OctaveChangeSet::const_iterator;
-        class OctaveChange : public ElementInterface        {
+        class OctaveChange : public ElementInterface
+        {
+        public:
         public:
             OctaveChange();
             OctaveChange( const types::Integer& value );
@@ -7969,7 +8185,9 @@ namespace mx
 		using AccordionMiddleSet = std::vector<AccordionMiddlePtr>;
 		using AccordionMiddleSetIter = AccordionMiddleSet::iterator;
 		using AccordionMiddleSetIterConst = AccordionMiddleSet::const_iterator;
-        class AccordionMiddle : public ElementInterface        {
+        class AccordionMiddle : public ElementInterface
+        {
+        public:
         public:
             AccordionMiddle();
             AccordionMiddle( const types::AccordionMiddleValue& value );
@@ -7997,7 +8215,9 @@ namespace mx
 		using FrameStringsSet = std::vector<FrameStringsPtr>;
 		using FrameStringsSetIter = FrameStringsSet::iterator;
 		using FrameStringsSetIterConst = FrameStringsSet::const_iterator;
-        class FrameStrings : public ElementInterface        {
+        class FrameStrings : public ElementInterface
+        {
+        public:
         public:
             FrameStrings();
             FrameStrings( const types::PositiveInteger& value );
@@ -8025,7 +8245,9 @@ namespace mx
 		using FrameFretsSet = std::vector<FrameFretsPtr>;
 		using FrameFretsSetIter = FrameFretsSet::iterator;
 		using FrameFretsSetIterConst = FrameFretsSet::const_iterator;
-        class FrameFrets : public ElementInterface        {
+        class FrameFrets : public ElementInterface
+        {
+        public:
         public:
             FrameFrets();
             FrameFrets( const types::PositiveInteger& value );
@@ -8053,7 +8275,9 @@ namespace mx
 		using MetronomeRelationSet = std::vector<MetronomeRelationPtr>;
 		using MetronomeRelationSetIter = MetronomeRelationSet::iterator;
 		using MetronomeRelationSetIterConst = MetronomeRelationSet::const_iterator;
-        class MetronomeRelation : public ElementInterface        {
+        class MetronomeRelation : public ElementInterface
+        {
+        public:
             // This is weird, the only allowed value is "equals"
             // per the specification, so the client cannot change
             // the value.  No matter what you do here, MetronomeRelation's
@@ -8125,7 +8349,9 @@ namespace mx
 		using MetronomeTypeSet = std::vector<MetronomeTypePtr>;
 		using MetronomeTypeSetIter = MetronomeTypeSet::iterator;
 		using MetronomeTypeSetIterConst = MetronomeTypeSet::const_iterator;
-        class MetronomeType : public ElementInterface        {
+        class MetronomeType : public ElementInterface
+        {
+        public:
         public:
             MetronomeType();
             MetronomeType( const types::NoteTypeValue& value );
@@ -8179,7 +8405,9 @@ namespace mx
 		using PedalStepSet = std::vector<PedalStepPtr>;
 		using PedalStepSetIter = PedalStepSet::iterator;
 		using PedalStepSetIterConst = PedalStepSet::const_iterator;
-        class PedalStep : public ElementInterface        {
+        class PedalStep : public ElementInterface
+        {
+        public:
         public:
             PedalStep();
             PedalStep( const types::StepEnum& value );
@@ -8217,7 +8445,9 @@ namespace mx
 		using PedalAlterSet = std::vector<PedalAlterPtr>;
 		using PedalAlterSetIter = PedalAlterSet::iterator;
 		using PedalAlterSetIterConst = PedalAlterSet::const_iterator;
-        class PedalAlter : public ElementInterface        {
+        class PedalAlter : public ElementInterface
+        {
+        public:
         public:
             PedalAlter();
             PedalAlter( const types::Semitones& value );
@@ -8259,7 +8489,9 @@ namespace mx
 		using GlassSet = std::vector<GlassPtr>;
 		using GlassSetIter = GlassSet::iterator;
 		using GlassSetIterConst = GlassSet::const_iterator;
-        class Glass : public ElementInterface        {
+        class Glass : public ElementInterface
+        {
+        public:
         public:
             Glass();
             Glass( const types::GlassEnum& value );
@@ -8345,7 +8577,9 @@ namespace mx
 		using MetalSet = std::vector<MetalPtr>;
 		using MetalSetIter = MetalSet::iterator;
 		using MetalSetIterConst = MetalSet::const_iterator;
-        class Metal : public ElementInterface        {
+        class Metal : public ElementInterface
+        {
+        public:
         public:
             Metal();
             Metal( const types::MetalEnum& value );
@@ -8413,7 +8647,9 @@ namespace mx
 		using WoodSet = std::vector<WoodPtr>;
 		using WoodSetIter = WoodSet::iterator;
 		using WoodSetIterConst = WoodSet::const_iterator;
-        class Wood : public ElementInterface        {
+        class Wood : public ElementInterface
+        {
+        public:
         public:
             Wood();
             Wood( const types::WoodEnum& value );
@@ -8467,7 +8703,9 @@ namespace mx
 		using PitchedSet = std::vector<PitchedPtr>;
 		using PitchedSetIter = PitchedSet::iterator;
 		using PitchedSetIterConst = PitchedSet::const_iterator;
-        class Pitched : public ElementInterface        {
+        class Pitched : public ElementInterface
+        {
+        public:
         public:
             Pitched();
             Pitched( const types::PitchedEnum& value );
@@ -8531,7 +8769,9 @@ namespace mx
 		using MembraneSet = std::vector<MembranePtr>;
 		using MembraneSetIter = MembraneSet::iterator;
 		using MembraneSetIterConst = MembraneSet::const_iterator;
-        class Membrane : public ElementInterface        {
+        class Membrane : public ElementInterface
+        {
+        public:
         public:
             Membrane();
             Membrane( const types::MembraneEnum& value );
@@ -8599,7 +8839,9 @@ namespace mx
 		using EffectSet = std::vector<EffectPtr>;
 		using EffectSetIter = EffectSet::iterator;
 		using EffectSetIterConst = EffectSet::const_iterator;
-        class Effect : public ElementInterface        {
+        class Effect : public ElementInterface
+        {
+        public:
         public:
             Effect();
             Effect( const types::EffectEnum& value );
@@ -8647,7 +8889,9 @@ namespace mx
 		using StickLocationSet = std::vector<StickLocationPtr>;
 		using StickLocationSetIter = StickLocationSet::iterator;
 		using StickLocationSetIterConst = StickLocationSet::const_iterator;
-        class StickLocation : public ElementInterface        {
+        class StickLocation : public ElementInterface
+        {
+        public:
         public:
             StickLocation();
             StickLocation( const types::StickLocationEnum& value );
@@ -8675,7 +8919,9 @@ namespace mx
 		using OtherPercussionSet = std::vector<OtherPercussionPtr>;
 		using OtherPercussionSetIter = OtherPercussionSet::iterator;
 		using OtherPercussionSetIterConst = OtherPercussionSet::const_iterator;
-        class OtherPercussion : public ElementInterface        {
+        class OtherPercussion : public ElementInterface
+        {
+        public:
         public:
             OtherPercussion();
             OtherPercussion( const types::XsString& value );
@@ -8727,7 +8973,9 @@ namespace mx
 		using StickTypeSet = std::vector<StickTypePtr>;
 		using StickTypeSetIter = StickTypeSet::iterator;
 		using StickTypeSetIterConst = StickTypeSet::const_iterator;
-        class StickType : public ElementInterface        {
+        class StickType : public ElementInterface
+        {
+        public:
         public:
             StickType();
             StickType( const types::StickTypeEnum& value );
@@ -8777,7 +9025,9 @@ namespace mx
 		using StickMaterialSet = std::vector<StickMaterialPtr>;
 		using StickMaterialSetIter = StickMaterialSet::iterator;
 		using StickMaterialSetIterConst = StickMaterialSet::const_iterator;
-        class StickMaterial : public ElementInterface        {
+        class StickMaterial : public ElementInterface
+        {
+        public:
         public:
             StickMaterial();
             StickMaterial( const types::StickMaterialEnum& value );
@@ -8819,7 +9069,9 @@ namespace mx
 		using EncodingDateSet = std::vector<EncodingDatePtr>;
 		using EncodingDateSetIter = EncodingDateSet::iterator;
 		using EncodingDateSetIterConst = EncodingDateSet::const_iterator;
-        class EncodingDate : public ElementInterface        {
+        class EncodingDate : public ElementInterface
+        {
+        public:
         public:
             EncodingDate();
             EncodingDate( const types::Date& value );
@@ -8847,7 +9099,9 @@ namespace mx
 		using SoftwareSet = std::vector<SoftwarePtr>;
 		using SoftwareSetIter = SoftwareSet::iterator;
 		using SoftwareSetIterConst = SoftwareSet::const_iterator;
-        class Software : public ElementInterface        {
+        class Software : public ElementInterface
+        {
+        public:
         public:
             Software();
             Software( const types::XsString& value );
@@ -8875,7 +9129,9 @@ namespace mx
 		using EncodingDescriptionSet = std::vector<EncodingDescriptionPtr>;
 		using EncodingDescriptionSetIter = EncodingDescriptionSet::iterator;
 		using EncodingDescriptionSetIterConst = EncodingDescriptionSet::const_iterator;
-        class EncodingDescription : public ElementInterface        {
+        class EncodingDescription : public ElementInterface
+        {
+        public:
         public:
             EncodingDescription();
             EncodingDescription( const types::XsString& value );
@@ -8903,7 +9159,9 @@ namespace mx
 		using SourceSet = std::vector<SourcePtr>;
 		using SourceSetIter = SourceSet::iterator;
 		using SourceSetIterConst = SourceSet::const_iterator;
-        class Source : public ElementInterface        {
+        class Source : public ElementInterface
+        {
+        public:
         public:
             Source();
             Source( const types::XsString& value );
@@ -8945,7 +9203,9 @@ namespace mx
 		using MeasureDistanceSet = std::vector<MeasureDistancePtr>;
 		using MeasureDistanceSetIter = MeasureDistanceSet::iterator;
 		using MeasureDistanceSetIterConst = MeasureDistanceSet::const_iterator;
-        class MeasureDistance : public ElementInterface        {
+        class MeasureDistance : public ElementInterface
+        {
+        public:
         public:
             MeasureDistance();
             MeasureDistance( const types::TenthsValue& value );
@@ -8987,7 +9247,9 @@ namespace mx
 		using PageHeightSet = std::vector<PageHeightPtr>;
 		using PageHeightSetIter = PageHeightSet::iterator;
 		using PageHeightSetIterConst = PageHeightSet::const_iterator;
-        class PageHeight : public ElementInterface        {
+        class PageHeight : public ElementInterface
+        {
+        public:
         public:
             PageHeight();
             PageHeight( const types::TenthsValue& value );
@@ -9029,7 +9291,9 @@ namespace mx
 		using PageWidthSet = std::vector<PageWidthPtr>;
 		using PageWidthSetIter = PageWidthSet::iterator;
 		using PageWidthSetIterConst = PageWidthSet::const_iterator;
-        class PageWidth : public ElementInterface        {
+        class PageWidth : public ElementInterface
+        {
+        public:
         public:
             PageWidth();
             PageWidth( const types::TenthsValue& value );
@@ -9067,7 +9331,9 @@ namespace mx
 		using MillimetersSet = std::vector<MillimetersPtr>;
 		using MillimetersSetIter = MillimetersSet::iterator;
 		using MillimetersSetIterConst = MillimetersSet::const_iterator;
-        class Millimeters : public ElementInterface        {
+        class Millimeters : public ElementInterface
+        {
+        public:
         public:
             Millimeters();
             Millimeters( const types::MillimetersValue& value );
@@ -9109,7 +9375,9 @@ namespace mx
 		using TenthsSet = std::vector<TenthsPtr>;
 		using TenthsSetIter = TenthsSet::iterator;
 		using TenthsSetIterConst = TenthsSet::const_iterator;
-        class Tenths : public ElementInterface        {
+        class Tenths : public ElementInterface
+        {
+        public:
         public:
             Tenths();
             Tenths( const types::TenthsValue& value );
@@ -9151,7 +9419,9 @@ namespace mx
 		using StaffDistanceSet = std::vector<StaffDistancePtr>;
 		using StaffDistanceSetIter = StaffDistanceSet::iterator;
 		using StaffDistanceSetIterConst = StaffDistanceSet::const_iterator;
-        class StaffDistance : public ElementInterface        {
+        class StaffDistance : public ElementInterface
+        {
+        public:
         public:
             StaffDistance();
             StaffDistance( const types::TenthsValue& value );
@@ -9193,7 +9463,9 @@ namespace mx
 		using SystemDistanceSet = std::vector<SystemDistancePtr>;
 		using SystemDistanceSetIter = SystemDistanceSet::iterator;
 		using SystemDistanceSetIterConst = SystemDistanceSet::const_iterator;
-        class SystemDistance : public ElementInterface        {
+        class SystemDistance : public ElementInterface
+        {
+        public:
         public:
             SystemDistance();
             SystemDistance( const types::TenthsValue& value );
@@ -9235,7 +9507,9 @@ namespace mx
 		using TopSystemDistanceSet = std::vector<TopSystemDistancePtr>;
 		using TopSystemDistanceSetIter = TopSystemDistanceSet::iterator;
 		using TopSystemDistanceSetIterConst = TopSystemDistanceSet::const_iterator;
-        class TopSystemDistance : public ElementInterface        {
+        class TopSystemDistance : public ElementInterface
+        {
+        public:
         public:
             TopSystemDistance();
             TopSystemDistance( const types::TenthsValue& value );
@@ -9301,7 +9575,9 @@ namespace mx
 		using ArrowDirectionSet = std::vector<ArrowDirectionPtr>;
 		using ArrowDirectionSetIter = ArrowDirectionSet::iterator;
 		using ArrowDirectionSetIterConst = ArrowDirectionSet::const_iterator;
-        class ArrowDirection : public ElementInterface        {
+        class ArrowDirection : public ElementInterface
+        {
+        public:
         public:
             ArrowDirection();
             ArrowDirection( const types::ArrowDirectionEnum& value );
@@ -9355,7 +9631,9 @@ namespace mx
 		using ArrowStyleSet = std::vector<ArrowStylePtr>;
 		using ArrowStyleSetIter = ArrowStyleSet::iterator;
 		using ArrowStyleSetIterConst = ArrowStyleSet::const_iterator;
-        class ArrowStyle : public ElementInterface        {
+        class ArrowStyle : public ElementInterface
+        {
+        public:
         public:
             ArrowStyle();
             ArrowStyle( const types::ArrowStyleEnum& value );
@@ -9399,7 +9677,9 @@ namespace mx
 		using CircularArrowSet = std::vector<CircularArrowPtr>;
 		using CircularArrowSetIter = CircularArrowSet::iterator;
 		using CircularArrowSetIterConst = CircularArrowSet::const_iterator;
-        class CircularArrow : public ElementInterface        {
+        class CircularArrow : public ElementInterface
+        {
+        public:
         public:
             CircularArrow();
             CircularArrow( const types::CircularArrowEnum& value );
@@ -9437,7 +9717,9 @@ namespace mx
 		using BendAlterSet = std::vector<BendAlterPtr>;
 		using BendAlterSetIter = BendAlterSet::iterator;
 		using BendAlterSetIterConst = BendAlterSet::const_iterator;
-        class BendAlter : public ElementInterface        {
+        class BendAlter : public ElementInterface
+        {
+        public:
         public:
             BendAlter();
             BendAlter( const types::Semitones& value );
@@ -9465,7 +9747,9 @@ namespace mx
 		using HoleTypeSet = std::vector<HoleTypePtr>;
 		using HoleTypeSetIter = HoleTypeSet::iterator;
 		using HoleTypeSetIterConst = HoleTypeSet::const_iterator;
-        class HoleType : public ElementInterface        {
+        class HoleType : public ElementInterface
+        {
+        public:
         public:
             HoleType();
             HoleType( const types::XsString& value );
@@ -9493,7 +9777,9 @@ namespace mx
 		using HoleShapeSet = std::vector<HoleShapePtr>;
 		using HoleShapeSetIter = HoleShapeSet::iterator;
 		using HoleShapeSetIterConst = HoleShapeSet::const_iterator;
-        class HoleShape : public ElementInterface        {
+        class HoleShape : public ElementInterface
+        {
+        public:
         public:
             HoleShape();
             HoleShape( const types::XsString& value );
@@ -9541,7 +9827,9 @@ namespace mx
 		using SyllabicSet = std::vector<SyllabicPtr>;
 		using SyllabicSetIter = SyllabicSet::iterator;
 		using SyllabicSetIterConst = SyllabicSet::const_iterator;
-        class Syllabic : public ElementInterface        {
+        class Syllabic : public ElementInterface
+        {
+        public:
         public:
             Syllabic();
             Syllabic( const types::SyllabicEnum& value );
@@ -9642,7 +9930,9 @@ namespace mx
 		using StepSet = std::vector<StepPtr>;
 		using StepSetIter = StepSet::iterator;
 		using StepSetIterConst = StepSet::const_iterator;
-        class Step : public ElementInterface        {
+        class Step : public ElementInterface
+        {
+        public:
         public:
             Step();
             Step( const types::StepEnum& value );
@@ -9680,7 +9970,9 @@ namespace mx
 		using AlterSet = std::vector<AlterPtr>;
 		using AlterSetIter = AlterSet::iterator;
 		using AlterSetIterConst = AlterSet::const_iterator;
-        class Alter : public ElementInterface        {
+        class Alter : public ElementInterface
+        {
+        public:
         public:
             Alter();
             Alter( const types::Semitones& value );
@@ -9724,7 +10016,9 @@ namespace mx
 		using OctaveSet = std::vector<OctavePtr>;
 		using OctaveSetIter = OctaveSet::iterator;
 		using OctaveSetIterConst = OctaveSet::const_iterator;
-        class Octave : public ElementInterface        {
+        class Octave : public ElementInterface
+        {
+        public:
         public:
             Octave();
             Octave( const types::OctaveValue& value );
@@ -9752,7 +10046,9 @@ namespace mx
 		using ActualNotesSet = std::vector<ActualNotesPtr>;
 		using ActualNotesSetIter = ActualNotesSet::iterator;
 		using ActualNotesSetIterConst = ActualNotesSet::const_iterator;
-        class ActualNotes : public ElementInterface        {
+        class ActualNotes : public ElementInterface
+        {
+        public:
         public:
             ActualNotes();
             ActualNotes( const types::NonNegativeInteger& value );
@@ -9780,7 +10076,9 @@ namespace mx
 		using NormalNotesSet = std::vector<NormalNotesPtr>;
 		using NormalNotesSetIter = NormalNotesSet::iterator;
 		using NormalNotesSetIterConst = NormalNotesSet::const_iterator;
-        class NormalNotes : public ElementInterface        {
+        class NormalNotes : public ElementInterface
+        {
+        public:
         public:
             NormalNotes();
             NormalNotes( const types::NonNegativeInteger& value );
@@ -9848,7 +10146,9 @@ namespace mx
 		using NormalTypeSet = std::vector<NormalTypePtr>;
 		using NormalTypeSetIter = NormalTypeSet::iterator;
 		using NormalTypeSetIterConst = NormalTypeSet::const_iterator;
-        class NormalType : public ElementInterface        {
+        class NormalType : public ElementInterface
+        {
+        public:
         public:
             NormalType();
             NormalType( const types::NoteTypeValue& value );
@@ -9876,7 +10176,9 @@ namespace mx
 		using CreditTypeSet = std::vector<CreditTypePtr>;
 		using CreditTypeSetIter = CreditTypeSet::iterator;
 		using CreditTypeSetIterConst = CreditTypeSet::const_iterator;
-        class CreditType : public ElementInterface        {
+        class CreditType : public ElementInterface
+        {
+        public:
         public:
             CreditType();
             CreditType( const types::XsString& value );
@@ -9904,7 +10206,9 @@ namespace mx
 		using InstrumentNameSet = std::vector<InstrumentNamePtr>;
 		using InstrumentNameSetIter = InstrumentNameSet::iterator;
 		using InstrumentNameSetIterConst = InstrumentNameSet::const_iterator;
-        class InstrumentName : public ElementInterface        {
+        class InstrumentName : public ElementInterface
+        {
+        public:
         public:
             InstrumentName();
             InstrumentName( const types::XsString& value );
@@ -9932,7 +10236,9 @@ namespace mx
 		using InstrumentAbbreviationSet = std::vector<InstrumentAbbreviationPtr>;
 		using InstrumentAbbreviationSetIter = InstrumentAbbreviationSet::iterator;
 		using InstrumentAbbreviationSetIterConst = InstrumentAbbreviationSet::const_iterator;
-        class InstrumentAbbreviation : public ElementInterface        {
+        class InstrumentAbbreviation : public ElementInterface
+        {
+        public:
         public:
             InstrumentAbbreviation();
             InstrumentAbbreviation( const types::XsString& value );
@@ -9960,7 +10266,9 @@ namespace mx
 		using InstrumentSoundSet = std::vector<InstrumentSoundPtr>;
 		using InstrumentSoundSetIter = InstrumentSoundSet::iterator;
 		using InstrumentSoundSetIterConst = InstrumentSoundSet::const_iterator;
-        class InstrumentSound : public ElementInterface        {
+        class InstrumentSound : public ElementInterface
+        {
+        public:
         public:
             InstrumentSound();
             InstrumentSound( const types::XsString& value );
@@ -10010,7 +10318,9 @@ namespace mx
 		using EnsembleSet = std::vector<EnsemblePtr>;
 		using EnsembleSetIter = EnsembleSet::iterator;
 		using EnsembleSetIterConst = EnsembleSet::const_iterator;
-        class Ensemble : public ElementInterface        {
+        class Ensemble : public ElementInterface
+        {
+        public:
         public:
             Ensemble();
             Ensemble( const types::PositiveIntegerOrEmpty& value );
@@ -10038,7 +10348,9 @@ namespace mx
 		using GroupSet = std::vector<GroupPtr>;
 		using GroupSetIter = GroupSet::iterator;
 		using GroupSetIterConst = GroupSet::const_iterator;
-        class Group : public ElementInterface        {
+        class Group : public ElementInterface
+        {
+        public:
         public:
             Group();
             Group( const types::XsString& value );
@@ -10066,7 +10378,9 @@ namespace mx
 		using VirtualLibrarySet = std::vector<VirtualLibraryPtr>;
 		using VirtualLibrarySetIter = VirtualLibrarySet::iterator;
 		using VirtualLibrarySetIterConst = VirtualLibrarySet::const_iterator;
-        class VirtualLibrary : public ElementInterface        {
+        class VirtualLibrary : public ElementInterface
+        {
+        public:
         public:
             VirtualLibrary();
             VirtualLibrary( const types::XsString& value );
@@ -10094,7 +10408,9 @@ namespace mx
 		using VirtualNameSet = std::vector<VirtualNamePtr>;
 		using VirtualNameSetIter = VirtualNameSet::iterator;
 		using VirtualNameSetIterConst = VirtualNameSet::const_iterator;
-        class VirtualName : public ElementInterface        {
+        class VirtualName : public ElementInterface
+        {
+        public:
         public:
             VirtualName();
             VirtualName( const types::XsString& value );
@@ -10122,7 +10438,9 @@ namespace mx
 		using WorkNumberSet = std::vector<WorkNumberPtr>;
 		using WorkNumberSetIter = WorkNumberSet::iterator;
 		using WorkNumberSetIterConst = WorkNumberSet::const_iterator;
-        class WorkNumber : public ElementInterface        {
+        class WorkNumber : public ElementInterface
+        {
+        public:
         public:
             WorkNumber();
             WorkNumber( const types::XsString& value );
@@ -10150,7 +10468,9 @@ namespace mx
 		using WorkTitleSet = std::vector<WorkTitlePtr>;
 		using WorkTitleSetIter = WorkTitleSet::iterator;
 		using WorkTitleSetIterConst = WorkTitleSet::const_iterator;
-        class WorkTitle : public ElementInterface        {
+        class WorkTitle : public ElementInterface
+        {
+        public:
         public:
             WorkTitle();
             WorkTitle( const types::XsString& value );
@@ -10178,7 +10498,9 @@ namespace mx
 		using StaffSet = std::vector<StaffPtr>;
 		using StaffSetIter = StaffSet::iterator;
 		using StaffSetIterConst = StaffSet::const_iterator;
-        class Staff : public ElementInterface        {
+        class Staff : public ElementInterface
+        {
+        public:
         public:
             Staff();
             Staff( const types::PositiveInteger& value );
@@ -10232,7 +10554,9 @@ namespace mx
 		using TuningStepSet = std::vector<TuningStepPtr>;
 		using TuningStepSetIter = TuningStepSet::iterator;
 		using TuningStepSetIterConst = TuningStepSet::const_iterator;
-        class TuningStep : public ElementInterface        {
+        class TuningStep : public ElementInterface
+        {
+        public:
         public:
             TuningStep();
             TuningStep( const types::StepEnum& value );
@@ -10270,7 +10594,9 @@ namespace mx
 		using TuningAlterSet = std::vector<TuningAlterPtr>;
 		using TuningAlterSetIter = TuningAlterSet::iterator;
 		using TuningAlterSetIterConst = TuningAlterSet::const_iterator;
-        class TuningAlter : public ElementInterface        {
+        class TuningAlter : public ElementInterface
+        {
+        public:
         public:
             TuningAlter();
             TuningAlter( const types::Semitones& value );
@@ -10314,7 +10640,9 @@ namespace mx
 		using TuningOctaveSet = std::vector<TuningOctavePtr>;
 		using TuningOctaveSetIter = TuningOctaveSet::iterator;
 		using TuningOctaveSetIterConst = TuningOctaveSet::const_iterator;
-        class TuningOctave : public ElementInterface        {
+        class TuningOctave : public ElementInterface
+        {
+        public:
         public:
             TuningOctave();
             TuningOctave( const types::OctaveValue& value );
@@ -10342,7 +10670,9 @@ namespace mx
 		using VoiceSet = std::vector<VoicePtr>;
 		using VoiceSetIter = VoiceSet::iterator;
 		using VoiceSetIterConst = VoiceSet::const_iterator;
-        class Voice : public ElementInterface        {
+        class Voice : public ElementInterface
+        {
+        public:
         public:
             Voice();
             Voice( const types::XsString& value );
@@ -10396,7 +10726,9 @@ namespace mx
 		using KeyStepSet = std::vector<KeyStepPtr>;
 		using KeyStepSetIter = KeyStepSet::iterator;
 		using KeyStepSetIterConst = KeyStepSet::const_iterator;
-        class KeyStep : public ElementInterface        {
+        class KeyStep : public ElementInterface
+        {
+        public:
         public:
             KeyStep();
             KeyStep( const types::StepEnum& value );
@@ -10434,7 +10766,9 @@ namespace mx
 		using KeyAlterSet = std::vector<KeyAlterPtr>;
 		using KeyAlterSetIter = KeyAlterSet::iterator;
 		using KeyAlterSetIterConst = KeyAlterSet::const_iterator;
-        class KeyAlter : public ElementInterface        {
+        class KeyAlter : public ElementInterface
+        {
+        public:
         public:
             KeyAlter();
             KeyAlter( const types::Semitones& value );
@@ -10542,7 +10876,9 @@ namespace mx
 		using KeyAccidentalSet = std::vector<KeyAccidentalPtr>;
 		using KeyAccidentalSetIter = KeyAccidentalSet::iterator;
 		using KeyAccidentalSetIterConst = KeyAccidentalSet::const_iterator;
-        class KeyAccidental : public ElementInterface        {
+        class KeyAccidental : public ElementInterface
+        {
+        public:
         public:
             KeyAccidental();
             KeyAccidental( const types::AccidentalValue& value );
@@ -10610,7 +10946,9 @@ namespace mx
 		using SlashTypeSet = std::vector<SlashTypePtr>;
 		using SlashTypeSetIter = SlashTypeSet::iterator;
 		using SlashTypeSetIterConst = SlashTypeSet::const_iterator;
-        class SlashType : public ElementInterface        {
+        class SlashType : public ElementInterface
+        {
+        public:
         public:
             SlashType();
             SlashType( const types::NoteTypeValue& value );
@@ -10638,7 +10976,9 @@ namespace mx
 		using BeatsSet = std::vector<BeatsPtr>;
 		using BeatsSetIter = BeatsSet::iterator;
 		using BeatsSetIterConst = BeatsSet::const_iterator;
-        class Beats : public ElementInterface        {
+        class Beats : public ElementInterface
+        {
+        public:
         public:
             Beats();
             Beats( const types::XsString& value );
@@ -10666,7 +11006,9 @@ namespace mx
 		using BeatTypeSet = std::vector<BeatTypePtr>;
 		using BeatTypeSetIter = BeatTypeSet::iterator;
 		using BeatTypeSetIterConst = BeatTypeSet::const_iterator;
-        class BeatType : public ElementInterface        {
+        class BeatType : public ElementInterface
+        {
+        public:
         public:
             BeatType();
             BeatType( const types::XsString& value );
@@ -10704,7 +11046,9 @@ namespace mx
 		using FifthsSet = std::vector<FifthsPtr>;
 		using FifthsSetIter = FifthsSet::iterator;
 		using FifthsSetIterConst = FifthsSet::const_iterator;
-        class Fifths : public ElementInterface        {
+        class Fifths : public ElementInterface
+        {
+        public:
         public:
             Fifths();
             Fifths( const types::FifthsValue& value );
@@ -10742,7 +11086,9 @@ namespace mx
 		using ModeSet = std::vector<ModePtr>;
 		using ModeSetIter = ModeSet::iterator;
 		using ModeSetIterConst = ModeSet::const_iterator;
-        class Mode : public ElementInterface        {
+        class Mode : public ElementInterface
+        {
+        public:
         public:
             Mode();
             Mode( const types::ModeValue& value );
@@ -10810,7 +11156,9 @@ namespace mx
 		using BeatUnitSet = std::vector<BeatUnitPtr>;
 		using BeatUnitSetIter = BeatUnitSet::iterator;
 		using BeatUnitSetIterConst = BeatUnitSet::const_iterator;
-        class BeatUnit : public ElementInterface        {
+        class BeatUnit : public ElementInterface
+        {
+        public:
         public:
             BeatUnit();
             BeatUnit( const types::NoteTypeValue& value );
@@ -10852,7 +11200,9 @@ namespace mx
 		using TopMarginSet = std::vector<TopMarginPtr>;
 		using TopMarginSetIter = TopMarginSet::iterator;
 		using TopMarginSetIterConst = TopMarginSet::const_iterator;
-        class TopMargin : public ElementInterface        {
+        class TopMargin : public ElementInterface
+        {
+        public:
         public:
             TopMargin();
             TopMargin( const types::TenthsValue& value );
@@ -10894,7 +11244,9 @@ namespace mx
 		using BottomMarginSet = std::vector<BottomMarginPtr>;
 		using BottomMarginSetIter = BottomMarginSet::iterator;
 		using BottomMarginSetIterConst = BottomMarginSet::const_iterator;
-        class BottomMargin : public ElementInterface        {
+        class BottomMargin : public ElementInterface
+        {
+        public:
         public:
             BottomMargin();
             BottomMargin( const types::TenthsValue& value );
@@ -10936,7 +11288,9 @@ namespace mx
 		using LeftMarginSet = std::vector<LeftMarginPtr>;
 		using LeftMarginSetIter = LeftMarginSet::iterator;
 		using LeftMarginSetIterConst = LeftMarginSet::const_iterator;
-        class LeftMargin : public ElementInterface        {
+        class LeftMargin : public ElementInterface
+        {
+        public:
         public:
             LeftMargin();
             LeftMargin( const types::TenthsValue& value );
@@ -10978,7 +11332,9 @@ namespace mx
 		using RightMarginSet = std::vector<RightMarginPtr>;
 		using RightMarginSetIter = RightMarginSet::iterator;
 		using RightMarginSetIterConst = RightMarginSet::const_iterator;
-        class RightMargin : public ElementInterface        {
+        class RightMargin : public ElementInterface
+        {
+        public:
         public:
             RightMargin();
             RightMargin( const types::TenthsValue& value );
@@ -11020,7 +11376,9 @@ namespace mx
 		using DurationSet = std::vector<DurationPtr>;
 		using DurationSetIter = DurationSet::iterator;
 		using DurationSetIterConst = DurationSet::const_iterator;
-        class Duration : public ElementInterface        {
+        class Duration : public ElementInterface
+        {
+        public:
         public:
             Duration();
             Duration( const types::PositiveDivisionsValue& value );
@@ -11074,7 +11432,9 @@ namespace mx
 		using DisplayStepSet = std::vector<DisplayStepPtr>;
 		using DisplayStepSetIter = DisplayStepSet::iterator;
 		using DisplayStepSetIterConst = DisplayStepSet::const_iterator;
-        class DisplayStep : public ElementInterface        {
+        class DisplayStep : public ElementInterface
+        {
+        public:
         public:
             DisplayStep();
             DisplayStep( const types::StepEnum& value );
@@ -11118,7 +11478,9 @@ namespace mx
 		using DisplayOctaveSet = std::vector<DisplayOctavePtr>;
 		using DisplayOctaveSetIter = DisplayOctaveSet::iterator;
 		using DisplayOctaveSetIterConst = DisplayOctaveSet::const_iterator;
-        class DisplayOctave : public ElementInterface        {
+        class DisplayOctave : public ElementInterface
+        {
+        public:
         public:
             DisplayOctave();
             DisplayOctave( const types::OctaveValue& value );
@@ -11146,7 +11508,9 @@ namespace mx
 		using MovementNumberSet = std::vector<MovementNumberPtr>;
 		using MovementNumberSetIter = MovementNumberSet::iterator;
 		using MovementNumberSetIterConst = MovementNumberSet::const_iterator;
-        class MovementNumber : public ElementInterface        {
+        class MovementNumber : public ElementInterface
+        {
+        public:
         public:
             MovementNumber();
             MovementNumber( const types::XsString& value );
@@ -11174,7 +11538,9 @@ namespace mx
 		using MovementTitleSet = std::vector<MovementTitlePtr>;
 		using MovementTitleSetIter = MovementTitleSet::iterator;
 		using MovementTitleSetIterConst = MovementTitleSet::const_iterator;
-        class MovementTitle : public ElementInterface        {
+        class MovementTitle : public ElementInterface
+        {
+        public:
         public:
             MovementTitle();
             MovementTitle( const types::XsString& value );
@@ -11209,7 +11575,9 @@ namespace mx
 		using DoubleSet = std::vector<DoublePtr>;
 		using DoubleSetIter = DoubleSet::iterator;
 		using DoubleSetIterConst = DoubleSet::const_iterator;
-        class Double : public ElementInterface        {
+        class Double : public ElementInterface
+        {
+        public:
         public:
             Double();
             virtual bool hasAttributes() const;
@@ -11232,7 +11600,9 @@ namespace mx
 		using AccordionHighSet = std::vector<AccordionHighPtr>;
 		using AccordionHighSetIter = AccordionHighSet::iterator;
 		using AccordionHighSetIterConst = AccordionHighSet::const_iterator;
-        class AccordionHigh : public ElementInterface        {
+        class AccordionHigh : public ElementInterface
+        {
+        public:
         public:
             AccordionHigh();
             virtual bool hasAttributes() const;
@@ -11255,7 +11625,9 @@ namespace mx
 		using AccordionLowSet = std::vector<AccordionLowPtr>;
 		using AccordionLowSetIter = AccordionLowSet::iterator;
 		using AccordionLowSetIterConst = AccordionLowSet::const_iterator;
-        class AccordionLow : public ElementInterface        {
+        class AccordionLow : public ElementInterface
+        {
+        public:
         public:
             AccordionLow();
             virtual bool hasAttributes() const;
@@ -11278,7 +11650,9 @@ namespace mx
 		using MetronomeDotSet = std::vector<MetronomeDotPtr>;
 		using MetronomeDotSetIter = MetronomeDotSet::iterator;
 		using MetronomeDotSetIterConst = MetronomeDotSet::const_iterator;
-        class MetronomeDot : public ElementInterface        {
+        class MetronomeDot : public ElementInterface
+        {
+        public:
         public:
             MetronomeDot();
             virtual bool hasAttributes() const;
@@ -11299,7 +11673,9 @@ namespace mx
 		using TimpaniSet = std::vector<TimpaniPtr>;
 		using TimpaniSetIter = TimpaniSet::iterator;
 		using TimpaniSetIterConst = TimpaniSet::const_iterator;
-        class Timpani : public ElementInterface        {
+        class Timpani : public ElementInterface
+        {
+        public:
         public:
             Timpani();
             virtual bool hasAttributes() const;
@@ -11322,7 +11698,9 @@ namespace mx
 		using PreBendSet = std::vector<PreBendPtr>;
 		using PreBendSetIter = PreBendSet::iterator;
 		using PreBendSetIterConst = PreBendSet::const_iterator;
-        class PreBend : public ElementInterface        {
+        class PreBend : public ElementInterface
+        {
+        public:
         public:
             PreBend();
             virtual bool hasAttributes() const;
@@ -11345,7 +11723,9 @@ namespace mx
 		using ReleaseSet = std::vector<ReleasePtr>;
 		using ReleaseSetIter = ReleaseSet::iterator;
 		using ReleaseSetIterConst = ReleaseSet::const_iterator;
-        class Release : public ElementInterface        {
+        class Release : public ElementInterface
+        {
+        public:
         public:
             Release();
             virtual bool hasAttributes() const;
@@ -11368,7 +11748,9 @@ namespace mx
 		using NaturalSet = std::vector<NaturalPtr>;
 		using NaturalSetIter = NaturalSet::iterator;
 		using NaturalSetIterConst = NaturalSet::const_iterator;
-        class Natural : public ElementInterface        {
+        class Natural : public ElementInterface
+        {
+        public:
         public:
             Natural();
             virtual bool hasAttributes() const;
@@ -11391,7 +11773,9 @@ namespace mx
 		using ArtificialSet = std::vector<ArtificialPtr>;
 		using ArtificialSetIter = ArtificialSet::iterator;
 		using ArtificialSetIterConst = ArtificialSet::const_iterator;
-        class Artificial : public ElementInterface        {
+        class Artificial : public ElementInterface
+        {
+        public:
         public:
             Artificial();
             virtual bool hasAttributes() const;
@@ -11414,7 +11798,9 @@ namespace mx
 		using BasePitchSet = std::vector<BasePitchPtr>;
 		using BasePitchSetIter = BasePitchSet::iterator;
 		using BasePitchSetIterConst = BasePitchSet::const_iterator;
-        class BasePitch : public ElementInterface        {
+        class BasePitch : public ElementInterface
+        {
+        public:
         public:
             BasePitch();
             virtual bool hasAttributes() const;
@@ -11437,7 +11823,9 @@ namespace mx
 		using TouchingPitchSet = std::vector<TouchingPitchPtr>;
 		using TouchingPitchSetIter = TouchingPitchSet::iterator;
 		using TouchingPitchSetIterConst = TouchingPitchSet::const_iterator;
-        class TouchingPitch : public ElementInterface        {
+        class TouchingPitch : public ElementInterface
+        {
+        public:
         public:
             TouchingPitch();
             virtual bool hasAttributes() const;
@@ -11460,7 +11848,9 @@ namespace mx
 		using SoundingPitchSet = std::vector<SoundingPitchPtr>;
 		using SoundingPitchSetIter = SoundingPitchSet::iterator;
 		using SoundingPitchSetIterConst = SoundingPitchSet::const_iterator;
-        class SoundingPitch : public ElementInterface        {
+        class SoundingPitch : public ElementInterface
+        {
+        public:
         public:
             SoundingPitch();
             virtual bool hasAttributes() const;
@@ -11483,7 +11873,9 @@ namespace mx
 		using LaughingSet = std::vector<LaughingPtr>;
 		using LaughingSetIter = LaughingSet::iterator;
 		using LaughingSetIterConst = LaughingSet::const_iterator;
-        class Laughing : public ElementInterface        {
+        class Laughing : public ElementInterface
+        {
+        public:
         public:
             Laughing();
             virtual bool hasAttributes() const;
@@ -11506,7 +11898,9 @@ namespace mx
 		using HummingSet = std::vector<HummingPtr>;
 		using HummingSetIter = HummingSet::iterator;
 		using HummingSetIterConst = HummingSet::const_iterator;
-        class Humming : public ElementInterface        {
+        class Humming : public ElementInterface
+        {
+        public:
         public:
             Humming();
             virtual bool hasAttributes() const;
@@ -11529,7 +11923,9 @@ namespace mx
 		using EndLineSet = std::vector<EndLinePtr>;
 		using EndLineSetIter = EndLineSet::iterator;
 		using EndLineSetIterConst = EndLineSet::const_iterator;
-        class EndLine : public ElementInterface        {
+        class EndLine : public ElementInterface
+        {
+        public:
         public:
             EndLine();
             virtual bool hasAttributes() const;
@@ -11552,7 +11948,9 @@ namespace mx
 		using EndParagraphSet = std::vector<EndParagraphPtr>;
 		using EndParagraphSetIter = EndParagraphSet::iterator;
 		using EndParagraphSetIterConst = EndParagraphSet::const_iterator;
-        class EndParagraph : public ElementInterface        {
+        class EndParagraph : public ElementInterface
+        {
+        public:
         public:
             EndParagraph();
             virtual bool hasAttributes() const;
@@ -11575,7 +11973,9 @@ namespace mx
 		using CueSet = std::vector<CuePtr>;
 		using CueSetIter = CueSet::iterator;
 		using CueSetIterConst = CueSet::const_iterator;
-        class Cue : public ElementInterface        {
+        class Cue : public ElementInterface
+        {
+        public:
         public:
             Cue();
             virtual bool hasAttributes() const;
@@ -11598,7 +11998,9 @@ namespace mx
 		using NormalDotSet = std::vector<NormalDotPtr>;
 		using NormalDotSetIter = NormalDotSet::iterator;
 		using NormalDotSetIterConst = NormalDotSet::const_iterator;
-        class NormalDot : public ElementInterface        {
+        class NormalDot : public ElementInterface
+        {
+        public:
         public:
             NormalDot();
             virtual bool hasAttributes() const;
@@ -11621,7 +12023,9 @@ namespace mx
 		using GroupTimeSet = std::vector<GroupTimePtr>;
 		using GroupTimeSetIter = GroupTimeSet::iterator;
 		using GroupTimeSetIterConst = GroupTimeSet::const_iterator;
-        class GroupTime : public ElementInterface        {
+        class GroupTime : public ElementInterface
+        {
+        public:
         public:
             GroupTime();
             virtual bool hasAttributes() const;
@@ -11644,7 +12048,9 @@ namespace mx
 		using SoloSet = std::vector<SoloPtr>;
 		using SoloSetIter = SoloSet::iterator;
 		using SoloSetIterConst = SoloSet::const_iterator;
-        class Solo : public ElementInterface        {
+        class Solo : public ElementInterface
+        {
+        public:
         public:
             Solo();
             virtual bool hasAttributes() const;
@@ -11667,7 +12073,9 @@ namespace mx
 		using SlashDotSet = std::vector<SlashDotPtr>;
 		using SlashDotSetIter = SlashDotSet::iterator;
 		using SlashDotSetIterConst = SlashDotSet::const_iterator;
-        class SlashDot : public ElementInterface        {
+        class SlashDot : public ElementInterface
+        {
+        public:
         public:
             SlashDot();
             virtual bool hasAttributes() const;
@@ -11690,7 +12098,9 @@ namespace mx
 		using BeatUnitDotSet = std::vector<BeatUnitDotPtr>;
 		using BeatUnitDotSetIter = BeatUnitDotSet::iterator;
 		using BeatUnitDotSetIterConst = BeatUnitDotSet::const_iterator;
-        class BeatUnitDot : public ElementInterface        {
+        class BeatUnitDot : public ElementInterface
+        {
+        public:
         public:
             BeatUnitDot();
             virtual bool hasAttributes() const;
@@ -11713,7 +12123,9 @@ namespace mx
 		using ChordSet = std::vector<ChordPtr>;
 		using ChordSetIter = ChordSet::iterator;
 		using ChordSetIterConst = ChordSet::const_iterator;
-        class Chord : public ElementInterface        {
+        class Chord : public ElementInterface
+        {
+        public:
         public:
             Chord();
             virtual bool hasAttributes() const;
@@ -11772,7 +12184,9 @@ namespace mx
 		using SegnoSet = std::vector<SegnoPtr>;
 		using SegnoSetIter = SegnoSet::iterator;
 		using SegnoSetIterConst = SegnoSet::const_iterator;
-        class Segno : public ElementInterface        {
+        class Segno : public ElementInterface
+        {
+        public:
         public:
             Segno();
             virtual bool hasAttributes() const;
@@ -11802,7 +12216,9 @@ namespace mx
 		using CodaSet = std::vector<CodaPtr>;
 		using CodaSetIter = CodaSet::iterator;
 		using CodaSetIterConst = CodaSet::const_iterator;
-        class Coda : public ElementInterface        {
+        class Coda : public ElementInterface
+        {
+        public:
         public:
             Coda();
             virtual bool hasAttributes() const;
@@ -11904,7 +12320,9 @@ namespace mx
 		using DampSet = std::vector<DampPtr>;
 		using DampSetIter = DampSet::iterator;
 		using DampSetIterConst = DampSet::const_iterator;
-        class Damp : public ElementInterface        {
+        class Damp : public ElementInterface
+        {
+        public:
         public:
             Damp();
             virtual bool hasAttributes() const;
@@ -11938,7 +12356,9 @@ namespace mx
 		using DampAllSet = std::vector<DampAllPtr>;
 		using DampAllSetIter = DampAllSet::iterator;
 		using DampAllSetIterConst = DampAllSet::const_iterator;
-        class DampAll : public ElementInterface        {
+        class DampAll : public ElementInterface
+        {
+        public:
         public:
             DampAll();
             virtual bool hasAttributes() const;
@@ -11972,7 +12392,9 @@ namespace mx
 		using EyeglassesSet = std::vector<EyeglassesPtr>;
 		using EyeglassesSetIter = EyeglassesSet::iterator;
 		using EyeglassesSetIterConst = EyeglassesSet::const_iterator;
-        class Eyeglasses : public ElementInterface        {
+        class Eyeglasses : public ElementInterface
+        {
+        public:
         public:
             Eyeglasses();
             virtual bool hasAttributes() const;
@@ -12003,7 +12425,9 @@ namespace mx
 		using LeftDividerSet = std::vector<LeftDividerPtr>;
 		using LeftDividerSetIter = LeftDividerSet::iterator;
 		using LeftDividerSetIterConst = LeftDividerSet::const_iterator;
-        class LeftDivider : public ElementInterface        {
+        class LeftDivider : public ElementInterface
+        {
+        public:
         public:
             LeftDivider();
             virtual bool hasAttributes() const;
@@ -12034,7 +12458,9 @@ namespace mx
 		using RightDividerSet = std::vector<RightDividerPtr>;
 		using RightDividerSetIter = RightDividerSet::iterator;
 		using RightDividerSetIterConst = RightDividerSet::const_iterator;
-        class RightDivider : public ElementInterface        {
+        class RightDivider : public ElementInterface
+        {
+        public:
         public:
             RightDivider();
             virtual bool hasAttributes() const;
@@ -12098,7 +12524,9 @@ namespace mx
 		using AccentSet = std::vector<AccentPtr>;
 		using AccentSetIter = AccentSet::iterator;
 		using AccentSetIterConst = AccentSet::const_iterator;
-        class Accent : public ElementInterface        {
+        class Accent : public ElementInterface
+        {
+        public:
         public:
             Accent();
             virtual bool hasAttributes() const;
@@ -12133,7 +12561,9 @@ namespace mx
 		using StaccatoSet = std::vector<StaccatoPtr>;
 		using StaccatoSetIter = StaccatoSet::iterator;
 		using StaccatoSetIterConst = StaccatoSet::const_iterator;
-        class Staccato : public ElementInterface        {
+        class Staccato : public ElementInterface
+        {
+        public:
         public:
             Staccato();
             virtual bool hasAttributes() const;
@@ -12168,7 +12598,9 @@ namespace mx
 		using TenutoSet = std::vector<TenutoPtr>;
 		using TenutoSetIter = TenutoSet::iterator;
 		using TenutoSetIterConst = TenutoSet::const_iterator;
-        class Tenuto : public ElementInterface        {
+        class Tenuto : public ElementInterface
+        {
+        public:
         public:
             Tenuto();
             virtual bool hasAttributes() const;
@@ -12203,7 +12635,9 @@ namespace mx
 		using DetachedLegatoSet = std::vector<DetachedLegatoPtr>;
 		using DetachedLegatoSetIter = DetachedLegatoSet::iterator;
 		using DetachedLegatoSetIterConst = DetachedLegatoSet::const_iterator;
-        class DetachedLegato : public ElementInterface        {
+        class DetachedLegato : public ElementInterface
+        {
+        public:
         public:
             DetachedLegato();
             virtual bool hasAttributes() const;
@@ -12238,7 +12672,9 @@ namespace mx
 		using StaccatissimoSet = std::vector<StaccatissimoPtr>;
 		using StaccatissimoSetIter = StaccatissimoSet::iterator;
 		using StaccatissimoSetIterConst = StaccatissimoSet::const_iterator;
-        class Staccatissimo : public ElementInterface        {
+        class Staccatissimo : public ElementInterface
+        {
+        public:
         public:
             Staccatissimo();
             virtual bool hasAttributes() const;
@@ -12273,7 +12709,9 @@ namespace mx
 		using SpiccatoSet = std::vector<SpiccatoPtr>;
 		using SpiccatoSetIter = SpiccatoSet::iterator;
 		using SpiccatoSetIterConst = SpiccatoSet::const_iterator;
-        class Spiccato : public ElementInterface        {
+        class Spiccato : public ElementInterface
+        {
+        public:
         public:
             Spiccato();
             virtual bool hasAttributes() const;
@@ -12344,7 +12782,9 @@ namespace mx
 		using ScoopSet = std::vector<ScoopPtr>;
 		using ScoopSetIter = ScoopSet::iterator;
 		using ScoopSetIterConst = ScoopSet::const_iterator;
-        class Scoop : public ElementInterface        {
+        class Scoop : public ElementInterface
+        {
+        public:
         public:
             Scoop();
             virtual bool hasAttributes() const;
@@ -12382,7 +12822,9 @@ namespace mx
 		using PlopSet = std::vector<PlopPtr>;
 		using PlopSetIter = PlopSet::iterator;
 		using PlopSetIterConst = PlopSet::const_iterator;
-        class Plop : public ElementInterface        {
+        class Plop : public ElementInterface
+        {
+        public:
         public:
             Plop();
             virtual bool hasAttributes() const;
@@ -12420,7 +12862,9 @@ namespace mx
 		using DoitSet = std::vector<DoitPtr>;
 		using DoitSetIter = DoitSet::iterator;
 		using DoitSetIterConst = DoitSet::const_iterator;
-        class Doit : public ElementInterface        {
+        class Doit : public ElementInterface
+        {
+        public:
         public:
             Doit();
             virtual bool hasAttributes() const;
@@ -12458,7 +12902,9 @@ namespace mx
 		using FalloffSet = std::vector<FalloffPtr>;
 		using FalloffSetIter = FalloffSet::iterator;
 		using FalloffSetIterConst = FalloffSet::const_iterator;
-        class Falloff : public ElementInterface        {
+        class Falloff : public ElementInterface
+        {
+        public:
         public:
             Falloff();
             virtual bool hasAttributes() const;
@@ -12493,7 +12939,9 @@ namespace mx
 		using CaesuraSet = std::vector<CaesuraPtr>;
 		using CaesuraSetIter = CaesuraSet::iterator;
 		using CaesuraSetIterConst = CaesuraSet::const_iterator;
-        class Caesura : public ElementInterface        {
+        class Caesura : public ElementInterface
+        {
+        public:
         public:
             Caesura();
             virtual bool hasAttributes() const;
@@ -12528,7 +12976,9 @@ namespace mx
 		using StressSet = std::vector<StressPtr>;
 		using StressSetIter = StressSet::iterator;
 		using StressSetIterConst = StressSet::const_iterator;
-        class Stress : public ElementInterface        {
+        class Stress : public ElementInterface
+        {
+        public:
         public:
             Stress();
             virtual bool hasAttributes() const;
@@ -12563,7 +13013,9 @@ namespace mx
 		using UnstressSet = std::vector<UnstressPtr>;
 		using UnstressSetIter = UnstressSet::iterator;
 		using UnstressSetIterConst = UnstressSet::const_iterator;
-        class Unstress : public ElementInterface        {
+        class Unstress : public ElementInterface
+        {
+        public:
         public:
             Unstress();
             virtual bool hasAttributes() const;
@@ -12598,7 +13050,9 @@ namespace mx
 		using DotSet = std::vector<DotPtr>;
 		using DotSetIter = DotSet::iterator;
 		using DotSetIterConst = DotSet::const_iterator;
-        class Dot : public ElementInterface        {
+        class Dot : public ElementInterface
+        {
+        public:
         public:
             Dot();
             virtual bool hasAttributes() const;
@@ -12677,7 +13131,9 @@ namespace mx
 		using TrillMarkSet = std::vector<TrillMarkPtr>;
 		using TrillMarkSetIter = TrillMarkSet::iterator;
 		using TrillMarkSetIterConst = TrillMarkSet::const_iterator;
-        class TrillMark : public ElementInterface        {
+        class TrillMark : public ElementInterface
+        {
+        public:
         public:
             TrillMark();
             virtual bool hasAttributes() const;
@@ -12713,7 +13169,9 @@ namespace mx
 		using VerticalTurnSet = std::vector<VerticalTurnPtr>;
 		using VerticalTurnSetIter = VerticalTurnSet::iterator;
 		using VerticalTurnSetIterConst = VerticalTurnSet::const_iterator;
-        class VerticalTurn : public ElementInterface        {
+        class VerticalTurn : public ElementInterface
+        {
+        public:
         public:
             VerticalTurn();
             virtual bool hasAttributes() const;
@@ -12749,7 +13207,9 @@ namespace mx
 		using ShakeSet = std::vector<ShakePtr>;
 		using ShakeSetIter = ShakeSet::iterator;
 		using ShakeSetIterConst = ShakeSet::const_iterator;
-        class Shake : public ElementInterface        {
+        class Shake : public ElementInterface
+        {
+        public:
         public:
             Shake();
             virtual bool hasAttributes() const;
@@ -12784,7 +13244,9 @@ namespace mx
 		using SchleiferSet = std::vector<SchleiferPtr>;
 		using SchleiferSetIter = SchleiferSet::iterator;
 		using SchleiferSetIterConst = SchleiferSet::const_iterator;
-        class Schleifer : public ElementInterface        {
+        class Schleifer : public ElementInterface
+        {
+        public:
         public:
             Schleifer();
             virtual bool hasAttributes() const;
@@ -12819,7 +13281,9 @@ namespace mx
 		using UpBowSet = std::vector<UpBowPtr>;
 		using UpBowSetIter = UpBowSet::iterator;
 		using UpBowSetIterConst = UpBowSet::const_iterator;
-        class UpBow : public ElementInterface        {
+        class UpBow : public ElementInterface
+        {
+        public:
         public:
             UpBow();
             virtual bool hasAttributes() const;
@@ -12854,7 +13318,9 @@ namespace mx
 		using DownBowSet = std::vector<DownBowPtr>;
 		using DownBowSetIter = DownBowSet::iterator;
 		using DownBowSetIterConst = DownBowSet::const_iterator;
-        class DownBow : public ElementInterface        {
+        class DownBow : public ElementInterface
+        {
+        public:
         public:
             DownBow();
             virtual bool hasAttributes() const;
@@ -12889,7 +13355,9 @@ namespace mx
 		using OpenStringSet = std::vector<OpenStringPtr>;
 		using OpenStringSetIter = OpenStringSet::iterator;
 		using OpenStringSetIterConst = OpenStringSet::const_iterator;
-        class OpenString : public ElementInterface        {
+        class OpenString : public ElementInterface
+        {
+        public:
         public:
             OpenString();
             virtual bool hasAttributes() const;
@@ -12924,7 +13392,9 @@ namespace mx
 		using ThumbPositionSet = std::vector<ThumbPositionPtr>;
 		using ThumbPositionSetIter = ThumbPositionSet::iterator;
 		using ThumbPositionSetIterConst = ThumbPositionSet::const_iterator;
-        class ThumbPosition : public ElementInterface        {
+        class ThumbPosition : public ElementInterface
+        {
+        public:
         public:
             ThumbPosition();
             virtual bool hasAttributes() const;
@@ -12959,7 +13429,9 @@ namespace mx
 		using DoubleTongueSet = std::vector<DoubleTonguePtr>;
 		using DoubleTongueSetIter = DoubleTongueSet::iterator;
 		using DoubleTongueSetIterConst = DoubleTongueSet::const_iterator;
-        class DoubleTongue : public ElementInterface        {
+        class DoubleTongue : public ElementInterface
+        {
+        public:
         public:
             DoubleTongue();
             virtual bool hasAttributes() const;
@@ -12994,7 +13466,9 @@ namespace mx
 		using TripleTongueSet = std::vector<TripleTonguePtr>;
 		using TripleTongueSetIter = TripleTongueSet::iterator;
 		using TripleTongueSetIterConst = TripleTongueSet::const_iterator;
-        class TripleTongue : public ElementInterface        {
+        class TripleTongue : public ElementInterface
+        {
+        public:
         public:
             TripleTongue();
             virtual bool hasAttributes() const;
@@ -13029,7 +13503,9 @@ namespace mx
 		using StoppedSet = std::vector<StoppedPtr>;
 		using StoppedSetIter = StoppedSet::iterator;
 		using StoppedSetIterConst = StoppedSet::const_iterator;
-        class Stopped : public ElementInterface        {
+        class Stopped : public ElementInterface
+        {
+        public:
         public:
             Stopped();
             virtual bool hasAttributes() const;
@@ -13064,7 +13540,9 @@ namespace mx
 		using SnapPizzicatoSet = std::vector<SnapPizzicatoPtr>;
 		using SnapPizzicatoSetIter = SnapPizzicatoSet::iterator;
 		using SnapPizzicatoSetIterConst = SnapPizzicatoSet::const_iterator;
-        class SnapPizzicato : public ElementInterface        {
+        class SnapPizzicato : public ElementInterface
+        {
+        public:
         public:
             SnapPizzicato();
             virtual bool hasAttributes() const;
@@ -13099,7 +13577,9 @@ namespace mx
 		using FingernailsSet = std::vector<FingernailsPtr>;
 		using FingernailsSetIter = FingernailsSet::iterator;
 		using FingernailsSetIterConst = FingernailsSet::const_iterator;
-        class Fingernails : public ElementInterface        {
+        class Fingernails : public ElementInterface
+        {
+        public:
         public:
             Fingernails();
             virtual bool hasAttributes() const;
@@ -13148,7 +13628,9 @@ namespace mx
 		using MusicFontSet = std::vector<MusicFontPtr>;
 		using MusicFontSetIter = MusicFontSet::iterator;
 		using MusicFontSetIterConst = MusicFontSet::const_iterator;
-        class MusicFont : public ElementInterface        {
+        class MusicFont : public ElementInterface
+        {
+        public:
         public:
             MusicFont();
             virtual bool hasAttributes() const;
@@ -13178,7 +13660,9 @@ namespace mx
 		using WordFontSet = std::vector<WordFontPtr>;
 		using WordFontSetIter = WordFontSet::iterator;
 		using WordFontSetIterConst = WordFontSet::const_iterator;
-        class WordFont : public ElementInterface        {
+        class WordFont : public ElementInterface
+        {
+        public:
         public:
             WordFont();
             virtual bool hasAttributes() const;
@@ -13256,7 +13740,9 @@ namespace mx
 		using WavyLineSet = std::vector<WavyLinePtr>;
 		using WavyLineSetIter = WavyLineSet::iterator;
 		using WavyLineSetIterConst = WavyLineSet::const_iterator;
-        class WavyLine : public ElementInterface        {
+        class WavyLine : public ElementInterface
+        {
+        public:
         public:
             WavyLine();
             virtual bool hasAttributes() const;
@@ -13306,7 +13792,9 @@ namespace mx
 		using RepeatSet = std::vector<RepeatPtr>;
 		using RepeatSetIter = RepeatSet::iterator;
 		using RepeatSetIterConst = RepeatSet::const_iterator;
-        class Repeat : public ElementInterface        {
+        class Repeat : public ElementInterface
+        {
+        public:
         public:
             Repeat();
             virtual bool hasAttributes() const;
@@ -13375,7 +13863,9 @@ namespace mx
 		using WedgeSet = std::vector<WedgePtr>;
 		using WedgeSetIter = WedgeSet::iterator;
 		using WedgeSetIterConst = WedgeSet::const_iterator;
-        class Wedge : public ElementInterface        {
+        class Wedge : public ElementInterface
+        {
+        public:
         public:
             Wedge();
             virtual bool hasAttributes() const;
@@ -13437,7 +13927,9 @@ namespace mx
 		using DashesSet = std::vector<DashesPtr>;
 		using DashesSetIter = DashesSet::iterator;
 		using DashesSetIterConst = DashesSet::const_iterator;
-        class Dashes : public ElementInterface        {
+        class Dashes : public ElementInterface
+        {
+        public:
         public:
             Dashes();
             virtual bool hasAttributes() const;
@@ -13488,7 +13980,9 @@ namespace mx
 		using BracketSet = std::vector<BracketPtr>;
 		using BracketSetIter = BracketSet::iterator;
 		using BracketSetIterConst = BracketSet::const_iterator;
-        class Bracket : public ElementInterface        {
+        class Bracket : public ElementInterface
+        {
+        public:
         public:
             Bracket();
             virtual bool hasAttributes() const;
@@ -13557,7 +14051,9 @@ namespace mx
 		using PedalSet = std::vector<PedalPtr>;
 		using PedalSetIter = PedalSet::iterator;
 		using PedalSetIterConst = PedalSet::const_iterator;
-        class Pedal : public ElementInterface        {
+        class Pedal : public ElementInterface
+        {
+        public:
         public:
             Pedal();
             virtual bool hasAttributes() const;
@@ -13629,7 +14125,9 @@ namespace mx
 		using OctaveShiftSet = std::vector<OctaveShiftPtr>;
 		using OctaveShiftSetIter = OctaveShiftSet::iterator;
 		using OctaveShiftSetIterConst = OctaveShiftSet::const_iterator;
-        class OctaveShift : public ElementInterface        {
+        class OctaveShift : public ElementInterface
+        {
+        public:
         public:
             OctaveShift();
             virtual bool hasAttributes() const;
@@ -13692,7 +14190,9 @@ namespace mx
 		using StringMuteSet = std::vector<StringMutePtr>;
 		using StringMuteSetIter = StringMuteSet::iterator;
 		using StringMuteSetIterConst = StringMuteSet::const_iterator;
-        class StringMute : public ElementInterface        {
+        class StringMute : public ElementInterface
+        {
+        public:
         public:
             StringMute();
             virtual bool hasAttributes() const;
@@ -13748,7 +14248,9 @@ namespace mx
 		using ImageSet = std::vector<ImagePtr>;
 		using ImageSetIter = ImageSet::iterator;
 		using ImageSetIterConst = ImageSet::const_iterator;
-        class Image : public ElementInterface        {
+        class Image : public ElementInterface
+        {
+        public:
         public:
             Image();
             virtual bool hasAttributes() const;
@@ -13793,7 +14295,9 @@ namespace mx
 		using BarreSet = std::vector<BarrePtr>;
 		using BarreSetIter = BarreSet::iterator;
 		using BarreSetIterConst = BarreSet::const_iterator;
-        class Barre : public ElementInterface        {
+        class Barre : public ElementInterface
+        {
+        public:
         public:
             Barre();
             virtual bool hasAttributes() const;
@@ -13846,7 +14350,9 @@ namespace mx
 		using SupportsSet = std::vector<SupportsPtr>;
 		using SupportsSetIter = SupportsSet::iterator;
 		using SupportsSetIterConst = SupportsSet::const_iterator;
-        class Supports : public ElementInterface        {
+        class Supports : public ElementInterface
+        {
+        public:
         public:
             Supports();
             virtual bool hasAttributes() const;
@@ -13907,7 +14413,9 @@ namespace mx
 		using ExtendSet = std::vector<ExtendPtr>;
 		using ExtendSetIter = ExtendSet::iterator;
 		using ExtendSetIterConst = ExtendSet::const_iterator;
-        class Extend : public ElementInterface        {
+        class Extend : public ElementInterface
+        {
+        public:
         public:
             Extend();
             virtual bool hasAttributes() const;
@@ -14015,7 +14523,9 @@ namespace mx
 		using TiedSet = std::vector<TiedPtr>;
 		using TiedSetIter = TiedSet::iterator;
 		using TiedSetIterConst = TiedSet::const_iterator;
-        class Tied : public ElementInterface        {
+        class Tied : public ElementInterface
+        {
+        public:
         public:
             Tied();
             virtual bool hasAttributes() const;
@@ -14097,7 +14607,9 @@ namespace mx
 		using SlurSet = std::vector<SlurPtr>;
 		using SlurSetIter = SlurSet::iterator;
 		using SlurSetIterConst = SlurSet::const_iterator;
-        class Slur : public ElementInterface        {
+        class Slur : public ElementInterface
+        {
+        public:
         public:
             Slur();
             virtual bool hasAttributes() const;
@@ -14157,7 +14669,9 @@ namespace mx
 		using ArpeggiateSet = std::vector<ArpeggiatePtr>;
 		using ArpeggiateSetIter = ArpeggiateSet::iterator;
 		using ArpeggiateSetIterConst = ArpeggiateSet::const_iterator;
-        class Arpeggiate : public ElementInterface        {
+        class Arpeggiate : public ElementInterface
+        {
+        public:
         public:
             Arpeggiate();
             virtual bool hasAttributes() const;
@@ -14217,7 +14731,9 @@ namespace mx
 		using NonArpeggiateSet = std::vector<NonArpeggiatePtr>;
 		using NonArpeggiateSetIter = NonArpeggiateSet::iterator;
 		using NonArpeggiateSetIterConst = NonArpeggiateSet::const_iterator;
-        class NonArpeggiate : public ElementInterface        {
+        class NonArpeggiate : public ElementInterface
+        {
+        public:
         public:
             NonArpeggiate();
             virtual bool hasAttributes() const;
@@ -14270,7 +14786,9 @@ namespace mx
 		using GraceSet = std::vector<GracePtr>;
 		using GraceSetIter = GraceSet::iterator;
 		using GraceSetIterConst = GraceSet::const_iterator;
-        class Grace : public ElementInterface        {
+        class Grace : public ElementInterface
+        {
+        public:
         public:
             Grace();
             virtual bool hasAttributes() const;
@@ -14317,7 +14835,9 @@ namespace mx
 		using TieSet = std::vector<TiePtr>;
 		using TieSetIter = TieSet::iterator;
 		using TieSetIterConst = TieSet::const_iterator;
-        class Tie : public ElementInterface        {
+        class Tie : public ElementInterface
+        {
+        public:
         public:
             Tie();
             virtual bool hasAttributes() const;
@@ -14373,7 +14893,9 @@ namespace mx
 		using InstrumentSet = std::vector<InstrumentPtr>;
 		using InstrumentSetIter = InstrumentSet::iterator;
 		using InstrumentSetIterConst = InstrumentSet::const_iterator;
-        class Instrument : public ElementInterface        {
+        class Instrument : public ElementInterface
+        {
+        public:
         public:
             Instrument();
             virtual bool hasAttributes() const;
@@ -14456,7 +14978,9 @@ namespace mx
 		using TurnSet = std::vector<TurnPtr>;
 		using TurnSetIter = TurnSet::iterator;
 		using TurnSetIterConst = TurnSet::const_iterator;
-        class Turn : public ElementInterface        {
+        class Turn : public ElementInterface
+        {
+        public:
         public:
             Turn();
             virtual bool hasAttributes() const;
@@ -14539,7 +15063,9 @@ namespace mx
 		using DelayedTurnSet = std::vector<DelayedTurnPtr>;
 		using DelayedTurnSetIter = DelayedTurnSet::iterator;
 		using DelayedTurnSetIterConst = DelayedTurnSet::const_iterator;
-        class DelayedTurn : public ElementInterface        {
+        class DelayedTurn : public ElementInterface
+        {
+        public:
         public:
             DelayedTurn();
             virtual bool hasAttributes() const;
@@ -14622,7 +15148,9 @@ namespace mx
 		using InvertedTurnSet = std::vector<InvertedTurnPtr>;
 		using InvertedTurnSetIter = InvertedTurnSet::iterator;
 		using InvertedTurnSetIterConst = InvertedTurnSet::const_iterator;
-        class InvertedTurn : public ElementInterface        {
+        class InvertedTurn : public ElementInterface
+        {
+        public:
         public:
             InvertedTurn();
             virtual bool hasAttributes() const;
@@ -14705,7 +15233,9 @@ namespace mx
 		using DelayedInvertedTurnSet = std::vector<DelayedInvertedTurnPtr>;
 		using DelayedInvertedTurnSetIter = DelayedInvertedTurnSet::iterator;
 		using DelayedInvertedTurnSetIterConst = DelayedInvertedTurnSet::const_iterator;
-        class DelayedInvertedTurn : public ElementInterface        {
+        class DelayedInvertedTurn : public ElementInterface
+        {
+        public:
         public:
             DelayedInvertedTurn();
             virtual bool hasAttributes() const;
@@ -14772,7 +15302,9 @@ namespace mx
 		using TupletDotSet = std::vector<TupletDotPtr>;
 		using TupletDotSetIter = TupletDotSet::iterator;
 		using TupletDotSetIterConst = TupletDotSet::const_iterator;
-        class TupletDot : public ElementInterface        {
+        class TupletDot : public ElementInterface
+        {
+        public:
         public:
             TupletDot();
             virtual bool hasAttributes() const;
@@ -14843,7 +15375,9 @@ namespace mx
 		using LinkSet = std::vector<LinkPtr>;
 		using LinkSetIter = LinkSet::iterator;
 		using LinkSetIterConst = LinkSet::const_iterator;
-        class Link : public ElementInterface        {
+        class Link : public ElementInterface
+        {
+        public:
         public:
             Link();
             virtual bool hasAttributes() const;
@@ -14895,7 +15429,9 @@ namespace mx
 		using BookmarkSet = std::vector<BookmarkPtr>;
 		using BookmarkSetIter = BookmarkSet::iterator;
 		using BookmarkSetIterConst = BookmarkSet::const_iterator;
-        class Bookmark : public ElementInterface        {
+        class Bookmark : public ElementInterface
+        {
+        public:
         public:
             Bookmark();
             virtual bool hasAttributes() const;
@@ -14951,7 +15487,9 @@ namespace mx
 		using CreditImageSet = std::vector<CreditImagePtr>;
 		using CreditImageSetIter = CreditImageSet::iterator;
 		using CreditImageSetIterConst = CreditImageSet::const_iterator;
-        class CreditImage : public ElementInterface        {
+        class CreditImage : public ElementInterface
+        {
+        public:
         public:
             CreditImage();
             virtual bool hasAttributes() const;
@@ -15034,7 +15572,9 @@ namespace mx
 		using LyricFontSet = std::vector<LyricFontPtr>;
 		using LyricFontSetIter = LyricFontSet::iterator;
 		using LyricFontSetIterConst = LyricFontSet::const_iterator;
-        class LyricFont : public ElementInterface        {
+        class LyricFont : public ElementInterface
+        {
+        public:
         public:
             LyricFont();
             virtual bool hasAttributes() const;
@@ -15084,7 +15624,9 @@ namespace mx
 		using LyricLanguageSet = std::vector<LyricLanguagePtr>;
 		using LyricLanguageSetIter = LyricLanguageSet::iterator;
 		using LyricLanguageSetIterConst = LyricLanguageSet::const_iterator;
-        class LyricLanguage : public ElementInterface        {
+        class LyricLanguage : public ElementInterface
+        {
+        public:
         public:
             LyricLanguage();
             virtual bool hasAttributes() const;
@@ -15138,7 +15680,9 @@ namespace mx
 		using OpusSet = std::vector<OpusPtr>;
 		using OpusSetIter = OpusSet::iterator;
 		using OpusSetIterConst = OpusSet::const_iterator;
-        class Opus : public ElementInterface        {
+        class Opus : public ElementInterface
+        {
+        public:
         public:
             Opus();
             virtual bool hasAttributes() const;
@@ -15223,6 +15767,201 @@ namespace mx
             ModePtr myMode;
             bool myHasCancel;
             bool myHasMode;
+        };
+        
+        /*
+         <xs:group name="non-traditional-key">
+         <xs:annotation>
+         <xs:documentation>The non-traditional-key group represents a single alteration within a non-traditional key signature. A sequence of these groups makes up a non-traditional key signature</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="key-step" type="step">
+         <xs:annotation>
+         <xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-step element indicates the pitch step to be altered, represented using the same names as in the step element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="key-alter" type="semitones">
+         <xs:annotation>
+         <xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-alter element represents the alteration for a given pitch step, represented with semitones in the same manner as the alter element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="key-accidental" type="accidental-value" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-accidental element indicates the accidental to be displayed in the key signature, represented in the same manner as the accidental element. It is used for disambiguating microtonal accidentals.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         */
+        class NonTraditionalKey;
+        using NonTraditionalKeyPtr = std::shared_ptr<NonTraditionalKey>;
+        using NonTraditionalKeyUPtr = std::shared_ptr<NonTraditionalKey>;
+        using NonTraditionalKeySet = std::vector<NonTraditionalKeyPtr>;
+        using NonTraditionalKeySetIter = NonTraditionalKeySet::iterator;
+        using NonTraditionalKeySetIterConst = NonTraditionalKeySet::const_iterator;
+        class NonTraditionalKey : public ElementInterface
+        {
+        public:
+            NonTraditionalKey();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            KeyStepPtr getKeyStep() const;
+            void setKeyStep( const KeyStepPtr& value );
+            KeyAlterPtr getKeyAlter() const;
+            void setKeyAlter( const KeyAlterPtr& value );
+            KeyAccidentalPtr getKeyAccidental() const;
+            void setKeyAccidental( const KeyAccidentalPtr& value );
+            bool getHasKeyAccidental() const;
+            void setHasKeyAccivental( const bool value );
+        private:
+            KeyStepPtr myKeyStep;
+            KeyAlterPtr myKeyAlter;
+            KeyAccidentalPtr myKeyAccidental;
+            bool myHasKeyAccidental;
+        };
+        
+        /*
+         <xs:complexType name="key">
+         <xs:annotation>
+         <xs:documentation>The key type represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part. Key signatures appear at the start of each system unless the print-object attribute has been set to "no".</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice>
+         <xs:group ref="traditional-key"/>
+         <xs:group ref="non-traditional-key" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:choice>
+         <xs:element name="key-octave" type="key-octave" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The optional list of key-octave elements is used to specify in which octave each element of the key signature appears.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attribute name="number" type="staff-number"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType>
+         */
+        
+        class KeyChoice;
+        using KeyChoicePtr = std::shared_ptr<KeyChoice>;
+        using KeyChoiceUPtr = std::unique_ptr<KeyChoice>;
+        using KeyChoiceSet = std::vector<KeyChoice>;
+        using KeyChoiceSetIter = KeyChoiceSet::iterator;
+        using KeyChoiceSetIterConst = KeyChoiceSet::const_iterator;
+        class KeyChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                traditionalKey = 0,
+                nonTraditionalKey = 1
+            };
+            KeyChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            Choice getChoice() const;
+            void setChoice( const Choice value );
+            TraditionalKeyPtr getTraditionalKey() const;
+            void setTraditionalKey( const TraditionalKeyPtr& value );
+            
+            const NonTraditionalKeySet& getNonTraditionalKeySet() const;
+            void removeNonTraditionalKey( const NonTraditionalKeySetIterConst& value );
+            void addNonTraditionalKey( const NonTraditionalKeyPtr& value );
+            void clearNonTraditionalKeySet();
+            
+        private:
+            Choice myChoice;
+            TraditionalKeyPtr myTraditionalKey;
+            NonTraditionalKeySet myNonTraditionalKeySet;
+        };
+        
+        /*
+         2614
+         <xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The key element represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="key">
+         <xs:annotation>
+         <xs:documentation>The key type represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part. Key signatures appear at the start of each system unless the print-object attribute has been set to "no".</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice>
+         <xs:group ref="traditional-key"/>
+         <xs:group ref="non-traditional-key" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:choice>
+         <xs:element name="key-octave" type="key-octave" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The optional list of key-octave elements is used to specify in which octave each element of the key signature appears.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attribute name="number" type="staff-number"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType>
+         */
+        
+        struct KeyAttributes;
+        using KeyAttributesPtr = std::shared_ptr<KeyAttributes>;
+        struct KeyAttributes : public AttributesInterface
+        {
+        public:
+            KeyAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StaffNumber number;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::YesNo printObject;
+            bool hasNumber;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasPrintObject;
+        };
+        
+        class Key;
+        using KeyPtr = std::shared_ptr<Key>;
+        class Key : public ElementInterface
+        {
+        public:
+            Key();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            KeyAttributesPtr getAttributes() const;
+            void setAttributes( const KeyAttributesPtr& value );
+            KeyChoicePtr getKeyChoice() const;
+            void setKeyChoice( const KeyChoicePtr& value );
+            const KeyOctaveSet& getKeyOctaveSet() const;
+            void removeKeyOctave( const KeyOctaveSetIterConst& value );
+            void addKeyOctave( const KeyOctavePtr& value );
+            void clearKeyOctaveSet();
+        private:
+            KeyAttributesPtr myAttributes;
+            KeyChoicePtr myKeyChoice;
+            KeyOctaveSet myKeyOctaveSet;
         };
     }
 }

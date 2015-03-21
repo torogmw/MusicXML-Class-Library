@@ -1,13 +1,13 @@
 #include "TestHarness.h"
-#include "TraditionalKey.h"
-#include "NonTraditionalKey.h"
-#include "KeyChoice.h"
-#include "Key.h"
+#include "MxTestHelper.h"
+#include "Elements.h"
 
 using namespace mx;
 using namespace types;
 using namespace e;
+using namespace MxTestHelpers;
 using namespace std;
+
 
 //TEST( Test01, xxx )
 //{

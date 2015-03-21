@@ -18479,6 +18479,336 @@ namespace mx
             myHasMode = value;
         }
         
+        NonTraditionalKey::NonTraditionalKey()
+        :ElementInterface()
+        ,myKeyStep( std::make_shared<KeyStep>() )
+        ,myKeyAlter( std::make_shared<KeyAlter>() )
+        ,myKeyAccidental( std::make_shared<KeyAccidental>() )
+        ,myHasKeyAccidental( false )
+        {}
+        bool NonTraditionalKey::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& NonTraditionalKey::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& NonTraditionalKey::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool NonTraditionalKey::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& NonTraditionalKey::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = false;
+            if ( myKeyStep )
+            {
+                myKeyStep->toStream( os, indentLevel ) << std::endl;
+            }
+            if ( myKeyAlter )
+            {
+                myKeyAlter->toStream( os, indentLevel );
+            }
+            if ( myKeyAccidental && myHasKeyAccidental )
+            {
+                os << std::endl;
+                myKeyAccidental->toStream( os, indentLevel );
+            }
+            return os;
+        }
+        KeyStepPtr NonTraditionalKey::getKeyStep() const
+        {
+            return myKeyStep;
+        }
+        void NonTraditionalKey::setKeyStep( const KeyStepPtr& value )
+        {
+            if ( value )
+            {
+                myKeyStep = value;
+            }
+        }
+        KeyAlterPtr NonTraditionalKey::getKeyAlter() const
+        {
+            return myKeyAlter;
+        }
+        void NonTraditionalKey::setKeyAlter( const KeyAlterPtr& value )
+        {
+            if ( value )
+            {
+                myKeyAlter = value;
+            }
+        }
+        KeyAccidentalPtr NonTraditionalKey::getKeyAccidental() const
+        {
+            return myKeyAccidental;
+        }
+        void NonTraditionalKey::setKeyAccidental( const KeyAccidentalPtr& value )
+        {
+            if ( value )
+            {
+                myKeyAccidental = value;
+            }
+        }
+        bool NonTraditionalKey::getHasKeyAccidental() const
+        {
+            return myHasKeyAccidental;
+        }
+        void NonTraditionalKey::setHasKeyAccivental( const bool value )
+        {
+            myHasKeyAccidental = value;
+        }
+        
+        KeyChoice::KeyChoice()
+        :myChoice( Choice::traditionalKey )
+        ,myTraditionalKey( std::make_shared<TraditionalKey>() )
+        ,myNonTraditionalKeySet()
+        {}
+        bool KeyChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& KeyChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& KeyChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool KeyChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& KeyChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            if ( myChoice == Choice::traditionalKey )
+            {
+                if ( myTraditionalKey )
+                {
+                    myTraditionalKey->streamContents( os, indentLevel, isOneLineOnly );
+                }
+            }
+            else if ( myChoice == Choice::nonTraditionalKey )
+            {
+                for ( auto it = myNonTraditionalKeySet.cbegin();
+                     it != myNonTraditionalKeySet.cend();
+                     ++it )
+                {
+                    if ( it != myNonTraditionalKeySet.cbegin() )
+                    {
+                        os << std::endl;
+                    }
+                    (*it)->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                if ( myNonTraditionalKeySet.size() > 1 )
+                {
+                    isOneLineOnly = false;
+                }
+            }
+            return os;
+        }
+        KeyChoice::Choice KeyChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void KeyChoice::setChoice( const Choice value )
+        {
+            myChoice = value;
+        }
+        TraditionalKeyPtr KeyChoice::getTraditionalKey() const
+        {
+            return myTraditionalKey;
+        }
+        void KeyChoice::setTraditionalKey( const TraditionalKeyPtr& value )
+        {
+            if ( value )
+            {
+                myTraditionalKey = value;
+            }
+        }
+        const NonTraditionalKeySet& KeyChoice::getNonTraditionalKeySet() const
+        {
+            return myNonTraditionalKeySet;
+        }
+        void KeyChoice::removeNonTraditionalKey( const NonTraditionalKeySetIterConst& value )
+        {
+            if ( value != myNonTraditionalKeySet.cend() )
+            {
+                myNonTraditionalKeySet.erase( value );
+            }
+        }
+        void KeyChoice::addNonTraditionalKey( const NonTraditionalKeyPtr& value )
+        {
+            if ( value )
+            {
+                myNonTraditionalKeySet.push_back( value );
+            }
+        }
+        void KeyChoice::clearNonTraditionalKeySet()
+        {
+            myNonTraditionalKeySet.clear();
+        }
+        
+        /**************** KeyAttributes ****************/
+        /* 2614 */
+        KeyAttributes::KeyAttributes()
+        :number()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,printObject( types::YesNo::no )
+        ,hasNumber( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasPrintObject( false )
+        {}
+        
+        bool KeyAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasPrintObject;
+        }
+        
+        std::ostream& KeyAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+        Key::Key()
+        :myAttributes( std::make_shared<KeyAttributes>() )
+        ,myKeyChoice( std::make_shared<KeyChoice>() )
+        ,myKeyOctaveSet()
+        {}
+        bool Key::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        std::ostream& Key::streamAttributes( std::ostream& os ) const
+        {
+            return myAttributes->toStream( os );
+            return os;
+        }
+        std::ostream& Key::streamName( std::ostream& os ) const
+        {
+            os << "key";
+            return os;
+        }
+        bool Key::hasContents() const
+        {
+            return myKeyChoice->hasContents() || myKeyOctaveSet.size() > 0;
+        }
+        std::ostream& Key::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            if ( myKeyChoice->hasContents() )
+            {
+                os << std::endl;
+                if ( myKeyChoice )
+                {
+                    myKeyChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                os << std::endl;
+            }
+            for ( auto it = myKeyOctaveSet.cbegin();
+                 it != myKeyOctaveSet.cend();
+                 ++it )
+            {
+                if ( it == myKeyOctaveSet.cbegin() )
+                {
+                    os << std::endl;
+                }
+                (*it)->streamContents( os, indentLevel+1, isOneLineOnly );
+                os << std::endl;
+            }
+            if ( myKeyChoice->hasContents() )
+            {
+                isOneLineOnly = false;
+            }
+            if ( myKeyOctaveSet.size() > 0 )
+            {
+                isOneLineOnly = false;
+            }
+            return os;
+        }
+        KeyAttributesPtr Key::getAttributes() const
+        {
+            return myAttributes;
+        }
+        void Key::setAttributes( const KeyAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        KeyChoicePtr Key::getKeyChoice() const
+        {
+            return myKeyChoice;
+        }
+        void Key::setKeyChoice( const KeyChoicePtr& value )
+        {
+            if ( value )
+            {
+                myKeyChoice = value;
+            }
+        }
+        const KeyOctaveSet& Key::getKeyOctaveSet() const
+        {
+            return myKeyOctaveSet;
+        }
+        void Key::removeKeyOctave( const KeyOctaveSetIterConst& value )
+        {
+            if ( value != myKeyOctaveSet.cend() )
+            {
+                myKeyOctaveSet.erase( value );
+            }
+        }
+        void Key::addKeyOctave( const KeyOctavePtr& value )
+        {
+            if ( value )
+            {
+                myKeyOctaveSet.push_back( value );
+            }
+        }
+        void Key::clearKeyOctaveSet()
+        {
+            myKeyOctaveSet.clear();
+        }
 
     } // namespace e
 
