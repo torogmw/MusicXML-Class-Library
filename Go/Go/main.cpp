@@ -27,6 +27,6 @@ int main(int argc, const char * argv[])
     // go::goCreateEmptyElementsWithAttributes_v2();
     // go::goRxCreateSharedPtrsToElements();
     // go::goCreateAttributesForOne( 2614 );
-    go::goRxMakeSharedNonDefault();
+    go::goRxMakeSharedNonDefaultTests();
     return 0;
 }

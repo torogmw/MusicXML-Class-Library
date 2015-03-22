@@ -205,6 +205,63 @@ namespace go
         } // while ( getline( is, line ) )
         return makers;
     }
+    inline void goRxMakeSharedNonDefaultTests()
+    {
+        using namespace fs;
+        using namespace std;
+        using namespace xsd;
+        set<string> makers = createTheMakers();
+        Directory dir = globals::getMxSourceDirectory();
+        FileName fn{ "Elements", "h" };
+        FileInfo fo{ fn, dir };
+        File f{ fo };
+        f.readIntoMemory();
+        string line;
+        istringstream is{ f.getContents() };
+        stringstream os;
+        int testNumber = 0;
+        while ( getline( is, line ) )
+        {
+            // os << line << end();
+            regex rx{ "inline\\s\\w+Ptr\\smake\\w+\\(\\s*\\)" };
+            smatch m;
+            if( regex_search( line, m, rx ) )
+            {
+                string partial = m.str();
+                rx = regex{ "\\w+(?=Ptr)" };
+                m = smatch{};
+                if( regex_search( partial, m, rx ) )
+                {
+                    string className = m.str();
+                    string makeName = "make"+className+"(";
+                    for ( auto s : makers )
+                    {
+                        if ( s.find( makeName ) != string::npos )
+                        {
+                            os << "TEST( Test" << testNumber <<", ConvenienceMakeFunctions )" << end();
+                            os << "{" << end();
+                            os << tab(1) << "auto a = " << makeName << "  );" << end();
+                            os << tab(1) << "auto b = " << makeName << "  );" << end();
+                            os << tab(1) << "stringstream aa;" << end();
+                            os << tab(1) << "stringstream bb;" << end();
+                            os << tab(1) << "aa << *a;" << end();
+                            os << tab(1) << "bb << *b;" << end();
+                            os << tab(1) << "string expected = aa.str();" << end();
+                            os << tab(1) << "string actual = bb.str();" << end();
+                            os << tab(1) << "CHECK( a )" << end();
+                            os << tab(1) << "CHECK( b )" << end();
+                            os << tab(1) << "CHECK_EQUAL( expected, actual )" << end();
+                            os << "}" << end();
+                            ++testNumber;
+                            break;
+                        }
+                    }
+                }
+            }
+        } // while ( getline( is, line ) )
+        std::cout << os.str() << end();
+        std::cout << "// ";
+    }
 }
 
 

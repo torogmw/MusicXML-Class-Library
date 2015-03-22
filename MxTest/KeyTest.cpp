@@ -7,7 +7,7 @@ using namespace mx::types;
 using namespace std;
 using namespace MxTestHelpers;
 
-TEST( Test01, TraditionalKey )
+TEST( Test01, Key )
 {
     Key object;
     object.getKeyChoice()->getTraditionalKey()->getFifths()->setValue( FifthsValue{ 3 } );
