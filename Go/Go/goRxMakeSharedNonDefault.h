@@ -4,15 +4,58 @@
 #include <sstream>
 #include "end.h"
 #include "tab.h"
+#include <set>
 
 namespace go
 {
+    inline std::set<std::string> createTheMakers();
     inline void goRxMakeSharedNonDefault()
     {
         using namespace fs;
         using namespace std;
         using namespace xsd;
-        
+        set<string> makers = createTheMakers();
+        Directory dir = globals::getMxSourceDirectory();
+        FileName fn{ "Elements", "h" };
+        FileInfo fo{ fn, dir };
+        File f{ fo };
+        f.readIntoMemory();
+        string line;
+        istringstream is{ f.getContents() };
+        stringstream os;
+        while ( getline( is, line ) )
+        {
+            os << line << end();
+            regex rx{ "inline\\s\\w+Ptr\\smake\\w+\\(\\s*\\)" };
+            smatch m;
+            if( regex_search( line, m, rx ) )
+            {
+                string partial = m.str();
+                rx = regex{ "\\w+(?=Ptr)" };
+                m = smatch{};
+                if( regex_search( partial, m, rx ) )
+                {
+                    string className = m.str();
+                    string makeName = "make"+className+"(";
+                    for ( auto s : makers )
+                    {
+                        if ( s.find( makeName ) != string::npos )
+                        {
+                            os << s; //<< end();
+                        }
+                    }
+                }
+            }
+        } // while ( getline( is, line ) )
+        std::cout << os.str() << end();
+        std::cout << "// ";
+    }
+    inline std::set<std::string> createTheMakers()
+    {
+        using namespace fs;
+        using namespace std;
+        using namespace xsd;
+        set<string> makers;
         Directory dir = globals::getMxSourceDirectory();
         FileName fn{ "Elements", "h" };
         FileInfo fo{ fn, dir };
@@ -29,6 +72,11 @@ namespace go
         string returnStatement;
         while ( getline( is, line ) )
         {
+            if( line.find( "Timpani" ) != std::string::npos )
+            {
+                int breakhere = 0;
+                ++breakhere;
+            }
             if ( regex_search( line, m1, rxLine ) )
             {
                 string s1 = m1.str();
@@ -42,7 +90,7 @@ namespace go
                         {
                             string className = m4.str();
                             std::stringstream beginClassDecl;
-                            beginClassDecl << line << end();
+                            // beginClassDecl << line << end();
                             stringstream nondefrxss;
                             nondefrxss << R"___(\s+)___";
                             nondefrxss << className;
@@ -50,10 +98,11 @@ namespace go
                             regex rxNonDef{ nondefrxss.str() };
                             smatch m5;
                             int innerCount = 0;
-                            while ( getline( is, line ) && innerCount < 15 )
+                            while ( getline( is, line ) && innerCount < 7 )
                             {
                                 if ( regex_search( line, m5, rxNonDef ) )
                                 {
+                                    // beginClassDecl << line << end();
                                     string nonDefCtor = m5.str();
                                     string strParamRx { "\\((.*)" };
                                     regex rxParam{ strParamRx };
@@ -109,71 +158,53 @@ namespace go
                                                                 }
                                                                 if ( variableName.length() > 0 )
                                                                 {
-                                                                    os << tab(2) << "inline " << className << "Ptr make" << className << "( " << typeName << " " << variableName << " ) { return std::make_shared<" << className << ">( std::move( " << variableName << " ) ); }" << end();
-                                                                    os << tab(2) << "inline " << className << "Ptr make" << className << "(" << p << ") { return std::make_shared<" << className << ">( " << variableName << " ); }" << end();
-                                                                }
-                                                            }
-                                                        }
-//                                                        variableName = *lastWord;
-//                                                        if ( variableName.length() > 0 )
-//                                                        {
-//                                                            os << tab(2) << "inline " << className << "Ptr make" << className << "(" << p << ") { return std::make_shared<" << className << ">( " << variableName << " ); }" << end();
-//                                                        }
-//                                                        else
-//                                                        {
-//                                                            beginClassDecl << line << end();
-//                                                        }
-                                                    }
-                                                    
+                                                                    std::stringstream make1;
+                                                                    std::stringstream make2;
+                                                                    make1 << tab(2) << "inline " << className << "Ptr make" << className << "( " << typeName << " " << variableName << " ) { return std::make_shared<" << className << ">( std::move( " << variableName << " ) ); }" << end();
+                                                                    make2 << tab(2) << "inline " << className << "Ptr make" << className << "(" << p << ") { return std::make_shared<" << className << ">( " << variableName << " ); }" << end();
+                                                                    makers.insert( make1.str() );
+                                                                    makers.insert( make2.str() );
+                                                                    
+                                                                } // else { beginClassDecl << line << end(); }
+                                                            } // else { beginClassDecl << line << end(); }
+                                                        } // else { beginClassDecl << line << end(); }
+                                                    } // else { beginClassDecl << line << end(); }
                                                 } // if ( tokens.size() > 1 )
-                                                else
-                                                {
-                                                    beginClassDecl << line << end();
-                                                }
+                                                // else { beginClassDecl << line << end(); }
                                             } // if ( regex_search( almostThere, m7, rxFinally ) )
-                                            else
-                                            {
-                                                beginClassDecl << line << end();
-                                            }
+                                            // else { beginClassDecl << line << end(); }
                                         } // if ( matchIter != m6.end() )
-                                        else
-                                        {
-                                            beginClassDecl << line << end();
-                                        }
+                                        // else { beginClassDecl << line << end(); }
                                     } // if ( regex_search( nonDefCtor, m6, rxParam ) )
-                                    else
-                                    {
-                                        beginClassDecl << line << end();
-                                    }
+                                    // else { beginClassDecl << line << end(); }
                                 } // if ( regex_search( line, m5, rxNonDef ) )
-                                else
-                                {
-                                    beginClassDecl << line << end();
-                                }
-                            ++innerCount;
+                                // else { beginClassDecl << line << end(); }
+                                ++innerCount;
                             } // while ( getline( is, line ) && innerCount < 15 )
                             os << beginClassDecl.str();
                         } // if ( regex_search( s3, m4, rxName ) )
                         else
                         {
-                            os << line << end();
+                            /* os << line << end(); */
                         }
                     } // if ( regex_search( s2, m3, rxSpaceAndName ) )
                     else
                     {
-                        os << line << end();
+                        /* os << line << end(); */
                     }
                 } // if ( regex_search( s1, m2, rxClassAndName ) )
                 else
                 {
-                    os << line << end();
+                    /* os << line << end(); */
                 }
             } // if ( regex_search( line, m1, rxLine ) )
             else
             {
-                os << line << end();
+                /* os << line << end(); */
             }
         } // while ( getline( is, line ) )
-        cout << os.str();
+        return makers;
     }
 }
+
+

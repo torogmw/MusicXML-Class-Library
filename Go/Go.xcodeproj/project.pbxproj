@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2996E6B61ABE975F004869DD /* goRxMakeSharedNonDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2996E6B41ABE975F004869DD /* goRxMakeSharedNonDefault.cpp */; };
 		29AAB9951A8895E00027B7A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9941A8895E00027B7A1 /* main.cpp */; };
 		29AAB9AB1A889EC50027B7A1 /* libDb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AAB9AA1A889EC50027B7A1 /* libDb.a */; };
 		29D10BA01A9BDB2C00F03CE6 /* libXsd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D10B9F1A9BDB2C00F03CE6 /* libXsd.a */; };
@@ -43,6 +44,7 @@
 		297749691AB20CBA00BF2205 /* goCreateValueNoAttributeElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateValueNoAttributeElements.h; sourceTree = "<group>"; };
 		2996E69D1ABE3D5F004869DD /* goRxMakeSharedFunctionsForElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goRxMakeSharedFunctionsForElements.h; sourceTree = "<group>"; };
 		2996E69E1ABE404C004869DD /* goRxMakeSharedNonDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goRxMakeSharedNonDefault.h; sourceTree = "<group>"; };
+		2996E6B41ABE975F004869DD /* goRxMakeSharedNonDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = goRxMakeSharedNonDefault.cpp; sourceTree = "<group>"; };
 		29A884F31A9D5D2F00F417CE /* goMsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				292D02DB1ABE225600005E61 /* goRxVectorAliasesForElements.h */,
 				2996E69D1ABE3D5F004869DD /* goRxMakeSharedFunctionsForElements.h */,
 				2996E69E1ABE404C004869DD /* goRxMakeSharedNonDefault.h */,
+				2996E6B41ABE975F004869DD /* goRxMakeSharedNonDefault.cpp */,
 			);
 			path = Go;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2996E6B61ABE975F004869DD /* goRxMakeSharedNonDefault.cpp in Sources */,
 				29AAB9951A8895E00027B7A1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
