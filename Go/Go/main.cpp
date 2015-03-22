@@ -12,7 +12,7 @@
 // #include "goListNonImplementedElements.h"
 // #include "goRxCreateSharedPtrsToElements.h"
 // #include "goCreateAttributesForOne.h"
-#include "goRxVectorAliasesForElements.h"
+#include "goRxMakeSharedFunctionsForElements.h"
 
 int main(int argc, const char * argv[])
 {
@@ -27,6 +27,6 @@ int main(int argc, const char * argv[])
     // go::goCreateEmptyElementsWithAttributes_v2();
     // go::goRxCreateSharedPtrsToElements();
     // go::goCreateAttributesForOne( 2614 );
-    go::goRxVectorAliasesForElements();
+    go::goRxMakeSharedFunctionsForElements();
     return 0;
 }
