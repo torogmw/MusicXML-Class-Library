@@ -321,75 +321,7 @@ namespace mx
         struct DisplayTextAttributes;
         using DisplayTextAttributesPtr = std::shared_ptr<DisplayTextAttributes>;
         
-        //        struct DisplayTextAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            DisplayTextAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::LeftCenterRight justify;
-        //            types::TenthsValue defaultX;
-        //            types::TenthsValue defaultY;
-        //            types::TenthsValue relativeX;
-        //            types::TenthsValue relativeY;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            types::LeftCenterRight halign;
-        //            types::NumberOfLines underline;
-        //            types::NumberOfLines overline;
-        //            types::NumberOfLines lineThrough;
-        //            types::RotationDegrees rotation;
-        //            types::NumberOrNormal letterSpacing;
-        //            types::NumberOrNormal lineHeight;
-        //            types::XmlLang lang;
-        //            types::XmlSpace space;
-        //            types::EnclosureShape enclosure;
-        //            bool hasJustify;
-        //            bool hasDefaultX;
-        //            bool hasDefaultY;
-        //            bool hasRelativeX;
-        //            bool hasRelativeY;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //            bool hasHalign;
-        //            bool hasUnderline;
-        //            bool hasOverline;
-        //            bool hasLineThrough;
-        //            bool hasRotation;
-        //            bool hasLetterSpacing;
-        //            bool hasLineHeight;
-        //            bool hasLang;
-        //            bool hasSpace;
-        //            bool hasEnclosure;
-        //        };
-        
-        //		class DisplayText;
-        //		using DisplayTextPtr = std::shared_ptr<DisplayText>;
-        //		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
-        //		using DisplayTextSet = std::vector<DisplayTextPtr>;
-        //		using DisplayTextSetIter = DisplayTextSet::iterator;
-        //		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
-        //		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
-        //        class DisplayText : public ElementInterface        //        {
-        //        public:
-        //            DisplayText();
-        //            DisplayText( const types::XsString& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            DisplayTextAttributesPtr getAttributes() const;
-        //            void setAttributes( const DisplayTextAttributesPtr& attributes );
-        //            types::XsString getValue() const;
-        //            void setValue( const types::XsString& value );
-        //        private:
-        //            types::XsString myValue;
-        //            DisplayTextAttributesPtr myAttributes;
-        //        };
+  
         
         
         /**************** OtherPlay ****************
@@ -2036,42 +1968,7 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        //        struct OffsetAttributes;
-        //        using OffsetAttributesPtr = std::shared_ptr<OffsetAttributes>;
         
-        //        struct OffsetAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            OffsetAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::YesNo sound;
-        //            bool hasSound;
-        //        };
-        //
-		//class Offset;
-		//using OffsetPtr = std::shared_ptr<Offset>;
-		//using OffsetUPtr = std::unique_ptr<Offset>;
-		//using OffsetSet = std::vector<OffsetPtr>;
-		//using OffsetSetIter = OffsetSet::iterator;
-		//using OffsetSetIterConst = OffsetSet::const_iterator;
-		//inline OffsetPtr makeOffset() { return std::make_shared<Offset>(); }
-        //        class Offset : public ElementInterface        //        {
-        //        public:
-        //            Offset();
-        //            Offset( const types::DivisionsValue& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            OffsetAttributesPtr getAttributes() const;
-        //            void setAttributes( const OffsetAttributesPtr& attributes );
-        //            types::DivisionsValue getValue() const;
-        //            void setValue( const types::DivisionsValue& value );
-        //        private:
-        //            types::DivisionsValue myValue;
-        //            OffsetAttributesPtr myAttributes;
-        //        };
         
         
         /**************** PerMinute ****************
@@ -2602,43 +2499,6 @@ namespace mx
          <xs:restriction base="xs:decimal"/>
          </xs:simpleType>
          */
-        //        struct OffsetAttributes;
-        //        using OffsetAttributesPtr = std::shared_ptr<OffsetAttributes>;
-        //
-        //        struct OffsetAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            OffsetAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::YesNo sound;
-        //            bool hasSound;
-        //        };
-        //
-        //		class Offset;
-        //		using OffsetPtr = std::shared_ptr<Offset>;
-        //		using OffsetUPtr = std::unique_ptr<Offset>;
-        //		using OffsetSet = std::vector<OffsetPtr>;
-        //		using OffsetSetIter = OffsetSet::iterator;
-        //		using OffsetSetIterConst = OffsetSet::const_iterator;
-        //		inline OffsetPtr makeOffset() { return std::make_shared<Offset>(); }
-        //        class Offset : public ElementInterface        //        {
-        //        public:
-        //            Offset();
-        //            Offset( const types::DivisionsValue& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            OffsetAttributesPtr getAttributes() const;
-        //            void setAttributes( const OffsetAttributesPtr& attributes );
-        //            types::DivisionsValue getValue() const;
-        //            void setValue( const types::DivisionsValue& value );
-        //        private:
-        //            types::DivisionsValue myValue;
-        //            OffsetAttributesPtr myAttributes;
-        //        };
-        
         
         /**************** Encoder ****************
          4048
@@ -3831,60 +3691,7 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-        //        struct TextAttributes;
-        //        using TextAttributesPtr = std::shared_ptr<TextAttributes>;
-        //
-        //        struct TextAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            TextAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            types::NumberOfLines underline;
-        //            types::NumberOfLines overline;
-        //            types::NumberOfLines lineThrough;
-        //            types::RotationDegrees rotation;
-        //            types::NumberOrNormal letterSpacing;
-        //            types::XmlLang lang;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //            bool hasUnderline;
-        //            bool hasOverline;
-        //            bool hasLineThrough;
-        //            bool hasRotation;
-        //            bool hasLetterSpacing;
-        //            bool hasLang;
-        //        };
-        //
-        //		class Text;
-        //		using TextPtr = std::shared_ptr<Text>;
-        //		using TextUPtr = std::unique_ptr<Text>;
-        //		using TextSet = std::vector<TextPtr>;
-        //		using TextSetIter = TextSet::iterator;
-        //		using TextSetIterConst = TextSet::const_iterator;
-        //		inline TextPtr makeText() { return std::make_shared<Text>(); }
-        //        class Text : public ElementInterface        //        {
-        //        public:
-        //            Text();
-        //            Text( const types::XsString& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            TextAttributesPtr getAttributes() const;
-        //            void setAttributes( const TextAttributesPtr& attributes );
-        //            types::XsString getValue() const;
-        //            void setValue( const types::XsString& value );
-        //        private:
-        //            types::XsString myValue;
-        //            TextAttributesPtr myAttributes;
-        //        };
+        
         
         
         /**************** Glissando ****************
@@ -4084,58 +3891,6 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        //        struct FermataAttributes;
-        //        using FermataAttributesPtr = std::shared_ptr<FermataAttributes>;
-        //
-        //        struct FermataAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            FermataAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::UprightInverted type;
-        //            types::TenthsValue defaultX;
-        //            types::TenthsValue defaultY;
-        //            types::TenthsValue relativeX;
-        //            types::TenthsValue relativeY;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            bool hasType;
-        //            bool hasDefaultX;
-        //            bool hasDefaultY;
-        //            bool hasRelativeX;
-        //            bool hasRelativeY;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //        };
-        
-        //		class Fermata;
-        //		using FermataPtr = std::shared_ptr<Fermata>;
-        //		using FermataUPtr = std::unique_ptr<Fermata>;
-        //		using FermataSet = std::vector<FermataPtr>;
-        //		using FermataSetIter = FermataSet::iterator;
-        //		using FermataSetIterConst = FermataSet::const_iterator;
-        //		inline FermataPtr makeFermata() { return std::make_shared<Fermata>(); }
-        //        class Fermata : public ElementInterface        //        {
-        //        public:
-        //            Fermata();
-        //            Fermata( const types::FermataShape& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            FermataAttributesPtr getAttributes() const;
-        //            void setAttributes( const FermataAttributesPtr& attributes );
-        //            types::FermataShape getValue() const;
-        //            void setValue( const types::FermataShape& value );
-        //        private:
-        //            types::FermataShape myValue;
-        //            FermataAttributesPtr myAttributes;
-        //        };
         
         
         /**************** AccidentalMark ****************
@@ -4800,78 +4555,6 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-        //        struct DisplayTextAttributes;
-        //        using DisplayTextAttributesPtr = std::shared_ptr<DisplayTextAttributes>;
-        //
-        //        struct DisplayTextAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            DisplayTextAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::LeftCenterRight justify;
-        //            types::TenthsValue defaultX;
-        //            types::TenthsValue defaultY;
-        //            types::TenthsValue relativeX;
-        //            types::TenthsValue relativeY;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            types::LeftCenterRight halign;
-        //            types::NumberOfLines underline;
-        //            types::NumberOfLines overline;
-        //            types::NumberOfLines lineThrough;
-        //            types::RotationDegrees rotation;
-        //            types::NumberOrNormal letterSpacing;
-        //            types::NumberOrNormal lineHeight;
-        //            types::XmlLang lang;
-        //            types::XmlSpace space;
-        //            types::EnclosureShape enclosure;
-        //            bool hasJustify;
-        //            bool hasDefaultX;
-        //            bool hasDefaultY;
-        //            bool hasRelativeX;
-        //            bool hasRelativeY;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //            bool hasHalign;
-        //            bool hasUnderline;
-        //            bool hasOverline;
-        //            bool hasLineThrough;
-        //            bool hasRotation;
-        //            bool hasLetterSpacing;
-        //            bool hasLineHeight;
-        //            bool hasLang;
-        //            bool hasSpace;
-        //            bool hasEnclosure;
-        //        };
-        
-        //		class DisplayText;
-        //		using DisplayTextPtr = std::shared_ptr<DisplayText>;
-        //		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
-        //		using DisplayTextSet = std::vector<DisplayTextPtr>;
-        //		using DisplayTextSetIter = DisplayTextSet::iterator;
-        //		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
-        //		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
-        //        class DisplayText : public ElementInterface        //        {
-        //        public:
-        //            DisplayText();
-        //            DisplayText( const types::XsString& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            DisplayTextAttributesPtr getAttributes() const;
-        //            void setAttributes( const DisplayTextAttributesPtr& attributes );
-        //            types::XsString getValue() const;
-        //            void setValue( const types::XsString& value );
-        //        private:
-        //            types::XsString myValue;
-        //            DisplayTextAttributesPtr myAttributes;
-        //        };
         
         
         /**************** Tremolo ****************
@@ -5089,58 +4772,6 @@ namespace mx
          </xs:restriction>
          </xs:simpleType>
          */
-        //        struct AccidentalMarkAttributes;
-        //        using AccidentalMarkAttributesPtr = std::shared_ptr<AccidentalMarkAttributes>;
-        //
-        //        struct AccidentalMarkAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            AccidentalMarkAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::TenthsValue defaultX;
-        //            types::TenthsValue defaultY;
-        //            types::TenthsValue relativeX;
-        //            types::TenthsValue relativeY;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            types::AboveBelow placement;
-        //            bool hasDefaultX;
-        //            bool hasDefaultY;
-        //            bool hasRelativeX;
-        //            bool hasRelativeY;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //            bool hasPlacement;
-        //        };
-        //
-        //		class AccidentalMark;
-        //		using AccidentalMarkPtr = std::shared_ptr<AccidentalMark>;
-        //		using AccidentalMarkUPtr = std::unique_ptr<AccidentalMark>;
-        //		using AccidentalMarkSet = std::vector<AccidentalMarkPtr>;
-        //		using AccidentalMarkSetIter = AccidentalMarkSet::iterator;
-        //		using AccidentalMarkSetIterConst = AccidentalMarkSet::const_iterator;
-        //		inline AccidentalMarkPtr makeAccidentalMark() { return std::make_shared<AccidentalMark>(); }
-        //        class AccidentalMark : public ElementInterface        //        {
-        //        public:
-        //            AccidentalMark();
-        //            AccidentalMark( const types::AccidentalValue& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            AccidentalMarkAttributesPtr getAttributes() const;
-        //            void setAttributes( const AccidentalMarkAttributesPtr& attributes );
-        //            types::AccidentalValue getValue() const;
-        //            void setValue( const types::AccidentalValue& value );
-        //        private:
-        //            types::AccidentalValue myValue;
-        //            AccidentalMarkAttributesPtr myAttributes;
-        //        };
         
         
         /**************** Fingering ****************
@@ -5161,63 +4792,6 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-        //        struct FingeringAttributes;
-        //        using FingeringAttributesPtr = std::shared_ptr<FingeringAttributes>;
-        //
-        //        struct FingeringAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            FingeringAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::YesNo substitution;
-        //            types::YesNo alternate;
-        //            types::TenthsValue defaultX;
-        //            types::TenthsValue defaultY;
-        //            types::TenthsValue relativeX;
-        //            types::TenthsValue relativeY;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            types::AboveBelow placement;
-        //            bool hasSubstitution;
-        //            bool hasAlternate;
-        //            bool hasDefaultX;
-        //            bool hasDefaultY;
-        //            bool hasRelativeX;
-        //            bool hasRelativeY;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //            bool hasPlacement;
-        //        };
-        //
-        //		class Fingering;
-        //		using FingeringPtr = std::shared_ptr<Fingering>;
-        //		using FingeringUPtr = std::unique_ptr<Fingering>;
-        //		using FingeringSet = std::vector<FingeringPtr>;
-        //		using FingeringSetIter = FingeringSet::iterator;
-        //		using FingeringSetIterConst = FingeringSet::const_iterator;
-        //		inline FingeringPtr makeFingering() { return std::make_shared<Fingering>(); }
-        //        class Fingering : public ElementInterface        //        {
-        //        public:
-        //            Fingering();
-        //            Fingering( const types::XsString& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            FingeringAttributesPtr getAttributes() const;
-        //            void setAttributes( const FingeringAttributesPtr& attributes );
-        //            types::XsString getValue() const;
-        //            void setValue( const types::XsString& value );
-        //        private:
-        //            types::XsString myValue;
-        //            FingeringAttributesPtr myAttributes;
-        //        };
-        
         
         /**************** Pluck ****************
          5365
@@ -5307,49 +4881,6 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:nonNegativeInteger"/>
          */
-        //        struct FretAttributes;
-        //        using FretAttributesPtr = std::shared_ptr<FretAttributes>;
-        //
-        //        struct FretAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            FretAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //        };
-        //
-        //		class Fret;
-        //		using FretPtr = std::shared_ptr<Fret>;
-        //		using FretUPtr = std::unique_ptr<Fret>;
-        //		using FretSet = std::vector<FretPtr>;
-        //		using FretSetIter = FretSet::iterator;
-        //		using FretSetIterConst = FretSet::const_iterator;
-        //		inline FretPtr makeFret() { return std::make_shared<Fret>(); }
-        //        class Fret : public ElementInterface        //        {
-        //        public:
-        //            Fret();
-        //            Fret( const types::NonNegativeInteger& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            FretAttributesPtr getAttributes() const;
-        //            void setAttributes( const FretAttributesPtr& attributes );
-        //            types::NonNegativeInteger getValue() const;
-        //            void setValue( const types::NonNegativeInteger& value );
-        //        private:
-        //            types::NonNegativeInteger myValue;
-        //            FretAttributesPtr myAttributes;
-        //        };
-        
         
         /**************** HammerOn ****************
          5396
@@ -5990,79 +5521,6 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-        //        struct CreditWordsAttributes;
-        //        using CreditWordsAttributesPtr = std::shared_ptr<CreditWordsAttributes>;
-        //
-        //        struct CreditWordsAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            CreditWordsAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::LeftCenterRight justify;
-        //            types::TenthsValue defaultX;
-        //            types::TenthsValue defaultY;
-        //            types::TenthsValue relativeX;
-        //            types::TenthsValue relativeY;
-        //            types::CommaSeparatedText fontFamily;
-        //            types::FontStyle fontStyle;
-        //            types::FontSize fontSize;
-        //            types::FontWeight fontWeight;
-        //            types::LeftCenterRight halign;
-        //            types::NumberOfLines underline;
-        //            types::NumberOfLines overline;
-        //            types::NumberOfLines lineThrough;
-        //            types::RotationDegrees rotation;
-        //            types::NumberOrNormal letterSpacing;
-        //            types::NumberOrNormal lineHeight;
-        //            types::XmlLang lang;
-        //            types::XmlSpace space;
-        //            types::EnclosureShape enclosure;
-        //            bool hasJustify;
-        //            bool hasDefaultX;
-        //            bool hasDefaultY;
-        //            bool hasRelativeX;
-        //            bool hasRelativeY;
-        //            bool hasFontFamily;
-        //            bool hasFontStyle;
-        //            bool hasFontSize;
-        //            bool hasFontWeight;
-        //            bool hasHalign;
-        //            bool hasUnderline;
-        //            bool hasOverline;
-        //            bool hasLineThrough;
-        //            bool hasRotation;
-        //            bool hasLetterSpacing;
-        //            bool hasLineHeight;
-        //            bool hasLang;
-        //            bool hasSpace;
-        //            bool hasEnclosure;
-        //        };
-        //
-        //		class CreditWords;
-        //		using CreditWordsPtr = std::shared_ptr<CreditWords>;
-        //		using CreditWordsUPtr = std::unique_ptr<CreditWords>;
-        //		using CreditWordsSet = std::vector<CreditWordsPtr>;
-        //		using CreditWordsSetIter = CreditWordsSet::iterator;
-        //		using CreditWordsSetIterConst = CreditWordsSet::const_iterator;
-        //		inline CreditWordsPtr makeCreditWords() { return std::make_shared<CreditWords>(); }
-        //        class CreditWords : public ElementInterface        //        {
-        //        public:
-        //            CreditWords();
-        //            CreditWords( const types::XsString& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            CreditWordsAttributesPtr getAttributes() const;
-        //            void setAttributes( const CreditWordsAttributesPtr& attributes );
-        //            types::XsString getValue() const;
-        //            void setValue( const types::XsString& value );
-        //        private:
-        //            types::XsString myValue;
-        //            CreditWordsAttributesPtr myAttributes;
-        //        };
-        
         
         /**************** GroupName ****************
          5803
@@ -6505,45 +5963,6 @@ namespace mx
          </xs:complexType>
          <xs:simpleType name="xs:string"/>
          */
-        //        struct MidiDeviceAttributes;
-        //        using MidiDeviceAttributesPtr = std::shared_ptr<MidiDeviceAttributes>;
-        //
-        //        struct MidiDeviceAttributes : public AttributesInterface
-        //        {
-        //        public:
-        //            MidiDeviceAttributes();
-        //            virtual bool hasValues() const;
-        //            virtual std::ostream& toStream( std::ostream& os ) const;
-        //            types::Midi16 port;
-        //            types::XsIDREF id;
-        //            bool hasPort;
-        //            bool hasId;
-        //        };
-        //
-        //		class MidiDevice;
-        //		using MidiDevicePtr = std::shared_ptr<MidiDevice>;
-        //		using MidiDeviceUPtr = std::unique_ptr<MidiDevice>;
-        //		using MidiDeviceSet = std::vector<MidiDevicePtr>;
-        //		using MidiDeviceSetIter = MidiDeviceSet::iterator;
-        //		using MidiDeviceSetIterConst = MidiDeviceSet::const_iterator;
-        //		inline MidiDevicePtr makeMidiDevice() { return std::make_shared<MidiDevice>(); }
-        //        class MidiDevice : public ElementInterface        //        {
-        //        public:
-        //            MidiDevice();
-        //            MidiDevice( const types::XsString& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            MidiDeviceAttributesPtr getAttributes() const;
-        //            void setAttributes( const MidiDeviceAttributesPtr& attributes );
-        //            types::XsString getValue() const;
-        //            void setValue( const types::XsString& value );
-        //        private:
-        //            types::XsString myValue;
-        //            MidiDeviceAttributesPtr myAttributes;
-        //        };
-        
         
         /**************** Footnote ****************
          6049
@@ -9857,52 +9276,7 @@ namespace mx
         };
         
         
-        //        /**************** Syllabic ****************
-        //         4802, 4817
-        //         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
-        //         <xs:simpleType name="syllabic">
-        //         <xs:annotation>
-        //         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
-        //         </xs:annotation>
-        //         <xs:restriction base="xs:string">
-        //         <xs:enumeration value="single"/>
-        //         <xs:enumeration value="begin"/>
-        //         <xs:enumeration value="end"/>
-        //         <xs:enumeration value="middle"/>
-        //         </xs:restriction>
-        //         </xs:simpleType>
-        //         <xs:simpleType name="syllabic">
-        //         <xs:annotation>
-        //         <xs:documentation>Lyric hyphenation is indicated by the syllabic type. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively.</xs:documentation>
-        //         </xs:annotation>
-        //         <xs:restriction base="xs:string">
-        //         <xs:enumeration value="single"/>
-        //         <xs:enumeration value="begin"/>
-        //         <xs:enumeration value="end"/>
-        //         <xs:enumeration value="middle"/>
-        //         </xs:restriction>
-        //         </xs:simpleType>
-        //         */
-        //		class Syllabic;
-        //		using SyllabicPtr = std::shared_ptr<Syllabic>;
-        //		using SyllabicUPtr = std::unique_ptr<Syllabic>;
-        //		using SyllabicSet = std::vector<SyllabicPtr>;
-        //		using SyllabicSetIter = SyllabicSet::iterator;
-        //		using SyllabicSetIterConst = SyllabicSet::const_iterator;
-        //		inline SyllabicPtr makeSyllabic() { return std::make_shared<Syllabic>(); }
-        //        class Syllabic : public ElementInterface        //        {
-        //        public:
-        //            Syllabic();
-        //            Syllabic( const types::SyllabicEnum& value );
-        //            virtual bool hasAttributes() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            types::SyllabicEnum getValue() const;
-        //            void setValue( const types::SyllabicEnum& value );
-        //        private:
-        //            types::SyllabicEnum myValue;
-        //        };
+        
         
         
         /**************** Step ****************
@@ -12259,26 +11633,7 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        //		class Segno;
-        //		using SegnoPtr = std::shared_ptr<Segno>;
-        //		using SegnoUPtr = std::unique_ptr<Segno>;
-        //		using SegnoSet = std::vector<SegnoPtr>;
-        //		using SegnoSetIter = SegnoSet::iterator;
-        //		using SegnoSetIterConst = SegnoSet::const_iterator;
-        //		inline SegnoPtr makeSegno() { return std::make_shared<Segno>(); }
-        //        class Segno : public ElementInterface//        {
-        //        public:
-        //            Segno();
-        //            virtual bool hasAttributes() const;
-        //            virtual bool hasContents() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
-        //            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
-        //        private:
-        //            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
-        //        };
+        
         
         /*
          3345
@@ -12294,26 +11649,6 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-        //		class Coda;
-        //		using CodaPtr = std::shared_ptr<Coda>;
-        //		using CodaUPtr = std::unique_ptr<Coda>;
-        //		using CodaSet = std::vector<CodaPtr>;
-        //		using CodaSetIter = CodaSet::iterator;
-        //		using CodaSetIterConst = CodaSet::const_iterator;
-        //		inline CodaPtr makeCoda() { return std::make_shared<Coda>(); }
-        //        class Coda : public ElementInterface//        {
-        //        public:
-        //            Coda();
-        //            virtual bool hasAttributes() const;
-        //            virtual bool hasContents() const;
-        //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-        //            virtual std::ostream& streamName( std::ostream& os ) const;
-        //            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        //            EmptyPrintObjectStyleAlignAttributesPtr getAttributes() const;
-        //            void setAttributes( const EmptyPrintObjectStyleAlignAttributesPtr& attributes );
-        //        private:
-        //            EmptyPrintObjectStyleAlignAttributesPtr myAttributes;
-        //        };
         
         /*
          3376
