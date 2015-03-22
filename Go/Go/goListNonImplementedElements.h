@@ -17,6 +17,18 @@ namespace go
         MsItemWebPtr web = std::make_shared<MsItemWeb>();
         MsItemElementSet unimplemented = findUnimplementedElements( web );
         std::stringstream ss;
+        ss << "<!-- Total Element Count: " << ( web->getFilteredMsItemSet( MsItemKind::element ) ).size() << " -->" << end();
+        ss << "<!-- Unimplemented Element Count:  " << unimplemented.size() << " -->" << end();
+        int readyCount = 0;
+        for ( auto e : unimplemented )
+        {
+            if ( e->getSubElementsImplemented() )
+            {
+                ++readyCount;
+            }
+        }
+        ss << "<!-- Elements with all submembers implemented: " << readyCount << " -->" << end();
+        ss << "<!-- ******************************************************************* -->" << end(2);
         for ( auto e : unimplemented )
         {
             if ( !onlyIncludeThoseWithImplementedSubElements || e->getSubElementsImplemented() )
