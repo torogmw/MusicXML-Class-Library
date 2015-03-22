@@ -55,31 +55,125 @@ namespace go
                                 if ( regex_search( line, m5, rxNonDef ) )
                                 {
                                     string nonDefCtor = m5.str();
-                                    string strParamRx { R"___((?<=[\(]).*)___" };
+                                    string strParamRx { "\\((.*)" };
                                     regex rxParam{ strParamRx };
                                     smatch m6;
-                                    //if ( regex_search( nonDefCtor, m6, rxParam ) )
-                                    //{
-                                    //    string p = m6.str();
-                                    //}
-                                }
+                                    if ( regex_search( nonDefCtor, m6, rxParam ) )
+                                    {
+                                        auto matchIter = m6.begin();
+                                        ++matchIter;
+                                        if ( matchIter != m6.end() )
+                                        {
+                                            string almostThere = *matchIter;
+                                            regex rxFinally{ ".*(?=\\))" };
+                                            smatch m7;
+                                            if ( regex_search( almostThere, m7, rxFinally ) )
+                                            {
+                                                string p = m7[0];
+                                                istringstream pss{ p };
+                                                vector<string> tokens;
+                                                copy(istream_iterator<string>(pss),
+                                                     istream_iterator<string>(),
+                                                     back_inserter(tokens));
+                                                string variableName = "";
+                                                string typeName = "";
+                                                if ( tokens.size() > 1 )
+                                                {
+                                                    
+                                                    auto iter = tokens.cbegin();
+                                                    if ( iter != tokens.cend() )
+                                                    {
+                                                        if ( *iter == "const" )
+                                                        {
+                                                            ++iter;
+                                                        }
+                                                        if ( iter != tokens.cend() )
+                                                        {
+                                                            typeName = *iter;
+                                                            ++iter;
+                                                            if ( iter != tokens.cend() )
+                                                            {
+                                                                variableName = *iter;
+                                                                size_t n = std::count( typeName.begin(), typeName.end(), '&' ) ;
+                                                                if ( n == 2 )
+                                                                {
+                                                                    ; // no problem
+                                                                }
+                                                                else if ( n == 1 )
+                                                                {
+                                                                    typeName = typeName+"&";
+                                                                }
+                                                                else if ( n == 0 )
+                                                                {
+                                                                    typeName = typeName+"&&";
+                                                                }
+                                                                if ( variableName.length() > 0 )
+                                                                {
+                                                                    os << tab(2) << "inline " << className << "Ptr make" << className << "( " << typeName << " " << variableName << " ) { return std::make_shared<" << className << ">( std::move( " << variableName << " ) ); }" << end();
+                                                                    os << tab(2) << "inline " << className << "Ptr make" << className << "(" << p << ") { return std::make_shared<" << className << ">( " << variableName << " ); }" << end();
+                                                                }
+                                                            }
+                                                        }
+//                                                        variableName = *lastWord;
+//                                                        if ( variableName.length() > 0 )
+//                                                        {
+//                                                            os << tab(2) << "inline " << className << "Ptr make" << className << "(" << p << ") { return std::make_shared<" << className << ">( " << variableName << " ); }" << end();
+//                                                        }
+//                                                        else
+//                                                        {
+//                                                            beginClassDecl << line << end();
+//                                                        }
+                                                    }
+                                                    
+                                                } // if ( tokens.size() > 1 )
+                                                else
+                                                {
+                                                    beginClassDecl << line << end();
+                                                }
+                                            } // if ( regex_search( almostThere, m7, rxFinally ) )
+                                            else
+                                            {
+                                                beginClassDecl << line << end();
+                                            }
+                                        } // if ( matchIter != m6.end() )
+                                        else
+                                        {
+                                            beginClassDecl << line << end();
+                                        }
+                                    } // if ( regex_search( nonDefCtor, m6, rxParam ) )
+                                    else
+                                    {
+                                        beginClassDecl << line << end();
+                                    }
+                                } // if ( regex_search( line, m5, rxNonDef ) )
                                 else
                                 {
-                                    beginClassDecl << line;
+                                    beginClassDecl << line << end();
                                 }
-                            }
-                            // os << tab(2) << "inline " << className << "Ptr make" << className << "() { return std::make_shared<" << className << ">(); }" << end();
-                            // os << line << end();
-                            
+                            ++innerCount;
+                            } // while ( getline( is, line ) && innerCount < 15 )
+                            os << beginClassDecl.str();
+                        } // if ( regex_search( s3, m4, rxName ) )
+                        else
+                        {
+                            os << line << end();
                         }
+                    } // if ( regex_search( s2, m3, rxSpaceAndName ) )
+                    else
+                    {
+                        os << line << end();
                     }
+                } // if ( regex_search( s1, m2, rxClassAndName ) )
+                else
+                {
+                    os << line << end();
                 }
-            }
+            } // if ( regex_search( line, m1, rxLine ) )
             else
             {
-                os << line << endl;
+                os << line << end();
             }
-        }
+        } // while ( getline( is, line ) )
         cout << os.str();
     }
 }

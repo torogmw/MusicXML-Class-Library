@@ -61,11 +61,11 @@ namespace mx
 		using DynamicsSetIter = DynamicsSet::iterator;
 		using DynamicsSetIterConst = DynamicsSet::const_iterator;
 		inline DynamicsPtr makeDynamics() { return std::make_shared<Dynamics>(); }
+		inline DynamicsPtr makeDynamics( types::DynamicsValue&& value ) { return std::make_shared<Dynamics>( std::move( value ) ); }
+		inline DynamicsPtr makeDynamics( const types::DynamicsValue& value ) { return std::make_shared<Dynamics>( value ); }
         class Dynamics : public ElementInterface
         {
         public:
-        public:
-            Dynamics( const types::DynamicsValue& value );
             Dynamics();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -78,7 +78,6 @@ namespace mx
             void setValue( const types::DynamicsValue& value );
             
         private:
-            types::DynamicsValue myValue;
             DynamicsAttributesPtr myAttributes;
         };
         
@@ -193,12 +192,12 @@ namespace mx
 		using AccidentalTextSetIter = AccidentalTextSet::iterator;
 		using AccidentalTextSetIterConst = AccidentalTextSet::const_iterator;
 		inline AccidentalTextPtr makeAccidentalText() { return std::make_shared<AccidentalText>(); }
+		inline AccidentalTextPtr makeAccidentalText( types::AccidentalValue&& value ) { return std::make_shared<AccidentalText>( std::move( value ) ); }
+		inline AccidentalTextPtr makeAccidentalText( const types::AccidentalValue& value ) { return std::make_shared<AccidentalText>( value ); }
         class AccidentalText : public ElementInterface
         {
         public:
-        public:
             AccidentalText();
-            AccidentalText( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -210,7 +209,6 @@ namespace mx
             void setValue( const types::AccidentalValue& value );
         private:
             types::AccidentalValue myValue;
-            AccidentalTextAttributesPtr myAttributes;
         };
         
         /**************** DisplayText ****************
@@ -284,12 +282,12 @@ namespace mx
 		using DisplayTextSetIter = DisplayTextSet::iterator;
 		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
 		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
+		inline DisplayTextPtr makeDisplayText( types::XsString&& value ) { return std::make_shared<DisplayText>( std::move( value ) ); }
+		inline DisplayTextPtr makeDisplayText( const types::XsString& value ) { return std::make_shared<DisplayText>( value ); }
         class DisplayText : public ElementInterface
         {
         public:
-        public:
             DisplayText();
-            DisplayText( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -301,7 +299,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            DisplayTextAttributesPtr myAttributes;
         };
         
         
@@ -370,17 +367,18 @@ namespace mx
         //            bool hasEnclosure;
         //        };
         
-//		class DisplayText;
-//		using DisplayTextPtr = std::shared_ptr<DisplayText>;
-//		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
-//		using DisplayTextSet = std::vector<DisplayTextPtr>;
-//		using DisplayTextSetIter = DisplayTextSet::iterator;
-//		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
-//		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
+        //		class DisplayText;
+        //		using DisplayTextPtr = std::shared_ptr<DisplayText>;
+        //		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
+        //		using DisplayTextSet = std::vector<DisplayTextPtr>;
+        //		using DisplayTextSetIter = DisplayTextSet::iterator;
+        //		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
+        //		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
+		inline DisplayTextPtr makeDisplayText( types::XsString&& value ) { return std::make_shared<DisplayText>( std::move( value ) ); }
+		inline DisplayTextPtr makeDisplayText( const types::XsString& value ) { return std::make_shared<DisplayText>( value ); }
         //        class DisplayText : public ElementInterface        //        {
         //        public:
         //            DisplayText();
-        //            DisplayText( const types::XsString& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -393,7 +391,6 @@ namespace mx
         //            types::XsString myValue;
         //            DisplayTextAttributesPtr myAttributes;
         //        };
-        
         
         /**************** OtherPlay ****************
          2555
@@ -430,12 +427,12 @@ namespace mx
 		using OtherPlaySetIter = OtherPlaySet::iterator;
 		using OtherPlaySetIterConst = OtherPlaySet::const_iterator;
 		inline OtherPlayPtr makeOtherPlay() { return std::make_shared<OtherPlay>(); }
+		inline OtherPlayPtr makeOtherPlay( types::XsString&& value ) { return std::make_shared<OtherPlay>( std::move( value ) ); }
+		inline OtherPlayPtr makeOtherPlay( const types::XsString& value ) { return std::make_shared<OtherPlay>( value ); }
         class OtherPlay : public ElementInterface
         {
         public:
-        public:
             OtherPlay();
-            OtherPlay( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -447,7 +444,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherPlayAttributesPtr myAttributes;
         };
         
         
@@ -510,12 +506,12 @@ namespace mx
 		using PartSymbolSetIter = PartSymbolSet::iterator;
 		using PartSymbolSetIterConst = PartSymbolSet::const_iterator;
 		inline PartSymbolPtr makePartSymbol() { return std::make_shared<PartSymbol>(); }
+		inline PartSymbolPtr makePartSymbol( types::GroupSymbolValue&& value ) { return std::make_shared<PartSymbol>( std::move( value ) ); }
+		inline PartSymbolPtr makePartSymbol( const types::GroupSymbolValue& value ) { return std::make_shared<PartSymbol>( value ); }
         class PartSymbol : public ElementInterface
         {
         public:
-        public:
             PartSymbol();
-            PartSymbol( const types::GroupSymbolValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -527,7 +523,6 @@ namespace mx
             void setValue( const types::GroupSymbolValue& value );
         private:
             types::GroupSymbolValue myValue;
-            PartSymbolAttributesPtr myAttributes;
         };
         
         
@@ -577,12 +572,12 @@ namespace mx
 		using KeyOctaveSetIter = KeyOctaveSet::iterator;
 		using KeyOctaveSetIterConst = KeyOctaveSet::const_iterator;
 		inline KeyOctavePtr makeKeyOctave() { return std::make_shared<KeyOctave>(); }
+		inline KeyOctavePtr makeKeyOctave( types::OctaveValue&& value ) { return std::make_shared<KeyOctave>( std::move( value ) ); }
+		inline KeyOctavePtr makeKeyOctave( const types::OctaveValue& value ) { return std::make_shared<KeyOctave>( value ); }
         class KeyOctave : public ElementInterface
         {
         public:
-        public:
             KeyOctave();
-            KeyOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -594,7 +589,6 @@ namespace mx
             void setValue( const types::OctaveValue& value );
         private:
             types::OctaveValue myValue;
-            KeyOctaveAttributesPtr myAttributes;
         };
         
         
@@ -644,12 +638,12 @@ namespace mx
 		using MultipleRestSetIter = MultipleRestSet::iterator;
 		using MultipleRestSetIterConst = MultipleRestSet::const_iterator;
 		inline MultipleRestPtr makeMultipleRest() { return std::make_shared<MultipleRest>(); }
+		inline MultipleRestPtr makeMultipleRest( types::PositiveIntegerOrEmpty&& value ) { return std::make_shared<MultipleRest>( std::move( value ) ); }
+		inline MultipleRestPtr makeMultipleRest( const types::PositiveIntegerOrEmpty& value ) { return std::make_shared<MultipleRest>( value ); }
         class MultipleRest : public ElementInterface
         {
         public:
-        public:
             MultipleRest();
-            MultipleRest( const types::PositiveIntegerOrEmpty& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -661,7 +655,6 @@ namespace mx
             void setValue( const types::PositiveIntegerOrEmpty& value );
         private:
             types::PositiveIntegerOrEmpty myValue;
-            MultipleRestAttributesPtr myAttributes;
         };
         
         
@@ -716,12 +709,12 @@ namespace mx
 		using MeasureRepeatSetIter = MeasureRepeatSet::iterator;
 		using MeasureRepeatSetIterConst = MeasureRepeatSet::const_iterator;
 		inline MeasureRepeatPtr makeMeasureRepeat() { return std::make_shared<MeasureRepeat>(); }
+		inline MeasureRepeatPtr makeMeasureRepeat( types::PositiveIntegerOrEmpty&& value ) { return std::make_shared<MeasureRepeat>( std::move( value ) ); }
+		inline MeasureRepeatPtr makeMeasureRepeat( const types::PositiveIntegerOrEmpty& value ) { return std::make_shared<MeasureRepeat>( value ); }
         class MeasureRepeat : public ElementInterface
         {
         public:
-        public:
             MeasureRepeat();
-            MeasureRepeat( const types::PositiveIntegerOrEmpty& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -733,7 +726,6 @@ namespace mx
             void setValue( const types::PositiveIntegerOrEmpty& value );
         private:
             types::PositiveIntegerOrEmpty myValue;
-            MeasureRepeatAttributesPtr myAttributes;
         };
         
         
@@ -789,12 +781,12 @@ namespace mx
 		using BarStyleSetIter = BarStyleSet::iterator;
 		using BarStyleSetIterConst = BarStyleSet::const_iterator;
 		inline BarStylePtr makeBarStyle() { return std::make_shared<BarStyle>(); }
+		inline BarStylePtr makeBarStyle( types::BarStyleEnum&& value ) { return std::make_shared<BarStyle>( std::move( value ) ); }
+		inline BarStylePtr makeBarStyle( const types::BarStyleEnum& value ) { return std::make_shared<BarStyle>( value ); }
         class BarStyle : public ElementInterface
         {
         public:
-        public:
             BarStyle();
-            BarStyle( const types::BarStyleEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -806,7 +798,6 @@ namespace mx
             void setValue( const types::BarStyleEnum& value );
         private:
             types::BarStyleEnum myValue;
-            BarStyleAttributesPtr myAttributes;
         };
         
         
@@ -872,12 +863,12 @@ namespace mx
 		using FermataSetIter = FermataSet::iterator;
 		using FermataSetIterConst = FermataSet::const_iterator;
 		inline FermataPtr makeFermata() { return std::make_shared<Fermata>(); }
+		inline FermataPtr makeFermata( types::FermataShape&& value ) { return std::make_shared<Fermata>( std::move( value ) ); }
+		inline FermataPtr makeFermata( const types::FermataShape& value ) { return std::make_shared<Fermata>( value ); }
         class Fermata : public ElementInterface
         {
         public:
-        public:
             Fermata();
-            Fermata( const types::FermataShape& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -889,7 +880,6 @@ namespace mx
             void setValue( const types::FermataShape& value );
         private:
             types::FermataShape myValue;
-            FermataAttributesPtr myAttributes;
         };
         
         
@@ -962,12 +952,12 @@ namespace mx
 		using EndingSetIter = EndingSet::iterator;
 		using EndingSetIterConst = EndingSet::const_iterator;
 		inline EndingPtr makeEnding() { return std::make_shared<Ending>(); }
+		inline EndingPtr makeEnding( types::XsString&& value ) { return std::make_shared<Ending>( std::move( value ) ); }
+		inline EndingPtr makeEnding( const types::XsString& value ) { return std::make_shared<Ending>( value ); }
         class Ending : public ElementInterface
         {
         public:
-        public:
             Ending();
-            Ending( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -979,7 +969,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            EndingAttributesPtr myAttributes;
         };
         
         
@@ -1048,12 +1037,12 @@ namespace mx
 		using BassStepSetIter = BassStepSet::iterator;
 		using BassStepSetIterConst = BassStepSet::const_iterator;
 		inline BassStepPtr makeBassStep() { return std::make_shared<BassStep>(); }
+		inline BassStepPtr makeBassStep( types::StepEnum&& value ) { return std::make_shared<BassStep>( std::move( value ) ); }
+		inline BassStepPtr makeBassStep( const types::StepEnum& value ) { return std::make_shared<BassStep>( value ); }
         class BassStep : public ElementInterface
         {
         public:
-        public:
             BassStep();
-            BassStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1065,7 +1054,6 @@ namespace mx
             void setValue( const types::StepEnum& value );
         private:
             types::StepEnum myValue;
-            BassStepAttributesPtr myAttributes;
         };
         
         
@@ -1129,12 +1117,12 @@ namespace mx
 		using BassAlterSetIter = BassAlterSet::iterator;
 		using BassAlterSetIterConst = BassAlterSet::const_iterator;
 		inline BassAlterPtr makeBassAlter() { return std::make_shared<BassAlter>(); }
+		inline BassAlterPtr makeBassAlter( types::Semitones&& value ) { return std::make_shared<BassAlter>( std::move( value ) ); }
+		inline BassAlterPtr makeBassAlter( const types::Semitones& value ) { return std::make_shared<BassAlter>( value ); }
         class BassAlter : public ElementInterface
         {
         public:
-        public:
             BassAlter();
-            BassAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1146,7 +1134,6 @@ namespace mx
             void setValue( const types::Semitones& value );
         private:
             types::Semitones myValue;
-            BassAlterAttributesPtr myAttributes;
         };
         
         
@@ -1205,12 +1192,12 @@ namespace mx
 		using DegreeValueSetIter = DegreeValueSet::iterator;
 		using DegreeValueSetIterConst = DegreeValueSet::const_iterator;
 		inline DegreeValuePtr makeDegreeValue() { return std::make_shared<DegreeValue>(); }
+		inline DegreeValuePtr makeDegreeValue( types::PositiveInteger&& value ) { return std::make_shared<DegreeValue>( std::move( value ) ); }
+		inline DegreeValuePtr makeDegreeValue( const types::PositiveInteger& value ) { return std::make_shared<DegreeValue>( value ); }
         class DegreeValue : public ElementInterface
         {
         public:
-        public:
             DegreeValue();
-            DegreeValue( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1222,7 +1209,6 @@ namespace mx
             void setValue( const types::PositiveInteger& value );
         private:
             types::PositiveInteger myValue;
-            DegreeValueAttributesPtr myAttributes;
         };
         
         
@@ -1283,12 +1269,12 @@ namespace mx
 		using DegreeAlterSetIter = DegreeAlterSet::iterator;
 		using DegreeAlterSetIterConst = DegreeAlterSet::const_iterator;
 		inline DegreeAlterPtr makeDegreeAlter() { return std::make_shared<DegreeAlter>(); }
+		inline DegreeAlterPtr makeDegreeAlter( types::Semitones&& value ) { return std::make_shared<DegreeAlter>( std::move( value ) ); }
+		inline DegreeAlterPtr makeDegreeAlter( const types::Semitones& value ) { return std::make_shared<DegreeAlter>( value ); }
         class DegreeAlter : public ElementInterface
         {
         public:
-        public:
             DegreeAlter();
-            DegreeAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1300,7 +1286,6 @@ namespace mx
             void setValue( const types::Semitones& value );
         private:
             types::Semitones myValue;
-            DegreeAlterAttributesPtr myAttributes;
         };
         
         
@@ -1365,12 +1350,12 @@ namespace mx
 		using DegreeTypeSetIter = DegreeTypeSet::iterator;
 		using DegreeTypeSetIterConst = DegreeTypeSet::const_iterator;
 		inline DegreeTypePtr makeDegreeType() { return std::make_shared<DegreeType>(); }
+		inline DegreeTypePtr makeDegreeType( types::DegreeTypeValue&& value ) { return std::make_shared<DegreeType>( std::move( value ) ); }
+		inline DegreeTypePtr makeDegreeType( const types::DegreeTypeValue& value ) { return std::make_shared<DegreeType>( value ); }
         class DegreeType : public ElementInterface
         {
         public:
-        public:
             DegreeType();
-            DegreeType( const types::DegreeTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1382,7 +1367,6 @@ namespace mx
             void setValue( const types::DegreeTypeValue& value );
         private:
             types::DegreeTypeValue myValue;
-            DegreeTypeAttributesPtr myAttributes;
         };
         
         
@@ -1426,12 +1410,12 @@ namespace mx
 		using OffsetSetIter = OffsetSet::iterator;
 		using OffsetSetIterConst = OffsetSet::const_iterator;
 		inline OffsetPtr makeOffset() { return std::make_shared<Offset>(); }
+		inline OffsetPtr makeOffset( types::DivisionsValue&& value ) { return std::make_shared<Offset>( std::move( value ) ); }
+		inline OffsetPtr makeOffset( const types::DivisionsValue& value ) { return std::make_shared<Offset>( value ); }
         class Offset : public ElementInterface
         {
         public:
-        public:
             Offset();
-            Offset( const types::DivisionsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1443,7 +1427,6 @@ namespace mx
             void setValue( const types::DivisionsValue& value );
         private:
             types::DivisionsValue myValue;
-            OffsetAttributesPtr myAttributes;
         };
         
         
@@ -1518,12 +1501,12 @@ namespace mx
 		using RehearsalSetIter = RehearsalSet::iterator;
 		using RehearsalSetIterConst = RehearsalSet::const_iterator;
 		inline RehearsalPtr makeRehearsal() { return std::make_shared<Rehearsal>(); }
+		inline RehearsalPtr makeRehearsal( types::XsString&& value ) { return std::make_shared<Rehearsal>( std::move( value ) ); }
+		inline RehearsalPtr makeRehearsal( const types::XsString& value ) { return std::make_shared<Rehearsal>( value ); }
         class Rehearsal : public ElementInterface
         {
         public:
-        public:
             Rehearsal();
-            Rehearsal( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1535,7 +1518,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            RehearsalAttributesPtr myAttributes;
         };
         
         
@@ -1610,12 +1592,12 @@ namespace mx
 		using WordsSetIter = WordsSet::iterator;
 		using WordsSetIterConst = WordsSet::const_iterator;
 		inline WordsPtr makeWords() { return std::make_shared<Words>(); }
+		inline WordsPtr makeWords( types::XsString&& value ) { return std::make_shared<Words>( std::move( value ) ); }
+		inline WordsPtr makeWords( const types::XsString& value ) { return std::make_shared<Words>( value ); }
         class Words : public ElementInterface
         {
         public:
-        public:
             Words();
-            Words( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1627,7 +1609,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            WordsAttributesPtr myAttributes;
         };
         
         
@@ -1688,12 +1669,12 @@ namespace mx
 		using PrincipalVoiceSetIter = PrincipalVoiceSet::iterator;
 		using PrincipalVoiceSetIterConst = PrincipalVoiceSet::const_iterator;
 		inline PrincipalVoicePtr makePrincipalVoice() { return std::make_shared<PrincipalVoice>(); }
+		inline PrincipalVoicePtr makePrincipalVoice( types::XsString&& value ) { return std::make_shared<PrincipalVoice>( std::move( value ) ); }
+		inline PrincipalVoicePtr makePrincipalVoice( const types::XsString& value ) { return std::make_shared<PrincipalVoice>( value ); }
         class PrincipalVoice : public ElementInterface
         {
         public:
-        public:
             PrincipalVoice();
-            PrincipalVoice( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1705,7 +1686,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PrincipalVoiceAttributesPtr myAttributes;
         };
         
         
@@ -1763,12 +1743,12 @@ namespace mx
 		using OtherDirectionSetIter = OtherDirectionSet::iterator;
 		using OtherDirectionSetIterConst = OtherDirectionSet::const_iterator;
 		inline OtherDirectionPtr makeOtherDirection() { return std::make_shared<OtherDirection>(); }
+		inline OtherDirectionPtr makeOtherDirection( types::XsString&& value ) { return std::make_shared<OtherDirection>( std::move( value ) ); }
+		inline OtherDirectionPtr makeOtherDirection( const types::XsString& value ) { return std::make_shared<OtherDirection>( value ); }
         class OtherDirection : public ElementInterface
         {
         public:
-        public:
             OtherDirection();
-            OtherDirection( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1780,7 +1760,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherDirectionAttributesPtr myAttributes;
         };
         
         
@@ -1822,12 +1801,12 @@ namespace mx
 		using FirstFretSetIter = FirstFretSet::iterator;
 		using FirstFretSetIterConst = FirstFretSet::const_iterator;
 		inline FirstFretPtr makeFirstFret() { return std::make_shared<FirstFret>(); }
+		inline FirstFretPtr makeFirstFret( types::PositiveInteger&& value ) { return std::make_shared<FirstFret>( std::move( value ) ); }
+		inline FirstFretPtr makeFirstFret( const types::PositiveInteger& value ) { return std::make_shared<FirstFret>( value ); }
         class FirstFret : public ElementInterface
         {
         public:
-        public:
             FirstFret();
-            FirstFret( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1839,7 +1818,6 @@ namespace mx
             void setValue( const types::PositiveInteger& value );
         private:
             types::PositiveInteger myValue;
-            FirstFretAttributesPtr myAttributes;
         };
         
         
@@ -1885,12 +1863,12 @@ namespace mx
 		using FretSetIter = FretSet::iterator;
 		using FretSetIterConst = FretSet::const_iterator;
 		inline FretPtr makeFret() { return std::make_shared<Fret>(); }
+		inline FretPtr makeFret( types::NonNegativeInteger&& value ) { return std::make_shared<Fret>( std::move( value ) ); }
+		inline FretPtr makeFret( const types::NonNegativeInteger& value ) { return std::make_shared<Fret>( value ); }
         class Fret : public ElementInterface
         {
         public:
-        public:
             Fret();
-            Fret( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1902,7 +1880,6 @@ namespace mx
             void setValue( const types::NonNegativeInteger& value );
         private:
             types::NonNegativeInteger myValue;
-            FretAttributesPtr myAttributes;
         };
         
         
@@ -1964,12 +1941,12 @@ namespace mx
 		using FingeringSetIter = FingeringSet::iterator;
 		using FingeringSetIterConst = FingeringSet::const_iterator;
 		inline FingeringPtr makeFingering() { return std::make_shared<Fingering>(); }
+		inline FingeringPtr makeFingering( types::XsString&& value ) { return std::make_shared<Fingering>( std::move( value ) ); }
+		inline FingeringPtr makeFingering( const types::XsString& value ) { return std::make_shared<Fingering>( value ); }
         class Fingering : public ElementInterface
         {
         public:
-        public:
             Fingering();
-            Fingering( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -1981,7 +1958,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            FingeringAttributesPtr myAttributes;
         };
         
         
@@ -2020,12 +1996,12 @@ namespace mx
 		using FeatureSetIter = FeatureSet::iterator;
 		using FeatureSetIterConst = FeatureSet::const_iterator;
 		inline FeaturePtr makeFeature() { return std::make_shared<Feature>(); }
+		inline FeaturePtr makeFeature( types::XsString&& value ) { return std::make_shared<Feature>( std::move( value ) ); }
+		inline FeaturePtr makeFeature( const types::XsString& value ) { return std::make_shared<Feature>( value ); }
         class Feature : public ElementInterface
         {
         public:
-        public:
             Feature();
-            Feature( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2037,7 +2013,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            FeatureAttributesPtr myAttributes;
         };
         
         
@@ -2081,10 +2056,11 @@ namespace mx
 		//using OffsetSetIter = OffsetSet::iterator;
 		//using OffsetSetIterConst = OffsetSet::const_iterator;
 		//inline OffsetPtr makeOffset() { return std::make_shared<Offset>(); }
+		inline OffsetPtr makeOffset( types::DivisionsValue&& value ) { return std::make_shared<Offset>( std::move( value ) ); }
+		inline OffsetPtr makeOffset( const types::DivisionsValue& value ) { return std::make_shared<Offset>( value ); }
         //        class Offset : public ElementInterface        //        {
         //        public:
         //            Offset();
-        //            Offset( const types::DivisionsValue& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -2097,7 +2073,6 @@ namespace mx
         //            types::DivisionsValue myValue;
         //            OffsetAttributesPtr myAttributes;
         //        };
-        
         
         /**************** PerMinute ****************
          3621
@@ -2140,12 +2115,12 @@ namespace mx
 		using PerMinuteSetIter = PerMinuteSet::iterator;
 		using PerMinuteSetIterConst = PerMinuteSet::const_iterator;
 		inline PerMinutePtr makePerMinute() { return std::make_shared<PerMinute>(); }
+		inline PerMinutePtr makePerMinute( types::XsString&& value ) { return std::make_shared<PerMinute>( std::move( value ) ); }
+		inline PerMinutePtr makePerMinute( const types::XsString& value ) { return std::make_shared<PerMinute>( value ); }
         class PerMinute : public ElementInterface
         {
         public:
-        public:
             PerMinute();
-            PerMinute( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2157,7 +2132,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PerMinuteAttributesPtr myAttributes;
         };
         
         
@@ -2207,12 +2181,12 @@ namespace mx
 		using MetronomeBeamSetIter = MetronomeBeamSet::iterator;
 		using MetronomeBeamSetIterConst = MetronomeBeamSet::const_iterator;
 		inline MetronomeBeamPtr makeMetronomeBeam() { return std::make_shared<MetronomeBeam>(); }
+		inline MetronomeBeamPtr makeMetronomeBeam( types::BeamValue&& value ) { return std::make_shared<MetronomeBeam>( std::move( value ) ); }
+		inline MetronomeBeamPtr makeMetronomeBeam( const types::BeamValue& value ) { return std::make_shared<MetronomeBeam>( value ); }
         class MetronomeBeam : public ElementInterface
         {
         public:
-        public:
             MetronomeBeam();
-            MetronomeBeam( const types::BeamValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2224,7 +2198,6 @@ namespace mx
             void setValue( const types::BeamValue& value );
         private:
             types::BeamValue myValue;
-            MetronomeBeamAttributesPtr myAttributes;
         };
         
         
@@ -2286,12 +2259,12 @@ namespace mx
 		using BeaterSetIter = BeaterSet::iterator;
 		using BeaterSetIterConst = BeaterSet::const_iterator;
 		inline BeaterPtr makeBeater() { return std::make_shared<Beater>(); }
+		inline BeaterPtr makeBeater( types::BeaterValue&& value ) { return std::make_shared<Beater>( std::move( value ) ); }
+		inline BeaterPtr makeBeater( const types::BeaterValue& value ) { return std::make_shared<Beater>( value ); }
         class Beater : public ElementInterface
         {
         public:
-        public:
             Beater();
-            Beater( const types::BeaterValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2303,7 +2276,6 @@ namespace mx
             void setValue( const types::BeaterValue& value );
         private:
             types::BeaterValue myValue;
-            BeaterAttributesPtr myAttributes;
         };
         
         
@@ -2367,12 +2339,12 @@ namespace mx
 		using MeasureNumberingSetIter = MeasureNumberingSet::iterator;
 		using MeasureNumberingSetIterConst = MeasureNumberingSet::const_iterator;
 		inline MeasureNumberingPtr makeMeasureNumbering() { return std::make_shared<MeasureNumbering>(); }
+		inline MeasureNumberingPtr makeMeasureNumbering( types::MeasureNumberingValue&& value ) { return std::make_shared<MeasureNumbering>( std::move( value ) ); }
+		inline MeasureNumberingPtr makeMeasureNumbering( const types::MeasureNumberingValue& value ) { return std::make_shared<MeasureNumbering>( value ); }
         class MeasureNumbering : public ElementInterface
         {
         public:
-        public:
             MeasureNumbering();
-            MeasureNumbering( const types::MeasureNumberingValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2384,7 +2356,6 @@ namespace mx
             void setValue( const types::MeasureNumberingValue& value );
         private:
             types::MeasureNumberingValue myValue;
-            MeasureNumberingAttributesPtr myAttributes;
         };
         
         
@@ -2453,12 +2424,12 @@ namespace mx
 		using RootStepSetIter = RootStepSet::iterator;
 		using RootStepSetIterConst = RootStepSet::const_iterator;
 		inline RootStepPtr makeRootStep() { return std::make_shared<RootStep>(); }
+		inline RootStepPtr makeRootStep( types::StepEnum&& value ) { return std::make_shared<RootStep>( std::move( value ) ); }
+		inline RootStepPtr makeRootStep( const types::StepEnum& value ) { return std::make_shared<RootStep>( value ); }
         class RootStep : public ElementInterface
         {
         public:
-        public:
             RootStep();
-            RootStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2470,7 +2441,6 @@ namespace mx
             void setValue( const types::StepEnum& value );
         private:
             types::StepEnum myValue;
-            RootStepAttributesPtr myAttributes;
         };
         
         
@@ -2534,12 +2504,12 @@ namespace mx
 		using RootAlterSetIter = RootAlterSet::iterator;
 		using RootAlterSetIterConst = RootAlterSet::const_iterator;
 		inline RootAlterPtr makeRootAlter() { return std::make_shared<RootAlter>(); }
+		inline RootAlterPtr makeRootAlter( types::Semitones&& value ) { return std::make_shared<RootAlter>( std::move( value ) ); }
+		inline RootAlterPtr makeRootAlter( const types::Semitones& value ) { return std::make_shared<RootAlter>( value ); }
         class RootAlter : public ElementInterface
         {
         public:
-        public:
             RootAlter();
-            RootAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2551,7 +2521,6 @@ namespace mx
             void setValue( const types::Semitones& value );
         private:
             types::Semitones myValue;
-            RootAlterAttributesPtr myAttributes;
         };
         
         
@@ -2593,12 +2562,12 @@ namespace mx
 		using MidiDeviceSetIter = MidiDeviceSet::iterator;
 		using MidiDeviceSetIterConst = MidiDeviceSet::const_iterator;
 		inline MidiDevicePtr makeMidiDevice() { return std::make_shared<MidiDevice>(); }
+		inline MidiDevicePtr makeMidiDevice( types::XsString&& value ) { return std::make_shared<MidiDevice>( std::move( value ) ); }
+		inline MidiDevicePtr makeMidiDevice( const types::XsString& value ) { return std::make_shared<MidiDevice>( value ); }
         class MidiDevice : public ElementInterface
         {
         public:
-        public:
             MidiDevice();
-            MidiDevice( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2610,7 +2579,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            MidiDeviceAttributesPtr myAttributes;
         };
         
         
@@ -2647,17 +2615,18 @@ namespace mx
         //            bool hasSound;
         //        };
         //
-//		class Offset;
-//		using OffsetPtr = std::shared_ptr<Offset>;
-//		using OffsetUPtr = std::unique_ptr<Offset>;
-//		using OffsetSet = std::vector<OffsetPtr>;
-//		using OffsetSetIter = OffsetSet::iterator;
-//		using OffsetSetIterConst = OffsetSet::const_iterator;
-//		inline OffsetPtr makeOffset() { return std::make_shared<Offset>(); }
+        //		class Offset;
+        //		using OffsetPtr = std::shared_ptr<Offset>;
+        //		using OffsetUPtr = std::unique_ptr<Offset>;
+        //		using OffsetSet = std::vector<OffsetPtr>;
+        //		using OffsetSetIter = OffsetSet::iterator;
+        //		using OffsetSetIterConst = OffsetSet::const_iterator;
+        //		inline OffsetPtr makeOffset() { return std::make_shared<Offset>(); }
+		inline OffsetPtr makeOffset( types::DivisionsValue&& value ) { return std::make_shared<Offset>( std::move( value ) ); }
+		inline OffsetPtr makeOffset( const types::DivisionsValue& value ) { return std::make_shared<Offset>( value ); }
         //        class Offset : public ElementInterface        //        {
         //        public:
         //            Offset();
-        //            Offset( const types::DivisionsValue& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -2670,7 +2639,6 @@ namespace mx
         //            types::DivisionsValue myValue;
         //            OffsetAttributesPtr myAttributes;
         //        };
-        
         
         /**************** Encoder ****************
          4048
@@ -2707,12 +2675,12 @@ namespace mx
 		using EncoderSetIter = EncoderSet::iterator;
 		using EncoderSetIterConst = EncoderSet::const_iterator;
 		inline EncoderPtr makeEncoder() { return std::make_shared<Encoder>(); }
+		inline EncoderPtr makeEncoder( types::XsString&& value ) { return std::make_shared<Encoder>( std::move( value ) ); }
+		inline EncoderPtr makeEncoder( const types::XsString& value ) { return std::make_shared<Encoder>( value ); }
         class Encoder : public ElementInterface
         {
         public:
-        public:
             Encoder();
-            Encoder( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2724,7 +2692,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            EncoderAttributesPtr myAttributes;
         };
         
         
@@ -2763,12 +2730,12 @@ namespace mx
 		using CreatorSetIter = CreatorSet::iterator;
 		using CreatorSetIterConst = CreatorSet::const_iterator;
 		inline CreatorPtr makeCreator() { return std::make_shared<Creator>(); }
+		inline CreatorPtr makeCreator( types::XsString&& value ) { return std::make_shared<Creator>( std::move( value ) ); }
+		inline CreatorPtr makeCreator( const types::XsString& value ) { return std::make_shared<Creator>( value ); }
         class Creator : public ElementInterface
         {
         public:
-        public:
             Creator();
-            Creator( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2780,7 +2747,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            CreatorAttributesPtr myAttributes;
         };
         
         
@@ -2819,12 +2785,12 @@ namespace mx
 		using RightsSetIter = RightsSet::iterator;
 		using RightsSetIterConst = RightsSet::const_iterator;
 		inline RightsPtr makeRights() { return std::make_shared<Rights>(); }
+		inline RightsPtr makeRights( types::XsString&& value ) { return std::make_shared<Rights>( std::move( value ) ); }
+		inline RightsPtr makeRights( const types::XsString& value ) { return std::make_shared<Rights>( value ); }
         class Rights : public ElementInterface
         {
         public:
-        public:
             Rights();
-            Rights( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2836,7 +2802,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            RightsAttributesPtr myAttributes;
         };
         
         
@@ -2875,12 +2840,12 @@ namespace mx
 		using RelationSetIter = RelationSet::iterator;
 		using RelationSetIterConst = RelationSet::const_iterator;
 		inline RelationPtr makeRelation() { return std::make_shared<Relation>(); }
+		inline RelationPtr makeRelation( types::XsString&& value ) { return std::make_shared<Relation>( std::move( value ) ); }
+		inline RelationPtr makeRelation( const types::XsString& value ) { return std::make_shared<Relation>( value ); }
         class Relation : public ElementInterface
         {
         public:
-        public:
             Relation();
-            Relation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2892,7 +2857,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            RelationAttributesPtr myAttributes;
         };
         
         
@@ -2931,12 +2895,12 @@ namespace mx
 		using MiscellaneousFieldSetIter = MiscellaneousFieldSet::iterator;
 		using MiscellaneousFieldSetIterConst = MiscellaneousFieldSet::const_iterator;
 		inline MiscellaneousFieldPtr makeMiscellaneousField() { return std::make_shared<MiscellaneousField>(); }
+		inline MiscellaneousFieldPtr makeMiscellaneousField( types::XsString&& value ) { return std::make_shared<MiscellaneousField>( std::move( value ) ); }
+		inline MiscellaneousFieldPtr makeMiscellaneousField( const types::XsString& value ) { return std::make_shared<MiscellaneousField>( value ); }
         class MiscellaneousField : public ElementInterface
         {
         public:
-        public:
             MiscellaneousField();
-            MiscellaneousField( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2948,7 +2912,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            MiscellaneousFieldAttributesPtr myAttributes;
         };
         
         
@@ -2994,12 +2957,12 @@ namespace mx
 		using LineWidthSetIter = LineWidthSet::iterator;
 		using LineWidthSetIterConst = LineWidthSet::const_iterator;
 		inline LineWidthPtr makeLineWidth() { return std::make_shared<LineWidth>(); }
+		inline LineWidthPtr makeLineWidth( types::TenthsValue&& value ) { return std::make_shared<LineWidth>( std::move( value ) ); }
+		inline LineWidthPtr makeLineWidth( const types::TenthsValue& value ) { return std::make_shared<LineWidth>( value ); }
         class LineWidth : public ElementInterface
         {
         public:
-        public:
             LineWidth();
-            LineWidth( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3011,7 +2974,6 @@ namespace mx
             void setValue( const types::TenthsValue& value );
         private:
             types::TenthsValue myValue;
-            LineWidthAttributesPtr myAttributes;
         };
         
         
@@ -3057,12 +3019,12 @@ namespace mx
 		using NoteSizeSetIter = NoteSizeSet::iterator;
 		using NoteSizeSetIterConst = NoteSizeSet::const_iterator;
 		inline NoteSizePtr makeNoteSize() { return std::make_shared<NoteSize>(); }
+		inline NoteSizePtr makeNoteSize( types::NonNegativeDecimal&& value ) { return std::make_shared<NoteSize>( std::move( value ) ); }
+		inline NoteSizePtr makeNoteSize( const types::NonNegativeDecimal& value ) { return std::make_shared<NoteSize>( value ); }
         class NoteSize : public ElementInterface
         {
         public:
-        public:
             NoteSize();
-            NoteSize( const types::NonNegativeDecimal& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3074,7 +3036,6 @@ namespace mx
             void setValue( const types::NonNegativeDecimal& value );
         private:
             types::NonNegativeDecimal myValue;
-            NoteSizeAttributesPtr myAttributes;
         };
         
         
@@ -3120,12 +3081,12 @@ namespace mx
 		using DistanceSetIter = DistanceSet::iterator;
 		using DistanceSetIterConst = DistanceSet::const_iterator;
 		inline DistancePtr makeDistance() { return std::make_shared<Distance>(); }
+		inline DistancePtr makeDistance( types::TenthsValue&& value ) { return std::make_shared<Distance>( std::move( value ) ); }
+		inline DistancePtr makeDistance( const types::TenthsValue& value ) { return std::make_shared<Distance>( value ); }
         class Distance : public ElementInterface
         {
         public:
-        public:
             Distance();
-            Distance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3137,7 +3098,6 @@ namespace mx
             void setValue( const types::TenthsValue& value );
         private:
             types::TenthsValue myValue;
-            DistanceAttributesPtr myAttributes;
         };
         
         
@@ -3176,12 +3136,12 @@ namespace mx
 		using OtherAppearanceSetIter = OtherAppearanceSet::iterator;
 		using OtherAppearanceSetIterConst = OtherAppearanceSet::const_iterator;
 		inline OtherAppearancePtr makeOtherAppearance() { return std::make_shared<OtherAppearance>(); }
+		inline OtherAppearancePtr makeOtherAppearance( types::XsString&& value ) { return std::make_shared<OtherAppearance>( std::move( value ) ); }
+		inline OtherAppearancePtr makeOtherAppearance( const types::XsString& value ) { return std::make_shared<OtherAppearance>( value ); }
         class OtherAppearance : public ElementInterface
         {
         public:
-        public:
             OtherAppearance();
-            OtherAppearance( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3193,7 +3153,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherAppearanceAttributesPtr myAttributes;
         };
         
         
@@ -3258,12 +3217,12 @@ namespace mx
 		using BreathMarkSetIter = BreathMarkSet::iterator;
 		using BreathMarkSetIterConst = BreathMarkSet::const_iterator;
 		inline BreathMarkPtr makeBreathMark() { return std::make_shared<BreathMark>(); }
+		inline BreathMarkPtr makeBreathMark( types::BreathMarkValue&& value ) { return std::make_shared<BreathMark>( std::move( value ) ); }
+		inline BreathMarkPtr makeBreathMark( const types::BreathMarkValue& value ) { return std::make_shared<BreathMark>( value ); }
         class BreathMark : public ElementInterface
         {
         public:
-        public:
             BreathMark();
-            BreathMark( const types::BreathMarkValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3275,7 +3234,6 @@ namespace mx
             void setValue( const types::BreathMarkValue& value );
         private:
             types::BreathMarkValue myValue;
-            BreathMarkAttributesPtr myAttributes;
         };
         
         
@@ -3331,12 +3289,12 @@ namespace mx
 		using OtherArticulationSetIter = OtherArticulationSet::iterator;
 		using OtherArticulationSetIterConst = OtherArticulationSet::const_iterator;
 		inline OtherArticulationPtr makeOtherArticulation() { return std::make_shared<OtherArticulation>(); }
+		inline OtherArticulationPtr makeOtherArticulation( types::XsString&& value ) { return std::make_shared<OtherArticulation>( std::move( value ) ); }
+		inline OtherArticulationPtr makeOtherArticulation( const types::XsString& value ) { return std::make_shared<OtherArticulation>( value ); }
         class OtherArticulation : public ElementInterface
         {
         public:
-        public:
             OtherArticulation();
-            OtherArticulation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3348,7 +3306,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherArticulationAttributesPtr myAttributes;
         };
         
         
@@ -3404,12 +3361,12 @@ namespace mx
 		using WithBarSetIter = WithBarSet::iterator;
 		using WithBarSetIterConst = WithBarSet::const_iterator;
 		inline WithBarPtr makeWithBar() { return std::make_shared<WithBar>(); }
+		inline WithBarPtr makeWithBar( types::XsString&& value ) { return std::make_shared<WithBar>( std::move( value ) ); }
+		inline WithBarPtr makeWithBar( const types::XsString& value ) { return std::make_shared<WithBar>( value ); }
         class WithBar : public ElementInterface
         {
         public:
-        public:
             WithBar();
-            WithBar( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3421,7 +3378,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            WithBarAttributesPtr myAttributes;
         };
         
         
@@ -3474,12 +3430,12 @@ namespace mx
 		using PrefixSetIter = PrefixSet::iterator;
 		using PrefixSetIterConst = PrefixSet::const_iterator;
 		inline PrefixPtr makePrefix() { return std::make_shared<Prefix>(); }
+		inline PrefixPtr makePrefix( types::XsString&& value ) { return std::make_shared<Prefix>( std::move( value ) ); }
+		inline PrefixPtr makePrefix( const types::XsString& value ) { return std::make_shared<Prefix>( value ); }
         class Prefix : public ElementInterface
         {
         public:
-        public:
             Prefix();
-            Prefix( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3491,7 +3447,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PrefixAttributesPtr myAttributes;
         };
         
         
@@ -3544,12 +3499,12 @@ namespace mx
 		using FigureNumberSetIter = FigureNumberSet::iterator;
 		using FigureNumberSetIterConst = FigureNumberSet::const_iterator;
 		inline FigureNumberPtr makeFigureNumber() { return std::make_shared<FigureNumber>(); }
+		inline FigureNumberPtr makeFigureNumber( types::XsString&& value ) { return std::make_shared<FigureNumber>( std::move( value ) ); }
+		inline FigureNumberPtr makeFigureNumber( const types::XsString& value ) { return std::make_shared<FigureNumber>( value ); }
         class FigureNumber : public ElementInterface
         {
         public:
-        public:
             FigureNumber();
-            FigureNumber( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3561,7 +3516,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            FigureNumberAttributesPtr myAttributes;
         };
         
         
@@ -3614,12 +3568,12 @@ namespace mx
 		using SuffixSetIter = SuffixSet::iterator;
 		using SuffixSetIterConst = SuffixSet::const_iterator;
 		inline SuffixPtr makeSuffix() { return std::make_shared<Suffix>(); }
+		inline SuffixPtr makeSuffix( types::XsString&& value ) { return std::make_shared<Suffix>( std::move( value ) ); }
+		inline SuffixPtr makeSuffix( const types::XsString& value ) { return std::make_shared<Suffix>( value ); }
         class Suffix : public ElementInterface
         {
         public:
-        public:
             Suffix();
-            Suffix( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3631,7 +3585,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            SuffixAttributesPtr myAttributes;
         };
         
         
@@ -3679,12 +3632,12 @@ namespace mx
 		using HoleClosedSetIter = HoleClosedSet::iterator;
 		using HoleClosedSetIterConst = HoleClosedSet::const_iterator;
 		inline HoleClosedPtr makeHoleClosed() { return std::make_shared<HoleClosed>(); }
+		inline HoleClosedPtr makeHoleClosed( types::HoleClosedValue&& value ) { return std::make_shared<HoleClosed>( std::move( value ) ); }
+		inline HoleClosedPtr makeHoleClosed( const types::HoleClosedValue& value ) { return std::make_shared<HoleClosed>( value ); }
         class HoleClosed : public ElementInterface
         {
         public:
-        public:
             HoleClosed();
-            HoleClosed( const types::HoleClosedValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3696,7 +3649,6 @@ namespace mx
             void setValue( const types::HoleClosedValue& value );
         private:
             types::HoleClosedValue myValue;
-            HoleClosedAttributesPtr myAttributes;
         };
         
         
@@ -3759,12 +3711,12 @@ namespace mx
 		using TextSetIter = TextSet::iterator;
 		using TextSetIterConst = TextSet::const_iterator;
 		inline TextPtr makeText() { return std::make_shared<Text>(); }
+		inline TextPtr makeText( types::XsString&& value ) { return std::make_shared<Text>( std::move( value ) ); }
+		inline TextPtr makeText( const types::XsString& value ) { return std::make_shared<Text>( value ); }
         class Text : public ElementInterface
         {
         public:
-        public:
             Text();
-            Text( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3776,7 +3728,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            TextAttributesPtr myAttributes;
         };
         
         
@@ -3839,12 +3790,12 @@ namespace mx
 		using ElisionSetIter = ElisionSet::iterator;
 		using ElisionSetIterConst = ElisionSet::const_iterator;
 		inline ElisionPtr makeElision() { return std::make_shared<Elision>(); }
+		inline ElisionPtr makeElision( types::XsString&& value ) { return std::make_shared<Elision>( std::move( value ) ); }
+		inline ElisionPtr makeElision( const types::XsString& value ) { return std::make_shared<Elision>( value ); }
         class Elision : public ElementInterface
         {
         public:
-        public:
             Elision();
-            Elision( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -3856,7 +3807,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            ElisionAttributesPtr myAttributes;
         };
         
         
@@ -3912,17 +3862,18 @@ namespace mx
         //            bool hasLang;
         //        };
         //
-//		class Text;
-//		using TextPtr = std::shared_ptr<Text>;
-//		using TextUPtr = std::unique_ptr<Text>;
-//		using TextSet = std::vector<TextPtr>;
-//		using TextSetIter = TextSet::iterator;
-//		using TextSetIterConst = TextSet::const_iterator;
-//		inline TextPtr makeText() { return std::make_shared<Text>(); }
+        //		class Text;
+        //		using TextPtr = std::shared_ptr<Text>;
+        //		using TextUPtr = std::unique_ptr<Text>;
+        //		using TextSet = std::vector<TextPtr>;
+        //		using TextSetIter = TextSet::iterator;
+        //		using TextSetIterConst = TextSet::const_iterator;
+        //		inline TextPtr makeText() { return std::make_shared<Text>(); }
+		inline TextPtr makeText( types::XsString&& value ) { return std::make_shared<Text>( std::move( value ) ); }
+		inline TextPtr makeText( const types::XsString& value ) { return std::make_shared<Text>( value ); }
         //        class Text : public ElementInterface        //        {
         //        public:
         //            Text();
-        //            Text( const types::XsString& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -3935,7 +3886,6 @@ namespace mx
         //            types::XsString myValue;
         //            TextAttributesPtr myAttributes;
         //        };
-        
         
         /**************** Glissando ****************
          4923
@@ -3998,12 +3948,12 @@ namespace mx
 		using GlissandoSetIter = GlissandoSet::iterator;
 		using GlissandoSetIterConst = GlissandoSet::const_iterator;
 		inline GlissandoPtr makeGlissando() { return std::make_shared<Glissando>(); }
+		inline GlissandoPtr makeGlissando( types::XsString&& value ) { return std::make_shared<Glissando>( std::move( value ) ); }
+		inline GlissandoPtr makeGlissando( const types::XsString& value ) { return std::make_shared<Glissando>( value ); }
         class Glissando : public ElementInterface
         {
         public:
-        public:
             Glissando();
-            Glissando( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4015,7 +3965,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            GlissandoAttributesPtr myAttributes;
         };
         
         
@@ -4089,12 +4038,12 @@ namespace mx
 		using SlideSetIter = SlideSet::iterator;
 		using SlideSetIterConst = SlideSet::const_iterator;
 		inline SlidePtr makeSlide() { return std::make_shared<Slide>(); }
+		inline SlidePtr makeSlide( types::XsString&& value ) { return std::make_shared<Slide>( std::move( value ) ); }
+		inline SlidePtr makeSlide( const types::XsString& value ) { return std::make_shared<Slide>( value ); }
         class Slide : public ElementInterface
         {
         public:
-        public:
             Slide();
-            Slide( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4106,7 +4055,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            SlideAttributesPtr myAttributes;
         };
         
         
@@ -4165,17 +4113,18 @@ namespace mx
         //            bool hasFontWeight;
         //        };
         
-//		class Fermata;
-//		using FermataPtr = std::shared_ptr<Fermata>;
-//		using FermataUPtr = std::unique_ptr<Fermata>;
-//		using FermataSet = std::vector<FermataPtr>;
-//		using FermataSetIter = FermataSet::iterator;
-//		using FermataSetIterConst = FermataSet::const_iterator;
-//		inline FermataPtr makeFermata() { return std::make_shared<Fermata>(); }
+        //		class Fermata;
+        //		using FermataPtr = std::shared_ptr<Fermata>;
+        //		using FermataUPtr = std::unique_ptr<Fermata>;
+        //		using FermataSet = std::vector<FermataPtr>;
+        //		using FermataSetIter = FermataSet::iterator;
+        //		using FermataSetIterConst = FermataSet::const_iterator;
+        //		inline FermataPtr makeFermata() { return std::make_shared<Fermata>(); }
+		inline FermataPtr makeFermata( types::FermataShape&& value ) { return std::make_shared<Fermata>( std::move( value ) ); }
+		inline FermataPtr makeFermata( const types::FermataShape& value ) { return std::make_shared<Fermata>( value ); }
         //        class Fermata : public ElementInterface        //        {
         //        public:
         //            Fermata();
-        //            Fermata( const types::FermataShape& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -4188,7 +4137,6 @@ namespace mx
         //            types::FermataShape myValue;
         //            FermataAttributesPtr myAttributes;
         //        };
-        
         
         /**************** AccidentalMark ****************
          4950, 5189
@@ -4282,12 +4230,12 @@ namespace mx
 		using AccidentalMarkSetIter = AccidentalMarkSet::iterator;
 		using AccidentalMarkSetIterConst = AccidentalMarkSet::const_iterator;
 		inline AccidentalMarkPtr makeAccidentalMark() { return std::make_shared<AccidentalMark>(); }
+		inline AccidentalMarkPtr makeAccidentalMark( types::AccidentalValue&& value ) { return std::make_shared<AccidentalMark>( std::move( value ) ); }
+		inline AccidentalMarkPtr makeAccidentalMark( const types::AccidentalValue& value ) { return std::make_shared<AccidentalMark>( value ); }
         class AccidentalMark : public ElementInterface
         {
         public:
-        public:
             AccidentalMark();
-            AccidentalMark( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4299,7 +4247,6 @@ namespace mx
             void setValue( const types::AccidentalValue& value );
         private:
             types::AccidentalValue myValue;
-            AccidentalMarkAttributesPtr myAttributes;
         };
         
         
@@ -4364,12 +4311,12 @@ namespace mx
 		using OtherNotationSetIter = OtherNotationSet::iterator;
 		using OtherNotationSetIterConst = OtherNotationSet::const_iterator;
 		inline OtherNotationPtr makeOtherNotation() { return std::make_shared<OtherNotation>(); }
+		inline OtherNotationPtr makeOtherNotation( types::XsString&& value ) { return std::make_shared<OtherNotation>( std::move( value ) ); }
+		inline OtherNotationPtr makeOtherNotation( const types::XsString& value ) { return std::make_shared<OtherNotation>( value ); }
         class OtherNotation : public ElementInterface
         {
         public:
-        public:
             OtherNotation();
-            OtherNotation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4381,7 +4328,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherNotationAttributesPtr myAttributes;
         };
         
         
@@ -4440,12 +4386,12 @@ namespace mx
 		using TypeSetIter = TypeSet::iterator;
 		using TypeSetIterConst = TypeSet::const_iterator;
 		inline TypePtr makeType() { return std::make_shared<Type>(); }
+		inline TypePtr makeType( types::NoteTypeValue&& value ) { return std::make_shared<Type>( std::move( value ) ); }
+		inline TypePtr makeType( const types::NoteTypeValue& value ) { return std::make_shared<Type>( value ); }
         class Type : public ElementInterface
         {
         public:
-        public:
             Type();
-            Type( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4457,7 +4403,6 @@ namespace mx
             void setValue( const types::NoteTypeValue& value );
         private:
             types::NoteTypeValue myValue;
-            TypeAttributesPtr myAttributes;
         };
         
         
@@ -4563,12 +4508,12 @@ namespace mx
 		using AccidentalSetIter = AccidentalSet::iterator;
 		using AccidentalSetIterConst = AccidentalSet::const_iterator;
 		inline AccidentalPtr makeAccidental() { return std::make_shared<Accidental>(); }
+		inline AccidentalPtr makeAccidental( types::AccidentalValue&& value ) { return std::make_shared<Accidental>( std::move( value ) ); }
+		inline AccidentalPtr makeAccidental( const types::AccidentalValue& value ) { return std::make_shared<Accidental>( value ); }
         class Accidental : public ElementInterface
         {
         public:
-        public:
             Accidental();
-            Accidental( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4580,7 +4525,6 @@ namespace mx
             void setValue( const types::AccidentalValue& value );
         private:
             types::AccidentalValue myValue;
-            AccidentalAttributesPtr myAttributes;
         };
         
         
@@ -4636,12 +4580,12 @@ namespace mx
 		using StemSetIter = StemSet::iterator;
 		using StemSetIterConst = StemSet::const_iterator;
 		inline StemPtr makeStem() { return std::make_shared<Stem>(); }
+		inline StemPtr makeStem( types::StemValue&& value ) { return std::make_shared<Stem>( std::move( value ) ); }
+		inline StemPtr makeStem( const types::StemValue& value ) { return std::make_shared<Stem>( value ); }
         class Stem : public ElementInterface
         {
         public:
-        public:
             Stem();
-            Stem( const types::StemValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4653,7 +4597,6 @@ namespace mx
             void setValue( const types::StemValue& value );
         private:
             types::StemValue myValue;
-            StemAttributesPtr myAttributes;
         };
         
         
@@ -4743,12 +4686,12 @@ namespace mx
 		using NoteheadSetIter = NoteheadSet::iterator;
 		using NoteheadSetIterConst = NoteheadSet::const_iterator;
 		inline NoteheadPtr makeNotehead() { return std::make_shared<Notehead>(); }
+		inline NoteheadPtr makeNotehead( types::NoteheadValue&& value ) { return std::make_shared<Notehead>( std::move( value ) ); }
+		inline NoteheadPtr makeNotehead( const types::NoteheadValue& value ) { return std::make_shared<Notehead>( value ); }
         class Notehead : public ElementInterface
         {
         public:
-        public:
             Notehead();
-            Notehead( const types::NoteheadValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4760,7 +4703,6 @@ namespace mx
             void setValue( const types::NoteheadValue& value );
         private:
             types::NoteheadValue myValue;
-            NoteheadAttributesPtr myAttributes;
         };
         
         
@@ -4823,12 +4765,12 @@ namespace mx
 		using BeamSetIter = BeamSet::iterator;
 		using BeamSetIterConst = BeamSet::const_iterator;
 		inline BeamPtr makeBeam() { return std::make_shared<Beam>(); }
+		inline BeamPtr makeBeam( types::BeamValue&& value ) { return std::make_shared<Beam>( std::move( value ) ); }
+		inline BeamPtr makeBeam( const types::BeamValue& value ) { return std::make_shared<Beam>( value ); }
         class Beam : public ElementInterface
         {
         public:
-        public:
             Beam();
-            Beam( const types::BeamValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -4840,7 +4782,6 @@ namespace mx
             void setValue( const types::BeamValue& value );
         private:
             types::BeamValue myValue;
-            BeamAttributesPtr myAttributes;
         };
         
         
@@ -4908,17 +4849,18 @@ namespace mx
         //            bool hasEnclosure;
         //        };
         
-//		class DisplayText;
-//		using DisplayTextPtr = std::shared_ptr<DisplayText>;
-//		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
-//		using DisplayTextSet = std::vector<DisplayTextPtr>;
-//		using DisplayTextSetIter = DisplayTextSet::iterator;
-//		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
-//		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
+        //		class DisplayText;
+        //		using DisplayTextPtr = std::shared_ptr<DisplayText>;
+        //		using DisplayTextUPtr = std::unique_ptr<DisplayText>;
+        //		using DisplayTextSet = std::vector<DisplayTextPtr>;
+        //		using DisplayTextSetIter = DisplayTextSet::iterator;
+        //		using DisplayTextSetIterConst = DisplayTextSet::const_iterator;
+        //		inline DisplayTextPtr makeDisplayText() { return std::make_shared<DisplayText>(); }
+		inline DisplayTextPtr makeDisplayText( types::XsString&& value ) { return std::make_shared<DisplayText>( std::move( value ) ); }
+		inline DisplayTextPtr makeDisplayText( const types::XsString& value ) { return std::make_shared<DisplayText>( value ); }
         //        class DisplayText : public ElementInterface        //        {
         //        public:
         //            DisplayText();
-        //            DisplayText( const types::XsString& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -4931,7 +4873,6 @@ namespace mx
         //            types::XsString myValue;
         //            DisplayTextAttributesPtr myAttributes;
         //        };
-        
         
         /**************** Tremolo ****************
          5181
@@ -5000,12 +4941,12 @@ namespace mx
 		using TremoloSetIter = TremoloSet::iterator;
 		using TremoloSetIterConst = TremoloSet::const_iterator;
 		inline TremoloPtr makeTremolo() { return std::make_shared<Tremolo>(); }
+		inline TremoloPtr makeTremolo( types::TremoloMarks&& value ) { return std::make_shared<Tremolo>( std::move( value ) ); }
+		inline TremoloPtr makeTremolo( const types::TremoloMarks& value ) { return std::make_shared<Tremolo>( value ); }
         class Tremolo : public ElementInterface
         {
         public:
-        public:
             Tremolo();
-            Tremolo( const types::TremoloMarks& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5017,7 +4958,6 @@ namespace mx
             void setValue( const types::TremoloMarks& value );
         private:
             types::TremoloMarks myValue;
-            TremoloAttributesPtr myAttributes;
         };
         
         
@@ -5073,12 +5013,12 @@ namespace mx
 		using OtherOrnamentSetIter = OtherOrnamentSet::iterator;
 		using OtherOrnamentSetIterConst = OtherOrnamentSet::const_iterator;
 		inline OtherOrnamentPtr makeOtherOrnament() { return std::make_shared<OtherOrnament>(); }
+		inline OtherOrnamentPtr makeOtherOrnament( types::XsString&& value ) { return std::make_shared<OtherOrnament>( std::move( value ) ); }
+		inline OtherOrnamentPtr makeOtherOrnament( const types::XsString& value ) { return std::make_shared<OtherOrnament>( value ); }
         class OtherOrnament : public ElementInterface
         {
         public:
-        public:
             OtherOrnament();
-            OtherOrnament( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5090,7 +5030,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherOrnamentAttributesPtr myAttributes;
         };
         
         
@@ -5179,17 +5118,18 @@ namespace mx
         //            bool hasPlacement;
         //        };
         //
-//		class AccidentalMark;
-//		using AccidentalMarkPtr = std::shared_ptr<AccidentalMark>;
-//		using AccidentalMarkUPtr = std::unique_ptr<AccidentalMark>;
-//		using AccidentalMarkSet = std::vector<AccidentalMarkPtr>;
-//		using AccidentalMarkSetIter = AccidentalMarkSet::iterator;
-//		using AccidentalMarkSetIterConst = AccidentalMarkSet::const_iterator;
-//		inline AccidentalMarkPtr makeAccidentalMark() { return std::make_shared<AccidentalMark>(); }
+        //		class AccidentalMark;
+        //		using AccidentalMarkPtr = std::shared_ptr<AccidentalMark>;
+        //		using AccidentalMarkUPtr = std::unique_ptr<AccidentalMark>;
+        //		using AccidentalMarkSet = std::vector<AccidentalMarkPtr>;
+        //		using AccidentalMarkSetIter = AccidentalMarkSet::iterator;
+        //		using AccidentalMarkSetIterConst = AccidentalMarkSet::const_iterator;
+        //		inline AccidentalMarkPtr makeAccidentalMark() { return std::make_shared<AccidentalMark>(); }
+		inline AccidentalMarkPtr makeAccidentalMark( types::AccidentalValue&& value ) { return std::make_shared<AccidentalMark>( std::move( value ) ); }
+		inline AccidentalMarkPtr makeAccidentalMark( const types::AccidentalValue& value ) { return std::make_shared<AccidentalMark>( value ); }
         //        class AccidentalMark : public ElementInterface        //        {
         //        public:
         //            AccidentalMark();
-        //            AccidentalMark( const types::AccidentalValue& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -5202,7 +5142,6 @@ namespace mx
         //            types::AccidentalValue myValue;
         //            AccidentalMarkAttributesPtr myAttributes;
         //        };
-        
         
         /**************** Fingering ****************
          3487, 5362
@@ -5255,17 +5194,18 @@ namespace mx
         //            bool hasPlacement;
         //        };
         //
-//		class Fingering;
-//		using FingeringPtr = std::shared_ptr<Fingering>;
-//		using FingeringUPtr = std::unique_ptr<Fingering>;
-//		using FingeringSet = std::vector<FingeringPtr>;
-//		using FingeringSetIter = FingeringSet::iterator;
-//		using FingeringSetIterConst = FingeringSet::const_iterator;
-//		inline FingeringPtr makeFingering() { return std::make_shared<Fingering>(); }
+        //		class Fingering;
+        //		using FingeringPtr = std::shared_ptr<Fingering>;
+        //		using FingeringUPtr = std::unique_ptr<Fingering>;
+        //		using FingeringSet = std::vector<FingeringPtr>;
+        //		using FingeringSetIter = FingeringSet::iterator;
+        //		using FingeringSetIterConst = FingeringSet::const_iterator;
+        //		inline FingeringPtr makeFingering() { return std::make_shared<Fingering>(); }
+		inline FingeringPtr makeFingering( types::XsString&& value ) { return std::make_shared<Fingering>( std::move( value ) ); }
+		inline FingeringPtr makeFingering( const types::XsString& value ) { return std::make_shared<Fingering>( value ); }
         //        class Fingering : public ElementInterface        //        {
         //        public:
         //            Fingering();
-        //            Fingering( const types::XsString& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -5278,7 +5218,6 @@ namespace mx
         //            types::XsString myValue;
         //            FingeringAttributesPtr myAttributes;
         //        };
-        
         
         /**************** Pluck ****************
          5365
@@ -5332,12 +5271,12 @@ namespace mx
 		using PluckSetIter = PluckSet::iterator;
 		using PluckSetIterConst = PluckSet::const_iterator;
 		inline PluckPtr makePluck() { return std::make_shared<Pluck>(); }
+		inline PluckPtr makePluck( types::XsString&& value ) { return std::make_shared<Pluck>( std::move( value ) ); }
+		inline PluckPtr makePluck( const types::XsString& value ) { return std::make_shared<Pluck>( value ); }
         class Pluck : public ElementInterface
         {
         public:
-        public:
             Pluck();
-            Pluck( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5349,7 +5288,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PluckAttributesPtr myAttributes;
         };
         
         
@@ -5388,17 +5326,18 @@ namespace mx
         //            bool hasFontWeight;
         //        };
         //
-//		class Fret;
-//		using FretPtr = std::shared_ptr<Fret>;
-//		using FretUPtr = std::unique_ptr<Fret>;
-//		using FretSet = std::vector<FretPtr>;
-//		using FretSetIter = FretSet::iterator;
-//		using FretSetIterConst = FretSet::const_iterator;
-//		inline FretPtr makeFret() { return std::make_shared<Fret>(); }
+        //		class Fret;
+        //		using FretPtr = std::shared_ptr<Fret>;
+        //		using FretUPtr = std::unique_ptr<Fret>;
+        //		using FretSet = std::vector<FretPtr>;
+        //		using FretSetIter = FretSet::iterator;
+        //		using FretSetIterConst = FretSet::const_iterator;
+        //		inline FretPtr makeFret() { return std::make_shared<Fret>(); }
+		inline FretPtr makeFret( types::NonNegativeInteger&& value ) { return std::make_shared<Fret>( std::move( value ) ); }
+		inline FretPtr makeFret( const types::NonNegativeInteger& value ) { return std::make_shared<Fret>( value ); }
         //        class Fret : public ElementInterface        //        {
         //        public:
         //            Fret();
-        //            Fret( const types::NonNegativeInteger& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -5411,7 +5350,6 @@ namespace mx
         //            types::NonNegativeInteger myValue;
         //            FretAttributesPtr myAttributes;
         //        };
-        
         
         /**************** HammerOn ****************
          5396
@@ -5471,12 +5409,12 @@ namespace mx
 		using HammerOnSetIter = HammerOnSet::iterator;
 		using HammerOnSetIterConst = HammerOnSet::const_iterator;
 		inline HammerOnPtr makeHammerOn() { return std::make_shared<HammerOn>(); }
+		inline HammerOnPtr makeHammerOn( types::XsString&& value ) { return std::make_shared<HammerOn>( std::move( value ) ); }
+		inline HammerOnPtr makeHammerOn( const types::XsString& value ) { return std::make_shared<HammerOn>( value ); }
         class HammerOn : public ElementInterface
         {
         public:
-        public:
             HammerOn();
-            HammerOn( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5488,7 +5426,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            HammerOnAttributesPtr myAttributes;
         };
         
         
@@ -5550,12 +5487,12 @@ namespace mx
 		using PullOffSetIter = PullOffSet::iterator;
 		using PullOffSetIterConst = PullOffSet::const_iterator;
 		inline PullOffPtr makePullOff() { return std::make_shared<PullOff>(); }
+		inline PullOffPtr makePullOff( types::XsString&& value ) { return std::make_shared<PullOff>( std::move( value ) ); }
+		inline PullOffPtr makePullOff( const types::XsString& value ) { return std::make_shared<PullOff>( value ); }
         class PullOff : public ElementInterface
         {
         public:
-        public:
             PullOff();
-            PullOff( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5567,7 +5504,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PullOffAttributesPtr myAttributes;
         };
         
         
@@ -5623,12 +5559,12 @@ namespace mx
 		using TapSetIter = TapSet::iterator;
 		using TapSetIterConst = TapSet::const_iterator;
 		inline TapPtr makeTap() { return std::make_shared<Tap>(); }
+		inline TapPtr makeTap( types::XsString&& value ) { return std::make_shared<Tap>( std::move( value ) ); }
+		inline TapPtr makeTap( const types::XsString& value ) { return std::make_shared<Tap>( value ); }
         class Tap : public ElementInterface
         {
         public:
-        public:
             Tap();
-            Tap( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5640,7 +5576,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            TapAttributesPtr myAttributes;
         };
         
         
@@ -5713,12 +5648,12 @@ namespace mx
 		using HandbellSetIter = HandbellSet::iterator;
 		using HandbellSetIterConst = HandbellSet::const_iterator;
 		inline HandbellPtr makeHandbell() { return std::make_shared<Handbell>(); }
+		inline HandbellPtr makeHandbell( types::HandbellValue&& value ) { return std::make_shared<Handbell>( std::move( value ) ); }
+		inline HandbellPtr makeHandbell( const types::HandbellValue& value ) { return std::make_shared<Handbell>( value ); }
         class Handbell : public ElementInterface
         {
         public:
-        public:
             Handbell();
-            Handbell( const types::HandbellValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5730,7 +5665,6 @@ namespace mx
             void setValue( const types::HandbellValue& value );
         private:
             types::HandbellValue myValue;
-            HandbellAttributesPtr myAttributes;
         };
         
         
@@ -5786,12 +5720,12 @@ namespace mx
 		using OtherTechnicalSetIter = OtherTechnicalSet::iterator;
 		using OtherTechnicalSetIterConst = OtherTechnicalSet::const_iterator;
 		inline OtherTechnicalPtr makeOtherTechnical() { return std::make_shared<OtherTechnical>(); }
+		inline OtherTechnicalPtr makeOtherTechnical( types::XsString&& value ) { return std::make_shared<OtherTechnical>( std::move( value ) ); }
+		inline OtherTechnicalPtr makeOtherTechnical( const types::XsString& value ) { return std::make_shared<OtherTechnical>( value ); }
         class OtherTechnical : public ElementInterface
         {
         public:
-        public:
             OtherTechnical();
-            OtherTechnical( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5803,7 +5737,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            OtherTechnicalAttributesPtr myAttributes;
         };
         
         
@@ -5849,12 +5782,12 @@ namespace mx
 		using TupletNumberSetIter = TupletNumberSet::iterator;
 		using TupletNumberSetIterConst = TupletNumberSet::const_iterator;
 		inline TupletNumberPtr makeTupletNumber() { return std::make_shared<TupletNumber>(); }
+		inline TupletNumberPtr makeTupletNumber( types::NonNegativeInteger&& value ) { return std::make_shared<TupletNumber>( std::move( value ) ); }
+		inline TupletNumberPtr makeTupletNumber( const types::NonNegativeInteger& value ) { return std::make_shared<TupletNumber>( value ); }
         class TupletNumber : public ElementInterface
         {
         public:
-        public:
             TupletNumber();
-            TupletNumber( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5866,7 +5799,6 @@ namespace mx
             void setValue( const types::NonNegativeInteger& value );
         private:
             types::NonNegativeInteger myValue;
-            TupletNumberAttributesPtr myAttributes;
         };
         
         
@@ -5932,12 +5864,12 @@ namespace mx
 		using TupletTypeSetIter = TupletTypeSet::iterator;
 		using TupletTypeSetIterConst = TupletTypeSet::const_iterator;
 		inline TupletTypePtr makeTupletType() { return std::make_shared<TupletType>(); }
+		inline TupletTypePtr makeTupletType( types::NoteTypeValue&& value ) { return std::make_shared<TupletType>( std::move( value ) ); }
+		inline TupletTypePtr makeTupletType( const types::NoteTypeValue& value ) { return std::make_shared<TupletType>( value ); }
         class TupletType : public ElementInterface
         {
         public:
-        public:
             TupletType();
-            TupletType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -5949,7 +5881,6 @@ namespace mx
             void setValue( const types::NoteTypeValue& value );
         private:
             types::NoteTypeValue myValue;
-            TupletTypeAttributesPtr myAttributes;
         };
         
         
@@ -6024,12 +5955,12 @@ namespace mx
 		using CreditWordsSetIter = CreditWordsSet::iterator;
 		using CreditWordsSetIterConst = CreditWordsSet::const_iterator;
 		inline CreditWordsPtr makeCreditWords() { return std::make_shared<CreditWords>(); }
+		inline CreditWordsPtr makeCreditWords( types::XsString&& value ) { return std::make_shared<CreditWords>( std::move( value ) ); }
+		inline CreditWordsPtr makeCreditWords( const types::XsString& value ) { return std::make_shared<CreditWords>( value ); }
         class CreditWords : public ElementInterface
         {
         public:
-        public:
             CreditWords();
-            CreditWords( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6041,7 +5972,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            CreditWordsAttributesPtr myAttributes;
         };
         
         
@@ -6109,17 +6039,18 @@ namespace mx
         //            bool hasEnclosure;
         //        };
         //
-//		class CreditWords;
-//		using CreditWordsPtr = std::shared_ptr<CreditWords>;
-//		using CreditWordsUPtr = std::unique_ptr<CreditWords>;
-//		using CreditWordsSet = std::vector<CreditWordsPtr>;
-//		using CreditWordsSetIter = CreditWordsSet::iterator;
-//		using CreditWordsSetIterConst = CreditWordsSet::const_iterator;
-//		inline CreditWordsPtr makeCreditWords() { return std::make_shared<CreditWords>(); }
+        //		class CreditWords;
+        //		using CreditWordsPtr = std::shared_ptr<CreditWords>;
+        //		using CreditWordsUPtr = std::unique_ptr<CreditWords>;
+        //		using CreditWordsSet = std::vector<CreditWordsPtr>;
+        //		using CreditWordsSetIter = CreditWordsSet::iterator;
+        //		using CreditWordsSetIterConst = CreditWordsSet::const_iterator;
+        //		inline CreditWordsPtr makeCreditWords() { return std::make_shared<CreditWords>(); }
+		inline CreditWordsPtr makeCreditWords( types::XsString&& value ) { return std::make_shared<CreditWords>( std::move( value ) ); }
+		inline CreditWordsPtr makeCreditWords( const types::XsString& value ) { return std::make_shared<CreditWords>( value ); }
         //        class CreditWords : public ElementInterface        //        {
         //        public:
         //            CreditWords();
-        //            CreditWords( const types::XsString& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -6132,7 +6063,6 @@ namespace mx
         //            types::XsString myValue;
         //            CreditWordsAttributesPtr myAttributes;
         //        };
-        
         
         /**************** GroupName ****************
          5803
@@ -6185,12 +6115,12 @@ namespace mx
 		using GroupNameSetIter = GroupNameSet::iterator;
 		using GroupNameSetIterConst = GroupNameSet::const_iterator;
 		inline GroupNamePtr makeGroupName() { return std::make_shared<GroupName>(); }
+		inline GroupNamePtr makeGroupName( types::XsString&& value ) { return std::make_shared<GroupName>( std::move( value ) ); }
+		inline GroupNamePtr makeGroupName( const types::XsString& value ) { return std::make_shared<GroupName>( value ); }
         class GroupName : public ElementInterface
         {
         public:
-        public:
             GroupName();
-            GroupName( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6202,7 +6132,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            GroupNameAttributesPtr myAttributes;
         };
         
         
@@ -6257,12 +6186,12 @@ namespace mx
 		using GroupAbbreviationSetIter = GroupAbbreviationSet::iterator;
 		using GroupAbbreviationSetIterConst = GroupAbbreviationSet::const_iterator;
 		inline GroupAbbreviationPtr makeGroupAbbreviation() { return std::make_shared<GroupAbbreviation>(); }
+		inline GroupAbbreviationPtr makeGroupAbbreviation( types::XsString&& value ) { return std::make_shared<GroupAbbreviation>( std::move( value ) ); }
+		inline GroupAbbreviationPtr makeGroupAbbreviation( const types::XsString& value ) { return std::make_shared<GroupAbbreviation>( value ); }
         class GroupAbbreviation : public ElementInterface
         {
         public:
-        public:
             GroupAbbreviation();
-            GroupAbbreviation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6274,7 +6203,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            GroupAbbreviationAttributesPtr myAttributes;
         };
         
         
@@ -6331,12 +6259,12 @@ namespace mx
 		using GroupSymbolSetIter = GroupSymbolSet::iterator;
 		using GroupSymbolSetIterConst = GroupSymbolSet::const_iterator;
 		inline GroupSymbolPtr makeGroupSymbol() { return std::make_shared<GroupSymbol>(); }
+		inline GroupSymbolPtr makeGroupSymbol( types::GroupSymbolValue&& value ) { return std::make_shared<GroupSymbol>( std::move( value ) ); }
+		inline GroupSymbolPtr makeGroupSymbol( const types::GroupSymbolValue& value ) { return std::make_shared<GroupSymbol>( value ); }
         class GroupSymbol : public ElementInterface
         {
         public:
-        public:
             GroupSymbol();
-            GroupSymbol( const types::GroupSymbolValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6348,7 +6276,6 @@ namespace mx
             void setValue( const types::GroupSymbolValue& value );
         private:
             types::GroupSymbolValue myValue;
-            GroupSymbolAttributesPtr myAttributes;
         };
         
         
@@ -6396,12 +6323,12 @@ namespace mx
 		using GroupBarlineSetIter = GroupBarlineSet::iterator;
 		using GroupBarlineSetIterConst = GroupBarlineSet::const_iterator;
 		inline GroupBarlinePtr makeGroupBarline() { return std::make_shared<GroupBarline>(); }
+		inline GroupBarlinePtr makeGroupBarline( types::GroupBarlineValue&& value ) { return std::make_shared<GroupBarline>( std::move( value ) ); }
+		inline GroupBarlinePtr makeGroupBarline( const types::GroupBarlineValue& value ) { return std::make_shared<GroupBarline>( value ); }
         class GroupBarline : public ElementInterface
         {
         public:
-        public:
             GroupBarline();
-            GroupBarline( const types::GroupBarlineValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6413,7 +6340,6 @@ namespace mx
             void setValue( const types::GroupBarlineValue& value );
         private:
             types::GroupBarlineValue myValue;
-            GroupBarlineAttributesPtr myAttributes;
         };
         
         
@@ -6470,12 +6396,12 @@ namespace mx
 		using PartNameSetIter = PartNameSet::iterator;
 		using PartNameSetIterConst = PartNameSet::const_iterator;
 		inline PartNamePtr makePartName() { return std::make_shared<PartName>(); }
+		inline PartNamePtr makePartName( types::XsString&& value ) { return std::make_shared<PartName>( std::move( value ) ); }
+		inline PartNamePtr makePartName( const types::XsString& value ) { return std::make_shared<PartName>( value ); }
         class PartName : public ElementInterface
         {
         public:
-        public:
             PartName();
-            PartName( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6487,7 +6413,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PartNameAttributesPtr myAttributes;
         };
         
         
@@ -6544,12 +6469,12 @@ namespace mx
 		using PartAbbreviationSetIter = PartAbbreviationSet::iterator;
 		using PartAbbreviationSetIterConst = PartAbbreviationSet::const_iterator;
 		inline PartAbbreviationPtr makePartAbbreviation() { return std::make_shared<PartAbbreviation>(); }
+		inline PartAbbreviationPtr makePartAbbreviation( types::XsString&& value ) { return std::make_shared<PartAbbreviation>( std::move( value ) ); }
+		inline PartAbbreviationPtr makePartAbbreviation( const types::XsString& value ) { return std::make_shared<PartAbbreviation>( value ); }
         class PartAbbreviation : public ElementInterface
         {
         public:
-        public:
             PartAbbreviation();
-            PartAbbreviation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6561,7 +6486,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            PartAbbreviationAttributesPtr myAttributes;
         };
         
         
@@ -6596,17 +6520,18 @@ namespace mx
         //            bool hasId;
         //        };
         //
-//		class MidiDevice;
-//		using MidiDevicePtr = std::shared_ptr<MidiDevice>;
-//		using MidiDeviceUPtr = std::unique_ptr<MidiDevice>;
-//		using MidiDeviceSet = std::vector<MidiDevicePtr>;
-//		using MidiDeviceSetIter = MidiDeviceSet::iterator;
-//		using MidiDeviceSetIterConst = MidiDeviceSet::const_iterator;
-//		inline MidiDevicePtr makeMidiDevice() { return std::make_shared<MidiDevice>(); }
+        //		class MidiDevice;
+        //		using MidiDevicePtr = std::shared_ptr<MidiDevice>;
+        //		using MidiDeviceUPtr = std::unique_ptr<MidiDevice>;
+        //		using MidiDeviceSet = std::vector<MidiDevicePtr>;
+        //		using MidiDeviceSetIter = MidiDeviceSet::iterator;
+        //		using MidiDeviceSetIterConst = MidiDeviceSet::const_iterator;
+        //		inline MidiDevicePtr makeMidiDevice() { return std::make_shared<MidiDevice>(); }
+		inline MidiDevicePtr makeMidiDevice( types::XsString&& value ) { return std::make_shared<MidiDevice>( std::move( value ) ); }
+		inline MidiDevicePtr makeMidiDevice( const types::XsString& value ) { return std::make_shared<MidiDevice>( value ); }
         //        class MidiDevice : public ElementInterface        //        {
         //        public:
         //            MidiDevice();
-        //            MidiDevice( const types::XsString& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -6619,7 +6544,6 @@ namespace mx
         //            types::XsString myValue;
         //            MidiDeviceAttributesPtr myAttributes;
         //        };
-        
         
         /**************** Footnote ****************
          6049
@@ -6692,12 +6616,12 @@ namespace mx
 		using FootnoteSetIter = FootnoteSet::iterator;
 		using FootnoteSetIterConst = FootnoteSet::const_iterator;
 		inline FootnotePtr makeFootnote() { return std::make_shared<Footnote>(); }
+		inline FootnotePtr makeFootnote( types::XsString&& value ) { return std::make_shared<Footnote>( std::move( value ) ); }
+		inline FootnotePtr makeFootnote( const types::XsString& value ) { return std::make_shared<Footnote>( value ); }
         class Footnote : public ElementInterface
         {
         public:
-        public:
             Footnote();
-            Footnote( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6709,7 +6633,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            FootnoteAttributesPtr myAttributes;
         };
         
         
@@ -6755,12 +6678,12 @@ namespace mx
 		using LevelSetIter = LevelSet::iterator;
 		using LevelSetIterConst = LevelSet::const_iterator;
 		inline LevelPtr makeLevel() { return std::make_shared<Level>(); }
+		inline LevelPtr makeLevel( types::XsString&& value ) { return std::make_shared<Level>( std::move( value ) ); }
+		inline LevelPtr makeLevel( const types::XsString& value ) { return std::make_shared<Level>( value ); }
         class Level : public ElementInterface
         {
         public:
-        public:
             Level();
-            Level( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6772,7 +6695,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            LevelAttributesPtr myAttributes;
         };
         
         
@@ -6816,12 +6738,12 @@ namespace mx
 		using CancelSetIter = CancelSet::iterator;
 		using CancelSetIterConst = CancelSet::const_iterator;
 		inline CancelPtr makeCancel() { return std::make_shared<Cancel>(); }
+		inline CancelPtr makeCancel( types::FifthsValue&& value ) { return std::make_shared<Cancel>( std::move( value ) ); }
+		inline CancelPtr makeCancel( const types::FifthsValue& value ) { return std::make_shared<Cancel>( value ); }
         class Cancel : public ElementInterface
         {
         public:
-        public:
             Cancel();
-            Cancel( const types::FifthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6833,7 +6755,6 @@ namespace mx
             void setValue( const types::FifthsValue& value );
         private:
             types::FifthsValue myValue;
-            CancelAttributesPtr myAttributes;
         };
         
         
@@ -6886,12 +6807,12 @@ namespace mx
 		using FunctionSetIter = FunctionSet::iterator;
 		using FunctionSetIterConst = FunctionSet::const_iterator;
 		inline FunctionPtr makeFunction() { return std::make_shared<Function>(); }
+		inline FunctionPtr makeFunction( types::XsString&& value ) { return std::make_shared<Function>( std::move( value ) ); }
+		inline FunctionPtr makeFunction( const types::XsString& value ) { return std::make_shared<Function>( value ); }
         class Function : public ElementInterface
         {
         public:
-        public:
             Function();
-            Function( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -6903,7 +6824,6 @@ namespace mx
             void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
-            FunctionAttributesPtr myAttributes;
         };
         
         
@@ -7071,12 +6991,12 @@ namespace mx
 		using KindSetIter = KindSet::iterator;
 		using KindSetIterConst = KindSet::const_iterator;
 		inline KindPtr makeKind() { return std::make_shared<Kind>(); }
+		inline KindPtr makeKind( types::KindValue&& value ) { return std::make_shared<Kind>( std::move( value ) ); }
+		inline KindPtr makeKind( const types::KindValue& value ) { return std::make_shared<Kind>( value ); }
         class Kind : public ElementInterface
         {
         public:
-        public:
             Kind();
-            Kind( const types::KindValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7088,7 +7008,6 @@ namespace mx
             void setValue( const types::KindValue& value );
         private:
             types::KindValue myValue;
-            KindAttributesPtr myAttributes;
         };
         
         
@@ -7141,12 +7060,12 @@ namespace mx
 		using InversionSetIter = InversionSet::iterator;
 		using InversionSetIterConst = InversionSet::const_iterator;
 		inline InversionPtr makeInversion() { return std::make_shared<Inversion>(); }
+		inline InversionPtr makeInversion( types::NonNegativeInteger&& value ) { return std::make_shared<Inversion>( std::move( value ) ); }
+		inline InversionPtr makeInversion( const types::NonNegativeInteger& value ) { return std::make_shared<Inversion>( value ); }
         class Inversion : public ElementInterface
         {
         public:
-        public:
             Inversion();
-            Inversion( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7158,7 +7077,6 @@ namespace mx
             void setValue( const types::NonNegativeInteger& value );
         private:
             types::NonNegativeInteger myValue;
-            InversionAttributesPtr myAttributes;
         };
         
         /***************************************************************************************************************************
@@ -7201,12 +7119,12 @@ namespace mx
 		using MidiChannelSetIter = MidiChannelSet::iterator;
 		using MidiChannelSetIterConst = MidiChannelSet::const_iterator;
 		inline MidiChannelPtr makeMidiChannel() { return std::make_shared<MidiChannel>(); }
+		inline MidiChannelPtr makeMidiChannel( types::Midi16&& value ) { return std::make_shared<MidiChannel>( std::move( value ) ); }
+		inline MidiChannelPtr makeMidiChannel( const types::Midi16& value ) { return std::make_shared<MidiChannel>( value ); }
         class MidiChannel : public ElementInterface
         {
         public:
-        public:
             MidiChannel();
-            MidiChannel( const types::Midi16& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7217,7 +7135,6 @@ namespace mx
         private:
             types::Midi16 myValue;
         };
-        
         
         /**************** MidiName ****************
          2463
@@ -7232,12 +7149,12 @@ namespace mx
 		using MidiNameSetIter = MidiNameSet::iterator;
 		using MidiNameSetIterConst = MidiNameSet::const_iterator;
 		inline MidiNamePtr makeMidiName() { return std::make_shared<MidiName>(); }
+		inline MidiNamePtr makeMidiName( types::XsString&& value ) { return std::make_shared<MidiName>( std::move( value ) ); }
+		inline MidiNamePtr makeMidiName( const types::XsString& value ) { return std::make_shared<MidiName>( value ); }
         class MidiName : public ElementInterface
         {
         public:
-        public:
             MidiName();
-            MidiName( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7248,7 +7165,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** MidiBank ****************
          2469
@@ -7279,12 +7195,12 @@ namespace mx
 		using MidiBankSetIter = MidiBankSet::iterator;
 		using MidiBankSetIterConst = MidiBankSet::const_iterator;
 		inline MidiBankPtr makeMidiBank() { return std::make_shared<MidiBank>(); }
+		inline MidiBankPtr makeMidiBank( types::Midi16384&& value ) { return std::make_shared<MidiBank>( std::move( value ) ); }
+		inline MidiBankPtr makeMidiBank( const types::Midi16384& value ) { return std::make_shared<MidiBank>( value ); }
         class MidiBank : public ElementInterface
         {
         public:
-        public:
             MidiBank();
-            MidiBank( const types::Midi16384& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7295,7 +7211,6 @@ namespace mx
         private:
             types::Midi16384 myValue;
         };
-        
         
         /**************** MidiProgram ****************
          2475
@@ -7326,12 +7241,12 @@ namespace mx
 		using MidiProgramSetIter = MidiProgramSet::iterator;
 		using MidiProgramSetIterConst = MidiProgramSet::const_iterator;
 		inline MidiProgramPtr makeMidiProgram() { return std::make_shared<MidiProgram>(); }
+		inline MidiProgramPtr makeMidiProgram( types::Midi128&& value ) { return std::make_shared<MidiProgram>( std::move( value ) ); }
+		inline MidiProgramPtr makeMidiProgram( const types::Midi128& value ) { return std::make_shared<MidiProgram>( value ); }
         class MidiProgram : public ElementInterface
         {
         public:
-        public:
             MidiProgram();
-            MidiProgram( const types::Midi128& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7342,7 +7257,6 @@ namespace mx
         private:
             types::Midi128 myValue;
         };
-        
         
         /**************** MidiUnpitched ****************
          2481
@@ -7373,12 +7287,12 @@ namespace mx
 		using MidiUnpitchedSetIter = MidiUnpitchedSet::iterator;
 		using MidiUnpitchedSetIterConst = MidiUnpitchedSet::const_iterator;
 		inline MidiUnpitchedPtr makeMidiUnpitched() { return std::make_shared<MidiUnpitched>(); }
+		inline MidiUnpitchedPtr makeMidiUnpitched( types::Midi128&& value ) { return std::make_shared<MidiUnpitched>( std::move( value ) ); }
+		inline MidiUnpitchedPtr makeMidiUnpitched( const types::Midi128& value ) { return std::make_shared<MidiUnpitched>( value ); }
         class MidiUnpitched : public ElementInterface
         {
         public:
-        public:
             MidiUnpitched();
-            MidiUnpitched( const types::Midi128& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7389,7 +7303,6 @@ namespace mx
         private:
             types::Midi128 myValue;
         };
-        
         
         /**************** Volume ****************
          2487
@@ -7420,12 +7333,12 @@ namespace mx
 		using VolumeSetIter = VolumeSet::iterator;
 		using VolumeSetIterConst = VolumeSet::const_iterator;
 		inline VolumePtr makeVolume() { return std::make_shared<Volume>(); }
+		inline VolumePtr makeVolume( types::Percent&& value ) { return std::make_shared<Volume>( std::move( value ) ); }
+		inline VolumePtr makeVolume( const types::Percent& value ) { return std::make_shared<Volume>( value ); }
         class Volume : public ElementInterface
         {
         public:
-        public:
             Volume();
-            Volume( const types::Percent& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7436,7 +7349,6 @@ namespace mx
         private:
             types::Percent myValue;
         };
-        
         
         /**************** Pan ****************
          2493
@@ -7467,12 +7379,12 @@ namespace mx
 		using PanSetIter = PanSet::iterator;
 		using PanSetIterConst = PanSet::const_iterator;
 		inline PanPtr makePan() { return std::make_shared<Pan>(); }
+		inline PanPtr makePan( types::RotationDegrees&& value ) { return std::make_shared<Pan>( std::move( value ) ); }
+		inline PanPtr makePan( const types::RotationDegrees& value ) { return std::make_shared<Pan>( value ); }
         class Pan : public ElementInterface
         {
         public:
-        public:
             Pan();
-            Pan( const types::RotationDegrees& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7483,7 +7395,6 @@ namespace mx
         private:
             types::RotationDegrees myValue;
         };
-        
         
         /**************** Elevation ****************
          2499
@@ -7514,12 +7425,12 @@ namespace mx
 		using ElevationSetIter = ElevationSet::iterator;
 		using ElevationSetIterConst = ElevationSet::const_iterator;
 		inline ElevationPtr makeElevation() { return std::make_shared<Elevation>(); }
+		inline ElevationPtr makeElevation( types::RotationDegrees&& value ) { return std::make_shared<Elevation>( std::move( value ) ); }
+		inline ElevationPtr makeElevation( const types::RotationDegrees& value ) { return std::make_shared<Elevation>( value ); }
         class Elevation : public ElementInterface
         {
         public:
-        public:
             Elevation();
-            Elevation( const types::RotationDegrees& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7530,7 +7441,6 @@ namespace mx
         private:
             types::RotationDegrees myValue;
         };
-        
         
         /**************** Ipa ****************
          2544
@@ -7545,12 +7455,12 @@ namespace mx
 		using IpaSetIter = IpaSet::iterator;
 		using IpaSetIterConst = IpaSet::const_iterator;
 		inline IpaPtr makeIpa() { return std::make_shared<Ipa>(); }
+		inline IpaPtr makeIpa( types::XsString&& value ) { return std::make_shared<Ipa>( std::move( value ) ); }
+		inline IpaPtr makeIpa( const types::XsString& value ) { return std::make_shared<Ipa>( value ); }
         class Ipa : public ElementInterface
         {
         public:
-        public:
             Ipa();
-            Ipa( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7561,7 +7471,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Mute ****************
          2549
@@ -7618,12 +7527,12 @@ namespace mx
 		using MuteSetIter = MuteSet::iterator;
 		using MuteSetIterConst = MuteSet::const_iterator;
 		inline MutePtr makeMute() { return std::make_shared<Mute>(); }
+		inline MutePtr makeMute( types::MuteEnum&& value ) { return std::make_shared<Mute>( std::move( value ) ); }
+		inline MutePtr makeMute( const types::MuteEnum& value ) { return std::make_shared<Mute>( value ); }
         class Mute : public ElementInterface
         {
         public:
-        public:
             Mute();
-            Mute( const types::MuteEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7634,7 +7543,6 @@ namespace mx
         private:
             types::MuteEnum myValue;
         };
-        
         
         /**************** SemiPitched ****************
          2552
@@ -7673,12 +7581,12 @@ namespace mx
 		using SemiPitchedSetIter = SemiPitchedSet::iterator;
 		using SemiPitchedSetIterConst = SemiPitchedSet::const_iterator;
 		inline SemiPitchedPtr makeSemiPitched() { return std::make_shared<SemiPitched>(); }
+		inline SemiPitchedPtr makeSemiPitched( types::SemiPitchedEnum&& value ) { return std::make_shared<SemiPitched>( std::move( value ) ); }
+		inline SemiPitchedPtr makeSemiPitched( const types::SemiPitchedEnum& value ) { return std::make_shared<SemiPitched>( value ); }
         class SemiPitched : public ElementInterface
         {
         public:
-        public:
             SemiPitched();
-            SemiPitched( const types::SemiPitchedEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7689,7 +7597,6 @@ namespace mx
         private:
             types::SemiPitchedEnum myValue;
         };
-        
         
         /**************** Divisions ****************
          2608
@@ -7718,12 +7625,12 @@ namespace mx
 		using DivisionsSetIter = DivisionsSet::iterator;
 		using DivisionsSetIterConst = DivisionsSet::const_iterator;
 		inline DivisionsPtr makeDivisions() { return std::make_shared<Divisions>(); }
+		inline DivisionsPtr makeDivisions( types::PositiveDivisionsValue&& value ) { return std::make_shared<Divisions>( std::move( value ) ); }
+		inline DivisionsPtr makeDivisions( const types::PositiveDivisionsValue& value ) { return std::make_shared<Divisions>( value ); }
         class Divisions : public ElementInterface
         {
         public:
-        public:
             Divisions();
-            Divisions( const types::PositiveDivisionsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7734,7 +7641,6 @@ namespace mx
         private:
             types::PositiveDivisionsValue myValue;
         };
-        
         
         /**************** Staves ****************
          2628
@@ -7749,12 +7655,12 @@ namespace mx
 		using StavesSetIter = StavesSet::iterator;
 		using StavesSetIterConst = StavesSet::const_iterator;
 		inline StavesPtr makeStaves() { return std::make_shared<Staves>(); }
+		inline StavesPtr makeStaves( types::NonNegativeInteger&& value ) { return std::make_shared<Staves>( std::move( value ) ); }
+		inline StavesPtr makeStaves( const types::NonNegativeInteger& value ) { return std::make_shared<Staves>( value ); }
         class Staves : public ElementInterface
         {
         public:
-        public:
             Staves();
-            Staves( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7765,7 +7671,6 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
         };
-        
         
         /**************** Instruments ****************
          2640
@@ -7780,12 +7685,12 @@ namespace mx
 		using InstrumentsSetIter = InstrumentsSet::iterator;
 		using InstrumentsSetIterConst = InstrumentsSet::const_iterator;
 		inline InstrumentsPtr makeInstruments() { return std::make_shared<Instruments>(); }
+		inline InstrumentsPtr makeInstruments( types::NonNegativeInteger&& value ) { return std::make_shared<Instruments>( std::move( value ) ); }
+		inline InstrumentsPtr makeInstruments( const types::NonNegativeInteger& value ) { return std::make_shared<Instruments>( value ); }
         class Instruments : public ElementInterface
         {
         public:
-        public:
             Instruments();
-            Instruments( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7796,7 +7701,6 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
         };
-        
         
         /**************** Sign ****************
          2720
@@ -7837,12 +7741,12 @@ namespace mx
 		using SignSetIter = SignSet::iterator;
 		using SignSetIterConst = SignSet::const_iterator;
 		inline SignPtr makeSign() { return std::make_shared<Sign>(); }
+		inline SignPtr makeSign( types::ClefSign&& value ) { return std::make_shared<Sign>( std::move( value ) ); }
+		inline SignPtr makeSign( const types::ClefSign& value ) { return std::make_shared<Sign>( value ); }
         class Sign : public ElementInterface
         {
         public:
-        public:
             Sign();
-            Sign( const types::ClefSign& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7853,7 +7757,6 @@ namespace mx
         private:
             types::ClefSign myValue;
         };
-        
         
         /**************** Line ****************
          2725
@@ -7878,12 +7781,12 @@ namespace mx
 		using LineSetIter = LineSet::iterator;
 		using LineSetIterConst = LineSet::const_iterator;
 		inline LinePtr makeLine() { return std::make_shared<Line>(); }
+		inline LinePtr makeLine( types::StaffLine&& value ) { return std::make_shared<Line>( std::move( value ) ); }
+		inline LinePtr makeLine( const types::StaffLine& value ) { return std::make_shared<Line>( value ); }
         class Line : public ElementInterface
         {
         public:
-        public:
             Line();
-            Line( const types::StaffLine& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7894,7 +7797,6 @@ namespace mx
         private:
             types::StaffLine myValue;
         };
-        
         
         /**************** ClefOctaveChange ****************
          2731
@@ -7909,12 +7811,12 @@ namespace mx
 		using ClefOctaveChangeSetIter = ClefOctaveChangeSet::iterator;
 		using ClefOctaveChangeSetIterConst = ClefOctaveChangeSet::const_iterator;
 		inline ClefOctaveChangePtr makeClefOctaveChange() { return std::make_shared<ClefOctaveChange>(); }
+		inline ClefOctaveChangePtr makeClefOctaveChange( types::Integer&& value ) { return std::make_shared<ClefOctaveChange>( std::move( value ) ); }
+		inline ClefOctaveChangePtr makeClefOctaveChange( const types::Integer& value ) { return std::make_shared<ClefOctaveChange>( value ); }
         class ClefOctaveChange : public ElementInterface
         {
         public:
-        public:
             ClefOctaveChange();
-            ClefOctaveChange( const types::Integer& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7925,7 +7827,6 @@ namespace mx
         private:
             types::Integer myValue;
         };
-        
         
         /**************** TimeRelation ****************
          2758
@@ -7964,12 +7865,12 @@ namespace mx
 		using TimeRelationSetIter = TimeRelationSet::iterator;
 		using TimeRelationSetIterConst = TimeRelationSet::const_iterator;
 		inline TimeRelationPtr makeTimeRelation() { return std::make_shared<TimeRelation>(); }
+		inline TimeRelationPtr makeTimeRelation( types::TimeRelationEnum&& value ) { return std::make_shared<TimeRelation>( std::move( value ) ); }
+		inline TimeRelationPtr makeTimeRelation( const types::TimeRelationEnum& value ) { return std::make_shared<TimeRelation>( value ); }
         class TimeRelation : public ElementInterface
         {
         public:
-        public:
             TimeRelation();
-            TimeRelation( const types::TimeRelationEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -7980,7 +7881,6 @@ namespace mx
         private:
             types::TimeRelationEnum myValue;
         };
-        
         
         /**************** StaffType ****************
          2898
@@ -8017,12 +7917,12 @@ namespace mx
 		using StaffTypeSetIter = StaffTypeSet::iterator;
 		using StaffTypeSetIterConst = StaffTypeSet::const_iterator;
 		inline StaffTypePtr makeStaffType() { return std::make_shared<StaffType>(); }
+		inline StaffTypePtr makeStaffType( types::StaffTypeEnum&& value ) { return std::make_shared<StaffType>( std::move( value ) ); }
+		inline StaffTypePtr makeStaffType( const types::StaffTypeEnum& value ) { return std::make_shared<StaffType>( value ); }
         class StaffType : public ElementInterface
         {
         public:
-        public:
             StaffType();
-            StaffType( const types::StaffTypeEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8033,7 +7933,6 @@ namespace mx
         private:
             types::StaffTypeEnum myValue;
         };
-        
         
         /**************** StaffLines ****************
          2902
@@ -8048,12 +7947,12 @@ namespace mx
 		using StaffLinesSetIter = StaffLinesSet::iterator;
 		using StaffLinesSetIterConst = StaffLinesSet::const_iterator;
 		inline StaffLinesPtr makeStaffLines() { return std::make_shared<StaffLines>(); }
+		inline StaffLinesPtr makeStaffLines( types::NonNegativeInteger&& value ) { return std::make_shared<StaffLines>( std::move( value ) ); }
+		inline StaffLinesPtr makeStaffLines( const types::NonNegativeInteger& value ) { return std::make_shared<StaffLines>( value ); }
         class StaffLines : public ElementInterface
         {
         public:
-        public:
             StaffLines();
-            StaffLines( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8064,7 +7963,6 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
         };
-        
         
         /**************** Capo ****************
          2913
@@ -8079,12 +7977,12 @@ namespace mx
 		using CapoSetIter = CapoSet::iterator;
 		using CapoSetIterConst = CapoSet::const_iterator;
 		inline CapoPtr makeCapo() { return std::make_shared<Capo>(); }
+		inline CapoPtr makeCapo( types::NonNegativeInteger&& value ) { return std::make_shared<Capo>( std::move( value ) ); }
+		inline CapoPtr makeCapo( const types::NonNegativeInteger& value ) { return std::make_shared<Capo>( value ); }
         class Capo : public ElementInterface
         {
         public:
-        public:
             Capo();
-            Capo( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8095,7 +7993,6 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
         };
-        
         
         /**************** StaffSize ****************
          2919
@@ -8124,12 +8021,12 @@ namespace mx
 		using StaffSizeSetIter = StaffSizeSet::iterator;
 		using StaffSizeSetIterConst = StaffSizeSet::const_iterator;
 		inline StaffSizePtr makeStaffSize() { return std::make_shared<StaffSize>(); }
+		inline StaffSizePtr makeStaffSize( types::NonNegativeDecimal&& value ) { return std::make_shared<StaffSize>( std::move( value ) ); }
+		inline StaffSizePtr makeStaffSize( const types::NonNegativeDecimal& value ) { return std::make_shared<StaffSize>( value ); }
         class StaffSize : public ElementInterface
         {
         public:
-        public:
             StaffSize();
-            StaffSize( const types::NonNegativeDecimal& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8140,7 +8037,6 @@ namespace mx
         private:
             types::NonNegativeDecimal myValue;
         };
-        
         
         /**************** SenzaMisura ****************
          2957
@@ -8155,12 +8051,12 @@ namespace mx
 		using SenzaMisuraSetIter = SenzaMisuraSet::iterator;
 		using SenzaMisuraSetIterConst = SenzaMisuraSet::const_iterator;
 		inline SenzaMisuraPtr makeSenzaMisura() { return std::make_shared<SenzaMisura>(); }
+		inline SenzaMisuraPtr makeSenzaMisura( types::XsString&& value ) { return std::make_shared<SenzaMisura>( std::move( value ) ); }
+		inline SenzaMisuraPtr makeSenzaMisura( const types::XsString& value ) { return std::make_shared<SenzaMisura>( value ); }
         class SenzaMisura : public ElementInterface
         {
         public:
-        public:
             SenzaMisura();
-            SenzaMisura( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8171,7 +8067,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Diatonic ****************
          2980
@@ -8186,12 +8081,12 @@ namespace mx
 		using DiatonicSetIter = DiatonicSet::iterator;
 		using DiatonicSetIterConst = DiatonicSet::const_iterator;
 		inline DiatonicPtr makeDiatonic() { return std::make_shared<Diatonic>(); }
+		inline DiatonicPtr makeDiatonic( types::Integer&& value ) { return std::make_shared<Diatonic>( std::move( value ) ); }
+		inline DiatonicPtr makeDiatonic( const types::Integer& value ) { return std::make_shared<Diatonic>( value ); }
         class Diatonic : public ElementInterface
         {
         public:
-        public:
             Diatonic();
-            Diatonic( const types::Integer& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8202,7 +8097,6 @@ namespace mx
         private:
             types::Integer myValue;
         };
-        
         
         /**************** Chromatic ****************
          2986
@@ -8227,12 +8121,12 @@ namespace mx
 		using ChromaticSetIter = ChromaticSet::iterator;
 		using ChromaticSetIterConst = ChromaticSet::const_iterator;
 		inline ChromaticPtr makeChromatic() { return std::make_shared<Chromatic>(); }
+		inline ChromaticPtr makeChromatic( types::Semitones&& value ) { return std::make_shared<Chromatic>( std::move( value ) ); }
+		inline ChromaticPtr makeChromatic( const types::Semitones& value ) { return std::make_shared<Chromatic>( value ); }
         class Chromatic : public ElementInterface
         {
         public:
-        public:
             Chromatic();
-            Chromatic( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8243,7 +8137,6 @@ namespace mx
         private:
             types::Semitones myValue;
         };
-        
         
         /**************** OctaveChange ****************
          2991
@@ -8258,12 +8151,12 @@ namespace mx
 		using OctaveChangeSetIter = OctaveChangeSet::iterator;
 		using OctaveChangeSetIterConst = OctaveChangeSet::const_iterator;
 		inline OctaveChangePtr makeOctaveChange() { return std::make_shared<OctaveChange>(); }
+		inline OctaveChangePtr makeOctaveChange( types::Integer&& value ) { return std::make_shared<OctaveChange>( std::move( value ) ); }
+		inline OctaveChangePtr makeOctaveChange( const types::Integer& value ) { return std::make_shared<OctaveChange>( value ); }
         class OctaveChange : public ElementInterface
         {
         public:
-        public:
             OctaveChange();
-            OctaveChange( const types::Integer& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8274,7 +8167,6 @@ namespace mx
         private:
             types::Integer myValue;
         };
-        
         
         /**************** AccordionMiddle ****************
          3126
@@ -8305,12 +8197,12 @@ namespace mx
 		using AccordionMiddleSetIter = AccordionMiddleSet::iterator;
 		using AccordionMiddleSetIterConst = AccordionMiddleSet::const_iterator;
 		inline AccordionMiddlePtr makeAccordionMiddle() { return std::make_shared<AccordionMiddle>(); }
+		inline AccordionMiddlePtr makeAccordionMiddle( types::AccordionMiddleValue&& value ) { return std::make_shared<AccordionMiddle>( std::move( value ) ); }
+		inline AccordionMiddlePtr makeAccordionMiddle( const types::AccordionMiddleValue& value ) { return std::make_shared<AccordionMiddle>( value ); }
         class AccordionMiddle : public ElementInterface
         {
         public:
-        public:
             AccordionMiddle();
-            AccordionMiddle( const types::AccordionMiddleValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8321,7 +8213,6 @@ namespace mx
         private:
             types::AccordionMiddleValue myValue;
         };
-        
         
         /**************** FrameStrings ****************
          3441
@@ -8336,12 +8227,12 @@ namespace mx
 		using FrameStringsSetIter = FrameStringsSet::iterator;
 		using FrameStringsSetIterConst = FrameStringsSet::const_iterator;
 		inline FrameStringsPtr makeFrameStrings() { return std::make_shared<FrameStrings>(); }
+		inline FrameStringsPtr makeFrameStrings( types::PositiveInteger&& value ) { return std::make_shared<FrameStrings>( std::move( value ) ); }
+		inline FrameStringsPtr makeFrameStrings( const types::PositiveInteger& value ) { return std::make_shared<FrameStrings>( value ); }
         class FrameStrings : public ElementInterface
         {
         public:
-        public:
             FrameStrings();
-            FrameStrings( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8352,7 +8243,6 @@ namespace mx
         private:
             types::PositiveInteger myValue;
         };
-        
         
         /**************** FrameFrets ****************
          3446
@@ -8367,12 +8257,12 @@ namespace mx
 		using FrameFretsSetIter = FrameFretsSet::iterator;
 		using FrameFretsSetIterConst = FrameFretsSet::const_iterator;
 		inline FrameFretsPtr makeFrameFrets() { return std::make_shared<FrameFrets>(); }
+		inline FrameFretsPtr makeFrameFrets( types::PositiveInteger&& value ) { return std::make_shared<FrameFrets>( std::move( value ) ); }
+		inline FrameFretsPtr makeFrameFrets( const types::PositiveInteger& value ) { return std::make_shared<FrameFrets>( value ); }
         class FrameFrets : public ElementInterface
         {
         public:
-        public:
             FrameFrets();
-            FrameFrets( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8383,7 +8273,6 @@ namespace mx
         private:
             types::PositiveInteger myValue;
         };
-        
         
         /**************** MetronomeRelation ****************
          3633
@@ -8398,6 +8287,8 @@ namespace mx
 		using MetronomeRelationSetIter = MetronomeRelationSet::iterator;
 		using MetronomeRelationSetIterConst = MetronomeRelationSet::const_iterator;
 		inline MetronomeRelationPtr makeMetronomeRelation() { return std::make_shared<MetronomeRelation>(); }
+		inline MetronomeRelationPtr makeMetronomeRelation( types::XsString&& value ) { return std::make_shared<MetronomeRelation>( std::move( value ) ); }
+		inline MetronomeRelationPtr makeMetronomeRelation( const types::XsString& value ) { return std::make_shared<MetronomeRelation>( value ); }
         class MetronomeRelation : public ElementInterface
         {
         public:
@@ -8407,14 +8298,12 @@ namespace mx
             // value will always be "equals"
         public:
             MetronomeRelation();
-            MetronomeRelation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             types::XsString getValue() const;
-            void setValue( const types::XsString& value );
         private:
             types::XsString myValue;
         };
@@ -8473,12 +8362,12 @@ namespace mx
 		using MetronomeTypeSetIter = MetronomeTypeSet::iterator;
 		using MetronomeTypeSetIterConst = MetronomeTypeSet::const_iterator;
 		inline MetronomeTypePtr makeMetronomeType() { return std::make_shared<MetronomeType>(); }
+		inline MetronomeTypePtr makeMetronomeType( types::NoteTypeValue&& value ) { return std::make_shared<MetronomeType>( std::move( value ) ); }
+		inline MetronomeTypePtr makeMetronomeType( const types::NoteTypeValue& value ) { return std::make_shared<MetronomeType>( value ); }
         class MetronomeType : public ElementInterface
         {
         public:
-        public:
             MetronomeType();
-            MetronomeType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8489,7 +8378,6 @@ namespace mx
         private:
             types::NoteTypeValue myValue;
         };
-        
         
         /**************** PedalStep ****************
          3764
@@ -8530,12 +8418,12 @@ namespace mx
 		using PedalStepSetIter = PedalStepSet::iterator;
 		using PedalStepSetIterConst = PedalStepSet::const_iterator;
 		inline PedalStepPtr makePedalStep() { return std::make_shared<PedalStep>(); }
+		inline PedalStepPtr makePedalStep( types::StepEnum&& value ) { return std::make_shared<PedalStep>( std::move( value ) ); }
+		inline PedalStepPtr makePedalStep( const types::StepEnum& value ) { return std::make_shared<PedalStep>( value ); }
         class PedalStep : public ElementInterface
         {
         public:
-        public:
             PedalStep();
-            PedalStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8546,7 +8434,6 @@ namespace mx
         private:
             types::StepEnum myValue;
         };
-        
         
         /**************** PedalAlter ****************
          3769
@@ -8571,12 +8458,12 @@ namespace mx
 		using PedalAlterSetIter = PedalAlterSet::iterator;
 		using PedalAlterSetIterConst = PedalAlterSet::const_iterator;
 		inline PedalAlterPtr makePedalAlter() { return std::make_shared<PedalAlter>(); }
+		inline PedalAlterPtr makePedalAlter( types::Semitones&& value ) { return std::make_shared<PedalAlter>( std::move( value ) ); }
+		inline PedalAlterPtr makePedalAlter( const types::Semitones& value ) { return std::make_shared<PedalAlter>( value ); }
         class PedalAlter : public ElementInterface
         {
         public:
-        public:
             PedalAlter();
-            PedalAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8587,7 +8474,6 @@ namespace mx
         private:
             types::Semitones myValue;
         };
-        
         
         /**************** Glass ****************
          3788
@@ -8616,12 +8502,12 @@ namespace mx
 		using GlassSetIter = GlassSet::iterator;
 		using GlassSetIterConst = GlassSet::const_iterator;
 		inline GlassPtr makeGlass() { return std::make_shared<Glass>(); }
+		inline GlassPtr makeGlass( types::GlassEnum&& value ) { return std::make_shared<Glass>( std::move( value ) ); }
+		inline GlassPtr makeGlass( const types::GlassEnum& value ) { return std::make_shared<Glass>( value ); }
         class Glass : public ElementInterface
         {
         public:
-        public:
             Glass();
-            Glass( const types::GlassEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8632,7 +8518,6 @@ namespace mx
         private:
             types::GlassEnum myValue;
         };
-        
         
         /**************** Metal ****************
          3791
@@ -8705,12 +8590,12 @@ namespace mx
 		using MetalSetIter = MetalSet::iterator;
 		using MetalSetIterConst = MetalSet::const_iterator;
 		inline MetalPtr makeMetal() { return std::make_shared<Metal>(); }
+		inline MetalPtr makeMetal( types::MetalEnum&& value ) { return std::make_shared<Metal>( std::move( value ) ); }
+		inline MetalPtr makeMetal( const types::MetalEnum& value ) { return std::make_shared<Metal>( value ); }
         class Metal : public ElementInterface
         {
         public:
-        public:
             Metal();
-            Metal( const types::MetalEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8721,7 +8606,6 @@ namespace mx
         private:
             types::MetalEnum myValue;
         };
-        
         
         /**************** Wood ****************
          3794
@@ -8776,12 +8660,12 @@ namespace mx
 		using WoodSetIter = WoodSet::iterator;
 		using WoodSetIterConst = WoodSet::const_iterator;
 		inline WoodPtr makeWood() { return std::make_shared<Wood>(); }
+		inline WoodPtr makeWood( types::WoodEnum&& value ) { return std::make_shared<Wood>( std::move( value ) ); }
+		inline WoodPtr makeWood( const types::WoodEnum& value ) { return std::make_shared<Wood>( value ); }
         class Wood : public ElementInterface
         {
         public:
-        public:
             Wood();
-            Wood( const types::WoodEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8792,7 +8676,6 @@ namespace mx
         private:
             types::WoodEnum myValue;
         };
-        
         
         /**************** Pitched ****************
          3797
@@ -8833,12 +8716,12 @@ namespace mx
 		using PitchedSetIter = PitchedSet::iterator;
 		using PitchedSetIterConst = PitchedSet::const_iterator;
 		inline PitchedPtr makePitched() { return std::make_shared<Pitched>(); }
+		inline PitchedPtr makePitched( types::PitchedEnum&& value ) { return std::make_shared<Pitched>( std::move( value ) ); }
+		inline PitchedPtr makePitched( const types::PitchedEnum& value ) { return std::make_shared<Pitched>( value ); }
         class Pitched : public ElementInterface
         {
         public:
-        public:
             Pitched();
-            Pitched( const types::PitchedEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8849,7 +8732,6 @@ namespace mx
         private:
             types::PitchedEnum myValue;
         };
-        
         
         /**************** Membrane ****************
          3800
@@ -8900,12 +8782,12 @@ namespace mx
 		using MembraneSetIter = MembraneSet::iterator;
 		using MembraneSetIterConst = MembraneSet::const_iterator;
 		inline MembranePtr makeMembrane() { return std::make_shared<Membrane>(); }
+		inline MembranePtr makeMembrane( types::MembraneEnum&& value ) { return std::make_shared<Membrane>( std::move( value ) ); }
+		inline MembranePtr makeMembrane( const types::MembraneEnum& value ) { return std::make_shared<Membrane>( value ); }
         class Membrane : public ElementInterface
         {
         public:
-        public:
             Membrane();
-            Membrane( const types::MembraneEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8916,7 +8798,6 @@ namespace mx
         private:
             types::MembraneEnum myValue;
         };
-        
         
         /**************** Effect ****************
          3803
@@ -8971,12 +8852,12 @@ namespace mx
 		using EffectSetIter = EffectSet::iterator;
 		using EffectSetIterConst = EffectSet::const_iterator;
 		inline EffectPtr makeEffect() { return std::make_shared<Effect>(); }
+		inline EffectPtr makeEffect( types::EffectEnum&& value ) { return std::make_shared<Effect>( std::move( value ) ); }
+		inline EffectPtr makeEffect( const types::EffectEnum& value ) { return std::make_shared<Effect>( value ); }
         class Effect : public ElementInterface
         {
         public:
-        public:
             Effect();
-            Effect( const types::EffectEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -8987,7 +8868,6 @@ namespace mx
         private:
             types::EffectEnum myValue;
         };
-        
         
         /**************** StickLocation ****************
          3815
@@ -9022,12 +8902,12 @@ namespace mx
 		using StickLocationSetIter = StickLocationSet::iterator;
 		using StickLocationSetIterConst = StickLocationSet::const_iterator;
 		inline StickLocationPtr makeStickLocation() { return std::make_shared<StickLocation>(); }
+		inline StickLocationPtr makeStickLocation( types::StickLocationEnum&& value ) { return std::make_shared<StickLocation>( std::move( value ) ); }
+		inline StickLocationPtr makeStickLocation( const types::StickLocationEnum& value ) { return std::make_shared<StickLocation>( value ); }
         class StickLocation : public ElementInterface
         {
         public:
-        public:
             StickLocation();
-            StickLocation( const types::StickLocationEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9038,7 +8918,6 @@ namespace mx
         private:
             types::StickLocationEnum myValue;
         };
-        
         
         /**************** OtherPercussion ****************
          3818
@@ -9053,12 +8932,12 @@ namespace mx
 		using OtherPercussionSetIter = OtherPercussionSet::iterator;
 		using OtherPercussionSetIterConst = OtherPercussionSet::const_iterator;
 		inline OtherPercussionPtr makeOtherPercussion() { return std::make_shared<OtherPercussion>(); }
+		inline OtherPercussionPtr makeOtherPercussion( types::XsString&& value ) { return std::make_shared<OtherPercussion>( std::move( value ) ); }
+		inline OtherPercussionPtr makeOtherPercussion( const types::XsString& value ) { return std::make_shared<OtherPercussion>( value ); }
         class OtherPercussion : public ElementInterface
         {
         public:
-        public:
             OtherPercussion();
-            OtherPercussion( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9069,7 +8948,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** StickType ****************
          3994
@@ -9108,12 +8986,12 @@ namespace mx
 		using StickTypeSetIter = StickTypeSet::iterator;
 		using StickTypeSetIterConst = StickTypeSet::const_iterator;
 		inline StickTypePtr makeStickType() { return std::make_shared<StickType>(); }
+		inline StickTypePtr makeStickType( types::StickTypeEnum&& value ) { return std::make_shared<StickType>( std::move( value ) ); }
+		inline StickTypePtr makeStickType( const types::StickTypeEnum& value ) { return std::make_shared<StickType>( value ); }
         class StickType : public ElementInterface
         {
         public:
-        public:
             StickType();
-            StickType( const types::StickTypeEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9124,7 +9002,6 @@ namespace mx
         private:
             types::StickTypeEnum myValue;
         };
-        
         
         /**************** StickMaterial ****************
          3997
@@ -9161,12 +9038,12 @@ namespace mx
 		using StickMaterialSetIter = StickMaterialSet::iterator;
 		using StickMaterialSetIterConst = StickMaterialSet::const_iterator;
 		inline StickMaterialPtr makeStickMaterial() { return std::make_shared<StickMaterial>(); }
+		inline StickMaterialPtr makeStickMaterial( types::StickMaterialEnum&& value ) { return std::make_shared<StickMaterial>( std::move( value ) ); }
+		inline StickMaterialPtr makeStickMaterial( const types::StickMaterialEnum& value ) { return std::make_shared<StickMaterial>( value ); }
         class StickMaterial : public ElementInterface
         {
         public:
-        public:
             StickMaterial();
-            StickMaterial( const types::StickMaterialEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9177,7 +9054,6 @@ namespace mx
         private:
             types::StickMaterialEnum myValue;
         };
-        
         
         /**************** EncodingDate ****************
          4045
@@ -9206,12 +9082,12 @@ namespace mx
 		using EncodingDateSetIter = EncodingDateSet::iterator;
 		using EncodingDateSetIterConst = EncodingDateSet::const_iterator;
 		inline EncodingDatePtr makeEncodingDate() { return std::make_shared<EncodingDate>(); }
+		inline EncodingDatePtr makeEncodingDate( types::Date&& value ) { return std::make_shared<EncodingDate>( std::move( value ) ); }
+		inline EncodingDatePtr makeEncodingDate( const types::Date& value ) { return std::make_shared<EncodingDate>( value ); }
         class EncodingDate : public ElementInterface
         {
         public:
-        public:
             EncodingDate();
-            EncodingDate( const types::Date& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9222,7 +9098,6 @@ namespace mx
         private:
             types::Date myValue;
         };
-        
         
         /**************** Software ****************
          4051
@@ -9237,12 +9112,12 @@ namespace mx
 		using SoftwareSetIter = SoftwareSet::iterator;
 		using SoftwareSetIterConst = SoftwareSet::const_iterator;
 		inline SoftwarePtr makeSoftware() { return std::make_shared<Software>(); }
+		inline SoftwarePtr makeSoftware( types::XsString&& value ) { return std::make_shared<Software>( std::move( value ) ); }
+		inline SoftwarePtr makeSoftware( const types::XsString& value ) { return std::make_shared<Software>( value ); }
         class Software : public ElementInterface
         {
         public:
-        public:
             Software();
-            Software( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9253,7 +9128,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** EncodingDescription ****************
          4054
@@ -9268,12 +9142,12 @@ namespace mx
 		using EncodingDescriptionSetIter = EncodingDescriptionSet::iterator;
 		using EncodingDescriptionSetIterConst = EncodingDescriptionSet::const_iterator;
 		inline EncodingDescriptionPtr makeEncodingDescription() { return std::make_shared<EncodingDescription>(); }
+		inline EncodingDescriptionPtr makeEncodingDescription( types::XsString&& value ) { return std::make_shared<EncodingDescription>( std::move( value ) ); }
+		inline EncodingDescriptionPtr makeEncodingDescription( const types::XsString& value ) { return std::make_shared<EncodingDescription>( value ); }
         class EncodingDescription : public ElementInterface
         {
         public:
-        public:
             EncodingDescription();
-            EncodingDescription( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9284,7 +9158,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Source ****************
          4083
@@ -9299,12 +9172,12 @@ namespace mx
 		using SourceSetIter = SourceSet::iterator;
 		using SourceSetIterConst = SourceSet::const_iterator;
 		inline SourcePtr makeSource() { return std::make_shared<Source>(); }
+		inline SourcePtr makeSource( types::XsString&& value ) { return std::make_shared<Source>( std::move( value ) ); }
+		inline SourcePtr makeSource( const types::XsString& value ) { return std::make_shared<Source>( value ); }
         class Source : public ElementInterface
         {
         public:
-        public:
             Source();
-            Source( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9315,7 +9188,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** MeasureDistance ****************
          4191
@@ -9344,12 +9216,12 @@ namespace mx
 		using MeasureDistanceSetIter = MeasureDistanceSet::iterator;
 		using MeasureDistanceSetIterConst = MeasureDistanceSet::const_iterator;
 		inline MeasureDistancePtr makeMeasureDistance() { return std::make_shared<MeasureDistance>(); }
+		inline MeasureDistancePtr makeMeasureDistance( types::TenthsValue&& value ) { return std::make_shared<MeasureDistance>( std::move( value ) ); }
+		inline MeasureDistancePtr makeMeasureDistance( const types::TenthsValue& value ) { return std::make_shared<MeasureDistance>( value ); }
         class MeasureDistance : public ElementInterface
         {
         public:
-        public:
             MeasureDistance();
-            MeasureDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9360,7 +9232,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** PageHeight ****************
          4226
@@ -9389,12 +9260,12 @@ namespace mx
 		using PageHeightSetIter = PageHeightSet::iterator;
 		using PageHeightSetIterConst = PageHeightSet::const_iterator;
 		inline PageHeightPtr makePageHeight() { return std::make_shared<PageHeight>(); }
+		inline PageHeightPtr makePageHeight( types::TenthsValue&& value ) { return std::make_shared<PageHeight>( std::move( value ) ); }
+		inline PageHeightPtr makePageHeight( const types::TenthsValue& value ) { return std::make_shared<PageHeight>( value ); }
         class PageHeight : public ElementInterface
         {
         public:
-        public:
             PageHeight();
-            PageHeight( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9405,7 +9276,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** PageWidth ****************
          4229
@@ -9434,12 +9304,12 @@ namespace mx
 		using PageWidthSetIter = PageWidthSet::iterator;
 		using PageWidthSetIterConst = PageWidthSet::const_iterator;
 		inline PageWidthPtr makePageWidth() { return std::make_shared<PageWidth>(); }
+		inline PageWidthPtr makePageWidth( types::TenthsValue&& value ) { return std::make_shared<PageWidth>( std::move( value ) ); }
+		inline PageWidthPtr makePageWidth( const types::TenthsValue& value ) { return std::make_shared<PageWidth>( value ); }
         class PageWidth : public ElementInterface
         {
         public:
-        public:
             PageWidth();
-            PageWidth( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9450,7 +9320,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** Millimeters ****************
          4251
@@ -9475,12 +9344,12 @@ namespace mx
 		using MillimetersSetIter = MillimetersSet::iterator;
 		using MillimetersSetIterConst = MillimetersSet::const_iterator;
 		inline MillimetersPtr makeMillimeters() { return std::make_shared<Millimeters>(); }
+		inline MillimetersPtr makeMillimeters( types::MillimetersValue&& value ) { return std::make_shared<Millimeters>( std::move( value ) ); }
+		inline MillimetersPtr makeMillimeters( const types::MillimetersValue& value ) { return std::make_shared<Millimeters>( value ); }
         class Millimeters : public ElementInterface
         {
         public:
-        public:
             Millimeters();
-            Millimeters( const types::MillimetersValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9491,7 +9360,6 @@ namespace mx
         private:
             types::MillimetersValue myValue;
         };
-        
         
         /**************** TenthsValue ****************
          4254
@@ -9520,12 +9388,12 @@ namespace mx
 		using TenthsSetIter = TenthsSet::iterator;
 		using TenthsSetIterConst = TenthsSet::const_iterator;
 		inline TenthsPtr makeTenths() { return std::make_shared<Tenths>(); }
+		inline TenthsPtr makeTenths( types::TenthsValue&& value ) { return std::make_shared<Tenths>( std::move( value ) ); }
+		inline TenthsPtr makeTenths( const types::TenthsValue& value ) { return std::make_shared<Tenths>( value ); }
         class Tenths : public ElementInterface
         {
         public:
-        public:
             Tenths();
-            Tenths( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9536,7 +9404,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** StaffDistance ****************
          4262
@@ -9565,12 +9432,12 @@ namespace mx
 		using StaffDistanceSetIter = StaffDistanceSet::iterator;
 		using StaffDistanceSetIterConst = StaffDistanceSet::const_iterator;
 		inline StaffDistancePtr makeStaffDistance() { return std::make_shared<StaffDistance>(); }
+		inline StaffDistancePtr makeStaffDistance( types::TenthsValue&& value ) { return std::make_shared<StaffDistance>( std::move( value ) ); }
+		inline StaffDistancePtr makeStaffDistance( const types::TenthsValue& value ) { return std::make_shared<StaffDistance>( value ); }
         class StaffDistance : public ElementInterface
         {
         public:
-        public:
             StaffDistance();
-            StaffDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9581,7 +9448,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** SystemDistance ****************
          4289
@@ -9610,12 +9476,12 @@ namespace mx
 		using SystemDistanceSetIter = SystemDistanceSet::iterator;
 		using SystemDistanceSetIterConst = SystemDistanceSet::const_iterator;
 		inline SystemDistancePtr makeSystemDistance() { return std::make_shared<SystemDistance>(); }
+		inline SystemDistancePtr makeSystemDistance( types::TenthsValue&& value ) { return std::make_shared<SystemDistance>( std::move( value ) ); }
+		inline SystemDistancePtr makeSystemDistance( const types::TenthsValue& value ) { return std::make_shared<SystemDistance>( value ); }
         class SystemDistance : public ElementInterface
         {
         public:
-        public:
             SystemDistance();
-            SystemDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9626,7 +9492,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** TopSystemDistance ****************
          4293
@@ -9655,12 +9520,12 @@ namespace mx
 		using TopSystemDistanceSetIter = TopSystemDistanceSet::iterator;
 		using TopSystemDistanceSetIterConst = TopSystemDistanceSet::const_iterator;
 		inline TopSystemDistancePtr makeTopSystemDistance() { return std::make_shared<TopSystemDistance>(); }
+		inline TopSystemDistancePtr makeTopSystemDistance( types::TenthsValue&& value ) { return std::make_shared<TopSystemDistance>( std::move( value ) ); }
+		inline TopSystemDistancePtr makeTopSystemDistance( const types::TenthsValue& value ) { return std::make_shared<TopSystemDistance>( value ); }
         class TopSystemDistance : public ElementInterface
         {
         public:
-        public:
             TopSystemDistance();
-            TopSystemDistance( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9671,7 +9536,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** ArrowDirection ****************
          4468
@@ -9724,12 +9588,12 @@ namespace mx
 		using ArrowDirectionSetIter = ArrowDirectionSet::iterator;
 		using ArrowDirectionSetIterConst = ArrowDirectionSet::const_iterator;
 		inline ArrowDirectionPtr makeArrowDirection() { return std::make_shared<ArrowDirection>(); }
+		inline ArrowDirectionPtr makeArrowDirection( types::ArrowDirectionEnum&& value ) { return std::make_shared<ArrowDirection>( std::move( value ) ); }
+		inline ArrowDirectionPtr makeArrowDirection( const types::ArrowDirectionEnum& value ) { return std::make_shared<ArrowDirection>( value ); }
         class ArrowDirection : public ElementInterface
         {
         public:
-        public:
             ArrowDirection();
-            ArrowDirection( const types::ArrowDirectionEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9740,7 +9604,6 @@ namespace mx
         private:
             types::ArrowDirectionEnum myValue;
         };
-        
         
         /**************** ArrowStyle ****************
          4471
@@ -9781,12 +9644,12 @@ namespace mx
 		using ArrowStyleSetIter = ArrowStyleSet::iterator;
 		using ArrowStyleSetIterConst = ArrowStyleSet::const_iterator;
 		inline ArrowStylePtr makeArrowStyle() { return std::make_shared<ArrowStyle>(); }
+		inline ArrowStylePtr makeArrowStyle( types::ArrowStyleEnum&& value ) { return std::make_shared<ArrowStyle>( std::move( value ) ); }
+		inline ArrowStylePtr makeArrowStyle( const types::ArrowStyleEnum& value ) { return std::make_shared<ArrowStyle>( value ); }
         class ArrowStyle : public ElementInterface
         {
         public:
-        public:
             ArrowStyle();
-            ArrowStyle( const types::ArrowStyleEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9797,7 +9660,6 @@ namespace mx
         private:
             types::ArrowStyleEnum myValue;
         };
-        
         
         /**************** CircularArrow ****************
          4475
@@ -9828,12 +9690,12 @@ namespace mx
 		using CircularArrowSetIter = CircularArrowSet::iterator;
 		using CircularArrowSetIterConst = CircularArrowSet::const_iterator;
 		inline CircularArrowPtr makeCircularArrow() { return std::make_shared<CircularArrow>(); }
+		inline CircularArrowPtr makeCircularArrow( types::CircularArrowEnum&& value ) { return std::make_shared<CircularArrow>( std::move( value ) ); }
+		inline CircularArrowPtr makeCircularArrow( const types::CircularArrowEnum& value ) { return std::make_shared<CircularArrow>( value ); }
         class CircularArrow : public ElementInterface
         {
         public:
-        public:
             CircularArrow();
-            CircularArrow( const types::CircularArrowEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9844,7 +9706,6 @@ namespace mx
         private:
             types::CircularArrowEnum myValue;
         };
-        
         
         /**************** BendAlter ****************
          4515
@@ -9869,12 +9730,12 @@ namespace mx
 		using BendAlterSetIter = BendAlterSet::iterator;
 		using BendAlterSetIterConst = BendAlterSet::const_iterator;
 		inline BendAlterPtr makeBendAlter() { return std::make_shared<BendAlter>(); }
+		inline BendAlterPtr makeBendAlter( types::Semitones&& value ) { return std::make_shared<BendAlter>( std::move( value ) ); }
+		inline BendAlterPtr makeBendAlter( const types::Semitones& value ) { return std::make_shared<BendAlter>( value ); }
         class BendAlter : public ElementInterface
         {
         public:
-        public:
             BendAlter();
-            BendAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9885,7 +9746,6 @@ namespace mx
         private:
             types::Semitones myValue;
         };
-        
         
         /**************** HoleType ****************
          4758
@@ -9900,12 +9760,12 @@ namespace mx
 		using HoleTypeSetIter = HoleTypeSet::iterator;
 		using HoleTypeSetIterConst = HoleTypeSet::const_iterator;
 		inline HoleTypePtr makeHoleType() { return std::make_shared<HoleType>(); }
+		inline HoleTypePtr makeHoleType( types::XsString&& value ) { return std::make_shared<HoleType>( std::move( value ) ); }
+		inline HoleTypePtr makeHoleType( const types::XsString& value ) { return std::make_shared<HoleType>( value ); }
         class HoleType : public ElementInterface
         {
         public:
-        public:
             HoleType();
-            HoleType( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9916,7 +9776,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** HoleShape ****************
          4767
@@ -9931,12 +9790,12 @@ namespace mx
 		using HoleShapeSetIter = HoleShapeSet::iterator;
 		using HoleShapeSetIterConst = HoleShapeSet::const_iterator;
 		inline HoleShapePtr makeHoleShape() { return std::make_shared<HoleShape>(); }
+		inline HoleShapePtr makeHoleShape( types::XsString&& value ) { return std::make_shared<HoleShape>( std::move( value ) ); }
+		inline HoleShapePtr makeHoleShape( const types::XsString& value ) { return std::make_shared<HoleShape>( value ); }
         class HoleShape : public ElementInterface
         {
         public:
-        public:
             HoleShape();
-            HoleShape( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9947,7 +9806,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Syllabic ****************
          4802, 4817
@@ -9982,12 +9840,12 @@ namespace mx
 		using SyllabicSetIter = SyllabicSet::iterator;
 		using SyllabicSetIterConst = SyllabicSet::const_iterator;
 		inline SyllabicPtr makeSyllabic() { return std::make_shared<Syllabic>(); }
+		inline SyllabicPtr makeSyllabic( types::SyllabicEnum&& value ) { return std::make_shared<Syllabic>( std::move( value ) ); }
+		inline SyllabicPtr makeSyllabic( const types::SyllabicEnum& value ) { return std::make_shared<Syllabic>( value ); }
         class Syllabic : public ElementInterface
         {
         public:
-        public:
             Syllabic();
-            Syllabic( const types::SyllabicEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -9998,7 +9856,6 @@ namespace mx
         private:
             types::SyllabicEnum myValue;
         };
-        
         
         //        /**************** Syllabic ****************
         //         4802, 4817
@@ -10026,17 +9883,18 @@ namespace mx
         //         </xs:restriction>
         //         </xs:simpleType>
         //         */
-//		class Syllabic;
-//		using SyllabicPtr = std::shared_ptr<Syllabic>;
-//		using SyllabicUPtr = std::unique_ptr<Syllabic>;
-//		using SyllabicSet = std::vector<SyllabicPtr>;
-//		using SyllabicSetIter = SyllabicSet::iterator;
-//		using SyllabicSetIterConst = SyllabicSet::const_iterator;
-//		inline SyllabicPtr makeSyllabic() { return std::make_shared<Syllabic>(); }
+        //		class Syllabic;
+        //		using SyllabicPtr = std::shared_ptr<Syllabic>;
+        //		using SyllabicUPtr = std::unique_ptr<Syllabic>;
+        //		using SyllabicSet = std::vector<SyllabicPtr>;
+        //		using SyllabicSetIter = SyllabicSet::iterator;
+        //		using SyllabicSetIterConst = SyllabicSet::const_iterator;
+        //		inline SyllabicPtr makeSyllabic() { return std::make_shared<Syllabic>(); }
+		inline SyllabicPtr makeSyllabic( types::SyllabicEnum&& value ) { return std::make_shared<Syllabic>( std::move( value ) ); }
+		inline SyllabicPtr makeSyllabic( const types::SyllabicEnum& value ) { return std::make_shared<Syllabic>( value ); }
         //        class Syllabic : public ElementInterface        //        {
         //        public:
         //            Syllabic();
-        //            Syllabic( const types::SyllabicEnum& value );
         //            virtual bool hasAttributes() const;
         //            virtual std::ostream& streamAttributes( std::ostream& os ) const;
         //            virtual std::ostream& streamName( std::ostream& os ) const;
@@ -10049,7 +9907,6 @@ namespace mx
         
         
         /**************** Step ****************
-         5220
          <xs:element name="step" type="step"/>
          <xs:simpleType name="step">
          <xs:annotation>
@@ -10087,12 +9944,12 @@ namespace mx
 		using StepSetIter = StepSet::iterator;
 		using StepSetIterConst = StepSet::const_iterator;
 		inline StepPtr makeStep() { return std::make_shared<Step>(); }
+		inline StepPtr makeStep( types::StepEnum&& value ) { return std::make_shared<Step>( std::move( value ) ); }
+		inline StepPtr makeStep( const types::StepEnum& value ) { return std::make_shared<Step>( value ); }
         class Step : public ElementInterface
         {
         public:
-        public:
             Step();
-            Step( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10103,7 +9960,6 @@ namespace mx
         private:
             types::StepEnum myValue;
         };
-        
         
         /**************** Alter ****************
          5223
@@ -10128,12 +9984,12 @@ namespace mx
 		using AlterSetIter = AlterSet::iterator;
 		using AlterSetIterConst = AlterSet::const_iterator;
 		inline AlterPtr makeAlter() { return std::make_shared<Alter>(); }
+		inline AlterPtr makeAlter( types::Semitones&& value ) { return std::make_shared<Alter>( std::move( value ) ); }
+		inline AlterPtr makeAlter( const types::Semitones& value ) { return std::make_shared<Alter>( value ); }
         class Alter : public ElementInterface
         {
         public:
-        public:
             Alter();
-            Alter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10144,7 +10000,6 @@ namespace mx
         private:
             types::Semitones myValue;
         };
-        
         
         /**************** Octave ****************
          5227
@@ -10175,12 +10030,12 @@ namespace mx
 		using OctaveSetIter = OctaveSet::iterator;
 		using OctaveSetIterConst = OctaveSet::const_iterator;
 		inline OctavePtr makeOctave() { return std::make_shared<Octave>(); }
+		inline OctavePtr makeOctave( types::OctaveValue&& value ) { return std::make_shared<Octave>( std::move( value ) ); }
+		inline OctavePtr makeOctave( const types::OctaveValue& value ) { return std::make_shared<Octave>( value ); }
         class Octave : public ElementInterface
         {
         public:
-        public:
             Octave();
-            Octave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10191,7 +10046,6 @@ namespace mx
         private:
             types::OctaveValue myValue;
         };
-        
         
         /**************** ActualNotes ****************
          5518
@@ -10206,12 +10060,12 @@ namespace mx
 		using ActualNotesSetIter = ActualNotesSet::iterator;
 		using ActualNotesSetIterConst = ActualNotesSet::const_iterator;
 		inline ActualNotesPtr makeActualNotes() { return std::make_shared<ActualNotes>(); }
+		inline ActualNotesPtr makeActualNotes( types::NonNegativeInteger&& value ) { return std::make_shared<ActualNotes>( std::move( value ) ); }
+		inline ActualNotesPtr makeActualNotes( const types::NonNegativeInteger& value ) { return std::make_shared<ActualNotes>( value ); }
         class ActualNotes : public ElementInterface
         {
         public:
-        public:
             ActualNotes();
-            ActualNotes( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10222,7 +10076,6 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
         };
-        
         
         /**************** NormalNotes ****************
          5523
@@ -10237,12 +10090,12 @@ namespace mx
 		using NormalNotesSetIter = NormalNotesSet::iterator;
 		using NormalNotesSetIterConst = NormalNotesSet::const_iterator;
 		inline NormalNotesPtr makeNormalNotes() { return std::make_shared<NormalNotes>(); }
+		inline NormalNotesPtr makeNormalNotes( types::NonNegativeInteger&& value ) { return std::make_shared<NormalNotes>( std::move( value ) ); }
+		inline NormalNotesPtr makeNormalNotes( const types::NonNegativeInteger& value ) { return std::make_shared<NormalNotes>( value ); }
         class NormalNotes : public ElementInterface
         {
         public:
-        public:
             NormalNotes();
-            NormalNotes( const types::NonNegativeInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10253,7 +10106,6 @@ namespace mx
         private:
             types::NonNegativeInteger myValue;
         };
-        
         
         /**************** NormalType ****************
          5530
@@ -10308,12 +10160,12 @@ namespace mx
 		using NormalTypeSetIter = NormalTypeSet::iterator;
 		using NormalTypeSetIterConst = NormalTypeSet::const_iterator;
 		inline NormalTypePtr makeNormalType() { return std::make_shared<NormalType>(); }
+		inline NormalTypePtr makeNormalType( types::NoteTypeValue&& value ) { return std::make_shared<NormalType>( std::move( value ) ); }
+		inline NormalTypePtr makeNormalType( const types::NoteTypeValue& value ) { return std::make_shared<NormalType>( value ); }
         class NormalType : public ElementInterface
         {
         public:
-        public:
             NormalType();
-            NormalType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10324,7 +10176,6 @@ namespace mx
         private:
             types::NoteTypeValue myValue;
         };
-        
         
         /**************** CreditType ****************
          5657
@@ -10339,12 +10190,12 @@ namespace mx
 		using CreditTypeSetIter = CreditTypeSet::iterator;
 		using CreditTypeSetIterConst = CreditTypeSet::const_iterator;
 		inline CreditTypePtr makeCreditType() { return std::make_shared<CreditType>(); }
+		inline CreditTypePtr makeCreditType( types::XsString&& value ) { return std::make_shared<CreditType>( std::move( value ) ); }
+		inline CreditTypePtr makeCreditType( const types::XsString& value ) { return std::make_shared<CreditType>( value ); }
         class CreditType : public ElementInterface
         {
         public:
-        public:
             CreditType();
-            CreditType( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10355,7 +10206,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** InstrumentName ****************
          5879
@@ -10370,12 +10220,12 @@ namespace mx
 		using InstrumentNameSetIter = InstrumentNameSet::iterator;
 		using InstrumentNameSetIterConst = InstrumentNameSet::const_iterator;
 		inline InstrumentNamePtr makeInstrumentName() { return std::make_shared<InstrumentName>(); }
+		inline InstrumentNamePtr makeInstrumentName( types::XsString&& value ) { return std::make_shared<InstrumentName>( std::move( value ) ); }
+		inline InstrumentNamePtr makeInstrumentName( const types::XsString& value ) { return std::make_shared<InstrumentName>( value ); }
         class InstrumentName : public ElementInterface
         {
         public:
-        public:
             InstrumentName();
-            InstrumentName( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10386,7 +10236,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** InstrumentAbbreviation ****************
          5884
@@ -10401,12 +10250,12 @@ namespace mx
 		using InstrumentAbbreviationSetIter = InstrumentAbbreviationSet::iterator;
 		using InstrumentAbbreviationSetIterConst = InstrumentAbbreviationSet::const_iterator;
 		inline InstrumentAbbreviationPtr makeInstrumentAbbreviation() { return std::make_shared<InstrumentAbbreviation>(); }
+		inline InstrumentAbbreviationPtr makeInstrumentAbbreviation( types::XsString&& value ) { return std::make_shared<InstrumentAbbreviation>( std::move( value ) ); }
+		inline InstrumentAbbreviationPtr makeInstrumentAbbreviation( const types::XsString& value ) { return std::make_shared<InstrumentAbbreviation>( value ); }
         class InstrumentAbbreviation : public ElementInterface
         {
         public:
-        public:
             InstrumentAbbreviation();
-            InstrumentAbbreviation( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10417,7 +10266,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** InstrumentSound ****************
          5890
@@ -10432,12 +10280,12 @@ namespace mx
 		using InstrumentSoundSetIter = InstrumentSoundSet::iterator;
 		using InstrumentSoundSetIterConst = InstrumentSoundSet::const_iterator;
 		inline InstrumentSoundPtr makeInstrumentSound() { return std::make_shared<InstrumentSound>(); }
+		inline InstrumentSoundPtr makeInstrumentSound( types::XsString&& value ) { return std::make_shared<InstrumentSound>( std::move( value ) ); }
+		inline InstrumentSoundPtr makeInstrumentSound( const types::XsString& value ) { return std::make_shared<InstrumentSound>( value ); }
         class InstrumentSound : public ElementInterface
         {
         public:
-        public:
             InstrumentSound();
-            InstrumentSound( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10448,7 +10296,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Ensemble ****************
          5903
@@ -10485,12 +10332,12 @@ namespace mx
 		using EnsembleSetIter = EnsembleSet::iterator;
 		using EnsembleSetIterConst = EnsembleSet::const_iterator;
 		inline EnsemblePtr makeEnsemble() { return std::make_shared<Ensemble>(); }
+		inline EnsemblePtr makeEnsemble( types::PositiveIntegerOrEmpty&& value ) { return std::make_shared<Ensemble>( std::move( value ) ); }
+		inline EnsemblePtr makeEnsemble( const types::PositiveIntegerOrEmpty& value ) { return std::make_shared<Ensemble>( value ); }
         class Ensemble : public ElementInterface
         {
         public:
-        public:
             Ensemble();
-            Ensemble( const types::PositiveIntegerOrEmpty& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10501,7 +10348,6 @@ namespace mx
         private:
             types::PositiveIntegerOrEmpty myValue;
         };
-        
         
         /**************** Group ****************
          5940
@@ -10516,12 +10362,12 @@ namespace mx
 		using GroupSetIter = GroupSet::iterator;
 		using GroupSetIterConst = GroupSet::const_iterator;
 		inline GroupPtr makeGroup() { return std::make_shared<Group>(); }
+		inline GroupPtr makeGroup( types::XsString&& value ) { return std::make_shared<Group>( std::move( value ) ); }
+		inline GroupPtr makeGroup( const types::XsString& value ) { return std::make_shared<Group>( value ); }
         class Group : public ElementInterface
         {
         public:
-        public:
             Group();
-            Group( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10532,7 +10378,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** VirtualLibrary ****************
          5972
@@ -10547,12 +10392,12 @@ namespace mx
 		using VirtualLibrarySetIter = VirtualLibrarySet::iterator;
 		using VirtualLibrarySetIterConst = VirtualLibrarySet::const_iterator;
 		inline VirtualLibraryPtr makeVirtualLibrary() { return std::make_shared<VirtualLibrary>(); }
+		inline VirtualLibraryPtr makeVirtualLibrary( types::XsString&& value ) { return std::make_shared<VirtualLibrary>( std::move( value ) ); }
+		inline VirtualLibraryPtr makeVirtualLibrary( const types::XsString& value ) { return std::make_shared<VirtualLibrary>( value ); }
         class VirtualLibrary : public ElementInterface
         {
         public:
-        public:
             VirtualLibrary();
-            VirtualLibrary( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10563,7 +10408,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** VirtualName ****************
          5978
@@ -10578,12 +10422,12 @@ namespace mx
 		using VirtualNameSetIter = VirtualNameSet::iterator;
 		using VirtualNameSetIterConst = VirtualNameSet::const_iterator;
 		inline VirtualNamePtr makeVirtualName() { return std::make_shared<VirtualName>(); }
+		inline VirtualNamePtr makeVirtualName( types::XsString&& value ) { return std::make_shared<VirtualName>( std::move( value ) ); }
+		inline VirtualNamePtr makeVirtualName( const types::XsString& value ) { return std::make_shared<VirtualName>( value ); }
         class VirtualName : public ElementInterface
         {
         public:
-        public:
             VirtualName();
-            VirtualName( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10594,7 +10438,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** WorkNumber ****************
          5989
@@ -10609,12 +10452,12 @@ namespace mx
 		using WorkNumberSetIter = WorkNumberSet::iterator;
 		using WorkNumberSetIterConst = WorkNumberSet::const_iterator;
 		inline WorkNumberPtr makeWorkNumber() { return std::make_shared<WorkNumber>(); }
+		inline WorkNumberPtr makeWorkNumber( types::XsString&& value ) { return std::make_shared<WorkNumber>( std::move( value ) ); }
+		inline WorkNumberPtr makeWorkNumber( const types::XsString& value ) { return std::make_shared<WorkNumber>( value ); }
         class WorkNumber : public ElementInterface
         {
         public:
-        public:
             WorkNumber();
-            WorkNumber( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10625,7 +10468,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** WorkTitle ****************
          5995
@@ -10640,12 +10482,12 @@ namespace mx
 		using WorkTitleSetIter = WorkTitleSet::iterator;
 		using WorkTitleSetIterConst = WorkTitleSet::const_iterator;
 		inline WorkTitlePtr makeWorkTitle() { return std::make_shared<WorkTitle>(); }
+		inline WorkTitlePtr makeWorkTitle( types::XsString&& value ) { return std::make_shared<WorkTitle>( std::move( value ) ); }
+		inline WorkTitlePtr makeWorkTitle( const types::XsString& value ) { return std::make_shared<WorkTitle>( value ); }
         class WorkTitle : public ElementInterface
         {
         public:
-        public:
             WorkTitle();
-            WorkTitle( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10656,7 +10498,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Staff ****************
          6065
@@ -10671,12 +10512,12 @@ namespace mx
 		using StaffSetIter = StaffSet::iterator;
 		using StaffSetIterConst = StaffSet::const_iterator;
 		inline StaffPtr makeStaff() { return std::make_shared<Staff>(); }
+		inline StaffPtr makeStaff( types::PositiveInteger&& value ) { return std::make_shared<Staff>( std::move( value ) ); }
+		inline StaffPtr makeStaff( const types::PositiveInteger& value ) { return std::make_shared<Staff>( value ); }
         class Staff : public ElementInterface
         {
         public:
-        public:
             Staff();
-            Staff( const types::PositiveInteger& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10687,7 +10528,6 @@ namespace mx
         private:
             types::PositiveInteger myValue;
         };
-        
         
         /**************** TuningStep ****************
          6075
@@ -10728,12 +10568,12 @@ namespace mx
 		using TuningStepSetIter = TuningStepSet::iterator;
 		using TuningStepSetIterConst = TuningStepSet::const_iterator;
 		inline TuningStepPtr makeTuningStep() { return std::make_shared<TuningStep>(); }
+		inline TuningStepPtr makeTuningStep( types::StepEnum&& value ) { return std::make_shared<TuningStep>( std::move( value ) ); }
+		inline TuningStepPtr makeTuningStep( const types::StepEnum& value ) { return std::make_shared<TuningStep>( value ); }
         class TuningStep : public ElementInterface
         {
         public:
-        public:
             TuningStep();
-            TuningStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10744,7 +10584,6 @@ namespace mx
         private:
             types::StepEnum myValue;
         };
-        
         
         /**************** TuningAlter ****************
          6080
@@ -10769,12 +10608,12 @@ namespace mx
 		using TuningAlterSetIter = TuningAlterSet::iterator;
 		using TuningAlterSetIterConst = TuningAlterSet::const_iterator;
 		inline TuningAlterPtr makeTuningAlter() { return std::make_shared<TuningAlter>(); }
+		inline TuningAlterPtr makeTuningAlter( types::Semitones&& value ) { return std::make_shared<TuningAlter>( std::move( value ) ); }
+		inline TuningAlterPtr makeTuningAlter( const types::Semitones& value ) { return std::make_shared<TuningAlter>( value ); }
         class TuningAlter : public ElementInterface
         {
         public:
-        public:
             TuningAlter();
-            TuningAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10785,7 +10624,6 @@ namespace mx
         private:
             types::Semitones myValue;
         };
-        
         
         /**************** TuningOctave ****************
          6086
@@ -10816,12 +10654,12 @@ namespace mx
 		using TuningOctaveSetIter = TuningOctaveSet::iterator;
 		using TuningOctaveSetIterConst = TuningOctaveSet::const_iterator;
 		inline TuningOctavePtr makeTuningOctave() { return std::make_shared<TuningOctave>(); }
+		inline TuningOctavePtr makeTuningOctave( types::OctaveValue&& value ) { return std::make_shared<TuningOctave>( std::move( value ) ); }
+		inline TuningOctavePtr makeTuningOctave( const types::OctaveValue& value ) { return std::make_shared<TuningOctave>( value ); }
         class TuningOctave : public ElementInterface
         {
         public:
-        public:
             TuningOctave();
-            TuningOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10832,7 +10670,6 @@ namespace mx
         private:
             types::OctaveValue myValue;
         };
-        
         
         /**************** Voice ****************
          6096
@@ -10847,12 +10684,12 @@ namespace mx
 		using VoiceSetIter = VoiceSet::iterator;
 		using VoiceSetIterConst = VoiceSet::const_iterator;
 		inline VoicePtr makeVoice() { return std::make_shared<Voice>(); }
+		inline VoicePtr makeVoice( types::XsString&& value ) { return std::make_shared<Voice>( std::move( value ) ); }
+		inline VoicePtr makeVoice( const types::XsString& value ) { return std::make_shared<Voice>( value ); }
         class Voice : public ElementInterface
         {
         public:
-        public:
             Voice();
-            Voice( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10863,7 +10700,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** KeyStep ****************
          6104
@@ -10904,12 +10740,12 @@ namespace mx
 		using KeyStepSetIter = KeyStepSet::iterator;
 		using KeyStepSetIterConst = KeyStepSet::const_iterator;
 		inline KeyStepPtr makeKeyStep() { return std::make_shared<KeyStep>(); }
+		inline KeyStepPtr makeKeyStep( types::StepEnum&& value ) { return std::make_shared<KeyStep>( std::move( value ) ); }
+		inline KeyStepPtr makeKeyStep( const types::StepEnum& value ) { return std::make_shared<KeyStep>( value ); }
         class KeyStep : public ElementInterface
         {
         public:
-        public:
             KeyStep();
-            KeyStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10920,7 +10756,6 @@ namespace mx
         private:
             types::StepEnum myValue;
         };
-        
         
         /**************** KeyAlter ****************
          6109
@@ -10945,12 +10780,12 @@ namespace mx
 		using KeyAlterSetIter = KeyAlterSet::iterator;
 		using KeyAlterSetIterConst = KeyAlterSet::const_iterator;
 		inline KeyAlterPtr makeKeyAlter() { return std::make_shared<KeyAlter>(); }
+		inline KeyAlterPtr makeKeyAlter( types::Semitones&& value ) { return std::make_shared<KeyAlter>( std::move( value ) ); }
+		inline KeyAlterPtr makeKeyAlter( const types::Semitones& value ) { return std::make_shared<KeyAlter>( value ); }
         class KeyAlter : public ElementInterface
         {
         public:
-        public:
             KeyAlter();
-            KeyAlter( const types::Semitones& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -10961,7 +10796,6 @@ namespace mx
         private:
             types::Semitones myValue;
         };
-        
         
         /**************** KeyAccidental ****************
          6114
@@ -11056,12 +10890,12 @@ namespace mx
 		using KeyAccidentalSetIter = KeyAccidentalSet::iterator;
 		using KeyAccidentalSetIterConst = KeyAccidentalSet::const_iterator;
 		inline KeyAccidentalPtr makeKeyAccidental() { return std::make_shared<KeyAccidental>(); }
+		inline KeyAccidentalPtr makeKeyAccidental( types::AccidentalValue&& value ) { return std::make_shared<KeyAccidental>( std::move( value ) ); }
+		inline KeyAccidentalPtr makeKeyAccidental( const types::AccidentalValue& value ) { return std::make_shared<KeyAccidental>( value ); }
         class KeyAccidental : public ElementInterface
         {
         public:
-        public:
             KeyAccidental();
-            KeyAccidental( const types::AccidentalValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11072,7 +10906,6 @@ namespace mx
         private:
             types::AccidentalValue myValue;
         };
-        
         
         /**************** SlashType ****************
          6125
@@ -11127,12 +10960,12 @@ namespace mx
 		using SlashTypeSetIter = SlashTypeSet::iterator;
 		using SlashTypeSetIterConst = SlashTypeSet::const_iterator;
 		inline SlashTypePtr makeSlashType() { return std::make_shared<SlashType>(); }
+		inline SlashTypePtr makeSlashType( types::NoteTypeValue&& value ) { return std::make_shared<SlashType>( std::move( value ) ); }
+		inline SlashTypePtr makeSlashType( const types::NoteTypeValue& value ) { return std::make_shared<SlashType>( value ); }
         class SlashType : public ElementInterface
         {
         public:
-        public:
             SlashType();
-            SlashType( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11143,7 +10976,6 @@ namespace mx
         private:
             types::NoteTypeValue myValue;
         };
-        
         
         /**************** Beats ****************
          6142
@@ -11158,12 +10990,12 @@ namespace mx
 		using BeatsSetIter = BeatsSet::iterator;
 		using BeatsSetIterConst = BeatsSet::const_iterator;
 		inline BeatsPtr makeBeats() { return std::make_shared<Beats>(); }
+		inline BeatsPtr makeBeats( types::XsString&& value ) { return std::make_shared<Beats>( std::move( value ) ); }
+		inline BeatsPtr makeBeats( const types::XsString& value ) { return std::make_shared<Beats>( value ); }
         class Beats : public ElementInterface
         {
         public:
-        public:
             Beats();
-            Beats( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11174,7 +11006,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** BeatType ****************
          6147
@@ -11189,12 +11020,12 @@ namespace mx
 		using BeatTypeSetIter = BeatTypeSet::iterator;
 		using BeatTypeSetIterConst = BeatTypeSet::const_iterator;
 		inline BeatTypePtr makeBeatType() { return std::make_shared<BeatType>(); }
+		inline BeatTypePtr makeBeatType( types::XsString&& value ) { return std::make_shared<BeatType>( std::move( value ) ); }
+		inline BeatTypePtr makeBeatType( const types::XsString& value ) { return std::make_shared<BeatType>( value ); }
         class BeatType : public ElementInterface
         {
         public:
-        public:
             BeatType();
-            BeatType( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11205,7 +11036,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** Fifths ****************
          6161
@@ -11230,12 +11060,12 @@ namespace mx
 		using FifthsSetIter = FifthsSet::iterator;
 		using FifthsSetIterConst = FifthsSet::const_iterator;
 		inline FifthsPtr makeFifths() { return std::make_shared<Fifths>(); }
+		inline FifthsPtr makeFifths( types::FifthsValue&& value ) { return std::make_shared<Fifths>( std::move( value ) ); }
+		inline FifthsPtr makeFifths( const types::FifthsValue& value ) { return std::make_shared<Fifths>( value ); }
         class Fifths : public ElementInterface
         {
         public:
-        public:
             Fifths();
-            Fifths( const types::FifthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11246,7 +11076,6 @@ namespace mx
         private:
             types::FifthsValue myValue;
         };
-        
         
         /**************** Mode ****************
          6164
@@ -11271,12 +11100,12 @@ namespace mx
 		using ModeSetIter = ModeSet::iterator;
 		using ModeSetIterConst = ModeSet::const_iterator;
 		inline ModePtr makeMode() { return std::make_shared<Mode>(); }
+		inline ModePtr makeMode( types::ModeValue&& value ) { return std::make_shared<Mode>( std::move( value ) ); }
+		inline ModePtr makeMode( const types::ModeValue& value ) { return std::make_shared<Mode>( value ); }
         class Mode : public ElementInterface
         {
         public:
-        public:
             Mode();
-            Mode( const types::ModeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11287,7 +11116,6 @@ namespace mx
         private:
             types::ModeValue myValue;
         };
-        
         
         /**************** BeatUnit ****************
          6173
@@ -11342,12 +11170,12 @@ namespace mx
 		using BeatUnitSetIter = BeatUnitSet::iterator;
 		using BeatUnitSetIterConst = BeatUnitSet::const_iterator;
 		inline BeatUnitPtr makeBeatUnit() { return std::make_shared<BeatUnit>(); }
+		inline BeatUnitPtr makeBeatUnit( types::NoteTypeValue&& value ) { return std::make_shared<BeatUnit>( std::move( value ) ); }
+		inline BeatUnitPtr makeBeatUnit( const types::NoteTypeValue& value ) { return std::make_shared<BeatUnit>( value ); }
         class BeatUnit : public ElementInterface
         {
         public:
-        public:
             BeatUnit();
-            BeatUnit( const types::NoteTypeValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11358,7 +11186,6 @@ namespace mx
         private:
             types::NoteTypeValue myValue;
         };
-        
         
         /**************** TopMargin ****************
          6222
@@ -11387,12 +11214,12 @@ namespace mx
 		using TopMarginSetIter = TopMarginSet::iterator;
 		using TopMarginSetIterConst = TopMarginSet::const_iterator;
 		inline TopMarginPtr makeTopMargin() { return std::make_shared<TopMargin>(); }
+		inline TopMarginPtr makeTopMargin( types::TenthsValue&& value ) { return std::make_shared<TopMargin>( std::move( value ) ); }
+		inline TopMarginPtr makeTopMargin( const types::TenthsValue& value ) { return std::make_shared<TopMargin>( value ); }
         class TopMargin : public ElementInterface
         {
         public:
-        public:
             TopMargin();
-            TopMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11403,7 +11230,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** BottomMargin ****************
          6225
@@ -11432,12 +11258,12 @@ namespace mx
 		using BottomMarginSetIter = BottomMarginSet::iterator;
 		using BottomMarginSetIterConst = BottomMarginSet::const_iterator;
 		inline BottomMarginPtr makeBottomMargin() { return std::make_shared<BottomMargin>(); }
+		inline BottomMarginPtr makeBottomMargin( types::TenthsValue&& value ) { return std::make_shared<BottomMargin>( std::move( value ) ); }
+		inline BottomMarginPtr makeBottomMargin( const types::TenthsValue& value ) { return std::make_shared<BottomMargin>( value ); }
         class BottomMargin : public ElementInterface
         {
         public:
-        public:
             BottomMargin();
-            BottomMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11448,7 +11274,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** LeftMargin ****************
          6251
@@ -11477,12 +11302,12 @@ namespace mx
 		using LeftMarginSetIter = LeftMarginSet::iterator;
 		using LeftMarginSetIterConst = LeftMarginSet::const_iterator;
 		inline LeftMarginPtr makeLeftMargin() { return std::make_shared<LeftMargin>(); }
+		inline LeftMarginPtr makeLeftMargin( types::TenthsValue&& value ) { return std::make_shared<LeftMargin>( std::move( value ) ); }
+		inline LeftMarginPtr makeLeftMargin( const types::TenthsValue& value ) { return std::make_shared<LeftMargin>( value ); }
         class LeftMargin : public ElementInterface
         {
         public:
-        public:
             LeftMargin();
-            LeftMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11493,7 +11318,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** RightMargin ****************
          6254
@@ -11522,12 +11346,12 @@ namespace mx
 		using RightMarginSetIter = RightMarginSet::iterator;
 		using RightMarginSetIterConst = RightMarginSet::const_iterator;
 		inline RightMarginPtr makeRightMargin() { return std::make_shared<RightMargin>(); }
+		inline RightMarginPtr makeRightMargin( types::TenthsValue&& value ) { return std::make_shared<RightMargin>( std::move( value ) ); }
+		inline RightMarginPtr makeRightMargin( const types::TenthsValue& value ) { return std::make_shared<RightMargin>( value ); }
         class RightMargin : public ElementInterface
         {
         public:
-        public:
             RightMargin();
-            RightMargin( const types::TenthsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11538,7 +11362,6 @@ namespace mx
         private:
             types::TenthsValue myValue;
         };
-        
         
         /**************** Duration ****************
          6262
@@ -11567,12 +11390,12 @@ namespace mx
 		using DurationSetIter = DurationSet::iterator;
 		using DurationSetIterConst = DurationSet::const_iterator;
 		inline DurationPtr makeDuration() { return std::make_shared<Duration>(); }
+		inline DurationPtr makeDuration( types::PositiveDivisionsValue&& value ) { return std::make_shared<Duration>( std::move( value ) ); }
+		inline DurationPtr makeDuration( const types::PositiveDivisionsValue& value ) { return std::make_shared<Duration>( value ); }
         class Duration : public ElementInterface
         {
         public:
-        public:
             Duration();
-            Duration( const types::PositiveDivisionsValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11583,7 +11406,6 @@ namespace mx
         private:
             types::PositiveDivisionsValue myValue;
         };
-        
         
         /**************** DisplayStep ****************
          6272
@@ -11624,12 +11446,12 @@ namespace mx
 		using DisplayStepSetIter = DisplayStepSet::iterator;
 		using DisplayStepSetIterConst = DisplayStepSet::const_iterator;
 		inline DisplayStepPtr makeDisplayStep() { return std::make_shared<DisplayStep>(); }
+		inline DisplayStepPtr makeDisplayStep( types::StepEnum&& value ) { return std::make_shared<DisplayStep>( std::move( value ) ); }
+		inline DisplayStepPtr makeDisplayStep( const types::StepEnum& value ) { return std::make_shared<DisplayStep>( value ); }
         class DisplayStep : public ElementInterface
         {
         public:
-        public:
             DisplayStep();
-            DisplayStep( const types::StepEnum& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11640,7 +11462,6 @@ namespace mx
         private:
             types::StepEnum myValue;
         };
-        
         
         /**************** DisplayOctave ****************
          6275
@@ -11671,12 +11492,12 @@ namespace mx
 		using DisplayOctaveSetIter = DisplayOctaveSet::iterator;
 		using DisplayOctaveSetIterConst = DisplayOctaveSet::const_iterator;
 		inline DisplayOctavePtr makeDisplayOctave() { return std::make_shared<DisplayOctave>(); }
+		inline DisplayOctavePtr makeDisplayOctave( types::OctaveValue&& value ) { return std::make_shared<DisplayOctave>( std::move( value ) ); }
+		inline DisplayOctavePtr makeDisplayOctave( const types::OctaveValue& value ) { return std::make_shared<DisplayOctave>( value ); }
         class DisplayOctave : public ElementInterface
         {
         public:
-        public:
             DisplayOctave();
-            DisplayOctave( const types::OctaveValue& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11687,7 +11508,6 @@ namespace mx
         private:
             types::OctaveValue myValue;
         };
-        
         
         /**************** MovementNumber ****************
          6363
@@ -11702,12 +11522,12 @@ namespace mx
 		using MovementNumberSetIter = MovementNumberSet::iterator;
 		using MovementNumberSetIterConst = MovementNumberSet::const_iterator;
 		inline MovementNumberPtr makeMovementNumber() { return std::make_shared<MovementNumber>(); }
+		inline MovementNumberPtr makeMovementNumber( types::XsString&& value ) { return std::make_shared<MovementNumber>( std::move( value ) ); }
+		inline MovementNumberPtr makeMovementNumber( const types::XsString& value ) { return std::make_shared<MovementNumber>( value ); }
         class MovementNumber : public ElementInterface
         {
         public:
-        public:
             MovementNumber();
-            MovementNumber( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11718,7 +11538,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         /**************** MovementTitle ****************
          6369
@@ -11733,12 +11552,12 @@ namespace mx
 		using MovementTitleSetIter = MovementTitleSet::iterator;
 		using MovementTitleSetIterConst = MovementTitleSet::const_iterator;
 		inline MovementTitlePtr makeMovementTitle() { return std::make_shared<MovementTitle>(); }
+		inline MovementTitlePtr makeMovementTitle( types::XsString&& value ) { return std::make_shared<MovementTitle>( std::move( value ) ); }
+		inline MovementTitlePtr makeMovementTitle( const types::XsString& value ) { return std::make_shared<MovementTitle>( value ); }
         class MovementTitle : public ElementInterface
         {
         public:
-        public:
             MovementTitle();
-            MovementTitle( const types::XsString& value );
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -11749,7 +11568,6 @@ namespace mx
         private:
             types::XsString myValue;
         };
-        
         
         
         
@@ -11774,7 +11592,6 @@ namespace mx
         class Double : public ElementInterface
         {
         public:
-        public:
             Double();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -11788,7 +11605,6 @@ namespace mx
          <xs:element name="accordion-high" type="empty" minOccurs="0">
          <xs:annotation>
          <xs:documentation>The accordion-high element indicates the presence of a dot in the high (4') section of the registration symbol.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class AccordionHigh;
 		using AccordionHighPtr = std::shared_ptr<AccordionHigh>;
@@ -11799,7 +11615,6 @@ namespace mx
 		inline AccordionHighPtr makeAccordionHigh() { return std::make_shared<AccordionHigh>(); }
         class AccordionHigh : public ElementInterface
         {
-        public:
         public:
             AccordionHigh();
             virtual bool hasAttributes() const;
@@ -11814,7 +11629,6 @@ namespace mx
          <xs:element name="accordion-low" type="empty" minOccurs="0">
          <xs:annotation>
          <xs:documentation>The accordion-low element indicates the presence of a dot in the low (16') section of the registration symbol.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class AccordionLow;
 		using AccordionLowPtr = std::shared_ptr<AccordionLow>;
@@ -11825,7 +11639,6 @@ namespace mx
 		inline AccordionLowPtr makeAccordionLow() { return std::make_shared<AccordionLow>(); }
         class AccordionLow : public ElementInterface
         {
-        public:
         public:
             AccordionLow();
             virtual bool hasAttributes() const;
@@ -11840,7 +11653,6 @@ namespace mx
          <xs:element name="metronome-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The metronome-dot element works like the dot element in defining metric relationships.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class MetronomeDot;
 		using MetronomeDotPtr = std::shared_ptr<MetronomeDot>;
@@ -11851,7 +11663,6 @@ namespace mx
 		inline MetronomeDotPtr makeMetronomeDot() { return std::make_shared<MetronomeDot>(); }
         class MetronomeDot : public ElementInterface
         {
-        public:
         public:
             MetronomeDot();
             virtual bool hasAttributes() const;
@@ -11866,7 +11677,6 @@ namespace mx
          <xs:element name="timpani" type="empty"/>
          
          */
-		class Timpani;
 		using TimpaniPtr = std::shared_ptr<Timpani>;
 		using TimpaniUPtr = std::unique_ptr<Timpani>;
 		using TimpaniSet = std::vector<TimpaniPtr>;
@@ -11875,7 +11685,6 @@ namespace mx
 		inline TimpaniPtr makeTimpani() { return std::make_shared<Timpani>(); }
         class Timpani : public ElementInterface
         {
-        public:
         public:
             Timpani();
             virtual bool hasAttributes() const;
@@ -11890,7 +11699,6 @@ namespace mx
          <xs:element name="pre-bend" type="empty">
          <xs:annotation>
          <xs:documentation>The pre-bend element indicates that this is a pre-bend rather than a normal bend or a release.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class PreBend;
 		using PreBendPtr = std::shared_ptr<PreBend>;
@@ -11901,7 +11709,6 @@ namespace mx
 		inline PreBendPtr makePreBend() { return std::make_shared<PreBend>(); }
         class PreBend : public ElementInterface
         {
-        public:
         public:
             PreBend();
             virtual bool hasAttributes() const;
@@ -11916,7 +11723,6 @@ namespace mx
          <xs:element name="release" type="empty">
          <xs:annotation>
          <xs:documentation>The release element indicates that this is a release rather than a normal bend or pre-bend.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Release;
 		using ReleasePtr = std::shared_ptr<Release>;
@@ -11927,7 +11733,6 @@ namespace mx
 		inline ReleasePtr makeRelease() { return std::make_shared<Release>(); }
         class Release : public ElementInterface
         {
-        public:
         public:
             Release();
             virtual bool hasAttributes() const;
@@ -11942,7 +11747,6 @@ namespace mx
          <xs:element name="natural" type="empty">
          <xs:annotation>
          <xs:documentation>The natural element indicates that this is a natural harmonic. These are usually notated at base pitch rather than sounding pitch.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Natural;
 		using NaturalPtr = std::shared_ptr<Natural>;
@@ -11953,7 +11757,6 @@ namespace mx
 		inline NaturalPtr makeNatural() { return std::make_shared<Natural>(); }
         class Natural : public ElementInterface
         {
-        public:
         public:
             Natural();
             virtual bool hasAttributes() const;
@@ -11968,7 +11771,6 @@ namespace mx
          <xs:element name="artificial" type="empty">
          <xs:annotation>
          <xs:documentation>The artificial element indicates that this is an artificial harmonic.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Artificial;
 		using ArtificialPtr = std::shared_ptr<Artificial>;
@@ -11979,7 +11781,6 @@ namespace mx
 		inline ArtificialPtr makeArtificial() { return std::make_shared<Artificial>(); }
         class Artificial : public ElementInterface
         {
-        public:
         public:
             Artificial();
             virtual bool hasAttributes() const;
@@ -11994,7 +11795,6 @@ namespace mx
          <xs:element name="base-pitch" type="empty">
          <xs:annotation>
          <xs:documentation>The base pitch is the pitch at which the string is played before touching to create the harmonic.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class BasePitch;
 		using BasePitchPtr = std::shared_ptr<BasePitch>;
@@ -12005,7 +11805,6 @@ namespace mx
 		inline BasePitchPtr makeBasePitch() { return std::make_shared<BasePitch>(); }
         class BasePitch : public ElementInterface
         {
-        public:
         public:
             BasePitch();
             virtual bool hasAttributes() const;
@@ -12020,7 +11819,6 @@ namespace mx
          <xs:element name="touching-pitch" type="empty">
          <xs:annotation>
          <xs:documentation>The touching-pitch is the pitch at which the string is touched lightly to produce the harmonic.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class TouchingPitch;
 		using TouchingPitchPtr = std::shared_ptr<TouchingPitch>;
@@ -12031,7 +11829,6 @@ namespace mx
 		inline TouchingPitchPtr makeTouchingPitch() { return std::make_shared<TouchingPitch>(); }
         class TouchingPitch : public ElementInterface
         {
-        public:
         public:
             TouchingPitch();
             virtual bool hasAttributes() const;
@@ -12046,7 +11843,6 @@ namespace mx
          <xs:element name="sounding-pitch" type="empty">
          <xs:annotation>
          <xs:documentation>The sounding-pitch is the pitch which is heard when playing the harmonic.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class SoundingPitch;
 		using SoundingPitchPtr = std::shared_ptr<SoundingPitch>;
@@ -12057,7 +11853,6 @@ namespace mx
 		inline SoundingPitchPtr makeSoundingPitch() { return std::make_shared<SoundingPitch>(); }
         class SoundingPitch : public ElementInterface
         {
-        public:
         public:
             SoundingPitch();
             virtual bool hasAttributes() const;
@@ -12072,7 +11867,6 @@ namespace mx
          <xs:element name="laughing" type="empty">
          <xs:annotation>
          <xs:documentation>The laughing element is taken from Humdrum.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Laughing;
 		using LaughingPtr = std::shared_ptr<Laughing>;
@@ -12083,7 +11877,6 @@ namespace mx
 		inline LaughingPtr makeLaughing() { return std::make_shared<Laughing>(); }
         class Laughing : public ElementInterface
         {
-        public:
         public:
             Laughing();
             virtual bool hasAttributes() const;
@@ -12098,7 +11891,6 @@ namespace mx
          <xs:element name="humming" type="empty">
          <xs:annotation>
          <xs:documentation>The humming element is taken from Humdrum.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Humming;
 		using HummingPtr = std::shared_ptr<Humming>;
@@ -12109,7 +11901,6 @@ namespace mx
 		inline HummingPtr makeHumming() { return std::make_shared<Humming>(); }
         class Humming : public ElementInterface
         {
-        public:
         public:
             Humming();
             virtual bool hasAttributes() const;
@@ -12124,7 +11915,6 @@ namespace mx
          <xs:element name="end-line" type="empty" minOccurs="0">
          <xs:annotation>
          <xs:documentation>The end-line element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class EndLine;
 		using EndLinePtr = std::shared_ptr<EndLine>;
@@ -12135,7 +11925,6 @@ namespace mx
 		inline EndLinePtr makeEndLine() { return std::make_shared<EndLine>(); }
         class EndLine : public ElementInterface
         {
-        public:
         public:
             EndLine();
             virtual bool hasAttributes() const;
@@ -12150,7 +11939,6 @@ namespace mx
          <xs:element name="end-paragraph" type="empty" minOccurs="0">
          <xs:annotation>
          <xs:documentation>The end-paragraph element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class EndParagraph;
 		using EndParagraphPtr = std::shared_ptr<EndParagraph>;
@@ -12161,7 +11949,6 @@ namespace mx
 		inline EndParagraphPtr makeEndParagraph() { return std::make_shared<EndParagraph>(); }
         class EndParagraph : public ElementInterface
         {
-        public:
         public:
             EndParagraph();
             virtual bool hasAttributes() const;
@@ -12176,7 +11963,6 @@ namespace mx
          <xs:element name="cue" type="empty">
          <xs:annotation>
          <xs:documentation>The cue element indicates the presence of a cue note.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Cue;
 		using CuePtr = std::shared_ptr<Cue>;
@@ -12187,7 +11973,6 @@ namespace mx
 		inline CuePtr makeCue() { return std::make_shared<Cue>(); }
         class Cue : public ElementInterface
         {
-        public:
         public:
             Cue();
             virtual bool hasAttributes() const;
@@ -12202,7 +11987,6 @@ namespace mx
          <xs:element name="normal-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The normal-dot element is used to specify dotted normal tuplet types.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class NormalDot;
 		using NormalDotPtr = std::shared_ptr<NormalDot>;
@@ -12213,7 +11997,6 @@ namespace mx
 		inline NormalDotPtr makeNormalDot() { return std::make_shared<NormalDot>(); }
         class NormalDot : public ElementInterface
         {
-        public:
         public:
             NormalDot();
             virtual bool hasAttributes() const;
@@ -12228,7 +12011,6 @@ namespace mx
          <xs:element name="group-time" type="empty" minOccurs="0">
          <xs:annotation>
          <xs:documentation>The group-time element indicates that the displayed time signatures should stretch across all parts and staves in the group.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class GroupTime;
 		using GroupTimePtr = std::shared_ptr<GroupTime>;
@@ -12239,7 +12021,6 @@ namespace mx
 		inline GroupTimePtr makeGroupTime() { return std::make_shared<GroupTime>(); }
         class GroupTime : public ElementInterface
         {
-        public:
         public:
             GroupTime();
             virtual bool hasAttributes() const;
@@ -12254,7 +12035,6 @@ namespace mx
          <xs:element name="solo" type="empty">
          <xs:annotation>
          <xs:documentation>The solo element was added in Version 2.0. It is present if performance is intended by a solo instrument.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Solo;
 		using SoloPtr = std::shared_ptr<Solo>;
@@ -12265,7 +12045,6 @@ namespace mx
 		inline SoloPtr makeSolo() { return std::make_shared<Solo>(); }
         class Solo : public ElementInterface
         {
-        public:
         public:
             Solo();
             virtual bool hasAttributes() const;
@@ -12280,7 +12059,6 @@ namespace mx
          <xs:element name="slash-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class SlashDot;
 		using SlashDotPtr = std::shared_ptr<SlashDot>;
@@ -12291,7 +12069,6 @@ namespace mx
 		inline SlashDotPtr makeSlashDot() { return std::make_shared<SlashDot>(); }
         class SlashDot : public ElementInterface
         {
-        public:
         public:
             SlashDot();
             virtual bool hasAttributes() const;
@@ -12306,7 +12083,6 @@ namespace mx
          <xs:element name="beat-unit-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The beat-unit-dot element is used to specify any augmentation dots for a metronome mark note.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class BeatUnitDot;
 		using BeatUnitDotPtr = std::shared_ptr<BeatUnitDot>;
@@ -12317,7 +12093,6 @@ namespace mx
 		inline BeatUnitDotPtr makeBeatUnitDot() { return std::make_shared<BeatUnitDot>(); }
         class BeatUnitDot : public ElementInterface
         {
-        public:
         public:
             BeatUnitDot();
             virtual bool hasAttributes() const;
@@ -12332,7 +12107,6 @@ namespace mx
          <xs:element name="chord" type="empty" minOccurs="0">
          <xs:annotation>
          <xs:documentation>The chord element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note. In MuseData, a missing duration indicates the same length as the previous note, but the MusicXML format requires a duration for chord notes too.</xs:documentation>
-         </xs:annotation>
          </xs:element> */
 		class Chord;
 		using ChordPtr = std::shared_ptr<Chord>;
@@ -12343,7 +12117,6 @@ namespace mx
 		inline ChordPtr makeChord() { return std::make_shared<Chord>(); }
         class Chord : public ElementInterface
         {
-        public:
         public:
             Chord();
             virtual bool hasAttributes() const;
@@ -12358,7 +12131,6 @@ namespace mx
          ***************************************************************/
         
         struct EmptyPrintObjectStyleAlignAttributes;
-        using EmptyPrintObjectStyleAlignAttributesPtr = std::shared_ptr<EmptyPrintObjectStyleAlignAttributes>;
         
         struct EmptyPrintObjectStyleAlignAttributes : public AttributesInterface
         {
@@ -12406,7 +12178,6 @@ namespace mx
         class Segno : public ElementInterface
         {
         public:
-        public:
             Segno();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12420,7 +12191,6 @@ namespace mx
         };
         
         /*
-         3034
          <xs:element name="coda" type="empty-print-style-align" minOccurs="0"/>
          <xs:complexType name="empty-print-style-align">
          <xs:annotation>
@@ -12439,7 +12209,6 @@ namespace mx
         class Coda : public ElementInterface
         {
         public:
-        public:
             Coda();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12453,7 +12222,6 @@ namespace mx
         };
         
         /*
-         3333
          <xs:element name="segno" type="empty-print-style-align" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
@@ -12466,13 +12234,13 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-//		class Segno;
-//		using SegnoPtr = std::shared_ptr<Segno>;
-//		using SegnoUPtr = std::unique_ptr<Segno>;
-//		using SegnoSet = std::vector<SegnoPtr>;
-//		using SegnoSetIter = SegnoSet::iterator;
-//		using SegnoSetIterConst = SegnoSet::const_iterator;
-//		inline SegnoPtr makeSegno() { return std::make_shared<Segno>(); }
+        //		class Segno;
+        //		using SegnoPtr = std::shared_ptr<Segno>;
+        //		using SegnoUPtr = std::unique_ptr<Segno>;
+        //		using SegnoSet = std::vector<SegnoPtr>;
+        //		using SegnoSetIter = SegnoSet::iterator;
+        //		using SegnoSetIterConst = SegnoSet::const_iterator;
+        //		inline SegnoPtr makeSegno() { return std::make_shared<Segno>(); }
         //        class Segno : public ElementInterface//        {
         //        public:
         //            Segno();
@@ -12489,7 +12257,6 @@ namespace mx
         
         /*
          3345
-         <xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
          </xs:annotation>
@@ -12501,13 +12268,13 @@ namespace mx
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
          */
-//		class Coda;
-//		using CodaPtr = std::shared_ptr<Coda>;
-//		using CodaUPtr = std::unique_ptr<Coda>;
-//		using CodaSet = std::vector<CodaPtr>;
-//		using CodaSetIter = CodaSet::iterator;
-//		using CodaSetIterConst = CodaSet::const_iterator;
-//		inline CodaPtr makeCoda() { return std::make_shared<Coda>(); }
+        //		class Coda;
+        //		using CodaPtr = std::shared_ptr<Coda>;
+        //		using CodaUPtr = std::unique_ptr<Coda>;
+        //		using CodaSet = std::vector<CodaPtr>;
+        //		using CodaSetIter = CodaSet::iterator;
+        //		using CodaSetIterConst = CodaSet::const_iterator;
+        //		inline CodaPtr makeCoda() { return std::make_shared<Coda>(); }
         //        class Coda : public ElementInterface//        {
         //        public:
         //            Coda();
@@ -12524,7 +12291,6 @@ namespace mx
         
         /*
          3376
-         <xs:element name="damp" type="empty-print-style-align">
          <xs:annotation>
          <xs:documentation>The damp element specifies a harp damping mark.</xs:documentation>
          </xs:annotation>
@@ -12546,7 +12312,6 @@ namespace mx
         class Damp : public ElementInterface
         {
         public:
-        public:
             Damp();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12560,7 +12325,6 @@ namespace mx
         };
         
         /*
-         3381
          <xs:element name="damp-all" type="empty-print-style-align">
          <xs:annotation>
          <xs:documentation>The damp-all element specifies a harp damping mark for all strings.</xs:documentation>
@@ -12583,7 +12347,6 @@ namespace mx
         class DampAll : public ElementInterface
         {
         public:
-        public:
             DampAll();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12597,7 +12360,6 @@ namespace mx
         };
         
         /*
-         3386
          <xs:element name="eyeglasses" type="empty-print-style-align">
          <xs:annotation>
          <xs:documentation>The eyeglasses element specifies the eyeglasses symbol, common in commercial music.</xs:documentation>
@@ -12620,7 +12382,6 @@ namespace mx
         class Eyeglasses : public ElementInterface
         {
         public:
-        public:
             Eyeglasses();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12634,7 +12395,6 @@ namespace mx
         };
         
         /*
-         4274
          <xs:element name="left-divider" type="empty-print-object-style-align"/>
          <xs:complexType name="empty-print-object-style-align">
          <xs:annotation>
@@ -12654,7 +12414,6 @@ namespace mx
         class LeftDivider : public ElementInterface
         {
         public:
-        public:
             LeftDivider();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12668,7 +12427,6 @@ namespace mx
         };
         
         /*
-         4277
          <xs:element name="right-divider" type="empty-print-object-style-align"/>
          <xs:complexType name="empty-print-object-style-align">
          <xs:annotation>
@@ -12688,7 +12446,6 @@ namespace mx
         class RightDivider : public ElementInterface
         {
         public:
-        public:
             RightDivider();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12702,7 +12459,6 @@ namespace mx
         };
         
         struct EmptyPlacementAttributes;
-        using EmptyPlacementAttributesPtr = std::shared_ptr<EmptyPlacementAttributes>;
         
         struct EmptyPlacementAttributes : public AttributesInterface
         {
@@ -12755,7 +12511,6 @@ namespace mx
         class Accent : public ElementInterface
         {
         public:
-        public:
             Accent();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12769,7 +12524,6 @@ namespace mx
         };
         
         /*
-         4394
          <xs:element name="staccato" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The staccato element is used for a dot articulation, as opposed to a stroke or a wedge.</xs:documentation>
@@ -12793,7 +12547,6 @@ namespace mx
         class Staccato : public ElementInterface
         {
         public:
-        public:
             Staccato();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12807,7 +12560,6 @@ namespace mx
         };
         
         /*
-         4399
          <xs:element name="tenuto" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The tenuto element indicates a tenuto line symbol.</xs:documentation>
@@ -12831,7 +12583,6 @@ namespace mx
         class Tenuto : public ElementInterface
         {
         public:
-        public:
             Tenuto();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12845,7 +12596,6 @@ namespace mx
         };
         
         /*
-         4404
          <xs:element name="detached-legato" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The detached-legato element indicates the combination of a tenuto line and staccato dot symbol.</xs:documentation>
@@ -12869,7 +12619,6 @@ namespace mx
         class DetachedLegato : public ElementInterface
         {
         public:
-        public:
             DetachedLegato();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12883,7 +12632,6 @@ namespace mx
         };
         
         /*
-         4409
          <xs:element name="staccatissimo" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The staccatissimo element is used for a wedge articulation, as opposed to a dot or a stroke.</xs:documentation>
@@ -12907,7 +12655,6 @@ namespace mx
         class Staccatissimo : public ElementInterface
         {
         public:
-        public:
             Staccatissimo();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12921,7 +12668,6 @@ namespace mx
         };
         
         /*
-         4414
          <xs:element name="spiccato" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The spiccato element is used for a stroke articulation, as opposed to a dot or a wedge.</xs:documentation>
@@ -12945,7 +12691,6 @@ namespace mx
         class Spiccato : public ElementInterface
         {
         public:
-        public:
             Spiccato();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -12959,7 +12704,6 @@ namespace mx
         };
         
         struct EmptyLineAttributes;
-        using EmptyLineAttributesPtr = std::shared_ptr<EmptyLineAttributes>;
         
         struct EmptyLineAttributes : public AttributesInterface
         {
@@ -13019,7 +12763,6 @@ namespace mx
         class Scoop : public ElementInterface
         {
         public:
-        public:
             Scoop();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13033,7 +12776,6 @@ namespace mx
         };
         
         /*
-         4424
          <xs:element name="plop" type="empty-line">
          <xs:annotation>
          <xs:documentation>The plop element is an indeterminate slide attached to a single note. The plop element appears before the main note and comes from above the main pitch.</xs:documentation>
@@ -13060,7 +12802,6 @@ namespace mx
         class Plop : public ElementInterface
         {
         public:
-        public:
             Plop();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13074,7 +12815,6 @@ namespace mx
         };
         
         /*
-         4429
          <xs:element name="doit" type="empty-line">
          <xs:annotation>
          <xs:documentation>The doit element is an indeterminate slide attached to a single note. The doit element appears after the main note and goes above the main pitch.</xs:documentation>
@@ -13101,7 +12841,6 @@ namespace mx
         class Doit : public ElementInterface
         {
         public:
-        public:
             Doit();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13115,7 +12854,6 @@ namespace mx
         };
         
         /*
-         4434
          <xs:element name="falloff" type="empty-line">
          <xs:annotation>
          <xs:documentation>The falloff element is an indeterminate slide attached to a single note. The falloff element appears before the main note and goes below the main pitch.</xs:documentation>
@@ -13142,7 +12880,6 @@ namespace mx
         class Falloff : public ElementInterface
         {
         public:
-        public:
             Falloff();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13156,7 +12893,6 @@ namespace mx
         };
         
         /*
-         4442
          <xs:element name="caesura" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The caesura element indicates a slight pause. It is notated using a "railroad tracks" symbol.</xs:documentation>
@@ -13180,7 +12916,6 @@ namespace mx
         class Caesura : public ElementInterface
         {
         public:
-        public:
             Caesura();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13194,7 +12929,6 @@ namespace mx
         };
         
         /*
-         4447
          <xs:element name="stress" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The stress element indicates a stressed note.</xs:documentation>
@@ -13218,7 +12952,6 @@ namespace mx
         class Stress : public ElementInterface
         {
         public:
-        public:
             Stress();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13232,7 +12965,6 @@ namespace mx
         };
         
         /*
-         4452
          <xs:element name="unstress" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The unstress element indicates an unstressed note. It is often notated using a u-shaped symbol.</xs:documentation>
@@ -13256,7 +12988,6 @@ namespace mx
         class Unstress : public ElementInterface
         {
         public:
-        public:
             Unstress();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13270,7 +13001,6 @@ namespace mx
         };
         
         /*
-         5005
          <xs:element name="dot" type="empty-placement" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>One dot element is used for each dot of prolongation. The placement element is used to specify whether the dot should appear above or below the staff line. It is ignored for notes that appear on a staff space.</xs:documentation>
@@ -13294,7 +13024,6 @@ namespace mx
         class Dot : public ElementInterface
         {
         public:
-        public:
             Dot();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13308,7 +13037,6 @@ namespace mx
         };
         
         struct EmptyTrillSoundAttributes;
-        using EmptyTrillSoundAttributesPtr = std::shared_ptr<EmptyTrillSoundAttributes>;
         
         struct EmptyTrillSoundAttributes : public AttributesInterface
         {
@@ -13376,7 +13104,6 @@ namespace mx
         class TrillMark : public ElementInterface
         {
         public:
-        public:
             TrillMark();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13390,7 +13117,6 @@ namespace mx
         };
         
         /*
-         5153
          <xs:element name="vertical-turn" type="empty-trill-sound">
          <xs:annotation>
          <xs:documentation>The vertical-turn element has the turn symbol shape arranged vertically going from upper left to lower right.</xs:documentation>
@@ -13415,7 +13141,6 @@ namespace mx
         class VerticalTurn : public ElementInterface
         {
         public:
-        public:
             VerticalTurn();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13429,7 +13154,6 @@ namespace mx
         };
         
         /*
-         5158
          <xs:element name="shake" type="empty-trill-sound">
          <xs:annotation>
          <xs:documentation>The shake element has a similar appearance to an inverted-mordent element.</xs:documentation>
@@ -13454,7 +13178,6 @@ namespace mx
         class Shake : public ElementInterface
         {
         public:
-        public:
             Shake();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13468,7 +13191,6 @@ namespace mx
         };
         
         /*
-         5176
          <xs:element name="schleifer" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The name for this ornament is based on the German, to avoid confusion with the more common slide element defined earlier.</xs:documentation>
@@ -13492,7 +13214,6 @@ namespace mx
         class Schleifer : public ElementInterface
         {
         public:
-        public:
             Schleifer();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13506,7 +13227,6 @@ namespace mx
         };
         
         /*
-         5339
          <xs:element name="up-bow" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The up-bow element represents the symbol that is used both for up-bowing on bowed instruments, and up-stroke on plucked instruments.</xs:documentation>
@@ -13530,7 +13250,6 @@ namespace mx
         class UpBow : public ElementInterface
         {
         public:
-        public:
             UpBow();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13544,7 +13263,6 @@ namespace mx
         };
         
         /*
-         5344
          <xs:element name="down-bow" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The down-bow element represents the symbol that is used both for down-bowing on bowed instruments, and down-stroke on plucked instruments.</xs:documentation>
@@ -13568,7 +13286,6 @@ namespace mx
         class DownBow : public ElementInterface
         {
         public:
-        public:
             DownBow();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13582,7 +13299,6 @@ namespace mx
         };
         
         /*
-         5352
          <xs:element name="open-string" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The open-string element represents the zero-shaped open string symbol.</xs:documentation>
@@ -13606,7 +13322,6 @@ namespace mx
         class OpenString : public ElementInterface
         {
         public:
-        public:
             OpenString();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13620,7 +13335,6 @@ namespace mx
         };
         
         /*
-         5357
          <xs:element name="thumb-position" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The thumb-position element represents the thumb position symbol. This is a circle with a line, where the line does not come within the circle. It is distinct from the snap pizzicato symbol, where the line comes inside the circle.</xs:documentation>
@@ -13644,7 +13358,6 @@ namespace mx
         class ThumbPosition : public ElementInterface
         {
         public:
-        public:
             ThumbPosition();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13658,7 +13371,6 @@ namespace mx
         };
         
         /*
-         5370
          <xs:element name="double-tongue" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The double-tongue element represents the double tongue symbol (two dots arranged horizontally).</xs:documentation>
@@ -13682,7 +13394,6 @@ namespace mx
         class DoubleTongue : public ElementInterface
         {
         public:
-        public:
             DoubleTongue();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13696,7 +13407,6 @@ namespace mx
         };
         
         /*
-         5375
          <xs:element name="triple-tongue" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The triple-tongue element represents the triple tongue symbol (three dots arranged horizontally).</xs:documentation>
@@ -13720,7 +13430,6 @@ namespace mx
         class TripleTongue : public ElementInterface
         {
         public:
-        public:
             TripleTongue();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13734,7 +13443,6 @@ namespace mx
         };
         
         /*
-         5380
          <xs:element name="stopped" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The stopped element represents the stopped symbol, which looks like a plus sign.</xs:documentation>
@@ -13758,7 +13466,6 @@ namespace mx
         class Stopped : public ElementInterface
         {
         public:
-        public:
             Stopped();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13772,7 +13479,6 @@ namespace mx
         };
         
         /*
-         5385
          <xs:element name="snap-pizzicato" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The snap-pizzicato element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the thumb-position symbol, where the line does not come inside the circle.</xs:documentation>
@@ -13796,7 +13502,6 @@ namespace mx
         class SnapPizzicato : public ElementInterface
         {
         public:
-        public:
             SnapPizzicato();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13810,7 +13515,6 @@ namespace mx
         };
         
         /*
-         5416
          <xs:element name="fingernails" type="empty-placement">
          <xs:annotation>
          <xs:documentation>The fingernails element is used in notation for harp and other plucked string instruments.</xs:documentation>
@@ -13834,7 +13538,6 @@ namespace mx
         class Fingernails : public ElementInterface
         {
         public:
-        public:
             Fingernails();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13848,7 +13551,6 @@ namespace mx
         };
         
         struct EmptyFontAttributes;
-        using EmptyFontAttributesPtr = std::shared_ptr<EmptyFontAttributes>;
         
         struct EmptyFontAttributes : public AttributesInterface
         {
@@ -13886,7 +13588,6 @@ namespace mx
         class MusicFont : public ElementInterface
         {
         public:
-        public:
             MusicFont();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13900,7 +13601,6 @@ namespace mx
         };
         
         /*
-         5718
          <xs:element name="word-font" type="empty-font" minOccurs="0"/>
          <xs:complexType name="empty-font">
          <xs:annotation>
@@ -13919,7 +13619,6 @@ namespace mx
         class WordFont : public ElementInterface
         {
         public:
-        public:
             WordFont();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -13933,7 +13632,6 @@ namespace mx
         };
         
         /****************************************************************************
-         MORE Empty Elements with Attributes
          ****************************************************************************/
         /*
          3026 [ equivalents 3026, 5163 ]
@@ -14000,7 +13698,6 @@ namespace mx
         class WavyLine : public ElementInterface
         {
         public:
-        public:
             WavyLine();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14014,7 +13711,6 @@ namespace mx
         };
         
         /*
-         3047
          <xs:element name="repeat" type="repeat" minOccurs="0"/>
          <xs:complexType name="repeat">
          <xs:annotation>
@@ -14053,7 +13749,6 @@ namespace mx
         class Repeat : public ElementInterface
         {
         public:
-        public:
             Repeat();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14067,7 +13762,6 @@ namespace mx
         };
         
         /*
-         3351
          <xs:element name="wedge" type="wedge"/>
          <xs:complexType name="wedge">
          <xs:annotation>
@@ -14125,7 +13819,6 @@ namespace mx
         class Wedge : public ElementInterface
         {
         public:
-        public:
             Wedge();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14139,7 +13832,6 @@ namespace mx
         };
         
         /*
-         3358
          <xs:element name="dashes" type="dashes"/>
          <xs:complexType name="dashes">
          <xs:annotation>
@@ -14190,7 +13882,6 @@ namespace mx
         class Dashes : public ElementInterface
         {
         public:
-        public:
             Dashes();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14204,7 +13895,6 @@ namespace mx
         };
         
         /*
-         3361
          <xs:element name="bracket" type="bracket"/>
          <xs:complexType name="bracket">
          <xs:annotation>
@@ -14244,7 +13934,6 @@ namespace mx
         class Bracket : public ElementInterface
         {
         public:
-        public:
             Bracket();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14258,7 +13947,6 @@ namespace mx
         };
         
         /*
-         3364
          <xs:element name="pedal" type="pedal"/>
          <xs:complexType name="pedal">
          <xs:annotation>
@@ -14316,7 +14004,6 @@ namespace mx
         class Pedal : public ElementInterface
         {
         public:
-        public:
             Pedal();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14330,7 +14017,6 @@ namespace mx
         };
         
         /*
-         3370
          <xs:element name="octave-shift" type="octave-shift"/>
          <xs:complexType name="octave-shift">
          <xs:annotation>
@@ -14391,7 +14077,6 @@ namespace mx
         class OctaveShift : public ElementInterface
         {
         public:
-        public:
             OctaveShift();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14405,7 +14090,6 @@ namespace mx
         };
         
         /*
-         3391
          <xs:element name="string-mute" type="string-mute"/>
          <xs:complexType name="string-mute">
          <xs:annotation>
@@ -14457,7 +14141,6 @@ namespace mx
         class StringMute : public ElementInterface
         {
         public:
-        public:
             StringMute();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14471,7 +14154,6 @@ namespace mx
         };
         
         /*
-         3397
          <xs:element name="image" type="image"/>
          <xs:complexType name="image">
          <xs:annotation>
@@ -14516,7 +14198,6 @@ namespace mx
         class Image : public ElementInterface
         {
         public:
-        public:
             Image();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14530,7 +14211,6 @@ namespace mx
         };
         
         /*
-         3491
          <xs:element name="barre" type="barre" minOccurs="0"/>
          <xs:complexType name="barre">
          <xs:annotation>
@@ -14564,7 +14244,6 @@ namespace mx
         class Barre : public ElementInterface
         {
         public:
-        public:
             Barre();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14578,7 +14257,6 @@ namespace mx
         };
         
         /*
-         4057
          <xs:element name="supports" type="supports"/>
          <xs:complexType name="supports">
          <xs:annotation>
@@ -14620,7 +14298,6 @@ namespace mx
         class Supports : public ElementInterface
         {
         public:
-        public:
             Supports();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14634,7 +14311,6 @@ namespace mx
         };
         
         /*
-         4599 [ equivalents 4599, 4824, 4828 ]
          <xs:element name="extend" type="extend" minOccurs="0"/>
          <xs:complexType name="extend">
          <xs:annotation>
@@ -14684,7 +14360,6 @@ namespace mx
         class Extend : public ElementInterface
         {
         public:
-        public:
             Extend();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14698,7 +14373,6 @@ namespace mx
         };
         
         /*
-         4824 [ equivalents 4599, 4824, 4828 ]
          <xs:element name="extend" type="extend" minOccurs="0"/>
          <xs:complexType name="extend">
          <xs:annotation>
@@ -14795,7 +14469,6 @@ namespace mx
         class Tied : public ElementInterface
         {
         public:
-        public:
             Tied();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14809,7 +14482,6 @@ namespace mx
         };
         
         /*
-         4917
          <xs:element name="slur" type="slur"/>
          <xs:complexType name="slur">
          <xs:annotation>
@@ -14880,7 +14552,6 @@ namespace mx
         class Slur : public ElementInterface
         {
         public:
-        public:
             Slur();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14894,7 +14565,6 @@ namespace mx
         };
         
         /*
-         4944
          <xs:element name="arpeggiate" type="arpeggiate"/>
          <xs:complexType name="arpeggiate">
          <xs:annotation>
@@ -14943,7 +14613,6 @@ namespace mx
         class Arpeggiate : public ElementInterface
         {
         public:
-        public:
             Arpeggiate();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -14957,7 +14626,6 @@ namespace mx
         };
         
         /*
-         4947
          <xs:element name="non-arpeggiate" type="non-arpeggiate"/>
          <xs:complexType name="non-arpeggiate">
          <xs:annotation>
@@ -15006,7 +14674,6 @@ namespace mx
         class NonArpeggiate : public ElementInterface
         {
         public:
-        public:
             NonArpeggiate();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15020,7 +14687,6 @@ namespace mx
         };
         
         /*
-         4965
          <xs:element name="grace" type="grace"/>
          <xs:complexType name="grace">
          <xs:annotation>
@@ -15062,7 +14728,6 @@ namespace mx
         class Grace : public ElementInterface
         {
         public:
-        public:
             Grace();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15076,7 +14741,6 @@ namespace mx
         };
         
         /*
-         4970 [ equivalents 4970, 4990 ]
          <xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
          <xs:complexType name="tie">
          <xs:annotation>
@@ -15112,7 +14776,6 @@ namespace mx
         class Tie : public ElementInterface
         {
         public:
-        public:
             Tie();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15126,7 +14789,6 @@ namespace mx
         };
         
         /*
-         4990 [ equivalents 4970, 4990 ]
          <xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
          <xs:complexType name="tie">
          <xs:annotation>
@@ -15171,7 +14833,6 @@ namespace mx
         class Instrument : public ElementInterface
         {
         public:
-        public:
             Instrument();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15185,7 +14846,6 @@ namespace mx
         };
         
         /*
-         5133
          <xs:element name="turn" type="horizontal-turn">
          <xs:annotation>
          <xs:documentation>The turn element is the normal turn shape which goes up then down.</xs:documentation>
@@ -15257,7 +14917,6 @@ namespace mx
         class Turn : public ElementInterface
         {
         public:
-        public:
             Turn();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15271,7 +14930,6 @@ namespace mx
         };
         
         /*
-         5138
          <xs:element name="delayed-turn" type="horizontal-turn">
          <xs:annotation>
          <xs:documentation>The delayed-turn element indicates a normal turn that is delayed until the end of the current note.</xs:documentation>
@@ -15343,7 +15001,6 @@ namespace mx
         class DelayedTurn : public ElementInterface
         {
         public:
-        public:
             DelayedTurn();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15357,7 +15014,6 @@ namespace mx
         };
         
         /*
-         5143
          <xs:element name="inverted-turn" type="horizontal-turn">
          <xs:annotation>
          <xs:documentation>The inverted-turn element has the shape which goes down and then up.</xs:documentation>
@@ -15429,7 +15085,6 @@ namespace mx
         class InvertedTurn : public ElementInterface
         {
         public:
-        public:
             InvertedTurn();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15443,7 +15098,6 @@ namespace mx
         };
         
         /*
-         5148
          <xs:element name="delayed-inverted-turn" type="horizontal-turn">
          <xs:annotation>
          <xs:documentation>The delayed-inverted-turn element indicates an inverted turn that is delayed until the end of the current note.</xs:documentation>
@@ -15515,7 +15169,6 @@ namespace mx
         class DelayedInvertedTurn : public ElementInterface
         {
         public:
-        public:
             DelayedInvertedTurn();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15529,7 +15182,6 @@ namespace mx
         };
         
         /*
-         5163 [ equivalents 3026, 5163 ]
          <xs:element name="wavy-line" type="wavy-line"/>
          <xs:complexType name="wavy-line">
          <xs:annotation>
@@ -15585,7 +15237,6 @@ namespace mx
         class TupletDot : public ElementInterface
         {
         public:
-        public:
             TupletDot();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15599,7 +15250,6 @@ namespace mx
         };
         
         /*
-         5662 [ equivalents 5662, 5683, 6340 ]
          <xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
          <xs:complexType name="link">
          <xs:annotation>
@@ -15659,7 +15309,6 @@ namespace mx
         class Link : public ElementInterface
         {
         public:
-        public:
             Link();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15673,7 +15322,6 @@ namespace mx
         };
         
         /*
-         5667 [ equivalents 5667, 5688, 6343 ]
          <xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
          <xs:complexType name="bookmark">
          <xs:annotation>
@@ -15714,7 +15362,6 @@ namespace mx
         class Bookmark : public ElementInterface
         {
         public:
-        public:
             Bookmark();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15728,7 +15375,6 @@ namespace mx
         };
         
         /*
-         5673
          <xs:element name="credit-image" type="image"/>
          <xs:complexType name="image">
          <xs:annotation>
@@ -15773,7 +15419,6 @@ namespace mx
         class CreditImage : public ElementInterface
         {
         public:
-        public:
             CreditImage();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15787,7 +15432,6 @@ namespace mx
         };
         
         /*
-         5683 [ equivalents 5662, 5683, 6340 ]
          <xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
          <xs:complexType name="link">
          <xs:annotation>
@@ -15859,7 +15503,6 @@ namespace mx
         class LyricFont : public ElementInterface
         {
         public:
-        public:
             LyricFont();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15873,7 +15516,6 @@ namespace mx
         };
         
         /*
-         5727
          <xs:element name="lyric-language" type="lyric-language" minOccurs="0" maxOccurs="unbounded"/>
          <xs:complexType name="lyric-language">
          <xs:annotation>
@@ -15912,7 +15554,6 @@ namespace mx
         class LyricLanguage : public ElementInterface
         {
         public:
-        public:
             LyricLanguage();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15926,7 +15567,6 @@ namespace mx
         };
         
         /*
-         6001
          <xs:element name="opus" type="opus" minOccurs="0"/>
          <xs:complexType name="opus">
          <xs:annotation>
@@ -15969,7 +15609,6 @@ namespace mx
         class Opus : public ElementInterface
         {
         public:
-        public:
             Opus();
             virtual bool hasAttributes() const;
             virtual bool hasContents() const;
@@ -15983,7 +15622,6 @@ namespace mx
         };
         
         /*
-         6340 [ equivalents 5662, 5683, 6340 ]
          <xs:element name="link" type="link"/>
          <xs:complexType name="link">
          <xs:annotation>
@@ -16045,7 +15683,6 @@ namespace mx
             FifthsPtr getFifths() const;
             void setFifths( const FifthsPtr& value );
             ModePtr getMode() const;
-            void setMode( const ModePtr& value );
             bool getHasMode() const;
             void setHasMode( const bool value );
         private:
@@ -16103,7 +15740,6 @@ namespace mx
             KeyAccidentalPtr getKeyAccidental() const;
             void setKeyAccidental( const KeyAccidentalPtr& value );
             bool getHasKeyAccidental() const;
-            void setHasKeyAccivental( const bool value );
         private:
             KeyStepPtr myKeyStep;
             KeyAlterPtr myKeyAlter;
@@ -16156,7 +15792,6 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             Choice getChoice() const;
             void setChoice( const Choice value );
-            TraditionalKeyPtr getTraditionalKey() const;
             void setTraditionalKey( const TraditionalKeyPtr& value );
             
             const NonTraditionalKeySet& getNonTraditionalKeySet() const;
@@ -16251,7 +15886,6 @@ namespace mx
             const KeyOctaveSet& getKeyOctaveSet() const;
             void removeKeyOctave( const KeyOctaveSetIterConst& value );
             void addKeyOctave( const KeyOctavePtr& value );
-            void clearKeyOctaveSet();
         private:
             KeyAttributesPtr myAttributes;
             KeyChoicePtr myKeyChoice;
@@ -16259,3 +15893,4 @@ namespace mx
         };
     }
 }
+Program ended with exit code: 0
