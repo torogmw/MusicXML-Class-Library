@@ -58,6 +58,9 @@
 /* Begin PBXFileReference section */
 		290D7C151AA397950081FBB5 /* MsItemAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemAttribute.cpp; sourceTree = "<group>"; };
 		290D7C161AA397950081FBB5 /* MsItemAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemAttribute.h; sourceTree = "<group>"; };
+		29115E5D1ABF20A500BB3357 /* codegenElementStubH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenElementStubH.h; sourceTree = "<group>"; };
+		29115E5E1ABF20AE00BB3357 /* codegenElementStubCpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenElementStubCpp.h; sourceTree = "<group>"; };
+		29115E5F1ABF20B900BB3357 /* codegenElementStubTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenElementStubTest.h; sourceTree = "<group>"; };
 		29200EB71AA43582000E3E37 /* MsItemElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MsItemElement.cpp; sourceTree = "<group>"; };
 		29200EB81AA43582000E3E37 /* MsItemElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsItemElement.h; sourceTree = "<group>"; };
 		2935A6F41AB5F76F002859CA /* codegenEmptyElementWithAttributesTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codegenEmptyElementWithAttributesTest.h; sourceTree = "<group>"; };
@@ -184,7 +187,14 @@
 			children = (
 				29D10B831A9BA5C800F03CE6 /* camelCase.cpp */,
 				29D10B841A9BA5C800F03CE6 /* camelCase.h */,
+				29CEB4B31AB4EFEF00D6AEFC /* codegenAttributesStructCpp.h */,
+				29CEB4B21AB4EE3B00D6AEFC /* codegenAttributesStructH.h */,
+				29AFF2701AB54AAB005E0E3D /* codegenEmptyElementWithAttributesCpp.h */,
+				29AFF26F1AB54A90005E0E3D /* codegenEmptyElementWithAttributesH.h */,
+				2935A6F41AB5F76F002859CA /* codegenEmptyElementWithAttributesTest.h */,
 				299CFC121AA78918009881B9 /* codegenValueElement.h */,
+				2977496A1AB211F400BF2205 /* codegenValueElementNoAttributes.h */,
+				298C816A1AB6715A006619A9 /* convertFunkyTypeName.h */,
 				29D10B9A1A9BD5BB00F03CE6 /* end.cpp */,
 				29D10B9B1A9BD5BB00F03CE6 /* end.h */,
 				29D10BA11A9BE05200F03CE6 /* enumsCpp.cpp */,
@@ -201,13 +211,9 @@
 				29CA12641A9C3FCC008DCCFA /* setIsImplemented.h */,
 				29D10B961A9BCD4700F03CE6 /* tab.cpp */,
 				29D10B971A9BCD4700F03CE6 /* tab.h */,
-				2977496A1AB211F400BF2205 /* codegenValueElementNoAttributes.h */,
-				29CEB4B21AB4EE3B00D6AEFC /* codegenAttributesStructH.h */,
-				29CEB4B31AB4EFEF00D6AEFC /* codegenAttributesStructCpp.h */,
-				29AFF26F1AB54A90005E0E3D /* codegenEmptyElementWithAttributesH.h */,
-				29AFF2701AB54AAB005E0E3D /* codegenEmptyElementWithAttributesCpp.h */,
-				2935A6F41AB5F76F002859CA /* codegenEmptyElementWithAttributesTest.h */,
-				298C816A1AB6715A006619A9 /* convertFunkyTypeName.h */,
+				29115E5D1ABF20A500BB3357 /* codegenElementStubH.h */,
+				29115E5E1ABF20AE00BB3357 /* codegenElementStubCpp.h */,
+				29115E5F1ABF20B900BB3357 /* codegenElementStubTest.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";

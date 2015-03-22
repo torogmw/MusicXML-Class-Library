@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29115E5C1ABF1AA900BB3357 /* goCreateElementStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29115E5A1ABF1AA900BB3357 /* goCreateElementStub.cpp */; };
 		2996E6B61ABE975F004869DD /* goRxMakeSharedNonDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2996E6B41ABE975F004869DD /* goRxMakeSharedNonDefault.cpp */; };
 		29AAB9951A8895E00027B7A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB9941A8895E00027B7A1 /* main.cpp */; };
 		29AAB9AB1A889EC50027B7A1 /* libDb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AAB9AA1A889EC50027B7A1 /* libDb.a */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		2900C30D1AA3EE170011D789 /* goCreateValueElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateValueElements.h; sourceTree = "<group>"; };
 		290D7C191AA3A0920081FBB5 /* goMsItemAttributeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemAttributeTest.h; sourceTree = "<group>"; };
+		29115E5A1ABF1AA900BB3357 /* goCreateElementStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = goCreateElementStub.cpp; sourceTree = "<group>"; };
+		29115E5B1ABF1AA900BB3357 /* goCreateElementStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goCreateElementStub.h; sourceTree = "<group>"; };
 		292D02DB1ABE225600005E61 /* goRxVectorAliasesForElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goRxVectorAliasesForElements.h; sourceTree = "<group>"; };
 		293FA8701ABCC8DC00E1CD67 /* goCreateAttributesForOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateAttributesForOne.h; sourceTree = "<group>"; };
 		294660831AB9D125002BDF66 /* goRxCreateSharedPtrsToElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goRxCreateSharedPtrsToElements.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				292D02DB1ABE225600005E61 /* goRxVectorAliasesForElements.h */,
 				29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */,
 				29AAB9941A8895E00027B7A1 /* main.cpp */,
+				29115E5A1ABF1AA900BB3357 /* goCreateElementStub.cpp */,
+				29115E5B1ABF1AA900BB3357 /* goCreateElementStub.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			files = (
 				2996E6B61ABE975F004869DD /* goRxMakeSharedNonDefault.cpp in Sources */,
 				29AAB9951A8895E00027B7A1 /* main.cpp in Sources */,
+				29115E5C1ABF1AA900BB3357 /* goCreateElementStub.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
