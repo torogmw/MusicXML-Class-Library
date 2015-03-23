@@ -161,6 +161,109 @@ namespace mx
 		{
 			myHasDouble = value;
 		}
-
+        /**************** DirectiveAttributes ****************/
+        /* 2667 */
+        DirectiveAttributes::DirectiveAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,lang( "it" )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasLang( false )
+        {}
+        
+        bool DirectiveAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasLang;
+        }
+        
+        std::ostream& DirectiveAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, lang, "lang", hasLang );
+            }
+            return os;
+        }
+        
+		Directive::Directive()
+		:myAttributes( std::make_shared<DirectiveAttributes>() )
+        ,myValue()
+		{}
+        Directive::Directive( const types::XsString& value )
+		:myAttributes( std::make_shared<DirectiveAttributes>() )
+        ,myValue( value )
+		{}
+		bool Directive::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Directive::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Directive::streamName( std::ostream& os ) const
+		{
+			os << "directive";
+			return os;
+		}
+		bool Directive::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Directive::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = true;
+            types::toStream( os, myValue );
+            return os;
+		}
+		DirectiveAttributesPtr Directive::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Directive::setAttributes( const DirectiveAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        types::XsString Directive::getValue() const
+        {
+            return myValue;
+        }
+        void Directive::setValue( const types::XsString& value )
+        {
+            myValue = value;
+        }
     }
 }

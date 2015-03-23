@@ -2,14 +2,12 @@
 #include <iostream>
 #include "goSetIsImplemented.h"
 #include "goListNonImplementedElements.h"
-// #include "goCreateAttributesForOne.h"
 #include "goCreateElementStub.h"
 
 int main(int argc, const char * argv[])
 {
-    // go::goSetIsImplemented( std::vector<int>{ 2660 } );
-    // go::goListNonImplementedElements();
-    // go::goCreateAttributesForOne( 2614 );
-    go::goCreateElementStubs( 2667 );
+    go::goSetIsImplemented( std::vector<int>{ 2667 } );
+    go::goListNonImplementedElements();
+    // go::goCreateElementStubs( 2667 );
     return 0;
 }
