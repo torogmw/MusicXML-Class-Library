@@ -107,8 +107,10 @@ namespace xsd
         cpp << tab(2) << "}" << end();
         cpp << tab(2) << "std::ostream& " << e->getCppName() << "::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const" << end();
         cpp << tab(2) << "{" << end();
+        cpp << tab(3) << "isOneLineOnly = false;" << end();
+        cpp << tab(3) << "os << std::endl;" << end();
+        cpp << tab(3) << "// mySign->toStream( os, indentLevel+1 );" << end();
         cpp << tab(3) << notImplemented << end();
-        cpp << tab(4) << "// myMember1->streamContents( os, indentLevel+1, isOneLineOnly );" << end();
         cpp << tab(2) << "}" << end();
         cpp << tab(2) << "" << attStructName << "Ptr " << e->getCppName() << "::getAttributes() const" << end();
         cpp << tab(2) << "{" << end();

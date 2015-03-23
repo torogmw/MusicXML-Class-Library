@@ -37,7 +37,7 @@ namespace xsd
         test << tab(0) << "}" << end();
         
         /* TEST 02 */
-        test << tab(0) << "TEST( Test01, " << e->getCppName() << " )" << end();
+        test << tab(0) << "TEST( Test02, " << e->getCppName() << " )" << end();
         test << tab(0) << "{" << end();
         test << tab(1) << "" << e->getCppName() << " object;" << end();
         test << tab(1) << "stringstream expected;" << end();

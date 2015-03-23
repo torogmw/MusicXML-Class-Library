@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2909CF281AC0887900D0F61B /* TransposeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF271AC0887900D0F61B /* TransposeTest.cpp */; };
 		290A23441AC071FE0038C1A7 /* ClefTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290A23431AC071FE0038C1A7 /* ClefTest.cpp */; };
 		290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */; };
 		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
@@ -311,6 +312,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2909CF271AC0887900D0F61B /* TransposeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransposeTest.cpp; sourceTree = "<group>"; };
 		290A23431AC071FE0038C1A7 /* ClefTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClefTest.cpp; sourceTree = "<group>"; };
 		290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NumberOrNormal.cpp; sourceTree = "<group>"; };
 		290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositiveIntegerOrEmptyTest.cpp; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
 				290A23431AC071FE0038C1A7 /* ClefTest.cpp */,
+				2909CF271AC0887900D0F61B /* TransposeTest.cpp */,
 				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
 				29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */,
 				29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */,
@@ -1029,6 +1032,7 @@
 				29CEB4AF1AB4C0FA00D6AEFC /* TimpaniTest.cpp in Sources */,
 				29C0B9C61AAE9398004F86FA /* FingeringTest.cpp in Sources */,
 				29774A1F1AB21FA000BF2205 /* StaffTypeTest.cpp in Sources */,
+				2909CF281AC0887900D0F61B /* TransposeTest.cpp in Sources */,
 				298C81E81AB6A8DC006619A9 /* TieTest.cpp in Sources */,
 				298C81D61AB6A8DC006619A9 /* DelayedTurnTest.cpp in Sources */,
 				2935A7361AB5FC3B002859CA /* ThumbPositionTest.cpp in Sources */,
