@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290A23441AC071FE0038C1A7 /* ClefTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290A23431AC071FE0038C1A7 /* ClefTest.cpp */; };
 		290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */; };
 		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
 		292D02D81ABE1A9500005E61 /* KeyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D02D61ABE1A9500005E61 /* KeyTest.cpp */; };
@@ -310,6 +311,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		290A23431AC071FE0038C1A7 /* ClefTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClefTest.cpp; sourceTree = "<group>"; };
 		290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NumberOrNormal.cpp; sourceTree = "<group>"; };
 		290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositiveIntegerOrEmptyTest.cpp; sourceTree = "<group>"; };
 		292D02D61ABE1A9500005E61 /* KeyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyTest.cpp; sourceTree = "<group>"; };
@@ -655,6 +657,7 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				290A23431AC071FE0038C1A7 /* ClefTest.cpp */,
 				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
 				29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */,
 				29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */,
@@ -1186,6 +1189,7 @@
 				29774A121AB21FA000BF2205 /* PedalStepTest.cpp in Sources */,
 				29C0B9E11AAE9398004F86FA /* OtherAppearanceTest.cpp in Sources */,
 				2935A7321AB5FC3B002859CA /* StaccatoTest.cpp in Sources */,
+				290A23441AC071FE0038C1A7 /* ClefTest.cpp in Sources */,
 				29774A131AB21FA000BF2205 /* PitchedTest.cpp in Sources */,
 				297749E71AB21FA000BF2205 /* EncodingDescriptionTest.cpp in Sources */,
 				290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */,
