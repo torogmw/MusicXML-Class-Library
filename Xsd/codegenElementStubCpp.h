@@ -103,7 +103,7 @@ namespace xsd
         cpp << tab(2) << "}" << end();
         cpp << tab(2) << "bool " << e->getCppName() << "::hasContents() const" << end();
         cpp << tab(2) << "{" << end();
-        cpp << tab(3) << notImplemented << end();
+        cpp << tab(3) << "return true;" << end();
         cpp << tab(2) << "}" << end();
         cpp << tab(2) << "std::ostream& " << e->getCppName() << "::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const" << end();
         cpp << tab(2) << "{" << end();

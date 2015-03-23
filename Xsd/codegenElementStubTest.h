@@ -9,6 +9,7 @@ namespace xsd
 {
     inline void codegenElementStubTest( std::ostream& test, const std::string& attStructName, const MsItemElementPtr& e )
     {
+        /* Test01 */
         test << tab(0) << "#include \"TestHarness.h\"" << end();
         test << tab(0) << "#include \"MxTestHelper.h\"" << end();
         test << tab(0) << "#include \"Elements.h\"" << end();
@@ -28,7 +29,26 @@ namespace xsd
         test << tab(1) << "streamLine( expected, 2, R\"()\" );" << end();
         test << tab(1) << "streamLine( expected, 1, R\"()\", false );" << end();
         test << tab(1) << "stringstream actual;" << end();
-        test << tab(1) << "object.toStream( actual, 1 );" << end();
+        test << tab(1) << "object.toStream( std::cout, 1 );" << end();
+        test << tab(1) << "// object.toStream( actual, 1 );" << end();
+        test << tab(1) << "CHECK_EQUAL( expected.str(), actual.str() )" << end();
+        test << tab(1) << "CHECK( ! object.hasAttributes() )" << end();
+        test << tab(1) << "CHECK( object.hasContents() )" << end();
+        test << tab(0) << "}" << end();
+        
+        /* TEST 02 */
+        test << tab(0) << "TEST( Test01, " << e->getCppName() << " )" << end();
+        test << tab(0) << "{" << end();
+        test << tab(1) << "" << e->getCppName() << " object;" << end();
+        test << tab(1) << "stringstream expected;" << end();
+        test << tab(1) << "streamLine( expected, 1, R\"()\" );" << end();
+        test << tab(1) << "streamLine( expected, 2, R\"()\" );" << end();
+        test << tab(1) << "streamLine( expected, 2, R\"()\" );" << end();
+        test << tab(1) << "streamLine( expected, 2, R\"()\" );" << end();
+        test << tab(1) << "streamLine( expected, 1, R\"()\", false );" << end();
+        test << tab(1) << "stringstream actual;" << end();
+        test << tab(1) << "object.toStream( std::cout, 1 );" << end();
+        test << tab(1) << "// object.toStream( actual, 1 );" << end();
         test << tab(1) << "CHECK_EQUAL( expected.str(), actual.str() )" << end();
         test << tab(1) << "CHECK( object.hasAttributes() )" << end();
         test << tab(1) << "CHECK( object.hasContents() )" << end();
