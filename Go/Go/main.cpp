@@ -8,8 +8,8 @@
 int main(int argc, const char * argv[])
 {
     // go::goSetIsImplemented( std::vector<int>{ 2646 } );
-    go::goListNonImplementedElements();
+    // go::goListNonImplementedElements();
     // go::goCreateAttributesForOne( 2614 );
-    // go::goCreateElementStubs( 2646 );
+    go::goCreateElementStubs( 2660 );
     return 0;
 }
