@@ -52,7 +52,7 @@ namespace xsd
         MsItemElement( const MsItem item );
         virtual ~MsItemElement();
         std::string getXmlName() const;
-        std::string getCppName() const;
+        // std::string getCppName() const;
         const MsItemAttributeSet& getAttributes() const;
         MsItemElementKind getMsItemElementKind() const;
         MsItemPtr myReferencedItem;
@@ -66,14 +66,14 @@ namespace xsd
         
     private:
         MsItemAttributeSet myAttributes;
-        std::string myCppName;
+        // std::string myCppName;
         MsItemElementKind myMsItemElementKind;
         MsItemElementSet mySubElements;
         unsigned int myMinOccurs;
         unsigned int myMaxOccurs;
         MsItemElementCardinality myCardinality;
         void parseAttributes();
-        void parseCppName();
+        // void parseCppName();
         void parseMsElementItemKind();
         void parseReferencedType();
         void parseSubElements();
@@ -83,7 +83,7 @@ namespace xsd
     MsItemElementSet findEquivalentElements( const MsItemElementPtr& pattern );
     void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );
     void findSubElementsRecursively( const MsItemPtr& e, MsItemSet& output, const int topElementID );
-    MsItemElementSet findSubElements( const MsItemPtr& i );
+    MsItemSet findSubElementsXXX( const MsItemPtr& i );
     
     class MsItemWeb;
     using MsItemWebPtr = std::shared_ptr<MsItemWeb>;

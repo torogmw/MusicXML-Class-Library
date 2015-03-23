@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448161961.704882"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1015"
-            endingLineNumber = "1015"
+            startingLineNumber = "1017"
+            endingLineNumber = "1017"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448160568.159547"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "920"
-            endingLineNumber = "920"
+            startingLineNumber = "922"
+            endingLineNumber = "922"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -666,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448161961.704882"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1059"
-            endingLineNumber = "1059"
+            startingLineNumber = "1061"
+            endingLineNumber = "1061"
             landmarkName = "MsItem::resolveInheritenceInWeb( MsItemSet&amp; web )"
             landmarkType = "5">
             <Locations>
@@ -712,11 +712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448161449.336064"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "918"
-            endingLineNumber = "918"
+            startingLineNumber = "920"
+            endingLineNumber = "920"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -728,11 +728,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448161998.211612"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "968"
-            endingLineNumber = "968"
+            startingLineNumber = "970"
+            endingLineNumber = "970"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -744,11 +744,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448162006.742398"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "979"
-            endingLineNumber = "979"
+            startingLineNumber = "981"
+            endingLineNumber = "981"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -760,11 +760,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448162017.728715"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "990"
-            endingLineNumber = "990"
+            startingLineNumber = "992"
+            endingLineNumber = "992"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -776,11 +776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448162023.994231"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1007"
-            endingLineNumber = "1007"
+            startingLineNumber = "1009"
+            endingLineNumber = "1009"
             landmarkName = "MsItem::parseInheritence( MsItemSet&amp; web, const MsItemPtr&amp; itemToParse )"
             landmarkType = "5">
          </BreakpointContent>
@@ -808,11 +808,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemElement.cpp"
-            timestampString = "448355616.708324"
+            timestampString = "448773054.553259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "MsItemElement::parseMinMaxOccurs()"
             landmarkType = "5">
          </BreakpointContent>
@@ -824,11 +824,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemElement.cpp"
-            timestampString = "448355616.708324"
+            timestampString = "448773054.553259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "MsItemElement::getMinOccurs()"
             landmarkType = "5">
          </BreakpointContent>
@@ -840,11 +840,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemElement.cpp"
-            timestampString = "448355616.708324"
+            timestampString = "448773054.553259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "MsItemElement::parseMinMaxOccurs()"
             landmarkType = "5">
          </BreakpointContent>
@@ -904,11 +904,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemElement.cpp"
-            timestampString = "448355616.708324"
+            timestampString = "448773054.553259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "MsItemElement::getMsItemElementKind()"
             landmarkType = "5">
          </BreakpointContent>
@@ -920,11 +920,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/MsItem.cpp"
-            timestampString = "448300789.794996"
+            timestampString = "448771989.668521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1150"
-            endingLineNumber = "1150"
+            startingLineNumber = "1147"
+            endingLineNumber = "1147"
             landmarkName = "findSubElementsRecursively( const MsItemPtr&amp; searchthis, MsItemSet&amp; output, const int parentMsItemID )"
             landmarkType = "7">
          </BreakpointContent>
@@ -1054,6 +1054,70 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "goCreateElementStubs( int ID )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/codegenElementStubH.h"
+            timestampString = "448775852.330679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "codegenElementStubH( std::ostream&amp; h, const std::string&amp; attStructName, const MsItemElementPtr&amp; e )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/codegenElementStubH.h"
+            timestampString = "448776632.502202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "codegenElementStubH( std::ostream&amp; h, const std::string&amp; attStructName, const MsItemElementPtr&amp; e )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/codegenElementStubH.h"
+            timestampString = "448776632.502202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "codegenElementStubH( std::ostream&amp; h, const std::string&amp; attStructName, const MsItemElementPtr&amp; e )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xsd/codegenElementStubH.h"
+            timestampString = "448775852.330679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "codegenElementStubH( std::ostream&amp; h, const std::string&amp; attStructName, const MsItemElementPtr&amp; e )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

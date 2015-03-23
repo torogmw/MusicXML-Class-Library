@@ -79,12 +79,14 @@ namespace xsd
         MsItemSet myChildren;
         bool myIsSpecialCase;
         MsItemPtr myInheritedDt;
+        std::string myCppName;
         
         /* parsing functions */
         void parseDtDef();
         void parseMsItemKind();
         void parseIsFirstClassConcept();
         void parseSpecialCases();
+        void parseCppName();
         static void parseInheritence( MsItemSet& web, const MsItemPtr& itemToParse );
         
         /* static web building functions */

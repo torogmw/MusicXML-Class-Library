@@ -9,7 +9,7 @@ namespace xsd
     MsItemElement::MsItemElement( const MsItem item )
     :MsItem( item )
     ,myAttributes()
-    ,myCppName( "" )
+    // ,myCppName( "" )
     ,myMsItemElementKind( MsItemElementKind::unknown )
     ,mySubElements()
     ,myMinOccurs( 1 )
@@ -21,7 +21,7 @@ namespace xsd
             throw std::runtime_error( "error constructing element" );
         }
         parseAttributes();
-        parseCppName();
+        // parseCppName();
         parseReferencedType();
         parseSubElements();
         parseMsElementItemKind();
@@ -33,31 +33,31 @@ namespace xsd
     {
         return MsItem::getDtDef();
     }
-    std::string MsItemElement::getCppName() const
-    {
-        return myCppName;
-    }
+//    std::string MsItemElement::getCppName() const
+//    {
+//        return myCppName;
+//    }
     void MsItemElement::parseAttributes()
     {
         myAttributes.clear();
         myAttributes = MsItemAttribute::findAllAttributes( this );
     }
-    void MsItemElement::parseCppName()
-    {
-        std::string xmlName = MsItem::getDtDef();
-        if ( xmlName.length() == 0 )
-        {
-            std::stringstream ss;
-            ss << "Node" << MsItem::getID();
-            xmlName = ss.str();
-        }
-        std::string name = camelCase( xmlName, true );
-        if ( isCppKeyword( name ) )
-        {
-            name = name + "_";
-        }
-        myCppName = name;
-    }
+//    void MsItemElement::parseCppName()
+//    {
+//        std::string xmlName = MsItem::getDtDef();
+//        if ( xmlName.length() == 0 )
+//        {
+//            std::stringstream ss;
+//            ss << "Node" << MsItem::getID();
+//            xmlName = ss.str();
+//        }
+//        std::string name = camelCase( xmlName, true );
+//        if ( isCppKeyword( name ) )
+//        {
+//            name = name + "_";
+//        }
+//        myCppName = name;
+//    }
     void MsItemElement::parseMsElementItemKind()
     {
         myMsItemElementKind = MsItemElementKind::simple;
@@ -144,7 +144,12 @@ namespace xsd
     void MsItemElement::parseSubElements()
     {
         MsItemElementPtr input = std::make_shared<MsItemElement>( *this );
-        mySubElements = findSubElements( input );
+        MsItemSet temp = findSubElementsXXX( input );
+        mySubElements.clear();
+        for ( auto t : temp )
+        {
+            mySubElements.push_back( std::make_shared<MsItemElement>( *t ) );
+        }
     }
     bool doesElementHaveTheLowestIDAmongPeers( const MsItemElementPtr& elementToCheck, const MsItemElementSet& peerElements )
     {

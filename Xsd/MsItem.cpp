@@ -19,6 +19,7 @@ namespace xsd
     ,myIsFirstClassConcept( false )
     ,myParent( nullptr )
     ,myIsSpecialCase( false )
+    ,myCppName()
     {
         if ( xpItemPtr )
         {
@@ -26,6 +27,7 @@ namespace xsd
             parseMsItemKind();
             parseIsFirstClassConcept();
             parseSpecialCases();
+            parseCppName();
         }
     }
     
@@ -494,7 +496,7 @@ namespace xsd
         addItemToXsd( "xs:positiveInteger", "xs:simpleType", newnodeid, root );
         addItemToXsd( "xs:string", "xs:simpleType", newnodeid, root );
         addItemToXsd( "xs:token", "xs:simpleType", newnodeid, root );
-        
+        addItemToXsd( "xs:decimal", "xs:simpleType", newnodeid, root );
         MsItemSet output;
         
         constructMsItemWebScaffold( root, output );
@@ -1138,12 +1140,7 @@ namespace xsd
     }
     std::string MsItem::getCppName() const
     {
-        std::string output = camelCase( myDtDef, true );
-        if ( isCppKeyword( output ) )
-        {
-            output = output + "_";
-        }
-        return output;
+        return myCppName;
     }
     void findSubElementsRecursively( const MsItemPtr& searchthis, MsItemSet& output, const int parentMsItemID )
     {
@@ -1190,7 +1187,7 @@ namespace xsd
             }
         }
     }
-    MsItemSet findSubElements( const MsItemPtr& parent )
+    MsItemSet findSubElementsXXX( const MsItemPtr& parent )
     {
         MsItemSet output;
         findSubElementsRecursively( parent, output, parent->getID() );
@@ -1209,5 +1206,21 @@ namespace xsd
             }
         }
         return false;
+    }
+    void MsItem::parseCppName()
+    {
+        std::string xmlName = MsItem::getDtDef();
+        if ( xmlName.length() == 0 )
+        {
+            std::stringstream ss;
+            ss << "Node" << MsItem::getID();
+            xmlName = ss.str();
+        }
+        std::string name = camelCase( xmlName, true );
+        if ( isCppKeyword( name ) )
+        {
+            name = name + "_";
+        }
+        myCppName = name;
     }
 }

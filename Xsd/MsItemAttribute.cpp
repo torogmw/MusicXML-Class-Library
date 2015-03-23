@@ -208,7 +208,8 @@ namespace xsd
                         current = current->getParent();
                     }
                     MsItemPtr refptr = findItem( kind, ref, top.get() );
-                    if ( refptr->getMsItemKind() != MsItemKind::element )
+                    if ( ref != "xs:date"
+                        && refptr->getMsItemKind() != MsItemKind::element )
                     {
                         findAllAttributesRecursively( refptr.get(), output );
                     }
