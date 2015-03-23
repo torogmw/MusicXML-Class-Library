@@ -97,12 +97,25 @@ namespace mx
 		}
 		bool Clef::hasContents() const
 		{
-			throw std::runtime_error{ "not implemented" };
+			return true;
 		}
 		std::ostream& Clef::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			throw std::runtime_error{ "not implemented" };
-            // myMember1->streamContents( os, indentLevel+1, isOneLineOnly );
+            isOneLineOnly = false;
+            os << std::endl;
+			mySign->toStream( os, indentLevel+1 );
+            if ( myHasLine )
+            {
+                os << std::endl;
+                myLine->toStream( os, indentLevel+1 );
+            }
+            if ( myHasClefOctaveChange )
+            {
+                os << std::endl;
+                myClefOctaveChange->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            return os;
 		}
 		ClefAttributesPtr Clef::getAttributes() const
 		{

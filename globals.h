@@ -5,17 +5,21 @@
 
 namespace globals
 {
+    inline std::string getParentDirectory()
+    {
+        return "/Volumes/MusikPlatz/";
+    }
     inline std::string getInputDirectory()
     {
-        return "/Volumes/MusikPlatz/input/";
+        return getParentDirectory()+"input/";
     }
     inline std::string getOutputDirectory()
     {
-        return "/Volumes/MusikPlatz/output/";
+        return getParentDirectory()+"output/";
     }
     inline std::string getMxSourceDirectory()
     {
-        return "/Volumes/MusikPlatz/Mx/";
+        return getParentDirectory()+"Mx/";
     }
     inline std::string getMusicXmlXpPath()
     {

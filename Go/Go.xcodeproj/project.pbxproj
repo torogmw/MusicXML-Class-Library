@@ -106,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				293FA8701ABCC8DC00E1CD67 /* goCreateAttributesForOne.h */,
+				29115E5A1ABF1AA900BB3357 /* goCreateElementStub.cpp */,
+				29115E5B1ABF1AA900BB3357 /* goCreateElementStub.h */,
 				29CEB47B1AB4ABB100D6AEFC /* goCreateEmptyElements.h */,
 				29CEB4B11AB4E2BB00D6AEFC /* goCreateEmptyElementsWithAttributes.h */,
 				29D10B9E1A9BD8E600F03CE6 /* goCreateMxEnums.h */,
@@ -129,8 +131,6 @@
 				292D02DB1ABE225600005E61 /* goRxVectorAliasesForElements.h */,
 				29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */,
 				29AAB9941A8895E00027B7A1 /* main.cpp */,
-				29115E5A1ABF1AA900BB3357 /* goCreateElementStub.cpp */,
-				29115E5B1ABF1AA900BB3357 /* goCreateElementStub.h */,
 			);
 			path = Go;
 			sourceTree = "<group>";
