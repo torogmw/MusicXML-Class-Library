@@ -112,6 +112,79 @@ namespace mx
             DoublePtr myDouble;
             bool myHasDouble;
         };
-
+        
+        /*
+         2667
+         <xs:element name="directive" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>Directives are like directions, but can be grouped together with attributes for convenience. This is typically used for tempo markings at the beginning of a piece of music. This element has been deprecated in Version 2.0 in favor of the directive attribute for direction elements. Language names come from ISO 639, with optional country subcodes from ISO 3166.</xs:documentation>
+         </xs:annotation>
+         <xs:complexType>
+         <xs:simpleContent>
+         <xs:extension base="xs:string">
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attribute ref="xml:lang"/>
+         </xs:extension>
+         </xs:simpleContent>
+         </xs:complexType>
+         </xs:element>
+         */
+        
+        struct DirectiveAttributes;
+        using DirectiveAttributesPtr = std::shared_ptr<DirectiveAttributes>;
+        
+        struct DirectiveAttributes : public AttributesInterface
+        {
+        public:
+            DirectiveAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::XmlLang lang;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasLang;
+        };
+        
+        class Directive;
+        using DirectivePtr = std::shared_ptr<Directive>;
+        using DirectiveUPtr = std::unique_ptr<Directive>;
+        using DirectiveSet = std::vector<DirectivePtr>;
+        using DirectiveSetIter = DirectiveSet::iterator;
+        using DirectiveSetIterConst = DirectiveSet::const_iterator;
+        inline DirectivePtr makeDirective() { return std::make_shared<Directive>(); }
+        inline DirectivePtr makeDirective( const XsString& value ) { return std::make_shared<Directive>( value ) ); }
+        
+        class Directive : public ElementInterface
+        {
+        public:
+            Directive();
+            Directive( const XsString& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DirectiveAttributesPtr getAttributes() const;
+            void setAttributes( const DirectiveAttributesPtr& value );
+            XsString getValue() const;
+            void setValue( const XsString& value );
+        private:
+            DirectiveAttributesPtr myAttributes;
+            XsString myValue;
+        };
     }
 }
