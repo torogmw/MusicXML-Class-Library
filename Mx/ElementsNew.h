@@ -110,17 +110,6 @@ namespace mx
             bool getHasStaffTuning() const;
             void setHasStaffTuning( const bool value );
             void clearStaffTuningSet();
-            /* _________ TuningStep minOccurs = 1, maxOccurs = 1 _________ */
-            TuningStepPtr getTuningStep() const;
-            void setTuningStep( const TuningStepPtr& value );
-            /* _________ TuningAlter minOccurs = 0, maxOccurs = 1 _________ */
-            TuningAlterPtr getTuningAlter() const;
-            void setTuningAlter( const TuningAlterPtr& value );
-            bool getHasTuningAlter() const;
-            void setHasTuningAlter( const bool value );
-            /* _________ TuningOctave minOccurs = 1, maxOccurs = 1 _________ */
-            TuningOctavePtr getTuningOctave() const;
-            void setTuningOctave( const TuningOctavePtr& value );
             /* _________ Capo minOccurs = 0, maxOccurs = 1 _________ */
             CapoPtr getCapo() const;
             void setCapo( const CapoPtr& value );
@@ -138,10 +127,6 @@ namespace mx
             StaffLinesPtr myStaffLines;
             bool myHasStaffLines;
             StaffTuningSet myStaffTuningSet;
-            TuningStepPtr myTuningStep;
-            TuningAlterPtr myTuningAlter;
-            bool myHasTuningAlter;
-            TuningOctavePtr myTuningOctave;
             CapoPtr myCapo;
             bool myHasCapo;
             StaffSizePtr myStaffSize;

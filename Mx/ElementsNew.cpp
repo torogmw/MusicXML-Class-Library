@@ -46,10 +46,6 @@ namespace mx
 		,myStaffLines( makeStaffLines() )
 		,myHasStaffLines( false )
 		,myStaffTuningSet()
-		,myTuningStep( makeTuningStep() )
-		,myTuningAlter( makeTuningAlter() )
-		,myHasTuningAlter( false )
-		,myTuningOctave( makeTuningOctave() )
 		,myCapo( makeCapo() )
 		,myHasCapo( false )
 		,myStaffSize( makeStaffSize() )
@@ -76,9 +72,33 @@ namespace mx
 		std::ostream& StaffDetails::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
 			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+            if ( myHasStaffType )
+            {
+                os << std::endl;
+                myStaffType->toStream( os, indentLevel+1 );
+            }
+            if ( myHasStaffLines )
+            {
+                os << std::endl;
+                myStaffLines->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myStaffTuningSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            if ( myHasCapo )
+            {
+                os << std::endl;
+                myCapo->toStream( os, indentLevel+1 );
+            }
+            if ( myHasStaffSize )
+            {
+                myStaffSize->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            return os;
 		}
 		StaffDetailsAttributesPtr StaffDetails::getAttributes() const
 		{
@@ -153,50 +173,6 @@ namespace mx
 		void StaffDetails::clearStaffTuningSet()
 		{
 			myStaffTuningSet.clear();
-		}
-		/* _________ TuningStep minOccurs = 1, maxOccurs = 1 _________ */
-		TuningStepPtr StaffDetails::getTuningStep() const
-		{
-			return myTuningStep;
-		}
-		void StaffDetails::setTuningStep( const TuningStepPtr& value )
-		{
-			if( value )
-			{
-				myTuningStep = value;
-			}
-		}
-		/* _________ TuningAlter minOccurs = 0, maxOccurs = 1 _________ */
-		TuningAlterPtr StaffDetails::getTuningAlter() const
-		{
-			return myTuningAlter;
-		}
-		void StaffDetails::setTuningAlter( const TuningAlterPtr& value )
-		{
-			if( value )
-			{
-				myTuningAlter = value;
-			}
-		}
-		bool StaffDetails::getHasTuningAlter() const
-		{
-			return myHasTuningAlter;
-		}
-		void StaffDetails::setHasTuningAlter( const bool value )
-		{
-			myHasTuningAlter = value;
-		}
-		/* _________ TuningOctave minOccurs = 1, maxOccurs = 1 _________ */
-		TuningOctavePtr StaffDetails::getTuningOctave() const
-		{
-			return myTuningOctave;
-		}
-		void StaffDetails::setTuningOctave( const TuningOctavePtr& value )
-		{
-			if( value )
-			{
-				myTuningOctave = value;
-			}
 		}
 		/* _________ Capo minOccurs = 0, maxOccurs = 1 _________ */
 		CapoPtr StaffDetails::getCapo() const
