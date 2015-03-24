@@ -240,5 +240,13 @@ namespace xsd
         findItemByNameAndKindRecursive( name, kind, output, localIsFound, anyItemWithinTheWeb->getRoot() );
         return output;
     }
+    
+    MsItemPtr findItemByNameAndKind( const std::string& name, const MsItemKind kind, const MsItem* anyItemWithinTheWeb )
+    {
+        MsItemPtr output;
+        bool localIsFound = false;
+        findItemByNameAndKindRecursive( name, kind, output, localIsFound, anyItemWithinTheWeb->getRoot() );
+        return output;
+    }
 }
 

@@ -20,25 +20,25 @@ namespace xsd
         if ( printXmlDocumentation )
         {
             h << "/*" << end();
-//            h << e->getID();
-//            if ( equivs.size() > 1 )
-//            {
-//                h << " [ equivalents ";
-//                eqi = eqb;
-//                for ( ; eqi != eqe; ++eqi )
-//                {
-//                    if ( eqi != eqb )
-//                    {
-//                        h << ", ";
-//                    }
-//                    h << (*eqi)->getID();
-//                }
-//                h << " ]" << end();
-//            }
-//            else
-//            {
-//                h << end();
-//            }
+            h << e->getID();
+            if ( equivs.size() > 1 )
+            {
+                h << " [ equivalents ";
+                eqi = eqb;
+                for ( ; eqi != eqe; ++eqi )
+                {
+                    if ( eqi != eqb )
+                    {
+                        h << ", ";
+                    }
+                    h << (*eqi)->getID();
+                }
+                h << " ]" << end();
+            }
+            else
+            {
+                h << end();
+            }
             e->toStream( h );
             h << " */" << end();
         } // end if ( printXmlDocumentation )

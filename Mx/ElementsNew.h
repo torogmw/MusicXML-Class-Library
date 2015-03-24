@@ -219,7 +219,6 @@ namespace mx
          </xs:element>
          </xs:sequence>
          </xs:group>
-         
          */
         
         struct BeatRepeatAttributes;
@@ -231,12 +230,12 @@ namespace mx
             BeatRepeatAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
-            types::YesNo slash;
+            // types::YesNo slash;
             types::StartStop type;
             types::PositiveInteger slashes;
             types::YesNo useDots;
             bool hasSlash;
-            const 	bool hasType;
+            const bool hasType;
             bool hasSlashes;
             bool hasUseDots;
         };
@@ -274,6 +273,88 @@ namespace mx
             SlashTypePtr mySlashType;
             SlashDotSet mySlashDotSet;
         };
-
+        /*
+         2839
+         <!--  ID = 2839 [2839] ------------------------->
+         <!-- RecursiveSubElementCount = 2 -->
+         <xs:element name="slash" type="slash"/>
+         <xs:complexType name="slash">
+         <xs:annotation>
+         <xs:documentation>The slash type is used to indicate that slash notation is to be used. If the slash is on every beat, use-stems is no (the default). To indicate rhythms but not pitches, use-stems is set to yes. The type attribute indicates whether this is the start or stop of a slash notation style. The use-dots attribute works as for the beat-repeat element, and only has effect if use-stems is no.</xs:documentation>
+         </xs:annotation>
+         <xs:group ref="slash" minOccurs="0"/>
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="use-dots" type="yes-no"/>
+         <xs:attribute name="use-stems" type="yes-no"/>
+         </xs:complexType>
+         <xs:group name="slash">
+         <xs:annotation>
+         <xs:documentation>The slash group combines elements used for more complete specification of the slash and beat-repeat measure-style elements. They have the same values as the type and dot elements, and define what the beat is for the display of repetition marks. If not present, the beat is based on the current time signature.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="slash-type" type="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="slash-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         */
+        
+        struct SlashAttributes;
+        using SlashAttributesPtr = std::shared_ptr<SlashAttributes>;
+        
+        struct SlashAttributes : public AttributesInterface
+        {
+        public:
+            SlashAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            types::YesNo useDots;
+            types::YesNo useStems;
+            const 	bool hasType;
+            bool hasUseDots;
+            bool hasUseStems;
+        };
+        
+        class Slash;
+        using SlashPtr = std::shared_ptr<Slash>;
+        using SlashUPtr = std::unique_ptr<Slash>;
+        using SlashSet = std::vector<SlashPtr>;
+        using SlashSetIter = SlashSet::iterator;
+        using SlashSetIterConst = SlashSet::const_iterator;
+        inline SlashPtr makeSlash() { return std::make_shared<Slash>(); }
+        class Slash : public ElementInterface
+        {
+        public:
+            Slash();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            SlashAttributesPtr getAttributes() const;
+            void setAttributes( const SlashAttributesPtr& value );
+            /* _________ SlashType minOccurs = 1, maxOccurs = 1 _________ */
+            SlashTypePtr getSlashType() const;
+            void setSlashType( const SlashTypePtr& value );
+            /* _________ SlashDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const SlashDotSet& getSlashDotSet() const;
+            void addSlashDot( const SlashDotPtr& value );
+            void removeSlashDot( const SlashDotSetIterConst& value );
+            bool getHasSlashDot() const;
+            void setHasSlashDot( const bool value );
+            void clearSlashDotSet();
+        private:
+            SlashAttributesPtr myAttributes;
+            SlashTypePtr mySlashType;
+            SlashDotSet mySlashDotSet;
+        };
     }
 }

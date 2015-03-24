@@ -3,6 +3,7 @@
 #include "MsItemAttribute.h"
 #include "camelCase.h"
 #include "isCppKeyword.h"
+#include "MsitemWeb.h"
 
 namespace xsd
 {
@@ -184,7 +185,7 @@ namespace xsd
             else
             {
                 /* check for referenced types */
-                MsItemKind kind = item->getMsItemKind();
+                // MsItemKind kind = item->getMsItemKind();
                 std::string ref;
                 bool isRef = false;
                 for ( auto p : item->getXpItem()->getProperties() )
@@ -200,19 +201,47 @@ namespace xsd
                 }
                 if ( isRef )
                 {
-                    MsItemPtr top = std::make_shared<MsItem>( *item );
-                    MsItemPtr current = std::make_shared<MsItem>( *item );
-                    while ( current->getParent() )
+                    if ( ref.length() > 0 && ref != "xs:date" )
                     {
-                        top = current->getParent();
-                        current = current->getParent();
+                        // MsItemPtr currentItem = std::make_shared<MsItem>( *item );
+                        MsItemPtr refItem;
+                        if ( item->getMsItemKind() == MsItemKind::attributeGroup )
+                        {
+                            refItem = findItemByNameAndKind( ref, MsItemKind::attributeGroup, item );
+                        }
+                        else if ( item->getMsItemKind() == MsItemKind::group )
+                        {
+                            refItem = findItemByNameAndKind( ref, MsItemKind::group, item );
+                        }
+                        else
+                        {
+                            refItem = findItemByNameAndKind( ref, MsItemKind::simpleType, item );
+                            if ( !refItem )
+                            {
+                                refItem = findItemByNameAndKind( ref, MsItemKind::complexType, item );
+                            }
+                        }
+                        if ( refItem )
+                        {
+                            findAllAttributesRecursively( refItem.get(), output );
+                        }
                     }
-                    MsItemPtr refptr = findItem( kind, ref, top.get() );
-                    if ( ref != "xs:date"
-                        && refptr->getMsItemKind() != MsItemKind::element )
-                    {
-                        findAllAttributesRecursively( refptr.get(), output );
-                    }
+                    
+                    
+//                    MsItemPtr top = std::make_shared<MsItem>( *item );
+//                    MsItemPtr current = std::make_shared<MsItem>( *item );
+//                    while ( current->getParent() )
+//                    {
+//                        top = current->getParent();
+//                        current = current->getParent();
+//                    }
+//                    MsItemPtr refptr = findItem( kind, ref, top.get() );
+//                    if ( ref != "xs:date"
+//                        && refptr->getMsItemKind() != MsItemKind::element )
+//                    {
+//                        findAllAttributesRecursively( refptr.get(), output );
+//                    }
+                    
                 }
                 
                 

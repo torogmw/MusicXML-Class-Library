@@ -7,13 +7,13 @@ using namespace mx::types;
 using namespace std;
 using namespace MxTestHelpers;
 
-TEST( Test01, BeatRepeat )
+TEST( Test01, Slash )
 {
-	BeatRepeat object;
+	Slash object;
 	stringstream expected;
-	streamLine( expected, 1, R"(<beat-repeat type="start">)" );
+	streamLine( expected, 1, R"(<slash type="start">)" );
 	streamLine( expected, 2, R"(<slash-type>eighth</slash-type>)" );
-	streamLine( expected, 1, R"(</beat-repeat>)", false );
+	streamLine( expected, 1, R"(</slash>)", false );
 	stringstream actual;
 	// object.toStream( std::cout, 1 );
 	object.toStream( actual, 1 );
@@ -21,21 +21,22 @@ TEST( Test01, BeatRepeat )
 	CHECK( object.hasAttributes() )
 	CHECK( object.hasContents() )
 }
-TEST( Test02, BeatRepeat )
+TEST( Test02, Slash )
 {
-	BeatRepeat object;
+	Slash object;
     object.getAttributes()->type = StartStop::stop;
     object.getAttributes()->hasUseDots = true;
     object.getAttributes()->useDots = YesNo::yes;
-    object.getAttributes()->hasSlashes = true;
+    object.getAttributes()->hasUseStems = true;
+    object.getAttributes()->useStems = YesNo::yes;
     object.addSlashDot( makeSlashDot() );
 	object.addSlashDot( makeSlashDot() );
 	stringstream expected;
-	streamLine( expected, 1, R"(<beat-repeat type="stop" slashes="1" use-dots="yes">)" );
+	streamLine( expected, 1, R"(<slash type="stop" use-dots="yes" use-stems="yes">)" );
 	streamLine( expected, 2, R"(<slash-type>eighth</slash-type>)" );
 	streamLine( expected, 2, R"(<slash-dot/>)" );
 	streamLine( expected, 2, R"(<slash-dot/>)" );
-	streamLine( expected, 1, R"(</beat-repeat>)", false );
+	streamLine( expected, 1, R"(</slash>)", false );
 	stringstream actual;
 	// object.toStream( std::cout, 1 );
 	object.toStream( actual, 1 );

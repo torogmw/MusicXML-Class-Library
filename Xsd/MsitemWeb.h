@@ -59,7 +59,7 @@ namespace xsd
     
     void findItemByNameAndKindRecursive( const std::string& name, const MsItemKind kind, MsItemPtr& output, bool& isFound, const MsItemPtr& itemToCheck );
     MsItemPtr findItemByNameAndKind( const std::string& name, const MsItemKind kind, const MsItemPtr& anyItemWithinTheWebRootWillBeFound );
-    
+    MsItemPtr findItemByNameAndKind( const std::string& name, const MsItemKind kind, const MsItem* anyItemWithinTheWebRootWillBeFound );
     
 }
 

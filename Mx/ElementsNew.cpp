@@ -268,9 +268,8 @@ namespace mx
         /**************** BeatRepeatAttributes ****************/
         /* 2836 */
         BeatRepeatAttributes::BeatRepeatAttributes()
-        :slash( types::YesNo::no )
-        ,type()
-        ,slashes()
+        :type( types::StartStop::start )
+        ,slashes( 1 )
         ,useDots( types::YesNo::no )
         ,hasSlash( false )
         ,hasType( true )
@@ -290,7 +289,7 @@ namespace mx
         {
             if ( hasValues() )
             {
-                streamAttribute( os, slash, "slash", hasSlash );
+                // streamAttribute( os, slash, "slash", hasSlash );
                 streamAttribute( os, type, "type", hasType );
                 streamAttribute( os, slashes, "slashes", hasSlashes );
                 streamAttribute( os, useDots, "use-dots", hasUseDots );
@@ -384,5 +383,124 @@ namespace mx
 		{
 			mySlashDotSet.clear();
 		}
+        
+        
+        
+        /**************** SlashAttributes ****************/
+        /* 2839 */
+        SlashAttributes::SlashAttributes()
+        :type( types::StartStop::start )
+        ,useDots( types::YesNo::no )
+        ,useStems( types::YesNo::no )
+        ,hasType( true )
+        ,hasUseDots( false )
+        ,hasUseStems( false )
+        {}
+        
+        bool SlashAttributes::hasValues() const
+        {
+            return hasType ||
+            hasUseDots ||
+            hasUseStems;
+        }
+        
+        std::ostream& SlashAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, useDots, "use-dots", hasUseDots );
+                streamAttribute( os, useStems, "use-stems", hasUseStems );
+            }
+            return os;
+        }
+        
+		Slash::Slash()
+		:myAttributes( std::make_shared<SlashAttributes>() )
+		,mySlashType( makeSlashType() )
+		,mySlashDotSet()
+		{}
+		bool Slash::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Slash::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Slash::streamName( std::ostream& os ) const
+		{
+			os << "slash";
+			return os;
+		}
+		bool Slash::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Slash::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			mySlashType->toStream( os, indentLevel+1 );
+			
+            for ( auto x : mySlashDotSet )
+            {
+                if ( x )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+            }
+            os << std::endl;
+            return os;
+		}
+		SlashAttributesPtr Slash::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Slash::setAttributes( const SlashAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ SlashType minOccurs = 1, maxOccurs = 1 _________ */
+		SlashTypePtr Slash::getSlashType() const
+		{
+			return mySlashType;
+		}
+		void Slash::setSlashType( const SlashTypePtr& value )
+		{
+			if( value )
+			{
+				mySlashType = value;
+			}
+		}
+		/* _________ SlashDot minOccurs = 0, maxOccurs = unbounded _________ */
+		const SlashDotSet& Slash::getSlashDotSet() const
+		{
+			return mySlashDotSet;
+		}
+		void Slash::removeSlashDot( const SlashDotSetIterConst& value )
+		{
+			if ( value != mySlashDotSet.cend() )
+			{
+				mySlashDotSet.erase( value );
+			}
+		}
+		void Slash::addSlashDot( const SlashDotPtr& value )
+		{
+			if ( value )
+			{
+				mySlashDotSet.push_back( value );
+			}
+		}
+		void Slash::clearSlashDotSet()
+		{
+			mySlashDotSet.clear();
+		}
+
     }
 }

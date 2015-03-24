@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */; };
+		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2909CF281AC0887900D0F61B /* TransposeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF271AC0887900D0F61B /* TransposeTest.cpp */; };
 		2909CF2A1AC08EAA00D0F61B /* DirectiveTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */; };
 		290A23441AC071FE0038C1A7 /* ClefTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290A23431AC071FE0038C1A7 /* ClefTest.cpp */; };
@@ -315,6 +316,7 @@
 
 /* Begin PBXFileReference section */
 		2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeatRepeatTest.cpp; sourceTree = "<group>"; };
+		2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlashTest.cpp; sourceTree = "<group>"; };
 		2909CF271AC0887900D0F61B /* TransposeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransposeTest.cpp; sourceTree = "<group>"; };
 		2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectiveTest.cpp; sourceTree = "<group>"; };
 		290A23431AC071FE0038C1A7 /* ClefTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClefTest.cpp; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */,
 				2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */,
 				2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */,
 				290A23431AC071FE0038C1A7 /* ClefTest.cpp */,
@@ -1230,6 +1233,7 @@
 				29C0B9FA1AAE9398004F86FA /* TremoloTest.cpp in Sources */,
 				29C0B9F81AAE9398004F86FA /* TapTest.cpp in Sources */,
 				29774A301AB21FA000BF2205 /* VoiceTest.cpp in Sources */,
+				2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */,
 				29C0B9CA1AAE9398004F86FA /* FunctionTest.cpp in Sources */,
 				29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */,
 				29C0B9CE1AAE9398004F86FA /* GroupNameTest.cpp in Sources */,
