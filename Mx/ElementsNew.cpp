@@ -10,7 +10,7 @@ namespace mx
         /* 2653 */
         StaffDetailsAttributes::StaffDetailsAttributes()
         :number()
-        ,showFrets()
+        ,showFrets( types::ShowFrets::numbers )
         ,printObject( types::YesNo::no )
         ,printSpacing( types::YesNo::no )
         ,hasNumber( false )
@@ -43,7 +43,7 @@ namespace mx
 		:myAttributes( std::make_shared<StaffDetailsAttributes>() )
 		,myStaffType( makeStaffType() )
 		,myHasStaffType( false )
-		,myStaffLines( makeStaffLines() )
+		,myStaffLines( makeStaffLines( types::NonNegativeInteger( 5 ) ) )
 		,myHasStaffLines( false )
 		,myStaffTuningSet()
 		,myCapo( makeCapo() )
@@ -67,11 +67,19 @@ namespace mx
 		}
 		bool StaffDetails::hasContents() const
 		{
-			return true;
+			return myHasStaffType
+            || myHasStaffLines
+            || myStaffTuningSet.size() > 0
+            || myHasCapo
+            || myHasStaffSize;
 		}
 		std::ostream& StaffDetails::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
+			isOneLineOnly = !(   myHasStaffType
+                             || myHasStaffLines
+                             || myStaffTuningSet.size() > 0
+                             || myHasCapo
+                             || myHasStaffSize);
             if ( myHasStaffType )
             {
                 os << std::endl;
@@ -87,7 +95,6 @@ namespace mx
                 os << std::endl;
                 x->toStream( os, indentLevel+1 );
             }
-            os << std::endl;
             if ( myHasCapo )
             {
                 os << std::endl;
@@ -95,9 +102,13 @@ namespace mx
             }
             if ( myHasStaffSize )
             {
+                os << std::endl;
                 myStaffSize->toStream( os, indentLevel+1 );
             }
-            os << std::endl;
+            if( hasContents() )
+            {
+                os << std::endl;
+            }
             return os;
 		}
 		StaffDetailsAttributesPtr StaffDetails::getAttributes() const
