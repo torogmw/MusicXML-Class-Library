@@ -501,6 +501,124 @@ namespace mx
 		{
 			mySlashDotSet.clear();
 		}
+        
+        
+        /**************** StaffTuningAttributes ****************/
+        /* 2908 */
+        StaffTuningAttributes::StaffTuningAttributes()
+        :line()
+        ,hasLine( false )
+        {}
+        
+        bool StaffTuningAttributes::hasValues() const
+        {
+            return hasLine;
+        }
+        
+        std::ostream& StaffTuningAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, line, "line", hasLine );
+            }
+            return os;
+        }
+        
+		StaffTuning::StaffTuning()
+		:myAttributes( std::make_shared<StaffTuningAttributes>() )
+		,myTuningStep( makeTuningStep() )
+		,myTuningAlter( makeTuningAlter() )
+		,myHasTuningAlter( false )
+		,myTuningOctave( makeTuningOctave() )
+		{}
+		bool StaffTuning::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& StaffTuning::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& StaffTuning::streamName( std::ostream& os ) const
+		{
+			os << "staff-tuning";
+			return os;
+		}
+		bool StaffTuning::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& StaffTuning::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myTuningStep->toStream( os, indentLevel+1 );
+            if ( myHasTuningAlter )
+            {
+                os << std::endl;
+                myTuningStep->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+			myTuningStep->toStream( os, indentLevel+1 );
+            os << std::endl;
+            return os;
+		}
+		StaffTuningAttributesPtr StaffTuning::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void StaffTuning::setAttributes( const StaffTuningAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ TuningStep minOccurs = 1, maxOccurs = 1 _________ */
+		TuningStepPtr StaffTuning::getTuningStep() const
+		{
+			return myTuningStep;
+		}
+		void StaffTuning::setTuningStep( const TuningStepPtr& value )
+		{
+			if( value )
+			{
+				myTuningStep = value;
+			}
+		}
+		/* _________ TuningAlter minOccurs = 0, maxOccurs = 1 _________ */
+		TuningAlterPtr StaffTuning::getTuningAlter() const
+		{
+			return myTuningAlter;
+		}
+		void StaffTuning::setTuningAlter( const TuningAlterPtr& value )
+		{
+			if( value )
+			{
+				myTuningAlter = value;
+			}
+		}
+		bool StaffTuning::getHasTuningAlter() const
+		{
+			return myHasTuningAlter;
+		}
+		void StaffTuning::setHasTuningAlter( const bool value )
+		{
+			myHasTuningAlter = value;
+		}
+		/* _________ TuningOctave minOccurs = 1, maxOccurs = 1 _________ */
+		TuningOctavePtr StaffTuning::getTuningOctave() const
+		{
+			return myTuningOctave;
+		}
+		void StaffTuning::setTuningOctave( const TuningOctavePtr& value )
+		{
+			if( value )
+			{
+				myTuningOctave = value;
+			}
+		}
 
     }
 }

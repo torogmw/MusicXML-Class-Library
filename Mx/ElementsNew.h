@@ -356,5 +356,94 @@ namespace mx
             SlashTypePtr mySlashType;
             SlashDotSet mySlashDotSet;
         };
+        
+        /*
+         2908
+         <!--  ID = 2908 [2908] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="staff-tuning" type="staff-tuning" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="staff-tuning">
+         <xs:annotation>
+         <xs:documentation>The staff-tuning type specifies the open, non-capo tuning of the lines on a tablature staff.</xs:documentation>
+         </xs:annotation>
+         <xs:group ref="tuning"/>
+         <xs:attribute name="line" type="staff-line"/>
+         </xs:complexType>
+         <xs:group name="tuning">
+         <xs:annotation>
+         <xs:documentation>The tuning group contains the sequence of elements common to the staff-tuning and accord elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="tuning-step" type="step">
+         <xs:annotation>
+         <xs:documentation>The tuning-step element is represented like the step element, with a different name to reflect is different function.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="tuning-alter" type="semitones" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The tuning-alter element is represented like the alter element, with a different name to reflect is different function.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="tuning-octave" type="octave">
+         <xs:annotation>
+         <xs:documentation>The tuning-octave element is represented like the octave element, with a different name to reflect is different function.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         */
+        
+        struct StaffTuningAttributes;
+        using StaffTuningAttributesPtr = std::shared_ptr<StaffTuningAttributes>;
+        
+        struct StaffTuningAttributes : public AttributesInterface
+        {
+        public:
+            StaffTuningAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StaffLine line;
+            bool hasLine;
+        };
+        
+        class StaffTuning;
+        using StaffTuningPtr = std::shared_ptr<StaffTuning>;
+        using StaffTuningUPtr = std::unique_ptr<StaffTuning>;
+        using StaffTuningSet = std::vector<StaffTuningPtr>;
+        using StaffTuningSetIter = StaffTuningSet::iterator;
+        using StaffTuningSetIterConst = StaffTuningSet::const_iterator;
+        inline StaffTuningPtr makeStaffTuning() { return std::make_shared<StaffTuning>(); }
+        class StaffTuning : public ElementInterface
+        {
+        public:
+            StaffTuning();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            StaffTuningAttributesPtr getAttributes() const;
+            void setAttributes( const StaffTuningAttributesPtr& value );
+            /* _________ TuningStep minOccurs = 1, maxOccurs = 1 _________ */
+            TuningStepPtr getTuningStep() const;
+            void setTuningStep( const TuningStepPtr& value );
+            /* _________ TuningAlter minOccurs = 0, maxOccurs = 1 _________ */
+            TuningAlterPtr getTuningAlter() const;
+            void setTuningAlter( const TuningAlterPtr& value );
+            bool getHasTuningAlter() const;
+            void setHasTuningAlter( const bool value );
+            /* _________ TuningOctave minOccurs = 1, maxOccurs = 1 _________ */
+            TuningOctavePtr getTuningOctave() const;
+            void setTuningOctave( const TuningOctavePtr& value );
+        private:
+            StaffTuningAttributesPtr myAttributes;
+            TuningStepPtr myTuningStep;
+            TuningAlterPtr myTuningAlter;
+            bool myHasTuningAlter;
+            TuningOctavePtr myTuningOctave;
+        };
     }
 }
