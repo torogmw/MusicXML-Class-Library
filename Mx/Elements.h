@@ -15801,7 +15801,8 @@ namespace mx
             void setHasClefOctaveChange( const bool value );
         private:
             ClefAttributesPtr myAttributes;
-mySt            LinePtr myLine;
+            SignPtr mySign;
+            LinePtr myLine;
             bool myHasLine;
             ClefOctaveChangePtr myClefOctaveChange;
             bool myHasClefOctaveChange;
