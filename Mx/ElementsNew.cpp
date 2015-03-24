@@ -416,5 +416,121 @@ namespace mx
                 myChoice = value;
             }
         }
+        
+        
+        
+        /**************** InterchangeableAttributes ****************/
+        /* 2953 */
+        InterchangeableAttributes::InterchangeableAttributes()
+        :symbol()
+        ,separator()
+        ,hasSymbol( false )
+        ,hasSeparator( false )
+        {}
+        
+        bool InterchangeableAttributes::hasValues() const
+        {
+            return hasSymbol ||
+            hasSeparator;
+        }
+        
+        std::ostream& InterchangeableAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, symbol, "symbol", hasSymbol );
+                streamAttribute( os, separator, "separator", hasSeparator );
+            }
+            return os;
+        }
+        
+		Interchangeable::Interchangeable()
+		:myAttributes( std::make_shared<InterchangeableAttributes>() )
+		,myTimeRelation( makeTimeRelation() )
+		,myHasTimeRelation( false )
+		,myBeats( makeBeats() )
+		,myBeatType( makeBeatType() )
+		{}
+		bool Interchangeable::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Interchangeable::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Interchangeable::streamName( std::ostream& os ) const
+		{
+			os << "interchangeable";
+			return os;
+		}
+		bool Interchangeable::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Interchangeable::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		InterchangeableAttributesPtr Interchangeable::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Interchangeable::setAttributes( const InterchangeableAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ TimeRelation minOccurs = 0, maxOccurs = 1 _________ */
+		TimeRelationPtr Interchangeable::getTimeRelation() const
+		{
+			return myTimeRelation;
+		}
+		void Interchangeable::setTimeRelation( const TimeRelationPtr& value )
+		{
+			if( value )
+			{
+				myTimeRelation = value;
+			}
+		}
+		bool Interchangeable::getHasTimeRelation() const
+		{
+			return myHasTimeRelation;
+		}
+		void Interchangeable::setHasTimeRelation( const bool value )
+		{
+			myHasTimeRelation = value;
+		}
+		/* _________ Beats minOccurs = 1, maxOccurs = 1 _________ */
+		BeatsPtr Interchangeable::getBeats() const
+		{
+			return myBeats;
+		}
+		void Interchangeable::setBeats( const BeatsPtr& value )
+		{
+			if( value )
+			{
+				myBeats = value;
+			}
+		}
+		/* _________ BeatType minOccurs = 1, maxOccurs = 1 _________ */
+		BeatTypePtr Interchangeable::getBeatType() const
+		{
+			return myBeatType;
+		}
+		void Interchangeable::setBeatType( const BeatTypePtr& value )
+		{
+			if( value )
+			{
+				myBeatType = value;
+			}
+		}
+
     }
 }
