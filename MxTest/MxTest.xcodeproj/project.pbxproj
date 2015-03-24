@@ -159,6 +159,7 @@
 		29774A331AB21FA000BF2205 /* WorkNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */; };
 		29774A341AB21FA000BF2205 /* WorkTitleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */; };
 		29884C211AC1FBEC00DD2209 /* StaffDetailsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */; };
+		29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -470,6 +471,7 @@
 		297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkNumberTest.cpp; sourceTree = "<group>"; };
 		297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkTitleTest.cpp; sourceTree = "<group>"; };
 		29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffDetailsTest.cpp; sourceTree = "<group>"; };
+		29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureStyleTest.cpp; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */,
 				29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */,
 				2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */,
 				2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */,
@@ -1305,6 +1308,7 @@
 				298C81E61AB6A8DC006619A9 /* SupportsTest.cpp in Sources */,
 				29C0B9E81AAE9398004F86FA /* PartAbbreviationTest.cpp in Sources */,
 				29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */,
+				29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */,
 				297749D01AB21FA000BF2205 /* AccordionMiddleTest.cpp in Sources */,
 				29CEB4A91AB4C0FA00D6AEFC /* NormalDotTest.cpp in Sources */,
 				29C0B9D71AAE9398004F86FA /* LineWidthTest.cpp in Sources */,

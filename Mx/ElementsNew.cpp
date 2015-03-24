@@ -225,6 +225,196 @@ namespace mx
 		{
 			myHasStaffSize = value;
 		}
-
+        MeasureStyleChoice::MeasureStyleChoice()
+        :myChoice( MeasureStyleChoice::Choice::multipleRest )
+        ,myMultipleRest( makeMultipleRest() )
+        ,myMeasureRepeat( makeMeasureRepeat() )
+        ,myBeatRepeat( makeBeatRepeat() )
+        ,mySlash( makeSlash() )
+        {}
+        bool MeasureStyleChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MeasureStyleChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MeasureStyleChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool MeasureStyleChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& MeasureStyleChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::multipleRest:
+                    myMultipleRest->toStream( os, indentLevel+1 );
+                    break;
+                case Choice::measureRepeat:
+                    myMeasureRepeat->toStream( os, indentLevel+1 );
+                    break;
+                    
+                case Choice::beatRepeat:
+                    myBeatRepeat->toStream( os, indentLevel+1 );
+                    break;
+                    
+                case Choice::slash:
+                    mySlash->toStream( os, indentLevel+1 );
+                    break;
+                default:
+                    break;
+            }
+            return os;
+        }
+        MeasureStyleChoice::Choice MeasureStyleChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void MeasureStyleChoice::setChoice( const Choice value )
+        {
+            myChoice = value;
+        }
+        MultipleRestPtr MeasureStyleChoice::getMultipleRest() const
+        {
+            return myMultipleRest;
+        }
+        void MeasureStyleChoice::setMultipleRest( const MultipleRestPtr& value )
+        {
+            if ( value )
+            {
+                myMultipleRest = value;
+            }
+        }
+        MeasureRepeatPtr MeasureStyleChoice::getMeasureRepeat() const
+        {
+            return myMeasureRepeat;
+        }
+        void MeasureStyleChoice::setMeasureRepeat( const MeasureRepeatPtr& value )
+        {
+            if ( value )
+            {
+                myMeasureRepeat = value;
+            }
+        }
+        BeatRepeatPtr MeasureStyleChoice::getBeatRepeat() const
+        {
+            return myBeatRepeat;
+        }
+        void MeasureStyleChoice::setBeatRepeat( const BeatRepeatPtr& value )
+        {
+            if ( value )
+            {
+                myBeatRepeat = value;
+            }
+        }
+        SlashPtr MeasureStyleChoice::getSlash() const
+        {
+            return mySlash;
+        }
+        void MeasureStyleChoice::setSlash( const SlashPtr& value )
+        {
+            if ( value )
+            {
+                mySlash = value;
+            }
+        }
+        /**************** MeasureStyleAttributes ****************/
+        /* 2681 */
+        MeasureStyleAttributes::MeasureStyleAttributes()
+        :number()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,hasNumber( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        {}
+        
+        bool MeasureStyleAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor;
+        }
+        
+        std::ostream& MeasureStyleAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+            }
+            return os;
+        }
+        
+		MeasureStyle::MeasureStyle()
+		:myAttributes( std::make_shared<MeasureStyleAttributes>() )
+		,myChoice( makeMeasureStyleChoice() )
+		{}
+		bool MeasureStyle::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& MeasureStyle::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& MeasureStyle::streamName( std::ostream& os ) const
+		{
+			os << "measure-style";
+			return os;
+		}
+		bool MeasureStyle::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& MeasureStyle::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myChoice->streamContents( os, indentLevel, isOneLineOnly );
+            os << std::endl;
+            return os;
+		}
+		MeasureStyleAttributesPtr MeasureStyle::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void MeasureStyle::setAttributes( const MeasureStyleAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        MeasureStyleChoicePtr MeasureStyle::getMeasureStyleChoice() const
+        {
+            return myChoice;
+        }
+        void MeasureStyle::setMeasureStyleChoice( const MeasureStyleChoicePtr& value )
+        {
+            if ( value )
+            {
+                myChoice = value;
+            }
+        }
     }
 }

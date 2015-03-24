@@ -241,48 +241,11 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             MeasureStyleAttributesPtr getAttributes() const;
             void setAttributes( const MeasureStyleAttributesPtr& value );
-            /* _________ MultipleRest minOccurs = 1, maxOccurs = 1 _________ */
-            MultipleRestPtr getMultipleRest() const;
-            void setMultipleRest( const MultipleRestPtr& value );
-            /* _________ MeasureRepeat minOccurs = 1, maxOccurs = 1 _________ */
-            MeasureRepeatPtr getMeasureRepeat() const;
-            void setMeasureRepeat( const MeasureRepeatPtr& value );
-            /* _________ BeatRepeat minOccurs = 1, maxOccurs = 1 _________ */
-            BeatRepeatPtr getBeatRepeat() const;
-            void setBeatRepeat( const BeatRepeatPtr& value );
-            /* _________ SlashType minOccurs = 1, maxOccurs = 1 _________ */
-            SlashTypePtr getSlashType() const;
-            void setSlashType( const SlashTypePtr& value );
-            /* _________ SlashDot minOccurs = 0, maxOccurs = unbounded _________ */
-            const SlashDotSet& getSlashDotSet() const;
-            void addSlashDot( const SlashDotPtr& value );
-            void removeSlashDot( const SlashDotSetIterConst& value );
-            bool getHasSlashDot() const;
-            void setHasSlashDot( const bool value );
-            void clearSlashDotSet();
-            /* _________ Slash minOccurs = 1, maxOccurs = 1 _________ */
-            SlashPtr getSlash() const;
-            void setSlash( const SlashPtr& value );
-            /* _________ SlashType minOccurs = 1, maxOccurs = 1 _________ */
-            SlashTypePtr getSlashType() const;
-            void setSlashType( const SlashTypePtr& value );
-            /* _________ SlashDot minOccurs = 0, maxOccurs = unbounded _________ */
-            const SlashDotSet& getSlashDotSet() const;
-            void addSlashDot( const SlashDotPtr& value );
-            void removeSlashDot( const SlashDotSetIterConst& value );
-            bool getHasSlashDot() const;
-            void setHasSlashDot( const bool value );
-            void clearSlashDotSet();
+            MeasureStyleChoicePtr getMeasureStyleChoice() const;
+            void setMeasureStyleChoice( const MeasureStyleChoicePtr& value );
         private:
             MeasureStyleAttributesPtr myAttributes;
-            MultipleRestPtr myMultipleRest;
-            MeasureRepeatPtr myMeasureRepeat;
-            BeatRepeatPtr myBeatRepeat;
-            SlashTypePtr mySlashType;
-            SlashDotSet mySlashDotSet;
-            SlashPtr mySlash;
-            SlashTypePtr mySlashType;
-            SlashDotSet mySlashDotSet;
+            MeasureStyleChoicePtr myChoice;
         };
     }
 }
