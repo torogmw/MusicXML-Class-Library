@@ -479,6 +479,10 @@ namespace mx
                 myTimeRelation->toStream( os, indentLevel+1 );
             }
             os << std::endl;
+            myBeats->toStream( os, indentLevel+1 );
+            os << std::endl;
+            myBeatType->toStream( os, indentLevel+1 );
+            os << std::endl;
             return os;
 		}
 		InterchangeableAttributesPtr Interchangeable::getAttributes() const
