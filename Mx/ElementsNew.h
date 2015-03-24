@@ -186,6 +186,12 @@ namespace mx
             void setChoice( const Choice value );
             MultipleRestPtr getMultipleRest() const;
             void setMultipleRest( const MultipleRestPtr& value );
+            MeasureRepeatPtr getMeasureRepeat() const;
+            void setMeasureRepeat( const MeasureRepeatPtr& value );
+            BeatRepeatPtr getBeatRepeat() const;
+            void setBeatRepeat( const BeatRepeatPtr& value );
+            SlashPtr getSlash() const;
+            void setSlash( const SlashPtr& value );
         private:
             Choice myChoice;
             MultipleRestPtr myMultipleRest;
