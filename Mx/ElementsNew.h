@@ -18,13 +18,9 @@ namespace mx
     {
         /*
          2653
-         
-         
          <!--  ID = 2653 [2653] ------------------------->
          <!-- min=0 max=4294967295 ZeroOrMany  -->
-         <!-- MsItemElementKind::composite -->
          <!-- RecursiveSubElementCount = 8 -->
-         <!-- All Sub Elements Are Implemented: true -->
          <xs:element name="staff-details" type="staff-details" minOccurs="0" maxOccurs="unbounded">
          <xs:annotation>
          <xs:documentation>The staff-details element is used to indicate different types of staves.</xs:documentation>
@@ -58,7 +54,6 @@ namespace mx
          <xs:attributeGroup ref="print-object"/>
          <xs:attributeGroup ref="print-spacing"/>
          </xs:complexType>
-         
          */
         
         struct StaffDetailsAttributes;
