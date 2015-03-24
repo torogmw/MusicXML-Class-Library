@@ -540,6 +540,190 @@ namespace mx
 				myBeatType = value;
 			}
 		}
-
+        
+        
+        /**************** AccordionRegistrationAttributes ****************/
+        /* 3403 */
+        AccordionRegistrationAttributes::AccordionRegistrationAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,halign( types::LeftCenterRight::center )
+        ,valign()
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasHalign( false )
+        ,hasValign( false )
+        {}
+        
+        bool AccordionRegistrationAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasHalign ||
+            hasValign;
+        }
+        
+        std::ostream& AccordionRegistrationAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, valign, "valign", hasValign );
+            }
+            return os;
+        }
+        
+		AccordionRegistration::AccordionRegistration()
+		:myAttributes( std::make_shared<AccordionRegistrationAttributes>() )
+		,myAccordionHigh( makeAccordionHigh() )
+		,myHasAccordionHigh( false )
+		,myAccordionMiddle( makeAccordionMiddle() )
+		,myHasAccordionMiddle( false )
+		,myAccordionLow( makeAccordionLow() )
+		,myHasAccordionLow( false )
+		{}
+		bool AccordionRegistration::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& AccordionRegistration::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& AccordionRegistration::streamName( std::ostream& os ) const
+		{
+			os << "accordion-registration";
+			return os;
+		}
+		bool AccordionRegistration::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& AccordionRegistration::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = hasContents();
+            if ( myHasAccordionHigh )
+            {
+                os << std::endl;
+                myAccordionHigh->toStream( os, indentLevel+1 );
+            }
+			if ( myHasAccordionMiddle )
+            {
+                os << std::endl;
+                myAccordionMiddle->toStream( os, indentLevel+1 );
+            }
+			if ( myHasAccordionLow )
+            {
+                os << std::endl;
+                myAccordionLow->toStream( os, indentLevel+1 );
+            }
+            if ( hasContents() )
+            {
+                os << std::endl;
+            }            
+			return os;
+		}
+		AccordionRegistrationAttributesPtr AccordionRegistration::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void AccordionRegistration::setAttributes( const AccordionRegistrationAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ AccordionHigh minOccurs = 0, maxOccurs = 1 _________ */
+		AccordionHighPtr AccordionRegistration::getAccordionHigh() const
+		{
+			return myAccordionHigh;
+		}
+		void AccordionRegistration::setAccordionHigh( const AccordionHighPtr& value )
+		{
+			if( value )
+			{
+				myAccordionHigh = value;
+			}
+		}
+		bool AccordionRegistration::getHasAccordionHigh() const
+		{
+			return myHasAccordionHigh;
+		}
+		void AccordionRegistration::setHasAccordionHigh( const bool value )
+		{
+			myHasAccordionHigh = value;
+		}
+		/* _________ AccordionMiddle minOccurs = 0, maxOccurs = 1 _________ */
+		AccordionMiddlePtr AccordionRegistration::getAccordionMiddle() const
+		{
+			return myAccordionMiddle;
+		}
+		void AccordionRegistration::setAccordionMiddle( const AccordionMiddlePtr& value )
+		{
+			if( value )
+			{
+				myAccordionMiddle = value;
+			}
+		}
+		bool AccordionRegistration::getHasAccordionMiddle() const
+		{
+			return myHasAccordionMiddle;
+		}
+		void AccordionRegistration::setHasAccordionMiddle( const bool value )
+		{
+			myHasAccordionMiddle = value;
+		}
+		/* _________ AccordionLow minOccurs = 0, maxOccurs = 1 _________ */
+		AccordionLowPtr AccordionRegistration::getAccordionLow() const
+		{
+			return myAccordionLow;
+		}
+		void AccordionRegistration::setAccordionLow( const AccordionLowPtr& value )
+		{
+			if( value )
+			{
+				myAccordionLow = value;
+			}
+		}
+		bool AccordionRegistration::getHasAccordionLow() const
+		{
+			return myHasAccordionLow;
+		}
+		void AccordionRegistration::setHasAccordionLow( const bool value )
+		{
+			myHasAccordionLow = value;
+		}
     }
 }

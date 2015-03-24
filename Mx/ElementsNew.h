@@ -335,5 +335,111 @@ namespace mx
             BeatsPtr myBeats;
             BeatTypePtr myBeatType;
         };
+        /*
+         3403<!--  ID = 3403 [3403] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <xs:element name="accordion-registration" type="accordion-registration"/>
+         <xs:complexType name="accordion-registration">
+         <xs:annotation>
+         <xs:documentation>The accordion-registration type is use for accordion registration symbols. These are circular symbols divided horizontally into high, middle, and low sections that correspond to 4', 8', and 16' pipes. Each accordion-high, accordion-middle, and accordion-low element represents the presence of one or more dots in the registration diagram. An accordion-registration element needs to have at least one of the child elements present.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="accordion-high" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The accordion-high element indicates the presence of a dot in the high (4') section of the registration symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="accordion-middle" type="accordion-middle" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The accordion-middle element indicates the presence of 1 to 3 dots in the middle (8') section of the registration symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="accordion-low" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The accordion-low element indicates the presence of a dot in the low (16') section of the registration symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         */
+        
+        struct AccordionRegistrationAttributes;
+        using AccordionRegistrationAttributesPtr = std::shared_ptr<AccordionRegistrationAttributes>;
+        
+        struct AccordionRegistrationAttributes : public AttributesInterface
+        {
+        public:
+            AccordionRegistrationAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::LeftCenterRight halign;
+            types::Valign valign;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasHalign;
+            bool hasValign;
+        };
+        
+        class AccordionRegistration;
+        using AccordionRegistrationPtr = std::shared_ptr<AccordionRegistration>;
+        using AccordionRegistrationUPtr = std::unique_ptr<AccordionRegistration>;
+        using AccordionRegistrationSet = std::vector<AccordionRegistrationPtr>;
+        using AccordionRegistrationSetIter = AccordionRegistrationSet::iterator;
+        using AccordionRegistrationSetIterConst = AccordionRegistrationSet::const_iterator;
+        inline AccordionRegistrationPtr makeAccordionRegistration() { return std::make_shared<AccordionRegistration>(); }
+        class AccordionRegistration : public ElementInterface
+        {
+        public:
+            AccordionRegistration();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            AccordionRegistrationAttributesPtr getAttributes() const;
+            void setAttributes( const AccordionRegistrationAttributesPtr& value );
+            /* _________ AccordionHigh minOccurs = 0, maxOccurs = 1 _________ */
+            AccordionHighPtr getAccordionHigh() const;
+            void setAccordionHigh( const AccordionHighPtr& value );
+            bool getHasAccordionHigh() const;
+            void setHasAccordionHigh( const bool value );
+            /* _________ AccordionMiddle minOccurs = 0, maxOccurs = 1 _________ */
+            AccordionMiddlePtr getAccordionMiddle() const;
+            void setAccordionMiddle( const AccordionMiddlePtr& value );
+            bool getHasAccordionMiddle() const;
+            void setHasAccordionMiddle( const bool value );
+            /* _________ AccordionLow minOccurs = 0, maxOccurs = 1 _________ */
+            AccordionLowPtr getAccordionLow() const;
+            void setAccordionLow( const AccordionLowPtr& value );
+            bool getHasAccordionLow() const;
+            void setHasAccordionLow( const bool value );
+        private:
+            AccordionRegistrationAttributesPtr myAttributes;
+            AccordionHighPtr myAccordionHigh;
+            bool myHasAccordionHigh;
+            AccordionMiddlePtr myAccordionMiddle;
+            bool myHasAccordionMiddle;
+            AccordionLowPtr myAccordionLow;
+            bool myHasAccordionLow;
+        };
+
     }
 }
