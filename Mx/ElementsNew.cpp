@@ -555,7 +555,7 @@ namespace mx
         ,fontWeight( types::FontWeight::normal )
         ,color()
         ,halign( types::LeftCenterRight::center )
-        ,valign()
+        ,valign( types::Valign::baseline )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
