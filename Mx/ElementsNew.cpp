@@ -557,10 +557,10 @@ namespace mx
             if ( myHasTuningAlter )
             {
                 os << std::endl;
-                myTuningStep->toStream( os, indentLevel+1 );
+                myTuningAlter->toStream( os, indentLevel+1 );
             }
             os << std::endl;
-			myTuningStep->toStream( os, indentLevel+1 );
+			myTuningOctave->toStream( os, indentLevel+1 );
             os << std::endl;
             return os;
 		}
