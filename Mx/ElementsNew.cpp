@@ -632,7 +632,7 @@ namespace mx
 		}
 		std::ostream& AccordionRegistration::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = hasContents();
+			isOneLineOnly = !hasContents();
             if ( myHasAccordionHigh )
             {
                 os << std::endl;

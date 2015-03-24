@@ -11,13 +11,13 @@ TEST( Test01, AccordionRegistration )
 {
 	AccordionRegistration object;
 	stringstream expected;
-	streamLine( expected, 1, R"(<accordion-registration/>)" );
+	streamLine( expected, 1, R"(<accordion-registration/>)", false );
 	stringstream actual;
 	// object.toStream( std::cout, 1 );
 	object.toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object.hasAttributes() )
-	CHECK( object.hasContents() )
+	CHECK( ! object.hasContents() )
 }
 TEST( Test02, AccordionRegistration )
 {
