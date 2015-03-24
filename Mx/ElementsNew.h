@@ -163,10 +163,36 @@ namespace mx
         using MeasureStyleChoicePtr = std::shared_ptr<MeasureStyleChoice>;
         using MeasureStyleChoiceUPtr = std::unique_ptr<MeasureStyleChoice>;
         using MeasureStyleChoiceSet = std::vector<MeasureStyleChoicePtr>;
-        using MeasureStyleChoiceSetIter = MeasureStyleSet::iterator;
-        using MeasureStyleChoiceSetIterConst = MeasureStyleSet::const_iterator;
-        inline MeasureStylePtr makeMeasureStyleChoice() { return std::make_shared<MeasureStyleChoice>(); }
-        class MeasureStyle : public ElementInterface
+        using MeasureStyleChoiceSetIter = MeasureStyleChoiceSet::iterator;
+        using MeasureStyleChoiceSetIterConst = MeasureStyleChoiceSet::const_iterator;
+        inline MeasureStyleChoicePtr makeMeasureStyleChoice() { return std::make_shared<MeasureStyleChoice>(); }
+        class MeasureStyleChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                multipleRest = 0,
+                measureRepeat = 1,
+                beatRepeat = 2,
+                slash = 3
+            };
+            MeasureStyleChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            Choice getChoice() const;
+            void setChoice( const Choice value );
+            MultipleRestPtr getMultipleRest() const;
+            void setMultipleRest( const MultipleRestPtr& value );
+        private:
+            Choice myChoice;
+            MultipleRestPtr myMultipleRest;
+            MeasureRepeatPtr myMeasureRepeat;
+            BeatRepeatPtr myBeatRepeat;
+            SlashPtr mySlash;
+        };
         
         struct MeasureStyleAttributes;
         using MeasureStyleAttributesPtr = std::shared_ptr<MeasureStyleAttributes>;
