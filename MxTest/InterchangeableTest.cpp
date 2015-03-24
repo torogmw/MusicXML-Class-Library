@@ -25,15 +25,23 @@ TEST( Test01, Interchangeable )
 TEST( Test02, Interchangeable )
 {
 	Interchangeable object;
+    object.getAttributes()->hasSeparator = true;
+    object.getAttributes()->separator = TimeSeparator::horizontal;
+    object.getAttributes()->hasSymbol = true;
+    object.getAttributes()->symbol = TimeSymbol::cut;
+    object.getBeats()->setValue( XsString{ "Weird" } );
+    object.getBeatType()->setValue( XsString{ "to be a string" } );
+    object.setHasTimeRelation( true );
+    object.getTimeRelation()->setValue( TimeRelationEnum::hyphen );
 	stringstream expected;
-	streamLine( expected, 1, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 1, R"()", false );
+	streamLine( expected, 1, R"(<interchangeable symbol="cut" separator="horizontal">)" );
+	streamLine( expected, 2, R"(<time-relation>hyphen</time-relation>)" );
+	streamLine( expected, 2, R"(<beats>Weird</beats>)" );
+	streamLine( expected, 2, R"(<beat-type>to be a string</beat-type>)" );
+	streamLine( expected, 1, R"(</interchangeable>)", false );
 	stringstream actual;
-	object.toStream( std::cout, 1 );
-	// object.toStream( actual, 1 );
+	// object.toStream( std::cout, 1 );
+	object.toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( object.hasAttributes() )
 	CHECK( object.hasContents() )
