@@ -32,6 +32,7 @@ TEST( Test02, MeasureStyle )
 	streamLine( expected, 1, R"(<measure-style color="#4C3AC92B">)" );
 	streamLine( expected, 2, R"(<beat-repeat type="start">)" );
 	streamLine( expected, 3, R"(<slash-type>eighth</slash-type>)" );
+	streamLine( expected, 3, R"(<slash-dot/>)" );
 	streamLine( expected, 2, R"(</beat-repeat>)" );
 	streamLine( expected, 1, R"(</measure-style>)", false );
 	stringstream actual;

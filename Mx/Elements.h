@@ -16137,8 +16137,6 @@ namespace mx
             const SlashDotSet& getSlashDotSet() const;
             void addSlashDot( const SlashDotPtr& value );
             void removeSlashDot( const SlashDotSetIterConst& value );
-            bool getHasSlashDot() const;
-            void setHasSlashDot( const bool value );
             void clearSlashDotSet();
         private:
             SlashAttributesPtr myAttributes;
