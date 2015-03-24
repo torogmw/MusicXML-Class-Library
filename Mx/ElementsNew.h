@@ -440,6 +440,97 @@ namespace mx
             AccordionLowPtr myAccordionLow;
             bool myHasAccordionLow;
         };
-
+        
+        /*
+         2621
+         <!--  ID = 2621 [2621] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- RecursiveSubElementCount = 7 -->
+         <xs:element name="time" type="time" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="time">
+         <xs:annotation>
+         <xs:documentation>Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator. The symbol attribute is used indicate common and cut time symbols as well as a single number display. Multiple pairs of beat and beat-type elements are used for composite time signatures with multiple denominators, such as 2/4 + 3/8. A composite such as 3+2/8 requires only one beat/beat-type pair.
+         
+         The print-object attribute allows a time signature to be specified but not printed, as is the case for excerpts from the middle of a score. The value is "yes" if not present. The optional number attribute refers to staff numbers within the part. If absent, the time signature applies to all staves in the part.</xs:documentation>
+         </xs:annotation>
+         <xs:choice>
+         <xs:sequence>
+         <xs:group ref="time-signature" maxOccurs="unbounded"/>
+         <xs:element name="interchangeable" type="interchangeable" minOccurs="0"/>
+         </xs:sequence>
+         <xs:element name="senza-misura" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>A senza-misura element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any, such as an X. The time element's symbol attribute is not used when a senza-misura element is present.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         <xs:attribute name="number" type="staff-number"/>
+         <xs:attribute name="symbol" type="time-symbol"/>
+         <xs:attribute name="separator" type="time-separator"/>
+         <xs:attributeGroup ref="print-style-align"/>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType>
+         <xs:group name="time-signature">
+         <xs:annotation>
+         <xs:documentation>Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="beats" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>The beats element indicates the number of beats, as found in the numerator of a time signature.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="beat-type" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>The beat-type element indicates the beat unit, as found in the denominator of a time signature.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         */
+        class TimeChoice;
+        using TimeChoicePtr = std::shared_ptr<TimeChoice>;
+        using TimeChoiceUPtr = std::unique_ptr<TimeChoice>;
+        using TimeChoiceSet = std::vector<TimeChoicePtr>;
+        using TimeChoiceSetIter = TimeChoiceSet::iterator;
+        using TimeChoiceSetIterConst = TimeChoiceSet::const_iterator;
+        inline TimeChoicePtr makeTimeChoice() { return std::make_shared<TimeChoice>(); }
+        class TimeChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                multipleRest = 0,
+                measureRepeat = 1,
+                beatRepeat = 2,
+                slash = 3
+            };
+            TimeChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            Choice getChoice() const;
+            void setChoice( const Choice value );
+            MultipleRestPtr getMultipleRest() const;
+            void setMultipleRest( const MultipleRestPtr& value );
+            MeasureRepeatPtr getMeasureRepeat() const;
+            void setMeasureRepeat( const MeasureRepeatPtr& value );
+            BeatRepeatPtr getBeatRepeat() const;
+            void setBeatRepeat( const BeatRepeatPtr& value );
+            SlashPtr getSlash() const;
+            void setSlash( const SlashPtr& value );
+        private:
+            Choice myChoice;
+            MultipleRestPtr myMultipleRest;
+            MeasureRepeatPtr myMeasureRepeat;
+            BeatRepeatPtr myBeatRepeat;
+            SlashPtr mySlash;
+        };
     }
 }
