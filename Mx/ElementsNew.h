@@ -247,5 +247,93 @@ namespace mx
             MeasureStyleAttributesPtr myAttributes;
             MeasureStyleChoicePtr myChoice;
         };
+        
+        /*
+         2953
+         <!--  ID = 2953 [2953] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <xs:element name="interchangeable" type="interchangeable" minOccurs="0"/>
+         <xs:complexType name="interchangeable">
+         <xs:annotation>
+         <xs:documentation>The interchangeable type is used to represent the second in a pair of interchangeable dual time signatures, such as the 6/8 in 3/4 (6/8). A separate symbol attribute value is available compared to the time element's symbol attribute, which applies to the first of the dual time signatures. The parentheses attribute value is yes by default.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="time-relation" type="time-relation" minOccurs="0"/>
+         <xs:group ref="time-signature" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute name="symbol" type="time-symbol"/>
+         <xs:attribute name="separator" type="time-separator"/>
+         </xs:complexType>
+         <xs:group name="time-signature">
+         <xs:annotation>
+         <xs:documentation>Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="beats" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>The beats element indicates the number of beats, as found in the numerator of a time signature.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="beat-type" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>The beat-type element indicates the beat unit, as found in the denominator of a time signature.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         */
+        
+        struct InterchangeableAttributes;
+        using InterchangeableAttributesPtr = std::shared_ptr<InterchangeableAttributes>;
+        
+        struct InterchangeableAttributes : public AttributesInterface
+        {
+        public:
+            InterchangeableAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TimeSymbol symbol;
+            types::TimeSeparator separator;
+            bool hasSymbol;
+            bool hasSeparator;
+        };
+        
+        class Interchangeable;
+        using InterchangeablePtr = std::shared_ptr<Interchangeable>;
+        using InterchangeableUPtr = std::unique_ptr<Interchangeable>;
+        using InterchangeableSet = std::vector<InterchangeablePtr>;
+        using InterchangeableSetIter = InterchangeableSet::iterator;
+        using InterchangeableSetIterConst = InterchangeableSet::const_iterator;
+        inline InterchangeablePtr makeInterchangeable() { return std::make_shared<Interchangeable>(); }
+        class Interchangeable : public ElementInterface
+        {
+        public:
+            Interchangeable();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            InterchangeableAttributesPtr getAttributes() const;
+            void setAttributes( const InterchangeableAttributesPtr& value );
+            /* _________ TimeRelation minOccurs = 0, maxOccurs = 1 _________ */
+            TimeRelationPtr getTimeRelation() const;
+            void setTimeRelation( const TimeRelationPtr& value );
+            bool getHasTimeRelation() const;
+            void setHasTimeRelation( const bool value );
+            /* _________ Beats minOccurs = 1, maxOccurs = 1 _________ */
+            BeatsPtr getBeats() const;
+            void setBeats( const BeatsPtr& value );
+            /* _________ BeatType minOccurs = 1, maxOccurs = 1 _________ */
+            BeatTypePtr getBeatType() const;
+            void setBeatType( const BeatTypePtr& value );
+        private:
+            InterchangeableAttributesPtr myAttributes;
+            TimeRelationPtr myTimeRelation;
+            bool myHasTimeRelation;
+            BeatsPtr myBeats;
+            BeatTypePtr myBeatType;
+        };
     }
 }
