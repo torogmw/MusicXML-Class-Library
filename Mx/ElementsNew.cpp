@@ -628,7 +628,7 @@ namespace mx
 		}
 		bool AccordionRegistration::hasContents() const
 		{
-			return true;
+			return myHasAccordionHigh || myHasAccordionMiddle || myHasAccordionLow;
 		}
 		std::ostream& AccordionRegistration::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
@@ -651,7 +651,7 @@ namespace mx
             if ( hasContents() )
             {
                 os << std::endl;
-            }            
+            }
 			return os;
 		}
 		AccordionRegistrationAttributesPtr AccordionRegistration::getAttributes() const
