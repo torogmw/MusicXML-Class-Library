@@ -325,8 +325,18 @@ namespace mx
 		{
 			isOneLineOnly = false;
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			mySlashType->toStream( os, indentLevel+1 );
+			
+            for ( auto x : mySlashDotSet )
+            {
+                if ( x )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+            }
+            os << std::endl;
+            return os;
 		}
 		BeatRepeatAttributesPtr BeatRepeat::getAttributes() const
 		{
