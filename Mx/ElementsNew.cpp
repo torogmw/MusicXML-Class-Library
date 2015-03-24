@@ -472,9 +472,14 @@ namespace mx
 		std::ostream& Interchangeable::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
 			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			
+			if( myHasTimeRelation )
+            {
+                os << std::endl;
+                myTimeRelation->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            return os;
 		}
 		InterchangeableAttributesPtr Interchangeable::getAttributes() const
 		{
