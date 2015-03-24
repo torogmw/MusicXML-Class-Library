@@ -20,30 +20,26 @@ namespace xsd
         if ( printXmlDocumentation )
         {
             h << "/*" << end();
-            h << e->getID();
-            if ( equivs.size() > 1 )
-            {
-                h << " [ equivalents ";
-                eqi = eqb;
-                for ( ; eqi != eqe; ++eqi )
-                {
-                    if ( eqi != eqb )
-                    {
-                        h << ", ";
-                    }
-                    h << (*eqi)->getID();
-                }
-                h << " ]" << end();
-            }
-            else
-            {
-                h << end();
-            }
-            e->getXpItem()->stream( h, 0 );
-            if ( inheritedMsItem )
-            {
-                inheritedMsItem->getXpItem()->stream( h, 0 );
-            }
+//            h << e->getID();
+//            if ( equivs.size() > 1 )
+//            {
+//                h << " [ equivalents ";
+//                eqi = eqb;
+//                for ( ; eqi != eqe; ++eqi )
+//                {
+//                    if ( eqi != eqb )
+//                    {
+//                        h << ", ";
+//                    }
+//                    h << (*eqi)->getID();
+//                }
+//                h << " ]" << end();
+//            }
+//            else
+//            {
+//                h << end();
+//            }
+            e->toStream( h );
             h << " */" << end();
         } // end if ( printXmlDocumentation )
         

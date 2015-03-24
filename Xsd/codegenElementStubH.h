@@ -61,7 +61,7 @@ namespace xsd
                 
                 h << tab(1) << "const " << cname << "Set& get" << cname << "Set() const;" << end();
                 h << tab(1) << "void add" << cname << "( const " << cname << "Ptr& value );" << end();
-                h << tab(1) << "void remove" << cname << "( const " << cname << "IterConst& value );" << end();
+                h << tab(1) << "void remove" << cname << "( const " << cname << "SetIterConst& value );" << end();
                 h << tab(1) << "bool getHas" << cname << "() const;" << end();
                 h << tab(1) << "void setHas" << cname << "( const bool value );" << end();
                 h << tab(1) << "void clear" << cname << "Set();" << end();
@@ -71,7 +71,7 @@ namespace xsd
                 
                 h << tab(1) << "const " << cname << "Set& get" << cname << "Set() const;" << end();
                 h << tab(1) << "void add" << cname << "( const " << cname << "Ptr& value );" << end();
-                h << tab(1) << "void remove" << cname << "( const " << cname << "IterConst& value );" << end();
+                h << tab(1) << "void remove" << cname << "( const " << cname << "SetIterConst& value );" << end();
                 h << tab(1) << "bool getHas" << cname << "() const;" << end();
                 h << tab(1) << "void setHas" << cname << "( const bool value );" << end();
                 h << tab(1) << "void clear" << cname << "Set();" << end();
@@ -81,7 +81,7 @@ namespace xsd
                 
                 h << tab(1) << "const " << cname << "Set& get" << cname << "Set() const;" << end();
                 h << tab(1) << "void add" << cname << "( const " << cname << "Ptr& value );" << end();
-                h << tab(1) << "void remove" << cname << "( const " << cname << "IterConst& value );" << end();
+                h << tab(1) << "void remove" << cname << "( const " << cname << "SetIterConst& value );" << end();
                 h << tab(1) << "bool getHas" << cname << "() const;" << end();
                 h << tab(1) << "void setHas" << cname << "( const bool value );" << end();
                 h << tab(1) << "void clear" << cname << "Set();" << end();

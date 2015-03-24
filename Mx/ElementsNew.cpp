@@ -265,5 +265,114 @@ namespace mx
         {
             myValue = value;
         }
+        /**************** BeatRepeatAttributes ****************/
+        /* 2836 */
+        BeatRepeatAttributes::BeatRepeatAttributes()
+        :slash( types::YesNo::no )
+        ,type()
+        ,slashes()
+        ,useDots( types::YesNo::no )
+        ,hasSlash( false )
+        ,hasType( true )
+        ,hasSlashes( false )
+        ,hasUseDots( false )
+        {}
+        
+        bool BeatRepeatAttributes::hasValues() const
+        {
+            return hasSlash ||
+            hasType ||
+            hasSlashes ||
+            hasUseDots;
+        }
+        
+        std::ostream& BeatRepeatAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, slash, "slash", hasSlash );
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, slashes, "slashes", hasSlashes );
+                streamAttribute( os, useDots, "use-dots", hasUseDots );
+            }
+            return os;
+        }
+        
+		BeatRepeat::BeatRepeat()
+		:myAttributes( std::make_shared<BeatRepeatAttributes>() )
+		,mySlashType( makeSlashType() )
+		,mySlashDotSet()
+		{}
+		bool BeatRepeat::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& BeatRepeat::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& BeatRepeat::streamName( std::ostream& os ) const
+		{
+			os << "beat-repeat";
+			return os;
+		}
+		bool BeatRepeat::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& BeatRepeat::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		BeatRepeatAttributesPtr BeatRepeat::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void BeatRepeat::setAttributes( const BeatRepeatAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ SlashType minOccurs = 1, maxOccurs = 1 _________ */
+		SlashTypePtr BeatRepeat::getSlashType() const
+		{
+			return mySlashType;
+		}
+		void BeatRepeat::setSlashType( const SlashTypePtr& value )
+		{
+			if( value )
+			{
+				mySlashType = value;
+			}
+		}
+		/* _________ SlashDot minOccurs = 0, maxOccurs = unbounded _________ */
+		const SlashDotSet& BeatRepeat::getSlashDotSet() const
+		{
+			return mySlashDotSet;
+		}
+		void BeatRepeat::removeSlashDot( const SlashDotSetIterConst& value )
+		{
+			if ( value != mySlashDotSet.cend() )
+			{
+				mySlashDotSet.erase( value );
+			}
+		}
+		void BeatRepeat::addSlashDot( const SlashDotPtr& value )
+		{
+			if ( value )
+			{
+				mySlashDotSet.push_back( value );
+			}
+		}
+		void BeatRepeat::clearSlashDotSet()
+		{
+			mySlashDotSet.clear();
+		}
     }
 }

@@ -3,6 +3,8 @@
 #include "camelCase.h"
 #include <limits>
 #include "end.h"
+#include "MsItem.h"
+#include "MsitemWeb.h"
 
 namespace xsd
 {
@@ -296,6 +298,48 @@ namespace xsd
         this->toStream( ss );
         return ss.str();
     }
+    std::ostream& followAllGroupsAndStream( const MsItemPtr& current, std::ostream& os )
+    {
+        if ( current->getMsItemKind() == MsItemKind::group )
+        {
+            // this is a group definition
+            if ( current->getChildren().size() > 0 && isGroupDefinition( current ) )
+            {
+                current->getXpItem()->stream( os, 0 );
+            }
+            else
+            // this is a group reference
+            {
+                std::string ref = "";
+                for ( auto prop : current->getXpItem()->getProperties() )
+                {
+                    if ( prop->getLabel() == "ref"
+                        || prop->getLabel() == "base"
+                        || prop->getLabel() == "type" )
+                    {
+                        ref = prop->getValue();
+                    }
+                }
+                if ( ref.length() > 0 )
+                {
+                    auto group = findItemByNameAndKind( ref, MsItemKind::group, current );
+                    if ( group && group->getMsItemKind() == MsItemKind::group )
+                    {
+                        if ( isGroupDefinition( group ) )
+                        {
+                            group->getXpItem()->stream( os, 0 );
+                        }
+                    }
+                }
+                
+            }
+        }
+        for ( auto x : current->getChildren() )
+        {
+            followAllGroupsAndStream( x, os );
+        }
+        return os;
+    }
     std::ostream& MsItemElement::toStream( std::ostream& os ) const
     {
         MsItemElementSet equivs = findEquivalentElements( std::make_shared<MsItemElement>( *this ) );
@@ -314,12 +358,17 @@ namespace xsd
         os << "<!-- MsItemElementKind::" << ::xsd::toString( this->getMsItemElementKind() ) << " -->" << end();
         os << "<!-- RecursiveSubElementCount = " << this->getSubElements().size() << " -->" << end();
         os << "<!-- All Sub Elements Are Implemented: " << std::boolalpha << this->getSubElementsImplemented() << " -->" << end();
+        auto This = std::make_shared<MsItem>( *this );
         this->getXpItem()->stream( os, 0 );
+        followAllGroupsAndStream( This, os );
         if ( this->getInheritedMsItem() )
         {
-            this->getInheritedMsItem()->getXpItem()->stream( os, 0 );
+            auto ThisInheritedMsItem = this->getInheritedMsItem();
+            ThisInheritedMsItem->getXpItem()->stream( os, 0 );
+            followAllGroupsAndStream( ThisInheritedMsItem, os );
             os << end();
         }
         return os;
     }
+    
 }

@@ -32,15 +32,15 @@ namespace xsd
             }
             else if ( child->getCardinality() == MsItemElementCardinality::ZeroOrMany )
             {
-                cpp << tab(2) << ",my" << cname << "()" << end();
+                cpp << tab(2) << ",my" << cname << "Set()" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::OneOrMMany )
             {
-                cpp << tab(2) << ",my" << cname << "()" << end();
+                cpp << tab(2) << ",my" << cname << "Set()" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::RangeBound )
             {
-                cpp << tab(2) << ",my" << cname << "()" << end();
+                cpp << tab(2) << ",my" << cname << "Set()" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::Unidentified )
             {
@@ -175,25 +175,25 @@ namespace xsd
             }
             else if ( child->getCardinality() == MsItemElementCardinality::ZeroOrMany )
             {
-                cpp << tab(2) << "const " << cname << "Set& Key::get" << cname << "Set() const" << end();
+                cpp << tab(2) << "const " << cname << "Set& " << e->getCppName() << "::get" << cname << "Set() const" << end();
                 cpp << tab(2) << "{" << end();
                 cpp << tab(3) << "return my" << cname << "Set;" << end();
                 cpp << tab(2) << "}" << end();
-                cpp << tab(2) << "void Key::remove" << cname << "( const " << cname << "SetIterConst& value )" << end();
+                cpp << tab(2) << "void " << e->getCppName() << "::remove" << cname << "( const " << cname << "SetIterConst& value )" << end();
                 cpp << tab(2) << "{" << end();
                 cpp << tab(3) << "if ( value != my" << cname << "Set.cend() )" << end();
                 cpp << tab(3) << "{" << end();
                 cpp << tab(4) << "my" << cname << "Set.erase( value );" << end();
                 cpp << tab(3) << "}" << end();
                 cpp << tab(2) << "}" << end();
-                cpp << tab(2) << "void Key::add" << cname << "( const " << cname << "Ptr& value )" << end();
+                cpp << tab(2) << "void " << e->getCppName() << "::add" << cname << "( const " << cname << "Ptr& value )" << end();
                 cpp << tab(2) << "{" << end();
                 cpp << tab(3) << "if ( value )" << end();
                 cpp << tab(3) << "{" << end();
                 cpp << tab(4) << "my" << cname << "Set.push_back( value );" << end();
                 cpp << tab(3) << "}" << end();
                 cpp << tab(2) << "}" << end();
-                cpp << tab(2) << "void Key::clear" << cname << "Set()" << end();
+                cpp << tab(2) << "void " << e->getCppName() << "::clear" << cname << "Set()" << end();
                 cpp << tab(2) << "{" << end();
                 cpp << tab(3) << "my" << cname << "Set.clear();" << end();
                 cpp << tab(2) << "}" << end();

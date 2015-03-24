@@ -186,9 +186,94 @@ namespace mx
             DirectiveAttributesPtr myAttributes;
             types::XsString myValue;
         };
+        /*
+         <!--  ID = 2836 [2836] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <xs:element name="beat-repeat" type="beat-repeat"/>
+         <xs:complexType name="beat-repeat">
+         <xs:annotation>
+         <xs:documentation>The beat-repeat type is used to indicate that a single beat (but possibly many notes) is repeated. Both the start and stop of the beat being repeated should be specified. The slashes attribute specifies the number of slashes to use in the symbol. The use-dots attribute indicates whether or not to use dots as well (for instance, with mixed rhythm patterns). By default, the value for slashes is 1 and the value for use-dots is no.
+         
+         The beat-repeat element specifies a notation style for repetitions. The actual music being repeated needs to be repeated within the MusicXML file. This element specifies the notation that indicates the repeat.</xs:documentation>
+         </xs:annotation>
+         <xs:group ref="slash" minOccurs="0"/>
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="slashes" type="xs:positiveInteger"/>
+         <xs:attribute name="use-dots" type="yes-no"/>
+         </xs:complexType>
+         <xs:group name="slash">
+         <xs:annotation>
+         <xs:documentation>The slash group combines elements used for more complete specification of the slash and beat-repeat measure-style elements. They have the same values as the type and dot elements, and define what the beat is for the display of repetition marks. If not present, the beat is based on the current time signature.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="slash-type" type="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="slash-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         
+         */
         
+        struct BeatRepeatAttributes;
+        using BeatRepeatAttributesPtr = std::shared_ptr<BeatRepeatAttributes>;
         
+        struct BeatRepeatAttributes : public AttributesInterface
+        {
+        public:
+            BeatRepeatAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo slash;
+            types::StartStop type;
+            types::PositiveInteger slashes;
+            types::YesNo useDots;
+            bool hasSlash;
+            const 	bool hasType;
+            bool hasSlashes;
+            bool hasUseDots;
+        };
         
-        
+        class BeatRepeat;
+        using BeatRepeatPtr = std::shared_ptr<BeatRepeat>;
+        using BeatRepeatUPtr = std::unique_ptr<BeatRepeat>;
+        using BeatRepeatSet = std::vector<BeatRepeatPtr>;
+        using BeatRepeatSetIter = BeatRepeatSet::iterator;
+        using BeatRepeatSetIterConst = BeatRepeatSet::const_iterator;
+        inline BeatRepeatPtr makeBeatRepeat() { return std::make_shared<BeatRepeat>(); }
+        class BeatRepeat : public ElementInterface
+        {
+        public:
+            BeatRepeat();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BeatRepeatAttributesPtr getAttributes() const;
+            void setAttributes( const BeatRepeatAttributesPtr& value );
+            /* _________ SlashType minOccurs = 1, maxOccurs = 1 _________ */
+            SlashTypePtr getSlashType() const;
+            void setSlashType( const SlashTypePtr& value );
+            /* _________ SlashDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const SlashDotSet& getSlashDotSet() const;
+            void addSlashDot( const SlashDotPtr& value );
+            void removeSlashDot( const SlashDotSetIterConst& value );
+            bool getHasSlashDot() const;
+            void setHasSlashDot( const bool value );
+            void clearSlashDotSet();
+        private:
+            BeatRepeatAttributesPtr myAttributes;
+            SlashTypePtr mySlashType;
+            SlashDotSet mySlashDotSet;
+        };
+
     }
 }
