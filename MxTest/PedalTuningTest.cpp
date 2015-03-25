@@ -25,16 +25,17 @@ TEST( Test01, PedalTuning )
 TEST( Test02, PedalTuning )
 {
 	PedalTuning object;
+    object.getPedalStep()->setValue( StepEnum::e );
+    object.getPedalAlter()->setValue( Semitones( -1 ) );
 	stringstream expected;
-	streamLine( expected, 1, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 1, R"()", false );
+	streamLine( expected, 1, R"(<pedal-tuning>)" );
+	streamLine( expected, 2, R"(<pedal-step>E</pedal-step>)" );
+	streamLine( expected, 2, R"(<pedal-alter>-1</pedal-alter>)" );
+	streamLine( expected, 1, R"(</pedal-tuning>)", false );
 	stringstream actual;
-	object.toStream( std::cout, 1 );
-	// object.toStream( actual, 1 );
+	// object.toStream( std::cout, 1 );
+	object.toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object.hasAttributes() )
+	CHECK( ! object.hasAttributes() )
 	CHECK( object.hasContents() )
 }
