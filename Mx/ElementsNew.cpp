@@ -1415,7 +1415,14 @@ namespace mx
 			myFrameNoteSet.clear();
             myFrameNoteSet.push_back( makeFrameNote() );
 		}
-        
+        FrameNotePtr Frame::getFrameNote( const FrameNoteSetIterConst& setIterator ) const
+        {
+            if( setIterator != myFrameNoteSet.cend() )
+            {
+                return *setIterator;
+            }
+            return FrameNotePtr();
+        }
         
         /**************** AttributesIterface ****************/
         /* 3554 */
@@ -1476,5 +1483,150 @@ namespace mx
 				myPedalAlter = value;
 			}
 		}
+        
+        
+        /**************** HarpPedalsAttributes ****************/
+        /* 3373 */
+        HarpPedalsAttributes::HarpPedalsAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,halign( types::LeftCenterRight::center )
+        ,valign()
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasHalign( false )
+        ,hasValign( false )
+        {}
+        
+        bool HarpPedalsAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasHalign ||
+            hasValign;
+        }
+        
+        std::ostream& HarpPedalsAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, valign, "valign", hasValign );
+            }
+            return os;
+        }
+        
+		HarpPedals::HarpPedals()
+		:myAttributes( std::make_shared<HarpPedalsAttributes>() )
+		,myPedalTuningSet()
+		{
+            myPedalTuningSet.push_back( makePedalTuning() );
+        }
+		bool HarpPedals::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& HarpPedals::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& HarpPedals::streamName( std::ostream& os ) const
+		{
+			os << "harp-pedals";
+			return os;
+		}
+		bool HarpPedals::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& HarpPedals::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			for ( auto x : myPedalTuningSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+			os << std::endl;
+			return os;
+		}
+		HarpPedalsAttributesPtr HarpPedals::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void HarpPedals::setAttributes( const HarpPedalsAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ PedalTuning minOccurs = 1, maxOccurs = unbounded _________ */
+		const PedalTuningSet& HarpPedals::getPedalTuningSet() const
+		{
+			return myPedalTuningSet;
+		}
+		void HarpPedals::removePedalTuning( const PedalTuningSetIterConst& value )
+		{
+			if ( value != myPedalTuningSet.cend() )
+			{
+				if ( myPedalTuningSet.size() > 1 )
+				{
+					myPedalTuningSet.erase( value );
+				}
+			}
+		}
+		void HarpPedals::addPedalTuning( const PedalTuningPtr& value )
+		{
+			if ( value )
+			{
+				myPedalTuningSet.push_back( value );
+			}
+		}
+		void HarpPedals::clearPedalTuningSet()
+		{
+			myPedalTuningSet.clear();
+			myPedalTuningSet.push_back( makePedalTuning() );
+		}
+        PedalTuningPtr HarpPedals::getPedalTuning( const PedalTuningSetIterConst& setIterator ) const
+        {
+            if( setIterator != myPedalTuningSet.cend() )
+            {
+                return *setIterator;
+            }
+            return PedalTuningPtr();
+        }
     }
 }

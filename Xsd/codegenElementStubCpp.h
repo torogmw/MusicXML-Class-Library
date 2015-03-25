@@ -229,6 +229,14 @@ namespace xsd
                 cpp << tab(4) << "my" << cname << "Set.push_back( make" << cname << "() );" << end();
                 cpp << tab(3) << "}" << end();
                 cpp << tab(2) << "}" << end();
+                cpp << tab(2) << cname << "Ptr " << e->getCppName() << "::get" << cname << "( const " << cname << " SetIterConst& setIterator ) const" << end();
+                cpp << tab(2) << "{" << end();
+                cpp << tab(3) << "if( setIterator != my" << cname << "Set.cend() )" << end();
+                cpp << tab(3) << "{" << end();
+                cpp << tab(4) << "return *setIterator;" << end();
+                cpp << tab(3) << "}" << end();
+                cpp << tab(3) << "return " << cname << "Ptr();" << end();
+                cpp << tab(2) << "}" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::RangeBound )
             {

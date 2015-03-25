@@ -855,6 +855,7 @@ namespace mx
             void addFrameNote( const FrameNotePtr& value );
             void removeFrameNote( const FrameNoteSetIterConst& value );
             void clearFrameNoteSet();
+            FrameNotePtr getFrameNote( const FrameNoteSetIterConst& setIterator ) const;
         private:
             FrameAttributesPtr myAttributes;
             FrameStringsPtr myFrameStrings;
@@ -914,5 +915,89 @@ namespace mx
             PedalStepPtr myPedalStep;
             PedalAlterPtr myPedalAlter;
         };
+        /*
+         3373
+         
+         
+         <!--  ID = 3373 [3373] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="harp-pedals" type="harp-pedals"/>
+         <xs:complexType name="harp-pedals">
+         <xs:annotation>
+         <xs:documentation>The harp-pedals type is used to create harp pedal diagrams. The pedal-step and pedal-alter elements use the same values as the step and alter elements. For easiest reading, the pedal-tuning elements should follow standard harp pedal order, with pedal-step values of D, C, B, E, F, G, and A.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="pedal-tuning" type="pedal-tuning" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-style-align"/>
+         </xs:complexType>
+         
+         */
+        
+        struct HarpPedalsAttributes;
+        using HarpPedalsAttributesPtr = std::shared_ptr<HarpPedalsAttributes>;
+        
+        struct HarpPedalsAttributes : public AttributesInterface
+        {
+        public:
+            HarpPedalsAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::LeftCenterRight halign;
+            types::Valign valign;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasHalign;
+            bool hasValign;
+        };
+        
+        class HarpPedals;
+        using HarpPedalsPtr = std::shared_ptr<HarpPedals>;
+        using HarpPedalsUPtr = std::unique_ptr<HarpPedals>;
+        using HarpPedalsSet = std::vector<HarpPedalsPtr>;
+        using HarpPedalsSetIter = HarpPedalsSet::iterator;
+        using HarpPedalsSetIterConst = HarpPedalsSet::const_iterator;
+        inline HarpPedalsPtr makeHarpPedals() { return std::make_shared<HarpPedals>(); }
+        class HarpPedals : public ElementInterface
+        {
+        public:
+            HarpPedals();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            HarpPedalsAttributesPtr getAttributes() const;
+            void setAttributes( const HarpPedalsAttributesPtr& value );
+            /* _________ PedalTuning minOccurs = 1, maxOccurs = unbounded _________ */
+            const PedalTuningSet& getPedalTuningSet() const;
+            void addPedalTuning( const PedalTuningPtr& value );
+            void removePedalTuning( const PedalTuningSetIterConst& value );
+            void clearPedalTuningSet();
+            PedalTuningPtr getPedalTuning( const PedalTuningSetIterConst& setIterator ) const;
+        private:
+            HarpPedalsAttributesPtr myAttributes;
+            PedalTuningSet myPedalTuningSet;
+        };
+
     }
 }

@@ -72,8 +72,6 @@ namespace xsd
                 h << tab(1) << "const " << cname << "Set& get" << cname << "Set() const;" << end();
                 h << tab(1) << "void add" << cname << "( const " << cname << "Ptr& value );" << end();
                 h << tab(1) << "void remove" << cname << "( const " << cname << "SetIterConst& value );" << end();
-                //h << tab(1) << "bool getHas" << cname << "() const;" << end();
-                //h << tab(1) << "void setHas" << cname << "( const bool value );" << end();
                 h << tab(1) << "void clear" << cname << "Set();" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::RangeBound )
@@ -82,9 +80,8 @@ namespace xsd
                 h << tab(1) << "const " << cname << "Set& get" << cname << "Set() const;" << end();
                 h << tab(1) << "void add" << cname << "( const " << cname << "Ptr& value );" << end();
                 h << tab(1) << "void remove" << cname << "( const " << cname << "SetIterConst& value );" << end();
-                //h << tab(1) << "bool getHas" << cname << "() const;" << end();
-                //h << tab(1) << "void setHas" << cname << "( const bool value );" << end();
                 h << tab(1) << "void clear" << cname << "Set();" << end();
+                h << tab(1) << cname << "Ptr get" << cname << "( const " << cname << " SetIterConst& setIterator ) const;" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::Unidentified )
             {
