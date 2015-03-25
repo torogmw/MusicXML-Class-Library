@@ -1415,5 +1415,92 @@ namespace mx
 			myFrameNoteSet.clear();
             myFrameNoteSet.push_back( makeFrameNote() );
 		}
+        
+        
+        /**************** AttributesIterface ****************/
+        /* 3554 */
+        AttributesIterface::AttributesIterface()
+        {}
+        
+        bool AttributesIterface::hasValues() const
+        {
+        }
+        
+        std::ostream& AttributesIterface::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+            }
+            return os;
+        }
+        
+		PedalTuning::PedalTuning()
+		:myAttributes( std::make_shared<AttributesIterface>() )
+		,myPedalStep( makePedalStep() )
+		,myPedalAlter( makePedalAlter() )
+		{}
+		bool PedalTuning::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& PedalTuning::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& PedalTuning::streamName( std::ostream& os ) const
+		{
+			os << "pedal-tuning";
+			return os;
+		}
+		bool PedalTuning::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PedalTuning::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myPedalStep->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myPedalAlter->toStream( os, indentLevel+1 );
+			os << std::endl;
+            return os;
+        }
+		AttributesIterfacePtr PedalTuning::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void PedalTuning::setAttributes( const AttributesIterfacePtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ PedalStep minOccurs = 1, maxOccurs = 1 _________ */
+		PedalStepPtr PedalTuning::getPedalStep() const
+		{
+			return myPedalStep;
+		}
+		void PedalTuning::setPedalStep( const PedalStepPtr& value )
+		{
+			if( value )
+			{
+				myPedalStep = value;
+			}
+		}
+		/* _________ PedalAlter minOccurs = 1, maxOccurs = 1 _________ */
+		PedalAlterPtr PedalTuning::getPedalAlter() const
+		{
+			return myPedalAlter;
+		}
+		void PedalTuning::setPedalAlter( const PedalAlterPtr& value )
+		{
+			if( value )
+			{
+				myPedalAlter = value;
+			}
+		}
     }
 }

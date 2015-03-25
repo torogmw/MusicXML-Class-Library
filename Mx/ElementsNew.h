@@ -863,5 +863,69 @@ namespace mx
             bool myHasFirstFret;
             FrameNoteSet myFrameNoteSet;
         };
+        /*
+         3554
+         <!--  ID = 3554 [3554] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <xs:element name="pedal-tuning" type="pedal-tuning" maxOccurs="unbounded"/>
+         <xs:complexType name="pedal-tuning">
+         <xs:annotation>
+         <xs:documentation>The pedal-tuning type specifies the tuning of a single harp pedal.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="pedal-step" type="step">
+         <xs:annotation>
+         <xs:documentation>The pedal-step element defines the pitch step for a single harp pedal.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="pedal-alter" type="semitones">
+         <xs:annotation>
+         <xs:documentation>The pedal-alter element defines the chromatic alteration for a single harp pedal.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:complexType>
+         */
+        struct AttributesIterface;
+        using AttributesIterfacePtr = std::shared_ptr<AttributesIterface>;
+        
+        struct AttributesIterface : public AttributesInterface
+        {
+        public:
+            AttributesIterface();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+        };
+        
+        class PedalTuning;
+        using PedalTuningPtr = std::shared_ptr<PedalTuning>;
+        using PedalTuningUPtr = std::unique_ptr<PedalTuning>;
+        using PedalTuningSet = std::vector<PedalTuningPtr>;
+        using PedalTuningSetIter = PedalTuningSet::iterator;
+        using PedalTuningSetIterConst = PedalTuningSet::const_iterator;
+        inline PedalTuningPtr makePedalTuning() { return std::make_shared<PedalTuning>(); }
+        class PedalTuning : public ElementInterface
+        {
+        public:
+            PedalTuning();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            AttributesIterfacePtr getAttributes() const;
+            void setAttributes( const AttributesIterfacePtr& value );
+            /* _________ PedalStep minOccurs = 1, maxOccurs = 1 _________ */
+            PedalStepPtr getPedalStep() const;
+            void setPedalStep( const PedalStepPtr& value );
+            /* _________ PedalAlter minOccurs = 1, maxOccurs = 1 _________ */
+            PedalAlterPtr getPedalAlter() const;
+            void setPedalAlter( const PedalAlterPtr& value );
+        private:
+            AttributesIterfacePtr myAttributes;
+            PedalStepPtr myPedalStep;
+            PedalAlterPtr myPedalAlter;
+        };
     }
 }
