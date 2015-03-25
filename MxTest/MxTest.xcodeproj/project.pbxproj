@@ -167,6 +167,7 @@
 		29884C2D1AC241B100DD2209 /* FrameNoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C2C1AC241B100DD2209 /* FrameNoteTest.cpp */; };
 		29884C2F1AC27F8B00DD2209 /* FrameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */; };
 		29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */; };
+		29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -486,6 +487,7 @@
 		29884C2C1AC241B100DD2209 /* FrameNoteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameNoteTest.cpp; sourceTree = "<group>"; };
 		29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameTest.cpp; sourceTree = "<group>"; };
 		29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PedalTuningTest.cpp; sourceTree = "<group>"; };
+		29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarpPedalsTest.cpp; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */,
 				29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */,
 				29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */,
 				29884C2C1AC241B100DD2209 /* FrameNoteTest.cpp */,
@@ -1257,6 +1260,7 @@
 				29774A1B1AB21FA000BF2205 /* StaffDistanceTest.cpp in Sources */,
 				297749FF1AB21FA000BF2205 /* MidiBankTest.cpp in Sources */,
 				29C0B9E71AAE9398004F86FA /* OtherTechnicalTest.cpp in Sources */,
+				29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */,
 				2935A72A1AB5FC3B002859CA /* RightDividerTest.cpp in Sources */,
 				29C0B9791AAE9337004F86FA /* CancelTest.cpp in Sources */,
 				298C81DE1AB6A8DC006619A9 /* LyricLanguageTest.cpp in Sources */,
