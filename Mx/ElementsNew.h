@@ -1377,29 +1377,127 @@ namespace mx
             void setChoice( const BeatUnitPerOrNoteRelationNoteChoice::Choice value );
             BeatUnitPerPtr getBeatUnitPer() const;
             void setBeatUnitPer( const BeatUnitPerPtr& value );
+            NoteRelationNotePtr getNoteRelationNote() const;
+            void setNoteRelationNote( const NoteRelationNotePtr& value );
         private:
             Choice myChoice;
             BeatUnitPerPtr myBeatUnitPer;
             NoteRelationNotePtr myNoteRelationNote;
         };
-        
-        class Metronome;
-        using MetronomePtr = std::shared_ptr<Metronome>;
-        using MetronomeUPtr = std::unique_ptr<Metronome>;
-        using MetronomeSet = std::vector<MetronomePtr>;
-        using MetronomeSetIter = MetronomeSet::iterator;
-        using MetronomeSetIterConst = MetronomeSet::const_iterator;
-        inline MetronomePtr makeMetronome() { return std::make_shared<Metronome>(); }
-        class Metronome : public ElementInterface
+        <!--  ID = 3367 [3367] ------------------------->
+        <!-- min=1 max=1 RequiredSingleOccurence  -->
+        <!-- MsItemElementKind::composite -->
+        <!-- RecursiveSubElementCount = 24 -->
+        <!-- All Sub Elements Are Implemented: true -->
+        <xs:element name="metronome" type="metronome"/>
+        <xs:complexType name="metronome">
+        <xs:annotation>
+		<xs:documentation>The metronome type represents metronome marks and other metric relationships. The beat-unit group and per-minute element specify regular metronome marks. The metronome-note and metronome-relation elements allow for the specification of more complicated metric relationships, such as swing tempo marks where two eighths are equated to a quarter note / eighth note triplet. The parentheses attribute indicates whether or not to put the metronome mark in parentheses; its value is no if not specified.</xs:documentation>
+            </xs:annotation>
+            <xs:choice> <!-- BeatUnitPerOrNoteRelationNoteChoice -->
+            <xs:sequence> <!-- BeatUnitPer -->
+			<xs:group ref="beat-unit"/> <!-- BeatUnitGroup -->
+			<xs:choice> <!-- PerMinuteOrBeatUnitChoice -->
+            <xs:element name="per-minute" type="per-minute"/>
+            <xs:group ref="beat-unit"/> <!-- BeatUnitGroup -->
+			</xs:choice>
+            </xs:sequence>
+            <xs:sequence> <!-- NoteRelationNote -->
+			<xs:element name="metronome-note" type="metronome-note" maxOccurs="unbounded"/>
+			<xs:sequence minOccurs="0"> <!-- MetronomeRelationGroup -->
+            <xs:element name="metronome-relation" type="xs:string">
+            <xs:annotation>
+            <xs:documentation>The metronome-relation element describes the relationship symbol that goes between the two sets of metronome-note elements. The currently allowed value is equals, but this may expand in future versions. If the element is empty, the equals value is used.</xs:documentation>
+            </xs:annotation>
+            </xs:element>
+            <xs:element name="metronome-note" type="metronome-note" maxOccurs="unbounded"/>
+			</xs:sequence>
+            </xs:sequence>
+            </xs:choice>
+            <xs:attributeGroup ref="print-style-align"/>
+            <xs:attributeGroup ref="justify"/>
+            <xs:attribute name="parentheses" type="yes-no"/>
+            </xs:complexType>
+            <xs:group name="beat-unit">
+            <xs:annotation>
+            <xs:documentation>The beat-unit group combines elements used repeatedly in the metronome element to specify a note within a metronome mark.</xs:documentation>
+            </xs:annotation>
+            <xs:sequence>
+            <xs:element name="beat-unit" type="note-type-value">
+			<xs:annotation>
+            <xs:documentation>The beat-unit element indicates the graphical note type to use in a metronome mark.</xs:documentation>
+			</xs:annotation>
+            </xs:element>
+            <xs:element name="beat-unit-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+			<xs:annotation>
+            <xs:documentation>The beat-unit-dot element is used to specify any augmentation dots for a metronome mark note.</xs:documentation>
+			</xs:annotation>
+            </xs:element>
+            </xs:sequence>
+            </xs:group>
+            struct AttributesIterface;
+            using AttributesIterfacePtr = std::shared_ptr<AttributesIterface>;
+            
+            struct AttributesIterface : public AttributesInterface
         {
         public:
-            Metronome();
+            AttributesIterface();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+        };
+        
+        class MetronomeNote;
+        using MetronomeNotePtr = std::shared_ptr<MetronomeNote>;
+        using MetronomeNoteUPtr = std::unique_ptr<MetronomeNote>;
+        using MetronomeNoteSet = std::vector<MetronomeNotePtr>;
+        using MetronomeNoteSetIter = MetronomeNoteSet::iterator;
+        using MetronomeNoteSetIterConst = MetronomeNoteSet::const_iterator;
+        inline MetronomeNotePtr makeMetronomeNote() { return std::make_shared<MetronomeNote>(); }
+        class MetronomeNote : public ElementInterface
+        {
+        public:
+            MetronomeNote();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            AttributesIterfacePtr getAttributes() const;
+            void setAttributes( const AttributesIterfacePtr& value );
+            /* _________ MetronomeType minOccurs = 1, maxOccurs = 1 _________ */
+            MetronomeTypePtr getMetronomeType() const;
+            void setMetronomeType( const MetronomeTypePtr& value );
+            /* _________ MetronomeDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const MetronomeDotSet& getMetronomeDotSet() const;
+            void addMetronomeDot( const MetronomeDotPtr& value );
+            void removeMetronomeDot( const MetronomeDotSetIterConst& value );
+            void clearMetronomeDotSet();
+            /* _________ MetronomeBeam minOccurs = 0, maxOccurs = unbounded _________ */
+            const MetronomeBeamSet& getMetronomeBeamSet() const;
+            void addMetronomeBeam( const MetronomeBeamPtr& value );
+            void removeMetronomeBeam( const MetronomeBeamSetIterConst& value );
+            void clearMetronomeBeamSet();
+            /* _________ MetronomeTuplet minOccurs = 0, maxOccurs = 1 _________ */
+            MetronomeTupletPtr getMetronomeTuplet() const;
+            void setMetronomeTuplet( const MetronomeTupletPtr& value );
+            bool getHasMetronomeTuplet() const;
+            void setHasMetronomeTuplet( const bool value );
+            /* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
+            ActualNotesPtr getActualNotes() const;
+            void setActualNotes( const ActualNotesPtr& value );
+            /* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
+            NormalNotesPtr getNormalNotes() const;
+            void setNormalNotes( const NormalNotesPtr& value );
+            /* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+            NormalTypePtr getNormalType() const;
+            void setNormalType( const NormalTypePtr& value );
+            /* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const NormalDotSet& getNormalDotSet() const;
+            void addNormalDot( const NormalDotPtr& value );
+            void removeNormalDot( const NormalDotSetIterConst& value );
+            void clearNormalDotSet();
         private:
+            BeatUnitPerOrNoteRelationNoteChoicePtr myChoice;
         };
 
 #if 1==0
