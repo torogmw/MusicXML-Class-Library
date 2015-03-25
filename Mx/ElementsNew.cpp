@@ -2183,7 +2183,77 @@ namespace mx
 			myHasMetronomeRelationGroup = value;
 		}
         
-        I cannot compile;
+        PerMinuteOrBeatUnitChoice::PerMinuteOrBeatUnitChoice()
+		:myChoice( Choice::perMinute )
+        ,myPerMinute( makePerMinute() )
+        ,myBeatUnitGroup( makeBeatUnitGroup() )
+		{}
+		bool PerMinuteOrBeatUnitChoice::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& PerMinuteOrBeatUnitChoice::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& PerMinuteOrBeatUnitChoice::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool PerMinuteOrBeatUnitChoice::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PerMinuteOrBeatUnitChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            switch ( myChoice )
+            {
+                case Choice::perMinute:
+                {
+                    myPerMinute->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::beatUnitGroup:
+                {
+                    myBeatUnitGroup->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                default:
+                    break;
+            }
+			isOneLineOnly = false;
+			return os;
+		}
+		PerMinuteOrBeatUnitChoice::Choice PerMinuteOrBeatUnitChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void PerMinuteOrBeatUnitChoice::setChoice( const PerMinuteOrBeatUnitChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        PerMinutePtr PerMinuteOrBeatUnitChoice::getPerMinute() const
+        {
+            return myPerMinute;
+        }
+        void PerMinuteOrBeatUnitChoice::setPerMinute( const PerMinutePtr& value )
+        {
+            if ( value )
+            {
+                myPerMinute = value;
+            }
+        }
+        BeatUnitGroupPtr PerMinuteOrBeatUnitChoice::getBeatUnitGroup() const
+        {
+            return myBeatUnitGroup;
+        }
+        void PerMinuteOrBeatUnitChoice::setBeatUnitGroup( const BeatUnitGroup& value )
+        {
+            if ( value )
+            {
+                myBeatUnitGroup = value;
+            }
+        }
         
 #if 1==0
         X__X::X__X()
