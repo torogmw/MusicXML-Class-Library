@@ -1201,23 +1201,197 @@ namespace mx
             bool myHasMetronomeTuplet;
         };
         
-        
-        class MetronomeNote;
-        using MetronomeNotePtr = std::shared_ptr<MetronomeNote>;
-        using MetronomeNoteUPtr = std::unique_ptr<MetronomeNote>;
-        using MetronomeNoteSet = std::vector<MetronomeNotePtr>;
-        using MetronomeNoteSetIter = MetronomeNoteSet::iterator;
-        using MetronomeNoteSetIterConst = MetronomeNoteSet::const_iterator;
-        inline MetronomeNotePtr makeMetronomeNote() { return std::make_shared<MetronomeNote>(); }
-        class MetronomeNote : public ElementInterface
+        class BeatUnitGroup;
+        using BeatUnitGroupPtr = std::shared_ptr<BeatUnitGroup>;
+        using BeatUnitGroupUPtr = std::unique_ptr<BeatUnitGroup>;
+        using BeatUnitGroupSet = std::vector<BeatUnitGroupPtr>;
+        using BeatUnitGroupSetIter = BeatUnitGroupSet::iterator;
+        using BeatUnitGroupSetIterConst = BeatUnitGroupSet::const_iterator;
+        inline BeatUnitGroupPtr makeBeatUnitGroup() { return std::make_shared<BeatUnitGroup>(); }
+        class BeatUnitGroup : public ElementInterface
         {
         public:
-            MetronomeNote();
+            BeatUnitGroup();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
+            BeatUnitPtr getBeatUnit() const;
+            void setBeatUnit( const BeatUnitPtr& value );
+            /* _________ BeatUnitDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const BeatUnitDotSet& getBeatUnitDotSet() const;
+            void addBeatUnitDot( const BeatUnitDotPtr& value );
+            void removeBeatUnitDot( const BeatUnitDotSetIterConst& value );
+            void clearBeatUnitDotSet();
+            MetronomeBeamPtr getBeatUnitDot( const BeatUnitDotSetIterConst& setIterator ) const;
             
+        private:
+            BeatUnitPtr myBeatUnit;
+            BeatUnitDotSet myBeatUnitDots;
+        };
+        
+        class MetronomeRelationGroup;
+        using MetronomeRelationGroupPtr = std::shared_ptr<MetronomeRelationGroup>;
+        using MetronomeRelationGroupUPtr = std::unique_ptr<MetronomeRelationGroup>;
+        using MetronomeRelationGroupSet = std::vector<MetronomeRelationGroupPtr>;
+        using MetronomeRelationGroupSetIter = MetronomeRelationGroupSet::iterator;
+        using MetronomeRelationGroupSetIterConst = MetronomeRelationGroupSet::const_iterator;
+        inline MetronomeRelationGroupPtr makeMetronomeRelationGroup() { return std::make_shared<MetronomeRelationGroup>(); }
+        class MetronomeRelationGroup : public ElementInterface
+        {
+        public:
+            MetronomeRelationGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
+            MetronomeRelationPtr getMetronomeRelation() const;
+            void setMetronomeRelation( const MetronomeRelationPtr& value );
+            /* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
+            MetronomeNotePtr getMetronomeNote() const;
+            void setMetronomeNote( const MetronomeNotePtr& value );
+        private:
+            MetronomeRelationPtr myMetronomeRelation;
+            MetronomeNotePtr myMetronomeNote;
+        };
+        
+        class NoteRelationNote;
+        using NoteRelationNotePtr = std::shared_ptr<NoteRelationNote>;
+        using NoteRelationNoteUPtr = std::unique_ptr<NoteRelationNote>;
+        using NoteRelationNoteSet = std::vector<NoteRelationNotePtr>;
+        using NoteRelationNoteSetIter = NoteRelationNoteSet::iterator;
+        using NoteRelationNoteSetIterConst = NoteRelationNoteSet::const_iterator;
+        inline NoteRelationNotePtr makeNoteRelationNote() { return std::make_shared<NoteRelationNote>(); }
+        class NoteRelationNote : public ElementInterface
+        {
+        public:
+            NoteRelationNote();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        class BeatUnitPer;
+        using BeatUnitPerPtr = std::shared_ptr<BeatUnitPer>;
+        using BeatUnitPerUPtr = std::unique_ptr<BeatUnitPer>;
+        using BeatUnitPerSet = std::vector<BeatUnitPerPtr>;
+        using BeatUnitPerSetIter = BeatUnitPerSet::iterator;
+        using BeatUnitPerSetIterConst = BeatUnitPerSet::const_iterator;
+        inline BeatUnitPerPtr makeBeatUnitPer() { return std::make_shared<BeatUnitPer>(); }
+        class BeatUnitPer : public ElementInterface
+        {
+        public:
+            BeatUnitPer();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        class PerMinuteOrBeatUnitChoice;
+        using PerMinuteOrBeatUnitChoicePtr = std::shared_ptr<PerMinuteOrBeatUnitChoice>;
+        using PerMinuteOrBeatUnitChoiceUPtr = std::unique_ptr<PerMinuteOrBeatUnitChoice>;
+        using PerMinuteOrBeatUnitChoiceSet = std::vector<PerMinuteOrBeatUnitChoicePtr>;
+        using PerMinuteOrBeatUnitChoiceSetIter = PerMinuteOrBeatUnitChoiceSet::iterator;
+        using PerMinuteOrBeatUnitChoiceSetIterConst = PerMinuteOrBeatUnitChoiceSet::const_iterator;
+        inline PerMinuteOrBeatUnitChoicePtr makePerMinuteOrBeatUnitChoice() { return std::make_shared<PerMinuteOrBeatUnitChoice>(); }
+        class PerMinuteOrBeatUnitChoice : public ElementInterface
+        {
+        public:
+            PerMinuteOrBeatUnitChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        class BeatUnitPerOrNoteRelationNoteChoice;
+        using BeatUnitPerOrNoteRelationNoteChoicePtr = std::shared_ptr<BeatUnitPerOrNoteRelationNoteChoice>;
+        using BeatUnitPerOrNoteRelationNoteChoiceUPtr = std::unique_ptr<BeatUnitPerOrNoteRelationNoteChoice>;
+        using BeatUnitPerOrNoteRelationNoteChoiceSet = std::vector<BeatUnitPerOrNoteRelationNoteChoicePtr>;
+        using BeatUnitPerOrNoteRelationNoteChoiceSetIter = BeatUnitPerOrNoteRelationNoteChoiceSet::iterator;
+        using BeatUnitPerOrNoteRelationNoteChoiceSetIterConst = BeatUnitPerOrNoteRelationNoteChoiceSet::const_iterator;
+        inline BeatUnitPerOrNoteRelationNoteChoicePtr makeBeatUnitPerOrNoteRelationNoteChoice() { return std::make_shared<BeatUnitPerOrNoteRelationNoteChoice>(); }
+        class BeatUnitPerOrNoteRelationNoteChoice : public ElementInterface
+        {
+        public:
+            BeatUnitPerOrNoteRelationNoteChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        class Metronome;
+        using MetronomePtr = std::shared_ptr<Metronome>;
+        using MetronomeUPtr = std::unique_ptr<Metronome>;
+        using MetronomeSet = std::vector<MetronomePtr>;
+        using MetronomeSetIter = MetronomeSet::iterator;
+        using MetronomeSetIterConst = MetronomeSet::const_iterator;
+        inline MetronomePtr makeMetronome() { return std::make_shared<Metronome>(); }
+        class Metronome : public ElementInterface
+        {
+        public:
+            Metronome();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+
+#if 1==0
+        class X_______X;
+        using X_______XPtr = std::shared_ptr<X_______X>;
+        using X_______XUPtr = std::unique_ptr<X_______X>;
+        using X_______XSet = std::vector<X_______XPtr>;
+        using X_______XSetIter = X_______XSet::iterator;
+        using X_______XSetIterConst = X_______XSet::const_iterator;
+        inline X_______XPtr makeX_______X() { return std::make_shared<X_______X>(); }
+        class X_______X : public ElementInterface
+        {
+        public:
+            X_______X();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        class X_______X;
+        using X_______XPtr = std::shared_ptr<X_______X>;
+        using X_______XUPtr = std::unique_ptr<X_______X>;
+        using X_______XSet = std::vector<X_______XPtr>;
+        using X_______XSetIter = X_______XSet::iterator;
+        using X_______XSetIterConst = X_______XSet::const_iterator;
+        inline X_______XPtr makeX_______X() { return std::make_shared<X_______X>(); }
+        class X_______X : public ElementInterface
+        {
+        public:
+            X_______X();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+#endif
     }
 }
