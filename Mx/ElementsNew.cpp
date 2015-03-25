@@ -1705,7 +1705,7 @@ namespace mx
         ,hasBracket( false )
         ,hasShowNumber( false )
         {}
-#if 1==0
+
         bool MetronomeTupletAttributes::hasValues() const
         {
             return hasType ||
@@ -1728,8 +1728,7 @@ namespace mx
         :myAttributes( std::make_shared<MetronomeTupletAttributes>() )
         ,myActualNotes( makeActualNotes() )
         ,myNormalNotes( makeNormalNotes() )
-        ,myNormalType( makeNormalType() )
-        ,myNormalDotSet()
+        ,myTimeModificationNormalTypeNormalDot( makeTimeModificationNormalTypeNormalDot() )
         {}
         bool MetronomeTuplet::hasAttributes() const
         {
@@ -1791,18 +1790,7 @@ namespace mx
                 myNormalNotes = value;
             }
         }
-        /* _________ MetronomeTupletAttributes minOccurs = 0, maxOccurs = 1 _________ */
-        MetronomeTupletAttributesPtr MetronomeTuplet::getMetronomeTupletAttributes() const
-        {
-            return myMetronomeTupletAttributes;
-        }
-        void MetronomeTuplet::setMetronomeTupletAttributes( const MetronomeTupletAttributesPtr& value )
-        {
-            if( value )
-            {
-                myMetronomeTupletAttributes = value;
-            }
-        }
-#endif
+        
     } // namespace e
+
 } // namespace mx
