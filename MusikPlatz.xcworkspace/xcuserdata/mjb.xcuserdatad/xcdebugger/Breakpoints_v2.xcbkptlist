@@ -1080,11 +1080,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Xsd/codegenElementStubH.h"
-            timestampString = "448957235.042441"
+            timestampString = "449008826.086986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "codegenElementStubH( std::ostream&amp; h, const std::string&amp; attStructName, const MsItemElementPtr&amp; e )"
             landmarkType = "7">
          </BreakpointContent>

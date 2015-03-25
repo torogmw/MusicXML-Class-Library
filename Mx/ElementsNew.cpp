@@ -1842,7 +1842,7 @@ namespace mx
 		{}
 		bool MetronomeNote::hasAttributes() const
 		{
-			return true;
+			return false;
 		}
 		std::ostream& MetronomeNote::streamAttributes( std::ostream& os ) const
 		{
