@@ -1317,7 +1317,20 @@ namespace mx
 		{
 			isOneLineOnly = false;
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
+			myFrameStrings->toStream( os, indentLevel+1 );
+			os << std::endl;
+            myFrameFrets->toStream( os, indentLevel+1 );
+            if ( myHasFirstFret )
+            {
+                os << std::endl;
+                myFirstFret->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myFrameNoteSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
 			throw std::runtime_error{ "not implemented" };
 		}
 		FrameAttributesPtr Frame::getAttributes() const
