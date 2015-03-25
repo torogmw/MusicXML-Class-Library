@@ -1200,5 +1200,24 @@ namespace mx
             MetronomeTupletPtr myMetronomeTuplet;
             bool myHasMetronomeTuplet;
         };
+        
+        
+        class MetronomeNote;
+        using MetronomeNotePtr = std::shared_ptr<MetronomeNote>;
+        using MetronomeNoteUPtr = std::unique_ptr<MetronomeNote>;
+        using MetronomeNoteSet = std::vector<MetronomeNotePtr>;
+        using MetronomeNoteSetIter = MetronomeNoteSet::iterator;
+        using MetronomeNoteSetIterConst = MetronomeNoteSet::const_iterator;
+        inline MetronomeNotePtr makeMetronomeNote() { return std::make_shared<MetronomeNote>(); }
+        class MetronomeNote : public ElementInterface
+        {
+        public:
+            MetronomeNote();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            
     }
 }
