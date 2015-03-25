@@ -1076,6 +1076,23 @@ namespace mx
             NormalDotSet myNormalDotSet;
         };
         
+        struct MetronomeTupletAttributes;
+        using MetronomeTupletAttributesPtr = std::shared_ptr<MetronomeTupletAttributes>;
+        
+        struct MetronomeTupletAttributes : public AttributesInterface
+        {
+        public:
+            MetronomeTupletAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            types::YesNo bracket;
+            types::ShowTuplet showNumber;
+            const 	bool hasType;
+            bool hasBracket;
+            bool hasShowNumber;
+        };
+        
         class MetronomeTuplet;
         using MetronomeTupletPtr = std::shared_ptr<MetronomeTuplet>;
         using MetronomeTupletUPtr = std::unique_ptr<MetronomeTuplet>;
