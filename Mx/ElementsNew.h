@@ -1071,6 +1071,7 @@ namespace mx
             void addNormalDot( const NormalDotPtr& value );
             void removeNormalDot( const NormalDotSetIterConst& value );
             void clearNormalDotSet();
+            NormalDotPtr getNormalDot( const NormalDotSetIterConst& setIterator ) const;
         private:
             NormalTypePtr myNormalType;
             NormalDotSet myNormalDotSet;

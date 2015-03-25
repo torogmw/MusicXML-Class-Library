@@ -1695,12 +1695,20 @@ namespace mx
 		{
 			myNormalDotSet.clear();
 		}
+        NormalDotPtr TimeModificationNormalTypeNormalDot::getNormalDot( const NormalDotSetIterConst& setIterator ) const
+        {
+            if( setIterator != myNormalDotSet.cend() )
+            {
+                return *setIterator;
+            }
+            return NormalDotPtr();
+        }
         /**************** MetronomeTupletAttributes ****************/
         /* 3682 */
         MetronomeTupletAttributes::MetronomeTupletAttributes()
-        :type()
+        :type( types::StartStop::start )
         ,bracket( types::YesNo::no )
-        ,showNumber()
+        ,showNumber( types::ShowTuplet::actual )
         ,hasType( true )
         ,hasBracket( false )
         ,hasShowNumber( false )
@@ -1754,11 +1762,12 @@ namespace mx
             
             os << std::endl;
             myActualNotes->toStream( os, indentLevel+1 );
+            os << std::endl;
             myNormalNotes->toStream( os, indentLevel+1 );
             if ( myHasTimeModificationNormalTypeNormalDot )
             {
                 os << std::endl;
-                myNormalNotes->streamContents( os, indentLevel+1, isOneLineOnly );
+                myTimeModificationNormalTypeNormalDot->streamContents( os, indentLevel+1, isOneLineOnly );
             }
             os << std::endl;
             isOneLineOnly = false;
