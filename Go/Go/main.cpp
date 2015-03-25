@@ -6,8 +6,8 @@
 
 int main(int argc, const char * argv[])
 {
-    // go::goSetIsImplemented( std::vector<int>{ 3524 } );
-    // go::goListNonImplementedElements();
-    go::goCreateElementStubs( 3554 );
+    go::goSetIsImplemented( std::vector<int>{ 3554 } );
+    go::goListNonImplementedElements();
+    // go::goCreateElementStubs( 3554 );
     return 0;
 }
