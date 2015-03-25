@@ -1276,9 +1276,8 @@ namespace mx
             /* _________ MetronomeNote minOccurs = 1, maxOccurs = unbounded _________ */
             const MetronomeNoteSet& getMetronomeNoteSet() const;
             void addMetronomeNote( const MetronomeNotePtr& value );
-            void removeMetronomeNote( const MetronomeNoteSetIterConst& value );
+            void removeMetronomeNote( const MetronomeNoteSetIterConst& setIterator );
             void clearMetronomeNoteSet();
-            MetronomeNotePtr getMetronomeNote( const MetronomeNoteSetIterConst& setIterator ) const;
             /* _________ MetronomeRelationGroup minOccurs = 0, maxOccurs = 1 _________ */
             MetronomeRelationGroupPtr getMetronomeRelationGroup() const;
             void setMetronomeRelationGroup( const MetronomeRelationGroupPtr& value );

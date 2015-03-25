@@ -2094,7 +2094,94 @@ namespace mx
                 myMetronomeNote = value;
             }
         }
-        
+        NoteRelationNote::NoteRelationNote()
+		:myMetronomeNoteSet()
+        ,myMetronomeRelationGroup( makeMetronomeRelationGroup() )
+        ,myHasMetronomeRelationGroup( false )
+		{}
+		bool NoteRelationNote::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& NoteRelationNote::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& NoteRelationNote::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool NoteRelationNote::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& NoteRelationNote::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			
+            for ( auto it = myMetronomeNoteSet.cbegin();
+                 it != myMetronomeNoteSet.cend();
+                  ++it )
+            {
+                if( it != myMetronomeNoteSet.cbegin() )
+                {
+                    os << std::endl;
+                }
+                (*it)->streamContents( os, indentLevel, isOneLineOnly );
+            }
+            if ( myHasMetronomeRelationGroup )
+            {
+                os << std::endl;
+                myMetronomeRelationGroup->streamContents( os, indentLevel, isOneLineOnly );
+            }
+			isOneLineOnly = false;
+            return os;
+		}
+		/* _________ MetronomeNote minOccurs = 1, maxOccurs = unbounded _________ */
+        const MetronomeNoteSet& NoteRelationNote::getMetronomeNoteSet() const
+		{
+			return myMetronomeNoteSet;
+		}
+        void NoteRelationNote::addMetronomeNote( const MetronomeNotePtr& value )
+		{
+			if ( value )
+            {
+                myMetronomeNoteSet.push_back( value );
+            }
+		}
+        void NoteRelationNote::removeMetronomeNote( const MetronomeNoteSetIterConst& setIterator )
+		{
+			if ( setIterator != myMetronomeNoteSet.cend() )
+            {
+                if ( myMetronomeNoteSet.size() > 1 )
+                {
+                    myMetronomeNoteSet.erase( setIterator );
+                }
+            }
+		}
+        void NoteRelationNote::clearMetronomeNoteSet()
+		{
+			myMetronomeNoteSet.clear();
+		}
+        /* _________ MetronomeRelationGroup minOccurs = 0, maxOccurs = 1 _________ */
+        MetronomeRelationGroupPtr NoteRelationNote::getMetronomeRelationGroup() const
+		{
+			return myMetronomeRelationGroup;
+		}
+        void NoteRelationNote::setMetronomeRelationGroup( const MetronomeRelationGroupPtr& value )
+		{
+			if ( value )
+            {
+                myMetronomeRelationGroup = value;
+            }
+		}
+        bool NoteRelationNote::getHasMetronomeRelationGroup() const
+		{
+			return myHasMetronomeRelationGroup;
+		}
+        void NoteRelationNote::setHasMetronomeRelationGroup( const bool value )
+		{
+			myHasMetronomeRelationGroup = value;
+		}
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )
