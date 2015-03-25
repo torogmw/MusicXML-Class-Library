@@ -756,5 +756,128 @@ namespace mx
             BarrePtr myBarre;
             bool myHasBarre;
         };
+        /*
+         3524
+         <!--  ID = 3524 [3524] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <xs:element name="frame" type="frame" minOccurs="0"/>
+         <xs:complexType name="frame">
+         <xs:annotation>
+         <xs:documentation>The frame type represents a frame or fretboard diagram used together with a chord symbol. The representation is based on the NIFF guitar grid with additional information. The frame type's unplayed attribute indicates what to display above a string that has no associated frame-note element. Typical values are x and the empty string. If the attribute is not present, the display of the unplayed string is application-defined.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="frame-strings" type="xs:positiveInteger">
+         <xs:annotation>
+         <xs:documentation>The frame-strings element gives the overall size of the frame in vertical lines (strings).</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="frame-frets" type="xs:positiveInteger">
+         <xs:annotation>
+         <xs:documentation>The frame-frets element gives the overall size of the frame in horizontal spaces (frets).</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="first-fret" type="first-fret" minOccurs="0"/>
+         <xs:element name="frame-note" type="frame-note" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="color"/>
+         <xs:attributeGroup ref="halign"/>
+         <xs:attributeGroup ref="valign-image"/>
+         <xs:attribute name="height" type="tenths"/>
+         <xs:attribute name="width" type="tenths"/>
+         <xs:attribute name="unplayed" type="xs:token"/>
+         </xs:complexType>
+         */
+        
+        struct FrameAttributes;
+        using FrameAttributesPtr = std::shared_ptr<FrameAttributes>;
+        
+        struct FrameAttributes : public AttributesInterface
+        {
+        public:
+            FrameAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::Color color;
+            types::LeftCenterRight halign;
+            types::ValignImage valign;
+            types::TenthsValue height;
+            types::TenthsValue width;
+            types::XsToken unplayed;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasColor;
+            bool hasHalign;
+            bool hasValign;
+            bool hasHeight;
+            bool hasWidth;
+            bool hasUnplayed;
+        };
+        
+        class Frame;
+        using FramePtr = std::shared_ptr<Frame>;
+        using FrameUPtr = std::unique_ptr<Frame>;
+        using FrameSet = std::vector<FramePtr>;
+        using FrameSetIter = FrameSet::iterator;
+        using FrameSetIterConst = FrameSet::const_iterator;
+        inline FramePtr makeFrame() { return std::make_shared<Frame>(); }
+        class Frame : public ElementInterface
+        {
+        public:
+            Frame();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            FrameAttributesPtr getAttributes() const;
+            void setAttributes( const FrameAttributesPtr& value );
+            /* _________ FrameStrings minOccurs = 1, maxOccurs = 1 _________ */
+            FrameStringsPtr getFrameStrings() const;
+            void setFrameStrings( const FrameStringsPtr& value );
+            /* _________ FrameFrets minOccurs = 1, maxOccurs = 1 _________ */
+            FrameFretsPtr getFrameFrets() const;
+            void setFrameFrets( const FrameFretsPtr& value );
+            /* _________ FirstFret minOccurs = 0, maxOccurs = 1 _________ */
+            FirstFretPtr getFirstFret() const;
+            void setFirstFret( const FirstFretPtr& value );
+            bool getHasFirstFret() const;
+            void setHasFirstFret( const bool value );
+            /* _________ FrameNote minOccurs = 1, maxOccurs = unbounded _________ */
+            const FrameNoteSet& getFrameNoteSet() const;
+            void addFrameNote( const FrameNotePtr& value );
+            void removeFrameNote( const FrameNoteSetIterConst& value );
+            void clearFrameNoteSet();
+            /* _________ String minOccurs = 1, maxOccurs = 1 _________ */
+            StringPtr getString() const;
+            void setString( const StringPtr& value );
+            /* _________ Fret minOccurs = 1, maxOccurs = 1 _________ */
+            FretPtr getFret() const;
+            void setFret( const FretPtr& value );
+            /* _________ Fingering minOccurs = 0, maxOccurs = 1 _________ */
+            FingeringPtr getFingering() const;
+            void setFingering( const FingeringPtr& value );
+            bool getHasFingering() const;
+            void setHasFingering( const bool value );
+            /* _________ Barre minOccurs = 0, maxOccurs = 1 _________ */
+            BarrePtr getBarre() const;
+            void setBarre( const BarrePtr& value );
+            bool getHasBarre() const;
+            void setHasBarre( const bool value );
+        private:
+            FrameAttributesPtr myAttributes;
+            FrameStringsPtr myFrameStrings;
+            FrameFretsPtr myFrameFrets;
+            FirstFretPtr myFirstFret;
+            bool myHasFirstFret;
+            FrameNoteSet myFrameNoteSet;
+        };
     }
 }

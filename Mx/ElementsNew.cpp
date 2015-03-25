@@ -1225,5 +1225,182 @@ namespace mx
 		{
 			myHasBarre = value;
 		}
+        
+        
+        /**************** FrameAttributes ****************/
+        /* 3524 */
+        FrameAttributes::FrameAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,color()
+        ,halign( types::LeftCenterRight::center )
+        ,valign()
+        ,height()
+        ,width()
+        ,unplayed()
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasColor( false )
+        ,hasHalign( false )
+        ,hasValign( false )
+        ,hasHeight( false )
+        ,hasWidth( false )
+        ,hasUnplayed( false )
+        {}
+        
+        bool FrameAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasColor ||
+            hasHalign ||
+            hasValign ||
+            hasHeight ||
+            hasWidth ||
+            hasUnplayed;
+        }
+        
+        std::ostream& FrameAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, valign, "valign", hasValign );
+                streamAttribute( os, height, "height", hasHeight );
+                streamAttribute( os, width, "width", hasWidth );
+                streamAttribute( os, unplayed, "unplayed", hasUnplayed );
+            }
+            return os;
+        }
+        
+		Frame::Frame()
+		:myAttributes( std::make_shared<FrameAttributes>() )
+		,myFrameStrings( makeFrameStrings() )
+		,myFrameFrets( makeFrameFrets() )
+		,myFirstFret( makeFirstFret() )
+		,myHasFirstFret( false )
+		,myFrameNoteSet()
+		{
+            myFrameNoteSet.push_back( makeFrameNote() );
+            
+        }
+		bool Frame::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Frame::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Frame::streamName( std::ostream& os ) const
+		{
+			os << "frame";
+			return os;
+		}
+		bool Frame::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Frame::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		FrameAttributesPtr Frame::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Frame::setAttributes( const FrameAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ FrameStrings minOccurs = 1, maxOccurs = 1 _________ */
+		FrameStringsPtr Frame::getFrameStrings() const
+		{
+			return myFrameStrings;
+		}
+		void Frame::setFrameStrings( const FrameStringsPtr& value )
+		{
+			if( value )
+			{
+				myFrameStrings = value;
+			}
+		}
+		/* _________ FrameFrets minOccurs = 1, maxOccurs = 1 _________ */
+		FrameFretsPtr Frame::getFrameFrets() const
+		{
+			return myFrameFrets;
+		}
+		void Frame::setFrameFrets( const FrameFretsPtr& value )
+		{
+			if( value )
+			{
+				myFrameFrets = value;
+			}
+		}
+		/* _________ FirstFret minOccurs = 0, maxOccurs = 1 _________ */
+		FirstFretPtr Frame::getFirstFret() const
+		{
+			return myFirstFret;
+		}
+		void Frame::setFirstFret( const FirstFretPtr& value )
+		{
+			if( value )
+			{
+				myFirstFret = value;
+			}
+		}
+		bool Frame::getHasFirstFret() const
+		{
+			return myHasFirstFret;
+		}
+		void Frame::setHasFirstFret( const bool value )
+		{
+			myHasFirstFret = value;
+		}
+		/* _________ FrameNote minOccurs = 1, maxOccurs = unbounded _________ */
+		const FrameNoteSet& Frame::getFrameNoteSet() const
+		{
+			return myFrameNoteSet;
+		}
+		void Frame::removeFrameNote( const FrameNoteSetIterConst& value )
+		{
+			if ( value != myFrameNoteSet.cend() )
+			{
+				if ( myFrameNoteSet.size() > 1 )
+				{
+					myFrameNoteSet.erase( value );
+				}
+			}
+		}
+		void Frame::addFrameNote( const FrameNotePtr& value )
+		{
+			if ( value )
+			{
+				myFrameNoteSet.push_back( value );
+			}
+		}
+		void Frame::clearFrameNoteSet()
+		{
+			myFrameNoteSet.clear();
+            myFrameNoteSet.push_back( makeFrameNote() );
+		}
     }
 }
