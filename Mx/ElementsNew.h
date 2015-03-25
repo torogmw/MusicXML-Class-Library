@@ -1128,6 +1128,7 @@ namespace mx
             ActualNotesPtr myActualNotes;
             NormalNotesPtr myNormalNotes;
             TimeModificationNormalTypeNormalDotPtr myTimeModificationNormalTypeNormalDot;
+            bool myHasTimeModificationNormalTypeNormalDot;
         };
 
     }

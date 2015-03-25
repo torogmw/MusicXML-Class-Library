@@ -1729,6 +1729,7 @@ namespace mx
         ,myActualNotes( makeActualNotes() )
         ,myNormalNotes( makeNormalNotes() )
         ,myTimeModificationNormalTypeNormalDot( makeTimeModificationNormalTypeNormalDot() )
+        ,myHasTimeModificationNormalTypeNormalDot( false )
         {}
         bool MetronomeTuplet::hasAttributes() const
         {
@@ -1750,10 +1751,18 @@ namespace mx
         }
         std::ostream& MetronomeTuplet::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
-            isOneLineOnly = false;
+            
             os << std::endl;
-            // mySign->toStream( os, indentLevel+1 );
-            throw std::runtime_error{ "not implemented" };
+            myActualNotes->toStream( os, indentLevel+1 );
+            myNormalNotes->toStream( os, indentLevel+1 );
+            if ( myHasTimeModificationNormalTypeNormalDot )
+            {
+                os << std::endl;
+                myNormalNotes->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
         }
         MetronomeTupletAttributesPtr MetronomeTuplet::getAttributes() const
         {
@@ -1789,6 +1798,26 @@ namespace mx
             {
                 myNormalNotes = value;
             }
+        }
+        /* _________ TimeModificationNormalTypeNormalDot minOccurs = 0, maxOccurs = 1 _________ */
+        TimeModificationNormalTypeNormalDotPtr MetronomeTuplet::getTimeModificationNormalTypeNormalDot() const
+        {
+            return myTimeModificationNormalTypeNormalDot;
+        }
+        void MetronomeTuplet::setTimeModificationNormalTypeNormalDot( const TimeModificationNormalTypeNormalDotPtr& value )
+        {
+            if ( value )
+            {
+                myTimeModificationNormalTypeNormalDot = value;
+            }
+        }
+        bool MetronomeTuplet::getHasTimeModificationNormalTypeNormalDot() const
+        {
+            return myHasTimeModificationNormalTypeNormalDot;
+        }
+        void MetronomeTuplet::setHasTimeModificationNormalTypeNormalDot( const bool value )
+        {
+            myHasTimeModificationNormalTypeNormalDot = value;
         }
         
     } // namespace e
