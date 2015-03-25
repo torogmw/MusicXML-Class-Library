@@ -1344,7 +1344,7 @@ namespace mx
             void setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value );
         private:
             BeatUnitGroupPtr myBeatUnitGroupPtr;
-            PerMinuteOrBeatUnitChoice myPerMinuteOrBeatUnitChoice;
+            PerMinuteOrBeatUnitChoicePtr myPerMinuteOrBeatUnitChoice;
         };
         
         

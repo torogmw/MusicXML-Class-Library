@@ -2254,6 +2254,23 @@ namespace mx
                 myBeatUnitGroup = value;
             }
         }
+        BeatUnitPer::BeatUnitPer()
+        :myBeatUnitGroupPtr( makeBeatUnitGroup() )
+        ,myPerMinuteOrBeatUnitChoice( makePerMinuteOrBeatUnitChoice() )
+        {}
+        bool BeatUnitPer::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& BeatUnitPer::streamAttributes( std::ostream& os ) const;
+        std::ostream& BeatUnitPer::streamName( std::ostream& os ) const;
+        bool BeatUnitPer::hasContents() const;
+        std::ostream& BeatUnitPer::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        BeatUnitGroupPtr BeatUnitPer::getBeatUnitGroup() const;
+        void BeatUnitPer::setBeatUnitGroup( const BeatUnitGroupPtr& value );
+        PerMinuteOrBeatUnitChoicePtr BeatUnitPer::getPerMinuteOrBeatUnitChoice() const;
+        void BeatUnitPer::setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value );
+        
         BeatUnitPerOrNoteRelationNoteChoice::BeatUnitPerOrNoteRelationNoteChoice()
 		:myChoice( Choice::beatUnitPer )
         ,myBeatUnitPer( makeBeatUnitPer() )
