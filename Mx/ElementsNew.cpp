@@ -1003,5 +1003,113 @@ namespace mx
         {
             myChoice = value;
         }
+        /**************** StringAttributes ****************/
+        /* 3481 */
+        StringAttributes::StringAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool StringAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement;
+        }
+        
+        std::ostream& StringAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+		String::String()
+		:myAttributes( std::make_shared<StringAttributes>() )
+        ,myValue()
+		{}
+        String::String( const types::StringNumber& value )
+		:myAttributes( std::make_shared<StringAttributes>() )
+        ,myValue( value )
+		{}
+		bool String::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& String::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& String::streamName( std::ostream& os ) const
+		{
+			os << "string";
+			return os;
+		}
+		bool String::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& String::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = true;
+            types::toStream( os, myValue );
+			return os;
+		}
+		StringAttributesPtr String::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void String::setAttributes( const StringAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        types::StringNumber String::getValue() const
+        {
+            return myValue;
+        }
+        void String::setValue( const types::StringNumber& value )
+        {
+            myValue = value;
+        }
     }
 }

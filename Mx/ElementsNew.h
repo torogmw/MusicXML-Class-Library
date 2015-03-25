@@ -621,5 +621,81 @@ namespace mx
             TimeAttributesPtr myAttributes;
             TimeChoicePtr myChoice;
         };
+        /*
+         3481 [ equivalents 3481, 5393 ]
+         <!--  ID = 3481 [3481, 5393] ------------------------->
+         <xs:element name="string" type="string"/>
+         <xs:complexType name="string">
+         <xs:annotation>
+         <xs:documentation>The string type is used with tablature notation, regular notation (where it is often circled), and chord diagrams. String numbers start with 1 for the highest string.</xs:documentation>
+         </xs:annotation>
+         <xs:simpleContent>
+         <xs:extension base="string-number">
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:extension>
+         </xs:simpleContent>
+         </xs:complexType>
+         */
+        
+        struct StringAttributes;
+        using StringAttributesPtr = std::shared_ptr<StringAttributes>;
+        
+        struct StringAttributes : public AttributesInterface
+        {
+        public:
+            StringAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+        };
+        
+        class String;
+        using StringPtr = std::shared_ptr<String>;
+        using StringUPtr = std::unique_ptr<String>;
+        using StringSet = std::vector<StringPtr>;
+        using StringSetIter = StringSet::iterator;
+        using StringSetIterConst = StringSet::const_iterator;
+        inline StringPtr makeString() { return std::make_shared<String>(); }
+        inline StringPtr makeString( const types::StringNumber& value ) { return std::make_shared<String>( value ); }
+		inline StringPtr makeString( types::StringNumber&& value ) { return std::make_shared<String>( std::move( value ) ); }
+        
+        class String : public ElementInterface
+        {
+        public:
+            String();
+            String( const types::StringNumber& value );
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            StringAttributesPtr getAttributes() const;
+            void setAttributes( const StringAttributesPtr& value );
+            types::StringNumber getValue() const;
+            void setValue( const types::StringNumber& value );
+        private:
+            StringAttributesPtr myAttributes;
+            types::StringNumber myValue;
+        };
     }
 }
