@@ -1223,13 +1223,11 @@ namespace mx
             /* _________ BeatUnitDot minOccurs = 0, maxOccurs = unbounded _________ */
             const BeatUnitDotSet& getBeatUnitDotSet() const;
             void addBeatUnitDot( const BeatUnitDotPtr& value );
-            void removeBeatUnitDot( const BeatUnitDotSetIterConst& value );
+            void removeBeatUnitDot( const BeatUnitDotSetIterConst& setIterator );
             void clearBeatUnitDotSet();
-            MetronomeBeamPtr getBeatUnitDot( const BeatUnitDotSetIterConst& setIterator ) const;
-            
         private:
             BeatUnitPtr myBeatUnit;
-            BeatUnitDotSet myBeatUnitDots;
+            BeatUnitDotSet myBeatUnitDotSet;
         };
         
         class MetronomeRelationGroup;
@@ -1384,6 +1382,7 @@ namespace mx
             BeatUnitPerPtr myBeatUnitPer;
             NoteRelationNotePtr myNoteRelationNote;
         };
+        /*
         <!--  ID = 3367 [3367] ------------------------->
         <!-- min=1 max=1 RequiredSingleOccurence  -->
         <!-- MsItemElementKind::composite -->
@@ -1434,70 +1433,67 @@ namespace mx
 			</xs:annotation>
             </xs:element>
             </xs:sequence>
-            </xs:group>
-            struct AttributesIterface;
-            using AttributesIterfacePtr = std::shared_ptr<AttributesIterface>;
+            </xs:group> */
+        
+        struct MetronomeAttributes;
+        using MetronomeAttributesPtr = std::shared_ptr<MetronomeAttributes>;
             
-            struct AttributesIterface : public AttributesInterface
+        struct MetronomeAttributes : public AttributesInterface
         {
         public:
-            AttributesIterface();
+            MetronomeAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::LeftCenterRight halign;
+            types::Valign valign;
+            types::LeftCenterRight justify;
+            types::YesNo parentheses;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasHalign;
+            bool hasValign;
+            bool hasJustify;
+            bool hasParentheses;
         };
         
-        class MetronomeNote;
-        using MetronomeNotePtr = std::shared_ptr<MetronomeNote>;
-        using MetronomeNoteUPtr = std::unique_ptr<MetronomeNote>;
-        using MetronomeNoteSet = std::vector<MetronomeNotePtr>;
-        using MetronomeNoteSetIter = MetronomeNoteSet::iterator;
-        using MetronomeNoteSetIterConst = MetronomeNoteSet::const_iterator;
-        inline MetronomeNotePtr makeMetronomeNote() { return std::make_shared<MetronomeNote>(); }
-        class MetronomeNote : public ElementInterface
+        class Metronome;
+        using MetronomePtr = std::shared_ptr<Metronome>;
+        using MetronomeUPtr = std::unique_ptr<Metronome>;
+        using MetronomeSet = std::vector<MetronomePtr>;
+        using MetronomeSetIter = MetronomeSet::iterator;
+        using MetronomeSetIterConst = MetronomeSet::const_iterator;
+        inline MetronomePtr makeMetronome() { return std::make_shared<Metronome>(); }
+        class Metronome : public ElementInterface
         {
         public:
-            MetronomeNote();
+            Metronome();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            AttributesIterfacePtr getAttributes() const;
-            void setAttributes( const AttributesIterfacePtr& value );
-            /* _________ MetronomeType minOccurs = 1, maxOccurs = 1 _________ */
-            MetronomeTypePtr getMetronomeType() const;
-            void setMetronomeType( const MetronomeTypePtr& value );
-            /* _________ MetronomeDot minOccurs = 0, maxOccurs = unbounded _________ */
-            const MetronomeDotSet& getMetronomeDotSet() const;
-            void addMetronomeDot( const MetronomeDotPtr& value );
-            void removeMetronomeDot( const MetronomeDotSetIterConst& value );
-            void clearMetronomeDotSet();
-            /* _________ MetronomeBeam minOccurs = 0, maxOccurs = unbounded _________ */
-            const MetronomeBeamSet& getMetronomeBeamSet() const;
-            void addMetronomeBeam( const MetronomeBeamPtr& value );
-            void removeMetronomeBeam( const MetronomeBeamSetIterConst& value );
-            void clearMetronomeBeamSet();
-            /* _________ MetronomeTuplet minOccurs = 0, maxOccurs = 1 _________ */
-            MetronomeTupletPtr getMetronomeTuplet() const;
-            void setMetronomeTuplet( const MetronomeTupletPtr& value );
-            bool getHasMetronomeTuplet() const;
-            void setHasMetronomeTuplet( const bool value );
-            /* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
-            ActualNotesPtr getActualNotes() const;
-            void setActualNotes( const ActualNotesPtr& value );
-            /* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
-            NormalNotesPtr getNormalNotes() const;
-            void setNormalNotes( const NormalNotesPtr& value );
-            /* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
-            NormalTypePtr getNormalType() const;
-            void setNormalType( const NormalTypePtr& value );
-            /* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
-            const NormalDotSet& getNormalDotSet() const;
-            void addNormalDot( const NormalDotPtr& value );
-            void removeNormalDot( const NormalDotSetIterConst& value );
-            void clearNormalDotSet();
+            MetronomeAttributesPtr getAttributes() const;
+            void setAttributes( const MetronomeAttributesPtr& value );
+            BeatUnitPerOrNoteRelationNoteChoicePtr getBeatUnitPerOrNoteRelationNoteChoice() const;
+            void setBeatUnitPerOrNoteRelationNoteChoice( const BeatUnitPerOrNoteRelationNoteChoicePtr& value );
         private:
-            BeatUnitPerOrNoteRelationNoteChoicePtr myChoice;
+            BeatUnitPerOrNoteRelationNoteChoicePtr myBeatUnitPerOrNoteRelationNoteChoice;
         };
 
 #if 1==0
