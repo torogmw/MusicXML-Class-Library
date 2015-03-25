@@ -1131,6 +1131,74 @@ namespace mx
             TimeModificationNormalTypeNormalDotPtr myTimeModificationNormalTypeNormalDot;
             bool myHasTimeModificationNormalTypeNormalDot;
         };
-
+        /*
+         3627 [ equivalents 3627, 3638 ]
+         <!--  ID = 3627 [3627, 3638] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <xs:element name="metronome-note" type="metronome-note" maxOccurs="unbounded"/>
+         <xs:complexType name="metronome-note">
+         <xs:annotation>
+         <xs:documentation>The metronome-note type defines the appearance of a note within a metric relationship mark.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="metronome-type" type="note-type-value">
+         <xs:annotation>
+         <xs:documentation>The metronome-type element works like the type element in defining metric relationships.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="metronome-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The metronome-dot element works like the dot element in defining metric relationships.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="metronome-beam" type="metronome-beam" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="metronome-tuplet" type="metronome-tuplet" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType>
+         */
+        
+        class MetronomeNote;
+        using MetronomeNotePtr = std::shared_ptr<MetronomeNote>;
+        using MetronomeNoteUPtr = std::unique_ptr<MetronomeNote>;
+        using MetronomeNoteSet = std::vector<MetronomeNotePtr>;
+        using MetronomeNoteSetIter = MetronomeNoteSet::iterator;
+        using MetronomeNoteSetIterConst = MetronomeNoteSet::const_iterator;
+        inline MetronomeNotePtr makeMetronomeNote() { return std::make_shared<MetronomeNote>(); }
+        class MetronomeNote : public ElementInterface
+        {
+        public:
+            MetronomeNote();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ MetronomeType minOccurs = 1, maxOccurs = 1 _________ */
+            MetronomeTypePtr getMetronomeType() const;
+            void setMetronomeType( const MetronomeTypePtr& value );
+            /* _________ MetronomeDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const MetronomeDotSet& getMetronomeDotSet() const;
+            void addMetronomeDot( const MetronomeDotPtr& value );
+            void removeMetronomeDot( const MetronomeDotSetIterConst& value );
+            void clearMetronomeDotSet();
+            MetronomeDotPtr getMetronomeDot( const MetronomeDotSetIterConst& setIterator ) const;
+            /* _________ MetronomeBeam minOccurs = 0, maxOccurs = unbounded _________ */
+            const MetronomeBeamSet& getMetronomeBeamSet() const;
+            void addMetronomeBeam( const MetronomeBeamPtr& value );
+            void removeMetronomeBeam( const MetronomeBeamSetIterConst& value );
+            void clearMetronomeBeamSet();
+            MetronomeBeamPtr getMetronomeBeam( const MetronomeBeamSetIterConst& setIterator ) const;
+            /* _________ MetronomeTuplet minOccurs = 0, maxOccurs = 1 _________ */
+            MetronomeTupletPtr getMetronomeTuplet() const;
+            void setMetronomeTuplet( const MetronomeTupletPtr& value );
+            bool getHasMetronomeTuplet() const;
+            void setHasMetronomeTuplet( const bool value );
+        private:
+            MetronomeTypePtr myMetronomeType;
+            MetronomeDotSet myMetronomeDotSet;
+            MetronomeBeamSet myMetronomeBeamSet;
+            MetronomeTupletPtr myMetronomeTuplet;
+            bool myHasMetronomeTuplet;
+        };
     }
 }

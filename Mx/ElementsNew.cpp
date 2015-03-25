@@ -1829,6 +1829,152 @@ namespace mx
             myHasTimeModificationNormalTypeNormalDot = value;
         }
         
+        
+        /**************** AttributesIterface ****************/
+        /* 3627 */
+        
+		MetronomeNote::MetronomeNote()
+		:myMetronomeType( makeMetronomeType() )
+		,myMetronomeDotSet()
+		,myMetronomeBeamSet()
+		,myMetronomeTuplet( makeMetronomeTuplet() )
+		,myHasMetronomeTuplet( false )
+		{}
+		bool MetronomeNote::hasAttributes() const
+		{
+			return true;
+		}
+		std::ostream& MetronomeNote::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& MetronomeNote::streamName( std::ostream& os ) const
+		{
+			os << "metronome-note";
+			return os;
+		}
+		bool MetronomeNote::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& MetronomeNote::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myMetronomeType->toStream( os, indentLevel+1 );
+            for ( auto x : myMetronomeDotSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myMetronomeBeamSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            if ( myHasMetronomeTuplet )
+            {
+                os << std::endl;
+                myMetronomeTuplet->toStream( os, indentLevel+1 );
+            }
+			os << std::endl;
+			return os;
+		}
+		/* _________ MetronomeType minOccurs = 1, maxOccurs = 1 _________ */
+		MetronomeTypePtr MetronomeNote::getMetronomeType() const
+		{
+			return myMetronomeType;
+		}
+		void MetronomeNote::setMetronomeType( const MetronomeTypePtr& value )
+		{
+			if( value )
+			{
+				myMetronomeType = value;
+			}
+		}
+		/* _________ MetronomeDot minOccurs = 0, maxOccurs = unbounded _________ */
+		const MetronomeDotSet& MetronomeNote::getMetronomeDotSet() const
+		{
+			return myMetronomeDotSet;
+		}
+		void MetronomeNote::removeMetronomeDot( const MetronomeDotSetIterConst& value )
+		{
+			if ( value != myMetronomeDotSet.cend() )
+			{
+				myMetronomeDotSet.erase( value );
+			}
+		}
+		void MetronomeNote::addMetronomeDot( const MetronomeDotPtr& value )
+		{
+			if ( value )
+			{
+				myMetronomeDotSet.push_back( value );
+			}
+		}
+		void MetronomeNote::clearMetronomeDotSet()
+		{
+			myMetronomeDotSet.clear();
+		}
+		MetronomeDotPtr MetronomeNote::getMetronomeDot( const MetronomeDotSetIterConst& setIterator ) const
+		{
+			if( setIterator != myMetronomeDotSet.cend() )
+			{
+				return *setIterator;
+			}
+			return MetronomeDotPtr();
+		}
+		/* _________ MetronomeBeam minOccurs = 0, maxOccurs = unbounded _________ */
+		const MetronomeBeamSet& MetronomeNote::getMetronomeBeamSet() const
+		{
+			return myMetronomeBeamSet;
+		}
+		void MetronomeNote::removeMetronomeBeam( const MetronomeBeamSetIterConst& value )
+		{
+			if ( value != myMetronomeBeamSet.cend() )
+			{
+				myMetronomeBeamSet.erase( value );
+			}
+		}
+		void MetronomeNote::addMetronomeBeam( const MetronomeBeamPtr& value )
+		{
+			if ( value )
+			{
+				myMetronomeBeamSet.push_back( value );
+			}
+		}
+		void MetronomeNote::clearMetronomeBeamSet()
+		{
+			myMetronomeBeamSet.clear();
+		}
+		MetronomeBeamPtr MetronomeNote::getMetronomeBeam( const MetronomeBeamSetIterConst& setIterator ) const
+		{
+			if( setIterator != myMetronomeBeamSet.cend() )
+			{
+				return *setIterator;
+			}
+			return MetronomeBeamPtr();
+		}
+		/* _________ MetronomeTuplet minOccurs = 0, maxOccurs = 1 _________ */
+		MetronomeTupletPtr MetronomeNote::getMetronomeTuplet() const
+		{
+			return myMetronomeTuplet;
+		}
+		void MetronomeNote::setMetronomeTuplet( const MetronomeTupletPtr& value )
+		{
+			if( value )
+			{
+				myMetronomeTuplet = value;
+			}
+		}
+		bool MetronomeNote::getHasMetronomeTuplet() const
+		{
+			return myHasMetronomeTuplet;
+		}
+		void MetronomeNote::setHasMetronomeTuplet( const bool value )
+		{
+			myHasMetronomeTuplet = value;
+		}
+        
     } // namespace e
 
 } // namespace mx
