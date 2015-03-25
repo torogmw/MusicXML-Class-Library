@@ -917,13 +917,9 @@ namespace mx
         };
         /*
          3373
-         
-         
          <!--  ID = 3373 [3373] ------------------------->
          <!-- min=1 max=1 RequiredSingleOccurence  -->
-         <!-- MsItemElementKind::composite -->
          <!-- RecursiveSubElementCount = 3 -->
-         <!-- All Sub Elements Are Implemented: true -->
          <xs:element name="harp-pedals" type="harp-pedals"/>
          <xs:complexType name="harp-pedals">
          <xs:annotation>
@@ -934,9 +930,7 @@ namespace mx
          </xs:sequence>
          <xs:attributeGroup ref="print-style-align"/>
          </xs:complexType>
-         
          */
-        
         struct HarpPedalsAttributes;
         using HarpPedalsAttributesPtr = std::shared_ptr<HarpPedalsAttributes>;
         
