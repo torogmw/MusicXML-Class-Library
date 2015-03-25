@@ -2247,11 +2247,130 @@ namespace mx
         {
             return myBeatUnitGroup;
         }
-        void PerMinuteOrBeatUnitChoice::setBeatUnitGroup( const BeatUnitGroup& value )
+        void PerMinuteOrBeatUnitChoice::setBeatUnitGroup( const BeatUnitGroupPtr& value )
         {
             if ( value )
             {
                 myBeatUnitGroup = value;
+            }
+        }
+        BeatUnitPerOrNoteRelationNoteChoice::BeatUnitPerOrNoteRelationNoteChoice()
+		:myChoice( Choice::beatUnitPer )
+        ,myBeatUnitPer( makeBeatUnitPer() )
+        ,myNoteRelationNote( makeNoteRelationNote() )
+        {}
+		bool BeatUnitPerOrNoteRelationNoteChoice::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& BeatUnitPerOrNoteRelationNoteChoice::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& BeatUnitPerOrNoteRelationNoteChoice::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool BeatUnitPerOrNoteRelationNoteChoice::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& BeatUnitPerOrNoteRelationNoteChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            switch ( myChoice )
+            {
+                case Choice::beatUnitPer:
+                {
+                    myBeatUnitPer->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::noteRelationNote:
+                {
+                    myNoteRelationNote->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                default:
+                    break;
+            }
+			isOneLineOnly = false;
+			return os;
+		}
+		BeatUnitPerOrNoteRelationNoteChoice::Choice BeatUnitPerOrNoteRelationNoteChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void BeatUnitPerOrNoteRelationNoteChoice::setChoice( const BeatUnitPerOrNoteRelationNoteChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        BeatUnitPerPtr BeatUnitPerOrNoteRelationNoteChoice::getBeatUnitPer() const
+        {
+            return myBeatUnitPer;
+        }
+        void BeatUnitPerOrNoteRelationNoteChoice::setBeatUnitPer( const BeatUnitPerPtr& value )
+        {
+            if ( value )
+            {
+                myBeatUnitPer = value;
+            }
+        }
+        NoteRelationNotePtr BeatUnitPerOrNoteRelationNoteChoice::getNoteRelationNote() const
+        {
+            return myNoteRelationNote;
+        }
+        void BeatUnitPerOrNoteRelationNoteChoice::setNoteRelationNote( const NoteRelationNotePtr& value )
+        {
+            myNoteRelationNote = value;
+        }
+        
+        Metronome::Metronome()
+        :myAttributes( std::make_shared<MetronomeAttributes>() )
+		,myBeatUnitPerOrNoteRelationNoteChoice( makeBeatUnitPerOrNoteRelationNoteChoice() )
+		{}
+		bool Metronome::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Metronome::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Metronome::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool Metronome::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Metronome::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+			myBeatUnitPerOrNoteRelationNoteChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+            os << std::endl;
+			isOneLineOnly = false;
+			return os;
+		}
+		MetronomeAttributesPtr Metronome::getAttributes() const
+        {
+            return myAttributes;
+        }
+        void Metronome::setAttributes( const MetronomeAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        BeatUnitPerOrNoteRelationNoteChoicePtr Metronome::getBeatUnitPerOrNoteRelationNoteChoice() const
+        {
+            return myBeatUnitPerOrNoteRelationNoteChoice;
+        }
+        void Metronome::setBeatUnitPerOrNoteRelationNoteChoice( const BeatUnitPerOrNoteRelationNoteChoicePtr& value )
+        {
+            if ( value )
+            {
+                myBeatUnitPerOrNoteRelationNoteChoice = value;
             }
         }
         

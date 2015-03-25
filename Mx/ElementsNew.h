@@ -1315,7 +1315,7 @@ namespace mx
             PerMinutePtr getPerMinute() const;
             void setPerMinute( const PerMinutePtr& value );
             BeatUnitGroupPtr getBeatUnitGroup() const;
-            void setBeatUnitGroup( const BeatUnitGroup& value );
+            void setBeatUnitGroup( const BeatUnitGroupPtr& value );
         private:
             Choice myChoice;
             PerMinutePtr myPerMinute;
@@ -1492,6 +1492,7 @@ namespace mx
             BeatUnitPerOrNoteRelationNoteChoicePtr getBeatUnitPerOrNoteRelationNoteChoice() const;
             void setBeatUnitPerOrNoteRelationNoteChoice( const BeatUnitPerOrNoteRelationNoteChoicePtr& value );
         private:
+            MetronomeAttributesPtr myAttributes;
             BeatUnitPerOrNoteRelationNoteChoicePtr myBeatUnitPerOrNoteRelationNoteChoice;
         };
 
