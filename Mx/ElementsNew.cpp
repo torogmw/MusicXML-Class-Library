@@ -2255,21 +2255,53 @@ namespace mx
             }
         }
         BeatUnitPer::BeatUnitPer()
-        :myBeatUnitGroupPtr( makeBeatUnitGroup() )
+        :myBeatUnitGroup( makeBeatUnitGroup() )
         ,myPerMinuteOrBeatUnitChoice( makePerMinuteOrBeatUnitChoice() )
         {}
         bool BeatUnitPer::hasAttributes() const
         {
             return false;
         }
-        std::ostream& BeatUnitPer::streamAttributes( std::ostream& os ) const;
-        std::ostream& BeatUnitPer::streamName( std::ostream& os ) const;
-        bool BeatUnitPer::hasContents() const;
-        std::ostream& BeatUnitPer::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        BeatUnitGroupPtr BeatUnitPer::getBeatUnitGroup() const;
-        void BeatUnitPer::setBeatUnitGroup( const BeatUnitGroupPtr& value );
-        PerMinuteOrBeatUnitChoicePtr BeatUnitPer::getPerMinuteOrBeatUnitChoice() const;
-        void BeatUnitPer::setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value );
+        std::ostream& BeatUnitPer::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& BeatUnitPer::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool BeatUnitPer::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& BeatUnitPer::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            // todo
+            isOneLineOnly = false;
+            return os;
+        }
+        BeatUnitGroupPtr BeatUnitPer::getBeatUnitGroup() const
+        {
+            return myBeatUnitGroup;
+        }
+        void BeatUnitPer::setBeatUnitGroup( const BeatUnitGroupPtr& value )
+        {
+            if ( value )
+            {
+                myBeatUnitGroup = value;
+            }
+        }
+        PerMinuteOrBeatUnitChoicePtr BeatUnitPer::getPerMinuteOrBeatUnitChoice() const
+        {
+            return myPerMinuteOrBeatUnitChoice;
+        }
+        void BeatUnitPer::setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value )
+        {
+            if ( value )
+            {
+                myPerMinuteOrBeatUnitChoice = value;
+            }
+        }
         
         BeatUnitPerOrNoteRelationNoteChoice::BeatUnitPerOrNoteRelationNoteChoice()
 		:myChoice( Choice::beatUnitPer )

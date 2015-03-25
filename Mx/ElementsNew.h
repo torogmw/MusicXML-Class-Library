@@ -1343,7 +1343,7 @@ namespace mx
             PerMinuteOrBeatUnitChoicePtr getPerMinuteOrBeatUnitChoice() const;
             void setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value );
         private:
-            BeatUnitGroupPtr myBeatUnitGroupPtr;
+            BeatUnitGroupPtr myBeatUnitGroup;
             PerMinuteOrBeatUnitChoicePtr myPerMinuteOrBeatUnitChoice;
         };
         
