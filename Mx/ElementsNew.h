@@ -1373,7 +1373,14 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BeatUnitPerOrNoteRelationNoteChoice::Choice getChoice() const;
+            void setChoice( const BeatUnitPerOrNoteRelationNoteChoice::Choice value );
+            BeatUnitPerPtr getBeatUnitPer() const;
+            void setBeatUnitPer( const BeatUnitPerPtr& value );
         private:
+            Choice myChoice;
+            BeatUnitPerPtr myBeatUnitPer;
+            NoteRelationNotePtr myNoteRelationNote;
         };
         
         class Metronome;
