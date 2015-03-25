@@ -873,5 +873,131 @@ namespace mx
                 mySenzaMisura = value;
             }
         }
+        /**************** TimeAttributes ****************/
+        /* 2621 */
+        TimeAttributes::TimeAttributes()
+        :number()
+        ,symbol()
+        ,separator()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,halign( types::LeftCenterRight::center )
+        ,valign()
+        ,printObject( types::YesNo::no )
+        ,hasNumber( false )
+        ,hasSymbol( false )
+        ,hasSeparator( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasHalign( false )
+        ,hasValign( false )
+        ,hasPrintObject( false )
+        {}
+        
+        bool TimeAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasSymbol ||
+            hasSeparator ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasHalign ||
+            hasValign ||
+            hasPrintObject;
+        }
+        
+        std::ostream& TimeAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, symbol, "symbol", hasSymbol );
+                streamAttribute( os, separator, "separator", hasSeparator );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, valign, "valign", hasValign );
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		Time::Time()
+		:myAttributes( std::make_shared<TimeAttributes>() )
+		,myChoice( makeTimeChoice() )
+		{}
+		bool Time::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Time::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Time::streamName( std::ostream& os ) const
+		{
+			os << "time";
+			return os;
+		}
+		bool Time::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Time::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			os << std::endl;
+			myChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+            os << std::endl;
+			isOneLineOnly = false;
+            return os;
+		}
+		TimeAttributesPtr Time::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Time::setAttributes( const TimeAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        TimeChoicePtr Time::getTimeChoice() const
+        {
+            return myChoice;
+        }
+        void Time::setTimeChoice( const TimeChoicePtr& value )
+        {
+            myChoice = value;
+        }
     }
 }

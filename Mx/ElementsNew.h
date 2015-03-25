@@ -555,5 +555,71 @@ namespace mx
             TimeSignaturePtr myTimeSignature;
             SenzaMisuraPtr mySenzaMisura;
         };
+        
+        struct TimeAttributes;
+        using TimeAttributesPtr = std::shared_ptr<TimeAttributes>;
+        
+        struct TimeAttributes : public AttributesInterface
+        {
+        public:
+            TimeAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StaffNumber number;
+            types::TimeSymbol symbol;
+            types::TimeSeparator separator;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::LeftCenterRight halign;
+            types::Valign valign;
+            types::YesNo printObject;
+            bool hasNumber;
+            bool hasSymbol;
+            bool hasSeparator;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasHalign;
+            bool hasValign;
+            bool hasPrintObject;
+        };
+        
+        class Time;
+        using TimePtr = std::shared_ptr<Time>;
+        using TimeUPtr = std::unique_ptr<Time>;
+        using TimeSet = std::vector<TimePtr>;
+        using TimeSetIter = TimeSet::iterator;
+        using TimeSetIterConst = TimeSet::const_iterator;
+        inline TimePtr makeTime() { return std::make_shared<Time>(); }
+        class Time : public ElementInterface
+        {
+        public:
+            Time();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            TimeAttributesPtr getAttributes() const;
+            void setAttributes( const TimeAttributesPtr& value );
+            TimeChoicePtr getTimeChoice() const;
+            void setTimeChoice( const TimeChoicePtr& value );
+        private:
+            TimeAttributesPtr myAttributes;
+            TimeChoicePtr myChoice;
+        };
     }
 }

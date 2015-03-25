@@ -162,6 +162,7 @@
 		29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */; };
 		29884C251AC211B200DD2209 /* InterchangeableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C241AC211B200DD2209 /* InterchangeableTest.cpp */; };
 		29884C271AC214BD00DD2209 /* AccordionRegistrationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C261AC214BD00DD2209 /* AccordionRegistrationTest.cpp */; };
+		29884C291AC237F200DD2209 /* TimeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C281AC237F200DD2209 /* TimeTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -476,6 +477,7 @@
 		29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureStyleTest.cpp; sourceTree = "<group>"; };
 		29884C241AC211B200DD2209 /* InterchangeableTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterchangeableTest.cpp; sourceTree = "<group>"; };
 		29884C261AC214BD00DD2209 /* AccordionRegistrationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionRegistrationTest.cpp; sourceTree = "<group>"; };
+		29884C281AC237F200DD2209 /* TimeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeTest.cpp; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				29884C281AC237F200DD2209 /* TimeTest.cpp */,
 				29884C261AC214BD00DD2209 /* AccordionRegistrationTest.cpp */,
 				29884C241AC211B200DD2209 /* InterchangeableTest.cpp */,
 				29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */,
@@ -1110,6 +1113,7 @@
 				29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */,
 				298C81DC1AB6A8DC006619A9 /* LinkTest.cpp in Sources */,
 				297749DC1AB21FA000BF2205 /* CircularArrowTest.cpp in Sources */,
+				29884C291AC237F200DD2209 /* TimeTest.cpp in Sources */,
 				29C0B96C1AAE9209004F86FA /* BarStyleTest.cpp in Sources */,
 				2935A71D1AB5FC3B002859CA /* DampTest.cpp in Sources */,
 				292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */,
