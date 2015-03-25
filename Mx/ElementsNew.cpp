@@ -2182,6 +2182,9 @@ namespace mx
 		{
 			myHasMetronomeRelationGroup = value;
 		}
+        
+        I cannot compile;
+        
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )
