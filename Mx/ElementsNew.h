@@ -855,22 +855,6 @@ namespace mx
             void addFrameNote( const FrameNotePtr& value );
             void removeFrameNote( const FrameNoteSetIterConst& value );
             void clearFrameNoteSet();
-            /* _________ String minOccurs = 1, maxOccurs = 1 _________ */
-            StringPtr getString() const;
-            void setString( const StringPtr& value );
-            /* _________ Fret minOccurs = 1, maxOccurs = 1 _________ */
-            FretPtr getFret() const;
-            void setFret( const FretPtr& value );
-            /* _________ Fingering minOccurs = 0, maxOccurs = 1 _________ */
-            FingeringPtr getFingering() const;
-            void setFingering( const FingeringPtr& value );
-            bool getHasFingering() const;
-            void setHasFingering( const bool value );
-            /* _________ Barre minOccurs = 0, maxOccurs = 1 _________ */
-            BarrePtr getBarre() const;
-            void setBarre( const BarrePtr& value );
-            bool getHasBarre() const;
-            void setHasBarre( const bool value );
         private:
             FrameAttributesPtr myAttributes;
             FrameStringsPtr myFrameStrings;

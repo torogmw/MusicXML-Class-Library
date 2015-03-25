@@ -1331,7 +1331,7 @@ namespace mx
                 x->toStream( os, indentLevel+1 );
             }
             os << std::endl;
-			throw std::runtime_error{ "not implemented" };
+			return os;
 		}
 		FrameAttributesPtr Frame::getAttributes() const
 		{
