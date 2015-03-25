@@ -887,16 +887,6 @@ namespace mx
          </xs:sequence>
          </xs:complexType>
          */
-        struct AttributesIterface;
-        using AttributesIterfacePtr = std::shared_ptr<AttributesIterface>;
-        
-        struct AttributesIterface : public AttributesInterface
-        {
-        public:
-            AttributesIterface();
-            virtual bool hasValues() const;
-            virtual std::ostream& toStream( std::ostream& os ) const;
-        };
         
         class PedalTuning;
         using PedalTuningPtr = std::shared_ptr<PedalTuning>;
@@ -914,8 +904,6 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            AttributesIterfacePtr getAttributes() const;
-            void setAttributes( const AttributesIterfacePtr& value );
             /* _________ PedalStep minOccurs = 1, maxOccurs = 1 _________ */
             PedalStepPtr getPedalStep() const;
             void setPedalStep( const PedalStepPtr& value );
@@ -923,7 +911,6 @@ namespace mx
             PedalAlterPtr getPedalAlter() const;
             void setPedalAlter( const PedalAlterPtr& value );
         private:
-            AttributesIterfacePtr myAttributes;
             PedalStepPtr myPedalStep;
             PedalAlterPtr myPedalAlter;
         };

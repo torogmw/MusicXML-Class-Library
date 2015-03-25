@@ -1419,33 +1419,18 @@ namespace mx
         
         /**************** AttributesIterface ****************/
         /* 3554 */
-        AttributesIterface::AttributesIterface()
-        {}
-        
-        bool AttributesIterface::hasValues() const
-        {
-        }
-        
-        std::ostream& AttributesIterface::toStream( std::ostream& os ) const
-        {
-            if ( hasValues() )
-            {
-            }
-            return os;
-        }
+
         
 		PedalTuning::PedalTuning()
-		:myAttributes( std::make_shared<AttributesIterface>() )
-		,myPedalStep( makePedalStep() )
+		:myPedalStep( makePedalStep() )
 		,myPedalAlter( makePedalAlter() )
 		{}
 		bool PedalTuning::hasAttributes() const
 		{
-			return myAttributes->hasValues();
+			return false;
 		}
 		std::ostream& PedalTuning::streamAttributes( std::ostream& os ) const
 		{
-			return myAttributes->toStream( os );
 			return os;
 		}
 		std::ostream& PedalTuning::streamName( std::ostream& os ) const
@@ -1467,17 +1452,6 @@ namespace mx
 			os << std::endl;
             return os;
         }
-		AttributesIterfacePtr PedalTuning::getAttributes() const
-		{
-			return myAttributes;
-		}
-		void PedalTuning::setAttributes( const AttributesIterfacePtr& value )
-		{
-			if ( value )
-			{
-				myAttributes = value;
-			}
-		}
 		/* _________ PedalStep minOccurs = 1, maxOccurs = 1 _________ */
 		PedalStepPtr PedalTuning::getPedalStep() const
 		{
