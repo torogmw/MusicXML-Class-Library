@@ -697,5 +697,78 @@ namespace mx
             StringAttributesPtr myAttributes;
             types::StringNumber myValue;
         };
+        /*
+         3455
+         <!--  ID = 3455 [3455] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <xs:element name="frame-note" type="frame-note" maxOccurs="unbounded"/>
+         <xs:complexType name="frame-note">
+         <xs:annotation>
+         <xs:documentation>The frame-note type represents each note included in the frame. An open string will have a fret value of 0, while a muted string will not be associated with a frame-note element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="string" type="string"/>
+         <xs:element name="fret" type="fret"/>
+         <xs:element name="fingering" type="fingering" minOccurs="0"/>
+         <xs:element name="barre" type="barre" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType>
+         */
+        
+        struct AttributesIterface;
+        using AttributesIterfacePtr = std::shared_ptr<AttributesIterface>;
+        
+        struct AttributesIterface : public AttributesInterface
+        {
+        public:
+            AttributesIterface();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+        };
+        
+        class FrameNote;
+        using FrameNotePtr = std::shared_ptr<FrameNote>;
+        using FrameNoteUPtr = std::unique_ptr<FrameNote>;
+        using FrameNoteSet = std::vector<FrameNotePtr>;
+        using FrameNoteSetIter = FrameNoteSet::iterator;
+        using FrameNoteSetIterConst = FrameNoteSet::const_iterator;
+        inline FrameNotePtr makeFrameNote() { return std::make_shared<FrameNote>(); }
+        class FrameNote : public ElementInterface
+        {
+        public:
+            FrameNote();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            AttributesIterfacePtr getAttributes() const;
+            void setAttributes( const AttributesIterfacePtr& value );
+            /* _________ String minOccurs = 1, maxOccurs = 1 _________ */
+            StringPtr getString() const;
+            void setString( const StringPtr& value );
+            /* _________ Fret minOccurs = 1, maxOccurs = 1 _________ */
+            FretPtr getFret() const;
+            void setFret( const FretPtr& value );
+            /* _________ Fingering minOccurs = 0, maxOccurs = 1 _________ */
+            FingeringPtr getFingering() const;
+            void setFingering( const FingeringPtr& value );
+            bool getHasFingering() const;
+            void setHasFingering( const bool value );
+            /* _________ Barre minOccurs = 0, maxOccurs = 1 _________ */
+            BarrePtr getBarre() const;
+            void setBarre( const BarrePtr& value );
+            bool getHasBarre() const;
+            void setHasBarre( const bool value );
+        private:
+            AttributesIterfacePtr myAttributes;
+            StringPtr myString;
+            FretPtr myFret;
+            FingeringPtr myFingering;
+            bool myHasFingering;
+            BarrePtr myBarre;
+            bool myHasBarre;
+        };
     }
 }

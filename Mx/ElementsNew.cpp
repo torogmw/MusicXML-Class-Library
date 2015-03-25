@@ -1111,5 +1111,146 @@ namespace mx
         {
             myValue = value;
         }
+        
+        
+        /**************** AttributesIterface ****************/
+        /* 3455 */
+        AttributesIterface::AttributesIterface()
+        {}
+        
+        bool AttributesIterface::hasValues() const
+        {
+        }
+        
+        std::ostream& AttributesIterface::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+            }
+            return os;
+        }
+        
+		FrameNote::FrameNote()
+		:myAttributes( std::make_shared<AttributesIterface>() )
+		,myString( makeString() )
+		,myFret( makeFret() )
+		,myFingering( makeFingering() )
+		,myHasFingering( false )
+		,myBarre( makeBarre() )
+		,myHasBarre( false )
+		{}
+		bool FrameNote::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& FrameNote::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& FrameNote::streamName( std::ostream& os ) const
+		{
+			os << "frame-note";
+			return os;
+		}
+		bool FrameNote::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& FrameNote::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myString->toStream( os, indentLevel+1 );
+            os << std::endl;
+			myFret->toStream( os, indentLevel+1 );
+            if ( myHasFingering )
+            {
+                os << std::endl;
+                myFingering->toStream( os, indentLevel+1 );
+            }
+            if ( myHasBarre )
+            {
+                os << std::endl;
+                myBarre->toStream( os, indentLevel+1 );
+            }
+			os << std::endl;
+            return os;
+		}
+		AttributesIterfacePtr FrameNote::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void FrameNote::setAttributes( const AttributesIterfacePtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ String minOccurs = 1, maxOccurs = 1 _________ */
+		StringPtr FrameNote::getString() const
+		{
+			return myString;
+		}
+		void FrameNote::setString( const StringPtr& value )
+		{
+			if( value )
+			{
+				myString = value;
+			}
+		}
+		/* _________ Fret minOccurs = 1, maxOccurs = 1 _________ */
+		FretPtr FrameNote::getFret() const
+		{
+			return myFret;
+		}
+		void FrameNote::setFret( const FretPtr& value )
+		{
+			if( value )
+			{
+				myFret = value;
+			}
+		}
+		/* _________ Fingering minOccurs = 0, maxOccurs = 1 _________ */
+		FingeringPtr FrameNote::getFingering() const
+		{
+			return myFingering;
+		}
+		void FrameNote::setFingering( const FingeringPtr& value )
+		{
+			if( value )
+			{
+				myFingering = value;
+			}
+		}
+		bool FrameNote::getHasFingering() const
+		{
+			return myHasFingering;
+		}
+		void FrameNote::setHasFingering( const bool value )
+		{
+			myHasFingering = value;
+		}
+		/* _________ Barre minOccurs = 0, maxOccurs = 1 _________ */
+		BarrePtr FrameNote::getBarre() const
+		{
+			return myBarre;
+		}
+		void FrameNote::setBarre( const BarrePtr& value )
+		{
+			if( value )
+			{
+				myBarre = value;
+			}
+		}
+		bool FrameNote::getHasBarre() const
+		{
+			return myHasBarre;
+		}
+		void FrameNote::setHasBarre( const bool value )
+		{
+			myHasBarre = value;
+		}
     }
 }
