@@ -309,6 +309,7 @@
 		29CEB4AF1AB4C0FA00D6AEFC /* TimpaniTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4981AB4C0FA00D6AEFC /* TimpaniTest.cpp */; };
 		29CEB4B01AB4C0FA00D6AEFC /* TouchingPitchTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4991AB4C0FA00D6AEFC /* TouchingPitchTest.cpp */; };
 		29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */; };
+		29D8C46B1AC38078008B5471 /* MetronomeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */; };
 		29DF38C41AC3532900606232 /* MetronomeNoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
@@ -632,6 +633,7 @@
 		29CEB4981AB4C0FA00D6AEFC /* TimpaniTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimpaniTest.cpp; sourceTree = "<group>"; };
 		29CEB4991AB4C0FA00D6AEFC /* TouchingPitchTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchingPitchTest.cpp; sourceTree = "<group>"; };
 		29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumsTest.cpp; sourceTree = "<group>"; };
+		29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTest.cpp; sourceTree = "<group>"; };
 		29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeNoteTest.cpp; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
 		29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayTextTest.cpp; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */,
 				29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */,
 				2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */,
 				29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */,
@@ -1186,6 +1189,7 @@
 				297749D41AB21FA000BF2205 /* ArrowStyleTest.cpp in Sources */,
 				29774A011AB21FA000BF2205 /* MidiNameTest.cpp in Sources */,
 				297749F61AB21FA000BF2205 /* KeyAlterTest.cpp in Sources */,
+				29D8C46B1AC38078008B5471 /* MetronomeTest.cpp in Sources */,
 				297749F51AB21FA000BF2205 /* KeyAccidentalTest.cpp in Sources */,
 				297749DB1AB21FA000BF2205 /* ChromaticTest.cpp in Sources */,
 				29884C271AC214BD00DD2209 /* AccordionRegistrationTest.cpp in Sources */,
