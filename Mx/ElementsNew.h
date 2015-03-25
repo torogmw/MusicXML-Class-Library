@@ -1045,39 +1045,36 @@ namespace mx
          </xs:complexType>
          */
         
-        struct MetronomeTupletAttributes;
-        using MetronomeTupletAttributesPtr = std::shared_ptr<MetronomeTupletAttributes>;
         
-        struct MetronomeTupletAttributes : public AttributesInterface
-        {
-        public:
-            MetronomeTupletAttributes();
-            virtual bool hasValues() const;
-            virtual std::ostream& toStream( std::ostream& os ) const;
-            types::StartStop type;
-            types::YesNo bracket;
-            types::ShowTuplet showNumber;
-            const 	bool hasType;
-            bool hasBracket;
-            bool hasShowNumber;
-        };
         
         class TimeModificationNormalTypeNormalDot;
-        using MetronomeTupletPtr = std::shared_ptr<MetronomeTuplet>;
-        using MetronomeTupletUPtr = std::unique_ptr<MetronomeTuplet>;
-        using MetronomeTupletSet = std::vector<MetronomeTupletPtr>;
-        using MetronomeTupletSetIter = MetronomeTupletSet::iterator;
-        using MetronomeTupletSetIterConst = MetronomeTupletSet::const_iterator;
-        inline MetronomeTupletPtr makeMetronomeTuplet() { return std::make_shared<MetronomeTuplet>(); }
-        class MetronomeTuplet : public ElementInterface
+        using TimeModificationNormalTypeNormalDotPtr = std::shared_ptr<TimeModificationNormalTypeNormalDot>;
+        using TimeModificationNormalTypeNormalDotUPtr = std::unique_ptr<TimeModificationNormalTypeNormalDot>;
+        using TimeModificationNormalTypeNormalDotSet = std::vector<TimeModificationNormalTypeNormalDotPtr>;
+        using TimeModificationNormalTypeNormalDotSetIter = TimeModificationNormalTypeNormalDotSet::iterator;
+        using TimeModificationNormalTypeNormalDotSetIterConst = TimeModificationNormalTypeNormalDotSet::const_iterator;
+        inline TimeModificationNormalTypeNormalDotPtr makeTimeModificationNormalTypeNormalDot() { return std::make_shared<TimeModificationNormalTypeNormalDot>(); }
+        class TimeModificationNormalTypeNormalDot : public ElementInterface
         {
         public:
-            MetronomeTuplet();
+            TimeModificationNormalTypeNormalDot();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+            NormalTypePtr getNormalType() const;
+            void setNormalType( const NormalTypePtr& value );
+            /* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const NormalDotSet& getNormalDotSet() const;
+            void addNormalDot( const NormalDotPtr& value );
+            void removeNormalDot( const NormalDotSetIterConst& value );
+            void clearNormalDotSet();
+        private:
+            NormalTypePtr myNormalType;
+            NormalDotSet myNormalDotSet;
+        };
         
         class MetronomeTuplet;
         using MetronomeTupletPtr = std::shared_ptr<MetronomeTuplet>;
@@ -1104,20 +1101,16 @@ namespace mx
             /* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
             NormalNotesPtr getNormalNotes() const;
             void setNormalNotes( const NormalNotesPtr& value );
-            /* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
-            NormalTypePtr getNormalType() const;
-            void setNormalType( const NormalTypePtr& value );
-            /* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
-            const NormalDotSet& getNormalDotSet() const;
-            void addNormalDot( const NormalDotPtr& value );
-            void removeNormalDot( const NormalDotSetIterConst& value );
-            void clearNormalDotSet();
+            /* _________ TimeModificationNormalTypeNormalDot minOccurs = 0, maxOccurs = 1 _________ */
+            TimeModificationNormalTypeNormalDotPtr getTimeModificationNormalTypeNormalDot() const;
+            void setTimeModificationNormalTypeNormalDot( const TimeModificationNormalTypeNormalDotPtr& value );
+            bool getHasTimeModificationNormalTypeNormalDot() const;
+            void setHasTimeModificationNormalTypeNormalDot( const bool value );
         private:
             MetronomeTupletAttributesPtr myAttributes;
             ActualNotesPtr myActualNotes;
             NormalNotesPtr myNormalNotes;
-            NormalTypePtr myNormalType;
-            NormalDotSet myNormalDotSet;
+            TimeModificationNormalTypeNormalDotPtr myTimeModificationNormalTypeNormalDot;
         };
 
     }
