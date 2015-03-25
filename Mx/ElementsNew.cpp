@@ -1573,7 +1573,6 @@ namespace mx
 		std::ostream& HarpPedals::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
 			isOneLineOnly = false;
-			os << std::endl;
 			for ( auto x : myPedalTuningSet )
             {
                 os << std::endl;
