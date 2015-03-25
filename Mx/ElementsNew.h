@@ -1248,10 +1248,10 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            /* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
+            /* _________ MetronomeRelation minOccurs = 1, maxOccurs = 1 _________ */
             MetronomeRelationPtr getMetronomeRelation() const;
             void setMetronomeRelation( const MetronomeRelationPtr& value );
-            /* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
+            /* _________ MetronomeNote minOccurs = 1, maxOccurs = 1 _________ */
             MetronomeNotePtr getMetronomeNote() const;
             void setMetronomeNote( const MetronomeNotePtr& value );
         private:
@@ -1275,7 +1275,54 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ MetronomeNote minOccurs = 1, maxOccurs = unbounded _________ */
+            const MetronomeNoteSet& getMetronomeNoteSet() const;
+            void addMetronomeNote( const MetronomeNotePtr& value );
+            void removeMetronomeNote( const MetronomeNoteSetIterConst& value );
+            void clearMetronomeNoteSet();
+            MetronomeNotePtr getMetronomeNote( const MetronomeNoteSetIterConst& setIterator ) const;
+            /* _________ MetronomeRelationGroup minOccurs = 0, maxOccurs = 1 _________ */
+            MetronomeRelationGroupPtr getMetronomeRelationGroup() const;
+            void setMetronomeRelationGroup( const MetronomeRelationGroupPtr& value );
+            bool getHasMetronomeRelationGroup() const;
+            void setHasMetronomeRelationGroup( const bool value );
         private:
+            MetronomeNoteSet myMetronomeNoteSet;
+            MetronomeRelationGroupPtr myMetronomeRelationGroup;
+            bool myHasMetronomeRelationGroup;
+        };
+        
+        class PerMinuteOrBeatUnitChoice;
+        using PerMinuteOrBeatUnitChoicePtr = std::shared_ptr<PerMinuteOrBeatUnitChoice>;
+        using PerMinuteOrBeatUnitChoiceUPtr = std::unique_ptr<PerMinuteOrBeatUnitChoice>;
+        using PerMinuteOrBeatUnitChoiceSet = std::vector<PerMinuteOrBeatUnitChoicePtr>;
+        using PerMinuteOrBeatUnitChoiceSetIter = PerMinuteOrBeatUnitChoiceSet::iterator;
+        using PerMinuteOrBeatUnitChoiceSetIterConst = PerMinuteOrBeatUnitChoiceSet::const_iterator;
+        inline PerMinuteOrBeatUnitChoicePtr makePerMinuteOrBeatUnitChoice() { return std::make_shared<PerMinuteOrBeatUnitChoice>(); }
+        class PerMinuteOrBeatUnitChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                perMinute = 0,
+                beatUnitGroup = 1
+            };
+            PerMinuteOrBeatUnitChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PerMinuteOrBeatUnitChoice::Choice getChoice() const;
+            void setChoice( const PerMinuteOrBeatUnitChoice::Choice value );
+            PerMinutePtr getPerMinute() const;
+            void setPerMinute( const PerMinutePtr& value );
+            BeatUnitGroupPtr getBeatUnitGroup() const;
+            void setBeatUnitGroup( const BeatUnitGroup& value );
+        private:
+            Choice myChoice;
+            PerMinutePtr myPerMinute;
+            BeatUnitGroupPtr myBeatUnitGroup;
         };
         
         class BeatUnitPer;
@@ -1294,27 +1341,16 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BeatUnitGroupPtr getBeatUnitGroup() const;
+            void setBeatUnitGroup( const BeatUnitGroupPtr& value );
+            PerMinuteOrBeatUnitChoicePtr getPerMinuteOrBeatUnitChoice() const;
+            void setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value );
         private:
+            BeatUnitGroupPtr myBeatUnitGroupPtr;
+            PerMinuteOrBeatUnitChoice myPerMinuteOrBeatUnitChoice;
         };
         
-        class PerMinuteOrBeatUnitChoice;
-        using PerMinuteOrBeatUnitChoicePtr = std::shared_ptr<PerMinuteOrBeatUnitChoice>;
-        using PerMinuteOrBeatUnitChoiceUPtr = std::unique_ptr<PerMinuteOrBeatUnitChoice>;
-        using PerMinuteOrBeatUnitChoiceSet = std::vector<PerMinuteOrBeatUnitChoicePtr>;
-        using PerMinuteOrBeatUnitChoiceSetIter = PerMinuteOrBeatUnitChoiceSet::iterator;
-        using PerMinuteOrBeatUnitChoiceSetIterConst = PerMinuteOrBeatUnitChoiceSet::const_iterator;
-        inline PerMinuteOrBeatUnitChoicePtr makePerMinuteOrBeatUnitChoice() { return std::make_shared<PerMinuteOrBeatUnitChoice>(); }
-        class PerMinuteOrBeatUnitChoice : public ElementInterface
-        {
-        public:
-            PerMinuteOrBeatUnitChoice();
-            virtual bool hasAttributes() const;
-            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-            virtual std::ostream& streamName( std::ostream& os ) const;
-            virtual bool hasContents() const;
-            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        private:
-        };
+        
         
         class BeatUnitPerOrNoteRelationNoteChoice;
         using BeatUnitPerOrNoteRelationNoteChoicePtr = std::shared_ptr<BeatUnitPerOrNoteRelationNoteChoice>;
@@ -1326,6 +1362,11 @@ namespace mx
         class BeatUnitPerOrNoteRelationNoteChoice : public ElementInterface
         {
         public:
+            enum class Choice
+            {
+                beatUnitPer = 0,
+                noteRelationNote = 1
+            };
             BeatUnitPerOrNoteRelationNoteChoice();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
