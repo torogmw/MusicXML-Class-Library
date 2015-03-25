@@ -2043,8 +2043,8 @@ namespace mx
         }
         
         MetronomeRelationGroup::MetronomeRelationGroup()
-		:myBeatUnit( makeBeatUnit() )
-        ,myBeatUnitDotSet()
+		:myMetronomeRelation( makeMetronomeRelation() )
+        ,myMetronomeNote( makeMetronomeNote() )
 		{}
 		bool MetronomeRelationGroup::hasAttributes() const
 		{
@@ -2065,48 +2065,34 @@ namespace mx
 		std::ostream& MetronomeRelationGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
 			isOneLineOnly = false;
-			myBeatUnit->toStream( os, indentLevel );
-            for ( auto x : myBeatUnitDotSet )
-            {
-                os << std::endl;
-                x->toStream( os, indentLevel );
-            }
+			myMetronomeRelation->toStream( os, indentLevel );
+            os << std::endl;
+            myMetronomeNote->toStream( os, indentLevel );
 			return os;
 		}
-		/* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
-        BeatUnitPtr MetronomeRelationGroup::getBeatUnit() const
+		/* _________ MetronomeRelation minOccurs = 1, maxOccurs = 1 _________ */
+        MetronomeRelationPtr MetronomeRelationGroup::getMetronomeRelation() const
         {
-            return myBeatUnit;
+            return myMetronomeRelation;
         }
-        void MetronomeRelationGroup::setBeatUnit( const BeatUnitPtr& value )
+        void MetronomeRelationGroup::setMetronomeRelation( const MetronomeRelationPtr& value )
         {
             if ( value )
             {
-                myBeatUnit = value;
+                myMetronomeRelation = value;
             }
         }
-        /* _________ BeatUnitDot minOccurs = 0, maxOccurs = unbounded _________ */
-        const BeatUnitDotSet& MetronomeRelationGroup::getBeatUnitDotSet() const
+        /* _________ MetronomeNote minOccurs = 1, maxOccurs = 1 _________ */
+        MetronomeNotePtr MetronomeRelationGroup::getMetronomeNote() const
         {
-            return myBeatUnitDotSet;
+            return myMetronomeNote;
         }
-        void MetronomeRelationGroup::addBeatUnitDot( const BeatUnitDotPtr& value )
+        void MetronomeRelationGroup::setMetronomeNote( const MetronomeNotePtr& value )
         {
             if ( value )
             {
-                myBeatUnitDotSet.push_back( value );
+                myMetronomeNote = value;
             }
-        }
-        void MetronomeRelationGroup::removeBeatUnitDot( const BeatUnitDotSetIterConst& setIterator )
-        {
-            if ( setIterator != myBeatUnitDotSet.cend() )
-            {
-                myBeatUnitDotSet.erase( setIterator );
-            }
-        }
-        void MetronomeRelationGroup::clearBeatUnitDotSet()
-        {
-            myBeatUnitDotSet.clear();
         }
         
 #if 1==0
