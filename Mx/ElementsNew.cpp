@@ -735,7 +735,7 @@ namespace mx
         :myBeats( makeBeats() )
         ,myBeatType( makeBeatType() )
         ,myInterchangeable( makeInterchangeable() )
-        ,myHasInterchangeable( makeInterchangeable() )
+        ,myHasInterchangeable( false )
         {}
         bool TimeSignature::hasAttributes() const
         {
@@ -756,10 +756,14 @@ namespace mx
         std::ostream& TimeSignature::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
             isOneLineOnly = false;
+            myBeats->toStream( os, indentLevel );
             os << std::endl;
-            myBeats->toStream( os, indentLevel+1 );
-            myBeatType->toStream( os, indentLevel+1 );
-            os << std::endl;
+            myBeatType->toStream( os, indentLevel );
+            if ( myHasInterchangeable )
+            {
+                os << std::endl;
+                myInterchangeable->toStream( os, indentLevel );
+            }
             return os;
         }
         BeatsPtr TimeSignature::getBeats() const
