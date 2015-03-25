@@ -1113,26 +1113,11 @@ namespace mx
         }
         
         
-        /**************** AttributesIterface ****************/
+        /****************  ****************/
         /* 3455 */
-        AttributesIterface::AttributesIterface()
-        {}
-        
-        bool AttributesIterface::hasValues() const
-        {
-        }
-        
-        std::ostream& AttributesIterface::toStream( std::ostream& os ) const
-        {
-            if ( hasValues() )
-            {
-            }
-            return os;
-        }
         
 		FrameNote::FrameNote()
-		:myAttributes( std::make_shared<AttributesIterface>() )
-		,myString( makeString() )
+		:myString( makeString() )
 		,myFret( makeFret() )
 		,myFingering( makeFingering() )
 		,myHasFingering( false )
@@ -1141,11 +1126,10 @@ namespace mx
 		{}
 		bool FrameNote::hasAttributes() const
 		{
-			return myAttributes->hasValues();
+			return false;
 		}
 		std::ostream& FrameNote::streamAttributes( std::ostream& os ) const
 		{
-			return myAttributes->toStream( os );
 			return os;
 		}
 		std::ostream& FrameNote::streamName( std::ostream& os ) const
@@ -1176,17 +1160,6 @@ namespace mx
             }
 			os << std::endl;
             return os;
-		}
-		AttributesIterfacePtr FrameNote::getAttributes() const
-		{
-			return myAttributes;
-		}
-		void FrameNote::setAttributes( const AttributesIterfacePtr& value )
-		{
-			if ( value )
-			{
-				myAttributes = value;
-			}
 		}
 		/* _________ String minOccurs = 1, maxOccurs = 1 _________ */
 		StringPtr FrameNote::getString() const

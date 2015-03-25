@@ -716,17 +716,6 @@ namespace mx
          </xs:complexType>
          */
         
-        struct AttributesIterface;
-        using AttributesIterfacePtr = std::shared_ptr<AttributesIterface>;
-        
-        struct AttributesIterface : public AttributesInterface
-        {
-        public:
-            AttributesIterface();
-            virtual bool hasValues() const;
-            virtual std::ostream& toStream( std::ostream& os ) const;
-        };
-        
         class FrameNote;
         using FrameNotePtr = std::shared_ptr<FrameNote>;
         using FrameNoteUPtr = std::unique_ptr<FrameNote>;
@@ -743,8 +732,6 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            AttributesIterfacePtr getAttributes() const;
-            void setAttributes( const AttributesIterfacePtr& value );
             /* _________ String minOccurs = 1, maxOccurs = 1 _________ */
             StringPtr getString() const;
             void setString( const StringPtr& value );
@@ -762,7 +749,6 @@ namespace mx
             bool getHasBarre() const;
             void setHasBarre( const bool value );
         private:
-            AttributesIterfacePtr myAttributes;
             StringPtr myString;
             FretPtr myFret;
             FingeringPtr myFingering;
