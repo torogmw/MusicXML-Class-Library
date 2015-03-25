@@ -1627,5 +1627,138 @@ namespace mx
             }
             return PedalTuningPtr();
         }
+        
+        
+        /**************** MetronomeTupletAttributes ****************/
+        /* 3682 */
+        MetronomeTupletAttributes::MetronomeTupletAttributes()
+        :type()
+        ,bracket( types::YesNo::no )
+        ,showNumber()
+        ,hasType( true )
+        ,hasBracket( false )
+        ,hasShowNumber( false )
+        {}
+        
+        bool MetronomeTupletAttributes::hasValues() const
+        {
+            return hasType ||
+            hasBracket ||
+            hasShowNumber;
+        }
+        
+        std::ostream& MetronomeTupletAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, bracket, "bracket", hasBracket );
+                streamAttribute( os, showNumber, "show-number", hasShowNumber );
+            }
+            return os;
+        }
+        
+		MetronomeTuplet::MetronomeTuplet()
+		:myAttributes( std::make_shared<MetronomeTupletAttributes>() )
+		,myActualNotes( makeActualNotes() )
+		,myNormalNotes( makeNormalNotes() )
+		,myNormalType( makeNormalType() )
+		,myNormalDotSet()
+		{}
+		bool MetronomeTuplet::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& MetronomeTuplet::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& MetronomeTuplet::streamName( std::ostream& os ) const
+		{
+			os << "metronome-tuplet";
+			return os;
+		}
+		bool MetronomeTuplet::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& MetronomeTuplet::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		MetronomeTupletAttributesPtr MetronomeTuplet::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void MetronomeTuplet::setAttributes( const MetronomeTupletAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
+		ActualNotesPtr MetronomeTuplet::getActualNotes() const
+		{
+			return myActualNotes;
+		}
+		void MetronomeTuplet::setActualNotes( const ActualNotesPtr& value )
+		{
+			if( value )
+			{
+				myActualNotes = value;
+			}
+		}
+		/* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
+		NormalNotesPtr MetronomeTuplet::getNormalNotes() const
+		{
+			return myNormalNotes;
+		}
+		void MetronomeTuplet::setNormalNotes( const NormalNotesPtr& value )
+		{
+			if( value )
+			{
+				myNormalNotes = value;
+			}
+		}
+		/* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+		NormalTypePtr MetronomeTuplet::getNormalType() const
+		{
+			return myNormalType;
+		}
+		void MetronomeTuplet::setNormalType( const NormalTypePtr& value )
+		{
+			if( value )
+			{
+				myNormalType = value;
+			}
+		}
+		/* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+		const NormalDotSet& MetronomeTuplet::getNormalDotSet() const
+		{
+			return myNormalDotSet;
+		}
+		void MetronomeTuplet::removeNormalDot( const NormalDotSetIterConst& value )
+		{
+			if ( value != myNormalDotSet.cend() )
+			{
+				myNormalDotSet.erase( value );
+			}
+		}
+		void MetronomeTuplet::addNormalDot( const NormalDotPtr& value )
+		{
+			if ( value )
+			{
+				myNormalDotSet.push_back( value );
+			}
+		}
+		void MetronomeTuplet::clearNormalDotSet()
+		{
+			myNormalDotSet.clear();
+		}
     }
 }

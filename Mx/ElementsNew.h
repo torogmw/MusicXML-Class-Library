@@ -992,6 +992,133 @@ namespace mx
             HarpPedalsAttributesPtr myAttributes;
             PedalTuningSet myPedalTuningSet;
         };
+        /*
+         3682
+         
+         
+         <!--  ID = 3682 [3682] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="metronome-tuplet" type="metronome-tuplet" minOccurs="0"/>
+         <xs:complexType name="metronome-tuplet">
+         <xs:annotation>
+         <xs:documentation>The metronome-tuplet type uses the same element structure as the time-modification element along with some attributes from the tuplet element.</xs:documentation>
+         </xs:annotation>
+         <xs:complexContent>
+         <xs:extension base="time-modification">
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="bracket" type="yes-no"/>
+         <xs:attribute name="show-number" type="show-tuplet"/>
+         </xs:extension>
+         </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType name="time-modification">
+         <xs:annotation>
+         <xs:documentation>Time modification indicates tuplets, double-note tremolos, and other durational changes. A time-modification element shows how the cumulative, sounding effect of tuplets and double-note tremolos compare to the written note type represented by the type and dot elements. Nested tuplets and other notations that use more detailed information need both the time-modification and tuplet elements to be represented accurately.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="actual-notes" type="xs:nonNegativeInteger">
+         <xs:annotation>
+         <xs:documentation>The actual-notes element describes how many notes are played in the time usually occupied by the number in the normal-notes element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="normal-notes" type="xs:nonNegativeInteger">
+         <xs:annotation>
+         <xs:documentation>The normal-notes element describes how many notes are usually played in the time occupied by the number in the actual-notes element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:sequence minOccurs="0">
+         <xs:element name="normal-type" type="note-type-value">
+         <xs:annotation>
+         <xs:documentation>If the type associated with the number in the normal-notes element is different than the current note type (e.g., a quarter note within an eighth note triplet), then the normal-notes type (e.g. eighth) is specified in the normal-type and normal-dot elements.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="normal-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The normal-dot element is used to specify dotted normal tuplet types.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:sequence>
+         </xs:complexType>
+         */
+        
+        struct MetronomeTupletAttributes;
+        using MetronomeTupletAttributesPtr = std::shared_ptr<MetronomeTupletAttributes>;
+        
+        struct MetronomeTupletAttributes : public AttributesInterface
+        {
+        public:
+            MetronomeTupletAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            types::YesNo bracket;
+            types::ShowTuplet showNumber;
+            const 	bool hasType;
+            bool hasBracket;
+            bool hasShowNumber;
+        };
+        
+        class TimeModificationNormalTypeNormalDot;
+        using MetronomeTupletPtr = std::shared_ptr<MetronomeTuplet>;
+        using MetronomeTupletUPtr = std::unique_ptr<MetronomeTuplet>;
+        using MetronomeTupletSet = std::vector<MetronomeTupletPtr>;
+        using MetronomeTupletSetIter = MetronomeTupletSet::iterator;
+        using MetronomeTupletSetIterConst = MetronomeTupletSet::const_iterator;
+        inline MetronomeTupletPtr makeMetronomeTuplet() { return std::make_shared<MetronomeTuplet>(); }
+        class MetronomeTuplet : public ElementInterface
+        {
+        public:
+            MetronomeTuplet();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        
+        class MetronomeTuplet;
+        using MetronomeTupletPtr = std::shared_ptr<MetronomeTuplet>;
+        using MetronomeTupletUPtr = std::unique_ptr<MetronomeTuplet>;
+        using MetronomeTupletSet = std::vector<MetronomeTupletPtr>;
+        using MetronomeTupletSetIter = MetronomeTupletSet::iterator;
+        using MetronomeTupletSetIterConst = MetronomeTupletSet::const_iterator;
+        inline MetronomeTupletPtr makeMetronomeTuplet() { return std::make_shared<MetronomeTuplet>(); }
+        
+        class MetronomeTuplet : public ElementInterface
+        {
+        public:
+            MetronomeTuplet();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            MetronomeTupletAttributesPtr getAttributes() const;
+            void setAttributes( const MetronomeTupletAttributesPtr& value );
+            /* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
+            ActualNotesPtr getActualNotes() const;
+            void setActualNotes( const ActualNotesPtr& value );
+            /* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
+            NormalNotesPtr getNormalNotes() const;
+            void setNormalNotes( const NormalNotesPtr& value );
+            /* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+            NormalTypePtr getNormalType() const;
+            void setNormalType( const NormalTypePtr& value );
+            /* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const NormalDotSet& getNormalDotSet() const;
+            void addNormalDot( const NormalDotPtr& value );
+            void removeNormalDot( const NormalDotSetIterConst& value );
+            void clearNormalDotSet();
+        private:
+            MetronomeTupletAttributesPtr myAttributes;
+            ActualNotesPtr myActualNotes;
+            NormalNotesPtr myNormalNotes;
+            NormalTypePtr myNormalType;
+            NormalDotSet myNormalDotSet;
+        };
 
     }
 }
