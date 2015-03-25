@@ -725,5 +725,153 @@ namespace mx
 		{
 			myHasAccordionLow = value;
 		}
+        
+        
+        
+        /**************** TimeAttributes ****************/
+        /* 2621 */
+        
+        TimeSignature::TimeSignature()
+        :myBeats( makeBeats() )
+        ,myBeatType( makeBeatType() )
+        ,myInterchangeable( makeInterchangeable() )
+        ,myHasInterchangeable( makeInterchangeable() )
+        {}
+        bool TimeSignature::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TimeSignature::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TimeSignature::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool TimeSignature::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& TimeSignature::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = false;
+            os << std::endl;
+            myBeats->toStream( os, indentLevel+1 );
+            myBeatType->toStream( os, indentLevel+1 );
+            os << std::endl;
+            return os;
+        }
+        BeatsPtr TimeSignature::getBeats() const
+        {
+            return myBeats;
+        }
+        void TimeSignature::setBeats( const BeatsPtr& value )
+        {
+            if ( value )
+            {
+                myBeats = value;
+            }
+        }
+        BeatTypePtr TimeSignature::getBeatType() const
+        {
+            return myBeatType;
+        }
+        void TimeSignature::setBeatType( const BeatTypePtr& value )
+        {
+            if ( value )
+            {
+                myBeatType = value;
+            }
+        }
+        InterchangeablePtr TimeSignature::getInterchangeable() const
+        {
+            return myInterchangeable;
+        }
+        void TimeSignature::setInterchangeable( const InterchangeablePtr& value )
+        {
+            if( value )
+            {
+                myInterchangeable = value;
+            }
+        }
+        bool TimeSignature::getHasInterchangeable() const
+        {
+            return myHasInterchangeable;
+        }
+        void TimeSignature::setHasInterchangeable( const bool value )
+        {
+            myHasInterchangeable = value;
+        }
+        TimeChoice::TimeChoice()
+        :myChoice( Choice::timeSignature )
+        ,myTimeSignature( makeTimeSignature() )
+        ,mySenzaMisura( makeSenzaMisura() )
+        {}
+        bool TimeChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& TimeChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& TimeChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool TimeChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& TimeChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::timeSignature:
+                {
+                    myTimeSignature->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::senzaMisura:
+                {
+                    mySenzaMisura->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                default:
+                    break;
+            }
+            return os;
+        }
+        TimeChoice::Choice TimeChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void TimeChoice::setChoice( const Choice value )
+        {
+            myChoice = value;
+        }
+        TimeSignaturePtr TimeChoice::getTimeSignature() const
+        {
+            return myTimeSignature;
+        }
+        void TimeChoice::setTimeSignature( const TimeSignaturePtr& value )
+        {
+            if ( value )
+            {
+                myTimeSignature = value;
+            }
+        }
+        SenzaMisuraPtr TimeChoice::getSenzaMisura() const
+        {
+            return mySenzaMisura;
+        }
+        void TimeChoice::setSenzaMisura( const SenzaMisuraPtr& value )
+        {
+            if ( value )
+            {
+                mySenzaMisura = value;
+            }
+        }
     }
 }

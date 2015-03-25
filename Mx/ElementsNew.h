@@ -492,6 +492,37 @@ namespace mx
          </xs:sequence>
          </xs:group>
          */
+        class TimeSignature;
+        using TimeSignaturePtr = std::shared_ptr<TimeSignature>;
+        using TimeSignatureUPtr = std::unique_ptr<TimeSignature>;
+        using TimeSignatureSet = std::vector<TimeSignaturePtr>;
+        using TimeSignatureSetIter = TimeSignatureSet::iterator;
+        using TimeSignatureSetIterConst = TimeSignatureSet::const_iterator;
+        inline TimeSignaturePtr makeTimeSignature() { return std::make_shared<TimeSignature>(); }
+        class TimeSignature : public ElementInterface
+        {
+        public:
+            TimeSignature();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BeatsPtr getBeats() const;
+            void setBeats( const BeatsPtr& value );
+            BeatTypePtr getBeatType() const;
+            void setBeatType( const BeatTypePtr& value );
+            InterchangeablePtr getInterchangeable() const;
+            void setInterchangeable( const InterchangeablePtr& value );
+            bool getHasInterchangeable() const;
+            void setHasInterchangeable( const bool value );
+        private:
+            BeatsPtr myBeats;
+            BeatTypePtr myBeatType;
+            InterchangeablePtr myInterchangeable;
+            bool myHasInterchangeable;
+        };
+        
         class TimeChoice;
         using TimeChoicePtr = std::shared_ptr<TimeChoice>;
         using TimeChoiceUPtr = std::unique_ptr<TimeChoice>;
@@ -504,10 +535,8 @@ namespace mx
         public:
             enum class Choice
             {
-                multipleRest = 0,
-                measureRepeat = 1,
-                beatRepeat = 2,
-                slash = 3
+                timeSignature = 0,
+                senzaMisura = 1
             };
             TimeChoice();
             virtual bool hasAttributes() const;
@@ -517,20 +546,14 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             Choice getChoice() const;
             void setChoice( const Choice value );
-            MultipleRestPtr getMultipleRest() const;
-            void setMultipleRest( const MultipleRestPtr& value );
-            MeasureRepeatPtr getMeasureRepeat() const;
-            void setMeasureRepeat( const MeasureRepeatPtr& value );
-            BeatRepeatPtr getBeatRepeat() const;
-            void setBeatRepeat( const BeatRepeatPtr& value );
-            SlashPtr getSlash() const;
-            void setSlash( const SlashPtr& value );
+            TimeSignaturePtr getTimeSignature() const;
+            void setTimeSignature( const TimeSignaturePtr& value );
+            SenzaMisuraPtr getSenzaMisura() const;
+            void setSenzaMisura( const SenzaMisuraPtr& value );
         private:
             Choice myChoice;
-            MultipleRestPtr myMultipleRest;
-            MeasureRepeatPtr myMeasureRepeat;
-            BeatRepeatPtr myBeatRepeat;
-            SlashPtr mySlash;
+            TimeSignaturePtr myTimeSignature;
+            SenzaMisuraPtr mySenzaMisura;
         };
     }
 }
