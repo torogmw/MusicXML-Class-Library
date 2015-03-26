@@ -2297,7 +2297,7 @@ namespace mx
         {
             return myPerMinuteOrBeatUnitChoice;
         }
-        void BeatUnitPer::setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value )
+        void BeatUnitPer::setPerMinuteOtBeatUnitChoice( const PerMinuteOrBeatUnitChoicePtr& value )
         {
             if ( value )
             {

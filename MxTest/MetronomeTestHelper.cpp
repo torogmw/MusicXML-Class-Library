@@ -33,22 +33,53 @@ namespace MxTestHelpers
     }
     MetronomeRelationGroupPtr tgenMetronomeRelationGroup( variant v )
     {
-        MetronomeRelationGroupPtr o = makeBeatUnitGroup();
+        MetronomeRelationGroupPtr o = makeMetronomeRelationGroup();
         switch ( v )
         {
             case variant::one:
             {
-                ;
+                MetronomeRelationPtr mr = makeMetronomeRelation();
+                mr->setValue( XsString( "120" ) );
+                o->setMetronomeRelation( mr );
+                MetronomeNotePtr mn = makeMetronomeNote();
+                mn->setHasMetronomeTuplet( false );
+                mn->getMetronomeType()->setValue( NoteTypeValue::whole );
+                o->setMetronomeNote( mn );
             }
                 break;
             case variant::two:
             {
-                ;
+                MetronomeRelationPtr mr = makeMetronomeRelation();
+                mr->setValue( XsString( "96" ) );
+                o->setMetronomeRelation( mr );
+                MetronomeNotePtr mn = makeMetronomeNote();
+                mn->setHasMetronomeTuplet( true );
+                mn->getMetronomeType()->setValue( NoteTypeValue::sixtyFourth );
+                MetronomeTupletPtr mtup = makeMetronomeTuplet();
+                mtup->setHasTimeModificationNormalTypeNormalDot( true );
+                mtup->getActualNotes()->setValue( NonNegativeInteger( 10 ) );
+                mtup->getNormalNotes()->setValue( NonNegativeInteger( 11 ) );
+                mtup->getTimeModificationNormalTypeNormalDot()->addNormalDot( makeNormalDot() );
+                mn->setMetronomeTuplet( mtup );
+                o->setMetronomeNote( mn );
             }
                 break;
             case variant::three:
             {
-                ;
+                MetronomeRelationPtr mr = makeMetronomeRelation();
+                mr->setValue( XsString( "30" ) );
+                o->setMetronomeRelation( mr );
+                MetronomeNotePtr mn = makeMetronomeNote();
+                mn->setHasMetronomeTuplet( true );
+                mn->getMetronomeType()->setValue( NoteTypeValue::sixtyFourth );
+                MetronomeTupletPtr mtup = makeMetronomeTuplet();
+                mtup->setHasTimeModificationNormalTypeNormalDot( true );
+                mtup->getActualNotes()->setValue( NonNegativeInteger( 12 ) );
+                mtup->getNormalNotes()->setValue( NonNegativeInteger( 14 ) );
+                mtup->getTimeModificationNormalTypeNormalDot()->addNormalDot( makeNormalDot() );
+                mtup->getTimeModificationNormalTypeNormalDot()->addNormalDot( makeNormalDot() );
+                mn->setMetronomeTuplet( mtup );
+                o->setMetronomeNote( mn );
             }
                 break;
             default:
@@ -58,7 +89,7 @@ namespace MxTestHelpers
     }
     NoteRelationNotePtr tgenNoteRelationNote( variant v )
     {
-        NoteRelationNotePtr o = makeBeatUnitGroup();
+        NoteRelationNotePtr o = makeNoteRelationNote();
         switch ( v )
         {
             case variant::one:
@@ -83,22 +114,28 @@ namespace MxTestHelpers
     }
     PerMinuteOrBeatUnitChoicePtr tgenPerMinuteOrBeatUnitChoice( variant v )
     {
-        PerMinuteOrBeatUnitChoicePtr o = makeBeatUnitGroup();
+        PerMinuteOrBeatUnitChoicePtr o = makePerMinuteOrBeatUnitChoice();
         switch ( v )
         {
             case variant::one:
             {
-                ;
+                o->setChoice( PerMinuteOrBeatUnitChoice::Choice::beatUnitGroup );
+                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
             }
                 break;
             case variant::two:
             {
-                ;
+                o->setChoice( PerMinuteOrBeatUnitChoice::Choice::perMinute );
+                o->getPerMinute()->setValue( XsString( "104" ) );
+                o->getPerMinute()->getAttributes()->hasFontSize = true;
+                o->getPerMinute()->getAttributes()->fontSize = FontSize( CssFontSize::xxLarge );
             }
                 break;
             case variant::three:
             {
-                ;
+                o->setChoice( PerMinuteOrBeatUnitChoice::Choice::beatUnitGroup );
+                o->setChoice( PerMinuteOrBeatUnitChoice::Choice::beatUnitGroup );
+                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
             }
                 break;
             default:
@@ -108,22 +145,25 @@ namespace MxTestHelpers
     }
     BeatUnitPerPtr tgenBeatUnitPer( variant v )
     {
-        BeatUnitPerPtr o = makeBeatUnitGroup();
+        BeatUnitPerPtr o = makeBeatUnitPer();
         switch ( v )
         {
             case variant::one:
             {
-                ;
+                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
+                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( v ) );
             }
                 break;
             case variant::two:
             {
-                ;
+                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
+                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( v ) );
             }
                 break;
             case variant::three:
             {
-                ;
+                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
+                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( v ) );
             }
                 break;
             default:
@@ -133,7 +173,7 @@ namespace MxTestHelpers
     }
     BeatUnitPerOrNoteRelationNoteChoicePtr tgenBeatUnitPerOrNoteRelationNoteChoice( variant v )
     {
-        BeatUnitPerOrNoteRelationNoteChoicePtr o = makeBeatUnitGroup();
+        BeatUnitPerOrNoteRelationNoteChoicePtr o = makeBeatUnitPerOrNoteRelationNoteChoice();
         switch ( v )
         {
             case variant::one:
@@ -158,7 +198,7 @@ namespace MxTestHelpers
     }
     MetronomeAttributesPtr tgenMetronomeAttributesPtr( variant v )
     {
-        MetronomeAttributesPtr o = makeBeatUnitGroup();
+        MetronomeAttributesPtr o = std::make_shared<MetronomeAttributes>();
         switch ( v )
         {
             case variant::one:
@@ -183,7 +223,7 @@ namespace MxTestHelpers
     }
     MetronomePtr tgenMetronome( variant v )
     {
-        MetronomePtr o = makeBeatUnitGroup();
+        MetronomePtr o = makeMetronome();
         switch ( v )
         {
             case variant::one:

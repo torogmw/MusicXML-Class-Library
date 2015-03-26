@@ -1341,7 +1341,7 @@ namespace mx
             BeatUnitGroupPtr getBeatUnitGroup() const;
             void setBeatUnitGroup( const BeatUnitGroupPtr& value );
             PerMinuteOrBeatUnitChoicePtr getPerMinuteOrBeatUnitChoice() const;
-            void setPerMinuteOtBeatUnitChoice( PerMinuteOrBeatUnitChoicePtr& value );
+            void setPerMinuteOtBeatUnitChoice( const PerMinuteOrBeatUnitChoicePtr& value );
         private:
             BeatUnitGroupPtr myBeatUnitGroup;
             PerMinuteOrBeatUnitChoicePtr myPerMinuteOrBeatUnitChoice;
