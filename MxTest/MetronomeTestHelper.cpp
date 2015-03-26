@@ -178,17 +178,20 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                ;
+                o->setChoice( BeatUnitPerOrNoteRelationNoteChoice::Choice::beatUnitPer );
+                o->setBeatUnitPer( tgenBeatUnitPer( v ) );
             }
                 break;
             case variant::two:
             {
-                ;
+                o->setChoice( BeatUnitPerOrNoteRelationNoteChoice::Choice::noteRelationNote );
+                o->setNoteRelationNote( tgenNoteRelationNote( v ) );
             }
                 break;
             case variant::three:
             {
-                ;
+                o->setChoice( BeatUnitPerOrNoteRelationNoteChoice::Choice::beatUnitPer );
+                o->setBeatUnitPer( tgenBeatUnitPer( v ) );
             }
                 break;
             default:
