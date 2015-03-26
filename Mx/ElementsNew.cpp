@@ -2952,7 +2952,14 @@ namespace mx
 		,myStickLocation( makeStickLocation() )
 		,myOtherPercussion( makeOtherPercussion() )
 		{}
-		
+		bool PercussionChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& PercussionChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
 		std::ostream& PercussionChoice::streamName( std::ostream& os ) const
 		{
 			return os;
@@ -3292,10 +3299,12 @@ namespace mx
 		}
 		std::ostream& Percussion::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
+			
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			myChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+			isOneLineOnly = false;
+            os << std::endl;
+            return os;
 		}
 		PercussionAttributesPtr Percussion::getAttributes() const
 		{

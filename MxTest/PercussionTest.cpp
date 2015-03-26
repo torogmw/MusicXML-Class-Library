@@ -81,27 +81,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<part-name-display></part-name-display>)", false );
+                streamLine( os, i, R"(<percussion>)" );
+                streamLine( os, i+1, R"(<glass>wind chimes</glass>)" );
+                streamLine( os, i, R"(</percussion>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<part-name-display print-object="no">)" );
-                streamLine( os, i+1, R"(<accidental-text enclosure="oval">flat-flat</accidental-text>)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i, R"(</part-name-display>)", false );
+                streamLine( os, i, R"()" );
+                streamLine( os, i+1, R"()" );
+                streamLine( os, i, R"()", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<part-name-display print-object="yes">)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i+1, R"(<display-text font-weight="bold" halign="right">three</display-text>)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i+1, R"(<display-text font-weight="bold" halign="right">three</display-text>)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i+1, R"(<accidental-text enclosure="oval">flat-flat</accidental-text>)" );
-                streamLine( os, i, R"(</part-name-display>)", false );
+                streamLine( os, i, R"()" );
+                streamLine( os, i+1, R"()" );
+                streamLine( os, i, R"()", false );
             }
                 break;
             default:
@@ -120,7 +116,7 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                
+                o->setChoice( PercussionChoice::Choice::wood );
             }
                 break;
             case variant::three:
