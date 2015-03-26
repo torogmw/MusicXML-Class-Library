@@ -2023,6 +2023,47 @@ namespace mx
             bool myHasTuningAlter;
             TuningOctavePtr myTuningOctave;
         };
+        /* <!--  ID = 3394 [3394] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="scordatura" type="scordatura"/>
+         <xs:complexType name="scordatura">
+         <xs:annotation>
+         <xs:documentation>Scordatura string tunings are represented by a series of accord elements, similar to the staff-tuning elements. Strings are numbered from high to low.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="accord" type="accord" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:complexType>
+         */
+        
+        class Scordatura;
+        using ScordaturaPtr = std::shared_ptr<Scordatura>;
+        using ScordaturaUPtr = std::unique_ptr<Scordatura>;
+        using ScordaturaSet = std::vector<ScordaturaPtr>;
+        using ScordaturaSetIter = ScordaturaSet::iterator;
+        using ScordaturaSetIterConst = ScordaturaSet::const_iterator;
+        inline ScordaturaPtr makeScordatura() { return std::make_shared<Scordatura>(); }
+        class Scordatura : public ElementInterface
+        {
+        public:
+            Scordatura();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Accord minOccurs = 1, maxOccurs = unbounded _________ */
+            const AccordSet& getAccordSet() const;
+            void addAccord( const AccordPtr& value );
+            void removeAccord( const AccordSetIterConst& value );
+            void clearAccordSet();
+            AccordPtr getAccord( const AccordSetIterConst& setIterator ) const;
+        private:
+            AccordSet myAccordSet;
+        };
 
 #if 1==0
         class X_______X;

@@ -3447,6 +3447,79 @@ namespace mx
 				myTuningOctave = value;
 			}
 		}
+        
+        
+        
+		Scordatura::Scordatura()
+		:myAccordSet()
+		{
+            myAccordSet.push_back( makeAccord() );
+            
+        }
+		bool Scordatura::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Scordatura::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Scordatura::streamName( std::ostream& os ) const
+		{
+			os << "scordatura";
+			return os;
+		}
+		bool Scordatura::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Scordatura::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			for ( auto x : myAccordSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+			os << std::endl;
+            return os;
+		}
+        /* _________ Accord minOccurs = 1, maxOccurs = unbounded _________ */
+		const AccordSet& Scordatura::getAccordSet() const
+		{
+			return myAccordSet;
+		}
+		void Scordatura::removeAccord( const AccordSetIterConst& value )
+		{
+			if ( value != myAccordSet.cend() )
+			{
+				if ( myAccordSet.size() > 1 )
+				{
+					myAccordSet.erase( value );
+				}
+			}
+		}
+		void Scordatura::addAccord( const AccordPtr& value )
+		{
+			if ( value )
+			{
+				myAccordSet.push_back( value );
+			}
+		}
+		void Scordatura::clearAccordSet()
+		{
+			myAccordSet.clear();
+			myAccordSet.push_back( makeAccord() );
+		}
+		AccordPtr Scordatura::getAccord( const AccordSetIterConst& setIterator ) const
+		{
+			if( setIterator != myAccordSet.cend() )
+			{
+				return *setIterator;
+			}
+			return AccordPtr();
+		}
+		
 
 #if 1==0
         X__X::X__X()
