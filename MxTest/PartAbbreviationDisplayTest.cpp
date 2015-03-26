@@ -1,6 +1,6 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "ElementsNew.h"
+#include "Elements.h"
 #include "PartNameDisplayTest.h"
 #include "PartAbbreviationDisplayTest.h"
 
