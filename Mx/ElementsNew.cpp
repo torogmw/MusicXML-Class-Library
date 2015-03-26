@@ -2496,6 +2496,255 @@ namespace mx
             }
         }
         
+        
+        /**************** StickAttributes ****************/
+        /* 3812 */
+        StickAttributes::StickAttributes()
+        :tip()
+        ,hasTip( false )
+        {}
+        
+        bool StickAttributes::hasValues() const
+        {
+            return hasTip;
+        }
+        
+        std::ostream& StickAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, tip, "tip", hasTip );
+            }
+            return os;
+        }
+        
+		Stick::Stick()
+		:myAttributes( std::make_shared<StickAttributes>() )
+		,myStickType( makeStickType() )
+		,myStickMaterial( makeStickMaterial() )
+		{}
+		bool Stick::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Stick::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Stick::streamName( std::ostream& os ) const
+		{
+			os << "stick";
+			return os;
+		}
+		bool Stick::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Stick::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		StickAttributesPtr Stick::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Stick::setAttributes( const StickAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ StickType minOccurs = 1, maxOccurs = 1 _________ */
+		StickTypePtr Stick::getStickType() const
+		{
+			return myStickType;
+		}
+		void Stick::setStickType( const StickTypePtr& value )
+		{
+			if( value )
+			{
+				myStickType = value;
+			}
+		}
+		/* _________ StickMaterial minOccurs = 1, maxOccurs = 1 _________ */
+		StickMaterialPtr Stick::getStickMaterial() const
+		{
+			return myStickMaterial;
+		}
+		void Stick::setStickMaterial( const StickMaterialPtr& value )
+		{
+			if( value )
+			{
+				myStickMaterial = value;
+			}
+		}
+        
+        
+        /**************** AttributesIterface ****************/
+        /* 3849 */
+        
+		MeasureLayout::MeasureLayout()
+		:myMeasureDistance( makeMeasureDistance() )
+		,myHasMeasureDistance( false )
+		{}
+		bool MeasureLayout::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& MeasureLayout::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& MeasureLayout::streamName( std::ostream& os ) const
+		{
+			os << "measure-layout";
+			return os;
+		}
+		bool MeasureLayout::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& MeasureLayout::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		/* _________ MeasureDistance minOccurs = 0, maxOccurs = 1 _________ */
+		MeasureDistancePtr MeasureLayout::getMeasureDistance() const
+		{
+			return myMeasureDistance;
+		}
+		void MeasureLayout::setMeasureDistance( const MeasureDistancePtr& value )
+		{
+			if( value )
+			{
+				myMeasureDistance = value;
+			}
+		}
+		bool MeasureLayout::getHasMeasureDistance() const
+		{
+			return myHasMeasureDistance;
+		}
+		void MeasureLayout::setHasMeasureDistance( const bool value )
+		{
+			myHasMeasureDistance = value;
+		}
+        DisplayTextOrAccidentalText::DisplayTextOrAccidentalText()
+        {
+            
+        }
+        bool DisplayTextOrAccidentalText::hasAttributes() const;
+        std::ostream& DisplayTextOrAccidentalText::streamAttributes( std::ostream& os ) const;
+        virtual std::ostream& DisplayTextOrAccidentalText::streamName( std::ostream& os ) const;
+        virtual bool DisplayTextOrAccidentalText::hasContents() const;
+        virtual std::ostream& DisplayTextOrAccidentalText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        DisplayTextOrAccidentalText::Choice DisplayTextOrAccidentalText::getChoice() const;
+        void DisplayTextOrAccidentalText::setChoice( const DisplayTextOrAccidentalText::Choice value );
+        DisplayTextPtr DisplayTextOrAccidentalText::getDisplayText() const;
+        void DisplayTextOrAccidentalText::setDisplayText( const DisplayTextPtr& value );
+        AccidentalTextPtr DisplayTextOrAccidentalText::getAccidentalText() const;
+        void DisplayTextOrAccidentalText::setAccidentalText( const AccidentalTextPtr& value );
+        
+        /**************** PartNameDisplayAttributes ****************/
+        /* 3857 */
+        PartNameDisplayAttributes::PartNameDisplayAttributes()
+        :printObject( types::YesNo::no )
+        ,hasPrintObject( false )
+        {}
+        
+        bool PartNameDisplayAttributes::hasValues() const
+        {
+            return hasPrintObject;
+        }
+        
+        std::ostream& PartNameDisplayAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		PartNameDisplay::PartNameDisplay()
+		:myAttributes( std::make_shared<PartNameDisplayAttributes>() )
+		,myDisplayTextOrAccidentalTextSet()
+		{}
+		bool PartNameDisplay::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& PartNameDisplay::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& PartNameDisplay::streamName( std::ostream& os ) const
+		{
+			os << "part-name-display";
+			return os;
+		}
+		bool PartNameDisplay::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PartNameDisplay::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		PartNameDisplayAttributesPtr PartNameDisplay::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void PartNameDisplay::setAttributes( const PartNameDisplayAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ DisplayTextOrAccidentalText minOccurs = 0, maxOccurs = unbounded _________ */
+        const DisplayTextOrAccidentalTextSet& PartNameDisplay::getDisplayTextOrAccidentalText() const
+        {
+            return myDisplayTextOrAccidentalTextSet;
+        }
+        void PartNameDisplay::addDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextPtr& value )
+        {
+            if ( value )
+            {
+                myDisplayTextOrAccidentalTextSet.push_back( value );
+            }
+        }
+        void PartNameDisplay::removeDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator )
+        {
+            if ( setIterator != myDisplayTextOrAccidentalTextSet.cend() )
+            {
+                myDisplayTextOrAccidentalTextSet.erase( setIterator );
+            }
+        }
+        void PartNameDisplay::clearDisplayTextOrAccidentalTextSet()
+        {
+            myDisplayTextOrAccidentalTextSet.clear();
+        }
+        DisplayTextOrAccidentalTextPtr PartNameDisplay::getDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator ) const
+        {
+            if ( setIterator != myDisplayTextOrAccidentalTextSet.cend() )
+            {
+                return *setIterator;
+            }
+            return makeDisplayTextOrAccidentalText();
+        }
+
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )

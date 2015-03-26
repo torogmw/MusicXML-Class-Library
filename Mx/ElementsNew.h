@@ -1495,7 +1495,204 @@ namespace mx
             MetronomeAttributesPtr myAttributes;
             BeatUnitPerOrNoteRelationNoteChoicePtr myBeatUnitPerOrNoteRelationNoteChoice;
         };
+        /*
+         3812
+         <!--  ID = 3812 [3812] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <xs:element name="stick" type="stick"/>
+         <xs:complexType name="stick">
+         <xs:annotation>
+         <xs:documentation>The stick type represents pictograms where the material of the stick, mallet, or beater is included.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="stick-type" type="stick-type"/>
+         <xs:element name="stick-material" type="stick-material"/>
+         </xs:sequence>
+         <xs:attribute name="tip" type="tip-direction"/>
+         </xs:complexType> */
+        
+        struct StickAttributes;
+        using StickAttributesPtr = std::shared_ptr<StickAttributes>;
+        
+        struct StickAttributes : public AttributesInterface
+        {
+        public:
+            StickAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TipDirection tip;
+            bool hasTip;
+        };
+        
+        class Stick;
+        using StickPtr = std::shared_ptr<Stick>;
+        using StickUPtr = std::unique_ptr<Stick>;
+        using StickSet = std::vector<StickPtr>;
+        using StickSetIter = StickSet::iterator;
+        using StickSetIterConst = StickSet::const_iterator;
+        inline StickPtr makeStick() { return std::make_shared<Stick>(); }
+        class Stick : public ElementInterface
+        {
+        public:
+            Stick();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            StickAttributesPtr getAttributes() const;
+            void setAttributes( const StickAttributesPtr& value );
+            /* _________ StickType minOccurs = 1, maxOccurs = 1 _________ */
+            StickTypePtr getStickType() const;
+            void setStickType( const StickTypePtr& value );
+            /* _________ StickMaterial minOccurs = 1, maxOccurs = 1 _________ */
+            StickMaterialPtr getStickMaterial() const;
+            void setStickMaterial( const StickMaterialPtr& value );
+        private:
+            StickAttributesPtr myAttributes;
+            StickTypePtr myStickType;
+            StickMaterialPtr myStickMaterial;
+        };
+        /*
+         <!--  ID = 3849 [3849] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 1 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="measure-layout" type="measure-layout" minOccurs="0"/>
+         <xs:complexType name="measure-layout">
+         <xs:annotation>
+         <xs:documentation>The measure-layout type includes the horizontal distance from the previous measure.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="measure-distance" type="tenths" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The measure-distance element specifies the horizontal distance from the previous measure. This value is only used for systems where there is horizontal whitespace in the middle of a system, as in systems with codas. To specify the measure width, use the width attribute of the measure element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:complexType> */
 
+        class MeasureLayout;
+        using MeasureLayoutPtr = std::shared_ptr<MeasureLayout>;
+        using MeasureLayoutUPtr = std::unique_ptr<MeasureLayout>;
+        using MeasureLayoutSet = std::vector<MeasureLayoutPtr>;
+        using MeasureLayoutSetIter = MeasureLayoutSet::iterator;
+        using MeasureLayoutSetIterConst = MeasureLayoutSet::const_iterator;
+        inline MeasureLayoutPtr makeMeasureLayout() { return std::make_shared<MeasureLayout>(); }
+        class MeasureLayout : public ElementInterface
+        {
+        public:
+            MeasureLayout();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ MeasureDistance minOccurs = 0, maxOccurs = 1 _________ */
+            MeasureDistancePtr getMeasureDistance() const;
+            void setMeasureDistance( const MeasureDistancePtr& value );
+            bool getHasMeasureDistance() const;
+            void setHasMeasureDistance( const bool value );
+        private:
+            MeasureDistancePtr myMeasureDistance;
+            bool myHasMeasureDistance;
+        };
+        /*
+         <!--  ID = 3857 [3857, 5928] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="part-name-display" type="name-display" minOccurs="0"/>
+         <xs:complexType name="name-display">
+         <xs:annotation>
+         <xs:documentation>The name-display type is used for exact formatting of multi-font text in part and group names to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system. Enclosure for the display-text element is none by default. Language for the display-text element is Italian ("it") by default.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="display-text" type="formatted-text"/>
+         <xs:element name="accidental-text" type="accidental-text"/>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType> */
+        
+        class DisplayTextOrAccidentalText;
+        using DisplayTextOrAccidentalTextPtr = std::shared_ptr<DisplayTextOrAccidentalText>;
+        using DisplayTextOrAccidentalTextUPtr = std::unique_ptr<DisplayTextOrAccidentalText>;
+        using DisplayTextOrAccidentalTextSet = std::vector<DisplayTextOrAccidentalTextPtr>;
+        using DisplayTextOrAccidentalTextSetIter = DisplayTextOrAccidentalTextSet::iterator;
+        using DisplayTextOrAccidentalTextSetIterConst = DisplayTextOrAccidentalTextSet::const_iterator;
+        inline DisplayTextOrAccidentalTextPtr makeDisplayTextOrAccidentalText() { return std::make_shared<DisplayTextOrAccidentalText>(); }
+        class DisplayTextOrAccidentalText : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                displayText = 1,
+                accidentalText = 2
+            };
+            DisplayTextOrAccidentalText();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DisplayTextOrAccidentalText::Choice getChoice() const;
+            void setChoice( const DisplayTextOrAccidentalText::Choice value );
+            DisplayTextPtr getDisplayText() const;
+            void setDisplayText( const DisplayTextPtr& value );
+            AccidentalTextPtr getAccidentalText() const;
+            void setAccidentalText( const AccidentalTextPtr& value );
+        private:
+            Choice myChoice;
+            DisplayTextPtr myDisplayText;
+            AccidentalTextPtr myAccidentalText;
+        };
+        
+        struct PartNameDisplayAttributes;
+        using PartNameDisplayAttributesPtr = std::shared_ptr<PartNameDisplayAttributes>;
+        
+        struct PartNameDisplayAttributes : public AttributesInterface
+        {
+        public:
+            PartNameDisplayAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo printObject;
+            bool hasPrintObject;
+        };
+        
+        class PartNameDisplay;
+        using PartNameDisplayPtr = std::shared_ptr<PartNameDisplay>;
+        using PartNameDisplayUPtr = std::unique_ptr<PartNameDisplay>;
+        using PartNameDisplaySet = std::vector<PartNameDisplayPtr>;
+        using PartNameDisplaySetIter = PartNameDisplaySet::iterator;
+        using PartNameDisplaySetIterConst = PartNameDisplaySet::const_iterator;
+        inline PartNameDisplayPtr makePartNameDisplay() { return std::make_shared<PartNameDisplay>(); }
+        class PartNameDisplay : public ElementInterface
+        {
+        public:
+            PartNameDisplay();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PartNameDisplayAttributesPtr getAttributes() const;
+            void setAttributes( const PartNameDisplayAttributesPtr& value );
+            /* _________ DisplayTextOrAccidentalText minOccurs = 0, maxOccurs = unbounded _________ */
+            const DisplayTextOrAccidentalTextSet& getDisplayTextOrAccidentalText() const;
+            void addDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextPtr& value );
+            void removeDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator );
+            void clearDisplayTextOrAccidentalTextSet();
+            DisplayTextOrAccidentalTextPtr getDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator ) const;
+        private:
+            PartNameDisplayAttributesPtr myAttributes;
+            DisplayTextOrAccidentalTextSet myDisplayTextOrAccidentalTextSet;
+        };
 #if 1==0
         class X_______X;
         using X_______XPtr = std::shared_ptr<X_______X>;
