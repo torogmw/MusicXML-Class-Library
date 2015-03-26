@@ -2098,7 +2098,9 @@ namespace mx
 		:myMetronomeNoteSet()
         ,myMetronomeRelationGroup( makeMetronomeRelationGroup() )
         ,myHasMetronomeRelationGroup( false )
-		{}
+		{
+            myMetronomeNoteSet.push_back( makeMetronomeNote() );
+        }
 		bool NoteRelationNote::hasAttributes() const
 		{
 			return false;
@@ -2122,11 +2124,11 @@ namespace mx
                  it != myMetronomeNoteSet.cend();
                   ++it )
             {
-                if( it != myMetronomeNoteSet.cbegin() )
+                if ( it != myMetronomeNoteSet.cbegin() )
                 {
                     os << std::endl;
                 }
-                (*it)->streamContents( os, indentLevel, isOneLineOnly );
+                (*it)->toStream( os, indentLevel );
             }
             if ( myHasMetronomeRelationGroup )
             {
@@ -2161,6 +2163,7 @@ namespace mx
         void NoteRelationNote::clearMetronomeNoteSet()
 		{
 			myMetronomeNoteSet.clear();
+            myMetronomeNoteSet.push_back( makeMetronomeNote() );
 		}
         /* _________ MetronomeRelationGroup minOccurs = 0, maxOccurs = 1 _________ */
         MetronomeRelationGroupPtr NoteRelationNote::getMetronomeRelationGroup() const
@@ -2447,10 +2450,11 @@ namespace mx
 		{}
 		bool Metronome::hasAttributes() const
 		{
-			return false;
+			return myAttributes->hasValues();
 		}
 		std::ostream& Metronome::streamAttributes( std::ostream& os ) const
 		{
+            myAttributes->toStream( os );
 			return os;
 		}
 		std::ostream& Metronome::streamName( std::ostream& os ) const

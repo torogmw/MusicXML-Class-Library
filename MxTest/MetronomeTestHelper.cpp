@@ -94,17 +94,71 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                ;
+                MetronomeNotePtr n = makeMetronomeNote();
+                n->setHasMetronomeTuplet( true );
+                n->getMetronomeType()->setValue( NoteTypeValue::half );
+                n->getMetronomeTuplet()->getActualNotes()->setValue( NonNegativeInteger( 3 ) );
+                n->getMetronomeTuplet()->getNormalNotes()->setValue( NonNegativeInteger( 4 ) );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                o->addMetronomeNote( n );
+                n = makeMetronomeNote();
+                n->setHasMetronomeTuplet( false );
+                n->getMetronomeType()->setValue( NoteTypeValue::half );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                o->addMetronomeNote( n );
+                o->removeMetronomeNote( o->getMetronomeNoteSet().cbegin() );
+                o->setHasMetronomeRelationGroup( true );
+                o->setMetronomeRelationGroup( tgenMetronomeRelationGroup( variant::three ) );
             }
                 break;
             case variant::two:
             {
-                ;
+                MetronomeNotePtr n = makeMetronomeNote();
+                n->setHasMetronomeTuplet( true );
+                n->getMetronomeType()->setValue( NoteTypeValue::sixtyFourth );
+                n->getMetronomeTuplet()->getActualNotes()->setValue( NonNegativeInteger( 33 ) );
+                n->getMetronomeTuplet()->getNormalNotes()->setValue( NonNegativeInteger( 24 ) );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                o->addMetronomeNote( n );
+                n = makeMetronomeNote();
+                n->setHasMetronomeTuplet( false );
+                n->getMetronomeType()->setValue( NoteTypeValue::thirtySecond );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                o->addMetronomeNote( n );
+                o->removeMetronomeNote( o->getMetronomeNoteSet().cbegin() );
+                o->setHasMetronomeRelationGroup( true );
+                o->setMetronomeRelationGroup( tgenMetronomeRelationGroup( variant::two ) );
             }
                 break;
             case variant::three:
             {
-                ;
+                MetronomeNotePtr n = makeMetronomeNote();
+                n->setHasMetronomeTuplet( false );
+                n->getMetronomeType()->setValue( NoteTypeValue::whole );
+                n->getMetronomeTuplet()->getActualNotes()->setValue( NonNegativeInteger( 13 ) );
+                n->getMetronomeTuplet()->getNormalNotes()->setValue( NonNegativeInteger( 11 ) );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                o->addMetronomeNote( n );
+                n = makeMetronomeNote();
+                n->setHasMetronomeTuplet( false );
+                n->getMetronomeType()->setValue( NoteTypeValue::sixteenth );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeBeam( makeMetronomeBeam() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                n->addMetronomeDot( makeMetronomeDot() );
+                o->addMetronomeNote( n );
+                o->removeMetronomeNote( o->getMetronomeNoteSet().cbegin() );
+                o->setHasMetronomeRelationGroup( true );
+                o->setMetronomeRelationGroup( tgenMetronomeRelationGroup( variant::one ) );
             }
                 break;
             default:
@@ -150,20 +204,20 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
-                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( v ) );
+                o->setBeatUnitGroup( tgenBeatUnitGroup( variant::two ) );
+                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( variant::three ) );
             }
                 break;
             case variant::two:
             {
-                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
-                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( v ) );
+                o->setBeatUnitGroup( tgenBeatUnitGroup( variant::three ) );
+                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( variant::one ) );
             }
                 break;
             case variant::three:
             {
-                o->setBeatUnitGroup( tgenBeatUnitGroup( v ) );
-                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( v ) );
+                o->setBeatUnitGroup( tgenBeatUnitGroup( variant::one ) );
+                o->setPerMinuteOtBeatUnitChoice( tgenPerMinuteOrBeatUnitChoice( variant::two ) );
             }
                 break;
             default:
@@ -179,19 +233,19 @@ namespace MxTestHelpers
             case variant::one:
             {
                 o->setChoice( BeatUnitPerOrNoteRelationNoteChoice::Choice::beatUnitPer );
-                o->setBeatUnitPer( tgenBeatUnitPer( v ) );
+                o->setBeatUnitPer( tgenBeatUnitPer( variant::three ) );
             }
                 break;
             case variant::two:
             {
                 o->setChoice( BeatUnitPerOrNoteRelationNoteChoice::Choice::noteRelationNote );
-                o->setNoteRelationNote( tgenNoteRelationNote( v ) );
+                o->setNoteRelationNote( tgenNoteRelationNote( variant::two ) );
             }
                 break;
             case variant::three:
             {
                 o->setChoice( BeatUnitPerOrNoteRelationNoteChoice::Choice::beatUnitPer );
-                o->setBeatUnitPer( tgenBeatUnitPer( v ) );
+                o->setBeatUnitPer( tgenBeatUnitPer( variant::one ) );
             }
                 break;
             default:
