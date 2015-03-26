@@ -1936,6 +1936,93 @@ namespace mx
             PercussionAttributesPtr myAttributes;
             PercussionChoicePtr myChoice;
         };
+        
+        /*
+         <!--  ID = 3910 [3910] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="accord" type="accord" maxOccurs="unbounded"/>
+         <xs:complexType name="accord">
+         <xs:annotation>
+         <xs:documentation>The accord type represents the tuning of a single string in the scordatura element. It uses the same group of elements as the staff-tuning element. Strings are numbered from high to low.</xs:documentation>
+         </xs:annotation>
+         <xs:group ref="tuning"/>
+         <xs:attribute name="string" type="string-number"/>
+         </xs:complexType>
+         <xs:group name="tuning">
+         <xs:annotation>
+         <xs:documentation>The tuning group contains the sequence of elements common to the staff-tuning and accord elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="tuning-step" type="step">
+         <xs:annotation>
+         <xs:documentation>The tuning-step element is represented like the step element, with a different name to reflect is different function.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="tuning-alter" type="semitones" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The tuning-alter element is represented like the alter element, with a different name to reflect is different function.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="tuning-octave" type="octave">
+         <xs:annotation>
+         <xs:documentation>The tuning-octave element is represented like the octave element, with a different name to reflect is different function.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct AccordAttributes;
+        using AccordAttributesPtr = std::shared_ptr<AccordAttributes>;
+        
+        struct AccordAttributes : public AttributesInterface
+        {
+        public:
+            AccordAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StringNumber string;
+            bool hasString;
+        };
+        
+        class Accord;
+        using AccordPtr = std::shared_ptr<Accord>;
+        using AccordUPtr = std::unique_ptr<Accord>;
+        using AccordSet = std::vector<AccordPtr>;
+        using AccordSetIter = AccordSet::iterator;
+        using AccordSetIterConst = AccordSet::const_iterator;
+        inline AccordPtr makeAccord() { return std::make_shared<Accord>(); }
+        class Accord : public ElementInterface
+        {
+        public:
+            Accord();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            AccordAttributesPtr getAttributes() const;
+            void setAttributes( const AccordAttributesPtr& value );
+            /* _________ TuningStep minOccurs = 1, maxOccurs = 1 _________ */
+            TuningStepPtr getTuningStep() const;
+            void setTuningStep( const TuningStepPtr& value );
+            /* _________ TuningAlter minOccurs = 0, maxOccurs = 1 _________ */
+            TuningAlterPtr getTuningAlter() const;
+            void setTuningAlter( const TuningAlterPtr& value );
+            bool getHasTuningAlter() const;
+            void setHasTuningAlter( const bool value );
+            /* _________ TuningOctave minOccurs = 1, maxOccurs = 1 _________ */
+            TuningOctavePtr getTuningOctave() const;
+            void setTuningOctave( const TuningOctavePtr& value );
+        private:
+            AccordAttributesPtr myAttributes;
+            TuningStepPtr myTuningStep;
+            TuningAlterPtr myTuningAlter;
+            bool myHasTuningAlter;
+            TuningOctavePtr myTuningOctave;
+        };
 
 #if 1==0
         class X_______X;

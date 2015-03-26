@@ -208,6 +208,7 @@
 		29A564FE1AC3CD180059CACD /* MeasureLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A564FD1AC3CD180059CACD /* MeasureLayoutTest.cpp */; };
 		29A565041AC49CF10059CACD /* PartAbbreviationDisplayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A565021AC49CF10059CACD /* PartAbbreviationDisplayTest.cpp */; };
 		29A565081AC4A3DB0059CACD /* PercussionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A565061AC4A3DB0059CACD /* PercussionTest.cpp */; };
+		29A5650B1AC4ABB10059CACD /* AccordTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A565091AC4ABB10059CACD /* AccordTest.cpp */; };
 		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
 		29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */; };
 		29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */; };
@@ -543,6 +544,8 @@
 		29A565031AC49CF10059CACD /* PartAbbreviationDisplayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartAbbreviationDisplayTest.h; sourceTree = "<group>"; };
 		29A565061AC4A3DB0059CACD /* PercussionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PercussionTest.cpp; sourceTree = "<group>"; };
 		29A565071AC4A3DB0059CACD /* PercussionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercussionTest.h; sourceTree = "<group>"; };
+		29A565091AC4ABB10059CACD /* AccordTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordTest.cpp; sourceTree = "<group>"; };
+		29A5650A1AC4ABB10059CACD /* AccordTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordTest.h; sourceTree = "<group>"; };
 		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
 		29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalMarkTest.cpp; sourceTree = "<group>"; };
 		29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTest.cpp; sourceTree = "<group>"; };
@@ -1030,10 +1033,12 @@
 				29A565031AC49CF10059CACD /* PartAbbreviationDisplayTest.h */,
 				29A564F91AC3CC770059CACD /* PartNameDisplayTest.cpp */,
 				29A565011AC490D00059CACD /* PartNameDisplayTest.h */,
-				29A564F71AC3C2540059CACD /* StickTest.cpp */,
-				29A564FF1AC459B10059CACD /* StickTest.h */,
 				29A565061AC4A3DB0059CACD /* PercussionTest.cpp */,
 				29A565071AC4A3DB0059CACD /* PercussionTest.h */,
+				29A564F71AC3C2540059CACD /* StickTest.cpp */,
+				29A564FF1AC459B10059CACD /* StickTest.h */,
+				29A565091AC4ABB10059CACD /* AccordTest.cpp */,
+				29A5650A1AC4ABB10059CACD /* AccordTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1149,6 +1154,7 @@
 				29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */,
 				298C81E91AB6A8DC006619A9 /* TupletDotTest.cpp in Sources */,
 				298C81D21AB6A8DC006619A9 /* BracketTest.cpp in Sources */,
+				29A5650B1AC4ABB10059CACD /* AccordTest.cpp in Sources */,
 				298C81DA1AB6A8DC006619A9 /* InstrumentTest.cpp in Sources */,
 				29CEB4A61AB4C0FA00D6AEFC /* LaughingTest.cpp in Sources */,
 				29774A031AB21FA000BF2205 /* MidiUnpitchedTest.cpp in Sources */,

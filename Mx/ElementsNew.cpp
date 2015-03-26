@@ -3330,6 +3330,124 @@ namespace mx
 			}
 		}
 		
+        
+        /**************** AccordAttributes ****************/
+        /* 3910 */
+        AccordAttributes::AccordAttributes()
+        :string()
+        ,hasString( false )
+        {}
+        
+        bool AccordAttributes::hasValues() const
+        {
+            return hasString;
+        }
+        
+        std::ostream& AccordAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, string, "string", hasString );
+            }
+            return os;
+        }
+        
+		Accord::Accord()
+		:myAttributes( std::make_shared<AccordAttributes>() )
+		,myTuningStep( makeTuningStep() )
+		,myTuningAlter( makeTuningAlter() )
+		,myHasTuningAlter( false )
+		,myTuningOctave( makeTuningOctave() )
+		{}
+		bool Accord::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Accord::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Accord::streamName( std::ostream& os ) const
+		{
+			os << "accord";
+			return os;
+		}
+		bool Accord::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Accord::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myTuningStep->toStream( os, indentLevel+1 );
+			if ( myHasTuningAlter )
+            {
+                os << std::endl;
+                myTuningAlter->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+			myTuningOctave->toStream( os, indentLevel+1 );
+            os << std::endl;
+			return os;
+		}
+		AccordAttributesPtr Accord::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Accord::setAttributes( const AccordAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ TuningStep minOccurs = 1, maxOccurs = 1 _________ */
+		TuningStepPtr Accord::getTuningStep() const
+		{
+			return myTuningStep;
+		}
+		void Accord::setTuningStep( const TuningStepPtr& value )
+		{
+			if( value )
+			{
+				myTuningStep = value;
+			}
+		}
+		/* _________ TuningAlter minOccurs = 0, maxOccurs = 1 _________ */
+		TuningAlterPtr Accord::getTuningAlter() const
+		{
+			return myTuningAlter;
+		}
+		void Accord::setTuningAlter( const TuningAlterPtr& value )
+		{
+			if( value )
+			{
+				myTuningAlter = value;
+			}
+		}
+		bool Accord::getHasTuningAlter() const
+		{
+			return myHasTuningAlter;
+		}
+		void Accord::setHasTuningAlter( const bool value )
+		{
+			myHasTuningAlter = value;
+		}
+		/* _________ TuningOctave minOccurs = 1, maxOccurs = 1 _________ */
+		TuningOctavePtr Accord::getTuningOctave() const
+		{
+			return myTuningOctave;
+		}
+		void Accord::setTuningOctave( const TuningOctavePtr& value )
+		{
+			if( value )
+			{
+				myTuningOctave = value;
+			}
+		}
+
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )
