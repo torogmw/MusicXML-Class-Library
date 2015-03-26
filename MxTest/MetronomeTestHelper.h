@@ -8,5 +8,7 @@ using namespace std;
 
 namespace MxTestHelpers
 {
-    BeatUnitPerPtr genBeatUnitPer();
+    
+    BeatUnitPerPtr genBeatUnitPer( variant v );
+    
 }
