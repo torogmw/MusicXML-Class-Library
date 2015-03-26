@@ -23,19 +23,16 @@ TEST( Test01, PartNameDisplay )
 }
 TEST( Test02, PartNameDisplay )
 {
-	PartNameDisplay object;
+    variant v = variant::two;
+	PartNameDisplayPtr object = tgenPartNameDisplay( v );
 	stringstream expected;
-	streamLine( expected, 1, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 2, R"()" );
-	streamLine( expected, 1, R"()", false );
+	tgenPartNameDisplayExpected( expected, 1, v );
 	stringstream actual;
-	object.toStream( std::cout, 1 );
-	// object.toStream( actual, 1 );
-	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object.hasAttributes() )
-	CHECK( object.hasContents() )
+	object->toStream( std::cout, 1 );
+	// object->toStream( actual, 1 );
+	// CHECK_EQUAL( expected.str(), actual.str() )
+	// CHECK( ! object->hasAttributes() )
+	// CHECK( object->hasContents() )
 }
 
 namespace MxTestHelpers
@@ -52,8 +49,10 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                
-                
+                o->getAttributes()->hasPrintObject = true;
+                o->getAttributes()->printObject = YesNo::no;
+                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::one ) );
+                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::two ) );
             }
                 break;
             case variant::three:
@@ -73,10 +72,7 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<stick>)" );
-                streamLine( os, i+1, R"(<stick-type>yarn</stick-type>)" );
-                streamLine( os, i+1, R"(<stick-material>medium</stick-material>)" );
-                streamLine( os, i, R"(</stick>)", false );
+                streamLine( os, i, R"(<part-name-display></part-name-display>)", false );
             }
                 break;
             case variant::two:
@@ -98,5 +94,43 @@ namespace MxTestHelpers
             default:
                 break;
         }
+    }
+    DisplayTextOrAccidentalTextPtr tgenDisplayTextOrAccidentalText( variant v )
+    {
+        DisplayTextOrAccidentalTextPtr o = makeDisplayTextOrAccidentalText();
+        switch ( v )
+        {
+            case variant::one:
+            {
+                o->setChoice( DisplayTextOrAccidentalText::Choice::accidentalText );
+                o->getAccidentalText()->setValue( AccidentalValue::flatFlat );
+                o->getAccidentalText()->getAttributes()->hasEnclosure = true;
+                o->getAccidentalText()->getAttributes()->enclosure = EnclosureShape::oval;
+                
+            }
+                break;
+            case variant::two:
+            {
+                o->setChoice( DisplayTextOrAccidentalText::Choice::displayText );
+                o->getDisplayText()->setValue( XsString( "two" ) );
+                o->getDisplayText()->getAttributes()->hasJustify = true;
+                o->getDisplayText()->getAttributes()->justify = LeftCenterRight::center;
+            }
+                break;
+            case variant::three:
+            {
+                o->setChoice( DisplayTextOrAccidentalText::Choice::displayText );
+                o->getDisplayText()->setValue( XsString( "three" ) );
+                o->getDisplayText()->getAttributes()->hasEnclosure = false;
+                o->getDisplayText()->getAttributes()->hasHalign = true;
+                o->getDisplayText()->getAttributes()->halign = LeftCenterRight::right;
+                o->getDisplayText()->getAttributes()->hasFontWeight = true;
+                o->getDisplayText()->getAttributes()->fontWeight = FontWeight::bold;
+            }
+                break;
+            default:
+                break;
+        }
+        return o;
     }
 }
