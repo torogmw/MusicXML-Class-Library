@@ -2210,7 +2210,7 @@ namespace mx
             {
                 case Choice::perMinute:
                 {
-                    myPerMinute->streamContents( os, indentLevel, isOneLineOnly );
+                    myPerMinute->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::beatUnitGroup:
@@ -2276,7 +2276,9 @@ namespace mx
         }
         std::ostream& BeatUnitPer::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
-            // todo
+            myBeatUnitGroup->streamContents( os, indentLevel, isOneLineOnly );
+            os << std::endl;
+            myPerMinuteOrBeatUnitChoice->streamContents( os, indentLevel, isOneLineOnly );
             isOneLineOnly = false;
             return os;
         }
@@ -2371,7 +2373,74 @@ namespace mx
         {
             myNoteRelationNote = value;
         }
+        /**************** MetronomeAttributes ****************/
+        /* 3367 */
+        MetronomeAttributes::MetronomeAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,halign( types::LeftCenterRight::center )
+        ,valign( types::Valign::baseline )
+        ,justify( types::LeftCenterRight::center )
+        ,parentheses( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasHalign( false )
+        ,hasValign( false )
+        ,hasJustify( false )
+        ,hasParentheses( false )
+        {}
         
+        bool MetronomeAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasHalign ||
+            hasValign ||
+            hasJustify ||
+            hasParentheses;
+        }
+        
+        std::ostream& MetronomeAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, valign, "valign", hasValign );
+                streamAttribute( os, justify, "justify", hasJustify );
+                streamAttribute( os, parentheses, "parentheses", hasParentheses );
+            }
+            return os;
+        }
         Metronome::Metronome()
         :myAttributes( std::make_shared<MetronomeAttributes>() )
 		,myBeatUnitPerOrNoteRelationNoteChoice( makeBeatUnitPerOrNoteRelationNoteChoice() )
@@ -2386,7 +2455,7 @@ namespace mx
 		}
 		std::ostream& Metronome::streamName( std::ostream& os ) const
 		{
-			return os;
+			return os << "metronome";
 		}
 		bool Metronome::hasContents() const
 		{

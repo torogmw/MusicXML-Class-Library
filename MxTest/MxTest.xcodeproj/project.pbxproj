@@ -284,6 +284,7 @@
 		29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */; };
 		29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */; };
 		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
+		29C61F541AC39B7D004B5530 /* MetronomeTestHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */; };
 		29CEB47E1AB4B9E800D6AEFC /* ________Temp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */; };
 		29CEB49A1AB4C0FA00D6AEFC /* AccordionHighTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */; };
 		29CEB49B1AB4C0FA00D6AEFC /* AccordionLowTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */; };
@@ -608,6 +609,8 @@
 		29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WithBarTest.cpp; sourceTree = "<group>"; };
 		29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordsTest.cpp; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
+		29C61F511AC39B1E004B5530 /* MetronomeTestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetronomeTestHelper.h; sourceTree = "<group>"; };
+		29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTestHelper.cpp; sourceTree = "<group>"; };
 		29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "________Temp.cpp"; sourceTree = "<group>"; };
 		29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionHighTest.cpp; sourceTree = "<group>"; };
 		29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionLowTest.cpp; sourceTree = "<group>"; };
@@ -693,25 +696,6 @@
 			isa = PBXGroup;
 			children = (
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
-				29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */,
-				29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */,
-				2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */,
-				29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */,
-				29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */,
-				29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */,
-				29884C2C1AC241B100DD2209 /* FrameNoteTest.cpp */,
-				29884C2A1AC23F4200DD2209 /* StringTest.cpp */,
-				29884C281AC237F200DD2209 /* TimeTest.cpp */,
-				29884C261AC214BD00DD2209 /* AccordionRegistrationTest.cpp */,
-				29884C241AC211B200DD2209 /* InterchangeableTest.cpp */,
-				29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */,
-				29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */,
-				2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */,
-				2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */,
-				2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */,
-				2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */,
-				290A23431AC071FE0038C1A7 /* ClefTest.cpp */,
-				2909CF271AC0887900D0F61B /* TransposeTest.cpp */,
 				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
 				29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */,
 				29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */,
@@ -719,6 +703,7 @@
 				29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */,
 				29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */,
 				2977496B1AB21FA000BF2205 /* AccordionMiddleTest.cpp */,
+				29884C261AC214BD00DD2209 /* AccordionRegistrationTest.cpp */,
 				2977496C1AB21FA000BF2205 /* ActualNotesTest.cpp */,
 				2977496D1AB21FA000BF2205 /* AlterTest.cpp */,
 				298C81B11AB6A8DC006619A9 /* ArpeggiateTest.cpp */,
@@ -732,6 +717,7 @@
 				29C0B9681AAE9209004F86FA /* BassStepTest.cpp */,
 				29C0B9691AAE9209004F86FA /* BeamTest.cpp */,
 				29C0B96A1AAE9209004F86FA /* BeaterTest.cpp */,
+				2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */,
 				297749701AB21FA000BF2205 /* BeatsTest.cpp */,
 				297749711AB21FA000BF2205 /* BeatTypeTest.cpp */,
 				29CEB4871AB4C0F900D6AEFC /* BeatUnitDotTest.cpp */,
@@ -748,8 +734,10 @@
 				297749761AB21FA000BF2205 /* ChromaticTest.cpp */,
 				297749771AB21FA000BF2205 /* CircularArrowTest.cpp */,
 				297749781AB21FA000BF2205 /* ClefOctaveChangeTest.cpp */,
+				290A23431AC071FE0038C1A7 /* ClefTest.cpp */,
 				2935A6F71AB5FC3B002859CA /* CodaTest.cpp */,
 				29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */,
+				2996E6B71ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp */,
 				29C0B9731AAE9337004F86FA /* CreatorTest.cpp */,
 				298C81B51AB6A8DC006619A9 /* CreditImageTest.cpp */,
 				297749791AB21FA000BF2205 /* CreditTypeTest.cpp */,
@@ -767,6 +755,7 @@
 				298C81B81AB6A8DC006619A9 /* DelayedTurnTest.cpp */,
 				2935A6FA1AB5FC3B002859CA /* DetachedLegatoTest.cpp */,
 				2977497A1AB21FA000BF2205 /* DiatonicTest.cpp */,
+				2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */,
 				2977497B1AB21FA000BF2205 /* DisplayOctaveTest.cpp */,
 				2977497C1AB21FA000BF2205 /* DisplayStepTest.cpp */,
 				29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */,
@@ -803,7 +792,9 @@
 				2939CD411AA2999500556D00 /* FontSizeTest.cpp */,
 				29C0B9881AAE9398004F86FA /* FootnoteTest.cpp */,
 				297749851AB21FA000BF2205 /* FrameFretsTest.cpp */,
+				29884C2C1AC241B100DD2209 /* FrameNoteTest.cpp */,
 				297749861AB21FA000BF2205 /* FrameStringsTest.cpp */,
+				29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */,
 				29C0B9891AAE9398004F86FA /* FretTest.cpp */,
 				29C0B98A1AAE9398004F86FA /* FunctionTest.cpp */,
 				297749871AB21FA000BF2205 /* GlassTest.cpp */,
@@ -817,6 +808,7 @@
 				29CEB48D1AB4C0FA00D6AEFC /* GroupTimeTest.cpp */,
 				29C0B9901AAE9398004F86FA /* HammerOnTest.cpp */,
 				29C0B9911AAE9398004F86FA /* HandbellTest.cpp */,
+				29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */,
 				29C0B9921AAE9398004F86FA /* HoleClosedTest.cpp */,
 				297749891AB21FA000BF2205 /* HoleShapeTest.cpp */,
 				2977498A1AB21FA000BF2205 /* HoleTypeTest.cpp */,
@@ -828,6 +820,7 @@
 				2977498E1AB21FA000BF2205 /* InstrumentsTest.cpp */,
 				298C81BC1AB6A8DC006619A9 /* InstrumentTest.cpp */,
 				29AFECA91A9CED26008516EF /* IntegersTest.cpp */,
+				29884C241AC211B200DD2209 /* InterchangeableTest.cpp */,
 				29C0B9931AAE9398004F86FA /* InversionTest.cpp */,
 				298C81BD1AB6A8DC006619A9 /* InvertedTurnTest.cpp */,
 				2977498F1AB21FA000BF2205 /* IpaTest.cpp */,
@@ -835,6 +828,7 @@
 				297749911AB21FA000BF2205 /* KeyAlterTest.cpp */,
 				29C0B9941AAE9398004F86FA /* KeyOctaveTest.cpp */,
 				297749921AB21FA000BF2205 /* KeyStepTest.cpp */,
+				292D02D61ABE1A9500005E61 /* KeyTest.cpp */,
 				29C0B9951AAE9398004F86FA /* KindTest.cpp */,
 				29CEB48F1AB4C0FA00D6AEFC /* LaughingTest.cpp */,
 				2935A7021AB5FC3B002859CA /* LeftDividerTest.cpp */,
@@ -848,11 +842,17 @@
 				297749951AB21FA000BF2205 /* MeasureDistanceTest.cpp */,
 				29C0B9981AAE9398004F86FA /* MeasureNumberingTest.cpp */,
 				29C0B9991AAE9398004F86FA /* MeasureRepeatTest.cpp */,
+				29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */,
 				297749961AB21FA000BF2205 /* MembraneTest.cpp */,
 				297749971AB21FA000BF2205 /* MetalTest.cpp */,
 				29C0B99A1AAE9398004F86FA /* MetronomeBeamTest.cpp */,
 				29CEB4901AB4C0FA00D6AEFC /* MetronomeDotTest.cpp */,
+				29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */,
 				297749981AB21FA000BF2205 /* MetronomeRelationTest.cpp */,
+				29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */,
+				29C61F511AC39B1E004B5530 /* MetronomeTestHelper.h */,
+				29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */,
+				2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */,
 				297749991AB21FA000BF2205 /* MetronomeTypeTest.cpp */,
 				2977499A1AB21FA000BF2205 /* MidiBankTest.cpp */,
 				2977499B1AB21FA000BF2205 /* MidiChannelTest.cpp */,
@@ -899,6 +899,7 @@
 				297749AC1AB21FA000BF2205 /* PedalAlterTest.cpp */,
 				297749AD1AB21FA000BF2205 /* PedalStepTest.cpp */,
 				298C81C41AB6A8DC006619A9 /* PedalTest.cpp */,
+				29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */,
 				29C0B9AB1AAE9398004F86FA /* PerMinuteTest.cpp */,
 				297749AE1AB21FA000BF2205 /* PitchedTest.cpp */,
 				2935A7051AB5FC3B002859CA /* PlopTest.cpp */,
@@ -925,6 +926,7 @@
 				2935A70A1AB5FC3B002859CA /* ShakeTest.cpp */,
 				297749B21AB21FA000BF2205 /* SignTest.cpp */,
 				29CEB4951AB4C0FA00D6AEFC /* SlashDotTest.cpp */,
+				2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */,
 				297749B31AB21FA000BF2205 /* SlashTypeTest.cpp */,
 				29C0B9B51AAE9398004F86FA /* SlideTest.cpp */,
 				298C81C61AB6A8DC006619A9 /* SlurTest.cpp */,
@@ -936,10 +938,12 @@
 				2935A70C1AB5FC3B002859CA /* SpiccatoTest.cpp */,
 				2935A70D1AB5FC3B002859CA /* StaccatissimoTest.cpp */,
 				2935A70E1AB5FC3B002859CA /* StaccatoTest.cpp */,
+				29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */,
 				297749B61AB21FA000BF2205 /* StaffDistanceTest.cpp */,
 				297749B71AB21FA000BF2205 /* StaffLinesTest.cpp */,
 				297749B81AB21FA000BF2205 /* StaffSizeTest.cpp */,
 				297749B91AB21FA000BF2205 /* StaffTest.cpp */,
+				2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */,
 				297749BA1AB21FA000BF2205 /* StaffTypeTest.cpp */,
 				297749BB1AB21FA000BF2205 /* StavesTest.cpp */,
 				29C0B9B61AAE9398004F86FA /* StemTest.cpp */,
@@ -951,6 +955,7 @@
 				2935A7101AB5FC3B002859CA /* StressTest.cpp */,
 				298C81C71AB6A8DC006619A9 /* StringMuteTest.cpp */,
 				29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */,
+				29884C2A1AC23F4200DD2209 /* StringTest.cpp */,
 				29C0B9B71AAE9398004F86FA /* SuffixTest.cpp */,
 				298C81C81AB6A8DC006619A9 /* SupportsTest.cpp */,
 				297749C01AB21FA000BF2205 /* SyllabicTest.cpp */,
@@ -963,10 +968,12 @@
 				298C81C91AB6A8DC006619A9 /* TiedTest.cpp */,
 				298C81CA1AB6A8DC006619A9 /* TieTest.cpp */,
 				297749C31AB21FA000BF2205 /* TimeRelationTest.cpp */,
+				29884C281AC237F200DD2209 /* TimeTest.cpp */,
 				29CEB4981AB4C0FA00D6AEFC /* TimpaniTest.cpp */,
 				297749C41AB21FA000BF2205 /* TopMarginTest.cpp */,
 				297749C51AB21FA000BF2205 /* TopSystemDistanceTest.cpp */,
 				29CEB4991AB4C0FA00D6AEFC /* TouchingPitchTest.cpp */,
+				2909CF271AC0887900D0F61B /* TransposeTest.cpp */,
 				29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */,
 				2935A7131AB5FC3B002859CA /* TrillMarkTest.cpp */,
 				2935A7141AB5FC3B002859CA /* TripleTongueTest.cpp */,
@@ -994,8 +1001,6 @@
 				297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */,
 				297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */,
 				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
-				292D02D61ABE1A9500005E61 /* KeyTest.cpp */,
-				2996E6B71ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1106,6 +1111,7 @@
 				29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */,
 				297749E31AB21FA000BF2205 /* DurationTest.cpp in Sources */,
 				297749D81AB21FA000BF2205 /* BendAlterTest.cpp in Sources */,
+				29C61F541AC39B7D004B5530 /* MetronomeTestHelper.cpp in Sources */,
 				29C0B97E1AAE9337004F86FA /* DegreeValueTest.cpp in Sources */,
 				29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */,
 				298C81E91AB6A8DC006619A9 /* TupletDotTest.cpp in Sources */,
