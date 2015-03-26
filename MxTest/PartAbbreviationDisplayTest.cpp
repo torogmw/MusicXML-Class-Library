@@ -2,18 +2,19 @@
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
 #include "PartNameDisplayTest.h"
+#include "PartAbbreviationDisplayTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
 using namespace std;
 using namespace MxTestHelpers;
 
-TEST( Test01, PartNameDisplay )
+TEST( Test01, PartAbbreviationDisplay )
 {
     variant v = variant::one;
-	PartNameDisplayPtr object = tgenPartNameDisplay( v );
+	PartAbbreviationDisplayPtr object = tgenPartAbbreviationDisplay( v );
 	stringstream expected;
-	tgenPartNameDisplayExpected( expected, 1, v );
+	tgenPartAbbreviationDisplayExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -21,12 +22,12 @@ TEST( Test01, PartNameDisplay )
 	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test02, PartNameDisplay )
+TEST( Test02, PartAbbreviationDisplay )
 {
     variant v = variant::two;
-	PartNameDisplayPtr object = tgenPartNameDisplay( v );
+	PartAbbreviationDisplayPtr object = tgenPartAbbreviationDisplay( v );
 	stringstream expected;
-	tgenPartNameDisplayExpected( expected, 1, v );
+	tgenPartAbbreviationDisplayExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -34,12 +35,12 @@ TEST( Test02, PartNameDisplay )
 	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, PartNameDisplay )
+TEST( Test03, PartAbbreviationDisplay )
 {
     variant v = variant::three;
-	PartNameDisplayPtr object = tgenPartNameDisplay( v );
+	PartAbbreviationDisplayPtr object = tgenPartAbbreviationDisplay( v );
 	stringstream expected;
-	tgenPartNameDisplayExpected( expected, 1, v );
+	tgenPartAbbreviationDisplayExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -49,9 +50,9 @@ TEST( Test03, PartNameDisplay )
 }
 namespace MxTestHelpers
 {
-    PartNameDisplayPtr tgenPartNameDisplay( variant v )
+    PartAbbreviationDisplayPtr tgenPartAbbreviationDisplay( variant v )
     {
-        PartNameDisplayPtr o = makePartNameDisplay();
+        PartAbbreviationDisplayPtr o = makePartAbbreviationDisplay();
         switch ( v )
         {
             case variant::one:
@@ -84,7 +85,7 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenPartNameDisplayExpected( std::ostream& os, int i, variant v )
+    void tgenPartAbbreviationDisplayExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )
@@ -117,43 +118,5 @@ namespace MxTestHelpers
             default:
                 break;
         }
-    }
-    DisplayTextOrAccidentalTextPtr tgenDisplayTextOrAccidentalText( variant v )
-    {
-        DisplayTextOrAccidentalTextPtr o = makeDisplayTextOrAccidentalText();
-        switch ( v )
-        {
-            case variant::one:
-            {
-                o->setChoice( DisplayTextOrAccidentalText::Choice::accidentalText );
-                o->getAccidentalText()->setValue( AccidentalValue::flatFlat );
-                o->getAccidentalText()->getAttributes()->hasEnclosure = true;
-                o->getAccidentalText()->getAttributes()->enclosure = EnclosureShape::oval;
-                
-            }
-                break;
-            case variant::two:
-            {
-                o->setChoice( DisplayTextOrAccidentalText::Choice::displayText );
-                o->getDisplayText()->setValue( XsString( "two" ) );
-                o->getDisplayText()->getAttributes()->hasJustify = true;
-                o->getDisplayText()->getAttributes()->justify = LeftCenterRight::center;
-            }
-                break;
-            case variant::three:
-            {
-                o->setChoice( DisplayTextOrAccidentalText::Choice::displayText );
-                o->getDisplayText()->setValue( XsString( "three" ) );
-                o->getDisplayText()->getAttributes()->hasEnclosure = false;
-                o->getDisplayText()->getAttributes()->hasHalign = true;
-                o->getDisplayText()->getAttributes()->halign = LeftCenterRight::right;
-                o->getDisplayText()->getAttributes()->hasFontWeight = true;
-                o->getDisplayText()->getAttributes()->fontWeight = FontWeight::bold;
-            }
-                break;
-            default:
-                break;
-        }
-        return o;
     }
 }
