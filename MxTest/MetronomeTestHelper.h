@@ -8,6 +8,6 @@ using namespace std;
 
 namespace MxTestHelpers
 {
-    
+    BeatUnitGroupPtr tgenBeatUnitGroup( variant v );
     
 }
