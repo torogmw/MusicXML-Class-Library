@@ -1,4 +1,4 @@
-#include "TestHarness.h"
+#pragma once
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
 
