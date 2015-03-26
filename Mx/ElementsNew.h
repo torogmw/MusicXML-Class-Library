@@ -1756,6 +1756,187 @@ namespace mx
             PartAbbreviationDisplayAttributesPtr myAttributes;
             DisplayTextOrAccidentalTextSet myDisplayTextOrAccidentalTextSet;
         };
+        
+        /*
+         3406
+         <!--  ID = 3406 [3406] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 13 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="percussion" type="percussion" maxOccurs="unbounded"/>
+         <xs:complexType name="percussion">
+         <xs:annotation>
+         <xs:documentation>The percussion element is used to define percussion pictogram symbols. Definitions for these symbols can be found in Kurt Stone's "Music Notation in the Twentieth Century" on pages 206-212 and 223. Some values are added to these based on how usage has evolved in the 30 years since Stone's book was published.</xs:documentation>
+         </xs:annotation>
+         <xs:choice>
+         <xs:element name="glass" type="glass"/>
+         <xs:element name="metal" type="metal"/>
+         <xs:element name="wood" type="wood"/>
+         <xs:element name="pitched" type="pitched"/>
+         <xs:element name="membrane" type="membrane"/>
+         <xs:element name="effect" type="effect"/>
+         <xs:element name="timpani" type="empty"/>
+         <xs:element name="beater" type="beater"/>
+         <xs:element name="stick" type="stick"/>
+         <xs:element name="stick-location" type="stick-location"/>
+         <xs:element name="other-percussion" type="xs:string"/>
+         </xs:choice>
+         <xs:attributeGroup ref="print-style-align"/>
+         <xs:attributeGroup ref="enclosure"/>
+         </xs:complexType> */
+        
+        class PercussionChoice;
+        using PercussionChoicePtr = std::shared_ptr<PercussionChoice>;
+        using PercussionChoiceUPtr = std::unique_ptr<PercussionChoice>;
+        using PercussionChoiceSet = std::vector<PercussionChoicePtr>;
+        using PercussionChoiceSetIter = PercussionChoiceSet::iterator;
+        using PercussionChoiceSetIterConst = PercussionChoiceSet::const_iterator;
+        inline PercussionChoicePtr makePercussionChoice() { return std::make_shared<PercussionChoice>(); }
+        class PercussionChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                glass = 1,
+                metal = 2,
+                wood = 3,
+                pitched = 4,
+                membrane = 5,
+                effect = 6,
+                timpani = 7,
+                beater = 8,
+                stick = 9,
+                stickType = 10,
+                stickMaterial = 11,
+                stickLocation = 12,
+                otherPercussion = 13
+            };
+            PercussionChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PercussionChoice::Choice getChoice() const;
+            void setChoice( const PercussionChoice::Choice value );
+            /* _________ Glass minOccurs = 1, maxOccurs = 1 _________ */
+            GlassPtr getGlass() const;
+            void setGlass( const GlassPtr& value );
+            /* _________ Metal minOccurs = 1, maxOccurs = 1 _________ */
+            MetalPtr getMetal() const;
+            void setMetal( const MetalPtr& value );
+            /* _________ Wood minOccurs = 1, maxOccurs = 1 _________ */
+            WoodPtr getWood() const;
+            void setWood( const WoodPtr& value );
+            /* _________ Pitched minOccurs = 1, maxOccurs = 1 _________ */
+            PitchedPtr getPitched() const;
+            void setPitched( const PitchedPtr& value );
+            /* _________ Membrane minOccurs = 1, maxOccurs = 1 _________ */
+            MembranePtr getMembrane() const;
+            void setMembrane( const MembranePtr& value );
+            /* _________ Effect minOccurs = 1, maxOccurs = 1 _________ */
+            EffectPtr getEffect() const;
+            void setEffect( const EffectPtr& value );
+            /* _________ Timpani minOccurs = 1, maxOccurs = 1 _________ */
+            TimpaniPtr getTimpani() const;
+            void setTimpani( const TimpaniPtr& value );
+            /* _________ Beater minOccurs = 1, maxOccurs = 1 _________ */
+            BeaterPtr getBeater() const;
+            void setBeater( const BeaterPtr& value );
+            /* _________ Stick minOccurs = 1, maxOccurs = 1 _________ */
+            StickPtr getStick() const;
+            void setStick( const StickPtr& value );
+            /* _________ StickType minOccurs = 1, maxOccurs = 1 _________ */
+            StickTypePtr getStickType() const;
+            void setStickType( const StickTypePtr& value );
+            /* _________ StickMaterial minOccurs = 1, maxOccurs = 1 _________ */
+            StickMaterialPtr getStickMaterial() const;
+            void setStickMaterial( const StickMaterialPtr& value );
+            /* _________ StickLocation minOccurs = 1, maxOccurs = 1 _________ */
+            StickLocationPtr getStickLocation() const;
+            void setStickLocation( const StickLocationPtr& value );
+            /* _________ OtherPercussion minOccurs = 1, maxOccurs = 1 _________ */
+            OtherPercussionPtr getOtherPercussion() const;
+            void setOtherPercussion( const OtherPercussionPtr& value );
+        private:
+            Choice myChoice;
+            GlassPtr myGlass;
+            MetalPtr myMetal;
+            WoodPtr myWood;
+            PitchedPtr myPitched;
+            MembranePtr myMembrane;
+            EffectPtr myEffect;
+            TimpaniPtr myTimpani;
+            BeaterPtr myBeater;
+            StickPtr myStick;
+            StickTypePtr myStickType;
+            StickMaterialPtr myStickMaterial;
+            StickLocationPtr myStickLocation;
+            OtherPercussionPtr myOtherPercussion;
+        };
+
+        
+        struct PercussionAttributes;
+        using PercussionAttributesPtr = std::shared_ptr<PercussionAttributes>;
+        
+        struct PercussionAttributes : public AttributesInterface
+        {
+        public:
+            PercussionAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::LeftCenterRight halign;
+            types::Valign valign;
+            types::EnclosureShape enclosure;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasHalign;
+            bool hasValign;
+            bool hasEnclosure;
+        };
+        
+        class Percussion;
+        using PercussionPtr = std::shared_ptr<Percussion>;
+        using PercussionUPtr = std::unique_ptr<Percussion>;
+        using PercussionSet = std::vector<PercussionPtr>;
+        using PercussionSetIter = PercussionSet::iterator;
+        using PercussionSetIterConst = PercussionSet::const_iterator;
+        inline PercussionPtr makePercussion() { return std::make_shared<Percussion>(); }
+        class Percussion : public ElementInterface
+        {
+        public:
+            Percussion();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PercussionAttributesPtr getAttributes() const;
+            void setAttributes( const PercussionAttributesPtr& value );
+            PercussionChoicePtr getPercussionChoice() const;
+            void setPercussionChoice( const PercussionChoicePtr& value );
+        private:
+            PercussionAttributesPtr myAttributes;
+            PercussionChoicePtr myChoice;
+        };
+
 #if 1==0
         class X_______X;
         using X_______XPtr = std::shared_ptr<X_______X>;

@@ -2936,7 +2936,391 @@ namespace mx
             }
             return makeDisplayTextOrAccidentalText();
         }
-
+        PercussionChoice::PercussionChoice()
+		:myChoice( PercussionChoice::Choice::glass )
+		,myGlass( makeGlass() )
+		,myMetal( makeMetal() )
+		,myWood( makeWood() )
+		,myPitched( makePitched() )
+		,myMembrane( makeMembrane() )
+		,myEffect( makeEffect() )
+		,myTimpani( makeTimpani() )
+		,myBeater( makeBeater() )
+		,myStick( makeStick() )
+		,myStickType( makeStickType() )
+		,myStickMaterial( makeStickMaterial() )
+		,myStickLocation( makeStickLocation() )
+		,myOtherPercussion( makeOtherPercussion() )
+		{}
+		
+		std::ostream& PercussionChoice::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool PercussionChoice::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PercussionChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			switch ( myChoice )
+            {
+                case Choice::glass:
+                {
+                    myGlass->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::metal:
+                {
+                    myMetal->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::wood:
+                {
+                    myWood->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::pitched:
+                {
+                    myPitched->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::membrane:
+                {
+                    myMembrane->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::effect:
+                {
+                    myEffect->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::timpani:
+                {
+                    myTimpani->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::beater:
+                {
+                    myBeater->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::stick:
+                {
+                    myStick->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::stickType:
+                {
+                   myStickType->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::stickMaterial:
+                {
+                    myStickMaterial->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::stickLocation:
+                {
+                    myStickLocation->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::otherPercussion:
+                {
+                    myOtherPercussion->toStream( os, indentLevel );
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            isOneLineOnly = false;
+			return os;
+		}
+		PercussionChoice::Choice PercussionChoice::getChoice() const
+		{
+			return myChoice;
+		}
+		void PercussionChoice::setChoice( const PercussionChoice::Choice value )
+		{
+			myChoice = value;
+		}
+		/* _________ Glass minOccurs = 1, maxOccurs = 1 _________ */
+		GlassPtr PercussionChoice::getGlass() const
+		{
+			return myGlass;
+		}
+		void PercussionChoice::setGlass( const GlassPtr& value )
+		{
+			if( value )
+			{
+				myGlass = value;
+			}
+		}
+		/* _________ Metal minOccurs = 1, maxOccurs = 1 _________ */
+		MetalPtr PercussionChoice::getMetal() const
+		{
+			return myMetal;
+		}
+		void PercussionChoice::setMetal( const MetalPtr& value )
+		{
+			if( value )
+			{
+				myMetal = value;
+			}
+		}
+		/* _________ Wood minOccurs = 1, maxOccurs = 1 _________ */
+		WoodPtr PercussionChoice::getWood() const
+		{
+			return myWood;
+		}
+		void PercussionChoice::setWood( const WoodPtr& value )
+		{
+			if( value )
+			{
+				myWood = value;
+			}
+		}
+		/* _________ Pitched minOccurs = 1, maxOccurs = 1 _________ */
+		PitchedPtr PercussionChoice::getPitched() const
+		{
+			return myPitched;
+		}
+		void PercussionChoice::setPitched( const PitchedPtr& value )
+		{
+			if( value )
+			{
+				myPitched = value;
+			}
+		}
+		/* _________ Membrane minOccurs = 1, maxOccurs = 1 _________ */
+		MembranePtr PercussionChoice::getMembrane() const
+		{
+			return myMembrane;
+		}
+		void PercussionChoice::setMembrane( const MembranePtr& value )
+		{
+			if( value )
+			{
+				myMembrane = value;
+			}
+		}
+		/* _________ Effect minOccurs = 1, maxOccurs = 1 _________ */
+		EffectPtr PercussionChoice::getEffect() const
+		{
+			return myEffect;
+		}
+		void PercussionChoice::setEffect( const EffectPtr& value )
+		{
+			if( value )
+			{
+				myEffect = value;
+			}
+		}
+		/* _________ Timpani minOccurs = 1, maxOccurs = 1 _________ */
+		TimpaniPtr PercussionChoice::getTimpani() const
+		{
+			return myTimpani;
+		}
+		void PercussionChoice::setTimpani( const TimpaniPtr& value )
+		{
+			if( value )
+			{
+				myTimpani = value;
+			}
+		}
+		/* _________ Beater minOccurs = 1, maxOccurs = 1 _________ */
+		BeaterPtr PercussionChoice::getBeater() const
+		{
+			return myBeater;
+		}
+		void PercussionChoice::setBeater( const BeaterPtr& value )
+		{
+			if( value )
+			{
+				myBeater = value;
+			}
+		}
+		/* _________ Stick minOccurs = 1, maxOccurs = 1 _________ */
+		StickPtr PercussionChoice::getStick() const
+		{
+			return myStick;
+		}
+		void PercussionChoice::setStick( const StickPtr& value )
+		{
+			if( value )
+			{
+				myStick = value;
+			}
+		}
+		/* _________ StickType minOccurs = 1, maxOccurs = 1 _________ */
+		StickTypePtr PercussionChoice::getStickType() const
+		{
+			return myStickType;
+		}
+		void PercussionChoice::setStickType( const StickTypePtr& value )
+		{
+			if( value )
+			{
+				myStickType = value;
+			}
+		}
+		/* _________ StickMaterial minOccurs = 1, maxOccurs = 1 _________ */
+		StickMaterialPtr PercussionChoice::getStickMaterial() const
+		{
+			return myStickMaterial;
+		}
+		void PercussionChoice::setStickMaterial( const StickMaterialPtr& value )
+		{
+			if( value )
+			{
+				myStickMaterial = value;
+			}
+		}
+		/* _________ StickLocation minOccurs = 1, maxOccurs = 1 _________ */
+		StickLocationPtr PercussionChoice::getStickLocation() const
+		{
+			return myStickLocation;
+		}
+		void PercussionChoice::setStickLocation( const StickLocationPtr& value )
+		{
+			if( value )
+			{
+				myStickLocation = value;
+			}
+		}
+		/* _________ OtherPercussion minOccurs = 1, maxOccurs = 1 _________ */
+		OtherPercussionPtr PercussionChoice::getOtherPercussion() const
+		{
+			return myOtherPercussion;
+		}
+		void PercussionChoice::setOtherPercussion( const OtherPercussionPtr& value )
+		{
+			if( value )
+			{
+				myOtherPercussion = value;
+			}
+		}
+        
+        
+        /**************** PercussionAttributes ****************/
+        /* 3406 */
+        PercussionAttributes::PercussionAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,halign( types::LeftCenterRight::center )
+        ,valign()
+        ,enclosure()
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasHalign( false )
+        ,hasValign( false )
+        ,hasEnclosure( false )
+        {}
+        
+        bool PercussionAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasHalign ||
+            hasValign ||
+            hasEnclosure;
+        }
+        
+        std::ostream& PercussionAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, halign, "halign", hasHalign );
+                streamAttribute( os, valign, "valign", hasValign );
+                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
+            }
+            return os;
+        }
+        
+		Percussion::Percussion()
+		:myAttributes( std::make_shared<PercussionAttributes>() )
+		,myChoice( makePercussionChoice() )
+		{}
+		bool Percussion::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Percussion::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Percussion::streamName( std::ostream& os ) const
+		{
+			os << "percussion";
+			return os;
+		}
+		bool Percussion::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Percussion::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		PercussionAttributesPtr Percussion::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Percussion::setAttributes( const PercussionAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ PercussionChoice minOccurs = 1, maxOccurs = 1 _________ */
+		PercussionChoicePtr Percussion::getPercussionChoice() const
+		{
+			return myChoice;
+		}
+		void Percussion::setPercussionChoice( const PercussionChoicePtr& value )
+		{
+			if( value )
+			{
+				myChoice = value;
+			}
+		}
+		
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )
