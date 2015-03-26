@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -5,6 +6,12 @@
 
 namespace MxTestHelpers
 {
+    enum class variant
+    {
+        one = 1,
+        two = 2,
+        three = 3
+    };
     inline std::string indent( int times )
     {
         std::stringstream output;
