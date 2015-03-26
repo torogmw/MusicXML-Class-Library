@@ -15,4 +15,5 @@ namespace MxTestHelpers
     BeatUnitPerPtr tgenBeatUnitPer( variant v );
     BeatUnitPerOrNoteRelationNoteChoicePtr tgenBeatUnitPerOrNoteRelationNoteChoice( variant v );
     MetronomeAttributesPtr tgenMetronomeAttributesPtr( variant v );
+    MetronomePtr tgenMetronome( variant v );
 }
