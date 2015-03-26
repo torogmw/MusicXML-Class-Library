@@ -536,6 +536,7 @@
 		29A564FD1AC3CD180059CACD /* MeasureLayoutTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureLayoutTest.cpp; sourceTree = "<group>"; };
 		29A564FF1AC459B10059CACD /* StickTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickTest.h; sourceTree = "<group>"; };
 		29A565001AC461A90059CACD /* MeasureLayoutTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeasureLayoutTest.h; sourceTree = "<group>"; };
+		29A565011AC490D00059CACD /* PartNameDisplayTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartNameDisplayTest.h; sourceTree = "<group>"; };
 		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
 		29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalMarkTest.cpp; sourceTree = "<group>"; };
 		29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTest.cpp; sourceTree = "<group>"; };
@@ -703,9 +704,10 @@
 		29F8F09F1AB62E9200788785 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				29A565011AC490D00059CACD /* PartNameDisplayTest.h */,
+				29A564F91AC3CC770059CACD /* PartNameDisplayTest.cpp */,
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
 				29A564FD1AC3CD180059CACD /* MeasureLayoutTest.cpp */,
-				29A564F91AC3CC770059CACD /* PartNameDisplayTest.cpp */,
 				29A564F71AC3C2540059CACD /* StickTest.cpp */,
 				29A564FF1AC459B10059CACD /* StickTest.h */,
 				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
