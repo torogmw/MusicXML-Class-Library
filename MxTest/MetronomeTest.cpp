@@ -34,9 +34,9 @@ TEST( Test02, Metronome )
 	streamLine( expected, 2, R"()" );
 	streamLine( expected, 1, R"()", false );
 	stringstream actual;
-	object.toStream( std::cout, 1 );
-	// object.toStream( actual, 1 );
+	object->toStream( std::cout, 1 );
+	// object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object.hasAttributes() )
-	CHECK( object.hasContents() )
+	CHECK( object->hasAttributes() )
+	CHECK( object->hasContents() )
 }
