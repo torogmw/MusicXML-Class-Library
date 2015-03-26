@@ -2545,8 +2545,11 @@ namespace mx
 		{
 			isOneLineOnly = false;
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			myStickType->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myStickMaterial->toStream( os, indentLevel+1 );
+			os << std::endl;
+			return os;
 		}
 		StickAttributesPtr Stick::getAttributes() const
 		{
@@ -2611,10 +2614,18 @@ namespace mx
 		}
 		std::ostream& MeasureLayout::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+            if ( myHasMeasureDistance )
+            {
+                os << std::endl;
+                myMeasureDistance->toStream( os, indentLevel+1 );
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+			else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
 		}
 		/* _________ MeasureDistance minOccurs = 0, maxOccurs = 1 _________ */
 		MeasureDistancePtr MeasureLayout::getMeasureDistance() const
@@ -2655,11 +2666,37 @@ namespace mx
         }
         bool DisplayTextOrAccidentalText::hasContents() const
         {
+            if ( myChoice == Choice::accidentalText )
+            {
+                return myAccidentalText->hasContents();
+            }
+            if ( myChoice == Choice::displayText )
+            {
+                return myDisplayText->hasContents();
+            }
             return false;
         }
         std::ostream& DisplayTextOrAccidentalText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
-            throw std::runtime_error( "not implemented" );
+            if ( hasContents() )
+            {
+                switch ( myChoice )
+                {
+                    case Choice::accidentalText:
+                    {
+                        myAccidentalText->streamContents( os, indentLevel, isOneLineOnly );
+                    }
+                        break;
+                    case Choice::displayText:
+                    {
+                        myDisplayText->streamContents( os, indentLevel, isOneLineOnly );
+                    }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return os;
         }
         DisplayTextOrAccidentalText::Choice DisplayTextOrAccidentalText::getChoice() const
         {
@@ -2737,10 +2774,21 @@ namespace mx
 		}
 		std::ostream& PartNameDisplay::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+            if ( myDisplayTextOrAccidentalTextSet.size() > 0 )
+            {
+                for ( auto x : myDisplayTextOrAccidentalTextSet )
+                {
+                    os << std::endl;
+                    x->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
 		}
 		PartNameDisplayAttributesPtr PartNameDisplay::getAttributes() const
 		{

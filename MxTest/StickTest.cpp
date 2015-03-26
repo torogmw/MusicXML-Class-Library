@@ -1,6 +1,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
+#include "StickTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
@@ -38,4 +39,13 @@ TEST( Test02, Stick )
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( object.hasAttributes() )
 	CHECK( object.hasContents() )
+}
+
+namespace MxTestHelper
+{
+    StickPtr tgenStick( variant v )
+    {
+        
+    }
+    void tgenStickExpected( variant v, int indentLevel );
 }

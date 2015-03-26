@@ -534,6 +534,7 @@
 		29A564F71AC3C2540059CACD /* StickTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StickTest.cpp; sourceTree = "<group>"; };
 		29A564F91AC3CC770059CACD /* PartNameDisplayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartNameDisplayTest.cpp; sourceTree = "<group>"; };
 		29A564FD1AC3CD180059CACD /* MeasureLayoutTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureLayoutTest.cpp; sourceTree = "<group>"; };
+		29A564FF1AC459B10059CACD /* StickTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickTest.h; sourceTree = "<group>"; };
 		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
 		29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalMarkTest.cpp; sourceTree = "<group>"; };
 		29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTest.cpp; sourceTree = "<group>"; };
@@ -615,7 +616,7 @@
 		29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WithBarTest.cpp; sourceTree = "<group>"; };
 		29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordsTest.cpp; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
-		29C61F511AC39B1E004B5530 /* MetronomeTestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetronomeTestHelper.h; sourceTree = "<group>"; };
+		29C61F511AC39B1E004B5530 /* MetronomeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetronomeTest.h; sourceTree = "<group>"; };
 		29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTestHelper.cpp; sourceTree = "<group>"; };
 		29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "________Temp.cpp"; sourceTree = "<group>"; };
 		29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionHighTest.cpp; sourceTree = "<group>"; };
@@ -705,6 +706,7 @@
 				29A564FD1AC3CD180059CACD /* MeasureLayoutTest.cpp */,
 				29A564F91AC3CC770059CACD /* PartNameDisplayTest.cpp */,
 				29A564F71AC3C2540059CACD /* StickTest.cpp */,
+				29A564FF1AC459B10059CACD /* StickTest.h */,
 				2935A6F51AB5FC3B002859CA /* AccentTest.cpp */,
 				29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */,
 				29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */,
@@ -859,7 +861,7 @@
 				29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */,
 				297749981AB21FA000BF2205 /* MetronomeRelationTest.cpp */,
 				29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */,
-				29C61F511AC39B1E004B5530 /* MetronomeTestHelper.h */,
+				29C61F511AC39B1E004B5530 /* MetronomeTest.h */,
 				29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */,
 				2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */,
 				297749991AB21FA000BF2205 /* MetronomeTypeTest.cpp */,
