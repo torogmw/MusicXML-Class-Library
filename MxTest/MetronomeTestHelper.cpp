@@ -206,17 +206,24 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                ;
+                o->hasColor = true;
+                o->color = Color( 123, 201, 9 );
+                o->hasFontFamily = true;
+                o->fontFamily = CommaSeparatedText( "Bone,and,Bish" );
             }
                 break;
             case variant::two:
             {
-                ;
+                o->hasHalign = true;
+                o->hasJustify = true;
+                o->hasParentheses = true;
+                o->parentheses = YesNo::yes;
             }
                 break;
             case variant::three:
             {
-                ;
+                o->hasDefaultX = true;
+                o->defaultX = TenthsValue{ 13.2 };
             }
                 break;
             default:
@@ -231,17 +238,20 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                ;
+                o->setAttributes( tgenMetronomeAttributesPtr( v ) );
+                o->setBeatUnitPerOrNoteRelationNoteChoice( tgenBeatUnitPerOrNoteRelationNoteChoice( v ) );
             }
                 break;
             case variant::two:
             {
-                ;
+                o->setAttributes( tgenMetronomeAttributesPtr( v ) );
+                o->setBeatUnitPerOrNoteRelationNoteChoice( tgenBeatUnitPerOrNoteRelationNoteChoice( v ) );
             }
                 break;
             case variant::three:
             {
-                ;
+                o->setAttributes( tgenMetronomeAttributesPtr( v ) );
+                o->setBeatUnitPerOrNoteRelationNoteChoice( tgenBeatUnitPerOrNoteRelationNoteChoice( v ) );
             }
                 break;
             default:
