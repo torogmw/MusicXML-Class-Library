@@ -2637,20 +2637,60 @@ namespace mx
 			myHasMeasureDistance = value;
 		}
         DisplayTextOrAccidentalText::DisplayTextOrAccidentalText()
+        :myChoice( Choice::displayText )
+        ,myDisplayText( makeDisplayText() )
+        ,myAccidentalText( makeAccidentalText() )
+        {}
+        bool DisplayTextOrAccidentalText::hasAttributes() const
         {
-            
+            return false;
         }
-        bool DisplayTextOrAccidentalText::hasAttributes() const;
-        std::ostream& DisplayTextOrAccidentalText::streamAttributes( std::ostream& os ) const;
-        virtual std::ostream& DisplayTextOrAccidentalText::streamName( std::ostream& os ) const;
-        virtual bool DisplayTextOrAccidentalText::hasContents() const;
-        virtual std::ostream& DisplayTextOrAccidentalText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        DisplayTextOrAccidentalText::Choice DisplayTextOrAccidentalText::getChoice() const;
-        void DisplayTextOrAccidentalText::setChoice( const DisplayTextOrAccidentalText::Choice value );
-        DisplayTextPtr DisplayTextOrAccidentalText::getDisplayText() const;
-        void DisplayTextOrAccidentalText::setDisplayText( const DisplayTextPtr& value );
-        AccidentalTextPtr DisplayTextOrAccidentalText::getAccidentalText() const;
-        void DisplayTextOrAccidentalText::setAccidentalText( const AccidentalTextPtr& value );
+        std::ostream& DisplayTextOrAccidentalText::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& DisplayTextOrAccidentalText::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool DisplayTextOrAccidentalText::hasContents() const
+        {
+            return false;
+        }
+        std::ostream& DisplayTextOrAccidentalText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            throw std::runtime_error( "not implemented" );
+        }
+        DisplayTextOrAccidentalText::Choice DisplayTextOrAccidentalText::getChoice() const
+        {
+            return myChoice;
+        }
+        void DisplayTextOrAccidentalText::setChoice( const DisplayTextOrAccidentalText::Choice value )
+        {
+            myChoice = value;
+        }
+        DisplayTextPtr DisplayTextOrAccidentalText::getDisplayText() const
+        {
+            return myDisplayText;
+        }
+        void DisplayTextOrAccidentalText::setDisplayText( const DisplayTextPtr& value )
+        {
+            if ( value )
+            {
+                myDisplayText = value;
+            }
+        }
+        AccidentalTextPtr DisplayTextOrAccidentalText::getAccidentalText() const
+        {
+            return myAccidentalText;
+        }
+        void DisplayTextOrAccidentalText::setAccidentalText( const AccidentalTextPtr& value )
+        {
+            if ( value )
+            {
+                myAccidentalText = value;
+            }
+        }
         
         /**************** PartNameDisplayAttributes ****************/
         /* 3857 */
