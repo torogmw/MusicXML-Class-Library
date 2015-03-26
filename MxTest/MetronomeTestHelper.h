@@ -9,5 +9,5 @@ using namespace std;
 namespace MxTestHelpers
 {
     BeatUnitGroupPtr tgenBeatUnitGroup( variant v );
-    
+    MetronomeRelationGroupPtr tgenMetronomeRelationGroup( variant v );
 }
