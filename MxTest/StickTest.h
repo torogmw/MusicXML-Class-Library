@@ -1,8 +1,8 @@
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
 
-namespace MxTestHelper
+namespace MxTestHelpers
 {
-    StickPtr tgenStick( variant v );
-    void tgenStickExpected( variant v, int indentLevel );
+    mx::e::StickPtr tgenStick( variant v );
+    void tgenStickExpected( std::ostream& os, int indentLevel, variant v );
 }
