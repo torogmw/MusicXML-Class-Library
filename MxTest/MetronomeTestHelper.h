@@ -12,5 +12,5 @@ namespace MxTestHelpers
     MetronomeRelationGroupPtr tgenMetronomeRelationGroup( variant v );
     NoteRelationNotePtr tgenNoteRelationNote( variant v );
     PerMinuteOrBeatUnitChoicePtr tgenPerMinuteOrBeatUnitChoice( variant v );
-    BeatUnitPtrPtr tgenBeatUnitPer( variant v );
+    BeatUnitPerPtr tgenBeatUnitPer( variant v );
 }
