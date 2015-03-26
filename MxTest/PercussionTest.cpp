@@ -61,12 +61,16 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                
+                o->setPercussionChoice( tgenPercussionChoice( v ) );
+                o->getAttributes()->hasValign = true;
+                o->getAttributes()->valign = Valign::baseline;
             }
                 break;
             case variant::three:
             {
-                
+                o->setPercussionChoice( tgenPercussionChoice( v ) );
+                o->getAttributes()->hasHalign = true;
+                o->getAttributes()->halign = LeftCenterRight::center;
             }
                 break;
             default:
@@ -88,16 +92,16 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i, R"()", false );
+                streamLine( os, i, R"(<percussion valign="baseline">)" );
+                streamLine( os, i+1, R"(<wood>claves</wood>)" );
+                streamLine( os, i, R"(</percussion>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i, R"()", false );
+                streamLine( os, i, R"(<percussion halign="center">)" );
+                streamLine( os, i+1, R"(<other-percussion>Hello</other-percussion>)" );
+                streamLine( os, i, R"(</percussion>)", false );
             }
                 break;
             default:
@@ -111,7 +115,7 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                
+                o->setChoice( PercussionChoice::Choice::stickType );
             }
                 break;
             case variant::two:
@@ -121,7 +125,8 @@ namespace MxTestHelpers
                 break;
             case variant::three:
             {
-                
+                o->setChoice( PercussionChoice::Choice::otherPercussion );
+                o->getOtherPercussion()->setValue( XsString("Hello" ) );
             }
                 break;
             default:
