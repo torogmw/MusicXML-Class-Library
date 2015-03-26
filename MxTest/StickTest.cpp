@@ -26,10 +26,22 @@ TEST( Test02, Stick )
 	stringstream expected;
 	tgenStickExpected( expected, 1, variant::two );
 	stringstream actual;
-	object->toStream( std::cout, 1 );
-	// object.toStream( actual, 1 );
+	// object->toStream( std::cout, 1 );
+	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasAttributes() )
+	CHECK( object->hasContents() )
+}
+TEST( Test03, Stick )
+{
+	StickPtr object = tgenStick( variant::three );
+	stringstream expected;
+	tgenStickExpected( expected, 1, variant::three );
+	stringstream actual;
+	// object->toStream( std::cout, 1 );
+	object->toStream( actual, 1 );
+	CHECK_EQUAL( expected.str(), actual.str() )
+	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 
@@ -48,15 +60,15 @@ namespace MxTestHelpers
             case variant::two:
             {
                 o->getStickMaterial()->setValue( StickMaterialEnum::x );
-                o->getStickType()->setValue( StickTypeEnum::yarn );
-                o->getAttributes()->hasTip = false;
+                o->getStickType()->setValue( StickTypeEnum::xylophone );
+                o->getAttributes()->hasTip = true;
                 o->getAttributes()->tip = TipDirection::southwest;
 
             }
                 break;
             case variant::three:
             {
-                o->getStickMaterial()->setValue( StickMaterialEnum::medium );
+                o->getStickMaterial()->setValue( StickMaterialEnum::shaded );
                 o->getStickType()->setValue( StickTypeEnum::doubleBassDrum );
                 o->getAttributes()->hasTip = true;
                 o->getAttributes()->tip = TipDirection::up;
@@ -82,20 +94,18 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i, R"()", false );
+                streamLine( os, i, R"(<stick tip="southwest">)" );
+                streamLine( os, i+1, R"(<stick-type>xylophone</stick-type>)" );
+                streamLine( os, i+1, R"(<stick-material>x</stick-material>)" );
+                streamLine( os, i, R"(</stick>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i+1, R"()" );
-                streamLine( os, i, R"()", false );
+                streamLine( os, i, R"(<stick tip="up">)" );
+                streamLine( os, i+1, R"(<stick-type>double bass drum</stick-type>)" );
+                streamLine( os, i+1, R"(<stick-material>shaded</stick-material>)" );
+                streamLine( os, i, R"(</stick>)", false );
             }
                 break;
             default:
