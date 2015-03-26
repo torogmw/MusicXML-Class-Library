@@ -1,6 +1,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
+#include "MetronomeTestHelper.h"
 
 using namespace mx::e;
 using namespace mx::types;
@@ -25,7 +26,7 @@ TEST( Test01, Metronome )
 }
 TEST( Test02, Metronome )
 {
-	Metronome object;
+	MetronomePtr object = tgenMetronome( variant::one );
 	stringstream expected;
 	streamLine( expected, 1, R"()" );
 	streamLine( expected, 2, R"()" );
