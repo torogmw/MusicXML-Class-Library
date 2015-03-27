@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "Strings.h"
 #include <sstream>
@@ -445,3 +447,4 @@ TEST( TimeOnly02, Strings )
     actual = ss.str();
     CHECK_EQUAL( expected, actual );
 }
+#endif

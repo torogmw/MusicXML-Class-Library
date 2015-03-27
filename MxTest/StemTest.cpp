@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -36,3 +38,4 @@ TEST( Test01, Stem )
 	CHECK( isOneLineOnly )
 	CHECK_EQUAL( o1.str(), o2.str() )
 }
+#endif

@@ -16,6 +16,8 @@
 	<xs:attributeGroup ref="placement"/>
 </xs:complexType>
 */
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -59,3 +61,4 @@ TEST( Test01, Scoop )
 	CHECK( !object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

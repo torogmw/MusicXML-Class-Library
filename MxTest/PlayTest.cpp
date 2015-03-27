@@ -19,8 +19,8 @@ TEST( Test01, Play )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
-	CHECK( ! object->hasContents() )
+	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasContents() )
 }
 TEST( Test02, Play )
 {
@@ -32,7 +32,7 @@ TEST( Test02, Play )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 TEST( Test03, Play )
@@ -45,7 +45,7 @@ TEST( Test03, Play )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 namespace MxTestHelpers
@@ -62,12 +62,15 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->setChoice( Play::Choice::mute );
+                o->getMute()->setValue( MuteEnum::hat );
             }
                 break;
             case variant::three:
             {
-
+                o->setChoice( Play::Choice::otherPlay );
+                o->getOtherPlay()->setValue( XsString( "SomeString" ) );
+                o->getOtherPlay()->getAttributes()->type = XsToken( "sometype" );
             }
                 break;
             default:
@@ -82,30 +85,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<midi-instrument id="ID"/>)", false );
+                streamLine( os, i, R"(<play>)" );
+                streamLine( os, i+1, R"(<ipa></ipa>)" );
+                streamLine( os, i, R"(</play>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<midi-instrument id="M1">)" );
-                streamLine( os, i+1, R"(<midi-channel>2</midi-channel>)" );
-                streamLine( os, i+1, R"(<midi-name>Trumpet</midi-name>)" );
-                streamLine( os, i+1, R"(<midi-bank>3</midi-bank>)" );
-                streamLine( os, i+1, R"(<volume>55.5</volume>)" );
-                streamLine( os, i+1, R"(<pan>-88.6</pan>)" );
-                streamLine( os, i, R"(</midi-instrument>)", false );
+                streamLine( os, i, R"(<play>)" );
+                streamLine( os, i+1, R"(<mute>hat</mute>)" );
+                streamLine( os, i, R"(</play>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<midi-instrument id="X2">)" );
-                streamLine( os, i+1, R"(<midi-channel>3</midi-channel>)" );
-                streamLine( os, i+1, R"(<midi-name>Bassoon</midi-name>)" );
-                streamLine( os, i+1, R"(<midi-bank>4</midi-bank>)" );
-                streamLine( os, i+1, R"(<midi-unpitched>97</midi-unpitched>)" );
-                streamLine( os, i+1, R"(<volume>0.123</volume>)" );
-                streamLine( os, i+1, R"(<elevation>-33.333</elevation>)" );
-                streamLine( os, i, R"(</midi-instrument>)", false );
+                streamLine( os, i, R"(<play>)" );
+                streamLine( os, i+1, R"(<other-play type="sometype">SomeString</other-play>)" );
+                streamLine( os, i, R"(</play>)", false );
             }
                 break;
             default:

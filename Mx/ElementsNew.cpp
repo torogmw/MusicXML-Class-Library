@@ -965,7 +965,8 @@ namespace mx
         
 		Play::Play()
 		:myAttributes( std::make_shared<PlayAttributes>() )
-		,myIpa( makeIpa() )
+		,myChoice( Choice::ipa )
+        ,myIpa( makeIpa() )
 		,myMute( makeMute() )
 		,mySemiPitched( makeSemiPitched() )
 		,myOtherPlay( makeOtherPlay() )

@@ -11,6 +11,8 @@
 	<xs:attribute name="value" type="xs:token"/>
 </xs:complexType>
 */
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -53,3 +55,4 @@ TEST( Test01, Supports )
 	CHECK( object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

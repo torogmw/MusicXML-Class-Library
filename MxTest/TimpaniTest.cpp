@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -31,3 +33,4 @@ TEST( Test01, Timpani )
    CHECK( ! object1.hasAttributes() )
    CHECK( ! object1.hasContents() )
 }
+#endif
