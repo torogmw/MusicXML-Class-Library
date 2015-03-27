@@ -16,6 +16,7 @@
 		290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C0B1AA38F9C0081FBB5 /* NumberOrNormal.cpp */; };
 		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
 		291221781AC4E4D400A19E48 /* DirectionTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */; };
+		2912217B1AC4EC2C00A19E48 /* MidiInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */; };
 		292D02D81ABE1A9500005E61 /* KeyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D02D61ABE1A9500005E61 /* KeyTest.cpp */; };
 		292D12711AA2A3270079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */; };
 		292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12761AA2A7260079EF22 /* DateTest.cpp */; };
@@ -348,6 +349,8 @@
 		290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositiveIntegerOrEmptyTest.cpp; sourceTree = "<group>"; };
 		291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectionTypeTest.cpp; sourceTree = "<group>"; };
 		291221771AC4E4D400A19E48 /* DirectionTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionTypeTest.h; sourceTree = "<group>"; };
+		291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInstrumentTest.cpp; sourceTree = "<group>"; };
+		2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiInstrumentTest.h; sourceTree = "<group>"; };
 		292D02D61ABE1A9500005E61 /* KeyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyTest.cpp; sourceTree = "<group>"; };
 		292D02DA1ABE1D1A00005E61 /* MxTestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MxTestHelper.h; sourceTree = "<group>"; };
 		292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoNumber.cpp; sourceTree = "<group>"; };
@@ -1049,6 +1052,8 @@
 				29A5650D1AC4B0DB0059CACD /* ScordaturaTest.h */,
 				291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */,
 				291221771AC4E4D400A19E48 /* DirectionTypeTest.h */,
+				291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */,
+				2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1402,6 +1407,7 @@
 				298C81DD1AB6A8DC006619A9 /* LyricFontTest.cpp in Sources */,
 				29CEB49F1AB4C0FA00D6AEFC /* ChordTest.cpp in Sources */,
 				29C0B9C11AAE9398004F86FA /* EncoderTest.cpp in Sources */,
+				2912217B1AC4EC2C00A19E48 /* MidiInstrumentTest.cpp in Sources */,
 				2935A72E1AB5FC3B002859CA /* ShakeTest.cpp in Sources */,
 				2935A7281AB5FC3B002859CA /* OpenStringTest.cpp in Sources */,
 				291221781AC4E4D400A19E48 /* DirectionTypeTest.cpp in Sources */,

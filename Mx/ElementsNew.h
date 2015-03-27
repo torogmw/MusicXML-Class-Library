@@ -245,7 +245,392 @@ namespace mx
             OtherDirectionPtr myOtherDirection;
         };
         
+        /*
+         3926 [ equivalents 3926, 5959 ]
+         <!--  ID = 3926 [3926, 5959] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="midi-instrument" type="midi-instrument" minOccurs="0"/>
+         <xs:complexType name="midi-instrument">
+         <xs:annotation>
+         <xs:documentation>The midi-instrument type defines MIDI 1.0 instrument playback. The midi-instrument element can be a part of either the score-instrument element at the start of a part, or the sound element within a part. The id attribute refers to the score-instrument affected by the change.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="midi-channel" type="midi-16" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The midi-channel element specifies a MIDI 1.0 channel numbers ranging from 1 to 16.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="midi-name" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The midi-name element corresponds to a ProgramName meta-event within a Standard MIDI File.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="midi-bank" type="midi-16384" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The midi-bank element specified a MIDI 1.0 bank number ranging from 1 to 16,384.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="midi-program" type="midi-128" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The midi-program element specifies a MIDI 1.0 program number ranging from 1 to 128.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="midi-unpitched" type="midi-128" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>For unpitched instruments, the midi-unpitched element specifies a MIDI 1.0 note number ranging from 1 to 128. It is usually used with MIDI banks for percussion. Note that MIDI 1.0 note numbers are generally specified from 0 to 127 rather than the 1 to 128 numbering used in this element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="volume" type="percent" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The volume element value is a percentage of the maximum ranging from 0 to 100, with decimal values allowed. This corresponds to a scaling value for the MIDI 1.0 channel volume controller.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="pan" type="rotation-degrees" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The pan and elevation elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan, 0 is straight ahead, -90 is hard left, 90 is hard right, and -180 and 180 are directly behind the listener.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="elevation" type="rotation-degrees" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The elevation and pan elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For elevation, 0 is level with the listener, 90 is directly above, and -90 is directly below.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attribute name="id" type="xs:IDREF" use="required"/>
+         </xs:complexType> */
         
+        struct MidiInstrumentAttributes;
+        using MidiInstrumentAttributesPtr = std::shared_ptr<MidiInstrumentAttributes>;
+        
+        struct MidiInstrumentAttributes : public AttributesInterface
+        {
+        public:
+            MidiInstrumentAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsIDREF id;
+            const 	bool hasId;
+        };
+        
+        class MidiInstrument;
+        using MidiInstrumentPtr = std::shared_ptr<MidiInstrument>;
+        using MidiInstrumentUPtr = std::unique_ptr<MidiInstrument>;
+        using MidiInstrumentSet = std::vector<MidiInstrumentPtr>;
+        using MidiInstrumentSetIter = MidiInstrumentSet::iterator;
+        using MidiInstrumentSetIterConst = MidiInstrumentSet::const_iterator;
+        inline MidiInstrumentPtr makeMidiInstrument() { return std::make_shared<MidiInstrument>(); }
+        class MidiInstrument : public ElementInterface
+        {
+        public:
+            MidiInstrument();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            MidiInstrumentAttributesPtr getAttributes() const;
+            void setAttributes( const MidiInstrumentAttributesPtr& value );
+            /* _________ MidiChannel minOccurs = 0, maxOccurs = 1 _________ */
+            MidiChannelPtr getMidiChannel() const;
+            void setMidiChannel( const MidiChannelPtr& value );
+            bool getHasMidiChannel() const;
+            void setHasMidiChannel( const bool value );
+            /* _________ MidiName minOccurs = 0, maxOccurs = 1 _________ */
+            MidiNamePtr getMidiName() const;
+            void setMidiName( const MidiNamePtr& value );
+            bool getHasMidiName() const;
+            void setHasMidiName( const bool value );
+            /* _________ MidiBank minOccurs = 0, maxOccurs = 1 _________ */
+            MidiBankPtr getMidiBank() const;
+            void setMidiBank( const MidiBankPtr& value );
+            bool getHasMidiBank() const;
+            void setHasMidiBank( const bool value );
+            /* _________ MidiProgram minOccurs = 0, maxOccurs = 1 _________ */
+            MidiProgramPtr getMidiProgram() const;
+            void setMidiProgram( const MidiProgramPtr& value );
+            bool getHasMidiProgram() const;
+            void setHasMidiProgram( const bool value );
+            /* _________ MidiUnpitched minOccurs = 0, maxOccurs = 1 _________ */
+            MidiUnpitchedPtr getMidiUnpitched() const;
+            void setMidiUnpitched( const MidiUnpitchedPtr& value );
+            bool getHasMidiUnpitched() const;
+            void setHasMidiUnpitched( const bool value );
+            /* _________ Volume minOccurs = 0, maxOccurs = 1 _________ */
+            VolumePtr getVolume() const;
+            void setVolume( const VolumePtr& value );
+            bool getHasVolume() const;
+            void setHasVolume( const bool value );
+            /* _________ Pan minOccurs = 0, maxOccurs = 1 _________ */
+            PanPtr getPan() const;
+            void setPan( const PanPtr& value );
+            bool getHasPan() const;
+            void setHasPan( const bool value );
+            /* _________ Elevation minOccurs = 0, maxOccurs = 1 _________ */
+            ElevationPtr getElevation() const;
+            void setElevation( const ElevationPtr& value );
+            bool getHasElevation() const;
+            void setHasElevation( const bool value );
+        private:
+            MidiInstrumentAttributesPtr myAttributes;
+            MidiChannelPtr myMidiChannel;
+            bool myHasMidiChannel;
+            MidiNamePtr myMidiName;
+            bool myHasMidiName;
+            MidiBankPtr myMidiBank;
+            bool myHasMidiBank;
+            MidiProgramPtr myMidiProgram;
+            bool myHasMidiProgram;
+            MidiUnpitchedPtr myMidiUnpitched;
+            bool myHasMidiUnpitched;
+            VolumePtr myVolume;
+            bool myHasVolume;
+            PanPtr myPan;
+            bool myHasPan;
+            ElevationPtr myElevation;
+            bool myHasElevation;
+        };
+        
+        
+        /**************** MidiInstrumentAttributes ****************/
+        /* 3926 */
+        MidiInstrumentAttributes::MidiInstrumentAttributes()
+        :id()
+        ,hasId( true )
+        {}
+        
+        bool MidiInstrumentAttributes::hasValues() const
+        {
+            return hasId;
+        }
+        
+        std::ostream& MidiInstrumentAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+            }
+            return os;
+        }
+        
+		MidiInstrument::MidiInstrument()
+		:myAttributes( std::make_shared<MidiInstrumentAttributes>() )
+		,myMidiChannel( makeMidiChannel() )
+		,myHasMidiChannel( false )
+		,myMidiName( makeMidiName() )
+		,myHasMidiName( false )
+		,myMidiBank( makeMidiBank() )
+		,myHasMidiBank( false )
+		,myMidiProgram( makeMidiProgram() )
+		,myHasMidiProgram( false )
+		,myMidiUnpitched( makeMidiUnpitched() )
+		,myHasMidiUnpitched( false )
+		,myVolume( makeVolume() )
+		,myHasVolume( false )
+		,myPan( makePan() )
+		,myHasPan( false )
+		,myElevation( makeElevation() )
+		,myHasElevation( false )
+		{}
+		bool MidiInstrument::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& MidiInstrument::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& MidiInstrument::streamName( std::ostream& os ) const
+		{
+			os << "midi-instrument";
+			return os;
+		}
+		bool MidiInstrument::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& MidiInstrument::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		MidiInstrumentAttributesPtr MidiInstrument::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void MidiInstrument::setAttributes( const MidiInstrumentAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ MidiChannel minOccurs = 0, maxOccurs = 1 _________ */
+		MidiChannelPtr MidiInstrument::getMidiChannel() const
+		{
+			return myMidiChannel;
+		}
+		void MidiInstrument::setMidiChannel( const MidiChannelPtr& value )
+		{
+			if( value )
+			{
+				myMidiChannel = value;
+			}
+		}
+		bool MidiInstrument::getHasMidiChannel() const
+		{
+			return myHasMidiChannel;
+		}
+		void MidiInstrument::setHasMidiChannel( const bool value )
+		{
+			myHasMidiChannel = value;
+		}
+		/* _________ MidiName minOccurs = 0, maxOccurs = 1 _________ */
+		MidiNamePtr MidiInstrument::getMidiName() const
+		{
+			return myMidiName;
+		}
+		void MidiInstrument::setMidiName( const MidiNamePtr& value )
+		{
+			if( value )
+			{
+				myMidiName = value;
+			}
+		}
+		bool MidiInstrument::getHasMidiName() const
+		{
+			return myHasMidiName;
+		}
+		void MidiInstrument::setHasMidiName( const bool value )
+		{
+			myHasMidiName = value;
+		}
+		/* _________ MidiBank minOccurs = 0, maxOccurs = 1 _________ */
+		MidiBankPtr MidiInstrument::getMidiBank() const
+		{
+			return myMidiBank;
+		}
+		void MidiInstrument::setMidiBank( const MidiBankPtr& value )
+		{
+			if( value )
+			{
+				myMidiBank = value;
+			}
+		}
+		bool MidiInstrument::getHasMidiBank() const
+		{
+			return myHasMidiBank;
+		}
+		void MidiInstrument::setHasMidiBank( const bool value )
+		{
+			myHasMidiBank = value;
+		}
+		/* _________ MidiProgram minOccurs = 0, maxOccurs = 1 _________ */
+		MidiProgramPtr MidiInstrument::getMidiProgram() const
+		{
+			return myMidiProgram;
+		}
+		void MidiInstrument::setMidiProgram( const MidiProgramPtr& value )
+		{
+			if( value )
+			{
+				myMidiProgram = value;
+			}
+		}
+		bool MidiInstrument::getHasMidiProgram() const
+		{
+			return myHasMidiProgram;
+		}
+		void MidiInstrument::setHasMidiProgram( const bool value )
+		{
+			myHasMidiProgram = value;
+		}
+		/* _________ MidiUnpitched minOccurs = 0, maxOccurs = 1 _________ */
+		MidiUnpitchedPtr MidiInstrument::getMidiUnpitched() const
+		{
+			return myMidiUnpitched;
+		}
+		void MidiInstrument::setMidiUnpitched( const MidiUnpitchedPtr& value )
+		{
+			if( value )
+			{
+				myMidiUnpitched = value;
+			}
+		}
+		bool MidiInstrument::getHasMidiUnpitched() const
+		{
+			return myHasMidiUnpitched;
+		}
+		void MidiInstrument::setHasMidiUnpitched( const bool value )
+		{
+			myHasMidiUnpitched = value;
+		}
+		/* _________ Volume minOccurs = 0, maxOccurs = 1 _________ */
+		VolumePtr MidiInstrument::getVolume() const
+		{
+			return myVolume;
+		}
+		void MidiInstrument::setVolume( const VolumePtr& value )
+		{
+			if( value )
+			{
+				myVolume = value;
+			}
+		}
+		bool MidiInstrument::getHasVolume() const
+		{
+			return myHasVolume;
+		}
+		void MidiInstrument::setHasVolume( const bool value )
+		{
+			myHasVolume = value;
+		}
+		/* _________ Pan minOccurs = 0, maxOccurs = 1 _________ */
+		PanPtr MidiInstrument::getPan() const
+		{
+			return myPan;
+		}
+		void MidiInstrument::setPan( const PanPtr& value )
+		{
+			if( value )
+			{
+				myPan = value;
+			}
+		}
+		bool MidiInstrument::getHasPan() const
+		{
+			return myHasPan;
+		}
+		void MidiInstrument::setHasPan( const bool value )
+		{
+			myHasPan = value;
+		}
+		/* _________ Elevation minOccurs = 0, maxOccurs = 1 _________ */
+		ElevationPtr MidiInstrument::getElevation() const
+		{
+			return myElevation;
+		}
+		void MidiInstrument::setElevation( const ElevationPtr& value )
+		{
+			if( value )
+			{
+				myElevation = value;
+			}
+		}
+		bool MidiInstrument::getHasElevation() const
+		{
+			return myHasElevation;
+		}
+		void MidiInstrument::setHasElevation( const bool value )
+		{
+			myHasElevation = value;
+		}
+
 #if 1==0
         class X_______X;
         using X_______XPtr = std::shared_ptr<X_______X>;
