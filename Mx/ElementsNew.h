@@ -746,6 +746,94 @@ namespace mx
             PlayPtr myPlay;
             bool myHasPlay;
         };
+        /*
+         4232
+         <!--  ID = 4232 [4232] ------------------------->
+         <!-- min=0 max=2 RangeBound  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="page-margins" type="page-margins" minOccurs="0" maxOccurs="2"/>
+         
+         <xs:complexType name="page-margins">
+         <xs:annotation>
+         <xs:documentation>Page margins are specified either for both even and odd pages, or via separate odd and even page number values. The type attribute is not needed when used as part of a print element. If omitted when the page-margins type is used in the defaults element, "both" is the default value.</xs:documentation>
+         </xs:annotation>
+         <xs:group ref="all-margins"/>
+         <xs:attribute name="type" type="margin-type"/>
+         </xs:complexType>
+         
+         <xs:group name="all-margins">
+         <xs:annotation>
+         <xs:documentation>The all-margins group specifies both horizontal and vertical margins in tenths.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="left-right-margins"/>
+         <xs:element name="top-margin" type="tenths"/>
+         <xs:element name="bottom-margin" type="tenths"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="left-right-margins">
+         <xs:annotation>
+         <xs:documentation>The left-right-margins group specifies horizontal margins in tenths.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="left-margin" type="tenths"/>
+         <xs:element name="right-margin" type="tenths"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct PageMarginsAttributes;
+        using PageMarginsAttributesPtr = std::shared_ptr<PageMarginsAttributes>;
+        
+        struct PageMarginsAttributes : public AttributesInterface
+        {
+        public:
+            PageMarginsAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::MarginType type;
+            bool hasType;
+        };
+        
+        class PageMargins;
+        using PageMarginsPtr = std::shared_ptr<PageMargins>;
+        using PageMarginsUPtr = std::unique_ptr<PageMargins>;
+        using PageMarginsSet = std::vector<PageMarginsPtr>;
+        using PageMarginsSetIter = PageMarginsSet::iterator;
+        using PageMarginsSetIterConst = PageMarginsSet::const_iterator;
+        inline PageMarginsPtr makePageMargins() { return std::make_shared<PageMargins>(); }
+        class PageMargins : public ElementInterface
+        {
+        public:
+            PageMargins();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PageMarginsAttributesPtr getAttributes() const;
+            void setAttributes( const PageMarginsAttributesPtr& value );
+            /* _________ LeftMargin minOccurs = 1, maxOccurs = 1 _________ */
+            LeftMarginPtr getLeftMargin() const;
+            void setLeftMargin( const LeftMarginPtr& value );
+            /* _________ RightMargin minOccurs = 1, maxOccurs = 1 _________ */
+            RightMarginPtr getRightMargin() const;
+            void setRightMargin( const RightMarginPtr& value );
+            /* _________ TopMargin minOccurs = 1, maxOccurs = 1 _________ */
+            TopMarginPtr getTopMargin() const;
+            void setTopMargin( const TopMarginPtr& value );
+            /* _________ BottomMargin minOccurs = 1, maxOccurs = 1 _________ */
+            BottomMarginPtr getBottomMargin() const;
+            void setBottomMargin( const BottomMarginPtr& value );
+        private:
+            PageMarginsAttributesPtr myAttributes;
+            LeftMarginPtr myLeftMargin;
+            RightMarginPtr myRightMargin;
+            TopMarginPtr myTopMargin;
+            BottomMarginPtr myBottomMargin;
+        };
 
     }
 }

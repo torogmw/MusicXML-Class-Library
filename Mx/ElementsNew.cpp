@@ -1504,6 +1504,128 @@ namespace mx
 		{
 			myHasPlay = value;
 		}
+        
+        
+        /**************** PageMarginsAttributes ****************/
+        /* 4232 */
+        PageMarginsAttributes::PageMarginsAttributes()
+        :type( types::MarginType::both )
+        ,hasType( false )
+        {}
+        
+        bool PageMarginsAttributes::hasValues() const
+        {
+            return hasType;
+        }
+        
+        std::ostream& PageMarginsAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+            }
+            return os;
+        }
+        
+		PageMargins::PageMargins()
+		:myAttributes( std::make_shared<PageMarginsAttributes>() )
+		,myLeftMargin( makeLeftMargin() )
+		,myRightMargin( makeRightMargin() )
+		,myTopMargin( makeTopMargin() )
+		,myBottomMargin( makeBottomMargin() )
+		{}
+		bool PageMargins::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& PageMargins::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& PageMargins::streamName( std::ostream& os ) const
+		{
+			os << "page-margins";
+			return os;
+		}
+		bool PageMargins::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PageMargins::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myLeftMargin->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myRightMargin->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myTopMargin->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myBottomMargin->toStream( os, indentLevel+1 );
+			os << std::endl;
+			return os;
+		}
+		PageMarginsAttributesPtr PageMargins::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void PageMargins::setAttributes( const PageMarginsAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ LeftMargin minOccurs = 1, maxOccurs = 1 _________ */
+		LeftMarginPtr PageMargins::getLeftMargin() const
+		{
+			return myLeftMargin;
+		}
+		void PageMargins::setLeftMargin( const LeftMarginPtr& value )
+		{
+			if( value )
+			{
+				myLeftMargin = value;
+			}
+		}
+		/* _________ RightMargin minOccurs = 1, maxOccurs = 1 _________ */
+		RightMarginPtr PageMargins::getRightMargin() const
+		{
+			return myRightMargin;
+		}
+		void PageMargins::setRightMargin( const RightMarginPtr& value )
+		{
+			if( value )
+			{
+				myRightMargin = value;
+			}
+		}
+		/* _________ TopMargin minOccurs = 1, maxOccurs = 1 _________ */
+		TopMarginPtr PageMargins::getTopMargin() const
+		{
+			return myTopMargin;
+		}
+		void PageMargins::setTopMargin( const TopMarginPtr& value )
+		{
+			if( value )
+			{
+				myTopMargin = value;
+			}
+		}
+		/* _________ BottomMargin minOccurs = 1, maxOccurs = 1 _________ */
+		BottomMarginPtr PageMargins::getBottomMargin() const
+		{
+			return myBottomMargin;
+		}
+		void PageMargins::setBottomMargin( const BottomMarginPtr& value )
+		{
+			if( value )
+			{
+				myBottomMargin = value;
+			}
+		}
+
     } // namespace e
 
 } // namespace mx
