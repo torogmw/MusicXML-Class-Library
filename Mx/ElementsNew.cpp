@@ -1680,7 +1680,64 @@ namespace mx
 				myRightMargin = value;
 			}
 		}
-
+        
+		/* 4297 */
+        
+		SystemDividers::SystemDividers()
+		:myLeftDivider( makeLeftDivider() )
+		,myRightDivider( makeRightDivider() )
+		{}
+		bool SystemDividers::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& SystemDividers::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& SystemDividers::streamName( std::ostream& os ) const
+		{
+			os << "system-dividers";
+			return os;
+		}
+		bool SystemDividers::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& SystemDividers::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myLeftDivider->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myRightDivider->toStream( os, indentLevel+1 );
+			os << std::endl;
+			return os;
+		}
+		/* _________ LeftDivider minOccurs = 1, maxOccurs = 1 _________ */
+		LeftDividerPtr SystemDividers::getLeftDivider() const
+		{
+			return myLeftDivider;
+		}
+		void SystemDividers::setLeftDivider( const LeftDividerPtr& value )
+		{
+			if( value )
+			{
+				myLeftDivider = value;
+			}
+		}
+		/* _________ RightDivider minOccurs = 1, maxOccurs = 1 _________ */
+		RightDividerPtr SystemDividers::getRightDivider() const
+		{
+			return myRightDivider;
+		}
+		void SystemDividers::setRightDivider( const RightDividerPtr& value )
+		{
+			if( value )
+			{
+				myRightDivider = value;
+			}
+		}
     } // namespace e
 
 } // namespace mx

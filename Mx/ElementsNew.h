@@ -883,6 +883,50 @@ namespace mx
             LeftMarginPtr myLeftMargin;
             RightMarginPtr myRightMargin;
         };
+        /* <!--  ID = 4297 [4297] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="system-dividers" type="system-dividers" minOccurs="0"/>
+         <xs:complexType name="system-dividers">
+         <xs:annotation>
+         <xs:documentation>The system-dividers element indicates the presence or absence of system dividers (also known as system separation marks) between systems displayed on the same page. Dividers on the left and right side of the page are controlled by the left-divider and right-divider elements respectively. The default vertical position is half the system-distance value from the top of the system that is below the divider. The default horizontal position is the left and right system margin, respectively.
+         
+         When used in the print element, the system-dividers element affects the dividers that would appear between the current system and the previous system.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="left-divider" type="empty-print-object-style-align"/>
+         <xs:element name="right-divider" type="empty-print-object-style-align"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class SystemDividers;
+        using SystemDividersPtr = std::shared_ptr<SystemDividers>;
+        using SystemDividersUPtr = std::unique_ptr<SystemDividers>;
+        using SystemDividersSet = std::vector<SystemDividersPtr>;
+        using SystemDividersSetIter = SystemDividersSet::iterator;
+        using SystemDividersSetIterConst = SystemDividersSet::const_iterator;
+        inline SystemDividersPtr makeSystemDividers() { return std::make_shared<SystemDividers>(); }
+        class SystemDividers : public ElementInterface
+        {
+        public:
+            SystemDividers();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ LeftDivider minOccurs = 1, maxOccurs = 1 _________ */
+            LeftDividerPtr getLeftDivider() const;
+            void setLeftDivider( const LeftDividerPtr& value );
+            /* _________ RightDivider minOccurs = 1, maxOccurs = 1 _________ */
+            RightDividerPtr getRightDivider() const;
+            void setRightDivider( const RightDividerPtr& value );
+        private:
+            LeftDividerPtr myLeftDivider;
+            RightDividerPtr myRightDivider;
+        };
 
     }
 }
