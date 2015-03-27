@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "NumberOrNormal.h"
 #include <sstream>
@@ -74,3 +76,4 @@ TEST( NumberOrNormal07, NumberOrNormal )
     std::string actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+#endif

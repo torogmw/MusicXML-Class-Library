@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -35,3 +37,4 @@ TEST( Test01, Natural )
    CHECK( ! object1.hasAttributes() )
    CHECK( ! object1.hasContents() )
 }
+#endif

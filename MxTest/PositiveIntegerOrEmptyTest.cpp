@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "PositiveIntegerOrEmpty.h"
 #include <sstream>
@@ -74,3 +76,4 @@ TEST( PositiveIntegerOrEmpty07, PositiveIntegerOrEmpty )
     std::string actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+#endif
