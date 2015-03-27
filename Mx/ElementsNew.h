@@ -1194,6 +1194,8 @@ namespace mx
             /* _________ NormalTypeNormalDotGroup minOccurs = 0, maxOccurs = 1 _________ */
             NormalTypeNormalDotGroupPtr getNormalTypeNormalDotGroup() const;
             void setNormalTypeNormalDotGroup( const NormalTypeNormalDotGroupPtr& value );
+            bool getHasNormalTypeNormalDotGroup() const;
+            void setHasNormalTypeNormalDotGroup( const bool value );
         private:
             ActualNotesPtr myActualNotes;
             NormalNotesPtr myNormalNotes;

@@ -2006,14 +2006,12 @@ namespace mx
 		{
             
 			isOneLineOnly = false;
-			os << std::endl;
 			myNormalType->toStream( os, indentLevel );
 			for ( auto x : myNormalDotSet )
             {
                 os << std::endl;
                 x->toStream( os, indentLevel );
             }
-            os << std::endl;
             return os;
 		}
 		/* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
@@ -2093,7 +2091,7 @@ namespace mx
             if ( myHasNormalTypeNormalDotGroup )
             {
                 os << std::endl;
-                myNormalTypeNormalDotGroup->toStream( os, indentLevel+1 );
+                myNormalTypeNormalDotGroup->streamContents( os, indentLevel+1, isOneLineOnly );
             }
 			os << std::endl;
 			isOneLineOnly = false;
@@ -2135,7 +2133,15 @@ namespace mx
 				myNormalTypeNormalDotGroup = value;
 			}
 		}
-
+        bool TimeModification::getHasNormalTypeNormalDotGroup() const
+        {
+            return myHasNormalTypeNormalDotGroup;
+        }
+        void TimeModification::setHasNormalTypeNormalDotGroup( const bool value )
+        {
+            myHasNormalTypeNormalDotGroup = value;
+        }
+        
     } // namespace e
 
 } // namespace mx

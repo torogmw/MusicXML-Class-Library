@@ -25,7 +25,7 @@ TEST( Test01, TimeModification )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( ! object->hasContents() )
+	CHECK( object->hasContents() )
 }
 TEST( Test02, TimeModification )
 {
@@ -68,12 +68,15 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                
+                o->getNormalType()->setValue( NoteTypeValue::half );
+                o->addNormalDot( makeNormalDot() );
+                o->addNormalDot( makeNormalDot() );
+
             }
                 break;
             case variant::three:
             {
-                
+                o->getNormalType()->setValue( NoteTypeValue::thirtySecond );
             }
                 break;
             default:
@@ -93,12 +96,18 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->setHasNormalTypeNormalDotGroup( true );
+                o->setNormalTypeNormalDotGroup( tgenNormalTypeNormalDotGroup( v ) );
+                o->getActualNotes()->setValue( NonNegativeInteger( 5 ) );
+                o->getNormalNotes()->setValue( NonNegativeInteger( 4 ) );
             }
                 break;
             case variant::three:
             {
-
+                o->setHasNormalTypeNormalDotGroup( true );
+                o->setNormalTypeNormalDotGroup( tgenNormalTypeNormalDotGroup( v ) );
+                o->getActualNotes()->setValue( NonNegativeInteger( 4 ) );
+                o->getNormalNotes()->setValue( NonNegativeInteger( 3 ) );
             }
                 break;
             default:
@@ -113,25 +122,30 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<figure/>)", false );
+                streamLine( os, i, R"(<time-modification>)" );
+                streamLine( os, i+1, R"(<actual-notes>1</actual-notes>)" );
+                streamLine( os, i+1, R"(<normal-notes>1</normal-notes>)" );
+                streamLine( os, i, R"(</time-modification>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<figure>)" );
-                streamLine( os, i+1, R"(<prefix>-</prefix>)" );
-                streamLine( os, i+1, R"(<extend type="start"/>)" );
-                streamLine( os, i, R"(</figure>)", false );
+                streamLine( os, i, R"(<time-modification>)" );
+                streamLine( os, i+1, R"(<actual-notes>5</actual-notes>)" );
+                streamLine( os, i+1, R"(<normal-notes>4</normal-notes>)" );
+                streamLine( os, i+1, R"(<normal-type>half</normal-type>)" );
+                streamLine( os, i+1, R"(<normal-dot/>)" );
+                streamLine( os, i+1, R"(<normal-dot/>)" );
+                streamLine( os, i, R"(</time-modification>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<figure>)" );
-                streamLine( os, i+1, R"(<prefix>-</prefix>)" );
-                streamLine( os, i+1, R"(<figure-number>xx</figure-number>)" );
-                streamLine( os, i+1, R"(<suffix>post</suffix>)" );
-                streamLine( os, i+1, R"(<extend type="start"/>)" );
-                streamLine( os, i, R"(</figure>)", false );
+                streamLine( os, i, R"(<time-modification>)" );
+                streamLine( os, i+1, R"(<actual-notes>4</actual-notes>)" );
+                streamLine( os, i+1, R"(<normal-notes>3</normal-notes>)" );
+                streamLine( os, i+1, R"(<normal-type>32nd</normal-type>)" );
+                streamLine( os, i, R"(</time-modification>)", false );
             }
                 break;
             default:
