@@ -482,8 +482,76 @@ namespace mx
             SemiPitchedPtr mySemiPitched;
             OtherPlayPtr myOtherPlay;
         };
-
+        /*
+         4079
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 5 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="encoding" type="encoding" minOccurs="0"/>
+         <xs:complexType name="encoding">
+         <xs:annotation>
+         <xs:documentation>The encoding element contains information about who did the digital encoding, when, with what software, and in what aspects. Standard type values for the encoder element are music, words, and arrangement, but other types may be used. The type attribute is only needed when there are multiple encoder elements.</xs:documentation>
+         </xs:annotation>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="encoding-date" type="yyyy-mm-dd"/>
+         <xs:element name="encoder" type="typed-text"/>
+         <xs:element name="software" type="xs:string"/>
+         <xs:element name="encoding-description" type="xs:string"/>
+         <xs:element name="supports" type="supports"/>
+         </xs:choice>
+         </xs:complexType> */
         
+        class Encoding;
+        using EncodingPtr = std::shared_ptr<Encoding>;
+        using EncodingUPtr = std::unique_ptr<Encoding>;
+        using EncodingSet = std::vector<EncodingPtr>;
+        using EncodingSetIter = EncodingSet::iterator;
+        using EncodingSetIterConst = EncodingSet::const_iterator;
+        inline EncodingPtr makeEncoding() { return std::make_shared<Encoding>(); }
+        class Encoding : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                encodingDate = 1,
+                encoder = 2,
+                software = 3,
+                encodingDescription = 4,
+                supports = 5
+            };
+            Encoding();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice _________ */
+            Encoding::Choice getChoice() const;
+            void setChoice( const Encoding::Choice value );
+            /* _________ EncodingDate minOccurs = 1, maxOccurs = 1 _________ */
+            EncodingDatePtr getEncodingDate() const;
+            void setEncodingDate( const EncodingDatePtr& value );
+            /* _________ Encoder minOccurs = 1, maxOccurs = 1 _________ */
+            EncoderPtr getEncoder() const;
+            void setEncoder( const EncoderPtr& value );
+            /* _________ Software minOccurs = 1, maxOccurs = 1 _________ */
+            SoftwarePtr getSoftware() const;
+            void setSoftware( const SoftwarePtr& value );
+            /* _________ EncodingDescription minOccurs = 1, maxOccurs = 1 _________ */
+            EncodingDescriptionPtr getEncodingDescription() const;
+            void setEncodingDescription( const EncodingDescriptionPtr& value );
+            /* _________ Supports minOccurs = 1, maxOccurs = 1 _________ */
+            SupportsPtr getSupports() const;
+            void setSupports( const SupportsPtr& value );
+        private:
+            Choice myChoice;
+            EncodingDatePtr myEncodingDate;
+            EncoderPtr myEncoder;
+            SoftwarePtr mySoftware;
+            EncodingDescriptionPtr myEncodingDescription;
+            SupportsPtr mySupports;
+        };
 
 #if 1==0
         class X_______X;

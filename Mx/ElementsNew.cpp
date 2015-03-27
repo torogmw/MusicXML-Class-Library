@@ -1089,7 +1089,137 @@ namespace mx
 				myOtherPlay = value;
 			}
 		}
-
+        Encoding::Encoding()
+		:myChoice( Choice::encodingDate )
+		,myEncodingDate( makeEncodingDate() )
+		,myEncoder( makeEncoder() )
+		,mySoftware( makeSoftware() )
+		,myEncodingDescription( makeEncodingDescription() )
+		,mySupports( makeSupports() )
+		{}
+		bool Encoding::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Encoding::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Encoding::streamName( std::ostream& os ) const
+		{
+			os << "encoding";
+			return os;
+		}
+		bool Encoding::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Encoding::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			os << std::endl;
+            switch ( myChoice )
+            {
+                case Choice::encodingDate:
+                {
+                    myEncodingDate->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::encoder:
+                {
+                    myEncoder->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::software:
+                {
+                    mySoftware->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::encodingDescription:
+                {
+                    myEncodingDescription->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::supports:
+                {
+                    mySupports->toStream( os, indentLevel+1 );
+                }
+                    break;
+                default:
+                    break;
+            }
+			isOneLineOnly = false;
+			os << std::endl;
+			return os;
+		}
+        /* _________ Choice _________ */
+        Encoding::Choice Encoding::getChoice() const
+        {
+            return myChoice;
+        }
+        void Encoding::setChoice( const Encoding::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ EncodingDate minOccurs = 1, maxOccurs = 1 _________ */
+		EncodingDatePtr Encoding::getEncodingDate() const
+		{
+			return myEncodingDate;
+		}
+		void Encoding::setEncodingDate( const EncodingDatePtr& value )
+		{
+			if( value )
+			{
+				myEncodingDate = value;
+			}
+		}
+		/* _________ Encoder minOccurs = 1, maxOccurs = 1 _________ */
+		EncoderPtr Encoding::getEncoder() const
+		{
+			return myEncoder;
+		}
+		void Encoding::setEncoder( const EncoderPtr& value )
+		{
+			if( value )
+			{
+				myEncoder = value;
+			}
+		}
+		/* _________ Software minOccurs = 1, maxOccurs = 1 _________ */
+		SoftwarePtr Encoding::getSoftware() const
+		{
+			return mySoftware;
+		}
+		void Encoding::setSoftware( const SoftwarePtr& value )
+		{
+			if( value )
+			{
+				mySoftware = value;
+			}
+		}
+		/* _________ EncodingDescription minOccurs = 1, maxOccurs = 1 _________ */
+		EncodingDescriptionPtr Encoding::getEncodingDescription() const
+		{
+			return myEncodingDescription;
+		}
+		void Encoding::setEncodingDescription( const EncodingDescriptionPtr& value )
+		{
+			if( value )
+			{
+				myEncodingDescription = value;
+			}
+		}
+		/* _________ Supports minOccurs = 1, maxOccurs = 1 _________ */
+		SupportsPtr Encoding::getSupports() const
+		{
+			return mySupports;
+		}
+		void Encoding::setSupports( const SupportsPtr& value )
+		{
+			if( value )
+			{
+				mySupports = value;
+			}
+		}
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )

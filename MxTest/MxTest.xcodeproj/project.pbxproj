@@ -214,6 +214,7 @@
 		29A5650E1AC4B0DB0059CACD /* ScordaturaTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A5650C1AC4B0DB0059CACD /* ScordaturaTest.cpp */; };
 		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
 		29BDAB4A1AC5177300C6DE31 /* PlayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB481AC5177300C6DE31 /* PlayTest.cpp */; };
+		29BDAB501AC5281D00C6DE31 /* EncodingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB4E1AC5281D00C6DE31 /* EncodingTest.cpp */; };
 		29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */; };
 		29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */; };
 		29C0B96C1AAE9209004F86FA /* BarStyleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9661AAE9209004F86FA /* BarStyleTest.cpp */; };
@@ -559,6 +560,8 @@
 		29BDAB481AC5177300C6DE31 /* PlayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayTest.cpp; sourceTree = "<group>"; };
 		29BDAB491AC5177300C6DE31 /* PlayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTest.h; sourceTree = "<group>"; };
 		29BDAB4C1AC5182700C6DE31 /* MxTestCompileControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxTestCompileControl.h; sourceTree = "<group>"; };
+		29BDAB4E1AC5281D00C6DE31 /* EncodingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EncodingTest.cpp; sourceTree = "<group>"; };
+		29BDAB4F1AC5281D00C6DE31 /* EncodingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodingTest.h; sourceTree = "<group>"; };
 		29C0B9621AAE91D9004F86FA /* AccidentalMarkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalMarkTest.cpp; sourceTree = "<group>"; };
 		29C0B9631AAE91D9004F86FA /* AccidentalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTest.cpp; sourceTree = "<group>"; };
 		29C0B9661AAE9209004F86FA /* BarStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BarStyleTest.cpp; sourceTree = "<group>"; };
@@ -1058,6 +1061,8 @@
 				2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */,
 				29BDAB481AC5177300C6DE31 /* PlayTest.cpp */,
 				29BDAB491AC5177300C6DE31 /* PlayTest.h */,
+				29BDAB4E1AC5281D00C6DE31 /* EncodingTest.cpp */,
+				29BDAB4F1AC5281D00C6DE31 /* EncodingTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1334,6 +1339,7 @@
 				2935A71C1AB5FC3B002859CA /* DampAllTest.cpp in Sources */,
 				2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */,
 				298C81E01AB6A8DC006619A9 /* OctaveShiftTest.cpp in Sources */,
+				29BDAB501AC5281D00C6DE31 /* EncodingTest.cpp in Sources */,
 				298C81D51AB6A8DC006619A9 /* DelayedInvertedTurnTest.cpp in Sources */,
 				297749DD1AB21FA000BF2205 /* ClefOctaveChangeTest.cpp in Sources */,
 				2935A73B1AB5FC3B002859CA /* VerticalTurnTest.cpp in Sources */,
