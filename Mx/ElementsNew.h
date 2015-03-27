@@ -1027,6 +1027,83 @@ namespace mx
         private:
             StrongAccentAttributesPtr myAttributes;
         };
+        /*
+         4608 <!--  ID = 4608 [4608] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="figure" type="figure" maxOccurs="unbounded"/>
+         <xs:complexType name="figure">
+         <xs:annotation>
+         <xs:documentation>The figure type represents a single figure within a figured-bass element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="prefix" type="style-text" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Values for the prefix element include the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. The prefix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="figure-number" type="style-text" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>A figure-number is a number. Overstrikes of the figure number are represented in the suffix element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="suffix" type="style-text" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Values for the suffix element include the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The suffix value slash is used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The suffix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="extend" type="extend" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class Figure;
+        using FigurePtr = std::shared_ptr<Figure>;
+        using FigureUPtr = std::unique_ptr<Figure>;
+        using FigureSet = std::vector<FigurePtr>;
+        using FigureSetIter = FigureSet::iterator;
+        using FigureSetIterConst = FigureSet::const_iterator;
+        inline FigurePtr makeFigure() { return std::make_shared<Figure>(); }
+        class Figure : public ElementInterface
+        {
+        public:
+            Figure();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Prefix minOccurs = 0, maxOccurs = 1 _________ */
+            PrefixPtr getPrefix() const;
+            void setPrefix( const PrefixPtr& value );
+            bool getHasPrefix() const;
+            void setHasPrefix( const bool value );
+            /* _________ FigureNumber minOccurs = 0, maxOccurs = 1 _________ */
+            FigureNumberPtr getFigureNumber() const;
+            void setFigureNumber( const FigureNumberPtr& value );
+            bool getHasFigureNumber() const;
+            void setHasFigureNumber( const bool value );
+            /* _________ Suffix minOccurs = 0, maxOccurs = 1 _________ */
+            SuffixPtr getSuffix() const;
+            void setSuffix( const SuffixPtr& value );
+            bool getHasSuffix() const;
+            void setHasSuffix( const bool value );
+            /* _________ Extend minOccurs = 0, maxOccurs = 1 _________ */
+            ExtendPtr getExtend() const;
+            void setExtend( const ExtendPtr& value );
+            bool getHasExtend() const;
+            void setHasExtend( const bool value );
+        private:
+            PrefixPtr myPrefix;
+            bool myHasPrefix;
+            FigureNumberPtr myFigureNumber;
+            bool myHasFigureNumber;
+            SuffixPtr mySuffix;
+            bool myHasSuffix;
+            ExtendPtr myExtend;
+            bool myHasExtend;
+        };
 
     }
 }
