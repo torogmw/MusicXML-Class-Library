@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Enums.h"
 
@@ -12807,3 +12809,4 @@ TEST( DynamicsValue_other, Enums )
     ss << object6;
     CHECK_EQUAL( expected_str, actual_str )
 }
+#endif

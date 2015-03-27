@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 
@@ -41,3 +43,4 @@ TEST( Test02, Dynamics )
     x.toStream( actual, 0 );
     CHECK_EQUAL( expected.str(), actual.str() )
 }
+#endif
