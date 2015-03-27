@@ -2142,17 +2142,15 @@ namespace mx
             myHasNormalTypeNormalDotGroup = value;
         }
         NoteheadText::NoteheadText()
-		:myAttributes( std::make_shared<AttributesIterface>() )
-		,myDisplayText( makeDisplayText() )
+		:myDisplayText( makeDisplayText() )
 		,myAccidentalText( makeAccidentalText() )
 		{}
 		bool NoteheadText::hasAttributes() const
 		{
-			return myAttributes->hasValues();
+			return false;
 		}
 		std::ostream& NoteheadText::streamAttributes( std::ostream& os ) const
 		{
-			return myAttributes->toStream( os );
 			return os;
 		}
 		std::ostream& NoteheadText::streamName( std::ostream& os ) const
@@ -2168,8 +2166,11 @@ namespace mx
 		{
 			isOneLineOnly = false;
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			myDisplayText->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myAccidentalText->toStream( os, indentLevel+1 );
+            os << std::endl;
+			return os;
 		}
 		/* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
 		DisplayTextPtr NoteheadText::getDisplayText() const
