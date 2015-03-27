@@ -834,6 +834,55 @@ namespace mx
             TopMarginPtr myTopMargin;
             BottomMarginPtr myBottomMargin;
         };
+        /*
+         <!--  ID = 4285 [4285] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="system-margins" type="system-margins" minOccurs="0"/>
+         <xs:complexType name="system-margins">
+         <xs:annotation>
+         <xs:documentation>System margins are relative to the page margins. Positive values indent and negative values reduce the margin size.</xs:documentation>
+         </xs:annotation>
+         <xs:group ref="left-right-margins"/>
+         </xs:complexType>
+         <xs:group name="left-right-margins">
+         <xs:annotation>
+         <xs:documentation>The left-right-margins group specifies horizontal margins in tenths.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="left-margin" type="tenths"/>
+         <xs:element name="right-margin" type="tenths"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        class SystemMargins;
+        using SystemMarginsPtr = std::shared_ptr<SystemMargins>;
+        using SystemMarginsUPtr = std::unique_ptr<SystemMargins>;
+        using SystemMarginsSet = std::vector<SystemMarginsPtr>;
+        using SystemMarginsSetIter = SystemMarginsSet::iterator;
+        using SystemMarginsSetIterConst = SystemMarginsSet::const_iterator;
+        inline SystemMarginsPtr makeSystemMargins() { return std::make_shared<SystemMargins>(); }
+        class SystemMargins : public ElementInterface
+        {
+        public:
+            SystemMargins();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ LeftMargin minOccurs = 1, maxOccurs = 1 _________ */
+            LeftMarginPtr getLeftMargin() const;
+            void setLeftMargin( const LeftMarginPtr& value );
+            /* _________ RightMargin minOccurs = 1, maxOccurs = 1 _________ */
+            RightMarginPtr getRightMargin() const;
+            void setRightMargin( const RightMarginPtr& value );
+        private:
+            LeftMarginPtr myLeftMargin;
+            RightMarginPtr myRightMargin;
+        };
 
     }
 }

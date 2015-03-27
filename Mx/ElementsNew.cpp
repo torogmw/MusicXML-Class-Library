@@ -1625,6 +1625,61 @@ namespace mx
 				myBottomMargin = value;
 			}
 		}
+        SystemMargins::SystemMargins()
+		:myLeftMargin( makeLeftMargin() )
+		,myRightMargin( makeRightMargin() )
+		{}
+		bool SystemMargins::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& SystemMargins::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& SystemMargins::streamName( std::ostream& os ) const
+		{
+			os << "system-margins";
+			return os;
+		}
+		bool SystemMargins::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& SystemMargins::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			myLeftMargin->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myRightMargin->toStream( os, indentLevel+1 );
+			os << std::endl;
+			return os;
+		}
+		/* _________ LeftMargin minOccurs = 1, maxOccurs = 1 _________ */
+		LeftMarginPtr SystemMargins::getLeftMargin() const
+		{
+			return myLeftMargin;
+		}
+		void SystemMargins::setLeftMargin( const LeftMarginPtr& value )
+		{
+			if( value )
+			{
+				myLeftMargin = value;
+			}
+		}
+		/* _________ RightMargin minOccurs = 1, maxOccurs = 1 _________ */
+		RightMarginPtr SystemMargins::getRightMargin() const
+		{
+			return myRightMargin;
+		}
+		void SystemMargins::setRightMargin( const RightMarginPtr& value )
+		{
+			if( value )
+			{
+				myRightMargin = value;
+			}
+		}
 
     } // namespace e
 
