@@ -1291,74 +1291,219 @@ namespace mx
 			return MiscellaneousFieldPtr();
 		}
         
-#if 1==0
-        X__X::X__X()
-		:myBeatUnit( makeBeatUnit() )
-        ,myBeatUnitDotSet()
+        
+        
+        /**************** SoundAttributes ****************/
+        /* 3314 */
+        SoundAttributes::SoundAttributes()
+        :tempo()
+        ,dynamics()
+        ,dacapo( types::YesNo::no )
+        ,segno()
+        ,dalsegno()
+        ,coda()
+        ,tocoda()
+        ,divisions()
+        ,forwardRepeat( types::YesNo::no )
+        ,fine()
+        ,timeOnly()
+        ,pizzicato( types::YesNo::no )
+        ,pan()
+        ,elevation()
+        ,damperPedal()
+        ,softPedal()
+        ,sostenutoPedal()
+        ,hasTempo( false )
+        ,hasDynamics( false )
+        ,hasDacapo( false )
+        ,hasSegno( false )
+        ,hasDalsegno( false )
+        ,hasCoda( false )
+        ,hasTocoda( false )
+        ,hasDivisions( false )
+        ,hasForwardRepeat( false )
+        ,hasFine( false )
+        ,hasTimeOnly( false )
+        ,hasPizzicato( false )
+        ,hasPan( false )
+        ,hasElevation( false )
+        ,hasDamperPedal( false )
+        ,hasSoftPedal( false )
+        ,hasSostenutoPedal( false )
+        {}
+        
+        bool SoundAttributes::hasValues() const
+        {
+            return hasTempo ||
+            hasDynamics ||
+            hasDacapo ||
+            hasSegno ||
+            hasDalsegno ||
+            hasCoda ||
+            hasTocoda ||
+            hasDivisions ||
+            hasForwardRepeat ||
+            hasFine ||
+            hasTimeOnly ||
+            hasPizzicato ||
+            hasPan ||
+            hasElevation ||
+            hasDamperPedal ||
+            hasSoftPedal ||
+            hasSostenutoPedal;
+        }
+        
+        std::ostream& SoundAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, tempo, "tempo", hasTempo );
+                streamAttribute( os, dynamics, "dynamics", hasDynamics );
+                streamAttribute( os, dacapo, "dacapo", hasDacapo );
+                streamAttribute( os, segno, "segno", hasSegno );
+                streamAttribute( os, dalsegno, "dalsegno", hasDalsegno );
+                streamAttribute( os, coda, "coda", hasCoda );
+                streamAttribute( os, tocoda, "tocoda", hasTocoda );
+                streamAttribute( os, divisions, "divisions", hasDivisions );
+                streamAttribute( os, forwardRepeat, "forward-repeat", hasForwardRepeat );
+                streamAttribute( os, fine, "fine", hasFine );
+                streamAttribute( os, timeOnly, "time-only", hasTimeOnly );
+                streamAttribute( os, pizzicato, "pizzicato", hasPizzicato );
+                streamAttribute( os, pan, "pan", hasPan );
+                streamAttribute( os, elevation, "elevation", hasElevation );
+                streamAttribute( os, damperPedal, "damper-pedal", hasDamperPedal );
+                streamAttribute( os, softPedal, "soft-pedal", hasSoftPedal );
+                streamAttribute( os, sostenutoPedal, "sostenuto-pedal", hasSostenutoPedal );
+            }
+            return os;
+        }
+        
+		Sound::Sound()
+		:myAttributes( std::make_shared<SoundAttributes>() )
+		,myMidiDevice( makeMidiDevice() )
+		,myHasMidiDevice( false )
+		,myMidiInstrument( makeMidiInstrument() )
+		,myHasMidiInstrument( false )
+		,myPlay( makePlay() )
+		,myHasPlay( false )
 		{}
-		bool X__X::hasAttributes() const
+		bool Sound::hasAttributes() const
 		{
-			return false;
+			return myAttributes->hasValues();
 		}
-		std::ostream& X__X::streamAttributes( std::ostream& os ) const
+		std::ostream& Sound::streamAttributes( std::ostream& os ) const
 		{
+			return myAttributes->toStream( os );
 			return os;
 		}
-		std::ostream& X__X::streamName( std::ostream& os ) const
+		std::ostream& Sound::streamName( std::ostream& os ) const
 		{
+			os << "sound";
 			return os;
 		}
-		bool X__X::hasContents() const
+		bool Sound::hasContents() const
 		{
-			return true;
+			return myHasMidiDevice || myHasMidiInstrument || myHasPlay;
 		}
-		std::ostream& X__X::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		std::ostream& Sound::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
-			myBeatUnit->toStream( os, indentLevel );
-            for ( auto x : myBeatUnitDotSet )
+			if ( myHasMidiDevice )
             {
                 os << std::endl;
-                x->toStream( os, indentLevel );
+                myMidiDevice->toStream( os, indentLevel+1 );
             }
-			return os;
+			if ( myMidiInstrument )
+            {
+                os << std::endl;
+                myMidiInstrument->toStream( os, indentLevel+1 );
+            }
+			if ( myHasPlay )
+            {
+                os << std::endl;
+                myPlay->toStream( os, indentLevel+1 );
+            }
+            if ( hasContents() )
+            {
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
 		}
-		/* _________ BeatUnit minOccurs = 1, maxOccurs = 1 _________ */
-        BeatUnitPtr X__X::getBeatUnit() const
-        {
-            return myBeatUnit;
-        }
-        void X__X::setBeatUnit( const BeatUnitPtr& value )
-        {
-            if ( value )
-            {
-                myBeatUnit = value;
-            }
-        }
-        /* _________ BeatUnitDot minOccurs = 0, maxOccurs = unbounded _________ */
-        const BeatUnitDotSet& X__X::getBeatUnitDotSet() const
-        {
-            return myBeatUnitDotSet;
-        }
-        void X__X::addBeatUnitDot( const BeatUnitDotPtr& value )
-        {
-            if ( value )
-            {
-                myBeatUnitDotSet.push_back( value );
-            }
-        }
-        void X__X::removeBeatUnitDot( const BeatUnitDotSetIterConst& setIterator )
-        {
-            if ( setIterator != myBeatUnitDotSet.cend() )
-            {
-                myBeatUnitDotSet.erase( setIterator );
-            }
-        }
-        void X__X::clearBeatUnitDotSet()
-        {
-            myBeatUnitDotSet.clear();
-        }
-#endif
+		SoundAttributesPtr Sound::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Sound::setAttributes( const SoundAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ MidiDevice minOccurs = 0, maxOccurs = 1 _________ */
+		MidiDevicePtr Sound::getMidiDevice() const
+		{
+			return myMidiDevice;
+		}
+		void Sound::setMidiDevice( const MidiDevicePtr& value )
+		{
+			if( value )
+			{
+				myMidiDevice = value;
+			}
+		}
+		bool Sound::getHasMidiDevice() const
+		{
+			return myHasMidiDevice;
+		}
+		void Sound::setHasMidiDevice( const bool value )
+		{
+			myHasMidiDevice = value;
+		}
+		/* _________ MidiInstrument minOccurs = 0, maxOccurs = 1 _________ */
+		MidiInstrumentPtr Sound::getMidiInstrument() const
+		{
+			return myMidiInstrument;
+		}
+		void Sound::setMidiInstrument( const MidiInstrumentPtr& value )
+		{
+			if( value )
+			{
+				myMidiInstrument = value;
+			}
+		}
+		bool Sound::getHasMidiInstrument() const
+		{
+			return myHasMidiInstrument;
+		}
+		void Sound::setHasMidiInstrument( const bool value )
+		{
+			myHasMidiInstrument = value;
+		}
+        /* _________ Play minOccurs = 0, maxOccurs = 1 _________ */
+		PlayPtr Sound::getPlay() const
+		{
+			return myPlay;
+		}
+		void Sound::setPlay( const PlayPtr& value )
+		{
+			if( value )
+			{
+				myPlay = value;
+			}
+		}
+		bool Sound::getHasPlay() const
+		{
+			return myHasPlay;
+		}
+		void Sound::setHasPlay( const bool value )
+		{
+			myHasPlay = value;
+		}
     } // namespace e
 
 } // namespace mx

@@ -594,45 +594,158 @@ namespace mx
         private:
             MiscellaneousFieldSet myMiscellaneousFieldSet;
         };
-
-#if 1==0
-        class X_______X;
-        using X_______XPtr = std::shared_ptr<X_______X>;
-        using X_______XUPtr = std::unique_ptr<X_______X>;
-        using X_______XSet = std::vector<X_______XPtr>;
-        using X_______XSetIter = X_______XSet::iterator;
-        using X_______XSetIterConst = X_______XSet::const_iterator;
-        inline X_______XPtr makeX_______X() { return std::make_shared<X_______X>(); }
-        class X_______X : public ElementInterface
+        /*
+         3314 [ equivalents 3314, 6331 ]
+         <!--  ID = 3314 [3314, 6331] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 16 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="sound" type="sound" minOccurs="0"/>
+         <xs:complexType name="sound">
+         <xs:annotation>
+         <xs:documentation>The sound element contains general playback parameters. They can stand alone within a part/measure, or be a component element within a direction.
+         
+         Tempo is expressed in quarter notes per minute. If 0, the sound-generating program should prompt the user at the time of compiling a sound (MIDI) file.
+         
+         Dynamics (or MIDI velocity) are expressed as a percentage of the default forte value (90 for MIDI 1.0).
+         
+         Dacapo indicates to go back to the beginning of the movement. When used it always has the value "yes".
+         
+         Segno and dalsegno are used for backwards jumps to a segno sign; coda and tocoda are used for forward jumps to a coda sign. If there are multiple jumps, the value of these parameters can be used to name and distinguish them. If segno or coda is used, the divisions attribute can also be used to indicate the number of divisions per quarter note. Otherwise sound and MIDI generating programs may have to recompute this.
+         
+         By default, a dalsegno or dacapo attribute indicates that the jump should occur the first time through, while a tocoda attribute indicates the jump should occur the second time through. The time that jumps occur can be changed by using the time-only attribute.
+         
+         Forward-repeat is used when a forward repeat sign is implied, and usually follows a bar line. When used it always has the value of "yes".
+         
+         The fine attribute follows the final note or rest in a movement with a da capo or dal segno direction. If numeric, the value represents the actual duration of the final note or rest, which can be ambiguous in written notation and different among parts and voices. The value may also be "yes" to indicate no change to the final duration.
+         
+         If the sound element applies only particular times through a repeat, the time-only attribute indicates which times to apply the sound element.
+         
+         Pizzicato in a sound element effects all following notes. Yes indicates pizzicato, no indicates arco.
+         
+         The pan and elevation attributes are deprecated in Version 2.0. The pan and elevation elements in the midi-instrument element should be used instead. The meaning of the pan and elevation attributes is the same as for the pan and elevation elements. If both are present, the mid-instrument elements take priority.
+         
+         The damper-pedal, soft-pedal, and sostenuto-pedal attributes effect playback of the three common piano pedals and their MIDI controller equivalents. The yes value indicates the pedal is depressed; no indicates the pedal is released. A numeric value from 0 to 100 may also be used for half pedaling. This value is the percentage that the pedal is depressed. A value of 0 is equivalent to no, and a value of 100 is equivalent to yes.
+         
+         MIDI devices, MIDI instruments, and playback techniques are changed using the midi-device, midi-instrument, and play elements. When there are multiple instances of these elements, they should be grouped together by instrument using the id attribute values.
+         
+         The offset element is used to indicate that the sound takes place offset from the current score position. If the sound element is a child of a direction element, the sound offset element overrides the direction offset element if both elements are present. Note that the offset reflects the intended musical position for the change in sound. It should not be used to compensate for latency issues in particular hardware configurations.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:sequence minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="midi-device" type="midi-device" minOccurs="0"/>
+         <xs:element name="midi-instrument" type="midi-instrument" minOccurs="0"/>
+         <xs:element name="play" type="play" minOccurs="0"/>
+         </xs:sequence>
+         <xs:element name="offset" type="offset" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attribute name="tempo" type="non-negative-decimal"/>
+         <xs:attribute name="dynamics" type="non-negative-decimal"/>
+         <xs:attribute name="dacapo" type="yes-no"/>
+         <xs:attribute name="segno" type="xs:token"/>
+         <xs:attribute name="dalsegno" type="xs:token"/>
+         <xs:attribute name="coda" type="xs:token"/>
+         <xs:attribute name="tocoda" type="xs:token"/>
+         <xs:attribute name="divisions" type="divisions"/>
+         <xs:attribute name="forward-repeat" type="yes-no"/>
+         <xs:attribute name="fine" type="xs:token"/>
+         <xs:attribute name="time-only" type="time-only"/>
+         <xs:attribute name="pizzicato" type="yes-no"/>
+         <xs:attribute name="pan" type="rotation-degrees"/>
+         <xs:attribute name="elevation" type="rotation-degrees"/>
+         <xs:attribute name="damper-pedal" type="yes-no-number"/>
+         <xs:attribute name="soft-pedal" type="yes-no-number"/>
+         <xs:attribute name="sostenuto-pedal" type="yes-no-number"/>
+         </xs:complexType> */
+        
+        struct SoundAttributes;
+        using SoundAttributesPtr = std::shared_ptr<SoundAttributes>;
+        
+        struct SoundAttributes : public AttributesInterface
         {
         public:
-            X_______X();
-            virtual bool hasAttributes() const;
-            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-            virtual std::ostream& streamName( std::ostream& os ) const;
-            virtual bool hasContents() const;
-            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-        private:
+            SoundAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::NonNegativeDecimal tempo;
+            types::NonNegativeDecimal dynamics;
+            types::YesNo dacapo;
+            types::XsToken segno;
+            types::XsToken dalsegno;
+            types::XsToken coda;
+            types::XsToken tocoda;
+            types::DivisionsValue divisions;
+            types::YesNo forwardRepeat;
+            types::XsToken fine;
+            types::TimeOnly timeOnly;
+            types::YesNo pizzicato;
+            types::RotationDegrees pan;
+            types::RotationDegrees elevation;
+            types::YesNoNumber damperPedal;
+            types::YesNoNumber softPedal;
+            types::YesNoNumber sostenutoPedal;
+            bool hasTempo;
+            bool hasDynamics;
+            bool hasDacapo;
+            bool hasSegno;
+            bool hasDalsegno;
+            bool hasCoda;
+            bool hasTocoda;
+            bool hasDivisions;
+            bool hasForwardRepeat;
+            bool hasFine;
+            bool hasTimeOnly;
+            bool hasPizzicato;
+            bool hasPan;
+            bool hasElevation;
+            bool hasDamperPedal;
+            bool hasSoftPedal;
+            bool hasSostenutoPedal;
         };
         
-        class X_______X;
-        using X_______XPtr = std::shared_ptr<X_______X>;
-        using X_______XUPtr = std::unique_ptr<X_______X>;
-        using X_______XSet = std::vector<X_______XPtr>;
-        using X_______XSetIter = X_______XSet::iterator;
-        using X_______XSetIterConst = X_______XSet::const_iterator;
-        inline X_______XPtr makeX_______X() { return std::make_shared<X_______X>(); }
-        class X_______X : public ElementInterface
+        class Sound;
+        using SoundPtr = std::shared_ptr<Sound>;
+        using SoundUPtr = std::unique_ptr<Sound>;
+        using SoundSet = std::vector<SoundPtr>;
+        using SoundSetIter = SoundSet::iterator;
+        using SoundSetIterConst = SoundSet::const_iterator;
+        inline SoundPtr makeSound() { return std::make_shared<Sound>(); }
+        class Sound : public ElementInterface
         {
         public:
-            X_______X();
+            Sound();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            SoundAttributesPtr getAttributes() const;
+            void setAttributes( const SoundAttributesPtr& value );
+            /* _________ MidiDevice minOccurs = 0, maxOccurs = 1 _________ */
+            MidiDevicePtr getMidiDevice() const;
+            void setMidiDevice( const MidiDevicePtr& value );
+            bool getHasMidiDevice() const;
+            void setHasMidiDevice( const bool value );
+            /* _________ MidiInstrument minOccurs = 0, maxOccurs = 1 _________ */
+            MidiInstrumentPtr getMidiInstrument() const;
+            void setMidiInstrument( const MidiInstrumentPtr& value );
+            bool getHasMidiInstrument() const;
+            void setHasMidiInstrument( const bool value );
+            /* _________ Play minOccurs = 0, maxOccurs = 1 _________ */
+            PlayPtr getPlay() const;
+            void setPlay( const PlayPtr& value );
+            bool getHasPlay() const;
+            void setHasPlay( const bool value );
         private:
+            SoundAttributesPtr myAttributes;
+            MidiDevicePtr myMidiDevice;
+            bool myHasMidiDevice;
+            MidiInstrumentPtr myMidiInstrument;
+            bool myHasMidiInstrument;
+            PlayPtr myPlay;
+            bool myHasPlay;
         };
-#endif
+
     }
 }

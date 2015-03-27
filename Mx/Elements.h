@@ -9,6 +9,7 @@
 #include "PositiveIntegerOrEmpty.h"
 #include "Color.h"
 #include "Date.h"
+#include "YesNoNumber.h"
 #include <memory>
 
 namespace mx
