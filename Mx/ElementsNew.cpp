@@ -939,6 +939,156 @@ namespace mx
 		{
 			myHasElevation = value;
 		}
+        
+        
+        
+        /**************** PlayAttributes ****************/
+        /* 3930 */
+        PlayAttributes::PlayAttributes()
+        :id()
+        ,hasId( false )
+        {}
+        
+        bool PlayAttributes::hasValues() const
+        {
+            return hasId;
+        }
+        
+        std::ostream& PlayAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+            }
+            return os;
+        }
+        
+		Play::Play()
+		:myAttributes( std::make_shared<PlayAttributes>() )
+		,myIpa( makeIpa() )
+		,myMute( makeMute() )
+		,mySemiPitched( makeSemiPitched() )
+		,myOtherPlay( makeOtherPlay() )
+		{}
+		bool Play::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Play::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Play::streamName( std::ostream& os ) const
+		{
+			os << "play";
+			return os;
+		}
+		bool Play::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Play::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+            switch ( myChoice )
+            {
+                case Choice::ipa:
+                {
+                    myIpa->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::mute:
+                {
+                    myMute->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::semiPitched:
+                {
+                    mySemiPitched->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::otherPlay:
+                {
+                    myOtherPlay->toStream( os, indentLevel+1 );
+                }
+                    break;
+                default:
+                    break;
+            }
+			isOneLineOnly = false;
+			os << std::endl;
+			return os;
+		}
+		PlayAttributesPtr Play::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Play::setAttributes( const PlayAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ Choice __________ */
+        Play::Choice Play::getChoice() const
+        {
+            return myChoice;
+        }
+        void Play::setChoice( const Play::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ Ipa minOccurs = 1, maxOccurs = 1 _________ */
+		IpaPtr Play::getIpa() const
+		{
+			return myIpa;
+		}
+		void Play::setIpa( const IpaPtr& value )
+		{
+			if( value )
+			{
+				myIpa = value;
+			}
+		}
+		/* _________ Mute minOccurs = 1, maxOccurs = 1 _________ */
+		MutePtr Play::getMute() const
+		{
+			return myMute;
+		}
+		void Play::setMute( const MutePtr& value )
+		{
+			if( value )
+			{
+				myMute = value;
+			}
+		}
+		/* _________ SemiPitched minOccurs = 1, maxOccurs = 1 _________ */
+		SemiPitchedPtr Play::getSemiPitched() const
+		{
+			return mySemiPitched;
+		}
+		void Play::setSemiPitched( const SemiPitchedPtr& value )
+		{
+			if( value )
+			{
+				mySemiPitched = value;
+			}
+		}
+		/* _________ OtherPlay minOccurs = 1, maxOccurs = 1 _________ */
+		OtherPlayPtr Play::getOtherPlay() const
+		{
+			return myOtherPlay;
+		}
+		void Play::setOtherPlay( const OtherPlayPtr& value )
+		{
+			if( value )
+			{
+				myOtherPlay = value;
+			}
+		}
+
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )

@@ -393,7 +393,96 @@ namespace mx
             bool myHasElevation;
         };
         
+        /*
+         3930 [ equivalents 3930, 5050 ]
+         <!--  ID = 3930 [3930, 5050] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="play" type="play" minOccurs="0"/>
+         <xs:complexType name="play">
+         <xs:annotation>
+         <xs:documentation>The play type, new in Version 3.0, specifies playback techniques to be used in conjunction with the instrument-sound element. When used as part of a sound element, it applies to all notes going forward in score order. In multi-instrument parts, the affected instrument should be specified using the id attribute. When used as part of a note element, it applies to the current note only.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="ipa" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>The ipa element represents International Phonetic Alphabet (IPA) sounds for vocal music. String content is limited to IPA 2005 symbols represented in Unicode 6.0.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="mute" type="mute"/>
+         <xs:element name="semi-pitched" type="semi-pitched"/>
+         <xs:element name="other-play" type="other-play"/>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attribute name="id" type="xs:IDREF"/>
+         </xs:complexType> */
         
+        struct PlayAttributes;
+        using PlayAttributesPtr = std::shared_ptr<PlayAttributes>;
+        
+        struct PlayAttributes : public AttributesInterface
+        {
+        public:
+            PlayAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsIDREF id;
+            bool hasId;
+        };
+        
+        class Play;
+        using PlayPtr = std::shared_ptr<Play>;
+        using PlayUPtr = std::unique_ptr<Play>;
+        using PlaySet = std::vector<PlayPtr>;
+        using PlaySetIter = PlaySet::iterator;
+        using PlaySetIterConst = PlaySet::const_iterator;
+        inline PlayPtr makePlay() { return std::make_shared<Play>(); }
+        class Play : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                ipa = 1,
+                mute = 2,
+                semiPitched = 3,
+                otherPlay = 4
+            };
+            Play();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PlayAttributesPtr getAttributes() const;
+            void setAttributes( const PlayAttributesPtr& value );
+            /* _________ Choice __________ */
+            Play::Choice getChoice() const;
+            void setChoice( const Play::Choice value );
+            /* _________ Ipa minOccurs = 1, maxOccurs = 1 _________ */
+            IpaPtr getIpa() const;
+            void setIpa( const IpaPtr& value );
+            /* _________ Mute minOccurs = 1, maxOccurs = 1 _________ */
+            MutePtr getMute() const;
+            void setMute( const MutePtr& value );
+            /* _________ SemiPitched minOccurs = 1, maxOccurs = 1 _________ */
+            SemiPitchedPtr getSemiPitched() const;
+            void setSemiPitched( const SemiPitchedPtr& value );
+            /* _________ OtherPlay minOccurs = 1, maxOccurs = 1 _________ */
+            OtherPlayPtr getOtherPlay() const;
+            void setOtherPlay( const OtherPlayPtr& value );
+            
+        private:
+            PlayAttributesPtr myAttributes;
+            Choice myChoice;
+            IpaPtr myIpa;
+            MutePtr myMute;
+            SemiPitchedPtr mySemiPitched;
+            OtherPlayPtr myOtherPlay;
+        };
+
         
 
 #if 1==0
