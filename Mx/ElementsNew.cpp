@@ -1981,6 +1981,107 @@ namespace mx
 		{
 			myHasExtend = value;
 		}
+        
+        
+		TimeModification::TimeModification()
+		:myActualNotes( makeActualNotes() )
+		,myNormalNotes( makeNormalNotes() )
+		,myNormalType( makeNormalType() )
+		,myNormalDotSet()
+		{}
+		bool TimeModification::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& TimeModification::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& TimeModification::streamName( std::ostream& os ) const
+		{
+			os << "time-modification";
+			return os;
+		}
+		bool TimeModification::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& TimeModification::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		/* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
+		ActualNotesPtr TimeModification::getActualNotes() const
+		{
+			return myActualNotes;
+		}
+		void TimeModification::setActualNotes( const ActualNotesPtr& value )
+		{
+			if( value )
+			{
+				myActualNotes = value;
+			}
+		}
+		/* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
+		NormalNotesPtr TimeModification::getNormalNotes() const
+		{
+			return myNormalNotes;
+		}
+		void TimeModification::setNormalNotes( const NormalNotesPtr& value )
+		{
+			if( value )
+			{
+				myNormalNotes = value;
+			}
+		}
+		/* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+		NormalTypePtr TimeModification::getNormalType() const
+		{
+			return myNormalType;
+		}
+		void TimeModification::setNormalType( const NormalTypePtr& value )
+		{
+			if( value )
+			{
+				myNormalType = value;
+			}
+		}
+		/* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+		const NormalDotSet& TimeModification::getNormalDotSet() const
+		{
+			return myNormalDotSet;
+		}
+		void TimeModification::removeNormalDot( const NormalDotSetIterConst& value )
+		{
+			if ( value != myNormalDotSet.cend() )
+			{
+				myNormalDotSet.erase( value );
+			}
+		}
+		void TimeModification::addNormalDot( const NormalDotPtr& value )
+		{
+			if ( value )
+			{
+				myNormalDotSet.push_back( value );
+			}
+		}
+		void TimeModification::clearNormalDotSet()
+		{
+			myNormalDotSet.clear();
+		}
+		NormalDotPtr TimeModification::getNormalDot( const NormalDot SetIterConst& setIterator ) const
+		{
+			if( setIterator != myNormalDotSet.cend() )
+			{
+				return *setIterator;
+			}
+			return NormalDotPtr();
+		}
+
 
     } // namespace e
 

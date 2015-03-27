@@ -1104,6 +1104,78 @@ namespace mx
             ExtendPtr myExtend;
             bool myHasExtend;
         };
+        /* <!--  ID = 5016 [5016] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="time-modification" type="time-modification" minOccurs="0"/>
+         <xs:complexType name="time-modification">
+         <xs:annotation>
+         <xs:documentation>Time modification indicates tuplets, double-note tremolos, and other durational changes. A time-modification element shows how the cumulative, sounding effect of tuplets and double-note tremolos compare to the written note type represented by the type and dot elements. Nested tuplets and other notations that use more detailed information need both the time-modification and tuplet elements to be represented accurately.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="actual-notes" type="xs:nonNegativeInteger">
+         <xs:annotation>
+         <xs:documentation>The actual-notes element describes how many notes are played in the time usually occupied by the number in the normal-notes element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="normal-notes" type="xs:nonNegativeInteger">
+         <xs:annotation>
+         <xs:documentation>The normal-notes element describes how many notes are usually played in the time occupied by the number in the actual-notes element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:sequence minOccurs="0">
+         <xs:element name="normal-type" type="note-type-value">
+         <xs:annotation>
+         <xs:documentation>If the type associated with the number in the normal-notes element is different than the current note type (e.g., a quarter note within an eighth note triplet), then the normal-notes type (e.g. eighth) is specified in the normal-type and normal-dot elements.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="normal-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The normal-dot element is used to specify dotted normal tuplet types.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class TimeModification;
+        using TimeModificationPtr = std::shared_ptr<TimeModification>;
+        using TimeModificationUPtr = std::unique_ptr<TimeModification>;
+        using TimeModificationSet = std::vector<TimeModificationPtr>;
+        using TimeModificationSetIter = TimeModificationSet::iterator;
+        using TimeModificationSetIterConst = TimeModificationSet::const_iterator;
+        inline TimeModificationPtr makeTimeModification() { return std::make_shared<TimeModification>(); }
+        class TimeModification : public ElementInterface
+        {
+        public:
+            TimeModification();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
+            ActualNotesPtr getActualNotes() const;
+            void setActualNotes( const ActualNotesPtr& value );
+            /* _________ NormalNotes minOccurs = 1, maxOccurs = 1 _________ */
+            NormalNotesPtr getNormalNotes() const;
+            void setNormalNotes( const NormalNotesPtr& value );
+            /* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+            NormalTypePtr getNormalType() const;
+            void setNormalType( const NormalTypePtr& value );
+            /* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const NormalDotSet& getNormalDotSet() const;
+            void addNormalDot( const NormalDotPtr& value );
+            void removeNormalDot( const NormalDotSetIterConst& value );
+            void clearNormalDotSet();
+        private:
+            ActualNotesPtr myActualNotes;
+            NormalNotesPtr myNormalNotes;
+            NormalTypePtr myNormalType;
+            NormalDotSet myNormalDotSet;
+        };
 
     }
 }
