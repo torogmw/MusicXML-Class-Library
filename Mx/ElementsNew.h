@@ -552,6 +552,48 @@ namespace mx
             EncodingDescriptionPtr myEncodingDescription;
             SupportsPtr mySupports;
         };
+        /*
+         4096
+         <!--  ID = 4096 [4096] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 1 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="miscellaneous" type="miscellaneous" minOccurs="0"/>
+         <xs:complexType name="miscellaneous">
+         <xs:annotation>
+         <xs:documentation>If a program has other metadata not yet supported in the MusicXML format, it can go in the miscellaneous element. The miscellaneous type puts each separate part of metadata into its own miscellaneous-field type.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="miscellaneous-field" type="miscellaneous-field" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class Miscellaneous;
+        using MiscellaneousPtr = std::shared_ptr<Miscellaneous>;
+        using MiscellaneousUPtr = std::unique_ptr<Miscellaneous>;
+        using MiscellaneousSet = std::vector<MiscellaneousPtr>;
+        using MiscellaneousSetIter = MiscellaneousSet::iterator;
+        using MiscellaneousSetIterConst = MiscellaneousSet::const_iterator;
+        inline MiscellaneousPtr makeMiscellaneous() { return std::make_shared<Miscellaneous>(); }
+        class Miscellaneous : public ElementInterface
+        {
+        public:
+            Miscellaneous();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ MiscellaneousField minOccurs = 0, maxOccurs = unbounded _________ */
+            const MiscellaneousFieldSet& getMiscellaneousFieldSet() const;
+            void addMiscellaneousField( const MiscellaneousFieldPtr& value );
+            void removeMiscellaneousField( const MiscellaneousFieldSetIterConst& value );
+            void clearMiscellaneousFieldSet();
+            MiscellaneousFieldPtr getMiscellaneousField( const MiscellaneousFieldSetIterConst& setIterator ) const;
+        private:
+            MiscellaneousFieldSet myMiscellaneousFieldSet;
+        };
 
 #if 1==0
         class X_______X;

@@ -1220,6 +1220,77 @@ namespace mx
 				mySupports = value;
 			}
 		}
+        
+        Miscellaneous::Miscellaneous()
+		:myMiscellaneousFieldSet()
+		{}
+		bool Miscellaneous::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Miscellaneous::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Miscellaneous::streamName( std::ostream& os ) const
+		{
+			os << "miscellaneous";
+			return os;
+		}
+		bool Miscellaneous::hasContents() const
+		{
+			return myMiscellaneousFieldSet.size() > 0;
+		}
+		std::ostream& Miscellaneous::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            for( auto x : myMiscellaneousFieldSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+			if ( hasContents() )
+            {
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+		/* _________ MiscellaneousField minOccurs = 0, maxOccurs = unbounded _________ */
+		const MiscellaneousFieldSet& Miscellaneous::getMiscellaneousFieldSet() const
+		{
+			return myMiscellaneousFieldSet;
+		}
+		void Miscellaneous::removeMiscellaneousField( const MiscellaneousFieldSetIterConst& value )
+		{
+			if ( value != myMiscellaneousFieldSet.cend() )
+			{
+				myMiscellaneousFieldSet.erase( value );
+			}
+		}
+		void Miscellaneous::addMiscellaneousField( const MiscellaneousFieldPtr& value )
+		{
+			if ( value )
+			{
+				myMiscellaneousFieldSet.push_back( value );
+			}
+		}
+		void Miscellaneous::clearMiscellaneousFieldSet()
+		{
+			myMiscellaneousFieldSet.clear();
+		}
+		MiscellaneousFieldPtr Miscellaneous::getMiscellaneousField( const MiscellaneousFieldSetIterConst& setIterator ) const
+		{
+			if( setIterator != myMiscellaneousFieldSet.cend() )
+			{
+				return *setIterator;
+			}
+			return MiscellaneousFieldPtr();
+		}
+        
 #if 1==0
         X__X::X__X()
 		:myBeatUnit( makeBeatUnit() )
