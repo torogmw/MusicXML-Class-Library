@@ -2,6 +2,7 @@
 #include "MxTestHelper.h"
 #include "Elements.h"
 #include "DirectionTypeTest.h"
+#include "PercussionTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
@@ -31,7 +32,7 @@ TEST( Test02, DirectionType )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 TEST( Test03, DirectionType )
@@ -44,7 +45,7 @@ TEST( Test03, DirectionType )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 namespace MxTestHelpers
@@ -56,21 +57,24 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                ;
+                (*o->getRehearsalSet().cbegin())->setValue( XsString( "A" ) );
             }
                 break;
             case variant::two:
             {
-                o->setDirectionTypeChoice( tgenDirectionTypeChoice( v ) );
-                o->getAttributes()->hasValign = true;
-                o->getAttributes()->valign = Valign::baseline;
+                o->setChoice( DirectionType::Choice::pedal );
+                o->getPedal()->getAttributes()->hasLine = true;
+                o->getPedal()->getAttributes()->line = YesNo::yes;
             }
                 break;
             case variant::three:
             {
-                o->setDirectionTypeChoice( tgenDirectionTypeChoice( v ) );
-                o->getAttributes()->hasHalign = true;
-                o->getAttributes()->halign = LeftCenterRight::center;
+                PercussionPtr p1 = tgenPercussion( variant::two );
+                PercussionPtr p2 = tgenPercussion( variant::three );
+                o->setChoice( DirectionType::Choice::percussion );
+                o->addPercussion( p1 );
+                o->removePercussion( o->getPercussionSet().cbegin() );
+                o->addPercussion( p2 );
             }
                 break;
             default:
@@ -85,23 +89,26 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<percussion>)" );
-                streamLine( os, i+1, R"(<glass>wind chimes</glass>)" );
-                streamLine( os, i, R"(</percussion>)", false );
+                streamLine( os, i, R"(<direction-type>)" );
+                streamLine( os, i+1, R"(<rehearsal>A</rehearsal>)" );
+                streamLine( os, i, R"(</direction-type>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<percussion valign="baseline">)" );
-                streamLine( os, i+1, R"(<wood>claves</wood>)" );
-                streamLine( os, i, R"(</percussion>)", false );
+                streamLine( os, i, R"(<direction-type>)" );
+                streamLine( os, i+1, R"(<pedal type="start" line="yes"/>)" );
+                streamLine( os, i, R"(</direction-type>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<percussion halign="center">)" );
-                streamLine( os, i+1, R"(<other-percussion>Hello</other-percussion>)" );
-                streamLine( os, i, R"(</percussion>)", false );
+                streamLine( os, i, R"(<direction-type>)" );
+                tgenPercussionExpected( os, i+1, variant::two );
+                os << std::endl;
+                tgenPercussionExpected( os, i+1, variant::three );
+                os << std::endl;
+                streamLine( os, i, R"(</direction-type>)", false );
             }
                 break;
             default:
