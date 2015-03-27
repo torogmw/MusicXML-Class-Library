@@ -2141,6 +2141,60 @@ namespace mx
         {
             myHasNormalTypeNormalDotGroup = value;
         }
+        NoteheadText::NoteheadText()
+		:myAttributes( std::make_shared<AttributesIterface>() )
+		,myDisplayText( makeDisplayText() )
+		,myAccidentalText( makeAccidentalText() )
+		{}
+		bool NoteheadText::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& NoteheadText::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& NoteheadText::streamName( std::ostream& os ) const
+		{
+			os << "notehead-text";
+			return os;
+		}
+		bool NoteheadText::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& NoteheadText::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		/* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+		DisplayTextPtr NoteheadText::getDisplayText() const
+		{
+			return myDisplayText;
+		}
+		void NoteheadText::setDisplayText( const DisplayTextPtr& value )
+		{
+			if( value )
+			{
+				myDisplayText = value;
+			}
+		}
+		/* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+		AccidentalTextPtr NoteheadText::getAccidentalText() const
+		{
+			return myAccidentalText;
+		}
+		void NoteheadText::setAccidentalText( const AccidentalTextPtr& value )
+		{
+			if( value )
+			{
+				myAccidentalText = value;
+			}
+		}
         
     } // namespace e
 

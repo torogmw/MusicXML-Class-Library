@@ -1202,6 +1202,51 @@ namespace mx
             NormalTypeNormalDotGroupPtr myNormalTypeNormalDotGroup;
             bool myHasNormalTypeNormalDotGroup;
         };
+        /*
+         <!--  ID = 5028 [5028] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="notehead-text" type="notehead-text" minOccurs="0"/>
+         <xs:complexType name="notehead-text">
+         <xs:annotation>
+         <xs:documentation>The notehead-text type represents text that is displayed inside a notehead, as is done in some educational music. It is not needed for the numbers used in tablature or jianpu notation. The presence of a TAB or jianpu clefs is sufficient to indicate that numbers are used. The display-text and accidental-text elements allow display of fully formatted text and accidentals.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+         <xs:element name="display-text" type="formatted-text"/>
+         <xs:element name="accidental-text" type="accidental-text"/>
+         </xs:choice>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class NoteheadText;
+        using NoteheadTextPtr = std::shared_ptr<NoteheadText>;
+        using NoteheadTextUPtr = std::unique_ptr<NoteheadText>;
+        using NoteheadTextSet = std::vector<NoteheadTextPtr>;
+        using NoteheadTextSetIter = NoteheadTextSet::iterator;
+        using NoteheadTextSetIterConst = NoteheadTextSet::const_iterator;
+        inline NoteheadTextPtr makeNoteheadText() { return std::make_shared<NoteheadText>(); }
+        class NoteheadText : public ElementInterface
+        {
+        public:
+            NoteheadText();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayTextPtr getDisplayText() const;
+            void setDisplayText( const DisplayTextPtr& value );
+            /* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+            AccidentalTextPtr getAccidentalText() const;
+            void setAccidentalText( const AccidentalTextPtr& value );
+        private:
+            DisplayTextPtr myDisplayText;
+            AccidentalTextPtr myAccidentalText;
+        };
 
     }
 }
