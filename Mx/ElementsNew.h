@@ -1348,7 +1348,7 @@ namespace mx
         class ArticulationsChoice : public ElementInterface
         {
         public:
-            enum class
+            enum class Choice
             {
                 accent = 1,
                 strongAccent = 2,
@@ -1375,7 +1375,7 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
             ArticulationsChoice::Choice getChoice() const;
-            void setChoice( const AtriculationsChoice::Choice value );
+            void setChoice( const ArticulationsChoice::Choice value );
             /* _________ Accent minOccurs = 1, maxOccurs = 1 _________ */
             AccentPtr getAccent() const;
             void setAccent( const AccentPtr& value );
@@ -1443,6 +1443,30 @@ namespace mx
             UnstressPtr myUnstress;
             OtherArticulationPtr myOtherArticulation;
         };
-
+        class Articulations;
+        using ArticulationsPtr = std::shared_ptr<Articulations>;
+        using ArticulationsUPtr = std::unique_ptr<Articulations>;
+        using ArticulationsSet = std::vector<ArticulationsPtr>;
+        using ArticulationsSetIter = ArticulationsSet::iterator;
+        using ArticulationsSetIterConst = ArticulationsSet::const_iterator;
+        inline ArticulationsPtr makeArticulations() { return std::make_shared<Articulations>(); }
+        class Articulations : public ElementInterface
+        {
+        public:
+            Articulations();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ ArticulationsChoice minOccurs = 0, maxOccurs = unbounded _________ */
+            const ArticulationsChoiceSet& getArticulationsChoiceSet() const;
+            void addArticulationsChoice( const ArticulationsChoicePtr& value );
+            void removeArticulationsChoice( const ArticulationsChoiceSetIterConst& value );
+            void clearArticulationsChoiceSet();
+            ArticulationsChoicePtr getArticulationsChoice( const ArticulationsChoiceSetIterConst& setIterator ) const;
+        private:
+            ArticulationsChoiceSet myArticulationsChoiceSet;
+        };
     }
 }
