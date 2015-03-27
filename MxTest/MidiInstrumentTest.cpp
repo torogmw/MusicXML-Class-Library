@@ -19,7 +19,7 @@ TEST( Test01, MidiInstrument )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 TEST( Test02, MidiInstrument )
@@ -62,7 +62,9 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->getAttributes()->id = XsIDREF( "M1" );
+                o->setHasMidiChannel( true );
+                
             }
                 break;
             case variant::three:
@@ -82,9 +84,7 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<direction-type>)" );
-                streamLine( os, i+1, R"(<rehearsal>A</rehearsal>)" );
-                streamLine( os, i, R"(</direction-type>)", false );
+                streamLine( os, i, R"(<midi-instrument id="ID"/>)", false );
             }
                 break;
             case variant::two:
