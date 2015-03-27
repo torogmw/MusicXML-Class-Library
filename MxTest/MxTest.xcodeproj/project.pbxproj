@@ -17,6 +17,7 @@
 		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
 		291221781AC4E4D400A19E48 /* DirectionTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */; };
 		2912217B1AC4EC2C00A19E48 /* MidiInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */; };
+		292A2BF61AC5D45E00A5D80B /* TimeModificationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */; };
 		292D02D81ABE1A9500005E61 /* KeyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D02D61ABE1A9500005E61 /* KeyTest.cpp */; };
 		292D12711AA2A3270079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */; };
 		292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D12761AA2A7260079EF22 /* DateTest.cpp */; };
@@ -359,6 +360,8 @@
 		291221771AC4E4D400A19E48 /* DirectionTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionTypeTest.h; sourceTree = "<group>"; };
 		291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInstrumentTest.cpp; sourceTree = "<group>"; };
 		2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiInstrumentTest.h; sourceTree = "<group>"; };
+		292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeModificationTest.cpp; sourceTree = "<group>"; };
+		292A2BF51AC5D45E00A5D80B /* TimeModificationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeModificationTest.h; sourceTree = "<group>"; };
 		292D02D61ABE1A9500005E61 /* KeyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyTest.cpp; sourceTree = "<group>"; };
 		292D02DA1ABE1D1A00005E61 /* MxTestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MxTestHelper.h; sourceTree = "<group>"; };
 		292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YesNoNumber.cpp; sourceTree = "<group>"; };
@@ -1098,6 +1101,8 @@
 				296236091AC5C7DB00F3E007 /* StrongAccentTest.h */,
 				2962360B1AC5CE1600F3E007 /* FigureTest.cpp */,
 				2962360C1AC5CE1600F3E007 /* FigureTest.h */,
+				292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */,
+				292A2BF51AC5D45E00A5D80B /* TimeModificationTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1388,6 +1393,7 @@
 				2935A72A1AB5FC3B002859CA /* RightDividerTest.cpp in Sources */,
 				29C0B9791AAE9337004F86FA /* CancelTest.cpp in Sources */,
 				298C81DE1AB6A8DC006619A9 /* LyricLanguageTest.cpp in Sources */,
+				292A2BF61AC5D45E00A5D80B /* TimeModificationTest.cpp in Sources */,
 				298C81E71AB6A8DC006619A9 /* TiedTest.cpp in Sources */,
 				2935A71B1AB5FC3B002859CA /* CodaTest.cpp in Sources */,
 				2935A7241AB5FC3B002859CA /* FalloffTest.cpp in Sources */,

@@ -1981,21 +1981,98 @@ namespace mx
 		{
 			myHasExtend = value;
 		}
-        
-        
+        /* ______________________________________________________________________ */
+		NormalTypeNormalDotGroup::NormalTypeNormalDotGroup()
+		:myNormalType( makeNormalType() )
+		,myNormalDotSet()
+		{}
+		bool NormalTypeNormalDotGroup::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& NormalTypeNormalDotGroup::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& NormalTypeNormalDotGroup::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool NormalTypeNormalDotGroup::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& NormalTypeNormalDotGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            
+			isOneLineOnly = false;
+			os << std::endl;
+			myNormalType->toStream( os, indentLevel );
+			for ( auto x : myNormalDotSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel );
+            }
+            os << std::endl;
+            return os;
+		}
+		/* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
+		NormalTypePtr NormalTypeNormalDotGroup::getNormalType() const
+		{
+			return myNormalType;
+		}
+		void NormalTypeNormalDotGroup::setNormalType( const NormalTypePtr& value )
+		{
+			if( value )
+			{
+				myNormalType = value;
+			}
+		}
+		/* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
+		const NormalDotSet& NormalTypeNormalDotGroup::getNormalDotSet() const
+		{
+			return myNormalDotSet;
+		}
+		void NormalTypeNormalDotGroup::removeNormalDot( const NormalDotSetIterConst& value )
+		{
+			if ( value != myNormalDotSet.cend() )
+			{
+				myNormalDotSet.erase( value );
+			}
+		}
+		void NormalTypeNormalDotGroup::addNormalDot( const NormalDotPtr& value )
+		{
+			if ( value )
+			{
+				myNormalDotSet.push_back( value );
+			}
+		}
+		void NormalTypeNormalDotGroup::clearNormalDotSet()
+		{
+			myNormalDotSet.clear();
+		}
+		NormalDotPtr NormalTypeNormalDotGroup::getNormalDot( const NormalDotSetIterConst& setIterator ) const
+		{
+			if( setIterator != myNormalDotSet.cend() )
+			{
+				return *setIterator;
+			}
+			return NormalDotPtr();
+		}
+
+        /* ______________________________________________________________________ */
 		TimeModification::TimeModification()
 		:myActualNotes( makeActualNotes() )
 		,myNormalNotes( makeNormalNotes() )
-		,myNormalType( makeNormalType() )
-		,myNormalDotSet()
+		,myNormalTypeNormalDotGroup( makeNormalTypeNormalDotGroup() )
+        ,myHasNormalTypeNormalDotGroup( false )
 		{}
 		bool TimeModification::hasAttributes() const
 		{
-			return myAttributes->hasValues();
+			return false;
 		}
 		std::ostream& TimeModification::streamAttributes( std::ostream& os ) const
 		{
-			return myAttributes->toStream( os );
 			return os;
 		}
 		std::ostream& TimeModification::streamName( std::ostream& os ) const
@@ -2009,10 +2086,18 @@ namespace mx
 		}
 		std::ostream& TimeModification::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
+            os << std::endl;
+			myActualNotes->toStream( os, indentLevel+1 );
+            os << std::endl;
+			myNormalNotes->toStream( os, indentLevel+1 );
+            if ( myHasNormalTypeNormalDotGroup )
+            {
+                os << std::endl;
+                myNormalTypeNormalDotGroup->toStream( os, indentLevel+1 );
+            }
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			isOneLineOnly = false;
+			return os;
 		}
 		/* _________ ActualNotes minOccurs = 1, maxOccurs = 1 _________ */
 		ActualNotesPtr TimeModification::getActualNotes() const
@@ -2038,50 +2123,18 @@ namespace mx
 				myNormalNotes = value;
 			}
 		}
-		/* _________ NormalType minOccurs = 1, maxOccurs = 1 _________ */
-		NormalTypePtr TimeModification::getNormalType() const
+		/* _________ NormalTypeNormalDotGroup minOccurs = 1, maxOccurs = 1 _________ */
+		NormalTypeNormalDotGroupPtr TimeModification::getNormalTypeNormalDotGroup() const
 		{
-			return myNormalType;
+			return myNormalTypeNormalDotGroup;
 		}
-		void TimeModification::setNormalType( const NormalTypePtr& value )
+		void TimeModification::setNormalTypeNormalDotGroup( const NormalTypeNormalDotGroupPtr& value )
 		{
 			if( value )
 			{
-				myNormalType = value;
+				myNormalTypeNormalDotGroup = value;
 			}
 		}
-		/* _________ NormalDot minOccurs = 0, maxOccurs = unbounded _________ */
-		const NormalDotSet& TimeModification::getNormalDotSet() const
-		{
-			return myNormalDotSet;
-		}
-		void TimeModification::removeNormalDot( const NormalDotSetIterConst& value )
-		{
-			if ( value != myNormalDotSet.cend() )
-			{
-				myNormalDotSet.erase( value );
-			}
-		}
-		void TimeModification::addNormalDot( const NormalDotPtr& value )
-		{
-			if ( value )
-			{
-				myNormalDotSet.push_back( value );
-			}
-		}
-		void TimeModification::clearNormalDotSet()
-		{
-			myNormalDotSet.clear();
-		}
-		NormalDotPtr TimeModification::getNormalDot( const NormalDot SetIterConst& setIterator ) const
-		{
-			if( setIterator != myNormalDotSet.cend() )
-			{
-				return *setIterator;
-			}
-			return NormalDotPtr();
-		}
-
 
     } // namespace e
 
