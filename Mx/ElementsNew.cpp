@@ -1738,6 +1738,107 @@ namespace mx
 				myRightDivider = value;
 			}
 		}
+        
+        
+        /**************** StrongAccentAttributes ****************/
+        /* 4389 */
+        StrongAccentAttributes::StrongAccentAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,type( types::UpDown::up )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        ,hasType( false )
+        {}
+        
+        bool StrongAccentAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement ||
+            hasType;
+        }
+        
+        std::ostream& StrongAccentAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, type, "type", hasType );
+            }
+            return os;
+        }
+        
+		StrongAccent::StrongAccent()
+		:myAttributes( std::make_shared<StrongAccentAttributes>() )
+		{}
+		bool StrongAccent::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& StrongAccent::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& StrongAccent::streamName( std::ostream& os ) const
+		{
+			os << "strong-accent";
+			return os;
+		}
+		bool StrongAccent::hasContents() const
+		{
+			return false;
+		}
+		std::ostream& StrongAccent::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = true;
+            return os;
+		}
+		StrongAccentAttributesPtr StrongAccent::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void StrongAccent::setAttributes( const StrongAccentAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+
     } // namespace e
 
 } // namespace mx

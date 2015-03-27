@@ -927,6 +927,106 @@ namespace mx
             LeftDividerPtr myLeftDivider;
             RightDividerPtr myRightDivider;
         };
+        /* <!--  ID = 4389 [4389] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::simple -->
+         <!-- RecursiveSubElementCount = 0 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="strong-accent" type="strong-accent">
+         <xs:annotation>
+         <xs:documentation>The strong-accent element indicates a vertical accent mark.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         
+         <xs:complexType name="strong-accent">
+         <xs:annotation>
+         <xs:documentation>The strong-accent type indicates a vertical accent mark. The type attribute indicates if the point of the accent is down or up.</xs:documentation>
+         </xs:annotation>
+         <xs:complexContent>
+         <xs:extension base="empty-placement">
+         <xs:attribute name="type" type="up-down" default="up"/>
+         </xs:extension>
+         </xs:complexContent>
+         </xs:complexType>
+         
+         <xs:complexType name="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         
+         <xs:attributeGroup name="print-style">
+         <xs:annotation>
+         <xs:documentation>The print-style attribute group collects the most popular combination of printing attributes: position, font, and color.</xs:documentation>
+         </xs:annotation>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="font"/>
+         <xs:attributeGroup ref="color"/>
+         </xs:attributeGroup>
+         
+         <xs:attributeGroup name="placement">
+         <xs:annotation>
+         <xs:documentation>The placement attribute indicates whether something is above or below another element, such as a note or a notation.</xs:documentation>
+         </xs:annotation>
+         <xs:attribute name="placement" type="above-below"/>
+         </xs:attributeGroup> */
+        
+        struct StrongAccentAttributes;
+        using StrongAccentAttributesPtr = std::shared_ptr<StrongAccentAttributes>;
+        
+        struct StrongAccentAttributes : public AttributesInterface
+        {
+        public:
+            StrongAccentAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            types::UpDown type;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+            bool hasType;
+        };
+        
+        class StrongAccent;
+        using StrongAccentPtr = std::shared_ptr<StrongAccent>;
+        using StrongAccentUPtr = std::unique_ptr<StrongAccent>;
+        using StrongAccentSet = std::vector<StrongAccentPtr>;
+        using StrongAccentSetIter = StrongAccentSet::iterator;
+        using StrongAccentSetIterConst = StrongAccentSet::const_iterator;
+        inline StrongAccentPtr makeStrongAccent() { return std::make_shared<StrongAccent>(); }
+        class StrongAccent : public ElementInterface
+        {
+        public:
+            StrongAccent();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            StrongAccentAttributesPtr getAttributes() const;
+            void setAttributes( const StrongAccentAttributesPtr& value );
+        private:
+            StrongAccentAttributesPtr myAttributes;
+        };
 
     }
 }
