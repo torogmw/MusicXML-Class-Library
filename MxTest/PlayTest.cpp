@@ -1,7 +1,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "Elements.h"
-#include "MidiInstrumentTest.h"
+#include "PlayTest.h"
 
 
 using namespace mx::e;
@@ -9,12 +9,12 @@ using namespace mx::types;
 using namespace std;
 using namespace MxTestHelpers;
 
-TEST( Test01, MidiInstrument )
+TEST( Test01, Play )
 {
     variant v = variant::one;
-	MidiInstrumentPtr object = tgenMidiInstrument( v );
+	PlayPtr object = tgenPlay( v );
 	stringstream expected;
-	tgenMidiInstrumentExpected( expected, 1, v );
+	tgenPlayExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -22,12 +22,12 @@ TEST( Test01, MidiInstrument )
 	CHECK( object->hasAttributes() )
 	CHECK( ! object->hasContents() )
 }
-TEST( Test02, MidiInstrument )
+TEST( Test02, Play )
 {
     variant v = variant::two;
-	MidiInstrumentPtr object = tgenMidiInstrument( v );
+	PlayPtr object = tgenPlay( v );
 	stringstream expected;
-	tgenMidiInstrumentExpected( expected, 1, v );
+	tgenPlayExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -35,12 +35,12 @@ TEST( Test02, MidiInstrument )
 	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, MidiInstrument )
+TEST( Test03, Play )
 {
     variant v = variant::three;
-	MidiInstrumentPtr object = tgenMidiInstrument( v );
+	PlayPtr object = tgenPlay( v );
 	stringstream expected;
-	tgenMidiInstrumentExpected( expected, 1, v );
+	tgenPlayExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -50,9 +50,9 @@ TEST( Test03, MidiInstrument )
 }
 namespace MxTestHelpers
 {
-    MidiInstrumentPtr tgenMidiInstrument( variant v )
+    PlayPtr tgenPlay( variant v )
     {
-        MidiInstrumentPtr o = makeMidiInstrument();
+        PlayPtr o = makePlay();
         switch ( v )
         {
             case variant::one:
@@ -62,40 +62,12 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->getAttributes()->id = XsIDREF( "M1" );
-                o->setHasMidiChannel( true );
-                o->setHasMidiName( true );
-                o->setHasMidiBank( true );
-                o->setHasMidiUnpitched( false );
-                o->setHasVolume( true );
-                o->setHasPan( true );
-                o->setHasElevation( false );
-                o->getMidiChannel()->setValue( Midi16( 2 ) );
-                o->getMidiName()->setValue( XsString( "Trumpet" ) );
-                o->getMidiBank()->setValue( Midi16384( 3 ) );
-                o->getMidiUnpitched()->setValue( Midi128( 100 ) );
-                o->getVolume()->setValue( Percent( 55.5 ) );
-                o->getPan()->setValue( RotationDegrees( -88.6 ) );
-                o->getElevation()->setValue( RotationDegrees( 101.112 ) );
+
             }
                 break;
             case variant::three:
             {
-                o->getAttributes()->id = XsIDREF( "X2" );
-                o->setHasMidiChannel( true );
-                o->setHasMidiName( true );
-                o->setHasMidiBank( true );
-                o->setHasMidiUnpitched( true );
-                o->setHasVolume( true );
-                o->setHasPan( false );
-                o->setHasElevation( true );
-                o->getMidiChannel()->setValue( Midi16( 3 ) );
-                o->getMidiName()->setValue( XsString( "Bassoon" ) );
-                o->getMidiBank()->setValue( Midi16384( 4 ) );
-                o->getMidiUnpitched()->setValue( Midi128( 97 ) );
-                o->getVolume()->setValue( Percent( 0.123 ) );
-                o->getPan()->setValue( RotationDegrees( 120.3 ) );
-                o->getElevation()->setValue( RotationDegrees( -33.333 ) );
+
             }
                 break;
             default:
@@ -103,7 +75,7 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenMidiInstrumentExpected( std::ostream& os, int i, variant v )
+    void tgenPlayExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )

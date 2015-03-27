@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 /*
 4384
 <xs:element name="accent" type="empty-placement">
@@ -54,3 +56,4 @@ TEST( Test01, Accent )
 	CHECK( !object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

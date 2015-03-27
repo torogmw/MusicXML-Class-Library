@@ -3,6 +3,6 @@
 
 namespace MxTestHelpers
 {
-    mx::e::MidiInstrumentPtr tgenMidiInstrument( variant v );
-    void tgenMidiInstrumentExpected( std::ostream& os, int indentLevel, variant v );
+    mx::e::PlayPtr tgenPlay( variant v );
+    void tgenPlayExpected( std::ostream& os, int indentLevel, variant v );
 }
