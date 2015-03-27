@@ -2197,6 +2197,345 @@ namespace mx
 			}
 		}
         
+        ArticulationsChoice::ArticulationsChoice()
+		:myChoice( Choice::accent )
+		,myAccent( makeAccent() )
+		,myStrongAccent( makeStrongAccent() )
+		,myStaccato( makeStaccato() )
+		,myTenuto( makeTenuto() )
+		,myDetachedLegato( makeDetachedLegato() )
+		,myStaccatissimo( makeStaccatissimo() )
+		,mySpiccato( makeSpiccato() )
+		,myScoop( makeScoop() )
+		,myPlop( makePlop() )
+		,myDoit( makeDoit() )
+		,myFalloff( makeFalloff() )
+		,myBreathMark( makeBreathMark() )
+		,myCaesura( makeCaesura() )
+		,myStress( makeStress() )
+		,myUnstress( makeUnstress() )
+		,myOtherArticulation( makeOtherArticulation() )
+		{}
+		bool ArticulationsChoice::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& ArticulationsChoice::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& ArticulationsChoice::streamName( std::ostream& os ) const
+		{
+			os << "articulations";
+			return os;
+		}
+		bool ArticulationsChoice::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& ArticulationsChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            switch ( myChoice )
+            {
+                case Choice::accent:
+                {
+                    myAccent->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::strongAccent:
+                {
+                    myStrongAccent->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::staccato:
+                {
+                    myStaccato->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::tenuto:
+                {
+                    myTenuto->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::detachedLegato:
+                {
+                    myDetachedLegato->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::stacatissimo:
+                {
+                    myStaccatissimo->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::spiccato:
+                {
+                    mySpiccato->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::scoop:
+                {
+                    myScoop->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::plop:
+                {
+                    myPlop->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::doit:
+                {
+                    myDoit->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::falloff:
+                {
+                    myFalloff->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::breathMark:
+                {
+                    myBreathMark->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::caesura:
+                {
+                    myCaesura->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::stress:
+                {
+                    myStress->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::unstress:
+                {
+                    myUnstress->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::otherArticulation:
+                {
+                    myOtherArticulation->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                default:
+                    break;
+            }
+            return os;
+		}
+		AttributesIterfacePtr ArticulationsChoice::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void ArticulationsChoice::setAttributes( const AttributesIterfacePtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+        ArticulationsChoice::Choice ArticulationsChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void ArticulationsChoice::setChoice( const AtriculationsChoice::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ Accent minOccurs = 1, maxOccurs = 1 _________ */
+		AccentPtr ArticulationsChoice::getAccent() const
+		{
+			return myAccent;
+		}
+		void ArticulationsChoice::setAccent( const AccentPtr& value )
+		{
+			if( value )
+			{
+				myAccent = value;
+			}
+		}
+		/* _________ StrongAccent minOccurs = 1, maxOccurs = 1 _________ */
+		StrongAccentPtr ArticulationsChoice::getStrongAccent() const
+		{
+			return myStrongAccent;
+		}
+		void ArticulationsChoice::setStrongAccent( const StrongAccentPtr& value )
+		{
+			if( value )
+			{
+				myStrongAccent = value;
+			}
+		}
+		/* _________ Staccato minOccurs = 1, maxOccurs = 1 _________ */
+		StaccatoPtr ArticulationsChoice::getStaccato() const
+		{
+			return myStaccato;
+		}
+		void ArticulationsChoice::setStaccato( const StaccatoPtr& value )
+		{
+			if( value )
+			{
+				myStaccato = value;
+			}
+		}
+		/* _________ Tenuto minOccurs = 1, maxOccurs = 1 _________ */
+		TenutoPtr ArticulationsChoice::getTenuto() const
+		{
+			return myTenuto;
+		}
+		void ArticulationsChoice::setTenuto( const TenutoPtr& value )
+		{
+			if( value )
+			{
+				myTenuto = value;
+			}
+		}
+		/* _________ DetachedLegato minOccurs = 1, maxOccurs = 1 _________ */
+		DetachedLegatoPtr ArticulationsChoice::getDetachedLegato() const
+		{
+			return myDetachedLegato;
+		}
+		void ArticulationsChoice::setDetachedLegato( const DetachedLegatoPtr& value )
+		{
+			if( value )
+			{
+				myDetachedLegato = value;
+			}
+		}
+		/* _________ Staccatissimo minOccurs = 1, maxOccurs = 1 _________ */
+		StaccatissimoPtr ArticulationsChoice::getStaccatissimo() const
+		{
+			return myStaccatissimo;
+		}
+		void ArticulationsChoice::setStaccatissimo( const StaccatissimoPtr& value )
+		{
+			if( value )
+			{
+				myStaccatissimo = value;
+			}
+		}
+		/* _________ Spiccato minOccurs = 1, maxOccurs = 1 _________ */
+		SpiccatoPtr ArticulationsChoice::getSpiccato() const
+		{
+			return mySpiccato;
+		}
+		void ArticulationsChoice::setSpiccato( const SpiccatoPtr& value )
+		{
+			if( value )
+			{
+				mySpiccato = value;
+			}
+		}
+		/* _________ Scoop minOccurs = 1, maxOccurs = 1 _________ */
+		ScoopPtr ArticulationsChoice::getScoop() const
+		{
+			return myScoop;
+		}
+		void ArticulationsChoice::setScoop( const ScoopPtr& value )
+		{
+			if( value )
+			{
+				myScoop = value;
+			}
+		}
+		/* _________ Plop minOccurs = 1, maxOccurs = 1 _________ */
+		PlopPtr ArticulationsChoice::getPlop() const
+		{
+			return myPlop;
+		}
+		void ArticulationsChoice::setPlop( const PlopPtr& value )
+		{
+			if( value )
+			{
+				myPlop = value;
+			}
+		}
+		/* _________ Doit minOccurs = 1, maxOccurs = 1 _________ */
+		DoitPtr ArticulationsChoice::getDoit() const
+		{
+			return myDoit;
+		}
+		void ArticulationsChoice::setDoit( const DoitPtr& value )
+		{
+			if( value )
+			{
+				myDoit = value;
+			}
+		}
+		/* _________ Falloff minOccurs = 1, maxOccurs = 1 _________ */
+		FalloffPtr ArticulationsChoice::getFalloff() const
+		{
+			return myFalloff;
+		}
+		void ArticulationsChoice::setFalloff( const FalloffPtr& value )
+		{
+			if( value )
+			{
+				myFalloff = value;
+			}
+		}
+		/* _________ BreathMark minOccurs = 1, maxOccurs = 1 _________ */
+		BreathMarkPtr ArticulationsChoice::getBreathMark() const
+		{
+			return myBreathMark;
+		}
+		void ArticulationsChoice::setBreathMark( const BreathMarkPtr& value )
+		{
+			if( value )
+			{
+				myBreathMark = value;
+			}
+		}
+		/* _________ Caesura minOccurs = 1, maxOccurs = 1 _________ */
+		CaesuraPtr ArticulationsChoice::getCaesura() const
+		{
+			return myCaesura;
+		}
+		void ArticulationsChoice::setCaesura( const CaesuraPtr& value )
+		{
+			if( value )
+			{
+				myCaesura = value;
+			}
+		}
+		/* _________ Stress minOccurs = 1, maxOccurs = 1 _________ */
+		StressPtr ArticulationsChoice::getStress() const
+		{
+			return myStress;
+		}
+		void ArticulationsChoice::setStress( const StressPtr& value )
+		{
+			if( value )
+			{
+				myStress = value;
+			}
+		}
+		/* _________ Unstress minOccurs = 1, maxOccurs = 1 _________ */
+		UnstressPtr ArticulationsChoice::getUnstress() const
+		{
+			return myUnstress;
+		}
+		void ArticulationsChoice::setUnstress( const UnstressPtr& value )
+		{
+			if( value )
+			{
+				myUnstress = value;
+			}
+		}
+		/* _________ OtherArticulation minOccurs = 1, maxOccurs = 1 _________ */
+		OtherArticulationPtr ArticulationsChoice::getOtherArticulation() const
+		{
+			return myOtherArticulation;
+		}
+		void ArticulationsChoice::setOtherArticulation( const OtherArticulationPtr& value )
+		{
+			if( value )
+			{
+				myOtherArticulation = value;
+			}
+		}
+        
     } // namespace e
 
 } // namespace mx

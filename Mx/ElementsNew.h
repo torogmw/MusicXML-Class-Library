@@ -1247,6 +1247,202 @@ namespace mx
             DisplayTextPtr myDisplayText;
             AccidentalTextPtr myAccidentalText;
         };
+        /*
+         <!--  ID = 4935 [4935] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 16 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="articulations" type="articulations"/>
+         <xs:complexType name="articulations">
+         <xs:annotation>
+         <xs:documentation>Articulations and accents are grouped together here.</xs:documentation>
+         </xs:annotation>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="accent" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The accent element indicates a regular horizontal accent mark.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="strong-accent" type="strong-accent">
+         <xs:annotation>
+         <xs:documentation>The strong-accent element indicates a vertical accent mark.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="staccato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The staccato element is used for a dot articulation, as opposed to a stroke or a wedge.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="tenuto" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The tenuto element indicates a tenuto line symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="detached-legato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The detached-legato element indicates the combination of a tenuto line and staccato dot symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="staccatissimo" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The staccatissimo element is used for a wedge articulation, as opposed to a dot or a stroke.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="spiccato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The spiccato element is used for a stroke articulation, as opposed to a dot or a wedge.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="scoop" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The scoop element is an indeterminate slide attached to a single note. The scoop element appears before the main note and comes from below the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="plop" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The plop element is an indeterminate slide attached to a single note. The plop element appears before the main note and comes from above the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="doit" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The doit element is an indeterminate slide attached to a single note. The doit element appears after the main note and goes above the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="falloff" type="empty-line">
+         <xs:annotation>
+         <xs:documentation>The falloff element is an indeterminate slide attached to a single note. The falloff element appears before the main note and goes below the main pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="breath-mark" type="breath-mark"/>
+         <xs:element name="caesura" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The caesura element indicates a slight pause. It is notated using a "railroad tracks" symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="stress" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The stress element indicates a stressed note.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="unstress" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The unstress element indicates an unstressed note. It is often notated using a u-shaped symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="other-articulation" type="placement-text">
+         <xs:annotation>
+         <xs:documentation>The other-articulation element is used to define any articulations not yet in the MusicXML format. This allows extended representation, though without application interoperability.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         </xs:complexType> */
+        
+        class ArticulationsChoice;
+        using ArticulationsChoicePtr = std::shared_ptr<ArticulationsChoice>;
+        using ArticulationsChoiceUPtr = std::unique_ptr<ArticulationsChoice>;
+        using ArticulationsChoiceSet = std::vector<ArticulationsChoicePtr>;
+        using ArticulationsChoiceSetIter = ArticulationsChoiceSet::iterator;
+        using ArticulationsChoiceSetIterConst = ArticulationsChoiceSet::const_iterator;
+        inline ArticulationsChoicePtr makeArticulationsChoice() { return std::make_shared<ArticulationsChoice>(); }
+        class ArticulationsChoice : public ElementInterface
+        {
+        public:
+            enum class
+            {
+                accent = 1,
+                strongAccent = 2,
+                staccato = 3,
+                tenuto = 4,
+                detachedLegato = 5,
+                stacatissimo = 6,
+                spiccato = 7,
+                scoop = 8,
+                plop = 9,
+                doit = 10,
+                falloff = 11,
+                breathMark = 12,
+                caesura = 13,
+                stress = 14,
+                unstress = 15,
+                otherArticulation = 16
+            };
+            ArticulationsChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            ArticulationsChoice::Choice getChoice() const;
+            void setChoice( const AtriculationsChoice::Choice value );
+            /* _________ Accent minOccurs = 1, maxOccurs = 1 _________ */
+            AccentPtr getAccent() const;
+            void setAccent( const AccentPtr& value );
+            /* _________ StrongAccent minOccurs = 1, maxOccurs = 1 _________ */
+            StrongAccentPtr getStrongAccent() const;
+            void setStrongAccent( const StrongAccentPtr& value );
+            /* _________ Staccato minOccurs = 1, maxOccurs = 1 _________ */
+            StaccatoPtr getStaccato() const;
+            void setStaccato( const StaccatoPtr& value );
+            /* _________ Tenuto minOccurs = 1, maxOccurs = 1 _________ */
+            TenutoPtr getTenuto() const;
+            void setTenuto( const TenutoPtr& value );
+            /* _________ DetachedLegato minOccurs = 1, maxOccurs = 1 _________ */
+            DetachedLegatoPtr getDetachedLegato() const;
+            void setDetachedLegato( const DetachedLegatoPtr& value );
+            /* _________ Staccatissimo minOccurs = 1, maxOccurs = 1 _________ */
+            StaccatissimoPtr getStaccatissimo() const;
+            void setStaccatissimo( const StaccatissimoPtr& value );
+            /* _________ Spiccato minOccurs = 1, maxOccurs = 1 _________ */
+            SpiccatoPtr getSpiccato() const;
+            void setSpiccato( const SpiccatoPtr& value );
+            /* _________ Scoop minOccurs = 1, maxOccurs = 1 _________ */
+            ScoopPtr getScoop() const;
+            void setScoop( const ScoopPtr& value );
+            /* _________ Plop minOccurs = 1, maxOccurs = 1 _________ */
+            PlopPtr getPlop() const;
+            void setPlop( const PlopPtr& value );
+            /* _________ Doit minOccurs = 1, maxOccurs = 1 _________ */
+            DoitPtr getDoit() const;
+            void setDoit( const DoitPtr& value );
+            /* _________ Falloff minOccurs = 1, maxOccurs = 1 _________ */
+            FalloffPtr getFalloff() const;
+            void setFalloff( const FalloffPtr& value );
+            /* _________ BreathMark minOccurs = 1, maxOccurs = 1 _________ */
+            BreathMarkPtr getBreathMark() const;
+            void setBreathMark( const BreathMarkPtr& value );
+            /* _________ Caesura minOccurs = 1, maxOccurs = 1 _________ */
+            CaesuraPtr getCaesura() const;
+            void setCaesura( const CaesuraPtr& value );
+            /* _________ Stress minOccurs = 1, maxOccurs = 1 _________ */
+            StressPtr getStress() const;
+            void setStress( const StressPtr& value );
+            /* _________ Unstress minOccurs = 1, maxOccurs = 1 _________ */
+            UnstressPtr getUnstress() const;
+            void setUnstress( const UnstressPtr& value );
+            /* _________ OtherArticulation minOccurs = 1, maxOccurs = 1 _________ */
+            OtherArticulationPtr getOtherArticulation() const;
+            void setOtherArticulation( const OtherArticulationPtr& value );
+        private:
+            Choice myChoice;
+            AccentPtr myAccent;
+            StrongAccentPtr myStrongAccent;
+            StaccatoPtr myStaccato;
+            TenutoPtr myTenuto;
+            DetachedLegatoPtr myDetachedLegato;
+            StaccatissimoPtr myStaccatissimo;
+            SpiccatoPtr mySpiccato;
+            ScoopPtr myScoop;
+            PlopPtr myPlop;
+            DoitPtr myDoit;
+            FalloffPtr myFalloff;
+            BreathMarkPtr myBreathMark;
+            CaesuraPtr myCaesura;
+            StressPtr myStress;
+            UnstressPtr myUnstress;
+            OtherArticulationPtr myOtherArticulation;
+        };
 
     }
 }
