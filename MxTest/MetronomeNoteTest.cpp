@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "Elements.h"
@@ -57,3 +59,4 @@ TEST( Test02, MetronomeNote )
 	CHECK( ! object.hasAttributes() )
 	CHECK( object.hasContents() )
 }
+#endif

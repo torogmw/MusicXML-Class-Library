@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "FontSize.h"
 #include <sstream>
@@ -74,3 +76,4 @@ TEST( FontSize07, FontSize )
     std::string actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+#endif

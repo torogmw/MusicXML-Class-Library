@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "Elements.h"
@@ -59,3 +61,4 @@ TEST( Test02, TraditionalKey )
     object.toStream( actual, 1 );
     CHECK_EQUAL( expected.str(), actual.str() )
 }
+#endif

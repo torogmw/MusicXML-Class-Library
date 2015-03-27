@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Integers.h"
 
@@ -600,3 +602,4 @@ TEST( TremoloMarks, Integers )
     actual = z.getValue();
     CHECK_EQUAL( expected, actual )
 }
+#endif

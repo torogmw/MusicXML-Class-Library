@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE2_TESTS
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "Elements.h"
@@ -74,3 +76,4 @@ TEST( Test04, MeasureStyle )
 	CHECK( ! object.hasAttributes() )
 	CHECK( object.hasContents() )
 }
+#endif

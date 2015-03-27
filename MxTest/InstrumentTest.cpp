@@ -8,6 +8,8 @@
 	<xs:attribute name="id" type="xs:IDREF" use="required"/>
 </xs:complexType>
 */
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -45,3 +47,4 @@ TEST( Test01, Instrument )
 	CHECK( object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

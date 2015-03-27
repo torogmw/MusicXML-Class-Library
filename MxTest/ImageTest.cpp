@@ -8,6 +8,8 @@
 	<xs:attributeGroup ref="image-attributes"/>
 </xs:complexType>
 */
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -47,3 +49,4 @@ TEST( Test01, Image )
 	CHECK( object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

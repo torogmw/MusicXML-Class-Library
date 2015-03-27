@@ -294,7 +294,6 @@
 		29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */; };
 		29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */; };
 		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
-		29C61F541AC39B7D004B5530 /* MetronomeTestHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */; };
 		29CEB47E1AB4B9E800D6AEFC /* ________Temp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */; };
 		29CEB49A1AB4C0FA00D6AEFC /* AccordionHighTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */; };
 		29CEB49B1AB4C0FA00D6AEFC /* AccordionLowTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */; };
@@ -641,7 +640,6 @@
 		29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordsTest.cpp; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
 		29C61F511AC39B1E004B5530 /* MetronomeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetronomeTest.h; sourceTree = "<group>"; };
-		29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTestHelper.cpp; sourceTree = "<group>"; };
 		29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "________Temp.cpp"; sourceTree = "<group>"; };
 		29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionHighTest.cpp; sourceTree = "<group>"; };
 		29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionLowTest.cpp; sourceTree = "<group>"; };
@@ -880,7 +878,6 @@
 				29CEB4901AB4C0FA00D6AEFC /* MetronomeDotTest.cpp */,
 				29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */,
 				297749981AB21FA000BF2205 /* MetronomeRelationTest.cpp */,
-				29C61F521AC39B7D004B5530 /* MetronomeTestHelper.cpp */,
 				2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */,
 				297749991AB21FA000BF2205 /* MetronomeTypeTest.cpp */,
 				2977499A1AB21FA000BF2205 /* MidiBankTest.cpp */,
@@ -1171,7 +1168,6 @@
 				29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */,
 				297749E31AB21FA000BF2205 /* DurationTest.cpp in Sources */,
 				297749D81AB21FA000BF2205 /* BendAlterTest.cpp in Sources */,
-				29C61F541AC39B7D004B5530 /* MetronomeTestHelper.cpp in Sources */,
 				29C0B97E1AAE9337004F86FA /* DegreeValueTest.cpp in Sources */,
 				29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */,
 				298C81E91AB6A8DC006619A9 /* TupletDotTest.cpp in Sources */,

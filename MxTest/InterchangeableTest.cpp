@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "Elements.h"
@@ -46,3 +48,4 @@ TEST( Test02, Interchangeable )
 	CHECK( object.hasAttributes() )
 	CHECK( object.hasContents() )
 }
+#endif
