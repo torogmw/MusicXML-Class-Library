@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Date.h"
 #include <string>
@@ -7499,3 +7501,4 @@ TEST( stream02, Date )
 	actual = ss3.str();
 	CHECK_EQUAL( expected, actual )
 }
+#endif

@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Color.h"
 #include <sstream>
@@ -162,3 +164,4 @@ TEST( Color10, Strings )
     actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+#endif

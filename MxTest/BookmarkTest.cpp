@@ -10,6 +10,8 @@
 	<xs:attributeGroup ref="element-position"/>
 </xs:complexType>
 */
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -51,3 +53,4 @@ TEST( Test01, Bookmark )
 	CHECK( object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

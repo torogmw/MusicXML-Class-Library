@@ -15,6 +15,8 @@
 	<xs:attributeGroup ref="color"/>
 </xs:complexType>
 */
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "Elements.h"
 #include <sstream>
@@ -53,3 +55,4 @@ TEST( Test01, Bracket )
 	CHECK( !object1.hasAttributes() )
 	CHECK( object2.hasAttributes() )
 }
+#endif

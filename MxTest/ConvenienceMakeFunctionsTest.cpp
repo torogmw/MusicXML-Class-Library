@@ -1,3 +1,5 @@
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE1_TESTS
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "Elements.h"
@@ -2559,5 +2561,4 @@ TEST( Test181, ConvenienceMakeFunctions )
 	CHECK( b )
 	CHECK_EQUAL( expected, actual )
 }
-
-// Program ended with exit code: 0
+#endif
