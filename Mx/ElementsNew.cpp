@@ -2659,7 +2659,75 @@ namespace mx
         {
             myHasSyllabic = value;
         }
+        /* _______________________________________________________________________________ */
         
+        ElisionSyllabicTextGroup::ElisionSyllabicTextGroup()
+        :myElisionSyllabicGroup( makeElisionSyllabicGroup() )
+        ,myHasElisionSyllabicGroup( false )
+        ,myText( makeText() )
+        {}
+        
+        bool ElisionSyllabicTextGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& ElisionSyllabicTextGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& ElisionSyllabicTextGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool ElisionSyllabicTextGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& ElisionSyllabicTextGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            isOneLineOnly = true;
+            if ( myHasElisionSyllabicGroup )
+            {
+                myElisionSyllabicGroup->toStream( os, indentLevel );
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+            myText->toStream( os, indentLevel );
+            return os;
+        }
+        
+        /* _________ ElisionSyllabicGroup minOccurs = 0, maxOccurs = 1 _________ */
+        ElisionSyllabicGroupPtr ElisionSyllabicTextGroup::getElisionSyllabicGroup() const
+        {
+            return myElisionSyllabicGroup;
+        }
+        void ElisionSyllabicTextGroup::setElisionSyllabicGroup( const ElisionSyllabicGroupPtr& value )
+        {
+            if ( value )
+            {
+                myElisionSyllabicGroup = value;
+            }
+        }
+        bool ElisionSyllabicTextGroup::getHasElisionSyllabicGroup() const
+        {
+            return myHasElisionSyllabicGroup;
+        }
+        void ElisionSyllabicTextGroup::setHasSyllabic( const bool value )
+        {
+            myHasElisionSyllabicGroup = value;
+        }
+        /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
+        TextPtr ElisionSyllabicTextGroup::getText() const
+        {
+            return myText;
+        }
+        void ElisionSyllabicTextGroup::setText( const TextPtr& value )
+        {
+            if ( value )
+            {
+                myText = value;
+            }
+        }
     } // namespace e
 
 } // namespace mx

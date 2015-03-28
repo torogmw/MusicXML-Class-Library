@@ -1585,10 +1585,18 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ ElisionSyllabicGroup minOccurs = 0, maxOccurs = 1 _________ */
+            ElisionSyllabicGroupPtr getElisionSyllabicGroup() const;
+            void setElisionSyllabicGroup( const ElisionSyllabicGroupPtr& value );
+            bool getHasElisionSyllabicGroup() const;
+            void setHasSyllabic( const bool value );
+            /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
+            TextPtr getText() const;
+            void setText( const TextPtr& value );
         private:
             ElisionSyllabicGroupPtr myElisionSyllabicGroup;
             bool myHasElisionSyllabicGroup;
-            
+            TextPtr myText;
         };
         
  #if 1==0
