@@ -3,7 +3,7 @@
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
 #include "ElisionSyllabicGroupTest.h"
-#include "
+#include "ElisionSyllabicTextGroupTest.h"
 #include "SyllabicTextGroupTest.h"
 #include "MidiInstrumentTest.h"
 #include "MidiDeviceTest.cpp"
@@ -68,23 +68,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
-                o->getText()->setValue( XsString( "Brahms" ) );
+                o->getText()->setValue( XsString( "tgenSyllabicTextGroup One" ) );
             }
                 break;
             case variant::two:
             {
-                o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
-                o->setHasElisionSyllabicGroup( true );
-                o->getText()->setValue( XsString( "Beethoven" ) );
+                o->getText()->setValue( XsString( "tgenSyllabicTextGroup Two" ) );
+                o->addElisionSyllabicTextGroup( tgenElisionSyllabicTextGroup( v ) );
+                o->setHasExtend( true );
             }
                 break;
             case variant::three:
             {
-                o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
-                o->setHasElisionSyllabicGroup( true );
-                o->getText()->setValue( XsString( "Berlioz" ) );
-                
+                o->getText()->setValue( XsString( "tgenSyllabicTextGroup Three" ) );
+                o->addElisionSyllabicTextGroup( tgenElisionSyllabicTextGroup( v ) );
+                o->addElisionSyllabicTextGroup( tgenElisionSyllabicTextGroup( variant::one ) );
+                o->setHasSyllabic( true );
+                o->setHasExtend( true );
             }
                 break;
             default:
@@ -100,21 +100,26 @@ namespace MxTestHelpers
             case variant::one:
             {
                 
-                streamLine( os, i, R"(<text>Brahms</text>)", false );
+                streamLine( os, i, R"(<text>tgenSyllabicTextGroup One</text>)", false );
             }
                 break;
             case variant::two:
             {
-                tgenElisionSyllabicGroupExpected( os, i, v );
+                streamLine( os, i, R"(<text>tgenSyllabicTextGroup Two</text>)" );
+                tgenElisionSyllabicTextGroupExpected( os, i, v );
                 os << std::endl;
-                streamLine( os, i, R"(<text>Beethoven</text>)", false );
+                streamLine( os, i, R"(<extend/>)", false );
             }
                 break;
             case variant::three:
             {
-                tgenElisionSyllabicGroupExpected( os, i, v );
+                streamLine( os, i, R"(<syllabic>begin</syllabic>)" );
+                streamLine( os, i, R"(<text>tgenSyllabicTextGroup Three</text>)" );
+                tgenElisionSyllabicTextGroupExpected( os, i, v );
                 os << std::endl;
-                streamLine( os, i, R"(<text>Berlioz</text>)", false );
+                tgenElisionSyllabicTextGroupExpected( os, i, variant::one );
+                os << std::endl;
+                streamLine( os, i, R"(<extend/>)", false );
             }
                 break;
             default:
