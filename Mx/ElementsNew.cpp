@@ -2862,6 +2862,109 @@ namespace mx
         {
             myHasExtend = value;
         }
+        
+        /* _______________________________________________________________________________ */
+        
+        LyricTextChoice::LyricTextChoice()
+        :myChoice( Choice::syllabicTextGroup )
+        ,mySyllabicTextGroup( makeSyllabicTextGroup() )
+        ,myExtend( makeExtend() )
+        ,myLaughing( makeLaughing() )
+        ,myHumming( makeHumming() )
+        {}
+        bool LyricTextChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& LyricTextChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& LyricTextChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool LyricTextChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& LyricTextChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::syllabicTextGroup:
+                {
+                    mySyllabicTextGroup->streamContents( os, indentLevel, isOneLineOnly );
+                }
+                    break;
+                case Choice::extend:
+                {
+                    myExtend->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::laughing:
+                {
+                    myLaughing->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::humming:
+                {
+                    myHumming->toStream( os, indentLevel );
+                }
+                    break;
+                default:
+                    break;
+            }
+            return os;
+        }
+        /* _________ SyllabicTextGroup minOccurs = 1, maxOccurs = 1 _________ */
+        SyllabicTextGroupPtr LyricTextChoice::getSyllabicTextGroup() const
+        {
+            return mySyllabicTextGroup;
+        }
+        void LyricTextChoice::setSyllabicTextGroup( const SyllabicTextGroupPtr& value )
+        {
+            if ( value )
+            {
+                mySyllabicTextGroup = value;
+            }
+        }
+        /* _________ Extend minOccurs = 1, maxOccurs = 1 _________ */
+        ExtendPtr LyricTextChoice::getExtend() const
+        {
+            return myExtend;
+        }
+        void LyricTextChoice::setExtend( const ExtendPtr& value )
+        {
+            if ( value )
+            {
+                myExtend    = value;
+            }
+        }
+        /* _________ Laughing minOccurs = 1, maxOccurs = 1 _________ */
+        LaughingPtr LyricTextChoice::getLaughing() const
+        {
+            return myLaughing;
+        }
+        void LyricTextChoice::setLaughing( const LaughingPtr& value )
+        {
+            if ( value )
+            {
+                myLaughing = value;
+            }
+        }
+        /* _________ Humming minOccurs = 1, maxOccurs = 1 _________ */
+        HummingPtr LyricTextChoice::getHumming() const
+        {
+            return myHumming;
+        }
+        void LyricTextChoice::setHumming( const HummingPtr& value )
+        {
+            if ( value )
+            {
+                myHumming = value;
+            }
+        }
     } // namespace e
 
 } // namespace mx

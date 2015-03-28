@@ -1644,7 +1644,7 @@ namespace mx
             bool myHasExtend;
         };
 
-#if 1==0
+
         class LyricTextChoice;
         using LyricTextChoicePtr = std::shared_ptr<LyricTextChoice>;
         using LyricTextChoiceUPtr = std::unique_ptr<LyricTextChoice>;
@@ -1655,15 +1655,42 @@ namespace mx
         class LyricTextChoice : public ElementInterface
         {
         public:
+            enum class Choice
+            {
+                syllabicTextGroup = 1,
+                extend = 2,
+                laughing = 3,
+                humming = 4
+            };
             LyricTextChoice();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            LyricTextChoice::Choice getChoice() const;
+            void setChoice( const LyricTextChoice::Choice value );
+            /* _________ SyllabicTextGroup minOccurs = 1, maxOccurs = 1 _________ */
+            SyllabicTextGroupPtr getSyllabicTextGroup() const;
+            void setSyllabicTextGroup( const SyllabicTextGroupPtr& value );
+            /* _________ Extend minOccurs = 1, maxOccurs = 1 _________ */
+            ExtendPtr getExtend() const;
+            void setExtend( const ExtendPtr& value );
+            /* _________ Laughing minOccurs = 1, maxOccurs = 1 _________ */
+            LaughingPtr getLaughing() const;
+            void setLaughing( const LaughingPtr& value );
+            /* _________ Humming minOccurs = 1, maxOccurs = 1 _________ */
+            HummingPtr getHumming() const;
+            void setHumming( const HummingPtr& value );
         private:
+            Choice myChoice;
+            SyllabicTextGroupPtr mySyllabicTextGroup;
+            ExtendPtr myExtend;
+            LaughingPtr myLaughing;
+            HummingPtr myHumming;
         };
-        
+
+#if 1==0
         class EditorialGroup;
         using EditorialGroupPtr = std::shared_ptr<EditorialGroup>;
         using EditorialGroupUPtr = std::unique_ptr<EditorialGroup>;
