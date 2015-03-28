@@ -67,21 +67,20 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                o->getElision()->setValue( XsString( "A" ) );
+                o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
             }
                 break;
             case variant::two:
             {
-                o->getElision()->setValue( XsString( "B" ) );
-                o->setHasSyllabic( true );
-                o->getSyllabic()->setValue( SyllabicEnum::single );
+                o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
+                o->setHasElisionSyllabicGroup( true );
             }
                 break;
             case variant::three:
             {
-                o->getElision()->setValue( XsString( "C" ) );
-                o->setHasSyllabic( true );
-                o->getSyllabic()->setValue( SyllabicEnum::middle );
+                o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
+                o->setHasElisionSyllabicGroup( true );
+
             }
                 break;
             default:

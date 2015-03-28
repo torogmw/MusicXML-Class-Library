@@ -2712,7 +2712,7 @@ namespace mx
         {
             return myHasElisionSyllabicGroup;
         }
-        void ElisionSyllabicTextGroup::setHasSyllabic( const bool value )
+        void ElisionSyllabicTextGroup::setHasElisionSyllabicGroup( const bool value )
         {
             myHasElisionSyllabicGroup = value;
         }

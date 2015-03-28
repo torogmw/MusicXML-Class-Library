@@ -1589,7 +1589,7 @@ namespace mx
             ElisionSyllabicGroupPtr getElisionSyllabicGroup() const;
             void setElisionSyllabicGroup( const ElisionSyllabicGroupPtr& value );
             bool getHasElisionSyllabicGroup() const;
-            void setHasSyllabic( const bool value );
+            void setHasElisionSyllabicGroup( const bool value );
             /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
             TextPtr getText() const;
             void setText( const TextPtr& value );
