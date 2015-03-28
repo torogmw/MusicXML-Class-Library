@@ -2239,82 +2239,82 @@ namespace mx
             {
                 case Choice::accent:
                 {
-                    myAccent->streamContents( os, indentLevel, isOneLineOnly );
+                    myAccent->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::strongAccent:
                 {
-                    myStrongAccent->streamContents( os, indentLevel, isOneLineOnly );
+                    myStrongAccent->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::staccato:
                 {
-                    myStaccato->streamContents( os, indentLevel, isOneLineOnly );
+                    myStaccato->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::tenuto:
                 {
-                    myTenuto->streamContents( os, indentLevel, isOneLineOnly );
+                    myTenuto->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::detachedLegato:
                 {
-                    myDetachedLegato->streamContents( os, indentLevel, isOneLineOnly );
+                    myDetachedLegato->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::stacatissimo:
                 {
-                    myStaccatissimo->streamContents( os, indentLevel, isOneLineOnly );
+                    myStaccatissimo->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::spiccato:
                 {
-                    mySpiccato->streamContents( os, indentLevel, isOneLineOnly );
+                    mySpiccato->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::scoop:
                 {
-                    myScoop->streamContents( os, indentLevel, isOneLineOnly );
+                    myScoop->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::plop:
                 {
-                    myPlop->streamContents( os, indentLevel, isOneLineOnly );
+                    myPlop->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::doit:
                 {
-                    myDoit->streamContents( os, indentLevel, isOneLineOnly );
+                    myDoit->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::falloff:
                 {
-                    myFalloff->streamContents( os, indentLevel, isOneLineOnly );
+                    myFalloff->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::breathMark:
                 {
-                    myBreathMark->streamContents( os, indentLevel, isOneLineOnly );
+                    myBreathMark->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::caesura:
                 {
-                    myCaesura->streamContents( os, indentLevel, isOneLineOnly );
+                    myCaesura->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::stress:
                 {
-                    myStress->streamContents( os, indentLevel, isOneLineOnly );
+                    myStress->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::unstress:
                 {
-                    myUnstress->streamContents( os, indentLevel, isOneLineOnly );
+                    myUnstress->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::otherArticulation:
                 {
-                    myOtherArticulation->streamContents( os, indentLevel, isOneLineOnly );
+                    myOtherArticulation->toStream( os, indentLevel );
                 }
                     break;
                 default:

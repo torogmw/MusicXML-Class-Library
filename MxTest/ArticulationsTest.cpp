@@ -25,7 +25,7 @@ TEST( Test01, Articulations )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( object->hasContents() )
+	CHECK( ! object->hasContents() )
 }
 TEST( Test02, Articulations )
 {
@@ -128,22 +128,20 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<time-modification>)" );
-                streamLine( os, i+1, R"(<actual-notes>5</actual-notes>)" );
-                streamLine( os, i+1, R"(<normal-notes>4</normal-notes>)" );
-                streamLine( os, i+1, R"(<normal-type>half</normal-type>)" );
-                streamLine( os, i+1, R"(<normal-dot/>)" );
-                streamLine( os, i+1, R"(<normal-dot/>)" );
-                streamLine( os, i, R"(</time-modification>)", false );
+                streamLine( os, i, R"(<articulations>)" );
+                streamLine( os, i+1, R"(<breath-mark font-style="italic"></breath-mark>)" );
+                streamLine( os, i+1, R"(<tenuto placement="above"/>)" );
+                streamLine( os, i, R"(</articulations>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<time-modification>)" );
-                streamLine( os, i+1, R"(<actual-notes>4</actual-notes>)" );
-                streamLine( os, i+1, R"(<normal-notes>3</normal-notes>)" );
-                streamLine( os, i+1, R"(<normal-type>32nd</normal-type>)" );
-                streamLine( os, i, R"(</time-modification>)", false );
+                streamLine( os, i, R"(<articulations>)" );
+                streamLine( os, i+1, R"(<strong-accent color="#385A0C"/>)" );
+                streamLine( os, i+1, R"(<tenuto placement="above"/>)" );
+                streamLine( os, i+1, R"(<breath-mark font-style="italic"></breath-mark>)" );
+                streamLine( os, i+1, R"(<strong-accent color="#385A0C"/>)" );
+                streamLine( os, i, R"(</articulations>)", false );
             }
                 break;
             default:
