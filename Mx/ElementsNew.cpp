@@ -2886,7 +2886,7 @@ namespace mx
         }
         bool LyricTextChoice::hasContents() const
         {
-            return true;
+            return myChoice == Choice::syllabicTextGroup;
         }
         std::ostream& LyricTextChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
@@ -2916,6 +2916,14 @@ namespace mx
                     break;
             }
             return os;
+        }
+        LyricTextChoice::Choice LyricTextChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void LyricTextChoice::setChoice( const LyricTextChoice::Choice value )
+        {
+            myChoice = value;
         }
         /* _________ SyllabicTextGroup minOccurs = 1, maxOccurs = 1 _________ */
         SyllabicTextGroupPtr LyricTextChoice::getSyllabicTextGroup() const

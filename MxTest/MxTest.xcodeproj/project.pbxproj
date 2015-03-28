@@ -10,6 +10,7 @@
 		2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */; };
 		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */; };
+		29070BB01AC75DD7000B8D31 /* LyricTextCoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */; };
 		2909CF281AC0887900D0F61B /* TransposeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF271AC0887900D0F61B /* TransposeTest.cpp */; };
 		2909CF2A1AC08EAA00D0F61B /* DirectiveTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */; };
 		290A23441AC071FE0038C1A7 /* ClefTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290A23431AC071FE0038C1A7 /* ClefTest.cpp */; };
@@ -356,6 +357,8 @@
 		2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeatRepeatTest.cpp; sourceTree = "<group>"; };
 		2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlashTest.cpp; sourceTree = "<group>"; };
 		2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffTuningTest.cpp; sourceTree = "<group>"; };
+		29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LyricTextCoiceTest.cpp; sourceTree = "<group>"; };
+		29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricTextChoiceTest.h; sourceTree = "<group>"; };
 		2909CF271AC0887900D0F61B /* TransposeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransposeTest.cpp; sourceTree = "<group>"; };
 		2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectiveTest.cpp; sourceTree = "<group>"; };
 		290A23431AC071FE0038C1A7 /* ClefTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClefTest.cpp; sourceTree = "<group>"; };
@@ -1128,6 +1131,8 @@
 				29D9213F1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.h */,
 				29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */,
 				29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */,
+				29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */,
+				29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1280,6 +1285,7 @@
 				29C0B96C1AAE9209004F86FA /* BarStyleTest.cpp in Sources */,
 				2935A71D1AB5FC3B002859CA /* DampTest.cpp in Sources */,
 				292D12781AA2A7260079EF22 /* DateTest.cpp in Sources */,
+				29070BB01AC75DD7000B8D31 /* LyricTextCoiceTest.cpp in Sources */,
 				29C0B97A1AAE9337004F86FA /* CreatorTest.cpp in Sources */,
 				2935A7271AB5FC3B002859CA /* MusicFontTest.cpp in Sources */,
 				298C81CF1AB6A8DC006619A9 /* ArpeggiateTest.cpp in Sources */,
