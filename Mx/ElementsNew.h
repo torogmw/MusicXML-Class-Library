@@ -1468,5 +1468,306 @@ namespace mx
         private:
             ArticulationsChoiceSet myArticulationsChoiceSet;
         };
+
+        /* <!--  ID = 5045 [5045] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 13 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="lyric" type="lyric" minOccurs="0" maxOccurs="unbounded"/>
+         
+         <xs:complexType name="lyric">
+         <xs:annotation>
+         <xs:documentation>The lyric type represents text underlays for lyrics, based on Humdrum with support for other formats. Two text elements that are not separated by an elision element are part of the same syllable, but may have different text formatting. The MusicXML 2.0 XSD is more strict than the 2.0 DTD in enforcing this by disallowing a second syllabic element unless preceded by an elision element. The lyric number indicates multiple lines, though a name can be used as well (as in Finale's verse / chorus / section specification). Justification is center by default; placement is below by default. The content of the elision type is used to specify the symbol used to display the elision. Common values are a no-break space (Unicode 00A0), an underscore (Unicode 005F), or an undertie (Unicode 203F).</xs:documentation>
+         </xs:annotation>
+         
+         <xs:sequence>
+         <xs:choice> <!-- LyricTextChoice -->
+         <xs:sequence> <!-- SyllabicTextGroup -->
+         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
+         <xs:element name="text" type="text-element-data"/>
+         <xs:sequence minOccurs="0" maxOccurs="unbounded">
+         <xs:sequence minOccurs="0"> <!-- ElisionSyllabicGroup -->
+         <xs:element name="elision" type="text-font-color"/>
+         <xs:element name="syllabic" type="syllabic" minOccurs="0"/>
+         </xs:sequence>
+         <xs:element name="text" type="text-element-data"/>
+         </xs:sequence> <!-- /SyllabicTextGroup -->
+         <xs:element name="extend" type="extend" minOccurs="0"/>
+         </xs:sequence> <!-- /SyllabicTextGroup -->
+         <xs:element name="extend" type="extend"/>
+         <xs:element name="laughing" type="empty">
+         <xs:annotation>
+         <xs:documentation>The laughing element is taken from Humdrum.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="humming" type="empty">
+         <xs:annotation>
+         <xs:documentation>The humming element is taken from Humdrum.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice> <!-- /LyricTextChoice -->
+         <xs:element name="end-line" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The end-line element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="end-paragraph" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The end-paragraph element comes from RP-017 for Standard MIDI File Lyric meta-events. It facilitates lyric display for Karaoke and similar applications.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:group ref="editorial"/> <!-- EditorialGroup -->
+         </xs:sequence>
+         
+         <xs:attribute name="number" type="xs:NMTOKEN"/>
+         <xs:attribute name="name" type="xs:token"/>
+         <xs:attributeGroup ref="justify"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="color"/>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType>
+         
+         <xs:group name="editorial"> <!-- EditorialGroup -->
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        class ElisionSyllabicGroup;
+        using ElisionSyllabicGroupPtr = std::shared_ptr<ElisionSyllabicGroup>;
+        using ElisionSyllabicGroupUPtr = std::unique_ptr<ElisionSyllabicGroup>;
+        using ElisionSyllabicGroupSet = std::vector<ElisionSyllabicGroupPtr>;
+        using ElisionSyllabicGroupSetIter = ElisionSyllabicGroupSet::iterator;
+        using ElisionSyllabicGroupSetIterConst = ElisionSyllabicGroupSet::const_iterator;
+        inline ElisionSyllabicGroupPtr makeElisionSyllabicGroup() { return std::make_shared<ElisionSyllabicGroup>(); }
+        class ElisionSyllabicGroup : public ElementInterface
+        {
+        public:
+            ElisionSyllabicGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Elision minOccurs = 1, maxOccurs = 1 _________ */
+            ElisionPtr getElision() const;
+            void setElision( const ElisionPtr& value );
+            /* _________ Syllabic minOccurs = 0, maxOccurs = 1 _________ */
+            SyllabicPtr getSyllabic() const;
+            void setSyllabic( const SyllabicPtr& value );
+            bool getHasSyllabic() const;
+            void setHasSyllabic( const bool value );
+        private:
+            ElisionPtr myElision;
+            SyllabicPtr mySyllabic;
+            bool myHasSyllabic;
+        };
+        
+        class ElisionSyllabicTextGroup;
+        using ElisionSyllabicTextGroupPtr = std::shared_ptr<ElisionSyllabicTextGroup>;
+        using ElisionSyllabicTextGroupUPtr = std::unique_ptr<ElisionSyllabicTextGroup>;
+        using ElisionSyllabicTextGroupSet = std::vector<ElisionSyllabicTextGroupPtr>;
+        using ElisionSyllabicTextGroupSetIter = ElisionSyllabicTextGroupSet::iterator;
+        using ElisionSyllabicTextGroupSetIterConst = ElisionSyllabicTextGroupSet::const_iterator;
+        inline ElisionSyllabicTextGroupPtr makeElisionSyllabicTextGroup() { return std::make_shared<ElisionSyllabicTextGroup>(); }
+        class ElisionSyllabicTextGroup : public ElementInterface
+        {
+        public:
+            ElisionSyllabicTextGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+            ElisionSyllabicGroupPtr myElisionSyllabicGroup;
+            bool myHasElisionSyllabicGroup;
+            
+        };
+        
+ #if 1==0
+        class SyllabicTextGroup;
+        using SyllabicTextGroupPtr = std::shared_ptr<SyllabicTextGroup>;
+        using SyllabicTextGroupUPtr = std::unique_ptr<SyllabicTextGroup>;
+        using SyllabicTextGroupSet = std::vector<SyllabicTextGroupPtr>;
+        using SyllabicTextGroupSetIter = SyllabicTextGroupSet::iterator;
+        using SyllabicTextGroupSetIterConst = SyllabicTextGroupSet::const_iterator;
+        inline SyllabicTextGroupPtr makeSyllabicTextGroup() { return std::make_shared<SyllabicTextGroup>(); }
+        class SyllabicTextGroup : public ElementInterface
+        {
+        public:
+            SyllabicTextGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+   
+        class LyricTextChoice;
+        using LyricTextChoicePtr = std::shared_ptr<LyricTextChoice>;
+        using LyricTextChoiceUPtr = std::unique_ptr<LyricTextChoice>;
+        using LyricTextChoiceSet = std::vector<LyricTextChoicePtr>;
+        using LyricTextChoiceSetIter = LyricTextChoiceSet::iterator;
+        using LyricTextChoiceSetIterConst = LyricTextChoiceSet::const_iterator;
+        inline LyricTextChoicePtr makeLyricTextChoice() { return std::make_shared<LyricTextChoice>(); }
+        class LyricTextChoice : public ElementInterface
+        {
+        public:
+            LyricTextChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        class EditorialGroup;
+        using EditorialGroupPtr = std::shared_ptr<EditorialGroup>;
+        using EditorialGroupUPtr = std::unique_ptr<EditorialGroup>;
+        using EditorialGroupSet = std::vector<EditorialGroupPtr>;
+        using EditorialGroupSetIter = EditorialGroupSet::iterator;
+        using EditorialGroupSetIterConst = EditorialGroupSet::const_iterator;
+        inline EditorialGroupPtr makeEditorialGroup() { return std::make_shared<EditorialGroup>(); }
+        class EditorialGroup : public ElementInterface
+        {
+        public:
+            EditorialGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+        
+        struct LyricAttributes;
+        using LyricAttributesPtr = std::shared_ptr<LyricAttributes>;
+        
+        struct LyricAttributes : public AttributesInterface
+        {
+        public:
+            LyricAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsNMToken number;
+            types::XsToken name;
+            types::LeftCenterRight justify;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            types::Color color;
+            types::YesNo printObject;
+            bool hasNumber;
+            bool hasName;
+            bool hasJustify;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+            bool hasColor;
+            bool hasPrintObject;
+        };
+        
+        class Lyric;
+        using LyricPtr = std::shared_ptr<Lyric>;
+        using LyricUPtr = std::unique_ptr<Lyric>;
+        using LyricSet = std::vector<LyricPtr>;
+        using LyricSetIter = LyricSet::iterator;
+        using LyricSetIterConst = LyricSet::const_iterator;
+        inline LyricPtr makeLyric() { return std::make_shared<Lyric>(); }
+        class Lyric : public ElementInterface
+        {
+        public:
+            Lyric();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            LyricAttributesPtr getAttributes() const;
+            void setAttributes( const LyricAttributesPtr& value );
+            /* _________ Syllabic minOccurs = 0, maxOccurs = 1 _________ */
+            SyllabicPtr getSyllabic() const;
+            void setSyllabic( const SyllabicPtr& value );
+            bool getHasSyllabic() const;
+            void setHasSyllabic( const bool value );
+            /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
+            TextPtr getText() const;
+            void setText( const TextPtr& value );
+            /* _________ Elision minOccurs = 1, maxOccurs = 1 _________ */
+            ElisionPtr getElision() const;
+            void setElision( const ElisionPtr& value );
+            /* _________ Syllabic minOccurs = 0, maxOccurs = 1 _________ */
+            SyllabicPtr getSyllabic() const;
+            void setSyllabic( const SyllabicPtr& value );
+            bool getHasSyllabic() const;
+            void setHasSyllabic( const bool value );
+            /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
+            TextPtr getText() const;
+            void setText( const TextPtr& value );
+            /* _________ Extend minOccurs = 0, maxOccurs = 1 _________ */
+            ExtendPtr getExtend() const;
+            void setExtend( const ExtendPtr& value );
+            bool getHasExtend() const;
+            void setHasExtend( const bool value );
+            /* _________ Extend minOccurs = 1, maxOccurs = 1 _________ */
+            ExtendPtr getExtend() const;
+            void setExtend( const ExtendPtr& value );
+            /* _________ Laughing minOccurs = 1, maxOccurs = 1 _________ */
+            LaughingPtr getLaughing() const;
+            void setLaughing( const LaughingPtr& value );
+            /* _________ Humming minOccurs = 1, maxOccurs = 1 _________ */
+            HummingPtr getHumming() const;
+            void setHumming( const HummingPtr& value );
+            /* _________ EndLine minOccurs = 0, maxOccurs = 1 _________ */
+            EndLinePtr getEndLine() const;
+            void setEndLine( const EndLinePtr& value );
+            bool getHasEndLine() const;
+            void setHasEndLine( const bool value );
+            /* _________ EndParagraph minOccurs = 0, maxOccurs = 1 _________ */
+            EndParagraphPtr getEndParagraph() const;
+            void setEndParagraph( const EndParagraphPtr& value );
+            bool getHasEndParagraph() const;
+            void setHasEndParagraph( const bool value );
+            /* _________ Footnote minOccurs = 1, maxOccurs = 1 _________ */
+            FootnotePtr getFootnote() const;
+            void setFootnote( const FootnotePtr& value );
+            /* _________ Level minOccurs = 1, maxOccurs = 1 _________ */
+            LevelPtr getLevel() const;
+            void setLevel( const LevelPtr& value );
+        private:
+            LyricAttributesPtr myAttributes;
+            SyllabicPtr mySyllabic;
+            bool myHasSyllabic;
+            TextPtr myText;
+            ElisionPtr myElision;
+            SyllabicPtr mySyllabic;
+            bool myHasSyllabic;
+            TextPtr myText;
+            ExtendPtr myExtend;
+            bool myHasExtend;
+            ExtendPtr myExtend;
+            LaughingPtr myLaughing;
+            HummingPtr myHumming;
+            EndLinePtr myEndLine;
+            bool myHasEndLine;
+            EndParagraphPtr myEndParagraph;
+            bool myHasEndParagraph;
+            FootnotePtr myFootnote;
+            LevelPtr myLevel;
+        };
+#endif
     }
 }
