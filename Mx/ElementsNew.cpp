@@ -2688,7 +2688,7 @@ namespace mx
             isOneLineOnly = true;
             if ( myHasElisionSyllabicGroup )
             {
-                myElisionSyllabicGroup->toStream( os, indentLevel );
+                myElisionSyllabicGroup->streamContents( os, indentLevel, isOneLineOnly );
                 isOneLineOnly = false;
                 os << std::endl;
             }

@@ -68,18 +68,21 @@ namespace MxTestHelpers
             case variant::one:
             {
                 o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
+                o->getText()->setValue( XsString( "Brahms" ) );
             }
                 break;
             case variant::two:
             {
                 o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
                 o->setHasElisionSyllabicGroup( true );
+                o->getText()->setValue( XsString( "Beethoven" ) );
             }
                 break;
             case variant::three:
             {
                 o->setElisionSyllabicGroup( tgenElisionSyllabicGroup( v ) );
                 o->setHasElisionSyllabicGroup( true );
+                o->getText()->setValue( XsString( "Berlioz" ) );
 
             }
                 break;
@@ -96,19 +99,21 @@ namespace MxTestHelpers
             case variant::one:
             {
                 
-                streamLine( os, i, R"(<elision>A</elision>)", false );
+                streamLine( os, i, R"(<text>Brahms</text>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<elision>B</elision>)" );
-                streamLine( os, i, R"(<syllabic>single</syllabic>)", false );
+                tgenElisionSyllabicGroupExpected( os, i, v );
+                os << std::endl;
+                streamLine( os, i, R"(<text>Beethoven</text>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<elision>C</elision>)" );
-                streamLine( os, i, R"(<syllabic>middle</syllabic>)", false );
+                tgenElisionSyllabicGroupExpected( os, i, v );
+                os << std::endl;
+                streamLine( os, i, R"(<text>Berlioz</text>)", false );
             }
                 break;
             default:
