@@ -1599,7 +1599,7 @@ namespace mx
             TextPtr myText;
         };
         
- #if 1==0
+
         class SyllabicTextGroup;
         using SyllabicTextGroupPtr = std::shared_ptr<SyllabicTextGroup>;
         using SyllabicTextGroupUPtr = std::unique_ptr<SyllabicTextGroup>;
@@ -1616,9 +1616,35 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Syllabic minOccurs = 0, maxOccurs = 1 _________ */
+            SyllabicPtr getSyllabic() const;
+            void setSyllabic( const SyllabicPtr& value );
+            bool getHasSyllabic() const;
+            void setHasSyllabic( const bool value );
+            /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
+            TextPtr getText() const;
+            void setText( const TextPtr& value );
+            /* _________ ElisionSyllabicTextGroup minOccurs = 0, maxOccurs = unbounded _________ */
+            const ElisionSyllabicTextGroupSet& getElisionSyllabicTextGroupSet() const;
+            void addElisionSyllabicTextGroup( const ElisionSyllabicTextGroupPtr& value );
+            void removeElisionSyllabicTextGroup( const ElisionSyllabicTextGroupSetIterConst& value );
+            void clearElisionSyllabicTextGroupSet();
+            ElisionSyllabicTextGroupPtr getElisionSyllabicTextGroup( const ElisionSyllabicTextGroupSetIterConst& setIterator ) const;
+            /* _________ Extend minOccurs = 0, maxOccurs = 1 _________ */
+            ExtendPtr getExtend() const;
+            void setExtend( const ExtendPtr& value );
+            bool getHasExtend() const;
+            void setHasExtend( const bool value );
         private:
+            SyllabicPtr mySyllabic;
+            bool myHasSyllabic;
+            TextPtr myText;
+            ElisionSyllabicTextGroupSet myElisionSyllabicTextGroupSet;
+            ExtendPtr myExtend;
+            bool myHasExtend;
         };
-   
+
+#if 1==0
         class LyricTextChoice;
         using LyricTextChoicePtr = std::shared_ptr<LyricTextChoice>;
         using LyricTextChoiceUPtr = std::unique_ptr<LyricTextChoice>;

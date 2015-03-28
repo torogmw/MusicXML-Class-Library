@@ -333,6 +333,7 @@
 		29D8C46B1AC38078008B5471 /* MetronomeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */; };
 		29D9213D1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */; };
 		29D921401AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */; };
+		29D921431AC720BB00F39361 /* SyllabicTextGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */; };
 		29DF38C41AC3532900606232 /* MetronomeNoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
@@ -705,6 +706,8 @@
 		29D9213C1AC70DD900F39361 /* ElisionSyllabicGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElisionSyllabicGroupTest.h; sourceTree = "<group>"; };
 		29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElisionSyllabicTextGroupTest.cpp; sourceTree = "<group>"; };
 		29D9213F1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElisionSyllabicTextGroupTest.h; sourceTree = "<group>"; };
+		29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyllabicTextGroupTest.cpp; sourceTree = "<group>"; };
+		29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyllabicTextGroupTest.h; sourceTree = "<group>"; };
 		29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeNoteTest.cpp; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
 		29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayTextTest.cpp; sourceTree = "<group>"; };
@@ -1123,6 +1126,8 @@
 				29D9213C1AC70DD900F39361 /* ElisionSyllabicGroupTest.h */,
 				29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */,
 				29D9213F1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.h */,
+				29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */,
+				29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1316,6 +1321,7 @@
 				29CEB4A11AB4C0FA00D6AEFC /* DoubleTest.cpp in Sources */,
 				2935A7381AB5FC3B002859CA /* TripleTongueTest.cpp in Sources */,
 				29774A261AB21FA000BF2205 /* SystemDistanceTest.cpp in Sources */,
+				29D921431AC720BB00F39361 /* SyllabicTextGroupTest.cpp in Sources */,
 				29C0B9E21AAE9398004F86FA /* OtherArticulationTest.cpp in Sources */,
 				29C0B9CC1AAE9398004F86FA /* GroupAbbreviationTest.cpp in Sources */,
 				297749F11AB21FA000BF2205 /* InstrumentNameTest.cpp in Sources */,
