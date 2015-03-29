@@ -3056,6 +3056,180 @@ namespace mx
         {
             myHasLevel = value;
         }
+        
+        
+        
+        /**************** LyricAttributes ****************/
+        /* 5045 */
+        LyricAttributes::LyricAttributes()
+        :number()
+        ,name()
+        ,justify( types::LeftCenterRight::center )
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,color()
+        ,printObject( types::YesNo::no )
+        ,hasNumber( false )
+        ,hasName( false )
+        ,hasJustify( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        ,hasColor( false )
+        ,hasPrintObject( false )
+        {}
+        
+        bool LyricAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasName ||
+            hasJustify ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement ||
+            hasColor ||
+            hasPrintObject;
+        }
+        
+        std::ostream& LyricAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, name, "name", hasName );
+                streamAttribute( os, justify, "justify", hasJustify );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+        /* _______________________________________________________________________________ */
+        
+        Lyric::Lyric()
+        :myAttributes( std::make_shared<LyricAttributes>() )
+        ,myLyricTextChoice( makeLyricTextChoice() )
+        ,myEndLine( makeEndLine() )
+        ,myHasEndLine( false )
+        ,myEndParagraph( makeEndParagraph() )
+        ,myHasEndParagraph( false )
+        ,myEditorialGroup( makeEditorialGroup() )
+        {}
+        bool Lyric::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Lyric::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Lyric::streamName( std::ostream& os ) const
+        {
+            return os << "lyric";
+        }
+        bool Lyric::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& Lyric::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            os << std::endl;
+            myLyricTextChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+            if ( myHasEndLine )
+            {
+                os << std::endl;
+                myEndLine->toStream( os, indentLevel+1 );
+            }
+            if ( myHasEndParagraph )
+            {
+                os << std::endl;
+                myEndParagraph->toStream( os, indentLevel+1 );
+            }
+            if( myEditorialGroup->hasContents() )
+            {
+                os << std::endl;
+            }
+            myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ LyricTextChoice minOccurs = 1, maxOccurs = 1 _________ */
+        LyricTextChoicePtr Lyric::getLyricTextChoice() const
+        {
+            return myLyricTextChoice;
+        }
+        void Lyric::setLyricTextChoice( const LyricTextChoicePtr& value )
+        {
+            if ( value )
+            {
+                myLyricTextChoice = value;
+            }
+        }
+        /* _________ EndLine minOccurs = 0, maxOccurs = 1 _________ */
+        EndLinePtr Lyric::getEndLine() const
+        {
+            return myEndLine;
+        }
+        void Lyric::setEndLine( const EndLinePtr& value )
+        {
+            if ( value )
+            {
+                myEndLine = value;
+            }
+        }
+        bool Lyric::getHasEndLine() const
+        {
+            return myHasEndLine;
+        }
+        void Lyric::setHasEndLine( const bool value )
+        {
+            myHasEndLine = value;
+        }
+        /* _________ EndParagraph minOccurs = 0, maxOccurs = 1 _________ */
+        EndParagraphPtr Lyric::getEndParagraph() const
+        {
+            return myEndParagraph;
+        }
+        void Lyric::setEndParagraph( const EndParagraphPtr& value )
+        {
+            if ( value )
+            {
+                myEndParagraph = value;
+            }
+        }
+        bool Lyric::getHasEndParagraph() const
+        {
+            return myHasEndParagraph;
+        }
+        void Lyric::setHasEndParagraph( const bool value )
+        {
+            myHasEndParagraph = value;
+        }
+        /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr Lyric::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void Lyric::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
     } // namespace e
 
 } // namespace mx

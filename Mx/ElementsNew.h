@@ -1742,7 +1742,7 @@ namespace mx
             bool myHasLevel;
         };
 
-#if 1==0
+
         struct LyricAttributes;
         using LyricAttributesPtr = std::shared_ptr<LyricAttributes>;
         
@@ -1792,39 +1792,9 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             LyricAttributesPtr getAttributes() const;
             void setAttributes( const LyricAttributesPtr& value );
-            /* _________ Syllabic minOccurs = 0, maxOccurs = 1 _________ */
-            SyllabicPtr getSyllabic() const;
-            void setSyllabic( const SyllabicPtr& value );
-            bool getHasSyllabic() const;
-            void setHasSyllabic( const bool value );
-            /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
-            TextPtr getText() const;
-            void setText( const TextPtr& value );
-            /* _________ Elision minOccurs = 1, maxOccurs = 1 _________ */
-            ElisionPtr getElision() const;
-            void setElision( const ElisionPtr& value );
-            /* _________ Syllabic minOccurs = 0, maxOccurs = 1 _________ */
-            SyllabicPtr getSyllabic() const;
-            void setSyllabic( const SyllabicPtr& value );
-            bool getHasSyllabic() const;
-            void setHasSyllabic( const bool value );
-            /* _________ Text minOccurs = 1, maxOccurs = 1 _________ */
-            TextPtr getText() const;
-            void setText( const TextPtr& value );
-            /* _________ Extend minOccurs = 0, maxOccurs = 1 _________ */
-            ExtendPtr getExtend() const;
-            void setExtend( const ExtendPtr& value );
-            bool getHasExtend() const;
-            void setHasExtend( const bool value );
-            /* _________ Extend minOccurs = 1, maxOccurs = 1 _________ */
-            ExtendPtr getExtend() const;
-            void setExtend( const ExtendPtr& value );
-            /* _________ Laughing minOccurs = 1, maxOccurs = 1 _________ */
-            LaughingPtr getLaughing() const;
-            void setLaughing( const LaughingPtr& value );
-            /* _________ Humming minOccurs = 1, maxOccurs = 1 _________ */
-            HummingPtr getHumming() const;
-            void setHumming( const HummingPtr& value );
+            /* _________ LyricTextChoice minOccurs = 1, maxOccurs = 1 _________ */
+            LyricTextChoicePtr getLyricTextChoice() const;
+            void setLyricTextChoice( const LyricTextChoicePtr& value );
             /* _________ EndLine minOccurs = 0, maxOccurs = 1 _________ */
             EndLinePtr getEndLine() const;
             void setEndLine( const EndLinePtr& value );
@@ -1835,33 +1805,19 @@ namespace mx
             void setEndParagraph( const EndParagraphPtr& value );
             bool getHasEndParagraph() const;
             void setHasEndParagraph( const bool value );
-            /* _________ Footnote minOccurs = 1, maxOccurs = 1 _________ */
-            FootnotePtr getFootnote() const;
-            void setFootnote( const FootnotePtr& value );
-            /* _________ Level minOccurs = 1, maxOccurs = 1 _________ */
-            LevelPtr getLevel() const;
-            void setLevel( const LevelPtr& value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
         private:
             LyricAttributesPtr myAttributes;
-            SyllabicPtr mySyllabic;
-            bool myHasSyllabic;
-            TextPtr myText;
-            ElisionPtr myElision;
-            SyllabicPtr mySyllabic;
-            bool myHasSyllabic;
-            TextPtr myText;
-            ExtendPtr myExtend;
-            bool myHasExtend;
-            ExtendPtr myExtend;
-            LaughingPtr myLaughing;
-            HummingPtr myHumming;
+            LyricTextChoicePtr myLyricTextChoice;
             EndLinePtr myEndLine;
             bool myHasEndLine;
             EndParagraphPtr myEndParagraph;
             bool myHasEndParagraph;
-            FootnotePtr myFootnote;
-            LevelPtr myLevel;
+            EditorialGroupPtr myEditorialGroup;
         };
+#if 1==0
 #endif
     }
 }
