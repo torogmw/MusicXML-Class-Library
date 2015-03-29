@@ -1,41 +1,118 @@
-#include "MxTestCompileControl.h"
-#ifdef RUN_PHASE2_TESTS
-#include "TestHarness.h"
-#include "Elements.h"
-#include <sstream>
 
-using namespace mx::types;
+#include "TestHarness.h"
+#include "MxTestHelper.h"
+#include "ElementsNew.h"
+#include "TupletNumberTest.h"
+#include "MidiInstrumentTest.h"
+#include "MidiDeviceTest.cpp"
+
+
 using namespace mx::e;
+using namespace mx::types;
+using namespace std;
+using namespace MxTestHelpers;
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE3_TESTS
 
 TEST( Test01, TupletNumber )
 {
-	std::string indentString( INDENT );
-	NonNegativeInteger value1{ 2 };
-	NonNegativeInteger value2{ 5 };
-	TupletNumber object1;
-	TupletNumber object2( value2 );
-	TupletNumberAttributesPtr attributes1 = std::make_shared<TupletNumberAttributes>();
-	TupletNumberAttributesPtr attributesNull;
-	/* set some attribute1 values here */
-	object2.setAttributes( attributes1 );
-    attributes1->hasFontStyle = true;
-    attributes1->fontStyle = FontStyle::italic;
-	std::stringstream default_constructed;
-	object1.toStream( default_constructed, 0 );
-	std::stringstream object2_stream;
-	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(<tuplet-number>1</tuplet-number>)";
-	std::string actual = default_constructed.str();
-	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<tuplet-number font-style="italic">5</tuplet-number>)";
-	actual = object2_stream.str();
-	CHECK_EQUAL( expected, actual )
-	value1 = object2.getValue();
-	object1.setValue( value1 );
-	std::stringstream o1;	std::stringstream o2;	bool isOneLineOnly = false;
-	object1.streamContents( o1, 0, isOneLineOnly );
-	object2.streamContents( o2, 0, isOneLineOnly );
-	CHECK( isOneLineOnly )
-	CHECK_EQUAL( o1.str(), o2.str() )
+    variant v = variant::one;
+	TupletNumberPtr object = tgenTupletNumber( v );
+	stringstream expected;
+	tgenTupletNumberExpected( expected, 1, v );
+	stringstream actual;
+	// object->toStream( std::cout, 1 );
+	object->toStream( actual, 1 );
+	CHECK_EQUAL( expected.str(), actual.str() )
+	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasContents() )
+}
+TEST( Test02, TupletNumber )
+{
+    variant v = variant::two;
+	TupletNumberPtr object = tgenTupletNumber( v );
+	stringstream expected;
+	tgenTupletNumberExpected( expected, 1, v );
+	stringstream actual;
+	// object->toStream( std::cout, 1 );
+	object->toStream( actual, 1 );
+	CHECK_EQUAL( expected.str(), actual.str() )
+	CHECK( object->hasAttributes() )
+	CHECK( object->hasContents() )
+}
+TEST( Test03, TupletNumber )
+{
+    variant v = variant::three;
+	TupletNumberPtr object = tgenTupletNumber( v );
+	stringstream expected;
+	tgenTupletNumberExpected( expected, 1, v );
+	stringstream actual;
+	// object->toStream( std::cout, 1 );
+	object->toStream( actual, 1 );
+	CHECK_EQUAL( expected.str(), actual.str() )
+	CHECK( object->hasAttributes() )
+	CHECK( object->hasContents() )
 }
 #endif
+namespace MxTestHelpers
+{
+    TupletNumberPtr tgenTupletNumber( variant v )
+    {
+        TupletNumberPtr o = makeTupletNumber();
+        switch ( v )
+        {
+            case variant::one:
+            {
+                
+            }
+                break;
+            case variant::two:
+            {
+                o->getAttributes()->hasFontWeight = true;
+                o->getAttributes()->fontWeight = FontWeight::bold;
+            }
+                break;
+            case variant::three:
+            {
+
+            }
+                break;
+            default:
+                break;
+        }
+        return o;
+    }
+    void tgenTupletNumberExpected( std::ostream& os, int i, variant v )
+    {
+        
+        switch ( v )
+        {
+            case variant::one:
+            {
+                streamLine( os, i, R"(<hole>)" );
+                streamLine( os, i+1, R"(<hole-closed>no</hole-closed>)" );
+                streamLine( os, i, R"(</hole>)", false );
+            }
+                break;
+            case variant::two:
+            {
+                streamLine( os, i, R"(<hole color="#010203">)" );
+                streamLine( os, i+1, R"(<hole-closed>half</hole-closed>)" );
+                streamLine( os, i+1, R"(<hole-shape>torus</hole-shape>)" );
+                streamLine( os, i, R"(</hole>)", false );
+            }
+                break;
+            case variant::three:
+            {
+                streamLine( os, i, R"(<hole default-y="-1.1" placement="above">)" );
+                streamLine( os, i+1, R"(<hole-type>foobar</hole-type>)" );
+                streamLine( os, i+1, R"(<hole-closed>yes</hole-closed>)" );
+                streamLine( os, i+1, R"(<hole-shape>smokes</hole-shape>)" );
+                streamLine( os, i, R"(</hole>)", false );
+            }
+                break;
+            default:
+                break;
+        }
+    }
+}
