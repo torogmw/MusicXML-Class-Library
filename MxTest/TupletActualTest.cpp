@@ -2,7 +2,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "ElementsNew.h"
-#include "TupletNumberTest.h"
+#include "TupletActualTest.h"
 #include "MidiInstrumentTest.h"
 #include "MidiDeviceTest.cpp"
 
@@ -14,12 +14,12 @@ using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"
 #ifdef RUN_PHASE3_TESTS
 
-TEST( Test01, TupletNumber )
+TEST( Test01, TupletActual )
 {
     variant v = variant::one;
-	TupletNumberPtr object = tgenTupletNumber( v );
+	TupletActualPtr object = tgenTupletActual( v );
 	stringstream expected;
-	tgenTupletNumberExpected( expected, 1, v );
+	tgenTupletActualExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -27,12 +27,12 @@ TEST( Test01, TupletNumber )
 	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test02, TupletNumber )
+TEST( Test02, TupletActual )
 {
     variant v = variant::two;
-	TupletNumberPtr object = tgenTupletNumber( v );
+	TupletActualPtr object = tgenTupletActual( v );
 	stringstream expected;
-	tgenTupletNumberExpected( expected, 1, v );
+	tgenTupletActualExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -40,12 +40,12 @@ TEST( Test02, TupletNumber )
 	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, TupletNumber )
+TEST( Test03, TupletActual )
 {
     variant v = variant::three;
-	TupletNumberPtr object = tgenTupletNumber( v );
+	TupletActualPtr object = tgenTupletActual( v );
 	stringstream expected;
-	tgenTupletNumberExpected( expected, 1, v );
+	tgenTupletActualExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -56,9 +56,9 @@ TEST( Test03, TupletNumber )
 #endif
 namespace MxTestHelpers
 {
-    TupletNumberPtr tgenTupletNumber( variant v )
+    TupletActualPtr tgenTupletActual( variant v )
     {
-        TupletNumberPtr o = makeTupletNumber();
+        TupletActualPtr o = makeTupletActual();
         switch ( v )
         {
             case variant::one:
@@ -68,13 +68,21 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->getAttributes()->hasFontWeight = true;
-                o->getAttributes()->fontWeight = FontWeight::bold;
+                o->setHasTupletNumber( true );
+                o->getTupletNumber()->setValue( NonNegativeInteger( 2 ) );
+                o->setHasTupletType( true );
+                o->getTupletType()->setValue( NoteTypeValue::sixteenth );
+                o->addTupletDot( makeTupletDot() );
             }
                 break;
             case variant::three:
             {
-
+                o->setHasTupletNumber( true );
+                o->getTupletNumber()->setValue( NonNegativeInteger( 3 ) );
+                o->setHasTupletType( true );
+                o->getTupletType()->setValue( NoteTypeValue::half );
+                o->addTupletDot( makeTupletDot() );
+                o->addTupletDot( makeTupletDot() );
             }
                 break;
             default:
@@ -82,7 +90,7 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenTupletNumberExpected( std::ostream& os, int i, variant v )
+    void tgenTupletActualExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )

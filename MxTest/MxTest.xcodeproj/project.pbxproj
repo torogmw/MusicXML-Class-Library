@@ -10,6 +10,7 @@
 		2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */; };
 		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */; };
+		290664071AC7E43F005E6E80 /* TupletActualTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290664051AC7E43F005E6E80 /* TupletActualTest.cpp */; };
 		29070BB01AC75DD7000B8D31 /* LyricTextCoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */; };
 		29070BB31AC778F0000B8D31 /* EditorialGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */; };
 		29070BB61AC77EFB000B8D31 /* LyricTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29070BB41AC77EFB000B8D31 /* LyricTest.cpp */; };
@@ -72,7 +73,6 @@
 		2962360D1AC5CE1600F3E007 /* FigureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962360B1AC5CE1600F3E007 /* FigureTest.cpp */; };
 		2971F50A1AC320B0007C2EF7 /* MetronomeTupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */; };
 		297597E31AACF9930055E101 /* AccidentalTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297597E11AACF9930055E101 /* AccidentalTextTest.cpp */; };
-		29760B111AC7DF7D000E953F /* TupletNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29760B0F1AC7DF7D000E953F /* TupletNumberTest.cpp */; };
 		297749D01AB21FA000BF2205 /* AccordionMiddleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2977496B1AB21FA000BF2205 /* AccordionMiddleTest.cpp */; };
 		297749D11AB21FA000BF2205 /* ActualNotesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2977496C1AB21FA000BF2205 /* ActualNotesTest.cpp */; };
 		297749D21AB21FA000BF2205 /* AlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2977496D1AB21FA000BF2205 /* AlterTest.cpp */; };
@@ -306,7 +306,6 @@
 		29C0B9F81AAE9398004F86FA /* TapTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B81AAE9398004F86FA /* TapTest.cpp */; };
 		29C0B9F91AAE9398004F86FA /* TextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9B91AAE9398004F86FA /* TextTest.cpp */; };
 		29C0B9FA1AAE9398004F86FA /* TremoloTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */; };
-		29C0B9FB1AAE9398004F86FA /* TupletNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */; };
 		29C0B9FC1AAE9398004F86FA /* TupletTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */; };
 		29C0B9FD1AAE9398004F86FA /* TypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */; };
 		29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */; };
@@ -365,6 +364,8 @@
 		2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeatRepeatTest.cpp; sourceTree = "<group>"; };
 		2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlashTest.cpp; sourceTree = "<group>"; };
 		2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffTuningTest.cpp; sourceTree = "<group>"; };
+		290664051AC7E43F005E6E80 /* TupletActualTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletActualTest.cpp; sourceTree = "<group>"; };
+		290664061AC7E43F005E6E80 /* TupletActualTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletActualTest.h; sourceTree = "<group>"; };
 		29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LyricTextCoiceTest.cpp; sourceTree = "<group>"; };
 		29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricTextChoiceTest.h; sourceTree = "<group>"; };
 		29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorialGroupTest.cpp; sourceTree = "<group>"; };
@@ -442,8 +443,6 @@
 		2962360C1AC5CE1600F3E007 /* FigureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureTest.h; sourceTree = "<group>"; };
 		2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTupletTest.cpp; sourceTree = "<group>"; };
 		297597E11AACF9930055E101 /* AccidentalTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTextTest.cpp; sourceTree = "<group>"; };
-		29760B0F1AC7DF7D000E953F /* TupletNumberTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletNumberTest.cpp; sourceTree = "<group>"; };
-		29760B101AC7DF7D000E953F /* TupletNumberTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletNumberTest.h; sourceTree = "<group>"; };
 		2977496B1AB21FA000BF2205 /* AccordionMiddleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionMiddleTest.cpp; sourceTree = "<group>"; };
 		2977496C1AB21FA000BF2205 /* ActualNotesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActualNotesTest.cpp; sourceTree = "<group>"; };
 		2977496D1AB21FA000BF2205 /* AlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlterTest.cpp; sourceTree = "<group>"; };
@@ -692,7 +691,6 @@
 		29C0B9B81AAE9398004F86FA /* TapTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TapTest.cpp; sourceTree = "<group>"; };
 		29C0B9B91AAE9398004F86FA /* TextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextTest.cpp; sourceTree = "<group>"; };
 		29C0B9BA1AAE9398004F86FA /* TremoloTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TremoloTest.cpp; sourceTree = "<group>"; };
-		29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletNumberTest.cpp; sourceTree = "<group>"; };
 		29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletTypeTest.cpp; sourceTree = "<group>"; };
 		29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypeTest.cpp; sourceTree = "<group>"; };
 		29C0B9BE1AAE9398004F86FA /* WithBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WithBarTest.cpp; sourceTree = "<group>"; };
@@ -1112,7 +1110,6 @@
 				297749C71AB21FA000BF2205 /* TuningOctaveTest.cpp */,
 				297749C81AB21FA000BF2205 /* TuningStepTest.cpp */,
 				298C81CB1AB6A8DC006619A9 /* TupletDotTest.cpp */,
-				29C0B9BB1AAE9398004F86FA /* TupletNumberTest.cpp */,
 				29C0B9BC1AAE9398004F86FA /* TupletTypeTest.cpp */,
 				298C81CC1AB6A8DC006619A9 /* TurnTest.cpp */,
 				29C0B9BD1AAE9398004F86FA /* TypeTest.cpp */,
@@ -1171,8 +1168,8 @@
 				29E08C681AC7D8D600744453 /* ToeTest.h */,
 				29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */,
 				29E08C6B1AC7DB0D00744453 /* HoleTest.h */,
-				29760B0F1AC7DF7D000E953F /* TupletNumberTest.cpp */,
-				29760B101AC7DF7D000E953F /* TupletNumberTest.h */,
+				290664051AC7E43F005E6E80 /* TupletActualTest.cpp */,
+				290664061AC7E43F005E6E80 /* TupletActualTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1279,6 +1276,7 @@
 				2935A7191AB5FC3B002859CA /* AccentTest.cpp in Sources */,
 				29CEB4A21AB4C0FA00D6AEFC /* EndLineTest.cpp in Sources */,
 				29C0B9DA1AAE9398004F86FA /* MetronomeBeamTest.cpp in Sources */,
+				290664071AC7E43F005E6E80 /* TupletActualTest.cpp in Sources */,
 				297749F91AB21FA000BF2205 /* LineTest.cpp in Sources */,
 				29774A141AB21FA000BF2205 /* RightMarginTest.cpp in Sources */,
 				29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */,
@@ -1429,7 +1427,6 @@
 				2935A71A1AB5FC3B002859CA /* CaesuraTest.cpp in Sources */,
 				298C81D41AB6A8DC006619A9 /* DashesTest.cpp in Sources */,
 				29CEB4B01AB4C0FA00D6AEFC /* TouchingPitchTest.cpp in Sources */,
-				29C0B9FB1AAE9398004F86FA /* TupletNumberTest.cpp in Sources */,
 				29C0B97C1AAE9337004F86FA /* DegreeAlterTest.cpp in Sources */,
 				29C0B9ED1AAE9398004F86FA /* PrefixTest.cpp in Sources */,
 				29C0B9EC1AAE9398004F86FA /* PluckTest.cpp in Sources */,
@@ -1519,7 +1516,6 @@
 				29C0B9D11AAE9398004F86FA /* HandbellTest.cpp in Sources */,
 				297749DA1AB21FA000BF2205 /* CapoTest.cpp in Sources */,
 				29774A311AB21FA000BF2205 /* VolumeTest.cpp in Sources */,
-				29760B111AC7DF7D000E953F /* TupletNumberTest.cpp in Sources */,
 				29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */,
 				29884C211AC1FBEC00DD2209 /* StaffDetailsTest.cpp in Sources */,
 				29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */,
