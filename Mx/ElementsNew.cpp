@@ -3867,7 +3867,7 @@ namespace mx
 		}
 		std::ostream& TupletNormal::streamName( std::ostream& os ) const
 		{
-			os << "tuplet-actual";
+			os << "tuplet-normal";
 			return os;
 		}
 		bool TupletNormal::hasContents() const

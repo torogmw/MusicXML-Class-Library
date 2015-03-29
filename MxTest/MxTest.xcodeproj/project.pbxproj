@@ -228,6 +228,7 @@
 		29A5650B1AC4ABB10059CACD /* AccordTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A565091AC4ABB10059CACD /* AccordTest.cpp */; };
 		29A5650E1AC4B0DB0059CACD /* ScordaturaTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A5650C1AC4B0DB0059CACD /* ScordaturaTest.cpp */; };
 		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
+		29BB00EA1AC864D300D87116 /* TupletNormalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */; };
 		29BDAB4A1AC5177300C6DE31 /* PlayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB481AC5177300C6DE31 /* PlayTest.cpp */; };
 		29BDAB501AC5281D00C6DE31 /* EncodingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB4E1AC5281D00C6DE31 /* EncodingTest.cpp */; };
 		29BDAB531AC52C7300C6DE31 /* MiscellaneousTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB511AC52C7300C6DE31 /* MiscellaneousTest.cpp */; };
@@ -608,6 +609,8 @@
 		29A5650C1AC4B0DB0059CACD /* ScordaturaTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScordaturaTest.cpp; sourceTree = "<group>"; };
 		29A5650D1AC4B0DB0059CACD /* ScordaturaTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScordaturaTest.h; sourceTree = "<group>"; };
 		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
+		29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletNormalTest.cpp; sourceTree = "<group>"; };
+		29BB00E91AC864D300D87116 /* TupletNormalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletNormalTest.h; sourceTree = "<group>"; };
 		29BDAB481AC5177300C6DE31 /* PlayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayTest.cpp; sourceTree = "<group>"; };
 		29BDAB491AC5177300C6DE31 /* PlayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTest.h; sourceTree = "<group>"; };
 		29BDAB4C1AC5182700C6DE31 /* MxTestCompileControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxTestCompileControl.h; sourceTree = "<group>"; };
@@ -1170,6 +1173,8 @@
 				29E08C6B1AC7DB0D00744453 /* HoleTest.h */,
 				290664051AC7E43F005E6E80 /* TupletActualTest.cpp */,
 				290664061AC7E43F005E6E80 /* TupletActualTest.h */,
+				29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */,
+				29BB00E91AC864D300D87116 /* TupletNormalTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1554,6 +1559,7 @@
 				29CEB4A01AB4C0FA00D6AEFC /* CueTest.cpp in Sources */,
 				298C81E61AB6A8DC006619A9 /* SupportsTest.cpp in Sources */,
 				29C0B9E81AAE9398004F86FA /* PartAbbreviationTest.cpp in Sources */,
+				29BB00EA1AC864D300D87116 /* TupletNormalTest.cpp in Sources */,
 				29070BB31AC778F0000B8D31 /* EditorialGroupTest.cpp in Sources */,
 				29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */,
 				29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */,
