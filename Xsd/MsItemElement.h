@@ -63,6 +63,7 @@ namespace xsd
         bool getSubElementsImplemented() const;
         std::string toString() const;
         std::ostream& toStream( std::ostream& os ) const;
+        int getChoiceCount() const;
         
     private:
         MsItemAttributeSet myAttributes;
@@ -84,7 +85,7 @@ namespace xsd
     void findEquivalentElementsRecursively( const MsItemElementPtr& pattern, const MsItemPtr& searchHere, MsItemElementSet& output );
     void findSubElementsRecursively( const MsItemPtr& e, MsItemSet& output, const int topElementID );
     MsItemSet findSubElementsXXX( const MsItemPtr& i );
-    
+    void countChoicesThereinRecursively( const MsItem* item, int& count );
     class MsItemWeb;
     using MsItemWebPtr = std::shared_ptr<MsItemWeb>;
     MsItemElementSet findUnimplementedElements( const MsItemWebPtr& web );

@@ -370,5 +370,48 @@ namespace xsd
         }
         return os;
     }
-    
+    void countChoicesThereinRecursively( const MsItem* item, int& count )
+    {
+        if ( item->getMsItemKind() == MsItemKind::choice )
+        {
+            ++count;
+        }
+        std::string refstr;
+        for ( auto p : item->getXpItem()->getProperties() )
+        {
+            if ( p->getLabel() == "ref" || p->getLabel() == "type" || p->getLabel() == "base" )
+            {
+                refstr = p->getValue();
+            }
+        }
+        if ( refstr.length() > 0 )
+        {
+            MsItemPtr ref;
+            if ( item->getMsItemKind() == MsItemKind::group )
+            {
+                ref = findItemByNameAndKind( refstr, MsItemKind::group, item );
+            }
+            if ( !ref )
+            {
+                if ( item->getMsItemKind() == MsItemKind::complexType || item->getMsItemKind() == MsItemKind::element )
+                {
+                    ref = findItemByNameAndKind( refstr, MsItemKind::complexType, item );
+                }
+            }
+            if ( ref )
+            {
+                countChoicesThereinRecursively( ref.get(), count );
+            }
+        }
+        for ( auto child : item->getChildren() )
+        {
+            countChoicesThereinRecursively( child.get(), count );
+        }
+    }
+    int MsItemElement::getChoiceCount() const
+    {
+        int count = 0;
+        countChoicesThereinRecursively( this, count );
+        return count;
+    }
 }

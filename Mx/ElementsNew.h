@@ -1817,7 +1817,146 @@ namespace mx
             bool myHasEndParagraph;
             EditorialGroupPtr myEditorialGroup;
         };
+
+        /**************** MordentAttributes ****************/
+        /* 5166 */
+        MordentAttributes::MordentAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,startNote( types::StartNote::main )
+        ,trillStep( types::TrillStep:: )
+        ,twoNoteTurn( types::TwoNoteTurn::none )
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,secondBeat()
+        ,lastBeat()
+        ,long( types::YesNo::no )
+        ,approach( types::AboveBelow::below )
+        ,departure( types::AboveBelow::below )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        ,hasStartNote( false )
+        ,hasTrillStep( false )
+        ,hasTwoNoteTurn( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasSecondBeat( false )
+        ,hasLastBeat( false )
+        ,hasLong( false )
+        ,hasApproach( false )
+        ,hasDeparture( false )
+        {}
 #if 1==0
+        bool MordentAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement ||
+            hasStartNote ||
+            hasTrillStep ||
+            hasTwoNoteTurn ||
+            hasAccelerate ||
+            hasBeats ||
+            hasSecondBeat ||
+            hasLastBeat ||
+            hasLong ||
+            hasApproach ||
+            hasDeparture;
+        }
+        
+        std::ostream& MordentAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, startNote, "start-note", hasStartNote );
+                streamAttribute( os, trillStep, "trill-step", hasTrillStep );
+                streamAttribute( os, twoNoteTurn, "two-note-turn", hasTwoNoteTurn );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, secondBeat, "second-beat", hasSecondBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+                streamAttribute( os, long, "long", hasLong );
+                streamAttribute( os, approach, "approach", hasApproach );
+                streamAttribute( os, departure, "departure", hasDeparture );
+            }
+            return os;
+        }
+        
+		Mordent::Mordent()
+		:myAttributes( std::make_shared<MordentAttributes>() )
+		{}
+		bool Mordent::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Mordent::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Mordent::streamName( std::ostream& os ) const
+		{
+			os << "mordent";
+			return os;
+		}
+		bool Mordent::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Mordent::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		MordentAttributesPtr Mordent::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Mordent::setAttributes( const MordentAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+
+
+
 #endif
     }
 }

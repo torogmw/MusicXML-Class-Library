@@ -42,7 +42,10 @@ namespace go
         {
             if ( !onlyIncludeThoseWithImplementedSubElements || e->getSubElementsImplemented() )
             {
-                e->toStream( ss );
+                if ( e->getChoiceCount() <= 0 )
+                {
+                    e->toStream( ss );
+                }
             }
         }
         std::cout << "finihed getSubElementsImplemented" << std::endl;
