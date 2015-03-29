@@ -3380,6 +3380,43 @@ namespace mx
 				myAttributes = value;
 			}
 		}
+        InvertedMordent::InvertedMordent()
+		:myAttributes( std::make_shared<InvertedMordentAttributes>() )
+		{}
+		bool InvertedMordent::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& InvertedMordent::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& InvertedMordent::streamName( std::ostream& os ) const
+		{
+			os << "inverted-mordent";
+			return os;
+		}
+		bool InvertedMordent::hasContents() const
+		{
+			return false;
+		}
+		std::ostream& InvertedMordent::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = true;
+			return os;
+		}
+		InvertedMordentAttributesPtr InvertedMordent::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void InvertedMordent::setAttributes( const InvertedMordentAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
         
 #if 1==0
 

@@ -1918,5 +1918,53 @@ namespace mx
             MordentAttributesPtr myAttributes;
         };
         
+        /*<!--  ID = 5171 [5171] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::simple -->
+         <!-- RecursiveSubElementCount = 0 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="inverted-mordent" type="mordent">
+         <xs:annotation>
+         <xs:documentation>The inverted-mordent element represents the sign without the vertical line. The long attribute is "no" by default.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="mordent">
+         <xs:annotation>
+         <xs:documentation>The mordent type is used for both represents the mordent sign with the vertical line and the inverted-mordent sign without the line. The long attribute is "no" by default. The approach and departure attributes are used for compound ornaments, indicating how the beginning and ending of the ornament look relative to the main part of the mordent.</xs:documentation>
+         </xs:annotation>
+         <xs:complexContent>
+         <xs:extension base="empty-trill-sound">
+         <xs:attribute name="long" type="yes-no"/>
+         <xs:attribute name="approach" type="above-below"/>
+         <xs:attribute name="departure" type="above-below"/>
+         </xs:extension>
+         </xs:complexContent>
+         </xs:complexType> */
+        
+        using InvertedMordentAttributes = MordentAttributes;
+        using InvertedMordentAttributesPtr = std::shared_ptr<InvertedMordentAttributes>;
+        
+        class InvertedMordent;
+        using InvertedMordentPtr = std::shared_ptr<InvertedMordent>;
+        using InvertedMordentUPtr = std::unique_ptr<InvertedMordent>;
+        using InvertedMordentSet = std::vector<InvertedMordentPtr>;
+        using InvertedMordentSetIter = InvertedMordentSet::iterator;
+        using InvertedMordentSetIterConst = InvertedMordentSet::const_iterator;
+        inline InvertedMordentPtr makeInvertedMordent() { return std::make_shared<InvertedMordent>(); }
+        class InvertedMordent : public ElementInterface
+        {
+        public:
+            InvertedMordent();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            InvertedMordentAttributesPtr getAttributes() const;
+            void setAttributes( const InvertedMordentAttributesPtr& value );
+        private:
+            InvertedMordentAttributesPtr myAttributes;
+        };
+        
     }
 }
