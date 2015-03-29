@@ -2229,6 +2229,7 @@ namespace mx
             void addTupletDot( const TupletDotPtr& value );
             void removeTupletDot( const TupletDotSetIterConst& value );
             void clearTupletDotSet();
+            TupletDotPtr getTupletDot( const TupletDotSetIterConst& setIterator ) const;
         private:
             TupletNumberPtr myTupletNumber;
             bool myHasTupletNumber;
