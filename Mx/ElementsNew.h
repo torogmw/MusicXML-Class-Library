@@ -2237,6 +2237,66 @@ namespace mx
             bool myHasTupletType;
             TupletDotSet myTupletDotSet;
         };
-
+        
+        /* <!--  ID = 5568 [5568] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="tuplet-normal" type="tuplet-portion" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The tuplet-normal element provide optional full control over how the normal part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="tuplet-portion">
+         <xs:annotation>
+         <xs:documentation>The tuplet-portion type provides optional full control over tuplet specifications. It allows the number and note type (including dots) to be set for the actual and normal portions of a single tuplet. If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="tuplet-number" type="tuplet-number" minOccurs="0"/>
+         <xs:element name="tuplet-type" type="tuplet-type" minOccurs="0"/>
+         <xs:element name="tuplet-dot" type="tuplet-dot" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class TupletNormal;
+        using TupletNormalPtr = std::shared_ptr<TupletNormal>;
+        using TupletNormalUPtr = std::unique_ptr<TupletNormal>;
+        using TupletNormalSet = std::vector<TupletNormalPtr>;
+        using TupletNormalSetIter = TupletNormalSet::iterator;
+        using TupletNormalSetIterConst = TupletNormalSet::const_iterator;
+        inline TupletNormalPtr makeTupletNormal() { return std::make_shared<TupletNormal>(); }
+        class TupletNormal : public ElementInterface
+        {
+        public:
+            TupletNormal();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ TupletNumber minOccurs = 0, maxOccurs = 1 _________ */
+            TupletNumberPtr getTupletNumber() const;
+            void setTupletNumber( const TupletNumberPtr& value );
+            bool getHasTupletNumber() const;
+            void setHasTupletNumber( const bool value );
+            /* _________ TupletType minOccurs = 0, maxOccurs = 1 _________ */
+            TupletTypePtr getTupletType() const;
+            void setTupletType( const TupletTypePtr& value );
+            bool getHasTupletType() const;
+            void setHasTupletType( const bool value );
+            /* _________ TupletDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const TupletDotSet& getTupletDotSet() const;
+            void addTupletDot( const TupletDotPtr& value );
+            void removeTupletDot( const TupletDotSetIterConst& value );
+            void clearTupletDotSet();
+            TupletDotPtr getTupletDot( const TupletDotSetIterConst& setIterator ) const;
+        private:
+            TupletNumberPtr myTupletNumber;
+            bool myHasTupletNumber;
+            TupletTypePtr myTupletType;
+            bool myHasTupletType;
+            TupletDotSet myTupletDotSet;
+        };
     }
 }
