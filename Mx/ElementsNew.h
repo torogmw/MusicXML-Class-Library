@@ -2079,5 +2079,104 @@ namespace mx
         private:
             ToeAttributesPtr myAttributes;
         };
+        
+        /* !--  ID = 5421 [5421] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="hole" type="hole"/>
+         <xs:complexType name="hole">
+         <xs:annotation>
+         <xs:documentation>The hole type represents the symbols used for woodwind and brass fingerings as well as other notations.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="hole-type" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The content of the optional hole-type element indicates what the hole symbol represents in terms of instrument fingering or other techniques.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="hole-closed" type="hole-closed"/>
+         <xs:element name="hole-shape" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The optional hole-shape element indicates the shape of the hole symbol; the default is a circle.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType> */
+        
+        struct HoleAttributes;
+        using HoleAttributesPtr = std::shared_ptr<HoleAttributes>;
+        
+        struct HoleAttributes : public AttributesInterface
+        {
+        public:
+            HoleAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+        };
+        
+        class Hole;
+        using HolePtr = std::shared_ptr<Hole>;
+        using HoleUPtr = std::unique_ptr<Hole>;
+        using HoleSet = std::vector<HolePtr>;
+        using HoleSetIter = HoleSet::iterator;
+        using HoleSetIterConst = HoleSet::const_iterator;
+        inline HolePtr makeHole() { return std::make_shared<Hole>(); }
+        class Hole : public ElementInterface
+        {
+        public:
+            Hole();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            HoleAttributesPtr getAttributes() const;
+            void setAttributes( const HoleAttributesPtr& value );
+            /* _________ HoleType minOccurs = 0, maxOccurs = 1 _________ */
+            HoleTypePtr getHoleType() const;
+            void setHoleType( const HoleTypePtr& value );
+            bool getHasHoleType() const;
+            void setHasHoleType( const bool value );
+            /* _________ HoleClosed minOccurs = 1, maxOccurs = 1 _________ */
+            HoleClosedPtr getHoleClosed() const;
+            void setHoleClosed( const HoleClosedPtr& value );
+            /* _________ HoleShape minOccurs = 0, maxOccurs = 1 _________ */
+            HoleShapePtr getHoleShape() const;
+            void setHoleShape( const HoleShapePtr& value );
+            bool getHasHoleShape() const;
+            void setHasHoleShape( const bool value );
+        private:
+            HoleAttributesPtr myAttributes;
+            HoleTypePtr myHoleType;
+            bool myHasHoleType;
+            HoleClosedPtr myHoleClosed;
+            HoleShapePtr myHoleShape;
+            bool myHasHoleShape;
+        };
+
     }
 }

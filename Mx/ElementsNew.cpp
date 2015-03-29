@@ -3556,6 +3556,174 @@ namespace mx
 				myAttributes = value;
 			}
 		}
+        
+        
+        
+        /**************** HoleAttributes ****************/
+        /* 5421 */
+        HoleAttributes::HoleAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool HoleAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement;
+        }
+        
+        std::ostream& HoleAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+		Hole::Hole()
+		:myAttributes( std::make_shared<HoleAttributes>() )
+		,myHoleType( makeHoleType() )
+		,myHasHoleType( false )
+		,myHoleClosed( makeHoleClosed() )
+		,myHoleShape( makeHoleShape() )
+		,myHasHoleShape( false )
+		{}
+		bool Hole::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Hole::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Hole::streamName( std::ostream& os ) const
+		{
+			os << "hole";
+			return os;
+		}
+		bool Hole::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Hole::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( myHasHoleType )
+            {
+                os << std::endl;
+                myHoleType->toStream( os, indentLevel+1 );
+            }
+			os << std::endl;
+			myHoleClosed->toStream( os, indentLevel+1 );
+            if ( myHasHoleShape )
+            {
+                os << std::endl;
+                myHoleShape->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+			isOneLineOnly = false;
+			return os;
+		}
+		HoleAttributesPtr Hole::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Hole::setAttributes( const HoleAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ HoleType minOccurs = 0, maxOccurs = 1 _________ */
+		HoleTypePtr Hole::getHoleType() const
+		{
+			return myHoleType;
+		}
+		void Hole::setHoleType( const HoleTypePtr& value )
+		{
+			if( value )
+			{
+				myHoleType = value;
+			}
+		}
+		bool Hole::getHasHoleType() const
+		{
+			return myHasHoleType;
+		}
+		void Hole::setHasHoleType( const bool value )
+		{
+			myHasHoleType = value;
+		}
+		/* _________ HoleClosed minOccurs = 1, maxOccurs = 1 _________ */
+		HoleClosedPtr Hole::getHoleClosed() const
+		{
+			return myHoleClosed;
+		}
+		void Hole::setHoleClosed( const HoleClosedPtr& value )
+		{
+			if( value )
+			{
+				myHoleClosed = value;
+			}
+		}
+		/* _________ HoleShape minOccurs = 0, maxOccurs = 1 _________ */
+		HoleShapePtr Hole::getHoleShape() const
+		{
+			return myHoleShape;
+		}
+		void Hole::setHoleShape( const HoleShapePtr& value )
+		{
+			if( value )
+			{
+				myHoleShape = value;
+			}
+		}
+		bool Hole::getHasHoleShape() const
+		{
+			return myHasHoleShape;
+		}
+		void Hole::setHasHoleShape( const bool value )
+		{
+			myHasHoleShape = value;
+		}
+
 #if 1==0
 
 #endif
