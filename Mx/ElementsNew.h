@@ -2177,6 +2177,65 @@ namespace mx
             HoleShapePtr myHoleShape;
             bool myHasHoleShape;
         };
+        /* <!--  ID = 5562 [5562] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="tuplet-actual" type="tuplet-portion" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The tuplet-actual element provide optional full control over how the actual part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="tuplet-portion">
+         <xs:annotation>
+         <xs:documentation>The tuplet-portion type provides optional full control over tuplet specifications. It allows the number and note type (including dots) to be set for the actual and normal portions of a single tuplet. If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="tuplet-number" type="tuplet-number" minOccurs="0"/>
+         <xs:element name="tuplet-type" type="tuplet-type" minOccurs="0"/>
+         <xs:element name="tuplet-dot" type="tuplet-dot" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class TupletActual;
+        using TupletActualPtr = std::shared_ptr<TupletActual>;
+        using TupletActualUPtr = std::unique_ptr<TupletActual>;
+        using TupletActualSet = std::vector<TupletActualPtr>;
+        using TupletActualSetIter = TupletActualSet::iterator;
+        using TupletActualSetIterConst = TupletActualSet::const_iterator;
+        inline TupletActualPtr makeTupletActual() { return std::make_shared<TupletActual>(); }
+        class TupletActual : public ElementInterface
+        {
+        public:
+            TupletActual();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ TupletNumber minOccurs = 0, maxOccurs = 1 _________ */
+            TupletNumberPtr getTupletNumber() const;
+            void setTupletNumber( const TupletNumberPtr& value );
+            bool getHasTupletNumber() const;
+            void setHasTupletNumber( const bool value );
+            /* _________ TupletType minOccurs = 0, maxOccurs = 1 _________ */
+            TupletTypePtr getTupletType() const;
+            void setTupletType( const TupletTypePtr& value );
+            bool getHasTupletType() const;
+            void setHasTupletType( const bool value );
+            /* _________ TupletDot minOccurs = 0, maxOccurs = unbounded _________ */
+            const TupletDotSet& getTupletDotSet() const;
+            void addTupletDot( const TupletDotPtr& value );
+            void removeTupletDot( const TupletDotSetIterConst& value );
+            void clearTupletDotSet();
+        private:
+            TupletNumberPtr myTupletNumber;
+            bool myHasTupletNumber;
+            TupletTypePtr myTupletType;
+            bool myHasTupletType;
+            TupletDotSet myTupletDotSet;
+        };
 
     }
 }
