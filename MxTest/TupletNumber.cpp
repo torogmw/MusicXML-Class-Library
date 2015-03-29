@@ -68,7 +68,8 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->getAttributes()->hasFontWeight = true;
+                o->getAttributes()->fontWeight = FontWeight::bold;
             }
                 break;
             case variant::three:

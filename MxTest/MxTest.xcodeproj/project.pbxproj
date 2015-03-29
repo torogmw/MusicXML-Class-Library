@@ -443,7 +443,7 @@
 		2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTupletTest.cpp; sourceTree = "<group>"; };
 		297597E11AACF9930055E101 /* AccidentalTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTextTest.cpp; sourceTree = "<group>"; };
 		29760B0F1AC7DF7D000E953F /* TupletNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletNumber.cpp; sourceTree = "<group>"; };
-		29760B101AC7DF7D000E953F /* TupletNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletNumber.h; sourceTree = "<group>"; };
+		29760B101AC7DF7D000E953F /* TupletNumberTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletNumberTest.h; sourceTree = "<group>"; };
 		2977496B1AB21FA000BF2205 /* AccordionMiddleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionMiddleTest.cpp; sourceTree = "<group>"; };
 		2977496C1AB21FA000BF2205 /* ActualNotesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActualNotesTest.cpp; sourceTree = "<group>"; };
 		2977496D1AB21FA000BF2205 /* AlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlterTest.cpp; sourceTree = "<group>"; };
@@ -1172,7 +1172,7 @@
 				29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */,
 				29E08C6B1AC7DB0D00744453 /* HoleTest.h */,
 				29760B0F1AC7DF7D000E953F /* TupletNumber.cpp */,
-				29760B101AC7DF7D000E953F /* TupletNumber.h */,
+				29760B101AC7DF7D000E953F /* TupletNumberTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
