@@ -3129,10 +3129,14 @@ namespace mx
         {}
         bool Lyric::hasAttributes() const
         {
-            return false;
+            return myAttributes->hasValues();
         }
         std::ostream& Lyric::streamAttributes( std::ostream& os ) const
         {
+            if ( myAttributes->hasValues() )
+            {
+                myAttributes->toStream( os );
+            }
             return os;
         }
         std::ostream& Lyric::streamName( std::ostream& os ) const
@@ -3143,6 +3147,17 @@ namespace mx
         {
             return true;
         }
+        LyricAttributesPtr Lyric::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Lyric::setAttributes( const LyricAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
         std::ostream& Lyric::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
             os << std::endl;

@@ -7,6 +7,7 @@
 #include "SyllabicTextGroupTest.h"
 #include "LyricTextChoiceTest.h"
 #include "LyricTest.h"
+#include "EditorialGroupTest.h"
 #include "MidiInstrumentTest.h"
 #include "MidiDeviceTest.cpp"
 
@@ -29,7 +30,7 @@ TEST( Test01, Lyric )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( ! object->hasContents() )
+	CHECK( object->hasContents() )
 }
 TEST( Test02, Lyric )
 {
@@ -41,7 +42,7 @@ TEST( Test02, Lyric )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 TEST( Test03, Lyric )
@@ -54,7 +55,7 @@ TEST( Test03, Lyric )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 #endif
@@ -67,17 +68,27 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                
+                o->setLyricTextChoice( tgenLyricTextChoice( v ) );
             }
                 break;
             case variant::two:
             {
-                
+                o->getAttributes()->hasName = true;
+                o->getAttributes()->name = XsToken( "Toker" );
+                o->setLyricTextChoice( tgenLyricTextChoice( v ) );
+                o->setEditorialGroup( tgenEditorialGroup( v ) );
+                o->setHasEndLine( true );
             }
                 break;
             case variant::three:
             {
-                
+                o->getAttributes()->hasName = true;
+                o->getAttributes()->name = XsToken( "YOLO" );
+                o->getAttributes()->hasNumber = true;
+                o->getAttributes()->number = XsNMToken( "Looser" );
+                o->setLyricTextChoice( tgenLyricTextChoice( v ) );
+                o->setEditorialGroup( tgenEditorialGroup( v ) );
+                o->setHasEndParagraph( true );
             }
                 break;
             default:
@@ -92,18 +103,32 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                
-                streamLine( os, i, R"(<laughing/>)", false );
+                streamLine( os, i, R"(<lyric>)" );
+                tgenLyricTextChoiceExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</lyric>)", false );
             }
                 break;
             case variant::two:
             {
-                tgenSyllabicTextGroupExpected( os, i, v );
+                streamLine( os, i, R"(<lyric name="Toker">)" );
+                tgenLyricTextChoiceExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i+1, R"(<end-line/>)" );
+                tgenEditorialGroupExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</lyric>)", false );
             }
                 break;
             case variant::three:
             {
-                tgenSyllabicTextGroupExpected( os, i, v );
+                streamLine( os, i, R"(<lyric number="Looser" name="YOLO">)" );
+                tgenLyricTextChoiceExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i+1, R"(<end-paragraph/>)" );
+                tgenEditorialGroupExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</lyric>)", false );
             }
                 break;
             default:
