@@ -25,7 +25,7 @@ TEST( Test01, TupletActual )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( object->hasContents() )
+	CHECK( ! object->hasContents() )
 }
 TEST( Test02, TupletActual )
 {
@@ -37,7 +37,7 @@ TEST( Test02, TupletActual )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 TEST( Test03, TupletActual )
@@ -50,7 +50,7 @@ TEST( Test03, TupletActual )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 #endif
@@ -97,26 +97,26 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<hole>)" );
-                streamLine( os, i+1, R"(<hole-closed>no</hole-closed>)" );
-                streamLine( os, i, R"(</hole>)", false );
+                streamLine( os, i, R"(<tuplet-actual/>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<hole color="#010203">)" );
-                streamLine( os, i+1, R"(<hole-closed>half</hole-closed>)" );
-                streamLine( os, i+1, R"(<hole-shape>torus</hole-shape>)" );
-                streamLine( os, i, R"(</hole>)", false );
+                streamLine( os, i, R"(<tuplet-actual>)" );
+                streamLine( os, i+1, R"(<tuplet-number>2</tuplet-number>)" );
+                streamLine( os, i+1, R"(<tuplet-type>16th</tuplet-type>)" );
+                streamLine( os, i+1, R"(<tuplet-dot/>)" );
+                streamLine( os, i, R"(</tuplet-actual>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<hole default-y="-1.1" placement="above">)" );
-                streamLine( os, i+1, R"(<hole-type>foobar</hole-type>)" );
-                streamLine( os, i+1, R"(<hole-closed>yes</hole-closed>)" );
-                streamLine( os, i+1, R"(<hole-shape>smokes</hole-shape>)" );
-                streamLine( os, i, R"(</hole>)", false );
+                streamLine( os, i, R"(<tuplet-actual>)" );
+                streamLine( os, i+1, R"(<tuplet-number>3</tuplet-number>)" );
+                streamLine( os, i+1, R"(<tuplet-type>half</tuplet-type>)" );
+                streamLine( os, i+1, R"(<tuplet-dot/>)" );
+                streamLine( os, i+1, R"(<tuplet-dot/>)" );
+                streamLine( os, i, R"(</tuplet-actual>)", false );
             }
                 break;
             default:

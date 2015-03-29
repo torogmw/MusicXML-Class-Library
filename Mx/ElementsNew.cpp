@@ -3746,7 +3746,7 @@ namespace mx
 		}
 		bool TupletActual::hasContents() const
 		{
-			return true;
+			return myHasTupletNumber || myHasTupletType || myTupletDotSet.size() > 0;
 		}
 		std::ostream& TupletActual::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
@@ -3765,7 +3765,15 @@ namespace mx
                 os << std::endl;
                 x->toStream( os, indentLevel+1 );
             }
-			isOneLineOnly = false;
+            if ( hasContents() )
+            {
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+			else
+            {
+                isOneLineOnly = true;
+            }
             return os;
 		}
 		/* _________ TupletNumber minOccurs = 0, maxOccurs = 1 _________ */
