@@ -1966,5 +1966,118 @@ namespace mx
             InvertedMordentAttributesPtr myAttributes;
         };
         
+        /* <!--  ID = 5410 [5410] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::simple -->
+         <!-- RecursiveSubElementCount = 0 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="heel" type="heel-toe"/>
+         <xs:complexType name="heel-toe">
+         <xs:annotation>
+         <xs:documentation>The heel and toe elements are used with organ pedals. The substitution value is "no" if the attribute is not present.</xs:documentation>
+         </xs:annotation>
+         <xs:complexContent>
+         <xs:extension base="empty-placement">
+         <xs:attribute name="substitution" type="yes-no"/>
+         </xs:extension>
+         </xs:complexContent>
+         </xs:complexType> */
+        
+        struct HeelAttributes;
+        using HeelAttributesPtr = std::shared_ptr<HeelAttributes>;
+        
+        struct HeelAttributes : public AttributesInterface
+        {
+        public:
+            HeelAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            types::YesNo substitution;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+            bool hasSubstitution;
+        };
+        
+        class Heel;
+        using HeelPtr = std::shared_ptr<Heel>;
+        using HeelUPtr = std::unique_ptr<Heel>;
+        using HeelSet = std::vector<HeelPtr>;
+        using HeelSetIter = HeelSet::iterator;
+        using HeelSetIterConst = HeelSet::const_iterator;
+        inline HeelPtr makeHeel() { return std::make_shared<Heel>(); }
+        class Heel : public ElementInterface
+        {
+        public:
+            Heel();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            HeelAttributesPtr getAttributes() const;
+            void setAttributes( const HeelAttributesPtr& value );
+        private:
+            HeelAttributesPtr myAttributes;
+        };
+        
+        /* <!--  ID = 5413 [5413] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::simple -->
+         <!-- RecursiveSubElementCount = 0 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="toe" type="heel-toe"/>
+         <xs:complexType name="heel-toe">
+         <xs:annotation>
+         <xs:documentation>The heel and toe elements are used with organ pedals. The substitution value is "no" if the attribute is not present.</xs:documentation>
+         </xs:annotation>
+         <xs:complexContent>
+         <xs:extension base="empty-placement">
+         <xs:attribute name="substitution" type="yes-no"/>
+         </xs:extension>
+         </xs:complexContent>
+         </xs:complexType> */
+        
+        using ToeAttributes = HeelAttributes;
+        using ToeAttributesPtr = HeelAttributesPtr;
+        
+        class Toe;
+        using ToePtr = std::shared_ptr<Toe>;
+        using ToeUPtr = std::unique_ptr<Toe>;
+        using ToeSet = std::vector<ToePtr>;
+        using ToeSetIter = ToeSet::iterator;
+        using ToeSetIterConst = ToeSet::const_iterator;
+        inline ToePtr makeToe() { return std::make_shared<Toe>(); }
+        class Toe : public ElementInterface
+        {
+        public:
+            Toe();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ToeAttributesPtr getAttributes() const;
+            void setAttributes( const ToeAttributesPtr& value );
+        private:
+            ToeAttributesPtr myAttributes;
+        };
     }
 }

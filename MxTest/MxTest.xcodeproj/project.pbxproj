@@ -20,6 +20,7 @@
 		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
 		291221781AC4E4D400A19E48 /* DirectionTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */; };
 		2912217B1AC4EC2C00A19E48 /* MidiInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */; };
+		291C54AE1AC7D6E700E60622 /* HeelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291C54AC1AC7D6E700E60622 /* HeelTest.cpp */; };
 		29237AB91AC790E900FB4515 /* MordentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29237AB71AC790E900FB4515 /* MordentTest.cpp */; };
 		29237ABC1AC7940700FB4515 /* InvertedMordentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */; };
 		292A2BF61AC5D45E00A5D80B /* TimeModificationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */; };
@@ -340,6 +341,7 @@
 		29D921401AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */; };
 		29D921431AC720BB00F39361 /* SyllabicTextGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */; };
 		29DF38C41AC3532900606232 /* MetronomeNoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */; };
+		29E08C691AC7D8D600744453 /* ToeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E08C671AC7D8D600744453 /* ToeTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
 		29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */; };
@@ -376,6 +378,8 @@
 		291221771AC4E4D400A19E48 /* DirectionTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionTypeTest.h; sourceTree = "<group>"; };
 		291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInstrumentTest.cpp; sourceTree = "<group>"; };
 		2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiInstrumentTest.h; sourceTree = "<group>"; };
+		291C54AC1AC7D6E700E60622 /* HeelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeelTest.cpp; sourceTree = "<group>"; };
+		291C54AD1AC7D6E700E60622 /* HeelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeelTest.h; sourceTree = "<group>"; };
 		29237AB71AC790E900FB4515 /* MordentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MordentTest.cpp; sourceTree = "<group>"; };
 		29237AB81AC790E900FB4515 /* MordentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MordentTest.h; sourceTree = "<group>"; };
 		29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvertedMordentTest.cpp; sourceTree = "<group>"; };
@@ -724,6 +728,8 @@
 		29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyllabicTextGroupTest.cpp; sourceTree = "<group>"; };
 		29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyllabicTextGroupTest.h; sourceTree = "<group>"; };
 		29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeNoteTest.cpp; sourceTree = "<group>"; };
+		29E08C671AC7D8D600744453 /* ToeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToeTest.cpp; sourceTree = "<group>"; };
+		29E08C681AC7D8D600744453 /* ToeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToeTest.h; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
 		29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayTextTest.cpp; sourceTree = "<group>"; };
 		29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorTest.cpp; sourceTree = "<group>"; };
@@ -1153,6 +1159,10 @@
 				29237AB81AC790E900FB4515 /* MordentTest.h */,
 				29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */,
 				29237ABB1AC7940700FB4515 /* InvertedMordentTest.h */,
+				291C54AC1AC7D6E700E60622 /* HeelTest.cpp */,
+				291C54AD1AC7D6E700E60622 /* HeelTest.h */,
+				29E08C671AC7D8D600744453 /* ToeTest.cpp */,
+				29E08C681AC7D8D600744453 /* ToeTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1339,6 +1349,7 @@
 				29774A0B1AB21FA000BF2205 /* OctaveChangeTest.cpp in Sources */,
 				29C0B9E41AAE9398004F86FA /* OtherNotationTest.cpp in Sources */,
 				2935A7291AB5FC3B002859CA /* PlopTest.cpp in Sources */,
+				291C54AE1AC7D6E700E60622 /* HeelTest.cpp in Sources */,
 				298C81D31AB6A8DC006619A9 /* CreditImageTest.cpp in Sources */,
 				29A1D92E1AC5F9F200BEFF24 /* ArticulationsTest.cpp in Sources */,
 				297749DF1AB21FA000BF2205 /* DiatonicTest.cpp in Sources */,
@@ -1540,6 +1551,7 @@
 				29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */,
 				297749D01AB21FA000BF2205 /* AccordionMiddleTest.cpp in Sources */,
 				29CEB4A91AB4C0FA00D6AEFC /* NormalDotTest.cpp in Sources */,
+				29E08C691AC7D8D600744453 /* ToeTest.cpp in Sources */,
 				29C0B9D71AAE9398004F86FA /* LineWidthTest.cpp in Sources */,
 				29CEB47E1AB4B9E800D6AEFC /* ________Temp.cpp in Sources */,
 				297749E01AB21FA000BF2205 /* DisplayOctaveTest.cpp in Sources */,

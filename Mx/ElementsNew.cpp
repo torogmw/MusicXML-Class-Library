@@ -3418,6 +3418,144 @@ namespace mx
 			}
 		}
         
+        
+        /**************** HeelAttributes ****************/
+        /* 5410 */
+        HeelAttributes::HeelAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,substitution( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        ,hasSubstitution( false )
+        {}
+        
+        bool HeelAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement ||
+            hasSubstitution;
+        }
+        
+        std::ostream& HeelAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, substitution, "substitution", hasSubstitution );
+            }
+            return os;
+        }
+        
+		Heel::Heel()
+		:myAttributes( std::make_shared<HeelAttributes>() )
+		{}
+		bool Heel::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Heel::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Heel::streamName( std::ostream& os ) const
+		{
+			os << "heel";
+			return os;
+		}
+		bool Heel::hasContents() const
+		{
+			return false;
+		}
+		std::ostream& Heel::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = true;
+			return os;
+		}
+		HeelAttributesPtr Heel::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Heel::setAttributes( const HeelAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        
+        /* <!--  ID = 5413 [5413] -------------------------> */
+        Toe::Toe()
+		:myAttributes( std::make_shared<ToeAttributes>() )
+		{}
+		bool Toe::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Toe::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Toe::streamName( std::ostream& os ) const
+		{
+			os << "toe";
+			return os;
+		}
+		bool Toe::hasContents() const
+		{
+			return false;
+		}
+		std::ostream& Toe::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = true;
+			return os;
+		}
+		ToeAttributesPtr Toe::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Toe::setAttributes( const ToeAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
 #if 1==0
 
 #endif
