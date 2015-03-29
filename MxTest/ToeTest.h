@@ -1,18 +1,8 @@
-/* matthew james briggs */
+#include "MxTestHelper.h"
+#include "ElementsNew.h"
 
-#pragma once
-#include <iostream>
-
-namespace mjb
+namespace MxTestHelpers
 {
-    class ToeTest
-    {
-
-    public:
-        ToeTest();
-        virtual ~ToeTest();
-        
-    private:
-    
-    };
+    mx::e::ToePtr tgenToe( variant v );
+    void tgenToeExpected( std::ostream& os, int indentLevel, variant v );
 }
