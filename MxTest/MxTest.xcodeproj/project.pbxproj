@@ -11,6 +11,7 @@
 		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */; };
 		29070BB01AC75DD7000B8D31 /* LyricTextCoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */; };
+		29070BB31AC778F0000B8D31 /* EditorialGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */; };
 		2909CF281AC0887900D0F61B /* TransposeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF271AC0887900D0F61B /* TransposeTest.cpp */; };
 		2909CF2A1AC08EAA00D0F61B /* DirectiveTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */; };
 		290A23441AC071FE0038C1A7 /* ClefTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290A23431AC071FE0038C1A7 /* ClefTest.cpp */; };
@@ -359,6 +360,8 @@
 		2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffTuningTest.cpp; sourceTree = "<group>"; };
 		29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LyricTextCoiceTest.cpp; sourceTree = "<group>"; };
 		29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricTextChoiceTest.h; sourceTree = "<group>"; };
+		29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorialGroupTest.cpp; sourceTree = "<group>"; };
+		29070BB21AC778F0000B8D31 /* EditorialGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorialGroupTest.h; sourceTree = "<group>"; };
 		2909CF271AC0887900D0F61B /* TransposeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransposeTest.cpp; sourceTree = "<group>"; };
 		2909CF291AC08EAA00D0F61B /* DirectiveTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectiveTest.cpp; sourceTree = "<group>"; };
 		290A23431AC071FE0038C1A7 /* ClefTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClefTest.cpp; sourceTree = "<group>"; };
@@ -1133,6 +1136,8 @@
 				29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */,
 				29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */,
 				29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */,
+				29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */,
+				29070BB21AC778F0000B8D31 /* EditorialGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1512,6 +1517,7 @@
 				29CEB4A01AB4C0FA00D6AEFC /* CueTest.cpp in Sources */,
 				298C81E61AB6A8DC006619A9 /* SupportsTest.cpp in Sources */,
 				29C0B9E81AAE9398004F86FA /* PartAbbreviationTest.cpp in Sources */,
+				29070BB31AC778F0000B8D31 /* EditorialGroupTest.cpp in Sources */,
 				29C0B9641AAE91D9004F86FA /* AccidentalMarkTest.cpp in Sources */,
 				29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */,
 				297749D01AB21FA000BF2205 /* AccordionMiddleTest.cpp in Sources */,

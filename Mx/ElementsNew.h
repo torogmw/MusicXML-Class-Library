@@ -1537,6 +1537,24 @@ namespace mx
          <xs:group ref="footnote" minOccurs="0"/>
          <xs:group ref="level" minOccurs="0"/>
          </xs:sequence>
+         </xs:group> 
+         
+         <xs:group name="footnote">
+         <xs:annotation>
+         <xs:documentation>The footnote element specifies editorial information that appears in footnotes in the printed score. It is defined within a group due to its multiple uses within the MusicXML schema.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="footnote" type="formatted-text"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="level">
+         <xs:annotation>
+         <xs:documentation>The level element specifies editorial information for different MusicXML elements. It is defined within a group due to its multiple uses within the MusicXML schema.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="level" type="level"/>
+         </xs:sequence>
          </xs:group> */
         
         class ElisionSyllabicGroup;
@@ -1690,7 +1708,7 @@ namespace mx
             HummingPtr myHumming;
         };
 
-#if 1==0
+
         class EditorialGroup;
         using EditorialGroupPtr = std::shared_ptr<EditorialGroup>;
         using EditorialGroupUPtr = std::unique_ptr<EditorialGroup>;
@@ -1707,9 +1725,24 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Footnote minOccurs = 0, maxOccurs = 1 _________ */
+            FootnotePtr getFootnote() const;
+            void setFootnote( const FootnotePtr& value );
+            bool getHasFootnote() const;
+            void setHasFootnote( const bool value );
+            /* _________ Level minOccurs = 0, maxOccurs = 1 _________ */
+            LevelPtr getLevel() const;
+            void setLevel( const LevelPtr& value );
+            bool getHasLevel() const;
+            void setHasLevel( const bool value );
         private:
+            FootnotePtr myFootnote;
+            bool myHasFootnote;
+            LevelPtr myLevel;
+            bool myHasLevel;
         };
-        
+
+#if 1==0
         struct LyricAttributes;
         using LyricAttributesPtr = std::shared_ptr<LyricAttributes>;
         
