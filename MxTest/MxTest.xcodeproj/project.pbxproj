@@ -187,6 +187,7 @@
 		298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B360B1AC8F38C0021CD1E /* TupletTest.cpp */; };
 		298B36121AC8F7D20021CD1E /* ScalingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36101AC8F7D20021CD1E /* ScalingTest.cpp */; };
 		298B36151AC8FBE40021CD1E /* AppearanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */; };
+		298B36181AC900930021CD1E /* VirtualInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36161AC900930021CD1E /* VirtualInstrumentTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -564,6 +565,8 @@
 		298B36111AC8F7D20021CD1E /* ScalingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalingTest.h; sourceTree = "<group>"; };
 		298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppearanceTest.cpp; sourceTree = "<group>"; };
 		298B36141AC8FBE40021CD1E /* AppearanceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceTest.h; sourceTree = "<group>"; };
+		298B36161AC900930021CD1E /* VirtualInstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualInstrumentTest.cpp; sourceTree = "<group>"; };
+		298B36171AC900930021CD1E /* VirtualInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtualInstrumentTest.h; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -1198,6 +1201,8 @@
 				298B36111AC8F7D20021CD1E /* ScalingTest.h */,
 				298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */,
 				298B36141AC8FBE40021CD1E /* AppearanceTest.h */,
+				298B36161AC900930021CD1E /* VirtualInstrumentTest.cpp */,
+				298B36171AC900930021CD1E /* VirtualInstrumentTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1412,6 +1417,7 @@
 				29884C271AC214BD00DD2209 /* AccordionRegistrationTest.cpp in Sources */,
 				29C0B9711AAE9209004F86FA /* BreathMarkTest.cpp in Sources */,
 				29774A221AB21FA000BF2205 /* StickLocationTest.cpp in Sources */,
+				298B36181AC900930021CD1E /* VirtualInstrumentTest.cpp in Sources */,
 				29774A191AB21FA000BF2205 /* SoftwareTest.cpp in Sources */,
 				297749FB1AB21FA000BF2205 /* MembraneTest.cpp in Sources */,
 				297749E91AB21FA000BF2205 /* FifthsTest.cpp in Sources */,

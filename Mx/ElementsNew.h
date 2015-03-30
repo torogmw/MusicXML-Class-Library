@@ -2510,6 +2510,62 @@ namespace mx
             DistanceSet myDistanceSet;
             OtherAppearanceSet myOtherAppearanceSet;
         };
+        /* <!--  ID = 5908 [5908] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="virtual-instrument" type="virtual-instrument" minOccurs="0"/>
+         <xs:complexType name="virtual-instrument">
+         <xs:annotation>
+         <xs:documentation>The virtual-instrument element defines a specific virtual instrument used for an instrument sound.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="virtual-library" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The virtual-library element indicates the virtual instrument library name.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="virtual-name" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The virtual-name element indicates the library-specific name for the virtual instrument.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class VirtualInstrument;
+        using VirtualInstrumentPtr = std::shared_ptr<VirtualInstrument>;
+        using VirtualInstrumentUPtr = std::unique_ptr<VirtualInstrument>;
+        using VirtualInstrumentSet = std::vector<VirtualInstrumentPtr>;
+        using VirtualInstrumentSetIter = VirtualInstrumentSet::iterator;
+        using VirtualInstrumentSetIterConst = VirtualInstrumentSet::const_iterator;
+        inline VirtualInstrumentPtr makeVirtualInstrument() { return std::make_shared<VirtualInstrument>(); }
+        class VirtualInstrument : public ElementInterface
+        {
+        public:
+            VirtualInstrument();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ VirtualLibrary minOccurs = 0, maxOccurs = 1 _________ */
+            VirtualLibraryPtr getVirtualLibrary() const;
+            void setVirtualLibrary( const VirtualLibraryPtr& value );
+            bool getHasVirtualLibrary() const;
+            void setHasVirtualLibrary( const bool value );
+            /* _________ VirtualName minOccurs = 0, maxOccurs = 1 _________ */
+            VirtualNamePtr getVirtualName() const;
+            void setVirtualName( const VirtualNamePtr& value );
+            bool getHasVirtualName() const;
+            void setHasVirtualName( const bool value );
+        private:
+            VirtualLibraryPtr myVirtualLibrary;
+            bool myHasVirtualLibrary;
+            VirtualNamePtr myVirtualName;
+            bool myHasVirtualName;
+        };
 
     }
 }
