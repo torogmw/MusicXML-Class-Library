@@ -174,6 +174,58 @@ namespace mx
             DegreeAlterPtr myDegreeAlter;
             DegreeTypePtr myDegreeType;
         };
+        /* <!--  ID = 6233 [6233] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 7 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="page-layout" type="page-layout" minOccurs="0"/>
+         <xs:complexType name="page-layout">
+         <xs:annotation>
+         <xs:documentation>Page layout can be defined both in score-wide defaults and in the print element. Page margins are specified either for both even and odd pages, or via separate odd and even page number values. The type is not needed when used as part of a print element. If omitted when used in the defaults element, "both" is the default.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:sequence minOccurs="0">
+         <xs:element name="page-height" type="tenths"/>
+         <xs:element name="page-width" type="tenths"/>
+         </xs:sequence>
+         <xs:element name="page-margins" type="page-margins" minOccurs="0" maxOccurs="2"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class PageLayout;
+        using PageLayoutPtr = std::shared_ptr<PageLayout>;
+        using PageLayoutUPtr = std::unique_ptr<PageLayout>;
+        using PageLayoutSet = std::vector<PageLayoutPtr>;
+        using PageLayoutSetIter = PageLayoutSet::iterator;
+        using PageLayoutSetIterConst = PageLayoutSet::const_iterator;
+        inline PageLayoutPtr makePageLayout() { return std::make_shared<PageLayout>(); }
+        class PageLayout : public ElementInterface
+        {
+        public:
+            PageLayout();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ PageHeight minOccurs = 1, maxOccurs = 1 _________ */
+            PageHeightPtr getPageHeight() const;
+            void setPageHeight( const PageHeightPtr& value );
+            /* _________ PageWidth minOccurs = 1, maxOccurs = 1 _________ */
+            PageWidthPtr getPageWidth() const;
+            void setPageWidth( const PageWidthPtr& value );
+            /* _________ PageMargins minOccurs = 0, maxOccurs = 2 _________ */
+            const PageMarginsSet& getPageMarginsSet() const;
+            void addPageMargins( const PageMarginsPtr& value );
+            void removePageMargins( const PageMarginsSetIterConst& value );
+            void clearPageMarginsSet();
+            PageMarginsPtr getPageMargins( const PageMarginsSetIterConst& setIterator ) const;
+        private:
+            PageHeightPtr myPageHeight;
+            PageWidthPtr myPageWidth;
+            PageMarginsSet myPageMarginsSet;
+        };
 
     }
 }

@@ -251,6 +251,105 @@ namespace mx
 				myDegreeType = value;
 			}
 		}
+        
+        
+        
+		PageLayout::PageLayout()
+		:myPageHeight( makePageHeight() )
+		,myPageWidth( makePageWidth() )
+		,myPageMarginsSet()
+		{}
+		bool PageLayout::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& PageLayout::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& PageLayout::streamName( std::ostream& os ) const
+		{
+			os << "page-layout";
+			return os;
+		}
+		bool PageLayout::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PageLayout::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			
+			os << std::endl;
+			myPageHeight->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myPageWidth->toStream( os, indentLevel+1 );
+            for ( auto x : myPageMarginsSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+		}
+		/* _________ PageHeight minOccurs = 1, maxOccurs = 1 _________ */
+		PageHeightPtr PageLayout::getPageHeight() const
+		{
+			return myPageHeight;
+		}
+		void PageLayout::setPageHeight( const PageHeightPtr& value )
+		{
+			if( value )
+			{
+				myPageHeight = value;
+			}
+		}
+		/* _________ PageWidth minOccurs = 1, maxOccurs = 1 _________ */
+		PageWidthPtr PageLayout::getPageWidth() const
+		{
+			return myPageWidth;
+		}
+		void PageLayout::setPageWidth( const PageWidthPtr& value )
+		{
+			if( value )
+			{
+				myPageWidth = value;
+			}
+		}
+		/* _________ PageMargins minOccurs = 0, maxOccurs = 2 _________ */
+		const PageMarginsSet& PageLayout::getPageMarginsSet() const
+		{
+			return myPageMarginsSet;
+		}
+		void PageLayout::removePageMargins( const PageMarginsSetIterConst& value )
+		{
+			if ( value != myPageMarginsSet.cend() )
+			{
+				myPageMarginsSet.erase( value );
+			}
+		}
+		void PageLayout::addPageMargins( const PageMarginsPtr& value )
+		{
+			if ( value )
+			{
+                if( myPageMarginsSet.size() < 2 )
+                {
+                    myPageMarginsSet.push_back( value );
+                }
+			}
+		}
+		void PageLayout::clearPageMarginsSet()
+		{
+			myPageMarginsSet.clear();
+		}
+		PageMarginsPtr PageLayout::getPageMargins( const PageMarginsSetIterConst& setIterator ) const
+		{
+			if( setIterator != myPageMarginsSet.cend() )
+			{
+				return *setIterator;
+			}
+			return PageMarginsPtr();
+		}
 
 #if 1==0
 
