@@ -184,6 +184,7 @@
 		29884C2F1AC27F8B00DD2209 /* FrameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */; };
 		29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */; };
 		29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */; };
+		298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B360B1AC8F38C0021CD1E /* TupletTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -555,6 +556,8 @@
 		29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameTest.cpp; sourceTree = "<group>"; };
 		29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PedalTuningTest.cpp; sourceTree = "<group>"; };
 		29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarpPedalsTest.cpp; sourceTree = "<group>"; };
+		298B360B1AC8F38C0021CD1E /* TupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletTest.cpp; sourceTree = "<group>"; };
+		298B360C1AC8F38C0021CD1E /* TupletTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletTest.h; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -762,6 +765,43 @@
 				29BDAB4C1AC5182700C6DE31 /* MxTestCompileControl.h */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		298B360A1AC8F36F0021CD1E /* Less Old */ = {
+			isa = PBXGroup;
+			children = (
+				2962360B1AC5CE1600F3E007 /* FigureTest.cpp */,
+				2962360C1AC5CE1600F3E007 /* FigureTest.h */,
+				292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */,
+				292A2BF51AC5D45E00A5D80B /* TimeModificationTest.h */,
+				29A1D9281AC5F11B00BEFF24 /* NoteheadTextTest.cpp */,
+				29A1D9291AC5F11B00BEFF24 /* NoteheadTextTest.h */,
+				29A1D92C1AC5F9F200BEFF24 /* ArticulationsTest.cpp */,
+				29A1D92D1AC5F9F200BEFF24 /* ArticulationsTest.h */,
+				29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */,
+				29D9213C1AC70DD900F39361 /* ElisionSyllabicGroupTest.h */,
+				29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */,
+				29D9213F1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.h */,
+				29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */,
+				29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */,
+				29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */,
+				29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */,
+				29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */,
+				29070BB21AC778F0000B8D31 /* EditorialGroupTest.h */,
+				29070BB41AC77EFB000B8D31 /* LyricTest.cpp */,
+				29070BB51AC77EFB000B8D31 /* LyricTest.h */,
+				29237AB71AC790E900FB4515 /* MordentTest.cpp */,
+				29237AB81AC790E900FB4515 /* MordentTest.h */,
+				29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */,
+				29237ABB1AC7940700FB4515 /* InvertedMordentTest.h */,
+				291C54AC1AC7D6E700E60622 /* HeelTest.cpp */,
+				291C54AD1AC7D6E700E60622 /* HeelTest.h */,
+				29E08C671AC7D8D600744453 /* ToeTest.cpp */,
+				29E08C681AC7D8D600744453 /* ToeTest.h */,
+				29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */,
+				29E08C6B1AC7DB0D00744453 /* HoleTest.h */,
+			);
+			name = "Less Old";
 			sourceTree = "<group>";
 		};
 		298B45E01A9B942A0014CAED = {
@@ -1139,42 +1179,15 @@
 		29F8F09F1AB62E9200788785 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				298B360A1AC8F36F0021CD1E /* Less Old */,
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
 				29A565051AC49D020059CACD /* Old */,
-				2962360B1AC5CE1600F3E007 /* FigureTest.cpp */,
-				2962360C1AC5CE1600F3E007 /* FigureTest.h */,
-				292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */,
-				292A2BF51AC5D45E00A5D80B /* TimeModificationTest.h */,
-				29A1D9281AC5F11B00BEFF24 /* NoteheadTextTest.cpp */,
-				29A1D9291AC5F11B00BEFF24 /* NoteheadTextTest.h */,
-				29A1D92C1AC5F9F200BEFF24 /* ArticulationsTest.cpp */,
-				29A1D92D1AC5F9F200BEFF24 /* ArticulationsTest.h */,
-				29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */,
-				29D9213C1AC70DD900F39361 /* ElisionSyllabicGroupTest.h */,
-				29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */,
-				29D9213F1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.h */,
-				29D921411AC720BB00F39361 /* SyllabicTextGroupTest.cpp */,
-				29D921421AC720BB00F39361 /* SyllabicTextGroupTest.h */,
-				29070BAE1AC75DD7000B8D31 /* LyricTextCoiceTest.cpp */,
-				29070BAF1AC75DD7000B8D31 /* LyricTextChoiceTest.h */,
-				29070BB11AC778F0000B8D31 /* EditorialGroupTest.cpp */,
-				29070BB21AC778F0000B8D31 /* EditorialGroupTest.h */,
-				29070BB41AC77EFB000B8D31 /* LyricTest.cpp */,
-				29070BB51AC77EFB000B8D31 /* LyricTest.h */,
-				29237AB71AC790E900FB4515 /* MordentTest.cpp */,
-				29237AB81AC790E900FB4515 /* MordentTest.h */,
-				29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */,
-				29237ABB1AC7940700FB4515 /* InvertedMordentTest.h */,
-				291C54AC1AC7D6E700E60622 /* HeelTest.cpp */,
-				291C54AD1AC7D6E700E60622 /* HeelTest.h */,
-				29E08C671AC7D8D600744453 /* ToeTest.cpp */,
-				29E08C681AC7D8D600744453 /* ToeTest.h */,
-				29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */,
-				29E08C6B1AC7DB0D00744453 /* HoleTest.h */,
 				290664051AC7E43F005E6E80 /* TupletActualTest.cpp */,
 				290664061AC7E43F005E6E80 /* TupletActualTest.h */,
 				29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */,
 				29BB00E91AC864D300D87116 /* TupletNormalTest.h */,
+				298B360B1AC8F38C0021CD1E /* TupletTest.cpp */,
+				298B360C1AC8F38C0021CD1E /* TupletTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1311,6 +1324,7 @@
 				29C0B9F01AAE9398004F86FA /* RehearsalTest.cpp in Sources */,
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
 				29C0B9CB1AAE9398004F86FA /* GlissandoTest.cpp in Sources */,
+				298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */,
 				29A564F81AC3C2540059CACD /* StickTest.cpp in Sources */,
 				29CEB4A41AB4C0FA00D6AEFC /* GroupTimeTest.cpp in Sources */,
 				297749F71AB21FA000BF2205 /* KeyStepTest.cpp in Sources */,

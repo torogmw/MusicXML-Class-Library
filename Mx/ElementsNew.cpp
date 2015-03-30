@@ -3974,6 +3974,165 @@ namespace mx
 			return TupletDotPtr();
 		}
         
+        
+        
+        /**************** TupletAttributes ****************/
+        /* 4920 */
+        TupletAttributes::TupletAttributes()
+        :type()
+        ,number()
+        ,bracket( types::YesNo::no )
+        ,showNumber()
+        ,showType()
+        ,lineShape()
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,placement( types::AboveBelow::below )
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasBracket( false )
+        ,hasShowNumber( false )
+        ,hasShowType( false )
+        ,hasLineShape( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool TupletAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasBracket ||
+            hasShowNumber ||
+            hasShowType ||
+            hasLineShape ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasPlacement;
+        }
+        
+        std::ostream& TupletAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, bracket, "bracket", hasBracket );
+                streamAttribute( os, showNumber, "show-number", hasShowNumber );
+                streamAttribute( os, showType, "show-type", hasShowType );
+                streamAttribute( os, lineShape, "line-shape", hasLineShape );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+		Tuplet::Tuplet()
+		:myAttributes( std::make_shared<TupletAttributes>() )
+		,myTupletActual( makeTupletActual() )
+		,myHasTupletActual( false )
+        ,myTupletNormal( makeTupletNormal() )
+		,myHasTupletNormal( false )
+        {}
+		bool Tuplet::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Tuplet::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Tuplet::streamName( std::ostream& os ) const
+		{
+			os << "tuplet";
+			return os;
+		}
+		bool Tuplet::hasContents() const
+		{
+			return myHasTupletActual || myHasTupletNormal;
+		}
+		std::ostream& Tuplet::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( myHasTupletActual )
+            {
+                os << std::endl;
+                myTupletActual->toStream( os, indentLevel+1 );
+            }
+            if ( myHasTupletNormal )
+            {
+                os << std::endl;
+                myTupletNormal->toStream( os, indentLevel+1 );
+            }
+			isOneLineOnly = ! hasContents();
+			if ( ! isOneLineOnly )
+            {
+                os << std::endl;
+            }
+            return os;
+		}
+		TupletAttributesPtr Tuplet::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Tuplet::setAttributes( const TupletAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ TupletActual minOccurs = 0, maxOccurs = 1 _________ */
+		TupletActualPtr Tuplet::getTupletActual() const
+		{
+			return myTupletActual;
+		}
+		void Tuplet::setTupletActual( const TupletActualPtr& value )
+		{
+			if( value )
+			{
+				myTupletActual = value;
+			}
+		}
+		bool Tuplet::getHasTupletActual() const
+		{
+			return myHasTupletActual;
+		}
+		void Tuplet::setHasTupletActual( const bool value )
+		{
+			myHasTupletActual = value;
+		}
+		/* _________ TupletNormal minOccurs = 0, maxOccurs = 1 _________ */
+		TupletNormalPtr Tuplet::getTupletNormal() const
+		{
+			return myTupletNormal;
+		}
+		void Tuplet::setTupletNormal( const TupletNormalPtr& value )
+		{
+			if( value )
+			{
+				myTupletNormal = value;
+			}
+		}
+		bool Tuplet::getHasTupletNormal() const
+		{
+			return myHasTupletNormal;
+		}
+		void Tuplet::setHasTupletNormal( const bool value )
+		{
+			myHasTupletNormal = value;
+		}
+
 #if 1==0
 
 #endif

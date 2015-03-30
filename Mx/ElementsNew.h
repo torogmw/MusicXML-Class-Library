@@ -2298,5 +2298,111 @@ namespace mx
             bool myHasTupletType;
             TupletDotSet myTupletDotSet;
         };
+        
+        /* <!--  ID = 4920 [4920] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="tuplet" type="tuplet"/>
+         <xs:complexType name="tuplet">
+         <xs:annotation>
+         <xs:documentation>A tuplet element is present when a tuplet is to be displayed graphically, in addition to the sound data provided by the time-modification elements. The number attribute is used to distinguish nested tuplets. The bracket attribute is used to indicate the presence of a bracket. If unspecified, the results are implementation-dependent. The line-shape attribute is used to specify whether the bracket is straight or in the older curved or slurred style. It is straight by default.
+         
+         Whereas a time-modification element shows how the cumulative, sounding effect of tuplets and double-note tremolos compare to the written note type, the tuplet element describes how this is displayed. The tuplet element also provides more detailed representation information than the time-modification element, and is needed to represent nested tuplets and other complex tuplets accurately.
+         
+         The show-number attribute is used to display either the number of actual notes, the number of both actual and normal notes, or neither. It is actual by default. The show-type attribute is used to display either the actual type, both the actual and normal types, or neither. It is none by default.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="tuplet-actual" type="tuplet-portion" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The tuplet-actual element provide optional full control over how the actual part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="tuplet-normal" type="tuplet-portion" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The tuplet-normal element provide optional full control over how the normal part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="number" type="number-level"/>
+         <xs:attribute name="bracket" type="yes-no"/>
+         <xs:attribute name="show-number" type="show-tuplet"/>
+         <xs:attribute name="show-type" type="show-tuplet"/>
+         <xs:attributeGroup ref="line-shape"/>
+         <xs:attributeGroup ref="position"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType> */
+        
+        struct TupletAttributes;
+        using TupletAttributesPtr = std::shared_ptr<TupletAttributes>;
+        
+        struct TupletAttributes : public AttributesInterface
+        {
+        public:
+            TupletAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            types::NumberLevel number;
+            types::YesNo bracket;
+            types::ShowTuplet showNumber;
+            types::ShowTuplet showType;
+            types::LineShape lineShape;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::AboveBelow placement;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasBracket;
+            bool hasShowNumber;
+            bool hasShowType;
+            bool hasLineShape;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasPlacement;
+        };
+        
+        class Tuplet;
+        using TupletPtr = std::shared_ptr<Tuplet>;
+        using TupletUPtr = std::unique_ptr<Tuplet>;
+        using TupletSet = std::vector<TupletPtr>;
+        using TupletSetIter = TupletSet::iterator;
+        using TupletSetIterConst = TupletSet::const_iterator;
+        inline TupletPtr makeTuplet() { return std::make_shared<Tuplet>(); }
+        class Tuplet : public ElementInterface
+        {
+        public:
+            Tuplet();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            TupletAttributesPtr getAttributes() const;
+            void setAttributes( const TupletAttributesPtr& value );
+            /* _________ TupletActual minOccurs = 0, maxOccurs = 1 _________ */
+            TupletActualPtr getTupletActual() const;
+            void setTupletActual( const TupletActualPtr& value );
+            bool getHasTupletActual() const;
+            void setHasTupletActual( const bool value );
+            /* _________ TupletNormal minOccurs = 0, maxOccurs = 1 _________ */
+            TupletNormalPtr getTupletNormal() const;
+            void setTupletNormal( const TupletNormalPtr& value );
+            bool getHasTupletNormal() const;
+            void setHasTupletNormal( const bool value );
+        private:
+            TupletAttributesPtr myAttributes;
+            TupletActualPtr myTupletActual;
+            bool myHasTupletActual;
+            TupletNormalPtr myTupletNormal;
+            bool myHasTupletNormal;
+        };
+
     }
 }
