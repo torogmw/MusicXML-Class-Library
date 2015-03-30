@@ -1,7 +1,6 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "Elements.h"
 #include "RootTest.h"
 #include "MidiInstrumentTest.h"
 #include "MidiDeviceTest.cpp"
@@ -25,7 +24,7 @@ TEST( Test01, Root )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( ! object->hasContents() )
+	CHECK( object->hasContents() )
 }
 TEST( Test02, Root )
 {
@@ -68,16 +67,16 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->setHasVirtualName( true );
-                o->getVirtualName()->setValue( XsString( "VI1" ) );
+                o->setHasRootAlter( true );
+                o->getRootAlter()->setValue( Semitones( -2 ) );
+                o->getRootStep()->setValue( StepEnum::f );
             }
                 break;
             case variant::three:
             {
-                o->setHasVirtualName( true );
-                o->getVirtualName()->setValue( XsString( "VI2" ) );
-                o->setHasVirtualLibrary( true );
-                o->getVirtualLibrary()->setValue( XsString( "VL2" ) );
+                o->setHasRootAlter( true );
+                o->getRootAlter()->setValue( Semitones( 1.1 ) );
+                o->getRootStep()->setValue( StepEnum::c );
             }
                 break;
             default:
@@ -92,22 +91,25 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<virtual-instrument/>)", false );
+                streamLine( os, i, R"(<root>)" );
+                streamLine( os, i+1, R"(<root-step>A</root-step>)" );
+                streamLine( os, i, R"(</root>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<virtual-instrument>)" );
-                streamLine( os, i+1, R"(<virtual-name>VI1</virtual-name>)" );
-                streamLine( os, i, R"(</virtual-instrument>)", false );
+                streamLine( os, i, R"(<root>)" );
+                streamLine( os, i+1, R"(<root-step>F</root-step>)" );
+                streamLine( os, i+1, R"(<root-alter>-2</root-alter>)" );
+                streamLine( os, i, R"(</root>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<virtual-instrument>)" );
-                streamLine( os, i+1, R"(<virtual-library>VL2</virtual-library>)" );
-                streamLine( os, i+1, R"(<virtual-name>VI2</virtual-name>)" );
-                streamLine( os, i, R"(</virtual-instrument>)", false );
+                streamLine( os, i, R"(<root>)" );
+                streamLine( os, i+1, R"(<root-step>C</root-step>)" );
+                streamLine( os, i+1, R"(<root-alter>1.1</root-alter>)" );
+                streamLine( os, i, R"(</root>)", false );
             }
                 break;
             default:
