@@ -2403,6 +2403,48 @@ namespace mx
             TupletNormalPtr myTupletNormal;
             bool myHasTupletNormal;
         };
+        /* <!--  ID = 5704 [5704] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="scaling" type="scaling" minOccurs="0"/>
+         <xs:complexType name="scaling">
+         <xs:annotation>
+         <xs:documentation>Margins, page sizes, and distances are all measured in tenths to keep MusicXML data in a consistent coordinate system as much as possible. The translation to absolute units is done with the scaling type, which specifies how many millimeters are equal to how many tenths. For a staff height of 7 mm, millimeters would be set to 7 while tenths is set to 40. The ability to set a formula rather than a single scaling factor helps avoid roundoff errors.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="millimeters" type="millimeters"/>
+         <xs:element name="tenths" type="tenths"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class Scaling;
+        using ScalingPtr = std::shared_ptr<Scaling>;
+        using ScalingUPtr = std::unique_ptr<Scaling>;
+        using ScalingSet = std::vector<ScalingPtr>;
+        using ScalingSetIter = ScalingSet::iterator;
+        using ScalingSetIterConst = ScalingSet::const_iterator;
+        inline ScalingPtr makeScaling() { return std::make_shared<Scaling>(); }
+        class Scaling : public ElementInterface
+        {
+        public:
+            Scaling();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Millimeters minOccurs = 1, maxOccurs = 1 _________ */
+            MillimetersPtr getMillimeters() const;
+            void setMillimeters( const MillimetersPtr& value );
+            /* _________ Tenths minOccurs = 1, maxOccurs = 1 _________ */
+            TenthsPtr getTenths() const;
+            void setTenths( const TenthsPtr& value );
+        private:
+            MillimetersPtr myMillimeters;
+            TenthsPtr myTenths;
+        };
 
     }
 }

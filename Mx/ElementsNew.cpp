@@ -4132,7 +4132,62 @@ namespace mx
 		{
 			myHasTupletNormal = value;
 		}
-
+        
+		Scaling::Scaling()
+		:myMillimeters( makeMillimeters() )
+		,myTenths( makeTenths() )
+		{}
+		bool Scaling::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Scaling::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Scaling::streamName( std::ostream& os ) const
+		{
+			os << "scaling";
+			return os;
+		}
+		bool Scaling::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Scaling::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			
+			os << std::endl;
+			myMillimeters->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myTenths->toStream( os, indentLevel+1 );
+            isOneLineOnly = false;
+            return os;
+		}
+		/* _________ Millimeters minOccurs = 1, maxOccurs = 1 _________ */
+		MillimetersPtr Scaling::getMillimeters() const
+		{
+			return myMillimeters;
+		}
+		void Scaling::setMillimeters( const MillimetersPtr& value )
+		{
+			if( value )
+			{
+				myMillimeters = value;
+			}
+		}
+		/* _________ Tenths minOccurs = 1, maxOccurs = 1 _________ */
+		TenthsPtr Scaling::getTenths() const
+		{
+			return myTenths;
+		}
+		void Scaling::setTenths( const TenthsPtr& value )
+		{
+			if( value )
+			{
+				myTenths = value;
+			}
+		}
 #if 1==0
 
 #endif
