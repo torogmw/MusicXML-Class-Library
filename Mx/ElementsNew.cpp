@@ -171,7 +171,7 @@ namespace mx
 		:myAttributes( std::make_shared<DegreeAttributes>() )
 		,myDegreeValue( makeDegreeValue() )
 		,myDegreeAlter( makeDegreeAlter() )
-		,myDegreeType( makeDegreeType() )
+		,myDegreeType( makeDegreeType( types::DegreeTypeValue::add ) )
 		{}
 		bool Degree::hasAttributes() const
 		{

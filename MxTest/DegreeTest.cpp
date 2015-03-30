@@ -49,7 +49,7 @@ TEST( Test03, Degree )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 #endif
@@ -67,12 +67,18 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->getDegreeAlter()->setValue( Semitones( 1.01 ) );
+                o->getDegreeType()->setValue( DegreeTypeValue::subtract );
+                o->getDegreeValue()->setValue( PositiveInteger( 9 ) );
             }
                 break;
             case variant::three:
             {
-
+                o->getAttributes()->hasPrintObject = true;
+                o->getAttributes()->printObject = YesNo::no;
+                o->getDegreeAlter()->setValue( Semitones( -2.01 ) );
+                o->getDegreeType()->setValue( DegreeTypeValue::alter );
+                o->getDegreeValue()->setValue( PositiveInteger( 7 ) );
             }
                 break;
             default:
@@ -87,25 +93,29 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<bass>)" );
-                streamLine( os, i+1, R"(<bass-step>A</bass-step>)" );
-                streamLine( os, i, R"(</bass>)", false );
+                streamLine( os, i, R"(<degree>)" );
+                streamLine( os, i+1, R"(<degree-value>1</degree-value>)" );
+                streamLine( os, i+1, R"(<degree-alter>0</degree-alter>)" );
+                streamLine( os, i+1, R"(<degree-type>add</degree-type>)" );
+                streamLine( os, i, R"(</degree>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<bass>)" );
-                streamLine( os, i+1, R"(<bass-step>F</bass-step>)" );
-                streamLine( os, i+1, R"(<bass-alter>-2</bass-alter>)" );
-                streamLine( os, i, R"(</bass>)", false );
+                streamLine( os, i, R"(<degree>)" );
+                streamLine( os, i+1, R"(<degree-value>9</degree-value>)" );
+                streamLine( os, i+1, R"(<degree-alter>1.01</degree-alter>)" );
+                streamLine( os, i+1, R"(<degree-type>subtract</degree-type>)" );
+                streamLine( os, i, R"(</degree>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<bass>)" );
-                streamLine( os, i+1, R"(<bass-step>C</bass-step>)" );
-                streamLine( os, i+1, R"(<bass-alter>1.1</bass-alter>)" );
-                streamLine( os, i, R"(</bass>)", false );
+                streamLine( os, i, R"(<degree print-object="no">)" );
+                streamLine( os, i+1, R"(<degree-value>7</degree-value>)" );
+                streamLine( os, i+1, R"(<degree-alter>-2.01</degree-alter>)" );
+                streamLine( os, i+1, R"(<degree-type>alter</degree-type>)" );
+                streamLine( os, i, R"(</degree>)", false );
             }
                 break;
             default:
