@@ -107,5 +107,73 @@ namespace mx
             BassAlterPtr myBassAlter;
             bool myHasBassAlter;
         };
+        
+        /* <!--  ID = 6210 [6210] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="degree" type="degree" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="degree">
+         <xs:annotation>
+         <xs:documentation>The degree type is used to add, alter, or subtract individual notes in the chord. The print-object attribute can be used to keep the degree from printing separately when it has already taken into account in the text attribute of the kind element. The degree-value and degree-type text attributes specify how the value and type of the degree should be displayed.
+         
+         A harmony of kind "other" can be spelled explicitly by using a series of degree elements together with a root.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="degree-value" type="degree-value"/>
+         <xs:element name="degree-alter" type="degree-alter"/>
+         <xs:element name="degree-type" type="degree-type"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType> */
+        
+        struct DegreeAttributes;
+        using DegreeAttributesPtr = std::shared_ptr<DegreeAttributes>;
+        
+        struct DegreeAttributes : public AttributesInterface
+        {
+        public:
+            DegreeAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo printObject;
+            bool hasPrintObject;
+        };
+        
+        class Degree;
+        using DegreePtr = std::shared_ptr<Degree>;
+        using DegreeUPtr = std::unique_ptr<Degree>;
+        using DegreeSet = std::vector<DegreePtr>;
+        using DegreeSetIter = DegreeSet::iterator;
+        using DegreeSetIterConst = DegreeSet::const_iterator;
+        inline DegreePtr makeDegree() { return std::make_shared<Degree>(); }
+        class Degree : public ElementInterface
+        {
+        public:
+            Degree();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DegreeAttributesPtr getAttributes() const;
+            void setAttributes( const DegreeAttributesPtr& value );
+            /* _________ DegreeValue minOccurs = 1, maxOccurs = 1 _________ */
+            DegreeValuePtr getDegreeValue() const;
+            void setDegreeValue( const DegreeValuePtr& value );
+            /* _________ DegreeAlter minOccurs = 1, maxOccurs = 1 _________ */
+            DegreeAlterPtr getDegreeAlter() const;
+            void setDegreeAlter( const DegreeAlterPtr& value );
+            /* _________ DegreeType minOccurs = 1, maxOccurs = 1 _________ */
+            DegreeTypePtr getDegreeType() const;
+            void setDegreeType( const DegreeTypePtr& value );
+        private:
+            DegreeAttributesPtr myAttributes;
+            DegreeValuePtr myDegreeValue;
+            DegreeAlterPtr myDegreeAlter;
+            DegreeTypePtr myDegreeType;
+        };
+
     }
 }

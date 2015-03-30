@@ -143,6 +143,115 @@ namespace mx
 		{
 			myHasBassAlter = value;
 		}
+        
+        
+        
+        /**************** DegreeAttributes ****************/
+        /* 6210 */
+        DegreeAttributes::DegreeAttributes()
+        :printObject( types::YesNo::no )
+        ,hasPrintObject( false )
+        {}
+        
+        bool DegreeAttributes::hasValues() const
+        {
+            return hasPrintObject;
+        }
+        
+        std::ostream& DegreeAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		Degree::Degree()
+		:myAttributes( std::make_shared<DegreeAttributes>() )
+		,myDegreeValue( makeDegreeValue() )
+		,myDegreeAlter( makeDegreeAlter() )
+		,myDegreeType( makeDegreeType() )
+		{}
+		bool Degree::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Degree::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Degree::streamName( std::ostream& os ) const
+		{
+			os << "degree";
+			return os;
+		}
+		bool Degree::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Degree::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			
+			os << std::endl;
+			myDegreeValue->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myDegreeAlter->toStream( os, indentLevel+1 );
+			os << std::endl;
+			myDegreeType->toStream( os, indentLevel+1 );
+			os << std::endl;
+			isOneLineOnly = false;
+            return os;
+		}
+		DegreeAttributesPtr Degree::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Degree::setAttributes( const DegreeAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ DegreeValue minOccurs = 1, maxOccurs = 1 _________ */
+		DegreeValuePtr Degree::getDegreeValue() const
+		{
+			return myDegreeValue;
+		}
+		void Degree::setDegreeValue( const DegreeValuePtr& value )
+		{
+			if( value )
+			{
+				myDegreeValue = value;
+			}
+		}
+		/* _________ DegreeAlter minOccurs = 1, maxOccurs = 1 _________ */
+		DegreeAlterPtr Degree::getDegreeAlter() const
+		{
+			return myDegreeAlter;
+		}
+		void Degree::setDegreeAlter( const DegreeAlterPtr& value )
+		{
+			if( value )
+			{
+				myDegreeAlter = value;
+			}
+		}
+		/* _________ DegreeType minOccurs = 1, maxOccurs = 1 _________ */
+		DegreeTypePtr Degree::getDegreeType() const
+		{
+			return myDegreeType;
+		}
+		void Degree::setDegreeType( const DegreeTypePtr& value )
+		{
+			if( value )
+			{
+				myDegreeType = value;
+			}
+		}
+
 #if 1==0
 
 #endif

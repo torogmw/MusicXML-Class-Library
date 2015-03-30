@@ -318,6 +318,7 @@
 		29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */; };
 		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
 		29CCA1891AC928BB007BFE5A /* BassTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CCA1871AC928BB007BFE5A /* BassTest.cpp */; };
+		29CCA18D1AC929FE007BFE5A /* DegreeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CCA18B1AC929FE007BFE5A /* DegreeTest.cpp */; };
 		29CEB47E1AB4B9E800D6AEFC /* ________Temp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */; };
 		29CEB49A1AB4C0FA00D6AEFC /* AccordionHighTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */; };
 		29CEB49B1AB4C0FA00D6AEFC /* AccordionLowTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */; };
@@ -718,6 +719,8 @@
 		29C61F511AC39B1E004B5530 /* MetronomeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetronomeTest.h; sourceTree = "<group>"; };
 		29CCA1871AC928BB007BFE5A /* BassTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BassTest.cpp; sourceTree = "<group>"; };
 		29CCA1881AC928BB007BFE5A /* BassTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BassTest.h; sourceTree = "<group>"; };
+		29CCA18B1AC929FE007BFE5A /* DegreeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DegreeTest.cpp; sourceTree = "<group>"; };
+		29CCA18C1AC929FE007BFE5A /* DegreeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DegreeTest.h; sourceTree = "<group>"; };
 		29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "________Temp.cpp"; sourceTree = "<group>"; };
 		29CEB4831AB4C0F900D6AEFC /* AccordionHighTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionHighTest.cpp; sourceTree = "<group>"; };
 		29CEB4841AB4C0F900D6AEFC /* AccordionLowTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionLowTest.cpp; sourceTree = "<group>"; };
@@ -1213,6 +1216,8 @@
 				293AD4E91AC92487008DEB6F /* RootTest.h */,
 				29CCA1871AC928BB007BFE5A /* BassTest.cpp */,
 				29CCA1881AC928BB007BFE5A /* BassTest.h */,
+				29CCA18B1AC929FE007BFE5A /* DegreeTest.cpp */,
+				29CCA18C1AC929FE007BFE5A /* DegreeTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1300,6 +1305,7 @@
 				29774A1D1AB21FA000BF2205 /* StaffSizeTest.cpp in Sources */,
 				29C0B9C01AAE9398004F86FA /* ElisionTest.cpp in Sources */,
 				29884C2D1AC241B100DD2209 /* FrameNoteTest.cpp in Sources */,
+				29CCA18D1AC929FE007BFE5A /* DegreeTest.cpp in Sources */,
 				29CEB4AF1AB4C0FA00D6AEFC /* TimpaniTest.cpp in Sources */,
 				29C0B9C61AAE9398004F86FA /* FingeringTest.cpp in Sources */,
 				29774A1F1AB21FA000BF2205 /* StaffTypeTest.cpp in Sources */,
