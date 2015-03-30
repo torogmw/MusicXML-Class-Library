@@ -12,7 +12,7 @@ using namespace mx::types;
 using namespace std;
 using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"
-#ifdef RUN_PHASE3_TESTS
+#ifdef RUN_PHASE4_TESTS
 
 TEST( Test01, Root )
 {
