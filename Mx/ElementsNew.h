@@ -2445,6 +2445,71 @@ namespace mx
             MillimetersPtr myMillimeters;
             TenthsPtr myTenths;
         };
+       
+        /* !--  ID = 5710 [5710] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="appearance" type="appearance" minOccurs="0"/>
+         <xs:complexType name="appearance">
+         <xs:annotation>
+         <xs:documentation>The appearance type controls general graphical settings for the music's final form appearance on a printed page of display. This includes support for line widths, definitions for note sizes, and standard distances between notation elements, plus an extension element for other aspects of appearance.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="line-width" type="line-width" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="note-size" type="note-size" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="distance" type="distance" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="other-appearance" type="other-appearance" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class Appearance;
+        using AppearancePtr = std::shared_ptr<Appearance>;
+        using AppearanceUPtr = std::unique_ptr<Appearance>;
+        using AppearanceSet = std::vector<AppearancePtr>;
+        using AppearanceSetIter = AppearanceSet::iterator;
+        using AppearanceSetIterConst = AppearanceSet::const_iterator;
+        inline AppearancePtr makeAppearance() { return std::make_shared<Appearance>(); }
+        class Appearance : public ElementInterface
+        {
+        public:
+            Appearance();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ LineWidth minOccurs = 0, maxOccurs = unbounded _________ */
+            const LineWidthSet& getLineWidthSet() const;
+            void addLineWidth( const LineWidthPtr& value );
+            void removeLineWidth( const LineWidthSetIterConst& value );
+            void clearLineWidthSet();
+            LineWidthPtr getLineWidth( const LineWidthSetIterConst& setIterator ) const;
+            /* _________ NoteSize minOccurs = 0, maxOccurs = unbounded _________ */
+            const NoteSizeSet& getNoteSizeSet() const;
+            void addNoteSize( const NoteSizePtr& value );
+            void removeNoteSize( const NoteSizeSetIterConst& value );
+            void clearNoteSizeSet();
+            NoteSizePtr getNoteSize( const NoteSizeSetIterConst& setIterator ) const;
+            /* _________ Distance minOccurs = 0, maxOccurs = unbounded _________ */
+            const DistanceSet& getDistanceSet() const;
+            void addDistance( const DistancePtr& value );
+            void removeDistance( const DistanceSetIterConst& value );
+            void clearDistanceSet();
+            DistancePtr getDistance( const DistanceSetIterConst& setIterator ) const;
+            /* _________ OtherAppearance minOccurs = 0, maxOccurs = unbounded _________ */
+            const OtherAppearanceSet& getOtherAppearanceSet() const;
+            void addOtherAppearance( const OtherAppearancePtr& value );
+            void removeOtherAppearance( const OtherAppearanceSetIterConst& value );
+            void clearOtherAppearanceSet();
+            OtherAppearancePtr getOtherAppearance( const OtherAppearanceSetIterConst& setIterator ) const;
+        private:
+            LineWidthSet myLineWidthSet;
+            NoteSizeSet myNoteSizeSet;
+            DistanceSet myDistanceSet;
+            OtherAppearanceSet myOtherAppearanceSet;
+        };
 
     }
 }

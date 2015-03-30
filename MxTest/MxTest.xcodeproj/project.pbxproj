@@ -186,6 +186,7 @@
 		29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */; };
 		298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B360B1AC8F38C0021CD1E /* TupletTest.cpp */; };
 		298B36121AC8F7D20021CD1E /* ScalingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36101AC8F7D20021CD1E /* ScalingTest.cpp */; };
+		298B36151AC8FBE40021CD1E /* AppearanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -561,6 +562,8 @@
 		298B360C1AC8F38C0021CD1E /* TupletTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletTest.h; sourceTree = "<group>"; };
 		298B36101AC8F7D20021CD1E /* ScalingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScalingTest.cpp; sourceTree = "<group>"; };
 		298B36111AC8F7D20021CD1E /* ScalingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalingTest.h; sourceTree = "<group>"; };
+		298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppearanceTest.cpp; sourceTree = "<group>"; };
+		298B36141AC8FBE40021CD1E /* AppearanceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceTest.h; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -1193,6 +1196,8 @@
 				298B360C1AC8F38C0021CD1E /* TupletTest.h */,
 				298B36101AC8F7D20021CD1E /* ScalingTest.cpp */,
 				298B36111AC8F7D20021CD1E /* ScalingTest.h */,
+				298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */,
+				298B36141AC8FBE40021CD1E /* AppearanceTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1424,6 +1429,7 @@
 				29CEB4AC1AB4C0FA00D6AEFC /* SlashDotTest.cpp in Sources */,
 				2935A7261AB5FC3B002859CA /* LeftDividerTest.cpp in Sources */,
 				29774A001AB21FA000BF2205 /* MidiChannelTest.cpp in Sources */,
+				298B36151AC8FBE40021CD1E /* AppearanceTest.cpp in Sources */,
 				297749FA1AB21FA000BF2205 /* MeasureDistanceTest.cpp in Sources */,
 				29BDAB531AC52C7300C6DE31 /* MiscellaneousTest.cpp in Sources */,
 				297749EF1AB21FA000BF2205 /* HoleTypeTest.cpp in Sources */,
