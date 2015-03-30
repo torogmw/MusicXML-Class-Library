@@ -50,7 +50,7 @@
 		2996E6B41ABE975F004869DD /* goRxMakeSharedNonDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = goRxMakeSharedNonDefault.cpp; sourceTree = "<group>"; };
 		29A884F31A9D5D2F00F417CE /* goMsItemSimpleTypeDecimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeDecimal.h; sourceTree = "<group>"; };
 		29AAB9911A8895E00027B7A1 /* Go */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Go; sourceTree = BUILT_PRODUCTS_DIR; };
-		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		29AAB9941A8895E00027B7A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Go/main.cpp; sourceTree = "<group>"; };
 		29AAB9AA1A889EC50027B7A1 /* libDb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDb.a; path = ../Build/Products/Debug/libDb.a; sourceTree = "<group>"; };
 		29AEC9231A9C4E6B00BF3DE0 /* goMsItemSimpleTypeIntegerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goMsItemSimpleTypeIntegerTest.h; sourceTree = "<group>"; };
 		29C3A8731AB24AA10048571D /* goCreateOneSequenceElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goCreateOneSequenceElements.h; sourceTree = "<group>"; };
@@ -89,6 +89,7 @@
 				29D10B9F1A9BDB2C00F03CE6 /* libXsd.a */,
 				29DDEDC61A992E86008AD266 /* libFile.a */,
 				29AAB9AA1A889EC50027B7A1 /* libDb.a */,
+				29AAB9941A8895E00027B7A1 /* main.cpp */,
 				29AAB9931A8895E00027B7A1 /* Go */,
 				29AAB9921A8895E00027B7A1 /* Products */,
 			);
@@ -130,7 +131,6 @@
 				2996E69E1ABE404C004869DD /* goRxMakeSharedNonDefault.h */,
 				292D02DB1ABE225600005E61 /* goRxVectorAliasesForElements.h */,
 				29E801B51A9F8FCA00EDBE41 /* goSetIsImplemented.h */,
-				29AAB9941A8895E00027B7A1 /* main.cpp */,
 			);
 			path = Go;
 			sourceTree = "<group>";

@@ -185,6 +185,7 @@
 		29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */; };
 		29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */; };
 		298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B360B1AC8F38C0021CD1E /* TupletTest.cpp */; };
+		298B36121AC8F7D20021CD1E /* ScalingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36101AC8F7D20021CD1E /* ScalingTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
 		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
@@ -558,6 +559,8 @@
 		29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarpPedalsTest.cpp; sourceTree = "<group>"; };
 		298B360B1AC8F38C0021CD1E /* TupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletTest.cpp; sourceTree = "<group>"; };
 		298B360C1AC8F38C0021CD1E /* TupletTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletTest.h; sourceTree = "<group>"; };
+		298B36101AC8F7D20021CD1E /* ScalingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScalingTest.cpp; sourceTree = "<group>"; };
+		298B36111AC8F7D20021CD1E /* ScalingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalingTest.h; sourceTree = "<group>"; };
 		298B45E91A9B942A0014CAED /* MxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MxTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B45EC1A9B942A0014CAED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		298B45FA1A9B948E0014CAED /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
@@ -1188,6 +1191,8 @@
 				29BB00E91AC864D300D87116 /* TupletNormalTest.h */,
 				298B360B1AC8F38C0021CD1E /* TupletTest.cpp */,
 				298B360C1AC8F38C0021CD1E /* TupletTest.h */,
+				298B36101AC8F7D20021CD1E /* ScalingTest.cpp */,
+				298B36111AC8F7D20021CD1E /* ScalingTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1505,6 +1510,7 @@
 				29C0B9EA1AAE9398004F86FA /* PartSymbolTest.cpp in Sources */,
 				297749F01AB21FA000BF2205 /* InstrumentAbbreviationTest.cpp in Sources */,
 				29774A231AB21FA000BF2205 /* StickMaterialTest.cpp in Sources */,
+				298B36121AC8F7D20021CD1E /* ScalingTest.cpp in Sources */,
 				2971F50A1AC320B0007C2EF7 /* MetronomeTupletTest.cpp in Sources */,
 				29774A0F1AB21FA000BF2205 /* PageWidthTest.cpp in Sources */,
 				29237ABC1AC7940700FB4515 /* InvertedMordentTest.cpp in Sources */,
