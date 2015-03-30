@@ -25,7 +25,7 @@ TEST( Test01, Scaling )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( ! object->hasContents() )
+	CHECK( object->hasContents() )
 }
 TEST( Test02, Scaling )
 {
@@ -63,17 +63,19 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                
+
             }
                 break;
             case variant::two:
             {
-
+                o->getMillimeters()->setValue( MillimetersValue( 9 ) );
+                o->getTenths()->setValue( TenthsValue( 42 ) );
             }
                 break;
             case variant::three:
             {
-
+                o->getMillimeters()->setValue( MillimetersValue( 11 ) );
+                o->getTenths()->setValue( TenthsValue( 44 ) );
             }
                 break;
             default:
@@ -88,26 +90,26 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<tuplet-actual/>)", false );
+                streamLine( os, i, R"(<scaling>)" );
+                streamLine( os, i+1, R"(<millimeters>7</millimeters>)" );
+                streamLine( os, i+1, R"(<tenths>40</tenths>)" );
+                streamLine( os, i, R"(</scaling>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<tuplet-actual>)" );
-                streamLine( os, i+1, R"(<tuplet-number>2</tuplet-number>)" );
-                streamLine( os, i+1, R"(<tuplet-type>16th</tuplet-type>)" );
-                streamLine( os, i+1, R"(<tuplet-dot/>)" );
-                streamLine( os, i, R"(</tuplet-actual>)", false );
+                streamLine( os, i, R"(<scaling>)" );
+                streamLine( os, i+1, R"(<millimeters>9</millimeters>)" );
+                streamLine( os, i+1, R"(<tenths>42</tenths>)" );
+                streamLine( os, i, R"(</scaling>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<tuplet-actual>)" );
-                streamLine( os, i+1, R"(<tuplet-number>3</tuplet-number>)" );
-                streamLine( os, i+1, R"(<tuplet-type>half</tuplet-type>)" );
-                streamLine( os, i+1, R"(<tuplet-dot/>)" );
-                streamLine( os, i+1, R"(<tuplet-dot/>)" );
-                streamLine( os, i, R"(</tuplet-actual>)", false );
+                streamLine( os, i, R"(<scaling>)" );
+                streamLine( os, i+1, R"(<millimeters>11</millimeters>)" );
+                streamLine( os, i+1, R"(<tenths>44</tenths>)" );
+                streamLine( os, i, R"(</scaling>)", false );
             }
                 break;
             default:

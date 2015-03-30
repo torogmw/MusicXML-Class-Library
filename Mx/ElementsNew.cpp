@@ -4134,8 +4134,8 @@ namespace mx
 		}
         
 		Scaling::Scaling()
-		:myMillimeters( makeMillimeters() )
-		,myTenths( makeTenths() )
+		:myMillimeters( makeMillimeters( types::MillimetersValue( 7 ) ) )
+		,myTenths( makeTenths( types::TenthsValue( 40 ) ) )
 		{}
 		bool Scaling::hasAttributes() const
 		{
@@ -4161,6 +4161,7 @@ namespace mx
 			myMillimeters->toStream( os, indentLevel+1 );
 			os << std::endl;
 			myTenths->toStream( os, indentLevel+1 );
+			os << std::endl;
             isOneLineOnly = false;
             return os;
 		}
