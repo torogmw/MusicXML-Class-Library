@@ -355,6 +355,7 @@
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
 		29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */; };
+		29EECBAC1AC99A4300AB6560 /* SystemLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -764,6 +765,8 @@
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
 		29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayTextTest.cpp; sourceTree = "<group>"; };
 		29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorTest.cpp; sourceTree = "<group>"; };
+		29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemLayoutTest.cpp; sourceTree = "<group>"; };
+		29EECBAB1AC99A4300AB6560 /* SystemLayoutTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemLayoutTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1223,6 +1226,8 @@
 				29CCA18C1AC929FE007BFE5A /* DegreeTest.h */,
 				29C8AD181AC92E3F00F00048 /* PageLayoutTest.cpp */,
 				29C8AD191AC92E3F00F00048 /* PageLayoutTest.h */,
+				29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */,
+				29EECBAB1AC99A4300AB6560 /* SystemLayoutTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1515,6 +1520,7 @@
 				290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */,
 				2935A71C1AB5FC3B002859CA /* DampAllTest.cpp in Sources */,
 				2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */,
+				29EECBAC1AC99A4300AB6560 /* SystemLayoutTest.cpp in Sources */,
 				298C81E01AB6A8DC006619A9 /* OctaveShiftTest.cpp in Sources */,
 				29BDAB501AC5281D00C6DE31 /* EncodingTest.cpp in Sources */,
 				298C81D51AB6A8DC006619A9 /* DelayedInvertedTurnTest.cpp in Sources */,

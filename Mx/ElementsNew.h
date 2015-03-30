@@ -226,6 +226,71 @@ namespace mx
             PageWidthPtr myPageWidth;
             PageMarginsSet myPageMarginsSet;
         };
+        /* <!--  ID = 6237 [6237] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="system-layout" type="system-layout" minOccurs="0"/>
+         <xs:complexType name="system-layout">
+         <xs:annotation>
+         <xs:documentation>A system is a group of staves that are read and played simultaneously. System layout includes left and right margins and the vertical distance from the previous system. The system distance is measured from the bottom line of the previous system to the top line of the current system. It is ignored for the first system on a page. The top system distance is measured from the page's top margin to the top line of the first system. It is ignored for all but the first system on a page.
+         
+         Sometimes the sum of measure widths in a system may not equal the system width specified by the layout elements due to roundoff or other errors. The behavior when reading MusicXML files in these cases is application-dependent. For instance, applications may find that the system layout data is more reliable than the sum of the measure widths, and adjust the measure widths accordingly.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="system-margins" type="system-margins" minOccurs="0"/>
+         <xs:element name="system-distance" type="tenths" minOccurs="0"/>
+         <xs:element name="top-system-distance" type="tenths" minOccurs="0"/>
+         <xs:element name="system-dividers" type="system-dividers" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class SystemLayout;
+        using SystemLayoutPtr = std::shared_ptr<SystemLayout>;
+        using SystemLayoutUPtr = std::unique_ptr<SystemLayout>;
+        using SystemLayoutSet = std::vector<SystemLayoutPtr>;
+        using SystemLayoutSetIter = SystemLayoutSet::iterator;
+        using SystemLayoutSetIterConst = SystemLayoutSet::const_iterator;
+        inline SystemLayoutPtr makeSystemLayout() { return std::make_shared<SystemLayout>(); }
+        class SystemLayout : public ElementInterface
+        {
+        public:
+            SystemLayout();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ SystemMargins minOccurs = 0, maxOccurs = 1 _________ */
+            SystemMarginsPtr getSystemMargins() const;
+            void setSystemMargins( const SystemMarginsPtr& value );
+            bool getHasSystemMargins() const;
+            void setHasSystemMargins( const bool value );
+            SystemDistancePtr getSystemDistance() const;
+            void setSystemDistance( const SystemDistancePtr& value );
+            bool getHasSystemDistance() const;
+            void setHasSystemDistance( const bool value );
+            /* _________ TopSystemDistance minOccurs = 0, maxOccurs = 1 _________ */
+            TopSystemDistancePtr getTopSystemDistance() const;
+            void setTopSystemDistance( const TopSystemDistancePtr& value );
+            bool getHasTopSystemDistance() const;
+            void setHasTopSystemDistance( const bool value );
+            /* _________ SystemDividers minOccurs = 0, maxOccurs = 1 _________ */
+            SystemDividersPtr getSystemDividers() const;
+            void setSystemDividers( const SystemDividersPtr& value );
+            bool getHasSystemDividers() const;
+            void setHasSystemDividers( const bool value );
+        private:
+            SystemMarginsPtr mySystemMargins;
+            bool myHasSystemMargins;
+            SystemDistancePtr mySystemDistance;
+            bool myHasSystemDistance;
+            TopSystemDistancePtr myTopSystemDistance;
+            bool myHasTopSystemDistance;
+            SystemDividersPtr mySystemDividers;
+            bool myHasSystemDividers;
+        };
 
     }
 }
