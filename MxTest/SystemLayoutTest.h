@@ -3,6 +3,6 @@
 
 namespace MxTestHelpers
 {
-    mx::e::PageLayoutPtr tgenPageLayout( variant v );
-    void tgenPageLayoutExpected( std::ostream& os, int indentLevel, variant v );
+    mx::e::SystemLayoutPtr tgenSystemLayout( variant v );
+    void tgenSystemLayoutExpected( std::ostream& os, int indentLevel, variant v );
 }

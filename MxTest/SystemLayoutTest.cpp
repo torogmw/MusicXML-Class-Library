@@ -1,9 +1,9 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "PageLayoutTest.h"
-#include "PageMarginsTest.h"
-#include "MidiInstrumentTest.h"
+#include "SystemLayoutTest.h"
+#include "SystemMarginsTest.h"
+#include "SystemDividersTest.h"
 #include "MidiDeviceTest.cpp"
 
 
@@ -14,25 +14,25 @@ using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"
 #ifdef RUN_PHASE4_TESTS
 
-TEST( Test01, PageLayout )
+TEST( Test01, SystemLayout )
 {
     variant v = variant::one;
-	PageLayoutPtr object = tgenPageLayout( v );
+	SystemLayoutPtr object = tgenSystemLayout( v );
 	stringstream expected;
-	tgenPageLayoutExpected( expected, 1, v );
+	tgenSystemLayoutExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( object->hasContents() )
+	CHECK( ! object->hasContents() )
 }
-TEST( Test02, PageLayout )
+TEST( Test02, SystemLayout )
 {
     variant v = variant::two;
-	PageLayoutPtr object = tgenPageLayout( v );
+	SystemLayoutPtr object = tgenSystemLayout( v );
 	stringstream expected;
-	tgenPageLayoutExpected( expected, 1, v );
+	tgenSystemLayoutExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -40,12 +40,12 @@ TEST( Test02, PageLayout )
 	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, PageLayout )
+TEST( Test03, SystemLayout )
 {
     variant v = variant::three;
-	PageLayoutPtr object = tgenPageLayout( v );
+	SystemLayoutPtr object = tgenSystemLayout( v );
 	stringstream expected;
-	tgenPageLayoutExpected( expected, 1, v );
+	tgenSystemLayoutExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -56,9 +56,9 @@ TEST( Test03, PageLayout )
 #endif
 namespace MxTestHelpers
 {
-    PageLayoutPtr tgenPageLayout( variant v )
+    SystemLayoutPtr tgenSystemLayout( variant v )
     {
-        PageLayoutPtr o = makePageLayout();
+        SystemLayoutPtr o = makeSystemLayout();
         switch ( v )
         {
             case variant::one:
@@ -68,17 +68,24 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->getPageHeight()->setValue( TenthsValue( 2534 ) );
-                o->getPageWidth()->setValue( TenthsValue( 4352 ) );
-                o->addPageMargins( tgenPageMargins( variant::one ) );
-                o->addPageMargins( tgenPageMargins( variant::two ) );
+                o->setHasSystemMargins( true );
+                o->setSystemMargins( tgenSystemMargins( v ) );
+                o->setHasTopSystemDistance( true );
+                o->getTopSystemDistance()->setValue( TenthsValue( 1.1 ) );
+                o->setHasSystemDistance( true );
+                o->getSystemDistance()->setValue( TenthsValue( 2.2 ) );
+                o->setHasSystemDividers( true );
+                o->setSystemDividers( tgenSystemDividers( v ) );
             }
                 break;
             case variant::three:
             {
-                o->getPageHeight()->setValue( TenthsValue( 3524 ) );
-                o->getPageWidth()->setValue( TenthsValue( 3241 ) );
-                o->addPageMargins( tgenPageMargins( variant::three ) );
+                o->setHasSystemMargins( true );
+                o->setSystemMargins( tgenSystemMargins( v ) );
+                o->setHasTopSystemDistance( true );
+                o->getTopSystemDistance()->setValue( TenthsValue( 3.3 ) );
+                o->setHasSystemDistance( true );
+                o->getSystemDistance()->setValue( TenthsValue( 4.4 ) );
             }
                 break;
             default:
@@ -86,39 +93,36 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenPageLayoutExpected( std::ostream& os, int i, variant v )
+    void tgenSystemLayoutExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<page-layout>)" );
-                streamLine( os, i+1, R"(<page-height>0</page-height>)" );
-                streamLine( os, i+1, R"(<page-width>0</page-width>)" );
-                streamLine( os, i, R"(</page-layout>)", false );
+                streamLine( os, i, R"(<system-layout/>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<page-layout>)" );
-                streamLine( os, i+1, R"(<page-height>2534</page-height>)" );
-                streamLine( os, i+1, R"(<page-width>4352</page-width>)" );
-                tgenPageMarginsExpected( os, i+1, variant::one );
+                streamLine( os, i, R"(<system-layout>)" );
+                tgenSystemMarginsExpected( os, i+1, v );
                 os << std::endl;
-                tgenPageMarginsExpected( os, i+1, variant::two );
+                streamLine( os, i+1, R"(<system-distance>2.2</system-distance>)" );
+                streamLine( os, i+1, R"(<top-system-distance>1.1</top-system-distance>)" );
+                tgenSystemDividersExpected( os, i+1, v );
                 os << std::endl;
-                streamLine( os, i, R"(</page-layout>)", false );
+                streamLine( os, i, R"(</system-layout>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<page-layout>)" );
-                streamLine( os, i+1, R"(<page-height>3524</page-height>)" );
-                streamLine( os, i+1, R"(<page-width>3241</page-width>)" );
-                tgenPageMarginsExpected( os, i+1, variant::three );
+                streamLine( os, i, R"(<system-layout>)" );
+                tgenSystemMarginsExpected( os, i+1, v );
                 os << std::endl;
-                streamLine( os, i, R"(</page-layout>)", false );
+                streamLine( os, i+1, R"(<system-distance>4.4</system-distance>)" );
+                streamLine( os, i+1, R"(<top-system-distance>3.3</top-system-distance>)" );
+                streamLine( os, i, R"(</system-layout>)", false );
             }
                 break;
             default:
