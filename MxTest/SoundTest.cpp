@@ -1,7 +1,7 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "ElementsNew.h"
+#include "Elements.h"
 #include "SoundTest.h"
 #include "PlayTest.h"
 #include "MidiInstrumentTest.h"

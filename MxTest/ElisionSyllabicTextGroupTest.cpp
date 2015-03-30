@@ -1,7 +1,7 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "ElementsNew.h"
+#include "Elements.h"
 #include "ElisionSyllabicGroupTest.h"
 #include "ElisionSyllabicTextGroupTest.h"
 #include "MidiInstrumentTest.h"

@@ -1,7 +1,7 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "ElementsNew.h"
+#include "Elements.h"
 #include "InvertedMordentTest.h"
 #include "MidiInstrumentTest.h"
 #include "MidiDeviceTest.cpp"
