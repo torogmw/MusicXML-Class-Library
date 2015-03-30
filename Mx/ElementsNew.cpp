@@ -362,7 +362,7 @@ namespace mx
 		{}
 		bool SystemLayout::hasAttributes() const
 		{
-			return true;
+			return false;
 		}
 		std::ostream& SystemLayout::streamAttributes( std::ostream& os ) const
 		{
