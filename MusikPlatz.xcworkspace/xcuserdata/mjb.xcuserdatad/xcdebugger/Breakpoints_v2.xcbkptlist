@@ -137,22 +137,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mx/ElementsNew.cpp"
-            timestampString = "449282892.071513"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3164"
-            endingLineNumber = "3164"
-            landmarkName = "Lyric::streamContents( std::ostream&amp; os, const int indentLevel, bool&amp; isOneLineOnly )"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemElement.cpp"
             timestampString = "449285043.885597"
             startingColumnNumber = "9223372036854775807"
