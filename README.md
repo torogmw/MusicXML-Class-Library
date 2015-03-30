@@ -3,4 +3,4 @@ MX DOM
 
 C++ binding for MusicXML.  This is a work in progress.
 
-Current Status as of 2015-03-29, 377 Elements Implemented, 44 Elements to go.
+Current Status as of 2015-03-30, 382 Elements Implemented, 39 Elements to go.
