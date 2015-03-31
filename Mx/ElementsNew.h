@@ -532,15 +532,15 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             RestAttributesPtr getAttributes() const;
             void setAttributes( const RestAttributesPtr& value );
-            /* _________ DisplayStep minOccurs = 1, maxOccurs = 1 _________ */
-            DisplayStepPtr getDisplayStep() const;
-            void setDisplayStep( const DisplayStepPtr& value );
-            /* _________ DisplayOctave minOccurs = 1, maxOccurs = 1 _________ */
-            DisplayOctavePtr getDisplayOctave() const;
-            void setDisplayOctave( const DisplayOctavePtr& value );
+            /* _________ DisplayStepOctaveGroup minOccurs = 0, maxOccurs = 1 _________ */
+            DisplayStepOctaveGroupPtr getDisplayStepOctaveGroup() const;
+            void setDisplayStepOctaveGroup( const DisplayStepOctaveGroupPtr& value );
+            bool getHasDisplayStepOctaveGroup() const;
+            void setHasDisplayStepOctaveGroup( const bool value );
         private:
             RestAttributesPtr myAttributes;
             DisplayStepOctaveGroupPtr myDisplayStepOctaveGroup;
+            bool myHasDisplayStepOctaveGroup;
         };
     }
 }
