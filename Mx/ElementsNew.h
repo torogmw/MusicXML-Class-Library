@@ -475,5 +475,72 @@ namespace mx
             DisplayStepOctaveGroupPtr myDisplayStepOctaveGroup;
             bool myHasDisplayStepOctaveGroup;
         };
+        
+        /* <!--  ID = 6296 [6296] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="rest" type="rest"/>
+         <xs:complexType name="rest">
+         <xs:annotation>
+         <xs:documentation>The rest element indicates notated rests or silences. Rest elements are usually empty, but placement on the staff can be specified using display-step and display-octave elements. If the measure attribute is set to yes, this indicates this is a complete measure rest.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="display-step-octave" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attribute name="measure" type="yes-no"/>
+         </xs:complexType>
+         <xs:group name="display-step-octave">
+         <xs:annotation>
+         <xs:documentation>The display-step-octave group contains the sequence of elements used by both the rest and unpitched elements. This group is used to place rests and unpitched elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the display-step and display-octave elements are interpreted as if in treble clef, with a G in octave 4 on line 2. If not present, the note is placed on the middle line of the staff, generally used for a one-line staff.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="display-step" type="step"/>
+         <xs:element name="display-octave" type="octave"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct RestAttributes;
+        using RestAttributesPtr = std::shared_ptr<RestAttributes>;
+        
+        struct RestAttributes : public AttributesInterface
+        {
+        public:
+            RestAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo measure;
+            bool hasMeasure;
+        };
+        
+        class Rest;
+        using RestPtr = std::shared_ptr<Rest>;
+        using RestUPtr = std::unique_ptr<Rest>;
+        using RestSet = std::vector<RestPtr>;
+        using RestSetIter = RestSet::iterator;
+        using RestSetIterConst = RestSet::const_iterator;
+        inline RestPtr makeRest() { return std::make_shared<Rest>(); }
+        class Rest : public ElementInterface
+        {
+        public:
+            Rest();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            RestAttributesPtr getAttributes() const;
+            void setAttributes( const RestAttributesPtr& value );
+            /* _________ DisplayStep minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayStepPtr getDisplayStep() const;
+            void setDisplayStep( const DisplayStepPtr& value );
+            /* _________ DisplayOctave minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayOctavePtr getDisplayOctave() const;
+            void setDisplayOctave( const DisplayOctavePtr& value );
+        private:
+            RestAttributesPtr myAttributes;
+            DisplayStepOctaveGroupPtr myDisplayStepOctaveGroup;
+        };
     }
 }

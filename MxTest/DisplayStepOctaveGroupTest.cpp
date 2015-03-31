@@ -71,12 +71,14 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->getDisplayOctave()->setValue( OctaveValue( 7 ) );
+                o->getDisplayStep()->setValue( StepEnum::g );
             }
                 break;
             case variant::three:
             {
-
+                o->getDisplayOctave()->setValue( OctaveValue( 5 ) );
+                o->getDisplayStep()->setValue( StepEnum::b );
             }
                 break;
             default:
@@ -91,27 +93,20 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<pitch>)" );
-                streamLine( os, i+1, R"(<step>A</step>)" );
-                streamLine( os, i+1, R"(<octave>0</octave>)" );
-                streamLine( os, i, R"(</pitch>)", false );
+                streamLine( os, i, R"(<display-step>A</display-step>)" );
+                streamLine( os, i, R"(<display-octave>0</display-octave>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<pitch>)" );
-                streamLine( os, i+1, R"(<step>D</step>)" );
-                streamLine( os, i+1, R"(<octave>3</octave>)" );
-                streamLine( os, i, R"(</pitch>)", false );
+                streamLine( os, i, R"(<display-step>G</display-step>)" );
+                streamLine( os, i, R"(<display-octave>7</display-octave>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<pitch>)" );
-                streamLine( os, i+1, R"(<step>E</step>)" );
-                streamLine( os, i+1, R"(<alter>-1.1</alter>)" );
-                streamLine( os, i+1, R"(<octave>6</octave>)" );
-                streamLine( os, i, R"(</pitch>)", false );
+                streamLine( os, i, R"(<display-step>B</display-step>)" );
+                streamLine( os, i, R"(<display-octave>5</display-octave>)", false );
             }
                 break;
             default:

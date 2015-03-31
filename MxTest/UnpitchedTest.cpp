@@ -2,10 +2,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "UnpitchedTest.h"
-#include "SystemMarginsTest.h"
-#include "SystemDividersTest.h"
-#include "MidiDeviceTest.cpp"
-
+#include "DisplayStepOctaveGroupTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
@@ -25,7 +22,7 @@ TEST( Test01, Unpitched )
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( object->hasContents() )
+	CHECK( ! object->hasContents() )
 }
 TEST( Test02, Unpitched )
 {
@@ -68,12 +65,14 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-
+                o->setHasDisplayStepOctaveGroup( true );
+                o->setDisplayStepOctaveGroup( tgenDisplayStepOctaveGroup( v ) );
             }
                 break;
             case variant::three:
             {
-
+                o->setHasDisplayStepOctaveGroup( true );
+                o->setDisplayStepOctaveGroup( tgenDisplayStepOctaveGroup( v ) );
             }
                 break;
             default:
@@ -88,27 +87,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<pitch>)" );
-                streamLine( os, i+1, R"(<step>A</step>)" );
-                streamLine( os, i+1, R"(<octave>0</octave>)" );
-                streamLine( os, i, R"(</pitch>)", false );
+                streamLine( os, i, R"(<unpitched/>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<pitch>)" );
-                streamLine( os, i+1, R"(<step>D</step>)" );
-                streamLine( os, i+1, R"(<octave>3</octave>)" );
-                streamLine( os, i, R"(</pitch>)", false );
+                streamLine( os, i, R"(<unpitched>)" );
+                tgenDisplayStepOctaveGroupExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</unpitched>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<pitch>)" );
-                streamLine( os, i+1, R"(<step>E</step>)" );
-                streamLine( os, i+1, R"(<alter>-1.1</alter>)" );
-                streamLine( os, i+1, R"(<octave>6</octave>)" );
-                streamLine( os, i, R"(</pitch>)", false );
+                streamLine( os, i, R"(<unpitched>)" );
+                tgenDisplayStepOctaveGroupExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</unpitched>)", false );
             }
                 break;
             default:

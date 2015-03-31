@@ -685,9 +685,9 @@ namespace mx
 		}
 		std::ostream& DisplayStepOctaveGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			myDisplayStep->streamContents( os, indentLevel, isOneLineOnly );
+			myDisplayStep->toStream( os, indentLevel );
             os << std::endl;
-            myDisplayOctave->streamContents( os, indentLevel, isOneLineOnly );
+            myDisplayOctave->toStream( os, indentLevel );
             return os;
 		}
         /* _________ DisplayStep minOccurs = 1, maxOccurs = 1 _________ */
@@ -729,12 +729,12 @@ namespace mx
 		}
 		std::ostream& Unpitched::streamName( std::ostream& os ) const
 		{
-			os << "pitch";
+			os << "unpitched";
 			return os;
 		}
 		bool Unpitched::hasContents() const
 		{
-			return true;
+			return myHasDisplayStepOctaveGroup;
 		}
 		std::ostream& Unpitched::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
