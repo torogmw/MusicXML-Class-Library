@@ -291,6 +291,62 @@ namespace mx
             SystemDividersPtr mySystemDividers;
             bool myHasSystemDividers;
         };
-
+        /* <!--  ID = 6241 [6241] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 1 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="staff-layout" type="staff-layout" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="staff-layout">
+         <xs:annotation>
+         <xs:documentation>Staff layout includes the vertical distance from the bottom line of the previous staff in this system to the top line of the staff specified by the number attribute. The optional number attribute refers to staff numbers within the part, from top to bottom on the system. A value of 1 is assumed if not present. When used in the defaults element, the values apply to all parts. This value is ignored for the first staff in a system.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="staff-distance" type="tenths" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attribute name="number" type="staff-number"/>
+         </xs:complexType> */
+        
+        struct StaffLayoutAttributes;
+        using StaffLayoutAttributesPtr = std::shared_ptr<StaffLayoutAttributes>;
+        
+        struct StaffLayoutAttributes : public AttributesInterface
+        {
+        public:
+            StaffLayoutAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StaffNumber number;
+            bool hasNumber;
+        };
+        
+        class StaffLayout;
+        using StaffLayoutPtr = std::shared_ptr<StaffLayout>;
+        using StaffLayoutUPtr = std::unique_ptr<StaffLayout>;
+        using StaffLayoutSet = std::vector<StaffLayoutPtr>;
+        using StaffLayoutSetIter = StaffLayoutSet::iterator;
+        using StaffLayoutSetIterConst = StaffLayoutSet::const_iterator;
+        inline StaffLayoutPtr makeStaffLayout() { return std::make_shared<StaffLayout>(); }
+        class StaffLayout : public ElementInterface
+        {
+        public:
+            StaffLayout();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            StaffLayoutAttributesPtr getAttributes() const;
+            void setAttributes( const StaffLayoutAttributesPtr& value );
+            /* _________ StaffDistance minOccurs = 0, maxOccurs = 1 _________ */
+            StaffDistancePtr getStaffDistance() const;
+            void setStaffDistance( const StaffDistancePtr& value );
+            bool getHasStaffDistance() const;
+            void setHasStaffDistance( const bool value );
+        private:
+            StaffLayoutAttributesPtr myAttributes;
+            StaffDistancePtr myStaffDistance;
+            bool myHasStaffDistance;
+        };
     }
 }

@@ -489,8 +489,99 @@ namespace mx
 		{
 			myHasSystemDividers = value;
 		}
-#if 1==0
+        
+        
+        /**************** StaffLayoutAttributes ****************/
+        /* 6241 */
+        StaffLayoutAttributes::StaffLayoutAttributes()
+        :number()
+        ,hasNumber( false )
+        {}
+        
+        bool StaffLayoutAttributes::hasValues() const
+        {
+            return hasNumber;
+        }
+        
+        std::ostream& StaffLayoutAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+            }
+            return os;
+        }
+        
+		StaffLayout::StaffLayout()
+		:myAttributes( std::make_shared<StaffLayoutAttributes>() )
+		,myStaffDistance( makeStaffDistance() )
+		,myHasStaffDistance( false )
+		{}
+		bool StaffLayout::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& StaffLayout::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& StaffLayout::streamName( std::ostream& os ) const
+		{
+			os << "staff-layout";
+			return os;
+		}
+		bool StaffLayout::hasContents() const
+		{
+			return myHasStaffDistance;
+		}
+		std::ostream& StaffLayout::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( myHasStaffDistance )
+            {
+                os << std::endl;
+                myStaffDistance->toStream( os, indentLevel+1 );
+            }
+            isOneLineOnly = ! hasContents();
+            if ( ! isOneLineOnly )
+            {
+                os << std::endl;
+            }
+			return os;
+		}
+		StaffLayoutAttributesPtr StaffLayout::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void StaffLayout::setAttributes( const StaffLayoutAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ StaffDistance minOccurs = 0, maxOccurs = 1 _________ */
+		StaffDistancePtr StaffLayout::getStaffDistance() const
+		{
+			return myStaffDistance;
+		}
+		void StaffLayout::setStaffDistance( const StaffDistancePtr& value )
+		{
+			if( value )
+			{
+				myStaffDistance = value;
+			}
+		}
+		bool StaffLayout::getHasStaffDistance() const
+		{
+			return myHasStaffDistance;
+		}
+		void StaffLayout::setHasStaffDistance( const bool value )
+		{
+			myHasStaffDistance = value;
+		}
 
+#if 1==0
 #endif
         
     } // namespace e
