@@ -580,7 +580,88 @@ namespace mx
 		{
 			myHasStaffDistance = value;
 		}
-
+        Pitch::Pitch()
+		:myStep( makeStep() )
+		,myAlter( makeAlter() )
+		,myHasAlter( false )
+		,myOctave( makeOctave() )
+		{}
+		bool Pitch::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Pitch::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Pitch::streamName( std::ostream& os ) const
+		{
+			os << "pitch";
+			return os;
+		}
+		bool Pitch::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Pitch::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			os << std::endl;
+			myStep->toStream( os, indentLevel+1 );
+			if ( myHasAlter )
+            {
+                os << std::endl;
+                myAlter->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+			myOctave->toStream( os, indentLevel+1 );
+			isOneLineOnly = false;
+			os << std::endl;
+            return os;
+		}
+		/* _________ Step minOccurs = 1, maxOccurs = 1 _________ */
+		StepPtr Pitch::getStep() const
+		{
+			return myStep;
+		}
+		void Pitch::setStep( const StepPtr& value )
+		{
+			if( value )
+			{
+				myStep = value;
+			}
+		}
+		/* _________ Alter minOccurs = 0, maxOccurs = 1 _________ */
+		AlterPtr Pitch::getAlter() const
+		{
+			return myAlter;
+		}
+		void Pitch::setAlter( const AlterPtr& value )
+		{
+			if( value )
+			{
+				myAlter = value;
+			}
+		}
+		bool Pitch::getHasAlter() const
+		{
+			return myHasAlter;
+		}
+		void Pitch::setHasAlter( const bool value )
+		{
+			myHasAlter = value;
+		}
+		/* _________ Octave minOccurs = 1, maxOccurs = 1 _________ */
+		OctavePtr Pitch::getOctave() const
+		{
+			return myOctave;
+		}
+		void Pitch::setOctave( const OctavePtr& value )
+		{
+			if( value )
+			{
+				myOctave = value;
+			}
+		}
 #if 1==0
 #endif
         

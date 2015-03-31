@@ -348,5 +348,56 @@ namespace mx
             StaffDistancePtr myStaffDistance;
             bool myHasStaffDistance;
         };
+        /* <!--  ID = 6290 [6290] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="pitch" type="pitch"/>
+         <xs:complexType name="pitch">
+         <xs:annotation>
+         <xs:documentation>Pitch is represented as a combination of the step of the diatonic scale, the chromatic alteration, and the octave.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="step" type="step"/>
+         <xs:element name="alter" type="semitones" minOccurs="0"/>
+         <xs:element name="octave" type="octave"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class Pitch;
+        using PitchPtr = std::shared_ptr<Pitch>;
+        using PitchUPtr = std::unique_ptr<Pitch>;
+        using PitchSet = std::vector<PitchPtr>;
+        using PitchSetIter = PitchSet::iterator;
+        using PitchSetIterConst = PitchSet::const_iterator;
+        inline PitchPtr makePitch() { return std::make_shared<Pitch>(); }
+        class Pitch : public ElementInterface
+        {
+        public:
+            Pitch();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Step minOccurs = 1, maxOccurs = 1 _________ */
+            StepPtr getStep() const;
+            void setStep( const StepPtr& value );
+            /* _________ Alter minOccurs = 0, maxOccurs = 1 _________ */
+            AlterPtr getAlter() const;
+            void setAlter( const AlterPtr& value );
+            bool getHasAlter() const;
+            void setHasAlter( const bool value );
+            /* _________ Octave minOccurs = 1, maxOccurs = 1 _________ */
+            OctavePtr getOctave() const;
+            void setOctave( const OctavePtr& value );
+        private:
+            StepPtr myStep;
+            AlterPtr myAlter;
+            bool myHasAlter;
+            OctavePtr myOctave;
+        };
+
     }
 }
