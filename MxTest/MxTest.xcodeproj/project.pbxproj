@@ -236,6 +236,8 @@
 		29BB00EA1AC864D300D87116 /* TupletNormalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */; };
 		29BBED291ACA545D00C16802 /* StaffLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED271ACA545D00C16802 /* StaffLayoutTest.cpp */; };
 		29BBED2C1ACA594200C16802 /* PitchTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED2A1ACA594200C16802 /* PitchTest.cpp */; };
+		29BBED2F1ACA5FB100C16802 /* UnpitchedTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED2D1ACA5FB100C16802 /* UnpitchedTest.cpp */; };
+		29BBED321ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED301ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp */; };
 		29BDAB4A1AC5177300C6DE31 /* PlayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB481AC5177300C6DE31 /* PlayTest.cpp */; };
 		29BDAB501AC5281D00C6DE31 /* EncodingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB4E1AC5281D00C6DE31 /* EncodingTest.cpp */; };
 		29BDAB531AC52C7300C6DE31 /* MiscellaneousTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BDAB511AC52C7300C6DE31 /* MiscellaneousTest.cpp */; };
@@ -636,6 +638,10 @@
 		29BBED281ACA545D00C16802 /* StaffLayoutTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffLayoutTest.h; sourceTree = "<group>"; };
 		29BBED2A1ACA594200C16802 /* PitchTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchTest.cpp; sourceTree = "<group>"; };
 		29BBED2B1ACA594200C16802 /* PitchTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchTest.h; sourceTree = "<group>"; };
+		29BBED2D1ACA5FB100C16802 /* UnpitchedTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnpitchedTest.cpp; sourceTree = "<group>"; };
+		29BBED2E1ACA5FB100C16802 /* UnpitchedTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpitchedTest.h; sourceTree = "<group>"; };
+		29BBED301ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayStepOctaveGroupTest.cpp; sourceTree = "<group>"; };
+		29BBED311ACA602100C16802 /* DisplayStepOctaveGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayStepOctaveGroupTest.h; sourceTree = "<group>"; };
 		29BDAB481AC5177300C6DE31 /* PlayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayTest.cpp; sourceTree = "<group>"; };
 		29BDAB491AC5177300C6DE31 /* PlayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTest.h; sourceTree = "<group>"; };
 		29BDAB4C1AC5182700C6DE31 /* MxTestCompileControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxTestCompileControl.h; sourceTree = "<group>"; };
@@ -1238,6 +1244,10 @@
 				29BBED281ACA545D00C16802 /* StaffLayoutTest.h */,
 				29BBED2A1ACA594200C16802 /* PitchTest.cpp */,
 				29BBED2B1ACA594200C16802 /* PitchTest.h */,
+				29BBED2D1ACA5FB100C16802 /* UnpitchedTest.cpp */,
+				29BBED2E1ACA5FB100C16802 /* UnpitchedTest.h */,
+				29BBED301ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp */,
+				29BBED311ACA602100C16802 /* DisplayStepOctaveGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1424,6 +1434,7 @@
 				29774A0E1AB21FA000BF2205 /* PageHeightTest.cpp in Sources */,
 				2935A7301AB5FC3B002859CA /* SpiccatoTest.cpp in Sources */,
 				29774A241AB21FA000BF2205 /* StickTypeTest.cpp in Sources */,
+				29BBED2F1ACA5FB100C16802 /* UnpitchedTest.cpp in Sources */,
 				29D921401AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp in Sources */,
 				29774A0B1AB21FA000BF2205 /* OctaveChangeTest.cpp in Sources */,
 				29C0B9E41AAE9398004F86FA /* OtherNotationTest.cpp in Sources */,
@@ -1612,6 +1623,7 @@
 				2962360D1AC5CE1600F3E007 /* FigureTest.cpp in Sources */,
 				29A565041AC49CF10059CACD /* PartAbbreviationDisplayTest.cpp in Sources */,
 				298C81D11AB6A8DC006619A9 /* BookmarkTest.cpp in Sources */,
+				29BBED321ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp in Sources */,
 				29884C2B1AC23F4200DD2209 /* StringTest.cpp in Sources */,
 				29774A081AB21FA000BF2205 /* MuteTest.cpp in Sources */,
 				297749F31AB21FA000BF2205 /* InstrumentsTest.cpp in Sources */,

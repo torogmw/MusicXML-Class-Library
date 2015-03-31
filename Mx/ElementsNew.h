@@ -398,6 +398,82 @@ namespace mx
             bool myHasAlter;
             OctavePtr myOctave;
         };
-
+        
+        class DisplayStepOctaveGroup;
+        using DisplayStepOctaveGroupPtr = std::shared_ptr<DisplayStepOctaveGroup>;
+        using DisplayStepOctaveGroupUPtr = std::unique_ptr<DisplayStepOctaveGroup>;
+        using DisplayStepOctaveGroupSet = std::vector<DisplayStepOctaveGroupPtr>;
+        using DisplayStepOctaveGroupSetIter = DisplayStepOctaveGroupSet::iterator;
+        using DisplayStepOctaveGroupSetIterConst = DisplayStepOctaveGroupSet::const_iterator;
+        inline DisplayStepOctaveGroupPtr makeDisplayStepOctaveGroup() { return std::make_shared<DisplayStepOctaveGroup>(); }
+        class DisplayStepOctaveGroup : public ElementInterface
+        {
+        public:
+            DisplayStepOctaveGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ DisplayStep minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayStepPtr getDisplayStep() const;
+            void setDisplayStep( const DisplayStepPtr& value );
+            /* _________ DisplayOctave minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayOctavePtr getDisplayOctave() const;
+            void setDisplayOctave( const DisplayOctavePtr& value );
+        private:
+            DisplayStepPtr myDisplayStep;
+            DisplayOctavePtr myDisplayOctave;
+        };
+        
+        /* <!--  ID = 6293 [6293] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="unpitched" type="unpitched"/>
+         <xs:complexType name="unpitched">
+         <xs:annotation>
+         <xs:documentation>The unpitched type represents musical elements that are notated on the staff but lack definite pitch, such as unpitched percussion and speaking voice.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="display-step-octave" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType>
+         <xs:group name="display-step-octave">
+         <xs:annotation>
+         <xs:documentation>The display-step-octave group contains the sequence of elements used by both the rest and unpitched elements. This group is used to place rests and unpitched elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the display-step and display-octave elements are interpreted as if in treble clef, with a G in octave 4 on line 2. If not present, the note is placed on the middle line of the staff, generally used for a one-line staff.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="display-step" type="step"/>
+         <xs:element name="display-octave" type="octave"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        class Unpitched;
+        using UnpitchedPtr = std::shared_ptr<Unpitched>;
+        using UnpitchedUPtr = std::unique_ptr<Unpitched>;
+        using UnpitchedSet = std::vector<UnpitchedPtr>;
+        using UnpitchedSetIter = UnpitchedSet::iterator;
+        using UnpitchedSetIterConst = UnpitchedSet::const_iterator;
+        inline UnpitchedPtr makeUnpitched() { return std::make_shared<Unpitched>(); }
+        class Unpitched : public ElementInterface
+        {
+        public:
+            Unpitched();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ DisplayStepOctaveGroup minOccurs = 0, maxOccurs = 1 _________ */
+            DisplayStepOctaveGroupPtr getDisplayStepOctaveGroup() const;
+            void setDisplayStepOctaveGroup( const DisplayStepOctaveGroupPtr& value );
+            bool getHasDisplayStepOctaveGroup() const;
+            void setHasDisplayStepOctaveGroup( const bool value );
+        private:
+            DisplayStepOctaveGroupPtr myDisplayStepOctaveGroup;
+            bool myHasDisplayStepOctaveGroup;
+        };
     }
 }

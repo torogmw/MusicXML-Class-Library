@@ -662,6 +662,115 @@ namespace mx
 				myOctave = value;
 			}
 		}
+        
+        DisplayStepOctaveGroup::DisplayStepOctaveGroup()
+		:myDisplayStep( makeDisplayStep() )
+        ,myDisplayOctave( makeDisplayOctave() )
+		{}
+		bool DisplayStepOctaveGroup::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& DisplayStepOctaveGroup::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& DisplayStepOctaveGroup::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool DisplayStepOctaveGroup::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& DisplayStepOctaveGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			myDisplayStep->streamContents( os, indentLevel, isOneLineOnly );
+            os << std::endl;
+            myDisplayOctave->streamContents( os, indentLevel, isOneLineOnly );
+            return os;
+		}
+        /* _________ DisplayStep minOccurs = 1, maxOccurs = 1 _________ */
+        DisplayStepPtr DisplayStepOctaveGroup::getDisplayStep() const
+        {
+            return myDisplayStep;
+        }
+        void DisplayStepOctaveGroup::setDisplayStep( const DisplayStepPtr& value )
+        {
+            if ( value )
+            {
+                myDisplayStep = value;
+            }
+        }
+        /* _________ DisplayOctave minOccurs = 1, maxOccurs = 1 _________ */
+        DisplayOctavePtr DisplayStepOctaveGroup::getDisplayOctave() const
+        {
+            return myDisplayOctave;
+        }
+        void DisplayStepOctaveGroup::setDisplayOctave( const DisplayOctavePtr& value )
+        {
+            if ( value )
+            {
+                myDisplayOctave = value;
+            }
+        }
+        
+        Unpitched::Unpitched()
+		:myDisplayStepOctaveGroup( makeDisplayStepOctaveGroup() )
+        ,myHasDisplayStepOctaveGroup( false )
+		{}
+		bool Unpitched::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Unpitched::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Unpitched::streamName( std::ostream& os ) const
+		{
+			os << "pitch";
+			return os;
+		}
+		bool Unpitched::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Unpitched::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( myHasDisplayStepOctaveGroup )
+            {
+                os << std::endl;
+                myDisplayStepOctaveGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+        /* _________ DisplayStepOctaveGroup minOccurs = 0, maxOccurs = 1 _________ */
+        DisplayStepOctaveGroupPtr Unpitched::getDisplayStepOctaveGroup() const
+        {
+            return myDisplayStepOctaveGroup;
+        }
+        void Unpitched::setDisplayStepOctaveGroup( const DisplayStepOctaveGroupPtr& value )
+        {
+            if ( value )
+            {
+                myDisplayStepOctaveGroup = value;
+            }
+        }
+        bool Unpitched::getHasDisplayStepOctaveGroup() const
+        {
+            return myHasDisplayStepOctaveGroup;
+        }
+        void Unpitched::setHasDisplayStepOctaveGroup( const bool value )
+        {
+            myHasDisplayStepOctaveGroup = value;
+        }
 #if 1==0
 #endif
         
