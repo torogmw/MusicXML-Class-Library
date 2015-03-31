@@ -865,6 +865,65 @@ namespace mx
             myHasDisplayStepOctaveGroup = value;
         }
         
+		Backup::Backup()
+		:myDuration( makeDuration() )
+        ,myEditorialGroup( makeEditorialGroup() )
+		{}
+		bool Backup::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Backup::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Backup::streamName( std::ostream& os ) const
+		{
+			os << "backup";
+			return os;
+		}
+		bool Backup::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Backup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+            myDuration->toStream( os, indentLevel+1 );
+            os << std::endl;
+            myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+            if ( myEditorialGroup->hasContents() )
+            {
+                os << std::endl;
+            }
+            isOneLineOnly = false;
+            return os;
+		}
+		/* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+		DurationPtr Backup::getDuration() const
+		{
+			return myDuration;
+		}
+		void Backup::setDuration( const DurationPtr& value )
+		{
+			if( value )
+			{
+				myDuration = value;
+			}
+		}
+		/* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr Backup::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void Backup::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
+
 #if 1==0
 #endif
         

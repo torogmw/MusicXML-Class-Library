@@ -542,5 +542,72 @@ namespace mx
             DisplayStepOctaveGroupPtr myDisplayStepOctaveGroup;
             bool myHasDisplayStepOctaveGroup;
         };
+        
+        /* <!--  ID = 6310 [6310] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="backup" type="backup"/>
+         
+         <xs:complexType name="backup">
+         <xs:annotation>
+         <xs:documentation>The backup and forward elements are required to coordinate multiple voices in one part, including music on multiple staves. The backup type is generally used to move between voices and staves. Thus the backup element does not include voice or staff elements. Duration values should always be positive, and should not cross measure boundaries or mid-measure changes in the divisions value.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="duration"/>
+         <xs:group ref="editorial"/>
+         </xs:sequence>
+         </xs:complexType>
+         
+         <xs:group name="duration">
+         <xs:annotation>
+         <xs:documentation>The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="duration" type="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, swing eighths vs. even eighths, or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        class Backup;
+        using BackupPtr = std::shared_ptr<Backup>;
+        using BackupUPtr = std::unique_ptr<Backup>;
+        using BackupSet = std::vector<BackupPtr>;
+        using BackupSetIter = BackupSet::iterator;
+        using BackupSetIterConst = BackupSet::const_iterator;
+        inline BackupPtr makeBackup() { return std::make_shared<Backup>(); }
+        class Backup : public ElementInterface
+        {
+        public:
+            Backup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+            DurationPtr getDuration() const;
+            void setDuration( const DurationPtr& value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
+        private:
+            DurationPtr myDuration;
+            EditorialGroupPtr myEditorialGroup;
+        };
     }
 }
