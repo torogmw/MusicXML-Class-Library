@@ -685,23 +685,18 @@ namespace mx
             DurationPtr getDuration() const;
             void setDuration( const DurationPtr& value );
             /* _________ Footnote minOccurs = 1, maxOccurs = 1 _________ */
-            FootnotePtr getFootnote() const;
-            void setFootnote( const FootnotePtr& value );
-            /* _________ Level minOccurs = 1, maxOccurs = 1 _________ */
-            LevelPtr getLevel() const;
-            void setLevel( const LevelPtr& value );
-            /* _________ Voice minOccurs = 1, maxOccurs = 1 _________ */
-            VoicePtr getVoice() const;
-            void setVoice( const VoicePtr& value );
-            /* _________ Staff minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialVoiceGroupPtr getEditorialVoiceGroup() const;
+            void setEditorialVoiceGroup( const EditorialVoiceGroupPtr& value );
+            /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
             StaffPtr getStaff() const;
             void setStaff( const StaffPtr& value );
+            bool getHasStaff() const;
+            void setHasStaff( const bool value );
         private:
             DurationPtr myDuration;
-            FootnotePtr myFootnote;
-            LevelPtr myLevel;
-            VoicePtr myVoice;
+            EditorialVoiceGroupPtr myEditorialVoiceGroup;
             StaffPtr myStaff;
+            bool myHasStaff;
         };
 
     }
