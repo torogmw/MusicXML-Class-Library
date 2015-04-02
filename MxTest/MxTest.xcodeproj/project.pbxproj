@@ -358,6 +358,7 @@
 		29DF38C41AC3532900606232 /* MetronomeNoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DF38C31AC3532900606232 /* MetronomeNoteTest.cpp */; };
 		29E08C691AC7D8D600744453 /* ToeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E08C671AC7D8D600744453 /* ToeTest.cpp */; };
 		29E08C6C1AC7DB0D00744453 /* HoleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */; };
+		29E620CF1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E620CD1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
 		29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */; };
@@ -780,6 +781,8 @@
 		29E08C681AC7D8D600744453 /* ToeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToeTest.h; sourceTree = "<group>"; };
 		29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HoleTest.cpp; sourceTree = "<group>"; };
 		29E08C6B1AC7DB0D00744453 /* HoleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoleTest.h; sourceTree = "<group>"; };
+		29E620CD1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditorialVoiceGroupTest.cpp; sourceTree = "<group>"; };
+		29E620CE1ACD0CCA00256399 /* EditorialVoiceGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorialVoiceGroupTest.h; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
 		29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayTextTest.cpp; sourceTree = "<group>"; };
 		29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorTest.cpp; sourceTree = "<group>"; };
@@ -1258,6 +1261,8 @@
 				29089EFF1ACAFDB0003943EB /* RestTest.h */,
 				29089F011ACB0066003943EB /* BackupTest.cpp */,
 				29089F021ACB0066003943EB /* BackupTest.h */,
+				29E620CD1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp */,
+				29E620CE1ACD0CCA00256399 /* EditorialVoiceGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1386,6 +1391,7 @@
 				29C0B9E91AAE9398004F86FA /* PartNameTest.cpp in Sources */,
 				297749D31AB21FA000BF2205 /* ArrowDirectionTest.cpp in Sources */,
 				297597E31AACF9930055E101 /* AccidentalTextTest.cpp in Sources */,
+				29E620CF1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp in Sources */,
 				29774A291AB21FA000BF2205 /* TopMarginTest.cpp in Sources */,
 				297749D51AB21FA000BF2205 /* BeatsTest.cpp in Sources */,
 				29774A091AB21FA000BF2205 /* NormalNotesTest.cpp in Sources */,

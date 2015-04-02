@@ -609,5 +609,100 @@ namespace mx
             DurationPtr myDuration;
             EditorialGroupPtr myEditorialGroup;
         };
+        
+        /* <!--  ID = 6313 [6313] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 5 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="forward" type="forward"/>
+         
+         <xs:complexType name="forward">
+         <xs:annotation>
+         <xs:documentation>The backup and forward elements are required to coordinate multiple voices in one part, including music on multiple staves. The forward element is generally used within voices and staves. Duration values should always be positive, and should not cross measure boundaries or mid-measure changes in the divisions value.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="duration"/>
+         <xs:group ref="editorial-voice"/>
+         <xs:group ref="staff" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType>
+         
+         <xs:group name="duration">
+         <xs:annotation>
+         <xs:documentation>The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="duration" type="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, swing eighths vs. even eighths, or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="editorial-voice">
+         <xs:annotation>
+         <xs:documentation>The editorial-voice group supports the common combination of editorial and voice information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         <xs:group ref="voice" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="staff">
+         <xs:annotation>
+         <xs:documentation>The staff element is defined within a group due to its use by both notes and direction elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="staff" type="xs:positiveInteger">
+         <xs:annotation>
+         <xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers, with 1 referring to the top-most staff in a part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group> */
+        
+        class Forward;
+        using ForwardPtr = std::shared_ptr<Forward>;
+        using ForwardUPtr = std::unique_ptr<Forward>;
+        using ForwardSet = std::vector<ForwardPtr>;
+        using ForwardSetIter = ForwardSet::iterator;
+        using ForwardSetIterConst = ForwardSet::const_iterator;
+        inline ForwardPtr makeForward() { return std::make_shared<Forward>(); }
+        class Forward : public ElementInterface
+        {
+        public:
+            Forward();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+            DurationPtr getDuration() const;
+            void setDuration( const DurationPtr& value );
+            /* _________ Footnote minOccurs = 1, maxOccurs = 1 _________ */
+            FootnotePtr getFootnote() const;
+            void setFootnote( const FootnotePtr& value );
+            /* _________ Level minOccurs = 1, maxOccurs = 1 _________ */
+            LevelPtr getLevel() const;
+            void setLevel( const LevelPtr& value );
+            /* _________ Voice minOccurs = 1, maxOccurs = 1 _________ */
+            VoicePtr getVoice() const;
+            void setVoice( const VoicePtr& value );
+            /* _________ Staff minOccurs = 1, maxOccurs = 1 _________ */
+            StaffPtr getStaff() const;
+            void setStaff( const StaffPtr& value );
+        private:
+            DurationPtr myDuration;
+            FootnotePtr myFootnote;
+            LevelPtr myLevel;
+            VoicePtr myVoice;
+            StaffPtr myStaff;
+        };
+
     }
 }
