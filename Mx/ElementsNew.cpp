@@ -1115,10 +1115,24 @@ namespace mx
 		}
 		std::ostream& FiguredBass::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			for ( auto x : myFigureSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            if ( myHasDuration )
+            {
+                os << std::endl;
+                myDuration->toStream( os, indentLevel+1 );
+            }
+            if ( myEditorialGroup->hasContents() )
+            {
+                os << std::endl;
+                myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
 		}
 		FiguredBassAttributesPtr FiguredBass::getAttributes() const
 		{
@@ -1156,7 +1170,7 @@ namespace mx
 		void FiguredBass::clearFigureSet()
 		{
 			myFigureSet.clear();
-			while( FigureSet.size() < 1 )
+			while( myFigureSet.size() < 1 )
 			{
 				myFigureSet.push_back( makeFigure() );
 			}
@@ -1189,7 +1203,18 @@ namespace mx
         {
             myHasDuration = value;
         }
-		
+		/* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr FiguredBass::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void FiguredBass::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
         
 #if 1==0
 #endif

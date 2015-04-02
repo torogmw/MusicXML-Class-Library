@@ -812,6 +812,9 @@ namespace mx
             void setDuration( const DurationPtr& value );
             bool getHasDuration() const;
             void setHasDuration( const bool value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
         private:
             FiguredBassAttributesPtr myAttributes;
             FigureSet myFigureSet;

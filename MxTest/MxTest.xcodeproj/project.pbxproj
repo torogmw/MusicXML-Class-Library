@@ -187,6 +187,7 @@
 		29884C2F1AC27F8B00DD2209 /* FrameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */; };
 		29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */; };
 		29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */; };
+		298A5F901ACDF2B9008F6B5A /* FiguredBassTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298A5F8E1ACDF2B9008F6B5A /* FiguredBassTest.cpp */; };
 		298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B360B1AC8F38C0021CD1E /* TupletTest.cpp */; };
 		298B36121AC8F7D20021CD1E /* ScalingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36101AC8F7D20021CD1E /* ScalingTest.cpp */; };
 		298B36151AC8FBE40021CD1E /* AppearanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */; };
@@ -578,6 +579,8 @@
 		29884C2E1AC27F8B00DD2209 /* FrameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameTest.cpp; sourceTree = "<group>"; };
 		29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PedalTuningTest.cpp; sourceTree = "<group>"; };
 		29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarpPedalsTest.cpp; sourceTree = "<group>"; };
+		298A5F8E1ACDF2B9008F6B5A /* FiguredBassTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FiguredBassTest.cpp; sourceTree = "<group>"; };
+		298A5F8F1ACDF2B9008F6B5A /* FiguredBassTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiguredBassTest.h; sourceTree = "<group>"; };
 		298B360B1AC8F38C0021CD1E /* TupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletTest.cpp; sourceTree = "<group>"; };
 		298B360C1AC8F38C0021CD1E /* TupletTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletTest.h; sourceTree = "<group>"; };
 		298B36101AC8F7D20021CD1E /* ScalingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScalingTest.cpp; sourceTree = "<group>"; };
@@ -813,6 +816,39 @@
 				29BDAB4C1AC5182700C6DE31 /* MxTestCompileControl.h */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		298A5F8D1ACDF29F008F6B5A /* 2015 04 02 */ = {
+			isa = PBXGroup;
+			children = (
+				298B36161AC900930021CD1E /* VirtualInstrumentTest.cpp */,
+				298B36171AC900930021CD1E /* VirtualInstrumentTest.h */,
+				293AD4E81AC92487008DEB6F /* RootTest.cpp */,
+				293AD4E91AC92487008DEB6F /* RootTest.h */,
+				29CCA1871AC928BB007BFE5A /* BassTest.cpp */,
+				29CCA1881AC928BB007BFE5A /* BassTest.h */,
+				29CCA18B1AC929FE007BFE5A /* DegreeTest.cpp */,
+				29CCA18C1AC929FE007BFE5A /* DegreeTest.h */,
+				29C8AD181AC92E3F00F00048 /* PageLayoutTest.cpp */,
+				29C8AD191AC92E3F00F00048 /* PageLayoutTest.h */,
+				29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */,
+				29EECBAB1AC99A4300AB6560 /* SystemLayoutTest.h */,
+				29BBED271ACA545D00C16802 /* StaffLayoutTest.cpp */,
+				29BBED281ACA545D00C16802 /* StaffLayoutTest.h */,
+				29BBED2A1ACA594200C16802 /* PitchTest.cpp */,
+				29BBED2B1ACA594200C16802 /* PitchTest.h */,
+				29BBED2D1ACA5FB100C16802 /* UnpitchedTest.cpp */,
+				29BBED2E1ACA5FB100C16802 /* UnpitchedTest.h */,
+				29BBED301ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp */,
+				29BBED311ACA602100C16802 /* DisplayStepOctaveGroupTest.h */,
+				29089EFE1ACAFDB0003943EB /* RestTest.cpp */,
+				29089EFF1ACAFDB0003943EB /* RestTest.h */,
+				29089F011ACB0066003943EB /* BackupTest.cpp */,
+				29089F021ACB0066003943EB /* BackupTest.h */,
+				29E620CD1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp */,
+				29E620CE1ACD0CCA00256399 /* EditorialVoiceGroupTest.h */,
+			);
+			name = "2015 04 02";
 			sourceTree = "<group>";
 		};
 		298B360A1AC8F36F0021CD1E /* Less Old */ = {
@@ -1237,37 +1273,14 @@
 		29F8F09F1AB62E9200788785 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				298A5F8D1ACDF29F008F6B5A /* 2015 04 02 */,
 				298B360A1AC8F36F0021CD1E /* Less Old */,
 				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
 				29A565051AC49D020059CACD /* Old */,
-				298B36161AC900930021CD1E /* VirtualInstrumentTest.cpp */,
-				298B36171AC900930021CD1E /* VirtualInstrumentTest.h */,
-				293AD4E81AC92487008DEB6F /* RootTest.cpp */,
-				293AD4E91AC92487008DEB6F /* RootTest.h */,
-				29CCA1871AC928BB007BFE5A /* BassTest.cpp */,
-				29CCA1881AC928BB007BFE5A /* BassTest.h */,
-				29CCA18B1AC929FE007BFE5A /* DegreeTest.cpp */,
-				29CCA18C1AC929FE007BFE5A /* DegreeTest.h */,
-				29C8AD181AC92E3F00F00048 /* PageLayoutTest.cpp */,
-				29C8AD191AC92E3F00F00048 /* PageLayoutTest.h */,
-				29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */,
-				29EECBAB1AC99A4300AB6560 /* SystemLayoutTest.h */,
-				29BBED271ACA545D00C16802 /* StaffLayoutTest.cpp */,
-				29BBED281ACA545D00C16802 /* StaffLayoutTest.h */,
-				29BBED2A1ACA594200C16802 /* PitchTest.cpp */,
-				29BBED2B1ACA594200C16802 /* PitchTest.h */,
-				29BBED2D1ACA5FB100C16802 /* UnpitchedTest.cpp */,
-				29BBED2E1ACA5FB100C16802 /* UnpitchedTest.h */,
-				29BBED301ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp */,
-				29BBED311ACA602100C16802 /* DisplayStepOctaveGroupTest.h */,
-				29089EFE1ACAFDB0003943EB /* RestTest.cpp */,
-				29089EFF1ACAFDB0003943EB /* RestTest.h */,
-				29089F011ACB0066003943EB /* BackupTest.cpp */,
-				29089F021ACB0066003943EB /* BackupTest.h */,
-				29E620CD1ACD0CCA00256399 /* EditorialVoiceGroupTest.cpp */,
-				29E620CE1ACD0CCA00256399 /* EditorialVoiceGroupTest.h */,
 				29E620D01ACD100C00256399 /* ForwardTest.cpp */,
 				29E620D11ACD100C00256399 /* ForwardTest.h */,
+				298A5F8E1ACDF2B9008F6B5A /* FiguredBassTest.cpp */,
+				298A5F8F1ACDF2B9008F6B5A /* FiguredBassTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1339,6 +1352,7 @@
 				2935A7331AB5FC3B002859CA /* StoppedTest.cpp in Sources */,
 				29C0B9F31AAE9398004F86FA /* RootAlterTest.cpp in Sources */,
 				292D02D81ABE1A9500005E61 /* KeyTest.cpp in Sources */,
+				298A5F901ACDF2B9008F6B5A /* FiguredBassTest.cpp in Sources */,
 				2935A73C1AB5FC3B002859CA /* WordFontTest.cpp in Sources */,
 				29C0B9C41AAE9398004F86FA /* FermataTest.cpp in Sources */,
 				297749D11AB21FA000BF2205 /* ActualNotesTest.cpp in Sources */,
