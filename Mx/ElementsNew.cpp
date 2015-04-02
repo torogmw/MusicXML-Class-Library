@@ -1216,6 +1216,312 @@ namespace mx
             }
         }
         
+        
+        /**************** BarlineAttributes ****************/
+        /* 6334 */
+        BarlineAttributes::BarlineAttributes()
+        :location( types::RightLeftMiddle::right )
+        ,segno()
+        ,coda()
+        ,divisions()
+        ,hasLocation( false )
+        ,hasSegno( false )
+        ,hasCoda( false )
+        ,hasDivisions( false )
+        {}
+        
+        bool BarlineAttributes::hasValues() const
+        {
+            return hasLocation ||
+            hasSegno ||
+            hasCoda ||
+            hasDivisions;
+        }
+        
+        std::ostream& BarlineAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, location, "location", hasLocation );
+                streamAttribute( os, segno, "segno", hasSegno );
+                streamAttribute( os, coda, "coda", hasCoda );
+                streamAttribute( os, divisions, "divisions", hasDivisions );
+            }
+            return os;
+        }
+        
+		Barline::Barline()
+		:myAttributes( std::make_shared<BarlineAttributes>() )
+		,myBarStyle( makeBarStyle() )
+		,myHasBarStyle( false )
+		,myEditorialGroup( makeEditorialGroup() )
+		,myWavyLine( makeWavyLine() )
+		,myHasWavyLine( false )
+		,mySegno( makeSegno() )
+		,myHasSegno( false )
+		,myCoda( makeCoda() )
+		,myHasCoda( false )
+		,myFermataSet()
+		,myEnding( makeEnding() )
+		,myHasEnding( false )
+		,myRepeat( makeRepeat() )
+		,myHasRepeat( false )
+		{}
+		bool Barline::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Barline::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Barline::streamName( std::ostream& os ) const
+		{
+			os << "barline";
+			return os;
+		}
+		bool Barline::hasContents() const
+		{
+			return myHasBarStyle
+            || myEditorialGroup->hasContents()
+            || myHasWavyLine
+            || myHasSegno
+            || myHasCoda
+            || myFermataSet.size() > 0
+            || myHasEnding
+            || myHasRepeat;
+		}
+		std::ostream& Barline::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( myHasBarStyle )
+            {
+                os << std::endl;
+                myBarStyle->toStream( os, indentLevel+1 );
+            }
+            if ( myEditorialGroup->hasContents() )
+            {
+                os << std::endl;
+                myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            if ( myHasWavyLine )
+            {
+                os << std::endl;
+                myWavyLine->toStream( os, indentLevel+1 );
+            }
+            if ( myHasSegno )
+            {
+                os << std::endl;
+                mySegno->toStream( os, indentLevel+1 );
+            }
+            if ( myHasCoda )
+            {
+                os << std::endl;
+                myCoda->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myFermataSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            if ( myHasEnding )
+            {
+                os << std::endl;
+                myEnding->toStream( os, indentLevel+1 );
+            }
+            if ( myHasRepeat )
+            {
+                os << std::endl;
+                myRepeat->toStream( os, indentLevel+1 );
+            }
+            isOneLineOnly = ! hasContents();
+            if ( ! isOneLineOnly )
+            {
+                os << std::endl;
+            }
+            return os;
+		}
+		BarlineAttributesPtr Barline::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Barline::setAttributes( const BarlineAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ BarStyle minOccurs = 0, maxOccurs = 1 _________ */
+		BarStylePtr Barline::getBarStyle() const
+		{
+			return myBarStyle;
+		}
+		void Barline::setBarStyle( const BarStylePtr& value )
+		{
+			if( value )
+			{
+				myBarStyle = value;
+			}
+		}
+		bool Barline::getHasBarStyle() const
+		{
+			return myHasBarStyle;
+		}
+		void Barline::setHasBarStyle( const bool value )
+		{
+			myHasBarStyle = value;
+		}
+		/* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr Barline::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void Barline::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
+		/* _________ WavyLine minOccurs = 0, maxOccurs = 1 _________ */
+		WavyLinePtr Barline::getWavyLine() const
+		{
+			return myWavyLine;
+		}
+		void Barline::setWavyLine( const WavyLinePtr& value )
+		{
+			if( value )
+			{
+				myWavyLine = value;
+			}
+		}
+		bool Barline::getHasWavyLine() const
+		{
+			return myHasWavyLine;
+		}
+		void Barline::setHasWavyLine( const bool value )
+		{
+			myHasWavyLine = value;
+		}
+		/* _________ Segno minOccurs = 0, maxOccurs = 1 _________ */
+		SegnoPtr Barline::getSegno() const
+		{
+			return mySegno;
+		}
+		void Barline::setSegno( const SegnoPtr& value )
+		{
+			if( value )
+			{
+				mySegno = value;
+			}
+		}
+		bool Barline::getHasSegno() const
+		{
+			return myHasSegno;
+		}
+		void Barline::setHasSegno( const bool value )
+		{
+			myHasSegno = value;
+		}
+		/* _________ Coda minOccurs = 0, maxOccurs = 1 _________ */
+		CodaPtr Barline::getCoda() const
+		{
+			return myCoda;
+		}
+		void Barline::setCoda( const CodaPtr& value )
+		{
+			if( value )
+			{
+				myCoda = value;
+			}
+		}
+		bool Barline::getHasCoda() const
+		{
+			return myHasCoda;
+		}
+		void Barline::setHasCoda( const bool value )
+		{
+			myHasCoda = value;
+		}
+		/* _________ Fermata minOccurs = 0, maxOccurs = 2 _________ */
+		const FermataSet& Barline::getFermataSet() const
+		{
+			return myFermataSet;
+		}
+		void Barline::removeFermata( const FermataSetIterConst& value )
+		{
+			if ( value != myFermataSet.cend() )
+			{
+				if ( myFermataSet.size() > 0 )
+				{
+					myFermataSet.erase( value );
+				}
+			}
+		}
+		void Barline::addFermata( const FermataPtr& value )
+		{
+			if ( value )
+			{
+                if ( myFermataSet.size() < 2 )
+                {
+                    myFermataSet.push_back( value );
+                }
+			}
+		}
+		void Barline::clearFermataSet()
+		{
+			myFermataSet.clear();
+		}
+		FermataPtr Barline::getFermata( const FermataSetIterConst& setIterator ) const
+		{
+			if( setIterator != myFermataSet.cend() )
+			{
+				return *setIterator;
+			}
+			return FermataPtr();
+		}
+		/* _________ Ending minOccurs = 0, maxOccurs = 1 _________ */
+		EndingPtr Barline::getEnding() const
+		{
+			return myEnding;
+		}
+		void Barline::setEnding( const EndingPtr& value )
+		{
+			if( value )
+			{
+				myEnding = value;
+			}
+		}
+		bool Barline::getHasEnding() const
+		{
+			return myHasEnding;
+		}
+		void Barline::setHasEnding( const bool value )
+		{
+			myHasEnding = value;
+		}
+		/* _________ Repeat minOccurs = 0, maxOccurs = 1 _________ */
+		RepeatPtr Barline::getRepeat() const
+		{
+			return myRepeat;
+		}
+		void Barline::setRepeat( const RepeatPtr& value )
+		{
+			if( value )
+			{
+				myRepeat = value;
+			}
+		}
+		bool Barline::getHasRepeat() const
+		{
+			return myHasRepeat;
+		}
+		void Barline::setHasRepeat( const bool value )
+		{
+			myHasRepeat = value;
+		}
+
 #if 1==0
 #endif
         

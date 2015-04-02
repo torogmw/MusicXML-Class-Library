@@ -188,6 +188,7 @@
 		29884C311AC2849C00DD2209 /* PedalTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C301AC2849C00DD2209 /* PedalTuningTest.cpp */; };
 		29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */; };
 		298A5F901ACDF2B9008F6B5A /* FiguredBassTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298A5F8E1ACDF2B9008F6B5A /* FiguredBassTest.cpp */; };
+		298A5F931ACDF9E9008F6B5A /* BarlineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298A5F911ACDF9E9008F6B5A /* BarlineTest.cpp */; };
 		298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B360B1AC8F38C0021CD1E /* TupletTest.cpp */; };
 		298B36121AC8F7D20021CD1E /* ScalingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36101AC8F7D20021CD1E /* ScalingTest.cpp */; };
 		298B36151AC8FBE40021CD1E /* AppearanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36131AC8FBE40021CD1E /* AppearanceTest.cpp */; };
@@ -581,6 +582,8 @@
 		29884C321AC28B0700DD2209 /* HarpPedalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarpPedalsTest.cpp; sourceTree = "<group>"; };
 		298A5F8E1ACDF2B9008F6B5A /* FiguredBassTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FiguredBassTest.cpp; sourceTree = "<group>"; };
 		298A5F8F1ACDF2B9008F6B5A /* FiguredBassTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiguredBassTest.h; sourceTree = "<group>"; };
+		298A5F911ACDF9E9008F6B5A /* BarlineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BarlineTest.cpp; sourceTree = "<group>"; };
+		298A5F921ACDF9E9008F6B5A /* BarlineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarlineTest.h; sourceTree = "<group>"; };
 		298B360B1AC8F38C0021CD1E /* TupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletTest.cpp; sourceTree = "<group>"; };
 		298B360C1AC8F38C0021CD1E /* TupletTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletTest.h; sourceTree = "<group>"; };
 		298B36101AC8F7D20021CD1E /* ScalingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScalingTest.cpp; sourceTree = "<group>"; };
@@ -1281,6 +1284,8 @@
 				29E620D11ACD100C00256399 /* ForwardTest.h */,
 				298A5F8E1ACDF2B9008F6B5A /* FiguredBassTest.cpp */,
 				298A5F8F1ACDF2B9008F6B5A /* FiguredBassTest.h */,
+				298A5F911ACDF9E9008F6B5A /* BarlineTest.cpp */,
+				298A5F921ACDF9E9008F6B5A /* BarlineTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1630,6 +1635,7 @@
 				29C0B9E01AAE9398004F86FA /* OffsetTest.cpp in Sources */,
 				2996E6B91ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp in Sources */,
 				297749EE1AB21FA000BF2205 /* HoleShapeTest.cpp in Sources */,
+				298A5F931ACDF9E9008F6B5A /* BarlineTest.cpp in Sources */,
 				29774A0D1AB21FA000BF2205 /* OtherPercussionTest.cpp in Sources */,
 				297749E81AB21FA000BF2205 /* EnsembleTest.cpp in Sources */,
 				29774A051AB21FA000BF2205 /* ModeTest.cpp in Sources */,

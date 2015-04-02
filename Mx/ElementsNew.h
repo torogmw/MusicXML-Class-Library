@@ -822,5 +822,136 @@ namespace mx
             bool myHasDuration;
             EditorialGroupPtr myEditorialGroup;
         };
+        
+        /* <!--  ID = 6334 [6334] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 9 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="barline" type="barline"/>
+         <xs:complexType name="barline">
+         <xs:annotation>
+         <xs:documentation>If a barline is other than a normal single barline, it should be represented by a barline type that describes it. This includes information about repeats and multiple endings, as well as line style. Barline data is on the same level as the other musical data in a score - a child of a measure in a partwise score, or a part in a timewise score. This allows for barlines within measures, as in dotted barlines that subdivide measures in complex meters. The two fermata elements allow for fermatas on both sides of the barline (the lower one inverted).
+         
+         Barlines have a location attribute to make it easier to process barlines independently of the other musical data in a score. It is often easier to set up measures separately from entering notes. The location attribute must match where the barline element occurs within the rest of the musical data in the score. If location is left, it should be the first element in the measure, aside from the print, bookmark, and link elements. If location is right, it should be the last element, again with the possible exception of the print, bookmark, and link elements. If no location is specified, the right barline is the default. The segno, coda, and divisions attributes work the same way as in the sound element. They are used for playback when barline elements contain segno or coda child elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="bar-style" type="bar-style-color" minOccurs="0"/>
+         <xs:group ref="editorial"/>
+         <xs:element name="wavy-line" type="wavy-line" minOccurs="0"/>
+         <xs:element name="segno" type="empty-print-style-align" minOccurs="0"/>
+         <xs:element name="coda" type="empty-print-style-align" minOccurs="0"/>
+         <xs:element name="fermata" type="fermata" minOccurs="0" maxOccurs="2"/>
+         <xs:element name="ending" type="ending" minOccurs="0"/>
+         <xs:element name="repeat" type="repeat" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attribute name="location" type="right-left-middle" default="right"/>
+         <xs:attribute name="segno" type="xs:token"/>
+         <xs:attribute name="coda" type="xs:token"/>
+         <xs:attribute name="divisions" type="divisions"/>
+         </xs:complexType>
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct BarlineAttributes;
+        using BarlineAttributesPtr = std::shared_ptr<BarlineAttributes>;
+        
+        struct BarlineAttributes : public AttributesInterface
+        {
+        public:
+            BarlineAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::RightLeftMiddle location;
+            types::XsToken segno;
+            types::XsToken coda;
+            types::DivisionsValue divisions;
+            bool hasLocation;
+            bool hasSegno;
+            bool hasCoda;
+            bool hasDivisions;
+        };
+        
+        class Barline;
+        using BarlinePtr = std::shared_ptr<Barline>;
+        using BarlineUPtr = std::unique_ptr<Barline>;
+        using BarlineSet = std::vector<BarlinePtr>;
+        using BarlineSetIter = BarlineSet::iterator;
+        using BarlineSetIterConst = BarlineSet::const_iterator;
+        inline BarlinePtr makeBarline() { return std::make_shared<Barline>(); }
+        class Barline : public ElementInterface
+        {
+        public:
+            Barline();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BarlineAttributesPtr getAttributes() const;
+            void setAttributes( const BarlineAttributesPtr& value );
+            /* _________ BarStyle minOccurs = 0, maxOccurs = 1 _________ */
+            BarStylePtr getBarStyle() const;
+            void setBarStyle( const BarStylePtr& value );
+            bool getHasBarStyle() const;
+            void setHasBarStyle( const bool value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
+            /* _________ WavyLine minOccurs = 0, maxOccurs = 1 _________ */
+            WavyLinePtr getWavyLine() const;
+            void setWavyLine( const WavyLinePtr& value );
+            bool getHasWavyLine() const;
+            void setHasWavyLine( const bool value );
+            /* _________ Segno minOccurs = 0, maxOccurs = 1 _________ */
+            SegnoPtr getSegno() const;
+            void setSegno( const SegnoPtr& value );
+            bool getHasSegno() const;
+            void setHasSegno( const bool value );
+            /* _________ Coda minOccurs = 0, maxOccurs = 1 _________ */
+            CodaPtr getCoda() const;
+            void setCoda( const CodaPtr& value );
+            bool getHasCoda() const;
+            void setHasCoda( const bool value );
+            /* _________ Fermata minOccurs = 0, maxOccurs = 2 _________ */
+            const FermataSet& getFermataSet() const;
+            void addFermata( const FermataPtr& value );
+            void removeFermata( const FermataSetIterConst& value );
+            void clearFermataSet();
+            FermataPtr getFermata( const FermataSetIterConst& setIterator ) const;
+            /* _________ Ending minOccurs = 0, maxOccurs = 1 _________ */
+            EndingPtr getEnding() const;
+            void setEnding( const EndingPtr& value );
+            bool getHasEnding() const;
+            void setHasEnding( const bool value );
+            /* _________ Repeat minOccurs = 0, maxOccurs = 1 _________ */
+            RepeatPtr getRepeat() const;
+            void setRepeat( const RepeatPtr& value );
+            bool getHasRepeat() const;
+            void setHasRepeat( const bool value );
+        private:
+            BarlineAttributesPtr myAttributes;
+            BarStylePtr myBarStyle;
+            bool myHasBarStyle;
+            EditorialGroupPtr myEditorialGroup;
+            WavyLinePtr myWavyLine;
+            bool myHasWavyLine;
+            SegnoPtr mySegno;
+            bool myHasSegno;
+            CodaPtr myCoda;
+            bool myHasCoda;
+            FermataSet myFermataSet;
+            EndingPtr myEnding;
+            bool myHasEnding;
+            RepeatPtr myRepeat;
+            bool myHasRepeat;
+        };
     }
 }
