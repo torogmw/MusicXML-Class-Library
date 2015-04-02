@@ -698,6 +698,126 @@ namespace mx
             StaffPtr myStaff;
             bool myHasStaff;
         };
-
+        /* <!--  ID = 6325 [6325] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="figured-bass" type="figured-bass"/>
+         <xs:complexType name="figured-bass">
+         <xs:annotation>
+         <xs:documentation>The figured-bass element represents figured bass notation. Figured bass elements take their position from the first regular note (not a grace note or chord note) that follows in score order. The optional duration element is used to indicate changes of figures under a note.
+         
+         Figures are ordered from top to bottom. The value of parentheses is "no" if not present.</xs:documentation>
+         </xs:annotation>
+         
+         <xs:sequence>
+         <xs:element name="figure" type="figure" maxOccurs="unbounded"/>
+         <xs:group ref="duration" minOccurs="0"/>
+         <xs:group ref="editorial"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="printout"/>
+         <xs:attribute name="parentheses" type="yes-no"/>
+         </xs:complexType>
+         
+         <xs:group name="duration">
+         <xs:annotation>
+         <xs:documentation>The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="duration" type="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, swing eighths vs. even eighths, or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct FiguredBassAttributes;
+        using FiguredBassAttributesPtr = std::shared_ptr<FiguredBassAttributes>;
+        
+        struct FiguredBassAttributes : public AttributesInterface
+        {
+        public:
+            FiguredBassAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::YesNo printObject;
+            types::YesNo printDot;
+            types::YesNo printSpacing;
+            types::YesNo printLyric;
+            types::YesNo parentheses;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPrintObject;
+            bool hasPrintDot;
+            bool hasPrintSpacing;
+            bool hasPrintLyric;
+            bool hasParentheses;
+        };
+        
+        class FiguredBass;
+        using FiguredBassPtr = std::shared_ptr<FiguredBass>;
+        using FiguredBassUPtr = std::unique_ptr<FiguredBass>;
+        using FiguredBassSet = std::vector<FiguredBassPtr>;
+        using FiguredBassSetIter = FiguredBassSet::iterator;
+        using FiguredBassSetIterConst = FiguredBassSet::const_iterator;
+        inline FiguredBassPtr makeFiguredBass() { return std::make_shared<FiguredBass>(); }
+        class FiguredBass : public ElementInterface
+        {
+        public:
+            FiguredBass();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            FiguredBassAttributesPtr getAttributes() const;
+            void setAttributes( const FiguredBassAttributesPtr& value );
+            /* _________ Figure minOccurs = 1, maxOccurs = unbounded _________ */
+            const FigureSet& getFigureSet() const;
+            void addFigure( const FigurePtr& value );
+            void removeFigure( const FigureSetIterConst& value );
+            void clearFigureSet();
+            FigurePtr getFigure( const FigureSetIterConst& setIterator ) const;
+            /* _________ Duration minOccurs = 0, maxOccurs = 1 _________ */
+            DurationPtr getDuration() const;
+            void setDuration( const DurationPtr& value );
+            bool getHasDuration() const;
+            void setHasDuration( const bool value );
+        private:
+            FiguredBassAttributesPtr myAttributes;
+            FigureSet myFigureSet;
+            DurationPtr myDuration;
+            bool myHasDuration;
+            EditorialGroupPtr myEditorialGroup;
+        };
     }
 }

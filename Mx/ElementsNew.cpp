@@ -1009,6 +1009,188 @@ namespace mx
         {
             myHasStaff = value;
         }
+        
+        
+        
+        /**************** FiguredBassAttributes ****************/
+        /* 6325 */
+        FiguredBassAttributes::FiguredBassAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,printObject( types::YesNo::no )
+        ,printDot( types::YesNo::no )
+        ,printSpacing( types::YesNo::no )
+        ,printLyric( types::YesNo::no )
+        ,parentheses( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPrintObject( false )
+        ,hasPrintDot( false )
+        ,hasPrintSpacing( false )
+        ,hasPrintLyric( false )
+        ,hasParentheses( false )
+        {}
+        
+        bool FiguredBassAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPrintObject ||
+            hasPrintDot ||
+            hasPrintSpacing ||
+            hasPrintLyric ||
+            hasParentheses;
+        }
+        
+        std::ostream& FiguredBassAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+                streamAttribute( os, printDot, "print-dot", hasPrintDot );
+                streamAttribute( os, printSpacing, "print-spacing", hasPrintSpacing );
+                streamAttribute( os, printLyric, "print-lyric", hasPrintLyric );
+                streamAttribute( os, parentheses, "parentheses", hasParentheses );
+            }
+            return os;
+        }
+        
+		FiguredBass::FiguredBass()
+		:myAttributes( std::make_shared<FiguredBassAttributes>() )
+		,myFigureSet()
+        ,myDuration( makeDuration() )
+		,myHasDuration( false )
+        ,myEditorialGroup( makeEditorialGroup() )
+		{
+            myFigureSet.push_back( makeFigure() );
+            
+        }
+		bool FiguredBass::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& FiguredBass::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& FiguredBass::streamName( std::ostream& os ) const
+		{
+			os << "figured-bass";
+			return os;
+		}
+		bool FiguredBass::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& FiguredBass::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		FiguredBassAttributesPtr FiguredBass::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void FiguredBass::setAttributes( const FiguredBassAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ Figure minOccurs = 1, maxOccurs = unbounded _________ */
+		const FigureSet& FiguredBass::getFigureSet() const
+		{
+			return myFigureSet;
+		}
+		void FiguredBass::removeFigure( const FigureSetIterConst& value )
+		{
+			if ( value != myFigureSet.cend() )
+			{
+				if ( myFigureSet.size() > 1 )
+				{
+					myFigureSet.erase( value );
+				}
+			}
+		}
+		void FiguredBass::addFigure( const FigurePtr& value )
+		{
+			if ( value )
+			{
+				myFigureSet.push_back( value );
+			}
+		}
+		void FiguredBass::clearFigureSet()
+		{
+			myFigureSet.clear();
+			while( FigureSet.size() < 1 )
+			{
+				myFigureSet.push_back( makeFigure() );
+			}
+		}
+		FigurePtr FiguredBass::getFigure( const FigureSetIterConst& setIterator ) const
+		{
+			if( setIterator != myFigureSet.cend() )
+			{
+				return *setIterator;
+			}
+			return FigurePtr();
+		}
+        /* _________ Duration minOccurs = 0, maxOccurs = 1 _________ */
+        DurationPtr FiguredBass::getDuration() const
+        {
+            return myDuration;
+        }
+        void FiguredBass::setDuration( const DurationPtr& value )
+        {
+            if ( value )
+            {
+                myDuration = value;
+            }
+        }
+        bool FiguredBass::getHasDuration() const
+        {
+            return myHasDuration;
+        }
+        void FiguredBass::setHasDuration( const bool value )
+        {
+            myHasDuration = value;
+        }
+		
+        
 #if 1==0
 #endif
         
