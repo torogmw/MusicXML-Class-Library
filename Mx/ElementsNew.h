@@ -953,5 +953,71 @@ namespace mx
             RepeatPtr myRepeat;
             bool myHasRepeat;
         };
+        
+        /* <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 1 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="grouping" type="grouping"/>
+         <xs:complexType name="grouping">
+         <xs:annotation>
+         <xs:documentation>The grouping type is used for musical analysis. When the type attribute is "start" or "single", it usually contains one or more feature elements. The number attribute is used for distinguishing between overlapping and hierarchical groupings. The member-of attribute allows for easy distinguishing of what grouping elements are in what hierarchy. Feature elements contained within a "stop" type of grouping may be ignored.
+         
+         This element is flexible to allow for different types of analyses. Future versions of the MusicXML format may add elements that can represent more standardized categories of analysis data, allowing for easier data sharing.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="feature" type="feature" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute name="type" type="start-stop-single" use="required"/>
+         <xs:attribute name="number" type="xs:token" default="1"/>
+         <xs:attribute name="member-of" type="xs:token"/>
+         </xs:complexType>  */
+        
+        struct GroupingAttributes;
+        using GroupingAttributesPtr = std::shared_ptr<GroupingAttributes>;
+        
+        struct GroupingAttributes : public AttributesInterface
+        {
+        public:
+            GroupingAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStopSingle type;
+            types::XsToken number;
+            types::XsToken memberOf;
+            const 	bool hasType;
+            bool hasNumber;
+            bool hasMemberOf;
+        };
+        
+        class Grouping;
+        using GroupingPtr = std::shared_ptr<Grouping>;
+        using GroupingUPtr = std::unique_ptr<Grouping>;
+        using GroupingSet = std::vector<GroupingPtr>;
+        using GroupingSetIter = GroupingSet::iterator;
+        using GroupingSetIterConst = GroupingSet::const_iterator;
+        inline GroupingPtr makeGrouping() { return std::make_shared<Grouping>(); }
+        class Grouping : public ElementInterface
+        {
+        public:
+            Grouping();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            GroupingAttributesPtr getAttributes() const;
+            void setAttributes( const GroupingAttributesPtr& value );
+            /* _________ Feature minOccurs = 0, maxOccurs = unbounded _________ */
+            const FeatureSet& getFeatureSet() const;
+            void addFeature( const FeaturePtr& value );
+            void removeFeature( const FeatureSetIterConst& value );
+            void clearFeatureSet();
+            FeaturePtr getFeature( const FeatureSetIterConst& setIterator ) const;
+        private:
+            GroupingAttributesPtr myAttributes;
+            FeatureSet myFeatureSet;
+        };
+
     }
 }

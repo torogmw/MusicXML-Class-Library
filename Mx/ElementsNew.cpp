@@ -1522,6 +1522,121 @@ namespace mx
 			myHasRepeat = value;
 		}
 
+        
+        
+        /**************** GroupingAttributes ****************/
+        /* 6337 */
+        GroupingAttributes::GroupingAttributes()
+        :type( types::StartStopSingle::single )
+        ,number( types::XsToken( "1" ) )
+        ,memberOf()
+        ,hasType( true )
+        ,hasNumber( false )
+        ,hasMemberOf( false )
+        {}
+        
+        bool GroupingAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber ||
+            hasMemberOf;
+        }
+        
+        std::ostream& GroupingAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, memberOf, "member-of", hasMemberOf );
+            }
+            return os;
+        }
+        
+		Grouping::Grouping()
+		:myAttributes( std::make_shared<GroupingAttributes>() )
+		,myFeatureSet()
+		{}
+		bool Grouping::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Grouping::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Grouping::streamName( std::ostream& os ) const
+		{
+			os << "grouping";
+			return os;
+		}
+		bool Grouping::hasContents() const
+		{
+			return myFeatureSet.size() > 0;
+		}
+		std::ostream& Grouping::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( hasContents() )
+            {
+                for ( auto x : myFeatureSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+		GroupingAttributesPtr Grouping::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Grouping::setAttributes( const GroupingAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ Feature minOccurs = 0, maxOccurs = unbounded _________ */
+		const FeatureSet& Grouping::getFeatureSet() const
+		{
+			return myFeatureSet;
+		}
+		void Grouping::removeFeature( const FeatureSetIterConst& value )
+		{
+			if ( value != myFeatureSet.cend() )
+			{
+				myFeatureSet.erase( value );
+			}
+		}
+		void Grouping::addFeature( const FeaturePtr& value )
+		{
+			if ( value )
+			{
+				myFeatureSet.push_back( value );
+			}
+		}
+		void Grouping::clearFeatureSet()
+		{
+			myFeatureSet.clear();
+		}
+		FeaturePtr Grouping::getFeature( const FeatureSetIterConst& setIterator ) const
+		{
+			if( setIterator != myFeatureSet.cend() )
+			{
+				return *setIterator;
+			}
+			return FeaturePtr();
+		}
+
+        
 #if 1==0
 #endif
         
