@@ -1175,6 +1175,9 @@ namespace mx
             void setScaling( const ScalingPtr& value );
             bool getHasScaling() const;
             void setHasScaling( const bool value );
+            /* _________ LayoutGroup minOccurs = 1, maxOccurs = 1 _________ */
+            LayoutGroupPtr getLayoutGroup() const;
+            void setLayoutGroup( const LayoutGroupPtr& value );
             /* _________ Appearance minOccurs = 0, maxOccurs = 1 _________ */
             AppearancePtr getAppearance() const;
             void setAppearance( const AppearancePtr& value );
@@ -1201,6 +1204,7 @@ namespace mx
             void addLyricLanguage( const LyricLanguagePtr& value );
             void removeLyricLanguage( const LyricLanguageSetIterConst& value );
             void clearLyricLanguageSet();
+            LyricLanguagePtr getLyricLanguage( const LyricLanguageSetIterConst& setIterator ) const;
         private:
             ScalingPtr myScaling;
             bool myHasScaling;

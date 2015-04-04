@@ -76,6 +76,7 @@
 		296236071AC5C43A00F3E007 /* SystemDividersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296236051AC5C43A00F3E007 /* SystemDividersTest.cpp */; };
 		2962360A1AC5C7DB00F3E007 /* StrongAccentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296236081AC5C7DB00F3E007 /* StrongAccentTest.cpp */; };
 		2962360D1AC5CE1600F3E007 /* FigureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962360B1AC5CE1600F3E007 /* FigureTest.cpp */; };
+		296C11911ACF77B6004FAD06 /* DefaultsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */; };
 		2971F50A1AC320B0007C2EF7 /* MetronomeTupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */; };
 		297597E31AACF9930055E101 /* AccidentalTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297597E11AACF9930055E101 /* AccidentalTextTest.cpp */; };
 		297749D01AB21FA000BF2205 /* AccordionMiddleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2977496B1AB21FA000BF2205 /* AccordionMiddleTest.cpp */; };
@@ -474,6 +475,8 @@
 		296236091AC5C7DB00F3E007 /* StrongAccentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrongAccentTest.h; sourceTree = "<group>"; };
 		2962360B1AC5CE1600F3E007 /* FigureTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FigureTest.cpp; sourceTree = "<group>"; };
 		2962360C1AC5CE1600F3E007 /* FigureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureTest.h; sourceTree = "<group>"; };
+		296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultsTest.cpp; sourceTree = "<group>"; };
+		296C11901ACF77B6004FAD06 /* DefaultsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultsTest.h; sourceTree = "<group>"; };
 		2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTupletTest.cpp; sourceTree = "<group>"; };
 		297597E11AACF9930055E101 /* AccidentalTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccidentalTextTest.cpp; sourceTree = "<group>"; };
 		2977496B1AB21FA000BF2205 /* AccordionMiddleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AccordionMiddleTest.cpp; sourceTree = "<group>"; };
@@ -1301,6 +1304,8 @@
 				294D218A1ACF670D00A8DACC /* WorkTest.h */,
 				2994F0871ACF6FBD005AB20E /* LayoutGroupTest.cpp */,
 				2994F0881ACF6FBD005AB20E /* LayoutGroupTest.h */,
+				296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */,
+				296C11901ACF77B6004FAD06 /* DefaultsTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1631,6 +1636,7 @@
 				29C0B9CA1AAE9398004F86FA /* FunctionTest.cpp in Sources */,
 				29E08C6C1AC7DB0D00744453 /* HoleTest.cpp in Sources */,
 				29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */,
+				296C11911ACF77B6004FAD06 /* DefaultsTest.cpp in Sources */,
 				29C0B9CE1AAE9398004F86FA /* GroupNameTest.cpp in Sources */,
 				29C0B9EA1AAE9398004F86FA /* PartSymbolTest.cpp in Sources */,
 				297749F01AB21FA000BF2205 /* InstrumentAbbreviationTest.cpp in Sources */,

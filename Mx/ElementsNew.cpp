@@ -1916,14 +1916,61 @@ namespace mx
 		}
 		bool Defaults::hasContents() const
 		{
-			return true;
+			return myHasScaling
+            || myLayoutGroup->hasContents()
+            || myHasAppearance
+            || myHasMusicFont
+            || myHasWordFont
+            || myLyricFontSet.size() > 0
+            || myLyricLanguageSet.size() > 0;
 		}
 		std::ostream& Defaults::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			if ( hasContents() )
+            {
+                if ( myHasScaling )
+                {
+                    os << std::endl;
+                    myScaling->toStream( os, indentLevel+1 );
+                }
+                if ( myLayoutGroup->hasContents() )
+                {
+                    os << std::endl;
+                    myLayoutGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                if ( myHasAppearance )
+                {
+                    os << std::endl;
+                    myAppearance->toStream( os, indentLevel+1 );
+                }
+                if ( myHasMusicFont )
+                {
+                    os << std::endl;
+                    myMusicFont->toStream( os, indentLevel+1 );
+                }
+                if ( myHasWordFont )
+                {
+                    os << std::endl;
+                    myWordFont->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myLyricFontSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myLyricLanguageSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                isOneLineOnly = false;
+                os << std::endl;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
 		}
         /* _________ Scaling minOccurs = 0, maxOccurs = 1 _________ */
 		ScalingPtr Defaults::getScaling() const
@@ -1945,6 +1992,18 @@ namespace mx
 		{
 			myHasScaling = value;
 		}
+        /* _________ LayoutGroup minOccurs = 1, maxOccurs = 1 _________ */
+        LayoutGroupPtr Defaults::getLayoutGroup() const
+        {
+            return myLayoutGroup;
+        }
+        void Defaults::setLayoutGroup( const LayoutGroupPtr& value )
+        {
+            if ( value )
+            {
+                myLayoutGroup = value;
+            }
+        }
 		/* _________ Appearance minOccurs = 0, maxOccurs = 1 _________ */
 		AppearancePtr Defaults::getAppearance() const
 		{
