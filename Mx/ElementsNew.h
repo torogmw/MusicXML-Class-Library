@@ -1122,5 +1122,96 @@ namespace mx
             bool myHasSystemLayout;
             StaffLayoutSet myStaffLayoutSet;
         };
+        
+        /* <!--  ID = 6379 [6379] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 31 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="defaults" type="defaults" minOccurs="0"/>
+         <xs:complexType name="defaults">
+         <xs:annotation>
+         <xs:documentation>The defaults type specifies score-wide defaults for scaling, layout, and appearance.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="scaling" type="scaling" minOccurs="0"/>
+         <xs:group ref="layout"/>
+         <xs:element name="appearance" type="appearance" minOccurs="0"/>
+         <xs:element name="music-font" type="empty-font" minOccurs="0"/>
+         <xs:element name="word-font" type="empty-font" minOccurs="0"/>
+         <xs:element name="lyric-font" type="lyric-font" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="lyric-language" type="lyric-language" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:complexType>
+         <xs:group name="layout">
+         <xs:annotation>
+         <xs:documentation>The layout group specifies the sequence of page, system, and staff layout elements that is common to both the defaults and print elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="page-layout" type="page-layout" minOccurs="0"/>
+         <xs:element name="system-layout" type="system-layout" minOccurs="0"/>
+         <xs:element name="staff-layout" type="staff-layout" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        class Defaults;
+        using DefaultsPtr = std::shared_ptr<Defaults>;
+        using DefaultsUPtr = std::unique_ptr<Defaults>;
+        using DefaultsSet = std::vector<DefaultsPtr>;
+        using DefaultsSetIter = DefaultsSet::iterator;
+        using DefaultsSetIterConst = DefaultsSet::const_iterator;
+        inline DefaultsPtr makeDefaults() { return std::make_shared<Defaults>(); }
+        class Defaults : public ElementInterface
+        {
+        public:
+            Defaults();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Scaling minOccurs = 0, maxOccurs = 1 _________ */
+            ScalingPtr getScaling() const;
+            void setScaling( const ScalingPtr& value );
+            bool getHasScaling() const;
+            void setHasScaling( const bool value );
+            /* _________ Appearance minOccurs = 0, maxOccurs = 1 _________ */
+            AppearancePtr getAppearance() const;
+            void setAppearance( const AppearancePtr& value );
+            bool getHasAppearance() const;
+            void setHasAppearance( const bool value );
+            /* _________ MusicFont minOccurs = 0, maxOccurs = 1 _________ */
+            MusicFontPtr getMusicFont() const;
+            void setMusicFont( const MusicFontPtr& value );
+            bool getHasMusicFont() const;
+            void setHasMusicFont( const bool value );
+            /* _________ WordFont minOccurs = 0, maxOccurs = 1 _________ */
+            WordFontPtr getWordFont() const;
+            void setWordFont( const WordFontPtr& value );
+            bool getHasWordFont() const;
+            void setHasWordFont( const bool value );
+            /* _________ LyricFont minOccurs = 0, maxOccurs = unbounded _________ */
+            const LyricFontSet& getLyricFontSet() const;
+            void addLyricFont( const LyricFontPtr& value );
+            void removeLyricFont( const LyricFontSetIterConst& value );
+            void clearLyricFontSet();
+            /* _________ LyricLanguage minOccurs = 0, maxOccurs = unbounded _________ */
+            const LyricLanguageSet& getLyricLanguageSet() const;
+            void addLyricLanguage( const LyricLanguagePtr& value );
+            void removeLyricLanguage( const LyricLanguageSetIterConst& value );
+            void clearLyricLanguageSet();
+        private:
+            ScalingPtr myScaling;
+            bool myHasScaling;
+            LayoutGroupPtr myLayoutGroup;
+            AppearancePtr myAppearance;
+            bool myHasAppearance;
+            MusicFontPtr myMusicFont;
+            bool myHasMusicFont;
+            WordFontPtr myWordFont;
+            bool myHasWordFont;
+            LyricFontSet myLyricFontSet;
+            LyricLanguageSet myLyricLanguageSet;
+        };
     }
 }
