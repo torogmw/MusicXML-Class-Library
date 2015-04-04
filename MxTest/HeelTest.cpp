@@ -4,7 +4,7 @@
 #include "Elements.h"
 #include "HeelTest.h"
 #include "MidiInstrumentTest.h"
-#include "MidiDeviceTest.cpp"
+/* #include "MidiDeviceTest.cpp" */
 
 
 using namespace mx::e;

@@ -3,7 +3,7 @@
 #include "MxTestHelper.h"
 #include "RootTest.h"
 #include "MidiInstrumentTest.h"
-#include "MidiDeviceTest.cpp"
+/* #include "MidiDeviceTest.cpp" */
 
 
 using namespace mx::e;

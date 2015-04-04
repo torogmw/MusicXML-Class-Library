@@ -4,7 +4,7 @@
 #include "StaffLayoutTest.h"
 #include "SystemMarginsTest.h"
 #include "SystemDividersTest.h"
-#include "MidiDeviceTest.cpp"
+/* #include "MidiDeviceTest.cpp" */
 
 
 using namespace mx::e;

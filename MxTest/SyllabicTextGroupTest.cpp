@@ -6,7 +6,7 @@
 #include "ElisionSyllabicTextGroupTest.h"
 #include "SyllabicTextGroupTest.h"
 #include "MidiInstrumentTest.h"
-#include "MidiDeviceTest.cpp"
+/* #include "MidiDeviceTest.cpp" */
 
 
 using namespace mx::e;

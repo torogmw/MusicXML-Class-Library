@@ -6,7 +6,7 @@
 #include "TupletActualTest.h"
 #include "TupletNormalTest.h"
 #include "MidiInstrumentTest.h"
-#include "MidiDeviceTest.cpp"
+/* #include "MidiDeviceTest.cpp" */
 
 
 using namespace mx::e;

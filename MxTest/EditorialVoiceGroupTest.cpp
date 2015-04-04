@@ -5,7 +5,7 @@
 #include "Elements.h"
 #include "EditorialVoiceGroupTest.h"
 #include "MidiInstrumentTest.h"
-#include "MidiDeviceTest.cpp"
+/* #include "MidiDeviceTest.cpp" */
 
 
 using namespace mx::e;
