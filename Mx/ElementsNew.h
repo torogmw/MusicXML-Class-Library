@@ -24,7 +24,7 @@ namespace mx
          <xs:element name="ornaments" type="ornaments"/>
          <xs:complexType name="ornaments">
          <xs:annotation>
-         <xs:documentation>Ornaments can be any of several types, followed optionally by accidentals. The accidental-mark element's content is represented the same as an accidental element, but with a different name to reflect the different musical meaning.</xs:documentation>
+         <xs:documentation>OrnamentsChoice can be any of several types, followed optionally by accidentals. The accidental-mark element's content is represented the same as an accidental element, but with a different name to reflect the different musical meaning.</xs:documentation>
          </xs:annotation>
          <xs:sequence minOccurs="0" maxOccurs="unbounded">
          <xs:choice>
@@ -90,26 +90,41 @@ namespace mx
          </xs:sequence>
          </xs:complexType> */
         
-        class Ornaments;
-        using OrnamentsPtr = std::shared_ptr<Ornaments>;
-        using OrnamentsUPtr = std::unique_ptr<Ornaments>;
-        using OrnamentsSet = std::vector<OrnamentsPtr>;
-        using OrnamentsSetIter = OrnamentsSet::iterator;
-        using OrnamentsSetIterConst = OrnamentsSet::const_iterator;
-        inline OrnamentsPtr makeOrnaments() { return std::make_shared<Ornaments>(); }
-        class Ornaments : public ElementInterface
+        class OrnamentsChoice;
+        using OrnamentsChoicePtr = std::shared_ptr<OrnamentsChoice>;
+        using OrnamentsChoiceUPtr = std::unique_ptr<OrnamentsChoice>;
+        using OrnamentsChoiceSet = std::vector<OrnamentsChoicePtr>;
+        using OrnamentsChoiceSetIter = OrnamentsChoiceSet::iterator;
+        using OrnamentsChoiceSetIterConst = OrnamentsChoiceSet::const_iterator;
+        inline OrnamentsChoicePtr makeOrnamentsChoice() { return std::make_shared<OrnamentsChoice>(); }
+        class OrnamentsChoice : public ElementInterface
         {
         public:
             enum class Choice
             {
-                trillMark = 1
+                trillMark = 1,
+                turn = 2,
+                delayedTurn = 3,
+                invertedTurn = 4,
+                delayedInvertedTurn = 5,
+                verticalTurn = 6,
+                shake = 7,
+                wavyLine = 8,
+                mordent = 9,
+                invertedMordent = 10,
+                schleifer = 11,
+                tremolo = 12,
+                otherOrnament = 13
             };
-            Ornaments();
+            OrnamentsChoice();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice enum _________ */
+            OrnamentsChoice::Choice getChoice() const;
+            void setChoice( const OrnamentsChoice::Choice value );
             /* _________ TrillMark minOccurs = 1, maxOccurs = 1 _________ */
             TrillMarkPtr getTrillMark() const;
             void setTrillMark( const TrillMarkPtr& value );
@@ -149,11 +164,6 @@ namespace mx
             /* _________ OtherOrnament minOccurs = 1, maxOccurs = 1 _________ */
             OtherOrnamentPtr getOtherOrnament() const;
             void setOtherOrnament( const OtherOrnamentPtr& value );
-            /* _________ AccidentalMark minOccurs = 0, maxOccurs = unbounded _________ */
-            const AccidentalMarkSet& getAccidentalMarkSet() const;
-            void addAccidentalMark( const AccidentalMarkPtr& value );
-            void removeAccidentalMark( const AccidentalMarkSetIterConst& value );
-            void clearAccidentalMarkSet();
         private:
             Choice myChoice;
             TrillMarkPtr myTrillMark;
@@ -169,8 +179,7 @@ namespace mx
             SchleiferPtr mySchleifer;
             TremoloPtr myTremolo;
             OtherOrnamentPtr myOtherOrnament;
-            AccidentalMarkSet myAccidentalMarkSet;
         };
-
+        
     }
 }

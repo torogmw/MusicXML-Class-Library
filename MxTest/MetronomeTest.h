@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include "MxTestHelper.h"
 #include "Elements.h"
 
