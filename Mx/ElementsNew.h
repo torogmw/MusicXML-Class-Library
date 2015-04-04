@@ -1195,6 +1195,7 @@ namespace mx
             void addLyricFont( const LyricFontPtr& value );
             void removeLyricFont( const LyricFontSetIterConst& value );
             void clearLyricFontSet();
+            LyricFontPtr getLyricFont( const LyricFontSetIterConst& setIterator ) const;
             /* _________ LyricLanguage minOccurs = 0, maxOccurs = unbounded _________ */
             const LyricLanguageSet& getLyricLanguageSet() const;
             void addLyricLanguage( const LyricLanguagePtr& value );

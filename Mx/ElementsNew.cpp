@@ -1887,6 +1887,188 @@ namespace mx
             }
             return StaffLayoutPtr();
         }
+        
+        Defaults::Defaults()
+		:myScaling( makeScaling() )
+		,myHasScaling( false )
+		,myLayoutGroup( makeLayoutGroup() )
+        ,myAppearance( makeAppearance() )
+		,myHasAppearance( false )
+		,myMusicFont( makeMusicFont() )
+		,myHasMusicFont( false )
+		,myWordFont( makeWordFont() )
+		,myHasWordFont( false )
+		,myLyricFontSet()
+		,myLyricLanguageSet()
+		{}
+		bool Defaults::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Defaults::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Defaults::streamName( std::ostream& os ) const
+		{
+			os << "defaults";
+			return os;
+		}
+		bool Defaults::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Defaults::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+        /* _________ Scaling minOccurs = 0, maxOccurs = 1 _________ */
+		ScalingPtr Defaults::getScaling() const
+		{
+			return myScaling;
+		}
+		void Defaults::setScaling( const ScalingPtr& value )
+		{
+			if( value )
+			{
+				myScaling = value;
+			}
+		}
+		bool Defaults::getHasScaling() const
+		{
+			return myHasScaling;
+		}
+		void Defaults::setHasScaling( const bool value )
+		{
+			myHasScaling = value;
+		}
+		/* _________ Appearance minOccurs = 0, maxOccurs = 1 _________ */
+		AppearancePtr Defaults::getAppearance() const
+		{
+			return myAppearance;
+		}
+		void Defaults::setAppearance( const AppearancePtr& value )
+		{
+			if( value )
+			{
+				myAppearance = value;
+			}
+		}
+		bool Defaults::getHasAppearance() const
+		{
+			return myHasAppearance;
+		}
+		void Defaults::setHasAppearance( const bool value )
+		{
+			myHasAppearance = value;
+		}
+		
+		/* _________ MusicFont minOccurs = 0, maxOccurs = 1 _________ */
+		MusicFontPtr Defaults::getMusicFont() const
+		{
+			return myMusicFont;
+		}
+		void Defaults::setMusicFont( const MusicFontPtr& value )
+		{
+			if( value )
+			{
+				myMusicFont = value;
+			}
+		}
+		bool Defaults::getHasMusicFont() const
+		{
+			return myHasMusicFont;
+		}
+		void Defaults::setHasMusicFont( const bool value )
+		{
+			myHasMusicFont = value;
+		}
+		/* _________ WordFont minOccurs = 0, maxOccurs = 1 _________ */
+		WordFontPtr Defaults::getWordFont() const
+		{
+			return myWordFont;
+		}
+		void Defaults::setWordFont( const WordFontPtr& value )
+		{
+			if( value )
+			{
+				myWordFont = value;
+			}
+		}
+		bool Defaults::getHasWordFont() const
+		{
+			return myHasWordFont;
+		}
+		void Defaults::setHasWordFont( const bool value )
+		{
+			myHasWordFont = value;
+		}
+		/* _________ LyricFont minOccurs = 0, maxOccurs = unbounded _________ */
+		const LyricFontSet& Defaults::getLyricFontSet() const
+		{
+			return myLyricFontSet;
+		}
+		void Defaults::removeLyricFont( const LyricFontSetIterConst& value )
+		{
+			if ( value != myLyricFontSet.cend() )
+			{
+				myLyricFontSet.erase( value );
+			}
+		}
+		void Defaults::addLyricFont( const LyricFontPtr& value )
+		{
+			if ( value )
+			{
+				myLyricFontSet.push_back( value );
+			}
+		}
+		void Defaults::clearLyricFontSet()
+		{
+			myLyricFontSet.clear();
+		}
+		LyricFontPtr Defaults::getLyricFont( const LyricFontSetIterConst& setIterator ) const
+		{
+			if( setIterator != myLyricFontSet.cend() )
+			{
+				return *setIterator;
+			}
+			return LyricFontPtr();
+		}
+		/* _________ LyricLanguage minOccurs = 0, maxOccurs = unbounded _________ */
+		const LyricLanguageSet& Defaults::getLyricLanguageSet() const
+		{
+			return myLyricLanguageSet;
+		}
+		void Defaults::removeLyricLanguage( const LyricLanguageSetIterConst& value )
+		{
+			if ( value != myLyricLanguageSet.cend() )
+			{
+				myLyricLanguageSet.erase( value );
+			}
+		}
+		void Defaults::addLyricLanguage( const LyricLanguagePtr& value )
+		{
+			if ( value )
+			{
+				myLyricLanguageSet.push_back( value );
+			}
+		}
+		void Defaults::clearLyricLanguageSet()
+		{
+			myLyricLanguageSet.clear();
+		}
+		LyricLanguagePtr Defaults::getLyricLanguage( const LyricLanguageSetIterConst& setIterator ) const
+		{
+			if( setIterator != myLyricLanguageSet.cend() )
+			{
+				return *setIterator;
+			}
+			return LyricLanguagePtr();
+		}
+
 #if 1==0
 #endif
         
