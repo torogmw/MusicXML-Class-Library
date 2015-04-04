@@ -69,6 +69,7 @@
 		2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2939CD411AA2999500556D00 /* FontSizeTest.cpp */; };
 		293AD4EA1AC92487008DEB6F /* RootTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293AD4E81AC92487008DEB6F /* RootTest.cpp */; };
 		294D21881ACF62C100A8DACC /* GroupingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294D21861ACF62C100A8DACC /* GroupingTest.cpp */; };
+		294D218B1ACF670D00A8DACC /* WorkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294D21891ACF670D00A8DACC /* WorkTest.cpp */; };
 		295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */; };
 		296236011AC5BDBC00F3E007 /* PageMarginsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296235FF1AC5BDBC00F3E007 /* PageMarginsTest.cpp */; };
 		296236041AC5C19600F3E007 /* SystemMarginsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296236021AC5C19600F3E007 /* SystemMarginsTest.cpp */; };
@@ -227,6 +228,7 @@
 		298C81EA1AB6A8DC006619A9 /* TurnTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298C81CC1AB6A8DC006619A9 /* TurnTest.cpp */; };
 		298C81EB1AB6A8DC006619A9 /* WavyLineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298C81CD1AB6A8DC006619A9 /* WavyLineTest.cpp */; };
 		298C81EC1AB6A8DC006619A9 /* WedgeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298C81CE1AB6A8DC006619A9 /* WedgeTest.cpp */; };
+		2994F0891ACF6FBD005AB20E /* LayoutGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2994F0871ACF6FBD005AB20E /* LayoutGroupTest.cpp */; };
 		2996E6B91ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2996E6B71ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp */; };
 		29A1D92A1AC5F11B00BEFF24 /* NoteheadTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D9281AC5F11B00BEFF24 /* NoteheadTextTest.cpp */; };
 		29A1D92E1AC5F9F200BEFF24 /* ArticulationsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D92C1AC5F9F200BEFF24 /* ArticulationsTest.cpp */; };
@@ -459,6 +461,8 @@
 		293AD4E91AC92487008DEB6F /* RootTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTest.h; sourceTree = "<group>"; };
 		294D21861ACF62C100A8DACC /* GroupingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GroupingTest.cpp; sourceTree = "<group>"; };
 		294D21871ACF62C100A8DACC /* GroupingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupingTest.h; sourceTree = "<group>"; };
+		294D21891ACF670D00A8DACC /* WorkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkTest.cpp; sourceTree = "<group>"; };
+		294D218A1ACF670D00A8DACC /* WorkTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkTest.h; sourceTree = "<group>"; };
 		295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicsTest.cpp; sourceTree = "<group>"; };
 		296235FF1AC5BDBC00F3E007 /* PageMarginsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageMarginsTest.cpp; sourceTree = "<group>"; };
 		296236001AC5BDBC00F3E007 /* PageMarginsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageMarginsTest.h; sourceTree = "<group>"; };
@@ -629,6 +633,8 @@
 		298C81CC1AB6A8DC006619A9 /* TurnTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TurnTest.cpp; sourceTree = "<group>"; };
 		298C81CD1AB6A8DC006619A9 /* WavyLineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WavyLineTest.cpp; sourceTree = "<group>"; };
 		298C81CE1AB6A8DC006619A9 /* WedgeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WedgeTest.cpp; sourceTree = "<group>"; };
+		2994F0871ACF6FBD005AB20E /* LayoutGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutGroupTest.cpp; sourceTree = "<group>"; };
+		2994F0881ACF6FBD005AB20E /* LayoutGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutGroupTest.h; sourceTree = "<group>"; };
 		2996E6B71ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConvenienceMakeFunctionsTest.cpp; sourceTree = "<group>"; };
 		29A1D9281AC5F11B00BEFF24 /* NoteheadTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoteheadTextTest.cpp; sourceTree = "<group>"; };
 		29A1D9291AC5F11B00BEFF24 /* NoteheadTextTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteheadTextTest.h; sourceTree = "<group>"; };
@@ -1291,6 +1297,10 @@
 				298A5F921ACDF9E9008F6B5A /* BarlineTest.h */,
 				294D21861ACF62C100A8DACC /* GroupingTest.cpp */,
 				294D21871ACF62C100A8DACC /* GroupingTest.h */,
+				294D21891ACF670D00A8DACC /* WorkTest.cpp */,
+				294D218A1ACF670D00A8DACC /* WorkTest.h */,
+				2994F0871ACF6FBD005AB20E /* LayoutGroupTest.cpp */,
+				2994F0881ACF6FBD005AB20E /* LayoutGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1434,6 +1444,7 @@
 				298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */,
 				29A564F81AC3C2540059CACD /* StickTest.cpp in Sources */,
 				29CEB4A41AB4C0FA00D6AEFC /* GroupTimeTest.cpp in Sources */,
+				2994F0891ACF6FBD005AB20E /* LayoutGroupTest.cpp in Sources */,
 				297749F71AB21FA000BF2205 /* KeyStepTest.cpp in Sources */,
 				298C81DB1AB6A8DC006619A9 /* InvertedTurnTest.cpp in Sources */,
 				29774A2B1AB21FA000BF2205 /* TuningAlterTest.cpp in Sources */,
@@ -1643,6 +1654,7 @@
 				297749EE1AB21FA000BF2205 /* HoleShapeTest.cpp in Sources */,
 				298A5F931ACDF9E9008F6B5A /* BarlineTest.cpp in Sources */,
 				29774A0D1AB21FA000BF2205 /* OtherPercussionTest.cpp in Sources */,
+				294D218B1ACF670D00A8DACC /* WorkTest.cpp in Sources */,
 				297749E81AB21FA000BF2205 /* EnsembleTest.cpp in Sources */,
 				29774A051AB21FA000BF2205 /* ModeTest.cpp in Sources */,
 				29CEB4A81AB4C0FA00D6AEFC /* NaturalTest.cpp in Sources */,

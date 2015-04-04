@@ -1018,6 +1018,109 @@ namespace mx
             GroupingAttributesPtr myAttributes;
             FeatureSet myFeatureSet;
         };
-
+        /* <!--  ID = 6359 [6359] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="work" type="work" minOccurs="0"/>
+         <xs:complexType name="work">
+         <xs:annotation>
+         <xs:documentation>LayoutGroups are optionally identified by number and title. The work type also may indicate a link to the opus document that composes multiple scores into a collection.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="work-number" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The work-number element specifies the number of a work, such as its opus number.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="work-title" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The work-title element specifies the title of a work, not including its opus or other work number.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="opus" type="opus" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType> */
+        
+        class Work;
+        using WorkPtr = std::shared_ptr<Work>;
+        using WorkUPtr = std::unique_ptr<Work>;
+        using WorkSet = std::vector<WorkPtr>;
+        using WorkSetIter = WorkSet::iterator;
+        using WorkSetIterConst = WorkSet::const_iterator;
+        inline WorkPtr makeWork() { return std::make_shared<Work>(); }
+        class Work : public ElementInterface
+        {
+        public:
+            Work();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ WorkNumber minOccurs = 0, maxOccurs = 1 _________ */
+            WorkNumberPtr getWorkNumber() const;
+            void setWorkNumber( const WorkNumberPtr& value );
+            bool getHasWorkNumber() const;
+            void setHasWorkNumber( const bool value );
+            /* _________ WorkTitle minOccurs = 0, maxOccurs = 1 _________ */
+            WorkTitlePtr getWorkTitle() const;
+            void setWorkTitle( const WorkTitlePtr& value );
+            bool getHasWorkTitle() const;
+            void setHasWorkTitle( const bool value );
+            /* _________ Opus minOccurs = 0, maxOccurs = 1 _________ */
+            OpusPtr getOpus() const;
+            void setOpus( const OpusPtr& value );
+            bool getHasOpus() const;
+            void setHasOpus( const bool value );
+        private:
+            WorkNumberPtr myWorkNumber;
+            bool myHasWorkNumber;
+            WorkTitlePtr myWorkTitle;
+            bool myHasWorkTitle;
+            OpusPtr myOpus;
+            bool myHasOpus;
+        };
+        
+        class LayoutGroup;
+        using LayoutGroupPtr = std::shared_ptr<LayoutGroup>;
+        using LayoutGroupUPtr = std::unique_ptr<LayoutGroup>;
+        using LayoutGroupSet = std::vector<LayoutGroupPtr>;
+        using LayoutGroupSetIter = LayoutGroupSet::iterator;
+        using LayoutGroupSetIterConst = LayoutGroupSet::const_iterator;
+        inline LayoutGroupPtr makeLayoutGroup() { return std::make_shared<LayoutGroup>(); }
+        class LayoutGroup : public ElementInterface
+        {
+        public:
+            LayoutGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ PageLayout minOccurs = 0, maxOccurs = 1 _________ */
+            PageLayoutPtr getPageLayout() const;
+            void setPageLayout( const PageLayoutPtr& value );
+            bool getHasPageLayout() const;
+            void setHasPageLayout( const bool value );
+            /* _________ SystemLayout minOccurs = 0, maxOccurs = 1 _________ */
+            SystemLayoutPtr getSystemLayout() const;
+            void setSystemLayout( const SystemLayoutPtr& value );
+            bool getHasSystemLayout() const;
+            void setHasSystemLayout( const bool value );
+            /* _________ StaffLayout minOccurs = 0, maxOccurs = unbounded _________ */
+            const StaffLayoutSet& getStaffLayoutSet() const;
+            void addStaffLayout( const StaffLayoutPtr& value );
+            void removeStaffLayout( const StaffLayoutSetIterConst& value );
+            void clearStaffLayoutSet();
+            StaffLayoutPtr getStaffLayout( const StaffLayoutSetIterConst& setIterator ) const;
+        private:
+            PageLayoutPtr myPageLayout;
+            bool myHasPageLayout;
+            SystemLayoutPtr mySystemLayout;
+            bool myHasSystemLayout;
+            StaffLayoutSet myStaffLayoutSet;
+        };
     }
 }

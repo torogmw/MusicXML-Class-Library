@@ -1635,8 +1635,258 @@ namespace mx
 			}
 			return FeaturePtr();
 		}
-
         
+        Work::Work()
+		:myWorkNumber( makeWorkNumber() )
+		,myHasWorkNumber( false )
+		,myWorkTitle( makeWorkTitle() )
+		,myHasWorkTitle( false )
+		,myOpus( makeOpus() )
+		,myHasOpus( false )
+		{}
+		bool Work::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Work::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Work::streamName( std::ostream& os ) const
+		{
+			os << "work";
+			return os;
+		}
+		bool Work::hasContents() const
+		{
+			return myHasWorkNumber || myHasWorkTitle || myHasOpus;
+		}
+		std::ostream& Work::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( myHasWorkNumber )
+            {
+                os << std::endl;
+                myWorkNumber->toStream( os, indentLevel+1 );
+            }
+            if ( myHasWorkTitle )
+            {
+                os << std::endl;
+                myWorkTitle->toStream( os, indentLevel+1 );
+            }
+            if ( myHasOpus )
+            {
+                os << std::endl;
+                myOpus->toStream( os, indentLevel+1 );
+            }
+            isOneLineOnly = ! hasContents();
+            if ( ! isOneLineOnly )
+            {
+                os << std::endl;
+            }
+            return os;
+		}
+		/* _________ WorkNumber minOccurs = 0, maxOccurs = 1 _________ */
+		WorkNumberPtr Work::getWorkNumber() const
+		{
+			return myWorkNumber;
+		}
+		void Work::setWorkNumber( const WorkNumberPtr& value )
+		{
+			if( value )
+			{
+				myWorkNumber = value;
+			}
+		}
+		bool Work::getHasWorkNumber() const
+		{
+			return myHasWorkNumber;
+		}
+		void Work::setHasWorkNumber( const bool value )
+		{
+			myHasWorkNumber = value;
+		}
+		/* _________ WorkTitle minOccurs = 0, maxOccurs = 1 _________ */
+		WorkTitlePtr Work::getWorkTitle() const
+		{
+			return myWorkTitle;
+		}
+		void Work::setWorkTitle( const WorkTitlePtr& value )
+		{
+			if( value )
+			{
+				myWorkTitle = value;
+			}
+		}
+		bool Work::getHasWorkTitle() const
+		{
+			return myHasWorkTitle;
+		}
+		void Work::setHasWorkTitle( const bool value )
+		{
+			myHasWorkTitle = value;
+		}
+		/* _________ Opus minOccurs = 0, maxOccurs = 1 _________ */
+		OpusPtr Work::getOpus() const
+		{
+			return myOpus;
+		}
+		void Work::setOpus( const OpusPtr& value )
+		{
+			if( value )
+			{
+				myOpus = value;
+			}
+		}
+		bool Work::getHasOpus() const
+		{
+			return myHasOpus;
+		}
+		void Work::setHasOpus( const bool value )
+		{
+			myHasOpus = value;
+		}
+        LayoutGroup::LayoutGroup()
+		:myPageLayout( makePageLayout() )
+        ,myHasPageLayout( false )
+        ,mySystemLayout( makeSystemLayout() )
+        ,myHasSystemLayout( false )
+        ,myStaffLayoutSet()
+		{}
+		bool LayoutGroup::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& LayoutGroup::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& LayoutGroup::streamName( std::ostream& os ) const
+		{
+			os << "work";
+			return os;
+		}
+		bool LayoutGroup::hasContents() const
+		{
+			return myHasPageLayout || myHasSystemLayout || myStaffLayoutSet.size() > 0;
+		}
+		std::ostream& LayoutGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( hasContents() )
+            {
+                bool isFirst = true;
+                if ( myHasPageLayout )
+                {
+                    myPageLayout->toStream( os, indentLevel );
+                    isFirst = false;
+                }
+                if ( myHasSystemLayout )
+                {
+                    if ( !isFirst )
+                    {
+                        os << std::endl;
+                        isFirst = false;
+                    }
+                    mySystemLayout->toStream( os, indentLevel );
+                }
+                if ( myStaffLayoutSet.size() > 0 )
+                {
+                    for ( auto it = myStaffLayoutSet.cbegin();
+                         it != myStaffLayoutSet.cend(); ++it )
+                    {
+                        if ( it == myStaffLayoutSet.cbegin() )
+                        {
+                            if ( !isFirst )
+                            {
+                                os << std::endl;
+                                isFirst = false;
+                            }
+                        }
+                        else
+                        {
+                            os << std::endl;
+                        }
+                        (*it)->toStream( os, indentLevel );
+                    }
+                }
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+        /* _________ PageLayout minOccurs = 0, maxOccurs = 1 _________ */
+        PageLayoutPtr LayoutGroup::getPageLayout() const
+        {
+            return myPageLayout;
+        }
+        void LayoutGroup::setPageLayout( const PageLayoutPtr& value )
+        {
+            if ( value )
+            {
+                myPageLayout = value;
+            }
+        }
+        bool LayoutGroup::getHasPageLayout() const
+        {
+            return myHasPageLayout;
+        }
+        void LayoutGroup::setHasPageLayout( const bool value )
+        {
+            myHasPageLayout = value;
+        }
+        /* _________ SystemLayout minOccurs = 0, maxOccurs = 1 _________ */
+        SystemLayoutPtr LayoutGroup::getSystemLayout() const
+        {
+            return mySystemLayout;
+        }
+        void LayoutGroup::setSystemLayout( const SystemLayoutPtr& value )
+        {
+            if ( value )
+            {
+                mySystemLayout = value;
+            }
+        }
+        bool LayoutGroup::getHasSystemLayout() const
+        {
+            return myHasSystemLayout;
+        }
+        void LayoutGroup::setHasSystemLayout( const bool value )
+        {
+            myHasSystemLayout = value;
+        }
+        /* _________ StaffLayout minOccurs = 0, maxOccurs = unbounded _________ */
+        const StaffLayoutSet& LayoutGroup::getStaffLayoutSet() const
+        {
+            return myStaffLayoutSet;
+        }
+        void LayoutGroup::addStaffLayout( const StaffLayoutPtr& value )
+        {
+            if ( value )
+            {
+                myStaffLayoutSet.push_back( value );
+            }
+        }
+        void LayoutGroup::removeStaffLayout( const StaffLayoutSetIterConst& value )
+        {
+            if ( value != myStaffLayoutSet.cend() )
+            {
+                myStaffLayoutSet.erase( value );
+            }
+        }
+        void LayoutGroup::clearStaffLayoutSet()
+        {
+            myStaffLayoutSet.clear();
+        }
+        StaffLayoutPtr LayoutGroup::getStaffLayout( const StaffLayoutSetIterConst& setIterator ) const
+        {
+            if( setIterator != myStaffLayoutSet.cend() )
+            {
+                return *setIterator;
+            }
+            return StaffLayoutPtr();
+        }
 #if 1==0
 #endif
         
