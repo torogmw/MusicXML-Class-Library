@@ -44,67 +44,67 @@ namespace mx
             {
                 case Choice::trillMark:
                 {
-                    myTrillMark->streamContents( os, indentLevel, isOneLineOnly );
+                    myTrillMark->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::turn:
                 {
-                    myTurn->streamContents( os, indentLevel, isOneLineOnly );
+                    myTurn->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::delayedTurn:
                 {
-                    myDelayedTurn->streamContents( os, indentLevel, isOneLineOnly );
+                    myDelayedTurn->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::invertedTurn:
                 {
-                    myInvertedTurn->streamContents( os, indentLevel, isOneLineOnly );
+                    myInvertedTurn->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::delayedInvertedTurn:
                 {
-                    myDelayedInvertedTurn->streamContents( os, indentLevel, isOneLineOnly );
+                    myDelayedInvertedTurn->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::verticalTurn:
                 {
-                    myVerticalTurn->streamContents( os, indentLevel, isOneLineOnly );
+                    myVerticalTurn->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::shake:
                 {
-                    myShake->streamContents( os, indentLevel, isOneLineOnly );
+                    myShake->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::wavyLine:
                 {
-                    myWavyLine->streamContents( os, indentLevel, isOneLineOnly );
+                    myWavyLine->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::mordent:
                 {
-                    myMordent->streamContents( os, indentLevel, isOneLineOnly );
+                    myMordent->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::invertedMordent:
                 {
-                    myInvertedMordent->streamContents( os, indentLevel, isOneLineOnly );
+                    myInvertedMordent->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::schleifer:
                 {
-                    mySchleifer->streamContents( os, indentLevel, isOneLineOnly );
+                    mySchleifer->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::tremolo:
                 {
-                    myTremolo->streamContents( os, indentLevel, isOneLineOnly );
+                    myTremolo->toStream( os, indentLevel );
                 }
                     break;
                 case Choice::otherOrnament:
                 {
-                    myOtherOrnament->streamContents( os, indentLevel, isOneLineOnly );
+                    myOtherOrnament->toStream( os, indentLevel );
                 }
                     break;
                     
