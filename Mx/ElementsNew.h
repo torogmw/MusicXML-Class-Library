@@ -231,6 +231,14 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BendChoice::Choice getChoice() const;
+            void setChoice( BendChoice::Choice value );
+            /* _________ PreBend minOccurs = 1, maxOccurs = 1 _________ */
+            PreBendPtr getPreBend() const;
+            void setPreBend( const PreBendPtr& value );
+            /* _________ Release minOccurs = 1, maxOccurs = 1 _________ */
+            ReleasePtr getRelease() const;
+            void setRelease( const ReleasePtr& value );
         private:
             Choice myChoice;
             PreBendPtr myPreBend;

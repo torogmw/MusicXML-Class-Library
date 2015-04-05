@@ -397,6 +397,39 @@ namespace mx
             }
             return os;
 		}
+        
+        BendChoice::Choice BendChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void BendChoice::setChoice( BendChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ PreBend minOccurs = 1, maxOccurs = 1 _________ */
+        PreBendPtr BendChoice::getPreBend() const
+        {
+            return myPreBend;
+        }
+        void BendChoice::setPreBend( const PreBendPtr& value )
+        {
+            if ( value )
+            {
+                myPreBend = value;
+            }
+        }
+        /* _________ Release minOccurs = 1, maxOccurs = 1 _________ */
+        ReleasePtr BendChoice::getRelease() const
+        {
+            return myRelease;
+        }
+        void BendChoice::setRelease( const ReleasePtr& value )
+        {
+            if ( value )
+            {
+                myRelease = value;
+            }
+        }
 #if 1==0
 #endif
         
