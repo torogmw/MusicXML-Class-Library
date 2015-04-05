@@ -357,6 +357,46 @@ namespace mx
 			return AccidentalMarkPtr();
 		}
 
+        BendChoice::BendChoice()
+		:myChoice( Choice::preBend )
+        ,myPreBend( makePreBend() )
+        ,myRelease( makeRelease() )
+		{}
+		bool BendChoice::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& BendChoice::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& BendChoice::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool BendChoice::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& BendChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			switch ( myChoice )
+            {
+                case Choice::preBend:
+                {
+                    myPreBend->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::release:
+                {
+                    myRelease->toStream( os, indentLevel );
+                }
+                    break;
+                default:
+                    break;
+            }
+            return os;
+		}
 #if 1==0
 #endif
         

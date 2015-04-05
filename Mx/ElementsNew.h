@@ -209,5 +209,32 @@ namespace mx
             OrnamentsChoicePtr myOrnamentsChoice;
             AccidentalMarkSet myAccidentalMarkSet;
         };
+        
+        class BendChoice;
+        using BendChoicePtr = std::shared_ptr<BendChoice>;
+        using BendChoiceUPtr = std::unique_ptr<BendChoice>;
+        using BendChoiceSet = std::vector<BendChoicePtr>;
+        using BendChoiceSetIter = BendChoiceSet::iterator;
+        using BendChoiceSetIterConst = BendChoiceSet::const_iterator;
+        inline BendChoicePtr makeBendChoice() { return std::make_shared<BendChoice>(); }
+        class BendChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                preBend = 1,
+                release = 2
+            };
+            BendChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+            Choice myChoice;
+            PreBendPtr myPreBend;
+            ReleasePtr myRelease;
+        };
     }
 }
