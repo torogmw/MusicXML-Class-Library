@@ -307,7 +307,7 @@ namespace mx
 			for ( auto x : myAccidentalMarkSet )
             {
                 os << std::endl;
-                x->toStream( os, indentLevel );
+                x->toStream( os, indentLevel+1 );
             }
             isOneLineOnly = false;
 			os << std::endl;
