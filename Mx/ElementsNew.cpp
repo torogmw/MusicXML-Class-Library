@@ -279,6 +279,83 @@ namespace mx
 			}
 		}
 		
+        Ornaments::Ornaments()
+		:myOrnamentsChoice( makeOrnamentsChoice() )
+		,myAccidentalMarkSet()
+		{}
+		bool Ornaments::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Ornaments::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Ornaments::streamName( std::ostream& os ) const
+		{
+			os << "ornaments";
+			return os;
+		}
+		bool Ornaments::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Ornaments::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+            myOrnamentsChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+			for ( auto x : myAccidentalMarkSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel );
+            }
+            isOneLineOnly = false;
+			os << std::endl;
+			return os;
+		}
+		/* _________ OrnamentsChoice minOccurs = 1, maxOccurs = 1 _________ */
+        OrnamentsChoicePtr Ornaments::getOrnamentsChoice() const
+        {
+            return myOrnamentsChoice;
+        }
+        void Ornaments::setOrnamentsChoice( const OrnamentsChoicePtr& value )
+        {
+            if ( value )
+            {
+                myOrnamentsChoice = value;
+            }
+        }
+		/* _________ AccidentalMark minOccurs = 0, maxOccurs = unbounded _________ */
+		const AccidentalMarkSet& Ornaments::getAccidentalMarkSet() const
+		{
+			return myAccidentalMarkSet;
+		}
+		void Ornaments::removeAccidentalMark( const AccidentalMarkSetIterConst& value )
+		{
+			if ( value != myAccidentalMarkSet.cend() )
+			{
+				myAccidentalMarkSet.erase( value );
+			}
+		}
+		void Ornaments::addAccidentalMark( const AccidentalMarkPtr& value )
+		{
+			if ( value )
+			{
+				myAccidentalMarkSet.push_back( value );
+			}
+		}
+		void Ornaments::clearAccidentalMarkSet()
+		{
+			myAccidentalMarkSet.clear();
+		}
+		AccidentalMarkPtr Ornaments::getAccidentalMark( const AccidentalMarkSetIterConst& setIterator ) const
+		{
+			if( setIterator != myAccidentalMarkSet.cend() )
+			{
+				return *setIterator;
+			}
+			return AccidentalMarkPtr();
+		}
 
 #if 1==0
 #endif

@@ -180,6 +180,34 @@ namespace mx
             TremoloPtr myTremolo;
             OtherOrnamentPtr myOtherOrnament;
         };
-        
+        class Ornaments;
+        using OrnamentsPtr = std::shared_ptr<Ornaments>;
+        using OrnamentsUPtr = std::unique_ptr<Ornaments>;
+        using OrnamentsSet = std::vector<OrnamentsPtr>;
+        using OrnamentsSetIter = OrnamentsSet::iterator;
+        using OrnamentsSetIterConst = OrnamentsSet::const_iterator;
+        inline OrnamentsPtr makeOrnaments() { return std::make_shared<Ornaments>(); }
+        class Ornaments : public ElementInterface
+        {
+        public:
+            Ornaments();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ OrnamentsChoice minOccurs = 1, maxOccurs = 1 _________ */
+            OrnamentsChoicePtr getOrnamentsChoice() const;
+            void setOrnamentsChoice( const OrnamentsChoicePtr& value );
+            /* _________ AccidentalMark minOccurs = 0, maxOccurs = unbounded _________ */
+            const AccidentalMarkSet& getAccidentalMarkSet() const;
+            void addAccidentalMark( const AccidentalMarkPtr& value );
+            void removeAccidentalMark( const AccidentalMarkSetIterConst& value );
+            void clearAccidentalMarkSet();
+            AccidentalMarkPtr getAccidentalMark( const AccidentalMarkSetIterConst& setIterator ) const;
+        private:
+            OrnamentsChoicePtr myOrnamentsChoice;
+            AccidentalMarkSet myAccidentalMarkSet;
+        };
     }
 }
