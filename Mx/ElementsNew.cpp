@@ -430,6 +430,172 @@ namespace mx
                 myRelease = value;
             }
         }
+        
+        /**************** BendAttributes ****************/
+        /* 5402 */
+        BendAttributes::BendAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,accelerate( types::YesNo::no )
+        ,beats()
+        ,firstBeat()
+        ,lastBeat()
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasAccelerate( false )
+        ,hasBeats( false )
+        ,hasFirstBeat( false )
+        ,hasLastBeat( false )
+        {}
+        
+        bool BendAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasAccelerate ||
+            hasBeats ||
+            hasFirstBeat ||
+            hasLastBeat;
+        }
+        
+        std::ostream& BendAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, accelerate, "accelerate", hasAccelerate );
+                streamAttribute( os, beats, "beats", hasBeats );
+                streamAttribute( os, firstBeat, "first-beat", hasFirstBeat );
+                streamAttribute( os, lastBeat, "last-beat", hasLastBeat );
+            }
+            return os;
+        }
+        
+		Bend::Bend()
+		:myAttributes( std::make_shared<BendAttributes>() )
+		,myBendAlter( makeBendAlter() )
+		,myBendChoice( makeBendChoice() )
+		,myWithBar( makeWithBar() )
+		,myHasWithBar( false )
+		{}
+		bool Bend::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Bend::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Bend::streamName( std::ostream& os ) const
+		{
+			os << "bend";
+			return os;
+		}
+		bool Bend::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Bend::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+            myBendAlter->toStream( os, indentLevel+1 );
+            os << std::endl;
+            myBendChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+            if ( myHasWithBar )
+            {
+                os << std::endl;
+                myWithBar->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+			return os;
+		}
+		BendAttributesPtr Bend::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Bend::setAttributes( const BendAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ BendAlter minOccurs = 1, maxOccurs = 1 _________ */
+		BendAlterPtr Bend::getBendAlter() const
+		{
+			return myBendAlter;
+		}
+		void Bend::setBendAlter( const BendAlterPtr& value )
+		{
+			if( value )
+			{
+				myBendAlter = value;
+			}
+		}
+        /* _________ BendChoice minOccurs = 1, maxOccurs = 1 _________ */
+        BendChoicePtr Bend::getBendChoice() const
+        {
+            return myBendChoice;
+        }
+        void Bend::setBendChoice( const BendChoicePtr& value )
+        {
+            if ( value )
+            {
+                myBendChoice = value;
+            }
+        }
+		/* _________ WithBar minOccurs = 0, maxOccurs = 1 _________ */
+		WithBarPtr Bend::getWithBar() const
+		{
+			return myWithBar;
+		}
+		void Bend::setWithBar( const WithBarPtr& value )
+		{
+			if( value )
+			{
+				myWithBar = value;
+			}
+		}
+		bool Bend::getHasWithBar() const
+		{
+			return myHasWithBar;
+		}
+		void Bend::setHasWithBar( const bool value )
+		{
+			myHasWithBar = value;
+		}
+        
 #if 1==0
 #endif
         

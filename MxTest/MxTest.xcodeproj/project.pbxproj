@@ -24,6 +24,7 @@
 		291221781AC4E4D400A19E48 /* DirectionTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */; };
 		2912217B1AC4EC2C00A19E48 /* MidiInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */; };
 		291C54AE1AC7D6E700E60622 /* HeelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291C54AC1AC7D6E700E60622 /* HeelTest.cpp */; };
+		2922D06F1AD1875000D2D462 /* BendTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2922D06D1AD1875000D2D462 /* BendTest.cpp */; };
 		29237AB91AC790E900FB4515 /* MordentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29237AB71AC790E900FB4515 /* MordentTest.cpp */; };
 		29237ABC1AC7940700FB4515 /* InvertedMordentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */; };
 		292A2BF61AC5D45E00A5D80B /* TimeModificationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292A2BF41AC5D45E00A5D80B /* TimeModificationTest.cpp */; };
@@ -414,6 +415,8 @@
 		2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiInstrumentTest.h; sourceTree = "<group>"; };
 		291C54AC1AC7D6E700E60622 /* HeelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeelTest.cpp; sourceTree = "<group>"; };
 		291C54AD1AC7D6E700E60622 /* HeelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeelTest.h; sourceTree = "<group>"; };
+		2922D06D1AD1875000D2D462 /* BendTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BendTest.cpp; sourceTree = "<group>"; };
+		2922D06E1AD1875000D2D462 /* BendTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BendTest.h; sourceTree = "<group>"; };
 		29237AB71AC790E900FB4515 /* MordentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MordentTest.cpp; sourceTree = "<group>"; };
 		29237AB81AC790E900FB4515 /* MordentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MordentTest.h; sourceTree = "<group>"; };
 		29237ABA1AC7940700FB4515 /* InvertedMordentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvertedMordentTest.cpp; sourceTree = "<group>"; };
@@ -1321,6 +1324,8 @@
 				2942EFFD1AD0B65F003E8FF5 /* OrnamentsTest.h */,
 				296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */,
 				296B1AFB1AD183890095FCAA /* BendChoiceTest.h */,
+				2922D06D1AD1875000D2D462 /* BendTest.cpp */,
+				2922D06E1AD1875000D2D462 /* BendTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1673,6 +1678,7 @@
 				297749E21AB21FA000BF2205 /* DivisionsTest.cpp in Sources */,
 				2935A7201AB5FC3B002859CA /* DotTest.cpp in Sources */,
 				2939CD431AA2999500556D00 /* FontSizeTest.cpp in Sources */,
+				2922D06F1AD1875000D2D462 /* BendTest.cpp in Sources */,
 				29C0B9E01AAE9398004F86FA /* OffsetTest.cpp in Sources */,
 				2996E6B91ABE9DE1004869DD /* ConvenienceMakeFunctionsTest.cpp in Sources */,
 				297749EE1AB21FA000BF2205 /* HoleShapeTest.cpp in Sources */,

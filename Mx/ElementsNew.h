@@ -210,6 +210,44 @@ namespace mx
             AccidentalMarkSet myAccidentalMarkSet;
         };
         
+        /* <!--  ID = 5402 [5402] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 4 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="bend" type="bend"/>
+         <xs:complexType name="bend">
+         <xs:annotation>
+         <xs:documentation>The bend type is used in guitar and tablature. The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended. A with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="bend-alter" type="semitones">
+         <xs:annotation>
+         <xs:documentation>The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:choice minOccurs="0">
+         <xs:element name="pre-bend" type="empty">
+         <xs:annotation>
+         <xs:documentation>The pre-bend element indicates that this is a pre-bend rather than a normal bend or a release.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="release" type="empty">
+         <xs:annotation>
+         <xs:documentation>The release element indicates that this is a release rather than a normal bend or pre-bend.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         <xs:element name="with-bar" type="placement-text" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="bend-sound"/>
+         </xs:complexType> */
+        
         class BendChoice;
         using BendChoicePtr = std::shared_ptr<BendChoice>;
         using BendChoiceUPtr = std::unique_ptr<BendChoice>;
@@ -244,5 +282,81 @@ namespace mx
             PreBendPtr myPreBend;
             ReleasePtr myRelease;
         };
+        
+        
+        struct BendAttributes;
+        using BendAttributesPtr = std::shared_ptr<BendAttributes>;
+        
+        struct BendAttributes : public AttributesInterface
+        {
+        public:
+            BendAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::YesNo accelerate;
+            types::TrillBeats beats;
+            types::Percent firstBeat;
+            types::Percent lastBeat;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasAccelerate;
+            bool hasBeats;
+            bool hasFirstBeat;
+            bool hasLastBeat;
+        };
+        
+        class Bend;
+        using BendPtr = std::shared_ptr<Bend>;
+        using BendUPtr = std::unique_ptr<Bend>;
+        using BendSet = std::vector<BendPtr>;
+        using BendSetIter = BendSet::iterator;
+        using BendSetIterConst = BendSet::const_iterator;
+        inline BendPtr makeBend() { return std::make_shared<Bend>(); }
+        class Bend : public ElementInterface
+        {
+        public:
+            Bend();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            BendAttributesPtr getAttributes() const;
+            void setAttributes( const BendAttributesPtr& value );
+            /* _________ BendAlter minOccurs = 1, maxOccurs = 1 _________ */
+            BendAlterPtr getBendAlter() const;
+            void setBendAlter( const BendAlterPtr& value );
+            /* _________ BendChoice minOccurs = 1, maxOccurs = 1 _________ */
+            BendChoicePtr getBendChoice() const;
+            void setBendChoice( const BendChoicePtr& value );
+            /* _________ WithBar minOccurs = 0, maxOccurs = 1 _________ */
+            WithBarPtr getWithBar() const;
+            void setWithBar( const WithBarPtr& value );
+            bool getHasWithBar() const;
+            void setHasWithBar( const bool value );
+        private:
+            BendAttributesPtr myAttributes;
+            BendAlterPtr myBendAlter;
+            BendChoicePtr myBendChoice;
+            WithBarPtr myWithBar;
+            bool myHasWithBar;
+        };
+
     }
 }
