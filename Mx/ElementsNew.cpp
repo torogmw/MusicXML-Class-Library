@@ -596,6 +596,223 @@ namespace mx
 			myHasWithBar = value;
 		}
         
+        ArrowGroup::ArrowGroup()
+        :myArrowDirection( makeArrowDirection() )
+        ,myArrowStyle( makeArrowStyle() )
+        ,myHasArrowStyle( false )
+        {}
+        bool ArrowGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& ArrowGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& ArrowGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool ArrowGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& ArrowGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            myArrowDirection->toStream( os, indentLevel );
+            if ( myHasArrowStyle )
+            {
+                os << std::endl;
+                myArrowStyle->toStream( os, indentLevel );
+            }
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ ArrowDirection minOccurs = 1, maxOccurs = 1 _________ */
+        ArrowDirectionPtr ArrowGroup::getArrowDirection() const
+        {
+            return myArrowDirection;
+        }
+        void ArrowGroup::setArrowDirection( const ArrowDirectionPtr& value )
+        {
+            if ( value )
+            {
+                myArrowDirection = value;
+            }
+        }
+        /* _________ ArrowStyle minOccurs = 0, maxOccurs = 1 _________ */
+        ArrowStylePtr ArrowGroup::getArrowStyle() const
+        {
+            return myArrowStyle;
+        }
+        void ArrowGroup::setArrowStyle( const ArrowStylePtr& value )
+        {
+            if ( value )
+            {
+                myArrowStyle = value;
+            }
+        }
+        bool ArrowGroup::getHasArrowStyle() const
+        {
+            return myHasArrowStyle;
+        }
+        void ArrowGroup::setHasArrowStyle( const bool value )
+        {
+            myHasArrowStyle = value;
+        }
+        
+        
+        
+        /**************** ArrowAttributes ****************/
+        /* 5424 */
+        ArrowAttributes::ArrowAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool ArrowAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement;
+        }
+        
+        std::ostream& ArrowAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+		Arrow::Arrow()
+		:myAttributes( std::make_shared<ArrowAttributes>() )
+		,myChoice( Choice::arrowGroup )
+        ,myArrowGroup( makeArrowGroup() )
+		,myCircularArrow( makeCircularArrow() )
+		{}
+		bool Arrow::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Arrow::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Arrow::streamName( std::ostream& os ) const
+		{
+			os << "arrow";
+			return os;
+		}
+		bool Arrow::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Arrow::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			switch ( myChoice )
+            {
+                case Choice::arrowGroup:
+                {
+                    os << std::endl;
+                    myArrowGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                    os << std::endl;
+                    isOneLineOnly = false;
+                }
+                    break;
+                case Choice::circularArrow:
+                {
+                    os << std::endl;
+                    myCircularArrow->toStream( os, indentLevel+1 );
+                    os << std::endl;
+                    isOneLineOnly = false;
+                }
+                    break;
+                default:
+                    break;
+            }
+            return os;
+		}
+		ArrowAttributesPtr Arrow::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Arrow::setAttributes( const ArrowAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        Arrow::Choice Arrow::getChoice() const
+        {
+            return myChoice;
+        }
+        void Arrow::setChoice( const Arrow::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ ArrowGroup minOccurs = 1, maxOccurs = 1 _________ */
+		ArrowGroupPtr Arrow::getArrowGroup() const
+		{
+			return myArrowGroup;
+		}
+		void Arrow::setArrowGroup( const ArrowGroupPtr& value )
+		{
+			if( value )
+			{
+				myArrowGroup = value;
+			}
+		}
+		/* _________ CircularArrow minOccurs = 1, maxOccurs = 1 _________ */
+		CircularArrowPtr Arrow::getCircularArrow() const
+		{
+			return myCircularArrow;
+		}
+		void Arrow::setCircularArrow( const CircularArrowPtr& value )
+		{
+			if( value )
+			{
+				myCircularArrow = value;
+			}
+		}
+
 #if 1==0
 #endif
         

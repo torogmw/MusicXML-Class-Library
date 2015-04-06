@@ -357,6 +357,125 @@ namespace mx
             WithBarPtr myWithBar;
             bool myHasWithBar;
         };
-
+        /* <!--  ID = 5424 [5424] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 3 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="arrow" type="arrow"/>
+         <xs:complexType name="arrow">
+         <xs:annotation>
+         <xs:documentation>The arrow element represents an arrow used for a musical technical indication..</xs:documentation>
+         </xs:annotation>
+         <xs:choice>
+         <xs:sequence>
+         <xs:element name="arrow-direction" type="arrow-direction"/>
+         <xs:element name="arrow-style" type="arrow-style" minOccurs="0"/>
+         </xs:sequence>
+         <xs:element name="circular-arrow" type="circular-arrow"/>
+         </xs:choice>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType> */
+        
+        class ArrowGroup;
+        using ArrowGroupPtr = std::shared_ptr<ArrowGroup>;
+        using ArrowGroupUPtr = std::unique_ptr<ArrowGroup>;
+        using ArrowGroupSet = std::vector<ArrowGroupPtr>;
+        using ArrowGroupSetIter = ArrowGroupSet::iterator;
+        using ArrowGroupSetIterConst = ArrowGroupSet::const_iterator;
+        inline ArrowGroupPtr makeArrowGroup() { return std::make_shared<ArrowGroup>(); }
+        class ArrowGroup : public ElementInterface
+        {
+        public:
+            ArrowGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+             /* _________ ArrowDirection minOccurs = 1, maxOccurs = 1 _________ */
+            ArrowDirectionPtr getArrowDirection() const;
+            void setArrowDirection( const ArrowDirectionPtr& value );
+            /* _________ ArrowStyle minOccurs = 0, maxOccurs = 1 _________ */
+            ArrowStylePtr getArrowStyle() const;
+            void setArrowStyle( const ArrowStylePtr& value );
+            bool getHasArrowStyle() const;
+            void setHasArrowStyle( const bool value );
+        private:
+            ArrowDirectionPtr myArrowDirection;
+            ArrowStylePtr myArrowStyle;
+            bool myHasArrowStyle;
+        };
+        
+        struct ArrowAttributes;
+        using ArrowAttributesPtr = std::shared_ptr<ArrowAttributes>;
+        
+        struct ArrowAttributes : public AttributesInterface
+        {
+        public:
+            ArrowAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+        };
+        
+        class Arrow;
+        using ArrowPtr = std::shared_ptr<Arrow>;
+        using ArrowUPtr = std::unique_ptr<Arrow>;
+        using ArrowSet = std::vector<ArrowPtr>;
+        using ArrowSetIter = ArrowSet::iterator;
+        using ArrowSetIterConst = ArrowSet::const_iterator;
+        inline ArrowPtr makeArrow() { return std::make_shared<Arrow>(); }
+        class Arrow : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                arrowGroup = 1,
+                circularArrow = 2
+            };
+            Arrow();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ArrowAttributesPtr getAttributes() const;
+            void setAttributes( const ArrowAttributesPtr& value );
+            /* _________ Choice _________ */
+            Arrow::Choice getChoice() const;
+            void setChoice( const Arrow::Choice value );
+            /* _________ ArrowGroup minOccurs = 1, maxOccurs = 1 _________ */
+            ArrowGroupPtr getArrowGroup() const;
+            void setArrowGroup( const ArrowGroupPtr& value );
+            /* _________ CircularArrow minOccurs = 1, maxOccurs = 1 _________ */
+            CircularArrowPtr getCircularArrow() const;
+            void setCircularArrow( const CircularArrowPtr& value );
+        private:
+            Choice myChoice;
+            ArrowAttributesPtr myAttributes;
+            ArrowGroupPtr myArrowGroup;
+            CircularArrowPtr myCircularArrow;
+        };
     }
 }
