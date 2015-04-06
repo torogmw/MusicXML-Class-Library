@@ -1271,6 +1271,117 @@ namespace mx
 			myHasMiscellaneous = value;
 		}
 		
+        /**************** PartAbbreviationDisplayAttributes ****************/
+        /* 3861, 5936 */
+        PartAbbreviationDisplayAttributes::PartAbbreviationDisplayAttributes()
+        :printObject( types::YesNo::no )
+        ,hasPrintObject( false )
+        {}
+        
+        bool PartAbbreviationDisplayAttributes::hasValues() const
+        {
+            return hasPrintObject;
+        }
+        
+        std::ostream& PartAbbreviationDisplayAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		PartAbbreviationDisplay::PartAbbreviationDisplay()
+		:myAttributes( std::make_shared<PartAbbreviationDisplayAttributes>() )
+        ,myChoice( PartAbbreviationDisplay::Choice::displayText )
+		,myDisplayText( makeDisplayText() )
+		,myAccidentalText( makeAccidentalText() )
+		{}
+		bool PartAbbreviationDisplay::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& PartAbbreviationDisplay::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& PartAbbreviationDisplay::streamName( std::ostream& os ) const
+		{
+			os << "group-abbreviation-display";
+			return os;
+		}
+		bool PartAbbreviationDisplay::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PartAbbreviationDisplay::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+			switch ( myChoice )
+            {
+                case Choice::displayText:
+                {
+                    myDisplayText->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::accidentalText:
+                {
+                    myAccidentalText->toStream( os, indentLevel+1 );
+                }
+                    break;
+                default:
+                    break;
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+		}
+		PartAbbreviationDisplayAttributesPtr PartAbbreviationDisplay::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void PartAbbreviationDisplay::setAttributes( const PartAbbreviationDisplayAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ Choice _________ */
+        PartAbbreviationDisplay::Choice PartAbbreviationDisplay::getChoice() const
+        {
+            return myChoice;
+        }
+        void PartAbbreviationDisplay::setChoice( const PartAbbreviationDisplay::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+		DisplayTextPtr PartAbbreviationDisplay::getDisplayText() const
+		{
+			return myDisplayText;
+		}
+		void PartAbbreviationDisplay::setDisplayText( const DisplayTextPtr& value )
+		{
+			if( value )
+			{
+				myDisplayText = value;
+			}
+		}
+		/* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+		AccidentalTextPtr PartAbbreviationDisplay::getAccidentalText() const
+		{
+			return myAccidentalText;
+		}
+		void PartAbbreviationDisplay::setAccidentalText( const AccidentalTextPtr& value )
+		{
+			if( value )
+			{
+				myAccidentalText = value;
+			}
+		}
 #if 1==0
 #endif
         

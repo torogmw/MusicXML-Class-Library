@@ -741,13 +741,13 @@ namespace mx
          </xs:sequence>
          <xs:attributeGroup ref="print-object"/>
          </xs:complexType> */
-        struct GroupAbbreviationDisplayAttributes;
-        using GroupAbbreviationDisplayAttributesPtr = std::shared_ptr<GroupAbbreviationDisplayAttributes>;
+        struct PartAbbreviationDisplayAttributes;
+        using PartAbbreviationDisplayAttributesPtr = std::shared_ptr<PartAbbreviationDisplayAttributes>;
         
-        struct GroupAbbreviationDisplayAttributes : public AttributesInterface
+        struct PartAbbreviationDisplayAttributes : public AttributesInterface
         {
         public:
-            GroupAbbreviationDisplayAttributes();
+            PartAbbreviationDisplayAttributes();
             virtual bool hasValues() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             types::YesNo printObject;
