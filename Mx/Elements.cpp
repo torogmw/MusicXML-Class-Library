@@ -210,8 +210,8 @@ namespace mx
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
                 streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-                streamAttribute( os, lang, "lang", hasLang );
-                streamAttribute( os, space, "space", hasSpace );
+                streamAttribute( os, lang, "xml:lang", hasLang );
+                streamAttribute( os, space, "xml:space", hasSpace );
                 streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
@@ -359,8 +359,8 @@ namespace mx
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
                 streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-                streamAttribute( os, lang, "lang", hasLang );
-                streamAttribute( os, space, "space", hasSpace );
+                streamAttribute( os, lang, "xml:lang", hasLang );
+                streamAttribute( os, space, "xml:space", hasSpace );
                 streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
@@ -509,8 +509,8 @@ namespace mx
         //                streamAttribute( os, rotation, "rotation", hasRotation );
         //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
         //                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-        //                streamAttribute( os, lang, "lang", hasLang );
-        //                streamAttribute( os, space, "space", hasSpace );
+        //                streamAttribute( os, lang, "xml:lang", hasLang );
+        //                streamAttribute( os, space, "xml:space", hasSpace );
         //                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
         //            }
         //            return os;
@@ -2031,8 +2031,8 @@ namespace mx
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
                 streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-                streamAttribute( os, lang, "lang", hasLang );
-                streamAttribute( os, space, "space", hasSpace );
+                streamAttribute( os, lang, "xml:lang", hasLang );
+                streamAttribute( os, space, "xml:space", hasSpace );
                 streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
@@ -2181,8 +2181,8 @@ namespace mx
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
                 streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-                streamAttribute( os, lang, "lang", hasLang );
-                streamAttribute( os, space, "space", hasSpace );
+                streamAttribute( os, lang, "xml:lang", hasLang );
+                streamAttribute( os, space, "xml:space", hasSpace );
                 streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
@@ -5143,7 +5143,7 @@ namespace mx
                 streamAttribute( os, lineThrough, "line-through", hasLineThrough );
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-                streamAttribute( os, lang, "lang", hasLang );
+                streamAttribute( os, lang, "xml:lang", hasLang );
             }
             return os;
         }
@@ -5257,7 +5257,7 @@ namespace mx
                 streamAttribute( os, lineThrough, "line-through", hasLineThrough );
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-                streamAttribute( os, lang, "lang", hasLang );
+                streamAttribute( os, lang, "xml:lang", hasLang );
             }
             return os;
         }
@@ -5371,7 +5371,7 @@ namespace mx
         //                streamAttribute( os, lineThrough, "line-through", hasLineThrough );
         //                streamAttribute( os, rotation, "rotation", hasRotation );
         //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
-        //                streamAttribute( os, lang, "lang", hasLang );
+        //                streamAttribute( os, lang, "xml:lang", hasLang );
         //            }
         //            return os;
         //        }
@@ -6599,8 +6599,8 @@ namespace mx
         //                streamAttribute( os, rotation, "rotation", hasRotation );
         //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
         //                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-        //                streamAttribute( os, lang, "lang", hasLang );
-        //                streamAttribute( os, space, "space", hasSpace );
+        //                streamAttribute( os, lang, "xml:lang", hasLang );
+        //                streamAttribute( os, space, "xml:space", hasSpace );
         //                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
         //            }
         //            return os;
@@ -8148,8 +8148,8 @@ namespace mx
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
                 streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-                streamAttribute( os, lang, "lang", hasLang );
-                streamAttribute( os, space, "space", hasSpace );
+                streamAttribute( os, lang, "xml:lang", hasLang );
+                streamAttribute( os, space, "xml:space", hasSpace );
                 streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
@@ -8298,8 +8298,8 @@ namespace mx
         //                streamAttribute( os, rotation, "rotation", hasRotation );
         //                streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
         //                streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-        //                streamAttribute( os, lang, "lang", hasLang );
-        //                streamAttribute( os, space, "space", hasSpace );
+        //                streamAttribute( os, lang, "xml:lang", hasLang );
+        //                streamAttribute( os, space, "xml:space", hasSpace );
         //                streamAttribute( os, enclosure, "enclosure", hasEnclosure );
         //            }
         //            return os;
@@ -9146,8 +9146,8 @@ namespace mx
                 streamAttribute( os, rotation, "rotation", hasRotation );
                 streamAttribute( os, letterSpacing, "letter-spacing", hasLetterSpacing );
                 streamAttribute( os, lineHeight, "line-height", hasLineHeight );
-                streamAttribute( os, lang, "lang", hasLang );
-                streamAttribute( os, space, "space", hasSpace );
+                streamAttribute( os, lang, "xml:lang", hasLang );
+                streamAttribute( os, space, "xml:space", hasSpace );
                 streamAttribute( os, enclosure, "enclosure", hasEnclosure );
             }
             return os;
@@ -18246,7 +18246,7 @@ namespace mx
             {
                 streamAttribute( os, number, "number", hasNumber );
                 streamAttribute( os, name, "name", hasName );
-                streamAttribute( os, lang, "lang", hasLang );
+                streamAttribute( os, lang, "xml:lang", hasLang );
             }
             return os;
         }
@@ -19189,7 +19189,7 @@ namespace mx
                 streamAttribute( os, fontStyle, "font-style", hasFontStyle );
                 streamAttribute( os, fontSize, "font-size", hasFontSize );
                 streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
-                streamAttribute( os, lang, "lang", hasLang );
+                streamAttribute( os, lang, "xml:lang", hasLang );
             }
             return os;
         }

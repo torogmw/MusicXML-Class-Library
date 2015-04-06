@@ -927,6 +927,118 @@ namespace mx
 			}
 		}
 
+        /**************** GroupAbbreviationDisplayAttributes ****************/
+        /* 5817 */
+        GroupAbbreviationDisplayAttributes::GroupAbbreviationDisplayAttributes()
+        :printObject( types::YesNo::no )
+        ,hasPrintObject( false )
+        {}
+        
+        bool GroupAbbreviationDisplayAttributes::hasValues() const
+        {
+            return hasPrintObject;
+        }
+        
+        std::ostream& GroupAbbreviationDisplayAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		GroupAbbreviationDisplay::GroupAbbreviationDisplay()
+		:myAttributes( std::make_shared<GroupAbbreviationDisplayAttributes>() )
+        ,myChoice( GroupAbbreviationDisplay::Choice::displayText )
+		,myDisplayText( makeDisplayText() )
+		,myAccidentalText( makeAccidentalText() )
+		{}
+		bool GroupAbbreviationDisplay::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& GroupAbbreviationDisplay::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& GroupAbbreviationDisplay::streamName( std::ostream& os ) const
+		{
+			os << "group-abbreviation-display";
+			return os;
+		}
+		bool GroupAbbreviationDisplay::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& GroupAbbreviationDisplay::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+			switch ( myChoice )
+            {
+                case Choice::displayText:
+                {
+                    myDisplayText->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::accidentalText:
+                {
+                    myAccidentalText->toStream( os, indentLevel+1 );
+                }
+                    break;
+                default:
+                    break;
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+		}
+		GroupAbbreviationDisplayAttributesPtr GroupAbbreviationDisplay::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void GroupAbbreviationDisplay::setAttributes( const GroupAbbreviationDisplayAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ Choice _________ */
+        GroupAbbreviationDisplay::Choice GroupAbbreviationDisplay::getChoice() const
+        {
+            return myChoice;
+        }
+        void GroupAbbreviationDisplay::setChoice( const GroupAbbreviationDisplay::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+		DisplayTextPtr GroupAbbreviationDisplay::getDisplayText() const
+		{
+			return myDisplayText;
+		}
+		void GroupAbbreviationDisplay::setDisplayText( const DisplayTextPtr& value )
+		{
+			if( value )
+			{
+				myDisplayText = value;
+			}
+		}
+		/* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+		AccidentalTextPtr GroupAbbreviationDisplay::getAccidentalText() const
+		{
+			return myAccidentalText;
+		}
+		void GroupAbbreviationDisplay::setAccidentalText( const AccidentalTextPtr& value )
+		{
+			if( value )
+			{
+				myAccidentalText = value;
+			}
+		}
+
 #if 1==0
 #endif
         

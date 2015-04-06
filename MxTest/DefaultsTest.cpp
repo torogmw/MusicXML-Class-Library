@@ -145,7 +145,7 @@ namespace MxTestHelpers
                 streamLine( os, i+1, R"(<music-font font-style="italic"/>)" );
                 streamLine( os, i+1, R"(<lyric-font name="Hello Bones"/>)" );
                 streamLine( os, i+1, R"(<lyric-font number="Hello Bish"/>)" );
-                streamLine( os, i+1, R"(<lyric-language name="lang1" lang="it"/>)" );
+                streamLine( os, i+1, R"(<lyric-language name="lang1" xml:lang="it"/>)" );
                 streamLine( os, i, R"(</defaults>)", false );
             }
                 break;

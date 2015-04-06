@@ -550,6 +550,81 @@ namespace mx
             DisplayTextPtr myDisplayText;
             AccidentalTextPtr myAccidentalText;
         };
-
+        
+        /* <!--  ID = 5817 [5817] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="group-abbreviation-display" type="name-display" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Formatting specified in the group-abbreviation-display element overrides formatting specified in the group-abbreviation element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="name-display">
+         <xs:annotation>
+         <xs:documentation>The name-display type is used for exact formatting of multi-font text in part and group names to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system. Enclosure for the display-text element is none by default. Language for the display-text element is Italian ("it") by default.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="display-text" type="formatted-text"/>
+         <xs:element name="accidental-text" type="accidental-text"/>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType> */
+        
+        struct GroupAbbreviationDisplayAttributes;
+        using GroupAbbreviationDisplayAttributesPtr = std::shared_ptr<GroupAbbreviationDisplayAttributes>;
+        
+        struct GroupAbbreviationDisplayAttributes : public AttributesInterface
+        {
+        public:
+            GroupAbbreviationDisplayAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo printObject;
+            bool hasPrintObject;
+        };
+        
+        class GroupAbbreviationDisplay;
+        using GroupAbbreviationDisplayPtr = std::shared_ptr<GroupAbbreviationDisplay>;
+        using GroupAbbreviationDisplayUPtr = std::unique_ptr<GroupAbbreviationDisplay>;
+        using GroupAbbreviationDisplaySet = std::vector<GroupAbbreviationDisplayPtr>;
+        using GroupAbbreviationDisplaySetIter = GroupAbbreviationDisplaySet::iterator;
+        using GroupAbbreviationDisplaySetIterConst = GroupAbbreviationDisplaySet::const_iterator;
+        inline GroupAbbreviationDisplayPtr makeGroupAbbreviationDisplay() { return std::make_shared<GroupAbbreviationDisplay>(); }
+        class GroupAbbreviationDisplay : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                displayText = 1,
+                accidentalText = 2
+            };
+            GroupAbbreviationDisplay();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            GroupAbbreviationDisplayAttributesPtr getAttributes() const;
+            void setAttributes( const GroupAbbreviationDisplayAttributesPtr& value );
+            /* _________ Choice _________ */
+            GroupAbbreviationDisplay::Choice getChoice() const;
+            void setChoice( const GroupAbbreviationDisplay::Choice value );
+            /* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayTextPtr getDisplayText() const;
+            void setDisplayText( const DisplayTextPtr& value );
+            /* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+            AccidentalTextPtr getAccidentalText() const;
+            void setAccidentalText( const AccidentalTextPtr& value );
+        private:
+            GroupAbbreviationDisplayAttributesPtr myAttributes;
+            Choice myChoice;
+            DisplayTextPtr myDisplayText;
+            AccidentalTextPtr myAccidentalText;
+        };
+        
     }
 }
