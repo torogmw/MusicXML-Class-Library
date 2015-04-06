@@ -1,13 +1,14 @@
+
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "Elements.h"
-#include "PartNameDisplayTest.h"
 #include "PartAbbreviationDisplayTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
 using namespace std;
 using namespace MxTestHelpers;
+#include "MxTestCompileControl.h"
+#ifdef RUN_PHASE4_TESTS
 
 TEST( Test01, PartAbbreviationDisplay )
 {
@@ -45,9 +46,10 @@ TEST( Test03, PartAbbreviationDisplay )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
+#endif
 namespace MxTestHelpers
 {
     PartAbbreviationDisplayPtr tgenPartAbbreviationDisplay( variant v )
@@ -57,27 +59,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                ;
+                
             }
                 break;
             case variant::two:
             {
+                o->setChoice( PartAbbreviationDisplay::Choice::accidentalText );
+                o->getAccidentalText()->setValue( AccidentalValue::doubleSharp );
                 o->getAttributes()->hasPrintObject = true;
                 o->getAttributes()->printObject = YesNo::no;
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::one ) );
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::two ) );
             }
                 break;
             case variant::three:
             {
-                o->getAttributes()->hasPrintObject = true;
-                o->getAttributes()->printObject = YesNo::yes;
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::two ) );
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::three ) );
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::two ) );
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::three ) );
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::two ) );
-                o->addDisplayTextOrAccidentalText( tgenDisplayTextOrAccidentalText( variant::one ) );
+                o->setChoice( PartAbbreviationDisplay::Choice::displayText );
+                o->getDisplayText()->setValue( XsString( "My Display String!" ) );
+                o->getDisplayText()->getAttributes()->hasSpace = true;
+                o->getDisplayText()->getAttributes()->space = XmlSpace::preserve;
             }
                 break;
             default:
@@ -92,27 +90,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<part-name-display></part-name-display>)", false );
+                streamLine( os, i, R"(<group-abbreviation-display>)" );
+                streamLine( os, i+1, R"(<display-text></display-text>)" );
+                streamLine( os, i, R"(</group-abbreviation-display>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<part-name-display print-object="no">)" );
-                streamLine( os, i+1, R"(<accidental-text enclosure="oval">flat-flat</accidental-text>)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i, R"(</part-name-display>)", false );
+                streamLine( os, i, R"(<group-abbreviation-display print-object="no">)" );
+                streamLine( os, i+1, R"(<accidental-text>double-sharp</accidental-text>)" );
+                streamLine( os, i, R"(</group-abbreviation-display>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<part-name-display print-object="yes">)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i+1, R"(<display-text font-weight="bold" halign="right">three</display-text>)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i+1, R"(<display-text font-weight="bold" halign="right">three</display-text>)" );
-                streamLine( os, i+1, R"(<display-text justify="center">two</display-text>)" );
-                streamLine( os, i+1, R"(<accidental-text enclosure="oval">flat-flat</accidental-text>)" );
-                streamLine( os, i, R"(</part-name-display>)", false );
+                streamLine( os, i, R"(<group-abbreviation-display>)" );
+                streamLine( os, i+1, R"(<display-text xml:space="preserve">My Display String!</display-text>)" );
+                streamLine( os, i, R"(</group-abbreviation-display>)", false );
             }
                 break;
             default:

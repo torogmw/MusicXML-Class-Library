@@ -17911,68 +17911,68 @@ namespace mx
             DisplayTextOrAccidentalTextSet myDisplayTextOrAccidentalTextSet;
         };
         
-        /*
-         <!--  ID = 3861 [3861, 5936] ------------------------->
-         <!-- min=0 max=1 OptionalSingleOccurrence  -->
-         <!-- MsItemElementKind::composite -->
-         <!-- RecursiveSubElementCount = 2 -->
-         <!-- All Sub Elements Are Implemented: true -->
-         <xs:element name="part-abbreviation-display" type="name-display" minOccurs="0"/>
-         <xs:complexType name="name-display">
-         <xs:annotation>
-         <xs:documentation>The name-display type is used for exact formatting of multi-font text in part and group names to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system. Enclosure for the display-text element is none by default. Language for the display-text element is Italian ("it") by default.</xs:documentation>
-         </xs:annotation>
-         <xs:sequence>
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-         <xs:element name="display-text" type="formatted-text"/>
-         <xs:element name="accidental-text" type="accidental-text"/>
-         </xs:choice>
-         </xs:sequence>
-         <xs:attributeGroup ref="print-object"/>
-         </xs:complexType>
-         */
-        
-        struct PartAbbreviationDisplayAttributes;
-        using PartAbbreviationDisplayAttributesPtr = std::shared_ptr<PartAbbreviationDisplayAttributes>;
-        
-        struct PartAbbreviationDisplayAttributes : public AttributesInterface
-        {
-        public:
-            PartAbbreviationDisplayAttributes();
-            virtual bool hasValues() const;
-            virtual std::ostream& toStream( std::ostream& os ) const;
-            types::YesNo printObject;
-            bool hasPrintObject;
-        };
-        
-        class PartAbbreviationDisplay;
-        using PartAbbreviationDisplayPtr = std::shared_ptr<PartAbbreviationDisplay>;
-        using PartAbbreviationDisplayUPtr = std::unique_ptr<PartAbbreviationDisplay>;
-        using PartAbbreviationDisplaySet = std::vector<PartAbbreviationDisplayPtr>;
-        using PartAbbreviationDisplaySetIter = PartAbbreviationDisplaySet::iterator;
-        using PartAbbreviationDisplaySetIterConst = PartAbbreviationDisplaySet::const_iterator;
-        inline PartAbbreviationDisplayPtr makePartAbbreviationDisplay() { return std::make_shared<PartAbbreviationDisplay>(); }
-        class PartAbbreviationDisplay : public ElementInterface
-        {
-        public:
-            PartAbbreviationDisplay();
-            virtual bool hasAttributes() const;
-            virtual std::ostream& streamAttributes( std::ostream& os ) const;
-            virtual std::ostream& streamName( std::ostream& os ) const;
-            virtual bool hasContents() const;
-            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            PartAbbreviationDisplayAttributesPtr getAttributes() const;
-            void setAttributes( const PartAbbreviationDisplayAttributesPtr& value );
-            /* _________ DisplayTextOrAccidentalText minOccurs = 0, maxOccurs = unbounded _________ */
-            const DisplayTextOrAccidentalTextSet& getDisplayTextOrAccidentalText() const;
-            void addDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextPtr& value );
-            void removeDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator );
-            void clearDisplayTextOrAccidentalTextSet();
-            DisplayTextOrAccidentalTextPtr getDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator ) const;
-        private:
-            PartAbbreviationDisplayAttributesPtr myAttributes;
-            DisplayTextOrAccidentalTextSet myDisplayTextOrAccidentalTextSet;
-        };
+//        /*
+//         <!--  ID = 3861 [3861, 5936] ------------------------->
+//         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+//         <!-- MsItemElementKind::composite -->
+//         <!-- RecursiveSubElementCount = 2 -->
+//         <!-- All Sub Elements Are Implemented: true -->
+//         <xs:element name="part-abbreviation-display" type="name-display" minOccurs="0"/>
+//         <xs:complexType name="name-display">
+//         <xs:annotation>
+//         <xs:documentation>The name-display type is used for exact formatting of multi-font text in part and group names to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system. Enclosure for the display-text element is none by default. Language for the display-text element is Italian ("it") by default.</xs:documentation>
+//         </xs:annotation>
+//         <xs:sequence>
+//         <xs:choice minOccurs="0" maxOccurs="unbounded">
+//         <xs:element name="display-text" type="formatted-text"/>
+//         <xs:element name="accidental-text" type="accidental-text"/>
+//         </xs:choice>
+//         </xs:sequence>
+//         <xs:attributeGroup ref="print-object"/>
+//         </xs:complexType>
+//         */
+//        
+//        struct PartAbbreviationDisplayAttributes;
+//        using PartAbbreviationDisplayAttributesPtr = std::shared_ptr<PartAbbreviationDisplayAttributes>;
+//        
+//        struct PartAbbreviationDisplayAttributes : public AttributesInterface
+//        {
+//        public:
+//            PartAbbreviationDisplayAttributes();
+//            virtual bool hasValues() const;
+//            virtual std::ostream& toStream( std::ostream& os ) const;
+//            types::YesNo printObject;
+//            bool hasPrintObject;
+//        };
+//        
+//        class PartAbbreviationDisplay;
+//        using PartAbbreviationDisplayPtr = std::shared_ptr<PartAbbreviationDisplay>;
+//        using PartAbbreviationDisplayUPtr = std::unique_ptr<PartAbbreviationDisplay>;
+//        using PartAbbreviationDisplaySet = std::vector<PartAbbreviationDisplayPtr>;
+//        using PartAbbreviationDisplaySetIter = PartAbbreviationDisplaySet::iterator;
+//        using PartAbbreviationDisplaySetIterConst = PartAbbreviationDisplaySet::const_iterator;
+//        inline PartAbbreviationDisplayPtr makePartAbbreviationDisplay() { return std::make_shared<PartAbbreviationDisplay>(); }
+//        class PartAbbreviationDisplay : public ElementInterface
+//        {
+//        public:
+//            PartAbbreviationDisplay();
+//            virtual bool hasAttributes() const;
+//            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+//            virtual std::ostream& streamName( std::ostream& os ) const;
+//            virtual bool hasContents() const;
+//            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+//            PartAbbreviationDisplayAttributesPtr getAttributes() const;
+//            void setAttributes( const PartAbbreviationDisplayAttributesPtr& value );
+//            /* _________ DisplayTextOrAccidentalText minOccurs = 0, maxOccurs = unbounded _________ */
+//            const DisplayTextOrAccidentalTextSet& getDisplayTextOrAccidentalText() const;
+//            void addDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextPtr& value );
+//            void removeDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator );
+//            void clearDisplayTextOrAccidentalTextSet();
+//            DisplayTextOrAccidentalTextPtr getDisplayTextOrAccidentalText( const DisplayTextOrAccidentalTextSetIterConst& setIterator ) const;
+//        private:
+//            PartAbbreviationDisplayAttributesPtr myAttributes;
+//            DisplayTextOrAccidentalTextSet myDisplayTextOrAccidentalTextSet;
+//        };
         
         /*
          3406
