@@ -813,6 +813,120 @@ namespace mx
 			}
 		}
 
+        
+        
+        /**************** GroupNameDisplayAttributes ****************/
+        /* 5807 */
+        GroupNameDisplayAttributes::GroupNameDisplayAttributes()
+        :printObject( types::YesNo::no )
+        ,hasPrintObject( false )
+        {}
+        
+        bool GroupNameDisplayAttributes::hasValues() const
+        {
+            return hasPrintObject;
+        }
+        
+        std::ostream& GroupNameDisplayAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		GroupNameDisplay::GroupNameDisplay()
+		:myAttributes( std::make_shared<GroupNameDisplayAttributes>() )
+        ,myChoice( GroupNameDisplay::Choice::displayText )
+		,myDisplayText( makeDisplayText() )
+		,myAccidentalText( makeAccidentalText() )
+		{}
+		bool GroupNameDisplay::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& GroupNameDisplay::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& GroupNameDisplay::streamName( std::ostream& os ) const
+		{
+			os << "group-name-display";
+			return os;
+		}
+		bool GroupNameDisplay::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& GroupNameDisplay::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+			switch ( myChoice )
+            {
+                case Choice::displayText:
+                {
+                    myDisplayText->toStream( os, indentLevel+1 );
+                }
+                    break;
+                case Choice::accidentalText:
+                {
+                    myAccidentalText->toStream( os, indentLevel+1 );
+                }
+                    break;
+                default:
+                    break;
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+		}
+		GroupNameDisplayAttributesPtr GroupNameDisplay::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void GroupNameDisplay::setAttributes( const GroupNameDisplayAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ Choice _________ */
+        GroupNameDisplay::Choice GroupNameDisplay::getChoice() const
+        {
+            return myChoice;
+        }
+        void GroupNameDisplay::setChoice( const GroupNameDisplay::Choice value )
+        {
+            myChoice = value;
+        }
+		/* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+		DisplayTextPtr GroupNameDisplay::getDisplayText() const
+		{
+			return myDisplayText;
+		}
+		void GroupNameDisplay::setDisplayText( const DisplayTextPtr& value )
+		{
+			if( value )
+			{
+				myDisplayText = value;
+			}
+		}
+		/* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+		AccidentalTextPtr GroupNameDisplay::getAccidentalText() const
+		{
+			return myAccidentalText;
+		}
+		void GroupNameDisplay::setAccidentalText( const AccidentalTextPtr& value )
+		{
+			if( value )
+			{
+				myAccidentalText = value;
+			}
+		}
+
 #if 1==0
 #endif
         

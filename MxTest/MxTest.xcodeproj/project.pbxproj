@@ -23,6 +23,7 @@
 		290D7C141AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C121AA3941C0081FBB5 /* PositiveIntegerOrEmptyTest.cpp */; };
 		291221781AC4E4D400A19E48 /* DirectionTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221761AC4E4D400A19E48 /* DirectionTypeTest.cpp */; };
 		2912217B1AC4EC2C00A19E48 /* MidiInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */; };
+		2916E39B1AD243800073ECC6 /* GroupNameDisplayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2916E3991AD243800073ECC6 /* GroupNameDisplayTest.cpp */; };
 		291C54AE1AC7D6E700E60622 /* HeelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291C54AC1AC7D6E700E60622 /* HeelTest.cpp */; };
 		2922D06F1AD1875000D2D462 /* BendTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2922D06D1AD1875000D2D462 /* BendTest.cpp */; };
 		29237AB91AC790E900FB4515 /* MordentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29237AB71AC790E900FB4515 /* MordentTest.cpp */; };
@@ -414,6 +415,8 @@
 		291221771AC4E4D400A19E48 /* DirectionTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DirectionTypeTest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		291221791AC4EC2C00A19E48 /* MidiInstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInstrumentTest.cpp; sourceTree = "<group>"; };
 		2912217A1AC4EC2C00A19E48 /* MidiInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiInstrumentTest.h; sourceTree = "<group>"; };
+		2916E3991AD243800073ECC6 /* GroupNameDisplayTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GroupNameDisplayTest.cpp; sourceTree = "<group>"; };
+		2916E39A1AD243800073ECC6 /* GroupNameDisplayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupNameDisplayTest.h; sourceTree = "<group>"; };
 		291C54AC1AC7D6E700E60622 /* HeelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeelTest.cpp; sourceTree = "<group>"; };
 		291C54AD1AC7D6E700E60622 /* HeelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeelTest.h; sourceTree = "<group>"; };
 		2922D06D1AD1875000D2D462 /* BendTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BendTest.cpp; sourceTree = "<group>"; };
@@ -1331,6 +1334,8 @@
 				2922D06E1AD1875000D2D462 /* BendTest.h */,
 				29A49B271AD2046100B33288 /* ArrowTest.cpp */,
 				29A49B281AD2046100B33288 /* ArrowTest.h */,
+				2916E3991AD243800073ECC6 /* GroupNameDisplayTest.cpp */,
+				2916E39A1AD243800073ECC6 /* GroupNameDisplayTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1640,6 +1645,7 @@
 				298C81E01AB6A8DC006619A9 /* OctaveShiftTest.cpp in Sources */,
 				29BDAB501AC5281D00C6DE31 /* EncodingTest.cpp in Sources */,
 				298C81D51AB6A8DC006619A9 /* DelayedInvertedTurnTest.cpp in Sources */,
+				2916E39B1AD243800073ECC6 /* GroupNameDisplayTest.cpp in Sources */,
 				297749DD1AB21FA000BF2205 /* ClefOctaveChangeTest.cpp in Sources */,
 				2935A73B1AB5FC3B002859CA /* VerticalTurnTest.cpp in Sources */,
 				29774A1B1AB21FA000BF2205 /* StaffDistanceTest.cpp in Sources */,

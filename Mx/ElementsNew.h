@@ -477,5 +477,79 @@ namespace mx
             ArrowGroupPtr myArrowGroup;
             CircularArrowPtr myCircularArrow;
         };
+        /* <!--  ID = 5807 [5807] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 2 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="group-name-display" type="name-display" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Formatting specified in the group-name-display element overrides formatting specified in the group-name element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="name-display">
+         <xs:annotation>
+         <xs:documentation>The name-display type is used for exact formatting of multi-font text in part and group names to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system. Enclosure for the display-text element is none by default. Language for the display-text element is Italian ("it") by default.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="display-text" type="formatted-text"/>
+         <xs:element name="accidental-text" type="accidental-text"/>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-object"/> */
+        
+        struct GroupNameDisplayAttributes;
+        using GroupNameDisplayAttributesPtr = std::shared_ptr<GroupNameDisplayAttributes>;
+        
+        struct GroupNameDisplayAttributes : public AttributesInterface
+        {
+        public:
+            GroupNameDisplayAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo printObject;
+            bool hasPrintObject;
+        };
+        
+        class GroupNameDisplay;
+        using GroupNameDisplayPtr = std::shared_ptr<GroupNameDisplay>;
+        using GroupNameDisplayUPtr = std::unique_ptr<GroupNameDisplay>;
+        using GroupNameDisplaySet = std::vector<GroupNameDisplayPtr>;
+        using GroupNameDisplaySetIter = GroupNameDisplaySet::iterator;
+        using GroupNameDisplaySetIterConst = GroupNameDisplaySet::const_iterator;
+        inline GroupNameDisplayPtr makeGroupNameDisplay() { return std::make_shared<GroupNameDisplay>(); }
+        class GroupNameDisplay : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                displayText = 1,
+                accidentalText = 2
+            };
+            GroupNameDisplay();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            GroupNameDisplayAttributesPtr getAttributes() const;
+            void setAttributes( const GroupNameDisplayAttributesPtr& value );
+            /* _________ Choice _________ */
+            GroupNameDisplay::Choice getChoice() const;
+            void setChoice( const GroupNameDisplay::Choice value );
+            /* _________ DisplayText minOccurs = 1, maxOccurs = 1 _________ */
+            DisplayTextPtr getDisplayText() const;
+            void setDisplayText( const DisplayTextPtr& value );
+            /* _________ AccidentalText minOccurs = 1, maxOccurs = 1 _________ */
+            AccidentalTextPtr getAccidentalText() const;
+            void setAccidentalText( const AccidentalTextPtr& value );
+        private:
+            GroupNameDisplayAttributesPtr myAttributes;
+            Choice myChoice;
+            DisplayTextPtr myDisplayText;
+            AccidentalTextPtr myAccidentalText;
+        };
+
     }
 }
