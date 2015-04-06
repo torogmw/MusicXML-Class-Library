@@ -625,6 +625,102 @@ namespace mx
             DisplayTextPtr myDisplayText;
             AccidentalTextPtr myAccidentalText;
         };
+        /* <!--  ID = 5921 [5921, 6375] ------------------------->
+         <!-- min=0 max=1 OptionalSingleOccurrence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 12 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="identification" type="identification" minOccurs="0"/>
+         <xs:complexType name="identification">
+         <xs:annotation>
+         <xs:documentation>Identification contains basic metadata about the score. It includes the information in MuseData headers that may apply at a score-wide, movement-wide, or part-wide level. The creator, rights, source, and relation elements are based on Dublin Core.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="creator" type="typed-text" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The creator element is borrowed from Dublin Core. It is used for the creators of the score. The type attribute is used to distinguish different creative contributions. Thus, there can be multiple creators within an identification. Standard type values are composer, lyricist, and arranger. Other type values may be used for different types of creative roles. The type attribute should usually be used even if there is just a single creator element. The MusicXML format does not use the creator / contributor distinction from Dublin Core.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="rights" type="typed-text" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The rights element is borrowed from Dublin Core. It contains copyright and other intellectual property notices. Words, music, and derivatives can have different types, so multiple rights tags with different type attributes are supported. Standard type values are music, words, and arrangement, but other types may be used. The type attribute is only needed when there are multiple rights elements.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="encoding" type="encoding" minOccurs="0"/>
+         <xs:element name="source" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The source for the music that is encoded. This is similar to the Dublin Core source element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="relation" type="typed-text" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>A related resource for the music that is encoded. This is similar to the Dublin Core relation element. Standard type values are music, words, and arrangement, but other types may be used.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="miscellaneous" type="miscellaneous" minOccurs="0"/>
+         </xs:sequence>
+         </xs:complexType> */
         
+        class Identification;
+        using IdentificationPtr = std::shared_ptr<Identification>;
+        using IdentificationUPtr = std::unique_ptr<Identification>;
+        using IdentificationSet = std::vector<IdentificationPtr>;
+        using IdentificationSetIter = IdentificationSet::iterator;
+        using IdentificationSetIterConst = IdentificationSet::const_iterator;
+        inline IdentificationPtr makeIdentification() { return std::make_shared<Identification>(); }
+        class Identification : public ElementInterface
+        {
+        public:
+            Identification();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Creator minOccurs = 0, maxOccurs = unbounded _________ */
+            const CreatorSet& getCreatorSet() const;
+            void addCreator( const CreatorPtr& value );
+            void removeCreator( const CreatorSetIterConst& value );
+            void clearCreatorSet();
+            CreatorPtr getCreator( const CreatorSetIterConst& setIterator ) const;
+            /* _________ Rights minOccurs = 0, maxOccurs = unbounded _________ */
+            const RightsSet& getRightsSet() const;
+            void addRights( const RightsPtr& value );
+            void removeRights( const RightsSetIterConst& value );
+            void clearRightsSet();
+            RightsPtr getRights( const RightsSetIterConst& setIterator ) const;
+            /* _________ Encoding minOccurs = 0, maxOccurs = 1 _________ */
+            EncodingPtr getEncoding() const;
+            void setEncoding( const EncodingPtr& value );
+            bool getHasEncoding() const;
+            void setHasEncoding( const bool value );
+            /* _________ Source minOccurs = 0, maxOccurs = 1 _________ */
+            SourcePtr getSource() const;
+            void setSource( const SourcePtr& value );
+            bool getHasSource() const;
+            void setHasSource( const bool value );
+            /* _________ Relation minOccurs = 0, maxOccurs = unbounded _________ */
+            const RelationSet& getRelationSet() const;
+            void addRelation( const RelationPtr& value );
+            void removeRelation( const RelationSetIterConst& value );
+            void clearRelationSet();
+            RelationPtr getRelation( const RelationSetIterConst& setIterator ) const;
+            /* _________ Miscellaneous minOccurs = 0, maxOccurs = 1 _________ */
+            MiscellaneousPtr getMiscellaneous() const;
+            void setMiscellaneous( const MiscellaneousPtr& value );
+            bool getHasMiscellaneous() const;
+            void setHasMiscellaneous( const bool value );
+        private:
+            CreatorSet myCreatorSet;
+            RightsSet myRightsSet;
+            EncodingPtr myEncoding;
+            bool myHasEncoding;
+            SourcePtr mySource;
+            bool myHasSource;
+            RelationSet myRelationSet;
+            MiscellaneousPtr myMiscellaneous;
+            bool myHasMiscellaneous;
+        };
+
     }
 }
