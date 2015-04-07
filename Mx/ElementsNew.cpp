@@ -1382,6 +1382,285 @@ namespace mx
 				myAccidentalText = value;
 			}
 		}
+        
+        SoloOrEnsemble::SoloOrEnsemble()
+        :myChoice( Choice::solo )
+        ,mySolo( makeSolo() )
+        ,myEnsemble( makeEnsemble() )
+        {}
+        bool SoloOrEnsemble::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& SoloOrEnsemble::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& SoloOrEnsemble::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool SoloOrEnsemble::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& SoloOrEnsemble::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::solo:
+                {
+                    mySolo->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::ensemble:
+                {
+                    myEnsemble->toStream( os, indentLevel );
+                }
+                    break;
+                default:
+                    break;
+            }
+            isOneLineOnly = true;
+            return os;
+        }
+        /* _________ Choice  _________ */
+        SoloOrEnsemble::Choice SoloOrEnsemble::getChoice() const
+        {
+            return myChoice;
+        }
+        void SoloOrEnsemble::setChoice( const SoloOrEnsemble::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ Solo minOccurs = 1, maxOccurs = 1 _________ */
+        SoloPtr SoloOrEnsemble::getSolo() const
+        {
+            return mySolo;
+        }
+        void SoloOrEnsemble::setSolo( const SoloPtr& value )
+        {
+            if ( value )
+            {
+                mySolo = value;
+            }
+        }
+        /* _________ Ensemble minOccurs = 1, maxOccurs = 1 _________ */
+        EnsemblePtr SoloOrEnsemble::getEnsemble() const
+        {
+            return myEnsemble;
+        }
+        void SoloOrEnsemble::setEnsemble( const EnsemblePtr& value )
+        {
+            if ( value )
+            {
+                myEnsemble = value;
+            }
+        }
+        
+        
+        /**************** ScoreInstrumentAttributes ****************/
+        /* 5947 */
+        ScoreInstrumentAttributes::ScoreInstrumentAttributes()
+        :id()
+        ,hasId( true )
+        {}
+        
+        bool ScoreInstrumentAttributes::hasValues() const
+        {
+            return hasId;
+        }
+        
+        std::ostream& ScoreInstrumentAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+            }
+            return os;
+        }
+        
+		ScoreInstrument::ScoreInstrument()
+		:myAttributes( std::make_shared<ScoreInstrumentAttributes>() )
+		,myInstrumentName( makeInstrumentName() )
+		,myInstrumentAbbreviation( makeInstrumentAbbreviation() )
+		,myHasInstrumentAbbreviation( false )
+		,myInstrumentSound( makeInstrumentSound() )
+		,myHasInstrumentSound( false )
+		,mySoloOrEnsemble( makeSoloOrEnsemble() )
+		,myVirtualInstrument( makeVirtualInstrument() )
+		,myHasVirtualInstrument( false )
+		{}
+		bool ScoreInstrument::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& ScoreInstrument::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& ScoreInstrument::streamName( std::ostream& os ) const
+		{
+			os << "score-instrument";
+			return os;
+		}
+		bool ScoreInstrument::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& ScoreInstrument::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		ScoreInstrumentAttributesPtr ScoreInstrument::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void ScoreInstrument::setAttributes( const ScoreInstrumentAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ InstrumentName minOccurs = 1, maxOccurs = 1 _________ */
+		InstrumentNamePtr ScoreInstrument::getInstrumentName() const
+		{
+			return myInstrumentName;
+		}
+		void ScoreInstrument::setInstrumentName( const InstrumentNamePtr& value )
+		{
+			if( value )
+			{
+				myInstrumentName = value;
+			}
+		}
+		/* _________ InstrumentAbbreviation minOccurs = 0, maxOccurs = 1 _________ */
+		InstrumentAbbreviationPtr ScoreInstrument::getInstrumentAbbreviation() const
+		{
+			return myInstrumentAbbreviation;
+		}
+		void ScoreInstrument::setInstrumentAbbreviation( const InstrumentAbbreviationPtr& value )
+		{
+			if( value )
+			{
+				myInstrumentAbbreviation = value;
+			}
+		}
+		bool ScoreInstrument::getHasInstrumentAbbreviation() const
+		{
+			return myHasInstrumentAbbreviation;
+		}
+		void ScoreInstrument::setHasInstrumentAbbreviation( const bool value )
+		{
+			myHasInstrumentAbbreviation = value;
+		}
+		/* _________ InstrumentSound minOccurs = 0, maxOccurs = 1 _________ */
+		InstrumentSoundPtr ScoreInstrument::getInstrumentSound() const
+		{
+			return myInstrumentSound;
+		}
+		void ScoreInstrument::setInstrumentSound( const InstrumentSoundPtr& value )
+		{
+			if( value )
+			{
+				myInstrumentSound = value;
+			}
+		}
+		bool ScoreInstrument::getHasInstrumentSound() const
+		{
+			return myHasInstrumentSound;
+		}
+		void ScoreInstrument::setHasInstrumentSound( const bool value )
+		{
+			myHasInstrumentSound = value;
+		}
+		/* _________ SoloOrEnsemble minOccurs = 0, maxOccurs = 1 _________ */
+        SoloOrEnsemblePtr ScoreInstrument::getSoloOrEnsemble() const
+        {
+            return mySoloOrEnsemble;
+        }
+        void ScoreInstrument::setSoloOrEnsemble( const SoloOrEnsemblePtr& value )
+        {
+            if ( value )
+            {
+                mySoloOrEnsemble = value;
+            }
+        }
+        bool ScoreInstrument::getHasSoloOrEnsemble() const
+        {
+            return myHasSoloOrEnsemble;
+        }
+        void ScoreInstrument::setHasSoloOrEnsemble( const bool value )
+        {
+            myHasSoloOrEnsemble = value;
+        }
+		/* _________ VirtualInstrument minOccurs = 0, maxOccurs = 1 _________ */
+		VirtualInstrumentPtr ScoreInstrument::getVirtualInstrument() const
+		{
+			return myVirtualInstrument;
+		}
+		void ScoreInstrument::setVirtualInstrument( const VirtualInstrumentPtr& value )
+		{
+			if( value )
+			{
+				myVirtualInstrument = value;
+			}
+		}
+		bool ScoreInstrument::getHasVirtualInstrument() const
+		{
+			return myHasVirtualInstrument;
+		}
+		void ScoreInstrument::setHasVirtualInstrument( const bool value )
+		{
+			myHasVirtualInstrument = value;
+		}
+		/* _________ VirtualLibrary minOccurs = 0, maxOccurs = 1 _________ */
+		VirtualLibraryPtr ScoreInstrument::getVirtualLibrary() const
+		{
+			return myVirtualLibrary;
+		}
+		void ScoreInstrument::setVirtualLibrary( const VirtualLibraryPtr& value )
+		{
+			if( value )
+			{
+				myVirtualLibrary = value;
+			}
+		}
+		bool ScoreInstrument::getHasVirtualLibrary() const
+		{
+			return myHasVirtualLibrary;
+		}
+		void ScoreInstrument::setHasVirtualLibrary( const bool value )
+		{
+			myHasVirtualLibrary = value;
+		}
+		/* _________ VirtualName minOccurs = 0, maxOccurs = 1 _________ */
+		VirtualNamePtr ScoreInstrument::getVirtualName() const
+		{
+			return myVirtualName;
+		}
+		void ScoreInstrument::setVirtualName( const VirtualNamePtr& value )
+		{
+			if( value )
+			{
+				myVirtualName = value;
+			}
+		}
+		bool ScoreInstrument::getHasVirtualName() const
+		{
+			return myHasVirtualName;
+		}
+		void ScoreInstrument::setHasVirtualName( const bool value )
+		{
+			myHasVirtualName = value;
+		}
+
+        
 #if 1==0
 #endif
         

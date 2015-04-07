@@ -792,5 +792,149 @@ namespace mx
             DisplayTextPtr myDisplayText;
             AccidentalTextPtr myAccidentalText;
         };
+        
+        /* <!--  ID = 5947 [5947] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="score-instrument" type="score-instrument" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="score-instrument">
+         <xs:annotation>
+         <xs:documentation>The score-instrument type represents a single instrument within a score-part. As with the score-part type, each score-instrument has a required ID attribute, a name, and an optional abbreviation.
+         
+         A score-instrument type is also required if the score specifies MIDI 1.0 channels, banks, or programs. An initial midi-instrument assignment can also be made here. MusicXML software should be able to automatically assign reasonable channels and instruments without these elements in simple cases, such as where part names match General MIDI instrument names.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="instrument-name" type="xs:string">
+         <xs:annotation>
+         <xs:documentation>The instrument-name element is typically used within a software application, rather than appearing on the printed page of a score.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="instrument-abbreviation" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The optional instrument-abbreviation element is typically used within a software application, rather than appearing on the printed page of a score.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="instrument-sound" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The instrument-sound element describes the default timbre of the score-instrument. This description is independent of a particular virtual or MIDI instrument specification and allows playback to be shared more easily between applications and libraries.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:choice minOccurs="0">
+         <xs:element name="solo" type="empty">
+         <xs:annotation>
+         <xs:documentation>The solo element was added in Version 2.0. It is present if performance is intended by a solo instrument.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="ensemble" type="positive-integer-or-empty">
+         <xs:annotation>
+         <xs:documentation>The ensemble element was added in Version 2.0. It is present if performance is intended by an ensemble such as an orchestral section. The text of the ensemble element contains the size of the section, or is empty if the ensemble size is not specified.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         <xs:element name="virtual-instrument" type="virtual-instrument" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attribute name="id" type="xs:ID" use="required"/>
+         </xs:complexType> */
+        
+        class SoloOrEnsemble;
+        using SoloOrEnsemblePtr = std::shared_ptr<SoloOrEnsemble>;
+        using SoloOrEnsembleUPtr = std::unique_ptr<SoloOrEnsemble>;
+        using SoloOrEnsembleSet = std::vector<SoloOrEnsemblePtr>;
+        using SoloOrEnsembleSetIter = SoloOrEnsembleSet::iterator;
+        using SoloOrEnsembleSetIterConst = SoloOrEnsembleSet::const_iterator;
+        inline SoloOrEnsemblePtr makeSoloOrEnsemble() { return std::make_shared<SoloOrEnsemble>(); }
+        class SoloOrEnsemble : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                solo = 1,
+                ensemble = 2
+            };
+            SoloOrEnsemble();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice  _________ */
+            SoloOrEnsemble::Choice getChoice() const;
+            void setChoice( const SoloOrEnsemble::Choice value );
+            /* _________ Solo minOccurs = 1, maxOccurs = 1 _________ */
+            SoloPtr getSolo() const;
+            void setSolo( const SoloPtr& value );
+            /* _________ Ensemble minOccurs = 1, maxOccurs = 1 _________ */
+            EnsemblePtr getEnsemble() const;
+            void setEnsemble( const EnsemblePtr& value );
+        private:
+            Choice myChoice;
+            SoloPtr mySolo;
+            EnsemblePtr myEnsemble;
+        };
+        
+        struct ScoreInstrumentAttributes;
+        using ScoreInstrumentAttributesPtr = std::shared_ptr<ScoreInstrumentAttributes>;
+        
+        struct ScoreInstrumentAttributes : public AttributesInterface
+        {
+        public:
+            ScoreInstrumentAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsID id;
+            const 	bool hasId;
+        };
+        
+        class ScoreInstrument;
+        using ScoreInstrumentPtr = std::shared_ptr<ScoreInstrument>;
+        using ScoreInstrumentUPtr = std::unique_ptr<ScoreInstrument>;
+        using ScoreInstrumentSet = std::vector<ScoreInstrumentPtr>;
+        using ScoreInstrumentSetIter = ScoreInstrumentSet::iterator;
+        using ScoreInstrumentSetIterConst = ScoreInstrumentSet::const_iterator;
+        inline ScoreInstrumentPtr makeScoreInstrument() { return std::make_shared<ScoreInstrument>(); }
+        class ScoreInstrument : public ElementInterface
+        {
+        public:
+            ScoreInstrument();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ScoreInstrumentAttributesPtr getAttributes() const;
+            void setAttributes( const ScoreInstrumentAttributesPtr& value );
+            /* _________ InstrumentName minOccurs = 1, maxOccurs = 1 _________ */
+            InstrumentNamePtr getInstrumentName() const;
+            void setInstrumentName( const InstrumentNamePtr& value );
+            /* _________ InstrumentAbbreviation minOccurs = 0, maxOccurs = 1 _________ */
+            InstrumentAbbreviationPtr getInstrumentAbbreviation() const;
+            void setInstrumentAbbreviation( const InstrumentAbbreviationPtr& value );
+            bool getHasInstrumentAbbreviation() const;
+            void setHasInstrumentAbbreviation( const bool value );
+            /* _________ InstrumentSound minOccurs = 0, maxOccurs = 1 _________ */
+            InstrumentSoundPtr getInstrumentSound() const;
+            void setInstrumentSound( const InstrumentSoundPtr& value );
+            bool getHasInstrumentSound() const;
+            void setHasInstrumentSound( const bool value );
+            /* _________ VirtualInstrument minOccurs = 0, maxOccurs = 1 _________ */
+            VirtualInstrumentPtr getVirtualInstrument() const;
+            void setVirtualInstrument( const VirtualInstrumentPtr& value );
+            bool getHasVirtualInstrument() const;
+            void setHasVirtualInstrument( const bool value );
+        private:
+            ScoreInstrumentAttributesPtr myAttributes;
+            InstrumentNamePtr myInstrumentName;
+            InstrumentAbbreviationPtr myInstrumentAbbreviation;
+            bool myHasInstrumentAbbreviation;
+            InstrumentSoundPtr myInstrumentSound;
+            bool myHasInstrumentSound;
+            SoloOrEnsemblePtr mySoloOrEnsemble;
+            bool myHasSoloOrEnsemble;
+            VirtualInstrumentPtr myVirtualInstrument;
+            bool myHasVirtualInstrument;
+        };
+
     }
 }
