@@ -1488,6 +1488,7 @@ namespace mx
 		,myInstrumentSound( makeInstrumentSound() )
 		,myHasInstrumentSound( false )
 		,mySoloOrEnsemble( makeSoloOrEnsemble() )
+        ,myHasSoloOrEnsemble( false )
 		,myVirtualInstrument( makeVirtualInstrument() )
 		,myHasVirtualInstrument( false )
 		{}
@@ -1511,10 +1512,31 @@ namespace mx
 		}
 		std::ostream& ScoreInstrument::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			myInstrumentName->toStream( os, indentLevel+1 );
+            if ( myHasInstrumentAbbreviation )
+            {
+                os << std::endl;
+                myInstrumentAbbreviation->toStream( os, indentLevel+1 );
+            }
+            if ( myHasInstrumentSound )
+            {
+                os << std::endl;
+                myInstrumentSound->toStream( os, indentLevel+1 );
+            }
+            if ( myHasSoloOrEnsemble )
+            {
+                os << std::endl;
+                mySoloOrEnsemble->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            if ( myHasVirtualInstrument )
+            {
+                os << std::endl;
+                myVirtualInstrument->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+			return os;
 		}
 		ScoreInstrumentAttributesPtr ScoreInstrument::getAttributes() const
 		{
@@ -1619,47 +1641,6 @@ namespace mx
 		{
 			myHasVirtualInstrument = value;
 		}
-		/* _________ VirtualLibrary minOccurs = 0, maxOccurs = 1 _________ */
-		VirtualLibraryPtr ScoreInstrument::getVirtualLibrary() const
-		{
-			return myVirtualLibrary;
-		}
-		void ScoreInstrument::setVirtualLibrary( const VirtualLibraryPtr& value )
-		{
-			if( value )
-			{
-				myVirtualLibrary = value;
-			}
-		}
-		bool ScoreInstrument::getHasVirtualLibrary() const
-		{
-			return myHasVirtualLibrary;
-		}
-		void ScoreInstrument::setHasVirtualLibrary( const bool value )
-		{
-			myHasVirtualLibrary = value;
-		}
-		/* _________ VirtualName minOccurs = 0, maxOccurs = 1 _________ */
-		VirtualNamePtr ScoreInstrument::getVirtualName() const
-		{
-			return myVirtualName;
-		}
-		void ScoreInstrument::setVirtualName( const VirtualNamePtr& value )
-		{
-			if( value )
-			{
-				myVirtualName = value;
-			}
-		}
-		bool ScoreInstrument::getHasVirtualName() const
-		{
-			return myHasVirtualName;
-		}
-		void ScoreInstrument::setHasVirtualName( const bool value )
-		{
-			myHasVirtualName = value;
-		}
-
         
 #if 1==0
 #endif

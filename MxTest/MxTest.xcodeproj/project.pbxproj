@@ -250,6 +250,7 @@
 		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
 		29BA0BB31AD2DF4A00961A55 /* PartAbbreviationDisplayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BA0BB11AD2DF4A00961A55 /* PartAbbreviationDisplayTest.cpp */; };
 		29BB00EA1AC864D300D87116 /* TupletNormalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */; };
+		29BBA8691AD436B600B72A85 /* ScoreInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBA8671AD436B600B72A85 /* ScoreInstrumentTest.cpp */; };
 		29BBED291ACA545D00C16802 /* StaffLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED271ACA545D00C16802 /* StaffLayoutTest.cpp */; };
 		29BBED2C1ACA594200C16802 /* PitchTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED2A1ACA594200C16802 /* PitchTest.cpp */; };
 		29BBED2F1ACA5FB100C16802 /* UnpitchedTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BBED2D1ACA5FB100C16802 /* UnpitchedTest.cpp */; };
@@ -684,6 +685,8 @@
 		29BA0BB21AD2DF4A00961A55 /* PartAbbreviationDisplayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartAbbreviationDisplayTest.h; sourceTree = "<group>"; };
 		29BB00E81AC864D300D87116 /* TupletNormalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TupletNormalTest.cpp; sourceTree = "<group>"; };
 		29BB00E91AC864D300D87116 /* TupletNormalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TupletNormalTest.h; sourceTree = "<group>"; };
+		29BBA8671AD436B600B72A85 /* ScoreInstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreInstrumentTest.cpp; sourceTree = "<group>"; };
+		29BBA8681AD436B600B72A85 /* ScoreInstrumentTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreInstrumentTest.h; sourceTree = "<group>"; };
 		29BBED271ACA545D00C16802 /* StaffLayoutTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffLayoutTest.cpp; sourceTree = "<group>"; };
 		29BBED281ACA545D00C16802 /* StaffLayoutTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffLayoutTest.h; sourceTree = "<group>"; };
 		29BBED2A1ACA594200C16802 /* PitchTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchTest.cpp; sourceTree = "<group>"; };
@@ -1346,6 +1349,8 @@
 				2916E3A01AD253290073ECC6 /* IdentificationTest.h */,
 				29BA0BB11AD2DF4A00961A55 /* PartAbbreviationDisplayTest.cpp */,
 				29BA0BB21AD2DF4A00961A55 /* PartAbbreviationDisplayTest.h */,
+				29BBA8671AD436B600B72A85 /* ScoreInstrumentTest.cpp */,
+				29BBA8681AD436B600B72A85 /* ScoreInstrumentTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1601,6 +1606,7 @@
 				29774A041AB21FA000BF2205 /* MillimetersTest.cpp in Sources */,
 				293AD4EA1AC92487008DEB6F /* RootTest.cpp in Sources */,
 				29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */,
+				29BBA8691AD436B600B72A85 /* ScoreInstrumentTest.cpp in Sources */,
 				29C0B96E1AAE9209004F86FA /* BassStepTest.cpp in Sources */,
 				29BDAB4A1AC5177300C6DE31 /* PlayTest.cpp in Sources */,
 				29774A111AB21FA000BF2205 /* PedalAlterTest.cpp in Sources */,

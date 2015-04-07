@@ -913,6 +913,11 @@ namespace mx
             void setInstrumentAbbreviation( const InstrumentAbbreviationPtr& value );
             bool getHasInstrumentAbbreviation() const;
             void setHasInstrumentAbbreviation( const bool value );
+            /* _________ SoloOrEnsemble minOccurs = 0, maxOccurs = 1 _________ */
+            SoloOrEnsemblePtr getSoloOrEnsemble() const;
+            void setSoloOrEnsemble( const SoloOrEnsemblePtr& value );
+            bool getHasSoloOrEnsemble() const;
+            void setHasSoloOrEnsemble( const bool value );
             /* _________ InstrumentSound minOccurs = 0, maxOccurs = 1 _________ */
             InstrumentSoundPtr getInstrumentSound() const;
             void setInstrumentSound( const InstrumentSoundPtr& value );
