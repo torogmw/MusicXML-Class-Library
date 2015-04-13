@@ -1642,6 +1642,151 @@ namespace mx
 			myHasVirtualInstrument = value;
 		}
         
+        HarmonyChordGroup::HarmonyChordGroup()
+        :myChoice( Choice::root )
+        ,myRoot( makeRoot() )
+        ,myFunction( makeFunction() )
+        ,myKind( makeKind() )
+        ,myBass( makeBass() )
+        ,myHasBass( false )
+        ,myDegreeSet()
+        {}
+        bool HarmonyChordGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& HarmonyChordGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& HarmonyChordGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool HarmonyChordGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& HarmonyChordGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            return os;
+        }
+        /* Choice */
+        HarmonyChordGroup::Choice HarmonyChordGroup::getChoice() const
+        {
+            return myChoice;
+        }
+        void HarmonyChordGroup::setChoice( const HarmonyChordGroup::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ Root minOccurs = 1, maxOccurs = 1 _________ */
+        RootPtr HarmonyChordGroup::getRoot() const
+        {
+            return myRoot;
+        }
+        void HarmonyChordGroup::setRoot( const RootPtr& value )
+        {
+            if ( value )
+            {
+                myRoot = value;
+            }
+        }
+        /* _________ Function minOccurs = 1, maxOccurs = 1 _________ */
+        FunctionPtr HarmonyChordGroup::getFunction() const
+        {
+            return myFunction;
+        }
+        void HarmonyChordGroup::setFunction( const FunctionPtr& value )
+        {
+            if ( value )
+            {
+                myFunction = value;
+            }
+        }
+        /* _________ Kind minOccurs = 1, maxOccurs = 1 _________ */
+        KindPtr HarmonyChordGroup::getKind() const
+        {
+            return myKind;
+        }
+        void HarmonyChordGroup::setKind( const KindPtr& value )
+        {
+            if ( value )
+            {
+                myKind = value;
+            }
+        }
+        /* _________ Inversion minOccurs = 0, maxOccurs = 1 _________ */
+        InversionPtr HarmonyChordGroup::getInversion() const
+        {
+            return myInversion;
+        }
+        void HarmonyChordGroup::setInversion( const InversionPtr& value )
+        {
+            if ( value )
+            {
+                myInversion = value;
+            }
+        }
+        bool HarmonyChordGroup::getHasInversion() const
+        {
+            return myHasInversion;
+        }
+        void HarmonyChordGroup::setHasInversion( const bool value )
+        {
+            myHasInversion = value;
+        }
+        /* _________ Bass minOccurs = 0, maxOccurs = 1 _________ */
+        BassPtr HarmonyChordGroup::getBass() const
+        {
+            return myBass;
+        }
+        void HarmonyChordGroup::setBass( const BassPtr& value )
+        {
+            if ( value )
+            {
+                myBass = value;
+            }
+        }
+        bool HarmonyChordGroup::getHasBass() const
+        {
+            return myHasBass;
+        }
+        void HarmonyChordGroup::setHasBass( const bool value )
+        {
+            myHasBass = value;
+        }
+        /* _________ Degree minOccurs = 0, maxOccurs = unbounded _________ */
+        const DegreeSet& HarmonyChordGroup::getDegreeSet() const
+        {
+            return myDegreeSet;
+        }
+        void HarmonyChordGroup::addDegree( const DegreePtr& value )
+        {
+            if ( value )
+            {
+                myDegreeSet.push_back( value );
+            }
+        }
+        void HarmonyChordGroup::removeDegree( const DegreeSetIterConst& value )
+        {
+            if ( value != myDegreeSet.cend() )
+            {
+                myDegreeSet.erase( value );
+            }
+        }
+        void HarmonyChordGroup::clearDegreeSet()
+        {
+            myDegreeSet.clear();
+        }
+        DegreePtr HarmonyChordGroup::getDegree( const DegreeSetIterConst& setIterator ) const
+        {
+            if( setIterator != myDegreeSet.cend() )
+            {
+                return *setIterator;
+            }
+            return DegreePtr();
+        }
 #if 1==0
 #endif
         

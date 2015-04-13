@@ -940,6 +940,206 @@ namespace mx
             VirtualInstrumentPtr myVirtualInstrument;
             bool myHasVirtualInstrument;
         };
-
+        
+        /* <!--  ID = 6322 [6322] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 26 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="harmony" type="harmony"/>
+         <xs:complexType name="harmony">
+         <xs:annotation>
+         <xs:documentation>The harmony type is based on Humdrum's **harm encoding, extended to support chord symbols in popular music as well as functional harmony analysis in classical music.
+         
+         If there are alternate harmonies possible, this can be specified using multiple harmony elements differentiated by type. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.
+         
+         The harmony object may be used for analysis or for chord symbols. The print-object attribute controls whether or not anything is printed due to the harmony element. The print-frame attribute controls printing of a frame or fretboard diagram. The print-style attribute group sets the default for the harmony, but individual elements can override this with their own print-style values.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="harmony-chord" maxOccurs="unbounded"/>
+         <xs:element name="frame" type="frame" minOccurs="0"/>
+         <xs:element name="offset" type="offset" minOccurs="0"/>
+         <xs:group ref="editorial"/>
+         <xs:group ref="staff" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attribute name="type" type="harmony-type"/>
+         <xs:attributeGroup ref="print-object"/>
+         <xs:attribute name="print-frame" type="yes-no"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType>
+         
+         <xs:group name="harmony-chord">
+         <xs:annotation>
+         <xs:documentation>A harmony element can contain many stacked chords (e.g. V of II). A sequence of harmony-chord groups is used for this type of secondary function, where V of II would be represented by a harmony-chord with a V function followed by a harmony-chord with a II function.
+         
+         A root is a pitch name like C, D, E, where a function is an indication like I, II, III. It is an either/or choice to avoid data inconsistency.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice>
+         <xs:element name="root" type="root"/>
+         <xs:element name="function" type="style-text">
+         <xs:annotation>
+         <xs:documentation>The function element is used to represent classical functional harmony with an indication like I, II, III rather than C, D, E. It is relative to the key that is specified in the MusicXML encoding.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         <xs:element name="kind" type="kind"/>
+         <xs:element name="inversion" type="inversion" minOccurs="0"/>
+         <xs:element name="bass" type="bass" minOccurs="0"/>
+         <xs:element name="degree" type="degree" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="staff">
+         <xs:annotation>
+         <xs:documentation>The staff element is defined within a group due to its use by both notes and direction elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="staff" type="xs:positiveInteger">
+         <xs:annotation>
+         <xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers, with 1 referring to the top-most staff in a part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group> */
+        
+        class HarmonyChordGroup;
+        using HarmonyChordGroupPtr = std::shared_ptr<HarmonyChordGroup>;
+        using HarmonyChordGroupUPtr = std::unique_ptr<HarmonyChordGroup>;
+        using HarmonyChordGroupSet = std::vector<HarmonyChordGroupPtr>;
+        using HarmonyChordGroupSetIter = HarmonyChordGroupSet::iterator;
+        using HarmonyChordGroupSetIterConst = HarmonyChordGroupSet::const_iterator;
+        inline HarmonyChordGroupPtr makeHarmonyChordGroup() { return std::make_shared<HarmonyChordGroup>(); }
+        class HarmonyChordGroup : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                root = 1,
+                function = 2
+            };
+            HarmonyChordGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* Choice */
+            HarmonyChordGroup::Choice getChoice() const;
+            void setChoice( const HarmonyChordGroup::Choice value );
+            /* _________ Root minOccurs = 1, maxOccurs = 1 _________ */
+            RootPtr getRoot() const;
+            void setRoot( const RootPtr& value );
+            /* _________ Function minOccurs = 1, maxOccurs = 1 _________ */
+            FunctionPtr getFunction() const;
+            void setFunction( const FunctionPtr& value );
+            /* _________ Kind minOccurs = 1, maxOccurs = 1 _________ */
+            KindPtr getKind() const;
+            void setKind( const KindPtr& value );
+            /* _________ Inversion minOccurs = 0, maxOccurs = 1 _________ */
+            InversionPtr getInversion() const;
+            void setInversion( const InversionPtr& value );
+            bool getHasInversion() const;
+            void setHasInversion( const bool value );
+            /* _________ Bass minOccurs = 0, maxOccurs = 1 _________ */
+            BassPtr getBass() const;
+            void setBass( const BassPtr& value );
+            bool getHasBass() const;
+            void setHasBass( const bool value );
+            /* _________ Degree minOccurs = 0, maxOccurs = unbounded _________ */
+            const DegreeSet& getDegreeSet() const;
+            void addDegree( const DegreePtr& value );
+            void removeDegree( const DegreeSetIterConst& value );
+            void clearDegreeSet();
+            DegreePtr getDegree( const DegreeSetIterConst& setIterator ) const;
+        private:
+            Choice myChoice;
+            RootPtr myRoot;
+            FunctionPtr myFunction;
+            KindPtr myKind;
+            InversionPtr myInversion;
+            bool myHasInversion;
+            BassPtr myBass;
+            bool myHasBass;
+            DegreeSet myDegreeSet;
+        };
+        
+        struct HarmonyAttributes;
+        using HarmonyAttributesPtr = std::shared_ptr<HarmonyAttributes>;
+        
+        struct HarmonyAttributes : public AttributesInterface
+        {
+        public:
+            HarmonyAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::HarmonyType type;
+            types::YesNo printObject;
+            types::YesNo printFrame;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            bool hasType;
+            bool hasPrintObject;
+            bool hasPrintFrame;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+        };
+        
+        class Harmony;
+        using HarmonyPtr = std::shared_ptr<Harmony>;
+        using HarmonyUPtr = std::unique_ptr<Harmony>;
+        using HarmonySet = std::vector<HarmonyPtr>;
+        using HarmonySetIter = HarmonySet::iterator;
+        using HarmonySetIterConst = HarmonySet::const_iterator;
+        inline HarmonyPtr makeHarmony() { return std::make_shared<Harmony>(); }
+        class Harmony : public ElementInterface
+        {
+        public:
+            Harmony();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            HarmonyAttributesPtr getAttributes() const;
+            void setAttributes( const HarmonyAttributesPtr& value );
+            
+        private:
+            HarmonyChordGroupSet myHarmonyChordGroupSet;
+            FramePtr myFrame;
+            bool myHasFrame;
+            OffsetPtr myOffset;
+            bool myHasOffset;
+            EditorialGroupPtr myEditorialGroup;
+            StaffPtr myStaff;
+            bool myHasStaff;
+        };
     }
 }
