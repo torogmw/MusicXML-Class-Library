@@ -1669,6 +1669,32 @@ namespace mx
         }
         std::ostream& HarmonyChordGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
+            // os << std::endl;
+            switch ( myChoice )
+            {
+                case Choice::root:
+                    myRoot->toStream( os, indentLevel );
+                    break;
+                case Choice::function:
+                    myFunction->toStream( os, indentLevel );
+                    break;
+                default:
+                    break;
+            }
+            os << std::endl;
+            myKind->toStream( os, indentLevel );
+            if ( myHasBass )
+            {
+                os << std::endl;
+                myBass->toStream( os, indentLevel );
+            }
+            for ( auto x : myDegreeSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel );
+            }
+            // os << std::endl;
+            isOneLineOnly = false;
             return os;
         }
         /* Choice */
