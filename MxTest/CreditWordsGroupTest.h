@@ -1,18 +1,9 @@
-/* matthew james briggs */
-
 #pragma once
-#include <iostream>
+#include "MxTestHelper.h"
+#include "ElementsNew.h"
 
-namespace mjb
+namespace MxTestHelpers
 {
-    class CreditWordsGroup
-    {
-
-    public:
-        CreditWordsGroup();
-        virtual ~CreditWordsGroup();
-        
-    private:
-    
-    };
+    mx::e::CreditWordsGroupPtr tgenCreditWordsGroup( variant v );
+    void tgenCreditWordsGroupExpected( std::ostream& os, int indentLevel, variant v );
 }

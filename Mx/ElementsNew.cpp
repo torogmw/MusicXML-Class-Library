@@ -2065,7 +2065,7 @@ namespace mx
         CreditWordsGroup::CreditWordsGroup()
         :myLinkSet()
         ,myBookmarkSet()
-        ,myCreditWords()
+        ,myCreditWords( makeCreditWords() )
         {}
         bool CreditWordsGroup::hasAttributes() const
         {
@@ -2085,19 +2085,30 @@ namespace mx
         }
         std::ostream& CreditWordsGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
+            bool isFirst = true;
             for ( auto x : myLinkSet )
             {
-                os << std::endl;
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
                 x->toStream( os, indentLevel );
+                isFirst = false;
             }
-            for ( auto x : myLinkSet )
+            for ( auto x : myBookmarkSet )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                x->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            if ( !isFirst )
             {
                 os << std::endl;
-                x->toStream( os, indentLevel );
             }
-            os << std::endl;
             myCreditWords->toStream( os, indentLevel );
-            os << std::endl;
             isOneLineOnly = false;
             return os;
         }
