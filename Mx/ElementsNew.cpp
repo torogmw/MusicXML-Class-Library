@@ -2061,6 +2061,120 @@ namespace mx
         {
             myHasStaff = value;
         }
+        
+        CreditWordsGroup::CreditWordsGroup()
+        :myLinkSet()
+        ,myBookmarkSet()
+        ,myCreditWords()
+        {}
+        bool CreditWordsGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& CreditWordsGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& CreditWordsGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool CreditWordsGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& CreditWordsGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            for ( auto x : myLinkSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel );
+            }
+            for ( auto x : myLinkSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel );
+            }
+            os << std::endl;
+            myCreditWords->toStream( os, indentLevel );
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ Link minOccurs = 0, maxOccurs = unbounded _________ */
+        const LinkSet& CreditWordsGroup::getLinkSet() const
+        {
+            return myLinkSet;
+        }
+        void CreditWordsGroup::addLink( const LinkPtr& value )
+        {
+            if ( value )
+            {
+                myLinkSet.push_back( value );
+            }
+        }
+        void CreditWordsGroup::removeLink( const LinkSetIterConst& value )
+        {
+            if ( value != myLinkSet.cend() )
+            {
+                myLinkSet.erase( value );
+            }
+        }
+        void CreditWordsGroup::clearLinkSet()
+        {
+            myLinkSet.clear();
+        }
+        LinkPtr CreditWordsGroup::getLink( const LinkSetIterConst& setIterator ) const
+        {
+            if( setIterator != myLinkSet.cend() )
+            {
+                return *setIterator;
+            }
+            return LinkPtr();
+        }
+        /* _________ Bookmark minOccurs = 0, maxOccurs = unbounded _________ */
+        const BookmarkSet& CreditWordsGroup::getBookmarkSet() const
+        {
+            return myBookmarkSet;
+        }
+        void CreditWordsGroup::addBookmark( const BookmarkPtr& value )
+        {
+            if ( value )
+            {
+                myBookmarkSet.push_back( value );
+            }
+        }
+        void CreditWordsGroup::removeBookmark( const BookmarkSetIterConst& value )
+        {
+            if ( value != myBookmarkSet.cend() )
+            {
+                myBookmarkSet.erase( value );
+            }
+        }
+        void CreditWordsGroup::clearBookmarkSet()
+        {
+            myBookmarkSet.clear();
+        }
+        BookmarkPtr CreditWordsGroup::getBookmark( const BookmarkSetIterConst& setIterator ) const
+        {
+            if( setIterator != myBookmarkSet.cend() )
+            {
+                return *setIterator;
+            }
+            return BookmarkPtr();
+        }
+        /* _________ CreditWords minOccurs = 1, maxOccurs = 1 _________ */
+        CreditWordsPtr CreditWordsGroup::getCreditWords() const
+        {
+            return myCreditWords;
+        }
+        void CreditWordsGroup::setCreditWords( const CreditWordsPtr& value )
+        {
+            if ( value )
+            {
+                myCreditWords = value;
+            }
+        }
 #if 1==0
 #endif
         
