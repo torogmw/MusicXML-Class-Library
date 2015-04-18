@@ -78,6 +78,7 @@
 		294D218B1ACF670D00A8DACC /* WorkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294D21891ACF670D00A8DACC /* WorkTest.cpp */; };
 		294F9B011AE30899006820D8 /* HarmonicTypeChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294F9AFF1AE30899006820D8 /* HarmonicTypeChoiceTest.cpp */; };
 		294F9B041AE30CAB006820D8 /* HarmonicInfoChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294F9B021AE30CAB006820D8 /* HarmonicInfoChoiceTest.cpp */; };
+		294F9B071AE30F90006820D8 /* HarmonicTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294F9B051AE30F90006820D8 /* HarmonicTest.cpp */; };
 		295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */; };
 		296236011AC5BDBC00F3E007 /* PageMarginsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296235FF1AC5BDBC00F3E007 /* PageMarginsTest.cpp */; };
 		296236041AC5C19600F3E007 /* SystemMarginsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296236021AC5C19600F3E007 /* SystemMarginsTest.cpp */; };
@@ -496,6 +497,8 @@
 		294F9B001AE30899006820D8 /* HarmonicTypeChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonicTypeChoiceTest.h; sourceTree = "<group>"; };
 		294F9B021AE30CAB006820D8 /* HarmonicInfoChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonicInfoChoiceTest.cpp; sourceTree = "<group>"; };
 		294F9B031AE30CAB006820D8 /* HarmonicInfoChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonicInfoChoiceTest.h; sourceTree = "<group>"; };
+		294F9B051AE30F90006820D8 /* HarmonicTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonicTest.cpp; sourceTree = "<group>"; };
+		294F9B061AE30F90006820D8 /* HarmonicTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonicTest.h; sourceTree = "<group>"; };
 		295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicsTest.cpp; sourceTree = "<group>"; };
 		296235FF1AC5BDBC00F3E007 /* PageMarginsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageMarginsTest.cpp; sourceTree = "<group>"; };
 		296236001AC5BDBC00F3E007 /* PageMarginsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageMarginsTest.h; sourceTree = "<group>"; };
@@ -1386,6 +1389,8 @@
 				294F9B001AE30899006820D8 /* HarmonicTypeChoiceTest.h */,
 				294F9B021AE30CAB006820D8 /* HarmonicInfoChoiceTest.cpp */,
 				294F9B031AE30CAB006820D8 /* HarmonicInfoChoiceTest.h */,
+				294F9B051AE30F90006820D8 /* HarmonicTest.cpp */,
+				294F9B061AE30F90006820D8 /* HarmonicTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1744,6 +1749,7 @@
 				29A1D92A1AC5F11B00BEFF24 /* NoteheadTextTest.cpp in Sources */,
 				2962A3711AE2E37E00903EB0 /* CreditWordsGroupTest.cpp in Sources */,
 				29C0B97F1AAE9337004F86FA /* DistanceTest.cpp in Sources */,
+				294F9B071AE30F90006820D8 /* HarmonicTest.cpp in Sources */,
 				29C0B9DB1AAE9398004F86FA /* MidiDeviceTest.cpp in Sources */,
 				297749E21AB21FA000BF2205 /* DivisionsTest.cpp in Sources */,
 				2935A7201AB5FC3B002859CA /* DotTest.cpp in Sources */,

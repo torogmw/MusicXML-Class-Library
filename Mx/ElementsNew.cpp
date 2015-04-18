@@ -2599,6 +2599,167 @@ namespace mx
                 mySoundingPitch = value;
             }
         }
+        
+        /**************** HarmonicAttributes ****************/
+        /* 5349 */
+        HarmonicAttributes::HarmonicAttributes()
+        :printObject( types::YesNo::no )
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,hasPrintObject( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        {}
+        
+        bool HarmonicAttributes::hasValues() const
+        {
+            return hasPrintObject ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement;
+        }
+        
+        std::ostream& HarmonicAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
+        
+		Harmonic::Harmonic()
+		:myAttributes( std::make_shared<HarmonicAttributes>() )
+		,myHarmonicTypeChoice( makeHarmonicTypeChoice() )
+        ,myHasHarmonicTypeChoice( false )
+        ,myHarmonicInfoChoice( makeHarmonicInfoChoice() )
+        ,myHasHarmonicInfoChoice( false )
+		{}
+		bool Harmonic::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Harmonic::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Harmonic::streamName( std::ostream& os ) const
+		{
+			os << "harmonic";
+			return os;
+		}
+		bool Harmonic::hasContents() const
+		{
+			return myHasHarmonicTypeChoice || myHasHarmonicInfoChoice;
+		}
+		std::ostream& Harmonic::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( hasContents() )
+            {
+                if ( myHasHarmonicTypeChoice )
+                {
+                    os << std::endl;
+                    myHarmonicTypeChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                if ( myHasHarmonicInfoChoice )
+                {
+                    os << std::endl;
+                    myHarmonicInfoChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+        /* _________ HarmonicTypeChoice minOccurs = 0, maxOccurs = 1 _________ */
+        HarmonicTypeChoicePtr Harmonic::getHarmonicTypeChoice() const
+        {
+            return myHarmonicTypeChoice;
+        }
+        void Harmonic::setHarmonicTypeChoice( const HarmonicTypeChoicePtr& value )
+        {
+            if ( value )
+            {
+                myHarmonicTypeChoice = value;
+            }
+        }
+        bool Harmonic::getHasHarmonicTypeChoice() const
+        {
+            return myHasHarmonicTypeChoice;
+        }
+        void Harmonic::setHasHarmonicTypeChoice( const bool value )
+        {
+            myHasHarmonicTypeChoice = value;
+        }
+        HarmonicAttributesPtr Harmonic::getAttributes() const
+        {
+            return myAttributes;
+        }
+        void Harmonic::setAttributes( const HarmonicAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        /* _________ HarmonicInfoChoice minOccurs = 0, maxOccurs = 1 _________ */
+        HarmonicInfoChoicePtr Harmonic::getHarmonicInfoChoice() const
+        {
+            return myHarmonicInfoChoice;
+        }
+        void Harmonic::setHarmonicInfoChoice( const HarmonicInfoChoicePtr& value )
+        {
+            if ( value )
+            {
+                myHarmonicInfoChoice = value;
+            }
+        }
+        bool Harmonic::getHasHarmonicInfoChoice() const
+        {
+            return myHasHarmonicInfoChoice;
+        }
+        void Harmonic::setHasHarmonicInfoChoice( const bool value )
+        {
+            myHasHarmonicInfoChoice = value;
+        }
 #if 1==0
 #endif
         

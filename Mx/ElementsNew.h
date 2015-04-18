@@ -1417,5 +1417,120 @@ namespace mx
             TouchingPitchPtr myTouchingPitch;
             SoundingPitchPtr mySoundingPitch;
         };
+        
+        /* <!--  ID = 5349 [5349] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 5 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="harmonic" type="harmonic"/>
+         <xs:complexType name="harmonic">
+         <xs:annotation>
+         <xs:documentation>The harmonic type indicates natural and artificial harmonics. Allowing the type of pitch to be specified, combined with controls for appearance/playback differences, allows both the notation and the sound to be represented. Artificial harmonics can add a notated touching-pitch; artificial pinch harmonics will usually not notate a touching pitch. The attributes for the harmonic element refer to the use of the circular harmonic symbol, typically but not always used with natural harmonics.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice minOccurs="0">
+         <xs:element name="natural" type="empty">
+         <xs:annotation>
+         <xs:documentation>The natural element indicates that this is a natural harmonic. These are usually notated at base pitch rather than sounding pitch.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="artificial" type="empty">
+         <xs:annotation>
+         <xs:documentation>The artificial element indicates that this is an artificial harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         <xs:choice minOccurs="0">
+         <xs:element name="base-pitch" type="empty">
+         <xs:annotation>
+         <xs:documentation>The base pitch is the pitch at which the string is played before touching to create the harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="touching-pitch" type="empty">
+         <xs:annotation>
+         <xs:documentation>The touching-pitch is the pitch at which the string is touched lightly to produce the harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="sounding-pitch" type="empty">
+         <xs:annotation>
+         <xs:documentation>The sounding-pitch is the pitch which is heard when playing the harmonic.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-object"/>
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attributeGroup ref="placement"/>
+         </xs:complexType> */
+        
+        struct HarmonicAttributes;
+        using HarmonicAttributesPtr = std::shared_ptr<HarmonicAttributes>;
+        
+        struct HarmonicAttributes : public AttributesInterface
+        {
+        public:
+            HarmonicAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo printObject;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::AboveBelow placement;
+            bool hasPrintObject;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPlacement;
+        };
+        
+        class Harmonic;
+        using HarmonicPtr = std::shared_ptr<Harmonic>;
+        using HarmonicUPtr = std::unique_ptr<Harmonic>;
+        using HarmonicSet = std::vector<HarmonicPtr>;
+        using HarmonicSetIter = HarmonicSet::iterator;
+        using HarmonicSetIterConst = HarmonicSet::const_iterator;
+        inline HarmonicPtr makeHarmonic() { return std::make_shared<Harmonic>(); }
+        class Harmonic : public ElementInterface
+        {
+        public:
+            Harmonic();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            HarmonicAttributesPtr getAttributes() const;
+            void setAttributes( const HarmonicAttributesPtr& value );
+            /* _________ HarmonicTypeChoice minOccurs = 0, maxOccurs = 1 _________ */
+            HarmonicTypeChoicePtr getHarmonicTypeChoice() const;
+            void setHarmonicTypeChoice( const HarmonicTypeChoicePtr& value );
+            bool getHasHarmonicTypeChoice() const;
+            void setHasHarmonicTypeChoice( const bool value );
+            /* _________ HarmonicInfoChoice minOccurs = 0, maxOccurs = 1 _________ */
+            HarmonicInfoChoicePtr getHarmonicInfoChoice() const;
+            void setHarmonicInfoChoice( const HarmonicInfoChoicePtr& value );
+            bool getHasHarmonicInfoChoice() const;
+            void setHasHarmonicInfoChoice( const bool value );
+        private:
+            HarmonicAttributesPtr myAttributes;
+            HarmonicTypeChoicePtr myHarmonicTypeChoice;
+            bool myHasHarmonicTypeChoice;
+            HarmonicInfoChoicePtr myHarmonicInfoChoice;
+            bool myHasHarmonicInfoChoice;
+        };
     }
 }
