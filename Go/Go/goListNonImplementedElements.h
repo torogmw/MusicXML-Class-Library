@@ -42,7 +42,7 @@ namespace go
         {
             if ( !onlyIncludeThoseWithImplementedSubElements || e->getSubElementsImplemented() )
             {
-                if ( e->getChoiceCount() <= 1 )
+                if ( e->getChoiceCount() <= 2 )
                 {
                     e->toStream( ss );
                 }
