@@ -1130,7 +1130,12 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             HarmonyAttributesPtr getAttributes() const;
             void setAttributes( const HarmonyAttributesPtr& value );
-            
+            /* _________ HarmonyChordGroup minOccurs = 1, maxOccurs = unbounded _________ */
+            const HarmonyChordGroupSet& getHarmonyChordGroupSet() const;
+            void addHarmonyChordGroup( const HarmonyChordGroupPtr& value );
+            void removeHarmonyChordGroup( const HarmonyChordGroupSetIterConst& value );
+            void clearHarmonyChordGroupSet();
+            HarmonyChordGroupPtr getHarmonyChordGroup( const HarmonyChordGroupSetIterConst& setIterator ) const;
         private:
             HarmonyAttributesPtr myAttributes;
             HarmonyChordGroupSet myHarmonyChordGroupSet;

@@ -1880,7 +1880,81 @@ namespace mx
                 myAttributes = value;
             }
         }
-        
+        /* _________ HarmonyChordGroup minOccurs = 1, maxOccurs = unbounded _________ */
+        const HarmonyChordGroupSet& Harmony::getHarmonyChordGroupSet() const
+        {
+            return myHarmonyChordGroupSet;
+        }
+        void Harmony::addHarmonyChordGroup( const HarmonyChordGroupPtr& value )
+        {
+            if ( value )
+            {
+                myHarmonyChordGroupSet.push_back( value );
+            }
+        }
+        void Harmony::removeHarmonyChordGroup( const HarmonyChordGroupSetIterConst& value )
+        {
+            if ( value != myHarmonyChordGroupSet.cend() )
+            {
+                if( myHarmonyChordGroupSet.size() > 1 )
+                {
+                    myHarmonyChordGroupSet.erase( value );
+                }
+            }
+        }
+        void Harmony::clearHarmonyChordGroupSet()
+        {
+            myHarmonyChordGroupSet.clear();
+            myHarmonyChordGroupSet.push_back( makeHarmonyChordGroup() );
+        }
+        HarmonyChordGroupPtr Harmony::getHarmonyChordGroup( const HarmonyChordGroupSetIterConst& setIterator ) const
+        {
+            if( setIterator != myHarmonyChordGroupSet.cend() )
+            {
+                return *setIterator;
+            }
+            return HarmonyChordGroupPtr();
+        }
+        /* _________ Frame minOccurs = 0, maxOccurs = 1 _________ */
+        FramePtr Harmony::getFrame() const
+        {
+            return myFrame;
+        }
+        void Harmony::setFrame( const FramePtr& value )
+        {
+            if ( value )
+            {
+                myFrame = value;
+            }
+        }
+        bool Harmony::getHasFrame() const
+        {
+            return myHasFrame;
+        }
+        void Harmony::setHasFrame( const bool value )
+        {
+            myHasFrame = value;
+        }
+        /* _________ Offset minOccurs = 0, maxOccurs = 1 _________ */
+        OffsetPtr Harmony::getOffset() const
+        {
+            return myOffset;
+        }
+        void Harmony::setOffset( const OffsetPtr& value )
+        {
+            if ( value )
+            {
+                myOffset = value;
+            }
+        }
+        bool Harmony::getHasOffset() const
+        {
+            return myHasOffset;
+        }
+        void Harmony::setHasOffset( const bool value )
+        {
+            myHasOffset = value;
+        }
 #if 1==0
 #endif
         
