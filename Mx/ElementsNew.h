@@ -1136,6 +1136,24 @@ namespace mx
             void removeHarmonyChordGroup( const HarmonyChordGroupSetIterConst& value );
             void clearHarmonyChordGroupSet();
             HarmonyChordGroupPtr getHarmonyChordGroup( const HarmonyChordGroupSetIterConst& setIterator ) const;
+            /* _________ Frame minOccurs = 0, maxOccurs = 1 _________ */
+            FramePtr getFrame() const;
+            void setFrame( const FramePtr& value );
+            bool getHasFrame() const;
+            void setHasFrame( const bool value );
+            /* _________ Offset minOccurs = 0, maxOccurs = 1 _________ */
+            OffsetPtr getOffset() const;
+            void setOffset( const OffsetPtr& value );
+            bool getHasOffset() const;
+            void setHasOffset( const bool value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
+            /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
+            StaffPtr getStaff() const;
+            void setStaff( const StaffPtr& value );
+            bool getHasStaff() const;
+            void setHasStaff( const bool value );
         private:
             HarmonyAttributesPtr myAttributes;
             HarmonyChordGroupSet myHarmonyChordGroupSet;

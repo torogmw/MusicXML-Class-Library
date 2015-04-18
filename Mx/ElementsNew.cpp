@@ -1813,7 +1813,74 @@ namespace mx
             }
             return DegreePtr();
         }
+        /**************** HarmonyAttributes ****************/
+        /* 6322 */
+        HarmonyAttributes::HarmonyAttributes()
+        :type()
+        ,printObject( types::YesNo::no )
+        ,printFrame( types::YesNo::no )
+        ,defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,placement( types::AboveBelow::below )
+        ,hasType( false )
+        ,hasPrintObject( false )
+        ,hasPrintFrame( false )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPlacement( false )
+        {}
         
+        bool HarmonyAttributes::hasValues() const
+        {
+            return hasType ||
+            hasPrintObject ||
+            hasPrintFrame ||
+            hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPlacement;
+        }
+        
+        std::ostream& HarmonyAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+                streamAttribute( os, printFrame, "print-frame", hasPrintFrame );
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, placement, "placement", hasPlacement );
+            }
+            return os;
+        }
         Harmony::Harmony()
         :myAttributes( std::make_shared<HarmonyAttributes>() )
         ,myHarmonyChordGroupSet()
@@ -1835,10 +1902,16 @@ namespace mx
         {
             return myAttributes->toStream( os );
         }
+        std::ostream& Harmony::streamName( std::ostream& os ) const
+        {
+            os << "harmony";
+            return os;
+        }
         bool Harmony::hasContents() const
         {
             return true;
         }
+        
         std::ostream& Harmony::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
             for ( auto x : myHarmonyChordGroupSet )
@@ -1867,6 +1940,7 @@ namespace mx
                 myStaff->toStream( os, indentLevel+1 );
             }
             os << std::endl;
+            isOneLineOnly = false;
             return os;
         }
         HarmonyAttributesPtr Harmony::getAttributes() const
@@ -1954,6 +2028,38 @@ namespace mx
         void Harmony::setHasOffset( const bool value )
         {
             myHasOffset = value;
+        }
+        /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr Harmony::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void Harmony::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
+        /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
+        StaffPtr Harmony::getStaff() const
+        {
+            return myStaff;
+        }
+        void Harmony::setStaff( const StaffPtr& value )
+        {
+            if ( value )
+            {
+                myStaff = value;
+            }
+        }
+        bool Harmony::getHasStaff() const
+        {
+            return myHasStaff;
+        }
+        void Harmony::setHasStaff( const bool value )
+        {
+            myHasStaff = value;
         }
 #if 1==0
 #endif
