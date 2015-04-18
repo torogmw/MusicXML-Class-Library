@@ -2760,6 +2760,221 @@ namespace mx
         {
             myHasHarmonicInfoChoice = value;
         }
+        
+        
+        
+        /**************** PrintAttributes ****************/
+        /* 6328 */
+        PrintAttributes::PrintAttributes()
+        :staffSpacing()
+        ,newSystem( types::YesNo::no )
+        ,newPage( types::YesNo::no )
+        ,blankPage()
+        ,pageNumber()
+        ,hasStaffSpacing( false )
+        ,hasNewSystem( false )
+        ,hasNewPage( false )
+        ,hasBlankPage( false )
+        ,hasPageNumber( false )
+        {}
+        
+        bool PrintAttributes::hasValues() const
+        {
+            return hasStaffSpacing ||
+            hasNewSystem ||
+            hasNewPage ||
+            hasBlankPage ||
+            hasPageNumber;
+        }
+        
+        std::ostream& PrintAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, staffSpacing, "staff-spacing", hasStaffSpacing );
+                streamAttribute( os, newSystem, "new-system", hasNewSystem );
+                streamAttribute( os, newPage, "new-page", hasNewPage );
+                streamAttribute( os, blankPage, "blank-page", hasBlankPage );
+                streamAttribute( os, pageNumber, "page-number", hasPageNumber );
+            }
+            return os;
+        }
+        
+		Print::Print()
+		:myAttributes( std::make_shared<PrintAttributes>() )
+		,myLayoutGroup( makeLayoutGroup() )
+        ,myMeasureLayout( makeMeasureLayout() )
+        ,myHasMeasureLayout( false )
+        ,myMeasureNumbering( makeMeasureNumbering() )
+        ,myHasMeasureNumbering( false )
+        ,myPartNameDisplay( makePartNameDisplay() )
+        ,myHasPartNameDisplay( false )
+        ,myPartAbbreviationDisplay( makePartAbbreviationDisplay() )
+        ,myHasPartAbbreviationDisplay( false )
+		{}
+		bool Print::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Print::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Print::streamName( std::ostream& os ) const
+		{
+			os << "print";
+			return os;
+		}
+		bool Print::hasContents() const
+		{
+			return myLayoutGroup->hasContents()
+            || myHasMeasureLayout
+            || myHasMeasureNumbering
+            || myHasPartNameDisplay
+            || myHasPartAbbreviationDisplay;
+		}
+		std::ostream& Print::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( hasContents() )
+            {
+                if ( myLayoutGroup->hasContents() )
+                {
+                    os << std::endl;
+                    myLayoutGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                if ( myHasMeasureLayout )
+                {
+                    os << std::endl;
+                    myMeasureLayout->toStream( os, indentLevel+1 );
+                }
+                if ( myHasMeasureNumbering )
+                {
+                    os << std::endl;
+                    myMeasureNumbering->toStream( os, indentLevel+1 );
+                }
+                if ( myHasPartNameDisplay )
+                {
+                    os << std::endl;
+                    myPartNameDisplay->toStream( os, indentLevel+1 );
+                }
+                if ( myHasPartAbbreviationDisplay )
+                {
+                    os << std::endl;
+                    myPartAbbreviationDisplay->toStream( os, indentLevel+1 );
+                }
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+			else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+		PrintAttributesPtr Print::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Print::setAttributes( const PrintAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ LayoutGroup minOccurs = 1, maxOccurs = 1 _________ */
+        LayoutGroupPtr Print::getLayoutGroup() const
+        {
+            return myLayoutGroup;
+        }
+        void Print::setLayoutGroup( const LayoutGroupPtr& value )
+        {
+            if ( value )
+            {
+                myLayoutGroup = value;
+            }
+        }
+        /* _________ MeasureLayout minOccurs = 0, maxOccurs = 1 _________ */
+        MeasureLayoutPtr Print::getMeasureLayout() const
+        {
+            return myMeasureLayout;
+        }
+        void Print::setMeasureLayout( const MeasureLayoutPtr& value )
+        {
+            if ( value )
+            {
+                myMeasureLayout = value;
+            }
+        }
+        bool Print::getHasMeasureLayout() const
+        {
+            return myHasMeasureLayout;
+        }
+        void Print::setHasMeasureLayout( const bool value )
+        {
+            myHasMeasureLayout = value;
+        }
+        /* _________ MeasureNumbering minOccurs = 0, maxOccurs = 1 _________ */
+        MeasureNumberingPtr Print::getMeasureNumbering() const
+        {
+            return myMeasureNumbering;
+        }
+        void Print::setMeasureNumbering( const MeasureNumberingPtr& value )
+        {
+            if ( value )
+            {
+                myMeasureNumbering = value;
+            }
+        }
+        bool Print::getHasMeasureNumbering() const
+        {
+            return myHasMeasureNumbering;
+        }
+        void Print::setHasMeasureNumbering( const bool value )
+        {
+            myHasMeasureNumbering = value;
+        }
+        /* _________ PartNameDisplay minOccurs = 0, maxOccurs = 1 _________ */
+        PartNameDisplayPtr Print::getPartNameDisplay() const
+        {
+            return myPartNameDisplay;
+        }
+        void Print::setPartNameDisplay( const PartNameDisplayPtr& value )
+        {
+            if ( value )
+            {
+                myPartNameDisplay = value;
+            }
+        }
+        bool Print::getHasPartNameDisplay() const
+        {
+            return myHasPartNameDisplay;
+        }
+        void Print::setHasPartNameDisplay( const bool value )
+        {
+            myHasPartNameDisplay = value;
+        }
+        /* _________ <#DATA#> minOccurs = 0, maxOccurs = 1 _________ */
+        <#DATA#>Ptr <#CLASS#>::get<#DATA#>() const
+        {
+            return my<#DATA#>;
+        }
+        void <#CLASS#>::set<#DATA#>( const <#DATA#>Ptr& value )
+        {
+            if ( value )
+            {
+                my<#DATA#> = value;
+            }
+        }
+        bool <#CLASS#>::getHas<#DATA#>() const
+        {
+            return myHas<#DATA#>;
+        }
+        void <#CLASS#>::setHas<#DATA#>( const bool value )
+        {
+            myHas<#DATA#> = value;
+        }
 #if 1==0
 #endif
         

@@ -1532,5 +1532,93 @@ namespace mx
             HarmonicInfoChoicePtr myHarmonicInfoChoice;
             bool myHasHarmonicInfoChoice;
         };
+        
+        /* <!--  ID = 6328 [6328] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 28 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="print" type="print"/>
+         <xs:complexType name="print">
+         <xs:annotation>
+         <xs:documentation>The print type contains general printing parameters, including the layout elements defined in the layout.mod file. The part-name-display and part-abbreviation-display elements used in the score.mod file may also be used here to change how a part name or abbreviation is displayed over the course of a piece. They take effect when the current measure or a succeeding measure starts a new system.
+         
+         Layout elements in a print statement only apply to the current page, system, staff, or measure. Music that follows continues to take the default values from the layout included in the defaults element.</xs:documentation>
+         </xs:annotation>
+         
+         <xs:sequence>
+         <xs:group ref="layout"/>
+         <xs:element name="measure-layout" type="measure-layout" minOccurs="0"/>
+         <xs:element name="measure-numbering" type="measure-numbering" minOccurs="0"/>
+         <xs:element name="part-name-display" type="name-display" minOccurs="0"/>
+         <xs:element name="part-abbreviation-display" type="name-display" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-attributes"/>
+         </xs:complexType>
+         
+         <xs:group name="layout">
+         <xs:annotation>
+         <xs:documentation>The layout group specifies the sequence of page, system, and staff layout elements that is common to both the defaults and print elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="page-layout" type="page-layout" minOccurs="0"/>
+         <xs:element name="system-layout" type="system-layout" minOccurs="0"/>
+         <xs:element name="staff-layout" type="staff-layout" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct PrintAttributes;
+        using PrintAttributesPtr = std::shared_ptr<PrintAttributes>;
+        
+        struct PrintAttributes : public AttributesInterface
+        {
+        public:
+            PrintAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue staffSpacing;
+            types::YesNo newSystem;
+            types::YesNo newPage;
+            types::PositiveInteger blankPage;
+            types::XsToken pageNumber;
+            bool hasStaffSpacing;
+            bool hasNewSystem;
+            bool hasNewPage;
+            bool hasBlankPage;
+            bool hasPageNumber;
+        };
+        
+        class Print;
+        using PrintPtr = std::shared_ptr<Print>;
+        using PrintUPtr = std::unique_ptr<Print>;
+        using PrintSet = std::vector<PrintPtr>;
+        using PrintSetIter = PrintSet::iterator;
+        using PrintSetIterConst = PrintSet::const_iterator;
+        inline PrintPtr makePrint() { return std::make_shared<Print>(); }
+        class Print : public ElementInterface
+        {
+        public:
+            Print();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PrintAttributesPtr getAttributes() const;
+            void setAttributes( const PrintAttributesPtr& value );
+            
+        private:
+            PrintAttributesPtr myAttributes;
+            LayoutGroupPtr myLayoutGroup;
+            MeasureLayoutPtr myMeasureLayout;
+            bool myHasMeasureLayout;
+            MeasureNumberingPtr myMeasureNumbering;
+            bool myHasMeasureNumbering;
+            PartNameDisplayPtr myPartNameDisplay;
+            bool myHasPartNameDisplay;
+            PartAbbreviationDisplayPtr myPartAbbreviationDisplay;
+            bool myHasPartAbbreviationDisplay;
+        };
+
     }
 }
