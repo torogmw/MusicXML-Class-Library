@@ -2,11 +2,6 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "CreditWordsGroupTest.h"
-#include "VirtualInstrumentTest.h"
-#include "EncodingTest.h"
-#include "RootTest.h"
-#include "BassTest.h"
-#include "DegreeTest.h"
 
 using namespace mx::e;
 using namespace mx::types;

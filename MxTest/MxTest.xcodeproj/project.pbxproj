@@ -83,6 +83,7 @@
 		2962360A1AC5C7DB00F3E007 /* StrongAccentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296236081AC5C7DB00F3E007 /* StrongAccentTest.cpp */; };
 		2962360D1AC5CE1600F3E007 /* FigureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962360B1AC5CE1600F3E007 /* FigureTest.cpp */; };
 		2962A3711AE2E37E00903EB0 /* CreditWordsGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962A36F1AE2E37E00903EB0 /* CreditWordsGroupTest.cpp */; };
+		2962A3741AE2EF8200903EB0 /* CreditChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962A3721AE2EF8200903EB0 /* CreditChoiceTest.cpp */; };
 		296B1AFC1AD183890095FCAA /* BendChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */; };
 		296C11911ACF77B6004FAD06 /* DefaultsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */; };
 		2971F50A1AC320B0007C2EF7 /* MetronomeTupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */; };
@@ -382,6 +383,7 @@
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
 		29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */; };
 		29EECBAC1AC99A4300AB6560 /* SystemLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */; };
+		29F6FFB91AE2F75C00CA74E7 /* CreditTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -501,6 +503,8 @@
 		2962360C1AC5CE1600F3E007 /* FigureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureTest.h; sourceTree = "<group>"; };
 		2962A36F1AE2E37E00903EB0 /* CreditWordsGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditWordsGroupTest.cpp; sourceTree = "<group>"; };
 		2962A3701AE2E37E00903EB0 /* CreditWordsGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditWordsGroupTest.h; sourceTree = "<group>"; };
+		2962A3721AE2EF8200903EB0 /* CreditChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditChoiceTest.cpp; sourceTree = "<group>"; };
+		2962A3731AE2EF8200903EB0 /* CreditChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditChoiceTest.h; sourceTree = "<group>"; };
 		296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BendChoiceTest.cpp; sourceTree = "<group>"; };
 		296B1AFB1AD183890095FCAA /* BendChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BendChoiceTest.h; sourceTree = "<group>"; };
 		296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = DefaultsTest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -845,6 +849,8 @@
 		29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorTest.cpp; sourceTree = "<group>"; };
 		29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemLayoutTest.cpp; sourceTree = "<group>"; };
 		29EECBAB1AC99A4300AB6560 /* SystemLayoutTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemLayoutTest.h; sourceTree = "<group>"; };
+		29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditTest.cpp; sourceTree = "<group>"; };
+		29F6FFB81AE2F75C00CA74E7 /* CreditTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1366,6 +1372,10 @@
 				29C6FCA11AE2D4B700EE272B /* HarmonyTest.h */,
 				2962A36F1AE2E37E00903EB0 /* CreditWordsGroupTest.cpp */,
 				2962A3701AE2E37E00903EB0 /* CreditWordsGroupTest.h */,
+				2962A3721AE2EF8200903EB0 /* CreditChoiceTest.cpp */,
+				2962A3731AE2EF8200903EB0 /* CreditChoiceTest.h */,
+				29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */,
+				29F6FFB81AE2F75C00CA74E7 /* CreditTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1509,6 +1519,7 @@
 				298B360D1AC8F38C0021CD1E /* TupletTest.cpp in Sources */,
 				29A564F81AC3C2540059CACD /* StickTest.cpp in Sources */,
 				29CEB4A41AB4C0FA00D6AEFC /* GroupTimeTest.cpp in Sources */,
+				2962A3741AE2EF8200903EB0 /* CreditChoiceTest.cpp in Sources */,
 				2994F0891ACF6FBD005AB20E /* LayoutGroupTest.cpp in Sources */,
 				297749F71AB21FA000BF2205 /* KeyStepTest.cpp in Sources */,
 				298C81DB1AB6A8DC006619A9 /* InvertedTurnTest.cpp in Sources */,
@@ -1543,6 +1554,7 @@
 				2935A7231AB5FC3B002859CA /* EyeglassesTest.cpp in Sources */,
 				29774A171AB21FA000BF2205 /* SignTest.cpp in Sources */,
 				29C0B9EF1AAE9398004F86FA /* PullOffTest.cpp in Sources */,
+				29F6FFB91AE2F75C00CA74E7 /* CreditTest.cpp in Sources */,
 				29A564FA1AC3CC770059CACD /* PartNameDisplayTest.cpp in Sources */,
 				2935A7221AB5FC3B002859CA /* DownBowTest.cpp in Sources */,
 				29C0B9DF1AAE9398004F86FA /* NoteSizeTest.cpp in Sources */,

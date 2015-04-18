@@ -2186,6 +2186,263 @@ namespace mx
                 myCreditWords = value;
             }
         }
+        CreditChoice::CreditChoice()
+        :myChoice( Choice::creditWords )
+        ,myCreditImage( makeCreditImage() )
+        ,myCreditWordsGroup( makeCreditWordsGroup() )
+        {}
+        bool CreditChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& CreditChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& CreditChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool CreditChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& CreditChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::creditImage:
+                    myCreditImage->toStream( os, indentLevel );
+                    break;
+                case Choice::creditWords:
+                    myCreditWordsGroup->streamContents( os, indentLevel, isOneLineOnly );
+                    break;
+                default:
+                    break;
+            }
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+        CreditChoice::Choice CreditChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void CreditChoice::setChoice( const CreditChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ CreditImage minOccurs = 1, maxOccurs = 1 _________ */
+        CreditImagePtr CreditChoice::getCreditImage() const
+        {
+            return myCreditImage;
+        }
+        void CreditChoice::setCreditImage( const CreditImagePtr& value )
+        {
+            if ( value )
+            {
+                myCreditImage = value;
+            }
+        }
+        /* _________ CreditWordsGroup minOccurs = 1, maxOccurs = 1 _________ */
+        CreditWordsGroupPtr CreditChoice::getCreditWordsGroup() const
+        {
+            return myCreditWordsGroup;
+        }
+        void CreditChoice::setCreditWordsGroup( const CreditWordsGroupPtr& value )
+        {
+            if ( value )
+            {
+                myCreditWordsGroup = value;
+            }
+        }
+        
+        /**************** CreditAttributes ****************/
+        /* 6383 */
+        CreditAttributes::CreditAttributes()
+        :page()
+        ,hasPage( false )
+        {}
+        
+        bool CreditAttributes::hasValues() const
+        {
+            return hasPage;
+        }
+        
+        std::ostream& CreditAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, page, "page", hasPage );
+            }
+            return os;
+        }
+        
+		Credit::Credit()
+		:myAttributes( std::make_shared<CreditAttributes>() )
+		,myCreditTypeSet()
+		,myLinkSet()
+		,myBookmarkSet()
+		,myCreditChoice( makeCreditChoice() )
+		{}
+		bool Credit::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Credit::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Credit::streamName( std::ostream& os ) const
+		{
+			os << "credit";
+			return os;
+		}
+		bool Credit::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Credit::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			for( auto x : myCreditTypeSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for( auto x : myLinkSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for( auto x : myBookmarkSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            myCreditChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+		}
+		CreditAttributesPtr Credit::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Credit::setAttributes( const CreditAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ CreditType minOccurs = 0, maxOccurs = unbounded _________ */
+		const CreditTypeSet& Credit::getCreditTypeSet() const
+		{
+			return myCreditTypeSet;
+		}
+		void Credit::removeCreditType( const CreditTypeSetIterConst& value )
+		{
+			if ( value != myCreditTypeSet.cend() )
+			{
+				myCreditTypeSet.erase( value );
+			}
+		}
+		void Credit::addCreditType( const CreditTypePtr& value )
+		{
+			if ( value )
+			{
+				myCreditTypeSet.push_back( value );
+			}
+		}
+		void Credit::clearCreditTypeSet()
+		{
+			myCreditTypeSet.clear();
+		}
+		CreditTypePtr Credit::getCreditType( const CreditTypeSetIterConst& setIterator ) const
+		{
+			if( setIterator != myCreditTypeSet.cend() )
+			{
+				return *setIterator;
+			}
+			return CreditTypePtr();
+		}
+		/* _________ Link minOccurs = 0, maxOccurs = unbounded _________ */
+		const LinkSet& Credit::getLinkSet() const
+		{
+			return myLinkSet;
+		}
+		void Credit::removeLink( const LinkSetIterConst& value )
+		{
+			if ( value != myLinkSet.cend() )
+			{
+				myLinkSet.erase( value );
+			}
+		}
+		void Credit::addLink( const LinkPtr& value )
+		{
+			if ( value )
+			{
+				myLinkSet.push_back( value );
+			}
+		}
+		void Credit::clearLinkSet()
+		{
+			myLinkSet.clear();
+		}
+		LinkPtr Credit::getLink( const LinkSetIterConst& setIterator ) const
+		{
+			if( setIterator != myLinkSet.cend() )
+			{
+				return *setIterator;
+			}
+			return LinkPtr();
+		}
+		/* _________ Bookmark minOccurs = 0, maxOccurs = unbounded _________ */
+		const BookmarkSet& Credit::getBookmarkSet() const
+		{
+			return myBookmarkSet;
+		}
+		void Credit::removeBookmark( const BookmarkSetIterConst& value )
+		{
+			if ( value != myBookmarkSet.cend() )
+			{
+				myBookmarkSet.erase( value );
+			}
+		}
+		void Credit::addBookmark( const BookmarkPtr& value )
+		{
+			if ( value )
+			{
+				myBookmarkSet.push_back( value );
+			}
+		}
+		void Credit::clearBookmarkSet()
+		{
+			myBookmarkSet.clear();
+		}
+		BookmarkPtr Credit::getBookmark( const BookmarkSetIterConst& setIterator ) const
+		{
+			if( setIterator != myBookmarkSet.cend() )
+			{
+				return *setIterator;
+			}
+			return BookmarkPtr();
+		}
+		/* _________ CreditChoice minOccurs = 1, maxOccurs = 1 _________ */
+		CreditChoicePtr Credit::getCreditChoice() const
+		{
+			return myCreditChoice;
+		}
+		void Credit::setCreditChoice( const CreditChoicePtr& value )
+		{
+			if( value )
+			{
+				myCreditChoice = value;
+			}
+		}
+
 #if 1==0
 #endif
         

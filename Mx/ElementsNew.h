@@ -1202,5 +1202,144 @@ namespace mx
             BookmarkSet myBookmarkSet;
             CreditWordsPtr myCreditWords;
         };
+        
+        class CreditChoice;
+        using CreditChoicePtr = std::shared_ptr<CreditChoice>;
+        using CreditChoiceUPtr = std::unique_ptr<CreditChoice>;
+        using CreditChoiceSet = std::vector<CreditChoicePtr>;
+        using CreditChoiceSetIter = CreditChoiceSet::iterator;
+        using CreditChoiceSetIterConst = CreditChoiceSet::const_iterator;
+        inline CreditChoicePtr makeCreditChoice() { return std::make_shared<CreditChoice>(); }
+        class CreditChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                creditImage = 1,
+                creditWords = 2
+            };
+            CreditChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            CreditChoice::Choice getChoice() const;
+            void setChoice( const CreditChoice::Choice value );
+            /* _________ CreditImage minOccurs = 1, maxOccurs = 1 _________ */
+            CreditImagePtr getCreditImage() const;
+            void setCreditImage( const CreditImagePtr& value );
+            /* _________ CreditWordsGroup minOccurs = 1, maxOccurs = 1 _________ */
+            CreditWordsGroupPtr getCreditWordsGroup() const;
+            void setCreditWordsGroup( const CreditWordsGroupPtr& value );
+        private:
+            Choice myChoice;
+            CreditImagePtr myCreditImage;
+            CreditWordsGroupPtr myCreditWordsGroup;
+        };
+        
+        /*
+         6383
+         
+         
+         <!--  ID = 6383 [6383] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 8 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="credit" type="credit" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="credit">
+         <xs:annotation>
+         <xs:documentation>The credit type represents the appearance of the title, composer, arranger, lyricist, copyright, dedication, and other text and graphics that commonly appears on the first page of a score. The credit-words and credit-image elements are similar to the words and image elements for directions. However, since the credit is not part of a measure, the default-x and default-y attributes adjust the origin relative to the bottom left-hand corner of the first page. The enclosure for credit-words is none by default.
+         
+         By default, a series of credit-words elements within a single credit element follow one another in sequence visually. Non-positional formatting attributes are carried over from the previous element by default.
+         
+         The page attribute for the credit element, new in Version 2.0, specifies the page number where the credit should appear. This is an integer value that starts with 1 for the first page. Its value is 1 by default. Since credits occur before the music, these page numbers do not refer to the page numbering specified by the print element's page-number attribute.
+         
+         The credit-type element, new in Version 3.0, indicates the purpose behind a credit. Multiple types of data may be combined in a single credit, so multiple elements may be used. Standard values include page number, title, subtitle, composer, arranger, lyricist, and rights.
+         </xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="credit-type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:choice>
+         <xs:element name="credit-image" type="image"/>
+         <xs:sequence>
+         <xs:element name="credit-words" type="formatted-text"/>
+         <xs:sequence minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="credit-words" type="formatted-text"/>
+         </xs:sequence>
+         </xs:sequence>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attribute name="page" type="xs:positiveInteger"/>
+         </xs:complexType>
+         
+         */
+        
+        struct CreditAttributes;
+        using CreditAttributesPtr = std::shared_ptr<CreditAttributes>;
+        
+        struct CreditAttributes : public AttributesInterface
+        {
+        public:
+            CreditAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::PositiveInteger page;
+            bool hasPage;
+        };
+        
+        class Credit;
+        using CreditPtr = std::shared_ptr<Credit>;
+        using CreditUPtr = std::unique_ptr<Credit>;
+        using CreditSet = std::vector<CreditPtr>;
+        using CreditSetIter = CreditSet::iterator;
+        using CreditSetIterConst = CreditSet::const_iterator;
+        inline CreditPtr makeCredit() { return std::make_shared<Credit>(); }
+        class Credit : public ElementInterface
+        {
+        public:
+            Credit();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            CreditAttributesPtr getAttributes() const;
+            void setAttributes( const CreditAttributesPtr& value );
+            /* _________ CreditType minOccurs = 0, maxOccurs = unbounded _________ */
+            const CreditTypeSet& getCreditTypeSet() const;
+            void addCreditType( const CreditTypePtr& value );
+            void removeCreditType( const CreditTypeSetIterConst& value );
+            void clearCreditTypeSet();
+            CreditTypePtr getCreditType( const CreditTypeSetIterConst& setIterator ) const;
+            /* _________ Link minOccurs = 0, maxOccurs = unbounded _________ */
+            const LinkSet& getLinkSet() const;
+            void addLink( const LinkPtr& value );
+            void removeLink( const LinkSetIterConst& value );
+            void clearLinkSet();
+            LinkPtr getLink( const LinkSetIterConst& setIterator ) const;
+            /* _________ Bookmark minOccurs = 0, maxOccurs = unbounded _________ */
+            const BookmarkSet& getBookmarkSet() const;
+            void addBookmark( const BookmarkPtr& value );
+            void removeBookmark( const BookmarkSetIterConst& value );
+            void clearBookmarkSet();
+            BookmarkPtr getBookmark( const BookmarkSetIterConst& setIterator ) const;
+            /* _________ CreditChoice minOccurs = 1, maxOccurs = 1 _________ */
+            CreditChoicePtr getCreditChoice() const;
+            void setCreditChoice( const CreditChoicePtr& value );
+        private:
+            CreditAttributesPtr myAttributes;
+            CreditTypeSet myCreditTypeSet;
+            LinkSet myLinkSet;
+            BookmarkSet myBookmarkSet;
+            CreditChoicePtr myCreditChoice;
+        };
+
     }
 }
