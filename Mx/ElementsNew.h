@@ -1132,6 +1132,7 @@ namespace mx
             void setAttributes( const HarmonyAttributesPtr& value );
             
         private:
+            HarmonyAttributesPtr myAttributes;
             HarmonyChordGroupSet myHarmonyChordGroupSet;
             FramePtr myFrame;
             bool myHasFrame;

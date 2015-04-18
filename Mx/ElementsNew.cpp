@@ -1813,6 +1813,74 @@ namespace mx
             }
             return DegreePtr();
         }
+        
+        Harmony::Harmony()
+        :myAttributes( std::make_shared<HarmonyAttributes>() )
+        ,myHarmonyChordGroupSet()
+        ,myFrame( makeFrame() )
+        ,myHasFrame( false )
+        ,myOffset( makeOffset() )
+        ,myHasOffset( false )
+        ,myEditorialGroup( makeEditorialGroup() )
+        ,myStaff( makeStaff() )
+        ,myHasStaff( false )
+        {
+            myHarmonyChordGroupSet.push_back( makeHarmonyChordGroup() );
+        }
+        bool Harmony::hasAttributes() const
+        {
+            return myAttributes->hasValues();
+        }
+        std::ostream& Harmony::streamAttributes( std::ostream& os ) const
+        {
+            return myAttributes->toStream( os );
+        }
+        bool Harmony::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& Harmony::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            for ( auto x : myHarmonyChordGroupSet )
+            {
+                os << std::endl;
+                x->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            if ( myHasFrame )
+            {
+                os << std::endl;
+                myFrame->toStream( os, indentLevel+1 );
+            }
+            if ( myHasOffset )
+            {
+                os << std::endl;
+                myOffset->toStream( os, indentLevel+1 );
+            }
+            if ( myEditorialGroup->hasContents() )
+            {
+                os << std::endl;
+                myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            if ( myHasStaff )
+            {
+                os << std::endl;
+                myStaff->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            return os;
+        }
+        HarmonyAttributesPtr Harmony::getAttributes() const
+        {
+            return myAttributes;
+        }
+        void Harmony::setAttributes( const HarmonyAttributesPtr& value )
+        {
+            if ( value )
+            {
+                myAttributes = value;
+            }
+        }
+        
 #if 1==0
 #endif
         
