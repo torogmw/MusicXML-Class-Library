@@ -1341,5 +1341,81 @@ namespace mx
             CreditChoicePtr myCreditChoice;
         };
 
+        class HarmonicTypeChoice;
+        using HarmonicTypeChoicePtr = std::shared_ptr<HarmonicTypeChoice>;
+        using HarmonicTypeChoiceUPtr = std::unique_ptr<HarmonicTypeChoice>;
+        using HarmonicTypeChoiceSet = std::vector<HarmonicTypeChoicePtr>;
+        using HarmonicTypeChoiceSetIter = HarmonicTypeChoiceSet::iterator;
+        using HarmonicTypeChoiceSetIterConst = HarmonicTypeChoiceSet::const_iterator;
+        inline HarmonicTypeChoicePtr makeHarmonicTypeChoice() { return std::make_shared<HarmonicTypeChoice>(); }
+        class HarmonicTypeChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                natural = 1,
+                artificial = 2
+            };
+            HarmonicTypeChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            HarmonicTypeChoice::Choice getChoice() const;
+            void setChoice( const HarmonicTypeChoice::Choice value );
+            /* _________ Natural minOccurs = 1, maxOccurs = 1 _________ */
+            NaturalPtr getNatural() const;
+            void setNatural( const NaturalPtr& value );
+            /* _________ Artificial minOccurs = 1, maxOccurs = 1 _________ */
+            ArtificialPtr getArtificial() const;
+            void setArtificial( const ArtificialPtr& value );
+        private:
+            Choice myChoice;
+            NaturalPtr myNatural;
+            ArtificialPtr myArtificial;
+        };
+        
+        class HarmonicInfoChoice;
+        using HarmonicInfoChoicePtr = std::shared_ptr<HarmonicInfoChoice>;
+        using HarmonicInfoChoiceUPtr = std::unique_ptr<HarmonicInfoChoice>;
+        using HarmonicInfoChoiceSet = std::vector<HarmonicInfoChoicePtr>;
+        using HarmonicInfoChoiceSetIter = HarmonicInfoChoiceSet::iterator;
+        using HarmonicInfoChoiceSetIterConst = HarmonicInfoChoiceSet::const_iterator;
+        inline HarmonicInfoChoicePtr makeHarmonicInfoChoice() { return std::make_shared<HarmonicInfoChoice>(); }
+        class HarmonicInfoChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                basePitch = 1,
+                touchingPitch = 2,
+                soundingPitch = 3
+            };
+            HarmonicInfoChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            HarmonicInfoChoice::Choice getChoice() const;
+            void setChoice( const HarmonicInfoChoice::Choice value );
+            /* _________ BasePitch minOccurs = 1, maxOccurs = 1 _________ */
+            BasePitchPtr getBasePitch() const;
+            void setBasePitch( const BasePitchPtr& value );
+            /* _________ TouchingPitch minOccurs = 1, maxOccurs = 1 _________ */
+            TouchingPitchPtr getTouchingPitch() const;
+            void setTouchingPitch( const TouchingPitchPtr& value );
+            /* _________ SoundingPitch minOccurs = 1, maxOccurs = 1 _________ */
+            SoundingPitchPtr getSoundingPitch() const;
+            void setSoundingPitch( const SoundingPitchPtr& value );
+        private:
+            Choice myChoice;
+            BasePitchPtr myBasePitch;
+            TouchingPitchPtr myTouchingPitch;
+            SoundingPitchPtr mySoundingPitch;
+        };
     }
 }

@@ -2442,7 +2442,76 @@ namespace mx
 				myCreditChoice = value;
 			}
 		}
-
+        HarmonicTypeChoice::HarmonicTypeChoice()
+        :myChoice( Choice::natural )
+        ,myNatural( makeNatural() )
+        ,myArtificial( makeArtificial() )
+        {}
+        bool HarmonicTypeChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& HarmonicTypeChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& HarmonicTypeChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool HarmonicTypeChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& HarmonicTypeChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::natural:
+                    myNatural->toStream( os, indentLevel );
+                    break;
+                case Choice::artificial:
+                    myArtificial->toStream( os, indentLevel );
+                    break;
+                default:
+                    break;
+            }
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+        HarmonicTypeChoice::Choice HarmonicTypeChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void HarmonicTypeChoice::setChoice( const HarmonicTypeChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ Natural minOccurs = 1, maxOccurs = 1 _________ */
+        NaturalPtr HarmonicTypeChoice::getNatural() const
+        {
+            return myNatural;
+        }
+        void HarmonicTypeChoice::setNatural( const NaturalPtr& value )
+        {
+            if ( value )
+            {
+                myNatural = value;
+            }
+        }
+        /* _________ Artificial minOccurs = 1, maxOccurs = 1 _________ */
+        ArtificialPtr HarmonicTypeChoice::getArtificial() const
+        {
+            return myArtificial;
+        }
+        void HarmonicTypeChoice::setArtificial( const ArtificialPtr& value )
+        {
+            if ( value )
+            {
+                myArtificial = value;
+            }
+        }
 #if 1==0
 #endif
         

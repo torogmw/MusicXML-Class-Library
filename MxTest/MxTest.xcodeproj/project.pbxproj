@@ -76,6 +76,7 @@
 		2942EFFE1AD0B65F003E8FF5 /* OrnamentsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2942EFFC1AD0B65F003E8FF5 /* OrnamentsTest.cpp */; };
 		294D21881ACF62C100A8DACC /* GroupingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294D21861ACF62C100A8DACC /* GroupingTest.cpp */; };
 		294D218B1ACF670D00A8DACC /* WorkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294D21891ACF670D00A8DACC /* WorkTest.cpp */; };
+		294F9B011AE30899006820D8 /* HarmonicTypeChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294F9AFF1AE30899006820D8 /* HarmonicTypeChoiceTest.cpp */; };
 		295F2BDD1AA59BA900C8AEB6 /* DynamicsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */; };
 		296236011AC5BDBC00F3E007 /* PageMarginsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296235FF1AC5BDBC00F3E007 /* PageMarginsTest.cpp */; };
 		296236041AC5C19600F3E007 /* SystemMarginsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296236021AC5C19600F3E007 /* SystemMarginsTest.cpp */; };
@@ -490,6 +491,8 @@
 		294D21871ACF62C100A8DACC /* GroupingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupingTest.h; sourceTree = "<group>"; };
 		294D21891ACF670D00A8DACC /* WorkTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkTest.cpp; sourceTree = "<group>"; };
 		294D218A1ACF670D00A8DACC /* WorkTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkTest.h; sourceTree = "<group>"; };
+		294F9AFF1AE30899006820D8 /* HarmonicTypeChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonicTypeChoiceTest.cpp; sourceTree = "<group>"; };
+		294F9B001AE30899006820D8 /* HarmonicTypeChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonicTypeChoiceTest.h; sourceTree = "<group>"; };
 		295F2BDB1AA59BA900C8AEB6 /* DynamicsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicsTest.cpp; sourceTree = "<group>"; };
 		296235FF1AC5BDBC00F3E007 /* PageMarginsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageMarginsTest.cpp; sourceTree = "<group>"; };
 		296236001AC5BDBC00F3E007 /* PageMarginsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageMarginsTest.h; sourceTree = "<group>"; };
@@ -1376,6 +1379,8 @@
 				2962A3731AE2EF8200903EB0 /* CreditChoiceTest.h */,
 				29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */,
 				29F6FFB81AE2F75C00CA74E7 /* CreditTest.h */,
+				294F9AFF1AE30899006820D8 /* HarmonicTypeChoiceTest.cpp */,
+				294F9B001AE30899006820D8 /* HarmonicTypeChoiceTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1777,6 +1782,7 @@
 				298C81D11AB6A8DC006619A9 /* BookmarkTest.cpp in Sources */,
 				29BBED321ACA602100C16802 /* DisplayStepOctaveGroupTest.cpp in Sources */,
 				29884C2B1AC23F4200DD2209 /* StringTest.cpp in Sources */,
+				294F9B011AE30899006820D8 /* HarmonicTypeChoiceTest.cpp in Sources */,
 				29774A081AB21FA000BF2205 /* MuteTest.cpp in Sources */,
 				297749F31AB21FA000BF2205 /* InstrumentsTest.cpp in Sources */,
 				298C81D91AB6A8DC006619A9 /* ImageTest.cpp in Sources */,
