@@ -65,23 +65,12 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->addDirectionChoice( tgenDirectionChoice( variant::one ) );
-                o->addDirectionChoice( tgenDirectionChoice( variant::two ) );
-                auto x = makeDirectionChoice();
-                x->setChoice( DirectionChoice::Choice::handbell );
-                x->getHandbell()->setValue( HandbellValue::gyro );
-                o->addDirectionChoice( x );
+
             }
                 break;
             case variant::three:
             {
-                o->addDirectionChoice( tgenDirectionChoice( v ) );
-                auto x = makeDirectionChoice();
-                x->setChoice( DirectionChoice::Choice::otherDirection );
-                x->getOtherDirection()->setValue( XsString( "Jump up and down" ) );
-                x->getOtherDirection()->getAttributes()->hasFontStyle = true;
-                x->getOtherDirection()->getAttributes()->fontStyle = FontStyle::italic;
-                o->addDirectionChoice( x );
+
             }
                 break;
             default:
@@ -101,22 +90,12 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<technical>)" );
-                tgenDirectionChoiceExpected( os, i+1, variant::one );
-                os << std::endl;
-                tgenDirectionChoiceExpected( os, i+1, variant::two );
-                os << std::endl;
-                streamLine( os, i+1, R"(<handbell>gyro</handbell>)" );
-                streamLine( os, i, R"(</technical>)", false );
+
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<technical>)" );
-                tgenDirectionChoiceExpected( os, i+1, v );
-                os << std::endl;
-                streamLine( os, i+1, R"(<other-technical font-style="italic">Jump up and down</other-technical>)" );
-                streamLine( os, i, R"(</technical>)", false );
+
             }
                 break;
             default:
