@@ -2955,25 +2955,25 @@ namespace mx
         {
             myHasPartNameDisplay = value;
         }
-        /* _________ <#DATA#> minOccurs = 0, maxOccurs = 1 _________ */
-        <#DATA#>Ptr <#CLASS#>::get<#DATA#>() const
+        /* _________ PartAbbreviationDisplay minOccurs = 0, maxOccurs = 1 _________ */
+        PartAbbreviationDisplayPtr Print::getPartAbbreviationDisplay() const
         {
-            return my<#DATA#>;
+            return myPartAbbreviationDisplay;
         }
-        void <#CLASS#>::set<#DATA#>( const <#DATA#>Ptr& value )
+        void Print::setPartAbbreviationDisplay( const PartAbbreviationDisplayPtr& value )
         {
             if ( value )
             {
-                my<#DATA#> = value;
+                myPartAbbreviationDisplay = value;
             }
         }
-        bool <#CLASS#>::getHas<#DATA#>() const
+        bool Print::getHasPartAbbreviationDisplay() const
         {
-            return myHas<#DATA#>;
+            return myHasPartAbbreviationDisplay;
         }
-        void <#CLASS#>::setHas<#DATA#>( const bool value )
+        void Print::setHasPartAbbreviationDisplay( const bool value )
         {
-            myHas<#DATA#> = value;
+            myHasPartAbbreviationDisplay = value;
         }
 #if 1==0
 #endif

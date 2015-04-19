@@ -1606,7 +1606,29 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             PrintAttributesPtr getAttributes() const;
             void setAttributes( const PrintAttributesPtr& value );
-            
+            /* _________ LayoutGroup minOccurs = 1, maxOccurs = 1 _________ */
+            LayoutGroupPtr getLayoutGroup() const;
+            void setLayoutGroup( const LayoutGroupPtr& value );
+            /* _________ MeasureLayout minOccurs = 0, maxOccurs = 1 _________ */
+            MeasureLayoutPtr getMeasureLayout() const;
+            void setMeasureLayout( const MeasureLayoutPtr& value );
+            bool getHasMeasureLayout() const;
+            void setHasMeasureLayout( const bool value );
+            /* _________ MeasureNumbering minOccurs = 0, maxOccurs = 1 _________ */
+            MeasureNumberingPtr getMeasureNumbering() const;
+            void setMeasureNumbering( const MeasureNumberingPtr& value );
+            bool getHasMeasureNumbering() const;
+            void setHasMeasureNumbering( const bool value );
+            /* _________ PartNameDisplay minOccurs = 0, maxOccurs = 1 _________ */
+            PartNameDisplayPtr getPartNameDisplay() const;
+            void setPartNameDisplay( const PartNameDisplayPtr& value );
+            bool getHasPartNameDisplay() const;
+            void setHasPartNameDisplay( const bool value );
+            /* _________ PartAbbreviationDisplay minOccurs = 0, maxOccurs = 1 _________ */
+            PartAbbreviationDisplayPtr getPartAbbreviationDisplay() const;
+            void setPartAbbreviationDisplay( const PartAbbreviationDisplayPtr& value );
+            bool getHasPartAbbreviationDisplay() const;
+            void setHasPartAbbreviationDisplay( const bool value );
         private:
             PrintAttributesPtr myAttributes;
             LayoutGroupPtr myLayoutGroup;

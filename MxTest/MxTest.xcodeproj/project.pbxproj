@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290460C81AE323B7008347D3 /* PrintTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460C61AE323B7008347D3 /* PrintTest.cpp */; };
 		2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */; };
 		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */; };
@@ -402,6 +403,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		290460C61AE323B7008347D3 /* PrintTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrintTest.cpp; sourceTree = "<group>"; };
+		290460C71AE323B7008347D3 /* PrintTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintTest.h; sourceTree = "<group>"; };
 		2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = BeatRepeatTest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlashTest.cpp; sourceTree = "<group>"; };
 		2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffTuningTest.cpp; sourceTree = "<group>"; };
@@ -1391,6 +1394,8 @@
 				294F9B031AE30CAB006820D8 /* HarmonicInfoChoiceTest.h */,
 				294F9B051AE30F90006820D8 /* HarmonicTest.cpp */,
 				294F9B061AE30F90006820D8 /* HarmonicTest.h */,
+				290460C61AE323B7008347D3 /* PrintTest.cpp */,
+				290460C71AE323B7008347D3 /* PrintTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1461,6 +1466,7 @@
 				29774A1E1AB21FA000BF2205 /* StaffTest.cpp in Sources */,
 				2935A7331AB5FC3B002859CA /* StoppedTest.cpp in Sources */,
 				29C0B9F31AAE9398004F86FA /* RootAlterTest.cpp in Sources */,
+				290460C81AE323B7008347D3 /* PrintTest.cpp in Sources */,
 				292D02D81ABE1A9500005E61 /* KeyTest.cpp in Sources */,
 				298A5F901ACDF2B9008F6B5A /* FiguredBassTest.cpp in Sources */,
 				2935A73C1AB5FC3B002859CA /* WordFontTest.cpp in Sources */,
