@@ -3308,10 +3308,133 @@ namespace mx
 		}
 		std::ostream& TechnicalChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
+            switch ( myChoice )
+            {
+                case Choice::upBow:
+                {
+                    myUpBow->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::downBow:
+                {
+                    myDownBow->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::harmonic:
+                {
+                    myHarmonic->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::openString:
+                {
+                    myOpenString->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::thumbPosition:
+                {
+                    myThumbPosition->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::fingering:
+                {
+                    myFingering->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::pluck:
+                {
+                    myPluck->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::doubleTongue:
+                {
+                    myDoubleTongue->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::tripleTounge:
+                {
+                    myTripleTongue->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::stopped:
+                {
+                    myStopped->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::snapPizzicato:
+                {
+                    mySnapPizzicato->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::fret:
+                {
+                    myFret->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::string_:
+                {
+                    myString->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::hammerOn:
+                {
+                    myHammerOn->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::pullOff:
+                {
+                    myPullOff->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::bend:
+                {
+                    myBend->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::tap:
+                {
+                    myTap->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::heel:
+                {
+                    myHeel->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::toe:
+                {
+                    myToe->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::fingernails:
+                {
+                    myFingernails->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::hole:
+                {
+                    myHole->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::arrow:
+                {
+                    myArrow->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::handbell:
+                {
+                    myHandbell->toStream( os, indentLevel );
+                }
+                    break;
+                case Choice::otherTechnical:
+                {
+                    myOtherTechnical->toStream( os, indentLevel );
+                }
+                    break;
+                default:
+                    break;
+            }
 			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			return os;
 		}
         /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
 		TechnicalChoice::Choice TechnicalChoice::getChoice() const
