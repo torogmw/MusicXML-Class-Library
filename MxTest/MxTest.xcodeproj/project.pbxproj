@@ -11,6 +11,7 @@
 		290460CC1AE32EF7008347D3 /* PartGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460CA1AE32EF7008347D3 /* PartGroupTest.cpp */; };
 		290460CF1AE3642C008347D3 /* TechnicalChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460CD1AE3642C008347D3 /* TechnicalChoiceTest.cpp */; };
 		290460D21AE369AA008347D3 /* TechnicalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460D01AE369AA008347D3 /* TechnicalTest.cpp */; };
+		290460D51AE3732B008347D3 /* DirectionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460D31AE3732B008347D3 /* DirectionTest.cpp */; };
 		2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */; };
 		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */; };
@@ -414,6 +415,8 @@
 		290460CE1AE3642C008347D3 /* TechnicalChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnicalChoiceTest.h; sourceTree = "<group>"; };
 		290460D01AE369AA008347D3 /* TechnicalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TechnicalTest.cpp; sourceTree = "<group>"; };
 		290460D11AE369AA008347D3 /* TechnicalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnicalTest.h; sourceTree = "<group>"; };
+		290460D31AE3732B008347D3 /* DirectionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectionTest.cpp; sourceTree = "<group>"; };
+		290460D41AE3732B008347D3 /* DirectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionTest.h; sourceTree = "<group>"; };
 		2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = BeatRepeatTest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlashTest.cpp; sourceTree = "<group>"; };
 		2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffTuningTest.cpp; sourceTree = "<group>"; };
@@ -1419,6 +1422,8 @@
 				290460CE1AE3642C008347D3 /* TechnicalChoiceTest.h */,
 				290460D01AE369AA008347D3 /* TechnicalTest.cpp */,
 				290460D11AE369AA008347D3 /* TechnicalTest.h */,
+				290460D31AE3732B008347D3 /* DirectionTest.cpp */,
+				290460D41AE3732B008347D3 /* DirectionTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1745,6 +1750,7 @@
 				297749FF1AB21FA000BF2205 /* MidiBankTest.cpp in Sources */,
 				29C0B9E71AAE9398004F86FA /* OtherTechnicalTest.cpp in Sources */,
 				29884C331AC28B0700DD2209 /* HarpPedalsTest.cpp in Sources */,
+				290460D51AE3732B008347D3 /* DirectionTest.cpp in Sources */,
 				2935A72A1AB5FC3B002859CA /* RightDividerTest.cpp in Sources */,
 				29C0B9791AAE9337004F86FA /* CancelTest.cpp in Sources */,
 				298C81DE1AB6A8DC006619A9 /* LyricLanguageTest.cpp in Sources */,

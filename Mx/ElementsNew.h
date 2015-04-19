@@ -2161,6 +2161,16 @@ namespace mx
             /* _________ EditorialVoiceDirectionGroup minOccurs = 1, maxOccurs = 1 _________ */
             EditorialVoiceDirectionGroupPtr getEditorialVoiceDirectionGroup() const;
             void setEditorialVoiceDirectionGroup( const EditorialVoiceDirectionGroupPtr& value );
+            /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
+            StaffPtr getStaff() const;
+            void setStaff( const StaffPtr& value );
+            bool getHasStaff() const;
+            void setHasStaff( const bool value );
+            /* _________ Sound minOccurs = 0, maxOccurs = 1 _________ */
+            SoundPtr getSound() const;
+            void setSound( const SoundPtr& value );
+            bool getHasSound() const;
+            void setHasSound( const bool value );
         private:
             DirectionAttributesPtr myAttributes;
             DirectionTypeSet myDirectionTypeSet;

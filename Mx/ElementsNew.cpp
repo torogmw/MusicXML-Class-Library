@@ -3967,6 +3967,46 @@ namespace mx
                 myEditorialVoiceDirectionGroup = value;
             }
         }
+        /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
+        StaffPtr Direction::getStaff() const
+        {
+            return myStaff;
+        }
+        void Direction::setStaff( const StaffPtr& value )
+        {
+            if ( value )
+            {
+                myStaff = value;
+            }
+        }
+        bool Direction::getHasStaff() const
+        {
+            return myHasStaff;
+        }
+        void Direction::setHasStaff( const bool value )
+        {
+            myHasStaff = value;
+        }
+        /* _________ Sound minOccurs = 0, maxOccurs = 1 _________ */
+        SoundPtr Direction::getSound() const
+        {
+            return mySound;
+        }
+        void Direction::setSound( const SoundPtr& value )
+        {
+            if ( value )
+            {
+                mySound = value;
+            }
+        }
+        bool Direction::getHasSound() const
+        {
+            return myHasSound;
+        }
+        void Direction::setHasSound( const bool value )
+        {
+            myHasSound = value;
+        }
 #if 1==0
 #endif
         
