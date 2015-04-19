@@ -2042,5 +2042,135 @@ namespace mx
         private:
             TechnicalChoiceSet myTechnicalChoiceSet;
         };
+        
+        
+        
+        /* <xs:group name="editorial-voice-direction">
+         <xs:annotation>
+         <xs:documentation>The editorial-voice-direction group supports the common combination of editorial and voice information for a direction element. It is separate from the editorial-voice element because extensions and restrictions might be different for directions than for the note and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         <xs:group ref="voice" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        using EditorialVoiceDirectionGroup = EditorialVoiceGroup;
+        using EditorialVoiceDirectionGroupPtr = std::shared_ptr<EditorialVoiceDirectionGroup>;
+        using EditorialVoiceDirectionGroupUPtr = std::unique_ptr<EditorialVoiceDirectionGroup>;
+        using EditorialVoiceDirectionGroupSet = std::vector<EditorialVoiceDirectionGroupPtr>;
+        using EditorialVoiceDirectionGroupSetIter = EditorialVoiceDirectionGroupSet::iterator;
+        using EditorialVoiceDirectionGroupSetIterConst = EditorialVoiceDirectionGroupSet::const_iterator;
+        inline EditorialVoiceDirectionGroupPtr makeEditorialVoiceDirectionGroup() { return std::make_shared<EditorialVoiceDirectionGroup>(); }
+        
+        /* !--  ID = 6316 [6316] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 116 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="direction" type="direction"/>
+         <xs:complexType name="direction">
+         <xs:annotation>
+         <xs:documentation>A direction is a musical indication that is not attached to a specific note. Two or more may be combined to indicate starts and stops of wedges, dashes, etc.
+         
+         By default, a series of direction-type elements and a series of child elements of a direction-type within a single direction element follow one another in sequence visually. For a series of direction-type children, non-positional formatting attributes are carried over from the previous element by default.</xs:documentation>
+         </xs:annotation>
+         
+         <xs:sequence>
+         <xs:element name="direction-type" type="direction-type" maxOccurs="unbounded"/>
+         <xs:element name="offset" type="offset" minOccurs="0"/>
+         <xs:group ref="editorial-voice-direction"/>
+         <xs:group ref="staff" minOccurs="0"/>
+         <xs:element name="sound" type="sound" minOccurs="0"/>
+         </xs:sequence>
+         
+         <xs:attributeGroup ref="placement"/>
+         <xs:attributeGroup ref="directive"/>
+         
+         </xs:complexType>
+         
+         <xs:group name="editorial-voice-direction">
+         <xs:annotation>
+         <xs:documentation>The editorial-voice-direction group supports the common combination of editorial and voice information for a direction element. It is separate from the editorial-voice element because extensions and restrictions might be different for directions than for the note and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         <xs:group ref="voice" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="staff">
+         <xs:annotation>
+         <xs:documentation>The staff element is defined within a group due to its use by both notes and direction elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="staff" type="xs:positiveInteger">
+         <xs:annotation>
+         <xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers, with 1 referring to the top-most staff in a part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct DirectionAttributes;
+        using DirectionAttributesPtr = std::shared_ptr<DirectionAttributes>;
+        
+        struct DirectionAttributes : public AttributesInterface
+        {
+        public:
+            DirectionAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::AboveBelow placement;
+            types::YesNo directive;
+            bool hasPlacement;
+            bool hasDirective;
+        };
+        
+        class Direction;
+        using DirectionPtr = std::shared_ptr<Direction>;
+        using DirectionUPtr = std::unique_ptr<Direction>;
+        using DirectionSet = std::vector<DirectionPtr>;
+        using DirectionSetIter = DirectionSet::iterator;
+        using DirectionSetIterConst = DirectionSet::const_iterator;
+        inline DirectionPtr makeDirection() { return std::make_shared<Direction>(); }
+        class Direction : public ElementInterface
+        {
+        public:
+            Direction();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            DirectionAttributesPtr getAttributes() const;
+            void setAttributes( const DirectionAttributesPtr& value );
+            /* _________ DirectionType minOccurs = 0, maxOccurs = unbounded _________ */
+            const DirectionTypeSet& getDirectionTypeSet() const;
+            void addDirectionType( const DirectionTypePtr& value );
+            void removeDirectionType( const DirectionTypeSetIterConst& value );
+            void clearDirectionTypeSet();
+            DirectionTypePtr getDirectionType( const DirectionTypeSetIterConst& setIterator ) const;
+            /* _________ Offset minOccurs = 0, maxOccurs = 1 _________ */
+            OffsetPtr getOffset() const;
+            void setOffset( const OffsetPtr& value );
+            bool getHasOffset() const;
+            void setHasOffset( const bool value );
+            /* _________ EditorialVoiceDirectionGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialVoiceDirectionGroupPtr getEditorialVoiceDirectionGroup() const;
+            void setEditorialVoiceDirectionGroup( const EditorialVoiceDirectionGroupPtr& value );
+        private:
+            DirectionAttributesPtr myAttributes;
+            DirectionTypeSet myDirectionTypeSet;
+            OffsetPtr myOffset;
+            bool myHasOffset;
+            EditorialVoiceDirectionGroupPtr myEditorialVoiceDirectionGroup;
+            StaffPtr myStaff;
+            bool myHasStaff;
+            SoundPtr mySound;
+            bool myHasSound;
+        };
     }
 }

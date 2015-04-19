@@ -3802,6 +3802,171 @@ namespace mx
             }
             return TechnicalChoicePtr();
         }
+        /**************** DirectionAttributes ****************/
+        /* 6316 */
+        DirectionAttributes::DirectionAttributes()
+        :placement( types::AboveBelow::below )
+        ,directive( types::YesNo::no )
+        ,hasPlacement( false )
+        ,hasDirective( false )
+        {}
+        
+        bool DirectionAttributes::hasValues() const
+        {
+            return hasPlacement ||
+            hasDirective;
+        }
+        
+        std::ostream& DirectionAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, placement, "placement", hasPlacement );
+                streamAttribute( os, directive, "directive", hasDirective );
+            }
+            return os;
+        }
+        
+		Direction::Direction()
+		:myAttributes( std::make_shared<DirectionAttributes>() )
+		,myDirectionTypeSet()
+        ,myOffset( makeOffset() )
+        ,myHasOffset( false )
+        ,myEditorialVoiceDirectionGroup( makeEditorialVoiceDirectionGroup() )
+        ,myStaff( makeStaff() )
+        ,myHasStaff( false )
+        ,mySound( makeSound() )
+        ,myHasSound( false )
+		{
+            myDirectionTypeSet.push_back( makeDirectionType() );
+        }
+		bool Direction::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Direction::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Direction::streamName( std::ostream& os ) const
+		{
+			os << "direction";
+			return os;
+		}
+		bool Direction::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Direction::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			for ( auto x : myDirectionTypeSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            if ( myHasOffset )
+            {
+                os << std::endl;
+                myOffset->toStream( os, indentLevel+1 );
+            }
+            if ( myEditorialVoiceDirectionGroup->hasContents() )
+            {
+                os << std::endl;
+                myEditorialVoiceDirectionGroup->streamContents( os, indentLevel, isOneLineOnly );
+            }
+            if ( myHasStaff )
+            {
+                os << std::endl;
+                myStaff->toStream( os, indentLevel+1 );
+            }
+            if ( myHasSound )
+            {
+                os << std::endl;
+                mySound->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            isOneLineOnly = false;
+            return os;
+		}
+		DirectionAttributesPtr Direction::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Direction::setAttributes( const DirectionAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ DirectionType minOccurs = 0, maxOccurs = unbounded _________ */
+        const DirectionTypeSet& Direction::getDirectionTypeSet() const
+        {
+            return myDirectionTypeSet;
+        }
+        void Direction::addDirectionType( const DirectionTypePtr& value )
+        {
+            if ( value )
+            {
+                myDirectionTypeSet.push_back( value );
+            }
+        }
+        void Direction::removeDirectionType( const DirectionTypeSetIterConst& value )
+        {
+            if ( value != myDirectionTypeSet.cend() )
+            {
+                if( myDirectionTypeSet.size() > 1 )
+                {
+                    myDirectionTypeSet.erase( value );
+                }
+            }
+        }
+        void Direction::clearDirectionTypeSet()
+        {
+            myDirectionTypeSet.clear();
+            myDirectionTypeSet.push_back( makeDirectionType() );
+        }
+        DirectionTypePtr Direction::getDirectionType( const DirectionTypeSetIterConst& setIterator ) const
+        {
+            if( setIterator != myDirectionTypeSet.cend() )
+            {
+                return *setIterator;
+            }
+            return DirectionTypePtr();
+        }
+        /* _________ Offset minOccurs = 0, maxOccurs = 1 _________ */
+        OffsetPtr Direction::getOffset() const
+        {
+            return myOffset;
+        }
+        void Direction::setOffset( const OffsetPtr& value )
+        {
+            if ( value )
+            {
+                myOffset = value;
+            }
+        }
+        bool Direction::getHasOffset() const
+        {
+            return myHasOffset;
+        }
+        void Direction::setHasOffset( const bool value )
+        {
+            myHasOffset = value;
+        }
+        /* _________ EditorialVoiceDirectionGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialVoiceDirectionGroupPtr Direction::getEditorialVoiceDirectionGroup() const
+        {
+            return myEditorialVoiceDirectionGroup;
+        }
+        void Direction::setEditorialVoiceDirectionGroup( const EditorialVoiceDirectionGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialVoiceDirectionGroup = value;
+            }
+        }
 #if 1==0
 #endif
         
