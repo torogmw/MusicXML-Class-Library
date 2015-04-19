@@ -4043,14 +4043,86 @@ namespace mx
 		}
 		bool Properties::hasContents() const
 		{
-			return true;
+			return myEditorialGroup->hasContents()
+            || myHasDivisions
+            || myKeySet.size() > 0
+            || myTimeSet.size() > 0
+            || myHasStaves
+            || myHasPartSymbol
+            || myHasInstruments
+            || myClefSet.size() > 0
+            || myStaffDetailsSet.size() > 0
+            || myTransposeSet.size() > 0
+            || myDirectiveSet.size() > 0
+            || myMeasureStyleSet.size() > 0;
 		}
 		std::ostream& Properties::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
-			isOneLineOnly = false;
-			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			if ( this->hasContents() )
+            {
+                if ( myEditorialGroup->hasContents() )
+                {
+                    os << std::endl;
+                    myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                for ( auto x : myKeySet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myTimeSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                if ( myHasStaves )
+                {
+                    os << std::endl;
+                    myStaves->toStream( os, indentLevel+1 );
+                }
+                if ( myHasPartSymbol )
+                {
+                    os << std::endl;
+                    myPartSymbol->toStream( os, indentLevel+1 );
+                }
+                if ( myHasInstruments )
+                {
+                    os << std::endl;
+                    myInstruments->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myClefSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myStaffDetailsSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myTransposeSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myDirectiveSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                for ( auto x : myMeasureStyleSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
 		}
         /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
         EditorialGroupPtr Properties::getEditorialGroup() const
