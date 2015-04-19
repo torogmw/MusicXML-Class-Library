@@ -2975,6 +2975,294 @@ namespace mx
         {
             myHasPartAbbreviationDisplay = value;
         }
+        
+        
+        
+        /**************** PartGroupAttributes ****************/
+        /* 6351 */
+        PartGroupAttributes::PartGroupAttributes()
+        :type( types::StartStop::start )
+        ,number( types::XsToken( "1" ) )
+        ,hasType( true )
+        ,hasNumber( false )
+        {}
+        
+        bool PartGroupAttributes::hasValues() const
+        {
+            return hasType ||
+            hasNumber;
+        }
+        
+        std::ostream& PartGroupAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, type, "type", hasType );
+                streamAttribute( os, number, "number", hasNumber );
+            }
+            return os;
+        }
+        
+		PartGroup::PartGroup()
+		:myAttributes( std::make_shared<PartGroupAttributes>() )
+		,myGroupName( makeGroupName() )
+		,myHasGroupName( false )
+		,myGroupNameDisplay( makeGroupNameDisplay() )
+		,myHasGroupNameDisplay( false )
+		,myGroupAbbreviation( makeGroupAbbreviation() )
+		,myHasGroupAbbreviation( false )
+		,myGroupAbbreviationDisplay( makeGroupAbbreviationDisplay() )
+		,myHasGroupAbbreviationDisplay( false )
+		,myGroupSymbol( makeGroupSymbol() )
+		,myHasGroupSymbol( false )
+		,myGroupBarline( makeGroupBarline() )
+		,myHasGroupBarline( false )
+		,myGroupTime( makeGroupTime() )
+		,myHasGroupTime( false )
+        ,myEditorialGroup( makeEditorialGroup() )
+		{}
+		bool PartGroup::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& PartGroup::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& PartGroup::streamName( std::ostream& os ) const
+		{
+			os << "part-group";
+			return os;
+		}
+		bool PartGroup::hasContents() const
+		{
+			return myHasGroupName
+            || myHasGroupNameDisplay
+            || myHasGroupAbbreviation
+            || myHasGroupAbbreviationDisplay
+            || myHasGroupSymbol
+            || myHasGroupBarline
+            || myHasGroupTime
+            || myEditorialGroup->hasContents();
+		}
+		std::ostream& PartGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			if ( hasContents() )
+            {
+                if ( myHasGroupName )
+                {
+                    os << std::endl;
+                    myGroupName->toStream( os, indentLevel+1 );
+                }
+                if ( myHasGroupNameDisplay )
+                {
+                    os << std::endl;
+                    myGroupNameDisplay->toStream( os, indentLevel+1 );
+                }
+                if ( myHasGroupAbbreviation )
+                {
+                    os << std::endl;
+                    myGroupAbbreviation->toStream( os, indentLevel+1 );
+                }
+                if ( myHasGroupAbbreviationDisplay )
+                {
+                    os << std::endl;
+                    myGroupAbbreviationDisplay->toStream( os, indentLevel+1 );
+                }
+                if ( myHasGroupSymbol )
+                {
+                    os << std::endl;
+                    myGroupSymbol->toStream( os, indentLevel+1 );
+                }
+                if ( myHasGroupBarline )
+                {
+                    os << std::endl;
+                    myGroupBarline->toStream( os, indentLevel+1 );
+                }
+                if ( myHasGroupTime )
+                {
+                    os << std::endl;
+                    myGroupTime->toStream( os, indentLevel+1 );
+                }
+                if ( myEditorialGroup->hasContents() )
+                {
+                    os << std::endl;
+                    myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+		PartGroupAttributesPtr PartGroup::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void PartGroup::setAttributes( const PartGroupAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ GroupName minOccurs = 0, maxOccurs = 1 _________ */
+		GroupNamePtr PartGroup::getGroupName() const
+		{
+			return myGroupName;
+		}
+		void PartGroup::setGroupName( const GroupNamePtr& value )
+		{
+			if( value )
+			{
+				myGroupName = value;
+			}
+		}
+		bool PartGroup::getHasGroupName() const
+		{
+			return myHasGroupName;
+		}
+		void PartGroup::setHasGroupName( const bool value )
+		{
+			myHasGroupName = value;
+		}
+		/* _________ GroupNameDisplay minOccurs = 0, maxOccurs = 1 _________ */
+		GroupNameDisplayPtr PartGroup::getGroupNameDisplay() const
+		{
+			return myGroupNameDisplay;
+		}
+		void PartGroup::setGroupNameDisplay( const GroupNameDisplayPtr& value )
+		{
+			if( value )
+			{
+				myGroupNameDisplay = value;
+			}
+		}
+		bool PartGroup::getHasGroupNameDisplay() const
+		{
+			return myHasGroupNameDisplay;
+		}
+		void PartGroup::setHasGroupNameDisplay( const bool value )
+		{
+			myHasGroupNameDisplay = value;
+		}
+        /* _________ GroupAbbreviation minOccurs = 0, maxOccurs = 1 _________ */
+		GroupAbbreviationPtr PartGroup::getGroupAbbreviation() const
+		{
+			return myGroupAbbreviation;
+		}
+		void PartGroup::setGroupAbbreviation( const GroupAbbreviationPtr& value )
+		{
+			if( value )
+			{
+				myGroupAbbreviation = value;
+			}
+		}
+		bool PartGroup::getHasGroupAbbreviation() const
+		{
+			return myHasGroupAbbreviation;
+		}
+		void PartGroup::setHasGroupAbbreviation( const bool value )
+		{
+			myHasGroupAbbreviation = value;
+		}
+		/* _________ GroupAbbreviationDisplay minOccurs = 0, maxOccurs = 1 _________ */
+		GroupAbbreviationDisplayPtr PartGroup::getGroupAbbreviationDisplay() const
+		{
+			return myGroupAbbreviationDisplay;
+		}
+		void PartGroup::setGroupAbbreviationDisplay( const GroupAbbreviationDisplayPtr& value )
+		{
+			if( value )
+			{
+				myGroupAbbreviationDisplay = value;
+			}
+		}
+		bool PartGroup::getHasGroupAbbreviationDisplay() const
+		{
+			return myHasGroupAbbreviationDisplay;
+		}
+		void PartGroup::setHasGroupAbbreviationDisplay( const bool value )
+		{
+			myHasGroupAbbreviationDisplay = value;
+		}
+		/* _________ GroupSymbol minOccurs = 0, maxOccurs = 1 _________ */
+		GroupSymbolPtr PartGroup::getGroupSymbol() const
+		{
+			return myGroupSymbol;
+		}
+		void PartGroup::setGroupSymbol( const GroupSymbolPtr& value )
+		{
+			if( value )
+			{
+				myGroupSymbol = value;
+			}
+		}
+		bool PartGroup::getHasGroupSymbol() const
+		{
+			return myHasGroupSymbol;
+		}
+		void PartGroup::setHasGroupSymbol( const bool value )
+		{
+			myHasGroupSymbol = value;
+		}
+		/* _________ GroupBarline minOccurs = 0, maxOccurs = 1 _________ */
+		GroupBarlinePtr PartGroup::getGroupBarline() const
+		{
+			return myGroupBarline;
+		}
+		void PartGroup::setGroupBarline( const GroupBarlinePtr& value )
+		{
+			if( value )
+			{
+				myGroupBarline = value;
+			}
+		}
+		bool PartGroup::getHasGroupBarline() const
+		{
+			return myHasGroupBarline;
+		}
+		void PartGroup::setHasGroupBarline( const bool value )
+		{
+			myHasGroupBarline = value;
+		}
+		/* _________ GroupTime minOccurs = 0, maxOccurs = 1 _________ */
+		GroupTimePtr PartGroup::getGroupTime() const
+		{
+			return myGroupTime;
+		}
+		void PartGroup::setGroupTime( const GroupTimePtr& value )
+		{
+			if( value )
+			{
+				myGroupTime = value;
+			}
+		}
+		bool PartGroup::getHasGroupTime() const
+		{
+			return myHasGroupTime;
+		}
+		void PartGroup::setHasGroupTime( const bool value )
+		{
+			myHasGroupTime = value;
+		}
+		/* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+		EditorialGroupPtr PartGroup::getEditorialGroup() const
+		{
+			return myEditorialGroup;
+		}
+		void PartGroup::setEditorialGroup( const EditorialGroupPtr& value )
+		{
+			if( value )
+			{
+				myEditorialGroup = value;
+			}
+		}
+        
 #if 1==0
 #endif
         

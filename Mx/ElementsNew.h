@@ -1641,6 +1641,149 @@ namespace mx
             PartAbbreviationDisplayPtr myPartAbbreviationDisplay;
             bool myHasPartAbbreviationDisplay;
         };
-
+        /* <!--  ID = 6351 [6351] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 13 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="part-group" type="part-group"/>
+         
+         <xs:complexType name="part-group">
+         <xs:annotation>
+         <xs:documentation>The part-group element indicates groupings of parts in the score, usually indicated by braces and brackets. Braces that are used for multi-staff parts should be defined in the attributes element for that part. The part-group start element appears before the first score-part in the group. The part-group stop element appears after the last score-part in the group.
+         
+         The number attribute is used to distinguish overlapping and nested part-groups, not the sequence of groups. As with parts, groups can have a name and abbreviation. Values for the child elements are ignored at the stop of a group.
+         
+         A part-group element is not needed for a single multi-staff part. By default, multi-staff parts include a brace symbol and (if appropriate given the bar-style) common barlines. The symbol formatting for a multi-staff part can be more fully specified using the part-symbol element.</xs:documentation>
+         </xs:annotation>
+         
+         <xs:sequence>
+         
+         <xs:element name="group-name" type="group-name" minOccurs="0"/>
+         <xs:element name="group-name-display" type="name-display" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Formatting specified in the group-name-display element overrides formatting specified in the group-name element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="group-abbreviation" type="group-name" minOccurs="0"/>
+         <xs:element name="group-abbreviation-display" type="name-display" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Formatting specified in the group-abbreviation-display element overrides formatting specified in the group-abbreviation element.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="group-symbol" type="group-symbol" minOccurs="0"/>
+         <xs:element name="group-barline" type="group-barline" minOccurs="0"/>
+         <xs:element name="group-time" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The group-time element indicates that the displayed time signatures should stretch across all parts and staves in the group.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:group ref="editorial"/>
+         
+         </xs:sequence>
+         
+         <xs:attribute name="type" type="start-stop" use="required"/>
+         <xs:attribute name="number" type="xs:token" default="1"/>
+         </xs:complexType>
+         
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        struct PartGroupAttributes;
+        using PartGroupAttributesPtr = std::shared_ptr<PartGroupAttributes>;
+        
+        struct PartGroupAttributes : public AttributesInterface
+        {
+        public:
+            PartGroupAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::StartStop type;
+            types::XsToken number;
+            const 	bool hasType;
+            bool hasNumber;
+        };
+        
+        class PartGroup;
+        using PartGroupPtr = std::shared_ptr<PartGroup>;
+        using PartGroupUPtr = std::unique_ptr<PartGroup>;
+        using PartGroupSet = std::vector<PartGroupPtr>;
+        using PartGroupSetIter = PartGroupSet::iterator;
+        using PartGroupSetIterConst = PartGroupSet::const_iterator;
+        inline PartGroupPtr makePartGroup() { return std::make_shared<PartGroup>(); }
+        class PartGroup : public ElementInterface
+        {
+        public:
+            PartGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PartGroupAttributesPtr getAttributes() const;
+            void setAttributes( const PartGroupAttributesPtr& value );
+            /* _________ GroupName minOccurs = 0, maxOccurs = 1 _________ */
+            GroupNamePtr getGroupName() const;
+            void setGroupName( const GroupNamePtr& value );
+            bool getHasGroupName() const;
+            void setHasGroupName( const bool value );
+            /* _________ GroupNameDisplay minOccurs = 0, maxOccurs = 1 _________ */
+            GroupNameDisplayPtr getGroupNameDisplay() const;
+            void setGroupNameDisplay( const GroupNameDisplayPtr& value );
+            bool getHasGroupNameDisplay() const;
+            void setHasGroupNameDisplay( const bool value );
+            /* _________ GroupAbbreviation minOccurs = 0, maxOccurs = 1 _________ */
+            GroupAbbreviationPtr getGroupAbbreviation() const;
+            void setGroupAbbreviation( const GroupAbbreviationPtr& value );
+            bool getHasGroupAbbreviation() const;
+            void setHasGroupAbbreviation( const bool value );
+            /* _________ GroupAbbreviationDisplay minOccurs = 0, maxOccurs = 1 _________ */
+            GroupAbbreviationDisplayPtr getGroupAbbreviationDisplay() const;
+            void setGroupAbbreviationDisplay( const GroupAbbreviationDisplayPtr& value );
+            bool getHasGroupAbbreviationDisplay() const;
+            void setHasGroupAbbreviationDisplay( const bool value );
+            /* _________ GroupSymbol minOccurs = 0, maxOccurs = 1 _________ */
+            GroupSymbolPtr getGroupSymbol() const;
+            void setGroupSymbol( const GroupSymbolPtr& value );
+            bool getHasGroupSymbol() const;
+            void setHasGroupSymbol( const bool value );
+            /* _________ GroupBarline minOccurs = 0, maxOccurs = 1 _________ */
+            GroupBarlinePtr getGroupBarline() const;
+            void setGroupBarline( const GroupBarlinePtr& value );
+            bool getHasGroupBarline() const;
+            void setHasGroupBarline( const bool value );
+            /* _________ GroupTime minOccurs = 0, maxOccurs = 1 _________ */
+            GroupTimePtr getGroupTime() const;
+            void setGroupTime( const GroupTimePtr& value );
+            bool getHasGroupTime() const;
+            void setHasGroupTime( const bool value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
+        private:
+            PartGroupAttributesPtr myAttributes;
+            GroupNamePtr myGroupName;
+            bool myHasGroupName;
+            GroupNameDisplayPtr myGroupNameDisplay;
+            bool myHasGroupNameDisplay;
+            GroupAbbreviationPtr myGroupAbbreviation;
+            bool myHasGroupAbbreviation;
+            GroupAbbreviationDisplayPtr myGroupAbbreviationDisplay;
+            bool myHasGroupAbbreviationDisplay;
+            GroupSymbolPtr myGroupSymbol;
+            bool myHasGroupSymbol;
+            GroupBarlinePtr myGroupBarline;
+            bool myHasGroupBarline;
+            GroupTimePtr myGroupTime;
+            bool myHasGroupTime;
+            EditorialGroupPtr myEditorialGroup;
+        };
     }
 }
