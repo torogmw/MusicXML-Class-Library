@@ -1,18 +1,9 @@
-/* matthew james briggs */
-
 #pragma once
-#include <iostream>
+#include "MxTestHelper.h"
+#include "ElementsNew.h"
 
-namespace mjb
+namespace MxTestHelpers
 {
-    class TechnicalTest
-    {
-
-    public:
-        TechnicalTest();
-        virtual ~TechnicalTest();
-        
-    private:
-    
-    };
+    mx::e::TechnicalPtr tgenTechnical( variant v );
+    void tgenTechnicalExpected( std::ostream& os, int indentLevel, variant v );
 }
