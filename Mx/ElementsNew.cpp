@@ -3873,7 +3873,7 @@ namespace mx
             if ( myEditorialVoiceDirectionGroup->hasContents() )
             {
                 os << std::endl;
-                myEditorialVoiceDirectionGroup->streamContents( os, indentLevel, isOneLineOnly );
+                myEditorialVoiceDirectionGroup->streamContents( os, indentLevel+1, isOneLineOnly );
             }
             if ( myHasStaff )
             {
