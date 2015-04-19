@@ -3733,6 +3733,75 @@ namespace mx
 				myOtherTechnical = value;
 			}
 		}
+        
+        Technical::Technical()
+        :myTechnicalChoiceSet()
+        {}
+        bool Technical::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& Technical::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& Technical::streamName( std::ostream& os ) const
+        {
+            os << "technical";
+            return os;
+        }
+        bool Technical::hasContents() const
+        {
+            return myTechnicalChoiceSet.size() > 0;
+        }
+        std::ostream& Technical::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            if ( hasContents() )
+            {
+                for ( auto x : myTechnicalChoiceSet )
+                {
+                    os << std::endl;
+                    x->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                os << std::endl;
+            }
+            else
+            {
+                isOneLineOnly = false;
+            }
+            return os;
+        }
+        /* _________ TechnicalChoice minOccurs = 0, maxOccurs = unbounded _________ */
+        const TechnicalChoiceSet& Technical::getTechnicalChoiceSet() const
+        {
+            return myTechnicalChoiceSet;
+        }
+        void Technical::addTechnicalChoice( const TechnicalChoicePtr& value )
+        {
+            if ( value )
+            {
+                myTechnicalChoiceSet.push_back( value );
+            }
+        }
+        void Technical::removeTechnicalChoice( const TechnicalChoiceSetIterConst& value )
+        {
+            if ( value != myTechnicalChoiceSet.cend() )
+            {
+                myTechnicalChoiceSet.erase( value );
+            }
+        }
+        void Technical::clearTechnicalChoiceSet()
+        {
+            myTechnicalChoiceSet.clear();
+        }
+        TechnicalChoicePtr Technical::getTechnicalChoice( const TechnicalChoiceSetIterConst& setIterator ) const
+        {
+            if( setIterator != myTechnicalChoiceSet.cend() )
+            {
+                return *setIterator;
+            }
+            return TechnicalChoicePtr();
+        }
 #if 1==0
 #endif
         

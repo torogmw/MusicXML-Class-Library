@@ -2016,5 +2016,31 @@ namespace mx
             HandbellPtr myHandbell;
             OtherTechnicalPtr myOtherTechnical;
         };
+        
+        class Technical;
+        using TechnicalPtr = std::shared_ptr<Technical>;
+        using TechnicalUPtr = std::unique_ptr<Technical>;
+        using TechnicalSet = std::vector<TechnicalPtr>;
+        using TechnicalSetIter = TechnicalSet::iterator;
+        using TechnicalSetIterConst = TechnicalSet::const_iterator;
+        inline TechnicalPtr makeTechnical() { return std::make_shared<Technical>(); }
+        class Technical : public ElementInterface
+        {
+        public:
+            Technical();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ TechnicalChoice minOccurs = 0, maxOccurs = unbounded _________ */
+            const TechnicalChoiceSet& getTechnicalChoiceSet() const;
+            void addTechnicalChoice( const TechnicalChoicePtr& value );
+            void removeTechnicalChoice( const TechnicalChoiceSetIterConst& value );
+            void clearTechnicalChoiceSet();
+            TechnicalChoicePtr getTechnicalChoice( const TechnicalChoiceSetIterConst& setIterator ) const;
+        private:
+            TechnicalChoiceSet myTechnicalChoiceSet;
+        };
     }
 }

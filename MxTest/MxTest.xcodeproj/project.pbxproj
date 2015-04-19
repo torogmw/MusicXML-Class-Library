@@ -10,6 +10,7 @@
 		290460C81AE323B7008347D3 /* PrintTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460C61AE323B7008347D3 /* PrintTest.cpp */; };
 		290460CC1AE32EF7008347D3 /* PartGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460CA1AE32EF7008347D3 /* PartGroupTest.cpp */; };
 		290460CF1AE3642C008347D3 /* TechnicalChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460CD1AE3642C008347D3 /* TechnicalChoiceTest.cpp */; };
+		290460D21AE369AA008347D3 /* TechnicalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290460D01AE369AA008347D3 /* TechnicalTest.cpp */; };
 		2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */; };
 		2904B0A81AC1D06B00B6C6C2 /* SlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */; };
 		2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */; };
@@ -411,6 +412,8 @@
 		290460CB1AE32EF7008347D3 /* PartGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartGroupTest.h; sourceTree = "<group>"; };
 		290460CD1AE3642C008347D3 /* TechnicalChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TechnicalChoiceTest.cpp; sourceTree = "<group>"; };
 		290460CE1AE3642C008347D3 /* TechnicalChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnicalChoiceTest.h; sourceTree = "<group>"; };
+		290460D01AE369AA008347D3 /* TechnicalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TechnicalTest.cpp; sourceTree = "<group>"; };
+		290460D11AE369AA008347D3 /* TechnicalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnicalTest.h; sourceTree = "<group>"; };
 		2904B0A51AC1C00500B6C6C2 /* BeatRepeatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = BeatRepeatTest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		2904B0A71AC1D06B00B6C6C2 /* SlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlashTest.cpp; sourceTree = "<group>"; };
 		2904B0A91AC1E1A300B6C6C2 /* StaffTuningTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffTuningTest.cpp; sourceTree = "<group>"; };
@@ -1414,6 +1417,8 @@
 				290460CB1AE32EF7008347D3 /* PartGroupTest.h */,
 				290460CD1AE3642C008347D3 /* TechnicalChoiceTest.cpp */,
 				290460CE1AE3642C008347D3 /* TechnicalChoiceTest.h */,
+				290460D01AE369AA008347D3 /* TechnicalTest.cpp */,
+				290460D11AE369AA008347D3 /* TechnicalTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1761,6 +1766,7 @@
 				29C0B9651AAE91D9004F86FA /* AccidentalTest.cpp in Sources */,
 				296C11911ACF77B6004FAD06 /* DefaultsTest.cpp in Sources */,
 				29C0B9CE1AAE9398004F86FA /* GroupNameTest.cpp in Sources */,
+				290460D21AE369AA008347D3 /* TechnicalTest.cpp in Sources */,
 				29C0B9EA1AAE9398004F86FA /* PartSymbolTest.cpp in Sources */,
 				297749F01AB21FA000BF2205 /* InstrumentAbbreviationTest.cpp in Sources */,
 				29774A231AB21FA000BF2205 /* StickMaterialTest.cpp in Sources */,
