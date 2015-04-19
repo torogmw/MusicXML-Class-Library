@@ -1785,5 +1785,236 @@ namespace mx
             bool myHasGroupTime;
             EditorialGroupPtr myEditorialGroup;
         };
+        /* <!--  ID = 4932 [4932] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 39 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="technical" type="technical"/>
+         <xs:complexType name="technical">
+         <xs:annotation>
+         <xs:documentation>Technical indications give performance information for individual instruments.</xs:documentation>
+         </xs:annotation>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="up-bow" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The up-bow element represents the symbol that is used both for up-bowing on bowed instruments, and up-stroke on plucked instruments.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="down-bow" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The down-bow element represents the symbol that is used both for down-bowing on bowed instruments, and down-stroke on plucked instruments.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="harmonic" type="harmonic"/>
+         <xs:element name="open-string" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The open-string element represents the zero-shaped open string symbol.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="thumb-position" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The thumb-position element represents the thumb position symbol. This is a circle with a line, where the line does not come within the circle. It is distinct from the snap pizzicato symbol, where the line comes inside the circle.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="fingering" type="fingering"/>
+         <xs:element name="pluck" type="placement-text">
+         <xs:annotation>
+         <xs:documentation>The pluck element is used to specify the plucking fingering on a fretted instrument, where the fingering element refers to the fretting fingering. Typical values are p, i, m, a for pulgar/thumb, indicio/index, medio/middle, and anular/ring fingers.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="double-tongue" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The double-tongue element represents the double tongue symbol (two dots arranged horizontally).</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="triple-tongue" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The triple-tongue element represents the triple tongue symbol (three dots arranged horizontally).</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="stopped" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The stopped element represents the stopped symbol, which looks like a plus sign.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="snap-pizzicato" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The snap-pizzicato element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the thumb-position symbol, where the line does not come inside the circle.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="fret" type="fret"/>
+         <xs:element name="string" type="string"/>
+         <xs:element name="hammer-on" type="hammer-on-pull-off"/>
+         <xs:element name="pull-off" type="hammer-on-pull-off"/>
+         <xs:element name="bend" type="bend"/>
+         <xs:element name="tap" type="placement-text">
+         <xs:annotation>
+         <xs:documentation>The tap element indicates a tap on the fretboard. The element content allows specification of the notation; + and T are common choices. If empty, the display is application-specific.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="heel" type="heel-toe"/>
+         <xs:element name="toe" type="heel-toe"/>
+         <xs:element name="fingernails" type="empty-placement">
+         <xs:annotation>
+         <xs:documentation>The fingernails element is used in notation for harp and other plucked string instruments.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="hole" type="hole"/>
+         <xs:element name="arrow" type="arrow"/>
+         <xs:element name="handbell" type="handbell"/>
+         <xs:element name="other-technical" type="placement-text">
+         <xs:annotation>
+         <xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. This allows extended representation, though without application interoperability.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:choice>
+         </xs:complexType> */
+        
+        class TechnicalChoice;
+        using TechnicalChoicePtr = std::shared_ptr<TechnicalChoice>;
+        using TechnicalChoiceUPtr = std::unique_ptr<TechnicalChoice>;
+        using TechnicalChoiceSet = std::vector<TechnicalChoicePtr>;
+        using TechnicalChoiceSetIter = TechnicalChoiceSet::iterator;
+        using TechnicalChoiceSetIterConst = TechnicalChoiceSet::const_iterator;
+        inline TechnicalChoicePtr makeTechnicalChoice() { return std::make_shared<TechnicalChoice>(); }
+        class TechnicalChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                upBow = 1,
+                downBow = 2,
+                harmonic = 3,
+                openString = 4,
+                thumbPosition = 5,
+                fingering = 6,
+                pluck = 7,
+                doubleTongue = 8,
+                tripleTounge = 9,
+                stopped = 10,
+                snapPizzicato = 11,
+                fret = 12,
+                string_ = 13,
+                hammerOn = 14,
+                pullOff = 15,
+                bend = 16,
+                tap = 17,
+                heel = 18,
+                toe = 19,
+                fingernails = 20,
+                hole = 21,
+                arrow = 22,
+                handbell = 23,
+                otherTechnical = 24
+            };
+            TechnicalChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            TechnicalChoice::Choice getChoice() const;
+            void setChoice( const TechnicalChoice::Choice value );
+            /* _________ UpBow minOccurs = 1, maxOccurs = 1 _________ */
+            UpBowPtr getUpBow() const;
+            void setUpBow( const UpBowPtr& value );
+            /* _________ DownBow minOccurs = 1, maxOccurs = 1 _________ */
+            DownBowPtr getDownBow() const;
+            void setDownBow( const DownBowPtr& value );
+            /* _________ Harmonic minOccurs = 1, maxOccurs = 1 _________ */
+            HarmonicPtr getHarmonic() const;
+            void setHarmonic( const HarmonicPtr& value );
+            /* _________ OpenString minOccurs = 1, maxOccurs = 1 _________ */
+            OpenStringPtr getOpenString() const;
+            void setOpenString( const OpenStringPtr& value );
+            /* _________ ThumbPosition minOccurs = 1, maxOccurs = 1 _________ */
+            ThumbPositionPtr getThumbPosition() const;
+            void setThumbPosition( const ThumbPositionPtr& value );
+            /* _________ Fingering minOccurs = 1, maxOccurs = 1 _________ */
+            FingeringPtr getFingering() const;
+            void setFingering( const FingeringPtr& value );
+            /* _________ Pluck minOccurs = 1, maxOccurs = 1 _________ */
+            PluckPtr getPluck() const;
+            void setPluck( const PluckPtr& value );
+            /* _________ DoubleTongue minOccurs = 1, maxOccurs = 1 _________ */
+            DoubleTonguePtr getDoubleTongue() const;
+            void setDoubleTongue( const DoubleTonguePtr& value );
+            /* _________ TripleTongue minOccurs = 1, maxOccurs = 1 _________ */
+            TripleTonguePtr getTripleTongue() const;
+            void setTripleTongue( const TripleTonguePtr& value );
+            /* _________ Stopped minOccurs = 1, maxOccurs = 1 _________ */
+            StoppedPtr getStopped() const;
+            void setStopped( const StoppedPtr& value );
+            /* _________ SnapPizzicato minOccurs = 1, maxOccurs = 1 _________ */
+            SnapPizzicatoPtr getSnapPizzicato() const;
+            void setSnapPizzicato( const SnapPizzicatoPtr& value );
+            /* _________ Fret minOccurs = 1, maxOccurs = 1 _________ */
+            FretPtr getFret() const;
+            void setFret( const FretPtr& value );
+            /* _________ String minOccurs = 1, maxOccurs = 1 _________ */
+            StringPtr getString() const;
+            void setString( const StringPtr& value );
+            /* _________ HammerOn minOccurs = 1, maxOccurs = 1 _________ */
+            HammerOnPtr getHammerOn() const;
+            void setHammerOn( const HammerOnPtr& value );
+            /* _________ PullOff minOccurs = 1, maxOccurs = 1 _________ */
+            PullOffPtr getPullOff() const;
+            void setPullOff( const PullOffPtr& value );
+            /* _________ Bend minOccurs = 1, maxOccurs = 1 _________ */
+            BendPtr getBend() const;
+            void setBend( const BendPtr& value );
+            /* _________ Tap minOccurs = 1, maxOccurs = 1 _________ */
+            TapPtr getTap() const;
+            void setTap( const TapPtr& value );
+            /* _________ Heel minOccurs = 1, maxOccurs = 1 _________ */
+            HeelPtr getHeel() const;
+            void setHeel( const HeelPtr& value );
+            /* _________ Toe minOccurs = 1, maxOccurs = 1 _________ */
+            ToePtr getToe() const;
+            void setToe( const ToePtr& value );
+            /* _________ Fingernails minOccurs = 1, maxOccurs = 1 _________ */
+            FingernailsPtr getFingernails() const;
+            void setFingernails( const FingernailsPtr& value );
+            /* _________ Hole minOccurs = 1, maxOccurs = 1 _________ */
+            HolePtr getHole() const;
+            void setHole( const HolePtr& value );
+            /* _________ Arrow minOccurs = 1, maxOccurs = 1 _________ */
+            ArrowPtr getArrow() const;
+            void setArrow( const ArrowPtr& value );
+            /* _________ Handbell minOccurs = 1, maxOccurs = 1 _________ */
+            HandbellPtr getHandbell() const;
+            void setHandbell( const HandbellPtr& value );
+            /* _________ OtherTechnical minOccurs = 1, maxOccurs = 1 _________ */
+            OtherTechnicalPtr getOtherTechnical() const;
+            void setOtherTechnical( const OtherTechnicalPtr& value );
+        private:
+            Choice myChoice;
+            UpBowPtr myUpBow;
+            DownBowPtr myDownBow;
+            HarmonicPtr myHarmonic;
+            OpenStringPtr myOpenString;
+            ThumbPositionPtr myThumbPosition;
+            FingeringPtr myFingering;
+            PluckPtr myPluck;
+            DoubleTonguePtr myDoubleTongue;
+            TripleTonguePtr myTripleTongue;
+            StoppedPtr myStopped;
+            SnapPizzicatoPtr mySnapPizzicato;
+            FretPtr myFret;
+            StringPtr myString;
+            HammerOnPtr myHammerOn;
+            PullOffPtr myPullOff;
+            BendPtr myBend;
+            TapPtr myTap;
+            HeelPtr myHeel;
+            ToePtr myToe;
+            FingernailsPtr myFingernails;
+            HolePtr myHole;
+            ArrowPtr myArrow;
+            HandbellPtr myHandbell;
+            OtherTechnicalPtr myOtherTechnical;
+        };
     }
 }

@@ -3262,7 +3262,354 @@ namespace mx
 				myEditorialGroup = value;
 			}
 		}
-        
+        TechnicalChoice::TechnicalChoice()
+		:myChoice( Choice::upBow )
+		,myUpBow( makeUpBow() )
+		,myDownBow( makeDownBow() )
+		,myHarmonic( makeHarmonic() )
+		,myOpenString( makeOpenString() )
+		,myThumbPosition( makeThumbPosition() )
+		,myFingering( makeFingering() )
+		,myPluck( makePluck() )
+		,myDoubleTongue( makeDoubleTongue() )
+		,myTripleTongue( makeTripleTongue() )
+		,myStopped( makeStopped() )
+		,mySnapPizzicato( makeSnapPizzicato() )
+		,myFret( makeFret() )
+		,myString( makeString() )
+		,myHammerOn( makeHammerOn() )
+		,myPullOff( makePullOff() )
+		,myBend( makeBend() )
+		,myTap( makeTap() )
+		,myHeel( makeHeel() )
+		,myToe( makeToe() )
+		,myFingernails( makeFingernails() )
+		,myHole( makeHole() )
+		,myArrow( makeArrow() )
+		,myHandbell( makeHandbell() )
+		,myOtherTechnical( makeOtherTechnical() )
+		{}
+		bool TechnicalChoice::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& TechnicalChoice::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& TechnicalChoice::streamName( std::ostream& os ) const
+		{
+			os << "technical";
+			return os;
+		}
+		bool TechnicalChoice::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& TechnicalChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+		TechnicalChoice::Choice TechnicalChoice::getChoice() const
+		{
+			return myChoice;
+		}
+		void TechnicalChoice::setChoice( const TechnicalChoice::Choice value )
+		{
+			myChoice = value;
+		}
+		/* _________ UpBow minOccurs = 1, maxOccurs = 1 _________ */
+		UpBowPtr TechnicalChoice::getUpBow() const
+		{
+			return myUpBow;
+		}
+		void TechnicalChoice::setUpBow( const UpBowPtr& value )
+		{
+			if( value )
+			{
+				myUpBow = value;
+			}
+		}
+		/* _________ DownBow minOccurs = 1, maxOccurs = 1 _________ */
+		DownBowPtr TechnicalChoice::getDownBow() const
+		{
+			return myDownBow;
+		}
+		void TechnicalChoice::setDownBow( const DownBowPtr& value )
+		{
+			if( value )
+			{
+				myDownBow = value;
+			}
+		}
+		/* _________ Harmonic minOccurs = 1, maxOccurs = 1 _________ */
+		HarmonicPtr TechnicalChoice::getHarmonic() const
+		{
+			return myHarmonic;
+		}
+		void TechnicalChoice::setHarmonic( const HarmonicPtr& value )
+		{
+			if( value )
+			{
+				myHarmonic = value;
+			}
+		}
+		/* _________ OpenString minOccurs = 1, maxOccurs = 1 _________ */
+		OpenStringPtr TechnicalChoice::getOpenString() const
+		{
+			return myOpenString;
+		}
+		void TechnicalChoice::setOpenString( const OpenStringPtr& value )
+		{
+			if( value )
+			{
+				myOpenString = value;
+			}
+		}
+		/* _________ ThumbPosition minOccurs = 1, maxOccurs = 1 _________ */
+		ThumbPositionPtr TechnicalChoice::getThumbPosition() const
+		{
+			return myThumbPosition;
+		}
+		void TechnicalChoice::setThumbPosition( const ThumbPositionPtr& value )
+		{
+			if( value )
+			{
+				myThumbPosition = value;
+			}
+		}
+		/* _________ Fingering minOccurs = 1, maxOccurs = 1 _________ */
+		FingeringPtr TechnicalChoice::getFingering() const
+		{
+			return myFingering;
+		}
+		void TechnicalChoice::setFingering( const FingeringPtr& value )
+		{
+			if( value )
+			{
+				myFingering = value;
+			}
+		}
+		/* _________ Pluck minOccurs = 1, maxOccurs = 1 _________ */
+		PluckPtr TechnicalChoice::getPluck() const
+		{
+			return myPluck;
+		}
+		void TechnicalChoice::setPluck( const PluckPtr& value )
+		{
+			if( value )
+			{
+				myPluck = value;
+			}
+		}
+		/* _________ DoubleTongue minOccurs = 1, maxOccurs = 1 _________ */
+		DoubleTonguePtr TechnicalChoice::getDoubleTongue() const
+		{
+			return myDoubleTongue;
+		}
+		void TechnicalChoice::setDoubleTongue( const DoubleTonguePtr& value )
+		{
+			if( value )
+			{
+				myDoubleTongue = value;
+			}
+		}
+		/* _________ TripleTongue minOccurs = 1, maxOccurs = 1 _________ */
+		TripleTonguePtr TechnicalChoice::getTripleTongue() const
+		{
+			return myTripleTongue;
+		}
+		void TechnicalChoice::setTripleTongue( const TripleTonguePtr& value )
+		{
+			if( value )
+			{
+				myTripleTongue = value;
+			}
+		}
+		/* _________ Stopped minOccurs = 1, maxOccurs = 1 _________ */
+		StoppedPtr TechnicalChoice::getStopped() const
+		{
+			return myStopped;
+		}
+		void TechnicalChoice::setStopped( const StoppedPtr& value )
+		{
+			if( value )
+			{
+				myStopped = value;
+			}
+		}
+		/* _________ SnapPizzicato minOccurs = 1, maxOccurs = 1 _________ */
+		SnapPizzicatoPtr TechnicalChoice::getSnapPizzicato() const
+		{
+			return mySnapPizzicato;
+		}
+		void TechnicalChoice::setSnapPizzicato( const SnapPizzicatoPtr& value )
+		{
+			if( value )
+			{
+				mySnapPizzicato = value;
+			}
+		}
+		/* _________ Fret minOccurs = 1, maxOccurs = 1 _________ */
+		FretPtr TechnicalChoice::getFret() const
+		{
+			return myFret;
+		}
+		void TechnicalChoice::setFret( const FretPtr& value )
+		{
+			if( value )
+			{
+				myFret = value;
+			}
+		}
+		/* _________ String minOccurs = 1, maxOccurs = 1 _________ */
+		StringPtr TechnicalChoice::getString() const
+		{
+			return myString;
+		}
+		void TechnicalChoice::setString( const StringPtr& value )
+		{
+			if( value )
+			{
+				myString = value;
+			}
+		}
+		/* _________ HammerOn minOccurs = 1, maxOccurs = 1 _________ */
+		HammerOnPtr TechnicalChoice::getHammerOn() const
+		{
+			return myHammerOn;
+		}
+		void TechnicalChoice::setHammerOn( const HammerOnPtr& value )
+		{
+			if( value )
+			{
+				myHammerOn = value;
+			}
+		}
+		/* _________ PullOff minOccurs = 1, maxOccurs = 1 _________ */
+		PullOffPtr TechnicalChoice::getPullOff() const
+		{
+			return myPullOff;
+		}
+		void TechnicalChoice::setPullOff( const PullOffPtr& value )
+		{
+			if( value )
+			{
+				myPullOff = value;
+			}
+		}
+		/* _________ Bend minOccurs = 1, maxOccurs = 1 _________ */
+		BendPtr TechnicalChoice::getBend() const
+		{
+			return myBend;
+		}
+		void TechnicalChoice::setBend( const BendPtr& value )
+		{
+			if( value )
+			{
+				myBend = value;
+			}
+		}
+				/* _________ Tap minOccurs = 1, maxOccurs = 1 _________ */
+		TapPtr TechnicalChoice::getTap() const
+		{
+			return myTap;
+		}
+		void TechnicalChoice::setTap( const TapPtr& value )
+		{
+			if( value )
+			{
+				myTap = value;
+			}
+		}
+		/* _________ Heel minOccurs = 1, maxOccurs = 1 _________ */
+		HeelPtr TechnicalChoice::getHeel() const
+		{
+			return myHeel;
+		}
+		void TechnicalChoice::setHeel( const HeelPtr& value )
+		{
+			if( value )
+			{
+				myHeel = value;
+			}
+		}
+		/* _________ Toe minOccurs = 1, maxOccurs = 1 _________ */
+		ToePtr TechnicalChoice::getToe() const
+		{
+			return myToe;
+		}
+		void TechnicalChoice::setToe( const ToePtr& value )
+		{
+			if( value )
+			{
+				myToe = value;
+			}
+		}
+		/* _________ Fingernails minOccurs = 1, maxOccurs = 1 _________ */
+		FingernailsPtr TechnicalChoice::getFingernails() const
+		{
+			return myFingernails;
+		}
+		void TechnicalChoice::setFingernails( const FingernailsPtr& value )
+		{
+			if( value )
+			{
+				myFingernails = value;
+			}
+		}
+		/* _________ Hole minOccurs = 1, maxOccurs = 1 _________ */
+		HolePtr TechnicalChoice::getHole() const
+		{
+			return myHole;
+		}
+		void TechnicalChoice::setHole( const HolePtr& value )
+		{
+			if( value )
+			{
+				myHole = value;
+			}
+		}
+		/* _________ Arrow minOccurs = 1, maxOccurs = 1 _________ */
+		ArrowPtr TechnicalChoice::getArrow() const
+		{
+			return myArrow;
+		}
+		void TechnicalChoice::setArrow( const ArrowPtr& value )
+		{
+			if( value )
+			{
+				myArrow = value;
+			}
+		}
+		/* _________ Handbell minOccurs = 1, maxOccurs = 1 _________ */
+		HandbellPtr TechnicalChoice::getHandbell() const
+		{
+			return myHandbell;
+		}
+		void TechnicalChoice::setHandbell( const HandbellPtr& value )
+		{
+			if( value )
+			{
+				myHandbell = value;
+			}
+		}
+		/* _________ OtherTechnical minOccurs = 1, maxOccurs = 1 _________ */
+		OtherTechnicalPtr TechnicalChoice::getOtherTechnical() const
+		{
+			return myOtherTechnical;
+		}
+		void TechnicalChoice::setOtherTechnical( const OtherTechnicalPtr& value )
+		{
+			if( value )
+			{
+				myOtherTechnical = value;
+			}
+		}
 #if 1==0
 #endif
         
