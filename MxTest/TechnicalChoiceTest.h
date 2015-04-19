@@ -4,6 +4,6 @@
 
 namespace MxTestHelpers
 {
-    mx::e::TechnicalChoice tgenHarmonicTypeChoice( variant v );
-    void tgenHarmonicTypeChoiceExpected( std::ostream& os, int indentLevel, variant v );
+    mx::e::TechnicalChoicePtr tgenTechnicalChoice( variant v );
+    void tgenTechnicalChoiceExpected( std::ostream& os, int indentLevel, variant v );
 }

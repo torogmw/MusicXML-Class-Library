@@ -2,6 +2,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "TechnicalChoiceTest.h"
+#include "HarmonicTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
@@ -67,12 +68,14 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->setChoice( TechnicalChoice::Choice::touchingPitch );
+                o->setChoice( TechnicalChoice::Choice::string_ );
+                o->getString()->setValue( StringNumber( 4 ) );
             }
                 break;
             case variant::three:
             {
-                o->setChoice( TechnicalChoice::Choice::soundingPitch );
+                o->setChoice( TechnicalChoice::Choice::harmonic );
+                o->setHarmonic( tgenHarmonic( v ) );
             }
                 break;
             default:
@@ -87,17 +90,17 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<base-pitch/>)", false );
+                streamLine( os, i, R"(<up-bow/>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<touching-pitch/>)", false );
+                streamLine( os, i, R"(<string>4</string>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<sounding-pitch/>)", false );
+                tgenHarmonicExpected( os, i, v );
             }
                 break;
             default:
