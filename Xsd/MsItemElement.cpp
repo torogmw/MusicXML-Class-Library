@@ -277,6 +277,25 @@ namespace xsd
     {
         return mySubElements;
     }
+    MsItemElementSet MsItemElement::getFirstGenerationSubElements() const
+    {
+        const MsItem* parent = this;
+        if ( this->getInheritedMsItem() )
+        {
+            parent = ( this->getInheritedMsItem() ).get();
+        }
+        MsItemElementSet output;
+        for ( auto e : mySubElements )
+        {
+            bool isFirstGen = false;
+            isFirstGenerationSubElement( e, isFirstGen, parent );
+            if ( isFirstGen )
+            {
+                output.push_back( e );
+            }
+        }
+        return output;
+    }
     MsItemElementKind MsItemElement::getMsItemElementKind() const
     {
         return myMsItemElementKind;
@@ -413,5 +432,24 @@ namespace xsd
         int count = 0;
         countChoicesThereinRecursively( this, count );
         return count;
+    }
+    
+    void isFirstGenerationSubElement( const MsItemPtr& item, bool& isFirstGeneration, const MsItem* parent )
+    {
+        if ( item->getParent()->getID() == parent->getID() )
+        {
+            isFirstGeneration = true;
+            return;
+        }
+        else
+        {
+            if ( item->getParent()->getMsItemKind() == MsItemKind::sequence ||
+                item->getParent()->getMsItemKind() == MsItemKind::choice ||
+                item->getMsItemKind() == MsItemKind::sequence ||
+                item->getMsItemKind() == MsItemKind::choice )
+            {
+                isFirstGenerationSubElement( item->getParent(), isFirstGeneration, parent );
+            }
+        }
     }
 }

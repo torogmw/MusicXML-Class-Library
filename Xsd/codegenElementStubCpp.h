@@ -17,7 +17,7 @@ namespace xsd
     {
         cpp << tab(2) << "" << e->getCppName() << "::" << e->getCppName() << "()" << end();
         cpp << tab(2) << ":myAttributes( std::make_shared<" << attStructName << ">() )" << end();
-        auto children = e->getSubElements();
+        auto children = e->getFirstGenerationSubElements();
         for ( auto child : children )
         {
             std::string cname = child->getCppName();
@@ -197,7 +197,7 @@ namespace xsd
                 cpp << tab(2) << "{" << end();
                 cpp << tab(3) << "my" << cname << "Set.clear();" << end();
                 cpp << tab(2) << "}" << end();
-                cpp << tab(2) << cname << "Ptr " << e->getCppName() << "::get" << cname << "( const " << cname << " SetIterConst& setIterator ) const" << end();
+                cpp << tab(2) << cname << "Ptr " << e->getCppName() << "::get" << cname << "( const " << cname << "SetIterConst& setIterator ) const" << end();
                 cpp << tab(2) << "{" << end();
                 cpp << tab(3) << "if( setIterator != my" << cname << "Set.cend() )" << end();
                 cpp << tab(3) << "{" << end();

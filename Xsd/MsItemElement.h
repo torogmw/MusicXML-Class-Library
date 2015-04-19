@@ -60,6 +60,7 @@ namespace xsd
         unsigned int getMaxOccurs() const;
         MsItemElementCardinality getCardinality() const;
         const MsItemElementSet& getSubElements() const;
+        MsItemElementSet getFirstGenerationSubElements() const;
         bool getSubElementsImplemented() const;
         std::string toString() const;
         std::ostream& toStream( std::ostream& os ) const;
@@ -91,4 +92,5 @@ namespace xsd
     MsItemElementSet findUnimplementedElements( const MsItemWebPtr& web );
     bool doesElementHaveTheLowestIDAmongPeers( const MsItemElementPtr& elementToCheck, const MsItemElementSet& peerElements );
     MsItemElementSetIterConst findElementWithLowestID( const MsItemElementSet& elements );
+    void isFirstGenerationSubElement( const MsItemPtr& item, bool& isFirstGeneration, const MsItem* parent );
 }

@@ -2182,5 +2182,203 @@ namespace mx
             SoundPtr mySound;
             bool myHasSound;
         };
+        
+        /* <!--  ID = 6319 [6319] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 50 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="attributes" type="attributes"/>
+         
+         <xs:complexType name="attributes">
+         <xs:annotation>
+         <xs:documentation>The attributes element contains musical information that typically changes on measure boundaries. This includes key and time signatures, clefs, transpositions, and staving. When attributes are changed mid-measure, it affects the music in score order, not in MusicXML document order.</xs:documentation>
+         </xs:annotation>
+         
+         <xs:sequence>
+         
+         <xs:group ref="editorial"/>
+         <xs:element name="divisions" type="positive-divisions" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>Musical notation duration is commonly represented as fractions. The divisions element indicates how many divisions per quarter note are used to indicate a note's duration. For example, if duration = 1 and divisions = 2, this is an eighth note duration. Duration and divisions are used directly for generating sound output, so they must be chosen to take tuplets into account. Using a divisions element lets us use just one number to represent a duration for each note in the score, while retaining the full power of a fractional representation. If maximum compatibility with Standard MIDI 1.0 files is important, do not have the divisions value exceed 16383.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The key element represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="time" type="time" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="staves" type="xs:nonNegativeInteger" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The staves element is used if there is more than one staff represented in the given part (e.g., 2 staves for typical piano parts). If absent, a value of 1 is assumed. Staves are ordered from top to bottom in a part in numerical order, with staff 1 above staff 2.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="part-symbol" type="part-symbol" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The part-symbol element indicates how a symbol for a multi-staff part is indicated in the score.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="instruments" type="xs:nonNegativeInteger" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The instruments element is only used if more than one instrument is represented in the part (e.g., oboe I and II where they play together most of the time). If absent, a value of 1 is assumed.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="clef" type="clef" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>Clefs are represented by a combination of sign, line, and clef-octave-change elements.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="staff-details" type="staff-details" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The staff-details element is used to indicate different types of staves.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="transpose" type="transpose" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>If the part is being encoded for a transposing instrument in written vs. concert pitch, the transposition must be encoded in the transpose element using the transpose type.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="directive" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>Directives are like directions, but can be grouped together with attributes for convenience. This is typically used for tempo markings at the beginning of a piece of music. This element has been deprecated in Version 2.0 in favor of the directive attribute for direction elements. Language names come from ISO 639, with optional country subcodes from ISO 3166.</xs:documentation>
+         </xs:annotation>
+         <xs:complexType>
+         <xs:simpleContent>
+         <xs:extension base="xs:string">
+         <xs:attributeGroup ref="print-style"/>
+         <xs:attribute ref="xml:lang"/>
+         </xs:extension>
+         </xs:simpleContent>
+         </xs:complexType>
+         </xs:element>
+         <xs:element name="measure-style" type="measure-style" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>A measure-style indicates a special way to print partial to multiple measures within a part. This includes multiple rests over several measures, repeats of beats, single, or multiple measures, and use of slash notation.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         
+         </xs:sequence>
+         
+         </xs:complexType>
+         
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        /* I am renaming this to "properties" because it clashes with a lot of things.
+         In particular it clashes with the Attributes which are contained by every
+         element.  I discovered this clash late in the game so this is likely to be
+         the only Element where the element's name does not match the Class name. */
+        
+        class Properties;
+        using PropertiesPtr = std::shared_ptr<Properties>;
+        using PropertiesUPtr = std::unique_ptr<Properties>;
+        using PropertiesSet = std::vector<PropertiesPtr>;
+        using PropertiesSetIter = PropertiesSet::iterator;
+        using PropertiesSetIterConst = PropertiesSet::const_iterator;
+        inline PropertiesPtr makeProperties() { return std::make_shared<Properties>(); }
+        class Properties : public ElementInterface
+        {
+        public:
+            Properties();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
+            /* _________ Divisions minOccurs = 0, maxOccurs = 1 _________ */
+            DivisionsPtr getDivisions() const;
+            void setDivisions( const DivisionsPtr& value );
+            bool getHasDivisions() const;
+            void setHasDivisions( const bool value );
+            /* _________ Key minOccurs = 0, maxOccurs = unbounded _________ */
+            const KeySet& getKeySet() const;
+            void addKey( const KeyPtr& value );
+            void removeKey( const KeySetIterConst& value );
+            void clearKeySet();
+            KeyPtr getKey( const KeySetIterConst& setIterator ) const;
+            /* _________ Time minOccurs = 0, maxOccurs = unbounded _________ */
+            const TimeSet& getTimeSet() const;
+            void addTime( const TimePtr& value );
+            void removeTime( const TimeSetIterConst& value );
+            void clearTimeSet();
+            TimePtr getTime( const TimeSetIterConst& setIterator ) const;
+            /* _________ Staves minOccurs = 0, maxOccurs = 1 _________ */
+            StavesPtr getStaves() const;
+            void setStaves( const StavesPtr& value );
+            bool getHasStaves() const;
+            void setHasStaves( const bool value );
+            /* _________ PartSymbol minOccurs = 0, maxOccurs = 1 _________ */
+            PartSymbolPtr getPartSymbol() const;
+            void setPartSymbol( const PartSymbolPtr& value );
+            bool getHasPartSymbol() const;
+            void setHasPartSymbol( const bool value );
+            /* _________ Instruments minOccurs = 0, maxOccurs = 1 _________ */
+            InstrumentsPtr getInstruments() const;
+            void setInstruments( const InstrumentsPtr& value );
+            bool getHasInstruments() const;
+            void setHasInstruments( const bool value );
+            /* _________ Clef minOccurs = 0, maxOccurs = unbounded _________ */
+            const ClefSet& getClefSet() const;
+            void addClef( const ClefPtr& value );
+            void removeClef( const ClefSetIterConst& value );
+            void clearClefSet();
+            ClefPtr getClef( const ClefSetIterConst& setIterator ) const;
+            /* _________ StaffDetails minOccurs = 0, maxOccurs = unbounded _________ */
+            const StaffDetailsSet& getStaffDetailsSet() const;
+            void addStaffDetails( const StaffDetailsPtr& value );
+            void removeStaffDetails( const StaffDetailsSetIterConst& value );
+            void clearStaffDetailsSet();
+            StaffDetailsPtr getStaffDetails( const StaffDetailsSetIterConst& setIterator ) const;
+            /* _________ Transpose minOccurs = 0, maxOccurs = unbounded _________ */
+            const TransposeSet& getTransposeSet() const;
+            void addTranspose( const TransposePtr& value );
+            void removeTranspose( const TransposeSetIterConst& value );
+            void clearTransposeSet();
+            TransposePtr getTranspose( const TransposeSetIterConst& setIterator ) const;
+            /* _________ Directive minOccurs = 0, maxOccurs = unbounded _________ */
+            const DirectiveSet& getDirectiveSet() const;
+            void addDirective( const DirectivePtr& value );
+            void removeDirective( const DirectiveSetIterConst& value );
+            void clearDirectiveSet();
+            DirectivePtr getDirective( const DirectiveSetIterConst& setIterator ) const;
+            /* _________ MeasureStyle minOccurs = 0, maxOccurs = unbounded _________ */
+            const MeasureStyleSet& getMeasureStyleSet() const;
+            void addMeasureStyle( const MeasureStylePtr& value );
+            void removeMeasureStyle( const MeasureStyleSetIterConst& value );
+            void clearMeasureStyleSet();
+            MeasureStylePtr getMeasureStyle( const MeasureStyleSetIterConst& setIterator ) const;
+        private:
+            EditorialGroupPtr myEditorialGroup;
+            DivisionsPtr myDivisions;
+            bool myHasDivisions;
+            KeySet myKeySet;
+            TimeSet myTimeSet;
+            StavesPtr myStaves;
+            bool myHasStaves;
+            PartSymbolPtr myPartSymbol;
+            bool myHasPartSymbol;
+            InstrumentsPtr myInstruments;
+            bool myHasInstruments;
+            ClefSet myClefSet;
+            StaffDetailsSet myStaffDetailsSet;
+            TransposeSet myTransposeSet;
+            DirectiveSet myDirectiveSet;
+            MeasureStyleSet myMeasureStyleSet;
+        };
     }
 }

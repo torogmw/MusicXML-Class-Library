@@ -27,7 +27,7 @@ namespace xsd
         h << tab(1) << "virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;" << end();
         h << tab(1) << attStructName << "Ptr getAttributes() const;" << end();
         h << tab(1) << "void setAttributes( const " << attStructName << "Ptr& value );" << end();
-        auto children = e->getSubElements();
+        auto children = e->getFirstGenerationSubElements();
         for ( auto child : children )
         {
             std::string cname = child->getCppName();
@@ -65,6 +65,7 @@ namespace xsd
                 //h << tab(1) << "bool getHas" << cname << "() const;" << end();
                 //h << tab(1) << "void setHas" << cname << "( const bool value );" << end();
                 h << tab(1) << "void clear" << cname << "Set();" << end();
+                h << tab(1) << cname << "Ptr get" << cname << "( const " << cname << "SetIterConst& setIterator ) const;" << end();
             }
             else if ( child->getCardinality() == MsItemElementCardinality::OneOrMMany )
             {

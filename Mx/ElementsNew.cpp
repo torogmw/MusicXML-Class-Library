@@ -4007,6 +4007,361 @@ namespace mx
         {
             myHasSound = value;
         }
+        
+        /* 6319 */
+        
+        Properties::Properties()
+		:myEditorialGroup( makeEditorialGroup() )
+		,myDivisions( makeDivisions() )
+		,myHasDivisions( false )
+		,myKeySet()
+		,myTimeSet()
+		,myStaves( makeStaves() )
+		,myHasStaves( false )
+		,myPartSymbol( makePartSymbol() )
+		,myHasPartSymbol( false )
+		,myInstruments( makeInstruments() )
+		,myHasInstruments( false )
+		,myClefSet()
+		,myStaffDetailsSet()
+		,myTransposeSet()
+		,myDirectiveSet()
+		,myMeasureStyleSet()
+		{}
+		bool Properties::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& Properties::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& Properties::streamName( std::ostream& os ) const
+		{
+			os << "attributes";
+			return os;
+		}
+		bool Properties::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Properties::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+        /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr Properties::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void Properties::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
+		/* _________ Divisions minOccurs = 0, maxOccurs = 1 _________ */
+		DivisionsPtr Properties::getDivisions() const
+		{
+			return myDivisions;
+		}
+		void Properties::setDivisions( const DivisionsPtr& value )
+		{
+			if( value )
+			{
+				myDivisions = value;
+			}
+		}
+		bool Properties::getHasDivisions() const
+		{
+			return myHasDivisions;
+		}
+		void Properties::setHasDivisions( const bool value )
+		{
+			myHasDivisions = value;
+		}
+		/* _________ Key minOccurs = 0, maxOccurs = unbounded _________ */
+		const KeySet& Properties::getKeySet() const
+		{
+			return myKeySet;
+		}
+		void Properties::removeKey( const KeySetIterConst& value )
+		{
+			if ( value != myKeySet.cend() )
+			{
+				myKeySet.erase( value );
+			}
+		}
+		void Properties::addKey( const KeyPtr& value )
+		{
+			if ( value )
+			{
+				myKeySet.push_back( value );
+			}
+		}
+		void Properties::clearKeySet()
+		{
+			myKeySet.clear();
+		}
+		KeyPtr Properties::getKey( const KeySetIterConst& setIterator ) const
+		{
+			if( setIterator != myKeySet.cend() )
+			{
+				return *setIterator;
+			}
+			return KeyPtr();
+		}
+		/* _________ Time minOccurs = 0, maxOccurs = unbounded _________ */
+		const TimeSet& Properties::getTimeSet() const
+		{
+			return myTimeSet;
+		}
+		void Properties::removeTime( const TimeSetIterConst& value )
+		{
+			if ( value != myTimeSet.cend() )
+			{
+				myTimeSet.erase( value );
+			}
+		}
+		void Properties::addTime( const TimePtr& value )
+		{
+			if ( value )
+			{
+				myTimeSet.push_back( value );
+			}
+		}
+		void Properties::clearTimeSet()
+		{
+			myTimeSet.clear();
+		}
+		TimePtr Properties::getTime( const TimeSetIterConst& setIterator ) const
+		{
+			if( setIterator != myTimeSet.cend() )
+			{
+				return *setIterator;
+			}
+			return TimePtr();
+		}
+		/* _________ Staves minOccurs = 0, maxOccurs = 1 _________ */
+		StavesPtr Properties::getStaves() const
+		{
+			return myStaves;
+		}
+		void Properties::setStaves( const StavesPtr& value )
+		{
+			if( value )
+			{
+				myStaves = value;
+			}
+		}
+		bool Properties::getHasStaves() const
+		{
+			return myHasStaves;
+		}
+		void Properties::setHasStaves( const bool value )
+		{
+			myHasStaves = value;
+		}
+		/* _________ PartSymbol minOccurs = 0, maxOccurs = 1 _________ */
+		PartSymbolPtr Properties::getPartSymbol() const
+		{
+			return myPartSymbol;
+		}
+		void Properties::setPartSymbol( const PartSymbolPtr& value )
+		{
+			if( value )
+			{
+				myPartSymbol = value;
+			}
+		}
+		bool Properties::getHasPartSymbol() const
+		{
+			return myHasPartSymbol;
+		}
+		void Properties::setHasPartSymbol( const bool value )
+		{
+			myHasPartSymbol = value;
+		}
+		/* _________ Instruments minOccurs = 0, maxOccurs = 1 _________ */
+		InstrumentsPtr Properties::getInstruments() const
+		{
+			return myInstruments;
+		}
+		void Properties::setInstruments( const InstrumentsPtr& value )
+		{
+			if( value )
+			{
+				myInstruments = value;
+			}
+		}
+		bool Properties::getHasInstruments() const
+		{
+			return myHasInstruments;
+		}
+		void Properties::setHasInstruments( const bool value )
+		{
+			myHasInstruments = value;
+		}
+		/* _________ Clef minOccurs = 0, maxOccurs = unbounded _________ */
+		const ClefSet& Properties::getClefSet() const
+		{
+			return myClefSet;
+		}
+		void Properties::removeClef( const ClefSetIterConst& value )
+		{
+			if ( value != myClefSet.cend() )
+			{
+				myClefSet.erase( value );
+			}
+		}
+		void Properties::addClef( const ClefPtr& value )
+		{
+			if ( value )
+			{
+				myClefSet.push_back( value );
+			}
+		}
+		void Properties::clearClefSet()
+		{
+			myClefSet.clear();
+		}
+		ClefPtr Properties::getClef( const ClefSetIterConst& setIterator ) const
+		{
+			if( setIterator != myClefSet.cend() )
+			{
+				return *setIterator;
+			}
+			return ClefPtr();
+		}
+		/* _________ StaffDetails minOccurs = 0, maxOccurs = unbounded _________ */
+		const StaffDetailsSet& Properties::getStaffDetailsSet() const
+		{
+			return myStaffDetailsSet;
+		}
+		void Properties::removeStaffDetails( const StaffDetailsSetIterConst& value )
+		{
+			if ( value != myStaffDetailsSet.cend() )
+			{
+				myStaffDetailsSet.erase( value );
+			}
+		}
+		void Properties::addStaffDetails( const StaffDetailsPtr& value )
+		{
+			if ( value )
+			{
+				myStaffDetailsSet.push_back( value );
+			}
+		}
+		void Properties::clearStaffDetailsSet()
+		{
+			myStaffDetailsSet.clear();
+		}
+		StaffDetailsPtr Properties::getStaffDetails( const StaffDetailsSetIterConst& setIterator ) const
+		{
+			if( setIterator != myStaffDetailsSet.cend() )
+			{
+				return *setIterator;
+			}
+			return StaffDetailsPtr();
+		}
+		/* _________ Transpose minOccurs = 0, maxOccurs = unbounded _________ */
+		const TransposeSet& Properties::getTransposeSet() const
+		{
+			return myTransposeSet;
+		}
+		void Properties::removeTranspose( const TransposeSetIterConst& value )
+		{
+			if ( value != myTransposeSet.cend() )
+			{
+				myTransposeSet.erase( value );
+			}
+		}
+		void Properties::addTranspose( const TransposePtr& value )
+		{
+			if ( value )
+			{
+				myTransposeSet.push_back( value );
+			}
+		}
+		void Properties::clearTransposeSet()
+		{
+			myTransposeSet.clear();
+		}
+		TransposePtr Properties::getTranspose( const TransposeSetIterConst& setIterator ) const
+		{
+			if( setIterator != myTransposeSet.cend() )
+			{
+				return *setIterator;
+			}
+			return TransposePtr();
+		}
+		/* _________ Directive minOccurs = 0, maxOccurs = unbounded _________ */
+		const DirectiveSet& Properties::getDirectiveSet() const
+		{
+			return myDirectiveSet;
+		}
+		void Properties::removeDirective( const DirectiveSetIterConst& value )
+		{
+			if ( value != myDirectiveSet.cend() )
+			{
+				myDirectiveSet.erase( value );
+			}
+		}
+		void Properties::addDirective( const DirectivePtr& value )
+		{
+			if ( value )
+			{
+				myDirectiveSet.push_back( value );
+			}
+		}
+		void Properties::clearDirectiveSet()
+		{
+			myDirectiveSet.clear();
+		}
+		DirectivePtr Properties::getDirective( const DirectiveSetIterConst& setIterator ) const
+		{
+			if( setIterator != myDirectiveSet.cend() )
+			{
+				return *setIterator;
+			}
+			return DirectivePtr();
+		}
+		/* _________ MeasureStyle minOccurs = 0, maxOccurs = unbounded _________ */
+		const MeasureStyleSet& Properties::getMeasureStyleSet() const
+		{
+			return myMeasureStyleSet;
+		}
+		void Properties::removeMeasureStyle( const MeasureStyleSetIterConst& value )
+		{
+			if ( value != myMeasureStyleSet.cend() )
+			{
+				myMeasureStyleSet.erase( value );
+			}
+		}
+		void Properties::addMeasureStyle( const MeasureStylePtr& value )
+		{
+			if ( value )
+			{
+				myMeasureStyleSet.push_back( value );
+			}
+		}
+		void Properties::clearMeasureStyleSet()
+		{
+			myMeasureStyleSet.clear();
+		}
+		MeasureStylePtr Properties::getMeasureStyle( const MeasureStyleSetIterConst& setIterator ) const
+		{
+			if( setIterator != myMeasureStyleSet.cend() )
+			{
+				return *setIterator;
+			}
+			return MeasureStylePtr();
+		}
+        
 #if 1==0
 #endif
         
