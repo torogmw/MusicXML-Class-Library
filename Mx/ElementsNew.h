@@ -2537,6 +2537,234 @@ namespace mx
             ScoreInstrumentSet myScoreInstrumentSet;
             MidiDeviceInstrumentGroupSet myMidiDeviceInstrumentGroupSet;
         };
+        
+        /* <!--  ID = 5040 [5040] ------------------------->
+         <!-- min=0 max=4294967295 ZeroOrMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 117 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="notations" type="notations" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:complexType name="notations">
+         <xs:annotation>
+         <xs:documentation>Notations refer to musical notations, not XML notations. Multiple notations are allowed in order to represent multiple editorial levels. The print-object attribute, added in Version 3.0, allows notations to represent details of performance technique, such as fingerings, without having them appear in the score.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="editorial"/>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="tied" type="tied"/>
+         <xs:element name="slur" type="slur"/>
+         <xs:element name="tuplet" type="tuplet"/>
+         <xs:element name="glissando" type="glissando"/>
+         <xs:element name="slide" type="slide"/>
+         <xs:element name="ornaments" type="ornaments"/>
+         <xs:element name="technical" type="technical"/>
+         <xs:element name="articulations" type="articulations"/>
+         <xs:element name="dynamics" type="dynamics"/>
+         <xs:element name="fermata" type="fermata"/>
+         <xs:element name="arpeggiate" type="arpeggiate"/>
+         <xs:element name="non-arpeggiate" type="non-arpeggiate"/>
+         <xs:element name="accidental-mark" type="accidental-mark"/>
+         <xs:element name="other-notation" type="other-notation"/>
+         </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="print-object"/>
+         </xs:complexType>
+         <xs:group name="editorial">
+         <xs:annotation>
+         <xs:documentation>The editorial group specifies editorial information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group> */
+        
+        class NotationsChoice;
+        using NotationsChoicePtr = std::shared_ptr<NotationsChoice>;
+        using NotationsChoiceUPtr = std::unique_ptr<NotationsChoice>;
+        using NotationsChoiceSet = std::vector<NotationsChoicePtr>;
+        using NotationsChoiceSetIter = NotationsChoiceSet::iterator;
+        using NotationsChoiceSetIterConst = NotationsChoiceSet::const_iterator;
+        inline NotationsChoicePtr makeNotationsChoice() { return std::make_shared<NotationsChoice>(); }
+        class NotationsChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                tied = 1,
+                slur = 2,
+                tuplet = 3,
+                glissando = 4,
+                slide = 5,
+                ornaments = 6,
+                technical = 7,
+                articulations = 8,
+                dynamics = 9,
+                fermata = 10,
+                arpeggiate = 11,
+                nonArpeggiate = 12,
+                accidentalMark = 13,
+                otherNotation = 14
+            };
+            NotationsChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            NotationsChoice::Choice getChoice() const;
+            void setChoice( const NotationsChoice::Choice value );
+            /* _________ Tied minOccurs = 1, maxOccurs = 1 _________ */
+            TiedPtr getTied() const;
+            void setTied( const TiedPtr& value );
+            /* _________ Slur minOccurs = 1, maxOccurs = 1 _________ */
+            SlurPtr getSlur() const;
+            void setSlur( const SlurPtr& value );
+            /* _________ Tuplet minOccurs = 1, maxOccurs = 1 _________ */
+            TupletPtr getTuplet() const;
+            void setTuplet( const TupletPtr& value );
+            /* _________ Glissando minOccurs = 1, maxOccurs = 1 _________ */
+            GlissandoPtr getGlissando() const;
+            void setGlissando( const GlissandoPtr& value );
+            /* _________ Slide minOccurs = 1, maxOccurs = 1 _________ */
+            SlidePtr getSlide() const;
+            void setSlide( const SlidePtr& value );
+            /* _________ Ornaments minOccurs = 1, maxOccurs = 1 _________ */
+            OrnamentsPtr getOrnaments() const;
+            void setOrnaments( const OrnamentsPtr& value );
+            /* _________ Technical minOccurs = 1, maxOccurs = 1 _________ */
+            TechnicalPtr getTechnical() const;
+            void setTechnical( const TechnicalPtr& value );
+            /* _________ Articulations minOccurs = 1, maxOccurs = 1 _________ */
+            ArticulationsPtr getArticulations() const;
+            void setArticulations( const ArticulationsPtr& value );
+            /* _________ Dynamics minOccurs = 1, maxOccurs = 1 _________ */
+            DynamicsPtr getDynamics() const;
+            void setDynamics( const DynamicsPtr& value );
+            /* _________ Fermata minOccurs = 1, maxOccurs = 1 _________ */
+            FermataPtr getFermata() const;
+            void setFermata( const FermataPtr& value );
+            /* _________ Arpeggiate minOccurs = 1, maxOccurs = 1 _________ */
+            ArpeggiatePtr getArpeggiate() const;
+            void setArpeggiate( const ArpeggiatePtr& value );
+            /* _________ NonArpeggiate minOccurs = 1, maxOccurs = 1 _________ */
+            NonArpeggiatePtr getNonArpeggiate() const;
+            void setNonArpeggiate( const NonArpeggiatePtr& value );
+            /* _________ AccidentalMark minOccurs = 1, maxOccurs = 1 _________ */
+            AccidentalMarkPtr getAccidentalMark() const;
+            void setAccidentalMark( const AccidentalMarkPtr& value );
+            /* _________ OtherNotation minOccurs = 1, maxOccurs = 1 _________ */
+            OtherNotationPtr getOtherNotation() const;
+            void setOtherNotation( const OtherNotationPtr& value );
+        private:
+            Choice myChoice;
+            TiedPtr myTied;
+            SlurPtr mySlur;
+            TupletPtr myTuplet;
+            GlissandoPtr myGlissando;
+            SlidePtr mySlide;
+            OrnamentsPtr myOrnaments;
+            TechnicalPtr myTechnical;
+            ArticulationsPtr myArticulations;
+            DynamicsPtr myDynamics;
+            FermataPtr myFermata;
+            ArpeggiatePtr myArpeggiate;
+            NonArpeggiatePtr myNonArpeggiate;
+            AccidentalMarkPtr myAccidentalMark;
+            OtherNotationPtr myOtherNotation;
+        };
+        
+        struct NotationsAttributes;
+        using NotationsAttributesPtr = std::shared_ptr<NotationsAttributes>;
+        
+        struct NotationsAttributes : public AttributesInterface
+        {
+        public:
+            NotationsAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::YesNo printObject;
+            bool hasPrintObject;
+        };
+        
+        class Notations;
+        using NotationsPtr = std::shared_ptr<Notations>;
+        using NotationsUPtr = std::unique_ptr<Notations>;
+        using NotationsSet = std::vector<NotationsPtr>;
+        using NotationsSetIter = NotationsSet::iterator;
+        using NotationsSetIterConst = NotationsSet::const_iterator;
+        inline NotationsPtr makeNotations() { return std::make_shared<Notations>(); }
+        class Notations : public ElementInterface
+        {
+        public:
+            Notations();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            NotationsAttributesPtr getAttributes() const;
+            void setAttributes( const NotationsAttributesPtr& value );
+            /* _________ Tied minOccurs = 1, maxOccurs = 1 _________ */
+            TiedPtr getTied() const;
+            void setTied( const TiedPtr& value );
+            /* _________ Slur minOccurs = 1, maxOccurs = 1 _________ */
+            SlurPtr getSlur() const;
+            void setSlur( const SlurPtr& value );
+            /* _________ Tuplet minOccurs = 1, maxOccurs = 1 _________ */
+            TupletPtr getTuplet() const;
+            void setTuplet( const TupletPtr& value );
+            /* _________ Glissando minOccurs = 1, maxOccurs = 1 _________ */
+            GlissandoPtr getGlissando() const;
+            void setGlissando( const GlissandoPtr& value );
+            /* _________ Slide minOccurs = 1, maxOccurs = 1 _________ */
+            SlidePtr getSlide() const;
+            void setSlide( const SlidePtr& value );
+            /* _________ Ornaments minOccurs = 1, maxOccurs = 1 _________ */
+            OrnamentsPtr getOrnaments() const;
+            void setOrnaments( const OrnamentsPtr& value );
+            /* _________ Technical minOccurs = 1, maxOccurs = 1 _________ */
+            TechnicalPtr getTechnical() const;
+            void setTechnical( const TechnicalPtr& value );
+            /* _________ Articulations minOccurs = 1, maxOccurs = 1 _________ */
+            ArticulationsPtr getArticulations() const;
+            void setArticulations( const ArticulationsPtr& value );
+            /* _________ Dynamics minOccurs = 1, maxOccurs = 1 _________ */
+            DynamicsPtr getDynamics() const;
+            void setDynamics( const DynamicsPtr& value );
+            /* _________ Fermata minOccurs = 1, maxOccurs = 1 _________ */
+            FermataPtr getFermata() const;
+            void setFermata( const FermataPtr& value );
+            /* _________ Arpeggiate minOccurs = 1, maxOccurs = 1 _________ */
+            ArpeggiatePtr getArpeggiate() const;
+            void setArpeggiate( const ArpeggiatePtr& value );
+            /* _________ NonArpeggiate minOccurs = 1, maxOccurs = 1 _________ */
+            NonArpeggiatePtr getNonArpeggiate() const;
+            void setNonArpeggiate( const NonArpeggiatePtr& value );
+            /* _________ AccidentalMark minOccurs = 1, maxOccurs = 1 _________ */
+            AccidentalMarkPtr getAccidentalMark() const;
+            void setAccidentalMark( const AccidentalMarkPtr& value );
+            /* _________ OtherNotation minOccurs = 1, maxOccurs = 1 _________ */
+            OtherNotationPtr getOtherNotation() const;
+            void setOtherNotation( const OtherNotationPtr& value );
+        private:
+            NotationsAttributesPtr myAttributes;
+            TiedPtr myTied;
+            SlurPtr mySlur;
+            TupletPtr myTuplet;
+            GlissandoPtr myGlissando;
+            SlidePtr mySlide;
+            OrnamentsPtr myOrnaments;
+            TechnicalPtr myTechnical;
+            ArticulationsPtr myArticulations;
+            DynamicsPtr myDynamics;
+            FermataPtr myFermata;
+            ArpeggiatePtr myArpeggiate;
+            NonArpeggiatePtr myNonArpeggiate;
+            AccidentalMarkPtr myAccidentalMark;
+            OtherNotationPtr myOtherNotation;
+        };
 
     }
 }
