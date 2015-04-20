@@ -6311,7 +6311,45 @@ namespace mx
 		{
 			myHasPlay = value;
 		}
-
+        
+        PartGroupOrScorePart::PartGroupOrScorePart()
+        :myChoice( Choice::partGroup )
+        ,myPartGroup( makePartGroup() )
+        ,myScorePart( makeScorePart() )
+        {}
+        bool PartGroupOrScorePart::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& PartGroupOrScorePart::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& PartGroupOrScorePart::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool PartGroupOrScorePart::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& PartGroupOrScorePart::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::partGroup:
+                    myPartGroup->streamContents( os, indentLevel, isOneLineOnly );
+                    break;
+                case Choice::scorePart:
+                    myScorePart->streamContents( os, indentLevel, isOneLineOnly );
+                    break;
+                default:
+                    break;
+            }
+            isOneLineOnly = false;
+            return os;
+        }
+        
 #if 1==0
 #endif
         

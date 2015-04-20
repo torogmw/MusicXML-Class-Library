@@ -3290,5 +3290,95 @@ namespace mx
             PlayPtr myPlay;
             bool myHasPlay;
         };
+        
+        /* <!--  ID = 6388 [6388] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 112 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="part-list" type="part-list"/>
+         
+         <xs:complexType name="part-list">
+         <xs:annotation>
+         <xs:documentation>The part-list identifies the different musical parts in this movement. Each part has an ID that is used later within the musical data. Since parts may be encoded separately and combined later, identification elements are present at both the score and score-part levels. There must be at least one score-part, combined as desired with part-group elements that indicate braces and brackets. Parts are ordered from top to bottom in a score based on the order in which they appear in the part-list.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="part-group" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:group ref="score-part"/>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:group ref="part-group"/>
+         <xs:group ref="score-part"/>
+         </xs:choice>
+         </xs:sequence>
+         </xs:complexType>
+         
+         <xs:group name="part-group">
+         <xs:annotation>
+         <xs:documentation>The part-group element is defined within a group due to its multiple uses within the part-list element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="part-group" type="part-group"/>
+         </xs:sequence>
+         </xs:group>
+         
+         <xs:group name="score-part">
+         <xs:annotation>
+         <xs:documentation>The score-part element is defined within a group due to its multiple uses within the part-list element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="score-part" type="score-part">
+         <xs:annotation>
+         <xs:documentation>Each MusicXML part corresponds to a track in a Standard MIDI Format 1 file. The score-instrument elements are used when there are multiple instruments per track. The midi-device element is used to make a MIDI device or port assignment for the given track. Initial midi-instrument assignments may be made here as well.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group> */
+        
+        class PartGroupOrScorePart;
+        using PartGroupOrScorePartPtr = std::shared_ptr<PartGroupOrScorePart>;
+        using PartGroupOrScorePartUPtr = std::unique_ptr<PartGroupOrScorePart>;
+        using PartGroupOrScorePartSet = std::vector<PartGroupOrScorePartPtr>;
+        using PartGroupOrScorePartSetIter = PartGroupOrScorePartSet::iterator;
+        using PartGroupOrScorePartSetIterConst = PartGroupOrScorePartSet::const_iterator;
+        inline PartGroupOrScorePartPtr makePartGroupOrScorePart() { return std::make_shared<PartGroupOrScorePart>(); }
+        class PartGroupOrScorePart : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                partGroup = 1,
+                scorePart = 2
+            };
+            PartGroupOrScorePart();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+            Choice myChoice;
+            PartGroupPtr myPartGroup;
+            ScorePartPtr myScorePart;
+        };
+        
+        class PartList;
+        using PartListPtr = std::shared_ptr<PartList>;
+        using PartListUPtr = std::unique_ptr<PartList>;
+        using PartListSet = std::vector<PartListPtr>;
+        using PartListSetIter = PartListSet::iterator;
+        using PartListSetIterConst = PartListSet::const_iterator;
+        inline PartListPtr makePartList() { return std::make_shared<PartList>(); }
+        class PartList : public ElementInterface
+        {
+        public:
+            PartList();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+        };
+
     }
 }
