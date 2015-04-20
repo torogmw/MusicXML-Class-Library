@@ -2380,5 +2380,163 @@ namespace mx
             DirectiveSet myDirectiveSet;
             MeasureStyleSet myMeasureStyleSet;
         };
+        
+        /* <!--  ID = 6396 [6396] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 41 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="score-part" type="score-part">
+         <xs:annotation>
+         <xs:documentation>Each MusicXML part corresponds to a track in a Standard MIDI Format 1 file. The score-instrument elements are used when there are multiple instruments per track. The midi-device element is used to make a MIDI device or port assignment for the given track. Initial midi-instrument assignments may be made here as well.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:complexType name="score-part">
+         <xs:annotation>
+         <xs:documentation>Each MusicXML part corresponds to a track in a Standard MIDI Format 1 file. The score-instrument elements are used when there are multiple instruments per track. The midi-device element is used to make a MIDI device or port assignment for the given track or specific MIDI instruments. Initial midi-instrument assignments may be made here as well.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="identification" type="identification" minOccurs="0"/>
+         <xs:element name="part-name" type="part-name"/>
+         <xs:element name="part-name-display" type="name-display" minOccurs="0"/>
+         <xs:element name="part-abbreviation" type="part-name" minOccurs="0"/>
+         <xs:element name="part-abbreviation-display" type="name-display" minOccurs="0"/>
+         <xs:element name="group" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>The group element allows the use of different versions of the part for different purposes. Typical values include score, parts, sound, and data. Ordering information that is directly encoded in MuseData can be derived from the ordering within a MusicXML score or opus.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="score-instrument" type="score-instrument" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:sequence minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="midi-device" type="midi-device" minOccurs="0"/>
+         <xs:element name="midi-instrument" type="midi-instrument" minOccurs="0"/>
+         </xs:sequence>
+         </xs:sequence>
+         <xs:attribute name="id" type="xs:ID" use="required"/>
+         </xs:complexType> */
+        
+        
+        
+        struct ScorePartAttributes;
+        using ScorePartAttributesPtr = std::shared_ptr<ScorePartAttributes>;
+        
+        struct ScorePartAttributes : public AttributesInterface
+        {
+        public:
+            ScorePartAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsID id;
+            const 	bool hasId;
+        };
+        
+        class MidiDeviceInstrumentGroup;
+        using MidiDeviceInstrumentGroupPtr = std::shared_ptr<MidiDeviceInstrumentGroup>;
+        using MidiDeviceInstrumentGroupUPtr = std::unique_ptr<MidiDeviceInstrumentGroup>;
+        using MidiDeviceInstrumentGroupSet = std::vector<MidiDeviceInstrumentGroupPtr>;
+        using MidiDeviceInstrumentGroupSetIter = MidiDeviceInstrumentGroupSet::iterator;
+        using MidiDeviceInstrumentGroupSetIterConst = MidiDeviceInstrumentGroupSet::const_iterator;
+        inline MidiDeviceInstrumentGroupPtr makeMidiDeviceInstrumentGroup() { return std::make_shared<MidiDeviceInstrumentGroup>(); }
+        class MidiDeviceInstrumentGroup : public ElementInterface
+        {
+        public:
+            MidiDeviceInstrumentGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ MidiDevice minOccurs = 0, maxOccurs = 1 _________ */
+            MidiDevicePtr getMidiDevice() const;
+            void setMidiDevice( const MidiDevicePtr& value );
+            bool getHasMidiDevice() const;
+            void setHasMidiDevice( const bool value );
+            /* _________ MidiInstrument minOccurs = 0, maxOccurs = 1 _________ */
+            MidiInstrumentPtr getMidiInstrument() const;
+            void setMidiInstrument( const MidiInstrumentPtr& value );
+            bool getHasMidiInstrument() const;
+            void setHasMidiInstrument( const bool value );
+        private:
+            MidiDevicePtr myMidiDevice;
+            bool myHasMidiDevice;
+            MidiInstrumentPtr myMidiInstrument;
+            bool myHasMidiInstrument;
+        };
+        
+        class ScorePart;
+        using ScorePartPtr = std::shared_ptr<ScorePart>;
+        using ScorePartUPtr = std::unique_ptr<ScorePart>;
+        using ScorePartSet = std::vector<ScorePartPtr>;
+        using ScorePartSetIter = ScorePartSet::iterator;
+        using ScorePartSetIterConst = ScorePartSet::const_iterator;
+        inline ScorePartPtr makeScorePart() { return std::make_shared<ScorePart>(); }
+        class ScorePart : public ElementInterface
+        {
+        public:
+            ScorePart();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ScorePartAttributesPtr getAttributes() const;
+            void setAttributes( const ScorePartAttributesPtr& value );
+            /* _________ Identification minOccurs = 0, maxOccurs = 1 _________ */
+            IdentificationPtr getIdentification() const;
+            void setIdentification( const IdentificationPtr& value );
+            bool getHasIdentification() const;
+            void setHasIdentification( const bool value );
+            /* _________ PartName minOccurs = 1, maxOccurs = 1 _________ */
+            PartNamePtr getPartName() const;
+            void setPartName( const PartNamePtr& value );
+            /* _________ PartNameDisplay minOccurs = 0, maxOccurs = 1 _________ */
+            PartNameDisplayPtr getPartNameDisplay() const;
+            void setPartNameDisplay( const PartNameDisplayPtr& value );
+            bool getHasPartNameDisplay() const;
+            void setHasPartNameDisplay( const bool value );
+            /* _________ PartAbbreviation minOccurs = 0, maxOccurs = 1 _________ */
+            PartAbbreviationPtr getPartAbbreviation() const;
+            void setPartAbbreviation( const PartAbbreviationPtr& value );
+            bool getHasPartAbbreviation() const;
+            void setHasPartAbbreviation( const bool value );
+            /* _________ PartAbbreviationDisplay minOccurs = 0, maxOccurs = 1 _________ */
+            PartAbbreviationDisplayPtr getPartAbbreviationDisplay() const;
+            void setPartAbbreviationDisplay( const PartAbbreviationDisplayPtr& value );
+            bool getHasPartAbbreviationDisplay() const;
+            void setHasPartAbbreviationDisplay( const bool value );
+            /* _________ Group minOccurs = 0, maxOccurs = unbounded _________ */
+            const GroupSet& getGroupSet() const;
+            void addGroup( const GroupPtr& value );
+            void removeGroup( const GroupSetIterConst& value );
+            void clearGroupSet();
+            GroupPtr getGroup( const GroupSetIterConst& setIterator ) const;
+            /* _________ ScoreInstrument minOccurs = 0, maxOccurs = unbounded _________ */
+            const ScoreInstrumentSet& getScoreInstrumentSet() const;
+            void addScoreInstrument( const ScoreInstrumentPtr& value );
+            void removeScoreInstrument( const ScoreInstrumentSetIterConst& value );
+            void clearScoreInstrumentSet();
+            ScoreInstrumentPtr getScoreInstrument( const ScoreInstrumentSetIterConst& setIterator ) const;
+            /* _________ MidiDeviceInstrumentGroup minOccurs = 0, maxOccurs = unbounded _________ */
+            const MidiDeviceInstrumentGroupSet& getMidiDeviceInstrumentGroupSet() const;
+            void addMidiDeviceInstrumentGroup( const MidiDeviceInstrumentGroupPtr& value );
+            void removeMidiDeviceInstrumentGroup( const MidiDeviceInstrumentGroupSetIterConst& value );
+            void clearMidiDeviceInstrumentGroupSet();
+            MidiDeviceInstrumentGroupPtr getMidiDeviceInstrumentGroup( const MidiDeviceInstrumentGroupSetIterConst& setIterator ) const;
+        private:
+            ScorePartAttributesPtr myAttributes;
+            IdentificationPtr myIdentification;
+            bool myHasIdentification;
+            PartNamePtr myPartName;
+            PartNameDisplayPtr myPartNameDisplay;
+            bool myHasPartNameDisplay;
+            PartAbbreviationPtr myPartAbbreviation;
+            bool myHasPartAbbreviation;
+            PartAbbreviationDisplayPtr myPartAbbreviationDisplay;
+            bool myHasPartAbbreviationDisplay;
+            GroupSet myGroupSet;
+            ScoreInstrumentSet myScoreInstrumentSet;
+            MidiDeviceInstrumentGroupSet myMidiDeviceInstrumentGroupSet;
+        };
+
     }
 }

@@ -1309,7 +1309,7 @@ namespace mx
 		}
 		std::ostream& PartAbbreviationDisplay::streamName( std::ostream& os ) const
 		{
-			os << "group-abbreviation-display";
+			os << "part-abbreviation-display";
 			return os;
 		}
 		bool PartAbbreviationDisplay::hasContents() const
@@ -4438,6 +4438,393 @@ namespace mx
 			}
 			return MeasureStylePtr();
 		}
+        MidiDeviceInstrumentGroup::MidiDeviceInstrumentGroup()
+        :myMidiDevice( makeMidiDevice() )
+        ,myHasMidiDevice( false )
+        ,myMidiInstrument( makeMidiInstrument() )
+        ,myHasMidiInstrument( false )
+        {}
+        bool MidiDeviceInstrumentGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MidiDeviceInstrumentGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MidiDeviceInstrumentGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool MidiDeviceInstrumentGroup::hasContents() const
+        {
+            return myHasMidiDevice || myHasMidiInstrument;
+        }
+        std::ostream& MidiDeviceInstrumentGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            if ( this->hasContents() )
+            {
+                if ( myHasMidiDevice )
+                {
+                    myMidiDevice->toStream( os, indentLevel );
+                    if ( myHasMidiInstrument )
+                    {
+                        os << std::endl;
+                    }
+                }
+                if ( myHasMidiInstrument )
+                {
+                    myMidiInstrument->toStream( os, indentLevel );
+                }
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+        }
+        /* _________ MidiDevice minOccurs = 0, maxOccurs = 1 _________ */
+        MidiDevicePtr MidiDeviceInstrumentGroup::getMidiDevice() const
+        {
+            return myMidiDevice;
+        }
+        void MidiDeviceInstrumentGroup::setMidiDevice( const MidiDevicePtr& value )
+        {
+            if ( value )
+            {
+                myMidiDevice = value;
+            }
+        }
+        bool MidiDeviceInstrumentGroup::getHasMidiDevice() const
+        {
+            return myHasMidiDevice;
+        }
+        void MidiDeviceInstrumentGroup::setHasMidiDevice( const bool value )
+        {
+            myHasMidiDevice = value;
+        }
+        /* _________ MidiInstrument minOccurs = 0, maxOccurs = 1 _________ */
+        MidiInstrumentPtr MidiDeviceInstrumentGroup::getMidiInstrument() const
+        {
+            return myMidiInstrument;
+        }
+        void MidiDeviceInstrumentGroup::setMidiInstrument( const MidiInstrumentPtr& value )
+        {
+            if ( value )
+            {
+                myMidiInstrument = value;
+            }
+        }
+        bool MidiDeviceInstrumentGroup::getHasMidiInstrument() const
+        {
+            return myHasMidiInstrument;
+        }
+        void MidiDeviceInstrumentGroup::setHasMidiInstrument( const bool value )
+        {
+            myHasMidiInstrument = value;
+        }
+        
+        
+        
+        /**************** ScorePartAttributes ****************/
+        /* 6396 */
+        ScorePartAttributes::ScorePartAttributes()
+        :id()
+        ,hasId( true )
+        {}
+        
+        bool ScorePartAttributes::hasValues() const
+        {
+            return hasId;
+        }
+        
+        std::ostream& ScorePartAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+            }
+            return os;
+        }
+        
+		ScorePart::ScorePart()
+		:myAttributes( std::make_shared<ScorePartAttributes>() )
+		,myIdentification( makeIdentification() )
+		,myHasIdentification( false )
+		,myPartName( makePartName() )
+		,myPartNameDisplay( makePartNameDisplay() )
+		,myHasPartNameDisplay( false )
+		,myPartAbbreviation( makePartAbbreviation() )
+		,myHasPartAbbreviation( false )
+		,myPartAbbreviationDisplay( makePartAbbreviationDisplay() )
+		,myHasPartAbbreviationDisplay( false )
+		,myGroupSet()
+		,myScoreInstrumentSet()
+		,myMidiDeviceInstrumentGroupSet()
+		{}
+        
+		bool ScorePart::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& ScorePart::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& ScorePart::streamName( std::ostream& os ) const
+		{
+			os << "score-part";
+			return os;
+		}
+		bool ScorePart::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& ScorePart::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( myHasIdentification )
+            {
+                os << std::endl;
+                myIdentification->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            myPartName->toStream( os, indentLevel+1 );
+            if ( myHasPartNameDisplay )
+            {
+                os << std::endl;
+                myPartNameDisplay->toStream( os, indentLevel+1 );
+            }
+            
+            if ( myHasPartAbbreviation )
+            {
+                os << std::endl;
+                myPartAbbreviation->toStream( os, indentLevel+1 );
+            }
+            if ( myHasPartAbbreviationDisplay )
+            {
+                os << std::endl;
+                myPartAbbreviationDisplay->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myGroupSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myScoreInstrumentSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myMidiDeviceInstrumentGroupSet )
+            {
+                if ( x->hasContents() )
+                {
+                    os << std::endl;
+                    x->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+            }
+            isOneLineOnly = false;
+			os << std::endl;
+			return os;
+		}
+		ScorePartAttributesPtr ScorePart::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void ScorePart::setAttributes( const ScorePartAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ Identification minOccurs = 0, maxOccurs = 1 _________ */
+		IdentificationPtr ScorePart::getIdentification() const
+		{
+			return myIdentification;
+		}
+		void ScorePart::setIdentification( const IdentificationPtr& value )
+		{
+			if( value )
+			{
+				myIdentification = value;
+			}
+		}
+		bool ScorePart::getHasIdentification() const
+		{
+			return myHasIdentification;
+		}
+		void ScorePart::setHasIdentification( const bool value )
+		{
+			myHasIdentification = value;
+		}
+		/* _________ PartName minOccurs = 1, maxOccurs = 1 _________ */
+		PartNamePtr ScorePart::getPartName() const
+		{
+			return myPartName;
+		}
+		void ScorePart::setPartName( const PartNamePtr& value )
+		{
+			if( value )
+			{
+				myPartName = value;
+			}
+		}
+		/* _________ PartNameDisplay minOccurs = 0, maxOccurs = 1 _________ */
+		PartNameDisplayPtr ScorePart::getPartNameDisplay() const
+		{
+			return myPartNameDisplay;
+		}
+		void ScorePart::setPartNameDisplay( const PartNameDisplayPtr& value )
+		{
+			if( value )
+			{
+				myPartNameDisplay = value;
+			}
+		}
+		bool ScorePart::getHasPartNameDisplay() const
+		{
+			return myHasPartNameDisplay;
+		}
+		void ScorePart::setHasPartNameDisplay( const bool value )
+		{
+			myHasPartNameDisplay = value;
+		}
+		/* _________ PartAbbreviation minOccurs = 0, maxOccurs = 1 _________ */
+		PartAbbreviationPtr ScorePart::getPartAbbreviation() const
+		{
+			return myPartAbbreviation;
+		}
+		void ScorePart::setPartAbbreviation( const PartAbbreviationPtr& value )
+		{
+			if( value )
+			{
+				myPartAbbreviation = value;
+			}
+		}
+		bool ScorePart::getHasPartAbbreviation() const
+		{
+			return myHasPartAbbreviation;
+		}
+		void ScorePart::setHasPartAbbreviation( const bool value )
+		{
+			myHasPartAbbreviation = value;
+		}
+		/* _________ PartAbbreviationDisplay minOccurs = 0, maxOccurs = 1 _________ */
+		PartAbbreviationDisplayPtr ScorePart::getPartAbbreviationDisplay() const
+		{
+			return myPartAbbreviationDisplay;
+		}
+		void ScorePart::setPartAbbreviationDisplay( const PartAbbreviationDisplayPtr& value )
+		{
+			if( value )
+			{
+				myPartAbbreviationDisplay = value;
+			}
+		}
+		bool ScorePart::getHasPartAbbreviationDisplay() const
+		{
+			return myHasPartAbbreviationDisplay;
+		}
+		void ScorePart::setHasPartAbbreviationDisplay( const bool value )
+		{
+			myHasPartAbbreviationDisplay = value;
+		}
+		/* _________ Group minOccurs = 0, maxOccurs = unbounded _________ */
+		const GroupSet& ScorePart::getGroupSet() const
+		{
+			return myGroupSet;
+		}
+		void ScorePart::removeGroup( const GroupSetIterConst& value )
+		{
+			if ( value != myGroupSet.cend() )
+			{
+				myGroupSet.erase( value );
+			}
+		}
+		void ScorePart::addGroup( const GroupPtr& value )
+		{
+			if ( value )
+			{
+				myGroupSet.push_back( value );
+			}
+		}
+		void ScorePart::clearGroupSet()
+		{
+			myGroupSet.clear();
+		}
+		GroupPtr ScorePart::getGroup( const GroupSetIterConst& setIterator ) const
+		{
+			if( setIterator != myGroupSet.cend() )
+			{
+				return *setIterator;
+			}
+			return GroupPtr();
+		}
+		/* _________ ScoreInstrument minOccurs = 0, maxOccurs = unbounded _________ */
+		const ScoreInstrumentSet& ScorePart::getScoreInstrumentSet() const
+		{
+			return myScoreInstrumentSet;
+		}
+		void ScorePart::removeScoreInstrument( const ScoreInstrumentSetIterConst& value )
+		{
+			if ( value != myScoreInstrumentSet.cend() )
+			{
+				myScoreInstrumentSet.erase( value );
+			}
+		}
+		void ScorePart::addScoreInstrument( const ScoreInstrumentPtr& value )
+		{
+			if ( value )
+			{
+				myScoreInstrumentSet.push_back( value );
+			}
+		}
+		void ScorePart::clearScoreInstrumentSet()
+		{
+			myScoreInstrumentSet.clear();
+		}
+		ScoreInstrumentPtr ScorePart::getScoreInstrument( const ScoreInstrumentSetIterConst& setIterator ) const
+		{
+			if( setIterator != myScoreInstrumentSet.cend() )
+			{
+				return *setIterator;
+			}
+			return ScoreInstrumentPtr();
+		}
+		/* _________ MidiDeviceInstrumentGroup minOccurs = 0, maxOccurs = unbounded _________ */
+        const MidiDeviceInstrumentGroupSet& ScorePart::getMidiDeviceInstrumentGroupSet() const
+        {
+            return myMidiDeviceInstrumentGroupSet;
+        }
+        void ScorePart::addMidiDeviceInstrumentGroup( const MidiDeviceInstrumentGroupPtr& value )
+        {
+            if ( value )
+            {
+                myMidiDeviceInstrumentGroupSet.push_back( value );
+            }
+        }
+        void ScorePart::removeMidiDeviceInstrumentGroup( const MidiDeviceInstrumentGroupSetIterConst& value )
+        {
+            if ( value != myMidiDeviceInstrumentGroupSet.cend() )
+            {
+                myMidiDeviceInstrumentGroupSet.erase( value );
+            }
+        }
+        void ScorePart::clearMidiDeviceInstrumentGroupSet()
+        {
+            myMidiDeviceInstrumentGroupSet.clear();
+        }
+        MidiDeviceInstrumentGroupPtr ScorePart::getMidiDeviceInstrumentGroup( const MidiDeviceInstrumentGroupSetIterConst& setIterator ) const
+        {
+            if( setIterator != myMidiDeviceInstrumentGroupSet.cend() )
+            {
+                return *setIterator;
+            }
+            return MidiDeviceInstrumentGroupPtr();
+        }
         
 #if 1==0
 #endif

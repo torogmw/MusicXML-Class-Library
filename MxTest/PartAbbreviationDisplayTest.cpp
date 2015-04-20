@@ -90,23 +90,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<group-abbreviation-display>)" );
+                streamLine( os, i, R"(<part-abbreviation-display>)" );
                 streamLine( os, i+1, R"(<display-text></display-text>)" );
-                streamLine( os, i, R"(</group-abbreviation-display>)", false );
+                streamLine( os, i, R"(</part-abbreviation-display>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<group-abbreviation-display print-object="no">)" );
+                streamLine( os, i, R"(<part-abbreviation-display print-object="no">)" );
                 streamLine( os, i+1, R"(<accidental-text>double-sharp</accidental-text>)" );
-                streamLine( os, i, R"(</group-abbreviation-display>)", false );
+                streamLine( os, i, R"(</part-abbreviation-display>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<group-abbreviation-display>)" );
+                streamLine( os, i, R"(<part-abbreviation-display>)" );
                 streamLine( os, i+1, R"(<display-text xml:space="preserve">My Display String!</display-text>)" );
-                streamLine( os, i, R"(</group-abbreviation-display>)", false );
+                streamLine( os, i, R"(</part-abbreviation-display>)", false );
             }
                 break;
             default:
