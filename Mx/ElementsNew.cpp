@@ -5866,6 +5866,7 @@ namespace mx
 		,myHasNotehead( false )
 		,myNoteheadText( makeNoteheadText() )
 		,myHasNoteheadText( false )
+        ,myStaff( makeStaff() )
 		,myBeamSet()
 		,myNotationsSet()
 		,myLyricSet()
@@ -5892,10 +5893,81 @@ namespace mx
 		}
 		std::ostream& Note::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
+			os << std::endl;
+            myNoteChoice->streamContents( os, indentLevel+1, isOneLineOnly );
+            if ( myHasInstrument )
+            {
+                os << std::endl;
+                myInstrument->toStream( os, indentLevel+1 );
+            }
+            if ( myEditorialVoiceGroup->hasContents() )
+            {
+                os << std::endl;
+                myEditorialVoiceGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+            if ( myHasType )
+            {
+                os << std::endl;
+                myType->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myDotSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            if ( myHasAccidental )
+            {
+                os << std::endl;
+                myAccidental->toStream( os, indentLevel+1 );
+            }
+            if ( myHasTimeModification )
+            {
+                os << std::endl;
+                myTimeModification->toStream( os, indentLevel+1 );
+            }
+            if ( myHasStem )
+            {
+                os << std::endl;
+                myStem->toStream( os, indentLevel+1 );
+            }
+            if ( myHasNotehead )
+            {
+                os << std::endl;
+                myNotehead->toStream( os, indentLevel+1 );
+            }
+            if ( myHasNoteheadText )
+            {
+                os << std::endl;
+                myNoteheadText->toStream( os, indentLevel+1 );
+            }
+            if ( myHasStaff )
+            {
+                os << std::endl;
+                myStaff->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myBeamSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myNotationsSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            for ( auto x : myLyricSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            if ( myHasPlay )
+            {
+                os << std::endl;
+                myPlay->toStream( os, indentLevel+1 );
+            }
 			isOneLineOnly = false;
 			os << std::endl;
-			// mySign->toStream( os, indentLevel+1 );
-			throw std::runtime_error{ "not implemented" };
+			return os;
 		}
 		NoteAttributesPtr Note::getAttributes() const
 		{
