@@ -3355,6 +3355,15 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            PartGroupOrScorePart::Choice getChoice() const;
+            void setChoice( const PartGroupOrScorePart::Choice value );
+            /* _________ PartGroup minOccurs = 1, maxPartGroupOccurs = 1 _________ */
+            PartGroupPtr getPartGroup() const;
+            void setPartGroup( const PartGroupPtr& value );
+            /* _________ ScorePart minOccurs = 1, maxOccurs = 1 _________ */
+            ScorePartPtr getScorePart() const;
+            void setScorePart( const ScorePartPtr& value );
         private:
             Choice myChoice;
             PartGroupPtr myPartGroup;

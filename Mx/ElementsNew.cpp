@@ -6349,7 +6349,39 @@ namespace mx
             isOneLineOnly = false;
             return os;
         }
-        
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+        PartGroupOrScorePart::Choice PartGroupOrScorePart::getChoice() const
+        {
+            return myChoice;
+        }
+        void PartGroupOrScorePart::setChoice( const PartGroupOrScorePart::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ PartGroup minOccurs = 1, maxPartGroupOccurs = 1 _________ */
+        PartGroupPtr PartGroupOrScorePart::getPartGroup() const
+        {
+            return myPartGroup;
+        }
+        void PartGroupOrScorePart::setPartGroup( const PartGroupPtr& value )
+        {
+            if ( value )
+            {
+                myPartGroup = value;
+            }
+        }
+        /* _________ ScorePart minOccurs = 1, maxOccurs = 1 _________ */
+        ScorePartPtr PartGroupOrScorePart::getScorePart() const
+        {
+            return myScorePart;
+        }
+        void PartGroupOrScorePart::setScorePart( const ScorePartPtr& value )
+        {
+            if ( value )
+            {
+                myScorePart = value;
+            }
+        }
 #if 1==0
 #endif
         
