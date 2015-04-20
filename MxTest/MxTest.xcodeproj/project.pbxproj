@@ -352,6 +352,7 @@
 		29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C0B9BF1AAE9398004F86FA /* WordsTest.cpp */; };
 		29C30BB51AE57477006C1ECD /* NoteChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C30BB31AE57477006C1ECD /* NoteChoiceTest.cpp */; };
 		29C30BB81AE5792F006C1ECD /* NoteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C30BB61AE5792F006C1ECD /* NoteTest.cpp */; };
+		29C30BBB1AE5B4B5006C1ECD /* PartGroupOrScorePartTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C30BB91AE5B4B5006C1ECD /* PartGroupOrScorePartTest.cpp */; };
 		29C59C711A9E814A00647187 /* DecimalsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */; };
 		29C6FCA21AE2D4B700EE272B /* HarmonyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C6FCA01AE2D4B700EE272B /* HarmonyTest.cpp */; };
 		29C8AD1A1AC92E3F00F00048 /* PageLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C8AD181AC92E3F00F00048 /* PageLayoutTest.cpp */; };
@@ -836,6 +837,8 @@
 		29C30BB41AE57477006C1ECD /* NoteChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteChoiceTest.h; sourceTree = "<group>"; };
 		29C30BB61AE5792F006C1ECD /* NoteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoteTest.cpp; sourceTree = "<group>"; };
 		29C30BB71AE5792F006C1ECD /* NoteTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTest.h; sourceTree = "<group>"; };
+		29C30BB91AE5B4B5006C1ECD /* PartGroupOrScorePartTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartGroupOrScorePartTest.cpp; sourceTree = "<group>"; };
+		29C30BBA1AE5B4B5006C1ECD /* PartGroupOrScorePartTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartGroupOrScorePartTest.h; sourceTree = "<group>"; };
 		29C59C6F1A9E814A00647187 /* DecimalsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalsTest.cpp; sourceTree = "<group>"; };
 		29C61F511AC39B1E004B5530 /* MetronomeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetronomeTest.h; sourceTree = "<group>"; };
 		29C6FCA01AE2D4B700EE272B /* HarmonyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonyTest.cpp; sourceTree = "<group>"; };
@@ -1464,15 +1467,9 @@
 			name = Old;
 			sourceTree = "<group>";
 		};
-		29F8F09F1AB62E9200788785 /* Tests */ = {
+		29C30BBC1AE5B4C8006C1ECD /* 2015 04 20 */ = {
 			isa = PBXGroup;
 			children = (
-				292DC0B31AE55C4100B50C1D /* 2015 04 19 */,
-				290460C91AE32ED6008347D3 /* 2015 04 18 */,
-				298A5F8D1ACDF29F008F6B5A /* 2015 04 02 */,
-				298B360A1AC8F36F0021CD1E /* Less Old */,
-				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
-				29A565051AC49D020059CACD /* Old */,
 				292DC0B41AE55C5800B50C1D /* FullNoteTypeChoiceTest.cpp */,
 				292DC0B51AE55C5800B50C1D /* FullNoteTypeChoiceTest.h */,
 				29F9D49D1AE55FED00B3560E /* FullNoteGroupTest.cpp */,
@@ -1487,6 +1484,22 @@
 				29C30BB41AE57477006C1ECD /* NoteChoiceTest.h */,
 				29C30BB61AE5792F006C1ECD /* NoteTest.cpp */,
 				29C30BB71AE5792F006C1ECD /* NoteTest.h */,
+			);
+			name = "2015 04 20";
+			sourceTree = "<group>";
+		};
+		29F8F09F1AB62E9200788785 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				29C30BBC1AE5B4C8006C1ECD /* 2015 04 20 */,
+				292DC0B31AE55C4100B50C1D /* 2015 04 19 */,
+				290460C91AE32ED6008347D3 /* 2015 04 18 */,
+				298A5F8D1ACDF29F008F6B5A /* 2015 04 02 */,
+				298B360A1AC8F36F0021CD1E /* Less Old */,
+				29CEB47C1AB4B9E800D6AEFC /* ________Temp.cpp */,
+				29A565051AC49D020059CACD /* Old */,
+				29C30BB91AE5B4B5006C1ECD /* PartGroupOrScorePartTest.cpp */,
+				29C30BBA1AE5B4B5006C1ECD /* PartGroupOrScorePartTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1769,6 +1782,7 @@
 				29C0B9F51AAE9398004F86FA /* SlideTest.cpp in Sources */,
 				29AC34EE1ADEC95F00C36BFD /* HarmonyChordGroupTest.cpp in Sources */,
 				29C0B9F41AAE9398004F86FA /* RootStepTest.cpp in Sources */,
+				29C30BBB1AE5B4B5006C1ECD /* PartGroupOrScorePartTest.cpp in Sources */,
 				29C0B9CD1AAE9398004F86FA /* GroupBarlineTest.cpp in Sources */,
 				29C0B9D41AAE9398004F86FA /* KeyOctaveTest.cpp in Sources */,
 				29BBED291ACA545D00C16802 /* StaffLayoutTest.cpp in Sources */,

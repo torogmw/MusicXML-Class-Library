@@ -6331,17 +6331,18 @@ namespace mx
         }
         bool PartGroupOrScorePart::hasContents() const
         {
-            return true;
+            return ( myChoice == Choice::partGroup && myPartGroup->hasContents() )
+            || ( myChoice == Choice::scorePart && myScorePart->hasContents() );
         }
         std::ostream& PartGroupOrScorePart::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
             switch ( myChoice )
             {
                 case Choice::partGroup:
-                    myPartGroup->streamContents( os, indentLevel, isOneLineOnly );
+                    myPartGroup->toStream( os, indentLevel );
                     break;
                 case Choice::scorePart:
-                    myScorePart->streamContents( os, indentLevel, isOneLineOnly );
+                    myScorePart->toStream( os, indentLevel );
                     break;
                 default:
                     break;
