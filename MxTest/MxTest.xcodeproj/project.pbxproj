@@ -378,6 +378,7 @@
 		29CEB4AF1AB4C0FA00D6AEFC /* TimpaniTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4981AB4C0FA00D6AEFC /* TimpaniTest.cpp */; };
 		29CEB4B01AB4C0FA00D6AEFC /* TouchingPitchTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CEB4991AB4C0FA00D6AEFC /* TouchingPitchTest.cpp */; };
 		29D10BBD1A9BF0BB00F03CE6 /* EnumsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */; };
+		29D48C8E1AE4777D00930140 /* PropertiesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D48C8C1AE4777D00930140 /* PropertiesTest.cpp */; };
 		29D8C46B1AC38078008B5471 /* MetronomeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */; };
 		29D9213D1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */; };
 		29D921401AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */; };
@@ -852,6 +853,8 @@
 		29CEB4981AB4C0FA00D6AEFC /* TimpaniTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimpaniTest.cpp; sourceTree = "<group>"; };
 		29CEB4991AB4C0FA00D6AEFC /* TouchingPitchTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchingPitchTest.cpp; sourceTree = "<group>"; };
 		29D10BBC1A9BF0BB00F03CE6 /* EnumsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumsTest.cpp; sourceTree = "<group>"; };
+		29D48C8C1AE4777D00930140 /* PropertiesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertiesTest.cpp; sourceTree = "<group>"; };
+		29D48C8D1AE4777D00930140 /* PropertiesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertiesTest.h; sourceTree = "<group>"; };
 		29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTest.cpp; sourceTree = "<group>"; };
 		29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElisionSyllabicGroupTest.cpp; sourceTree = "<group>"; };
 		29D9213C1AC70DD900F39361 /* ElisionSyllabicGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElisionSyllabicGroupTest.h; sourceTree = "<group>"; };
@@ -1424,6 +1427,8 @@
 				290460D11AE369AA008347D3 /* TechnicalTest.h */,
 				290460D31AE3732B008347D3 /* DirectionTest.cpp */,
 				290460D41AE3732B008347D3 /* DirectionTest.h */,
+				29D48C8C1AE4777D00930140 /* PropertiesTest.cpp */,
+				29D48C8D1AE4777D00930140 /* PropertiesTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1824,6 +1829,7 @@
 				297749DE1AB21FA000BF2205 /* CreditTypeTest.cpp in Sources */,
 				2935A71F1AB5FC3B002859CA /* DoitTest.cpp in Sources */,
 				29CEB49C1AB4C0FA00D6AEFC /* ArtificialTest.cpp in Sources */,
+				29D48C8E1AE4777D00930140 /* PropertiesTest.cpp in Sources */,
 				297749D71AB21FA000BF2205 /* BeatUnitTest.cpp in Sources */,
 				296236011AC5BDBC00F3E007 /* PageMarginsTest.cpp in Sources */,
 				297749D21AB21FA000BF2205 /* AlterTest.cpp in Sources */,

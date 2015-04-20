@@ -4065,6 +4065,11 @@ namespace mx
                     os << std::endl;
                     myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
                 }
+                if ( myHasDivisions )
+                {
+                    os << std::endl;
+                    myDivisions->toStream( os, indentLevel+1 );
+                }
                 for ( auto x : myKeySet )
                 {
                     os << std::endl;
