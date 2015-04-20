@@ -394,6 +394,7 @@
 		29E620D21ACD100C00256399 /* ForwardTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E620D01ACD100C00256399 /* ForwardTest.cpp */; };
 		29E801BC1A9FA13800EDBE41 /* StringsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */; };
 		29E8A2DF1AAD61F200235C36 /* DisplayTextTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */; };
+		29E9CAF01AE5704300CCD15B /* NormalNoteGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E9CAEE1AE5704300CCD15B /* NormalNoteGroupTest.cpp */; };
 		29ED3EC11AA138EB009FAF55 /* ColorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */; };
 		29EECBAC1AC99A4300AB6560 /* SystemLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */; };
 		29F6FFB91AE2F75C00CA74E7 /* CreditTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */; };
@@ -888,6 +889,8 @@
 		29E620D11ACD100C00256399 /* ForwardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForwardTest.h; sourceTree = "<group>"; };
 		29E801BA1A9FA13800EDBE41 /* StringsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringsTest.cpp; sourceTree = "<group>"; };
 		29E8A2DE1AAD61F200235C36 /* DisplayTextTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayTextTest.cpp; sourceTree = "<group>"; };
+		29E9CAEE1AE5704300CCD15B /* NormalNoteGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalNoteGroupTest.cpp; sourceTree = "<group>"; };
+		29E9CAEF1AE5704300CCD15B /* NormalNoteGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNoteGroupTest.h; sourceTree = "<group>"; };
 		29ED3EBF1AA138EB009FAF55 /* ColorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorTest.cpp; sourceTree = "<group>"; };
 		29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SystemLayoutTest.cpp; sourceTree = "<group>"; };
 		29EECBAB1AC99A4300AB6560 /* SystemLayoutTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemLayoutTest.h; sourceTree = "<group>"; };
@@ -1472,6 +1475,8 @@
 				29F9D4A11AE56B9D00B3560E /* GraceNoteGroupTest.h */,
 				29F9D4A31AE56E6300B3560E /* CueNoteGroupTest.cpp */,
 				29F9D4A41AE56E6300B3560E /* CueNoteGroupTest.h */,
+				29E9CAEE1AE5704300CCD15B /* NormalNoteGroupTest.cpp */,
+				29E9CAEF1AE5704300CCD15B /* NormalNoteGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1560,6 +1565,7 @@
 				298C81E41AB6A8DC006619A9 /* SlurTest.cpp in Sources */,
 				29774A1A1AB21FA000BF2205 /* SourceTest.cpp in Sources */,
 				29774A1D1AB21FA000BF2205 /* StaffSizeTest.cpp in Sources */,
+				29E9CAF01AE5704300CCD15B /* NormalNoteGroupTest.cpp in Sources */,
 				29C0B9C01AAE9398004F86FA /* ElisionTest.cpp in Sources */,
 				29884C2D1AC241B100DD2209 /* FrameNoteTest.cpp in Sources */,
 				29CCA18D1AC929FE007BFE5A /* DegreeTest.cpp in Sources */,
