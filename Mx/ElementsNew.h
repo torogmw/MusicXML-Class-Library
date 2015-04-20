@@ -2918,13 +2918,13 @@ namespace mx
         inline FullNoteTypeChoicePtr makeFullNoteTypeChoice() { return std::make_shared<FullNoteTypeChoice>(); }
         class FullNoteTypeChoice : public ElementInterface
         {
+        public:
             enum class Choice
             {
                 pitch = 1,
                 unpitched = 2,
                 rest = 3
             };
-        public:
             FullNoteTypeChoice();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
@@ -2966,7 +2966,14 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
-            /* getset */
+            /* _________ Chord minOccurs = 0, maxOccurs = 1 _________ */
+            ChordPtr getChord() const;
+            void setChord( const ChordPtr& value );
+            bool getHasChord() const;
+            void setHasChord( const bool value );
+            /* _________ FullNoteTypeChoice minOccurs = 1, maxOccurs = 1 _________ */
+            FullNoteTypeChoicePtr getFullNoteTypeChoice() const;
+            void setFullNoteTypeChoice( const FullNoteTypeChoicePtr& value );
         private:
             ChordPtr myChord;
             bool myHasChord;

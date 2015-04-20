@@ -5290,13 +5290,13 @@ namespace mx
             switch ( myChoice )
             {
                 case Choice::pitch:
-                    myPitch->streamContents( os, indentLevel, isOneLineOnly );
+                    myPitch->toStream( os, indentLevel );
                     break;
                 case Choice::unpitched:
-                    myUnpitched->streamContents( os, indentLevel, isOneLineOnly );
+                    myUnpitched->toStream( os, indentLevel );
                     break;
                 case Choice::rest:
-                    myRest->streamContents( os, indentLevel, isOneLineOnly );
+                    myRest->toStream( os, indentLevel );
                     break;
                 default:
                     break;
@@ -5349,7 +5349,70 @@ namespace mx
             }
         }
         
-        
+        FullNoteGroup::FullNoteGroup()
+        :myChord( makeChord() )
+        ,myHasChord( false )
+        ,myFullNoteTypeChoice( makeFullNoteTypeChoice() )
+        {}
+        bool FullNoteGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& FullNoteGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& FullNoteGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool FullNoteGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& FullNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            if ( myHasChord )
+            {
+                myChord->toStream( os, indentLevel );
+                os << std::endl;
+            }
+            myFullNoteTypeChoice->streamContents( os, indentLevel, isOneLineOnly );
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ Chord minOccurs = 0, maxOccurs = 1 _________ */
+        ChordPtr FullNoteGroup::getChord() const
+        {
+            return myChord;
+        }
+        void FullNoteGroup::setChord( const ChordPtr& value )
+        {
+            if ( value )
+            {
+                myChord = value;
+            }
+        }
+        bool FullNoteGroup::getHasChord() const
+        {
+            return myHasChord;
+        }
+        void FullNoteGroup::setHasChord( const bool value )
+        {
+            myHasChord = value;
+        }
+        /* _________ FullNoteTypeChoice minOccurs = 1, maxOccurs = 1 _________ */
+        FullNoteTypeChoicePtr FullNoteGroup::getFullNoteTypeChoice() const
+        {
+            return myFullNoteTypeChoice;
+        }
+        void FullNoteGroup::setFullNoteTypeChoice( const FullNoteTypeChoicePtr& value )
+        {
+            if ( value )
+            {
+                myFullNoteTypeChoice = value;
+            }
+        }
 #if 1==0
 #endif
         
