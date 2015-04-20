@@ -26,7 +26,7 @@ TEST( Test01, NotationsChoice )
 	object->streamContents( actual, 1, isOneLineOnly );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( ! object->hasAttributes() )
-	CHECK( ! object->hasContents() )
+	CHECK( object->hasContents() )
 }
 TEST( Test02, NotationsChoice )
 {

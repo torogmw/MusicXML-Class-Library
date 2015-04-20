@@ -257,6 +257,7 @@
 		29A565081AC4A3DB0059CACD /* PercussionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A565061AC4A3DB0059CACD /* PercussionTest.cpp */; };
 		29A5650B1AC4ABB10059CACD /* AccordTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A565091AC4ABB10059CACD /* AccordTest.cpp */; };
 		29A5650E1AC4B0DB0059CACD /* ScordaturaTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A5650C1AC4B0DB0059CACD /* ScordaturaTest.cpp */; };
+		29A9C11A1AE4BAFC007C1FBD /* NotationsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A9C1181AE4BAFC007C1FBD /* NotationsTest.cpp */; };
 		29AC34EE1ADEC95F00C36BFD /* HarmonyChordGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AC34EC1ADEC95F00C36BFD /* HarmonyChordGroupTest.cpp */; };
 		29AFECAB1A9CED26008516EF /* IntegersTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29AFECA91A9CED26008516EF /* IntegersTest.cpp */; };
 		29BA0BB31AD2DF4A00961A55 /* PartAbbreviationDisplayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BA0BB11AD2DF4A00961A55 /* PartAbbreviationDisplayTest.cpp */; };
@@ -716,6 +717,8 @@
 		29A5650A1AC4ABB10059CACD /* AccordTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AccordTest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		29A5650C1AC4B0DB0059CACD /* ScordaturaTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScordaturaTest.cpp; sourceTree = "<group>"; };
 		29A5650D1AC4B0DB0059CACD /* ScordaturaTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScordaturaTest.h; sourceTree = "<group>"; };
+		29A9C1181AE4BAFC007C1FBD /* NotationsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NotationsTest.cpp; sourceTree = "<group>"; };
+		29A9C1191AE4BAFC007C1FBD /* NotationsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotationsTest.h; sourceTree = "<group>"; };
 		29AC34EC1ADEC95F00C36BFD /* HarmonyChordGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HarmonyChordGroupTest.cpp; sourceTree = "<group>"; };
 		29AC34ED1ADEC95F00C36BFD /* HarmonyChordGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonyChordGroupTest.h; sourceTree = "<group>"; };
 		29AFECA91A9CED26008516EF /* IntegersTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntegersTest.cpp; sourceTree = "<group>"; };
@@ -1439,6 +1442,8 @@
 				29D48C901AE49D8900930140 /* ScorePartTest.h */,
 				29D48C921AE4AEA300930140 /* NotationsChoiceTest.cpp */,
 				29D48C931AE4AEA300930140 /* NotationsChoiceTest.h */,
+				29A9C1181AE4BAFC007C1FBD /* NotationsTest.cpp */,
+				29A9C1191AE4BAFC007C1FBD /* NotationsTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1831,6 +1836,7 @@
 				2916E39E1AD24C080073ECC6 /* GroupAbbreviationDisplayTest.cpp in Sources */,
 				29774A311AB21FA000BF2205 /* VolumeTest.cpp in Sources */,
 				29C0B9FE1AAE9398004F86FA /* WithBarTest.cpp in Sources */,
+				29A9C11A1AE4BAFC007C1FBD /* NotationsTest.cpp in Sources */,
 				29884C211AC1FBEC00DD2209 /* StaffDetailsTest.cpp in Sources */,
 				29C0B9FF1AAE9398004F86FA /* WordsTest.cpp in Sources */,
 				297749E41AB21FA000BF2205 /* EffectTest.cpp in Sources */,

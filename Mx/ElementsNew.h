@@ -2706,64 +2706,19 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             NotationsAttributesPtr getAttributes() const;
             void setAttributes( const NotationsAttributesPtr& value );
-            /* _________ Tied minOccurs = 1, maxOccurs = 1 _________ */
-            TiedPtr getTied() const;
-            void setTied( const TiedPtr& value );
-            /* _________ Slur minOccurs = 1, maxOccurs = 1 _________ */
-            SlurPtr getSlur() const;
-            void setSlur( const SlurPtr& value );
-            /* _________ Tuplet minOccurs = 1, maxOccurs = 1 _________ */
-            TupletPtr getTuplet() const;
-            void setTuplet( const TupletPtr& value );
-            /* _________ Glissando minOccurs = 1, maxOccurs = 1 _________ */
-            GlissandoPtr getGlissando() const;
-            void setGlissando( const GlissandoPtr& value );
-            /* _________ Slide minOccurs = 1, maxOccurs = 1 _________ */
-            SlidePtr getSlide() const;
-            void setSlide( const SlidePtr& value );
-            /* _________ Ornaments minOccurs = 1, maxOccurs = 1 _________ */
-            OrnamentsPtr getOrnaments() const;
-            void setOrnaments( const OrnamentsPtr& value );
-            /* _________ Technical minOccurs = 1, maxOccurs = 1 _________ */
-            TechnicalPtr getTechnical() const;
-            void setTechnical( const TechnicalPtr& value );
-            /* _________ Articulations minOccurs = 1, maxOccurs = 1 _________ */
-            ArticulationsPtr getArticulations() const;
-            void setArticulations( const ArticulationsPtr& value );
-            /* _________ Dynamics minOccurs = 1, maxOccurs = 1 _________ */
-            DynamicsPtr getDynamics() const;
-            void setDynamics( const DynamicsPtr& value );
-            /* _________ Fermata minOccurs = 1, maxOccurs = 1 _________ */
-            FermataPtr getFermata() const;
-            void setFermata( const FermataPtr& value );
-            /* _________ Arpeggiate minOccurs = 1, maxOccurs = 1 _________ */
-            ArpeggiatePtr getArpeggiate() const;
-            void setArpeggiate( const ArpeggiatePtr& value );
-            /* _________ NonArpeggiate minOccurs = 1, maxOccurs = 1 _________ */
-            NonArpeggiatePtr getNonArpeggiate() const;
-            void setNonArpeggiate( const NonArpeggiatePtr& value );
-            /* _________ AccidentalMark minOccurs = 1, maxOccurs = 1 _________ */
-            AccidentalMarkPtr getAccidentalMark() const;
-            void setAccidentalMark( const AccidentalMarkPtr& value );
-            /* _________ OtherNotation minOccurs = 1, maxOccurs = 1 _________ */
-            OtherNotationPtr getOtherNotation() const;
-            void setOtherNotation( const OtherNotationPtr& value );
+            /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialGroupPtr getEditorialGroup() const;
+            void setEditorialGroup( const EditorialGroupPtr& value );
+            /* _________ NotationsChoice minOccurs = 0, maxOccurs = unbounded _________ */
+            const NotationsChoiceSet& getNotationsChoiceSet() const;
+            void addNotationsChoice( const NotationsChoicePtr& value );
+            void removeNotationsChoice( const NotationsChoiceSetIterConst& value );
+            void clearNotationsChoiceSet();
+            NotationsChoicePtr getNotationsChoice( const NotationsChoiceSetIterConst& setIterator ) const;
         private:
             NotationsAttributesPtr myAttributes;
-            TiedPtr myTied;
-            SlurPtr mySlur;
-            TupletPtr myTuplet;
-            GlissandoPtr myGlissando;
-            SlidePtr mySlide;
-            OrnamentsPtr myOrnaments;
-            TechnicalPtr myTechnical;
-            ArticulationsPtr myArticulations;
-            DynamicsPtr myDynamics;
-            FermataPtr myFermata;
-            ArpeggiatePtr myArpeggiate;
-            NonArpeggiatePtr myNonArpeggiate;
-            AccidentalMarkPtr myAccidentalMark;
-            OtherNotationPtr myOtherNotation;
+            EditorialGroupPtr myEditorialGroup;
+            NotationsChoiceSet myNotationsChoiceSet;
         };
 
     }

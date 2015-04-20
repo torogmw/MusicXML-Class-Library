@@ -4853,11 +4853,12 @@ namespace mx
 		}
 		std::ostream& NotationsChoice::streamName( std::ostream& os ) const
 		{
-			os << "notations";
 			return os;
 		}
 		bool NotationsChoice::hasContents() const
 		{
+            return true;
+            /*
             bool tempHasContents = false;
 			switch ( myChoice )
             {
@@ -4907,6 +4908,7 @@ namespace mx
                     break;
             }
             return tempHasContents;
+             */
 		}
 		std::ostream& NotationsChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
@@ -5137,7 +5139,128 @@ namespace mx
 				myOtherNotation = value;
 			}
 		}
+        /**************** NotationsAttributes ****************/
+        /* 5040 */
+        NotationsAttributes::NotationsAttributes()
+        :printObject( types::YesNo::no )
+        ,hasPrintObject( false )
+        {}
         
+        bool NotationsAttributes::hasValues() const
+        {
+            return hasPrintObject;
+        }
+        
+        std::ostream& NotationsAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+            }
+            return os;
+        }
+        
+		Notations::Notations()
+		:myAttributes( std::make_shared<NotationsAttributes>() )
+		,myEditorialGroup( makeEditorialGroup() )
+        ,myNotationsChoiceSet()
+		{}
+        
+		bool Notations::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Notations::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Notations::streamName( std::ostream& os ) const
+		{
+			os << "notations";
+			return os;
+		}
+		bool Notations::hasContents() const
+		{
+			return myEditorialGroup->hasContents() || myNotationsChoiceSet.size() > 0;
+		}
+		std::ostream& Notations::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( hasContents() )
+            {
+                if ( myEditorialGroup->hasContents() )
+                {
+                    os << std::endl;
+                    myEditorialGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                for ( auto x : myNotationsChoiceSet )
+                {
+                    os << std::endl;
+                    x->streamContents( os, indentLevel+1, isOneLineOnly );
+                }
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+			else
+            {
+                isOneLineOnly = true;
+            }
+            return os;
+		}
+		NotationsAttributesPtr Notations::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Notations::setAttributes( const NotationsAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ EditorialGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialGroupPtr Notations::getEditorialGroup() const
+        {
+            return myEditorialGroup;
+        }
+        void Notations::setEditorialGroup( const EditorialGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialGroup = value;
+            }
+        }
+        /* _________ NotationsChoice minOccurs = 0, maxOccurs = unbounded _________ */
+        const NotationsChoiceSet& Notations::getNotationsChoiceSet() const
+        {
+            return myNotationsChoiceSet;
+        }
+        void Notations::addNotationsChoice( const NotationsChoicePtr& value )
+        {
+            if ( value )
+            {
+                myNotationsChoiceSet.push_back( value );
+            }
+        }
+        void Notations::removeNotationsChoice( const NotationsChoiceSetIterConst& value )
+        {
+            if ( value != myNotationsChoiceSet.cend() )
+            {
+                myNotationsChoiceSet.erase( value );
+            }
+        }
+        void Notations::clearNotationsChoiceSet()
+        {
+            myNotationsChoiceSet.clear();
+        }
+        NotationsChoicePtr Notations::getNotationsChoice( const NotationsChoiceSetIterConst& setIterator ) const
+        {
+            if( setIterator != myNotationsChoiceSet.cend() )
+            {
+                return *setIterator;
+            }
+            return NotationsChoicePtr();
+        }
 #if 1==0
 #endif
         
