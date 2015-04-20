@@ -2980,6 +2980,73 @@ namespace mx
             FullNoteTypeChoicePtr myFullNoteTypeChoice;
         };
         
+        class GraceNoteGroup;
+        using GraceNoteGroupPtr = std::shared_ptr<GraceNoteGroup>;
+        using GraceNoteGroupUPtr = std::unique_ptr<GraceNoteGroup>;
+        using GraceNoteGroupSet = std::vector<GraceNoteGroupPtr>;
+        using GraceNoteGroupSetIter = GraceNoteGroupSet::iterator;
+        using GraceNoteGroupSetIterConst = GraceNoteGroupSet::const_iterator;
+        inline GraceNoteGroupPtr makeGraceNoteGroup() { return std::make_shared<GraceNoteGroup>(); }
+        class GraceNoteGroup : public ElementInterface
+        {
+        public:
+            GraceNoteGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+            GracePtr myGrace;
+            FullNoteGroupPtr myFullNoteGroup;
+            TieSet myTieSet; // min 0 max 2 //
+            bool myHasTie;
+        };
+        
+        class CueNoteGroup;
+        using CueNoteGroupPtr = std::shared_ptr<CueNoteGroup>;
+        using CueNoteGroupUPtr = std::unique_ptr<CueNoteGroup>;
+        using CueNoteGroupSet = std::vector<CueNoteGroupPtr>;
+        using CueNoteGroupSetIter = CueNoteGroupSet::iterator;
+        using CueNoteGroupSetIterConst = CueNoteGroupSet::const_iterator;
+        inline CueNoteGroupPtr makeCueNoteGroup() { return std::make_shared<CueNoteGroup>(); }
+        class CueNoteGroup : public ElementInterface
+        {
+        public:
+            CueNoteGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+            CuePtr myCue;
+            FullNoteGroupPtr myFullNoteGroup;
+            DurationPtr myDuration;
+        };
+        
+        class NormalNoteGroup;
+        using NormalNoteGroupPtr = std::shared_ptr<NormalNoteGroup>;
+        using NormalNoteGroupUPtr = std::unique_ptr<NormalNoteGroup>;
+        using NormalNoteGroupSet = std::vector<NormalNoteGroupPtr>;
+        using NormalNoteGroupSetIter = NormalNoteGroupSet::iterator;
+        using NormalNoteGroupSetIterConst = NormalNoteGroupSet::const_iterator;
+        inline NormalNoteGroupPtr makeNormalNoteGroup() { return std::make_shared<NormalNoteGroup>(); }
+        class NormalNoteGroup : public ElementInterface
+        {
+        public:
+            NormalNoteGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+        private:
+            FullNoteGroupPtr myFullNoteGroup;
+            DurationPtr myDuration;
+            TieSet myTieSet; // min 0 max 2 //
+        };
+        
         struct NoteAttributes;
         using NoteAttributesPtr = std::shared_ptr<NoteAttributes>;
         

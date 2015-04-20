@@ -5413,6 +5413,92 @@ namespace mx
                 myFullNoteTypeChoice = value;
             }
         }
+        
+        GraceNoteGroup::GraceNoteGroup()
+        :myGrace( makeGrace() )
+        ,myFullNoteGroup( makeFullNoteGroup() )
+        ,myTieSet()
+        {}
+        bool GraceNoteGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& GraceNoteGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& GraceNoteGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool GraceNoteGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& GraceNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            myGrace->toStream( os, indentLevel );
+            myFullNoteGroup->streamContents( os, indentLevel, isOneLineOnly );
+            for ( auto x : myTieSet )
+            {
+                x->toStream( os, indentLevel );
+            }
+            return os;
+        }
+        
+        CueNoteGroup::CueNoteGroup()
+        :myCue( makeCue() )
+        ,myFullNoteGroup( makeFullNoteGroup() )
+        ,myDuration( makeDuration() )
+        {}
+        bool CueNoteGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& CueNoteGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& CueNoteGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool CueNoteGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& CueNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            return os;
+        }
+        
+        NormalNoteGroup::NormalNoteGroup()
+        :myFullNoteGroup( makeFullNoteGroup() )
+        ,myDuration( makeDuration() )
+        ,myTieSet()
+        {}
+        bool NormalNoteGroup::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& NormalNoteGroup::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& NormalNoteGroup::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool NormalNoteGroup::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& NormalNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            return os;
+        }
+        
+        
 #if 1==0
 #endif
         
