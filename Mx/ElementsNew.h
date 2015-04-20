@@ -3080,6 +3080,47 @@ namespace mx
             TieSet myTieSet; // min 0 max 2 //
         };
         
+        class NoteChoice;
+        using NoteChoicePtr = std::shared_ptr<NoteChoice>;
+        using NoteChoiceUPtr = std::unique_ptr<NoteChoice>;
+        using NoteChoiceSet = std::vector<NoteChoicePtr>;
+        using NoteChoiceSetIter = NoteChoiceSet::iterator;
+        using NoteChoiceSetIterConst = NoteChoiceSet::const_iterator;
+        inline NoteChoicePtr makeNoteChoice() { return std::make_shared<NoteChoice>(); }
+        class NoteChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                grace = 1,
+                cue = 2,
+                normal = 3
+            };
+            NoteChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            NoteChoice::Choice getChoice() const;
+            void setChoice( const NoteChoice::Choice value );
+            /* _________ GraceNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+            GraceNoteGroupPtr getGraceNoteGroup() const;
+            void setGraceNoteGroup( const GraceNoteGroupPtr& value );
+            /* _________ CueNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+            CueNoteGroupPtr getCueNoteGroup() const;
+            void setCueNoteGroup( const CueNoteGroupPtr& value );
+            /* _________ NormalNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+            NormalNoteGroupPtr getNormalNoteGroup() const;
+            void setNormalNoteGroup( const NormalNoteGroupPtr& value );
+        private:
+            Choice myChoice;
+            GraceNoteGroupPtr myGraceNoteGroup;
+            CueNoteGroupPtr myCueNoteGroup;
+            NormalNoteGroupPtr myNormalNoteGroup;
+        };
+        
         struct NoteAttributes;
         using NoteAttributesPtr = std::shared_ptr<NoteAttributes>;
         
