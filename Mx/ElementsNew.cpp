@@ -5751,6 +5751,495 @@ namespace mx
                 myNormalNoteGroup = value;
             }
         }
+        
+        
+        
+        /**************** NoteAttributes ****************/
+        /* 6307 */
+        NoteAttributes::NoteAttributes()
+        :defaultX()
+        ,defaultY()
+        ,relativeX()
+        ,relativeY()
+        ,fontFamily()
+        ,fontStyle( types::FontStyle::normal )
+        ,fontSize( types::CssFontSize::medium )
+        ,fontWeight( types::FontWeight::normal )
+        ,color()
+        ,printObject( types::YesNo::no )
+        ,printDot( types::YesNo::no )
+        ,printSpacing( types::YesNo::no )
+        ,printLyric( types::YesNo::no )
+        ,dynamics()
+        ,endDynamics()
+        ,attack()
+        ,release()
+        ,timeOnly()
+        ,pizzicato( types::YesNo::no )
+        ,hasDefaultX( false )
+        ,hasDefaultY( false )
+        ,hasRelativeX( false )
+        ,hasRelativeY( false )
+        ,hasFontFamily( false )
+        ,hasFontStyle( false )
+        ,hasFontSize( false )
+        ,hasFontWeight( false )
+        ,hasColor( false )
+        ,hasPrintObject( false )
+        ,hasPrintDot( false )
+        ,hasPrintSpacing( false )
+        ,hasPrintLyric( false )
+        ,hasDynamics( false )
+        ,hasEndDynamics( false )
+        ,hasAttack( false )
+        ,hasRelease( false )
+        ,hasTimeOnly( false )
+        ,hasPizzicato( false )
+        {}
+        
+        bool NoteAttributes::hasValues() const
+        {
+            return hasDefaultX ||
+            hasDefaultY ||
+            hasRelativeX ||
+            hasRelativeY ||
+            hasFontFamily ||
+            hasFontStyle ||
+            hasFontSize ||
+            hasFontWeight ||
+            hasColor ||
+            hasPrintObject ||
+            hasPrintDot ||
+            hasPrintSpacing ||
+            hasPrintLyric ||
+            hasDynamics ||
+            hasEndDynamics ||
+            hasAttack ||
+            hasRelease ||
+            hasTimeOnly ||
+            hasPizzicato;
+        }
+        
+        std::ostream& NoteAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, defaultX, "default-x", hasDefaultX );
+                streamAttribute( os, defaultY, "default-y", hasDefaultY );
+                streamAttribute( os, relativeX, "relative-x", hasRelativeX );
+                streamAttribute( os, relativeY, "relative-y", hasRelativeY );
+                streamAttribute( os, fontFamily, "font-family", hasFontFamily );
+                streamAttribute( os, fontStyle, "font-style", hasFontStyle );
+                streamAttribute( os, fontSize, "font-size", hasFontSize );
+                streamAttribute( os, fontWeight, "font-weight", hasFontWeight );
+                streamAttribute( os, color, "color", hasColor );
+                streamAttribute( os, printObject, "print-object", hasPrintObject );
+                streamAttribute( os, printDot, "print-dot", hasPrintDot );
+                streamAttribute( os, printSpacing, "print-spacing", hasPrintSpacing );
+                streamAttribute( os, printLyric, "print-lyric", hasPrintLyric );
+                streamAttribute( os, dynamics, "dynamics", hasDynamics );
+                streamAttribute( os, endDynamics, "end-dynamics", hasEndDynamics );
+                streamAttribute( os, attack, "attack", hasAttack );
+                streamAttribute( os, release, "release", hasRelease );
+                streamAttribute( os, timeOnly, "time-only", hasTimeOnly );
+                streamAttribute( os, pizzicato, "pizzicato", hasPizzicato );
+            }
+            return os;
+        }
+        
+		Note::Note()
+		:myAttributes( std::make_shared<NoteAttributes>() )
+		,myNoteChoice( makeNoteChoice() )
+		,myInstrument( makeInstrument() )
+		,myHasInstrument( false )
+        ,myEditorialVoiceGroup( makeEditorialVoiceGroup() )
+		,myType( makeType() )
+		,myHasType( false )
+		,myDotSet()
+		,myAccidental( makeAccidental() )
+		,myHasAccidental( false )
+		,myTimeModification( makeTimeModification() )
+		,myHasTimeModification( false )
+		,myStem( makeStem() )
+		,myHasStem( false )
+		,myNotehead( makeNotehead() )
+		,myHasNotehead( false )
+		,myNoteheadText( makeNoteheadText() )
+		,myHasNoteheadText( false )
+		,myBeamSet()
+		,myNotationsSet()
+		,myLyricSet()
+		,myPlay( makePlay() )
+		,myHasPlay( false )
+		{}
+		bool Note::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Note::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Note::streamName( std::ostream& os ) const
+		{
+			os << "note";
+			return os;
+		}
+		bool Note::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& Note::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			isOneLineOnly = false;
+			os << std::endl;
+			// mySign->toStream( os, indentLevel+1 );
+			throw std::runtime_error{ "not implemented" };
+		}
+		NoteAttributesPtr Note::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Note::setAttributes( const NoteAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+		/* _________ NoteChoice minOccurs = 1, maxOccurs = 1 _________ */
+		NoteChoicePtr Note::getNoteChoice() const
+		{
+			return myNoteChoice;
+		}
+		void Note::setNoteChoice( const NoteChoicePtr& value )
+		{
+			if( value )
+			{
+				myNoteChoice = value;
+			}
+		}
+		/* _________ Instrument minOccurs = 0, maxOccurs = 1 _________ */
+		InstrumentPtr Note::getInstrument() const
+		{
+			return myInstrument;
+		}
+		void Note::setInstrument( const InstrumentPtr& value )
+		{
+			if( value )
+			{
+				myInstrument = value;
+			}
+		}
+		bool Note::getHasInstrument() const
+		{
+			return myHasInstrument;
+		}
+		void Note::setHasInstrument( const bool value )
+		{
+			myHasInstrument = value;
+		}
+        /* _________ EditorialVoiceGroup minOccurs = 1, maxOccurs = 1 _________ */
+        EditorialVoiceGroupPtr Note::getEditorialVoiceGroup() const
+        {
+            return myEditorialVoiceGroup;
+        }
+        void Note::setEditorialVoiceGroup( const EditorialVoiceGroupPtr& value )
+        {
+            if ( value )
+            {
+                myEditorialVoiceGroup = value;
+            }
+        }
+		/* _________ Type minOccurs = 0, maxOccurs = 1 _________ */
+		TypePtr Note::getType() const
+		{
+			return myType;
+		}
+		void Note::setType( const TypePtr& value )
+		{
+			if( value )
+			{
+				myType = value;
+			}
+		}
+		bool Note::getHasType() const
+		{
+			return myHasType;
+		}
+		void Note::setHasType( const bool value )
+		{
+			myHasType = value;
+		}
+		/* _________ Dot minOccurs = 0, maxOccurs = unbounded _________ */
+		const DotSet& Note::getDotSet() const
+		{
+			return myDotSet;
+		}
+		void Note::removeDot( const DotSetIterConst& value )
+		{
+			if ( value != myDotSet.cend() )
+			{
+				myDotSet.erase( value );
+			}
+		}
+		void Note::addDot( const DotPtr& value )
+		{
+			if ( value )
+			{
+				myDotSet.push_back( value );
+			}
+		}
+		void Note::clearDotSet()
+		{
+			myDotSet.clear();
+		}
+		DotPtr Note::getDot( const DotSetIterConst& setIterator ) const
+		{
+			if( setIterator != myDotSet.cend() )
+			{
+				return *setIterator;
+			}
+			return DotPtr();
+		}
+		/* _________ Accidental minOccurs = 0, maxOccurs = 1 _________ */
+		AccidentalPtr Note::getAccidental() const
+		{
+			return myAccidental;
+		}
+		void Note::setAccidental( const AccidentalPtr& value )
+		{
+			if( value )
+			{
+				myAccidental = value;
+			}
+		}
+		bool Note::getHasAccidental() const
+		{
+			return myHasAccidental;
+		}
+		void Note::setHasAccidental( const bool value )
+		{
+			myHasAccidental = value;
+		}
+		/* _________ TimeModification minOccurs = 0, maxOccurs = 1 _________ */
+		TimeModificationPtr Note::getTimeModification() const
+		{
+			return myTimeModification;
+		}
+		void Note::setTimeModification( const TimeModificationPtr& value )
+		{
+			if( value )
+			{
+				myTimeModification = value;
+			}
+		}
+		bool Note::getHasTimeModification() const
+		{
+			return myHasTimeModification;
+		}
+		void Note::setHasTimeModification( const bool value )
+		{
+			myHasTimeModification = value;
+		}
+		/* _________ Stem minOccurs = 0, maxOccurs = 1 _________ */
+		StemPtr Note::getStem() const
+		{
+			return myStem;
+		}
+		void Note::setStem( const StemPtr& value )
+		{
+			if( value )
+			{
+				myStem = value;
+			}
+		}
+		bool Note::getHasStem() const
+		{
+			return myHasStem;
+		}
+		void Note::setHasStem( const bool value )
+		{
+			myHasStem = value;
+		}
+		/* _________ Notehead minOccurs = 0, maxOccurs = 1 _________ */
+		NoteheadPtr Note::getNotehead() const
+		{
+			return myNotehead;
+		}
+		void Note::setNotehead( const NoteheadPtr& value )
+		{
+			if( value )
+			{
+				myNotehead = value;
+			}
+		}
+		bool Note::getHasNotehead() const
+		{
+			return myHasNotehead;
+		}
+		void Note::setHasNotehead( const bool value )
+		{
+			myHasNotehead = value;
+		}
+		/* _________ NoteheadText minOccurs = 0, maxOccurs = 1 _________ */
+		NoteheadTextPtr Note::getNoteheadText() const
+		{
+			return myNoteheadText;
+		}
+		void Note::setNoteheadText( const NoteheadTextPtr& value )
+		{
+			if( value )
+			{
+				myNoteheadText = value;
+			}
+		}
+		bool Note::getHasNoteheadText() const
+		{
+			return myHasNoteheadText;
+		}
+		void Note::setHasNoteheadText( const bool value )
+		{
+			myHasNoteheadText = value;
+		}
+        /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
+        StaffPtr Note::getStaff() const
+        {
+            return myStaff;
+        }
+        void Note::setStaff( const StaffPtr& value )
+        {
+            if ( value )
+            {
+                myStaff = value;
+            }
+        }
+        bool Note::getHasStaff() const
+        {
+            return myHasStaff;
+        }
+        void Note::setHasStaff( const bool value )
+        {
+            myHasStaff = value;
+        }
+		/* _________ Beam minOccurs = 0, maxOccurs = 8 _________ */
+		const BeamSet& Note::getBeamSet() const
+		{
+			return myBeamSet;
+		}
+		void Note::removeBeam( const BeamSetIterConst& value )
+		{
+			if ( value != myBeamSet.cend() )
+			{
+				myBeamSet.erase( value );
+			}
+		}
+		void Note::addBeam( const BeamPtr& value )
+		{
+			if ( value )
+			{
+                if ( myBeamSet.size() < 8 )
+                {
+                    myBeamSet.push_back( value );
+                }
+			}
+		}
+		void Note::clearBeamSet()
+		{
+			myBeamSet.clear();
+		}
+		BeamPtr Note::getBeam( const BeamSetIterConst& setIterator ) const
+		{
+			if( setIterator != myBeamSet.cend() )
+			{
+				return *setIterator;
+			}
+			return BeamPtr();
+		}
+		/* _________ Notations minOccurs = 0, maxOccurs = unbounded _________ */
+		const NotationsSet& Note::getNotationsSet() const
+		{
+			return myNotationsSet;
+		}
+		void Note::removeNotations( const NotationsSetIterConst& value )
+		{
+			if ( value != myNotationsSet.cend() )
+			{
+				myNotationsSet.erase( value );
+			}
+		}
+		void Note::addNotations( const NotationsPtr& value )
+		{
+			if ( value )
+			{
+				myNotationsSet.push_back( value );
+			}
+		}
+		void Note::clearNotationsSet()
+		{
+			myNotationsSet.clear();
+		}
+		NotationsPtr Note::getNotations( const NotationsSetIterConst& setIterator ) const
+		{
+			if( setIterator != myNotationsSet.cend() )
+			{
+				return *setIterator;
+			}
+			return NotationsPtr();
+		}
+		/* _________ Lyric minOccurs = 0, maxOccurs = unbounded _________ */
+		const LyricSet& Note::getLyricSet() const
+		{
+			return myLyricSet;
+		}
+		void Note::removeLyric( const LyricSetIterConst& value )
+		{
+			if ( value != myLyricSet.cend() )
+			{
+				myLyricSet.erase( value );
+			}
+		}
+		void Note::addLyric( const LyricPtr& value )
+		{
+			if ( value )
+			{
+				myLyricSet.push_back( value );
+			}
+		}
+		void Note::clearLyricSet()
+		{
+			myLyricSet.clear();
+		}
+		LyricPtr Note::getLyric( const LyricSetIterConst& setIterator ) const
+		{
+			if( setIterator != myLyricSet.cend() )
+			{
+				return *setIterator;
+			}
+			return LyricPtr();
+		}
+		/* _________ Play minOccurs = 0, maxOccurs = 1 _________ */
+		PlayPtr Note::getPlay() const
+		{
+			return myPlay;
+		}
+		void Note::setPlay( const PlayPtr& value )
+		{
+			if( value )
+			{
+				myPlay = value;
+			}
+		}
+		bool Note::getHasPlay() const
+		{
+			return myHasPlay;
+		}
+		void Note::setHasPlay( const bool value )
+		{
+			myHasPlay = value;
+		}
+
 #if 1==0
 #endif
         

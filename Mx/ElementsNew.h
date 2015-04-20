@@ -3170,7 +3170,6 @@ namespace mx
             bool hasPizzicato;
         };
 
-#if 1==0
         class Note;
         using NotePtr = std::shared_ptr<Note>;
         using NoteUPtr = std::unique_ptr<Note>;
@@ -3189,29 +3188,17 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             NoteAttributesPtr getAttributes() const;
             void setAttributes( const NoteAttributesPtr& value );
-            /* _________ Grace minOccurs = 1, maxOccurs = 1 _________ */
-            GracePtr getGrace() const;
-            void setGrace( const GracePtr& value );
-            /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
-            const TieSet& getTieSet() const;
-            void addTie( const TiePtr& value );
-            void removeTie( const TieSetIterConst& value );
-            void clearTieSet();
-            TiePtr getTie( const TieSetIterConst& setIterator ) const;
-            /* _________ Cue minOccurs = 1, maxOccurs = 1 _________ */
-            CuePtr getCue() const;
-            void setCue( const CuePtr& value );
-            /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
-            const TieSet& getTieSet() const;
-            void addTie( const TiePtr& value );
-            void removeTie( const TieSetIterConst& value );
-            void clearTieSet();
-            TiePtr getTie( const TieSetIterConst& setIterator ) const;
+            /* _________ NoteChoice minOccurs = 1, maxOccurs = 1 _________ */
+            NoteChoicePtr getNoteChoice() const;
+            void setNoteChoice( const NoteChoicePtr& value );
             /* _________ Instrument minOccurs = 0, maxOccurs = 1 _________ */
             InstrumentPtr getInstrument() const;
             void setInstrument( const InstrumentPtr& value );
             bool getHasInstrument() const;
             void setHasInstrument( const bool value );
+            /* _________ EditorialVoiceGroup minOccurs = 1, maxOccurs = 1 _________ */
+            EditorialVoiceGroupPtr getEditorialVoiceGroup() const;
+            void setEditorialVoiceGroup( const EditorialVoiceGroupPtr& value );
             /* _________ Type minOccurs = 0, maxOccurs = 1 _________ */
             TypePtr getType() const;
             void setType( const TypePtr& value );
@@ -3248,6 +3235,11 @@ namespace mx
             void setNoteheadText( const NoteheadTextPtr& value );
             bool getHasNoteheadText() const;
             void setHasNoteheadText( const bool value );
+            /* _________ Staff minOccurs = 0, maxOccurs = 1 _________ */
+            StaffPtr getStaff() const;
+            void setStaff( const StaffPtr& value );
+            bool getHasStaff() const;
+            void setHasStaff( const bool value );
             /* _________ Beam minOccurs = 0, maxOccurs = 8 _________ */
             const BeamSet& getBeamSet() const;
             void addBeam( const BeamPtr& value );
@@ -3273,12 +3265,10 @@ namespace mx
             void setHasPlay( const bool value );
         private:
             NoteAttributesPtr myAttributes;
-            GracePtr myGrace;
-            TieSet myTieSet;
-            CuePtr myCue;
-            TieSet myTieSet;
+            NoteChoicePtr myNoteChoice;
             InstrumentPtr myInstrument;
             bool myHasInstrument;
+            EditorialVoiceGroupPtr myEditorialVoiceGroup;
             TypePtr myType;
             bool myHasType;
             DotSet myDotSet;
@@ -3292,13 +3282,13 @@ namespace mx
             bool myHasNotehead;
             NoteheadTextPtr myNoteheadText;
             bool myHasNoteheadText;
-            BeamSet myBeamSet;
+            StaffPtr myStaff;
+            bool myHasStaff;
+            BeamSet myBeamSet; // min 0 max 8 //
             NotationsSet myNotationsSet;
             LyricSet myLyricSet;
             PlayPtr myPlay;
             bool myHasPlay;
         };
-#endif
-
     }
 }
