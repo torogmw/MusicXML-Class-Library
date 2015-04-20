@@ -2721,5 +2721,436 @@ namespace mx
             NotationsChoiceSet myNotationsChoiceSet;
         };
 
+        /* <!--  ID = 6307 [6307] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 195 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="note" type="note"/>
+         <xs:complexType name="note">
+         <xs:annotation>
+         <xs:documentation>
+         
+         Notes are the most common type of MusicXML data.
+         The MusicXML format keeps the MuseData distinction between elements
+         used for sound information and elements used for notation information
+         (e.g., tie is used for sound, tied for notation). Thus grace notes do
+         not have a duration element. Cue notes have a duration element, as do
+         forward elements, but no tie elements. Having these two types of
+         information available can make interchange considerably easier, as
+         some programs handle one type of information much more readily than
+         the other.
+         
+         The dynamics and end-dynamics attributes correspond to MIDI 1.0's Note On
+         and Note Off velocities, respectively. They are expressed in terms of percentages
+         of the default forte value (90 for MIDI 1.0). The attack and release attributes
+         are used to alter the starting and stopping time of the note from when it would
+         otherwise occur based on the flow of durations - information that is specific to
+         a performance. They are expressed in terms of divisions, either positive or
+         negative. A note that starts a tie should not have a release attribute, and a
+         note that stops a tie should not have an attack attribute. If a note is played
+         only particular times through a repeat, the time-only attribute shows which times
+         to play the note. The pizzicato attribute is used when just this note is sounded
+         pizzicato, vs. the pizzicato element which changes overall playback between pizzicato
+         and arco.
+         
+         </xs:documentation>
+         
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice>
+         <xs:sequence>
+         <xs:element name="grace" type="grace"/>
+         <xs:group ref="full-note"/>
+         <xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
+         </xs:sequence>
+         <xs:sequence>
+         <xs:element name="cue" type="empty">
+         <xs:annotation>
+         <xs:documentation>The cue element indicates the presence of a cue note.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:group ref="full-note"/>
+         <xs:group ref="duration"/>
+         </xs:sequence>
+         <xs:sequence>
+         <xs:group ref="full-note"/>
+         <xs:group ref="duration"/>
+         <xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
+         </xs:sequence>
+         </xs:choice>
+         <xs:element name="instrument" type="instrument" minOccurs="0"/>
+         <xs:group ref="editorial-voice"/>
+         <xs:element name="type" type="note-type" minOccurs="0"/>
+         <xs:element name="dot" type="empty-placement" minOccurs="0" maxOccurs="unbounded">
+         <xs:annotation>
+         <xs:documentation>One dot element is used for each dot of prolongation. The placement element is used to specify whether the dot should appear above or below the staff line. It is ignored for notes that appear on a staff space.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="accidental" type="accidental" minOccurs="0"/>
+         <xs:element name="time-modification" type="time-modification" minOccurs="0"/>
+         <xs:element name="stem" type="stem" minOccurs="0"/>
+         <xs:element name="notehead" type="notehead" minOccurs="0"/>
+         <xs:element name="notehead-text" type="notehead-text" minOccurs="0"/>
+         <xs:group ref="staff" minOccurs="0"/>
+         <xs:element name="beam" type="beam" minOccurs="0" maxOccurs="8"/>
+         <xs:element name="notations" type="notations" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="lyric" type="lyric" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="play" type="play" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="x-position"/>
+         <xs:attributeGroup ref="font"/>
+         <xs:attributeGroup ref="color"/>
+         <xs:attributeGroup ref="printout"/>
+         <xs:attribute name="dynamics" type="non-negative-decimal"/>
+         <xs:attribute name="end-dynamics" type="non-negative-decimal"/>
+         <xs:attribute name="attack" type="divisions"/>
+         <xs:attribute name="release" type="divisions"/>
+         <xs:attribute name="time-only" type="time-only"/>
+         <xs:attribute name="pizzicato" type="yes-no"/>
+         </xs:complexType>
+         <xs:group name="full-note">
+         <xs:annotation>
+         <xs:documentation>The full-note group is a sequence of the common note elements between cue/grace notes and regular (full) notes: pitch, chord, and rest information, but not duration (cue and grace notes do not have duration encoded). Unpitched elements are used for unpitched percussion, speaking voice, and other musical elements lacking determinate pitch.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="chord" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The chord element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note. In MuseData, a missing duration indicates the same length as the previous note, but the MusicXML format requires a duration for chord notes too.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:choice>
+         <xs:element name="pitch" type="pitch"/>
+         <xs:element name="unpitched" type="unpitched"/>
+         <xs:element name="rest" type="rest"/>
+         </xs:choice>
+         </xs:sequence>
+         </xs:group>
+         <xs:group name="full-note">
+         <xs:annotation>
+         <xs:documentation>The full-note group is a sequence of the common note elements between cue/grace notes and regular (full) notes: pitch, chord, and rest information, but not duration (cue and grace notes do not have duration encoded). Unpitched elements are used for unpitched percussion, speaking voice, and other musical elements lacking determinate pitch.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="chord" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The chord element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note. In MuseData, a missing duration indicates the same length as the previous note, but the MusicXML format requires a duration for chord notes too.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:choice>
+         <xs:element name="pitch" type="pitch"/>
+         <xs:element name="unpitched" type="unpitched"/>
+         <xs:element name="rest" type="rest"/>
+         </xs:choice>
+         </xs:sequence>
+         </xs:group>
+         <xs:group name="duration">
+         <xs:annotation>
+         <xs:documentation>The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="duration" type="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, swing eighths vs. even eighths, or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         <xs:group name="full-note">
+         <xs:annotation>
+         <xs:documentation>The full-note group is a sequence of the common note elements between cue/grace notes and regular (full) notes: pitch, chord, and rest information, but not duration (cue and grace notes do not have duration encoded). Unpitched elements are used for unpitched percussion, speaking voice, and other musical elements lacking determinate pitch.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="chord" type="empty" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The chord element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note. In MuseData, a missing duration indicates the same length as the previous note, but the MusicXML format requires a duration for chord notes too.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:choice>
+         <xs:element name="pitch" type="pitch"/>
+         <xs:element name="unpitched" type="unpitched"/>
+         <xs:element name="rest" type="rest"/>
+         </xs:choice>
+         </xs:sequence>
+         </xs:group>
+         <xs:group name="duration">
+         <xs:annotation>
+         <xs:documentation>The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="duration" type="positive-divisions">
+         <xs:annotation>
+         <xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, swing eighths vs. even eighths, or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         <xs:group name="editorial-voice">
+         <xs:annotation>
+         <xs:documentation>The editorial-voice group supports the common combination of editorial and voice information for a musical element.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:group ref="footnote" minOccurs="0"/>
+         <xs:group ref="level" minOccurs="0"/>
+         <xs:group ref="voice" minOccurs="0"/>
+         </xs:sequence>
+         </xs:group>
+         <xs:group name="staff">
+         <xs:annotation>
+         <xs:documentation>The staff element is defined within a group due to its use by both notes and direction elements.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="staff" type="xs:positiveInteger">
+         <xs:annotation>
+         <xs:documentation>Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers, with 1 referring to the top-most staff in a part.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         </xs:sequence>
+         </xs:group>
+         
+         */
+        
+        class FullNoteTypeChoice;
+        using FullNoteTypeChoicePtr = std::shared_ptr<FullNoteTypeChoice>;
+        using FullNoteTypeChoiceUPtr = std::unique_ptr<FullNoteTypeChoice>;
+        using FullNoteTypeChoiceSet = std::vector<FullNoteTypeChoicePtr>;
+        using FullNoteTypeChoiceSetIter = FullNoteTypeChoiceSet::iterator;
+        using FullNoteTypeChoiceSetIterConst = FullNoteTypeChoiceSet::const_iterator;
+        inline FullNoteTypeChoicePtr makeFullNoteTypeChoice() { return std::make_shared<FullNoteTypeChoice>(); }
+        class FullNoteTypeChoice : public ElementInterface
+        {
+            enum class Choice
+            {
+                pitch = 1,
+                unpitched = 2,
+                rest = 3
+            };
+        public:
+            FullNoteTypeChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            FullNoteTypeChoice::Choice getChoice() const;
+            void setChoice( const FullNoteTypeChoice::Choice value );
+            /* _________ Pitch minOccurs = 1, maxOccurs = 1 _________ */
+            PitchPtr getPitch() const;
+            void setPitch( const PitchPtr& value );
+            /* _________ Unpitched minOccurs = 1, maxOccurs = 1 _________ */
+            UnpitchedPtr getUnpitched() const;
+            void setUnpitched( const UnpitchedPtr& value );
+            /* _________ Rest minOccurs = 1, maxOccurs = 1 _________ */
+            RestPtr getRest() const;
+            void setRest( const RestPtr& value );
+        private:
+            Choice myChoice;
+            PitchPtr myPitch;
+            UnpitchedPtr myUnpitched;
+            RestPtr myRest;
+        };
+        
+        class FullNoteGroup;
+        using FullNoteGroupPtr = std::shared_ptr<FullNoteGroup>;
+        using FullNoteGroupUPtr = std::unique_ptr<FullNoteGroup>;
+        using FullNoteGroupSet = std::vector<FullNoteGroupPtr>;
+        using FullNoteGroupSetIter = FullNoteGroupSet::iterator;
+        using FullNoteGroupSetIterConst = FullNoteGroupSet::const_iterator;
+        inline FullNoteGroupPtr makeFullNoteGroup() { return std::make_shared<FullNoteGroup>(); }
+        class FullNoteGroup : public ElementInterface
+        {
+        public:
+            FullNoteGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* getset */
+        private:
+            ChordPtr myChord;
+            bool myHasChord;
+            FullNoteTypeChoicePtr myFullNoteTypeChoice;
+        };
+        
+        struct NoteAttributes;
+        using NoteAttributesPtr = std::shared_ptr<NoteAttributes>;
+        
+        struct NoteAttributes : public AttributesInterface
+        {
+        public:
+            NoteAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::TenthsValue defaultX;
+            types::TenthsValue defaultY;
+            types::TenthsValue relativeX;
+            types::TenthsValue relativeY;
+            types::CommaSeparatedText fontFamily;
+            types::FontStyle fontStyle;
+            types::FontSize fontSize;
+            types::FontWeight fontWeight;
+            types::Color color;
+            types::YesNo printObject;
+            types::YesNo printDot;
+            types::YesNo printSpacing;
+            types::YesNo printLyric;
+            types::NonNegativeDecimal dynamics;
+            types::NonNegativeDecimal endDynamics;
+            types::DivisionsValue attack;
+            types::DivisionsValue release;
+            types::TimeOnly timeOnly;
+            types::YesNo pizzicato;
+            bool hasDefaultX;
+            bool hasDefaultY;
+            bool hasRelativeX;
+            bool hasRelativeY;
+            bool hasFontFamily;
+            bool hasFontStyle;
+            bool hasFontSize;
+            bool hasFontWeight;
+            bool hasColor;
+            bool hasPrintObject;
+            bool hasPrintDot;
+            bool hasPrintSpacing;
+            bool hasPrintLyric;
+            bool hasDynamics;
+            bool hasEndDynamics;
+            bool hasAttack;
+            bool hasRelease;
+            bool hasTimeOnly;
+            bool hasPizzicato;
+        };
+
+#if 1==0
+        class Note;
+        using NotePtr = std::shared_ptr<Note>;
+        using NoteUPtr = std::unique_ptr<Note>;
+        using NoteSet = std::vector<NotePtr>;
+        using NoteSetIter = NoteSet::iterator;
+        using NoteSetIterConst = NoteSet::const_iterator;
+        inline NotePtr makeNote() { return std::make_shared<Note>(); }
+        class Note : public ElementInterface
+        {
+        public:
+            Note();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            NoteAttributesPtr getAttributes() const;
+            void setAttributes( const NoteAttributesPtr& value );
+            /* _________ Grace minOccurs = 1, maxOccurs = 1 _________ */
+            GracePtr getGrace() const;
+            void setGrace( const GracePtr& value );
+            /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
+            const TieSet& getTieSet() const;
+            void addTie( const TiePtr& value );
+            void removeTie( const TieSetIterConst& value );
+            void clearTieSet();
+            TiePtr getTie( const TieSetIterConst& setIterator ) const;
+            /* _________ Cue minOccurs = 1, maxOccurs = 1 _________ */
+            CuePtr getCue() const;
+            void setCue( const CuePtr& value );
+            /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
+            const TieSet& getTieSet() const;
+            void addTie( const TiePtr& value );
+            void removeTie( const TieSetIterConst& value );
+            void clearTieSet();
+            TiePtr getTie( const TieSetIterConst& setIterator ) const;
+            /* _________ Instrument minOccurs = 0, maxOccurs = 1 _________ */
+            InstrumentPtr getInstrument() const;
+            void setInstrument( const InstrumentPtr& value );
+            bool getHasInstrument() const;
+            void setHasInstrument( const bool value );
+            /* _________ Type minOccurs = 0, maxOccurs = 1 _________ */
+            TypePtr getType() const;
+            void setType( const TypePtr& value );
+            bool getHasType() const;
+            void setHasType( const bool value );
+            /* _________ Dot minOccurs = 0, maxOccurs = unbounded _________ */
+            const DotSet& getDotSet() const;
+            void addDot( const DotPtr& value );
+            void removeDot( const DotSetIterConst& value );
+            void clearDotSet();
+            DotPtr getDot( const DotSetIterConst& setIterator ) const;
+            /* _________ Accidental minOccurs = 0, maxOccurs = 1 _________ */
+            AccidentalPtr getAccidental() const;
+            void setAccidental( const AccidentalPtr& value );
+            bool getHasAccidental() const;
+            void setHasAccidental( const bool value );
+            /* _________ TimeModification minOccurs = 0, maxOccurs = 1 _________ */
+            TimeModificationPtr getTimeModification() const;
+            void setTimeModification( const TimeModificationPtr& value );
+            bool getHasTimeModification() const;
+            void setHasTimeModification( const bool value );
+            /* _________ Stem minOccurs = 0, maxOccurs = 1 _________ */
+            StemPtr getStem() const;
+            void setStem( const StemPtr& value );
+            bool getHasStem() const;
+            void setHasStem( const bool value );
+            /* _________ Notehead minOccurs = 0, maxOccurs = 1 _________ */
+            NoteheadPtr getNotehead() const;
+            void setNotehead( const NoteheadPtr& value );
+            bool getHasNotehead() const;
+            void setHasNotehead( const bool value );
+            /* _________ NoteheadText minOccurs = 0, maxOccurs = 1 _________ */
+            NoteheadTextPtr getNoteheadText() const;
+            void setNoteheadText( const NoteheadTextPtr& value );
+            bool getHasNoteheadText() const;
+            void setHasNoteheadText( const bool value );
+            /* _________ Beam minOccurs = 0, maxOccurs = 8 _________ */
+            const BeamSet& getBeamSet() const;
+            void addBeam( const BeamPtr& value );
+            void removeBeam( const BeamSetIterConst& value );
+            void clearBeamSet();
+            BeamPtr getBeam( const BeamSetIterConst& setIterator ) const;
+            /* _________ Notations minOccurs = 0, maxOccurs = unbounded _________ */
+            const NotationsSet& getNotationsSet() const;
+            void addNotations( const NotationsPtr& value );
+            void removeNotations( const NotationsSetIterConst& value );
+            void clearNotationsSet();
+            NotationsPtr getNotations( const NotationsSetIterConst& setIterator ) const;
+            /* _________ Lyric minOccurs = 0, maxOccurs = unbounded _________ */
+            const LyricSet& getLyricSet() const;
+            void addLyric( const LyricPtr& value );
+            void removeLyric( const LyricSetIterConst& value );
+            void clearLyricSet();
+            LyricPtr getLyric( const LyricSetIterConst& setIterator ) const;
+            /* _________ Play minOccurs = 0, maxOccurs = 1 _________ */
+            PlayPtr getPlay() const;
+            void setPlay( const PlayPtr& value );
+            bool getHasPlay() const;
+            void setHasPlay( const bool value );
+        private:
+            NoteAttributesPtr myAttributes;
+            GracePtr myGrace;
+            TieSet myTieSet;
+            CuePtr myCue;
+            TieSet myTieSet;
+            InstrumentPtr myInstrument;
+            bool myHasInstrument;
+            TypePtr myType;
+            bool myHasType;
+            DotSet myDotSet;
+            AccidentalPtr myAccidental;
+            bool myHasAccidental;
+            TimeModificationPtr myTimeModification;
+            bool myHasTimeModification;
+            StemPtr myStem;
+            bool myHasStem;
+            NoteheadPtr myNotehead;
+            bool myHasNotehead;
+            NoteheadTextPtr myNoteheadText;
+            bool myHasNoteheadText;
+            BeamSet myBeamSet;
+            NotationsSet myNotationsSet;
+            LyricSet myLyricSet;
+            PlayPtr myPlay;
+            bool myHasPlay;
+        };
+#endif
+
     }
 }

@@ -5261,6 +5261,95 @@ namespace mx
             }
             return NotationsChoicePtr();
         }
+        
+        FullNoteTypeChoice::FullNoteTypeChoice()
+        :myChoice( Choice::pitch )
+        ,myPitch( makePitch() )
+        ,myUnpitched( makeUnpitched() )
+        ,myRest( makeRest() )
+        {}
+        
+        bool FullNoteTypeChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& FullNoteTypeChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& FullNoteTypeChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool FullNoteTypeChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& FullNoteTypeChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::pitch:
+                    myPitch->streamContents( os, indentLevel, isOneLineOnly );
+                    break;
+                case Choice::unpitched:
+                    myUnpitched->streamContents( os, indentLevel, isOneLineOnly );
+                    break;
+                case Choice::rest:
+                    myRest->streamContents( os, indentLevel, isOneLineOnly );
+                    break;
+                default:
+                    break;
+            }
+            return os;
+        }
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+        FullNoteTypeChoice::Choice FullNoteTypeChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void FullNoteTypeChoice::setChoice( const FullNoteTypeChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ Pitch minOccurs = 1, maxOccurs = 1 _________ */
+        PitchPtr FullNoteTypeChoice::getPitch() const
+        {
+            return myPitch;
+        }
+        void FullNoteTypeChoice::setPitch( const PitchPtr& value )
+        {
+            if ( value )
+            {
+                myPitch = value;
+            }
+        }
+        /* _________ Unpitched minOccurs = 1, maxOccurs = 1 _________ */
+        UnpitchedPtr FullNoteTypeChoice::getUnpitched() const
+        {
+            return myUnpitched;
+        }
+        void FullNoteTypeChoice::setUnpitched( const UnpitchedPtr& value )
+        {
+            if ( value )
+            {
+                myUnpitched = value;
+            }
+        }
+        /* _________ Rest minOccurs = 1, maxOccurs = 1 _________ */
+        RestPtr FullNoteTypeChoice::getRest() const
+        {
+            return myRest;
+        }
+        void FullNoteTypeChoice::setRest( const RestPtr& value )
+        {
+            if ( value )
+            {
+                myRest = value;
+            }
+        }
+        
+        
 #if 1==0
 #endif
         
