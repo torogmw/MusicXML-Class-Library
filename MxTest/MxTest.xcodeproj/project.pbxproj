@@ -398,6 +398,7 @@
 		29EECBAC1AC99A4300AB6560 /* SystemLayoutTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EECBAA1AC99A4300AB6560 /* SystemLayoutTest.cpp */; };
 		29F6FFB91AE2F75C00CA74E7 /* CreditTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */; };
 		29F9D49F1AE55FED00B3560E /* FullNoteGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F9D49D1AE55FED00B3560E /* FullNoteGroupTest.cpp */; };
+		29F9D4A21AE56B9D00B3560E /* GraceNoteGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F9D4A01AE56B9D00B3560E /* GraceNoteGroupTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -893,6 +894,8 @@
 		29F6FFB81AE2F75C00CA74E7 /* CreditTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditTest.h; sourceTree = "<group>"; };
 		29F9D49D1AE55FED00B3560E /* FullNoteGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FullNoteGroupTest.cpp; sourceTree = "<group>"; };
 		29F9D49E1AE55FED00B3560E /* FullNoteGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullNoteGroupTest.h; sourceTree = "<group>"; };
+		29F9D4A01AE56B9D00B3560E /* GraceNoteGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraceNoteGroupTest.cpp; sourceTree = "<group>"; };
+		29F9D4A11AE56B9D00B3560E /* GraceNoteGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraceNoteGroupTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1462,6 +1465,8 @@
 				292DC0B51AE55C5800B50C1D /* FullNoteTypeChoiceTest.h */,
 				29F9D49D1AE55FED00B3560E /* FullNoteGroupTest.cpp */,
 				29F9D49E1AE55FED00B3560E /* FullNoteGroupTest.h */,
+				29F9D4A01AE56B9D00B3560E /* GraceNoteGroupTest.cpp */,
+				29F9D4A11AE56B9D00B3560E /* GraceNoteGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1848,6 +1853,7 @@
 				29774A071AB21FA000BF2205 /* MovementTitleTest.cpp in Sources */,
 				29774A101AB21FA000BF2205 /* PanTest.cpp in Sources */,
 				298C81D71AB6A8DC006619A9 /* ExtendTest.cpp in Sources */,
+				29F9D4A21AE56B9D00B3560E /* GraceNoteGroupTest.cpp in Sources */,
 				297749EA1AB21FA000BF2205 /* FrameFretsTest.cpp in Sources */,
 				2935A7211AB5FC3B002859CA /* DoubleTongueTest.cpp in Sources */,
 				297749F21AB21FA000BF2205 /* InstrumentSoundTest.cpp in Sources */,

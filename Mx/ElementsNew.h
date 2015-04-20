@@ -2996,6 +2996,18 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Grace minOccurs = 1, maxOccurs = 1 _________ */
+            GracePtr getGrace() const;
+            void setGrace( const GracePtr& value );
+            /* _________ FullNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+            FullNoteGroupPtr getFullNoteGroup() const;
+            void setFullNoteGroup( const FullNoteGroupPtr& value );
+            /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
+            const TieSet& getTieSet() const;
+            void addTie( const TiePtr& value );
+            void removeTie( const TieSetIterConst& value );
+            void clearTieSet();
+            TiePtr getTie( const TieSetIterConst& setIterator ) const;
         private:
             GracePtr myGrace;
             FullNoteGroupPtr myFullNoteGroup;
@@ -3019,6 +3031,15 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Cue minOccurs = 1, maxOccurs = 1 _________ */
+            CuePtr getCue() const;
+            void setCue( const CuePtr& value );
+            /* _________ FullNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+            FullNoteGroupPtr getFullNoteGroup() const;
+            void setFullNoteGroup( const FullNoteGroupPtr& value );
+            /* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+            DurationPtr getDuration() const;
+            void setDuration( const DurationPtr& value );
         private:
             CuePtr myCue;
             FullNoteGroupPtr myFullNoteGroup;
@@ -3041,6 +3062,18 @@ namespace mx
             virtual std::ostream& streamName( std::ostream& os ) const;
             virtual bool hasContents() const;
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ FullNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+            FullNoteGroupPtr getFullNoteGroup() const;
+            void setFullNoteGroup( const FullNoteGroupPtr& value );
+            /* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+            DurationPtr getDuration() const;
+            void setDuration( const DurationPtr& value );
+            /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
+            const TieSet& getTieSet() const;
+            void addTie( const TiePtr& value );
+            void removeTie( const TieSetIterConst& value );
+            void clearTieSet();
+            TiePtr getTie( const TieSetIterConst& setIterator ) const;
         private:
             FullNoteGroupPtr myFullNoteGroup;
             DurationPtr myDuration;

@@ -5438,12 +5438,73 @@ namespace mx
         std::ostream& GraceNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
             myGrace->toStream( os, indentLevel );
+            os << std::endl;
             myFullNoteGroup->streamContents( os, indentLevel, isOneLineOnly );
             for ( auto x : myTieSet )
             {
+                os << std::endl;
                 x->toStream( os, indentLevel );
             }
+            isOneLineOnly = false;
             return os;
+        }
+        /* _________ Grace minOccurs = 1, maxOccurs = 1 _________ */
+        GracePtr GraceNoteGroup::getGrace() const
+        {
+            return myGrace;
+        }
+        void GraceNoteGroup::setGrace( const GracePtr& value )
+        {
+            if ( value )
+            {
+                myGrace = value;
+            }
+        }
+        /* _________ FullNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+        FullNoteGroupPtr GraceNoteGroup::getFullNoteGroup() const
+        {
+            return myFullNoteGroup;
+        }
+        void GraceNoteGroup::setFullNoteGroup( const FullNoteGroupPtr& value )
+        {
+            if ( value )
+            {
+                myFullNoteGroup = value;
+            }
+        }
+        /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
+        const TieSet& GraceNoteGroup::getTieSet() const
+        {
+            return myTieSet;
+        }
+        void GraceNoteGroup::addTie( const TiePtr& value )
+        {
+            if ( value )
+            {
+                if ( myTieSet.size() < 2 )
+                {
+                    myTieSet.push_back( value );
+                }
+            }
+        }
+        void GraceNoteGroup::removeTie( const TieSetIterConst& value )
+        {
+            if ( value != myTieSet.cend() )
+            {
+                myTieSet.erase( value );
+            }
+        }
+        void GraceNoteGroup::clearTieSet()
+        {
+            myTieSet.clear();
+        }
+        TiePtr GraceNoteGroup::getTie( const TieSetIterConst& setIterator ) const
+        {
+            if( setIterator != myTieSet.cend() )
+            {
+                return *setIterator;
+            }
+            return TiePtr();
         }
         
         CueNoteGroup::CueNoteGroup()
@@ -5469,9 +5530,50 @@ namespace mx
         }
         std::ostream& CueNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
+            myCue->toStream( os, indentLevel );
+            os << std::endl;
+            myFullNoteGroup->streamContents( os, indentLevel, isOneLineOnly );
+            os << std::endl;
+            myDuration->toStream( os, indentLevel );
+            isOneLineOnly = false;
             return os;
         }
-        
+        /* _________ Cue minOccurs = 1, maxOccurs = 1 _________ */
+        CuePtr CueNoteGroup::getCue() const
+        {
+            return myCue;
+        }
+        void CueNoteGroup::setCue( const CuePtr& value )
+        {
+            if ( value )
+            {
+                myCue = value;
+            }
+        }
+        /* _________ FullNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+        FullNoteGroupPtr CueNoteGroup::getFullNoteGroup() const
+        {
+            return myFullNoteGroup;
+        }
+        void CueNoteGroup::setFullNoteGroup( const FullNoteGroupPtr& value )
+        {
+            if ( value )
+            {
+                myFullNoteGroup = value;
+            }
+        }
+        /* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+        DurationPtr CueNoteGroup::getDuration() const
+        {
+            return myDuration;
+        }
+        void CueNoteGroup::setDuration( const DurationPtr& value )
+        {
+            if ( value )
+            {
+                myDuration = value;
+            }
+        }
         NormalNoteGroup::NormalNoteGroup()
         :myFullNoteGroup( makeFullNoteGroup() )
         ,myDuration( makeDuration() )
@@ -5495,9 +5597,74 @@ namespace mx
         }
         std::ostream& NormalNoteGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
         {
+            myFullNoteGroup->streamContents( os, indentLevel, isOneLineOnly );
+            os << std::endl;
+            myDuration->toStream( os, indentLevel );
+            for ( auto x : myTieSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel );
+            }
             return os;
         }
-        
+        /* _________ FullNoteGroup minOccurs = 1, maxOccurs = 1 _________ */
+        FullNoteGroupPtr NormalNoteGroup::getFullNoteGroup() const
+        {
+            return myFullNoteGroup;
+        }
+        void NormalNoteGroup::setFullNoteGroup( const FullNoteGroupPtr& value )
+        {
+            if ( value )
+            {
+                myFullNoteGroup = value;
+            }
+        }
+        /* _________ Duration minOccurs = 1, maxOccurs = 1 _________ */
+        DurationPtr NormalNoteGroup::getDuration() const
+        {
+            return myDuration;
+        }
+        void NormalNoteGroup::setDuration( const DurationPtr& value )
+        {
+            if ( value )
+            {
+                myDuration = value;
+            }
+        }
+        /* _________ Tie minOccurs = 0, maxOccurs = 2 _________ */
+        const TieSet& NormalNoteGroup::getTieSet() const
+        {
+            return myTieSet;
+        }
+        void NormalNoteGroup::addTie( const TiePtr& value )
+        {
+            if ( value )
+            {
+                if ( myTieSet.size() < 2 )
+                {
+                    myTieSet.push_back( value );
+                }
+            }
+        }
+        void NormalNoteGroup::removeTie( const TieSetIterConst& value )
+        {
+            if ( value != myTieSet.cend() )
+            {
+                myTieSet.erase( value );
+            }
+        }
+        void NormalNoteGroup::clearTieSet()
+        {
+            myTieSet.clear();
+        }
+        TiePtr NormalNoteGroup::getTie( const TieSetIterConst& setIterator ) const
+        {
+            if( setIterator != myTieSet.cend() )
+            {
+                return *setIterator;
+            }
+            return TiePtr();
+        }
         
 #if 1==0
 #endif
