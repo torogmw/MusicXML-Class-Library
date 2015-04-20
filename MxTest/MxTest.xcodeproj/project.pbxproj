@@ -399,6 +399,7 @@
 		29F6FFB91AE2F75C00CA74E7 /* CreditTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F6FFB71AE2F75C00CA74E7 /* CreditTest.cpp */; };
 		29F9D49F1AE55FED00B3560E /* FullNoteGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F9D49D1AE55FED00B3560E /* FullNoteGroupTest.cpp */; };
 		29F9D4A21AE56B9D00B3560E /* GraceNoteGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F9D4A01AE56B9D00B3560E /* GraceNoteGroupTest.cpp */; };
+		29F9D4A51AE56E6300B3560E /* CueNoteGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F9D4A31AE56E6300B3560E /* CueNoteGroupTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -896,6 +897,8 @@
 		29F9D49E1AE55FED00B3560E /* FullNoteGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullNoteGroupTest.h; sourceTree = "<group>"; };
 		29F9D4A01AE56B9D00B3560E /* GraceNoteGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraceNoteGroupTest.cpp; sourceTree = "<group>"; };
 		29F9D4A11AE56B9D00B3560E /* GraceNoteGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraceNoteGroupTest.h; sourceTree = "<group>"; };
+		29F9D4A31AE56E6300B3560E /* CueNoteGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CueNoteGroupTest.cpp; sourceTree = "<group>"; };
+		29F9D4A41AE56E6300B3560E /* CueNoteGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CueNoteGroupTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1467,6 +1470,8 @@
 				29F9D49E1AE55FED00B3560E /* FullNoteGroupTest.h */,
 				29F9D4A01AE56B9D00B3560E /* GraceNoteGroupTest.cpp */,
 				29F9D4A11AE56B9D00B3560E /* GraceNoteGroupTest.h */,
+				29F9D4A31AE56E6300B3560E /* CueNoteGroupTest.cpp */,
+				29F9D4A41AE56E6300B3560E /* CueNoteGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1646,6 +1651,7 @@
 				29C0B9EB1AAE9398004F86FA /* PerMinuteTest.cpp in Sources */,
 				2935A7371AB5FC3B002859CA /* TrillMarkTest.cpp in Sources */,
 				2935A7231AB5FC3B002859CA /* EyeglassesTest.cpp in Sources */,
+				29F9D4A51AE56E6300B3560E /* CueNoteGroupTest.cpp in Sources */,
 				29774A171AB21FA000BF2205 /* SignTest.cpp in Sources */,
 				29C0B9EF1AAE9398004F86FA /* PullOffTest.cpp in Sources */,
 				29F6FFB91AE2F75C00CA74E7 /* CreditTest.cpp in Sources */,
