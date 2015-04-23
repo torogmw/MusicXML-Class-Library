@@ -3681,5 +3681,94 @@ namespace mx
             PartAttributesPtr myAttributes;
             MusicDataGroupPtr myMusicDataGroup;
         };
+        
+        /*
+         <xs:group name="score-header">
+         <xs:annotation>
+         <xs:documentation>The score-header group contains basic score metadata about the work and movement, score-wide defaults for layout and fonts, credits that appear on the first or following pages, and the part list.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:element name="work" type="work" minOccurs="0"/>
+         <xs:element name="movement-number" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The movement-number element specifies the number of a movement.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="movement-title" type="xs:string" minOccurs="0">
+         <xs:annotation>
+         <xs:documentation>The movement-title element specifies the title of a movement, not including its number.</xs:documentation>
+         </xs:annotation>
+         </xs:element>
+         <xs:element name="identification" type="identification" minOccurs="0"/>
+         <xs:element name="defaults" type="defaults" minOccurs="0"/>
+         <xs:element name="credit" type="credit" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="part-list" type="part-list"/>
+         </xs:sequence>
+         </xs:group>
+         */
+        class ScoreHeaderGroup;
+        using ScoreHeaderGroupPtr = std::shared_ptr<ScoreHeaderGroup>;
+        using ScoreHeaderGroupUPtr = std::unique_ptr<ScoreHeaderGroup>;
+        using ScoreHeaderGroupSet = std::vector<ScoreHeaderGroupPtr>;
+        using ScoreHeaderGroupSetIter = ScoreHeaderGroupSet::iterator;
+        using ScoreHeaderGroupSetIterConst = ScoreHeaderGroupSet::const_iterator;
+        inline ScoreHeaderGroupPtr makeScoreHeaderGroup() { return std::make_shared<ScoreHeaderGroup>(); }
+        class ScoreHeaderGroup : public ElementInterface
+        {
+        public:
+            ScoreHeaderGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Work minOccurs = 0, maxOccurs = 1 _________ */
+            WorkPtr getWork() const;
+            void setWork( const WorkPtr& value );
+            bool getHasWork() const;
+            void setHasWork( const bool value );
+            /* _________ MovementNumber minOccurs = 0, maxOccurs = 1 _________ */
+            MovementNumberPtr getMovementNumber() const;
+            void setMovementNumber( const MovementNumberPtr& value );
+            bool getHasMovementNumber() const;
+            void setHasMovementNumber( const bool value );
+            /* _________ MovementTitle minOccurs = 0, maxOccurs = 1 _________ */
+            MovementTitlePtr getMovementTitle() const;
+            void setMovementTitle( const MovementTitlePtr& value );
+            bool getHasMovementTitle() const;
+            void setHasMovementTitle( const bool value );
+            /* _________ Identification minOccurs = 0, maxOccurs = 1 _________ */
+            IdentificationPtr getIdentification() const;
+            void setIdentification( const IdentificationPtr& value );
+            bool getHasIdentification() const;
+            void setHasIdentification( const bool value );
+            /* _________ Defaults minOccurs = 0, maxOccurs = 1 _________ */
+            DefaultsPtr getDefaults() const;
+            void setDefaults( const DefaultsPtr& value );
+            bool getHasCredit() const;
+            void setHasCredit( const bool value );
+            /* _________ Credit minOccurs = 0, maxOccurs = unbounded _________ */
+            const CreditSet& getCreditSet() const;
+            void addCredit( const CreditPtr& value );
+            void removeCredit( const CreditSetIterConst& value );
+            void clearCreditSet();
+            CreditPtr getCredit( const CreditSetIterConst& setIterator ) const;
+            /* _________ PartList minOccurs = 1, maxOccurs = 1 _________ */
+            PartListPtr getPartList() const;
+            void setPartList( const PartListPtr& value );
+        private:
+            WorkPtr myWork;
+            bool myHasWork;
+            MovementNumberPtr myMovementNumber;
+            bool myHasMovementNumber;
+            MovementTitlePtr myMovementTitle;
+            bool myHasMovementTitle;
+            IdentificationPtr myIdentification;
+            bool myHasIdentification;
+            DefaultsPtr myDefaults;
+            bool myHasDefaults;
+            CreditSet myCreditSet;
+            PartListPtr myPartList;
+        };
     }
 }

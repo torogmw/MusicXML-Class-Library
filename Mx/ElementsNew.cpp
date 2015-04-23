@@ -6990,6 +6990,190 @@ namespace mx
                 myMusicDataGroup = value;
             }
         }
+        
+        ScoreHeaderGroup::ScoreHeaderGroup()
+		{}
+		bool ScoreHeaderGroup::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& ScoreHeaderGroup::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& ScoreHeaderGroup::streamName( std::ostream& os ) const
+		{
+			return os;
+		}
+		bool ScoreHeaderGroup::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& ScoreHeaderGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+			return os;
+		}
+        /*
+         
+         WorkPtr myWork;
+         bool myHasWork;
+         MovementNumberPtr myMovementNumber;
+         bool myHasMovementNumber;
+         MovementTitlePtr myMovementTitle;
+         bool myHasMovementTitle;
+         IdentificationPtr myIdentification;
+         bool myHasIdentification;
+         DefaultsPtr myDefaults;
+         bool myHasDefaults;
+         CreditPtr myCredit;
+         bool myHasCredit;
+         PartListPtr myPartList;
+        
+         */
+        
+        /* _________ Work minOccurs = 0, maxOccurs = 1 _________ */
+        WorkPtr ScoreHeaderGroup::getWork() const
+        {
+            return myWork;
+        }
+        void ScoreHeaderGroup::setWork( const WorkPtr& value )
+        {
+            if ( value )
+            {
+                myWork = value;
+            }
+        }
+        bool ScoreHeaderGroup::getHasWork() const
+        {
+            return myHasWork;
+        }
+        void ScoreHeaderGroup::setHasWork( const bool value )
+        {
+            myHasWork = value;
+        }
+        /* _________ MovementNumber minOccurs = 0, maxOccurs = 1 _________ */
+        MovementNumberPtr ScoreHeaderGroup::getMovementNumber() const
+        {
+            return myMovementNumber;
+        }
+        void ScoreHeaderGroup::setMovementNumber( const MovementNumberPtr& value )
+        {
+            if ( value )
+            {
+                myMovementNumber = value;
+            }
+        }
+        bool ScoreHeaderGroup::getHasMovementNumber() const
+        {
+            return myHasMovementNumber;
+        }
+        void ScoreHeaderGroup::setHasMovementNumber( const bool value )
+        {
+            myHasMovementNumber = value;
+        }
+        /* _________ MovementTitle minOccurs = 0, maxOccurs = 1 _________ */
+        MovementTitlePtr ScoreHeaderGroup::getMovementTitle() const
+        {
+            return myMovementTitle;
+        }
+        void ScoreHeaderGroup::setMovementTitle( const MovementTitlePtr& value )
+        {
+            if ( value )
+            {
+                myMovementTitle = value;
+            }
+        }
+        bool ScoreHeaderGroup::getHasMovementTitle() const
+        {
+            return myHasMovementTitle;
+        }
+        void ScoreHeaderGroup::setHasMovementTitle( const bool value )
+        {
+            myHasMovementTitle = value;
+        }
+        /* _________ Identification minOccurs = 0, maxOccurs = 1 _________ */
+        IdentificationPtr ScoreHeaderGroup::getIdentification() const
+        {
+            return myIdentification;
+        }
+        void ScoreHeaderGroup::setIdentification( const IdentificationPtr& value )
+        {
+            if ( value )
+            {
+                myIdentification = value;
+            }
+        }
+        bool ScoreHeaderGroup::getHasIdentification() const
+        {
+            return myHasIdentification;
+        }
+        void ScoreHeaderGroup::setHasIdentification( const bool value )
+        {
+            myHasIdentification = value;
+        }
+        /* _________ Defaults minOccurs = 0, maxOccurs = 1 _________ */
+        DefaultsPtr ScoreHeaderGroup::getDefaults() const
+        {
+            return myDefaults;
+        }
+        void ScoreHeaderGroup::setDefaults( const DefaultsPtr& value )
+        {
+            if ( value )
+            {
+                myDefaults = value;
+            }
+        }
+        bool ScoreHeaderGroup::getHasCredit() const
+        {
+            return myHasCredit;
+        }
+        void ScoreHeaderGroup::setHasCredit( const bool value )
+        {
+            myHasCredit = value;
+        }
+        /* _________ Credit minOccurs = 0, maxOccurs = unbounded _________ */
+        const CreditSet& ScoreHeaderGroup::getCreditSet() const
+        {
+            return myCreditSet;
+        }
+        void ScoreHeaderGroup::addCredit( const CreditPtr& value )
+        {
+            if ( value )
+            {
+                myCreditSet.push_back( value );
+            }
+        }
+        void ScoreHeaderGroup::removeCredit( const CreditSetIterConst& value )
+        {
+            if ( value != myCreditSet.cend() )
+            {
+                myCreditSet.erase( value );
+            }
+        }
+        void ScoreHeaderGroup::clearCreditSet()
+        {
+            myCreditSet.clear();
+        }
+        CreditPtr ScoreHeaderGroup::getCredit( const CreditSetIterConst& setIterator ) const
+        {
+            if( setIterator != myCreditSet.cend() )
+            {
+                return *setIterator;
+            }
+            return CreditPtr();
+        }
+        /* _________ PartList minOccurs = 1, maxOccurs = 1 _________ */
+        PartListPtr ScoreHeaderGroup::getPartList() const
+        {
+            return myPartList;
+        }
+        void ScoreHeaderGroup::setPartList( const PartListPtr& value )
+        {
+            if ( value )
+            {
+                myPartList = value;
+            }
+        }
 #if 1==0
 #endif
         
