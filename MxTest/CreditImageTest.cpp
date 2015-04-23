@@ -1,6 +1,6 @@
 /*
 5673
-<xs:element name="credit-image" type="image"/>
+<xs:element name="credit-image"xlink:type="image"/>
 <xs:complexType name="image">
 	<xs:annotation>
 		<xs:documentation>The image type is used to include graphical images in a score.</xs:documentation>
@@ -35,10 +35,10 @@ TEST( Test01, CreditImage )
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(<credit-image source="" type=""/>)";
+	std::string expected = R"(<credit-image xlink:source=""xlink:type=""/>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<credit-image source="file/blah" type="Hi there" default-x="0.1"/>)";
+	expected = indentString+indentString+R"(<credit-image xlink:source="file/blah"xlink:type="Hi there" default-x="0.1"/>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	std::stringstream o1;	std::stringstream o2;	bool isOneLineOnly = false;

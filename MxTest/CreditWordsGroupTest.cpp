@@ -113,15 +113,15 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<link href="matthewjamesbriggs.com"/>)" );
+                streamLine( os, i, R"(<link xlink:href="matthewjamesbriggs.com"/>)" );
                 streamLine( os, i, R"(<bookmark id="ID" element="NMToken1"/>)" );
                 streamLine( os, i, R"(<credit-words>Matthew James Briggs</credit-words>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<link href="matthewjamesbriggs.com"/>)" );
-                streamLine( os, i, R"(<link href="somethingelse.com"/>)" );
+                streamLine( os, i, R"(<link xlink:href="matthewjamesbriggs.com"/>)" );
+                streamLine( os, i, R"(<link xlink:href="somethingelse.com"/>)" );
                 streamLine( os, i, R"(<bookmark id="ID" element="NMToken2"/>)" );
                 streamLine( os, i, R"(<bookmark id="ID" element="NMToken3"/>)" );
                 streamLine( os, i, R"(<credit-words>.mjb</credit-words>)", false );

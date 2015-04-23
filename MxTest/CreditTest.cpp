@@ -125,8 +125,8 @@ namespace MxTestHelpers
             case variant::two:
             {
                 streamLine( os, i, R"(<credit page="2">)" );
-                streamLine( os, i+1, R"(<link href="hfrefABC"/>)" );
-                streamLine( os, i+1, R"(<link href="hrefDEF"/>)" );
+                streamLine( os, i+1, R"(<link xlink:href="hfrefABC"/>)" );
+                streamLine( os, i+1, R"(<link xlink:href="hrefDEF"/>)" );
                 streamLine( os, i+1, R"(<bookmark id="ID" element="element1 23"/>)" );
                 streamLine( os, i+1, R"(<bookmark id="ID" element="elemtn673"/>)" );
                 tgenCreditChoiceExpected( os, i+1, v );
@@ -139,7 +139,7 @@ namespace MxTestHelpers
                 streamLine( os, i, R"(<credit page="3">)" );
                 streamLine( os, i+1, R"(<credit-type>composer</credit-type>)" );
                 streamLine( os, i+1, R"(<credit-type>lyricist</credit-type>)" );
-                streamLine( os, i+1, R"(<link href="sdfljkhsldjfkg"/>)" );
+                streamLine( os, i+1, R"(<link xlink:href="sdfljkhsldjfkg"/>)" );
                 streamLine( os, i+1, R"(<bookmark id="ID" element="sdf89g7sd0f67g"/>)" );
                 tgenCreditChoiceExpected( os, i+1, v );
                 os << std::endl;

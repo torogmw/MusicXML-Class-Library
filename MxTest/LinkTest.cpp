@@ -39,10 +39,10 @@ TEST( Test01, Link )
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(<link href=""/>)";
+	std::string expected = R"(<link xlink:href=""/>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<link href="" title="" show="replace" default-x="0.1"/>)";
+	expected = indentString+indentString+R"(<link xlink:href="" title="" show="replace" default-x="0.1"/>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	std::stringstream o1;	std::stringstream o2;	bool isOneLineOnly = false;

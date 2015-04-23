@@ -108,7 +108,7 @@ namespace MxTestHelpers
                 streamLine( os, i, R"(<work>)" );
                 streamLine( os, i+1, R"(<work-number>1</work-number>)" );
                 streamLine( os, i+1, R"(<work-title>Freezing Pieces</work-title>)" );
-                streamLine( os, i+1, R"(<opus href="//Macintosh HD/SomeFolder/SomeFile.xml" type="simple" actuate="onRequest"/>)" );
+                streamLine( os, i+1, R"(<opus xlink:href="//Macintosh HD/SomeFolder/SomeFile.xml" xlink:type="simple" xlink:actuate="onRequest"/>)" );
                 streamLine( os, i, R"(</work>)", false );
             }
                 break;

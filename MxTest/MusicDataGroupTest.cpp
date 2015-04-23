@@ -216,7 +216,7 @@ namespace MxTestHelpers
                 os << std::endl;
                 tgenBarlineExpected( os, i, v );
                 os << std::endl;
-                streamLine( os, i, R"(<link href="linkStringThree"/>)", false );
+                streamLine( os, i, R"(<link xlink:href="linkStringThree"/>)", false );
             }
                 break;
             default:

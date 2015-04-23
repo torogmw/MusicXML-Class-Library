@@ -17902,12 +17902,12 @@ namespace mx
         {
             if ( hasValues() )
             {
-                streamAttribute( os, href, "href", hasHref );
-                streamAttribute( os, type, "type", hasType );
-                streamAttribute( os, role, "role", hasRole );
-                streamAttribute( os, title, "title", hasTitle );
-                streamAttribute( os, show, "show", hasShow );
-                streamAttribute( os, actuate, "actuate", hasActuate );
+                streamAttribute( os, href, "xlink:href", hasHref );
+                streamAttribute( os, type, "xlink:type", hasType );
+                streamAttribute( os, role, "xlink:role", hasRole );
+                streamAttribute( os, title, "xlink:title", hasTitle );
+                streamAttribute( os, show, "xlink:show", hasShow );
+                streamAttribute( os, actuate, "xlink:actuate", hasActuate );
                 streamAttribute( os, name, "name", hasName );
                 streamAttribute( os, element, "element", hasElement );
                 streamAttribute( os, position, "position", hasPosition );
@@ -18326,12 +18326,12 @@ namespace mx
         {
             if ( hasValues() )
             {
-                streamAttribute( os, href, "href", hasHref );
-                streamAttribute( os, type, "type", hasType );
-                streamAttribute( os, role, "role", hasRole );
-                streamAttribute( os, title, "title", hasTitle );
-                streamAttribute( os, show, "show", hasShow );
-                streamAttribute( os, actuate, "actuate", hasActuate );
+                streamAttribute( os, href, "xlink:href", hasHref );
+                streamAttribute( os, type, "xlink:type", hasType );
+                streamAttribute( os, role, "xlink:role", hasRole );
+                streamAttribute( os, title, "xlink:title", hasTitle );
+                streamAttribute( os, show, "xlink:show", hasShow );
+                streamAttribute( os, actuate, "xlink:actuate", hasActuate );
             }
             return os;
         }
