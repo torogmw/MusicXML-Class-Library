@@ -6991,8 +6991,37 @@ namespace mx
             }
         }
         
+        /*
+         
+         WorkPtr myWork;
+         bool myHasWork;
+         MovementNumberPtr myMovementNumber;
+         bool myHasMovementNumber;
+         MovementTitlePtr myMovementTitle;
+         bool myHasMovementTitle;
+         IdentificationPtr myIdentification;
+         bool myHasIdentification;
+         DefaultsPtr myDefaults;
+         bool myHasDefaults;
+         CreditPtr myCredit;
+         bool myHasCredit;
+         PartListPtr myPartList;
+         
+         */
         ScoreHeaderGroup::ScoreHeaderGroup()
-		{}
+		:myWork( makeWork() )
+        ,myHasWork( false )
+        ,myMovementNumber( makeMovementNumber() )
+        ,myHasMovementNumber( false )
+        ,myMovementTitle( makeMovementTitle() )
+        ,myHasMovementTitle( false )
+        ,myIdentification( makeIdentification() )
+        ,myHasIdentification( false )
+        ,myDefaults( makeDefaults() )
+        ,myHasDefaults( false )
+        ,myCreditSet()
+        ,myPartList( makePartList() )
+        {}
 		bool ScoreHeaderGroup::hasAttributes() const
 		{
 			return false;
@@ -7011,26 +7040,68 @@ namespace mx
 		}
 		std::ostream& ScoreHeaderGroup::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
+            bool isFirst = true;
+            if ( myHasWork )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                myWork->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            if ( myHasMovementNumber )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                myMovementNumber->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            if ( myHasMovementTitle )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                myMovementTitle->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            if ( myHasIdentification )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                myIdentification->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            if ( myHasDefaults )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                myDefaults->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            for ( auto x : myCreditSet )
+            {
+                if ( !isFirst )
+                {
+                    os << std::endl;
+                }
+                x->toStream( os, indentLevel );
+                isFirst = false;
+            }
+            if ( !isFirst )
+            {
+                os << std::endl;
+            }
+            myPartList->toStream( os, indentLevel );
 			return os;
 		}
-        /*
-         
-         WorkPtr myWork;
-         bool myHasWork;
-         MovementNumberPtr myMovementNumber;
-         bool myHasMovementNumber;
-         MovementTitlePtr myMovementTitle;
-         bool myHasMovementTitle;
-         IdentificationPtr myIdentification;
-         bool myHasIdentification;
-         DefaultsPtr myDefaults;
-         bool myHasDefaults;
-         CreditPtr myCredit;
-         bool myHasCredit;
-         PartListPtr myPartList;
-        
-         */
-        
         /* _________ Work minOccurs = 0, maxOccurs = 1 _________ */
         WorkPtr ScoreHeaderGroup::getWork() const
         {
@@ -7123,13 +7194,13 @@ namespace mx
                 myDefaults = value;
             }
         }
-        bool ScoreHeaderGroup::getHasCredit() const
+        bool ScoreHeaderGroup::getHasDefaults() const
         {
-            return myHasCredit;
+            return myHasDefaults;
         }
-        void ScoreHeaderGroup::setHasCredit( const bool value )
+        void ScoreHeaderGroup::setHasDefaults( const bool value )
         {
-            myHasCredit = value;
+            myHasDefaults = value;
         }
         /* _________ Credit minOccurs = 0, maxOccurs = unbounded _________ */
         const CreditSet& ScoreHeaderGroup::getCreditSet() const

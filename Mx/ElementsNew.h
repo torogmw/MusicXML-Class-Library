@@ -3745,8 +3745,8 @@ namespace mx
             /* _________ Defaults minOccurs = 0, maxOccurs = 1 _________ */
             DefaultsPtr getDefaults() const;
             void setDefaults( const DefaultsPtr& value );
-            bool getHasCredit() const;
-            void setHasCredit( const bool value );
+            bool getHasDefaults() const;
+            void setHasDefaults( const bool value );
             /* _________ Credit minOccurs = 0, maxOccurs = unbounded _________ */
             const CreditSet& getCreditSet() const;
             void addCredit( const CreditPtr& value );
