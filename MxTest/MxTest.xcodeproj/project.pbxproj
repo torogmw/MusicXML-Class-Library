@@ -226,7 +226,6 @@
 		298B36181AC900930021CD1E /* VirtualInstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B36161AC900930021CD1E /* VirtualInstrumentTest.cpp */; };
 		298B45ED1A9B942A0014CAED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B45EC1A9B942A0014CAED /* main.cpp */; };
 		298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FA1A9B948E0014CAED /* libMx.a */; };
-		298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298B45FC1A9B94910014CAED /* libCppUnitLite.a */; };
 		298C81CF1AB6A8DC006619A9 /* ArpeggiateTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298C81B11AB6A8DC006619A9 /* ArpeggiateTest.cpp */; };
 		298C81D01AB6A8DC006619A9 /* BarreTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298C81B21AB6A8DC006619A9 /* BarreTest.cpp */; };
 		298C81D11AB6A8DC006619A9 /* BookmarkTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298C81B31AB6A8DC006619A9 /* BookmarkTest.cpp */; };
@@ -396,6 +395,10 @@
 		29D48C8E1AE4777D00930140 /* PropertiesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D48C8C1AE4777D00930140 /* PropertiesTest.cpp */; };
 		29D48C911AE49D8900930140 /* ScorePartTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D48C8F1AE49D8900930140 /* ScorePartTest.cpp */; };
 		29D48C941AE4AEA300930140 /* NotationsChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D48C921AE4AEA300930140 /* NotationsChoiceTest.cpp */; };
+		29D728911AE9AC2100806D33 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D728871AE9AC2100806D33 /* Failure.cpp */; };
+		29D728921AE9AC2100806D33 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D728891AE9AC2100806D33 /* Test.cpp */; };
+		29D728931AE9AC2100806D33 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7288C1AE9AC2100806D33 /* TestRegistry.cpp */; };
+		29D728941AE9AC2100806D33 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7288E1AE9AC2100806D33 /* TestResult.cpp */; };
 		29D8C46B1AC38078008B5471 /* MetronomeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */; };
 		29D9213D1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */; };
 		29D921401AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D9213E1AC714DC00F39361 /* ElisionSyllabicTextGroupTest.cpp */; };
@@ -910,6 +913,16 @@
 		29D48C901AE49D8900930140 /* ScorePartTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScorePartTest.h; sourceTree = "<group>"; };
 		29D48C921AE4AEA300930140 /* NotationsChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NotationsChoiceTest.cpp; sourceTree = "<group>"; };
 		29D48C931AE4AEA300930140 /* NotationsChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotationsChoiceTest.h; sourceTree = "<group>"; };
+		29D728871AE9AC2100806D33 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Failure.cpp; path = CppUnitLite/Failure.cpp; sourceTree = SOURCE_ROOT; };
+		29D728881AE9AC2100806D33 /* Failure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Failure.h; path = CppUnitLite/Failure.h; sourceTree = SOURCE_ROOT; };
+		29D728891AE9AC2100806D33 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = CppUnitLite/Test.cpp; sourceTree = SOURCE_ROOT; };
+		29D7288A1AE9AC2100806D33 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test.h; path = CppUnitLite/Test.h; sourceTree = SOURCE_ROOT; };
+		29D7288B1AE9AC2100806D33 /* TestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestHarness.h; path = CppUnitLite/TestHarness.h; sourceTree = SOURCE_ROOT; };
+		29D7288C1AE9AC2100806D33 /* TestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestRegistry.cpp; path = CppUnitLite/TestRegistry.cpp; sourceTree = SOURCE_ROOT; };
+		29D7288D1AE9AC2100806D33 /* TestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestRegistry.h; path = CppUnitLite/TestRegistry.h; sourceTree = SOURCE_ROOT; };
+		29D7288E1AE9AC2100806D33 /* TestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestResult.cpp; path = CppUnitLite/TestResult.cpp; sourceTree = SOURCE_ROOT; };
+		29D7288F1AE9AC2100806D33 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestResult.h; path = CppUnitLite/TestResult.h; sourceTree = SOURCE_ROOT; };
+		29D728901AE9AC2100806D33 /* TestSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestSelector.h; path = CppUnitLite/TestSelector.h; sourceTree = SOURCE_ROOT; };
 		29D8C46A1AC38078008B5471 /* MetronomeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetronomeTest.cpp; sourceTree = "<group>"; };
 		29D9213B1AC70DD900F39361 /* ElisionSyllabicGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElisionSyllabicGroupTest.cpp; sourceTree = "<group>"; };
 		29D9213C1AC70DD900F39361 /* ElisionSyllabicGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElisionSyllabicGroupTest.h; sourceTree = "<group>"; };
@@ -949,7 +962,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				298B45FB1A9B948E0014CAED /* libMx.a in Frameworks */,
-				298B45FD1A9B94910014CAED /* libCppUnitLite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,7 +1144,7 @@
 			children = (
 				292D02D91ABE1D0500005E61 /* Helpers */,
 				29F8F0A01AB62EE300788785 /* Links */,
-				298B45EB1A9B942A0014CAED /* Main */,
+				298B45EB1A9B942A0014CAED /* CppUnitLite */,
 				298B45EA1A9B942A0014CAED /* Products */,
 				29F8F09F1AB62E9200788785 /* Tests */,
 			);
@@ -1146,12 +1158,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		298B45EB1A9B942A0014CAED /* Main */ = {
+		298B45EB1A9B942A0014CAED /* CppUnitLite */ = {
 			isa = PBXGroup;
 			children = (
+				29D728871AE9AC2100806D33 /* Failure.cpp */,
+				29D728881AE9AC2100806D33 /* Failure.h */,
+				29D728891AE9AC2100806D33 /* Test.cpp */,
+				29D7288A1AE9AC2100806D33 /* Test.h */,
+				29D7288B1AE9AC2100806D33 /* TestHarness.h */,
+				29D7288C1AE9AC2100806D33 /* TestRegistry.cpp */,
+				29D7288D1AE9AC2100806D33 /* TestRegistry.h */,
+				29D7288E1AE9AC2100806D33 /* TestResult.cpp */,
+				29D7288F1AE9AC2100806D33 /* TestResult.h */,
+				29D728901AE9AC2100806D33 /* TestSelector.h */,
 				298B45EC1A9B942A0014CAED /* main.cpp */,
 			);
-			name = Main;
+			name = CppUnitLite;
 			path = MxTest;
 			sourceTree = "<group>";
 		};
@@ -1640,6 +1662,7 @@
 				29774A1D1AB21FA000BF2205 /* StaffSizeTest.cpp in Sources */,
 				29E9CAF01AE5704300CCD15B /* NormalNoteGroupTest.cpp in Sources */,
 				29C0B9C01AAE9398004F86FA /* ElisionTest.cpp in Sources */,
+				29D728931AE9AC2100806D33 /* TestRegistry.cpp in Sources */,
 				29884C2D1AC241B100DD2209 /* FrameNoteTest.cpp in Sources */,
 				29CCA18D1AC929FE007BFE5A /* DegreeTest.cpp in Sources */,
 				29BBED2C1ACA594200C16802 /* PitchTest.cpp in Sources */,
@@ -1655,6 +1678,7 @@
 				29C0B9EE1AAE9398004F86FA /* PrincipalVoiceTest.cpp in Sources */,
 				297749FD1AB21FA000BF2205 /* MetronomeRelationTest.cpp in Sources */,
 				2935A72F1AB5FC3B002859CA /* SnapPizzicatoTest.cpp in Sources */,
+				29D728941AE9AC2100806D33 /* TestResult.cpp in Sources */,
 				297749E51AB21FA000BF2205 /* ElevationTest.cpp in Sources */,
 				29C0B9D21AAE9398004F86FA /* HoleClosedTest.cpp in Sources */,
 				29D48C941AE4AEA300930140 /* NotationsChoiceTest.cpp in Sources */,
@@ -1874,6 +1898,7 @@
 				29774A021AB21FA000BF2205 /* MidiProgramTest.cpp in Sources */,
 				297749FC1AB21FA000BF2205 /* MetalTest.cpp in Sources */,
 				291AFC1D1AE8C69200F0E1DD /* ScorePartwiseTest.cpp in Sources */,
+				29D728921AE9AC2100806D33 /* Test.cpp in Sources */,
 				290D7C0D1AA38F9C0081FBB5 /* NumberOrNormal.cpp in Sources */,
 				2935A71C1AB5FC3B002859CA /* DampAllTest.cpp in Sources */,
 				2904B0AA1AC1E1A300B6C6C2 /* StaffTuningTest.cpp in Sources */,
@@ -1904,6 +1929,7 @@
 				290460CF1AE3642C008347D3 /* TechnicalChoiceTest.cpp in Sources */,
 				29C0B9FC1AAE9398004F86FA /* TupletTypeTest.cpp in Sources */,
 				29CEB4AE1AB4C0FA00D6AEFC /* SoundingPitchTest.cpp in Sources */,
+				29D728911AE9AC2100806D33 /* Failure.cpp in Sources */,
 				29C0B9FA1AAE9398004F86FA /* TremoloTest.cpp in Sources */,
 				29C0B9F81AAE9398004F86FA /* TapTest.cpp in Sources */,
 				29774A301AB21FA000BF2205 /* VoiceTest.cpp in Sources */,
@@ -2060,7 +2086,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "../**";
+				USER_HEADER_SEARCH_PATHS = "../** ./CppUnitLite";
 			};
 			name = Debug;
 		};
@@ -2093,7 +2119,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "../**";
+				USER_HEADER_SEARCH_PATHS = "../** ./CppUnitLite";
 			};
 			name = Release;
 		};
