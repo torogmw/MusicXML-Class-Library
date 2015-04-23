@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		290A23471AC072500038C1A7 /* ElementsNew.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290A23451AC072500038C1A7 /* ElementsNew.cpp */; };
-		290A23481AC072500038C1A7 /* ElementsNew.h in Headers */ = {isa = PBXBuildFile; fileRef = 290A23461AC072500038C1A7 /* ElementsNew.h */; };
 		290D7C101AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D7C0E1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp */; };
 		290D7C111AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 290D7C0F1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h */; };
 		292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */; };
@@ -38,8 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		290A23451AC072500038C1A7 /* ElementsNew.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElementsNew.cpp; sourceTree = "<group>"; };
-		290A23461AC072500038C1A7 /* ElementsNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ElementsNew.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		290D7C0E1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PositiveIntegerOrEmpty.cpp; sourceTree = "<group>"; };
 		290D7C0F1AA3937B0081FBB5 /* PositiveIntegerOrEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositiveIntegerOrEmpty.h; sourceTree = "<group>"; };
 		292D126B1AA2A2740079EF22 /* YesNoNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = YesNoNumber.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -125,8 +121,6 @@
 				298B360E1AC8F7400021CD1E /* Types */,
 				29D632151AA54E9100E6E28B /* Elements.cpp */,
 				29D632161AA54E9100E6E28B /* Elements.h */,
-				290A23451AC072500038C1A7 /* ElementsNew.cpp */,
-				290A23461AC072500038C1A7 /* ElementsNew.h */,
 				298B45DA1A9B93FF0014CAED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,7 +146,6 @@
 				2971FBED1AA580C600547E82 /* AttributesInterface.h in Headers */,
 				292D126E1AA2A2740079EF22 /* YesNoNumber.h in Headers */,
 				29E801B91A9F983800EDBE41 /* Strings.h in Headers */,
-				290A23481AC072500038C1A7 /* ElementsNew.h in Headers */,
 				29A884FB1A9D5FD800F417CE /* Decimals.h in Headers */,
 				2971FBF11AA583D400547E82 /* ElementInterface.h in Headers */,
 				29D10BB41A9BEF4E00F03CE6 /* Enums.h in Headers */,
@@ -219,7 +212,6 @@
 				29ED3EBD1AA1319E009FAF55 /* Color.cpp in Sources */,
 				29E801B81A9F983800EDBE41 /* Strings.cpp in Sources */,
 				29D632171AA54E9100E6E28B /* Elements.cpp in Sources */,
-				290A23471AC072500038C1A7 /* ElementsNew.cpp in Sources */,
 				295BAFB81AA23C5B002CAB3F /* FontSize.cpp in Sources */,
 				298949C71A9CE9D60089D4F0 /* Integers.cpp in Sources */,
 				292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */,
