@@ -93,6 +93,7 @@
 		2962360D1AC5CE1600F3E007 /* FigureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962360B1AC5CE1600F3E007 /* FigureTest.cpp */; };
 		2962A3711AE2E37E00903EB0 /* CreditWordsGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962A36F1AE2E37E00903EB0 /* CreditWordsGroupTest.cpp */; };
 		2962A3741AE2EF8200903EB0 /* CreditChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962A3721AE2EF8200903EB0 /* CreditChoiceTest.cpp */; };
+		2967EE591AE88C7300B706FD /* PartListTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2967EE571AE88C7300B706FD /* PartListTest.cpp */; };
 		296B1AFC1AD183890095FCAA /* BendChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */; };
 		296C11911ACF77B6004FAD06 /* DefaultsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */; };
 		2971F50A1AC320B0007C2EF7 /* MetronomeTupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */; };
@@ -543,6 +544,8 @@
 		2962A3701AE2E37E00903EB0 /* CreditWordsGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditWordsGroupTest.h; sourceTree = "<group>"; };
 		2962A3721AE2EF8200903EB0 /* CreditChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditChoiceTest.cpp; sourceTree = "<group>"; };
 		2962A3731AE2EF8200903EB0 /* CreditChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditChoiceTest.h; sourceTree = "<group>"; };
+		2967EE571AE88C7300B706FD /* PartListTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartListTest.cpp; sourceTree = "<group>"; };
+		2967EE581AE88C7300B706FD /* PartListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartListTest.h; sourceTree = "<group>"; };
 		296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BendChoiceTest.cpp; sourceTree = "<group>"; };
 		296B1AFB1AD183890095FCAA /* BendChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BendChoiceTest.h; sourceTree = "<group>"; };
 		296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = DefaultsTest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -1500,6 +1503,8 @@
 				29A565051AC49D020059CACD /* Old */,
 				29C30BB91AE5B4B5006C1ECD /* PartGroupOrScorePartTest.cpp */,
 				29C30BBA1AE5B4B5006C1ECD /* PartGroupOrScorePartTest.h */,
+				2967EE571AE88C7300B706FD /* PartListTest.cpp */,
+				2967EE581AE88C7300B706FD /* PartListTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1696,6 +1701,7 @@
 				2935A7251AB5FC3B002859CA /* FingernailsTest.cpp in Sources */,
 				29C0B9F11AAE9398004F86FA /* RelationTest.cpp in Sources */,
 				29CEB49E1AB4C0FA00D6AEFC /* BeatUnitDotTest.cpp in Sources */,
+				2967EE591AE88C7300B706FD /* PartListTest.cpp in Sources */,
 				298C81EA1AB6A8DC006619A9 /* TurnTest.cpp in Sources */,
 				29C0B9F61AAE9398004F86FA /* StemTest.cpp in Sources */,
 				298C81E51AB6A8DC006619A9 /* StringMuteTest.cpp in Sources */,

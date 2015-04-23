@@ -6383,6 +6383,124 @@ namespace mx
                 myScorePart = value;
             }
         }
+        
+        
+        
+        /* 6388 */
+        PartList::PartList()
+		:myPartGroupSet()
+        ,myScorePart( makeScorePart() )
+        ,myPartGroupOrScorePartSet()
+		{}
+		bool PartList::hasAttributes() const
+		{
+			return false;
+		}
+		std::ostream& PartList::streamAttributes( std::ostream& os ) const
+		{
+			return os;
+		}
+		std::ostream& PartList::streamName( std::ostream& os ) const
+		{
+			os << "part-list";
+			return os;
+		}
+		bool PartList::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& PartList::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            for ( auto x : myPartGroupSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+            myScorePart->toStream( os, indentLevel+1 );
+            for ( auto x : myPartGroupOrScorePartSet )
+            {
+                os << std::endl;
+                x->streamContents( os, indentLevel+1, isOneLineOnly );
+            }
+			isOneLineOnly = false;
+			os << std::endl;
+			return os;
+		}
+        /* _________ PartGroup minOccurs = 0, maxOccurs = unbounded _________ */
+        const PartGroupSet& PartList::getPartGroupSet() const
+        {
+            return myPartGroupSet;
+        }
+        void PartList::addPartGroup( const PartGroupPtr& value )
+        {
+            if ( value )
+            {
+                myPartGroupSet.push_back( value );
+            }
+        }
+        void PartList::removePartGroup( const PartGroupSetIterConst& value )
+        {
+            if ( value != myPartGroupSet.cend() )
+            {
+                myPartGroupSet.erase( value );
+            }
+        }
+        void PartList::clearPartGroupSet()
+        {
+            myPartGroupSet.clear();
+        }
+        PartGroupPtr PartList::getPartGroup( const PartGroupSetIterConst& setIterator ) const
+        {
+            if( setIterator != myPartGroupSet.cend() )
+            {
+                return *setIterator;
+            }
+            return PartGroupPtr();
+        }
+        /* _________ ScorePart minOccurs = 1, maxOccurs = 1 _________ */
+        ScorePartPtr PartList::getScorePart() const
+        {
+            return myScorePart;
+        }
+        void PartList::setScorePart( const ScorePartPtr& value )
+        {
+            if ( value )
+            {
+                myScorePart = value;
+            }
+        }
+        /* _________ PartGroupOrScorePart minOccurs = 0, maxOccurs = unbounded _________ */
+        const PartGroupOrScorePartSet& PartList::getPartGroupOrScorePartSet() const
+        {
+            return myPartGroupOrScorePartSet;
+        }
+        void PartList::addPartGroupOrScorePart( const PartGroupOrScorePartPtr& value )
+        {
+            if ( value )
+            {
+                myPartGroupOrScorePartSet.push_back( value );
+            }
+        }
+        void PartList::removePartGroupOrScorePart( const PartGroupOrScorePartSetIterConst& value )
+        {
+            if ( value != myPartGroupOrScorePartSet.cend() )
+            {
+                myPartGroupOrScorePartSet.erase( value );
+            }
+        }
+        void PartList::clearPartGroupOrScorePartSet()
+        {
+            myPartGroupOrScorePartSet.clear();
+        }
+        PartGroupOrScorePartPtr PartList::getPartGroupOrScorePart( const PartGroupOrScorePartSetIterConst& setIterator ) const
+        {
+            if( setIterator != myPartGroupOrScorePartSet.cend() )
+            {
+                return *setIterator;
+            }
+            return PartGroupOrScorePartPtr();
+        }
 #if 1==0
 #endif
         
