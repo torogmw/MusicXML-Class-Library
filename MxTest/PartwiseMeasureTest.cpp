@@ -1,7 +1,7 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "MeasureTest.h"
+#include "PartwiseMeasureTest.h"
 #include "MusicDataGroupTest.h"
 
 using namespace mx::e;
@@ -14,9 +14,9 @@ using namespace MxTestHelpers;
 TEST( Test01, Measure )
 {
     variant v = variant::one;
-	MeasurePtr object = tgenMeasure( v );
+	PartwiseMeasurePtr object = tgenPartwiseMeasure( v );
 	stringstream expected;
-	tgenMeasureExpected( expected, 1, v );
+	tgenPartwiseMeasureExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -27,9 +27,9 @@ TEST( Test01, Measure )
 TEST( Test02, Measure )
 {
     variant v = variant::two;
-	MeasurePtr object = tgenMeasure( v );
+	PartwiseMeasurePtr object = tgenPartwiseMeasure( v );
 	stringstream expected;
-	tgenMeasureExpected( expected, 1, v );
+	tgenPartwiseMeasureExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -40,9 +40,9 @@ TEST( Test02, Measure )
 TEST( Test03, Measure )
 {
     variant v = variant::three;
-	MeasurePtr object = tgenMeasure( v );
+	PartwiseMeasurePtr object = tgenPartwiseMeasure( v );
 	stringstream expected;
-	tgenMeasureExpected( expected, 1, v );
+	tgenPartwiseMeasureExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -53,9 +53,9 @@ TEST( Test03, Measure )
 #endif
 namespace MxTestHelpers
 {
-    MeasurePtr tgenMeasure( variant v )
+    PartwiseMeasurePtr tgenPartwiseMeasure( variant v )
     {
-        MeasurePtr o = makeMeasure();
+        PartwiseMeasurePtr o = makePartwiseMeasure();
         switch ( v )
         {
             case variant::one:
@@ -84,7 +84,7 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenMeasureExpected( std::ostream& os, int i, variant v )
+    void tgenPartwiseMeasureExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )

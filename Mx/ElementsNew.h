@@ -3577,17 +3577,17 @@ namespace mx
             bool hasWidth;
         };
 
-        class Measure;
-        using MeasurePtr = std::shared_ptr<Measure>;
-        using MeasureUPtr = std::unique_ptr<Measure>;
-        using MeasureSet = std::vector<MeasurePtr>;
-        using MeasureSetIter = MeasureSet::iterator;
-        using MeasureSetIterConst = MeasureSet::const_iterator;
-        inline MeasurePtr makeMeasure() { return std::make_shared<Measure>(); }
-        class Measure : public ElementInterface
+        class PartwiseMeasure;
+        using PartwiseMeasurePtr = std::shared_ptr<PartwiseMeasure>;
+        using PartwiseMeasureUPtr = std::unique_ptr<PartwiseMeasure>;
+        using PartwiseMeasureSet = std::vector<PartwiseMeasurePtr>;
+        using PartwiseMeasureSetIter = PartwiseMeasureSet::iterator;
+        using PartwiseMeasureSetIterConst = PartwiseMeasureSet::const_iterator;
+        inline PartwiseMeasurePtr makePartwiseMeasure() { return std::make_shared<PartwiseMeasure>(); }
+        class PartwiseMeasure : public ElementInterface
         {
         public:
-            Measure();
+            PartwiseMeasure();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
@@ -3674,15 +3674,15 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             PartAttributesPtr getAttributes() const;
             void setAttributes( const PartAttributesPtr& value );
-            /* _________ Measure minOccurs = 0, maxOccurs = unbounded _________ */
-            const MeasureSet& getMeasureSet() const;
-            void addMeasure( const MeasurePtr& value );
-            void removeMeasure( const MeasureSetIterConst& value );
-            void clearMeasureSet();
-            MeasurePtr getMeasure( const MeasureSetIterConst& setIterator ) const;
+            /* _________ PartwiseMeasure minOccurs = 0, maxOccurs = unbounded _________ */
+            const PartwiseMeasureSet& getPartwiseMeasureSet() const;
+            void addPartwiseMeasure( const PartwiseMeasurePtr& value );
+            void removePartwiseMeasure( const PartwiseMeasureSetIterConst& value );
+            void clearPartwiseMeasureSet();
+            PartwiseMeasurePtr getPartwiseMeasure( const PartwiseMeasureSetIterConst& setIterator ) const;
         private:
             PartAttributesPtr myAttributes;
-            MeasureSet myMeasureSet;
+            PartwiseMeasureSet myPartwiseMeasureSet;
         };
         
         /*
@@ -3850,6 +3850,91 @@ namespace mx
             PartwisePartSet myPartwisePartSet;
         };
 
+        
+        
+        
+        /*
+         <xs:element name="part" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:group ref="music-data"/>
+         <xs:attributeGroup ref="part-attributes"/>
+         </xs:complexType>
+         </xs:element>
+         */
+        class TimewisePart;
+        using TimewisePartPtr = std::shared_ptr<TimewisePart>;
+        using TimewisePartUPtr = std::unique_ptr<TimewisePart>;
+        using TimewisePartSet = std::vector<TimewisePartPtr>;
+        using TimewisePartSetIter = TimewisePartSet::iterator;
+        using TimewisePartSetIterConst = TimewisePartSet::const_iterator;
+        inline TimewisePartPtr makeTimewisePart() { return std::make_shared<TimewisePart>(); }
+        class TimewisePart : public ElementInterface
+        {
+        public:
+            TimewisePart();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            PartAttributesPtr getAttributes() const;
+            void setAttributes( const PartAttributesPtr& value );
+            /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
+            MusicDataGroupPtr getMusicDataGroup() const;
+            void setMusicDataGroup( const MusicDataGroupPtr& value );
+        private:
+            PartAttributesPtr myAttributes;
+            MusicDataGroupPtr myMusicDataGroup;
+        };
+        
+        struct MeasureAttributes;
+        using MeasureAttributesPtr = std::shared_ptr<MeasureAttributes>;
+        
+//        struct MeasureAttributes : public AttributesInterface
+//        {
+//        public:
+//            MeasureAttributes();
+//            virtual bool hasValues() const;
+//            virtual std::ostream& toStream( std::ostream& os ) const;
+//            types::XsToken number;
+//            types::YesNo implicit;
+//            types::YesNo nonControlling;
+//            types::TenthsValue width;
+//            const 	bool hasNumber;
+//            bool hasImplicit;
+//            bool hasNonControlling;
+//            bool hasWidth;
+//        };
+//        
+        class TimewiseMeasure;
+        using TimewiseMeasurePtr = std::shared_ptr<TimewiseMeasure>;
+        using TimewiseMeasureUPtr = std::unique_ptr<TimewiseMeasure>;
+        using TimewiseMeasureSet = std::vector<TimewiseMeasurePtr>;
+        using TimewiseMeasureSetIter = TimewiseMeasureSet::iterator;
+        using TimewiseMeasureSetIterConst = TimewiseMeasureSet::const_iterator;
+        inline TimewiseMeasurePtr makeTimewiseMeasure() { return std::make_shared<TimewiseMeasure>(); }
+        class TimewiseMeasure : public ElementInterface
+        {
+        public:
+            TimewiseMeasure();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            MeasureAttributesPtr getAttributes() const;
+            void setAttributes( const MeasureAttributesPtr& value );
+            /* _________ TimewisePart minOccurs = 1, maxOccurs = unbounded _________ */
+            const TimewisePartSet& getTimewisePartSet() const;
+            void addTimewisePart( const TimewisePartPtr& value );
+            void removeTimewisePart( const TimewisePartSetIterConst& value );
+            void clearTimewisePartSet();
+            TimewisePartPtr getTimewisePart( const TimewisePartSetIterConst& setIterator ) const;
+        private:
+            MeasureAttributesPtr myAttributes;
+            TimewisePartSet myTimewisePartSet;
+        };
+        
         /* <!--  ID = 6430 [6430] ------------------------->
          <!-- min=1 max=1 RequiredSingleOccurence  -->
          <!-- MsItemElementKind::composite -->
@@ -3914,16 +3999,18 @@ namespace mx
             /* _________ ScoreHeaderGroup minOccurs = 1, maxOccurs = 1 _________ */
             ScoreHeaderGroupPtr getScoreHeaderGroup() const;
             void setScoreHeaderGroup( const ScoreHeaderGroupPtr& value );
-            /* _________ Part minOccurs = 1, maxOccurs = unbounded _________ */
-            const PartwisePartSet& getPartwisePartSet() const;
-            void addPartwisePart( const PartwisePartPtr& value );
-            void removePartwisePart( const PartwisePartSetIterConst& value );
-            void clearPartwisePartSet();
-            PartwisePartPtr getPartwisePart( const PartwisePartSetIterConst& setIterator ) const;
+            /* _________ TimewiseMeasure minOccurs = 1, maxOccurs = unbounded _________ */
+            const TimewiseMeasureSet& getTimewiseMeasureSet() const;
+            void addTimewiseMeasure( const TimewiseMeasurePtr& value );
+            void removeTimewiseMeasure( const TimewiseMeasureSetIterConst& value );
+            void clearTimewiseMeasureSet();
+            TimewiseMeasurePtr getTimewiseMeasure( const TimewiseMeasureSetIterConst& setIterator ) const;
         private:
             ScoreTimewiseAttributesPtr myAttributes;
             ScoreHeaderGroupPtr myScoreHeaderGroup;
-            PartwisePartSet myPartwisePartSet;
+            TimewiseMeasureSet myTimewiseMeasureSet;
         };
+        
+        
     }
 }

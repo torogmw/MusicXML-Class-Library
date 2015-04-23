@@ -6850,29 +6850,29 @@ namespace mx
             return os;
         }
         
-		Measure::Measure()
+		PartwiseMeasure::PartwiseMeasure()
 		:myAttributes( std::make_shared<MeasureAttributes>() )
         ,myMusicDataGroup( makeMusicDataGroup() )
 		{}
-		bool Measure::hasAttributes() const
+		bool PartwiseMeasure::hasAttributes() const
 		{
 			return myAttributes->hasValues();
 		}
-		std::ostream& Measure::streamAttributes( std::ostream& os ) const
+		std::ostream& PartwiseMeasure::streamAttributes( std::ostream& os ) const
 		{
 			return myAttributes->toStream( os );
 			return os;
 		}
-		std::ostream& Measure::streamName( std::ostream& os ) const
+		std::ostream& PartwiseMeasure::streamName( std::ostream& os ) const
 		{
 			os << "measure";
 			return os;
 		}
-		bool Measure::hasContents() const
+		bool PartwiseMeasure::hasContents() const
 		{
 			return myMusicDataGroup->hasContents();
 		}
-		std::ostream& Measure::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		std::ostream& PartwiseMeasure::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
             if ( hasContents() )
             {
@@ -6887,11 +6887,11 @@ namespace mx
             }
 			return os;
 		}
-		MeasureAttributesPtr Measure::getAttributes() const
+		MeasureAttributesPtr PartwiseMeasure::getAttributes() const
 		{
 			return myAttributes;
 		}
-		void Measure::setAttributes( const MeasureAttributesPtr& value )
+		void PartwiseMeasure::setAttributes( const MeasureAttributesPtr& value )
 		{
 			if ( value )
 			{
@@ -6899,11 +6899,11 @@ namespace mx
 			}
 		}
         /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
-        MusicDataGroupPtr Measure::getMusicDataGroup() const
+        MusicDataGroupPtr PartwiseMeasure::getMusicDataGroup() const
         {
             return myMusicDataGroup;
         }
-        void Measure::setMusicDataGroup( const MusicDataGroupPtr& value )
+        void PartwiseMeasure::setMusicDataGroup( const MusicDataGroupPtr& value )
         {
             if ( value )
             {
@@ -6933,9 +6933,9 @@ namespace mx
         }
         PartwisePart::PartwisePart()
 		:myAttributes( std::make_shared<PartAttributes>() )
-        ,myMeasureSet()
+        ,myPartwiseMeasureSet()
 		{
-            myMeasureSet.push_back( makeMeasure() );
+            myPartwiseMeasureSet.push_back( makePartwiseMeasure() );
         }
 		bool PartwisePart::hasAttributes() const
 		{
@@ -6960,7 +6960,7 @@ namespace mx
             if ( hasContents() )
             {
                 
-                for ( auto x : myMeasureSet )
+                for ( auto x : myPartwiseMeasureSet )
                 {
                     os << std::endl;
                     x->toStream( os, indentLevel+1 );
@@ -6985,40 +6985,40 @@ namespace mx
 				myAttributes = value;
 			}
 		}
-        /* _________ Measure minOccurs = 0, maxOccurs = unbounded _________ */
-        const MeasureSet& PartwisePart::getMeasureSet() const
+        /* _________ PartwiseMeasure minOccurs = 0, maxOccurs = unbounded _________ */
+        const PartwiseMeasureSet& PartwisePart::getPartwiseMeasureSet() const
         {
-            return myMeasureSet;
+            return myPartwiseMeasureSet;
         }
-        void PartwisePart::addMeasure( const MeasurePtr& value )
+        void PartwisePart::addPartwiseMeasure( const PartwiseMeasurePtr& value )
         {
             if ( value )
             {
-                myMeasureSet.push_back( value );
+                myPartwiseMeasureSet.push_back( value );
             }
         }
-        void PartwisePart::removeMeasure( const MeasureSetIterConst& value )
+        void PartwisePart::removePartwiseMeasure( const PartwiseMeasureSetIterConst& value )
         {
-            if ( value != myMeasureSet.cend() )
+            if ( value != myPartwiseMeasureSet.cend() )
             {
-                if ( myMeasureSet.size() > 1 )
+                if ( myPartwiseMeasureSet.size() > 1 )
                 {
-                    myMeasureSet.erase( value );
+                    myPartwiseMeasureSet.erase( value );
                 }
             }
         }
-        void PartwisePart::clearMeasureSet()
+        void PartwisePart::clearPartwiseMeasureSet()
         {
-            myMeasureSet.clear();
-            myMeasureSet.push_back( makeMeasure() );
+            myPartwiseMeasureSet.clear();
+            myPartwiseMeasureSet.push_back( makePartwiseMeasure() );
         }
-        MeasurePtr PartwisePart::getMeasure( const MeasureSetIterConst& setIterator ) const
+        PartwiseMeasurePtr PartwisePart::getPartwiseMeasure( const PartwiseMeasureSetIterConst& setIterator ) const
         {
-            if( setIterator != myMeasureSet.cend() )
+            if( setIterator != myPartwiseMeasureSet.cend() )
             {
                 return *setIterator;
             }
-            return MeasurePtr();
+            return PartwiseMeasurePtr();
         }
         
         /*
@@ -7397,6 +7397,268 @@ namespace mx
 			return PartwisePartPtr();
 		}
 
+        TimewisePart::TimewisePart()
+		:myAttributes( std::make_shared<PartAttributes>() )
+        ,myMusicDataGroup( makeMusicDataGroup() )
+		{}
+		bool TimewisePart::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& TimewisePart::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& TimewisePart::streamName( std::ostream& os ) const
+		{
+			os << "part";
+			return os;
+		}
+		bool TimewisePart::hasContents() const
+		{
+			return myMusicDataGroup->hasContents();
+		}
+		std::ostream& TimewisePart::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( hasContents() )
+            {
+                
+                os << std::endl;
+                myMusicDataGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+			return os;
+		}
+		PartAttributesPtr TimewisePart::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void TimewisePart::setAttributes( const PartAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
+        MusicDataGroupPtr TimewisePart::getMusicDataGroup() const
+        {
+            return myMusicDataGroup;
+        }
+        void TimewisePart::setMusicDataGroup( const MusicDataGroupPtr& value )
+        {
+            if ( value )
+            {
+                myMusicDataGroup = value;
+            }
+        }
+        
+        TimewiseMeasure::TimewiseMeasure()
+		:myAttributes( std::make_shared<MeasureAttributes>() )
+        ,myTimewisePartSet()
+		{
+            myTimewisePartSet.push_back( makeTimewisePart() );
+        }
+		bool TimewiseMeasure::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& TimewiseMeasure::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& TimewiseMeasure::streamName( std::ostream& os ) const
+		{
+			os << "measure";
+			return os;
+		}
+		bool TimewiseMeasure::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& TimewiseMeasure::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( hasContents() )
+            {
+                for ( auto x : myTimewisePartSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+			return os;
+		}
+		MeasureAttributesPtr TimewiseMeasure::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void TimewiseMeasure::setAttributes( const MeasureAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ TimewisePart minOccurs = 1, maxOccurs = unbounded _________ */
+        const TimewisePartSet& TimewiseMeasure::getTimewisePartSet() const
+        {
+            return myTimewisePartSet;
+        }
+        void TimewiseMeasure::addTimewisePart( const TimewisePartPtr& value )
+        {
+            if ( value )
+            {
+                myTimewisePartSet.push_back( value );
+            }
+        }
+        void TimewiseMeasure::removeTimewisePart( const TimewisePartSetIterConst& value )
+        {
+            if ( value != myTimewisePartSet.cend() )
+            {
+                myTimewisePartSet.erase( value );
+            }
+        }
+        void TimewiseMeasure::clearTimewisePartSet()
+        {
+            myTimewisePartSet.clear();
+        }
+        TimewisePartPtr TimewiseMeasure::getTimewisePart( const TimewisePartSetIterConst& setIterator ) const
+        {
+            if( setIterator != myTimewisePartSet.cend() )
+            {
+                return *setIterator;
+            }
+            return TimewisePartPtr();
+        }
+        ScoreTimewiseAttributes::ScoreTimewiseAttributes()
+        :version( "3.0" )
+        ,hasVersion( false )
+        {}
+        
+        bool ScoreTimewiseAttributes::hasValues() const
+        {
+            return hasVersion;
+        }
+        
+        std::ostream& ScoreTimewiseAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, version, "version", hasVersion );
+            }
+            return os;
+        }
+        
+		ScoreTimewise::ScoreTimewise()
+		:myAttributes( std::make_shared<ScoreTimewiseAttributes>() )
+        ,myScoreHeaderGroup( makeScoreHeaderGroup() )
+		,myTimewiseMeasureSet()
+		{
+            myTimewiseMeasureSet.push_back( makeTimewiseMeasure() );
+            
+        }
+		bool ScoreTimewise::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& ScoreTimewise::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& ScoreTimewise::streamName( std::ostream& os ) const
+		{
+			os << "score-partwise";
+			return os;
+		}
+		bool ScoreTimewise::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& ScoreTimewise::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+            myScoreHeaderGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+			for ( auto x : myTimewiseMeasureSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+			isOneLineOnly = false;
+			return os;
+		}
+		ScoreTimewiseAttributesPtr ScoreTimewise::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void ScoreTimewise::setAttributes( const ScoreTimewiseAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ ScoreHeaderGroup minOccurs = 1, maxOccurs = 1 _________ */
+        ScoreHeaderGroupPtr ScoreTimewise::getScoreHeaderGroup() const
+        {
+            return myScoreHeaderGroup;
+        }
+        void ScoreTimewise::setScoreHeaderGroup( const ScoreHeaderGroupPtr& value )
+        {
+            if ( value )
+            {
+                myScoreHeaderGroup = value;
+            }
+        }
+		/* _________ TimewiseMeasure minOccurs = 1, maxOccurs = unbounded _________ */
+		const TimewiseMeasureSet& ScoreTimewise::getTimewiseMeasureSet() const
+		{
+			return myTimewiseMeasureSet;
+		}
+		void ScoreTimewise::removeTimewiseMeasure( const TimewiseMeasureSetIterConst& value )
+		{
+			if ( value != myTimewiseMeasureSet.cend() )
+			{
+				if ( myTimewiseMeasureSet.size() > 1 )
+				{
+					myTimewiseMeasureSet.erase( value );
+				}
+			}
+		}
+		void ScoreTimewise::addTimewiseMeasure( const TimewiseMeasurePtr& value )
+		{
+			if ( value )
+			{
+				myTimewiseMeasureSet.push_back( value );
+			}
+		}
+		void ScoreTimewise::clearTimewiseMeasureSet()
+		{
+			myTimewiseMeasureSet.clear();
+            myTimewiseMeasureSet.push_back( makeTimewiseMeasure() );
+		}
+		TimewiseMeasurePtr ScoreTimewise::getTimewiseMeasure( const TimewiseMeasureSetIterConst& setIterator ) const
+		{
+			if( setIterator != myTimewiseMeasureSet.cend() )
+			{
+				return *setIterator;
+			}
+			return TimewiseMeasurePtr();
+		}
 #if 1==0
 #endif
         

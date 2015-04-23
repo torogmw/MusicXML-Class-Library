@@ -1,8 +1,8 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "PartwisePartTest.h"
-#include "PartwiseMeasureTest.h"
+#include "TimewisePartTest.h"
+#include "MusicDataGroupTest.h"
 
 using namespace mx::e;
 using namespace mx::types;
@@ -11,25 +11,25 @@ using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"
 #ifdef RUN_PHASE4_TESTS
 
-TEST( Test01, PartwisePart )
+TEST( Test01, TimewisePart )
 {
     variant v = variant::one;
-	PartwisePartPtr object = tgenPartwisePart( v );
+	TimewisePartPtr object = tgenTimewisePart( v );
 	stringstream expected;
-	tgenPartwisePartExpected( expected, 1, v );
+	tgenTimewisePartExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
 	CHECK( object->hasAttributes() )
-	CHECK( object->hasContents() )
+	CHECK( ! object->hasContents() )
 }
-TEST( Test02, PartwisePart )
+TEST( Test02, TimewisePart )
 {
     variant v = variant::two;
-	PartwisePartPtr object = tgenPartwisePart( v );
+	TimewisePartPtr object = tgenTimewisePart( v );
 	stringstream expected;
-	tgenPartwisePartExpected( expected, 1, v );
+	tgenTimewisePartExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -37,12 +37,12 @@ TEST( Test02, PartwisePart )
 	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, PartwisePart )
+TEST( Test03, TimewisePart )
 {
     variant v = variant::three;
-	PartwisePartPtr object = tgenPartwisePart( v );
+	TimewisePartPtr object = tgenTimewisePart( v );
 	stringstream expected;
-	tgenPartwisePartExpected( expected, 1, v );
+	tgenTimewisePartExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -53,9 +53,9 @@ TEST( Test03, PartwisePart )
 #endif
 namespace MxTestHelpers
 {
-    PartwisePartPtr tgenPartwisePart( variant v )
+    TimewisePartPtr tgenTimewisePart( variant v )
     {
-        PartwisePartPtr o = makePartwisePart();
+        TimewisePartPtr o = makeTimewisePart();
         switch ( v )
         {
             case variant::one:
@@ -65,18 +65,14 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->getAttributes()->id = XsIDREF( "ID2" );
-                o->addPartwiseMeasure( tgenPartwiseMeasure( v ) );
-                o->removePartwiseMeasure( o->getPartwiseMeasureSet().cbegin() );
-                o->addPartwiseMeasure( tgenPartwiseMeasure( variant::three ) );
+                o->getAttributes()->id = XsID( "ID200" );
+                o->setMusicDataGroup( tgenMusicDataGroup( v ) );
             }
                 break;
             case variant::three:
             {
-                o->getAttributes()->id = XsIDREF( "ID3" );
-                o->addPartwiseMeasure( tgenPartwiseMeasure( v ) );
-                o->removePartwiseMeasure( o->getPartwiseMeasureSet().cbegin() );
-                o->addPartwiseMeasure( tgenPartwiseMeasure( variant::two ) );
+                o->getAttributes()->id = XsID( "ID300" );
+                o->setMusicDataGroup( tgenMusicDataGroup( v ) );
             }
                 break;
             default:
@@ -84,35 +80,28 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenPartwisePartExpected( std::ostream& os, int i, variant v )
+    void tgenTimewisePartExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<part id="ID">)" );
-                tgenPartwiseMeasureExpected( os, i+1,  v );
-                os << std::endl;
-                streamLine( os, i, R"(</part>)", false );
+                streamLine( os, i, R"(<part id="ID"/>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<part id="ID2">)" );
-                tgenPartwiseMeasureExpected( os, i+1,  v );
-                os << std::endl;
-                tgenPartwiseMeasureExpected( os, i+1,  variant::three );
+                streamLine( os, i, R"(<part id="ID200">)" );
+                tgenMusicDataGroupExpected( os, i+1,  v );
                 os << std::endl;
                 streamLine( os, i, R"(</part>)", false );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<part id="ID3">)" );
-                tgenPartwiseMeasureExpected( os, i+1,  v );
-                os << std::endl;
-                tgenPartwiseMeasureExpected( os, i+1,  variant::two );
+                streamLine( os, i, R"(<part id="ID300">)" );
+                tgenMusicDataGroupExpected( os, i+1,  v );
                 os << std::endl;
                 streamLine( os, i, R"(</part>)", false );
             }
