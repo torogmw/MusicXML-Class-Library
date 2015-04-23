@@ -32,6 +32,7 @@
 		2916E39E1AD24C080073ECC6 /* GroupAbbreviationDisplayTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2916E39C1AD24C080073ECC6 /* GroupAbbreviationDisplayTest.cpp */; };
 		2916E3A11AD253290073ECC6 /* IdentificationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2916E39F1AD253290073ECC6 /* IdentificationTest.cpp */; };
 		29178AFA1AE988800083CE46 /* TimewisePartTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29178AF81AE988800083CE46 /* TimewisePartTest.cpp */; };
+		29178AFD1AE995C80083CE46 /* TimewiseMeasureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29178AFB1AE995C70083CE46 /* TimewiseMeasureTest.cpp */; };
 		291AFC171AE8B4E900F0E1DD /* PartwisePartTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291AFC151AE8B4E900F0E1DD /* PartwisePartTest.cpp */; };
 		291AFC1A1AE8BE7D00F0E1DD /* ScoreHeaderGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291AFC181AE8BE7D00F0E1DD /* ScoreHeaderGroupTest.cpp */; };
 		291AFC1D1AE8C69200F0E1DD /* ScorePartwiseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291AFC1B1AE8C69200F0E1DD /* ScorePartwiseTest.cpp */; };
@@ -469,6 +470,8 @@
 		2916E3A01AD253290073ECC6 /* IdentificationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentificationTest.h; sourceTree = "<group>"; };
 		29178AF81AE988800083CE46 /* TimewisePartTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimewisePartTest.cpp; sourceTree = "<group>"; };
 		29178AF91AE988800083CE46 /* TimewisePartTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimewisePartTest.h; sourceTree = "<group>"; };
+		29178AFB1AE995C70083CE46 /* TimewiseMeasureTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimewiseMeasureTest.cpp; sourceTree = "<group>"; };
+		29178AFC1AE995C70083CE46 /* TimewiseMeasureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimewiseMeasureTest.h; sourceTree = "<group>"; };
 		291AFC151AE8B4E900F0E1DD /* PartwisePartTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartwisePartTest.cpp; sourceTree = "<group>"; };
 		291AFC161AE8B4E900F0E1DD /* PartwisePartTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartwisePartTest.h; sourceTree = "<group>"; };
 		291AFC181AE8BE7D00F0E1DD /* ScoreHeaderGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreHeaderGroupTest.cpp; sourceTree = "<group>"; };
@@ -1540,6 +1543,8 @@
 				291AFC1C1AE8C69200F0E1DD /* ScorePartwiseTest.h */,
 				29178AF81AE988800083CE46 /* TimewisePartTest.cpp */,
 				29178AF91AE988800083CE46 /* TimewisePartTest.h */,
+				29178AFB1AE995C70083CE46 /* TimewiseMeasureTest.cpp */,
+				29178AFC1AE995C70083CE46 /* TimewiseMeasureTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1653,6 +1658,7 @@
 				2935A7191AB5FC3B002859CA /* AccentTest.cpp in Sources */,
 				29CEB4A21AB4C0FA00D6AEFC /* EndLineTest.cpp in Sources */,
 				29C0B9DA1AAE9398004F86FA /* MetronomeBeamTest.cpp in Sources */,
+				29178AFD1AE995C80083CE46 /* TimewiseMeasureTest.cpp in Sources */,
 				290664071AC7E43F005E6E80 /* TupletActualTest.cpp in Sources */,
 				297749F91AB21FA000BF2205 /* LineTest.cpp in Sources */,
 				29774A141AB21FA000BF2205 /* RightMarginTest.cpp in Sources */,
