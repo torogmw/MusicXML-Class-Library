@@ -36,10 +36,10 @@ TEST( Test01, LyricLanguage )
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(<lyric-language lang="it"/>)";
+	std::string expected = R"(<lyric-language xml:lang="it"/>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<lyric-language number="ABC" lang="it"/>)";
+	expected = indentString+indentString+R"(<lyric-language number="ABC" xml:lang="it"/>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	std::stringstream o1;	std::stringstream o2;	bool isOneLineOnly = false;

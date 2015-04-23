@@ -28,7 +28,7 @@ TEST( Test01, AccidentalText )
 	std::string expected = "<accidental-text>natural</accidental-text>";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+"<accidental-text justify=\"right\" lang=\"it\">sharp</accidental-text>";
+	expected = indentString+indentString+"<accidental-text justify=\"right\" xml:lang=\"it\">sharp</accidental-text>";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

@@ -28,7 +28,7 @@ TEST( Test01, Text )
 	std::string expected = R"(<text></text>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<text letter-spacing="1" lang="it">How now brown cow.</text>)";
+	expected = indentString+indentString+R"(<text letter-spacing="1" xml:lang="it">How now brown cow.</text>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();

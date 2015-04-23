@@ -152,7 +152,7 @@ TEST( DecimalRange06, Decimals )
 TEST( PositiveDecimal01, Decimals )
 {
     PositiveDecimal d;
-    DecimalType expected = kNonZeroAmount;
+    DecimalType expected = 1;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }
@@ -497,7 +497,7 @@ TEST( Percent06, Decimals )
 TEST( PositiveDivisionsValue01, Decimals )
 {
     PositiveDivisionsValue d;
-    DecimalType expected = kNonZeroAmount;
+    DecimalType expected = 1;
     DecimalType actual = d.getValue();
     CHECK_DOUBLES_EQUAL( expected, actual, kThreshold )
 }

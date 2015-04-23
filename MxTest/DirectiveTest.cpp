@@ -28,7 +28,7 @@ TEST( Test02, Directive )
     object->getAttributes()->hasFontFamily = true;
     object->getAttributes()->fontFamily = CommaSeparatedText{ "This Font,That Font" };
 	stringstream expected;
-	streamLine( expected, 1, "<directive font-family=\"This Font,That Font\" lang=\"it\">Mork\nde\t\t\n\nbork</directive>", false );
+	streamLine( expected, 1, "<directive font-family=\"This Font,That Font\" xml:lang=\"it\">Mork\nde\t\t\n\nbork</directive>", false );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );

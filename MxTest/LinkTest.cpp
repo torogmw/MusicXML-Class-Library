@@ -42,7 +42,7 @@ TEST( Test01, Link )
 	std::string expected = R"(<link xlink:href=""/>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<link xlink:href="" title="" show="replace" default-x="0.1"/>)";
+	expected = indentString+indentString+R"(<link xlink:href="" xlink:title="" xlink:show="replace" default-x="0.1"/>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	std::stringstream o1;	std::stringstream o2;	bool isOneLineOnly = false;

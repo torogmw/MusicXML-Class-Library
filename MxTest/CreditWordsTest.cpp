@@ -30,7 +30,7 @@ TEST( Test01, CreditWords )
 	std::string expected = R"(<credit-words></credit-words>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
-	expected = indentString+indentString+R"(<credit-words lang="it" space="preserve" enclosure="oval">Water</credit-words>)";
+	expected = indentString+indentString+R"(<credit-words xml:lang="it" xml:space="preserve" enclosure="oval">Water</credit-words>)";
 	actual = object2_stream.str();
 	CHECK_EQUAL( expected, actual )
 	value1 = object2.getValue();
