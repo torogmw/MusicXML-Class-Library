@@ -6932,8 +6932,10 @@ namespace mx
         }
         Part::Part()
 		:myAttributes( std::make_shared<PartAttributes>() )
-        ,myMusicDataGroup( makeMusicDataGroup() )
-		{}
+        ,myMeasureSet()
+		{
+            myMeasureSet.push_back( makeMeasure() );
+        }
 		bool Part::hasAttributes() const
 		{
 			return myAttributes->hasValues();
@@ -6950,14 +6952,18 @@ namespace mx
 		}
 		bool Part::hasContents() const
 		{
-			return myMusicDataGroup->hasContents();
+			return true;
 		}
 		std::ostream& Part::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
             if ( hasContents() )
             {
-                os << std::endl;
-                myMusicDataGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                
+                for ( auto x : myMeasureSet )
+                {
+                    os << std::endl;
+                    x->toStream( os, indentLevel+1 );
+                }
                 os << std::endl;
                 isOneLineOnly = false;
             }
@@ -6978,17 +6984,40 @@ namespace mx
 				myAttributes = value;
 			}
 		}
-        /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
-        MusicDataGroupPtr Part::getMusicDataGroup() const
+        /* _________ Measure minOccurs = 0, maxOccurs = unbounded _________ */
+        const MeasureSet& Part::getMeasureSet() const
         {
-            return myMusicDataGroup;
+            return myMeasureSet;
         }
-        void Part::setMusicDataGroup( const MusicDataGroupPtr& value )
+        void Part::addMeasure( const MeasurePtr& value )
         {
             if ( value )
             {
-                myMusicDataGroup = value;
+                myMeasureSet.push_back( value );
             }
+        }
+        void Part::removeMeasure( const MeasureSetIterConst& value )
+        {
+            if ( value != myMeasureSet.cend() )
+            {
+                if ( myMeasureSet.size() > 1 )
+                {
+                    myMeasureSet.erase( value );
+                }
+            }
+        }
+        void Part::clearMeasureSet()
+        {
+            myMeasureSet.clear();
+            myMeasureSet.push_back( makeMeasure() );
+        }
+        MeasurePtr Part::getMeasure( const MeasureSetIterConst& setIterator ) const
+        {
+            if( setIterator != myMeasureSet.cend() )
+            {
+                return *setIterator;
+            }
+            return MeasurePtr();
         }
         
         /*
@@ -7245,6 +7274,128 @@ namespace mx
                 myPartList = value;
             }
         }
+        
+        
+        
+        /**************** ScorePartwiseAttributes ****************/
+        /* 6403 */
+        ScorePartwiseAttributes::ScorePartwiseAttributes()
+        :version( "3.0" )
+        ,hasVersion( false )
+        {}
+        
+        bool ScorePartwiseAttributes::hasValues() const
+        {
+            return hasVersion;
+        }
+        
+        std::ostream& ScorePartwiseAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, version, "version", hasVersion );
+            }
+            return os;
+        }
+        
+		ScorePartwise::ScorePartwise()
+		:myAttributes( std::make_shared<ScorePartwiseAttributes>() )
+        ,myScoreHeaderGroup( makeScoreHeaderGroup() )
+		,myPartSet()
+		{
+            myPartSet.push_back( makePart() );
+            
+        }
+		bool ScorePartwise::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& ScorePartwise::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& ScorePartwise::streamName( std::ostream& os ) const
+		{
+			os << "score-partwise";
+			return os;
+		}
+		bool ScorePartwise::hasContents() const
+		{
+			return true;
+		}
+		std::ostream& ScorePartwise::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            os << std::endl;
+            myScoreHeaderGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+			for ( auto x : myPartSet )
+            {
+                os << std::endl;
+                x->toStream( os, indentLevel+1 );
+            }
+            os << std::endl;
+			isOneLineOnly = false;
+			return os;
+		}
+		ScorePartwiseAttributesPtr ScorePartwise::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void ScorePartwise::setAttributes( const ScorePartwiseAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ ScoreHeaderGroup minOccurs = 1, maxOccurs = 1 _________ */
+        ScoreHeaderGroupPtr ScorePartwise::getScoreHeaderGroup() const
+        {
+            return myScoreHeaderGroup;
+        }
+        void ScorePartwise::setScoreHeaderGroup( const ScoreHeaderGroupPtr& value )
+        {
+            if ( value )
+            {
+                myScoreHeaderGroup = value;
+            }
+        }
+		/* _________ Part minOccurs = 1, maxOccurs = unbounded _________ */
+		const PartSet& ScorePartwise::getPartSet() const
+		{
+			return myPartSet;
+		}
+		void ScorePartwise::removePart( const PartSetIterConst& value )
+		{
+			if ( value != myPartSet.cend() )
+			{
+				if ( myPartSet.size() > 1 )
+				{
+					myPartSet.erase( value );
+				}
+			}
+		}
+		void ScorePartwise::addPart( const PartPtr& value )
+		{
+			if ( value )
+			{
+				myPartSet.push_back( value );
+			}
+		}
+		void ScorePartwise::clearPartSet()
+		{
+			myPartSet.clear();
+            myPartSet.push_back( makePart() );
+		}
+		PartPtr ScorePartwise::getPart( const PartSetIterConst& setIterator ) const
+		{
+			if( setIterator != myPartSet.cend() )
+			{
+				return *setIterator;
+			}
+			return PartPtr();
+		}
+
 #if 1==0
 #endif
         

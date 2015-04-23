@@ -3674,12 +3674,15 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             PartAttributesPtr getAttributes() const;
             void setAttributes( const PartAttributesPtr& value );
-            /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
-            MusicDataGroupPtr getMusicDataGroup() const;
-            void setMusicDataGroup( const MusicDataGroupPtr& value );
+            /* _________ Measure minOccurs = 0, maxOccurs = unbounded _________ */
+            const MeasureSet& getMeasureSet() const;
+            void addMeasure( const MeasurePtr& value );
+            void removeMeasure( const MeasureSetIterConst& value );
+            void clearMeasureSet();
+            MeasurePtr getMeasure( const MeasureSetIterConst& setIterator ) const;
         private:
             PartAttributesPtr myAttributes;
-            MusicDataGroupPtr myMusicDataGroup;
+            MeasureSet myMeasureSet;
         };
         
         /*
@@ -3770,5 +3773,82 @@ namespace mx
             CreditSet myCreditSet;
             PartListPtr myPartList;
         };
+        
+        /* <!--  ID = 6403 [6403] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 645 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="score-partwise" block="extension substitution" final="#all">
+         <xs:annotation>
+         <xs:documentation>The score-partwise element is the root element for a partwise MusicXML score. It includes a score-header group followed by a series of parts with measures inside. The document-attributes attribute group includes the version attribute.</xs:documentation>
+         </xs:annotation>
+         <xs:complexType>
+         <xs:sequence>
+         <xs:group ref="score-header"/>
+         <xs:element name="part" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:sequence>
+         <xs:element name="measure" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:group ref="music-data"/>
+         <xs:attributeGroup ref="measure-attributes"/>
+         </xs:complexType>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="part-attributes"/>
+         </xs:complexType>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="document-attributes"/>
+         </xs:complexType>
+         </xs:element> */
+        
+        struct ScorePartwiseAttributes;
+        using ScorePartwiseAttributesPtr = std::shared_ptr<ScorePartwiseAttributes>;
+        
+        struct ScorePartwiseAttributes : public AttributesInterface
+        {
+        public:
+            ScorePartwiseAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsToken version;
+            bool hasVersion;
+        };
+        
+        class ScorePartwise;
+        using ScorePartwisePtr = std::shared_ptr<ScorePartwise>;
+        using ScorePartwiseUPtr = std::unique_ptr<ScorePartwise>;
+        using ScorePartwiseSet = std::vector<ScorePartwisePtr>;
+        using ScorePartwiseSetIter = ScorePartwiseSet::iterator;
+        using ScorePartwiseSetIterConst = ScorePartwiseSet::const_iterator;
+        inline ScorePartwisePtr makeScorePartwise() { return std::make_shared<ScorePartwise>(); }
+        class ScorePartwise : public ElementInterface
+        {
+        public:
+            ScorePartwise();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ScorePartwiseAttributesPtr getAttributes() const;
+            void setAttributes( const ScorePartwiseAttributesPtr& value );
+            /* _________ ScoreHeaderGroup minOccurs = 1, maxOccurs = 1 _________ */
+            ScoreHeaderGroupPtr getScoreHeaderGroup() const;
+            void setScoreHeaderGroup( const ScoreHeaderGroupPtr& value );
+            /* _________ Part minOccurs = 1, maxOccurs = unbounded _________ */
+            const PartSet& getPartSet() const;
+            void addPart( const PartPtr& value );
+            void removePart( const PartSetIterConst& value );
+            void clearPartSet();
+            PartPtr getPart( const PartSetIterConst& setIterator ) const;
+        private:
+            ScorePartwiseAttributesPtr myAttributes;
+            ScoreHeaderGroupPtr myScoreHeaderGroup;
+            PartSet myPartSet;
+        };
+
     }
 }

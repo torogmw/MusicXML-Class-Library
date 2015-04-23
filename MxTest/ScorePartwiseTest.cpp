@@ -1,8 +1,10 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
+#include "ScorePartwiseTest.h"
 #include "PartTest.h"
-#include "MeasureTest.h"
+#include "ScoreHeaderGroupTest.h"
+
 
 using namespace mx::e;
 using namespace mx::types;
@@ -11,38 +13,38 @@ using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"
 #ifdef RUN_PHASE4_TESTS
 
-TEST( Test01, Part )
+TEST( Test01, ScorePartwise )
 {
     variant v = variant::one;
-	PartPtr object = tgenPart( v );
+	ScorePartwisePtr object = tgenScorePartwise( v );
 	stringstream expected;
-	tgenPartExpected( expected, 1, v );
+	tgenScorePartwiseExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test02, Part )
+TEST( Test02, ScorePartwise )
 {
     variant v = variant::two;
-	PartPtr object = tgenPart( v );
+	ScorePartwisePtr object = tgenScorePartwise( v );
 	stringstream expected;
-	tgenPartExpected( expected, 1, v );
+	tgenScorePartwiseExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, Part )
+TEST( Test03, ScorePartwise )
 {
     variant v = variant::three;
-	PartPtr object = tgenPart( v );
+	ScorePartwisePtr object = tgenScorePartwise( v );
 	stringstream expected;
-	tgenPartExpected( expected, 1, v );
+	tgenScorePartwiseExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -53,9 +55,9 @@ TEST( Test03, Part )
 #endif
 namespace MxTestHelpers
 {
-    PartPtr tgenPart( variant v )
+    ScorePartwisePtr tgenScorePartwise( variant v )
     {
-        PartPtr o = makePart();
+        ScorePartwisePtr o = makeScorePartwise();
         switch ( v )
         {
             case variant::one:
@@ -65,18 +67,14 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->getAttributes()->id = XsIDREF( "ID2" );
-                o->addMeasure( tgenMeasure( v ) );
-                o->removeMeasure( o->getMeasureSet().cbegin() );
-                o->addMeasure( tgenMeasure( variant::three ) );
+                o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
+                o->addPart( tgenPart( v ) );
+                o->removePart( o->getPartSet().cbegin() );
             }
                 break;
             case variant::three:
             {
-                o->getAttributes()->id = XsIDREF( "ID3" );
-                o->addMeasure( tgenMeasure( v ) );
-                o->removeMeasure( o->getMeasureSet().cbegin() );
-                o->addMeasure( tgenMeasure( variant::two ) );
+
             }
                 break;
             default:
@@ -84,37 +82,29 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenPartExpected( std::ostream& os, int i, variant v )
+    void tgenScorePartwiseExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<part id="ID">)" );
-                tgenMeasureExpected( os, i+1,  v );
+                streamLine( os, i, R"(<score-partwise>)" );
+                tgenScoreHeaderGroupExpected( os, i+1,  v );
                 os << std::endl;
-                streamLine( os, i, R"(</part>)", false );
+                tgenPartExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</score-partwise>)", false );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<part id="ID2">)" );
-                tgenMeasureExpected( os, i+1,  v );
-                os << std::endl;
-                tgenMeasureExpected( os, i+1,  variant::three );
-                os << std::endl;
-                streamLine( os, i, R"(</part>)", false );
+                
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<part id="ID3">)" );
-                tgenMeasureExpected( os, i+1,  v );
-                os << std::endl;
-                tgenMeasureExpected( os, i+1,  variant::two );
-                os << std::endl;
-                streamLine( os, i, R"(</part>)", false );
+
             }
                 break;
             default:
