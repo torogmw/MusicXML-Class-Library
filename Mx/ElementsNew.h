@@ -3656,17 +3656,17 @@ namespace mx
             const bool hasId;
         };
         
-        class Part;
-        using PartPtr = std::shared_ptr<Part>;
-        using PartUPtr = std::unique_ptr<Part>;
-        using PartSet = std::vector<PartPtr>;
-        using PartSetIter = PartSet::iterator;
-        using PartSetIterConst = PartSet::const_iterator;
-        inline PartPtr makePart() { return std::make_shared<Part>(); }
-        class Part : public ElementInterface
+        class PartwisePart;
+        using PartwisePartPtr = std::shared_ptr<PartwisePart>;
+        using PartwisePartUPtr = std::unique_ptr<PartwisePart>;
+        using PartwisePartSet = std::vector<PartwisePartPtr>;
+        using PartwisePartSetIter = PartwisePartSet::iterator;
+        using PartwisePartSetIterConst = PartwisePartSet::const_iterator;
+        inline PartwisePartPtr makePartwisePart() { return std::make_shared<PartwisePart>(); }
+        class PartwisePart : public ElementInterface
         {
         public:
-            Part();
+            PartwisePart();
             virtual bool hasAttributes() const;
             virtual std::ostream& streamAttributes( std::ostream& os ) const;
             virtual std::ostream& streamName( std::ostream& os ) const;
@@ -3838,17 +3838,92 @@ namespace mx
             /* _________ ScoreHeaderGroup minOccurs = 1, maxOccurs = 1 _________ */
             ScoreHeaderGroupPtr getScoreHeaderGroup() const;
             void setScoreHeaderGroup( const ScoreHeaderGroupPtr& value );
-            /* _________ Part minOccurs = 1, maxOccurs = unbounded _________ */
-            const PartSet& getPartSet() const;
-            void addPart( const PartPtr& value );
-            void removePart( const PartSetIterConst& value );
-            void clearPartSet();
-            PartPtr getPart( const PartSetIterConst& setIterator ) const;
+            /* _________ PartwisePart minOccurs = 1, maxOccurs = unbounded _________ */
+            const PartwisePartSet& getPartwisePartSet() const;
+            void addPartwisePart( const PartwisePartPtr& value );
+            void removePartwisePart( const PartwisePartSetIterConst& value );
+            void clearPartwisePartSet();
+            PartwisePartPtr getPartwisePart( const PartwisePartSetIterConst& setIterator ) const;
         private:
             ScorePartwiseAttributesPtr myAttributes;
             ScoreHeaderGroupPtr myScoreHeaderGroup;
-            PartSet myPartSet;
+            PartwisePartSet myPartwisePartSet;
         };
 
+        /* <!--  ID = 6430 [6430] ------------------------->
+         <!-- min=1 max=1 RequiredSingleOccurence  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 645 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="score-timewise" block="extension substitution" final="#all">
+         <xs:annotation>
+         <xs:documentation>The score-timewise element is the root element for a timewise MusicXML score. It includes a score-header group followed by a series of measures with parts inside. The document-attributes attribute group includes the version attribute.</xs:documentation>
+         </xs:annotation>
+         <xs:complexType>
+         <xs:sequence>
+         <xs:group ref="score-header"/>
+         <xs:element name="measure" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:sequence>
+         <xs:element name="part" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:group ref="music-data"/>
+         <xs:attributeGroup ref="part-attributes"/>
+         </xs:complexType>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="measure-attributes"/>
+         </xs:complexType>
+         </xs:element>
+         </xs:sequence>
+         <xs:attributeGroup ref="document-attributes"/>
+         </xs:complexType>
+         </xs:element> */
+        
+        struct ScoreTimewiseAttributes;
+        using ScoreTimewiseAttributesPtr = std::shared_ptr<ScoreTimewiseAttributes>;
+        
+        struct ScoreTimewiseAttributes : public AttributesInterface
+        {
+        public:
+            ScoreTimewiseAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsToken version;
+            bool hasVersion;
+        };
+        
+        class ScoreTimewise;
+        using ScoreTimewisePtr = std::shared_ptr<ScoreTimewise>;
+        using ScoreTimewiseUPtr = std::unique_ptr<ScoreTimewise>;
+        using ScoreTimewiseSet = std::vector<ScoreTimewisePtr>;
+        using ScoreTimewiseSetIter = ScoreTimewiseSet::iterator;
+        using ScoreTimewiseSetIterConst = ScoreTimewiseSet::const_iterator;
+        inline ScoreTimewisePtr makeScoreTimewise() { return std::make_shared<ScoreTimewise>(); }
+        class ScoreTimewise : public ElementInterface
+        {
+        public:
+            ScoreTimewise();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            ScoreTimewiseAttributesPtr getAttributes() const;
+            void setAttributes( const ScoreTimewiseAttributesPtr& value );
+            /* _________ ScoreHeaderGroup minOccurs = 1, maxOccurs = 1 _________ */
+            ScoreHeaderGroupPtr getScoreHeaderGroup() const;
+            void setScoreHeaderGroup( const ScoreHeaderGroupPtr& value );
+            /* _________ Part minOccurs = 1, maxOccurs = unbounded _________ */
+            const PartwisePartSet& getPartwisePartSet() const;
+            void addPartwisePart( const PartwisePartPtr& value );
+            void removePartwisePart( const PartwisePartSetIterConst& value );
+            void clearPartwisePartSet();
+            PartwisePartPtr getPartwisePart( const PartwisePartSetIterConst& setIterator ) const;
+        private:
+            ScoreTimewiseAttributesPtr myAttributes;
+            ScoreHeaderGroupPtr myScoreHeaderGroup;
+            PartwisePartSet myPartwisePartSet;
+        };
     }
 }

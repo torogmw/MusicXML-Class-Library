@@ -1,7 +1,7 @@
 
 #include "TestHarness.h"
 #include "MxTestHelper.h"
-#include "PartTest.h"
+#include "PartwisePartTest.h"
 #include "MeasureTest.h"
 
 using namespace mx::e;
@@ -11,12 +11,12 @@ using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"
 #ifdef RUN_PHASE4_TESTS
 
-TEST( Test01, Part )
+TEST( Test01, PartwisePart )
 {
     variant v = variant::one;
-	PartPtr object = tgenPart( v );
+	PartwisePartPtr object = tgenPartwisePart( v );
 	stringstream expected;
-	tgenPartExpected( expected, 1, v );
+	tgenPartwisePartExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -24,12 +24,12 @@ TEST( Test01, Part )
 	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test02, Part )
+TEST( Test02, PartwisePart )
 {
     variant v = variant::two;
-	PartPtr object = tgenPart( v );
+	PartwisePartPtr object = tgenPartwisePart( v );
 	stringstream expected;
-	tgenPartExpected( expected, 1, v );
+	tgenPartwisePartExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -37,12 +37,12 @@ TEST( Test02, Part )
 	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
-TEST( Test03, Part )
+TEST( Test03, PartwisePart )
 {
     variant v = variant::three;
-	PartPtr object = tgenPart( v );
+	PartwisePartPtr object = tgenPartwisePart( v );
 	stringstream expected;
-	tgenPartExpected( expected, 1, v );
+	tgenPartwisePartExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
@@ -53,9 +53,9 @@ TEST( Test03, Part )
 #endif
 namespace MxTestHelpers
 {
-    PartPtr tgenPart( variant v )
+    PartwisePartPtr tgenPartwisePart( variant v )
     {
-        PartPtr o = makePart();
+        PartwisePartPtr o = makePartwisePart();
         switch ( v )
         {
             case variant::one:
@@ -84,7 +84,7 @@ namespace MxTestHelpers
         }
         return o;
     }
-    void tgenPartExpected( std::ostream& os, int i, variant v )
+    void tgenPartwisePartExpected( std::ostream& os, int i, variant v )
     {
         
         switch ( v )

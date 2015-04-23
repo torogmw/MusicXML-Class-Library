@@ -2,7 +2,7 @@
 #include "TestHarness.h"
 #include "MxTestHelper.h"
 #include "ScorePartwiseTest.h"
-#include "PartTest.h"
+#include "PartwisePartTest.h"
 #include "ScoreHeaderGroupTest.h"
 
 
@@ -70,17 +70,17 @@ namespace MxTestHelpers
                 o->getAttributes()->hasVersion = true;
                 o->getAttributes()->version = XsToken( "3.0" );
                 o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
-                o->addPart( tgenPart( v ) );
-                o->removePart( o->getPartSet().cbegin() );
+                o->addPartwisePart( tgenPartwisePart( v ) );
+                o->removePartwisePart( o->getPartwisePartSet().cbegin() );
             }
                 break;
             case variant::three:
             {
                 o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
-                o->addPart( tgenPart( v ) );
-                o->removePart( o->getPartSet().cbegin() );
-                o->addPart( tgenPart( variant::one ) );
-                o->addPart( tgenPart( variant::two ) );
+                o->addPartwisePart( tgenPartwisePart( v ) );
+                o->removePartwisePart( o->getPartwisePartSet().cbegin() );
+                o->addPartwisePart( tgenPartwisePart( variant::one ) );
+                o->addPartwisePart( tgenPartwisePart( variant::two ) );
             }
                 break;
             default:
@@ -98,7 +98,7 @@ namespace MxTestHelpers
                 streamLine( os, i, R"(<score-partwise>)" );
                 tgenScoreHeaderGroupExpected( os, i+1,  v );
                 os << std::endl;
-                tgenPartExpected( os, i+1, v );
+                tgenPartwisePartExpected( os, i+1, v );
                 os << std::endl;
                 streamLine( os, i, R"(</score-partwise>)", false );
             }
@@ -108,7 +108,7 @@ namespace MxTestHelpers
                 streamLine( os, i, R"(<score-partwise version="3.0">)" );
                 tgenScoreHeaderGroupExpected( os, i+1,  v );
                 os << std::endl;
-                tgenPartExpected( os, i+1, v );
+                tgenPartwisePartExpected( os, i+1, v );
                 os << std::endl;
                 streamLine( os, i, R"(</score-partwise>)", false );
             }
@@ -118,11 +118,11 @@ namespace MxTestHelpers
                 streamLine( os, i, R"(<score-partwise>)" );
                 tgenScoreHeaderGroupExpected( os, i+1,  v );
                 os << std::endl;
-                tgenPartExpected( os, i+1, v );
+                tgenPartwisePartExpected( os, i+1, v );
                 os << std::endl;
-                tgenPartExpected( os, i+1, variant::one );
+                tgenPartwisePartExpected( os, i+1, variant::one );
                 os << std::endl;
-                tgenPartExpected( os, i+1, variant::two );
+                tgenPartwisePartExpected( os, i+1, variant::two );
                 os << std::endl;
                 streamLine( os, i, R"(</score-partwise>)", false );
             }

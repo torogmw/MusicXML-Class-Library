@@ -6931,31 +6931,31 @@ namespace mx
             }
             return os;
         }
-        Part::Part()
+        PartwisePart::PartwisePart()
 		:myAttributes( std::make_shared<PartAttributes>() )
         ,myMeasureSet()
 		{
             myMeasureSet.push_back( makeMeasure() );
         }
-		bool Part::hasAttributes() const
+		bool PartwisePart::hasAttributes() const
 		{
 			return myAttributes->hasValues();
 		}
-		std::ostream& Part::streamAttributes( std::ostream& os ) const
+		std::ostream& PartwisePart::streamAttributes( std::ostream& os ) const
 		{
 			return myAttributes->toStream( os );
 			return os;
 		}
-		std::ostream& Part::streamName( std::ostream& os ) const
+		std::ostream& PartwisePart::streamName( std::ostream& os ) const
 		{
 			os << "part";
 			return os;
 		}
-		bool Part::hasContents() const
+		bool PartwisePart::hasContents() const
 		{
 			return true;
 		}
-		std::ostream& Part::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		std::ostream& PartwisePart::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
             if ( hasContents() )
             {
@@ -6974,11 +6974,11 @@ namespace mx
             }
 			return os;
 		}
-		PartAttributesPtr Part::getAttributes() const
+		PartAttributesPtr PartwisePart::getAttributes() const
 		{
 			return myAttributes;
 		}
-		void Part::setAttributes( const PartAttributesPtr& value )
+		void PartwisePart::setAttributes( const PartAttributesPtr& value )
 		{
 			if ( value )
 			{
@@ -6986,18 +6986,18 @@ namespace mx
 			}
 		}
         /* _________ Measure minOccurs = 0, maxOccurs = unbounded _________ */
-        const MeasureSet& Part::getMeasureSet() const
+        const MeasureSet& PartwisePart::getMeasureSet() const
         {
             return myMeasureSet;
         }
-        void Part::addMeasure( const MeasurePtr& value )
+        void PartwisePart::addMeasure( const MeasurePtr& value )
         {
             if ( value )
             {
                 myMeasureSet.push_back( value );
             }
         }
-        void Part::removeMeasure( const MeasureSetIterConst& value )
+        void PartwisePart::removeMeasure( const MeasureSetIterConst& value )
         {
             if ( value != myMeasureSet.cend() )
             {
@@ -7007,12 +7007,12 @@ namespace mx
                 }
             }
         }
-        void Part::clearMeasureSet()
+        void PartwisePart::clearMeasureSet()
         {
             myMeasureSet.clear();
             myMeasureSet.push_back( makeMeasure() );
         }
-        MeasurePtr Part::getMeasure( const MeasureSetIterConst& setIterator ) const
+        MeasurePtr PartwisePart::getMeasure( const MeasureSetIterConst& setIterator ) const
         {
             if( setIterator != myMeasureSet.cend() )
             {
@@ -7302,9 +7302,9 @@ namespace mx
 		ScorePartwise::ScorePartwise()
 		:myAttributes( std::make_shared<ScorePartwiseAttributes>() )
         ,myScoreHeaderGroup( makeScoreHeaderGroup() )
-		,myPartSet()
+		,myPartwisePartSet()
 		{
-            myPartSet.push_back( makePart() );
+            myPartwisePartSet.push_back( makePartwisePart() );
             
         }
 		bool ScorePartwise::hasAttributes() const
@@ -7329,7 +7329,7 @@ namespace mx
 		{
             os << std::endl;
             myScoreHeaderGroup->streamContents( os, indentLevel+1, isOneLineOnly );
-			for ( auto x : myPartSet )
+			for ( auto x : myPartwisePartSet )
             {
                 os << std::endl;
                 x->toStream( os, indentLevel+1 );
@@ -7362,39 +7362,39 @@ namespace mx
             }
         }
 		/* _________ Part minOccurs = 1, maxOccurs = unbounded _________ */
-		const PartSet& ScorePartwise::getPartSet() const
+		const PartwisePartSet& ScorePartwise::getPartwisePartSet() const
 		{
-			return myPartSet;
+			return myPartwisePartSet;
 		}
-		void ScorePartwise::removePart( const PartSetIterConst& value )
+		void ScorePartwise::removePartwisePart( const PartwisePartSetIterConst& value )
 		{
-			if ( value != myPartSet.cend() )
+			if ( value != myPartwisePartSet.cend() )
 			{
-				if ( myPartSet.size() > 1 )
+				if ( myPartwisePartSet.size() > 1 )
 				{
-					myPartSet.erase( value );
+					myPartwisePartSet.erase( value );
 				}
 			}
 		}
-		void ScorePartwise::addPart( const PartPtr& value )
+		void ScorePartwise::addPartwisePart( const PartwisePartPtr& value )
 		{
 			if ( value )
 			{
-				myPartSet.push_back( value );
+				myPartwisePartSet.push_back( value );
 			}
 		}
-		void ScorePartwise::clearPartSet()
+		void ScorePartwise::clearPartwisePartSet()
 		{
-			myPartSet.clear();
-            myPartSet.push_back( makePart() );
+			myPartwisePartSet.clear();
+            myPartwisePartSet.push_back( makePartwisePart() );
 		}
-		PartPtr ScorePartwise::getPart( const PartSetIterConst& setIterator ) const
+		PartwisePartPtr ScorePartwise::getPartwisePart( const PartwisePartSetIterConst& setIterator ) const
 		{
-			if( setIterator != myPartSet.cend() )
+			if( setIterator != myPartwisePartSet.cend() )
 			{
 				return *setIterator;
 			}
-			return PartPtr();
+			return PartwisePartPtr();
 		}
 
 #if 1==0
