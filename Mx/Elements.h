@@ -26068,7 +26068,6 @@ namespace mx
             ScoreHeaderGroupPtr myScoreHeaderGroup;
             TimewiseMeasureSet myTimewiseMeasureSet;
         };
-        
     }
 }
 

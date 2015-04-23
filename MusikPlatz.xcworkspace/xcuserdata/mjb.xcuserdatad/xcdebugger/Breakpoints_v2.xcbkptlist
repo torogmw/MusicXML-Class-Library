@@ -281,36 +281,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mx/ElementsNew.cpp"
-            timestampString = "451078223.280481"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2120"
-            endingLineNumber = "2120">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Mx/ElementsNew.cpp"
-            timestampString = "451078132.436528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2088"
-            endingLineNumber = "2088"
-            landmarkName = "CreditWordsGroup::streamContents( std::ostream&amp; os, const int indentLevel, bool&amp; isOneLineOnly )"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Xsd/MsItemElement.cpp"
             timestampString = "451161246.530953"
             startingColumnNumber = "9223372036854775807"
@@ -334,22 +304,6 @@
             startingLineNumber = "289"
             endingLineNumber = "289"
             landmarkName = "MsItemElement::getFirstGenerationSubElements()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Mx/ElementsNew.cpp"
-            timestampString = "451191123.154241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4608"
-            endingLineNumber = "4608"
-            landmarkName = "ScorePart::streamContents( std::ostream&amp; os, const int indentLevel, bool&amp; isOneLineOnly )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
