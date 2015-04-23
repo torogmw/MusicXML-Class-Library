@@ -67,13 +67,12 @@ namespace mx
             const DecimalType myMax;
         };
         
-        /* MIN = 0 EXCLUSIVE!, MAX = N/A, DEFAULT = kNonZeroAmount */
+        /* MIN = 0 EXCLUSIVE!, MAX = N/A, DEFAULT = 1 */
         class PositiveDecimal: public Decimal
         {
         public:
             explicit PositiveDecimal( DecimalType value );
-            PositiveDecimal();
-            // virtual ~PositiveDecimal();
+            PositiveDecimal(); /* Initializes to 1 */
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };
@@ -84,7 +83,6 @@ namespace mx
         public:
             explicit NonNegativeDecimal( DecimalType value );
             NonNegativeDecimal();
-            // virtual ~NonNegativeDecimal ();
             virtual void setValue( DecimalType value );
             virtual void parse( const std::string& value );
         };

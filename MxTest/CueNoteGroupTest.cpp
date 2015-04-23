@@ -95,7 +95,7 @@ namespace MxTestHelpers
                 streamLine( os, i, R"(<cue/>)" );
                 tgenFullNoteGroupExpected( os, i, v );
                 os << std::endl;
-                streamLine( os, i, R"(<duration>0.00000000001</duration>)", false );
+                streamLine( os, i, R"(<duration>1</duration>)", false );
             }
                 break;
             case variant::two:

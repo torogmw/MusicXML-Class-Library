@@ -143,7 +143,7 @@ namespace mx
         }
         
         PositiveDecimal::PositiveDecimal()
-        :Decimal( kNonZeroAmount ) {}
+        :Decimal( 1 ) {}
         
         // PositiveDecimal::~PositiveDecimal() {}
         

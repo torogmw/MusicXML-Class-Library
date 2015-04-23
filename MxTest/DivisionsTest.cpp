@@ -18,7 +18,7 @@ TEST( Test01, Divisions )
 	object1.toStream( default_constructed, 0 );
 	std::stringstream object2_stream;
 	object2.toStream( object2_stream, 2 );
-	std::string expected = R"(<divisions>0.00000000001</divisions>)";
+	std::string expected = R"(<divisions>1</divisions>)";
 	std::string actual = default_constructed.str();
 	CHECK_EQUAL( expected, actual )
 	expected = indentString+indentString+R"(<divisions>4.1</divisions>)";

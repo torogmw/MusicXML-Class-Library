@@ -87,7 +87,7 @@ namespace MxTestHelpers
             case variant::one:
             {
                 streamLine( os, i, R"(<backup>)" );
-                streamLine( os, i+1, R"(<duration>0.00000000001</duration>)" );
+                streamLine( os, i+1, R"(<duration>1</duration>)" );
                 streamLine( os, i, R"(</backup>)", false );
             }
                 break;
