@@ -6813,6 +6813,102 @@ namespace mx
             }
             return MusicDataChoicePtr();
         }
+        
+        
+        
+        /**************** MeasureAttributes ****************/
+        /* 6418 */
+        MeasureAttributes::MeasureAttributes()
+        :number()
+        ,implicit( types::YesNo::no )
+        ,nonControlling( types::YesNo::no )
+        ,width()
+        ,hasNumber( true )
+        ,hasImplicit( false )
+        ,hasNonControlling( false )
+        ,hasWidth( false )
+        {}
+        
+        bool MeasureAttributes::hasValues() const
+        {
+            return hasNumber ||
+            hasImplicit ||
+            hasNonControlling ||
+            hasWidth;
+        }
+        
+        std::ostream& MeasureAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, number, "number", hasNumber );
+                streamAttribute( os, implicit, "implicit", hasImplicit );
+                streamAttribute( os, nonControlling, "non-controlling", hasNonControlling );
+                streamAttribute( os, width, "width", hasWidth );
+            }
+            return os;
+        }
+        
+		Measure::Measure()
+		:myAttributes( std::make_shared<MeasureAttributes>() )
+        ,myMusicDataGroup( makeMusicDataGroup() )
+		{}
+		bool Measure::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Measure::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Measure::streamName( std::ostream& os ) const
+		{
+			os << "measure";
+			return os;
+		}
+		bool Measure::hasContents() const
+		{
+			return myMusicDataGroup->hasContents();
+		}
+		std::ostream& Measure::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( hasContents() )
+            {
+                os << std::endl;
+                myMusicDataGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+			return os;
+		}
+		MeasureAttributesPtr Measure::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Measure::setAttributes( const MeasureAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
+        MusicDataGroupPtr Measure::getMusicDataGroup() const
+        {
+            return myMusicDataGroup;
+        }
+        void Measure::setMusicDataGroup( const MusicDataGroupPtr& value )
+        {
+            if ( value )
+            {
+                myMusicDataGroup = value;
+            }
+        }
 #if 1==0
 #endif
         

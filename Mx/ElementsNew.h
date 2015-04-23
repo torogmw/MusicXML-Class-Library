@@ -3406,6 +3406,7 @@ namespace mx
             ScorePartPtr myScorePart; /* minOccurs="1" maxOccurs="1" */
             PartGroupOrScorePartSet myPartGroupOrScorePartSet; /* minOccurs="0" maxOccurs="unbounded" */
         };
+        
         /* <!--  ID = 6418 [6418, 6440] ------------------------->
          <!-- min=1 max=4294967295 OneOrMMany  -->
          <!-- MsItemElementKind::composite -->
@@ -3575,9 +3576,7 @@ namespace mx
             bool hasNonControlling;
             bool hasWidth;
         };
-        
-        
-        
+
         class Measure;
         using MeasurePtr = std::shared_ptr<Measure>;
         using MeasureUPtr = std::unique_ptr<Measure>;
@@ -3596,8 +3595,12 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             MeasureAttributesPtr getAttributes() const;
             void setAttributes( const MeasureAttributesPtr& value );
+            /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
+            MusicDataGroupPtr getMusicDataGroup() const;
+            void setMusicDataGroup( const MusicDataGroupPtr& value );
         private:
             MeasureAttributesPtr myAttributes;
+            MusicDataGroupPtr myMusicDataGroup;
         };
 
     }
