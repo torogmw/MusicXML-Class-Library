@@ -3406,6 +3406,173 @@ namespace mx
             ScorePartPtr myScorePart; /* minOccurs="1" maxOccurs="1" */
             PartGroupOrScorePartSet myPartGroupOrScorePartSet; /* minOccurs="0" maxOccurs="unbounded" */
         };
+        /* <!--  ID = 6418 [6418, 6440] ------------------------->
+         <!-- min=1 max=4294967295 OneOrMMany  -->
+         <!-- MsItemElementKind::composite -->
+         <!-- RecursiveSubElementCount = 470 -->
+         <!-- All Sub Elements Are Implemented: true -->
+         <xs:element name="measure" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:group ref="music-data"/>
+         <xs:attributeGroup ref="measure-attributes"/>
+         </xs:complexType>
+         </xs:element>
+         <xs:group name="music-data">
+         <xs:annotation>
+         <xs:documentation>The music-data group contains the basic musical data that is either associated with a part or a measure, depending on whether the partwise or timewise hierarchy is used.</xs:documentation>
+         </xs:annotation>
+         <xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="note" type="note"/>
+         <xs:element name="backup" type="backup"/>
+         <xs:element name="forward" type="forward"/>
+         <xs:element name="direction" type="direction"/>
+         <xs:element name="attributes" type="attributes"/>
+         <xs:element name="harmony" type="harmony"/>
+         <xs:element name="figured-bass" type="figured-bass"/>
+         <xs:element name="print" type="print"/>
+         <xs:element name="sound" type="sound"/>
+         <xs:element name="barline" type="barline"/>
+         <xs:element name="grouping" type="grouping"/>
+         <xs:element name="link" type="link"/>
+         <xs:element name="bookmark" type="bookmark"/>
+         </xs:choice>
+         </xs:sequence>
+         </xs:group> */
         
+        class MusicDataChoice;
+        using MusicDataChoicePtr = std::shared_ptr<MusicDataChoice>;
+        using MusicDataChoiceUPtr = std::unique_ptr<MusicDataChoice>;
+        using MusicDataChoiceSet = std::vector<MusicDataChoicePtr>;
+        using MusicDataChoiceSetIter = MusicDataChoiceSet::iterator;
+        using MusicDataChoiceSetIterConst = MusicDataChoiceSet::const_iterator;
+        inline MusicDataChoicePtr makeMusicDataChoice() { return std::make_shared<MusicDataChoice>(); }
+        class MusicDataChoice : public ElementInterface
+        {
+        public:
+            enum class Choice
+            {
+                note = 1,
+                backup = 2,
+                forward = 3,
+                direction = 4,
+                properties = 5,
+                harmony = 6,
+                figuredBass = 7,
+                print = 8,
+                sound = 9,
+                barline = 10,
+                grouping = 11,
+                link = 12,
+                bookmark = 13
+            };
+            MusicDataChoice();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+            MusicDataChoice::Choice getChoice() const;
+            void setChoice( const MusicDataChoice::Choice value );
+            /* _________ Note minOccurs = 1, maxOccurs = 1 _________ */
+            NotePtr getNote() const;
+            void setNote( const NotePtr& value );
+            /* _________ Backup minOccurs = 1, maxOccurs = 1 _________ */
+            BackupPtr getBackup() const;
+            void setBackup( const BackupPtr& value );
+            /* _________ Forward minOccurs = 1, maxOccurs = 1 _________ */
+            ForwardPtr getForward() const;
+            void setForward( const ForwardPtr& value );
+            /* _________ Direction minOccurs = 1, maxOccurs = 1 _________ */
+            DirectionPtr getDirection() const;
+            void setDirection( const DirectionPtr& value );
+            /* _________ Properties minOccurs = 1, maxOccurs = 1 _________ */
+            PropertiesPtr getProperties() const;
+            void setProperties( const PropertiesPtr& value );
+            /* _________ Harmony minOccurs = 1, maxOccurs = 1 _________ */
+            HarmonyPtr getHarmony() const;
+            void setHarmony( const HarmonyPtr& value );
+            /* _________ FiguredBass minOccurs = 1, maxOccurs = 1 _________ */
+            FiguredBassPtr getFiguredBass() const;
+            void setFiguredBass( const FiguredBassPtr& value );
+            /* _________ Print minOccurs = 1, maxOccurs = 1 _________ */
+            PrintPtr getPrint() const;
+            void setPrint( const PrintPtr& value );
+            /* _________ Sound minOccurs = 1, maxOccurs = 1 _________ */
+            SoundPtr getSound() const;
+            void setSound( const SoundPtr& value );
+            /* _________ Barline minOccurs = 1, maxOccurs = 1 _________ */
+            BarlinePtr getBarline() const;
+            void setBarline( const BarlinePtr& value );
+            /* _________ Grouping minOccurs = 1, maxOccurs = 1 _________ */
+            GroupingPtr getGrouping() const;
+            void setGrouping( const GroupingPtr& value );
+            /* _________ Link minOccurs = 1, maxOccurs = 1 _________ */
+            LinkPtr getLink() const;
+            void setLink( const LinkPtr& value );
+            /* _________ Bookmark minOccurs = 1, maxOccurs = 1 _________ */
+            BookmarkPtr getBookmark() const;
+            void setBookmark( const BookmarkPtr& value );
+        private:
+            Choice myChoice;
+            NotePtr myNote;
+            BackupPtr myBackup;
+            ForwardPtr myForward;
+            DirectionPtr myDirection;
+            PropertiesPtr myProperties;
+            HarmonyPtr myHarmony;
+            FiguredBassPtr myFiguredBass;
+            PrintPtr myPrint;
+            SoundPtr mySound;
+            BarlinePtr myBarline;
+            GroupingPtr myGrouping;
+            LinkPtr myLink;
+            BookmarkPtr myBookmark;
+        };
+        
+        
+        struct MeasureAttributes;
+        using MeasureAttributesPtr = std::shared_ptr<MeasureAttributes>;
+        
+        struct MeasureAttributes : public AttributesInterface
+        {
+        public:
+            MeasureAttributes();
+            virtual bool hasValues() const;
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            types::XsToken number;
+            types::YesNo implicit;
+            types::YesNo nonControlling;
+            types::TenthsValue width;
+            const 	bool hasNumber;
+            bool hasImplicit;
+            bool hasNonControlling;
+            bool hasWidth;
+        };
+        
+        
+        class Measure;
+        using MeasurePtr = std::shared_ptr<Measure>;
+        using MeasureUPtr = std::unique_ptr<Measure>;
+        using MeasureSet = std::vector<MeasurePtr>;
+        using MeasureSetIter = MeasureSet::iterator;
+        using MeasureSetIterConst = MeasureSet::const_iterator;
+        inline MeasurePtr makeMeasure() { return std::make_shared<Measure>(); }
+        class Measure : public ElementInterface
+        {
+        public:
+            Measure();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            MeasureAttributesPtr getAttributes() const;
+            void setAttributes( const MeasureAttributesPtr& value );
+        private:
+            MeasureAttributesPtr myAttributes;
+        };
+
     }
 }

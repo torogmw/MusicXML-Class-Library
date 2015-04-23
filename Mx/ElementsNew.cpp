@@ -6501,6 +6501,254 @@ namespace mx
             }
             return PartGroupOrScorePartPtr();
         }
+        
+        MusicDataChoice::MusicDataChoice()
+        :myChoice( Choice::note )
+        ,myNote( makeNote() )
+        ,myBackup( makeBackup() )
+        ,myForward( makeForward() )
+        ,myDirection( makeDirection() )
+        ,myProperties( makeProperties() )
+        ,myHarmony( makeHarmony() )
+        ,myFiguredBass( makeFiguredBass() )
+        ,myPrint( makePrint() )
+        ,mySound( makeSound() )
+        ,myBarline( makeBarline() )
+        ,myGrouping( makeGrouping() )
+        ,myLink( makeLink() )
+        ,myBookmark( makeBookmark() )
+        {}
+        bool MusicDataChoice::hasAttributes() const
+        {
+            return false;
+        }
+        std::ostream& MusicDataChoice::streamAttributes( std::ostream& os ) const
+        {
+            return os;
+        }
+        std::ostream& MusicDataChoice::streamName( std::ostream& os ) const
+        {
+            return os;
+        }
+        bool MusicDataChoice::hasContents() const
+        {
+            return true;
+        }
+        std::ostream& MusicDataChoice::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+        {
+            switch ( myChoice )
+            {
+                case Choice::note:
+                    myNote->toStream( os, indentLevel );
+                    break;
+                case Choice::backup:
+                    myBackup->toStream( os, indentLevel );
+                    break;
+                case Choice::forward:
+                    myForward->toStream( os, indentLevel );
+                    break;
+                case Choice::direction:
+                    myDirection->toStream( os, indentLevel );
+                    break;
+                case Choice::properties:
+                    myProperties->toStream( os, indentLevel );
+                    break;
+                case Choice::harmony:
+                    myHarmony->toStream( os, indentLevel );
+                    break;
+                case Choice::figuredBass:
+                    myFiguredBass->toStream( os, indentLevel );
+                    break;
+                case Choice::print:
+                    myPrint->toStream( os, indentLevel );
+                    break;
+                case Choice::sound:
+                    mySound->toStream( os, indentLevel );
+                    break;
+                case Choice::barline:
+                    myBarline->toStream( os, indentLevel );
+                    break;
+                case Choice::grouping:
+                    myGrouping->toStream( os, indentLevel );
+                    break;
+                case Choice::link:
+                    myLink->toStream( os, indentLevel );
+                    break;
+                case Choice::bookmark:
+                    myBookmark->toStream( os, indentLevel );
+                    break;
+                default:
+                    break;
+            }
+            isOneLineOnly = false;
+            return os;
+        }
+        /* _________ Choice minOccurs = 1, maxOccurs = 1 _________ */
+        MusicDataChoice::Choice MusicDataChoice::getChoice() const
+        {
+            return myChoice;
+        }
+        void MusicDataChoice::setChoice( const MusicDataChoice::Choice value )
+        {
+            myChoice = value;
+        }
+        /* _________ Note minOccurs = 1, maxOccurs = 1 _________ */
+        NotePtr MusicDataChoice::getNote() const
+        {
+            return myNote;
+        }
+        void MusicDataChoice::setNote( const NotePtr& value )
+        {
+            if ( value )
+            {
+                myNote = value;
+            }
+        }
+        /* _________ Backup minOccurs = 1, maxOccurs = 1 _________ */
+        BackupPtr MusicDataChoice::getBackup() const
+        {
+            return myBackup;
+        }
+        void MusicDataChoice::setBackup( const BackupPtr& value )
+        {
+            if ( value )
+            {
+                myBackup = value;
+            }
+        }
+        /* _________ Forward minOccurs = 1, maxOccurs = 1 _________ */
+        ForwardPtr MusicDataChoice::getForward() const
+        {
+            return myForward;
+        }
+        void MusicDataChoice::setForward( const ForwardPtr& value )
+        {
+            if ( value )
+            {
+                myForward = value;
+            }
+        }
+        /* _________ Direction minOccurs = 1, maxOccurs = 1 _________ */
+        DirectionPtr MusicDataChoice::getDirection() const
+        {
+            return myDirection;
+        }
+        void MusicDataChoice::setDirection( const DirectionPtr& value )
+        {
+            if ( value )
+            {
+                myDirection = value;
+            }
+        }
+        /* _________ Properties minOccurs = 1, maxOccurs = 1 _________ */
+        PropertiesPtr MusicDataChoice::getProperties() const
+        {
+            return myProperties;
+        }
+        void MusicDataChoice::setProperties( const PropertiesPtr& value )
+        {
+            if ( value )
+            {
+                myProperties = value;
+            }
+        }
+        /* _________ Harmony minOccurs = 1, maxOccurs = 1 _________ */
+        HarmonyPtr MusicDataChoice::getHarmony() const
+        {
+            return myHarmony;
+        }
+        void MusicDataChoice::setHarmony( const HarmonyPtr& value )
+        {
+            if ( value )
+            {
+                myHarmony = value;
+            }
+        }
+        /* _________ FiguredBass minOccurs = 1, maxOccurs = 1 _________ */
+        FiguredBassPtr MusicDataChoice::getFiguredBass() const
+        {
+            return myFiguredBass;
+        }
+        void MusicDataChoice::setFiguredBass( const FiguredBassPtr& value )
+        {
+            if ( value )
+            {
+                myFiguredBass = value;
+            }
+        }
+        /* _________ Print minOccurs = 1, maxOccurs = 1 _________ */
+        PrintPtr MusicDataChoice::getPrint() const
+        {
+            return myPrint;
+        }
+        void MusicDataChoice::setPrint( const PrintPtr& value )
+        {
+            if ( value )
+            {
+                myPrint = value;
+            }
+        }
+        /* _________ Sound minOccurs = 1, maxOccurs = 1 _________ */
+        SoundPtr MusicDataChoice::getSound() const
+        {
+            return mySound;
+        }
+        void MusicDataChoice::setSound( const SoundPtr& value )
+        {
+            if ( value )
+            {
+                mySound = value;
+            }
+        }
+        /* _________ Barline minOccurs = 1, maxOccurs = 1 _________ */
+        BarlinePtr MusicDataChoice::getBarline() const
+        {
+            return myBarline;
+        }
+        void MusicDataChoice::setBarline( const BarlinePtr& value )
+        {
+            if ( value )
+            {
+                myBarline = value;
+            }
+        }
+        /* _________ Grouping minOccurs = 1, maxOccurs = 1 _________ */
+        GroupingPtr MusicDataChoice::getGrouping() const
+        {
+            return myGrouping;
+        }
+        void MusicDataChoice::setGrouping( const GroupingPtr& value )
+        {
+            if ( value )
+            {
+                myGrouping = value;
+            }
+        }
+        /* _________ Link minOccurs = 1, maxOccurs = 1 _________ */
+        LinkPtr MusicDataChoice::getLink() const
+        {
+            return myLink;
+        }
+        void MusicDataChoice::setLink( const LinkPtr& value )
+        {
+            if ( value )
+            {
+                myLink = value;
+            }
+        }
+        /* _________ Bookmark minOccurs = 1, maxOccurs = 1 _________ */
+        BookmarkPtr MusicDataChoice::getBookmark() const
+        {
+            return myBookmark;
+        }
+        void MusicDataChoice::setBookmark( const BookmarkPtr& value )
+        {
+            if ( value )
+            {
+                myBookmark = value;
+            }
+        }
+        
 #if 1==0
 #endif
         
