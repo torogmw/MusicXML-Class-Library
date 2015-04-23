@@ -3531,6 +3531,31 @@ namespace mx
             BookmarkPtr myBookmark;
         };
         
+        class MusicDataGroup;
+        using MusicDataGroupPtr = std::shared_ptr<MusicDataGroup>;
+        using MusicDataGroupUPtr = std::unique_ptr<MusicDataGroup>;
+        using MusicDataGroupSet = std::vector<MusicDataGroupPtr>;
+        using MusicDataGroupSetIter = MusicDataGroupSet::iterator;
+        using MusicDataGroupSetIterConst = MusicDataGroupSet::const_iterator;
+        inline MusicDataGroupPtr makeMusicDataGroup() { return std::make_shared<MusicDataGroup>(); }
+        class MusicDataGroup : public ElementInterface
+        {
+        public:
+            MusicDataGroup();
+            virtual bool hasAttributes() const;
+            virtual std::ostream& streamAttributes( std::ostream& os ) const;
+            virtual std::ostream& streamName( std::ostream& os ) const;
+            virtual bool hasContents() const;
+            virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
+            /* _________ MusicDataChoice minOccurs = 0, maxOccurs = unbounded _________ */
+            const MusicDataChoiceSet& getMusicDataChoiceSet() const;
+            void addMusicDataChoice( const MusicDataChoicePtr& value );
+            void removeMusicDataChoice( const MusicDataChoiceSetIterConst& value );
+            void clearMusicDataChoiceSet();
+            MusicDataChoicePtr getMusicDataChoice( const MusicDataChoiceSetIterConst& setIterator ) const;
+        private:
+            MusicDataChoiceSet myMusicDataChoiceSet;
+        };
         
         struct MeasureAttributes;
         using MeasureAttributesPtr = std::shared_ptr<MeasureAttributes>;
@@ -3550,6 +3575,7 @@ namespace mx
             bool hasNonControlling;
             bool hasWidth;
         };
+        
         
         
         class Measure;

@@ -95,6 +95,7 @@
 		2962A3741AE2EF8200903EB0 /* CreditChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2962A3721AE2EF8200903EB0 /* CreditChoiceTest.cpp */; };
 		2967EE591AE88C7300B706FD /* PartListTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2967EE571AE88C7300B706FD /* PartListTest.cpp */; };
 		2967EE5C1AE8A24100B706FD /* MusicDataChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2967EE5A1AE8A24100B706FD /* MusicDataChoiceTest.cpp */; };
+		2967EE5F1AE8A90500B706FD /* MusicDataGroupTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2967EE5D1AE8A90500B706FD /* MusicDataGroupTest.cpp */; };
 		296B1AFC1AD183890095FCAA /* BendChoiceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */; };
 		296C11911ACF77B6004FAD06 /* DefaultsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */; };
 		2971F50A1AC320B0007C2EF7 /* MetronomeTupletTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971F5091AC320B0007C2EF7 /* MetronomeTupletTest.cpp */; };
@@ -549,6 +550,8 @@
 		2967EE581AE88C7300B706FD /* PartListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartListTest.h; sourceTree = "<group>"; };
 		2967EE5A1AE8A24100B706FD /* MusicDataChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MusicDataChoiceTest.cpp; sourceTree = "<group>"; };
 		2967EE5B1AE8A24100B706FD /* MusicDataChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataChoiceTest.h; sourceTree = "<group>"; };
+		2967EE5D1AE8A90500B706FD /* MusicDataGroupTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MusicDataGroupTest.cpp; sourceTree = "<group>"; };
+		2967EE5E1AE8A90500B706FD /* MusicDataGroupTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataGroupTest.h; sourceTree = "<group>"; };
 		296B1AFA1AD183890095FCAA /* BendChoiceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BendChoiceTest.cpp; sourceTree = "<group>"; };
 		296B1AFB1AD183890095FCAA /* BendChoiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BendChoiceTest.h; sourceTree = "<group>"; };
 		296C118F1ACF77B6004FAD06 /* DefaultsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = DefaultsTest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -1510,6 +1513,8 @@
 				2967EE581AE88C7300B706FD /* PartListTest.h */,
 				2967EE5A1AE8A24100B706FD /* MusicDataChoiceTest.cpp */,
 				2967EE5B1AE8A24100B706FD /* MusicDataChoiceTest.h */,
+				2967EE5D1AE8A90500B706FD /* MusicDataGroupTest.cpp */,
+				2967EE5E1AE8A90500B706FD /* MusicDataGroupTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1635,6 +1640,7 @@
 				298C81D21AB6A8DC006619A9 /* BracketTest.cpp in Sources */,
 				29A5650B1AC4ABB10059CACD /* AccordTest.cpp in Sources */,
 				298C81DA1AB6A8DC006619A9 /* InstrumentTest.cpp in Sources */,
+				2967EE5F1AE8A90500B706FD /* MusicDataGroupTest.cpp in Sources */,
 				29CEB4A61AB4C0FA00D6AEFC /* LaughingTest.cpp in Sources */,
 				29774A031AB21FA000BF2205 /* MidiUnpitchedTest.cpp in Sources */,
 				2935A7341AB5FC3B002859CA /* StressTest.cpp in Sources */,
