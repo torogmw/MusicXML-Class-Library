@@ -6909,6 +6909,87 @@ namespace mx
                 myMusicDataGroup = value;
             }
         }
+        
+        /**************** PartAttributes ****************/
+        /* 6413 */
+        PartAttributes::PartAttributes()
+        :id()
+        ,hasId( true )
+        {}
+        
+        bool PartAttributes::hasValues() const
+        {
+            return hasId;
+        }
+        
+        std::ostream& PartAttributes::toStream( std::ostream& os ) const
+        {
+            if ( hasValues() )
+            {
+                streamAttribute( os, id, "id", hasId );
+            }
+            return os;
+        }
+        Part::Part()
+		:myAttributes( std::make_shared<PartAttributes>() )
+        ,myMusicDataGroup( makeMusicDataGroup() )
+		{}
+		bool Part::hasAttributes() const
+		{
+			return myAttributes->hasValues();
+		}
+		std::ostream& Part::streamAttributes( std::ostream& os ) const
+		{
+			return myAttributes->toStream( os );
+			return os;
+		}
+		std::ostream& Part::streamName( std::ostream& os ) const
+		{
+			os << "part";
+			return os;
+		}
+		bool Part::hasContents() const
+		{
+			return myMusicDataGroup->hasContents();
+		}
+		std::ostream& Part::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
+		{
+            if ( hasContents() )
+            {
+                os << std::endl;
+                myMusicDataGroup->streamContents( os, indentLevel+1, isOneLineOnly );
+                os << std::endl;
+                isOneLineOnly = false;
+            }
+            else
+            {
+                isOneLineOnly = true;
+            }
+			return os;
+		}
+		PartAttributesPtr Part::getAttributes() const
+		{
+			return myAttributes;
+		}
+		void Part::setAttributes( const PartAttributesPtr& value )
+		{
+			if ( value )
+			{
+				myAttributes = value;
+			}
+		}
+        /* _________ MusicDataGroup minOccurs = 1, maxOccurs = 1 _________ */
+        MusicDataGroupPtr Part::getMusicDataGroup() const
+        {
+            return myMusicDataGroup;
+        }
+        void Part::setMusicDataGroup( const MusicDataGroupPtr& value )
+        {
+            if ( value )
+            {
+                myMusicDataGroup = value;
+            }
+        }
 #if 1==0
 #endif
         
