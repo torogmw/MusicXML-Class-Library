@@ -5867,6 +5867,7 @@ namespace mx
 		,myNoteheadText( makeNoteheadText() )
 		,myHasNoteheadText( false )
         ,myStaff( makeStaff() )
+        ,myHasStaff( false )
 		,myBeamSet()
 		,myNotationsSet()
 		,myLyricSet()

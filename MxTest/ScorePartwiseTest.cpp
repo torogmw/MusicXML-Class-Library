@@ -36,7 +36,7 @@ TEST( Test02, ScorePartwise )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
+	CHECK( object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 TEST( Test03, ScorePartwise )
@@ -49,7 +49,7 @@ TEST( Test03, ScorePartwise )
 	// object->toStream( std::cout, 1 );
 	object->toStream( actual, 1 );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
+	CHECK( ! object->hasAttributes() )
 	CHECK( object->hasContents() )
 }
 #endif
@@ -67,6 +67,8 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
+                o->getAttributes()->hasVersion = true;
+                o->getAttributes()->version = XsToken( "3.0" );
                 o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
                 o->addPart( tgenPart( v ) );
                 o->removePart( o->getPartSet().cbegin() );
@@ -74,7 +76,11 @@ namespace MxTestHelpers
                 break;
             case variant::three:
             {
-
+                o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
+                o->addPart( tgenPart( v ) );
+                o->removePart( o->getPartSet().cbegin() );
+                o->addPart( tgenPart( variant::one ) );
+                o->addPart( tgenPart( variant::two ) );
             }
                 break;
             default:
@@ -99,12 +105,26 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                
+                streamLine( os, i, R"(<score-partwise version="3.0">)" );
+                tgenScoreHeaderGroupExpected( os, i+1,  v );
+                os << std::endl;
+                tgenPartExpected( os, i+1, v );
+                os << std::endl;
+                streamLine( os, i, R"(</score-partwise>)", false );
             }
                 break;
             case variant::three:
             {
-
+                streamLine( os, i, R"(<score-partwise>)" );
+                tgenScoreHeaderGroupExpected( os, i+1,  v );
+                os << std::endl;
+                tgenPartExpected( os, i+1, v );
+                os << std::endl;
+                tgenPartExpected( os, i+1, variant::one );
+                os << std::endl;
+                tgenPartExpected( os, i+1, variant::two );
+                os << std::endl;
+                streamLine( os, i, R"(</score-partwise>)", false );
             }
                 break;
             default:
