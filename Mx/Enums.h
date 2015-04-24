@@ -4,7 +4,7 @@
 
 namespace mx
 {
-	namespce t
+	namespace t
 	{
 		enum class AboveBelow
 		{
@@ -1369,5 +1369,5 @@ namespace mx
 		std::ostream& toStream( std::ostream& os, const DynamicsValue& value );
 		std::ostream& operator<<( std::ostream& os, const DynamicsValue& value );
         
-	} // namespce t
+	} // namespace t
 } // namespace mx

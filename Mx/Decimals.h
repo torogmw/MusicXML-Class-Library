@@ -6,7 +6,7 @@
 
 namespace mx
 {
-    namespce t
+    namespace t
     {
         
         /* alias for the floating point size used by this library.

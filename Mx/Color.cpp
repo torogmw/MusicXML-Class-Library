@@ -7,7 +7,7 @@
 
 namespace mx
 {
-    namespce t
+    namespace t
     {
         class Color::impl
         {

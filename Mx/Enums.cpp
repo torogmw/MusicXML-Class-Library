@@ -2,7 +2,7 @@
 
 namespace mx
 {
-	namespce t
+	namespace t
 	{
 		AboveBelow parseAboveBelow( const std::string& value )
 		{
@@ -3321,6 +3321,6 @@ namespace mx
          ***************************************************************************************************************************/
         
 
-	} // namespce t
+	} // namespace t
 
 } // namespace mx

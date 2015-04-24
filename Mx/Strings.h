@@ -6,7 +6,7 @@
 
 namespace mx
 {
-    namespce t
+    namespace t
     {
         /* Ostensibly you could change the type of
          string being used for locality.  However,

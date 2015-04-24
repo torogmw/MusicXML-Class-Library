@@ -5,7 +5,7 @@
 
 namespace mx
 {
-    namespce t
+    namespace t
     {
         
         class YesNoNumber::impl

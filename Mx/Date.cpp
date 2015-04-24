@@ -17,7 +17,7 @@ namespace
 
 namespace mx
 {
-    namespce t
+    namespace t
     {
         class Date::impl
         {
