@@ -208,6 +208,7 @@
 		29774A321AB21FA000BF2205 /* WoodTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CD1AB21FA000BF2205 /* WoodTest.cpp */; };
 		29774A331AB21FA000BF2205 /* WorkNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */; };
 		29774A341AB21FA000BF2205 /* WorkTitleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */; };
+		297804EE1AEA116A00B346B8 /* DocumentPartwiseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297804EC1AEA116A00B346B8 /* DocumentPartwiseTest.cpp */; };
 		29884C211AC1FBEC00DD2209 /* StaffDetailsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */; };
 		29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */; };
 		29884C251AC211B200DD2209 /* InterchangeableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C241AC211B200DD2209 /* InterchangeableTest.cpp */; };
@@ -683,6 +684,8 @@
 		297749CD1AB21FA000BF2205 /* WoodTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WoodTest.cpp; sourceTree = "<group>"; };
 		297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkNumberTest.cpp; sourceTree = "<group>"; };
 		297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkTitleTest.cpp; sourceTree = "<group>"; };
+		297804EC1AEA116A00B346B8 /* DocumentPartwiseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentPartwiseTest.cpp; sourceTree = "<group>"; };
+		297804ED1AEA116A00B346B8 /* DocumentPartwiseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentPartwiseTest.h; sourceTree = "<group>"; };
 		29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffDetailsTest.cpp; sourceTree = "<group>"; };
 		29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureStyleTest.cpp; sourceTree = "<group>"; };
 		29884C241AC211B200DD2209 /* InterchangeableTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterchangeableTest.cpp; sourceTree = "<group>"; };
@@ -1093,7 +1096,7 @@
 			name = "2015 04 02";
 			sourceTree = "<group>";
 		};
-		298B360A1AC8F36F0021CD1E /* Less Old */ = {
+		298B360A1AC8F36F0021CD1E /* 2015 03 01 */ = {
 			isa = PBXGroup;
 			children = (
 				290664051AC7E43F005E6E80 /* TupletActualTest.cpp */,
@@ -1137,15 +1140,15 @@
 				29E08C6A1AC7DB0D00744453 /* HoleTest.cpp */,
 				29E08C6B1AC7DB0D00744453 /* HoleTest.h */,
 			);
-			name = "Less Old";
+			name = "2015 03 01";
 			sourceTree = "<group>";
 		};
 		298B45E01A9B942A0014CAED = {
 			isa = PBXGroup;
 			children = (
+				298B45EB1A9B942A0014CAED /* CppUnitLite */,
 				292D02D91ABE1D0500005E61 /* Helpers */,
 				29F8F0A01AB62EE300788785 /* Links */,
-				298B45EB1A9B942A0014CAED /* CppUnitLite */,
 				298B45EA1A9B942A0014CAED /* Products */,
 				29F8F09F1AB62E9200788785 /* Tests */,
 			);
@@ -1178,7 +1181,7 @@
 			path = MxTest;
 			sourceTree = "<group>";
 		};
-		29A565051AC49D020059CACD /* Old */ = {
+		29A565051AC49D020059CACD /* 2015 02 01 */ = {
 			isa = PBXGroup;
 			children = (
 				29A564FD1AC3CD180059CACD /* MeasureLayoutTest.cpp */,
@@ -1517,7 +1520,7 @@
 				297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */,
 				292D126F1AA2A3270079EF22 /* YesNoNumber.cpp */,
 			);
-			name = Old;
+			name = "2015 02 01";
 			sourceTree = "<group>";
 		};
 		29C30BBC1AE5B4C8006C1ECD /* 2015 04 20 */ = {
@@ -1573,15 +1576,17 @@
 		29F8F09F1AB62E9200788785 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				29D728991AE9F14200806D33 /* 2015 04 23 */,
-				29C30BBC1AE5B4C8006C1ECD /* 2015 04 20 */,
-				292DC0B31AE55C4100B50C1D /* 2015 04 19 */,
-				290460C91AE32ED6008347D3 /* 2015 04 18 */,
+				29A565051AC49D020059CACD /* 2015 02 01 */,
+				298B360A1AC8F36F0021CD1E /* 2015 03 01 */,
 				298A5F8D1ACDF29F008F6B5A /* 2015 04 02 */,
-				298B360A1AC8F36F0021CD1E /* Less Old */,
-				29A565051AC49D020059CACD /* Old */,
+				290460C91AE32ED6008347D3 /* 2015 04 18 */,
+				292DC0B31AE55C4100B50C1D /* 2015 04 19 */,
+				29C30BBC1AE5B4C8006C1ECD /* 2015 04 20 */,
+				29D728991AE9F14200806D33 /* 2015 04 23 */,
 				29D7289A1AE9F18E00806D33 /* DocumentHeaderTest.cpp */,
 				29D7289B1AE9F18E00806D33 /* DocumentHeaderTest.h */,
+				297804EC1AEA116A00B346B8 /* DocumentPartwiseTest.cpp */,
+				297804ED1AEA116A00B346B8 /* DocumentPartwiseTest.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -2021,6 +2026,7 @@
 				29774A081AB21FA000BF2205 /* MuteTest.cpp in Sources */,
 				297749F31AB21FA000BF2205 /* InstrumentsTest.cpp in Sources */,
 				298C81D91AB6A8DC006619A9 /* ImageTest.cpp in Sources */,
+				297804EE1AEA116A00B346B8 /* DocumentPartwiseTest.cpp in Sources */,
 				298C81DD1AB6A8DC006619A9 /* LyricFontTest.cpp in Sources */,
 				29237AB91AC790E900FB4515 /* MordentTest.cpp in Sources */,
 				296236071AC5C43A00F3E007 /* SystemDividersTest.cpp in Sources */,
