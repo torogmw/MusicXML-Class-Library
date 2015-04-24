@@ -6,6 +6,9 @@ namespace mx
 {
     namespace d
     {
+        class DocumentPartwise;
+        using DocumentPartwisePtr = std::shared_ptr<DocumentPartwise>;
+        inline DocumentPartwisePtr makeDocumentPartwise() { return std::make_shared<DocumentPartwise>(); }
         class DocumentPartwise
         {
         public:
