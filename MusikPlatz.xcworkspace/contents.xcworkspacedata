@@ -7,6 +7,12 @@
       <FileRef
          location = "group:README.md">
       </FileRef>
+      <FileRef
+         location = "group:LICENSE.txt">
+      </FileRef>
+      <FileRef
+         location = "group:MusicXml_LICENSE.txt">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Mx/Mx.xcodeproj">

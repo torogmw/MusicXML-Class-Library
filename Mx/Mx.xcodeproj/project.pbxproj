@@ -29,6 +29,8 @@
 		29D10BB41A9BEF4E00F03CE6 /* Enums.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D10BB21A9BEF4E00F03CE6 /* Enums.h */; };
 		29D632171AA54E9100E6E28B /* Elements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D632151AA54E9100E6E28B /* Elements.cpp */; };
 		29D632181AA54E9100E6E28B /* Elements.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D632161AA54E9100E6E28B /* Elements.h */; };
+		29D728971AE9E48400806D33 /* DocumentHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D728951AE9E48400806D33 /* DocumentHeader.cpp */; };
+		29D728981AE9E48400806D33 /* DocumentHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 29D728961AE9E48400806D33 /* DocumentHeader.h */; };
 		29E801B81A9F983800EDBE41 /* Strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E801B61A9F983800EDBE41 /* Strings.cpp */; };
 		29E801B91A9F983800EDBE41 /* Strings.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E801B71A9F983800EDBE41 /* Strings.h */; };
 		29ED3EBD1AA1319E009FAF55 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29ED3EBB1AA1319E009FAF55 /* Color.cpp */; };
@@ -59,6 +61,8 @@
 		29D10BB21A9BEF4E00F03CE6 /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		29D632151AA54E9100E6E28B /* Elements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Elements.cpp; sourceTree = "<group>"; };
 		29D632161AA54E9100E6E28B /* Elements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Elements.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		29D728951AE9E48400806D33 /* DocumentHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentHeader.cpp; sourceTree = "<group>"; };
+		29D728961AE9E48400806D33 /* DocumentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentHeader.h; sourceTree = "<group>"; };
 		29E801B61A9F983800EDBE41 /* Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Strings.cpp; sourceTree = "<group>"; };
 		29E801B71A9F983800EDBE41 /* Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
 		29ED3EBB1AA1319E009FAF55 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Color.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -117,6 +121,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
+				29D728951AE9E48400806D33 /* DocumentHeader.cpp */,
+				29D728961AE9E48400806D33 /* DocumentHeader.h */,
 				298B360F1AC8F7A10021CD1E /* Element Bases */,
 				298B360E1AC8F7400021CD1E /* Types */,
 				29D632151AA54E9100E6E28B /* Elements.cpp */,
@@ -149,6 +155,7 @@
 				29A884FB1A9D5FD800F417CE /* Decimals.h in Headers */,
 				2971FBF11AA583D400547E82 /* ElementInterface.h in Headers */,
 				29D10BB41A9BEF4E00F03CE6 /* Enums.h in Headers */,
+				29D728981AE9E48400806D33 /* DocumentHeader.h in Headers */,
 				29D632181AA54E9100E6E28B /* Elements.h in Headers */,
 				295BAFB91AA23C5B002CAB3F /* FontSize.h in Headers */,
 				292D127C1AA2ACE80079EF22 /* NumberOrNormal.h in Headers */,
@@ -207,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D728971AE9E48400806D33 /* DocumentHeader.cpp in Sources */,
 				2971FBEC1AA580C600547E82 /* AttributesInterface.cpp in Sources */,
 				292D12741AA2A3FA0079EF22 /* Date.cpp in Sources */,
 				29ED3EBD1AA1319E009FAF55 /* Color.cpp in Sources */,
