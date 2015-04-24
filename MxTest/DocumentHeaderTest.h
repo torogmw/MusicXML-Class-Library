@@ -4,6 +4,5 @@
 
 namespace MxTestHelpers
 {
-    mx::d::DocumentHeaderPtr tgenDocumentHeader( variant v );
-    void tgenDocumentHeaderExpected( std::ostream& os, int indentLevel, variant v );
+    void tgenDocumentHeaderExpected( std::ostream& os, const mx::d::DocumentType doctype );
 }
