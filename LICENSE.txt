@@ -1,4 +1,32 @@
-Copyright (c) 2015, Matthew James Briggs
-All rights reserved.
+License for MusicXML C++ Class Library
 
-Redistribution and use in source and binary forms is not permitted.  This license will be updated to provide permissions when the software is released.
+The MIT License (MIT) - Slightly Modified
+
+Copyright (c) 2015 by Matthew James Briggs ( matthew.james.briggs@gmail.com )
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software (MusicXML C++ Class Library) and associated documentation files
+(the "Software" or "Library"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to permit persons
+to whom the Software is furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+* The Library (License for MusicXML C++ Class Library) and its author (Matthew
+James Briggs) must be acknowledged in a manner accessible to the users of any
+software which uses this library and which has a graphical user interface (for
+example in the "About" or "Acknowledgments" section of a graphic user
+interface).
+
+* If the Library has been modified, please amend this license at bottom with a
+few sentences describing the scope of the modifications.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
