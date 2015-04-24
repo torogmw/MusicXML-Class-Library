@@ -209,6 +209,7 @@
 		29774A331AB21FA000BF2205 /* WorkNumberTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CE1AB21FA000BF2205 /* WorkNumberTest.cpp */; };
 		29774A341AB21FA000BF2205 /* WorkTitleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */; };
 		297804EE1AEA116A00B346B8 /* DocumentPartwiseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297804EC1AEA116A00B346B8 /* DocumentPartwiseTest.cpp */; };
+		297804F11AEA165400B346B8 /* HelloWorldTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297804EF1AEA165400B346B8 /* HelloWorldTest.cpp */; };
 		29884C211AC1FBEC00DD2209 /* StaffDetailsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */; };
 		29884C231AC2085B00DD2209 /* MeasureStyleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */; };
 		29884C251AC211B200DD2209 /* InterchangeableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29884C241AC211B200DD2209 /* InterchangeableTest.cpp */; };
@@ -686,6 +687,7 @@
 		297749CF1AB21FA000BF2205 /* WorkTitleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorkTitleTest.cpp; sourceTree = "<group>"; };
 		297804EC1AEA116A00B346B8 /* DocumentPartwiseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentPartwiseTest.cpp; sourceTree = "<group>"; };
 		297804ED1AEA116A00B346B8 /* DocumentPartwiseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentPartwiseTest.h; sourceTree = "<group>"; };
+		297804EF1AEA165400B346B8 /* HelloWorldTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldTest.cpp; sourceTree = "<group>"; };
 		29884C201AC1FBEC00DD2209 /* StaffDetailsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaffDetailsTest.cpp; sourceTree = "<group>"; };
 		29884C221AC2085B00DD2209 /* MeasureStyleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeasureStyleTest.cpp; sourceTree = "<group>"; };
 		29884C241AC211B200DD2209 /* InterchangeableTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterchangeableTest.cpp; sourceTree = "<group>"; };
@@ -1587,6 +1589,7 @@
 				29D7289B1AE9F18E00806D33 /* DocumentHeaderTest.h */,
 				297804EC1AEA116A00B346B8 /* DocumentPartwiseTest.cpp */,
 				297804ED1AEA116A00B346B8 /* DocumentPartwiseTest.h */,
+				297804EF1AEA165400B346B8 /* HelloWorldTest.cpp */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1732,6 +1735,7 @@
 				2904B0A61AC1C00500B6C6C2 /* BeatRepeatTest.cpp in Sources */,
 				29C0B9E61AAE9398004F86FA /* OtherPlayTest.cpp in Sources */,
 				2935A7391AB5FC3B002859CA /* UnstressTest.cpp in Sources */,
+				297804F11AEA165400B346B8 /* HelloWorldTest.cpp in Sources */,
 				29C0B9F01AAE9398004F86FA /* RehearsalTest.cpp in Sources */,
 				298B45ED1A9B942A0014CAED /* main.cpp in Sources */,
 				29C0B9CB1AAE9398004F86FA /* GlissandoTest.cpp in Sources */,

@@ -22,10 +22,8 @@ TEST( Test01, DocumentPartwise )
 	tgenDocumentPartwiseExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
-	object->toStream( actual, 1 );
+	object->toStream( actual );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
-	CHECK( object->hasContents() )
 }
 TEST( Test02, DocumentPartwise )
 {
@@ -35,10 +33,8 @@ TEST( Test02, DocumentPartwise )
 	tgenDocumentPartwiseExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
-	object->toStream( actual, 1 );
+	object->toStream( actual );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( object->hasAttributes() )
-	CHECK( object->hasContents() )
 }
 TEST( Test03, DocumentPartwise )
 {
@@ -48,10 +44,8 @@ TEST( Test03, DocumentPartwise )
 	tgenDocumentPartwiseExpected( expected, 1, v );
 	stringstream actual;
 	// object->toStream( std::cout, 1 );
-	object->toStream( actual, 1 );
+	object->toStream( actual );
 	CHECK_EQUAL( expected.str(), actual.str() )
-	CHECK( ! object->hasAttributes() )
-	CHECK( object->hasContents() )
 }
 #endif
 namespace MxTestHelpers
@@ -68,20 +62,12 @@ namespace MxTestHelpers
                 break;
             case variant::two:
             {
-                o->getAttributes()->hasVersion = true;
-                o->getAttributes()->version = XsToken( "3.0" );
-                o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
-                o->addPartwisePart( tgenPartwisePart( v ) );
-                o->removePartwisePart( o->getPartwisePartSet().cbegin() );
+                o->setScorePartwise( tgenScorePartwise( v ) );
             }
                 break;
             case variant::three:
             {
-                o->setScoreHeaderGroup( tgenScoreHeaderGroup( v ) );
-                o->addPartwisePart( tgenPartwisePart( v ) );
-                o->removePartwisePart( o->getPartwisePartSet().cbegin() );
-                o->addPartwisePart( tgenPartwisePart( variant::one ) );
-                o->addPartwisePart( tgenPartwisePart( variant::two ) );
+                o->setScorePartwise( tgenScorePartwise( v ) );
             }
                 break;
             default:
@@ -96,36 +82,23 @@ namespace MxTestHelpers
         {
             case variant::one:
             {
-                streamLine( os, i, R"(<score-partwise>)" );
-                tgenScoreHeaderGroupExpected( os, i+1,  v );
+                tgenDocumentHeaderExpected( os, DocumentType::partwise );
                 os << std::endl;
-                tgenPartwisePartExpected( os, i+1, v );
-                os << std::endl;
-                streamLine( os, i, R"(</score-partwise>)", false );
+                tgenScorePartwiseExpected( os, 0, v );
             }
                 break;
             case variant::two:
             {
-                streamLine( os, i, R"(<score-partwise version="3.0">)" );
-                tgenScoreHeaderGroupExpected( os, i+1,  v );
+                tgenDocumentHeaderExpected( os, DocumentType::partwise );
                 os << std::endl;
-                tgenPartwisePartExpected( os, i+1, v );
-                os << std::endl;
-                streamLine( os, i, R"(</score-partwise>)", false );
+                tgenScorePartwiseExpected( os, 0, v );
             }
                 break;
             case variant::three:
             {
-                streamLine( os, i, R"(<score-partwise>)" );
-                tgenScoreHeaderGroupExpected( os, i+1,  v );
+                tgenDocumentHeaderExpected( os, DocumentType::partwise );
                 os << std::endl;
-                tgenPartwisePartExpected( os, i+1, v );
-                os << std::endl;
-                tgenPartwisePartExpected( os, i+1, variant::one );
-                os << std::endl;
-                tgenPartwisePartExpected( os, i+1, variant::two );
-                os << std::endl;
-                streamLine( os, i, R"(</score-partwise>)", false );
+                tgenScorePartwiseExpected( os, 0, v );
             }
                 break;
             default:

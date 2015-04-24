@@ -23,8 +23,8 @@
 		2971FBF11AA583D400547E82 /* ElementInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 2971FBEF1AA583D400547E82 /* ElementInterface.h */; };
 		298949C71A9CE9D60089D4F0 /* Integers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298949C51A9CE9D60089D4F0 /* Integers.cpp */; };
 		298949C81A9CE9D60089D4F0 /* Integers.h in Headers */ = {isa = PBXBuildFile; fileRef = 298949C61A9CE9D60089D4F0 /* Integers.h */; };
-		29A71B981AEA073700B3657E /* Document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A71B961AEA073700B3657E /* Document.cpp */; };
-		29A71B991AEA073800B3657E /* Document.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A71B971AEA073700B3657E /* Document.h */; };
+		29A71B981AEA073700B3657E /* DocumentPartwise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A71B961AEA073700B3657E /* DocumentPartwise.cpp */; };
+		29A71B991AEA073800B3657E /* DocumentPartwise.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A71B971AEA073700B3657E /* DocumentPartwise.h */; };
 		29A884FA1A9D5FD800F417CE /* Decimals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A884F81A9D5FD800F417CE /* Decimals.cpp */; };
 		29A884FB1A9D5FD800F417CE /* Decimals.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A884F91A9D5FD800F417CE /* Decimals.h */; };
 		29D10BB31A9BEF4E00F03CE6 /* Enums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D10BB11A9BEF4E00F03CE6 /* Enums.cpp */; };
@@ -57,8 +57,8 @@
 		298949C51A9CE9D60089D4F0 /* Integers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Integers.cpp; sourceTree = "<group>"; };
 		298949C61A9CE9D60089D4F0 /* Integers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integers.h; sourceTree = "<group>"; };
 		298B45D91A9B93FF0014CAED /* libMx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMx.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		29A71B961AEA073700B3657E /* Document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Document.cpp; sourceTree = "<group>"; };
-		29A71B971AEA073700B3657E /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		29A71B961AEA073700B3657E /* DocumentPartwise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentPartwise.cpp; sourceTree = "<group>"; };
+		29A71B971AEA073700B3657E /* DocumentPartwise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentPartwise.h; sourceTree = "<group>"; };
 		29A884F81A9D5FD800F417CE /* Decimals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Decimals.cpp; sourceTree = "<group>"; };
 		29A884F91A9D5FD800F417CE /* Decimals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decimals.h; sourceTree = "<group>"; };
 		29D10BB11A9BEF4E00F03CE6 /* Enums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enums.cpp; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
-				29A71B961AEA073700B3657E /* Document.cpp */,
-				29A71B971AEA073700B3657E /* Document.h */,
+				29A71B961AEA073700B3657E /* DocumentPartwise.cpp */,
+				29A71B971AEA073700B3657E /* DocumentPartwise.h */,
 				29D728951AE9E48400806D33 /* DocumentHeader.cpp */,
 				29D728961AE9E48400806D33 /* DocumentHeader.h */,
 				298B360F1AC8F7A10021CD1E /* Elements */,
@@ -160,7 +160,7 @@
 				29E801B91A9F983800EDBE41 /* Strings.h in Headers */,
 				29A884FB1A9D5FD800F417CE /* Decimals.h in Headers */,
 				2971FBF11AA583D400547E82 /* ElementInterface.h in Headers */,
-				29A71B991AEA073800B3657E /* Document.h in Headers */,
+				29A71B991AEA073800B3657E /* DocumentPartwise.h in Headers */,
 				29D10BB41A9BEF4E00F03CE6 /* Enums.h in Headers */,
 				29D728981AE9E48400806D33 /* DocumentHeader.h in Headers */,
 				29D632181AA54E9100E6E28B /* Elements.h in Headers */,
@@ -232,7 +232,7 @@
 				292D127B1AA2ACE80079EF22 /* NumberOrNormal.cpp in Sources */,
 				2971FBF01AA583D400547E82 /* ElementInterface.cpp in Sources */,
 				29A884FA1A9D5FD800F417CE /* Decimals.cpp in Sources */,
-				29A71B981AEA073700B3657E /* Document.cpp in Sources */,
+				29A71B981AEA073700B3657E /* DocumentPartwise.cpp in Sources */,
 				290D7C101AA3937B0081FBB5 /* PositiveIntegerOrEmpty.cpp in Sources */,
 				29D10BB31A9BEF4E00F03CE6 /* Enums.cpp in Sources */,
 				292D126D1AA2A2740079EF22 /* YesNoNumber.cpp in Sources */,

@@ -1,4 +1,4 @@
-#include "Document.h"
+#include "DocumentPartwise.h"
 #include "DocumentHeader.h"
 
 using namespace mx::e;
