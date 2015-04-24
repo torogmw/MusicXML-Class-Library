@@ -3,7 +3,7 @@
 
 namespace mx
 {
-    namespace types
+    namespce t
     {
         class Date
         {

@@ -4,7 +4,7 @@
 
 namespace mx
 {
-    namespace types
+    namespce t
     {
         /* alias for the int size used by this library */
         using IntType = int;

@@ -5,7 +5,7 @@
 
 namespace mx
 {
-    namespace types
+    namespce t
     {
         Integer::Integer( IntType value )
         :myValue( value )

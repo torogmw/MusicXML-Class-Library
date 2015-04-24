@@ -66,7 +66,7 @@ namespace
 
 namespace mx
 {
-    namespace types
+    namespce t
     {
         XsString::XsString()
         :myValue( "" ) {}
