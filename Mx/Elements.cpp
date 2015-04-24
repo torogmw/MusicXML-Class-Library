@@ -61,7 +61,7 @@ namespace mx
             return os;
         }
         
-        Dynamics::Dynamics( const types::DynamicsValue& value )
+        Dynamics::Dynamics( const t::DynamicsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DynamicsAttributes>() )
         {}
@@ -79,22 +79,22 @@ namespace mx
         {
             isOneLineOnly = false;
             os << std::endl;
-            if ( myValue.getValue() == types::DynamicsEnum::otherDynamics )
+            if ( myValue.getValue() == t::DynamicsEnum::otherDynamics )
             {
                 indent( os, indentLevel + 1 );
                 os << "<";
-                types::toStream( os, myValue.getValue() );
+                t::toStream( os, myValue.getValue() );
                 os << ">";
                 os << myValue;
                 os << "</";
-                types::toStream( os, myValue.getValue() );
+                t::toStream( os, myValue.getValue() );
                 os << ">";
             }
             else
             {
                 indent( os, indentLevel + 1 );
                 os << "<";
-                types::toStream( os, myValue.getValue() );
+                t::toStream( os, myValue.getValue() );
                 os << "/>";
             }
             os << std::endl;
@@ -116,26 +116,26 @@ namespace mx
         {
             return myAttributes->toStream( os );
         }
-        types::DynamicsValue Dynamics::getValue() const
+        t::DynamicsValue Dynamics::getValue() const
         {
             return myValue;
         }
-        void Dynamics::setValue( const types::DynamicsValue& value )
+        void Dynamics::setValue( const t::DynamicsValue& value )
         {
             myValue = value;
         }
         
         /**************** AccidentalText ****************/
         AccidentalTextAttributes::AccidentalTextAttributes()
-        :justify( types::LeftCenterRight::center )
+        :justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,underline()
         ,overline()
@@ -144,8 +144,8 @@ namespace mx
         ,letterSpacing()
         ,lineHeight()
         ,lang( "it" )
-        ,space( types::XmlSpace::default_ )
-        ,enclosure( types::EnclosureShape::rectangle )
+        ,space( t::XmlSpace::default_ )
+        ,enclosure( t::EnclosureShape::rectangle )
         ,hasJustify( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -218,10 +218,10 @@ namespace mx
         }
         
         AccidentalText::AccidentalText()
-        :myValue( types::AccidentalValue::natural )
+        :myValue( t::AccidentalValue::natural )
         ,myAttributes( std::make_shared<AccidentalTextAttributes>() )
         {}
-        AccidentalText::AccidentalText( const types::AccidentalValue& value )
+        AccidentalText::AccidentalText( const t::AccidentalValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<AccidentalTextAttributes>() )
         {}
@@ -265,26 +265,26 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::AccidentalValue AccidentalText::getValue() const
+        t::AccidentalValue AccidentalText::getValue() const
         {
             return myValue;
         }
-        void AccidentalText::setValue( const types::AccidentalValue& value )
+        void AccidentalText::setValue( const t::AccidentalValue& value )
         {
             myValue = value;
         }
         
         /**************** DisplayText ****************/
         DisplayTextAttributes::DisplayTextAttributes()
-        :justify( types::LeftCenterRight::center )
+        :justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,underline()
         ,overline()
@@ -292,9 +292,9 @@ namespace mx
         ,rotation()
         ,letterSpacing()
         ,lineHeight()
-        ,lang( types::XmlLang{ "it" } )
-        ,space( types::XmlSpace::default_ )
-        ,enclosure( types::EnclosureShape::rectangle )
+        ,lang( t::XmlLang{ "it" } )
+        ,space( t::XmlSpace::default_ )
+        ,enclosure( t::EnclosureShape::rectangle )
         ,hasJustify( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -370,7 +370,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<DisplayTextAttributes>() )
         {}
-        DisplayText::DisplayText( const types::XsString& value )
+        DisplayText::DisplayText( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DisplayTextAttributes>() )
         {}
@@ -414,11 +414,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString DisplayText::getValue() const
+        t::XsString DisplayText::getValue() const
         {
             return myValue;
         }
-        void DisplayText::setValue( const types::XsString& value )
+        void DisplayText::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -426,15 +426,15 @@ namespace mx
         
         /**************** DisplayText ****************/
         //        DisplayTextAttributes::DisplayTextAttributes()
-        //        :justify( types::LeftCenterRight::center )
+        //        :justify( t::LeftCenterRight::center )
         //        ,defaultX()
         //        ,defaultY()
         //        ,relativeX()
         //        ,relativeY()
         //        ,fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,halign()
         //        ,underline()
         //        ,overline()
@@ -442,9 +442,9 @@ namespace mx
         //        ,rotation()
         //        ,letterSpacing()
         //        ,lineHeight()
-        //        ,lang( types::XmlLang{ "it" } )
-        //        ,space( types::XmlSpace::default_ )
-        //        ,enclosure( types::EnclosureShape::rectangle )
+        //        ,lang( t::XmlLang{ "it" } )
+        //        ,space( t::XmlSpace::default_ )
+        //        ,enclosure( t::EnclosureShape::rectangle )
         //        ,hasJustify( false )
         //        ,hasDefaultX( false )
         //        ,hasDefaultY( false )
@@ -520,7 +520,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
         //        {}
-        //        DisplayText::DisplayText( const types::XsString& value )
+        //        DisplayText::DisplayText( const t::XsString& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
         //        {}
@@ -564,11 +564,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::XsString DisplayText::getValue() const
+        //        t::XsString DisplayText::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void DisplayText::setValue( const types::XsString& value )
+        //        void DisplayText::setValue( const t::XsString& value )
         //        {
         //            myValue = value;
         //        }
@@ -598,7 +598,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherPlayAttributes>() )
         {}
-        OtherPlay::OtherPlay( const types::XsString& value )
+        OtherPlay::OtherPlay( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherPlayAttributes>() )
         {}
@@ -642,11 +642,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherPlay::getValue() const
+        t::XsString OtherPlay::getValue() const
         {
             return myValue;
         }
-        void OtherPlay::setValue( const types::XsString& value )
+        void OtherPlay::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -693,10 +693,10 @@ namespace mx
         }
         
         PartSymbol::PartSymbol()
-        :myValue( types::GroupSymbolValue::none )
+        :myValue( t::GroupSymbolValue::none )
         ,myAttributes( std::make_shared<PartSymbolAttributes>() )
         {}
-        PartSymbol::PartSymbol( const types::GroupSymbolValue& value )
+        PartSymbol::PartSymbol( const t::GroupSymbolValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PartSymbolAttributes>() )
         {}
@@ -740,11 +740,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::GroupSymbolValue PartSymbol::getValue() const
+        t::GroupSymbolValue PartSymbol::getValue() const
         {
             return myValue;
         }
-        void PartSymbol::setValue( const types::GroupSymbolValue& value )
+        void PartSymbol::setValue( const t::GroupSymbolValue& value )
         {
             myValue = value;
         }
@@ -752,8 +752,8 @@ namespace mx
         
         /**************** KeyOctave ****************/
         KeyOctaveAttributes::KeyOctaveAttributes()
-        :number( types::PositiveInteger{ 1 } )
-        ,cancel( types::YesNo::no )
+        :number( t::PositiveInteger{ 1 } )
+        ,cancel( t::YesNo::no )
         ,hasNumber( true )
         ,hasCancel( false )
         {}
@@ -778,7 +778,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<KeyOctaveAttributes>() )
         {}
-        KeyOctave::KeyOctave( const types::OctaveValue& value )
+        KeyOctave::KeyOctave( const t::OctaveValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<KeyOctaveAttributes>() )
         {}
@@ -822,11 +822,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::OctaveValue KeyOctave::getValue() const
+        t::OctaveValue KeyOctave::getValue() const
         {
             return myValue;
         }
-        void KeyOctave::setValue( const types::OctaveValue& value )
+        void KeyOctave::setValue( const t::OctaveValue& value )
         {
             myValue = value;
         }
@@ -856,7 +856,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<MultipleRestAttributes>() )
         {}
-        MultipleRest::MultipleRest( const types::PositiveIntegerOrEmpty& value )
+        MultipleRest::MultipleRest( const t::PositiveIntegerOrEmpty& value )
         :myValue( value )
         ,myAttributes( std::make_shared<MultipleRestAttributes>() )
         {}
@@ -900,11 +900,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::PositiveIntegerOrEmpty MultipleRest::getValue() const
+        t::PositiveIntegerOrEmpty MultipleRest::getValue() const
         {
             return myValue;
         }
-        void MultipleRest::setValue( const types::PositiveIntegerOrEmpty& value )
+        void MultipleRest::setValue( const t::PositiveIntegerOrEmpty& value )
         {
             myValue = value;
         }
@@ -912,7 +912,7 @@ namespace mx
         
         /**************** MeasureRepeat ****************/
         MeasureRepeatAttributes::MeasureRepeatAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,slashes()
         ,hasType( true )
         ,hasSlashes( false )
@@ -938,7 +938,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<MeasureRepeatAttributes>() )
         {}
-        MeasureRepeat::MeasureRepeat( const types::PositiveIntegerOrEmpty& value )
+        MeasureRepeat::MeasureRepeat( const t::PositiveIntegerOrEmpty& value )
         :myValue( value )
         ,myAttributes( std::make_shared<MeasureRepeatAttributes>() )
         {}
@@ -982,11 +982,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::PositiveIntegerOrEmpty MeasureRepeat::getValue() const
+        t::PositiveIntegerOrEmpty MeasureRepeat::getValue() const
         {
             return myValue;
         }
-        void MeasureRepeat::setValue( const types::PositiveIntegerOrEmpty& value )
+        void MeasureRepeat::setValue( const t::PositiveIntegerOrEmpty& value )
         {
             myValue = value;
         }
@@ -1013,10 +1013,10 @@ namespace mx
         }
         
         BarStyle::BarStyle()
-        :myValue( types::BarStyleEnum::regular )
+        :myValue( t::BarStyleEnum::regular )
         ,myAttributes( std::make_shared<BarStyleAttributes>() )
         {}
-        BarStyle::BarStyle( const types::BarStyleEnum& value )
+        BarStyle::BarStyle( const t::BarStyleEnum& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BarStyleAttributes>() )
         {}
@@ -1060,11 +1060,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::BarStyleEnum BarStyle::getValue() const
+        t::BarStyleEnum BarStyle::getValue() const
         {
             return myValue;
         }
-        void BarStyle::setValue( const types::BarStyleEnum& value )
+        void BarStyle::setValue( const t::BarStyleEnum& value )
         {
             myValue = value;
         }
@@ -1072,15 +1072,15 @@ namespace mx
         
         /**************** Fermata ****************/
         FermataAttributes::FermataAttributes()
-        :type( types::UprightInverted::upright )
+        :type( t::UprightInverted::upright )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasType( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -1123,10 +1123,10 @@ namespace mx
         }
         
         Fermata::Fermata()
-        :myValue( types::FermataShape::normal )
+        :myValue( t::FermataShape::normal )
         ,myAttributes( std::make_shared<FermataAttributes>() )
         {}
-        Fermata::Fermata( const types::FermataShape& value )
+        Fermata::Fermata( const t::FermataShape& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FermataAttributes>() )
         {}
@@ -1170,11 +1170,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::FermataShape Fermata::getValue() const
+        t::FermataShape Fermata::getValue() const
         {
             return myValue;
         }
-        void Fermata::setValue( const types::FermataShape& value )
+        void Fermata::setValue( const t::FermataShape& value )
         {
             myValue = value;
         }
@@ -1183,16 +1183,16 @@ namespace mx
         /**************** Ending ****************/
         EndingAttributes::EndingAttributes()
         :number( "1" )
-        ,type( types::StartStopDiscontinue::start )
+        ,type( t::StartStopDiscontinue::start )
         ,printObject()
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,endLength()
         ,textX()
         ,textY()
@@ -1256,7 +1256,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<EndingAttributes>() )
         {}
-        Ending::Ending( const types::XsString& value )
+        Ending::Ending( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<EndingAttributes>() )
         {}
@@ -1300,11 +1300,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Ending::getValue() const
+        t::XsString Ending::getValue() const
         {
             return myValue;
         }
-        void Ending::setValue( const types::XsString& value )
+        void Ending::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -1318,9 +1318,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasText( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -1363,10 +1363,10 @@ namespace mx
         }
         
         BassStep::BassStep()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         ,myAttributes( std::make_shared<BassStepAttributes>() )
         {}
-        BassStep::BassStep( const types::StepEnum& value )
+        BassStep::BassStep( const t::StepEnum& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BassStepAttributes>() )
         {}
@@ -1410,11 +1410,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::StepEnum BassStep::getValue() const
+        t::StepEnum BassStep::getValue() const
         {
             return myValue;
         }
-        void BassStep::setValue( const types::StepEnum& value )
+        void BassStep::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
@@ -1428,9 +1428,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,location()
         ,hasPrintObject( false )
         ,hasDefaultX( false )
@@ -1480,7 +1480,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<BassAlterAttributes>() )
         {}
-        BassAlter::BassAlter( const types::Semitones& value )
+        BassAlter::BassAlter( const t::Semitones& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BassAlterAttributes>() )
         {}
@@ -1524,11 +1524,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Semitones BassAlter::getValue() const
+        t::Semitones BassAlter::getValue() const
         {
             return myValue;
         }
-        void BassAlter::setValue( const types::Semitones& value )
+        void BassAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
@@ -1543,9 +1543,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasSymbol( false )
         ,hasText( false )
         ,hasDefaultX( false )
@@ -1594,7 +1594,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<DegreeValueAttributes>() )
         {}
-        DegreeValue::DegreeValue( const types::PositiveInteger& value )
+        DegreeValue::DegreeValue( const t::PositiveInteger& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DegreeValueAttributes>() )
         {}
@@ -1638,11 +1638,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::PositiveInteger DegreeValue::getValue() const
+        t::PositiveInteger DegreeValue::getValue() const
         {
             return myValue;
         }
-        void DegreeValue::setValue( const types::PositiveInteger& value )
+        void DegreeValue::setValue( const t::PositiveInteger& value )
         {
             myValue = value;
         }
@@ -1655,10 +1655,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
-        ,plusMinus( types::YesNo::no )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
+        ,plusMinus( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -1704,7 +1704,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<DegreeAlterAttributes>() )
         {}
-        DegreeAlter::DegreeAlter( const types::Semitones& value )
+        DegreeAlter::DegreeAlter( const t::Semitones& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DegreeAlterAttributes>() )
         {}
@@ -1748,11 +1748,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Semitones DegreeAlter::getValue() const
+        t::Semitones DegreeAlter::getValue() const
         {
             return myValue;
         }
-        void DegreeAlter::setValue( const types::Semitones& value )
+        void DegreeAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
@@ -1766,9 +1766,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasText( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -1811,10 +1811,10 @@ namespace mx
         }
         
         DegreeType::DegreeType()
-        :myValue( types::DegreeTypeValue::add )
+        :myValue( t::DegreeTypeValue::add )
         ,myAttributes( std::make_shared<DegreeTypeAttributes>() )
         {}
-        DegreeType::DegreeType( const types::DegreeTypeValue& value )
+        DegreeType::DegreeType( const t::DegreeTypeValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DegreeTypeAttributes>() )
         {}
@@ -1858,11 +1858,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::DegreeTypeValue DegreeType::getValue() const
+        t::DegreeTypeValue DegreeType::getValue() const
         {
             return myValue;
         }
-        void DegreeType::setValue( const types::DegreeTypeValue& value )
+        void DegreeType::setValue( const t::DegreeTypeValue& value )
         {
             myValue = value;
         }
@@ -1892,7 +1892,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OffsetAttributes>() )
         {}
-        Offset::Offset( const types::DivisionsValue& value )
+        Offset::Offset( const t::DivisionsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OffsetAttributes>() )
         {}
@@ -1936,11 +1936,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::DivisionsValue Offset::getValue() const
+        t::DivisionsValue Offset::getValue() const
         {
             return myValue;
         }
-        void Offset::setValue( const types::DivisionsValue& value )
+        void Offset::setValue( const t::DivisionsValue& value )
         {
             myValue = value;
         }
@@ -1948,15 +1948,15 @@ namespace mx
         
         /**************** Rehearsal ****************/
         RehearsalAttributes::RehearsalAttributes()
-        :justify( types::LeftCenterRight::center )
+        :justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,underline()
         ,overline()
@@ -1964,9 +1964,9 @@ namespace mx
         ,rotation()
         ,letterSpacing()
         ,lineHeight()
-        ,lang( types::XmlLang{ "it" } )
-        ,space( types::XmlSpace::default_ )
-        ,enclosure( types::EnclosureShape::rectangle )
+        ,lang( t::XmlLang{ "it" } )
+        ,space( t::XmlSpace::default_ )
+        ,enclosure( t::EnclosureShape::rectangle )
         ,hasJustify( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -2042,7 +2042,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<RehearsalAttributes>() )
         {}
-        Rehearsal::Rehearsal( const types::XsString& value )
+        Rehearsal::Rehearsal( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<RehearsalAttributes>() )
         {}
@@ -2086,11 +2086,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Rehearsal::getValue() const
+        t::XsString Rehearsal::getValue() const
         {
             return myValue;
         }
-        void Rehearsal::setValue( const types::XsString& value )
+        void Rehearsal::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -2098,15 +2098,15 @@ namespace mx
         
         /**************** Words ****************/
         WordsAttributes::WordsAttributes()
-        :justify( types::LeftCenterRight::center )
+        :justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,underline()
         ,overline()
@@ -2115,8 +2115,8 @@ namespace mx
         ,letterSpacing()
         ,lineHeight()
         ,lang( "it" )
-        ,space( types::XmlSpace::default_ )
-        ,enclosure( types::EnclosureShape::rectangle )
+        ,space( t::XmlSpace::default_ )
+        ,enclosure( t::EnclosureShape::rectangle )
         ,hasJustify( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -2192,7 +2192,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<WordsAttributes>() )
         {}
-        Words::Words( const types::XsString& value )
+        Words::Words( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<WordsAttributes>() )
         {}
@@ -2236,11 +2236,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Words::getValue() const
+        t::XsString Words::getValue() const
         {
             return myValue;
         }
-        void Words::setValue( const types::XsString& value )
+        void Words::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -2248,16 +2248,16 @@ namespace mx
         
         /**************** PrincipalVoice ****************/
         PrincipalVoiceAttributes::PrincipalVoiceAttributes()
-        :type( types::StartStop::start )
-        ,symbol( types::PrincipalVoiceSymbol::none )
+        :type( t::StartStop::start )
+        ,symbol( t::PrincipalVoiceSymbol::none )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,hasType( true )
         ,hasSymbol( true )
@@ -2310,7 +2310,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PrincipalVoiceAttributes>() )
         {}
-        PrincipalVoice::PrincipalVoice( const types::XsString& value )
+        PrincipalVoice::PrincipalVoice( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PrincipalVoiceAttributes>() )
         {}
@@ -2354,11 +2354,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString PrincipalVoice::getValue() const
+        t::XsString PrincipalVoice::getValue() const
         {
             return myValue;
         }
-        void PrincipalVoice::setValue( const types::XsString& value )
+        void PrincipalVoice::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -2372,9 +2372,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,hasPrintObject( false )
         ,hasDefaultX( false )
@@ -2424,7 +2424,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherDirectionAttributes>() )
         {}
-        OtherDirection::OtherDirection( const types::XsString& value )
+        OtherDirection::OtherDirection( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherDirectionAttributes>() )
         {}
@@ -2468,11 +2468,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherDirection::getValue() const
+        t::XsString OtherDirection::getValue() const
         {
             return myValue;
         }
-        void OtherDirection::setValue( const types::XsString& value )
+        void OtherDirection::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -2506,7 +2506,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FirstFretAttributes>() )
         {}
-        FirstFret::FirstFret( const types::PositiveInteger& value )
+        FirstFret::FirstFret( const t::PositiveInteger& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FirstFretAttributes>() )
         {}
@@ -2550,11 +2550,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::PositiveInteger FirstFret::getValue() const
+        t::PositiveInteger FirstFret::getValue() const
         {
             return myValue;
         }
-        void FirstFret::setValue( const types::PositiveInteger& value )
+        void FirstFret::setValue( const t::PositiveInteger& value )
         {
             myValue = value;
         }
@@ -2563,9 +2563,9 @@ namespace mx
         /**************** Fret ****************/
         FretAttributes::FretAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -2596,7 +2596,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FretAttributes>() )
         {}
-        Fret::Fret( const types::NonNegativeInteger& value )
+        Fret::Fret( const t::NonNegativeInteger& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FretAttributes>() )
         {}
@@ -2640,11 +2640,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NonNegativeInteger Fret::getValue() const
+        t::NonNegativeInteger Fret::getValue() const
         {
             return myValue;
         }
-        void Fret::setValue( const types::NonNegativeInteger& value )
+        void Fret::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
@@ -2652,16 +2652,16 @@ namespace mx
         
         /**************** Fingering ****************/
         FingeringAttributes::FingeringAttributes()
-        :substitution( types::YesNo::no )
-        ,alternate( types::YesNo::no )
+        :substitution( t::YesNo::no )
+        ,alternate( t::YesNo::no )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasSubstitution( false )
         ,hasAlternate( false )
@@ -2714,7 +2714,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FingeringAttributes>() )
         {}
-        Fingering::Fingering( const types::XsString& value )
+        Fingering::Fingering( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FingeringAttributes>() )
         {}
@@ -2758,11 +2758,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Fingering::getValue() const
+        t::XsString Fingering::getValue() const
         {
             return myValue;
         }
-        void Fingering::setValue( const types::XsString& value )
+        void Fingering::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -2792,7 +2792,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FeatureAttributes>() )
         {}
-        Feature::Feature( const types::XsString& value )
+        Feature::Feature( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FeatureAttributes>() )
         {}
@@ -2836,11 +2836,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Feature::getValue() const
+        t::XsString Feature::getValue() const
         {
             return myValue;
         }
-        void Feature::setValue( const types::XsString& value )
+        void Feature::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -2870,7 +2870,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<OffsetAttributes>() )
         //        {}
-        //        Offset::Offset( const types::DivisionsValue& value )
+        //        Offset::Offset( const t::DivisionsValue& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<OffsetAttributes>() )
         //        {}
@@ -2914,11 +2914,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::DivisionsValue Offset::getValue() const
+        //        t::DivisionsValue Offset::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Offset::setValue( const types::DivisionsValue& value )
+        //        void Offset::setValue( const t::DivisionsValue& value )
         //        {
         //            myValue = value;
         //        }
@@ -2927,9 +2927,9 @@ namespace mx
         /**************** PerMinute ****************/
         PerMinuteAttributes::PerMinuteAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -2960,7 +2960,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PerMinuteAttributes>() )
         {}
-        PerMinute::PerMinute( const types::XsString& value )
+        PerMinute::PerMinute( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PerMinuteAttributes>() )
         {}
@@ -3004,11 +3004,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString PerMinute::getValue() const
+        t::XsString PerMinute::getValue() const
         {
             return myValue;
         }
-        void PerMinute::setValue( const types::XsString& value )
+        void PerMinute::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -3035,10 +3035,10 @@ namespace mx
         }
         
         MetronomeBeam::MetronomeBeam()
-        :myValue( types::BeamValue::begin )
+        :myValue( t::BeamValue::begin )
         ,myAttributes( std::make_shared<MetronomeBeamAttributes>() )
         {}
-        MetronomeBeam::MetronomeBeam( const types::BeamValue& value )
+        MetronomeBeam::MetronomeBeam( const t::BeamValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<MetronomeBeamAttributes>() )
         {}
@@ -3082,11 +3082,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::BeamValue MetronomeBeam::getValue() const
+        t::BeamValue MetronomeBeam::getValue() const
         {
             return myValue;
         }
-        void MetronomeBeam::setValue( const types::BeamValue& value )
+        void MetronomeBeam::setValue( const t::BeamValue& value )
         {
             myValue = value;
         }
@@ -3113,10 +3113,10 @@ namespace mx
         }
         
         Beater::Beater()
-        :myValue( types::BeaterValue::snareStick )
+        :myValue( t::BeaterValue::snareStick )
         ,myAttributes( std::make_shared<BeaterAttributes>() )
         {}
-        Beater::Beater( const types::BeaterValue& value )
+        Beater::Beater( const t::BeaterValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BeaterAttributes>() )
         {}
@@ -3160,11 +3160,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::BeaterValue Beater::getValue() const
+        t::BeaterValue Beater::getValue() const
         {
             return myValue;
         }
-        void Beater::setValue( const types::BeaterValue& value )
+        void Beater::setValue( const t::BeaterValue& value )
         {
             myValue = value;
         }
@@ -3177,9 +3177,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -3223,10 +3223,10 @@ namespace mx
         }
         
         MeasureNumbering::MeasureNumbering()
-        :myValue( types::MeasureNumberingValue::none )
+        :myValue( t::MeasureNumberingValue::none )
         ,myAttributes( std::make_shared<MeasureNumberingAttributes>() )
         {}
-        MeasureNumbering::MeasureNumbering( const types::MeasureNumberingValue& value )
+        MeasureNumbering::MeasureNumbering( const t::MeasureNumberingValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<MeasureNumberingAttributes>() )
         {}
@@ -3270,11 +3270,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::MeasureNumberingValue MeasureNumbering::getValue() const
+        t::MeasureNumberingValue MeasureNumbering::getValue() const
         {
             return myValue;
         }
-        void MeasureNumbering::setValue( const types::MeasureNumberingValue& value )
+        void MeasureNumbering::setValue( const t::MeasureNumberingValue& value )
         {
             myValue = value;
         }
@@ -3288,9 +3288,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasText( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -3333,10 +3333,10 @@ namespace mx
         }
         
         RootStep::RootStep()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         ,myAttributes( std::make_shared<RootStepAttributes>() )
         {}
-        RootStep::RootStep( const types::StepEnum& value )
+        RootStep::RootStep( const t::StepEnum& value )
         :myValue( value )
         ,myAttributes( std::make_shared<RootStepAttributes>() )
         {}
@@ -3380,11 +3380,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::StepEnum RootStep::getValue() const
+        t::StepEnum RootStep::getValue() const
         {
             return myValue;
         }
-        void RootStep::setValue( const types::StepEnum& value )
+        void RootStep::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
@@ -3398,9 +3398,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,location()
         ,hasPrintObject( false )
         ,hasDefaultX( false )
@@ -3450,7 +3450,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<RootAlterAttributes>() )
         {}
-        RootAlter::RootAlter( const types::Semitones& value )
+        RootAlter::RootAlter( const t::Semitones& value )
         :myValue( value )
         ,myAttributes( std::make_shared<RootAlterAttributes>() )
         {}
@@ -3494,11 +3494,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::Semitones RootAlter::getValue() const
+        t::Semitones RootAlter::getValue() const
         {
             return myValue;
         }
-        void RootAlter::setValue( const types::Semitones& value )
+        void RootAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
@@ -3532,7 +3532,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
         {}
-        MidiDevice::MidiDevice( const types::XsString& value )
+        MidiDevice::MidiDevice( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
         {}
@@ -3576,11 +3576,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString MidiDevice::getValue() const
+        t::XsString MidiDevice::getValue() const
         {
             return myValue;
         }
-        void MidiDevice::setValue( const types::XsString& value )
+        void MidiDevice::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -3610,7 +3610,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<OffsetAttributes>() )
         //        {}
-        //        Offset::Offset( const types::DivisionsValue& value )
+        //        Offset::Offset( const t::DivisionsValue& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<OffsetAttributes>() )
         //        {}
@@ -3654,11 +3654,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::DivisionsValue Offset::getValue() const
+        //        t::DivisionsValue Offset::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Offset::setValue( const types::DivisionsValue& value )
+        //        void Offset::setValue( const t::DivisionsValue& value )
         //        {
         //            myValue = value;
         //        }
@@ -3688,7 +3688,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<EncoderAttributes>() )
         {}
-        Encoder::Encoder( const types::XsString& value )
+        Encoder::Encoder( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<EncoderAttributes>() )
         {}
@@ -3732,11 +3732,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Encoder::getValue() const
+        t::XsString Encoder::getValue() const
         {
             return myValue;
         }
-        void Encoder::setValue( const types::XsString& value )
+        void Encoder::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -3766,7 +3766,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<CreatorAttributes>() )
         {}
-        Creator::Creator( const types::XsString& value )
+        Creator::Creator( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<CreatorAttributes>() )
         {}
@@ -3810,11 +3810,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Creator::getValue() const
+        t::XsString Creator::getValue() const
         {
             return myValue;
         }
-        void Creator::setValue( const types::XsString& value )
+        void Creator::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -3844,7 +3844,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<RightsAttributes>() )
         {}
-        Rights::Rights( const types::XsString& value )
+        Rights::Rights( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<RightsAttributes>() )
         {}
@@ -3888,11 +3888,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Rights::getValue() const
+        t::XsString Rights::getValue() const
         {
             return myValue;
         }
-        void Rights::setValue( const types::XsString& value )
+        void Rights::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -3922,7 +3922,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<RelationAttributes>() )
         {}
-        Relation::Relation( const types::XsString& value )
+        Relation::Relation( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<RelationAttributes>() )
         {}
@@ -3966,11 +3966,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Relation::getValue() const
+        t::XsString Relation::getValue() const
         {
             return myValue;
         }
-        void Relation::setValue( const types::XsString& value )
+        void Relation::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4000,7 +4000,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<MiscellaneousFieldAttributes>() )
         {}
-        MiscellaneousField::MiscellaneousField( const types::XsString& value )
+        MiscellaneousField::MiscellaneousField( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<MiscellaneousFieldAttributes>() )
         {}
@@ -4044,11 +4044,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString MiscellaneousField::getValue() const
+        t::XsString MiscellaneousField::getValue() const
         {
             return myValue;
         }
-        void MiscellaneousField::setValue( const types::XsString& value )
+        void MiscellaneousField::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4056,7 +4056,7 @@ namespace mx
         
         /**************** LineWidth ****************/
         LineWidthAttributes::LineWidthAttributes()
-        :type( types::LineWidthTypeEnum::beam )
+        :type( t::LineWidthTypeEnum::beam )
         ,hasType( true )
         {}
         
@@ -4078,7 +4078,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<LineWidthAttributes>() )
         {}
-        LineWidth::LineWidth( const types::TenthsValue& value )
+        LineWidth::LineWidth( const t::TenthsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<LineWidthAttributes>() )
         {}
@@ -4122,11 +4122,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::TenthsValue LineWidth::getValue() const
+        t::TenthsValue LineWidth::getValue() const
         {
             return myValue;
         }
-        void LineWidth::setValue( const types::TenthsValue& value )
+        void LineWidth::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
@@ -4134,7 +4134,7 @@ namespace mx
         
         /**************** NoteSize ****************/
         NoteSizeAttributes::NoteSizeAttributes()
-        :type( types::NoteSizeType::large )
+        :type( t::NoteSizeType::large )
         ,hasType( true )
         {}
         
@@ -4156,7 +4156,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<NoteSizeAttributes>() )
         {}
-        NoteSize::NoteSize( const types::NonNegativeDecimal& value )
+        NoteSize::NoteSize( const t::NonNegativeDecimal& value )
         :myValue( value )
         ,myAttributes( std::make_shared<NoteSizeAttributes>() )
         {}
@@ -4200,11 +4200,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NonNegativeDecimal NoteSize::getValue() const
+        t::NonNegativeDecimal NoteSize::getValue() const
         {
             return myValue;
         }
-        void NoteSize::setValue( const types::NonNegativeDecimal& value )
+        void NoteSize::setValue( const t::NonNegativeDecimal& value )
         {
             myValue = value;
         }
@@ -4234,7 +4234,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<DistanceAttributes>() )
         {}
-        Distance::Distance( const types::TenthsValue& value )
+        Distance::Distance( const t::TenthsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<DistanceAttributes>() )
         {}
@@ -4278,11 +4278,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::TenthsValue Distance::getValue() const
+        t::TenthsValue Distance::getValue() const
         {
             return myValue;
         }
-        void Distance::setValue( const types::TenthsValue& value )
+        void Distance::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
@@ -4312,7 +4312,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherAppearanceAttributes>() )
         {}
-        OtherAppearance::OtherAppearance( const types::XsString& value )
+        OtherAppearance::OtherAppearance( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherAppearanceAttributes>() )
         {}
@@ -4356,11 +4356,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherAppearance::getValue() const
+        t::XsString OtherAppearance::getValue() const
         {
             return myValue;
         }
-        void OtherAppearance::setValue( const types::XsString& value )
+        void OtherAppearance::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4373,9 +4373,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -4419,10 +4419,10 @@ namespace mx
         }
         
         BreathMark::BreathMark()
-        :myValue( types::BreathMarkValue::emptystring )
+        :myValue( t::BreathMarkValue::emptystring )
         ,myAttributes( std::make_shared<BreathMarkAttributes>() )
         {}
-        BreathMark::BreathMark( const types::BreathMarkValue& value )
+        BreathMark::BreathMark( const t::BreathMarkValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BreathMarkAttributes>() )
         {}
@@ -4466,11 +4466,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::BreathMarkValue BreathMark::getValue() const
+        t::BreathMarkValue BreathMark::getValue() const
         {
             return myValue;
         }
-        void BreathMark::setValue( const types::BreathMarkValue& value )
+        void BreathMark::setValue( const t::BreathMarkValue& value )
         {
             myValue = value;
         }
@@ -4483,9 +4483,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -4532,7 +4532,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherArticulationAttributes>() )
         {}
-        OtherArticulation::OtherArticulation( const types::XsString& value )
+        OtherArticulation::OtherArticulation( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherArticulationAttributes>() )
         {}
@@ -4576,11 +4576,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherArticulation::getValue() const
+        t::XsString OtherArticulation::getValue() const
         {
             return myValue;
         }
-        void OtherArticulation::setValue( const types::XsString& value )
+        void OtherArticulation::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4593,9 +4593,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -4642,7 +4642,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<WithBarAttributes>() )
         {}
-        WithBar::WithBar( const types::XsString& value )
+        WithBar::WithBar( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<WithBarAttributes>() )
         {}
@@ -4686,11 +4686,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString WithBar::getValue() const
+        t::XsString WithBar::getValue() const
         {
             return myValue;
         }
-        void WithBar::setValue( const types::XsString& value )
+        void WithBar::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4703,9 +4703,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -4748,7 +4748,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PrefixAttributes>() )
         {}
-        Prefix::Prefix( const types::XsString& value )
+        Prefix::Prefix( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PrefixAttributes>() )
         {}
@@ -4792,11 +4792,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Prefix::getValue() const
+        t::XsString Prefix::getValue() const
         {
             return myValue;
         }
-        void Prefix::setValue( const types::XsString& value )
+        void Prefix::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4809,9 +4809,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -4854,7 +4854,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FigureNumberAttributes>() )
         {}
-        FigureNumber::FigureNumber( const types::XsString& value )
+        FigureNumber::FigureNumber( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FigureNumberAttributes>() )
         {}
@@ -4898,11 +4898,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString FigureNumber::getValue() const
+        t::XsString FigureNumber::getValue() const
         {
             return myValue;
         }
-        void FigureNumber::setValue( const types::XsString& value )
+        void FigureNumber::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -4915,9 +4915,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -4960,7 +4960,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<SuffixAttributes>() )
         {}
-        Suffix::Suffix( const types::XsString& value )
+        Suffix::Suffix( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<SuffixAttributes>() )
         {}
@@ -5004,11 +5004,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Suffix::getValue() const
+        t::XsString Suffix::getValue() const
         {
             return myValue;
         }
-        void Suffix::setValue( const types::XsString& value )
+        void Suffix::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -5016,7 +5016,7 @@ namespace mx
         
         /**************** HoleClosed ****************/
         HoleClosedAttributes::HoleClosedAttributes()
-        :location( types::HoleClosedLocation::top )
+        :location( t::HoleClosedLocation::top )
         ,hasLocation( false )
         {}
         
@@ -5035,10 +5035,10 @@ namespace mx
         }
         
         HoleClosed::HoleClosed()
-        :myValue( types::HoleClosedValue::no )
+        :myValue( t::HoleClosedValue::no )
         ,myAttributes( std::make_shared<HoleClosedAttributes>() )
         {}
-        HoleClosed::HoleClosed( const types::HoleClosedValue& value )
+        HoleClosed::HoleClosed( const t::HoleClosedValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<HoleClosedAttributes>() )
         {}
@@ -5082,11 +5082,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::HoleClosedValue HoleClosed::getValue() const
+        t::HoleClosedValue HoleClosed::getValue() const
         {
             return myValue;
         }
-        void HoleClosed::setValue( const types::HoleClosedValue& value )
+        void HoleClosed::setValue( const t::HoleClosedValue& value )
         {
             myValue = value;
         }
@@ -5095,15 +5095,15 @@ namespace mx
         /**************** Text ****************/
         TextAttributes::TextAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,underline()
         ,overline()
         ,lineThrough()
         ,rotation()
         ,letterSpacing()
-        ,lang( types::XmlLang{ "it" } )
+        ,lang( t::XmlLang{ "it" } )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -5152,7 +5152,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<TextAttributes>() )
         {}
-        Text::Text( const types::XsString& value )
+        Text::Text( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<TextAttributes>() )
         {}
@@ -5196,11 +5196,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Text::getValue() const
+        t::XsString Text::getValue() const
         {
             return myValue;
         }
-        void Text::setValue( const types::XsString& value )
+        void Text::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -5209,15 +5209,15 @@ namespace mx
         /**************** Elision ****************/
         ElisionAttributes::ElisionAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,underline()
         ,overline()
         ,lineThrough()
         ,rotation()
         ,letterSpacing()
-        ,lang( types::XmlLang{ "it" } )
+        ,lang( t::XmlLang{ "it" } )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -5266,7 +5266,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<ElisionAttributes>() )
         {}
-        Elision::Elision( const types::XsString& value )
+        Elision::Elision( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<ElisionAttributes>() )
         {}
@@ -5310,11 +5310,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Elision::getValue() const
+        t::XsString Elision::getValue() const
         {
             return myValue;
         }
-        void Elision::setValue( const types::XsString& value )
+        void Elision::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -5323,15 +5323,15 @@ namespace mx
         /**************** Text ****************/
         //        TextAttributes::TextAttributes()
         //        :fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,underline()
         //        ,overline()
         //        ,lineThrough()
         //        ,rotation()
         //        ,letterSpacing()
-        //        ,lang( types::XmlLang{ "it" } )
+        //        ,lang( t::XmlLang{ "it" } )
         //        ,hasFontFamily( false )
         //        ,hasFontStyle( false )
         //        ,hasFontSize( false )
@@ -5380,7 +5380,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<TextAttributes>() )
         //        {}
-        //        Text::Text( const types::XsString& value )
+        //        Text::Text( const t::XsString& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<TextAttributes>() )
         //        {}
@@ -5424,11 +5424,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::XsString Text::getValue() const
+        //        t::XsString Text::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Text::setValue( const types::XsString& value )
+        //        void Text::setValue( const t::XsString& value )
         //        {
         //            myValue = value;
         //        }
@@ -5436,7 +5436,7 @@ namespace mx
         
         /**************** Glissando ****************/
         GlissandoAttributes::GlissandoAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,number( 1 )
         ,dashLength()
         ,spaceLength()
@@ -5445,9 +5445,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasType( true )
         ,hasNumber( false )
         ,hasDashLength( false )
@@ -5502,7 +5502,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<GlissandoAttributes>() )
         {}
-        Glissando::Glissando( const types::XsString& value )
+        Glissando::Glissando( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<GlissandoAttributes>() )
         {}
@@ -5546,11 +5546,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Glissando::getValue() const
+        t::XsString Glissando::getValue() const
         {
             return myValue;
         }
-        void Glissando::setValue( const types::XsString& value )
+        void Glissando::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -5558,7 +5558,7 @@ namespace mx
         
         /**************** Slide ****************/
         SlideAttributes::SlideAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,number( 1 )
         ,dashLength()
         ,spaceLength()
@@ -5567,9 +5567,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,accelerate()
         ,beats()
         ,firstBeat()
@@ -5640,7 +5640,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<SlideAttributes>() )
         {}
-        Slide::Slide( const types::XsString& value )
+        Slide::Slide( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<SlideAttributes>() )
         {}
@@ -5684,11 +5684,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Slide::getValue() const
+        t::XsString Slide::getValue() const
         {
             return myValue;
         }
-        void Slide::setValue( const types::XsString& value )
+        void Slide::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -5702,9 +5702,9 @@ namespace mx
         //        ,relativeX()
         //        ,relativeY()
         //        ,fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,hasType( false )
         //        ,hasDefaultX( false )
         //        ,hasDefaultY( false )
@@ -5750,7 +5750,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<FermataAttributes>() )
         //        {}
-        //        Fermata::Fermata( const types::FermataShape& value )
+        //        Fermata::Fermata( const t::FermataShape& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<FermataAttributes>() )
         //        {}
@@ -5794,11 +5794,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::FermataShape Fermata::getValue() const
+        //        t::FermataShape Fermata::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Fermata::setValue( const types::FermataShape& value )
+        //        void Fermata::setValue( const t::FermataShape& value )
         //        {
         //            myValue = value;
         //        }
@@ -5811,9 +5811,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -5857,10 +5857,10 @@ namespace mx
         }
         
         AccidentalMark::AccidentalMark()
-        :myValue( types::AccidentalValue::natural )
+        :myValue( t::AccidentalValue::natural )
         ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
         {}
-        AccidentalMark::AccidentalMark( const types::AccidentalValue& value )
+        AccidentalMark::AccidentalMark( const t::AccidentalValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
         {}
@@ -5904,11 +5904,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::AccidentalValue AccidentalMark::getValue() const
+        t::AccidentalValue AccidentalMark::getValue() const
         {
             return myValue;
         }
-        void AccidentalMark::setValue( const types::AccidentalValue& value )
+        void AccidentalMark::setValue( const t::AccidentalValue& value )
         {
             myValue = value;
         }
@@ -5916,7 +5916,7 @@ namespace mx
         
         /**************** OtherNotation ****************/
         OtherNotationAttributes::OtherNotationAttributes()
-        :type( types::StartStopSingle::start )
+        :type( t::StartStopSingle::start )
         ,number( 1 )
         ,printObject()
         ,defaultX()
@@ -5924,9 +5924,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasType( true )
         ,hasNumber( false )
@@ -5982,7 +5982,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherNotationAttributes>() )
         {}
-        OtherNotation::OtherNotation( const types::XsString& value )
+        OtherNotation::OtherNotation( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherNotationAttributes>() )
         {}
@@ -6026,11 +6026,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherNotation::getValue() const
+        t::XsString OtherNotation::getValue() const
         {
             return myValue;
         }
-        void OtherNotation::setValue( const types::XsString& value )
+        void OtherNotation::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -6057,10 +6057,10 @@ namespace mx
         }
         
         Type::Type()
-        :myValue( types::NoteTypeValue::quarter )
+        :myValue( t::NoteTypeValue::quarter )
         ,myAttributes( std::make_shared<TypeAttributes>() )
         {}
-        Type::Type( const types::NoteTypeValue& value )
+        Type::Type( const t::NoteTypeValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<TypeAttributes>() )
         {}
@@ -6104,11 +6104,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NoteTypeValue Type::getValue() const
+        t::NoteTypeValue Type::getValue() const
         {
             return myValue;
         }
-        void Type::setValue( const types::NoteTypeValue& value )
+        void Type::setValue( const t::NoteTypeValue& value )
         {
             myValue = value;
         }
@@ -6116,9 +6116,9 @@ namespace mx
         
         /**************** Accidental ****************/
         AccidentalAttributes::AccidentalAttributes()
-        :cautionary( types::YesNo::no )
-        ,editorial( types::YesNo::no )
-        ,parentheses( types::YesNo::no )
+        :cautionary( t::YesNo::no )
+        ,editorial( t::YesNo::no )
+        ,parentheses( t::YesNo::no )
         ,bracket()
         ,size()
         ,defaultX()
@@ -6126,9 +6126,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasCautionary( false )
         ,hasEditorial( false )
         ,hasParentheses( false )
@@ -6183,10 +6183,10 @@ namespace mx
         }
         
         Accidental::Accidental()
-        :myValue( types::AccidentalValue::natural )
+        :myValue( t::AccidentalValue::natural )
         ,myAttributes( std::make_shared<AccidentalAttributes>() )
         {}
-        Accidental::Accidental( const types::AccidentalValue& value )
+        Accidental::Accidental( const t::AccidentalValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<AccidentalAttributes>() )
         {}
@@ -6230,11 +6230,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::AccidentalValue Accidental::getValue() const
+        t::AccidentalValue Accidental::getValue() const
         {
             return myValue;
         }
-        void Accidental::setValue( const types::AccidentalValue& value )
+        void Accidental::setValue( const t::AccidentalValue& value )
         {
             myValue = value;
         }
@@ -6273,10 +6273,10 @@ namespace mx
         }
         
         Stem::Stem()
-        :myValue( types::StemValue::none )
+        :myValue( t::StemValue::none )
         ,myAttributes( std::make_shared<StemAttributes>() )
         {}
-        Stem::Stem( const types::StemValue& value )
+        Stem::Stem( const t::StemValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<StemAttributes>() )
         {}
@@ -6320,11 +6320,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::StemValue Stem::getValue() const
+        t::StemValue Stem::getValue() const
         {
             return myValue;
         }
-        void Stem::setValue( const types::StemValue& value )
+        void Stem::setValue( const t::StemValue& value )
         {
             myValue = value;
         }
@@ -6335,9 +6335,9 @@ namespace mx
         :filled()
         ,parentheses()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFilled( false )
         ,hasParentheses( false )
         ,hasFontFamily( false )
@@ -6371,10 +6371,10 @@ namespace mx
         }
         
         Notehead::Notehead()
-        :myValue( types::NoteheadValue::normal )
+        :myValue( t::NoteheadValue::normal )
         ,myAttributes( std::make_shared<NoteheadAttributes>() )
         {}
-        Notehead::Notehead( const types::NoteheadValue& value )
+        Notehead::Notehead( const t::NoteheadValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<NoteheadAttributes>() )
         {}
@@ -6418,11 +6418,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NoteheadValue Notehead::getValue() const
+        t::NoteheadValue Notehead::getValue() const
         {
             return myValue;
         }
-        void Notehead::setValue( const types::NoteheadValue& value )
+        void Notehead::setValue( const t::NoteheadValue& value )
         {
             myValue = value;
         }
@@ -6457,10 +6457,10 @@ namespace mx
         }
         
         Beam::Beam()
-        :myValue( types::BeamValue::begin )
+        :myValue( t::BeamValue::begin )
         ,myAttributes( std::make_shared<BeamAttributes>() )
         {}
-        Beam::Beam( const types::BeamValue& value )
+        Beam::Beam( const t::BeamValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<BeamAttributes>() )
         {}
@@ -6504,11 +6504,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::BeamValue Beam::getValue() const
+        t::BeamValue Beam::getValue() const
         {
             return myValue;
         }
-        void Beam::setValue( const types::BeamValue& value )
+        void Beam::setValue( const t::BeamValue& value )
         {
             myValue = value;
         }
@@ -6516,15 +6516,15 @@ namespace mx
         
         /**************** DisplayText ****************/
         //        DisplayTextAttributes::DisplayTextAttributes()
-        //        :justify( types::LeftCenterRight::center )
+        //        :justify( t::LeftCenterRight::center )
         //        ,defaultX()
         //        ,defaultY()
         //        ,relativeX()
         //        ,relativeY()
         //        ,fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,halign()
         //        ,underline()
         //        ,overline()
@@ -6532,9 +6532,9 @@ namespace mx
         //        ,rotation()
         //        ,letterSpacing()
         //        ,lineHeight()
-        //        ,lang( types::XmlLang{ "it" } )
-        //        ,space( types::XmlSpace::default_ )
-        //        ,enclosure( types::EnclosureShape::rectangle )
+        //        ,lang( t::XmlLang{ "it" } )
+        //        ,space( t::XmlSpace::default_ )
+        //        ,enclosure( t::EnclosureShape::rectangle )
         //        ,hasJustify( false )
         //        ,hasDefaultX( false )
         //        ,hasDefaultY( false )
@@ -6610,7 +6610,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
         //        {}
-        //        DisplayText::DisplayText( const types::XsString& value )
+        //        DisplayText::DisplayText( const t::XsString& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<DisplayTextAttributes>() )
         //        {}
@@ -6654,11 +6654,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::XsString DisplayText::getValue() const
+        //        t::XsString DisplayText::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void DisplayText::setValue( const types::XsString& value )
+        //        void DisplayText::setValue( const t::XsString& value )
         //        {
         //            myValue = value;
         //        }
@@ -6666,16 +6666,16 @@ namespace mx
         
         /**************** Tremolo ****************/
         TremoloAttributes::TremoloAttributes()
-        :type( types::StartStopSingle::single )
+        :type( t::StartStopSingle::single )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
         ,hasType( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -6724,7 +6724,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<TremoloAttributes>() )
         {}
-        Tremolo::Tremolo( const types::TremoloMarks& value )
+        Tremolo::Tremolo( const t::TremoloMarks& value )
         :myValue( value )
         ,myAttributes( std::make_shared<TremoloAttributes>() )
         {}
@@ -6768,11 +6768,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::TremoloMarks Tremolo::getValue() const
+        t::TremoloMarks Tremolo::getValue() const
         {
             return myValue;
         }
-        void Tremolo::setValue( const types::TremoloMarks& value )
+        void Tremolo::setValue( const t::TremoloMarks& value )
         {
             myValue = value;
             // throw std::runtime_error( "" );
@@ -6786,9 +6786,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -6835,7 +6835,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherOrnamentAttributes>() )
         {}
-        OtherOrnament::OtherOrnament( const types::XsString& value )
+        OtherOrnament::OtherOrnament( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherOrnamentAttributes>() )
         {}
@@ -6879,11 +6879,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherOrnament::getValue() const
+        t::XsString OtherOrnament::getValue() const
         {
             return myValue;
         }
-        void OtherOrnament::setValue( const types::XsString& value )
+        void OtherOrnament::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -6896,9 +6896,9 @@ namespace mx
         //        ,relativeX()
         //        ,relativeY()
         //        ,fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,placement()
         //        ,hasDefaultX( false )
         //        ,hasDefaultY( false )
@@ -6945,7 +6945,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
         //        {}
-        //        AccidentalMark::AccidentalMark( const types::AccidentalValue& value )
+        //        AccidentalMark::AccidentalMark( const t::AccidentalValue& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<AccidentalMarkAttributes>() )
         //        {}
@@ -6989,11 +6989,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::AccidentalValue AccidentalMark::getValue() const
+        //        t::AccidentalValue AccidentalMark::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void AccidentalMark::setValue( const types::AccidentalValue& value )
+        //        void AccidentalMark::setValue( const t::AccidentalValue& value )
         //        {
         //            myValue = value;
         //        }
@@ -7008,9 +7008,9 @@ namespace mx
         //        ,relativeX()
         //        ,relativeY()
         //        ,fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,placement()
         //        ,hasSubstitution( false )
         //        ,hasAlternate( false )
@@ -7063,7 +7063,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<FingeringAttributes>() )
         //        {}
-        //        Fingering::Fingering( const types::XsString& value )
+        //        Fingering::Fingering( const t::XsString& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<FingeringAttributes>() )
         //        {}
@@ -7107,11 +7107,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::XsString Fingering::getValue() const
+        //        t::XsString Fingering::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Fingering::setValue( const types::XsString& value )
+        //        void Fingering::setValue( const t::XsString& value )
         //        {
         //            myValue = value;
         //        }
@@ -7124,9 +7124,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -7173,7 +7173,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PluckAttributes>() )
         {}
-        Pluck::Pluck( const types::XsString& value )
+        Pluck::Pluck( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PluckAttributes>() )
         {}
@@ -7217,11 +7217,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Pluck::getValue() const
+        t::XsString Pluck::getValue() const
         {
             return myValue;
         }
-        void Pluck::setValue( const types::XsString& value )
+        void Pluck::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -7230,9 +7230,9 @@ namespace mx
         /**************** Fret ****************/
         //        FretAttributes::FretAttributes()
         //        :fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,hasFontFamily( false )
         //        ,hasFontStyle( false )
         //        ,hasFontSize( false )
@@ -7263,7 +7263,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<FretAttributes>() )
         //        {}
-        //        Fret::Fret( const types::NonNegativeInteger& value )
+        //        Fret::Fret( const t::NonNegativeInteger& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<FretAttributes>() )
         //        {}
@@ -7307,11 +7307,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::NonNegativeInteger Fret::getValue() const
+        //        t::NonNegativeInteger Fret::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Fret::setValue( const types::NonNegativeInteger& value )
+        //        void Fret::setValue( const t::NonNegativeInteger& value )
         //        {
         //            myValue = value;
         //        }
@@ -7319,16 +7319,16 @@ namespace mx
         
         /**************** HammerOn ****************/
         HammerOnAttributes::HammerOnAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,number( 1 )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasType( true )
         ,hasNumber( false )
@@ -7381,7 +7381,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<HammerOnAttributes>() )
         {}
-        HammerOn::HammerOn( const types::XsString& value )
+        HammerOn::HammerOn( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<HammerOnAttributes>() )
         {}
@@ -7425,11 +7425,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString HammerOn::getValue() const
+        t::XsString HammerOn::getValue() const
         {
             return myValue;
         }
-        void HammerOn::setValue( const types::XsString& value )
+        void HammerOn::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -7437,16 +7437,16 @@ namespace mx
         
         /**************** PullOff ****************/
         PullOffAttributes::PullOffAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,number( 1 )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasType( true )
         ,hasNumber( false )
@@ -7499,7 +7499,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PullOffAttributes>() )
         {}
-        PullOff::PullOff( const types::XsString& value )
+        PullOff::PullOff( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PullOffAttributes>() )
         {}
@@ -7543,11 +7543,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString PullOff::getValue() const
+        t::XsString PullOff::getValue() const
         {
             return myValue;
         }
-        void PullOff::setValue( const types::XsString& value )
+        void PullOff::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -7560,9 +7560,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -7609,7 +7609,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<TapAttributes>() )
         {}
-        Tap::Tap( const types::XsString& value )
+        Tap::Tap( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<TapAttributes>() )
         {}
@@ -7653,11 +7653,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Tap::getValue() const
+        t::XsString Tap::getValue() const
         {
             return myValue;
         }
-        void Tap::setValue( const types::XsString& value )
+        void Tap::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -7670,9 +7670,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -7716,10 +7716,10 @@ namespace mx
         }
         
         Handbell::Handbell()
-        :myValue( types::HandbellValue::damp )
+        :myValue( t::HandbellValue::damp )
         ,myAttributes( std::make_shared<HandbellAttributes>() )
         {}
-        Handbell::Handbell( const types::HandbellValue& value )
+        Handbell::Handbell( const t::HandbellValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<HandbellAttributes>() )
         {}
@@ -7763,11 +7763,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::HandbellValue Handbell::getValue() const
+        t::HandbellValue Handbell::getValue() const
         {
             return myValue;
         }
-        void Handbell::setValue( const types::HandbellValue& value )
+        void Handbell::setValue( const t::HandbellValue& value )
         {
             myValue = value;
         }
@@ -7780,9 +7780,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,placement()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -7829,7 +7829,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<OtherTechnicalAttributes>() )
         {}
-        OtherTechnical::OtherTechnical( const types::XsString& value )
+        OtherTechnical::OtherTechnical( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<OtherTechnicalAttributes>() )
         {}
@@ -7873,11 +7873,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString OtherTechnical::getValue() const
+        t::XsString OtherTechnical::getValue() const
         {
             return myValue;
         }
-        void OtherTechnical::setValue( const types::XsString& value )
+        void OtherTechnical::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -7886,9 +7886,9 @@ namespace mx
         /**************** TupletNumber ****************/
         TupletNumberAttributes::TupletNumberAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -7919,7 +7919,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<TupletNumberAttributes>() )
         {}
-        TupletNumber::TupletNumber( const types::NonNegativeInteger& value )
+        TupletNumber::TupletNumber( const t::NonNegativeInteger& value )
         :myValue( value )
         ,myAttributes( std::make_shared<TupletNumberAttributes>() )
         {}
@@ -7963,11 +7963,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NonNegativeInteger TupletNumber::getValue() const
+        t::NonNegativeInteger TupletNumber::getValue() const
         {
             return myValue;
         }
-        void TupletNumber::setValue( const types::NonNegativeInteger& value )
+        void TupletNumber::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
@@ -7976,9 +7976,9 @@ namespace mx
         /**************** TupletType ****************/
         TupletTypeAttributes::TupletTypeAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -8006,10 +8006,10 @@ namespace mx
         }
         
         TupletType::TupletType()
-        :myValue( types::NoteTypeValue::eighth )
+        :myValue( t::NoteTypeValue::eighth )
         ,myAttributes( std::make_shared<TupletTypeAttributes>() )
         {}
-        TupletType::TupletType( const types::NoteTypeValue& value )
+        TupletType::TupletType( const t::NoteTypeValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<TupletTypeAttributes>() )
         {}
@@ -8053,11 +8053,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NoteTypeValue TupletType::getValue() const
+        t::NoteTypeValue TupletType::getValue() const
         {
             return myValue;
         }
-        void TupletType::setValue( const types::NoteTypeValue& value )
+        void TupletType::setValue( const t::NoteTypeValue& value )
         {
             myValue = value;
         }
@@ -8065,15 +8065,15 @@ namespace mx
         
         /**************** CreditWords ****************/
         CreditWordsAttributes::CreditWordsAttributes()
-        :justify( types::LeftCenterRight::center )
+        :justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,underline()
         ,overline()
@@ -8081,9 +8081,9 @@ namespace mx
         ,rotation()
         ,letterSpacing()
         ,lineHeight()
-        ,lang( types::XmlLang{ "it" } )
-        ,space( types::XmlSpace::default_ )
-        ,enclosure( types::EnclosureShape::rectangle )
+        ,lang( t::XmlLang{ "it" } )
+        ,space( t::XmlSpace::default_ )
+        ,enclosure( t::EnclosureShape::rectangle )
         ,hasJustify( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -8159,7 +8159,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<CreditWordsAttributes>() )
         {}
-        CreditWords::CreditWords( const types::XsString& value )
+        CreditWords::CreditWords( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<CreditWordsAttributes>() )
         {}
@@ -8203,11 +8203,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString CreditWords::getValue() const
+        t::XsString CreditWords::getValue() const
         {
             return myValue;
         }
-        void CreditWords::setValue( const types::XsString& value )
+        void CreditWords::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -8215,15 +8215,15 @@ namespace mx
         
         /**************** CreditWords ****************/
         //        CreditWordsAttributes::CreditWordsAttributes()
-        //        :justify( types::LeftCenterRight::center )
+        //        :justify( t::LeftCenterRight::center )
         //        ,defaultX()
         //        ,defaultY()
         //        ,relativeX()
         //        ,relativeY()
         //        ,fontFamily()
-        //        ,fontStyle( types::FontStyle::normal )
-        //        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        //        ,fontWeight( types::FontWeight::normal )
+        //        ,fontStyle( t::FontStyle::normal )
+        //        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        //        ,fontWeight( t::FontWeight::normal )
         //        ,halign()
         //        ,underline()
         //        ,overline()
@@ -8231,9 +8231,9 @@ namespace mx
         //        ,rotation()
         //        ,letterSpacing()
         //        ,lineHeight()
-        //        ,lang( types::XmlLang{ "it" } )
-        //        ,space( types::XmlSpace::default_ )
-        //        ,enclosure( types::EnclosureShape::rectangle )
+        //        ,lang( t::XmlLang{ "it" } )
+        //        ,space( t::XmlSpace::default_ )
+        //        ,enclosure( t::EnclosureShape::rectangle )
         //        ,hasJustify( false )
         //        ,hasDefaultX( false )
         //        ,hasDefaultY( false )
@@ -8309,7 +8309,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<CreditWordsAttributes>() )
         //        {}
-        //        CreditWords::CreditWords( const types::XsString& value )
+        //        CreditWords::CreditWords( const t::XsString& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<CreditWordsAttributes>() )
         //        {}
@@ -8353,11 +8353,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::XsString CreditWords::getValue() const
+        //        t::XsString CreditWords::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void CreditWords::setValue( const types::XsString& value )
+        //        void CreditWords::setValue( const t::XsString& value )
         //        {
         //            myValue = value;
         //        }
@@ -8370,10 +8370,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
-        ,justify( types::LeftCenterRight::center )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
+        ,justify( t::LeftCenterRight::center )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -8419,7 +8419,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<GroupNameAttributes>() )
         {}
-        GroupName::GroupName( const types::XsString& value )
+        GroupName::GroupName( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<GroupNameAttributes>() )
         {}
@@ -8463,11 +8463,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString GroupName::getValue() const
+        t::XsString GroupName::getValue() const
         {
             return myValue;
         }
-        void GroupName::setValue( const types::XsString& value )
+        void GroupName::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -8480,10 +8480,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
-        ,justify( types::LeftCenterRight::center )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
+        ,justify( t::LeftCenterRight::center )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -8529,7 +8529,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<GroupAbbreviationAttributes>() )
         {}
-        GroupAbbreviation::GroupAbbreviation( const types::XsString& value )
+        GroupAbbreviation::GroupAbbreviation( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<GroupAbbreviationAttributes>() )
         {}
@@ -8573,11 +8573,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString GroupAbbreviation::getValue() const
+        t::XsString GroupAbbreviation::getValue() const
         {
             return myValue;
         }
-        void GroupAbbreviation::setValue( const types::XsString& value )
+        void GroupAbbreviation::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -8616,10 +8616,10 @@ namespace mx
         }
         
         GroupSymbol::GroupSymbol()
-        :myValue( types::GroupSymbolValue::none )
+        :myValue( t::GroupSymbolValue::none )
         ,myAttributes( std::make_shared<GroupSymbolAttributes>() )
         {}
-        GroupSymbol::GroupSymbol( const types::GroupSymbolValue& value )
+        GroupSymbol::GroupSymbol( const t::GroupSymbolValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<GroupSymbolAttributes>() )
         {}
@@ -8663,11 +8663,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::GroupSymbolValue GroupSymbol::getValue() const
+        t::GroupSymbolValue GroupSymbol::getValue() const
         {
             return myValue;
         }
-        void GroupSymbol::setValue( const types::GroupSymbolValue& value )
+        void GroupSymbol::setValue( const t::GroupSymbolValue& value )
         {
             myValue = value;
         }
@@ -8694,10 +8694,10 @@ namespace mx
         }
         
         GroupBarline::GroupBarline()
-        :myValue( types::GroupBarlineValue::yes )
+        :myValue( t::GroupBarlineValue::yes )
         ,myAttributes( std::make_shared<GroupBarlineAttributes>() )
         {}
-        GroupBarline::GroupBarline( const types::GroupBarlineValue& value )
+        GroupBarline::GroupBarline( const t::GroupBarlineValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<GroupBarlineAttributes>() )
         {}
@@ -8741,11 +8741,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::GroupBarlineValue GroupBarline::getValue() const
+        t::GroupBarlineValue GroupBarline::getValue() const
         {
             return myValue;
         }
-        void GroupBarline::setValue( const types::GroupBarlineValue& value )
+        void GroupBarline::setValue( const t::GroupBarlineValue& value )
         {
             myValue = value;
         }
@@ -8758,11 +8758,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,printObject()
-        ,justify( types::LeftCenterRight::center )
+        ,justify( t::LeftCenterRight::center )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -8811,7 +8811,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PartNameAttributes>() )
         {}
-        PartName::PartName( const types::XsString& value )
+        PartName::PartName( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PartNameAttributes>() )
         {}
@@ -8855,11 +8855,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString PartName::getValue() const
+        t::XsString PartName::getValue() const
         {
             return myValue;
         }
-        void PartName::setValue( const types::XsString& value )
+        void PartName::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -8872,11 +8872,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,printObject()
-        ,justify( types::LeftCenterRight::center )
+        ,justify( t::LeftCenterRight::center )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -8925,7 +8925,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<PartAbbreviationAttributes>() )
         {}
-        PartAbbreviation::PartAbbreviation( const types::XsString& value )
+        PartAbbreviation::PartAbbreviation( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<PartAbbreviationAttributes>() )
         {}
@@ -8969,11 +8969,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString PartAbbreviation::getValue() const
+        t::XsString PartAbbreviation::getValue() const
         {
             return myValue;
         }
-        void PartAbbreviation::setValue( const types::XsString& value )
+        void PartAbbreviation::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -9007,7 +9007,7 @@ namespace mx
         //        :myValue()
         //        ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
         //        {}
-        //        MidiDevice::MidiDevice( const types::XsString& value )
+        //        MidiDevice::MidiDevice( const t::XsString& value )
         //        :myValue( value )
         //        ,myAttributes( std::make_shared<MidiDeviceAttributes>() )
         //        {}
@@ -9051,11 +9051,11 @@ namespace mx
         //                myAttributes = value;
         //            }
         //        }
-        //        types::XsString MidiDevice::getValue() const
+        //        t::XsString MidiDevice::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void MidiDevice::setValue( const types::XsString& value )
+        //        void MidiDevice::setValue( const t::XsString& value )
         //        {
         //            myValue = value;
         //        }
@@ -9063,15 +9063,15 @@ namespace mx
         
         /**************** Footnote ****************/
         FootnoteAttributes::FootnoteAttributes()
-        :justify( types::LeftCenterRight::center )
+        :justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,underline()
         ,overline()
@@ -9079,9 +9079,9 @@ namespace mx
         ,rotation()
         ,letterSpacing()
         ,lineHeight()
-        ,lang( types::XmlLang{ "it" } )
-        ,space( types::XmlSpace::default_ )
-        ,enclosure( types::EnclosureShape::rectangle )
+        ,lang( t::XmlLang{ "it" } )
+        ,space( t::XmlSpace::default_ )
+        ,enclosure( t::EnclosureShape::rectangle )
         ,hasJustify( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -9157,7 +9157,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FootnoteAttributes>() )
         {}
-        Footnote::Footnote( const types::XsString& value )
+        Footnote::Footnote( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FootnoteAttributes>() )
         {}
@@ -9201,11 +9201,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Footnote::getValue() const
+        t::XsString Footnote::getValue() const
         {
             return myValue;
         }
-        void Footnote::setValue( const types::XsString& value )
+        void Footnote::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -9247,7 +9247,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<LevelAttributes>() )
         {}
-        Level::Level( const types::XsString& value )
+        Level::Level( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<LevelAttributes>() )
         {}
@@ -9291,11 +9291,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Level::getValue() const
+        t::XsString Level::getValue() const
         {
             return myValue;
         }
-        void Level::setValue( const types::XsString& value )
+        void Level::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -9325,7 +9325,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<CancelAttributes>() )
         {}
-        Cancel::Cancel( const types::FifthsValue& value )
+        Cancel::Cancel( const t::FifthsValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<CancelAttributes>() )
         {}
@@ -9369,11 +9369,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::FifthsValue Cancel::getValue() const
+        t::FifthsValue Cancel::getValue() const
         {
             return myValue;
         }
-        void Cancel::setValue( const types::FifthsValue& value )
+        void Cancel::setValue( const t::FifthsValue& value )
         {
             myValue = value;
         }
@@ -9386,9 +9386,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -9431,7 +9431,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<FunctionAttributes>() )
         {}
-        Function::Function( const types::XsString& value )
+        Function::Function( const t::XsString& value )
         :myValue( value )
         ,myAttributes( std::make_shared<FunctionAttributes>() )
         {}
@@ -9475,11 +9475,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::XsString Function::getValue() const
+        t::XsString Function::getValue() const
         {
             return myValue;
         }
-        void Function::setValue( const types::XsString& value )
+        void Function::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -9497,9 +9497,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,halign()
         ,hasUseSymbols( false )
         ,hasText( false )
@@ -9558,10 +9558,10 @@ namespace mx
         }
         
         Kind::Kind()
-        :myValue( types::KindValue::major )
+        :myValue( t::KindValue::major )
         ,myAttributes( std::make_shared<KindAttributes>() )
         {}
-        Kind::Kind( const types::KindValue& value )
+        Kind::Kind( const t::KindValue& value )
         :myValue( value )
         ,myAttributes( std::make_shared<KindAttributes>() )
         {}
@@ -9605,11 +9605,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::KindValue Kind::getValue() const
+        t::KindValue Kind::getValue() const
         {
             return myValue;
         }
-        void Kind::setValue( const types::KindValue& value )
+        void Kind::setValue( const t::KindValue& value )
         {
             myValue = value;
         }
@@ -9622,9 +9622,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::FontSize{ types::CssFontSize::medium } )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::FontSize{ t::CssFontSize::medium } )
+        ,fontWeight( t::FontWeight::normal )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -9667,7 +9667,7 @@ namespace mx
         :myValue()
         ,myAttributes( std::make_shared<InversionAttributes>() )
         {}
-        Inversion::Inversion( const types::NonNegativeInteger& value )
+        Inversion::Inversion( const t::NonNegativeInteger& value )
         :myValue( value )
         ,myAttributes( std::make_shared<InversionAttributes>() )
         {}
@@ -9711,11 +9711,11 @@ namespace mx
                 myAttributes = value;
             }
         }
-        types::NonNegativeInteger Inversion::getValue() const
+        t::NonNegativeInteger Inversion::getValue() const
         {
             return myValue;
         }
-        void Inversion::setValue( const types::NonNegativeInteger& value )
+        void Inversion::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
@@ -9733,7 +9733,7 @@ namespace mx
         MidiChannel::MidiChannel()
         :myValue()
         {}
-        MidiChannel::MidiChannel( const types::Midi16& value )
+        MidiChannel::MidiChannel( const t::Midi16& value )
         :myValue( value )
         {}
         bool MidiChannel::hasAttributes() const
@@ -9759,18 +9759,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Midi16 MidiChannel::getValue() const
+        t::Midi16 MidiChannel::getValue() const
         {
             return myValue;
         }
-        void MidiChannel::setValue( const types::Midi16& value )
+        void MidiChannel::setValue( const t::Midi16& value )
         {
             myValue = value;
         }
         MidiName::MidiName()
         :myValue()
         {}
-        MidiName::MidiName( const types::XsString& value )
+        MidiName::MidiName( const t::XsString& value )
         :myValue( value )
         {}
         bool MidiName::hasAttributes() const
@@ -9796,18 +9796,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString MidiName::getValue() const
+        t::XsString MidiName::getValue() const
         {
             return myValue;
         }
-        void MidiName::setValue( const types::XsString& value )
+        void MidiName::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         MidiBank::MidiBank()
         :myValue()
         {}
-        MidiBank::MidiBank( const types::Midi16384& value )
+        MidiBank::MidiBank( const t::Midi16384& value )
         :myValue( value )
         {}
         bool MidiBank::hasAttributes() const
@@ -9833,18 +9833,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Midi16384 MidiBank::getValue() const
+        t::Midi16384 MidiBank::getValue() const
         {
             return myValue;
         }
-        void MidiBank::setValue( const types::Midi16384& value )
+        void MidiBank::setValue( const t::Midi16384& value )
         {
             myValue = value;
         }
         MidiProgram::MidiProgram()
         :myValue()
         {}
-        MidiProgram::MidiProgram( const types::Midi128& value )
+        MidiProgram::MidiProgram( const t::Midi128& value )
         :myValue( value )
         {}
         bool MidiProgram::hasAttributes() const
@@ -9870,18 +9870,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Midi128 MidiProgram::getValue() const
+        t::Midi128 MidiProgram::getValue() const
         {
             return myValue;
         }
-        void MidiProgram::setValue( const types::Midi128& value )
+        void MidiProgram::setValue( const t::Midi128& value )
         {
             myValue = value;
         }
         MidiUnpitched::MidiUnpitched()
         :myValue()
         {}
-        MidiUnpitched::MidiUnpitched( const types::Midi128& value )
+        MidiUnpitched::MidiUnpitched( const t::Midi128& value )
         :myValue( value )
         {}
         bool MidiUnpitched::hasAttributes() const
@@ -9907,18 +9907,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Midi128 MidiUnpitched::getValue() const
+        t::Midi128 MidiUnpitched::getValue() const
         {
             return myValue;
         }
-        void MidiUnpitched::setValue( const types::Midi128& value )
+        void MidiUnpitched::setValue( const t::Midi128& value )
         {
             myValue = value;
         }
         Volume::Volume()
         :myValue()
         {}
-        Volume::Volume( const types::Percent& value )
+        Volume::Volume( const t::Percent& value )
         :myValue( value )
         {}
         bool Volume::hasAttributes() const
@@ -9944,18 +9944,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Percent Volume::getValue() const
+        t::Percent Volume::getValue() const
         {
             return myValue;
         }
-        void Volume::setValue( const types::Percent& value )
+        void Volume::setValue( const t::Percent& value )
         {
             myValue = value;
         }
         Pan::Pan()
         :myValue()
         {}
-        Pan::Pan( const types::RotationDegrees& value )
+        Pan::Pan( const t::RotationDegrees& value )
         :myValue( value )
         {}
         bool Pan::hasAttributes() const
@@ -9981,18 +9981,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::RotationDegrees Pan::getValue() const
+        t::RotationDegrees Pan::getValue() const
         {
             return myValue;
         }
-        void Pan::setValue( const types::RotationDegrees& value )
+        void Pan::setValue( const t::RotationDegrees& value )
         {
             myValue = value;
         }
         Elevation::Elevation()
         :myValue()
         {}
-        Elevation::Elevation( const types::RotationDegrees& value )
+        Elevation::Elevation( const t::RotationDegrees& value )
         :myValue( value )
         {}
         bool Elevation::hasAttributes() const
@@ -10018,18 +10018,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::RotationDegrees Elevation::getValue() const
+        t::RotationDegrees Elevation::getValue() const
         {
             return myValue;
         }
-        void Elevation::setValue( const types::RotationDegrees& value )
+        void Elevation::setValue( const t::RotationDegrees& value )
         {
             myValue = value;
         }
         Ipa::Ipa()
         :myValue()
         {}
-        Ipa::Ipa( const types::XsString& value )
+        Ipa::Ipa( const t::XsString& value )
         :myValue( value )
         {}
         bool Ipa::hasAttributes() const
@@ -10055,18 +10055,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString Ipa::getValue() const
+        t::XsString Ipa::getValue() const
         {
             return myValue;
         }
-        void Ipa::setValue( const types::XsString& value )
+        void Ipa::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Mute::Mute()
-        :myValue( types::MuteEnum::off )
+        :myValue( t::MuteEnum::off )
         {}
-        Mute::Mute( const types::MuteEnum& value )
+        Mute::Mute( const t::MuteEnum& value )
         :myValue( value )
         {}
         bool Mute::hasAttributes() const
@@ -10092,18 +10092,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::MuteEnum Mute::getValue() const
+        t::MuteEnum Mute::getValue() const
         {
             return myValue;
         }
-        void Mute::setValue( const types::MuteEnum& value )
+        void Mute::setValue( const t::MuteEnum& value )
         {
             myValue = value;
         }
         SemiPitched::SemiPitched()
-        :myValue( types::SemiPitchedEnum::medium )
+        :myValue( t::SemiPitchedEnum::medium )
         {}
-        SemiPitched::SemiPitched( const types::SemiPitchedEnum& value )
+        SemiPitched::SemiPitched( const t::SemiPitchedEnum& value )
         :myValue( value )
         {}
         bool SemiPitched::hasAttributes() const
@@ -10129,18 +10129,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::SemiPitchedEnum SemiPitched::getValue() const
+        t::SemiPitchedEnum SemiPitched::getValue() const
         {
             return myValue;
         }
-        void SemiPitched::setValue( const types::SemiPitchedEnum& value )
+        void SemiPitched::setValue( const t::SemiPitchedEnum& value )
         {
             myValue = value;
         }
         Divisions::Divisions()
         :myValue()
         {}
-        Divisions::Divisions( const types::PositiveDivisionsValue& value )
+        Divisions::Divisions( const t::PositiveDivisionsValue& value )
         :myValue( value )
         {}
         bool Divisions::hasAttributes() const
@@ -10166,18 +10166,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveDivisionsValue Divisions::getValue() const
+        t::PositiveDivisionsValue Divisions::getValue() const
         {
             return myValue;
         }
-        void Divisions::setValue( const types::PositiveDivisionsValue& value )
+        void Divisions::setValue( const t::PositiveDivisionsValue& value )
         {
             myValue = value;
         }
         Staves::Staves()
         :myValue()
         {}
-        Staves::Staves( const types::NonNegativeInteger& value )
+        Staves::Staves( const t::NonNegativeInteger& value )
         :myValue( value )
         {}
         bool Staves::hasAttributes() const
@@ -10203,18 +10203,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeInteger Staves::getValue() const
+        t::NonNegativeInteger Staves::getValue() const
         {
             return myValue;
         }
-        void Staves::setValue( const types::NonNegativeInteger& value )
+        void Staves::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
         Instruments::Instruments()
         :myValue()
         {}
-        Instruments::Instruments( const types::NonNegativeInteger& value )
+        Instruments::Instruments( const t::NonNegativeInteger& value )
         :myValue( value )
         {}
         bool Instruments::hasAttributes() const
@@ -10240,18 +10240,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeInteger Instruments::getValue() const
+        t::NonNegativeInteger Instruments::getValue() const
         {
             return myValue;
         }
-        void Instruments::setValue( const types::NonNegativeInteger& value )
+        void Instruments::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
         Sign::Sign()
-        :myValue( types::ClefSign::g )
+        :myValue( t::ClefSign::g )
         {}
-        Sign::Sign( const types::ClefSign& value )
+        Sign::Sign( const t::ClefSign& value )
         :myValue( value )
         {}
         bool Sign::hasAttributes() const
@@ -10277,18 +10277,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::ClefSign Sign::getValue() const
+        t::ClefSign Sign::getValue() const
         {
             return myValue;
         }
-        void Sign::setValue( const types::ClefSign& value )
+        void Sign::setValue( const t::ClefSign& value )
         {
             myValue = value;
         }
         Line::Line()
         :myValue()
         {}
-        Line::Line( const types::StaffLine& value )
+        Line::Line( const t::StaffLine& value )
         :myValue( value )
         {}
         bool Line::hasAttributes() const
@@ -10314,18 +10314,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StaffLine Line::getValue() const
+        t::StaffLine Line::getValue() const
         {
             return myValue;
         }
-        void Line::setValue( const types::StaffLine& value )
+        void Line::setValue( const t::StaffLine& value )
         {
             myValue = value;
         }
         ClefOctaveChange::ClefOctaveChange()
         :myValue()
         {}
-        ClefOctaveChange::ClefOctaveChange( const types::Integer& value )
+        ClefOctaveChange::ClefOctaveChange( const t::Integer& value )
         :myValue( value )
         {}
         bool ClefOctaveChange::hasAttributes() const
@@ -10351,18 +10351,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Integer ClefOctaveChange::getValue() const
+        t::Integer ClefOctaveChange::getValue() const
         {
             return myValue;
         }
-        void ClefOctaveChange::setValue( const types::Integer& value )
+        void ClefOctaveChange::setValue( const t::Integer& value )
         {
             myValue = value;
         }
         TimeRelation::TimeRelation()
-        :myValue( types::TimeRelationEnum::equals )
+        :myValue( t::TimeRelationEnum::equals )
         {}
-        TimeRelation::TimeRelation( const types::TimeRelationEnum& value )
+        TimeRelation::TimeRelation( const t::TimeRelationEnum& value )
         :myValue( value )
         {}
         bool TimeRelation::hasAttributes() const
@@ -10388,18 +10388,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TimeRelationEnum TimeRelation::getValue() const
+        t::TimeRelationEnum TimeRelation::getValue() const
         {
             return myValue;
         }
-        void TimeRelation::setValue( const types::TimeRelationEnum& value )
+        void TimeRelation::setValue( const t::TimeRelationEnum& value )
         {
             myValue = value;
         }
         StaffType::StaffType()
-        :myValue( types::StaffTypeEnum::regular )
+        :myValue( t::StaffTypeEnum::regular )
         {}
-        StaffType::StaffType( const types::StaffTypeEnum& value )
+        StaffType::StaffType( const t::StaffTypeEnum& value )
         :myValue( value )
         {}
         bool StaffType::hasAttributes() const
@@ -10425,18 +10425,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StaffTypeEnum StaffType::getValue() const
+        t::StaffTypeEnum StaffType::getValue() const
         {
             return myValue;
         }
-        void StaffType::setValue( const types::StaffTypeEnum& value )
+        void StaffType::setValue( const t::StaffTypeEnum& value )
         {
             myValue = value;
         }
         StaffLines::StaffLines()
         :myValue()
         {}
-        StaffLines::StaffLines( const types::NonNegativeInteger& value )
+        StaffLines::StaffLines( const t::NonNegativeInteger& value )
         :myValue( value )
         {}
         bool StaffLines::hasAttributes() const
@@ -10462,18 +10462,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeInteger StaffLines::getValue() const
+        t::NonNegativeInteger StaffLines::getValue() const
         {
             return myValue;
         }
-        void StaffLines::setValue( const types::NonNegativeInteger& value )
+        void StaffLines::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
         Capo::Capo()
         :myValue()
         {}
-        Capo::Capo( const types::NonNegativeInteger& value )
+        Capo::Capo( const t::NonNegativeInteger& value )
         :myValue( value )
         {}
         bool Capo::hasAttributes() const
@@ -10499,18 +10499,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeInteger Capo::getValue() const
+        t::NonNegativeInteger Capo::getValue() const
         {
             return myValue;
         }
-        void Capo::setValue( const types::NonNegativeInteger& value )
+        void Capo::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
         StaffSize::StaffSize()
         :myValue()
         {}
-        StaffSize::StaffSize( const types::NonNegativeDecimal& value )
+        StaffSize::StaffSize( const t::NonNegativeDecimal& value )
         :myValue( value )
         {}
         bool StaffSize::hasAttributes() const
@@ -10536,18 +10536,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeDecimal StaffSize::getValue() const
+        t::NonNegativeDecimal StaffSize::getValue() const
         {
             return myValue;
         }
-        void StaffSize::setValue( const types::NonNegativeDecimal& value )
+        void StaffSize::setValue( const t::NonNegativeDecimal& value )
         {
             myValue = value;
         }
         SenzaMisura::SenzaMisura()
         :myValue()
         {}
-        SenzaMisura::SenzaMisura( const types::XsString& value )
+        SenzaMisura::SenzaMisura( const t::XsString& value )
         :myValue( value )
         {}
         bool SenzaMisura::hasAttributes() const
@@ -10573,18 +10573,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString SenzaMisura::getValue() const
+        t::XsString SenzaMisura::getValue() const
         {
             return myValue;
         }
-        void SenzaMisura::setValue( const types::XsString& value )
+        void SenzaMisura::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Diatonic::Diatonic()
         :myValue()
         {}
-        Diatonic::Diatonic( const types::Integer& value )
+        Diatonic::Diatonic( const t::Integer& value )
         :myValue( value )
         {}
         bool Diatonic::hasAttributes() const
@@ -10610,18 +10610,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Integer Diatonic::getValue() const
+        t::Integer Diatonic::getValue() const
         {
             return myValue;
         }
-        void Diatonic::setValue( const types::Integer& value )
+        void Diatonic::setValue( const t::Integer& value )
         {
             myValue = value;
         }
         Chromatic::Chromatic()
         :myValue()
         {}
-        Chromatic::Chromatic( const types::Semitones& value )
+        Chromatic::Chromatic( const t::Semitones& value )
         :myValue( value )
         {}
         bool Chromatic::hasAttributes() const
@@ -10647,18 +10647,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Semitones Chromatic::getValue() const
+        t::Semitones Chromatic::getValue() const
         {
             return myValue;
         }
-        void Chromatic::setValue( const types::Semitones& value )
+        void Chromatic::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
         OctaveChange::OctaveChange()
         :myValue()
         {}
-        OctaveChange::OctaveChange( const types::Integer& value )
+        OctaveChange::OctaveChange( const t::Integer& value )
         :myValue( value )
         {}
         bool OctaveChange::hasAttributes() const
@@ -10684,18 +10684,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Integer OctaveChange::getValue() const
+        t::Integer OctaveChange::getValue() const
         {
             return myValue;
         }
-        void OctaveChange::setValue( const types::Integer& value )
+        void OctaveChange::setValue( const t::Integer& value )
         {
             myValue = value;
         }
         AccordionMiddle::AccordionMiddle()
         :myValue()
         {}
-        AccordionMiddle::AccordionMiddle( const types::AccordionMiddleValue& value )
+        AccordionMiddle::AccordionMiddle( const t::AccordionMiddleValue& value )
         :myValue( value )
         {}
         bool AccordionMiddle::hasAttributes() const
@@ -10721,18 +10721,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::AccordionMiddleValue AccordionMiddle::getValue() const
+        t::AccordionMiddleValue AccordionMiddle::getValue() const
         {
             return myValue;
         }
-        void AccordionMiddle::setValue( const types::AccordionMiddleValue& value )
+        void AccordionMiddle::setValue( const t::AccordionMiddleValue& value )
         {
             myValue = value;
         }
         FrameStrings::FrameStrings()
         :myValue()
         {}
-        FrameStrings::FrameStrings( const types::PositiveInteger& value )
+        FrameStrings::FrameStrings( const t::PositiveInteger& value )
         :myValue( value )
         {}
         bool FrameStrings::hasAttributes() const
@@ -10758,18 +10758,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveInteger FrameStrings::getValue() const
+        t::PositiveInteger FrameStrings::getValue() const
         {
             return myValue;
         }
-        void FrameStrings::setValue( const types::PositiveInteger& value )
+        void FrameStrings::setValue( const t::PositiveInteger& value )
         {
             myValue = value;
         }
         FrameFrets::FrameFrets()
         :myValue()
         {}
-        FrameFrets::FrameFrets( const types::PositiveInteger& value )
+        FrameFrets::FrameFrets( const t::PositiveInteger& value )
         :myValue( value )
         {}
         bool FrameFrets::hasAttributes() const
@@ -10795,18 +10795,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveInteger FrameFrets::getValue() const
+        t::PositiveInteger FrameFrets::getValue() const
         {
             return myValue;
         }
-        void FrameFrets::setValue( const types::PositiveInteger& value )
+        void FrameFrets::setValue( const t::PositiveInteger& value )
         {
             myValue = value;
         }
         MetronomeRelation::MetronomeRelation()
         :myValue( "equals" )
         {}
-        MetronomeRelation::MetronomeRelation( const types::XsString& value )
+        MetronomeRelation::MetronomeRelation( const t::XsString& value )
         :myValue( "equals" )
         {}
         bool MetronomeRelation::hasAttributes() const
@@ -10832,11 +10832,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString MetronomeRelation::getValue() const
+        t::XsString MetronomeRelation::getValue() const
         {
             return myValue;
         }
-        void MetronomeRelation::setValue( const types::XsString& value )
+        void MetronomeRelation::setValue( const t::XsString& value )
         {
             // No!  This is weird, the only allowed value is "equals"
             // per the specification, so the client cannot change
@@ -10844,9 +10844,9 @@ namespace mx
             // myValue = value;
         }
         MetronomeType::MetronomeType()
-        :myValue( types::NoteTypeValue::eighth )
+        :myValue( t::NoteTypeValue::eighth )
         {}
-        MetronomeType::MetronomeType( const types::NoteTypeValue& value )
+        MetronomeType::MetronomeType( const t::NoteTypeValue& value )
         :myValue( value )
         {}
         bool MetronomeType::hasAttributes() const
@@ -10872,18 +10872,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NoteTypeValue MetronomeType::getValue() const
+        t::NoteTypeValue MetronomeType::getValue() const
         {
             return myValue;
         }
-        void MetronomeType::setValue( const types::NoteTypeValue& value )
+        void MetronomeType::setValue( const t::NoteTypeValue& value )
         {
             myValue = value;
         }
         PedalStep::PedalStep()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         {}
-        PedalStep::PedalStep( const types::StepEnum& value )
+        PedalStep::PedalStep( const t::StepEnum& value )
         :myValue( value )
         {}
         bool PedalStep::hasAttributes() const
@@ -10909,18 +10909,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StepEnum PedalStep::getValue() const
+        t::StepEnum PedalStep::getValue() const
         {
             return myValue;
         }
-        void PedalStep::setValue( const types::StepEnum& value )
+        void PedalStep::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
         PedalAlter::PedalAlter()
         :myValue()
         {}
-        PedalAlter::PedalAlter( const types::Semitones& value )
+        PedalAlter::PedalAlter( const t::Semitones& value )
         :myValue( value )
         {}
         bool PedalAlter::hasAttributes() const
@@ -10946,18 +10946,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Semitones PedalAlter::getValue() const
+        t::Semitones PedalAlter::getValue() const
         {
             return myValue;
         }
-        void PedalAlter::setValue( const types::Semitones& value )
+        void PedalAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
         Glass::Glass()
-        :myValue( types::GlassEnum::windChimes )
+        :myValue( t::GlassEnum::windChimes )
         {}
-        Glass::Glass( const types::GlassEnum& value )
+        Glass::Glass( const t::GlassEnum& value )
         :myValue( value )
         {}
         bool Glass::hasAttributes() const
@@ -10983,18 +10983,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::GlassEnum Glass::getValue() const
+        t::GlassEnum Glass::getValue() const
         {
             return myValue;
         }
-        void Glass::setValue( const types::GlassEnum& value )
+        void Glass::setValue( const t::GlassEnum& value )
         {
             myValue = value;
         }
         Metal::Metal()
-        :myValue( types::MetalEnum::bell )
+        :myValue( t::MetalEnum::bell )
         {}
-        Metal::Metal( const types::MetalEnum& value )
+        Metal::Metal( const t::MetalEnum& value )
         :myValue( value )
         {}
         bool Metal::hasAttributes() const
@@ -11020,18 +11020,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::MetalEnum Metal::getValue() const
+        t::MetalEnum Metal::getValue() const
         {
             return myValue;
         }
-        void Metal::setValue( const types::MetalEnum& value )
+        void Metal::setValue( const t::MetalEnum& value )
         {
             myValue = value;
         }
         Wood::Wood()
-        :myValue( types::WoodEnum::claves )
+        :myValue( t::WoodEnum::claves )
         {}
-        Wood::Wood( const types::WoodEnum& value )
+        Wood::Wood( const t::WoodEnum& value )
         :myValue( value )
         {}
         bool Wood::hasAttributes() const
@@ -11057,18 +11057,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::WoodEnum Wood::getValue() const
+        t::WoodEnum Wood::getValue() const
         {
             return myValue;
         }
-        void Wood::setValue( const types::WoodEnum& value )
+        void Wood::setValue( const t::WoodEnum& value )
         {
             myValue = value;
         }
         Pitched::Pitched()
-        :myValue( types::PitchedEnum::xylophone )
+        :myValue( t::PitchedEnum::xylophone )
         {}
-        Pitched::Pitched( const types::PitchedEnum& value )
+        Pitched::Pitched( const t::PitchedEnum& value )
         :myValue( value )
         {}
         bool Pitched::hasAttributes() const
@@ -11094,18 +11094,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PitchedEnum Pitched::getValue() const
+        t::PitchedEnum Pitched::getValue() const
         {
             return myValue;
         }
-        void Pitched::setValue( const types::PitchedEnum& value )
+        void Pitched::setValue( const t::PitchedEnum& value )
         {
             myValue = value;
         }
         Membrane::Membrane()
-        :myValue( types::MembraneEnum::snareDrum )
+        :myValue( t::MembraneEnum::snareDrum )
         {}
-        Membrane::Membrane( const types::MembraneEnum& value )
+        Membrane::Membrane( const t::MembraneEnum& value )
         :myValue( value )
         {}
         bool Membrane::hasAttributes() const
@@ -11131,18 +11131,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::MembraneEnum Membrane::getValue() const
+        t::MembraneEnum Membrane::getValue() const
         {
             return myValue;
         }
-        void Membrane::setValue( const types::MembraneEnum& value )
+        void Membrane::setValue( const t::MembraneEnum& value )
         {
             myValue = value;
         }
         Effect::Effect()
-        :myValue( types::EffectEnum::anvil )
+        :myValue( t::EffectEnum::anvil )
         {}
-        Effect::Effect( const types::EffectEnum& value )
+        Effect::Effect( const t::EffectEnum& value )
         :myValue( value )
         {}
         bool Effect::hasAttributes() const
@@ -11168,18 +11168,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::EffectEnum Effect::getValue() const
+        t::EffectEnum Effect::getValue() const
         {
             return myValue;
         }
-        void Effect::setValue( const types::EffectEnum& value )
+        void Effect::setValue( const t::EffectEnum& value )
         {
             myValue = value;
         }
         StickLocation::StickLocation()
-        :myValue( types::StickLocationEnum::center )
+        :myValue( t::StickLocationEnum::center )
         {}
-        StickLocation::StickLocation( const types::StickLocationEnum& value )
+        StickLocation::StickLocation( const t::StickLocationEnum& value )
         :myValue( value )
         {}
         bool StickLocation::hasAttributes() const
@@ -11205,18 +11205,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StickLocationEnum StickLocation::getValue() const
+        t::StickLocationEnum StickLocation::getValue() const
         {
             return myValue;
         }
-        void StickLocation::setValue( const types::StickLocationEnum& value )
+        void StickLocation::setValue( const t::StickLocationEnum& value )
         {
             myValue = value;
         }
         OtherPercussion::OtherPercussion()
         :myValue()
         {}
-        OtherPercussion::OtherPercussion( const types::XsString& value )
+        OtherPercussion::OtherPercussion( const t::XsString& value )
         :myValue( value )
         {}
         bool OtherPercussion::hasAttributes() const
@@ -11242,18 +11242,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString OtherPercussion::getValue() const
+        t::XsString OtherPercussion::getValue() const
         {
             return myValue;
         }
-        void OtherPercussion::setValue( const types::XsString& value )
+        void OtherPercussion::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         StickType::StickType()
-        :myValue( types::StickTypeEnum::yarn )
+        :myValue( t::StickTypeEnum::yarn )
         {}
-        StickType::StickType( const types::StickTypeEnum& value )
+        StickType::StickType( const t::StickTypeEnum& value )
         :myValue( value )
         {}
         bool StickType::hasAttributes() const
@@ -11279,18 +11279,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StickTypeEnum StickType::getValue() const
+        t::StickTypeEnum StickType::getValue() const
         {
             return myValue;
         }
-        void StickType::setValue( const types::StickTypeEnum& value )
+        void StickType::setValue( const t::StickTypeEnum& value )
         {
             myValue = value;
         }
         StickMaterial::StickMaterial()
-        :myValue( types::StickMaterialEnum::medium )
+        :myValue( t::StickMaterialEnum::medium )
         {}
-        StickMaterial::StickMaterial( const types::StickMaterialEnum& value )
+        StickMaterial::StickMaterial( const t::StickMaterialEnum& value )
         :myValue( value )
         {}
         bool StickMaterial::hasAttributes() const
@@ -11316,18 +11316,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StickMaterialEnum StickMaterial::getValue() const
+        t::StickMaterialEnum StickMaterial::getValue() const
         {
             return myValue;
         }
-        void StickMaterial::setValue( const types::StickMaterialEnum& value )
+        void StickMaterial::setValue( const t::StickMaterialEnum& value )
         {
             myValue = value;
         }
         EncodingDate::EncodingDate()
         :myValue()
         {}
-        EncodingDate::EncodingDate( const types::Date& value )
+        EncodingDate::EncodingDate( const t::Date& value )
         :myValue( value )
         {}
         bool EncodingDate::hasAttributes() const
@@ -11353,18 +11353,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Date EncodingDate::getValue() const
+        t::Date EncodingDate::getValue() const
         {
             return myValue;
         }
-        void EncodingDate::setValue( const types::Date& value )
+        void EncodingDate::setValue( const t::Date& value )
         {
             myValue = value;
         }
         Software::Software()
         :myValue()
         {}
-        Software::Software( const types::XsString& value )
+        Software::Software( const t::XsString& value )
         :myValue( value )
         {}
         bool Software::hasAttributes() const
@@ -11390,18 +11390,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString Software::getValue() const
+        t::XsString Software::getValue() const
         {
             return myValue;
         }
-        void Software::setValue( const types::XsString& value )
+        void Software::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         EncodingDescription::EncodingDescription()
         :myValue()
         {}
-        EncodingDescription::EncodingDescription( const types::XsString& value )
+        EncodingDescription::EncodingDescription( const t::XsString& value )
         :myValue( value )
         {}
         bool EncodingDescription::hasAttributes() const
@@ -11427,18 +11427,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString EncodingDescription::getValue() const
+        t::XsString EncodingDescription::getValue() const
         {
             return myValue;
         }
-        void EncodingDescription::setValue( const types::XsString& value )
+        void EncodingDescription::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Source::Source()
         :myValue()
         {}
-        Source::Source( const types::XsString& value )
+        Source::Source( const t::XsString& value )
         :myValue( value )
         {}
         bool Source::hasAttributes() const
@@ -11464,18 +11464,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString Source::getValue() const
+        t::XsString Source::getValue() const
         {
             return myValue;
         }
-        void Source::setValue( const types::XsString& value )
+        void Source::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         MeasureDistance::MeasureDistance()
         :myValue()
         {}
-        MeasureDistance::MeasureDistance( const types::TenthsValue& value )
+        MeasureDistance::MeasureDistance( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool MeasureDistance::hasAttributes() const
@@ -11501,18 +11501,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue MeasureDistance::getValue() const
+        t::TenthsValue MeasureDistance::getValue() const
         {
             return myValue;
         }
-        void MeasureDistance::setValue( const types::TenthsValue& value )
+        void MeasureDistance::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         PageHeight::PageHeight()
         :myValue()
         {}
-        PageHeight::PageHeight( const types::TenthsValue& value )
+        PageHeight::PageHeight( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool PageHeight::hasAttributes() const
@@ -11538,18 +11538,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue PageHeight::getValue() const
+        t::TenthsValue PageHeight::getValue() const
         {
             return myValue;
         }
-        void PageHeight::setValue( const types::TenthsValue& value )
+        void PageHeight::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         PageWidth::PageWidth()
         :myValue()
         {}
-        PageWidth::PageWidth( const types::TenthsValue& value )
+        PageWidth::PageWidth( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool PageWidth::hasAttributes() const
@@ -11575,18 +11575,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue PageWidth::getValue() const
+        t::TenthsValue PageWidth::getValue() const
         {
             return myValue;
         }
-        void PageWidth::setValue( const types::TenthsValue& value )
+        void PageWidth::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         Millimeters::Millimeters()
         :myValue()
         {}
-        Millimeters::Millimeters( const types::MillimetersValue& value )
+        Millimeters::Millimeters( const t::MillimetersValue& value )
         :myValue( value )
         {}
         bool Millimeters::hasAttributes() const
@@ -11612,18 +11612,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::MillimetersValue Millimeters::getValue() const
+        t::MillimetersValue Millimeters::getValue() const
         {
             return myValue;
         }
-        void Millimeters::setValue( const types::MillimetersValue& value )
+        void Millimeters::setValue( const t::MillimetersValue& value )
         {
             myValue = value;
         }
         Tenths::Tenths()
         :myValue()
         {}
-        Tenths::Tenths( const types::TenthsValue& value )
+        Tenths::Tenths( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool Tenths::hasAttributes() const
@@ -11649,18 +11649,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue Tenths::getValue() const
+        t::TenthsValue Tenths::getValue() const
         {
             return myValue;
         }
-        void Tenths::setValue( const types::TenthsValue& value )
+        void Tenths::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         StaffDistance::StaffDistance()
         :myValue()
         {}
-        StaffDistance::StaffDistance( const types::TenthsValue& value )
+        StaffDistance::StaffDistance( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool StaffDistance::hasAttributes() const
@@ -11686,18 +11686,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue StaffDistance::getValue() const
+        t::TenthsValue StaffDistance::getValue() const
         {
             return myValue;
         }
-        void StaffDistance::setValue( const types::TenthsValue& value )
+        void StaffDistance::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         SystemDistance::SystemDistance()
         :myValue()
         {}
-        SystemDistance::SystemDistance( const types::TenthsValue& value )
+        SystemDistance::SystemDistance( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool SystemDistance::hasAttributes() const
@@ -11723,18 +11723,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue SystemDistance::getValue() const
+        t::TenthsValue SystemDistance::getValue() const
         {
             return myValue;
         }
-        void SystemDistance::setValue( const types::TenthsValue& value )
+        void SystemDistance::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         TopSystemDistance::TopSystemDistance()
         :myValue()
         {}
-        TopSystemDistance::TopSystemDistance( const types::TenthsValue& value )
+        TopSystemDistance::TopSystemDistance( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool TopSystemDistance::hasAttributes() const
@@ -11760,18 +11760,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue TopSystemDistance::getValue() const
+        t::TenthsValue TopSystemDistance::getValue() const
         {
             return myValue;
         }
-        void TopSystemDistance::setValue( const types::TenthsValue& value )
+        void TopSystemDistance::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         ArrowDirection::ArrowDirection()
-        :myValue( types::ArrowDirectionEnum::up )
+        :myValue( t::ArrowDirectionEnum::up )
         {}
-        ArrowDirection::ArrowDirection( const types::ArrowDirectionEnum& value )
+        ArrowDirection::ArrowDirection( const t::ArrowDirectionEnum& value )
         :myValue( value )
         {}
         bool ArrowDirection::hasAttributes() const
@@ -11797,18 +11797,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::ArrowDirectionEnum ArrowDirection::getValue() const
+        t::ArrowDirectionEnum ArrowDirection::getValue() const
         {
             return myValue;
         }
-        void ArrowDirection::setValue( const types::ArrowDirectionEnum& value )
+        void ArrowDirection::setValue( const t::ArrowDirectionEnum& value )
         {
             myValue = value;
         }
         ArrowStyle::ArrowStyle()
-        :myValue( types::ArrowStyleEnum::single )
+        :myValue( t::ArrowStyleEnum::single )
         {}
-        ArrowStyle::ArrowStyle( const types::ArrowStyleEnum& value )
+        ArrowStyle::ArrowStyle( const t::ArrowStyleEnum& value )
         :myValue( value )
         {}
         bool ArrowStyle::hasAttributes() const
@@ -11834,18 +11834,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::ArrowStyleEnum ArrowStyle::getValue() const
+        t::ArrowStyleEnum ArrowStyle::getValue() const
         {
             return myValue;
         }
-        void ArrowStyle::setValue( const types::ArrowStyleEnum& value )
+        void ArrowStyle::setValue( const t::ArrowStyleEnum& value )
         {
             myValue = value;
         }
         CircularArrow::CircularArrow()
-        :myValue( types::CircularArrowEnum::clockwise )
+        :myValue( t::CircularArrowEnum::clockwise )
         {}
-        CircularArrow::CircularArrow( const types::CircularArrowEnum& value )
+        CircularArrow::CircularArrow( const t::CircularArrowEnum& value )
         :myValue( value )
         {}
         bool CircularArrow::hasAttributes() const
@@ -11871,18 +11871,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::CircularArrowEnum CircularArrow::getValue() const
+        t::CircularArrowEnum CircularArrow::getValue() const
         {
             return myValue;
         }
-        void CircularArrow::setValue( const types::CircularArrowEnum& value )
+        void CircularArrow::setValue( const t::CircularArrowEnum& value )
         {
             myValue = value;
         }
         BendAlter::BendAlter()
         :myValue()
         {}
-        BendAlter::BendAlter( const types::Semitones& value )
+        BendAlter::BendAlter( const t::Semitones& value )
         :myValue( value )
         {}
         bool BendAlter::hasAttributes() const
@@ -11908,18 +11908,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Semitones BendAlter::getValue() const
+        t::Semitones BendAlter::getValue() const
         {
             return myValue;
         }
-        void BendAlter::setValue( const types::Semitones& value )
+        void BendAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
         HoleType::HoleType()
         :myValue()
         {}
-        HoleType::HoleType( const types::XsString& value )
+        HoleType::HoleType( const t::XsString& value )
         :myValue( value )
         {}
         bool HoleType::hasAttributes() const
@@ -11945,18 +11945,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString HoleType::getValue() const
+        t::XsString HoleType::getValue() const
         {
             return myValue;
         }
-        void HoleType::setValue( const types::XsString& value )
+        void HoleType::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         HoleShape::HoleShape()
         :myValue()
         {}
-        HoleShape::HoleShape( const types::XsString& value )
+        HoleShape::HoleShape( const t::XsString& value )
         :myValue( value )
         {}
         bool HoleShape::hasAttributes() const
@@ -11982,18 +11982,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString HoleShape::getValue() const
+        t::XsString HoleShape::getValue() const
         {
             return myValue;
         }
-        void HoleShape::setValue( const types::XsString& value )
+        void HoleShape::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Syllabic::Syllabic()
-        :myValue( types::SyllabicEnum::begin )
+        :myValue( t::SyllabicEnum::begin )
         {}
-        Syllabic::Syllabic( const types::SyllabicEnum& value )
+        Syllabic::Syllabic( const t::SyllabicEnum& value )
         :myValue( value )
         {}
         bool Syllabic::hasAttributes() const
@@ -12019,18 +12019,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::SyllabicEnum Syllabic::getValue() const
+        t::SyllabicEnum Syllabic::getValue() const
         {
             return myValue;
         }
-        void Syllabic::setValue( const types::SyllabicEnum& value )
+        void Syllabic::setValue( const t::SyllabicEnum& value )
         {
             myValue = value;
         }
         //        Syllabic::Syllabic()
-        //        :myValue( types::SyllabicEnum:: )
+        //        :myValue( t::SyllabicEnum:: )
         //        {}
-        //        Syllabic::Syllabic( const types::SyllabicEnum& value )
+        //        Syllabic::Syllabic( const t::SyllabicEnum& value )
         //        :myValue( value )
         //        {}
         //        bool Syllabic::hasAttributes() const
@@ -12056,18 +12056,18 @@ namespace mx
         //            os << myValue;
         //            return os;
         //        }
-        //        types::SyllabicEnum Syllabic::getValue() const
+        //        t::SyllabicEnum Syllabic::getValue() const
         //        {
         //            return myValue;
         //        }
-        //        void Syllabic::setValue( const types::SyllabicEnum& value )
+        //        void Syllabic::setValue( const t::SyllabicEnum& value )
         //        {
         //            myValue = value;
         //        }
         Step::Step()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         {}
-        Step::Step( const types::StepEnum& value )
+        Step::Step( const t::StepEnum& value )
         :myValue( value )
         {}
         bool Step::hasAttributes() const
@@ -12093,18 +12093,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StepEnum Step::getValue() const
+        t::StepEnum Step::getValue() const
         {
             return myValue;
         }
-        void Step::setValue( const types::StepEnum& value )
+        void Step::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
         Alter::Alter()
         :myValue()
         {}
-        Alter::Alter( const types::Semitones& value )
+        Alter::Alter( const t::Semitones& value )
         :myValue( value )
         {}
         bool Alter::hasAttributes() const
@@ -12130,18 +12130,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Semitones Alter::getValue() const
+        t::Semitones Alter::getValue() const
         {
             return myValue;
         }
-        void Alter::setValue( const types::Semitones& value )
+        void Alter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
         Octave::Octave()
         :myValue()
         {}
-        Octave::Octave( const types::OctaveValue& value )
+        Octave::Octave( const t::OctaveValue& value )
         :myValue( value )
         {}
         bool Octave::hasAttributes() const
@@ -12167,18 +12167,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::OctaveValue Octave::getValue() const
+        t::OctaveValue Octave::getValue() const
         {
             return myValue;
         }
-        void Octave::setValue( const types::OctaveValue& value )
+        void Octave::setValue( const t::OctaveValue& value )
         {
             myValue = value;
         }
         ActualNotes::ActualNotes()
         :myValue()
         {}
-        ActualNotes::ActualNotes( const types::NonNegativeInteger& value )
+        ActualNotes::ActualNotes( const t::NonNegativeInteger& value )
         :myValue( value )
         {}
         bool ActualNotes::hasAttributes() const
@@ -12204,18 +12204,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeInteger ActualNotes::getValue() const
+        t::NonNegativeInteger ActualNotes::getValue() const
         {
             return myValue;
         }
-        void ActualNotes::setValue( const types::NonNegativeInteger& value )
+        void ActualNotes::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
         NormalNotes::NormalNotes()
         :myValue()
         {}
-        NormalNotes::NormalNotes( const types::NonNegativeInteger& value )
+        NormalNotes::NormalNotes( const t::NonNegativeInteger& value )
         :myValue( value )
         {}
         bool NormalNotes::hasAttributes() const
@@ -12241,18 +12241,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NonNegativeInteger NormalNotes::getValue() const
+        t::NonNegativeInteger NormalNotes::getValue() const
         {
             return myValue;
         }
-        void NormalNotes::setValue( const types::NonNegativeInteger& value )
+        void NormalNotes::setValue( const t::NonNegativeInteger& value )
         {
             myValue = value;
         }
         NormalType::NormalType()
-        :myValue( types::NoteTypeValue::eighth )
+        :myValue( t::NoteTypeValue::eighth )
         {}
-        NormalType::NormalType( const types::NoteTypeValue& value )
+        NormalType::NormalType( const t::NoteTypeValue& value )
         :myValue( value )
         {}
         bool NormalType::hasAttributes() const
@@ -12278,18 +12278,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NoteTypeValue NormalType::getValue() const
+        t::NoteTypeValue NormalType::getValue() const
         {
             return myValue;
         }
-        void NormalType::setValue( const types::NoteTypeValue& value )
+        void NormalType::setValue( const t::NoteTypeValue& value )
         {
             myValue = value;
         }
         CreditType::CreditType()
         :myValue()
         {}
-        CreditType::CreditType( const types::XsString& value )
+        CreditType::CreditType( const t::XsString& value )
         :myValue( value )
         {}
         bool CreditType::hasAttributes() const
@@ -12315,18 +12315,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString CreditType::getValue() const
+        t::XsString CreditType::getValue() const
         {
             return myValue;
         }
-        void CreditType::setValue( const types::XsString& value )
+        void CreditType::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         InstrumentName::InstrumentName()
         :myValue()
         {}
-        InstrumentName::InstrumentName( const types::XsString& value )
+        InstrumentName::InstrumentName( const t::XsString& value )
         :myValue( value )
         {}
         bool InstrumentName::hasAttributes() const
@@ -12352,18 +12352,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString InstrumentName::getValue() const
+        t::XsString InstrumentName::getValue() const
         {
             return myValue;
         }
-        void InstrumentName::setValue( const types::XsString& value )
+        void InstrumentName::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         InstrumentAbbreviation::InstrumentAbbreviation()
         :myValue()
         {}
-        InstrumentAbbreviation::InstrumentAbbreviation( const types::XsString& value )
+        InstrumentAbbreviation::InstrumentAbbreviation( const t::XsString& value )
         :myValue( value )
         {}
         bool InstrumentAbbreviation::hasAttributes() const
@@ -12389,18 +12389,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString InstrumentAbbreviation::getValue() const
+        t::XsString InstrumentAbbreviation::getValue() const
         {
             return myValue;
         }
-        void InstrumentAbbreviation::setValue( const types::XsString& value )
+        void InstrumentAbbreviation::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         InstrumentSound::InstrumentSound()
         :myValue()
         {}
-        InstrumentSound::InstrumentSound( const types::XsString& value )
+        InstrumentSound::InstrumentSound( const t::XsString& value )
         :myValue( value )
         {}
         bool InstrumentSound::hasAttributes() const
@@ -12426,18 +12426,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString InstrumentSound::getValue() const
+        t::XsString InstrumentSound::getValue() const
         {
             return myValue;
         }
-        void InstrumentSound::setValue( const types::XsString& value )
+        void InstrumentSound::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Ensemble::Ensemble()
         :myValue()
         {}
-        Ensemble::Ensemble( const types::PositiveIntegerOrEmpty& value )
+        Ensemble::Ensemble( const t::PositiveIntegerOrEmpty& value )
         :myValue( value )
         {}
         bool Ensemble::hasAttributes() const
@@ -12463,18 +12463,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveIntegerOrEmpty Ensemble::getValue() const
+        t::PositiveIntegerOrEmpty Ensemble::getValue() const
         {
             return myValue;
         }
-        void Ensemble::setValue( const types::PositiveIntegerOrEmpty& value )
+        void Ensemble::setValue( const t::PositiveIntegerOrEmpty& value )
         {
             myValue = value;
         }
         Group::Group()
         :myValue()
         {}
-        Group::Group( const types::XsString& value )
+        Group::Group( const t::XsString& value )
         :myValue( value )
         {}
         bool Group::hasAttributes() const
@@ -12500,18 +12500,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString Group::getValue() const
+        t::XsString Group::getValue() const
         {
             return myValue;
         }
-        void Group::setValue( const types::XsString& value )
+        void Group::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         VirtualLibrary::VirtualLibrary()
         :myValue()
         {}
-        VirtualLibrary::VirtualLibrary( const types::XsString& value )
+        VirtualLibrary::VirtualLibrary( const t::XsString& value )
         :myValue( value )
         {}
         bool VirtualLibrary::hasAttributes() const
@@ -12537,18 +12537,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString VirtualLibrary::getValue() const
+        t::XsString VirtualLibrary::getValue() const
         {
             return myValue;
         }
-        void VirtualLibrary::setValue( const types::XsString& value )
+        void VirtualLibrary::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         VirtualName::VirtualName()
         :myValue()
         {}
-        VirtualName::VirtualName( const types::XsString& value )
+        VirtualName::VirtualName( const t::XsString& value )
         :myValue( value )
         {}
         bool VirtualName::hasAttributes() const
@@ -12574,18 +12574,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString VirtualName::getValue() const
+        t::XsString VirtualName::getValue() const
         {
             return myValue;
         }
-        void VirtualName::setValue( const types::XsString& value )
+        void VirtualName::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         WorkNumber::WorkNumber()
         :myValue()
         {}
-        WorkNumber::WorkNumber( const types::XsString& value )
+        WorkNumber::WorkNumber( const t::XsString& value )
         :myValue( value )
         {}
         bool WorkNumber::hasAttributes() const
@@ -12611,18 +12611,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString WorkNumber::getValue() const
+        t::XsString WorkNumber::getValue() const
         {
             return myValue;
         }
-        void WorkNumber::setValue( const types::XsString& value )
+        void WorkNumber::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         WorkTitle::WorkTitle()
         :myValue()
         {}
-        WorkTitle::WorkTitle( const types::XsString& value )
+        WorkTitle::WorkTitle( const t::XsString& value )
         :myValue( value )
         {}
         bool WorkTitle::hasAttributes() const
@@ -12648,18 +12648,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString WorkTitle::getValue() const
+        t::XsString WorkTitle::getValue() const
         {
             return myValue;
         }
-        void WorkTitle::setValue( const types::XsString& value )
+        void WorkTitle::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Staff::Staff()
         :myValue()
         {}
-        Staff::Staff( const types::PositiveInteger& value )
+        Staff::Staff( const t::PositiveInteger& value )
         :myValue( value )
         {}
         bool Staff::hasAttributes() const
@@ -12685,18 +12685,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveInteger Staff::getValue() const
+        t::PositiveInteger Staff::getValue() const
         {
             return myValue;
         }
-        void Staff::setValue( const types::PositiveInteger& value )
+        void Staff::setValue( const t::PositiveInteger& value )
         {
             myValue = value;
         }
         TuningStep::TuningStep()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         {}
-        TuningStep::TuningStep( const types::StepEnum& value )
+        TuningStep::TuningStep( const t::StepEnum& value )
         :myValue( value )
         {}
         bool TuningStep::hasAttributes() const
@@ -12722,18 +12722,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StepEnum TuningStep::getValue() const
+        t::StepEnum TuningStep::getValue() const
         {
             return myValue;
         }
-        void TuningStep::setValue( const types::StepEnum& value )
+        void TuningStep::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
         TuningAlter::TuningAlter()
         :myValue()
         {}
-        TuningAlter::TuningAlter( const types::Semitones& value )
+        TuningAlter::TuningAlter( const t::Semitones& value )
         :myValue( value )
         {}
         bool TuningAlter::hasAttributes() const
@@ -12759,18 +12759,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Semitones TuningAlter::getValue() const
+        t::Semitones TuningAlter::getValue() const
         {
             return myValue;
         }
-        void TuningAlter::setValue( const types::Semitones& value )
+        void TuningAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
         TuningOctave::TuningOctave()
         :myValue()
         {}
-        TuningOctave::TuningOctave( const types::OctaveValue& value )
+        TuningOctave::TuningOctave( const t::OctaveValue& value )
         :myValue( value )
         {}
         bool TuningOctave::hasAttributes() const
@@ -12796,18 +12796,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::OctaveValue TuningOctave::getValue() const
+        t::OctaveValue TuningOctave::getValue() const
         {
             return myValue;
         }
-        void TuningOctave::setValue( const types::OctaveValue& value )
+        void TuningOctave::setValue( const t::OctaveValue& value )
         {
             myValue = value;
         }
         Voice::Voice()
         :myValue()
         {}
-        Voice::Voice( const types::XsString& value )
+        Voice::Voice( const t::XsString& value )
         :myValue( value )
         {}
         bool Voice::hasAttributes() const
@@ -12833,18 +12833,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString Voice::getValue() const
+        t::XsString Voice::getValue() const
         {
             return myValue;
         }
-        void Voice::setValue( const types::XsString& value )
+        void Voice::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         KeyStep::KeyStep()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         {}
-        KeyStep::KeyStep( const types::StepEnum& value )
+        KeyStep::KeyStep( const t::StepEnum& value )
         :myValue( value )
         {}
         bool KeyStep::hasAttributes() const
@@ -12870,18 +12870,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StepEnum KeyStep::getValue() const
+        t::StepEnum KeyStep::getValue() const
         {
             return myValue;
         }
-        void KeyStep::setValue( const types::StepEnum& value )
+        void KeyStep::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
         KeyAlter::KeyAlter()
         :myValue()
         {}
-        KeyAlter::KeyAlter( const types::Semitones& value )
+        KeyAlter::KeyAlter( const t::Semitones& value )
         :myValue( value )
         {}
         bool KeyAlter::hasAttributes() const
@@ -12907,18 +12907,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::Semitones KeyAlter::getValue() const
+        t::Semitones KeyAlter::getValue() const
         {
             return myValue;
         }
-        void KeyAlter::setValue( const types::Semitones& value )
+        void KeyAlter::setValue( const t::Semitones& value )
         {
             myValue = value;
         }
         KeyAccidental::KeyAccidental()
-        :myValue( types::AccidentalValue::natural )
+        :myValue( t::AccidentalValue::natural )
         {}
-        KeyAccidental::KeyAccidental( const types::AccidentalValue& value )
+        KeyAccidental::KeyAccidental( const t::AccidentalValue& value )
         :myValue( value )
         {}
         bool KeyAccidental::hasAttributes() const
@@ -12944,18 +12944,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::AccidentalValue KeyAccidental::getValue() const
+        t::AccidentalValue KeyAccidental::getValue() const
         {
             return myValue;
         }
-        void KeyAccidental::setValue( const types::AccidentalValue& value )
+        void KeyAccidental::setValue( const t::AccidentalValue& value )
         {
             myValue = value;
         }
         SlashType::SlashType()
-        :myValue( types::NoteTypeValue::eighth )
+        :myValue( t::NoteTypeValue::eighth )
         {}
-        SlashType::SlashType( const types::NoteTypeValue& value )
+        SlashType::SlashType( const t::NoteTypeValue& value )
         :myValue( value )
         {}
         bool SlashType::hasAttributes() const
@@ -12981,18 +12981,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NoteTypeValue SlashType::getValue() const
+        t::NoteTypeValue SlashType::getValue() const
         {
             return myValue;
         }
-        void SlashType::setValue( const types::NoteTypeValue& value )
+        void SlashType::setValue( const t::NoteTypeValue& value )
         {
             myValue = value;
         }
         Beats::Beats()
         :myValue()
         {}
-        Beats::Beats( const types::XsString& value )
+        Beats::Beats( const t::XsString& value )
         :myValue( value )
         {}
         bool Beats::hasAttributes() const
@@ -13018,18 +13018,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString Beats::getValue() const
+        t::XsString Beats::getValue() const
         {
             return myValue;
         }
-        void Beats::setValue( const types::XsString& value )
+        void Beats::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         BeatType::BeatType()
         :myValue()
         {}
-        BeatType::BeatType( const types::XsString& value )
+        BeatType::BeatType( const t::XsString& value )
         :myValue( value )
         {}
         bool BeatType::hasAttributes() const
@@ -13055,18 +13055,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString BeatType::getValue() const
+        t::XsString BeatType::getValue() const
         {
             return myValue;
         }
-        void BeatType::setValue( const types::XsString& value )
+        void BeatType::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         Fifths::Fifths()
         :myValue()
         {}
-        Fifths::Fifths( const types::FifthsValue& value )
+        Fifths::Fifths( const t::FifthsValue& value )
         :myValue( value )
         {}
         bool Fifths::hasAttributes() const
@@ -13092,18 +13092,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::FifthsValue Fifths::getValue() const
+        t::FifthsValue Fifths::getValue() const
         {
             return myValue;
         }
-        void Fifths::setValue( const types::FifthsValue& value )
+        void Fifths::setValue( const t::FifthsValue& value )
         {
             myValue = value;
         }
         Mode::Mode()
         :myValue()
         {}
-        Mode::Mode( const types::ModeValue& value )
+        Mode::Mode( const t::ModeValue& value )
         :myValue( value )
         {}
         bool Mode::hasAttributes() const
@@ -13129,18 +13129,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::ModeValue Mode::getValue() const
+        t::ModeValue Mode::getValue() const
         {
             return myValue;
         }
-        void Mode::setValue( const types::ModeValue& value )
+        void Mode::setValue( const t::ModeValue& value )
         {
             myValue = value;
         }
         BeatUnit::BeatUnit()
-        :myValue( types::NoteTypeValue::eighth )
+        :myValue( t::NoteTypeValue::eighth )
         {}
-        BeatUnit::BeatUnit( const types::NoteTypeValue& value )
+        BeatUnit::BeatUnit( const t::NoteTypeValue& value )
         :myValue( value )
         {}
         bool BeatUnit::hasAttributes() const
@@ -13166,18 +13166,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::NoteTypeValue BeatUnit::getValue() const
+        t::NoteTypeValue BeatUnit::getValue() const
         {
             return myValue;
         }
-        void BeatUnit::setValue( const types::NoteTypeValue& value )
+        void BeatUnit::setValue( const t::NoteTypeValue& value )
         {
             myValue = value;
         }
         TopMargin::TopMargin()
         :myValue()
         {}
-        TopMargin::TopMargin( const types::TenthsValue& value )
+        TopMargin::TopMargin( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool TopMargin::hasAttributes() const
@@ -13203,18 +13203,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue TopMargin::getValue() const
+        t::TenthsValue TopMargin::getValue() const
         {
             return myValue;
         }
-        void TopMargin::setValue( const types::TenthsValue& value )
+        void TopMargin::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         BottomMargin::BottomMargin()
         :myValue()
         {}
-        BottomMargin::BottomMargin( const types::TenthsValue& value )
+        BottomMargin::BottomMargin( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool BottomMargin::hasAttributes() const
@@ -13240,18 +13240,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue BottomMargin::getValue() const
+        t::TenthsValue BottomMargin::getValue() const
         {
             return myValue;
         }
-        void BottomMargin::setValue( const types::TenthsValue& value )
+        void BottomMargin::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         LeftMargin::LeftMargin()
         :myValue()
         {}
-        LeftMargin::LeftMargin( const types::TenthsValue& value )
+        LeftMargin::LeftMargin( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool LeftMargin::hasAttributes() const
@@ -13277,18 +13277,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue LeftMargin::getValue() const
+        t::TenthsValue LeftMargin::getValue() const
         {
             return myValue;
         }
-        void LeftMargin::setValue( const types::TenthsValue& value )
+        void LeftMargin::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         RightMargin::RightMargin()
         :myValue()
         {}
-        RightMargin::RightMargin( const types::TenthsValue& value )
+        RightMargin::RightMargin( const t::TenthsValue& value )
         :myValue( value )
         {}
         bool RightMargin::hasAttributes() const
@@ -13314,18 +13314,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::TenthsValue RightMargin::getValue() const
+        t::TenthsValue RightMargin::getValue() const
         {
             return myValue;
         }
-        void RightMargin::setValue( const types::TenthsValue& value )
+        void RightMargin::setValue( const t::TenthsValue& value )
         {
             myValue = value;
         }
         Duration::Duration()
         :myValue()
         {}
-        Duration::Duration( const types::PositiveDivisionsValue& value )
+        Duration::Duration( const t::PositiveDivisionsValue& value )
         :myValue( value )
         {}
         bool Duration::hasAttributes() const
@@ -13351,18 +13351,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::PositiveDivisionsValue Duration::getValue() const
+        t::PositiveDivisionsValue Duration::getValue() const
         {
             return myValue;
         }
-        void Duration::setValue( const types::PositiveDivisionsValue& value )
+        void Duration::setValue( const t::PositiveDivisionsValue& value )
         {
             myValue = value;
         }
         DisplayStep::DisplayStep()
-        :myValue( types::StepEnum::a )
+        :myValue( t::StepEnum::a )
         {}
-        DisplayStep::DisplayStep( const types::StepEnum& value )
+        DisplayStep::DisplayStep( const t::StepEnum& value )
         :myValue( value )
         {}
         bool DisplayStep::hasAttributes() const
@@ -13388,18 +13388,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::StepEnum DisplayStep::getValue() const
+        t::StepEnum DisplayStep::getValue() const
         {
             return myValue;
         }
-        void DisplayStep::setValue( const types::StepEnum& value )
+        void DisplayStep::setValue( const t::StepEnum& value )
         {
             myValue = value;
         }
         DisplayOctave::DisplayOctave()
         :myValue()
         {}
-        DisplayOctave::DisplayOctave( const types::OctaveValue& value )
+        DisplayOctave::DisplayOctave( const t::OctaveValue& value )
         :myValue( value )
         {}
         bool DisplayOctave::hasAttributes() const
@@ -13425,18 +13425,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::OctaveValue DisplayOctave::getValue() const
+        t::OctaveValue DisplayOctave::getValue() const
         {
             return myValue;
         }
-        void DisplayOctave::setValue( const types::OctaveValue& value )
+        void DisplayOctave::setValue( const t::OctaveValue& value )
         {
             myValue = value;
         }
         MovementNumber::MovementNumber()
         :myValue()
         {}
-        MovementNumber::MovementNumber( const types::XsString& value )
+        MovementNumber::MovementNumber( const t::XsString& value )
         :myValue( value )
         {}
         bool MovementNumber::hasAttributes() const
@@ -13462,18 +13462,18 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString MovementNumber::getValue() const
+        t::XsString MovementNumber::getValue() const
         {
             return myValue;
         }
-        void MovementNumber::setValue( const types::XsString& value )
+        void MovementNumber::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         MovementTitle::MovementTitle()
         :myValue()
         {}
-        MovementTitle::MovementTitle( const types::XsString& value )
+        MovementTitle::MovementTitle( const t::XsString& value )
         :myValue( value )
         {}
         bool MovementTitle::hasAttributes() const
@@ -13499,11 +13499,11 @@ namespace mx
             os << myValue;
             return os;
         }
-        types::XsString MovementTitle::getValue() const
+        t::XsString MovementTitle::getValue() const
         {
             return myValue;
         }
-        void MovementTitle::setValue( const types::XsString& value )
+        void MovementTitle::setValue( const t::XsString& value )
         {
             myValue = value;
         }
@@ -13777,10 +13777,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,halign( types::LeftCenterRight::center )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,halign( t::LeftCenterRight::center )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -14173,10 +14173,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -14457,10 +14457,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
         ,hasDashLength( false )
         ,hasSpaceLength( false )
         ,hasDefaultX( false )
@@ -14821,14 +14821,14 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
         ,trillStep()
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
@@ -15393,9 +15393,9 @@ namespace mx
         /**************** MusicFont ****************/
         EmptyFontAttributes::EmptyFontAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -15505,17 +15505,17 @@ namespace mx
         /**************** WavyLineAttributes ****************/
         /* 3026 */
         WavyLineAttributes::WavyLineAttributes()
-        :type( types::StartStopContinue::start )
+        :type( t::StartStopContinue::start )
         ,number()
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
         ,trillStep()
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
@@ -15622,9 +15622,9 @@ namespace mx
         /**************** RepeatAttributes ****************/
         /* 3047 */
         RepeatAttributes::RepeatAttributes()
-        :direction( types::BackwardForward::backward )
+        :direction( t::BackwardForward::backward )
         ,times()
-        ,winged( types::Winged::none )
+        ,winged( t::Winged::none )
         ,hasDirection( true )
         ,hasTimes( false )
         ,hasWinged( false )
@@ -15695,10 +15695,10 @@ namespace mx
         /**************** WedgeAttributes ****************/
         /* 3351 */
         WedgeAttributes::WedgeAttributes()
-        :type( types::WedgeType::crescendo )
+        :type( t::WedgeType::crescendo )
         ,number()
         ,spread()
-        ,niente( types::YesNo::no )
+        ,niente( t::YesNo::no )
         ,dashLength()
         ,spaceLength()
         ,defaultX()
@@ -15796,7 +15796,7 @@ namespace mx
         /**************** DashesAttributes ****************/
         /* 3358 */
         DashesAttributes::DashesAttributes()
-        :type( types::StartStopContinue::start )
+        :type( t::StartStopContinue::start )
         ,number()
         ,dashLength()
         ,spaceLength()
@@ -15889,7 +15889,7 @@ namespace mx
         /**************** BracketAttributes ****************/
         /* 3361 */
         BracketAttributes::BracketAttributes()
-        :bracket( types::YesNo::no )
+        :bracket( t::YesNo::no )
         ,hasBracket( false )
         {}
         
@@ -15954,18 +15954,18 @@ namespace mx
         /**************** PedalAttributes ****************/
         /* 3364 */
         PedalAttributes::PedalAttributes()
-        :type( types::StartStopChangeContinue::start )
-        ,line( types::YesNo::no )
-        ,sign( types::YesNo::no )
+        :type( t::StartStopChangeContinue::start )
+        ,line( t::YesNo::no )
+        ,sign( t::YesNo::no )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,halign( types::LeftCenterRight::center )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,halign( t::LeftCenterRight::center )
         ,hasType( true )
         ,hasLine( false )
         ,hasSign( false )
@@ -16063,7 +16063,7 @@ namespace mx
         /**************** OctaveShiftAttributes ****************/
         /* 3370 */
         OctaveShiftAttributes::OctaveShiftAttributes()
-        :type( types::UpDownStopContinue::up )
+        :type( t::UpDownStopContinue::up )
         ,number()
         ,size( 8 )
         ,dashLength()
@@ -16073,9 +16073,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,hasType( true )
         ,hasNumber( false )
         ,hasSize( false )
@@ -16176,16 +16176,16 @@ namespace mx
         /**************** StringMuteAttributes ****************/
         /* 3391 */
         StringMuteAttributes::StringMuteAttributes()
-        :type( types::OnOff::on )
+        :type( t::OnOff::on )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,halign( types::LeftCenterRight::center )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,halign( t::LeftCenterRight::center )
         ,hasType( true )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -16283,7 +16283,7 @@ namespace mx
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,halign( types::LeftCenterRight::center )
+        ,halign( t::LeftCenterRight::center )
         ,hasSource( true )
         ,hasType( true )
         ,hasDefaultX( false )
@@ -16366,7 +16366,7 @@ namespace mx
         /**************** BarreAttributes ****************/
         /* 3491 */
         BarreAttributes::BarreAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,hasType( true )
         {}
         
@@ -16431,7 +16431,7 @@ namespace mx
         /**************** SupportsAttributes ****************/
         /* 4057 */
         SupportsAttributes::SupportsAttributes()
-        :type( types::YesNo::no )
+        :type( t::YesNo::no )
         ,element()
         ,attribute()
         ,value()
@@ -16514,9 +16514,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,hasType( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -16613,7 +16613,7 @@ namespace mx
         /**************** TiedAttributes ****************/
         /* 4914 */
         TiedAttributes::TiedAttributes()
-        :type( types::StartStopContinue::start )
+        :type( t::StartStopContinue::start )
         ,number()
         ,dashLength()
         ,spaceLength()
@@ -16621,7 +16621,7 @@ namespace mx
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,orientation()
         ,bezierOffset()
         ,bezierOffset2()
@@ -16738,7 +16738,7 @@ namespace mx
         /**************** SlurAttributes ****************/
         /* 4917 */
         SlurAttributes::SlurAttributes()
-        :type( types::StartStopContinue::start )
+        :type( t::StartStopContinue::start )
         ,number( 1 )
         ,dashLength()
         ,spaceLength()
@@ -16746,7 +16746,7 @@ namespace mx
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,orientation()
         ,bezierOffset()
         ,bezierOffset2()
@@ -16869,7 +16869,7 @@ namespace mx
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasNumber( false )
         ,hasDirection( false )
         ,hasDefaultX( false )
@@ -16952,13 +16952,13 @@ namespace mx
         /**************** NonArpeggiateAttributes ****************/
         /* 4947 */
         NonArpeggiateAttributes::NonArpeggiateAttributes()
-        :type( types::TopBottom::top )
+        :type( t::TopBottom::top )
         ,number()
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasType( true )
         ,hasNumber( false )
         ,hasDefaultX( false )
@@ -17044,7 +17044,7 @@ namespace mx
         :stealTimePrevious()
         ,stealTimeFollowing()
         ,makeTime()
-        ,slash( types::YesNo::no )
+        ,slash( t::YesNo::no )
         ,hasStealTimePrevious( false )
         ,hasStealTimeFollowing( false )
         ,hasMakeTime( false )
@@ -17118,7 +17118,7 @@ namespace mx
         /**************** TieAttributes ****************/
         /* 4970 */
         TieAttributes::TieAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,timeOnly()
         ,hasType( true )
         ,hasTimeOnly( false )
@@ -17261,18 +17261,18 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
         ,trillStep()
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
-        ,slash( types::YesNo::no )
+        ,slash( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -17390,18 +17390,18 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
         ,trillStep()
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
-        ,slash( types::YesNo::no )
+        ,slash( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -17519,18 +17519,18 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
         ,trillStep()
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
-        ,slash( types::YesNo::no )
+        ,slash( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -17648,18 +17648,18 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
         ,trillStep()
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
-        ,slash( types::YesNo::no )
+        ,slash( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -17777,9 +17777,9 @@ namespace mx
         /* 5628 */
         TupletDotAttributes::TupletDotAttributes()
         :fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,hasFontFamily( false )
         ,hasFontStyle( false )
         ,hasFontSize( false )
@@ -17854,11 +17854,11 @@ namespace mx
         /* 5662 */
         LinkAttributes::LinkAttributes()
         :href()
-        ,type( types::XlinkType::simple )
+        ,type( t::XlinkType::simple )
         ,role()
         ,title()
-        ,show( types::XlinkShow::replace )
-        ,actuate( types::XlinkActuate::onRequest )
+        ,show( t::XlinkShow::replace )
+        ,actuate( t::XlinkActuate::onRequest )
         ,name()
         ,element()
         ,position()
@@ -18049,7 +18049,7 @@ namespace mx
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,halign( types::LeftCenterRight::center )
+        ,halign( t::LeftCenterRight::center )
         ,hasSource( true )
         ,hasType( true )
         ,hasDefaultX( false )
@@ -18143,9 +18143,9 @@ namespace mx
         :number()
         ,name()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,hasNumber( false )
         ,hasName( false )
         ,hasFontFamily( false )
@@ -18299,11 +18299,11 @@ namespace mx
         /* 6001 */
         OpusAttributes::OpusAttributes()
         :href()
-        ,type( types::XlinkType::simple )
+        ,type( t::XlinkType::simple )
         ,role()
         ,title()
-        ,show( types::XlinkShow::replace )
-        ,actuate( types::XlinkActuate::onRequest )
+        ,show( t::XlinkShow::replace )
+        ,actuate( t::XlinkActuate::onRequest )
         ,hasHref( true )
         ,hasType( false )
         ,hasRole( false )
@@ -18662,10 +18662,10 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,printObject( types::YesNo::no )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,printObject( t::YesNo::no )
         ,hasNumber( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -18814,18 +18814,18 @@ namespace mx
         /* 2646 */
         ClefAttributes::ClefAttributes()
         :number()
-        ,additional( types::YesNo::no )
+        ,additional( t::YesNo::no )
         ,size()
-        ,afterBarline( types::YesNo::no )
+        ,afterBarline( t::YesNo::no )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
-        ,printObject( types::YesNo::no )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
+        ,printObject( t::YesNo::no )
         ,hasNumber( false )
         ,hasAdditional( false )
         ,hasSize( false )
@@ -19149,9 +19149,9 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,lang( "it" )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -19198,7 +19198,7 @@ namespace mx
 		:myAttributes( std::make_shared<DirectiveAttributes>() )
         ,myValue()
 		{}
-        Directive::Directive( const types::XsString& value )
+        Directive::Directive( const t::XsString& value )
 		:myAttributes( std::make_shared<DirectiveAttributes>() )
         ,myValue( value )
 		{}
@@ -19223,7 +19223,7 @@ namespace mx
 		std::ostream& Directive::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
 			isOneLineOnly = true;
-            types::toStream( os, myValue );
+            t::toStream( os, myValue );
             return os;
 		}
 		DirectiveAttributesPtr Directive::getAttributes() const
@@ -19237,20 +19237,20 @@ namespace mx
 				myAttributes = value;
 			}
 		}
-        types::XsString Directive::getValue() const
+        t::XsString Directive::getValue() const
         {
             return myValue;
         }
-        void Directive::setValue( const types::XsString& value )
+        void Directive::setValue( const t::XsString& value )
         {
             myValue = value;
         }
         /**************** BeatRepeatAttributes ****************/
         /* 2836 */
         BeatRepeatAttributes::BeatRepeatAttributes()
-        :type( types::StartStop::start )
+        :type( t::StartStop::start )
         ,slashes( 1 )
-        ,useDots( types::YesNo::no )
+        ,useDots( t::YesNo::no )
         ,hasSlash( false )
         ,hasType( true )
         ,hasSlashes( false )
@@ -19369,9 +19369,9 @@ namespace mx
         /**************** SlashAttributes ****************/
         /* 2839 */
         SlashAttributes::SlashAttributes()
-        :type( types::StartStop::start )
-        ,useDots( types::YesNo::no )
-        ,useStems( types::YesNo::no )
+        :type( t::StartStop::start )
+        ,useDots( t::YesNo::no )
+        ,useStems( t::YesNo::no )
         ,hasType( true )
         ,hasUseDots( false )
         ,hasUseStems( false )
@@ -19604,9 +19604,9 @@ namespace mx
         /* 2653 */
         StaffDetailsAttributes::StaffDetailsAttributes()
         :number()
-        ,showFrets( types::ShowFrets::numbers )
-        ,printObject( types::YesNo::no )
-        ,printSpacing( types::YesNo::no )
+        ,showFrets( t::ShowFrets::numbers )
+        ,printObject( t::YesNo::no )
+        ,printSpacing( t::YesNo::no )
         ,hasNumber( false )
         ,hasShowFrets( false )
         ,hasPrintObject( false )
@@ -19637,7 +19637,7 @@ namespace mx
 		:myAttributes( std::make_shared<StaffDetailsAttributes>() )
 		,myStaffType( makeStaffType() )
 		,myHasStaffType( false )
-		,myStaffLines( makeStaffLines( types::NonNegativeInteger( 5 ) ) )
+		,myStaffLines( makeStaffLines( t::NonNegativeInteger( 5 ) ) )
 		,myHasStaffLines( false )
 		,myStaffTuningSet()
 		,myCapo( makeCapo() )
@@ -19922,9 +19922,9 @@ namespace mx
         MeasureStyleAttributes::MeasureStyleAttributes()
         :number()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
         ,hasNumber( false )
         ,hasFontFamily( false )
@@ -20144,12 +20144,12 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,halign( types::LeftCenterRight::center )
-        ,valign( types::Valign::baseline )
+        ,halign( t::LeftCenterRight::center )
+        ,valign( t::Valign::baseline )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -20482,13 +20482,13 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,halign( types::LeftCenterRight::center )
+        ,halign( t::LeftCenterRight::center )
         ,valign()
-        ,printObject( types::YesNo::no )
+        ,printObject( t::YesNo::no )
         ,hasNumber( false )
         ,hasSymbol( false )
         ,hasSeparator( false )
@@ -20605,11 +20605,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -20658,7 +20658,7 @@ namespace mx
 		:myAttributes( std::make_shared<StringAttributes>() )
         ,myValue()
 		{}
-        String::String( const types::StringNumber& value )
+        String::String( const t::StringNumber& value )
 		:myAttributes( std::make_shared<StringAttributes>() )
         ,myValue( value )
 		{}
@@ -20683,7 +20683,7 @@ namespace mx
 		std::ostream& String::streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const
 		{
 			isOneLineOnly = true;
-            types::toStream( os, myValue );
+            t::toStream( os, myValue );
 			return os;
 		}
 		StringAttributesPtr String::getAttributes() const
@@ -20697,11 +20697,11 @@ namespace mx
 				myAttributes = value;
 			}
 		}
-        types::StringNumber String::getValue() const
+        t::StringNumber String::getValue() const
         {
             return myValue;
         }
-        void String::setValue( const types::StringNumber& value )
+        void String::setValue( const t::StringNumber& value )
         {
             myValue = value;
         }
@@ -20829,7 +20829,7 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,color()
-        ,halign( types::LeftCenterRight::center )
+        ,halign( t::LeftCenterRight::center )
         ,valign()
         ,height()
         ,width()
@@ -21087,11 +21087,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,halign( types::LeftCenterRight::center )
+        ,halign( t::LeftCenterRight::center )
         ,valign()
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -21300,9 +21300,9 @@ namespace mx
         /**************** MetronomeTupletAttributes ****************/
         /* 3682 */
         MetronomeTupletAttributes::MetronomeTupletAttributes()
-        :type( types::StartStop::start )
-        ,bracket( types::YesNo::no )
-        ,showNumber( types::ShowTuplet::actual )
+        :type( t::StartStop::start )
+        ,bracket( t::YesNo::no )
+        ,showNumber( t::ShowTuplet::actual )
         ,hasType( true )
         ,hasBracket( false )
         ,hasShowNumber( false )
@@ -21978,14 +21978,14 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,halign( types::LeftCenterRight::center )
-        ,valign( types::Valign::baseline )
-        ,justify( types::LeftCenterRight::center )
-        ,parentheses( types::YesNo::no )
+        ,halign( t::LeftCenterRight::center )
+        ,valign( t::Valign::baseline )
+        ,justify( t::LeftCenterRight::center )
+        ,parentheses( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -22326,7 +22326,7 @@ namespace mx
         /**************** PartNameDisplayAttributes ****************/
         /* 3857 */
         PartNameDisplayAttributes::PartNameDisplayAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,hasPrintObject( false )
         {}
         
@@ -22430,7 +22430,7 @@ namespace mx
 //        /**************** PartAbbreviationDisplayAttributes ****************/
 //        /* 3861 */
 //        PartAbbreviationDisplayAttributes::PartAbbreviationDisplayAttributes()
-//        :printObject( types::YesNo::no )
+//        :printObject( t::YesNo::no )
 //        ,hasPrintObject( false )
 //        {}
 //        
@@ -22812,11 +22812,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,halign( types::LeftCenterRight::center )
+        ,halign( t::LeftCenterRight::center )
         ,valign()
         ,enclosure()
         ,hasDefaultX( false )
@@ -24406,16 +24406,16 @@ namespace mx
         SoundAttributes::SoundAttributes()
         :tempo()
         ,dynamics()
-        ,dacapo( types::YesNo::no )
+        ,dacapo( t::YesNo::no )
         ,segno()
         ,dalsegno()
         ,coda()
         ,tocoda()
         ,divisions()
-        ,forwardRepeat( types::YesNo::no )
+        ,forwardRepeat( t::YesNo::no )
         ,fine()
         ,timeOnly()
-        ,pizzicato( types::YesNo::no )
+        ,pizzicato( t::YesNo::no )
         ,pan()
         ,elevation()
         ,damperPedal()
@@ -24617,7 +24617,7 @@ namespace mx
         /**************** PageMarginsAttributes ****************/
         /* 4232 */
         PageMarginsAttributes::PageMarginsAttributes()
-        :type( types::MarginType::both )
+        :type( t::MarginType::both )
         ,hasType( false )
         {}
         
@@ -24856,12 +24856,12 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
-        ,type( types::UpDown::up )
+        ,placement( t::AboveBelow::below )
+        ,type( t::UpDown::up )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -26280,14 +26280,14 @@ namespace mx
         LyricAttributes::LyricAttributes()
         :number()
         ,name()
-        ,justify( types::LeftCenterRight::center )
+        ,justify( t::LeftCenterRight::center )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,color()
-        ,printObject( types::YesNo::no )
+        ,printObject( t::YesNo::no )
         ,hasNumber( false )
         ,hasName( false )
         ,hasJustify( false )
@@ -26470,21 +26470,21 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
-        ,startNote( types::StartNote::main )
-        ,trillStep( types::TrillStep::half )
-        ,twoNoteTurn( types::TwoNoteTurn::none )
-        ,accelerate( types::YesNo::no )
+        ,placement( t::AboveBelow::below )
+        ,startNote( t::StartNote::main )
+        ,trillStep( t::TrillStep::half )
+        ,twoNoteTurn( t::TwoNoteTurn::none )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,secondBeat()
         ,lastBeat()
-        ,long_( types::YesNo::no )
-        ,approach( types::AboveBelow::below )
-        ,departure( types::AboveBelow::below )
+        ,long_( t::YesNo::no )
+        ,approach( t::AboveBelow::below )
+        ,departure( t::AboveBelow::below )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -26643,12 +26643,12 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
-        ,substitution( types::YesNo::no )
+        ,placement( t::AboveBelow::below )
+        ,substitution( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -26783,11 +26783,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -27197,7 +27197,7 @@ namespace mx
         TupletAttributes::TupletAttributes()
         :type()
         ,number()
-        ,bracket( types::YesNo::no )
+        ,bracket( t::YesNo::no )
         ,showNumber()
         ,showType()
         ,lineShape()
@@ -27205,7 +27205,7 @@ namespace mx
         ,defaultY()
         ,relativeX()
         ,relativeY()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasType( true )
         ,hasNumber( false )
         ,hasBracket( false )
@@ -27350,8 +27350,8 @@ namespace mx
 		}
         
 		Scaling::Scaling()
-		:myMillimeters( makeMillimeters( types::MillimetersValue( 7 ) ) )
-		,myTenths( makeTenths( types::TenthsValue( 40 ) ) )
+		:myMillimeters( makeMillimeters( t::MillimetersValue( 7 ) ) )
+		,myTenths( makeTenths( t::TenthsValue( 40 ) ) )
 		{}
 		bool Scaling::hasAttributes() const
 		{
@@ -27815,7 +27815,7 @@ namespace mx
         /**************** DegreeAttributes ****************/
         /* 6210 */
         DegreeAttributes::DegreeAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,hasPrintObject( false )
         {}
         
@@ -27837,7 +27837,7 @@ namespace mx
 		:myAttributes( std::make_shared<DegreeAttributes>() )
 		,myDegreeValue( makeDegreeValue() )
 		,myDegreeAlter( makeDegreeAlter() )
-		,myDegreeType( makeDegreeType( types::DegreeTypeValue::add ) )
+		,myDegreeType( makeDegreeType( t::DegreeTypeValue::add ) )
 		{}
 		bool Degree::hasAttributes() const
 		{
@@ -28443,7 +28443,7 @@ namespace mx
         /**************** RestAttributes ****************/
         /* 6296 */
         RestAttributes::RestAttributes()
-        :measure( types::YesNo::no )
+        :measure( t::YesNo::no )
         ,hasMeasure( false )
         {}
         
@@ -28686,15 +28686,15 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,printObject( types::YesNo::no )
-        ,printDot( types::YesNo::no )
-        ,printSpacing( types::YesNo::no )
-        ,printLyric( types::YesNo::no )
-        ,parentheses( types::YesNo::no )
+        ,printObject( t::YesNo::no )
+        ,printDot( t::YesNo::no )
+        ,printSpacing( t::YesNo::no )
+        ,printLyric( t::YesNo::no )
+        ,parentheses( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -28886,7 +28886,7 @@ namespace mx
         /**************** BarlineAttributes ****************/
         /* 6334 */
         BarlineAttributes::BarlineAttributes()
-        :location( types::RightLeftMiddle::right )
+        :location( t::RightLeftMiddle::right )
         ,segno()
         ,coda()
         ,divisions()
@@ -29193,8 +29193,8 @@ namespace mx
         /**************** GroupingAttributes ****************/
         /* 6337 */
         GroupingAttributes::GroupingAttributes()
-        :type( types::StartStopSingle::single )
-        ,number( types::XsToken( "1" ) )
+        :type( t::StartStopSingle::single )
+        ,number( t::XsToken( "1" ) )
         ,memberOf()
         ,hasType( true )
         ,hasNumber( false )
@@ -30227,11 +30227,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,accelerate( types::YesNo::no )
+        ,accelerate( t::YesNo::no )
         ,beats()
         ,firstBeat()
         ,lastBeat()
@@ -30459,11 +30459,11 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -30606,7 +30606,7 @@ namespace mx
         /**************** GroupNameDisplayAttributes ****************/
         /* 5807 */
         GroupNameDisplayAttributes::GroupNameDisplayAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,hasPrintObject( false )
         {}
         
@@ -30718,7 +30718,7 @@ namespace mx
         /**************** GroupAbbreviationDisplayAttributes ****************/
         /* 5817 */
         GroupAbbreviationDisplayAttributes::GroupAbbreviationDisplayAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,hasPrintObject( false )
         {}
         
@@ -31062,7 +31062,7 @@ namespace mx
         /**************** PartAbbreviationDisplayAttributes ****************/
         /* 3861, 5936 */
         PartAbbreviationDisplayAttributes::PartAbbreviationDisplayAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,hasPrintObject( false )
         {}
         
@@ -31605,18 +31605,18 @@ namespace mx
         /* 6322 */
         HarmonyAttributes::HarmonyAttributes()
         :type()
-        ,printObject( types::YesNo::no )
-        ,printFrame( types::YesNo::no )
+        ,printObject( t::YesNo::no )
+        ,printFrame( t::YesNo::no )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasType( false )
         ,hasPrintObject( false )
         ,hasPrintFrame( false )
@@ -32391,17 +32391,17 @@ namespace mx
         /**************** HarmonicAttributes ****************/
         /* 5349 */
         HarmonicAttributes::HarmonicAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,defaultX()
         ,defaultY()
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,placement( types::AboveBelow::below )
+        ,placement( t::AboveBelow::below )
         ,hasPrintObject( false )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
@@ -32555,8 +32555,8 @@ namespace mx
         /* 6328 */
         PrintAttributes::PrintAttributes()
         :staffSpacing()
-        ,newSystem( types::YesNo::no )
-        ,newPage( types::YesNo::no )
+        ,newSystem( t::YesNo::no )
+        ,newPage( t::YesNo::no )
         ,blankPage()
         ,pageNumber()
         ,hasStaffSpacing( false )
@@ -32769,8 +32769,8 @@ namespace mx
         /**************** PartGroupAttributes ****************/
         /* 6351 */
         PartGroupAttributes::PartGroupAttributes()
-        :type( types::StartStop::start )
-        ,number( types::XsToken( "1" ) )
+        :type( t::StartStop::start )
+        ,number( t::XsToken( "1" ) )
         ,hasType( true )
         ,hasNumber( false )
         {}
@@ -33593,8 +33593,8 @@ namespace mx
         /**************** DirectionAttributes ****************/
         /* 6316 */
         DirectionAttributes::DirectionAttributes()
-        :placement( types::AboveBelow::below )
-        ,directive( types::YesNo::no )
+        :placement( t::AboveBelow::below )
+        ,directive( t::YesNo::no )
         ,hasPlacement( false )
         ,hasDirective( false )
         {}
@@ -34930,7 +34930,7 @@ namespace mx
         /**************** NotationsAttributes ****************/
         /* 5040 */
         NotationsAttributes::NotationsAttributes()
-        :printObject( types::YesNo::no )
+        :printObject( t::YesNo::no )
         ,hasPrintObject( false )
         {}
         
@@ -35550,20 +35550,20 @@ namespace mx
         ,relativeX()
         ,relativeY()
         ,fontFamily()
-        ,fontStyle( types::FontStyle::normal )
-        ,fontSize( types::CssFontSize::medium )
-        ,fontWeight( types::FontWeight::normal )
+        ,fontStyle( t::FontStyle::normal )
+        ,fontSize( t::CssFontSize::medium )
+        ,fontWeight( t::FontWeight::normal )
         ,color()
-        ,printObject( types::YesNo::no )
-        ,printDot( types::YesNo::no )
-        ,printSpacing( types::YesNo::no )
-        ,printLyric( types::YesNo::no )
+        ,printObject( t::YesNo::no )
+        ,printDot( t::YesNo::no )
+        ,printSpacing( t::YesNo::no )
+        ,printLyric( t::YesNo::no )
         ,dynamics()
         ,endDynamics()
         ,attack()
         ,release()
         ,timeOnly()
-        ,pizzicato( types::YesNo::no )
+        ,pizzicato( t::YesNo::no )
         ,hasDefaultX( false )
         ,hasDefaultY( false )
         ,hasRelativeX( false )
@@ -36609,8 +36609,8 @@ namespace mx
         /* 6418 */
         MeasureAttributes::MeasureAttributes()
         :number()
-        ,implicit( types::YesNo::no )
-        ,nonControlling( types::YesNo::no )
+        ,implicit( t::YesNo::no )
+        ,nonControlling( t::YesNo::no )
         ,width()
         ,hasNumber( true )
         ,hasImplicit( false )
