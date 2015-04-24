@@ -83,6 +83,9 @@ TEST( HelloWorld, HelloWorld )
     noteData->getNote()->getNoteChoice()->getNormalNoteGroup()->getDuration()->setValue( PositiveDivisionsValue( 4 ) );
     noteData->getNote()->getType()->setValue( NoteTypeValue::whole );
     measure->getMusicDataGroup()->addMusicDataChoice( noteData );
-    doc->toStream( cout );
-    cout << endl;
+    
+    std::string expected = R"((()))";
+    std::stringstream actual;
+    doc->toStream( actual );
+    CHECK_EQUAL( expected, actual.str() )
 }
