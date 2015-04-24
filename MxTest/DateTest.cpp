@@ -4,7 +4,7 @@
 #include "Date.h"
 #include <string>
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( toString01, Date )
 {

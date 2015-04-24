@@ -4,7 +4,7 @@
 #include "Strings.h"
 #include <sstream>
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( XsString01, Strings )
 {

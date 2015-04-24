@@ -5,7 +5,7 @@
 #include "TimewisePartTest.h"
 
 using namespace mx::e;
-using namespace mx::types;
+using namespace mx::t;
 using namespace std;
 using namespace MxTestHelpers;
 #include "MxTestCompileControl.h"

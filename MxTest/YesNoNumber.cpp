@@ -4,7 +4,7 @@
 #include "YesNoNumber.h"
 #include <sstream>
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( YesNoNumber01, YesNoNumber )
 {

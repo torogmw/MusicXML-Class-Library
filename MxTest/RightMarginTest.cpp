@@ -4,14 +4,14 @@
 #include "Elements.h"
 #include <sstream>
 
-using namespace mx::types;
+using namespace mx::t;
 using namespace mx::e;
 
 TEST( Test01, RightMargin )
 {
 	std::string indentString( INDENT );
-    mx::types::TenthsValue value1{ 1.23 };
-	mx::types::TenthsValue value2{ 4.56 };
+    mx::t::TenthsValue value1{ 1.23 };
+	mx::t::TenthsValue value2{ 4.56 };
 	RightMargin object1;
 	RightMargin object2( value2 );
 	std::stringstream default_constructed;

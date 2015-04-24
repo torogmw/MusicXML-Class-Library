@@ -4,13 +4,13 @@
 
 namespace
 {
-    const mx::types::StringType kWhitespace = " \t\n\v\f\r";
-    const mx::types::StringType kNCNameAllowed = "-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
-    mx::types::StringType trim(const mx::types::StringType& str,
-                     const mx::types::StringType& whitespace = kWhitespace )
+    const mx::t::StringType kWhitespace = " \t\n\v\f\r";
+    const mx::t::StringType kNCNameAllowed = "-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
+    mx::t::StringType trim(const mx::t::StringType& str,
+                     const mx::t::StringType& whitespace = kWhitespace )
     {
         const auto strBegin = str.find_first_not_of(whitespace);
-        if (strBegin == mx::types::StringType::npos)
+        if (strBegin == mx::t::StringType::npos)
             return ""; // no content
         
         const auto strEnd = str.find_last_not_of(whitespace);
@@ -19,16 +19,16 @@ namespace
         return str.substr(strBegin, strRange);
     }
     
-    mx::types::StringType reduce(const mx::types::StringType& str,
-                       const mx::types::StringType& fill = " ",
-                       const mx::types::StringType& whitespace = kWhitespace)
+    mx::t::StringType reduce(const mx::t::StringType& str,
+                       const mx::t::StringType& fill = " ",
+                       const mx::t::StringType& whitespace = kWhitespace)
     {
         // trim first
         auto result = trim(str, whitespace);
         
         // replace sub ranges
         auto beginSpace = result.find_first_of(whitespace);
-        while (beginSpace != mx::types::StringType::npos)
+        while (beginSpace != mx::t::StringType::npos)
         {
             const auto endSpace = result.find_first_not_of(whitespace, beginSpace);
             const auto range = endSpace - beginSpace;
@@ -41,13 +41,13 @@ namespace
         
         return result;
     }
-    mx::types::StringType onlyAllow(const mx::types::StringType& input,
-                                    const mx::types::StringType& fill = "_",
-                                    const mx::types::StringType& onlyAllow = kNCNameAllowed)
+    mx::t::StringType onlyAllow(const mx::t::StringType& input,
+                                    const mx::t::StringType& fill = "_",
+                                    const mx::t::StringType& onlyAllow = kNCNameAllowed)
     {
         std::string str = input;
         auto firstBadChar = str.find_first_not_of( onlyAllow );
-        while ( firstBadChar != mx::types::StringType::npos )
+        while ( firstBadChar != mx::t::StringType::npos )
         {
             str = str.replace( firstBadChar, 1, fill );
             firstBadChar = str.find_first_not_of( onlyAllow );

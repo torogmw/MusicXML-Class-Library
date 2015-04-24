@@ -4,7 +4,7 @@
 #include "Color.h"
 #include <sstream>
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( Color01, Strings )
 {

@@ -3,7 +3,7 @@
 
 using namespace mx::e;
 using namespace mx::d;
-using namespace mx::types;
+using namespace mx::t;
 using namespace std;
 
 inline MusicDataChoicePtr makeSixteenthNote( const StepEnum step, int octave, BeamValue beamval )

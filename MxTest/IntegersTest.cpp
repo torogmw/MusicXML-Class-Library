@@ -3,7 +3,7 @@
 #include "TestHarness.h"
 #include "Integers.h"
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( Int01, Integers )
 {

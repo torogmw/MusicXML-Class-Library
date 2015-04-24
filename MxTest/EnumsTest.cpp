@@ -5,20 +5,20 @@
 
 TEST( AboveBelow_BadParse, Enums )
 {
-	mx::types::AboveBelow actual = mx::types::parseAboveBelow( "above" );
-	mx::types::AboveBelow expected = mx::types::AboveBelow::above;
+	mx::t::AboveBelow actual = mx::t::parseAboveBelow( "above" );
+	mx::t::AboveBelow expected = mx::t::AboveBelow::above;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( AboveBelow_above, Enums )
 {
-	mx::types::AboveBelow e = mx::types::AboveBelow::above;
+	mx::t::AboveBelow e = mx::t::AboveBelow::above;
 	std::string expected = "above";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -27,19 +27,19 @@ TEST( AboveBelow_above, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AboveBelow e2 = mx::types::parseAboveBelow( expected );
+	mx::t::AboveBelow e2 = mx::t::parseAboveBelow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AboveBelow_below, Enums )
 {
-	mx::types::AboveBelow e = mx::types::AboveBelow::below;
+	mx::t::AboveBelow e = mx::t::AboveBelow::below;
 	std::string expected = "below";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -48,26 +48,26 @@ TEST( AboveBelow_below, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AboveBelow e2 = mx::types::parseAboveBelow( expected );
+	mx::t::AboveBelow e2 = mx::t::parseAboveBelow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_BadParse, Enums )
 {
-	mx::types::CssFontSize actual = mx::types::parseCssFontSize( "xx-small" );
-	mx::types::CssFontSize expected = mx::types::CssFontSize::xxSmall;
+	mx::t::CssFontSize actual = mx::t::parseCssFontSize( "xx-small" );
+	mx::t::CssFontSize expected = mx::t::CssFontSize::xxSmall;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( CssFontSize_xxSmall, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::xxSmall;
+	mx::t::CssFontSize e = mx::t::CssFontSize::xxSmall;
 	std::string expected = "xx-small";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -76,19 +76,19 @@ TEST( CssFontSize_xxSmall, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_xSmall, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::xSmall;
+	mx::t::CssFontSize e = mx::t::CssFontSize::xSmall;
 	std::string expected = "x-small";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -97,19 +97,19 @@ TEST( CssFontSize_xSmall, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_small, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::small;
+	mx::t::CssFontSize e = mx::t::CssFontSize::small;
 	std::string expected = "small";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -118,19 +118,19 @@ TEST( CssFontSize_small, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_medium, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::medium;
+	mx::t::CssFontSize e = mx::t::CssFontSize::medium;
 	std::string expected = "medium";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -139,19 +139,19 @@ TEST( CssFontSize_medium, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_large, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::large;
+	mx::t::CssFontSize e = mx::t::CssFontSize::large;
 	std::string expected = "large";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -160,19 +160,19 @@ TEST( CssFontSize_large, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_xLarge, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::xLarge;
+	mx::t::CssFontSize e = mx::t::CssFontSize::xLarge;
 	std::string expected = "x-large";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -181,19 +181,19 @@ TEST( CssFontSize_xLarge, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CssFontSize_xxLarge, Enums )
 {
-	mx::types::CssFontSize e = mx::types::CssFontSize::xxLarge;
+	mx::t::CssFontSize e = mx::t::CssFontSize::xxLarge;
 	std::string expected = "xx-large";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -202,26 +202,26 @@ TEST( CssFontSize_xxLarge, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CssFontSize e2 = mx::types::parseCssFontSize( expected );
+	mx::t::CssFontSize e2 = mx::t::parseCssFontSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_BadParse, Enums )
 {
-	mx::types::EnclosureShape actual = mx::types::parseEnclosureShape( "rectangle" );
-	mx::types::EnclosureShape expected = mx::types::EnclosureShape::rectangle;
+	mx::t::EnclosureShape actual = mx::t::parseEnclosureShape( "rectangle" );
+	mx::t::EnclosureShape expected = mx::t::EnclosureShape::rectangle;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( EnclosureShape_rectangle, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::rectangle;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::rectangle;
 	std::string expected = "rectangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -230,19 +230,19 @@ TEST( EnclosureShape_rectangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_square, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::square;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::square;
 	std::string expected = "square";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -251,19 +251,19 @@ TEST( EnclosureShape_square, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_oval, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::oval;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::oval;
 	std::string expected = "oval";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -272,19 +272,19 @@ TEST( EnclosureShape_oval, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_circle, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::circle;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::circle;
 	std::string expected = "circle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -293,19 +293,19 @@ TEST( EnclosureShape_circle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_bracket, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::bracket;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::bracket;
 	std::string expected = "bracket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -314,19 +314,19 @@ TEST( EnclosureShape_bracket, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_triangle, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::triangle;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::triangle;
 	std::string expected = "triangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -335,19 +335,19 @@ TEST( EnclosureShape_triangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_diamond, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::diamond;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::diamond;
 	std::string expected = "diamond";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -356,19 +356,19 @@ TEST( EnclosureShape_diamond, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( EnclosureShape_none, Enums )
 {
-	mx::types::EnclosureShape e = mx::types::EnclosureShape::none;
+	mx::t::EnclosureShape e = mx::t::EnclosureShape::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -377,26 +377,26 @@ TEST( EnclosureShape_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EnclosureShape e2 = mx::types::parseEnclosureShape( expected );
+	mx::t::EnclosureShape e2 = mx::t::parseEnclosureShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FermataShape_BadParse, Enums )
 {
-	mx::types::FermataShape actual = mx::types::parseFermataShape( "normal" );
-	mx::types::FermataShape expected = mx::types::FermataShape::normal;
+	mx::t::FermataShape actual = mx::t::parseFermataShape( "normal" );
+	mx::t::FermataShape expected = mx::t::FermataShape::normal;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( FermataShape_normal, Enums )
 {
-	mx::types::FermataShape e = mx::types::FermataShape::normal;
+	mx::t::FermataShape e = mx::t::FermataShape::normal;
 	std::string expected = "normal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -405,19 +405,19 @@ TEST( FermataShape_normal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FermataShape e2 = mx::types::parseFermataShape( expected );
+	mx::t::FermataShape e2 = mx::t::parseFermataShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FermataShape_angled, Enums )
 {
-	mx::types::FermataShape e = mx::types::FermataShape::angled;
+	mx::t::FermataShape e = mx::t::FermataShape::angled;
 	std::string expected = "angled";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -426,19 +426,19 @@ TEST( FermataShape_angled, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FermataShape e2 = mx::types::parseFermataShape( expected );
+	mx::t::FermataShape e2 = mx::t::parseFermataShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FermataShape_square, Enums )
 {
-	mx::types::FermataShape e = mx::types::FermataShape::square;
+	mx::t::FermataShape e = mx::t::FermataShape::square;
 	std::string expected = "square";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -447,19 +447,19 @@ TEST( FermataShape_square, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FermataShape e2 = mx::types::parseFermataShape( expected );
+	mx::t::FermataShape e2 = mx::t::parseFermataShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FermataShape_emptystring, Enums )
 {
-	mx::types::FermataShape e = mx::types::FermataShape::emptystring;
+	mx::t::FermataShape e = mx::t::FermataShape::emptystring;
 	std::string expected = "";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -468,26 +468,26 @@ TEST( FermataShape_emptystring, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FermataShape e2 = mx::types::parseFermataShape( expected );
+	mx::t::FermataShape e2 = mx::t::parseFermataShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FontStyle_BadParse, Enums )
 {
-	mx::types::FontStyle actual = mx::types::parseFontStyle( "normal" );
-	mx::types::FontStyle expected = mx::types::FontStyle::normal;
+	mx::t::FontStyle actual = mx::t::parseFontStyle( "normal" );
+	mx::t::FontStyle expected = mx::t::FontStyle::normal;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( FontStyle_normal, Enums )
 {
-	mx::types::FontStyle e = mx::types::FontStyle::normal;
+	mx::t::FontStyle e = mx::t::FontStyle::normal;
 	std::string expected = "normal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -496,19 +496,19 @@ TEST( FontStyle_normal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FontStyle e2 = mx::types::parseFontStyle( expected );
+	mx::t::FontStyle e2 = mx::t::parseFontStyle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FontStyle_italic, Enums )
 {
-	mx::types::FontStyle e = mx::types::FontStyle::italic;
+	mx::t::FontStyle e = mx::t::FontStyle::italic;
 	std::string expected = "italic";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -517,26 +517,26 @@ TEST( FontStyle_italic, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FontStyle e2 = mx::types::parseFontStyle( expected );
+	mx::t::FontStyle e2 = mx::t::parseFontStyle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FontWeight_BadParse, Enums )
 {
-	mx::types::FontWeight actual = mx::types::parseFontWeight( "normal" );
-	mx::types::FontWeight expected = mx::types::FontWeight::normal;
+	mx::t::FontWeight actual = mx::t::parseFontWeight( "normal" );
+	mx::t::FontWeight expected = mx::t::FontWeight::normal;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( FontWeight_normal, Enums )
 {
-	mx::types::FontWeight e = mx::types::FontWeight::normal;
+	mx::t::FontWeight e = mx::t::FontWeight::normal;
 	std::string expected = "normal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -545,19 +545,19 @@ TEST( FontWeight_normal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FontWeight e2 = mx::types::parseFontWeight( expected );
+	mx::t::FontWeight e2 = mx::t::parseFontWeight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( FontWeight_bold, Enums )
 {
-	mx::types::FontWeight e = mx::types::FontWeight::bold;
+	mx::t::FontWeight e = mx::t::FontWeight::bold;
 	std::string expected = "bold";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -566,26 +566,26 @@ TEST( FontWeight_bold, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::FontWeight e2 = mx::types::parseFontWeight( expected );
+	mx::t::FontWeight e2 = mx::t::parseFontWeight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LeftCenterRight_BadParse, Enums )
 {
-	mx::types::LeftCenterRight actual = mx::types::parseLeftCenterRight( "left" );
-	mx::types::LeftCenterRight expected = mx::types::LeftCenterRight::left;
+	mx::t::LeftCenterRight actual = mx::t::parseLeftCenterRight( "left" );
+	mx::t::LeftCenterRight expected = mx::t::LeftCenterRight::left;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( LeftCenterRight_left, Enums )
 {
-	mx::types::LeftCenterRight e = mx::types::LeftCenterRight::left;
+	mx::t::LeftCenterRight e = mx::t::LeftCenterRight::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -594,19 +594,19 @@ TEST( LeftCenterRight_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LeftCenterRight e2 = mx::types::parseLeftCenterRight( expected );
+	mx::t::LeftCenterRight e2 = mx::t::parseLeftCenterRight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LeftCenterRight_center, Enums )
 {
-	mx::types::LeftCenterRight e = mx::types::LeftCenterRight::center;
+	mx::t::LeftCenterRight e = mx::t::LeftCenterRight::center;
 	std::string expected = "center";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -615,19 +615,19 @@ TEST( LeftCenterRight_center, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LeftCenterRight e2 = mx::types::parseLeftCenterRight( expected );
+	mx::t::LeftCenterRight e2 = mx::t::parseLeftCenterRight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LeftCenterRight_right, Enums )
 {
-	mx::types::LeftCenterRight e = mx::types::LeftCenterRight::right;
+	mx::t::LeftCenterRight e = mx::t::LeftCenterRight::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -636,26 +636,26 @@ TEST( LeftCenterRight_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LeftCenterRight e2 = mx::types::parseLeftCenterRight( expected );
+	mx::t::LeftCenterRight e2 = mx::t::parseLeftCenterRight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LeftRight_BadParse, Enums )
 {
-	mx::types::LeftRight actual = mx::types::parseLeftRight( "left" );
-	mx::types::LeftRight expected = mx::types::LeftRight::left;
+	mx::t::LeftRight actual = mx::t::parseLeftRight( "left" );
+	mx::t::LeftRight expected = mx::t::LeftRight::left;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( LeftRight_left, Enums )
 {
-	mx::types::LeftRight e = mx::types::LeftRight::left;
+	mx::t::LeftRight e = mx::t::LeftRight::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -664,19 +664,19 @@ TEST( LeftRight_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LeftRight e2 = mx::types::parseLeftRight( expected );
+	mx::t::LeftRight e2 = mx::t::parseLeftRight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LeftRight_right, Enums )
 {
-	mx::types::LeftRight e = mx::types::LeftRight::right;
+	mx::t::LeftRight e = mx::t::LeftRight::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -685,26 +685,26 @@ TEST( LeftRight_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LeftRight e2 = mx::types::parseLeftRight( expected );
+	mx::t::LeftRight e2 = mx::t::parseLeftRight( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineShape_BadParse, Enums )
 {
-	mx::types::LineShape actual = mx::types::parseLineShape( "straight" );
-	mx::types::LineShape expected = mx::types::LineShape::straight;
+	mx::t::LineShape actual = mx::t::parseLineShape( "straight" );
+	mx::t::LineShape expected = mx::t::LineShape::straight;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( LineShape_straight, Enums )
 {
-	mx::types::LineShape e = mx::types::LineShape::straight;
+	mx::t::LineShape e = mx::t::LineShape::straight;
 	std::string expected = "straight";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -713,19 +713,19 @@ TEST( LineShape_straight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineShape e2 = mx::types::parseLineShape( expected );
+	mx::t::LineShape e2 = mx::t::parseLineShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineShape_curved, Enums )
 {
-	mx::types::LineShape e = mx::types::LineShape::curved;
+	mx::t::LineShape e = mx::t::LineShape::curved;
 	std::string expected = "curved";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -734,26 +734,26 @@ TEST( LineShape_curved, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineShape e2 = mx::types::parseLineShape( expected );
+	mx::t::LineShape e2 = mx::t::parseLineShape( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineType_BadParse, Enums )
 {
-	mx::types::LineType actual = mx::types::parseLineType( "solid" );
-	mx::types::LineType expected = mx::types::LineType::solid;
+	mx::t::LineType actual = mx::t::parseLineType( "solid" );
+	mx::t::LineType expected = mx::t::LineType::solid;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( LineType_solid, Enums )
 {
-	mx::types::LineType e = mx::types::LineType::solid;
+	mx::t::LineType e = mx::t::LineType::solid;
 	std::string expected = "solid";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -762,19 +762,19 @@ TEST( LineType_solid, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineType e2 = mx::types::parseLineType( expected );
+	mx::t::LineType e2 = mx::t::parseLineType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineType_dashed, Enums )
 {
-	mx::types::LineType e = mx::types::LineType::dashed;
+	mx::t::LineType e = mx::t::LineType::dashed;
 	std::string expected = "dashed";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -783,19 +783,19 @@ TEST( LineType_dashed, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineType e2 = mx::types::parseLineType( expected );
+	mx::t::LineType e2 = mx::t::parseLineType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineType_dotted, Enums )
 {
-	mx::types::LineType e = mx::types::LineType::dotted;
+	mx::t::LineType e = mx::t::LineType::dotted;
 	std::string expected = "dotted";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -804,19 +804,19 @@ TEST( LineType_dotted, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineType e2 = mx::types::parseLineType( expected );
+	mx::t::LineType e2 = mx::t::parseLineType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineType_wavy, Enums )
 {
-	mx::types::LineType e = mx::types::LineType::wavy;
+	mx::t::LineType e = mx::t::LineType::wavy;
 	std::string expected = "wavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -825,26 +825,26 @@ TEST( LineType_wavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineType e2 = mx::types::parseLineType( expected );
+	mx::t::LineType e2 = mx::t::parseLineType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_BadParse, Enums )
 {
-	mx::types::MuteEnum actual = mx::types::parseMuteEnum( "on" );
-	mx::types::MuteEnum expected = mx::types::MuteEnum::on;
+	mx::t::MuteEnum actual = mx::t::parseMuteEnum( "on" );
+	mx::t::MuteEnum expected = mx::t::MuteEnum::on;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Mute_on, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::on;
+	mx::t::MuteEnum e = mx::t::MuteEnum::on;
 	std::string expected = "on";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -853,19 +853,19 @@ TEST( Mute_on, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_off, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::off;
+	mx::t::MuteEnum e = mx::t::MuteEnum::off;
 	std::string expected = "off";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -874,19 +874,19 @@ TEST( Mute_off, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_straight, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::straight;
+	mx::t::MuteEnum e = mx::t::MuteEnum::straight;
 	std::string expected = "straight";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -895,19 +895,19 @@ TEST( Mute_straight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_cup, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::cup;
+	mx::t::MuteEnum e = mx::t::MuteEnum::cup;
 	std::string expected = "cup";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -916,19 +916,19 @@ TEST( Mute_cup, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_harmonNoStem, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::harmonNoStem;
+	mx::t::MuteEnum e = mx::t::MuteEnum::harmonNoStem;
 	std::string expected = "harmon-no-stem";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -937,19 +937,19 @@ TEST( Mute_harmonNoStem, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_harmonStem, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::harmonStem;
+	mx::t::MuteEnum e = mx::t::MuteEnum::harmonStem;
 	std::string expected = "harmon-stem";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -958,19 +958,19 @@ TEST( Mute_harmonStem, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_bucket, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::bucket;
+	mx::t::MuteEnum e = mx::t::MuteEnum::bucket;
 	std::string expected = "bucket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -979,19 +979,19 @@ TEST( Mute_bucket, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_plunger, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::plunger;
+	mx::t::MuteEnum e = mx::t::MuteEnum::plunger;
 	std::string expected = "plunger";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1000,19 +1000,19 @@ TEST( Mute_plunger, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_hat, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::hat;
+	mx::t::MuteEnum e = mx::t::MuteEnum::hat;
 	std::string expected = "hat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1021,19 +1021,19 @@ TEST( Mute_hat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_solotone, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::solotone;
+	mx::t::MuteEnum e = mx::t::MuteEnum::solotone;
 	std::string expected = "solotone";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1042,19 +1042,19 @@ TEST( Mute_solotone, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_practice, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::practice;
+	mx::t::MuteEnum e = mx::t::MuteEnum::practice;
 	std::string expected = "practice";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1063,19 +1063,19 @@ TEST( Mute_practice, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_stopMute, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::stopMute;
+	mx::t::MuteEnum e = mx::t::MuteEnum::stopMute;
 	std::string expected = "stop-mute";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1084,19 +1084,19 @@ TEST( Mute_stopMute, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_stopHand, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::stopHand;
+	mx::t::MuteEnum e = mx::t::MuteEnum::stopHand;
 	std::string expected = "stop-hand";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1105,19 +1105,19 @@ TEST( Mute_stopHand, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_echo, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::echo;
+	mx::t::MuteEnum e = mx::t::MuteEnum::echo;
 	std::string expected = "echo";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1126,19 +1126,19 @@ TEST( Mute_echo, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mute_palm, Enums )
 {
-	mx::types::MuteEnum e = mx::types::MuteEnum::palm;
+	mx::t::MuteEnum e = mx::t::MuteEnum::palm;
 	std::string expected = "palm";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1147,26 +1147,26 @@ TEST( Mute_palm, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MuteEnum e2 = mx::types::parseMuteEnum( expected );
+	mx::t::MuteEnum e2 = mx::t::parseMuteEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( OverUnder_BadParse, Enums )
 {
-	mx::types::OverUnder actual = mx::types::parseOverUnder( "over" );
-	mx::types::OverUnder expected = mx::types::OverUnder::over;
+	mx::t::OverUnder actual = mx::t::parseOverUnder( "over" );
+	mx::t::OverUnder expected = mx::t::OverUnder::over;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( OverUnder_over, Enums )
 {
-	mx::types::OverUnder e = mx::types::OverUnder::over;
+	mx::t::OverUnder e = mx::t::OverUnder::over;
 	std::string expected = "over";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1175,19 +1175,19 @@ TEST( OverUnder_over, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::OverUnder e2 = mx::types::parseOverUnder( expected );
+	mx::t::OverUnder e2 = mx::t::parseOverUnder( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( OverUnder_under, Enums )
 {
-	mx::types::OverUnder e = mx::types::OverUnder::under;
+	mx::t::OverUnder e = mx::t::OverUnder::under;
 	std::string expected = "under";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1196,26 +1196,26 @@ TEST( OverUnder_under, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::OverUnder e2 = mx::types::parseOverUnder( expected );
+	mx::t::OverUnder e2 = mx::t::parseOverUnder( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SemiPitchedEnum_BadParse, Enums )
 {
-	mx::types::SemiPitchedEnum actual = mx::types::parseSemiPitchedEnum( "high" );
-	mx::types::SemiPitchedEnum expected = mx::types::SemiPitchedEnum::high;
+	mx::t::SemiPitchedEnum actual = mx::t::parseSemiPitchedEnum( "high" );
+	mx::t::SemiPitchedEnum expected = mx::t::SemiPitchedEnum::high;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( SemiPitchedEnum_high, Enums )
 {
-	mx::types::SemiPitchedEnum e = mx::types::SemiPitchedEnum::high;
+	mx::t::SemiPitchedEnum e = mx::t::SemiPitchedEnum::high;
 	std::string expected = "high";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1224,19 +1224,19 @@ TEST( SemiPitchedEnum_high, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SemiPitchedEnum e2 = mx::types::parseSemiPitchedEnum( expected );
+	mx::t::SemiPitchedEnum e2 = mx::t::parseSemiPitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SemiPitchedEnum_mediumHigh, Enums )
 {
-	mx::types::SemiPitchedEnum e = mx::types::SemiPitchedEnum::mediumHigh;
+	mx::t::SemiPitchedEnum e = mx::t::SemiPitchedEnum::mediumHigh;
 	std::string expected = "medium-high";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1245,19 +1245,19 @@ TEST( SemiPitchedEnum_mediumHigh, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SemiPitchedEnum e2 = mx::types::parseSemiPitchedEnum( expected );
+	mx::t::SemiPitchedEnum e2 = mx::t::parseSemiPitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SemiPitchedEnum_medium, Enums )
 {
-	mx::types::SemiPitchedEnum e = mx::types::SemiPitchedEnum::medium;
+	mx::t::SemiPitchedEnum e = mx::t::SemiPitchedEnum::medium;
 	std::string expected = "medium";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1266,19 +1266,19 @@ TEST( SemiPitchedEnum_medium, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SemiPitchedEnum e2 = mx::types::parseSemiPitchedEnum( expected );
+	mx::t::SemiPitchedEnum e2 = mx::t::parseSemiPitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SemiPitchedEnum_mediumLow, Enums )
 {
-	mx::types::SemiPitchedEnum e = mx::types::SemiPitchedEnum::mediumLow;
+	mx::t::SemiPitchedEnum e = mx::t::SemiPitchedEnum::mediumLow;
 	std::string expected = "medium-low";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1287,19 +1287,19 @@ TEST( SemiPitchedEnum_mediumLow, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SemiPitchedEnum e2 = mx::types::parseSemiPitchedEnum( expected );
+	mx::t::SemiPitchedEnum e2 = mx::t::parseSemiPitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SemiPitchedEnum_low, Enums )
 {
-	mx::types::SemiPitchedEnum e = mx::types::SemiPitchedEnum::low;
+	mx::t::SemiPitchedEnum e = mx::t::SemiPitchedEnum::low;
 	std::string expected = "low";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1308,19 +1308,19 @@ TEST( SemiPitchedEnum_low, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SemiPitchedEnum e2 = mx::types::parseSemiPitchedEnum( expected );
+	mx::t::SemiPitchedEnum e2 = mx::t::parseSemiPitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SemiPitchedEnum_veryLow, Enums )
 {
-	mx::types::SemiPitchedEnum e = mx::types::SemiPitchedEnum::veryLow;
+	mx::t::SemiPitchedEnum e = mx::t::SemiPitchedEnum::veryLow;
 	std::string expected = "very-low";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1329,26 +1329,26 @@ TEST( SemiPitchedEnum_veryLow, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SemiPitchedEnum e2 = mx::types::parseSemiPitchedEnum( expected );
+	mx::t::SemiPitchedEnum e2 = mx::t::parseSemiPitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartNote_BadParse, Enums )
 {
-	mx::types::StartNote actual = mx::types::parseStartNote( "upper" );
-	mx::types::StartNote expected = mx::types::StartNote::upper;
+	mx::t::StartNote actual = mx::t::parseStartNote( "upper" );
+	mx::t::StartNote expected = mx::t::StartNote::upper;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StartNote_upper, Enums )
 {
-	mx::types::StartNote e = mx::types::StartNote::upper;
+	mx::t::StartNote e = mx::t::StartNote::upper;
 	std::string expected = "upper";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1357,19 +1357,19 @@ TEST( StartNote_upper, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartNote e2 = mx::types::parseStartNote( expected );
+	mx::t::StartNote e2 = mx::t::parseStartNote( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartNote_main, Enums )
 {
-	mx::types::StartNote e = mx::types::StartNote::main;
+	mx::t::StartNote e = mx::t::StartNote::main;
 	std::string expected = "main";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1378,19 +1378,19 @@ TEST( StartNote_main, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartNote e2 = mx::types::parseStartNote( expected );
+	mx::t::StartNote e2 = mx::t::parseStartNote( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartNote_below, Enums )
 {
-	mx::types::StartNote e = mx::types::StartNote::below;
+	mx::t::StartNote e = mx::t::StartNote::below;
 	std::string expected = "below";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1399,26 +1399,26 @@ TEST( StartNote_below, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartNote e2 = mx::types::parseStartNote( expected );
+	mx::t::StartNote e2 = mx::t::parseStartNote( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStop_BadParse, Enums )
 {
-	mx::types::StartStop actual = mx::types::parseStartStop( "start" );
-	mx::types::StartStop expected = mx::types::StartStop::start;
+	mx::t::StartStop actual = mx::t::parseStartStop( "start" );
+	mx::t::StartStop expected = mx::t::StartStop::start;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StartStop_start, Enums )
 {
-	mx::types::StartStop e = mx::types::StartStop::start;
+	mx::t::StartStop e = mx::t::StartStop::start;
 	std::string expected = "start";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1427,19 +1427,19 @@ TEST( StartStop_start, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStop e2 = mx::types::parseStartStop( expected );
+	mx::t::StartStop e2 = mx::t::parseStartStop( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStop_stop, Enums )
 {
-	mx::types::StartStop e = mx::types::StartStop::stop;
+	mx::t::StartStop e = mx::t::StartStop::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1448,26 +1448,26 @@ TEST( StartStop_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStop e2 = mx::types::parseStartStop( expected );
+	mx::t::StartStop e2 = mx::t::parseStartStop( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopContinue_BadParse, Enums )
 {
-	mx::types::StartStopContinue actual = mx::types::parseStartStopContinue( "start" );
-	mx::types::StartStopContinue expected = mx::types::StartStopContinue::start;
+	mx::t::StartStopContinue actual = mx::t::parseStartStopContinue( "start" );
+	mx::t::StartStopContinue expected = mx::t::StartStopContinue::start;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StartStopContinue_start, Enums )
 {
-	mx::types::StartStopContinue e = mx::types::StartStopContinue::start;
+	mx::t::StartStopContinue e = mx::t::StartStopContinue::start;
 	std::string expected = "start";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1476,19 +1476,19 @@ TEST( StartStopContinue_start, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopContinue e2 = mx::types::parseStartStopContinue( expected );
+	mx::t::StartStopContinue e2 = mx::t::parseStartStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopContinue_stop, Enums )
 {
-	mx::types::StartStopContinue e = mx::types::StartStopContinue::stop;
+	mx::t::StartStopContinue e = mx::t::StartStopContinue::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1497,19 +1497,19 @@ TEST( StartStopContinue_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopContinue e2 = mx::types::parseStartStopContinue( expected );
+	mx::t::StartStopContinue e2 = mx::t::parseStartStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopContinue_continue_, Enums )
 {
-	mx::types::StartStopContinue e = mx::types::StartStopContinue::continue_;
+	mx::t::StartStopContinue e = mx::t::StartStopContinue::continue_;
 	std::string expected = "continue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1518,26 +1518,26 @@ TEST( StartStopContinue_continue_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopContinue e2 = mx::types::parseStartStopContinue( expected );
+	mx::t::StartStopContinue e2 = mx::t::parseStartStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopSingle_BadParse, Enums )
 {
-	mx::types::StartStopSingle actual = mx::types::parseStartStopSingle( "start" );
-	mx::types::StartStopSingle expected = mx::types::StartStopSingle::start;
+	mx::t::StartStopSingle actual = mx::t::parseStartStopSingle( "start" );
+	mx::t::StartStopSingle expected = mx::t::StartStopSingle::start;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StartStopSingle_start, Enums )
 {
-	mx::types::StartStopSingle e = mx::types::StartStopSingle::start;
+	mx::t::StartStopSingle e = mx::t::StartStopSingle::start;
 	std::string expected = "start";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1546,19 +1546,19 @@ TEST( StartStopSingle_start, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopSingle e2 = mx::types::parseStartStopSingle( expected );
+	mx::t::StartStopSingle e2 = mx::t::parseStartStopSingle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopSingle_stop, Enums )
 {
-	mx::types::StartStopSingle e = mx::types::StartStopSingle::stop;
+	mx::t::StartStopSingle e = mx::t::StartStopSingle::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1567,19 +1567,19 @@ TEST( StartStopSingle_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopSingle e2 = mx::types::parseStartStopSingle( expected );
+	mx::t::StartStopSingle e2 = mx::t::parseStartStopSingle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopSingle_single, Enums )
 {
-	mx::types::StartStopSingle e = mx::types::StartStopSingle::single;
+	mx::t::StartStopSingle e = mx::t::StartStopSingle::single;
 	std::string expected = "single";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1588,26 +1588,26 @@ TEST( StartStopSingle_single, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopSingle e2 = mx::types::parseStartStopSingle( expected );
+	mx::t::StartStopSingle e2 = mx::t::parseStartStopSingle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SymbolSize_BadParse, Enums )
 {
-	mx::types::SymbolSize actual = mx::types::parseSymbolSize( "full" );
-	mx::types::SymbolSize expected = mx::types::SymbolSize::full;
+	mx::t::SymbolSize actual = mx::t::parseSymbolSize( "full" );
+	mx::t::SymbolSize expected = mx::t::SymbolSize::full;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( SymbolSize_full, Enums )
 {
-	mx::types::SymbolSize e = mx::types::SymbolSize::full;
+	mx::t::SymbolSize e = mx::t::SymbolSize::full;
 	std::string expected = "full";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1616,19 +1616,19 @@ TEST( SymbolSize_full, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SymbolSize e2 = mx::types::parseSymbolSize( expected );
+	mx::t::SymbolSize e2 = mx::t::parseSymbolSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SymbolSize_cue, Enums )
 {
-	mx::types::SymbolSize e = mx::types::SymbolSize::cue;
+	mx::t::SymbolSize e = mx::t::SymbolSize::cue;
 	std::string expected = "cue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1637,19 +1637,19 @@ TEST( SymbolSize_cue, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SymbolSize e2 = mx::types::parseSymbolSize( expected );
+	mx::t::SymbolSize e2 = mx::t::parseSymbolSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( SymbolSize_large, Enums )
 {
-	mx::types::SymbolSize e = mx::types::SymbolSize::large;
+	mx::t::SymbolSize e = mx::t::SymbolSize::large;
 	std::string expected = "large";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1658,26 +1658,26 @@ TEST( SymbolSize_large, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SymbolSize e2 = mx::types::parseSymbolSize( expected );
+	mx::t::SymbolSize e2 = mx::t::parseSymbolSize( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TextDirection_BadParse, Enums )
 {
-	mx::types::TextDirection actual = mx::types::parseTextDirection( "ltr" );
-	mx::types::TextDirection expected = mx::types::TextDirection::ltr;
+	mx::t::TextDirection actual = mx::t::parseTextDirection( "ltr" );
+	mx::t::TextDirection expected = mx::t::TextDirection::ltr;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TextDirection_ltr, Enums )
 {
-	mx::types::TextDirection e = mx::types::TextDirection::ltr;
+	mx::t::TextDirection e = mx::t::TextDirection::ltr;
 	std::string expected = "ltr";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1686,19 +1686,19 @@ TEST( TextDirection_ltr, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TextDirection e2 = mx::types::parseTextDirection( expected );
+	mx::t::TextDirection e2 = mx::t::parseTextDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TextDirection_rtl, Enums )
 {
-	mx::types::TextDirection e = mx::types::TextDirection::rtl;
+	mx::t::TextDirection e = mx::t::TextDirection::rtl;
 	std::string expected = "rtl";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1707,19 +1707,19 @@ TEST( TextDirection_rtl, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TextDirection e2 = mx::types::parseTextDirection( expected );
+	mx::t::TextDirection e2 = mx::t::parseTextDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TextDirection_lro, Enums )
 {
-	mx::types::TextDirection e = mx::types::TextDirection::lro;
+	mx::t::TextDirection e = mx::t::TextDirection::lro;
 	std::string expected = "lro";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1728,19 +1728,19 @@ TEST( TextDirection_lro, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TextDirection e2 = mx::types::parseTextDirection( expected );
+	mx::t::TextDirection e2 = mx::t::parseTextDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TextDirection_rlo, Enums )
 {
-	mx::types::TextDirection e = mx::types::TextDirection::rlo;
+	mx::t::TextDirection e = mx::t::TextDirection::rlo;
 	std::string expected = "rlo";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1749,26 +1749,26 @@ TEST( TextDirection_rlo, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TextDirection e2 = mx::types::parseTextDirection( expected );
+	mx::t::TextDirection e2 = mx::t::parseTextDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TopBottom_BadParse, Enums )
 {
-	mx::types::TopBottom actual = mx::types::parseTopBottom( "top" );
-	mx::types::TopBottom expected = mx::types::TopBottom::top;
+	mx::t::TopBottom actual = mx::t::parseTopBottom( "top" );
+	mx::t::TopBottom expected = mx::t::TopBottom::top;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TopBottom_top, Enums )
 {
-	mx::types::TopBottom e = mx::types::TopBottom::top;
+	mx::t::TopBottom e = mx::t::TopBottom::top;
 	std::string expected = "top";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1777,19 +1777,19 @@ TEST( TopBottom_top, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TopBottom e2 = mx::types::parseTopBottom( expected );
+	mx::t::TopBottom e2 = mx::t::parseTopBottom( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TopBottom_bottom, Enums )
 {
-	mx::types::TopBottom e = mx::types::TopBottom::bottom;
+	mx::t::TopBottom e = mx::t::TopBottom::bottom;
 	std::string expected = "bottom";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1798,26 +1798,26 @@ TEST( TopBottom_bottom, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TopBottom e2 = mx::types::parseTopBottom( expected );
+	mx::t::TopBottom e2 = mx::t::parseTopBottom( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TrillStep_BadParse, Enums )
 {
-	mx::types::TrillStep actual = mx::types::parseTrillStep( "whole" );
-	mx::types::TrillStep expected = mx::types::TrillStep::whole;
+	mx::t::TrillStep actual = mx::t::parseTrillStep( "whole" );
+	mx::t::TrillStep expected = mx::t::TrillStep::whole;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TrillStep_whole, Enums )
 {
-	mx::types::TrillStep e = mx::types::TrillStep::whole;
+	mx::t::TrillStep e = mx::t::TrillStep::whole;
 	std::string expected = "whole";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1826,19 +1826,19 @@ TEST( TrillStep_whole, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TrillStep e2 = mx::types::parseTrillStep( expected );
+	mx::t::TrillStep e2 = mx::t::parseTrillStep( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TrillStep_half, Enums )
 {
-	mx::types::TrillStep e = mx::types::TrillStep::half;
+	mx::t::TrillStep e = mx::t::TrillStep::half;
 	std::string expected = "half";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1847,19 +1847,19 @@ TEST( TrillStep_half, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TrillStep e2 = mx::types::parseTrillStep( expected );
+	mx::t::TrillStep e2 = mx::t::parseTrillStep( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TrillStep_unison, Enums )
 {
-	mx::types::TrillStep e = mx::types::TrillStep::unison;
+	mx::t::TrillStep e = mx::t::TrillStep::unison;
 	std::string expected = "unison";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1868,26 +1868,26 @@ TEST( TrillStep_unison, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TrillStep e2 = mx::types::parseTrillStep( expected );
+	mx::t::TrillStep e2 = mx::t::parseTrillStep( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TwoNoteTurn_BadParse, Enums )
 {
-	mx::types::TwoNoteTurn actual = mx::types::parseTwoNoteTurn( "whole" );
-	mx::types::TwoNoteTurn expected = mx::types::TwoNoteTurn::whole;
+	mx::t::TwoNoteTurn actual = mx::t::parseTwoNoteTurn( "whole" );
+	mx::t::TwoNoteTurn expected = mx::t::TwoNoteTurn::whole;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TwoNoteTurn_whole, Enums )
 {
-	mx::types::TwoNoteTurn e = mx::types::TwoNoteTurn::whole;
+	mx::t::TwoNoteTurn e = mx::t::TwoNoteTurn::whole;
 	std::string expected = "whole";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1896,19 +1896,19 @@ TEST( TwoNoteTurn_whole, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TwoNoteTurn e2 = mx::types::parseTwoNoteTurn( expected );
+	mx::t::TwoNoteTurn e2 = mx::t::parseTwoNoteTurn( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TwoNoteTurn_half, Enums )
 {
-	mx::types::TwoNoteTurn e = mx::types::TwoNoteTurn::half;
+	mx::t::TwoNoteTurn e = mx::t::TwoNoteTurn::half;
 	std::string expected = "half";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1917,19 +1917,19 @@ TEST( TwoNoteTurn_half, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TwoNoteTurn e2 = mx::types::parseTwoNoteTurn( expected );
+	mx::t::TwoNoteTurn e2 = mx::t::parseTwoNoteTurn( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TwoNoteTurn_none, Enums )
 {
-	mx::types::TwoNoteTurn e = mx::types::TwoNoteTurn::none;
+	mx::t::TwoNoteTurn e = mx::t::TwoNoteTurn::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1938,26 +1938,26 @@ TEST( TwoNoteTurn_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TwoNoteTurn e2 = mx::types::parseTwoNoteTurn( expected );
+	mx::t::TwoNoteTurn e2 = mx::t::parseTwoNoteTurn( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UpDown_BadParse, Enums )
 {
-	mx::types::UpDown actual = mx::types::parseUpDown( "up" );
-	mx::types::UpDown expected = mx::types::UpDown::up;
+	mx::t::UpDown actual = mx::t::parseUpDown( "up" );
+	mx::t::UpDown expected = mx::t::UpDown::up;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( UpDown_up, Enums )
 {
-	mx::types::UpDown e = mx::types::UpDown::up;
+	mx::t::UpDown e = mx::t::UpDown::up;
 	std::string expected = "up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1966,19 +1966,19 @@ TEST( UpDown_up, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UpDown e2 = mx::types::parseUpDown( expected );
+	mx::t::UpDown e2 = mx::t::parseUpDown( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UpDown_down, Enums )
 {
-	mx::types::UpDown e = mx::types::UpDown::down;
+	mx::t::UpDown e = mx::t::UpDown::down;
 	std::string expected = "down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -1987,26 +1987,26 @@ TEST( UpDown_down, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UpDown e2 = mx::types::parseUpDown( expected );
+	mx::t::UpDown e2 = mx::t::parseUpDown( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UprightInverted_BadParse, Enums )
 {
-	mx::types::UprightInverted actual = mx::types::parseUprightInverted( "upright" );
-	mx::types::UprightInverted expected = mx::types::UprightInverted::upright;
+	mx::t::UprightInverted actual = mx::t::parseUprightInverted( "upright" );
+	mx::t::UprightInverted expected = mx::t::UprightInverted::upright;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( UprightInverted_upright, Enums )
 {
-	mx::types::UprightInverted e = mx::types::UprightInverted::upright;
+	mx::t::UprightInverted e = mx::t::UprightInverted::upright;
 	std::string expected = "upright";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2015,19 +2015,19 @@ TEST( UprightInverted_upright, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UprightInverted e2 = mx::types::parseUprightInverted( expected );
+	mx::t::UprightInverted e2 = mx::t::parseUprightInverted( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UprightInverted_inverted, Enums )
 {
-	mx::types::UprightInverted e = mx::types::UprightInverted::inverted;
+	mx::t::UprightInverted e = mx::t::UprightInverted::inverted;
 	std::string expected = "inverted";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2036,26 +2036,26 @@ TEST( UprightInverted_inverted, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UprightInverted e2 = mx::types::parseUprightInverted( expected );
+	mx::t::UprightInverted e2 = mx::t::parseUprightInverted( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Valign_BadParse, Enums )
 {
-	mx::types::Valign actual = mx::types::parseValign( "top" );
-	mx::types::Valign expected = mx::types::Valign::top;
+	mx::t::Valign actual = mx::t::parseValign( "top" );
+	mx::t::Valign expected = mx::t::Valign::top;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Valign_top, Enums )
 {
-	mx::types::Valign e = mx::types::Valign::top;
+	mx::t::Valign e = mx::t::Valign::top;
 	std::string expected = "top";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2064,19 +2064,19 @@ TEST( Valign_top, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Valign e2 = mx::types::parseValign( expected );
+	mx::t::Valign e2 = mx::t::parseValign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Valign_middle, Enums )
 {
-	mx::types::Valign e = mx::types::Valign::middle;
+	mx::t::Valign e = mx::t::Valign::middle;
 	std::string expected = "middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2085,19 +2085,19 @@ TEST( Valign_middle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Valign e2 = mx::types::parseValign( expected );
+	mx::t::Valign e2 = mx::t::parseValign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Valign_bottom, Enums )
 {
-	mx::types::Valign e = mx::types::Valign::bottom;
+	mx::t::Valign e = mx::t::Valign::bottom;
 	std::string expected = "bottom";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2106,19 +2106,19 @@ TEST( Valign_bottom, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Valign e2 = mx::types::parseValign( expected );
+	mx::t::Valign e2 = mx::t::parseValign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Valign_baseline, Enums )
 {
-	mx::types::Valign e = mx::types::Valign::baseline;
+	mx::t::Valign e = mx::t::Valign::baseline;
 	std::string expected = "baseline";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2127,26 +2127,26 @@ TEST( Valign_baseline, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Valign e2 = mx::types::parseValign( expected );
+	mx::t::Valign e2 = mx::t::parseValign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ValignImage_BadParse, Enums )
 {
-	mx::types::ValignImage actual = mx::types::parseValignImage( "top" );
-	mx::types::ValignImage expected = mx::types::ValignImage::top;
+	mx::t::ValignImage actual = mx::t::parseValignImage( "top" );
+	mx::t::ValignImage expected = mx::t::ValignImage::top;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( ValignImage_top, Enums )
 {
-	mx::types::ValignImage e = mx::types::ValignImage::top;
+	mx::t::ValignImage e = mx::t::ValignImage::top;
 	std::string expected = "top";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2155,19 +2155,19 @@ TEST( ValignImage_top, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ValignImage e2 = mx::types::parseValignImage( expected );
+	mx::t::ValignImage e2 = mx::t::parseValignImage( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ValignImage_middle, Enums )
 {
-	mx::types::ValignImage e = mx::types::ValignImage::middle;
+	mx::t::ValignImage e = mx::t::ValignImage::middle;
 	std::string expected = "middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2176,19 +2176,19 @@ TEST( ValignImage_middle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ValignImage e2 = mx::types::parseValignImage( expected );
+	mx::t::ValignImage e2 = mx::t::parseValignImage( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ValignImage_bottom, Enums )
 {
-	mx::types::ValignImage e = mx::types::ValignImage::bottom;
+	mx::t::ValignImage e = mx::t::ValignImage::bottom;
 	std::string expected = "bottom";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2197,26 +2197,26 @@ TEST( ValignImage_bottom, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ValignImage e2 = mx::types::parseValignImage( expected );
+	mx::t::ValignImage e2 = mx::t::parseValignImage( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( YesNo_BadParse, Enums )
 {
-	mx::types::YesNo actual = mx::types::parseYesNo( "yes" );
-	mx::types::YesNo expected = mx::types::YesNo::yes;
+	mx::t::YesNo actual = mx::t::parseYesNo( "yes" );
+	mx::t::YesNo expected = mx::t::YesNo::yes;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( YesNo_yes, Enums )
 {
-	mx::types::YesNo e = mx::types::YesNo::yes;
+	mx::t::YesNo e = mx::t::YesNo::yes;
 	std::string expected = "yes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2225,19 +2225,19 @@ TEST( YesNo_yes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::YesNo e2 = mx::types::parseYesNo( expected );
+	mx::t::YesNo e2 = mx::t::parseYesNo( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( YesNo_no, Enums )
 {
-	mx::types::YesNo e = mx::types::YesNo::no;
+	mx::t::YesNo e = mx::t::YesNo::no;
 	std::string expected = "no";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2246,26 +2246,26 @@ TEST( YesNo_no, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::YesNo e2 = mx::types::parseYesNo( expected );
+	mx::t::YesNo e2 = mx::t::parseYesNo( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CancelLocation_BadParse, Enums )
 {
-	mx::types::CancelLocation actual = mx::types::parseCancelLocation( "left" );
-	mx::types::CancelLocation expected = mx::types::CancelLocation::left;
+	mx::t::CancelLocation actual = mx::t::parseCancelLocation( "left" );
+	mx::t::CancelLocation expected = mx::t::CancelLocation::left;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( CancelLocation_left, Enums )
 {
-	mx::types::CancelLocation e = mx::types::CancelLocation::left;
+	mx::t::CancelLocation e = mx::t::CancelLocation::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2274,19 +2274,19 @@ TEST( CancelLocation_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CancelLocation e2 = mx::types::parseCancelLocation( expected );
+	mx::t::CancelLocation e2 = mx::t::parseCancelLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CancelLocation_right, Enums )
 {
-	mx::types::CancelLocation e = mx::types::CancelLocation::right;
+	mx::t::CancelLocation e = mx::t::CancelLocation::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2295,19 +2295,19 @@ TEST( CancelLocation_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CancelLocation e2 = mx::types::parseCancelLocation( expected );
+	mx::t::CancelLocation e2 = mx::t::parseCancelLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CancelLocation_beforeBarline, Enums )
 {
-	mx::types::CancelLocation e = mx::types::CancelLocation::beforeBarline;
+	mx::t::CancelLocation e = mx::t::CancelLocation::beforeBarline;
 	std::string expected = "before-barline";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2316,26 +2316,26 @@ TEST( CancelLocation_beforeBarline, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CancelLocation e2 = mx::types::parseCancelLocation( expected );
+	mx::t::CancelLocation e2 = mx::t::parseCancelLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_BadParse, Enums )
 {
-	mx::types::ClefSign actual = mx::types::parseClefSign( "G" );
-	mx::types::ClefSign expected = mx::types::ClefSign::g;
+	mx::t::ClefSign actual = mx::t::parseClefSign( "G" );
+	mx::t::ClefSign expected = mx::t::ClefSign::g;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( ClefSign_g, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::g;
+	mx::t::ClefSign e = mx::t::ClefSign::g;
 	std::string expected = "G";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2344,19 +2344,19 @@ TEST( ClefSign_g, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_f, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::f;
+	mx::t::ClefSign e = mx::t::ClefSign::f;
 	std::string expected = "F";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2365,19 +2365,19 @@ TEST( ClefSign_f, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_c, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::c;
+	mx::t::ClefSign e = mx::t::ClefSign::c;
 	std::string expected = "C";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2386,19 +2386,19 @@ TEST( ClefSign_c, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_percussion, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::percussion;
+	mx::t::ClefSign e = mx::t::ClefSign::percussion;
 	std::string expected = "percussion";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2407,19 +2407,19 @@ TEST( ClefSign_percussion, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_tab, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::tab;
+	mx::t::ClefSign e = mx::t::ClefSign::tab;
 	std::string expected = "TAB";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2428,19 +2428,19 @@ TEST( ClefSign_tab, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_jianpu, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::jianpu;
+	mx::t::ClefSign e = mx::t::ClefSign::jianpu;
 	std::string expected = "jianpu";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2449,19 +2449,19 @@ TEST( ClefSign_jianpu, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ClefSign_none, Enums )
 {
-	mx::types::ClefSign e = mx::types::ClefSign::none;
+	mx::t::ClefSign e = mx::t::ClefSign::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2470,26 +2470,26 @@ TEST( ClefSign_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ClefSign e2 = mx::types::parseClefSign( expected );
+	mx::t::ClefSign e2 = mx::t::parseClefSign( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ShowFrets_BadParse, Enums )
 {
-	mx::types::ShowFrets actual = mx::types::parseShowFrets( "numbers" );
-	mx::types::ShowFrets expected = mx::types::ShowFrets::numbers;
+	mx::t::ShowFrets actual = mx::t::parseShowFrets( "numbers" );
+	mx::t::ShowFrets expected = mx::t::ShowFrets::numbers;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( ShowFrets_numbers, Enums )
 {
-	mx::types::ShowFrets e = mx::types::ShowFrets::numbers;
+	mx::t::ShowFrets e = mx::t::ShowFrets::numbers;
 	std::string expected = "numbers";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2498,19 +2498,19 @@ TEST( ShowFrets_numbers, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ShowFrets e2 = mx::types::parseShowFrets( expected );
+	mx::t::ShowFrets e2 = mx::t::parseShowFrets( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ShowFrets_letters, Enums )
 {
-	mx::types::ShowFrets e = mx::types::ShowFrets::letters;
+	mx::t::ShowFrets e = mx::t::ShowFrets::letters;
 	std::string expected = "letters";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2519,26 +2519,26 @@ TEST( ShowFrets_letters, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ShowFrets e2 = mx::types::parseShowFrets( expected );
+	mx::t::ShowFrets e2 = mx::t::parseShowFrets( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StaffType_BadParse, Enums )
 {
-	mx::types::StaffTypeEnum actual = mx::types::parseStaffTypeEnum ( "ossia" );
-	mx::types::StaffTypeEnum expected = mx::types::StaffTypeEnum::ossia;
+	mx::t::StaffTypeEnum actual = mx::t::parseStaffTypeEnum ( "ossia" );
+	mx::t::StaffTypeEnum expected = mx::t::StaffTypeEnum::ossia;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StaffType_ossia, Enums )
 {
-	mx::types::StaffTypeEnum e = mx::types::StaffTypeEnum::ossia;
+	mx::t::StaffTypeEnum e = mx::t::StaffTypeEnum::ossia;
 	std::string expected = "ossia";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2547,19 +2547,19 @@ TEST( StaffType_ossia, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StaffTypeEnum e2 = mx::types::parseStaffTypeEnum ( expected );
+	mx::t::StaffTypeEnum e2 = mx::t::parseStaffTypeEnum ( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StaffType_cue, Enums )
 {
-	mx::types::StaffTypeEnum e = mx::types::StaffTypeEnum::cue;
+	mx::t::StaffTypeEnum e = mx::t::StaffTypeEnum::cue;
 	std::string expected = "cue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2568,19 +2568,19 @@ TEST( StaffType_cue, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StaffTypeEnum e2 = mx::types::parseStaffTypeEnum ( expected );
+	mx::t::StaffTypeEnum e2 = mx::t::parseStaffTypeEnum ( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StaffType_editorial, Enums )
 {
-	mx::types::StaffTypeEnum e = mx::types::StaffTypeEnum::editorial;
+	mx::t::StaffTypeEnum e = mx::t::StaffTypeEnum::editorial;
 	std::string expected = "editorial";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2589,19 +2589,19 @@ TEST( StaffType_editorial, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StaffTypeEnum e2 = mx::types::parseStaffTypeEnum ( expected );
+	mx::t::StaffTypeEnum e2 = mx::t::parseStaffTypeEnum ( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StaffType_regular, Enums )
 {
-	mx::types::StaffTypeEnum e = mx::types::StaffTypeEnum::regular;
+	mx::t::StaffTypeEnum e = mx::t::StaffTypeEnum::regular;
 	std::string expected = "regular";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2610,19 +2610,19 @@ TEST( StaffType_regular, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StaffTypeEnum e2 = mx::types::parseStaffTypeEnum ( expected );
+	mx::t::StaffTypeEnum e2 = mx::t::parseStaffTypeEnum ( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StaffType_alternate, Enums )
 {
-	mx::types::StaffTypeEnum e = mx::types::StaffTypeEnum::alternate;
+	mx::t::StaffTypeEnum e = mx::t::StaffTypeEnum::alternate;
 	std::string expected = "alternate";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2631,26 +2631,26 @@ TEST( StaffType_alternate, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StaffTypeEnum e2 = mx::types::parseStaffTypeEnum ( expected );
+	mx::t::StaffTypeEnum e2 = mx::t::parseStaffTypeEnum ( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeRelation_BadParse, Enums )
 {
-	mx::types::TimeRelationEnum actual = mx::types::parseTimeRelationEnum( "parentheses" );
-	mx::types::TimeRelationEnum expected = mx::types::TimeRelationEnum::parentheses;
+	mx::t::TimeRelationEnum actual = mx::t::parseTimeRelationEnum( "parentheses" );
+	mx::t::TimeRelationEnum expected = mx::t::TimeRelationEnum::parentheses;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TimeRelation_parentheses, Enums )
 {
-	mx::types::TimeRelationEnum e = mx::types::TimeRelationEnum::parentheses;
+	mx::t::TimeRelationEnum e = mx::t::TimeRelationEnum::parentheses;
 	std::string expected = "parentheses";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2659,19 +2659,19 @@ TEST( TimeRelation_parentheses, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeRelationEnum e2 = mx::types::parseTimeRelationEnum( expected );
+	mx::t::TimeRelationEnum e2 = mx::t::parseTimeRelationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeRelation_bracket, Enums )
 {
-	mx::types::TimeRelationEnum e = mx::types::TimeRelationEnum::bracket;
+	mx::t::TimeRelationEnum e = mx::t::TimeRelationEnum::bracket;
 	std::string expected = "bracket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2680,19 +2680,19 @@ TEST( TimeRelation_bracket, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeRelationEnum e2 = mx::types::parseTimeRelationEnum( expected );
+	mx::t::TimeRelationEnum e2 = mx::t::parseTimeRelationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeRelation_equals, Enums )
 {
-	mx::types::TimeRelationEnum e = mx::types::TimeRelationEnum::equals;
+	mx::t::TimeRelationEnum e = mx::t::TimeRelationEnum::equals;
 	std::string expected = "equals";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2701,19 +2701,19 @@ TEST( TimeRelation_equals, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeRelationEnum e2 = mx::types::parseTimeRelationEnum( expected );
+	mx::t::TimeRelationEnum e2 = mx::t::parseTimeRelationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeRelation_slash, Enums )
 {
-	mx::types::TimeRelationEnum e = mx::types::TimeRelationEnum::slash;
+	mx::t::TimeRelationEnum e = mx::t::TimeRelationEnum::slash;
 	std::string expected = "slash";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2722,19 +2722,19 @@ TEST( TimeRelation_slash, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeRelationEnum e2 = mx::types::parseTimeRelationEnum( expected );
+	mx::t::TimeRelationEnum e2 = mx::t::parseTimeRelationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeRelation_space, Enums )
 {
-	mx::types::TimeRelationEnum e = mx::types::TimeRelationEnum::space;
+	mx::t::TimeRelationEnum e = mx::t::TimeRelationEnum::space;
 	std::string expected = "space";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2743,19 +2743,19 @@ TEST( TimeRelation_space, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeRelationEnum e2 = mx::types::parseTimeRelationEnum( expected );
+	mx::t::TimeRelationEnum e2 = mx::t::parseTimeRelationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeRelation_hyphen, Enums )
 {
-	mx::types::TimeRelationEnum e = mx::types::TimeRelationEnum::hyphen;
+	mx::t::TimeRelationEnum e = mx::t::TimeRelationEnum::hyphen;
 	std::string expected = "hyphen";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2764,26 +2764,26 @@ TEST( TimeRelation_hyphen, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeRelationEnum e2 = mx::types::parseTimeRelationEnum( expected );
+	mx::t::TimeRelationEnum e2 = mx::t::parseTimeRelationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSeparator_BadParse, Enums )
 {
-	mx::types::TimeSeparator actual = mx::types::parseTimeSeparator( "none" );
-	mx::types::TimeSeparator expected = mx::types::TimeSeparator::none;
+	mx::t::TimeSeparator actual = mx::t::parseTimeSeparator( "none" );
+	mx::t::TimeSeparator expected = mx::t::TimeSeparator::none;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TimeSeparator_none, Enums )
 {
-	mx::types::TimeSeparator e = mx::types::TimeSeparator::none;
+	mx::t::TimeSeparator e = mx::t::TimeSeparator::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2792,19 +2792,19 @@ TEST( TimeSeparator_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSeparator e2 = mx::types::parseTimeSeparator( expected );
+	mx::t::TimeSeparator e2 = mx::t::parseTimeSeparator( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSeparator_horizontal, Enums )
 {
-	mx::types::TimeSeparator e = mx::types::TimeSeparator::horizontal;
+	mx::t::TimeSeparator e = mx::t::TimeSeparator::horizontal;
 	std::string expected = "horizontal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2813,19 +2813,19 @@ TEST( TimeSeparator_horizontal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSeparator e2 = mx::types::parseTimeSeparator( expected );
+	mx::t::TimeSeparator e2 = mx::t::parseTimeSeparator( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSeparator_diagonal, Enums )
 {
-	mx::types::TimeSeparator e = mx::types::TimeSeparator::diagonal;
+	mx::t::TimeSeparator e = mx::t::TimeSeparator::diagonal;
 	std::string expected = "diagonal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2834,19 +2834,19 @@ TEST( TimeSeparator_diagonal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSeparator e2 = mx::types::parseTimeSeparator( expected );
+	mx::t::TimeSeparator e2 = mx::t::parseTimeSeparator( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSeparator_vertical, Enums )
 {
-	mx::types::TimeSeparator e = mx::types::TimeSeparator::vertical;
+	mx::t::TimeSeparator e = mx::t::TimeSeparator::vertical;
 	std::string expected = "vertical";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2855,19 +2855,19 @@ TEST( TimeSeparator_vertical, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSeparator e2 = mx::types::parseTimeSeparator( expected );
+	mx::t::TimeSeparator e2 = mx::t::parseTimeSeparator( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSeparator_adjacent, Enums )
 {
-	mx::types::TimeSeparator e = mx::types::TimeSeparator::adjacent;
+	mx::t::TimeSeparator e = mx::t::TimeSeparator::adjacent;
 	std::string expected = "adjacent";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2876,26 +2876,26 @@ TEST( TimeSeparator_adjacent, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSeparator e2 = mx::types::parseTimeSeparator( expected );
+	mx::t::TimeSeparator e2 = mx::t::parseTimeSeparator( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSymbol_BadParse, Enums )
 {
-	mx::types::TimeSymbol actual = mx::types::parseTimeSymbol( "common" );
-	mx::types::TimeSymbol expected = mx::types::TimeSymbol::common;
+	mx::t::TimeSymbol actual = mx::t::parseTimeSymbol( "common" );
+	mx::t::TimeSymbol expected = mx::t::TimeSymbol::common;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TimeSymbol_common, Enums )
 {
-	mx::types::TimeSymbol e = mx::types::TimeSymbol::common;
+	mx::t::TimeSymbol e = mx::t::TimeSymbol::common;
 	std::string expected = "common";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2904,19 +2904,19 @@ TEST( TimeSymbol_common, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSymbol e2 = mx::types::parseTimeSymbol( expected );
+	mx::t::TimeSymbol e2 = mx::t::parseTimeSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSymbol_cut, Enums )
 {
-	mx::types::TimeSymbol e = mx::types::TimeSymbol::cut;
+	mx::t::TimeSymbol e = mx::t::TimeSymbol::cut;
 	std::string expected = "cut";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2925,19 +2925,19 @@ TEST( TimeSymbol_cut, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSymbol e2 = mx::types::parseTimeSymbol( expected );
+	mx::t::TimeSymbol e2 = mx::t::parseTimeSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSymbol_singleNumber, Enums )
 {
-	mx::types::TimeSymbol e = mx::types::TimeSymbol::singleNumber;
+	mx::t::TimeSymbol e = mx::t::TimeSymbol::singleNumber;
 	std::string expected = "single-number";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2946,19 +2946,19 @@ TEST( TimeSymbol_singleNumber, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSymbol e2 = mx::types::parseTimeSymbol( expected );
+	mx::t::TimeSymbol e2 = mx::t::parseTimeSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSymbol_note, Enums )
 {
-	mx::types::TimeSymbol e = mx::types::TimeSymbol::note;
+	mx::t::TimeSymbol e = mx::t::TimeSymbol::note;
 	std::string expected = "note";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2967,19 +2967,19 @@ TEST( TimeSymbol_note, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSymbol e2 = mx::types::parseTimeSymbol( expected );
+	mx::t::TimeSymbol e2 = mx::t::parseTimeSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSymbol_dottedNote, Enums )
 {
-	mx::types::TimeSymbol e = mx::types::TimeSymbol::dottedNote;
+	mx::t::TimeSymbol e = mx::t::TimeSymbol::dottedNote;
 	std::string expected = "dotted-note";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -2988,19 +2988,19 @@ TEST( TimeSymbol_dottedNote, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSymbol e2 = mx::types::parseTimeSymbol( expected );
+	mx::t::TimeSymbol e2 = mx::t::parseTimeSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TimeSymbol_normal, Enums )
 {
-	mx::types::TimeSymbol e = mx::types::TimeSymbol::normal;
+	mx::t::TimeSymbol e = mx::t::TimeSymbol::normal;
 	std::string expected = "normal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3009,26 +3009,26 @@ TEST( TimeSymbol_normal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TimeSymbol e2 = mx::types::parseTimeSymbol( expected );
+	mx::t::TimeSymbol e2 = mx::t::parseTimeSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BackwardForward_BadParse, Enums )
 {
-	mx::types::BackwardForward actual = mx::types::parseBackwardForward( "backward" );
-	mx::types::BackwardForward expected = mx::types::BackwardForward::backward;
+	mx::t::BackwardForward actual = mx::t::parseBackwardForward( "backward" );
+	mx::t::BackwardForward expected = mx::t::BackwardForward::backward;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( BackwardForward_backward, Enums )
 {
-	mx::types::BackwardForward e = mx::types::BackwardForward::backward;
+	mx::t::BackwardForward e = mx::t::BackwardForward::backward;
 	std::string expected = "backward";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3037,19 +3037,19 @@ TEST( BackwardForward_backward, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BackwardForward e2 = mx::types::parseBackwardForward( expected );
+	mx::t::BackwardForward e2 = mx::t::parseBackwardForward( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BackwardForward_forward, Enums )
 {
-	mx::types::BackwardForward e = mx::types::BackwardForward::forward;
+	mx::t::BackwardForward e = mx::t::BackwardForward::forward;
 	std::string expected = "forward";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3058,26 +3058,26 @@ TEST( BackwardForward_forward, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BackwardForward e2 = mx::types::parseBackwardForward( expected );
+	mx::t::BackwardForward e2 = mx::t::parseBackwardForward( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_BadParse, Enums )
 {
-	mx::types::BarStyleEnum actual = mx::types::parseBarStyleEnum( "regular" );
-	mx::types::BarStyleEnum expected = mx::types::BarStyleEnum::regular;
+	mx::t::BarStyleEnum actual = mx::t::parseBarStyleEnum( "regular" );
+	mx::t::BarStyleEnum expected = mx::t::BarStyleEnum::regular;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( BarStyleEnum_regular, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::regular;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::regular;
 	std::string expected = "regular";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3086,19 +3086,19 @@ TEST( BarStyleEnum_regular, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_dotted, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::dotted;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::dotted;
 	std::string expected = "dotted";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3107,19 +3107,19 @@ TEST( BarStyleEnum_dotted, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_dashed, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::dashed;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::dashed;
 	std::string expected = "dashed";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3128,19 +3128,19 @@ TEST( BarStyleEnum_dashed, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_heavy, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::heavy;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::heavy;
 	std::string expected = "heavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3149,19 +3149,19 @@ TEST( BarStyleEnum_heavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_lightLight, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::lightLight;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::lightLight;
 	std::string expected = "light-light";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3170,19 +3170,19 @@ TEST( BarStyleEnum_lightLight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_lightHeavy, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::lightHeavy;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::lightHeavy;
 	std::string expected = "light-heavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3191,19 +3191,19 @@ TEST( BarStyleEnum_lightHeavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_heavyLight, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::heavyLight;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::heavyLight;
 	std::string expected = "heavy-light";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3212,19 +3212,19 @@ TEST( BarStyleEnum_heavyLight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_heavyHeavy, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::heavyHeavy;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::heavyHeavy;
 	std::string expected = "heavy-heavy";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3233,19 +3233,19 @@ TEST( BarStyleEnum_heavyHeavy, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_tick, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::tick;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::tick;
 	std::string expected = "tick";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3254,19 +3254,19 @@ TEST( BarStyleEnum_tick, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_short_, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::short_;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::short_;
 	std::string expected = "short";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3275,19 +3275,19 @@ TEST( BarStyleEnum_short_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BarStyleEnum_none, Enums )
 {
-	mx::types::BarStyleEnum e = mx::types::BarStyleEnum::none;
+	mx::t::BarStyleEnum e = mx::t::BarStyleEnum::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3296,26 +3296,26 @@ TEST( BarStyleEnum_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BarStyleEnum e2 = mx::types::parseBarStyleEnum( expected );
+	mx::t::BarStyleEnum e2 = mx::t::parseBarStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( RightLeftMiddle_BadParse, Enums )
 {
-	mx::types::RightLeftMiddle actual = mx::types::parseRightLeftMiddle( "right" );
-	mx::types::RightLeftMiddle expected = mx::types::RightLeftMiddle::right;
+	mx::t::RightLeftMiddle actual = mx::t::parseRightLeftMiddle( "right" );
+	mx::t::RightLeftMiddle expected = mx::t::RightLeftMiddle::right;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( RightLeftMiddle_right, Enums )
 {
-	mx::types::RightLeftMiddle e = mx::types::RightLeftMiddle::right;
+	mx::t::RightLeftMiddle e = mx::t::RightLeftMiddle::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3324,19 +3324,19 @@ TEST( RightLeftMiddle_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::RightLeftMiddle e2 = mx::types::parseRightLeftMiddle( expected );
+	mx::t::RightLeftMiddle e2 = mx::t::parseRightLeftMiddle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( RightLeftMiddle_left, Enums )
 {
-	mx::types::RightLeftMiddle e = mx::types::RightLeftMiddle::left;
+	mx::t::RightLeftMiddle e = mx::t::RightLeftMiddle::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3345,19 +3345,19 @@ TEST( RightLeftMiddle_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::RightLeftMiddle e2 = mx::types::parseRightLeftMiddle( expected );
+	mx::t::RightLeftMiddle e2 = mx::t::parseRightLeftMiddle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( RightLeftMiddle_middle, Enums )
 {
-	mx::types::RightLeftMiddle e = mx::types::RightLeftMiddle::middle;
+	mx::t::RightLeftMiddle e = mx::t::RightLeftMiddle::middle;
 	std::string expected = "middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3366,26 +3366,26 @@ TEST( RightLeftMiddle_middle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::RightLeftMiddle e2 = mx::types::parseRightLeftMiddle( expected );
+	mx::t::RightLeftMiddle e2 = mx::t::parseRightLeftMiddle( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopDiscontinue_BadParse, Enums )
 {
-	mx::types::StartStopDiscontinue actual = mx::types::parseStartStopDiscontinue( "start" );
-	mx::types::StartStopDiscontinue expected = mx::types::StartStopDiscontinue::start;
+	mx::t::StartStopDiscontinue actual = mx::t::parseStartStopDiscontinue( "start" );
+	mx::t::StartStopDiscontinue expected = mx::t::StartStopDiscontinue::start;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StartStopDiscontinue_start, Enums )
 {
-	mx::types::StartStopDiscontinue e = mx::types::StartStopDiscontinue::start;
+	mx::t::StartStopDiscontinue e = mx::t::StartStopDiscontinue::start;
 	std::string expected = "start";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3394,19 +3394,19 @@ TEST( StartStopDiscontinue_start, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopDiscontinue e2 = mx::types::parseStartStopDiscontinue( expected );
+	mx::t::StartStopDiscontinue e2 = mx::t::parseStartStopDiscontinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopDiscontinue_stop, Enums )
 {
-	mx::types::StartStopDiscontinue e = mx::types::StartStopDiscontinue::stop;
+	mx::t::StartStopDiscontinue e = mx::t::StartStopDiscontinue::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3415,19 +3415,19 @@ TEST( StartStopDiscontinue_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopDiscontinue e2 = mx::types::parseStartStopDiscontinue( expected );
+	mx::t::StartStopDiscontinue e2 = mx::t::parseStartStopDiscontinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopDiscontinue_discontinue, Enums )
 {
-	mx::types::StartStopDiscontinue e = mx::types::StartStopDiscontinue::discontinue;
+	mx::t::StartStopDiscontinue e = mx::t::StartStopDiscontinue::discontinue;
 	std::string expected = "discontinue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3436,26 +3436,26 @@ TEST( StartStopDiscontinue_discontinue, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopDiscontinue e2 = mx::types::parseStartStopDiscontinue( expected );
+	mx::t::StartStopDiscontinue e2 = mx::t::parseStartStopDiscontinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Winged_BadParse, Enums )
 {
-	mx::types::Winged actual = mx::types::parseWinged( "none" );
-	mx::types::Winged expected = mx::types::Winged::none;
+	mx::t::Winged actual = mx::t::parseWinged( "none" );
+	mx::t::Winged expected = mx::t::Winged::none;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Winged_none, Enums )
 {
-	mx::types::Winged e = mx::types::Winged::none;
+	mx::t::Winged e = mx::t::Winged::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3464,19 +3464,19 @@ TEST( Winged_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Winged e2 = mx::types::parseWinged( expected );
+	mx::t::Winged e2 = mx::t::parseWinged( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Winged_straight, Enums )
 {
-	mx::types::Winged e = mx::types::Winged::straight;
+	mx::t::Winged e = mx::t::Winged::straight;
 	std::string expected = "straight";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3485,19 +3485,19 @@ TEST( Winged_straight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Winged e2 = mx::types::parseWinged( expected );
+	mx::t::Winged e2 = mx::t::parseWinged( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Winged_curved, Enums )
 {
-	mx::types::Winged e = mx::types::Winged::curved;
+	mx::t::Winged e = mx::t::Winged::curved;
 	std::string expected = "curved";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3506,19 +3506,19 @@ TEST( Winged_curved, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Winged e2 = mx::types::parseWinged( expected );
+	mx::t::Winged e2 = mx::t::parseWinged( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Winged_doubleStraight, Enums )
 {
-	mx::types::Winged e = mx::types::Winged::doubleStraight;
+	mx::t::Winged e = mx::t::Winged::doubleStraight;
 	std::string expected = "double-straight";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3527,19 +3527,19 @@ TEST( Winged_doubleStraight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Winged e2 = mx::types::parseWinged( expected );
+	mx::t::Winged e2 = mx::t::parseWinged( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Winged_doubleCurved, Enums )
 {
-	mx::types::Winged e = mx::types::Winged::doubleCurved;
+	mx::t::Winged e = mx::t::Winged::doubleCurved;
 	std::string expected = "double-curved";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3548,26 +3548,26 @@ TEST( Winged_doubleCurved, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Winged e2 = mx::types::parseWinged( expected );
+	mx::t::Winged e2 = mx::t::parseWinged( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_BadParse, Enums )
 {
-	mx::types::BeaterValue actual = mx::types::parseBeaterValue( "bow" );
-	mx::types::BeaterValue expected = mx::types::BeaterValue::bow;
+	mx::t::BeaterValue actual = mx::t::parseBeaterValue( "bow" );
+	mx::t::BeaterValue expected = mx::t::BeaterValue::bow;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( BeaterValue_bow, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::bow;
+	mx::t::BeaterValue e = mx::t::BeaterValue::bow;
 	std::string expected = "bow";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3576,19 +3576,19 @@ TEST( BeaterValue_bow, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_chimeHammer, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::chimeHammer;
+	mx::t::BeaterValue e = mx::t::BeaterValue::chimeHammer;
 	std::string expected = "chime hammer";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3597,19 +3597,19 @@ TEST( BeaterValue_chimeHammer, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_coin, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::coin;
+	mx::t::BeaterValue e = mx::t::BeaterValue::coin;
 	std::string expected = "coin";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3618,19 +3618,19 @@ TEST( BeaterValue_coin, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_finger, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::finger;
+	mx::t::BeaterValue e = mx::t::BeaterValue::finger;
 	std::string expected = "finger";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3639,19 +3639,19 @@ TEST( BeaterValue_finger, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_fingernail, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::fingernail;
+	mx::t::BeaterValue e = mx::t::BeaterValue::fingernail;
 	std::string expected = "fingernail";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3660,19 +3660,19 @@ TEST( BeaterValue_fingernail, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_fist, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::fist;
+	mx::t::BeaterValue e = mx::t::BeaterValue::fist;
 	std::string expected = "fist";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3681,19 +3681,19 @@ TEST( BeaterValue_fist, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_guiroScraper, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::guiroScraper;
+	mx::t::BeaterValue e = mx::t::BeaterValue::guiroScraper;
 	std::string expected = "guiro scraper";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3702,19 +3702,19 @@ TEST( BeaterValue_guiroScraper, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_hammer, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::hammer;
+	mx::t::BeaterValue e = mx::t::BeaterValue::hammer;
 	std::string expected = "hammer";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3723,19 +3723,19 @@ TEST( BeaterValue_hammer, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_hand, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::hand;
+	mx::t::BeaterValue e = mx::t::BeaterValue::hand;
 	std::string expected = "hand";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3744,19 +3744,19 @@ TEST( BeaterValue_hand, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_jazzStick, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::jazzStick;
+	mx::t::BeaterValue e = mx::t::BeaterValue::jazzStick;
 	std::string expected = "jazz stick";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3765,19 +3765,19 @@ TEST( BeaterValue_jazzStick, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_knittingNeedle, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::knittingNeedle;
+	mx::t::BeaterValue e = mx::t::BeaterValue::knittingNeedle;
 	std::string expected = "knitting needle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3786,19 +3786,19 @@ TEST( BeaterValue_knittingNeedle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_metalHammer, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::metalHammer;
+	mx::t::BeaterValue e = mx::t::BeaterValue::metalHammer;
 	std::string expected = "metal hammer";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3807,19 +3807,19 @@ TEST( BeaterValue_metalHammer, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_snareStick, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::snareStick;
+	mx::t::BeaterValue e = mx::t::BeaterValue::snareStick;
 	std::string expected = "snare stick";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3828,19 +3828,19 @@ TEST( BeaterValue_snareStick, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_spoonMallet, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::spoonMallet;
+	mx::t::BeaterValue e = mx::t::BeaterValue::spoonMallet;
 	std::string expected = "spoon mallet";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3849,19 +3849,19 @@ TEST( BeaterValue_spoonMallet, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_triangleBeater, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::triangleBeater;
+	mx::t::BeaterValue e = mx::t::BeaterValue::triangleBeater;
 	std::string expected = "triangle beater";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3870,19 +3870,19 @@ TEST( BeaterValue_triangleBeater, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_triangleBeaterPlain, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::triangleBeaterPlain;
+	mx::t::BeaterValue e = mx::t::BeaterValue::triangleBeaterPlain;
 	std::string expected = "triangle beater plain";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3891,19 +3891,19 @@ TEST( BeaterValue_triangleBeaterPlain, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeaterValue_wireBrush, Enums )
 {
-	mx::types::BeaterValue e = mx::types::BeaterValue::wireBrush;
+	mx::t::BeaterValue e = mx::t::BeaterValue::wireBrush;
 	std::string expected = "wire brush";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3912,26 +3912,26 @@ TEST( BeaterValue_wireBrush, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeaterValue e2 = mx::types::parseBeaterValue( expected );
+	mx::t::BeaterValue e2 = mx::t::parseBeaterValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeSymbolValue_BadParse, Enums )
 {
-	mx::types::DegreeSymbolValue actual = mx::types::parseDegreeSymbolValue( "major" );
-	mx::types::DegreeSymbolValue expected = mx::types::DegreeSymbolValue::major;
+	mx::t::DegreeSymbolValue actual = mx::t::parseDegreeSymbolValue( "major" );
+	mx::t::DegreeSymbolValue expected = mx::t::DegreeSymbolValue::major;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( DegreeSymbolValue_major, Enums )
 {
-	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::major;
+	mx::t::DegreeSymbolValue e = mx::t::DegreeSymbolValue::major;
 	std::string expected = "major";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3940,19 +3940,19 @@ TEST( DegreeSymbolValue_major, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeSymbolValue e2 = mx::types::parseDegreeSymbolValue( expected );
+	mx::t::DegreeSymbolValue e2 = mx::t::parseDegreeSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeSymbolValue_minor, Enums )
 {
-	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::minor;
+	mx::t::DegreeSymbolValue e = mx::t::DegreeSymbolValue::minor;
 	std::string expected = "minor";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3961,19 +3961,19 @@ TEST( DegreeSymbolValue_minor, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeSymbolValue e2 = mx::types::parseDegreeSymbolValue( expected );
+	mx::t::DegreeSymbolValue e2 = mx::t::parseDegreeSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeSymbolValue_augmented, Enums )
 {
-	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::augmented;
+	mx::t::DegreeSymbolValue e = mx::t::DegreeSymbolValue::augmented;
 	std::string expected = "augmented";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -3982,19 +3982,19 @@ TEST( DegreeSymbolValue_augmented, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeSymbolValue e2 = mx::types::parseDegreeSymbolValue( expected );
+	mx::t::DegreeSymbolValue e2 = mx::t::parseDegreeSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeSymbolValue_diminished, Enums )
 {
-	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::diminished;
+	mx::t::DegreeSymbolValue e = mx::t::DegreeSymbolValue::diminished;
 	std::string expected = "diminished";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4003,19 +4003,19 @@ TEST( DegreeSymbolValue_diminished, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeSymbolValue e2 = mx::types::parseDegreeSymbolValue( expected );
+	mx::t::DegreeSymbolValue e2 = mx::t::parseDegreeSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeSymbolValue_halfDiminished, Enums )
 {
-	mx::types::DegreeSymbolValue e = mx::types::DegreeSymbolValue::halfDiminished;
+	mx::t::DegreeSymbolValue e = mx::t::DegreeSymbolValue::halfDiminished;
 	std::string expected = "half-diminished";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4024,26 +4024,26 @@ TEST( DegreeSymbolValue_halfDiminished, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeSymbolValue e2 = mx::types::parseDegreeSymbolValue( expected );
+	mx::t::DegreeSymbolValue e2 = mx::t::parseDegreeSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeTypeValue_BadParse, Enums )
 {
-	mx::types::DegreeTypeValue actual = mx::types::parseDegreeTypeValue( "add" );
-	mx::types::DegreeTypeValue expected = mx::types::DegreeTypeValue::add;
+	mx::t::DegreeTypeValue actual = mx::t::parseDegreeTypeValue( "add" );
+	mx::t::DegreeTypeValue expected = mx::t::DegreeTypeValue::add;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( DegreeTypeValue_add, Enums )
 {
-	mx::types::DegreeTypeValue e = mx::types::DegreeTypeValue::add;
+	mx::t::DegreeTypeValue e = mx::t::DegreeTypeValue::add;
 	std::string expected = "add";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4052,19 +4052,19 @@ TEST( DegreeTypeValue_add, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeTypeValue e2 = mx::types::parseDegreeTypeValue( expected );
+	mx::t::DegreeTypeValue e2 = mx::t::parseDegreeTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeTypeValue_alter, Enums )
 {
-	mx::types::DegreeTypeValue e = mx::types::DegreeTypeValue::alter;
+	mx::t::DegreeTypeValue e = mx::t::DegreeTypeValue::alter;
 	std::string expected = "alter";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4073,19 +4073,19 @@ TEST( DegreeTypeValue_alter, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeTypeValue e2 = mx::types::parseDegreeTypeValue( expected );
+	mx::t::DegreeTypeValue e2 = mx::t::parseDegreeTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DegreeTypeValue_subtract, Enums )
 {
-	mx::types::DegreeTypeValue e = mx::types::DegreeTypeValue::subtract;
+	mx::t::DegreeTypeValue e = mx::t::DegreeTypeValue::subtract;
 	std::string expected = "subtract";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4094,26 +4094,26 @@ TEST( DegreeTypeValue_subtract, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::DegreeTypeValue e2 = mx::types::parseDegreeTypeValue( expected );
+	mx::t::DegreeTypeValue e2 = mx::t::parseDegreeTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_BadParse, Enums )
 {
-	mx::types::EffectEnum actual = mx::types::parseEffectEnum( "anvil" );
-	mx::types::EffectEnum expected = mx::types::EffectEnum::anvil;
+	mx::t::EffectEnum actual = mx::t::parseEffectEnum( "anvil" );
+	mx::t::EffectEnum expected = mx::t::EffectEnum::anvil;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Effect_anvil, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::anvil;
+	mx::t::EffectEnum e = mx::t::EffectEnum::anvil;
 	std::string expected = "anvil";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4122,19 +4122,19 @@ TEST( Effect_anvil, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_autoHorn, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::autoHorn;
+	mx::t::EffectEnum e = mx::t::EffectEnum::autoHorn;
 	std::string expected = "auto horn";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4143,19 +4143,19 @@ TEST( Effect_autoHorn, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_birdWhistle, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::birdWhistle;
+	mx::t::EffectEnum e = mx::t::EffectEnum::birdWhistle;
 	std::string expected = "bird whistle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4164,19 +4164,19 @@ TEST( Effect_birdWhistle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_cannon, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::cannon;
+	mx::t::EffectEnum e = mx::t::EffectEnum::cannon;
 	std::string expected = "cannon";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4185,19 +4185,19 @@ TEST( Effect_cannon, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_duckCall, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::duckCall;
+	mx::t::EffectEnum e = mx::t::EffectEnum::duckCall;
 	std::string expected = "duck call";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4206,19 +4206,19 @@ TEST( Effect_duckCall, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_gunShot, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::gunShot;
+	mx::t::EffectEnum e = mx::t::EffectEnum::gunShot;
 	std::string expected = "gun shot";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4227,19 +4227,19 @@ TEST( Effect_gunShot, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_klaxonHorn, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::klaxonHorn;
+	mx::t::EffectEnum e = mx::t::EffectEnum::klaxonHorn;
 	std::string expected = "klaxon horn";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4248,19 +4248,19 @@ TEST( Effect_klaxonHorn, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_lionsRoar, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::lionsRoar;
+	mx::t::EffectEnum e = mx::t::EffectEnum::lionsRoar;
 	std::string expected = "lions roar";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4269,19 +4269,19 @@ TEST( Effect_lionsRoar, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_policeWhistle, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::policeWhistle;
+	mx::t::EffectEnum e = mx::t::EffectEnum::policeWhistle;
 	std::string expected = "police whistle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4290,19 +4290,19 @@ TEST( Effect_policeWhistle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_siren, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::siren;
+	mx::t::EffectEnum e = mx::t::EffectEnum::siren;
 	std::string expected = "siren";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4311,19 +4311,19 @@ TEST( Effect_siren, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_slideWhistle, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::slideWhistle;
+	mx::t::EffectEnum e = mx::t::EffectEnum::slideWhistle;
 	std::string expected = "slide whistle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4332,19 +4332,19 @@ TEST( Effect_slideWhistle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_thunderSheet, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::thunderSheet;
+	mx::t::EffectEnum e = mx::t::EffectEnum::thunderSheet;
 	std::string expected = "thunder sheet";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4353,19 +4353,19 @@ TEST( Effect_thunderSheet, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_windMachine, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::windMachine;
+	mx::t::EffectEnum e = mx::t::EffectEnum::windMachine;
 	std::string expected = "wind machine";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4374,19 +4374,19 @@ TEST( Effect_windMachine, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Effect_windWhistle, Enums )
 {
-	mx::types::EffectEnum e = mx::types::EffectEnum::windWhistle;
+	mx::t::EffectEnum e = mx::t::EffectEnum::windWhistle;
 	std::string expected = "wind whistle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4395,26 +4395,26 @@ TEST( Effect_windWhistle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::EffectEnum e2 = mx::types::parseEffectEnum( expected );
+	mx::t::EffectEnum e2 = mx::t::parseEffectEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Glass_BadParse, Enums )
 {
-	mx::types::GlassEnum actual = mx::types::parseGlassEnum( "wind chimes" );
-	mx::types::GlassEnum expected = mx::types::GlassEnum::windChimes;
+	mx::t::GlassEnum actual = mx::t::parseGlassEnum( "wind chimes" );
+	mx::t::GlassEnum expected = mx::t::GlassEnum::windChimes;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Glass_windChimes, Enums )
 {
-	mx::types::GlassEnum e = mx::types::GlassEnum::windChimes;
+	mx::t::GlassEnum e = mx::t::GlassEnum::windChimes;
 	std::string expected = "wind chimes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4423,26 +4423,26 @@ TEST( Glass_windChimes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GlassEnum e2 = mx::types::parseGlassEnum( expected );
+	mx::t::GlassEnum e2 = mx::t::parseGlassEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HarmonyType_BadParse, Enums )
 {
-	mx::types::HarmonyType actual = mx::types::parseHarmonyType( "explicit" );
-	mx::types::HarmonyType expected = mx::types::HarmonyType::explicit_;
+	mx::t::HarmonyType actual = mx::t::parseHarmonyType( "explicit" );
+	mx::t::HarmonyType expected = mx::t::HarmonyType::explicit_;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( HarmonyType_explicit_, Enums )
 {
-	mx::types::HarmonyType e = mx::types::HarmonyType::explicit_;
+	mx::t::HarmonyType e = mx::t::HarmonyType::explicit_;
 	std::string expected = "explicit";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4451,19 +4451,19 @@ TEST( HarmonyType_explicit_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HarmonyType e2 = mx::types::parseHarmonyType( expected );
+	mx::t::HarmonyType e2 = mx::t::parseHarmonyType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HarmonyType_implied, Enums )
 {
-	mx::types::HarmonyType e = mx::types::HarmonyType::implied;
+	mx::t::HarmonyType e = mx::t::HarmonyType::implied;
 	std::string expected = "implied";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4472,19 +4472,19 @@ TEST( HarmonyType_implied, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HarmonyType e2 = mx::types::parseHarmonyType( expected );
+	mx::t::HarmonyType e2 = mx::t::parseHarmonyType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HarmonyType_alternate, Enums )
 {
-	mx::types::HarmonyType e = mx::types::HarmonyType::alternate;
+	mx::t::HarmonyType e = mx::t::HarmonyType::alternate;
 	std::string expected = "alternate";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4493,26 +4493,26 @@ TEST( HarmonyType_alternate, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HarmonyType e2 = mx::types::parseHarmonyType( expected );
+	mx::t::HarmonyType e2 = mx::t::parseHarmonyType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_BadParse, Enums )
 {
-	mx::types::KindValue actual = mx::types::parseKindValue( "major" );
-	mx::types::KindValue expected = mx::types::KindValue::major;
+	mx::t::KindValue actual = mx::t::parseKindValue( "major" );
+	mx::t::KindValue expected = mx::t::KindValue::major;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( KindValue_major, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::major;
+	mx::t::KindValue e = mx::t::KindValue::major;
 	std::string expected = "major";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4521,19 +4521,19 @@ TEST( KindValue_major, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_minor, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::minor;
+	mx::t::KindValue e = mx::t::KindValue::minor;
 	std::string expected = "minor";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4542,19 +4542,19 @@ TEST( KindValue_minor, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_augmented, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::augmented;
+	mx::t::KindValue e = mx::t::KindValue::augmented;
 	std::string expected = "augmented";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4563,19 +4563,19 @@ TEST( KindValue_augmented, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_diminished, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::diminished;
+	mx::t::KindValue e = mx::t::KindValue::diminished;
 	std::string expected = "diminished";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4584,19 +4584,19 @@ TEST( KindValue_diminished, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_dominant, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::dominant;
+	mx::t::KindValue e = mx::t::KindValue::dominant;
 	std::string expected = "dominant";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4605,19 +4605,19 @@ TEST( KindValue_dominant, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_majorSeventh, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::majorSeventh;
+	mx::t::KindValue e = mx::t::KindValue::majorSeventh;
 	std::string expected = "major-seventh";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4626,19 +4626,19 @@ TEST( KindValue_majorSeventh, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_minorSeventh, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::minorSeventh;
+	mx::t::KindValue e = mx::t::KindValue::minorSeventh;
 	std::string expected = "minor-seventh";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4647,19 +4647,19 @@ TEST( KindValue_minorSeventh, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_diminishedSeventh, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::diminishedSeventh;
+	mx::t::KindValue e = mx::t::KindValue::diminishedSeventh;
 	std::string expected = "diminished-seventh";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4668,19 +4668,19 @@ TEST( KindValue_diminishedSeventh, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_augmentedSeventh, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::augmentedSeventh;
+	mx::t::KindValue e = mx::t::KindValue::augmentedSeventh;
 	std::string expected = "augmented-seventh";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4689,19 +4689,19 @@ TEST( KindValue_augmentedSeventh, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_halfDiminished, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::halfDiminished;
+	mx::t::KindValue e = mx::t::KindValue::halfDiminished;
 	std::string expected = "half-diminished";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4710,19 +4710,19 @@ TEST( KindValue_halfDiminished, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_majorMinor, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::majorMinor;
+	mx::t::KindValue e = mx::t::KindValue::majorMinor;
 	std::string expected = "major-minor";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4731,19 +4731,19 @@ TEST( KindValue_majorMinor, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_majorSixth, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::majorSixth;
+	mx::t::KindValue e = mx::t::KindValue::majorSixth;
 	std::string expected = "major-sixth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4752,19 +4752,19 @@ TEST( KindValue_majorSixth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_minorSixth, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::minorSixth;
+	mx::t::KindValue e = mx::t::KindValue::minorSixth;
 	std::string expected = "minor-sixth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4773,19 +4773,19 @@ TEST( KindValue_minorSixth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_dominantNinth, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::dominantNinth;
+	mx::t::KindValue e = mx::t::KindValue::dominantNinth;
 	std::string expected = "dominant-ninth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4794,19 +4794,19 @@ TEST( KindValue_dominantNinth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_majorNinth, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::majorNinth;
+	mx::t::KindValue e = mx::t::KindValue::majorNinth;
 	std::string expected = "major-ninth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4815,19 +4815,19 @@ TEST( KindValue_majorNinth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_minorNinth, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::minorNinth;
+	mx::t::KindValue e = mx::t::KindValue::minorNinth;
 	std::string expected = "minor-ninth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4836,19 +4836,19 @@ TEST( KindValue_minorNinth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_dominant11Th, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::dominant11Th;
+	mx::t::KindValue e = mx::t::KindValue::dominant11Th;
 	std::string expected = "dominant-11th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4857,19 +4857,19 @@ TEST( KindValue_dominant11Th, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_major11Th, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::major11Th;
+	mx::t::KindValue e = mx::t::KindValue::major11Th;
 	std::string expected = "major-11th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4878,19 +4878,19 @@ TEST( KindValue_major11Th, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_minor11Th, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::minor11Th;
+	mx::t::KindValue e = mx::t::KindValue::minor11Th;
 	std::string expected = "minor-11th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4899,19 +4899,19 @@ TEST( KindValue_minor11Th, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_dominant13Th, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::dominant13Th;
+	mx::t::KindValue e = mx::t::KindValue::dominant13Th;
 	std::string expected = "dominant-13th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4920,19 +4920,19 @@ TEST( KindValue_dominant13Th, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_major13Th, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::major13Th;
+	mx::t::KindValue e = mx::t::KindValue::major13Th;
 	std::string expected = "major-13th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4941,19 +4941,19 @@ TEST( KindValue_major13Th, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_minor13Th, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::minor13Th;
+	mx::t::KindValue e = mx::t::KindValue::minor13Th;
 	std::string expected = "minor-13th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4962,19 +4962,19 @@ TEST( KindValue_minor13Th, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_suspendedSecond, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::suspendedSecond;
+	mx::t::KindValue e = mx::t::KindValue::suspendedSecond;
 	std::string expected = "suspended-second";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -4983,19 +4983,19 @@ TEST( KindValue_suspendedSecond, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_suspendedFourth, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::suspendedFourth;
+	mx::t::KindValue e = mx::t::KindValue::suspendedFourth;
 	std::string expected = "suspended-fourth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5004,19 +5004,19 @@ TEST( KindValue_suspendedFourth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_neapolitan, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::neapolitan;
+	mx::t::KindValue e = mx::t::KindValue::neapolitan;
 	std::string expected = "Neapolitan";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5025,19 +5025,19 @@ TEST( KindValue_neapolitan, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_italian, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::italian;
+	mx::t::KindValue e = mx::t::KindValue::italian;
 	std::string expected = "Italian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5046,19 +5046,19 @@ TEST( KindValue_italian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_french, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::french;
+	mx::t::KindValue e = mx::t::KindValue::french;
 	std::string expected = "French";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5067,19 +5067,19 @@ TEST( KindValue_french, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_german, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::german;
+	mx::t::KindValue e = mx::t::KindValue::german;
 	std::string expected = "German";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5088,19 +5088,19 @@ TEST( KindValue_german, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_pedal, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::pedal;
+	mx::t::KindValue e = mx::t::KindValue::pedal;
 	std::string expected = "pedal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5109,19 +5109,19 @@ TEST( KindValue_pedal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_power, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::power;
+	mx::t::KindValue e = mx::t::KindValue::power;
 	std::string expected = "power";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5130,19 +5130,19 @@ TEST( KindValue_power, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_tristan, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::tristan;
+	mx::t::KindValue e = mx::t::KindValue::tristan;
 	std::string expected = "Tristan";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5151,19 +5151,19 @@ TEST( KindValue_tristan, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_other, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::other;
+	mx::t::KindValue e = mx::t::KindValue::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5172,19 +5172,19 @@ TEST( KindValue_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( KindValue_none, Enums )
 {
-	mx::types::KindValue e = mx::types::KindValue::none;
+	mx::t::KindValue e = mx::t::KindValue::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5193,26 +5193,26 @@ TEST( KindValue_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::KindValue e2 = mx::types::parseKindValue( expected );
+	mx::t::KindValue e2 = mx::t::parseKindValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineEnd_BadParse, Enums )
 {
-	mx::types::LineEnd actual = mx::types::parseLineEnd( "up" );
-	mx::types::LineEnd expected = mx::types::LineEnd::up;
+	mx::t::LineEnd actual = mx::t::parseLineEnd( "up" );
+	mx::t::LineEnd expected = mx::t::LineEnd::up;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( LineEnd_up, Enums )
 {
-	mx::types::LineEnd e = mx::types::LineEnd::up;
+	mx::t::LineEnd e = mx::t::LineEnd::up;
 	std::string expected = "up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5221,19 +5221,19 @@ TEST( LineEnd_up, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineEnd e2 = mx::types::parseLineEnd( expected );
+	mx::t::LineEnd e2 = mx::t::parseLineEnd( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineEnd_down, Enums )
 {
-	mx::types::LineEnd e = mx::types::LineEnd::down;
+	mx::t::LineEnd e = mx::t::LineEnd::down;
 	std::string expected = "down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5242,19 +5242,19 @@ TEST( LineEnd_down, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineEnd e2 = mx::types::parseLineEnd( expected );
+	mx::t::LineEnd e2 = mx::t::parseLineEnd( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineEnd_both, Enums )
 {
-	mx::types::LineEnd e = mx::types::LineEnd::both;
+	mx::t::LineEnd e = mx::t::LineEnd::both;
 	std::string expected = "both";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5263,19 +5263,19 @@ TEST( LineEnd_both, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineEnd e2 = mx::types::parseLineEnd( expected );
+	mx::t::LineEnd e2 = mx::t::parseLineEnd( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineEnd_arrow, Enums )
 {
-	mx::types::LineEnd e = mx::types::LineEnd::arrow;
+	mx::t::LineEnd e = mx::t::LineEnd::arrow;
 	std::string expected = "arrow";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5284,19 +5284,19 @@ TEST( LineEnd_arrow, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineEnd e2 = mx::types::parseLineEnd( expected );
+	mx::t::LineEnd e2 = mx::t::parseLineEnd( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineEnd_none, Enums )
 {
-	mx::types::LineEnd e = mx::types::LineEnd::none;
+	mx::t::LineEnd e = mx::t::LineEnd::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5305,26 +5305,26 @@ TEST( LineEnd_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::LineEnd e2 = mx::types::parseLineEnd( expected );
+	mx::t::LineEnd e2 = mx::t::parseLineEnd( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( MeasureNumberingValue_BadParse, Enums )
 {
-	mx::types::MeasureNumberingValue actual = mx::types::parseMeasureNumberingValue( "none" );
-	mx::types::MeasureNumberingValue expected = mx::types::MeasureNumberingValue::none;
+	mx::t::MeasureNumberingValue actual = mx::t::parseMeasureNumberingValue( "none" );
+	mx::t::MeasureNumberingValue expected = mx::t::MeasureNumberingValue::none;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( MeasureNumberingValue_none, Enums )
 {
-	mx::types::MeasureNumberingValue e = mx::types::MeasureNumberingValue::none;
+	mx::t::MeasureNumberingValue e = mx::t::MeasureNumberingValue::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5333,19 +5333,19 @@ TEST( MeasureNumberingValue_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MeasureNumberingValue e2 = mx::types::parseMeasureNumberingValue( expected );
+	mx::t::MeasureNumberingValue e2 = mx::t::parseMeasureNumberingValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( MeasureNumberingValue_measure, Enums )
 {
-	mx::types::MeasureNumberingValue e = mx::types::MeasureNumberingValue::measure;
+	mx::t::MeasureNumberingValue e = mx::t::MeasureNumberingValue::measure;
 	std::string expected = "measure";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5354,19 +5354,19 @@ TEST( MeasureNumberingValue_measure, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MeasureNumberingValue e2 = mx::types::parseMeasureNumberingValue( expected );
+	mx::t::MeasureNumberingValue e2 = mx::t::parseMeasureNumberingValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( MeasureNumberingValue_system, Enums )
 {
-	mx::types::MeasureNumberingValue e = mx::types::MeasureNumberingValue::system;
+	mx::t::MeasureNumberingValue e = mx::t::MeasureNumberingValue::system;
 	std::string expected = "system";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5375,26 +5375,26 @@ TEST( MeasureNumberingValue_system, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MeasureNumberingValue e2 = mx::types::parseMeasureNumberingValue( expected );
+	mx::t::MeasureNumberingValue e2 = mx::t::parseMeasureNumberingValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_BadParse, Enums )
 {
-	mx::types::MembraneEnum actual = mx::types::parseMembraneEnum( "bass drum" );
-	mx::types::MembraneEnum expected = mx::types::MembraneEnum::bassDrum;
+	mx::t::MembraneEnum actual = mx::t::parseMembraneEnum( "bass drum" );
+	mx::t::MembraneEnum expected = mx::t::MembraneEnum::bassDrum;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Membrane_bassDrum, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::bassDrum;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::bassDrum;
 	std::string expected = "bass drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5403,19 +5403,19 @@ TEST( Membrane_bassDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_bassDrumOnSide, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::bassDrumOnSide;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::bassDrumOnSide;
 	std::string expected = "bass drum on side";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5424,19 +5424,19 @@ TEST( Membrane_bassDrumOnSide, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_bongos, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::bongos;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::bongos;
 	std::string expected = "bongos";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5445,19 +5445,19 @@ TEST( Membrane_bongos, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_congaDrum, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::congaDrum;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::congaDrum;
 	std::string expected = "conga drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5466,19 +5466,19 @@ TEST( Membrane_congaDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_gobletDrum, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::gobletDrum;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::gobletDrum;
 	std::string expected = "goblet drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5487,19 +5487,19 @@ TEST( Membrane_gobletDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_militaryDrum, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::militaryDrum;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::militaryDrum;
 	std::string expected = "military drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5508,19 +5508,19 @@ TEST( Membrane_militaryDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_snareDrum, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::snareDrum;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::snareDrum;
 	std::string expected = "snare drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5529,19 +5529,19 @@ TEST( Membrane_snareDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_snareDrumSnaresOff, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::snareDrumSnaresOff;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::snareDrumSnaresOff;
 	std::string expected = "snare drum snares off";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5550,19 +5550,19 @@ TEST( Membrane_snareDrumSnaresOff, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_tambourine, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::tambourine;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::tambourine;
 	std::string expected = "tambourine";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5571,19 +5571,19 @@ TEST( Membrane_tambourine, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_tenorDrum, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::tenorDrum;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::tenorDrum;
 	std::string expected = "tenor drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5592,19 +5592,19 @@ TEST( Membrane_tenorDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_timbales, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::timbales;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::timbales;
 	std::string expected = "timbales";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5613,19 +5613,19 @@ TEST( Membrane_timbales, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Membrane_tomtom, Enums )
 {
-	mx::types::MembraneEnum e = mx::types::MembraneEnum::tomtom;
+	mx::t::MembraneEnum e = mx::t::MembraneEnum::tomtom;
 	std::string expected = "tomtom";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5634,26 +5634,26 @@ TEST( Membrane_tomtom, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MembraneEnum e2 = mx::types::parseMembraneEnum( expected );
+	mx::t::MembraneEnum e2 = mx::t::parseMembraneEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_BadParse, Enums )
 {
-	mx::types::MetalEnum actual = mx::types::parseMetalEnum( "almglocken" );
-	mx::types::MetalEnum expected = mx::types::MetalEnum::almglocken;
+	mx::t::MetalEnum actual = mx::t::parseMetalEnum( "almglocken" );
+	mx::t::MetalEnum expected = mx::t::MetalEnum::almglocken;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Metal_almglocken, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::almglocken;
+	mx::t::MetalEnum e = mx::t::MetalEnum::almglocken;
 	std::string expected = "almglocken";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5662,19 +5662,19 @@ TEST( Metal_almglocken, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_bell, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::bell;
+	mx::t::MetalEnum e = mx::t::MetalEnum::bell;
 	std::string expected = "bell";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5683,19 +5683,19 @@ TEST( Metal_bell, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_bellPlate, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::bellPlate;
+	mx::t::MetalEnum e = mx::t::MetalEnum::bellPlate;
 	std::string expected = "bell plate";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5704,19 +5704,19 @@ TEST( Metal_bellPlate, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_brakeDrum, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::brakeDrum;
+	mx::t::MetalEnum e = mx::t::MetalEnum::brakeDrum;
 	std::string expected = "brake drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5725,19 +5725,19 @@ TEST( Metal_brakeDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_chineseCymbal, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::chineseCymbal;
+	mx::t::MetalEnum e = mx::t::MetalEnum::chineseCymbal;
 	std::string expected = "Chinese cymbal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5746,19 +5746,19 @@ TEST( Metal_chineseCymbal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_cowbell, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::cowbell;
+	mx::t::MetalEnum e = mx::t::MetalEnum::cowbell;
 	std::string expected = "cowbell";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5767,19 +5767,19 @@ TEST( Metal_cowbell, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_crashCymbals, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::crashCymbals;
+	mx::t::MetalEnum e = mx::t::MetalEnum::crashCymbals;
 	std::string expected = "crash cymbals";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5788,19 +5788,19 @@ TEST( Metal_crashCymbals, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_crotale, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::crotale;
+	mx::t::MetalEnum e = mx::t::MetalEnum::crotale;
 	std::string expected = "crotale";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5809,19 +5809,19 @@ TEST( Metal_crotale, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_cymbalTongs, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::cymbalTongs;
+	mx::t::MetalEnum e = mx::t::MetalEnum::cymbalTongs;
 	std::string expected = "cymbal tongs";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5830,19 +5830,19 @@ TEST( Metal_cymbalTongs, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_domedGong, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::domedGong;
+	mx::t::MetalEnum e = mx::t::MetalEnum::domedGong;
 	std::string expected = "domed gong";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5851,19 +5851,19 @@ TEST( Metal_domedGong, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_fingerCymbals, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::fingerCymbals;
+	mx::t::MetalEnum e = mx::t::MetalEnum::fingerCymbals;
 	std::string expected = "finger cymbals";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5872,19 +5872,19 @@ TEST( Metal_fingerCymbals, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_flexatone, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::flexatone;
+	mx::t::MetalEnum e = mx::t::MetalEnum::flexatone;
 	std::string expected = "flexatone";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5893,19 +5893,19 @@ TEST( Metal_flexatone, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_gong, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::gong;
+	mx::t::MetalEnum e = mx::t::MetalEnum::gong;
 	std::string expected = "gong";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5914,19 +5914,19 @@ TEST( Metal_gong, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_hiHat, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::hiHat;
+	mx::t::MetalEnum e = mx::t::MetalEnum::hiHat;
 	std::string expected = "hi-hat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5935,19 +5935,19 @@ TEST( Metal_hiHat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_highHatCymbals, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::highHatCymbals;
+	mx::t::MetalEnum e = mx::t::MetalEnum::highHatCymbals;
 	std::string expected = "high-hat cymbals";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5956,19 +5956,19 @@ TEST( Metal_highHatCymbals, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_handbell, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::handbell;
+	mx::t::MetalEnum e = mx::t::MetalEnum::handbell;
 	std::string expected = "handbell";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5977,19 +5977,19 @@ TEST( Metal_handbell, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_sistrum, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::sistrum;
+	mx::t::MetalEnum e = mx::t::MetalEnum::sistrum;
 	std::string expected = "sistrum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -5998,19 +5998,19 @@ TEST( Metal_sistrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_sizzleCymbal, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::sizzleCymbal;
+	mx::t::MetalEnum e = mx::t::MetalEnum::sizzleCymbal;
 	std::string expected = "sizzle cymbal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6019,19 +6019,19 @@ TEST( Metal_sizzleCymbal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_sleighBells, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::sleighBells;
+	mx::t::MetalEnum e = mx::t::MetalEnum::sleighBells;
 	std::string expected = "sleigh bells";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6040,19 +6040,19 @@ TEST( Metal_sleighBells, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_suspendedCymbal, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::suspendedCymbal;
+	mx::t::MetalEnum e = mx::t::MetalEnum::suspendedCymbal;
 	std::string expected = "suspended cymbal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6061,19 +6061,19 @@ TEST( Metal_suspendedCymbal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_tamTam, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::tamTam;
+	mx::t::MetalEnum e = mx::t::MetalEnum::tamTam;
 	std::string expected = "tam tam";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6082,19 +6082,19 @@ TEST( Metal_tamTam, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_triangle, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::triangle;
+	mx::t::MetalEnum e = mx::t::MetalEnum::triangle;
 	std::string expected = "triangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6103,19 +6103,19 @@ TEST( Metal_triangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Metal_vietnameseHat, Enums )
 {
-	mx::types::MetalEnum e = mx::types::MetalEnum::vietnameseHat;
+	mx::t::MetalEnum e = mx::t::MetalEnum::vietnameseHat;
 	std::string expected = "Vietnamese hat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6124,26 +6124,26 @@ TEST( Metal_vietnameseHat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MetalEnum e2 = mx::types::parseMetalEnum( expected );
+	mx::t::MetalEnum e2 = mx::t::parseMetalEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( OnOff_BadParse, Enums )
 {
-	mx::types::OnOff actual = mx::types::parseOnOff( "on" );
-	mx::types::OnOff expected = mx::types::OnOff::on;
+	mx::t::OnOff actual = mx::t::parseOnOff( "on" );
+	mx::t::OnOff expected = mx::t::OnOff::on;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( OnOff_on, Enums )
 {
-	mx::types::OnOff e = mx::types::OnOff::on;
+	mx::t::OnOff e = mx::t::OnOff::on;
 	std::string expected = "on";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6152,19 +6152,19 @@ TEST( OnOff_on, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::OnOff e2 = mx::types::parseOnOff( expected );
+	mx::t::OnOff e2 = mx::t::parseOnOff( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( OnOff_off, Enums )
 {
-	mx::types::OnOff e = mx::types::OnOff::off;
+	mx::t::OnOff e = mx::t::OnOff::off;
 	std::string expected = "off";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6173,26 +6173,26 @@ TEST( OnOff_off, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::OnOff e2 = mx::types::parseOnOff( expected );
+	mx::t::OnOff e2 = mx::t::parseOnOff( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_BadParse, Enums )
 {
-	mx::types::PitchedEnum actual = mx::types::parsePitchedEnum( "chimes" );
-	mx::types::PitchedEnum expected = mx::types::PitchedEnum::chimes;
+	mx::t::PitchedEnum actual = mx::t::parsePitchedEnum( "chimes" );
+	mx::t::PitchedEnum expected = mx::t::PitchedEnum::chimes;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Pitched_chimes, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::chimes;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::chimes;
 	std::string expected = "chimes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6201,19 +6201,19 @@ TEST( Pitched_chimes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_glockenspiel, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::glockenspiel;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::glockenspiel;
 	std::string expected = "glockenspiel";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6222,19 +6222,19 @@ TEST( Pitched_glockenspiel, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_mallet, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::mallet;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::mallet;
 	std::string expected = "mallet";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6243,19 +6243,19 @@ TEST( Pitched_mallet, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_marimba, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::marimba;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::marimba;
 	std::string expected = "marimba";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6264,19 +6264,19 @@ TEST( Pitched_marimba, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_tubularChimes, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::tubularChimes;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::tubularChimes;
 	std::string expected = "tubular chimes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6285,19 +6285,19 @@ TEST( Pitched_tubularChimes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_vibraphone, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::vibraphone;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::vibraphone;
 	std::string expected = "vibraphone";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6306,19 +6306,19 @@ TEST( Pitched_vibraphone, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Pitched_xylophone, Enums )
 {
-	mx::types::PitchedEnum e = mx::types::PitchedEnum::xylophone;
+	mx::t::PitchedEnum e = mx::t::PitchedEnum::xylophone;
 	std::string expected = "xylophone";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6327,26 +6327,26 @@ TEST( Pitched_xylophone, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PitchedEnum e2 = mx::types::parsePitchedEnum( expected );
+	mx::t::PitchedEnum e2 = mx::t::parsePitchedEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( PrincipalVoiceSymbol_BadParse, Enums )
 {
-	mx::types::PrincipalVoiceSymbol actual = mx::types::parsePrincipalVoiceSymbol( "Hauptstimme" );
-	mx::types::PrincipalVoiceSymbol expected = mx::types::PrincipalVoiceSymbol::hauptstimme;
+	mx::t::PrincipalVoiceSymbol actual = mx::t::parsePrincipalVoiceSymbol( "Hauptstimme" );
+	mx::t::PrincipalVoiceSymbol expected = mx::t::PrincipalVoiceSymbol::hauptstimme;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( PrincipalVoiceSymbol_hauptstimme, Enums )
 {
-	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::hauptstimme;
+	mx::t::PrincipalVoiceSymbol e = mx::t::PrincipalVoiceSymbol::hauptstimme;
 	std::string expected = "Hauptstimme";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6355,19 +6355,19 @@ TEST( PrincipalVoiceSymbol_hauptstimme, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PrincipalVoiceSymbol e2 = mx::types::parsePrincipalVoiceSymbol( expected );
+	mx::t::PrincipalVoiceSymbol e2 = mx::t::parsePrincipalVoiceSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( PrincipalVoiceSymbol_nebenstimme, Enums )
 {
-	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::nebenstimme;
+	mx::t::PrincipalVoiceSymbol e = mx::t::PrincipalVoiceSymbol::nebenstimme;
 	std::string expected = "Nebenstimme";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6376,19 +6376,19 @@ TEST( PrincipalVoiceSymbol_nebenstimme, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PrincipalVoiceSymbol e2 = mx::types::parsePrincipalVoiceSymbol( expected );
+	mx::t::PrincipalVoiceSymbol e2 = mx::t::parsePrincipalVoiceSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( PrincipalVoiceSymbol_plain, Enums )
 {
-	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::plain;
+	mx::t::PrincipalVoiceSymbol e = mx::t::PrincipalVoiceSymbol::plain;
 	std::string expected = "plain";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6397,19 +6397,19 @@ TEST( PrincipalVoiceSymbol_plain, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PrincipalVoiceSymbol e2 = mx::types::parsePrincipalVoiceSymbol( expected );
+	mx::t::PrincipalVoiceSymbol e2 = mx::t::parsePrincipalVoiceSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( PrincipalVoiceSymbol_none, Enums )
 {
-	mx::types::PrincipalVoiceSymbol e = mx::types::PrincipalVoiceSymbol::none;
+	mx::t::PrincipalVoiceSymbol e = mx::t::PrincipalVoiceSymbol::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6418,26 +6418,26 @@ TEST( PrincipalVoiceSymbol_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::PrincipalVoiceSymbol e2 = mx::types::parsePrincipalVoiceSymbol( expected );
+	mx::t::PrincipalVoiceSymbol e2 = mx::t::parsePrincipalVoiceSymbol( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopChangeContinue_BadParse, Enums )
 {
-	mx::types::StartStopChangeContinue actual = mx::types::parseStartStopChangeContinue( "start" );
-	mx::types::StartStopChangeContinue expected = mx::types::StartStopChangeContinue::start;
+	mx::t::StartStopChangeContinue actual = mx::t::parseStartStopChangeContinue( "start" );
+	mx::t::StartStopChangeContinue expected = mx::t::StartStopChangeContinue::start;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StartStopChangeContinue_start, Enums )
 {
-	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::start;
+	mx::t::StartStopChangeContinue e = mx::t::StartStopChangeContinue::start;
 	std::string expected = "start";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6446,19 +6446,19 @@ TEST( StartStopChangeContinue_start, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopChangeContinue e2 = mx::types::parseStartStopChangeContinue( expected );
+	mx::t::StartStopChangeContinue e2 = mx::t::parseStartStopChangeContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopChangeContinue_stop, Enums )
 {
-	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::stop;
+	mx::t::StartStopChangeContinue e = mx::t::StartStopChangeContinue::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6467,19 +6467,19 @@ TEST( StartStopChangeContinue_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopChangeContinue e2 = mx::types::parseStartStopChangeContinue( expected );
+	mx::t::StartStopChangeContinue e2 = mx::t::parseStartStopChangeContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopChangeContinue_change, Enums )
 {
-	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::change;
+	mx::t::StartStopChangeContinue e = mx::t::StartStopChangeContinue::change;
 	std::string expected = "change";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6488,19 +6488,19 @@ TEST( StartStopChangeContinue_change, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopChangeContinue e2 = mx::types::parseStartStopChangeContinue( expected );
+	mx::t::StartStopChangeContinue e2 = mx::t::parseStartStopChangeContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StartStopChangeContinue_continue_, Enums )
 {
-	mx::types::StartStopChangeContinue e = mx::types::StartStopChangeContinue::continue_;
+	mx::t::StartStopChangeContinue e = mx::t::StartStopChangeContinue::continue_;
 	std::string expected = "continue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6509,26 +6509,26 @@ TEST( StartStopChangeContinue_continue_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StartStopChangeContinue e2 = mx::types::parseStartStopChangeContinue( expected );
+	mx::t::StartStopChangeContinue e2 = mx::t::parseStartStopChangeContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_BadParse, Enums )
 {
-	mx::types::TipDirection actual = mx::types::parseTipDirection( "up" );
-	mx::types::TipDirection expected = mx::types::TipDirection::up;
+	mx::t::TipDirection actual = mx::t::parseTipDirection( "up" );
+	mx::t::TipDirection expected = mx::t::TipDirection::up;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( TipDirection_up, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::up;
+	mx::t::TipDirection e = mx::t::TipDirection::up;
 	std::string expected = "up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6537,19 +6537,19 @@ TEST( TipDirection_up, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_down, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::down;
+	mx::t::TipDirection e = mx::t::TipDirection::down;
 	std::string expected = "down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6558,19 +6558,19 @@ TEST( TipDirection_down, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_left, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::left;
+	mx::t::TipDirection e = mx::t::TipDirection::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6579,19 +6579,19 @@ TEST( TipDirection_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_right, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::right;
+	mx::t::TipDirection e = mx::t::TipDirection::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6600,19 +6600,19 @@ TEST( TipDirection_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_northwest, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::northwest;
+	mx::t::TipDirection e = mx::t::TipDirection::northwest;
 	std::string expected = "northwest";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6621,19 +6621,19 @@ TEST( TipDirection_northwest, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_northeast, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::northeast;
+	mx::t::TipDirection e = mx::t::TipDirection::northeast;
 	std::string expected = "northeast";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6642,19 +6642,19 @@ TEST( TipDirection_northeast, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_southeast, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::southeast;
+	mx::t::TipDirection e = mx::t::TipDirection::southeast;
 	std::string expected = "southeast";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6663,19 +6663,19 @@ TEST( TipDirection_southeast, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( TipDirection_southwest, Enums )
 {
-	mx::types::TipDirection e = mx::types::TipDirection::southwest;
+	mx::t::TipDirection e = mx::t::TipDirection::southwest;
 	std::string expected = "southwest";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6684,26 +6684,26 @@ TEST( TipDirection_southwest, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::TipDirection e2 = mx::types::parseTipDirection( expected );
+	mx::t::TipDirection e2 = mx::t::parseTipDirection( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickLocation_BadParse, Enums )
 {
-	mx::types::StickLocationEnum actual = mx::types::parseStickLocationEnum( "center" );
-	mx::types::StickLocationEnum expected = mx::types::StickLocationEnum::center;
+	mx::t::StickLocationEnum actual = mx::t::parseStickLocationEnum( "center" );
+	mx::t::StickLocationEnum expected = mx::t::StickLocationEnum::center;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StickLocation_center, Enums )
 {
-	mx::types::StickLocationEnum e = mx::types::StickLocationEnum::center;
+	mx::t::StickLocationEnum e = mx::t::StickLocationEnum::center;
 	std::string expected = "center";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6712,19 +6712,19 @@ TEST( StickLocation_center, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickLocationEnum e2 = mx::types::parseStickLocationEnum( expected );
+	mx::t::StickLocationEnum e2 = mx::t::parseStickLocationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickLocation_rim, Enums )
 {
-	mx::types::StickLocationEnum e = mx::types::StickLocationEnum::rim;
+	mx::t::StickLocationEnum e = mx::t::StickLocationEnum::rim;
 	std::string expected = "rim";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6733,19 +6733,19 @@ TEST( StickLocation_rim, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickLocationEnum e2 = mx::types::parseStickLocationEnum( expected );
+	mx::t::StickLocationEnum e2 = mx::t::parseStickLocationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickLocation_cymbalBell, Enums )
 {
-	mx::types::StickLocationEnum e = mx::types::StickLocationEnum::cymbalBell;
+	mx::t::StickLocationEnum e = mx::t::StickLocationEnum::cymbalBell;
 	std::string expected = "cymbal bell";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6754,19 +6754,19 @@ TEST( StickLocation_cymbalBell, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickLocationEnum e2 = mx::types::parseStickLocationEnum( expected );
+	mx::t::StickLocationEnum e2 = mx::t::parseStickLocationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickLocation_cymbalEdge, Enums )
 {
-	mx::types::StickLocationEnum e = mx::types::StickLocationEnum::cymbalEdge;
+	mx::t::StickLocationEnum e = mx::t::StickLocationEnum::cymbalEdge;
 	std::string expected = "cymbal edge";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6775,26 +6775,26 @@ TEST( StickLocation_cymbalEdge, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickLocationEnum e2 = mx::types::parseStickLocationEnum( expected );
+	mx::t::StickLocationEnum e2 = mx::t::parseStickLocationEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickMaterial_BadParse, Enums )
 {
-	mx::types::StickMaterialEnum actual = mx::types::parseStickMaterialEnum( "soft" );
-	mx::types::StickMaterialEnum expected = mx::types::StickMaterialEnum::soft;
+	mx::t::StickMaterialEnum actual = mx::t::parseStickMaterialEnum( "soft" );
+	mx::t::StickMaterialEnum expected = mx::t::StickMaterialEnum::soft;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StickMaterial_soft, Enums )
 {
-	mx::types::StickMaterialEnum e = mx::types::StickMaterialEnum::soft;
+	mx::t::StickMaterialEnum e = mx::t::StickMaterialEnum::soft;
 	std::string expected = "soft";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6803,19 +6803,19 @@ TEST( StickMaterial_soft, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickMaterialEnum e2 = mx::types::parseStickMaterialEnum( expected );
+	mx::t::StickMaterialEnum e2 = mx::t::parseStickMaterialEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickMaterial_medium, Enums )
 {
-	mx::types::StickMaterialEnum e = mx::types::StickMaterialEnum::medium;
+	mx::t::StickMaterialEnum e = mx::t::StickMaterialEnum::medium;
 	std::string expected = "medium";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6824,19 +6824,19 @@ TEST( StickMaterial_medium, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickMaterialEnum e2 = mx::types::parseStickMaterialEnum( expected );
+	mx::t::StickMaterialEnum e2 = mx::t::parseStickMaterialEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickMaterial_hard, Enums )
 {
-	mx::types::StickMaterialEnum e = mx::types::StickMaterialEnum::hard;
+	mx::t::StickMaterialEnum e = mx::t::StickMaterialEnum::hard;
 	std::string expected = "hard";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6845,19 +6845,19 @@ TEST( StickMaterial_hard, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickMaterialEnum e2 = mx::types::parseStickMaterialEnum( expected );
+	mx::t::StickMaterialEnum e2 = mx::t::parseStickMaterialEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickMaterial_shaded, Enums )
 {
-	mx::types::StickMaterialEnum e = mx::types::StickMaterialEnum::shaded;
+	mx::t::StickMaterialEnum e = mx::t::StickMaterialEnum::shaded;
 	std::string expected = "shaded";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6866,19 +6866,19 @@ TEST( StickMaterial_shaded, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickMaterialEnum e2 = mx::types::parseStickMaterialEnum( expected );
+	mx::t::StickMaterialEnum e2 = mx::t::parseStickMaterialEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickMaterial_x, Enums )
 {
-	mx::types::StickMaterialEnum e = mx::types::StickMaterialEnum::x;
+	mx::t::StickMaterialEnum e = mx::t::StickMaterialEnum::x;
 	std::string expected = "x";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6887,26 +6887,26 @@ TEST( StickMaterial_x, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickMaterialEnum e2 = mx::types::parseStickMaterialEnum( expected );
+	mx::t::StickMaterialEnum e2 = mx::t::parseStickMaterialEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickType_BadParse, Enums )
 {
-	mx::types::StickTypeEnum actual = mx::types::parseStickTypeEnum( "bass drum" );
-	mx::types::StickTypeEnum expected = mx::types::StickTypeEnum::bassDrum;
+	mx::t::StickTypeEnum actual = mx::t::parseStickTypeEnum( "bass drum" );
+	mx::t::StickTypeEnum expected = mx::t::StickTypeEnum::bassDrum;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StickType_bassDrum, Enums )
 {
-	mx::types::StickTypeEnum e = mx::types::StickTypeEnum::bassDrum;
+	mx::t::StickTypeEnum e = mx::t::StickTypeEnum::bassDrum;
 	std::string expected = "bass drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6915,19 +6915,19 @@ TEST( StickType_bassDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickTypeEnum e2 = mx::types::parseStickTypeEnum( expected );
+	mx::t::StickTypeEnum e2 = mx::t::parseStickTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickType_doubleBassDrum, Enums )
 {
-	mx::types::StickTypeEnum e = mx::types::StickTypeEnum::doubleBassDrum;
+	mx::t::StickTypeEnum e = mx::t::StickTypeEnum::doubleBassDrum;
 	std::string expected = "double bass drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6936,19 +6936,19 @@ TEST( StickType_doubleBassDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickTypeEnum e2 = mx::types::parseStickTypeEnum( expected );
+	mx::t::StickTypeEnum e2 = mx::t::parseStickTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickType_timpani, Enums )
 {
-	mx::types::StickTypeEnum e = mx::types::StickTypeEnum::timpani;
+	mx::t::StickTypeEnum e = mx::t::StickTypeEnum::timpani;
 	std::string expected = "timpani";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6957,19 +6957,19 @@ TEST( StickType_timpani, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickTypeEnum e2 = mx::types::parseStickTypeEnum( expected );
+	mx::t::StickTypeEnum e2 = mx::t::parseStickTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickType_xylophone, Enums )
 {
-	mx::types::StickTypeEnum e = mx::types::StickTypeEnum::xylophone;
+	mx::t::StickTypeEnum e = mx::t::StickTypeEnum::xylophone;
 	std::string expected = "xylophone";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6978,19 +6978,19 @@ TEST( StickType_xylophone, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickTypeEnum e2 = mx::types::parseStickTypeEnum( expected );
+	mx::t::StickTypeEnum e2 = mx::t::parseStickTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StickType_yarn, Enums )
 {
-	mx::types::StickTypeEnum e = mx::types::StickTypeEnum::yarn;
+	mx::t::StickTypeEnum e = mx::t::StickTypeEnum::yarn;
 	std::string expected = "yarn";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -6999,26 +6999,26 @@ TEST( StickType_yarn, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StickTypeEnum e2 = mx::types::parseStickTypeEnum( expected );
+	mx::t::StickTypeEnum e2 = mx::t::parseStickTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UpDownStopContinue_BadParse, Enums )
 {
-	mx::types::UpDownStopContinue actual = mx::types::parseUpDownStopContinue( "up" );
-	mx::types::UpDownStopContinue expected = mx::types::UpDownStopContinue::up;
+	mx::t::UpDownStopContinue actual = mx::t::parseUpDownStopContinue( "up" );
+	mx::t::UpDownStopContinue expected = mx::t::UpDownStopContinue::up;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( UpDownStopContinue_up, Enums )
 {
-	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::up;
+	mx::t::UpDownStopContinue e = mx::t::UpDownStopContinue::up;
 	std::string expected = "up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7027,19 +7027,19 @@ TEST( UpDownStopContinue_up, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UpDownStopContinue e2 = mx::types::parseUpDownStopContinue( expected );
+	mx::t::UpDownStopContinue e2 = mx::t::parseUpDownStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UpDownStopContinue_down, Enums )
 {
-	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::down;
+	mx::t::UpDownStopContinue e = mx::t::UpDownStopContinue::down;
 	std::string expected = "down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7048,19 +7048,19 @@ TEST( UpDownStopContinue_down, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UpDownStopContinue e2 = mx::types::parseUpDownStopContinue( expected );
+	mx::t::UpDownStopContinue e2 = mx::t::parseUpDownStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UpDownStopContinue_stop, Enums )
 {
-	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::stop;
+	mx::t::UpDownStopContinue e = mx::t::UpDownStopContinue::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7069,19 +7069,19 @@ TEST( UpDownStopContinue_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UpDownStopContinue e2 = mx::types::parseUpDownStopContinue( expected );
+	mx::t::UpDownStopContinue e2 = mx::t::parseUpDownStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( UpDownStopContinue_continue_, Enums )
 {
-	mx::types::UpDownStopContinue e = mx::types::UpDownStopContinue::continue_;
+	mx::t::UpDownStopContinue e = mx::t::UpDownStopContinue::continue_;
 	std::string expected = "continue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7090,26 +7090,26 @@ TEST( UpDownStopContinue_continue_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::UpDownStopContinue e2 = mx::types::parseUpDownStopContinue( expected );
+	mx::t::UpDownStopContinue e2 = mx::t::parseUpDownStopContinue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( WedgeType_BadParse, Enums )
 {
-	mx::types::WedgeType actual = mx::types::parseWedgeType( "crescendo" );
-	mx::types::WedgeType expected = mx::types::WedgeType::crescendo;
+	mx::t::WedgeType actual = mx::t::parseWedgeType( "crescendo" );
+	mx::t::WedgeType expected = mx::t::WedgeType::crescendo;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( WedgeType_crescendo, Enums )
 {
-	mx::types::WedgeType e = mx::types::WedgeType::crescendo;
+	mx::t::WedgeType e = mx::t::WedgeType::crescendo;
 	std::string expected = "crescendo";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7118,19 +7118,19 @@ TEST( WedgeType_crescendo, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WedgeType e2 = mx::types::parseWedgeType( expected );
+	mx::t::WedgeType e2 = mx::t::parseWedgeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( WedgeType_diminuendo, Enums )
 {
-	mx::types::WedgeType e = mx::types::WedgeType::diminuendo;
+	mx::t::WedgeType e = mx::t::WedgeType::diminuendo;
 	std::string expected = "diminuendo";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7139,19 +7139,19 @@ TEST( WedgeType_diminuendo, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WedgeType e2 = mx::types::parseWedgeType( expected );
+	mx::t::WedgeType e2 = mx::t::parseWedgeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( WedgeType_stop, Enums )
 {
-	mx::types::WedgeType e = mx::types::WedgeType::stop;
+	mx::t::WedgeType e = mx::t::WedgeType::stop;
 	std::string expected = "stop";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7160,19 +7160,19 @@ TEST( WedgeType_stop, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WedgeType e2 = mx::types::parseWedgeType( expected );
+	mx::t::WedgeType e2 = mx::t::parseWedgeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( WedgeType_continue_, Enums )
 {
-	mx::types::WedgeType e = mx::types::WedgeType::continue_;
+	mx::t::WedgeType e = mx::t::WedgeType::continue_;
 	std::string expected = "continue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7181,26 +7181,26 @@ TEST( WedgeType_continue_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WedgeType e2 = mx::types::parseWedgeType( expected );
+	mx::t::WedgeType e2 = mx::t::parseWedgeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_BadParse, Enums )
 {
-	mx::types::WoodEnum actual = mx::types::parseWoodEnum( "board clapper" );
-	mx::types::WoodEnum expected = mx::types::WoodEnum::boardClapper;
+	mx::t::WoodEnum actual = mx::t::parseWoodEnum( "board clapper" );
+	mx::t::WoodEnum expected = mx::t::WoodEnum::boardClapper;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Wood_boardClapper, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::boardClapper;
+	mx::t::WoodEnum e = mx::t::WoodEnum::boardClapper;
 	std::string expected = "board clapper";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7209,19 +7209,19 @@ TEST( Wood_boardClapper, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_cabasa, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::cabasa;
+	mx::t::WoodEnum e = mx::t::WoodEnum::cabasa;
 	std::string expected = "cabasa";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7230,19 +7230,19 @@ TEST( Wood_cabasa, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_castanets, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::castanets;
+	mx::t::WoodEnum e = mx::t::WoodEnum::castanets;
 	std::string expected = "castanets";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7251,19 +7251,19 @@ TEST( Wood_castanets, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_claves, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::claves;
+	mx::t::WoodEnum e = mx::t::WoodEnum::claves;
 	std::string expected = "claves";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7272,19 +7272,19 @@ TEST( Wood_claves, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_guiro, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::guiro;
+	mx::t::WoodEnum e = mx::t::WoodEnum::guiro;
 	std::string expected = "guiro";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7293,19 +7293,19 @@ TEST( Wood_guiro, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_logDrum, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::logDrum;
+	mx::t::WoodEnum e = mx::t::WoodEnum::logDrum;
 	std::string expected = "log drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7314,19 +7314,19 @@ TEST( Wood_logDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_maraca, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::maraca;
+	mx::t::WoodEnum e = mx::t::WoodEnum::maraca;
 	std::string expected = "maraca";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7335,19 +7335,19 @@ TEST( Wood_maraca, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_maracas, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::maracas;
+	mx::t::WoodEnum e = mx::t::WoodEnum::maracas;
 	std::string expected = "maracas";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7356,19 +7356,19 @@ TEST( Wood_maracas, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_ratchet, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::ratchet;
+	mx::t::WoodEnum e = mx::t::WoodEnum::ratchet;
 	std::string expected = "ratchet";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7377,19 +7377,19 @@ TEST( Wood_ratchet, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_sandpaperBlocks, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::sandpaperBlocks;
+	mx::t::WoodEnum e = mx::t::WoodEnum::sandpaperBlocks;
 	std::string expected = "sandpaper blocks";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7398,19 +7398,19 @@ TEST( Wood_sandpaperBlocks, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_slitDrum, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::slitDrum;
+	mx::t::WoodEnum e = mx::t::WoodEnum::slitDrum;
 	std::string expected = "slit drum";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7419,19 +7419,19 @@ TEST( Wood_slitDrum, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_templeBlock, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::templeBlock;
+	mx::t::WoodEnum e = mx::t::WoodEnum::templeBlock;
 	std::string expected = "temple block";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7440,19 +7440,19 @@ TEST( Wood_templeBlock, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_vibraslap, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::vibraslap;
+	mx::t::WoodEnum e = mx::t::WoodEnum::vibraslap;
 	std::string expected = "vibraslap";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7461,19 +7461,19 @@ TEST( Wood_vibraslap, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Wood_woodBlock, Enums )
 {
-	mx::types::WoodEnum e = mx::types::WoodEnum::woodBlock;
+	mx::t::WoodEnum e = mx::t::WoodEnum::woodBlock;
 	std::string expected = "wood block";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7482,26 +7482,26 @@ TEST( Wood_woodBlock, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::WoodEnum e2 = mx::types::parseWoodEnum( expected );
+	mx::t::WoodEnum e2 = mx::t::parseWoodEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( MarginType_BadParse, Enums )
 {
-	mx::types::MarginType actual = mx::types::parseMarginType( "odd" );
-	mx::types::MarginType expected = mx::types::MarginType::odd;
+	mx::t::MarginType actual = mx::t::parseMarginType( "odd" );
+	mx::t::MarginType expected = mx::t::MarginType::odd;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( MarginType_odd, Enums )
 {
-	mx::types::MarginType e = mx::types::MarginType::odd;
+	mx::t::MarginType e = mx::t::MarginType::odd;
 	std::string expected = "odd";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7510,19 +7510,19 @@ TEST( MarginType_odd, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MarginType e2 = mx::types::parseMarginType( expected );
+	mx::t::MarginType e2 = mx::t::parseMarginType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( MarginType_even, Enums )
 {
-	mx::types::MarginType e = mx::types::MarginType::even;
+	mx::t::MarginType e = mx::t::MarginType::even;
 	std::string expected = "even";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7531,19 +7531,19 @@ TEST( MarginType_even, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MarginType e2 = mx::types::parseMarginType( expected );
+	mx::t::MarginType e2 = mx::t::parseMarginType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( MarginType_both, Enums )
 {
-	mx::types::MarginType e = mx::types::MarginType::both;
+	mx::t::MarginType e = mx::t::MarginType::both;
 	std::string expected = "both";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7552,26 +7552,26 @@ TEST( MarginType_both, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::MarginType e2 = mx::types::parseMarginType( expected );
+	mx::t::MarginType e2 = mx::t::parseMarginType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteSizeType_BadParse, Enums )
 {
-	mx::types::NoteSizeType actual = mx::types::parseNoteSizeType( "cue" );
-	mx::types::NoteSizeType expected = mx::types::NoteSizeType::cue;
+	mx::t::NoteSizeType actual = mx::t::parseNoteSizeType( "cue" );
+	mx::t::NoteSizeType expected = mx::t::NoteSizeType::cue;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( NoteSizeType_cue, Enums )
 {
-	mx::types::NoteSizeType e = mx::types::NoteSizeType::cue;
+	mx::t::NoteSizeType e = mx::t::NoteSizeType::cue;
 	std::string expected = "cue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7580,19 +7580,19 @@ TEST( NoteSizeType_cue, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteSizeType e2 = mx::types::parseNoteSizeType( expected );
+	mx::t::NoteSizeType e2 = mx::t::parseNoteSizeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteSizeType_grace, Enums )
 {
-	mx::types::NoteSizeType e = mx::types::NoteSizeType::grace;
+	mx::t::NoteSizeType e = mx::t::NoteSizeType::grace;
 	std::string expected = "grace";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7601,19 +7601,19 @@ TEST( NoteSizeType_grace, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteSizeType e2 = mx::types::parseNoteSizeType( expected );
+	mx::t::NoteSizeType e2 = mx::t::parseNoteSizeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteSizeType_large, Enums )
 {
-	mx::types::NoteSizeType e = mx::types::NoteSizeType::large;
+	mx::t::NoteSizeType e = mx::t::NoteSizeType::large;
 	std::string expected = "large";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7622,26 +7622,26 @@ TEST( NoteSizeType_large, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteSizeType e2 = mx::types::parseNoteSizeType( expected );
+	mx::t::NoteSizeType e2 = mx::t::parseNoteSizeType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_BadParse, Enums )
 {
-	mx::types::AccidentalValue actual = mx::types::parseAccidentalValue( "sharp" );
-	mx::types::AccidentalValue expected = mx::types::AccidentalValue::sharp;
+	mx::t::AccidentalValue actual = mx::t::parseAccidentalValue( "sharp" );
+	mx::t::AccidentalValue expected = mx::t::AccidentalValue::sharp;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( AccidentalValue_sharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharp;
 	std::string expected = "sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7650,19 +7650,19 @@ TEST( AccidentalValue_sharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_natural, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::natural;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::natural;
 	std::string expected = "natural";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7671,19 +7671,19 @@ TEST( AccidentalValue_natural, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flat;
 	std::string expected = "flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7692,19 +7692,19 @@ TEST( AccidentalValue_flat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_doubleSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::doubleSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::doubleSharp;
 	std::string expected = "double-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7713,19 +7713,19 @@ TEST( AccidentalValue_doubleSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharpSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharpSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharpSharp;
 	std::string expected = "sharp-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7734,19 +7734,19 @@ TEST( AccidentalValue_sharpSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flatFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flatFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flatFlat;
 	std::string expected = "flat-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7755,19 +7755,19 @@ TEST( AccidentalValue_flatFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_naturalSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::naturalSharp;
 	std::string expected = "natural-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7776,19 +7776,19 @@ TEST( AccidentalValue_naturalSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_naturalFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::naturalFlat;
 	std::string expected = "natural-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7797,19 +7797,19 @@ TEST( AccidentalValue_naturalFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_quarterFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::quarterFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::quarterFlat;
 	std::string expected = "quarter-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7818,19 +7818,19 @@ TEST( AccidentalValue_quarterFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_quarterSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::quarterSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::quarterSharp;
 	std::string expected = "quarter-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7839,19 +7839,19 @@ TEST( AccidentalValue_quarterSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_threeQuartersFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::threeQuartersFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::threeQuartersFlat;
 	std::string expected = "three-quarters-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7860,19 +7860,19 @@ TEST( AccidentalValue_threeQuartersFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_threeQuartersSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::threeQuartersSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::threeQuartersSharp;
 	std::string expected = "three-quarters-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7881,19 +7881,19 @@ TEST( AccidentalValue_threeQuartersSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharpDown, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharpDown;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharpDown;
 	std::string expected = "sharp-down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7902,19 +7902,19 @@ TEST( AccidentalValue_sharpDown, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharpUp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharpUp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharpUp;
 	std::string expected = "sharp-up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7923,19 +7923,19 @@ TEST( AccidentalValue_sharpUp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_naturalDown, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalDown;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::naturalDown;
 	std::string expected = "natural-down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7944,19 +7944,19 @@ TEST( AccidentalValue_naturalDown, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_naturalUp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::naturalUp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::naturalUp;
 	std::string expected = "natural-up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7965,19 +7965,19 @@ TEST( AccidentalValue_naturalUp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flatDown, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flatDown;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flatDown;
 	std::string expected = "flat-down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -7986,19 +7986,19 @@ TEST( AccidentalValue_flatDown, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flatUp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flatUp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flatUp;
 	std::string expected = "flat-up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8007,19 +8007,19 @@ TEST( AccidentalValue_flatUp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_tripleSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::tripleSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::tripleSharp;
 	std::string expected = "triple-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8028,19 +8028,19 @@ TEST( AccidentalValue_tripleSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_tripleFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::tripleFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::tripleFlat;
 	std::string expected = "triple-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8049,19 +8049,19 @@ TEST( AccidentalValue_tripleFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_slashQuarterSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::slashQuarterSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::slashQuarterSharp;
 	std::string expected = "slash-quarter-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8070,19 +8070,19 @@ TEST( AccidentalValue_slashQuarterSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_slashSharp, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::slashSharp;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::slashSharp;
 	std::string expected = "slash-sharp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8091,19 +8091,19 @@ TEST( AccidentalValue_slashSharp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_slashFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::slashFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::slashFlat;
 	std::string expected = "slash-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8112,19 +8112,19 @@ TEST( AccidentalValue_slashFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_doubleSlashFlat, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::doubleSlashFlat;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::doubleSlashFlat;
 	std::string expected = "double-slash-flat";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8133,19 +8133,19 @@ TEST( AccidentalValue_doubleSlashFlat, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharp1, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp1;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharp1;
 	std::string expected = "sharp-1";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8154,19 +8154,19 @@ TEST( AccidentalValue_sharp1, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharp2, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp2;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharp2;
 	std::string expected = "sharp-2";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8175,19 +8175,19 @@ TEST( AccidentalValue_sharp2, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharp3, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp3;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharp3;
 	std::string expected = "sharp-3";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8196,19 +8196,19 @@ TEST( AccidentalValue_sharp3, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sharp5, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sharp5;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sharp5;
 	std::string expected = "sharp-5";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8217,19 +8217,19 @@ TEST( AccidentalValue_sharp5, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flat1, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat1;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flat1;
 	std::string expected = "flat-1";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8238,19 +8238,19 @@ TEST( AccidentalValue_flat1, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flat2, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat2;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flat2;
 	std::string expected = "flat-2";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8259,19 +8259,19 @@ TEST( AccidentalValue_flat2, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flat3, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat3;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flat3;
 	std::string expected = "flat-3";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8280,19 +8280,19 @@ TEST( AccidentalValue_flat3, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_flat4, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::flat4;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::flat4;
 	std::string expected = "flat-4";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8301,19 +8301,19 @@ TEST( AccidentalValue_flat4, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_sori, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::sori;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::sori;
 	std::string expected = "sori";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8322,19 +8322,19 @@ TEST( AccidentalValue_sori, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( AccidentalValue_koron, Enums )
 {
-	mx::types::AccidentalValue e = mx::types::AccidentalValue::koron;
+	mx::t::AccidentalValue e = mx::t::AccidentalValue::koron;
 	std::string expected = "koron";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8343,26 +8343,26 @@ TEST( AccidentalValue_koron, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::AccidentalValue e2 = mx::types::parseAccidentalValue( expected );
+	mx::t::AccidentalValue e2 = mx::t::parseAccidentalValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_BadParse, Enums )
 {
-	mx::types::ArrowDirectionEnum actual = mx::types::parseArrowDirectionEnum( "left" );
-	mx::types::ArrowDirectionEnum expected = mx::types::ArrowDirectionEnum::left;
+	mx::t::ArrowDirectionEnum actual = mx::t::parseArrowDirectionEnum( "left" );
+	mx::t::ArrowDirectionEnum expected = mx::t::ArrowDirectionEnum::left;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( ArrowDirectionEnum_left, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::left;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8371,19 +8371,19 @@ TEST( ArrowDirectionEnum_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_up, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::up;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::up;
 	std::string expected = "up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8392,19 +8392,19 @@ TEST( ArrowDirectionEnum_up, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_right, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::right;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8413,19 +8413,19 @@ TEST( ArrowDirectionEnum_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_down, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::down;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::down;
 	std::string expected = "down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8434,19 +8434,19 @@ TEST( ArrowDirectionEnum_down, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_northwest, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::northwest;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::northwest;
 	std::string expected = "northwest";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8455,19 +8455,19 @@ TEST( ArrowDirectionEnum_northwest, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_northeast, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::northeast;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::northeast;
 	std::string expected = "northeast";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8476,19 +8476,19 @@ TEST( ArrowDirectionEnum_northeast, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_southeast, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::southeast;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::southeast;
 	std::string expected = "southeast";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8497,19 +8497,19 @@ TEST( ArrowDirectionEnum_southeast, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_southwest, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::southwest;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::southwest;
 	std::string expected = "southwest";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8518,19 +8518,19 @@ TEST( ArrowDirectionEnum_southwest, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_leftRight, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::leftRight;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::leftRight;
 	std::string expected = "left right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8539,19 +8539,19 @@ TEST( ArrowDirectionEnum_leftRight, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_upDown, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::upDown;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::upDown;
 	std::string expected = "up down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8560,19 +8560,19 @@ TEST( ArrowDirectionEnum_upDown, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_northwestSoutheast, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::northwestSoutheast;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::northwestSoutheast;
 	std::string expected = "northwest southeast";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8581,19 +8581,19 @@ TEST( ArrowDirectionEnum_northwestSoutheast, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_northeastSouthwest, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::northeastSouthwest;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::northeastSouthwest;
 	std::string expected = "northeast southwest";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8602,19 +8602,19 @@ TEST( ArrowDirectionEnum_northeastSouthwest, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowDirectionEnum_other, Enums )
 {
-	mx::types::ArrowDirectionEnum e = mx::types::ArrowDirectionEnum::other;
+	mx::t::ArrowDirectionEnum e = mx::t::ArrowDirectionEnum::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8623,26 +8623,26 @@ TEST( ArrowDirectionEnum_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowDirectionEnum e2 = mx::types::parseArrowDirectionEnum( expected );
+	mx::t::ArrowDirectionEnum e2 = mx::t::parseArrowDirectionEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_BadParse, Enums )
 {
-	mx::types::ArrowStyleEnum actual = mx::types::parseArrowStyleEnum( "single" );
-	mx::types::ArrowStyleEnum expected = mx::types::ArrowStyleEnum::single;
+	mx::t::ArrowStyleEnum actual = mx::t::parseArrowStyleEnum( "single" );
+	mx::t::ArrowStyleEnum expected = mx::t::ArrowStyleEnum::single;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( ArrowStyle_single, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::single;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::single;
 	std::string expected = "single";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8651,19 +8651,19 @@ TEST( ArrowStyle_single, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_double_, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::double_;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::double_;
 	std::string expected = "double";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8672,19 +8672,19 @@ TEST( ArrowStyle_double_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_filled, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::filled;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::filled;
 	std::string expected = "filled";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8693,19 +8693,19 @@ TEST( ArrowStyle_filled, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_hollow, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::hollow;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::hollow;
 	std::string expected = "hollow";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8714,19 +8714,19 @@ TEST( ArrowStyle_hollow, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_paired, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::paired;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::paired;
 	std::string expected = "paired";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8735,19 +8735,19 @@ TEST( ArrowStyle_paired, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_combined, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::combined;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::combined;
 	std::string expected = "combined";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8756,19 +8756,19 @@ TEST( ArrowStyle_combined, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ArrowStyle_other, Enums )
 {
-	mx::types::ArrowStyleEnum e = mx::types::ArrowStyleEnum::other;
+	mx::t::ArrowStyleEnum e = mx::t::ArrowStyleEnum::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8777,26 +8777,26 @@ TEST( ArrowStyle_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ArrowStyleEnum e2 = mx::types::parseArrowStyleEnum( expected );
+	mx::t::ArrowStyleEnum e2 = mx::t::parseArrowStyleEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeamValue_BadParse, Enums )
 {
-	mx::types::BeamValue actual = mx::types::parseBeamValue( "begin" );
-	mx::types::BeamValue expected = mx::types::BeamValue::begin;
+	mx::t::BeamValue actual = mx::t::parseBeamValue( "begin" );
+	mx::t::BeamValue expected = mx::t::BeamValue::begin;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( BeamValue_begin, Enums )
 {
-	mx::types::BeamValue e = mx::types::BeamValue::begin;
+	mx::t::BeamValue e = mx::t::BeamValue::begin;
 	std::string expected = "begin";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8805,19 +8805,19 @@ TEST( BeamValue_begin, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeamValue e2 = mx::types::parseBeamValue( expected );
+	mx::t::BeamValue e2 = mx::t::parseBeamValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeamValue_continue_, Enums )
 {
-	mx::types::BeamValue e = mx::types::BeamValue::continue_;
+	mx::t::BeamValue e = mx::t::BeamValue::continue_;
 	std::string expected = "continue";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8826,19 +8826,19 @@ TEST( BeamValue_continue_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeamValue e2 = mx::types::parseBeamValue( expected );
+	mx::t::BeamValue e2 = mx::t::parseBeamValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeamValue_end, Enums )
 {
-	mx::types::BeamValue e = mx::types::BeamValue::end;
+	mx::t::BeamValue e = mx::t::BeamValue::end;
 	std::string expected = "end";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8847,19 +8847,19 @@ TEST( BeamValue_end, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeamValue e2 = mx::types::parseBeamValue( expected );
+	mx::t::BeamValue e2 = mx::t::parseBeamValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeamValue_forwardHook, Enums )
 {
-	mx::types::BeamValue e = mx::types::BeamValue::forwardHook;
+	mx::t::BeamValue e = mx::t::BeamValue::forwardHook;
 	std::string expected = "forward hook";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8868,19 +8868,19 @@ TEST( BeamValue_forwardHook, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeamValue e2 = mx::types::parseBeamValue( expected );
+	mx::t::BeamValue e2 = mx::t::parseBeamValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BeamValue_backwardHook, Enums )
 {
-	mx::types::BeamValue e = mx::types::BeamValue::backwardHook;
+	mx::t::BeamValue e = mx::t::BeamValue::backwardHook;
 	std::string expected = "backward hook";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8889,26 +8889,26 @@ TEST( BeamValue_backwardHook, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BeamValue e2 = mx::types::parseBeamValue( expected );
+	mx::t::BeamValue e2 = mx::t::parseBeamValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BreathMarkValue_BadParse, Enums )
 {
-	mx::types::BreathMarkValue actual = mx::types::parseBreathMarkValue( "" );
-	mx::types::BreathMarkValue expected = mx::types::BreathMarkValue::emptystring;
+	mx::t::BreathMarkValue actual = mx::t::parseBreathMarkValue( "" );
+	mx::t::BreathMarkValue expected = mx::t::BreathMarkValue::emptystring;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( BreathMarkValue_emptystring, Enums )
 {
-	mx::types::BreathMarkValue e = mx::types::BreathMarkValue::emptystring;
+	mx::t::BreathMarkValue e = mx::t::BreathMarkValue::emptystring;
 	std::string expected = "";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8917,19 +8917,19 @@ TEST( BreathMarkValue_emptystring, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BreathMarkValue e2 = mx::types::parseBreathMarkValue( expected );
+	mx::t::BreathMarkValue e2 = mx::t::parseBreathMarkValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BreathMarkValue_comma, Enums )
 {
-	mx::types::BreathMarkValue e = mx::types::BreathMarkValue::comma;
+	mx::t::BreathMarkValue e = mx::t::BreathMarkValue::comma;
 	std::string expected = "comma";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8938,19 +8938,19 @@ TEST( BreathMarkValue_comma, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BreathMarkValue e2 = mx::types::parseBreathMarkValue( expected );
+	mx::t::BreathMarkValue e2 = mx::t::parseBreathMarkValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( BreathMarkValue_tick, Enums )
 {
-	mx::types::BreathMarkValue e = mx::types::BreathMarkValue::tick;
+	mx::t::BreathMarkValue e = mx::t::BreathMarkValue::tick;
 	std::string expected = "tick";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8959,26 +8959,26 @@ TEST( BreathMarkValue_tick, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::BreathMarkValue e2 = mx::types::parseBreathMarkValue( expected );
+	mx::t::BreathMarkValue e2 = mx::t::parseBreathMarkValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CircularArrow_BadParse, Enums )
 {
-	mx::types::CircularArrowEnum actual = mx::types::parseCircularArrowEnum( "clockwise" );
-	mx::types::CircularArrowEnum expected = mx::types::CircularArrowEnum::clockwise;
+	mx::t::CircularArrowEnum actual = mx::t::parseCircularArrowEnum( "clockwise" );
+	mx::t::CircularArrowEnum expected = mx::t::CircularArrowEnum::clockwise;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( CircularArrow_clockwise, Enums )
 {
-	mx::types::CircularArrowEnum e = mx::types::CircularArrowEnum::clockwise;
+	mx::t::CircularArrowEnum e = mx::t::CircularArrowEnum::clockwise;
 	std::string expected = "clockwise";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -8987,19 +8987,19 @@ TEST( CircularArrow_clockwise, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CircularArrowEnum e2 = mx::types::parseCircularArrowEnum( expected );
+	mx::t::CircularArrowEnum e2 = mx::t::parseCircularArrowEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( CircularArrow_anticlockwise, Enums )
 {
-	mx::types::CircularArrowEnum e = mx::types::CircularArrowEnum::anticlockwise;
+	mx::t::CircularArrowEnum e = mx::t::CircularArrowEnum::anticlockwise;
 	std::string expected = "anticlockwise";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9008,26 +9008,26 @@ TEST( CircularArrow_anticlockwise, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::CircularArrowEnum e2 = mx::types::parseCircularArrowEnum( expected );
+	mx::t::CircularArrowEnum e2 = mx::t::parseCircularArrowEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Fan_BadParse, Enums )
 {
-	mx::types::Fan actual = mx::types::parseFan( "accel" );
-	mx::types::Fan expected = mx::types::Fan::accel;
+	mx::t::Fan actual = mx::t::parseFan( "accel" );
+	mx::t::Fan expected = mx::t::Fan::accel;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Fan_accel, Enums )
 {
-	mx::types::Fan e = mx::types::Fan::accel;
+	mx::t::Fan e = mx::t::Fan::accel;
 	std::string expected = "accel";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9036,19 +9036,19 @@ TEST( Fan_accel, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Fan e2 = mx::types::parseFan( expected );
+	mx::t::Fan e2 = mx::t::parseFan( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Fan_rit, Enums )
 {
-	mx::types::Fan e = mx::types::Fan::rit;
+	mx::t::Fan e = mx::t::Fan::rit;
 	std::string expected = "rit";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9057,19 +9057,19 @@ TEST( Fan_rit, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Fan e2 = mx::types::parseFan( expected );
+	mx::t::Fan e2 = mx::t::parseFan( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Fan_none, Enums )
 {
-	mx::types::Fan e = mx::types::Fan::none;
+	mx::t::Fan e = mx::t::Fan::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9078,26 +9078,26 @@ TEST( Fan_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::Fan e2 = mx::types::parseFan( expected );
+	mx::t::Fan e2 = mx::t::parseFan( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_BadParse, Enums )
 {
-	mx::types::HandbellValue actual = mx::types::parseHandbellValue( "damp" );
-	mx::types::HandbellValue expected = mx::types::HandbellValue::damp;
+	mx::t::HandbellValue actual = mx::t::parseHandbellValue( "damp" );
+	mx::t::HandbellValue expected = mx::t::HandbellValue::damp;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( HandbellValue_damp, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::damp;
+	mx::t::HandbellValue e = mx::t::HandbellValue::damp;
 	std::string expected = "damp";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9106,19 +9106,19 @@ TEST( HandbellValue_damp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_echo, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::echo;
+	mx::t::HandbellValue e = mx::t::HandbellValue::echo;
 	std::string expected = "echo";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9127,19 +9127,19 @@ TEST( HandbellValue_echo, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_gyro, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::gyro;
+	mx::t::HandbellValue e = mx::t::HandbellValue::gyro;
 	std::string expected = "gyro";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9148,19 +9148,19 @@ TEST( HandbellValue_gyro, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_handMartellato, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::handMartellato;
+	mx::t::HandbellValue e = mx::t::HandbellValue::handMartellato;
 	std::string expected = "hand martellato";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9169,19 +9169,19 @@ TEST( HandbellValue_handMartellato, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_malletLift, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::malletLift;
+	mx::t::HandbellValue e = mx::t::HandbellValue::malletLift;
 	std::string expected = "mallet lift";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9190,19 +9190,19 @@ TEST( HandbellValue_malletLift, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_malletTable, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::malletTable;
+	mx::t::HandbellValue e = mx::t::HandbellValue::malletTable;
 	std::string expected = "mallet table";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9211,19 +9211,19 @@ TEST( HandbellValue_malletTable, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_martellato, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::martellato;
+	mx::t::HandbellValue e = mx::t::HandbellValue::martellato;
 	std::string expected = "martellato";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9232,19 +9232,19 @@ TEST( HandbellValue_martellato, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_martellatoLift, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::martellatoLift;
+	mx::t::HandbellValue e = mx::t::HandbellValue::martellatoLift;
 	std::string expected = "martellato lift";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9253,19 +9253,19 @@ TEST( HandbellValue_martellatoLift, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_mutedMartellato, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::mutedMartellato;
+	mx::t::HandbellValue e = mx::t::HandbellValue::mutedMartellato;
 	std::string expected = "muted martellato";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9274,19 +9274,19 @@ TEST( HandbellValue_mutedMartellato, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_pluckLift, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::pluckLift;
+	mx::t::HandbellValue e = mx::t::HandbellValue::pluckLift;
 	std::string expected = "pluck lift";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9295,19 +9295,19 @@ TEST( HandbellValue_pluckLift, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HandbellValue_swing, Enums )
 {
-	mx::types::HandbellValue e = mx::types::HandbellValue::swing;
+	mx::t::HandbellValue e = mx::t::HandbellValue::swing;
 	std::string expected = "swing";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9316,26 +9316,26 @@ TEST( HandbellValue_swing, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HandbellValue e2 = mx::types::parseHandbellValue( expected );
+	mx::t::HandbellValue e2 = mx::t::parseHandbellValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedLocation_BadParse, Enums )
 {
-	mx::types::HoleClosedLocation actual = mx::types::parseHoleClosedLocation( "right" );
-	mx::types::HoleClosedLocation expected = mx::types::HoleClosedLocation::right;
+	mx::t::HoleClosedLocation actual = mx::t::parseHoleClosedLocation( "right" );
+	mx::t::HoleClosedLocation expected = mx::t::HoleClosedLocation::right;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( HoleClosedLocation_right, Enums )
 {
-	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::right;
+	mx::t::HoleClosedLocation e = mx::t::HoleClosedLocation::right;
 	std::string expected = "right";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9344,19 +9344,19 @@ TEST( HoleClosedLocation_right, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedLocation e2 = mx::types::parseHoleClosedLocation( expected );
+	mx::t::HoleClosedLocation e2 = mx::t::parseHoleClosedLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedLocation_bottom, Enums )
 {
-	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::bottom;
+	mx::t::HoleClosedLocation e = mx::t::HoleClosedLocation::bottom;
 	std::string expected = "bottom";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9365,19 +9365,19 @@ TEST( HoleClosedLocation_bottom, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedLocation e2 = mx::types::parseHoleClosedLocation( expected );
+	mx::t::HoleClosedLocation e2 = mx::t::parseHoleClosedLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedLocation_left, Enums )
 {
-	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::left;
+	mx::t::HoleClosedLocation e = mx::t::HoleClosedLocation::left;
 	std::string expected = "left";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9386,19 +9386,19 @@ TEST( HoleClosedLocation_left, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedLocation e2 = mx::types::parseHoleClosedLocation( expected );
+	mx::t::HoleClosedLocation e2 = mx::t::parseHoleClosedLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedLocation_top, Enums )
 {
-	mx::types::HoleClosedLocation e = mx::types::HoleClosedLocation::top;
+	mx::t::HoleClosedLocation e = mx::t::HoleClosedLocation::top;
 	std::string expected = "top";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9407,26 +9407,26 @@ TEST( HoleClosedLocation_top, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedLocation e2 = mx::types::parseHoleClosedLocation( expected );
+	mx::t::HoleClosedLocation e2 = mx::t::parseHoleClosedLocation( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedValue_BadParse, Enums )
 {
-	mx::types::HoleClosedValue actual = mx::types::parseHoleClosedValue( "yes" );
-	mx::types::HoleClosedValue expected = mx::types::HoleClosedValue::yes;
+	mx::t::HoleClosedValue actual = mx::t::parseHoleClosedValue( "yes" );
+	mx::t::HoleClosedValue expected = mx::t::HoleClosedValue::yes;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( HoleClosedValue_yes, Enums )
 {
-	mx::types::HoleClosedValue e = mx::types::HoleClosedValue::yes;
+	mx::t::HoleClosedValue e = mx::t::HoleClosedValue::yes;
 	std::string expected = "yes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9435,19 +9435,19 @@ TEST( HoleClosedValue_yes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedValue e2 = mx::types::parseHoleClosedValue( expected );
+	mx::t::HoleClosedValue e2 = mx::t::parseHoleClosedValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedValue_no, Enums )
 {
-	mx::types::HoleClosedValue e = mx::types::HoleClosedValue::no;
+	mx::t::HoleClosedValue e = mx::t::HoleClosedValue::no;
 	std::string expected = "no";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9456,19 +9456,19 @@ TEST( HoleClosedValue_no, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedValue e2 = mx::types::parseHoleClosedValue( expected );
+	mx::t::HoleClosedValue e2 = mx::t::parseHoleClosedValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( HoleClosedValue_half, Enums )
 {
-	mx::types::HoleClosedValue e = mx::types::HoleClosedValue::half;
+	mx::t::HoleClosedValue e = mx::t::HoleClosedValue::half;
 	std::string expected = "half";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9477,26 +9477,26 @@ TEST( HoleClosedValue_half, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::HoleClosedValue e2 = mx::types::parseHoleClosedValue( expected );
+	mx::t::HoleClosedValue e2 = mx::t::parseHoleClosedValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_BadParse, Enums )
 {
-	mx::types::NoteTypeValue actual = mx::types::parseNoteTypeValue( "1024th" );
-	mx::types::NoteTypeValue expected = mx::types::NoteTypeValue::oneThousandTwentyFourth;
+	mx::t::NoteTypeValue actual = mx::t::parseNoteTypeValue( "1024th" );
+	mx::t::NoteTypeValue expected = mx::t::NoteTypeValue::oneThousandTwentyFourth;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( NoteTypeValue_oneThousandTwentyFourth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::oneThousandTwentyFourth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::oneThousandTwentyFourth;
 	std::string expected = "1024th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9505,19 +9505,19 @@ TEST( NoteTypeValue_oneThousandTwentyFourth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_fiveHundredTwelfth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::fiveHundredTwelfth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::fiveHundredTwelfth;
 	std::string expected = "512th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9526,19 +9526,19 @@ TEST( NoteTypeValue_fiveHundredTwelfth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_twoHundredFifthySixth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::twoHundredFifthySixth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::twoHundredFifthySixth;
 	std::string expected = "256th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9547,19 +9547,19 @@ TEST( NoteTypeValue_twoHundredFifthySixth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_oneHundredTwentyEighth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::oneHundredTwentyEighth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::oneHundredTwentyEighth;
 	std::string expected = "128th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9568,19 +9568,19 @@ TEST( NoteTypeValue_oneHundredTwentyEighth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_sixtyFourth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::sixtyFourth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::sixtyFourth;
 	std::string expected = "64th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9589,19 +9589,19 @@ TEST( NoteTypeValue_sixtyFourth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_thirtySecond, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::thirtySecond;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::thirtySecond;
 	std::string expected = "32nd";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9610,19 +9610,19 @@ TEST( NoteTypeValue_thirtySecond, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_sixteenth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::sixteenth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::sixteenth;
 	std::string expected = "16th";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9631,19 +9631,19 @@ TEST( NoteTypeValue_sixteenth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_eighth, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::eighth;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::eighth;
 	std::string expected = "eighth";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9652,19 +9652,19 @@ TEST( NoteTypeValue_eighth, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_quarter, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::quarter;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::quarter;
 	std::string expected = "quarter";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9673,19 +9673,19 @@ TEST( NoteTypeValue_quarter, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_half, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::half;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::half;
 	std::string expected = "half";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9694,19 +9694,19 @@ TEST( NoteTypeValue_half, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_whole, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::whole;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::whole;
 	std::string expected = "whole";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9715,19 +9715,19 @@ TEST( NoteTypeValue_whole, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_breve, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::breve;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::breve;
 	std::string expected = "breve";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9736,19 +9736,19 @@ TEST( NoteTypeValue_breve, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_long_, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::long_;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::long_;
 	std::string expected = "long";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9757,19 +9757,19 @@ TEST( NoteTypeValue_long_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteTypeValue_maxima, Enums )
 {
-	mx::types::NoteTypeValue e = mx::types::NoteTypeValue::maxima;
+	mx::t::NoteTypeValue e = mx::t::NoteTypeValue::maxima;
 	std::string expected = "maxima";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9778,26 +9778,26 @@ TEST( NoteTypeValue_maxima, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteTypeValue e2 = mx::types::parseNoteTypeValue( expected );
+	mx::t::NoteTypeValue e2 = mx::t::parseNoteTypeValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_BadParse, Enums )
 {
-	mx::types::NoteheadValue actual = mx::types::parseNoteheadValue( "slash" );
-	mx::types::NoteheadValue expected = mx::types::NoteheadValue::slash;
+	mx::t::NoteheadValue actual = mx::t::parseNoteheadValue( "slash" );
+	mx::t::NoteheadValue expected = mx::t::NoteheadValue::slash;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( NoteheadValue_slash, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::slash;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::slash;
 	std::string expected = "slash";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9806,19 +9806,19 @@ TEST( NoteheadValue_slash, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_triangle, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::triangle;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::triangle;
 	std::string expected = "triangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9827,19 +9827,19 @@ TEST( NoteheadValue_triangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_diamond, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::diamond;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::diamond;
 	std::string expected = "diamond";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9848,19 +9848,19 @@ TEST( NoteheadValue_diamond, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_square, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::square;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::square;
 	std::string expected = "square";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9869,19 +9869,19 @@ TEST( NoteheadValue_square, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_cross, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::cross;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::cross;
 	std::string expected = "cross";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9890,19 +9890,19 @@ TEST( NoteheadValue_cross, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_x, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::x;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::x;
 	std::string expected = "x";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9911,19 +9911,19 @@ TEST( NoteheadValue_x, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_circleX, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::circleX;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::circleX;
 	std::string expected = "circle-x";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9932,19 +9932,19 @@ TEST( NoteheadValue_circleX, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_invertedTriangle, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::invertedTriangle;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::invertedTriangle;
 	std::string expected = "inverted triangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9953,19 +9953,19 @@ TEST( NoteheadValue_invertedTriangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_arrowDown, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::arrowDown;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::arrowDown;
 	std::string expected = "arrow down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9974,19 +9974,19 @@ TEST( NoteheadValue_arrowDown, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_arrowUp, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::arrowUp;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::arrowUp;
 	std::string expected = "arrow up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -9995,19 +9995,19 @@ TEST( NoteheadValue_arrowUp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_slashed, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::slashed;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::slashed;
 	std::string expected = "slashed";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10016,19 +10016,19 @@ TEST( NoteheadValue_slashed, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_backSlashed, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::backSlashed;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::backSlashed;
 	std::string expected = "back slashed";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10037,19 +10037,19 @@ TEST( NoteheadValue_backSlashed, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_normal, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::normal;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::normal;
 	std::string expected = "normal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10058,19 +10058,19 @@ TEST( NoteheadValue_normal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_cluster, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::cluster;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::cluster;
 	std::string expected = "cluster";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10079,19 +10079,19 @@ TEST( NoteheadValue_cluster, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_circleDot, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::circleDot;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::circleDot;
 	std::string expected = "circle dot";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10100,19 +10100,19 @@ TEST( NoteheadValue_circleDot, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_leftTriangle, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::leftTriangle;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::leftTriangle;
 	std::string expected = "left triangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10121,19 +10121,19 @@ TEST( NoteheadValue_leftTriangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_rectangle, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::rectangle;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::rectangle;
 	std::string expected = "rectangle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10142,19 +10142,19 @@ TEST( NoteheadValue_rectangle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_none, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::none;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10163,19 +10163,19 @@ TEST( NoteheadValue_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_do_, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::do_;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::do_;
 	std::string expected = "do";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10184,19 +10184,19 @@ TEST( NoteheadValue_do_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_re, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::re;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::re;
 	std::string expected = "re";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10205,19 +10205,19 @@ TEST( NoteheadValue_re, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_mi, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::mi;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::mi;
 	std::string expected = "mi";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10226,19 +10226,19 @@ TEST( NoteheadValue_mi, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_fa, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::fa;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::fa;
 	std::string expected = "fa";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10247,19 +10247,19 @@ TEST( NoteheadValue_fa, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_faUp, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::faUp;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::faUp;
 	std::string expected = "fa up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10268,19 +10268,19 @@ TEST( NoteheadValue_faUp, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_so, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::so;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::so;
 	std::string expected = "so";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10289,19 +10289,19 @@ TEST( NoteheadValue_so, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_la, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::la;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::la;
 	std::string expected = "la";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10310,19 +10310,19 @@ TEST( NoteheadValue_la, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( NoteheadValue_ti, Enums )
 {
-	mx::types::NoteheadValue e = mx::types::NoteheadValue::ti;
+	mx::t::NoteheadValue e = mx::t::NoteheadValue::ti;
 	std::string expected = "ti";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10331,26 +10331,26 @@ TEST( NoteheadValue_ti, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::NoteheadValue e2 = mx::types::parseNoteheadValue( expected );
+	mx::t::NoteheadValue e2 = mx::t::parseNoteheadValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ShowTuplet_BadParse, Enums )
 {
-	mx::types::ShowTuplet actual = mx::types::parseShowTuplet( "actual" );
-	mx::types::ShowTuplet expected = mx::types::ShowTuplet::actual;
+	mx::t::ShowTuplet actual = mx::t::parseShowTuplet( "actual" );
+	mx::t::ShowTuplet expected = mx::t::ShowTuplet::actual;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( ShowTuplet_actual, Enums )
 {
-	mx::types::ShowTuplet e = mx::types::ShowTuplet::actual;
+	mx::t::ShowTuplet e = mx::t::ShowTuplet::actual;
 	std::string expected = "actual";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10359,19 +10359,19 @@ TEST( ShowTuplet_actual, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ShowTuplet e2 = mx::types::parseShowTuplet( expected );
+	mx::t::ShowTuplet e2 = mx::t::parseShowTuplet( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ShowTuplet_both, Enums )
 {
-	mx::types::ShowTuplet e = mx::types::ShowTuplet::both;
+	mx::t::ShowTuplet e = mx::t::ShowTuplet::both;
 	std::string expected = "both";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10380,19 +10380,19 @@ TEST( ShowTuplet_both, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ShowTuplet e2 = mx::types::parseShowTuplet( expected );
+	mx::t::ShowTuplet e2 = mx::t::parseShowTuplet( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ShowTuplet_none, Enums )
 {
-	mx::types::ShowTuplet e = mx::types::ShowTuplet::none;
+	mx::t::ShowTuplet e = mx::t::ShowTuplet::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10401,26 +10401,26 @@ TEST( ShowTuplet_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::ShowTuplet e2 = mx::types::parseShowTuplet( expected );
+	mx::t::ShowTuplet e2 = mx::t::parseShowTuplet( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StemValue_BadParse, Enums )
 {
-	mx::types::StemValue actual = mx::types::parseStemValue( "down" );
-	mx::types::StemValue expected = mx::types::StemValue::down;
+	mx::t::StemValue actual = mx::t::parseStemValue( "down" );
+	mx::t::StemValue expected = mx::t::StemValue::down;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( StemValue_down, Enums )
 {
-	mx::types::StemValue e = mx::types::StemValue::down;
+	mx::t::StemValue e = mx::t::StemValue::down;
 	std::string expected = "down";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10429,19 +10429,19 @@ TEST( StemValue_down, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StemValue e2 = mx::types::parseStemValue( expected );
+	mx::t::StemValue e2 = mx::t::parseStemValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StemValue_up, Enums )
 {
-	mx::types::StemValue e = mx::types::StemValue::up;
+	mx::t::StemValue e = mx::t::StemValue::up;
 	std::string expected = "up";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10450,19 +10450,19 @@ TEST( StemValue_up, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StemValue e2 = mx::types::parseStemValue( expected );
+	mx::t::StemValue e2 = mx::t::parseStemValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StemValue_double_, Enums )
 {
-	mx::types::StemValue e = mx::types::StemValue::double_;
+	mx::t::StemValue e = mx::t::StemValue::double_;
 	std::string expected = "double";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10471,19 +10471,19 @@ TEST( StemValue_double_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StemValue e2 = mx::types::parseStemValue( expected );
+	mx::t::StemValue e2 = mx::t::parseStemValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( StemValue_none, Enums )
 {
-	mx::types::StemValue e = mx::types::StemValue::none;
+	mx::t::StemValue e = mx::t::StemValue::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10492,26 +10492,26 @@ TEST( StemValue_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StemValue e2 = mx::types::parseStemValue( expected );
+	mx::t::StemValue e2 = mx::t::parseStemValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_BadParse, Enums )
 {
-	mx::types::StepEnum actual = mx::types::parseStepEnum( "A" );
-	mx::types::StepEnum expected = mx::types::StepEnum::a;
+	mx::t::StepEnum actual = mx::t::parseStepEnum( "A" );
+	mx::t::StepEnum expected = mx::t::StepEnum::a;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Step_a, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::a;
+	mx::t::StepEnum e = mx::t::StepEnum::a;
 	std::string expected = "A";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10520,19 +10520,19 @@ TEST( Step_a, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_b, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::b;
+	mx::t::StepEnum e = mx::t::StepEnum::b;
 	std::string expected = "B";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10541,19 +10541,19 @@ TEST( Step_b, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_c, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::c;
+	mx::t::StepEnum e = mx::t::StepEnum::c;
 	std::string expected = "C";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10562,19 +10562,19 @@ TEST( Step_c, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_d, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::d;
+	mx::t::StepEnum e = mx::t::StepEnum::d;
 	std::string expected = "D";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10583,19 +10583,19 @@ TEST( Step_d, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_e, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::e;
+	mx::t::StepEnum e = mx::t::StepEnum::e;
 	std::string expected = "E";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10604,19 +10604,19 @@ TEST( Step_e, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_f, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::f;
+	mx::t::StepEnum e = mx::t::StepEnum::f;
 	std::string expected = "F";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10625,19 +10625,19 @@ TEST( Step_f, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Step_g, Enums )
 {
-	mx::types::StepEnum e = mx::types::StepEnum::g;
+	mx::t::StepEnum e = mx::t::StepEnum::g;
 	std::string expected = "G";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10646,26 +10646,26 @@ TEST( Step_g, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::StepEnum e2 = mx::types::parseStepEnum( expected );
+	mx::t::StepEnum e2 = mx::t::parseStepEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Syllabic_BadParse, Enums )
 {
-	mx::types::SyllabicEnum actual = mx::types::parseSyllabicEnum( "single" );
-	mx::types::SyllabicEnum expected = mx::types::SyllabicEnum::single;
+	mx::t::SyllabicEnum actual = mx::t::parseSyllabicEnum( "single" );
+	mx::t::SyllabicEnum expected = mx::t::SyllabicEnum::single;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( Syllabic_single, Enums )
 {
-	mx::types::SyllabicEnum e = mx::types::SyllabicEnum::single;
+	mx::t::SyllabicEnum e = mx::t::SyllabicEnum::single;
 	std::string expected = "single";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10674,19 +10674,19 @@ TEST( Syllabic_single, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SyllabicEnum e2 = mx::types::parseSyllabicEnum( expected );
+	mx::t::SyllabicEnum e2 = mx::t::parseSyllabicEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Syllabic_begin, Enums )
 {
-	mx::types::SyllabicEnum e = mx::types::SyllabicEnum::begin;
+	mx::t::SyllabicEnum e = mx::t::SyllabicEnum::begin;
 	std::string expected = "begin";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10695,19 +10695,19 @@ TEST( Syllabic_begin, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SyllabicEnum e2 = mx::types::parseSyllabicEnum( expected );
+	mx::t::SyllabicEnum e2 = mx::t::parseSyllabicEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Syllabic_end, Enums )
 {
-	mx::types::SyllabicEnum e = mx::types::SyllabicEnum::end;
+	mx::t::SyllabicEnum e = mx::t::SyllabicEnum::end;
 	std::string expected = "end";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10716,19 +10716,19 @@ TEST( Syllabic_end, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SyllabicEnum e2 = mx::types::parseSyllabicEnum( expected );
+	mx::t::SyllabicEnum e2 = mx::t::parseSyllabicEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Syllabic_middle, Enums )
 {
-	mx::types::SyllabicEnum e = mx::types::SyllabicEnum::middle;
+	mx::t::SyllabicEnum e = mx::t::SyllabicEnum::middle;
 	std::string expected = "middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10737,26 +10737,26 @@ TEST( Syllabic_middle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::SyllabicEnum e2 = mx::types::parseSyllabicEnum( expected );
+	mx::t::SyllabicEnum e2 = mx::t::parseSyllabicEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupBarlineValue_BadParse, Enums )
 {
-	mx::types::GroupBarlineValue actual = mx::types::parseGroupBarlineValue( "yes" );
-	mx::types::GroupBarlineValue expected = mx::types::GroupBarlineValue::yes;
+	mx::t::GroupBarlineValue actual = mx::t::parseGroupBarlineValue( "yes" );
+	mx::t::GroupBarlineValue expected = mx::t::GroupBarlineValue::yes;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( GroupBarlineValue_yes, Enums )
 {
-	mx::types::GroupBarlineValue e = mx::types::GroupBarlineValue::yes;
+	mx::t::GroupBarlineValue e = mx::t::GroupBarlineValue::yes;
 	std::string expected = "yes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10765,19 +10765,19 @@ TEST( GroupBarlineValue_yes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupBarlineValue e2 = mx::types::parseGroupBarlineValue( expected );
+	mx::t::GroupBarlineValue e2 = mx::t::parseGroupBarlineValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupBarlineValue_no, Enums )
 {
-	mx::types::GroupBarlineValue e = mx::types::GroupBarlineValue::no;
+	mx::t::GroupBarlineValue e = mx::t::GroupBarlineValue::no;
 	std::string expected = "no";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10786,19 +10786,19 @@ TEST( GroupBarlineValue_no, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupBarlineValue e2 = mx::types::parseGroupBarlineValue( expected );
+	mx::t::GroupBarlineValue e2 = mx::t::parseGroupBarlineValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupBarlineValue_mensurstrich, Enums )
 {
-	mx::types::GroupBarlineValue e = mx::types::GroupBarlineValue::mensurstrich;
+	mx::t::GroupBarlineValue e = mx::t::GroupBarlineValue::mensurstrich;
 	std::string expected = "Mensurstrich";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10807,26 +10807,26 @@ TEST( GroupBarlineValue_mensurstrich, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupBarlineValue e2 = mx::types::parseGroupBarlineValue( expected );
+	mx::t::GroupBarlineValue e2 = mx::t::parseGroupBarlineValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupSymbolValue_BadParse, Enums )
 {
-	mx::types::GroupSymbolValue actual = mx::types::parseGroupSymbolValue( "none" );
-	mx::types::GroupSymbolValue expected = mx::types::GroupSymbolValue::none;
+	mx::t::GroupSymbolValue actual = mx::t::parseGroupSymbolValue( "none" );
+	mx::t::GroupSymbolValue expected = mx::t::GroupSymbolValue::none;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( GroupSymbolValue_none, Enums )
 {
-	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::none;
+	mx::t::GroupSymbolValue e = mx::t::GroupSymbolValue::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10835,19 +10835,19 @@ TEST( GroupSymbolValue_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupSymbolValue e2 = mx::types::parseGroupSymbolValue( expected );
+	mx::t::GroupSymbolValue e2 = mx::t::parseGroupSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupSymbolValue_brace, Enums )
 {
-	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::brace;
+	mx::t::GroupSymbolValue e = mx::t::GroupSymbolValue::brace;
 	std::string expected = "brace";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10856,19 +10856,19 @@ TEST( GroupSymbolValue_brace, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupSymbolValue e2 = mx::types::parseGroupSymbolValue( expected );
+	mx::t::GroupSymbolValue e2 = mx::t::parseGroupSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupSymbolValue_line, Enums )
 {
-	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::line;
+	mx::t::GroupSymbolValue e = mx::t::GroupSymbolValue::line;
 	std::string expected = "line";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10877,19 +10877,19 @@ TEST( GroupSymbolValue_line, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupSymbolValue e2 = mx::types::parseGroupSymbolValue( expected );
+	mx::t::GroupSymbolValue e2 = mx::t::parseGroupSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupSymbolValue_bracket, Enums )
 {
-	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::bracket;
+	mx::t::GroupSymbolValue e = mx::t::GroupSymbolValue::bracket;
 	std::string expected = "bracket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10898,19 +10898,19 @@ TEST( GroupSymbolValue_bracket, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupSymbolValue e2 = mx::types::parseGroupSymbolValue( expected );
+	mx::t::GroupSymbolValue e2 = mx::t::parseGroupSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( GroupSymbolValue_square, Enums )
 {
-	mx::types::GroupSymbolValue e = mx::types::GroupSymbolValue::square;
+	mx::t::GroupSymbolValue e = mx::t::GroupSymbolValue::square;
 	std::string expected = "square";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
 
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
@@ -10919,19 +10919,19 @@ TEST( GroupSymbolValue_square, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
 
-	mx::types::GroupSymbolValue e2 = mx::types::parseGroupSymbolValue( expected );
+	mx::t::GroupSymbolValue e2 = mx::t::parseGroupSymbolValue( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_major, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::major;
+	mx::t::ModeEnum e = mx::t::ModeEnum::major;
 	std::string expected = "major";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -10940,19 +10940,19 @@ TEST( ModeEnum_major, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_minor, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::minor;
+	mx::t::ModeEnum e = mx::t::ModeEnum::minor;
 	std::string expected = "minor";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -10961,19 +10961,19 @@ TEST( ModeEnum_minor, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_dorian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::dorian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::dorian;
 	std::string expected = "dorian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -10982,19 +10982,19 @@ TEST( ModeEnum_dorian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_phrygian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::phrygian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::phrygian;
 	std::string expected = "phrygian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11003,19 +11003,19 @@ TEST( ModeEnum_phrygian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_lydian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::lydian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::lydian;
 	std::string expected = "lydian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11024,19 +11024,19 @@ TEST( ModeEnum_lydian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_mixolydian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::mixolydian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::mixolydian;
 	std::string expected = "mixolydian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11045,19 +11045,19 @@ TEST( ModeEnum_mixolydian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_aeolian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::aeolian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::aeolian;
 	std::string expected = "aeolian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11066,19 +11066,19 @@ TEST( ModeEnum_aeolian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_ionian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::ionian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::ionian;
 	std::string expected = "ionian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11087,19 +11087,19 @@ TEST( ModeEnum_ionian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_locrian, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::locrian;
+	mx::t::ModeEnum e = mx::t::ModeEnum::locrian;
 	std::string expected = "locrian";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11108,19 +11108,19 @@ TEST( ModeEnum_locrian, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_none, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::none;
+	mx::t::ModeEnum e = mx::t::ModeEnum::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11129,19 +11129,19 @@ TEST( ModeEnum_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( ModeEnum_other, Enums )
 {
-	mx::types::ModeEnum e = mx::types::ModeEnum::other;
+	mx::t::ModeEnum e = mx::t::ModeEnum::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11150,30 +11150,30 @@ TEST( ModeEnum_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::ModeEnum e2 = mx::types::parseModeEnum( expected );
+	mx::t::ModeEnum e2 = mx::t::parseModeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( Mode_default, Enums )
 {
-	mx::types::ModeValue object;
-    mx::types::ModeEnum expected = mx::types::ModeEnum::major;
-    mx::types::ModeEnum actual = object.getValue();
+	mx::t::ModeValue object;
+    mx::t::ModeEnum expected = mx::t::ModeEnum::major;
+    mx::t::ModeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Mode_major, Enums )
 {
-    mx::types::ModeEnum enumval = mx::types::ModeEnum::major;
-    mx::types::ModeEnum diffval = mx::types::ModeEnum::other;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::ModeEnum enumval = mx::t::ModeEnum::major;
+    mx::t::ModeEnum diffval = mx::t::ModeEnum::other;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "none";
     std::string badstr = "EORIUT";
-    mx::types::ModeValue object( enumval );
-    mx::types::ModeEnum expected = enumval;
-    mx::types::ModeEnum actual = object.getValue();
+    mx::t::ModeValue object( enumval );
+    mx::t::ModeEnum expected = enumval;
+    mx::t::ModeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object2( diffval );
+    mx::t::ModeValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11182,36 +11182,36 @@ TEST( Mode_major, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object3( diffval );
-    object3 = mx::types::parseModeValue( strval );
+    mx::t::ModeValue object3( diffval );
+    object3 = mx::t::parseModeValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object4( strval );
+    mx::t::ModeValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object5( badstr );
-    expected = mx::types::ModeEnum::other;
+    mx::t::ModeValue object5( badstr );
+    expected = mx::t::ModeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object6( enumval );
+    mx::t::ModeValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseModeValue( badstr );
+    object6 = mx::t::parseModeValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11221,17 +11221,17 @@ TEST( Mode_major, Enums )
 
 TEST( Mode_lydian, Enums )
 {
-    mx::types::ModeEnum enumval = mx::types::ModeEnum::lydian;
-    mx::types::ModeEnum diffval = mx::types::ModeEnum::locrian;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::ModeEnum enumval = mx::t::ModeEnum::lydian;
+    mx::t::ModeEnum diffval = mx::t::ModeEnum::locrian;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "locrian";
     std::string badstr = "Lydian";
-    mx::types::ModeValue object( enumval );
-    mx::types::ModeEnum expected = enumval;
-    mx::types::ModeEnum actual = object.getValue();
+    mx::t::ModeValue object( enumval );
+    mx::t::ModeEnum expected = enumval;
+    mx::t::ModeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object2( diffval );
+    mx::t::ModeValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11240,36 +11240,36 @@ TEST( Mode_lydian, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object3( diffval );
-    object3 = mx::types::parseModeValue( strval );
+    mx::t::ModeValue object3( diffval );
+    object3 = mx::t::parseModeValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object4( strval );
+    mx::t::ModeValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object5( badstr );
-    expected = mx::types::ModeEnum::other;
+    mx::t::ModeValue object5( badstr );
+    expected = mx::t::ModeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object6( enumval );
+    mx::t::ModeValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseModeValue( badstr );
+    object6 = mx::t::parseModeValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11279,17 +11279,17 @@ TEST( Mode_lydian, Enums )
 
 TEST( Mode_locrian, Enums )
 {
-    mx::types::ModeEnum enumval = mx::types::ModeEnum::locrian;
-    mx::types::ModeEnum diffval = mx::types::ModeEnum::aeolian;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::ModeEnum enumval = mx::t::ModeEnum::locrian;
+    mx::t::ModeEnum diffval = mx::t::ModeEnum::aeolian;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "aeolian";
     std::string badstr = "pelog";
-    mx::types::ModeValue object( enumval );
-    mx::types::ModeEnum expected = enumval;
-    mx::types::ModeEnum actual = object.getValue();
+    mx::t::ModeValue object( enumval );
+    mx::t::ModeEnum expected = enumval;
+    mx::t::ModeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object2( diffval );
+    mx::t::ModeValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11298,36 +11298,36 @@ TEST( Mode_locrian, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object3( diffval );
-    object3 = mx::types::parseModeValue( strval );
+    mx::t::ModeValue object3( diffval );
+    object3 = mx::t::parseModeValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object4( strval );
+    mx::t::ModeValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object5( badstr );
-    expected = mx::types::ModeEnum::other;
+    mx::t::ModeValue object5( badstr );
+    expected = mx::t::ModeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object6( enumval );
+    mx::t::ModeValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseModeValue( badstr );
+    object6 = mx::t::parseModeValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11337,17 +11337,17 @@ TEST( Mode_locrian, Enums )
 
 TEST( Mode_other, Enums )
 {
-    mx::types::ModeEnum enumval = mx::types::ModeEnum::other;
-    mx::types::ModeEnum diffval = mx::types::ModeEnum::aeolian;
-    std::string strval = ""; // mx::types::toString( enumval );
+    mx::t::ModeEnum enumval = mx::t::ModeEnum::other;
+    mx::t::ModeEnum diffval = mx::t::ModeEnum::aeolian;
+    std::string strval = ""; // mx::t::toString( enumval );
     std::string difval = "aeolian";
     std::string badstr = "pelog";
-    mx::types::ModeValue object( enumval );
-    mx::types::ModeEnum expected = enumval;
-    mx::types::ModeEnum actual = object.getValue();
+    mx::t::ModeValue object( enumval );
+    mx::t::ModeEnum expected = enumval;
+    mx::t::ModeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object2( diffval );
+    mx::t::ModeValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11356,36 +11356,36 @@ TEST( Mode_other, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object3( diffval );
-    object3 = mx::types::parseModeValue( strval );
+    mx::t::ModeValue object3( diffval );
+    object3 = mx::t::parseModeValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object4( strval );
+    mx::t::ModeValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object5( badstr );
-    expected = mx::types::ModeEnum::other;
+    mx::t::ModeValue object5( badstr );
+    expected = mx::t::ModeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::ModeValue object6( enumval );
+    mx::t::ModeValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseModeValue( badstr );
+    object6 = mx::t::parseModeValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11395,13 +11395,13 @@ TEST( Mode_other, Enums )
 
 TEST( DistanceTypeEnum_beam, Enums )
 {
-	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::beam;
+	mx::t::DistanceTypeEnum e = mx::t::DistanceTypeEnum::beam;
 	std::string expected = "beam";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11410,19 +11410,19 @@ TEST( DistanceTypeEnum_beam, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::DistanceTypeEnum e2 = mx::types::parseDistanceTypeEnum( expected );
+	mx::t::DistanceTypeEnum e2 = mx::t::parseDistanceTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DistanceTypeEnum_hyphen, Enums )
 {
-	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::hyphen;
+	mx::t::DistanceTypeEnum e = mx::t::DistanceTypeEnum::hyphen;
 	std::string expected = "hyphen";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11431,19 +11431,19 @@ TEST( DistanceTypeEnum_hyphen, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::DistanceTypeEnum e2 = mx::types::parseDistanceTypeEnum( expected );
+	mx::t::DistanceTypeEnum e2 = mx::t::parseDistanceTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DistanceTypeEnum_other, Enums )
 {
-	mx::types::DistanceTypeEnum e = mx::types::DistanceTypeEnum::other;
+	mx::t::DistanceTypeEnum e = mx::t::DistanceTypeEnum::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11452,23 +11452,23 @@ TEST( DistanceTypeEnum_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::DistanceTypeEnum e2 = mx::types::parseDistanceTypeEnum( expected );
+	mx::t::DistanceTypeEnum e2 = mx::t::parseDistanceTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( DistanceType_beam, Enums )
 {
-    mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::beam;
-    mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::hyphen;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::DistanceTypeEnum enumval = mx::t::DistanceTypeEnum::beam;
+    mx::t::DistanceTypeEnum diffval = mx::t::DistanceTypeEnum::hyphen;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "hyphen";
     std::string badstr = "someothertype";
-    mx::types::DistanceType object( enumval );
-    mx::types::DistanceTypeEnum expected = enumval;
-    mx::types::DistanceTypeEnum actual = object.getValue();
+    mx::t::DistanceType object( enumval );
+    mx::t::DistanceTypeEnum expected = enumval;
+    mx::t::DistanceTypeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object2( diffval );
+    mx::t::DistanceType object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11477,36 +11477,36 @@ TEST( DistanceType_beam, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object3( diffval );
-    object3 = mx::types::parseDistanceType( strval );
+    mx::t::DistanceType object3( diffval );
+    object3 = mx::t::parseDistanceType( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object4( strval );
+    mx::t::DistanceType object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object5( badstr );
-    expected = mx::types::DistanceTypeEnum::other;
+    mx::t::DistanceType object5( badstr );
+    expected = mx::t::DistanceTypeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object6( enumval );
+    mx::t::DistanceType object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseDistanceType( badstr );
+    object6 = mx::t::parseDistanceType( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11516,17 +11516,17 @@ TEST( DistanceType_beam, Enums )
 
 TEST( DistanceType_hyphen, Enums )
 {
-    mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::hyphen;
-    mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::beam;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::DistanceTypeEnum enumval = mx::t::DistanceTypeEnum::hyphen;
+    mx::t::DistanceTypeEnum diffval = mx::t::DistanceTypeEnum::beam;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "beam";
     std::string badstr = "someothertype";
-    mx::types::DistanceType object( enumval );
-    mx::types::DistanceTypeEnum expected = enumval;
-    mx::types::DistanceTypeEnum actual = object.getValue();
+    mx::t::DistanceType object( enumval );
+    mx::t::DistanceTypeEnum expected = enumval;
+    mx::t::DistanceTypeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object2( diffval );
+    mx::t::DistanceType object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11535,36 +11535,36 @@ TEST( DistanceType_hyphen, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object3( diffval );
-    object3 = mx::types::parseDistanceType( strval );
+    mx::t::DistanceType object3( diffval );
+    object3 = mx::t::parseDistanceType( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object4( strval );
+    mx::t::DistanceType object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object5( badstr );
-    expected = mx::types::DistanceTypeEnum::other;
+    mx::t::DistanceType object5( badstr );
+    expected = mx::t::DistanceTypeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object6( enumval );
+    mx::t::DistanceType object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseDistanceType( badstr );
+    object6 = mx::t::parseDistanceType( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11575,17 +11575,17 @@ TEST( DistanceType_hyphen, Enums )
 
 TEST( DistanceType_other, Enums )
 {
-    mx::types::DistanceTypeEnum enumval = mx::types::DistanceTypeEnum::other;
-    mx::types::DistanceTypeEnum diffval = mx::types::DistanceTypeEnum::beam;
-    std::string strval = ""; // mx::types::toString( enumval );
+    mx::t::DistanceTypeEnum enumval = mx::t::DistanceTypeEnum::other;
+    mx::t::DistanceTypeEnum diffval = mx::t::DistanceTypeEnum::beam;
+    std::string strval = ""; // mx::t::toString( enumval );
     std::string difval = "beam";
     std::string badstr = "someothertype";
-    mx::types::DistanceType object( enumval );
-    mx::types::DistanceTypeEnum expected = enumval;
-    mx::types::DistanceTypeEnum actual = object.getValue();
+    mx::t::DistanceType object( enumval );
+    mx::t::DistanceTypeEnum expected = enumval;
+    mx::t::DistanceTypeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object2( diffval );
+    mx::t::DistanceType object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -11594,36 +11594,36 @@ TEST( DistanceType_other, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object3( diffval );
-    object3 = mx::types::parseDistanceType( strval );
+    mx::t::DistanceType object3( diffval );
+    object3 = mx::t::parseDistanceType( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object4( strval );
+    mx::t::DistanceType object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object5( badstr );
-    expected = mx::types::DistanceTypeEnum::other;
+    mx::t::DistanceType object5( badstr );
+    expected = mx::t::DistanceTypeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DistanceType object6( enumval );
+    mx::t::DistanceType object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseDistanceType( badstr );
+    object6 = mx::t::parseDistanceType( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -11633,13 +11633,13 @@ TEST( DistanceType_other, Enums )
 
 TEST( LineWidthTypeEnum_beam, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::beam;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::beam;
 	std::string expected = "beam";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11648,19 +11648,19 @@ TEST( LineWidthTypeEnum_beam, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_bracket, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::bracket;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::bracket;
 	std::string expected = "bracket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11669,19 +11669,19 @@ TEST( LineWidthTypeEnum_bracket, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_dashes, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::dashes;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::dashes;
 	std::string expected = "dashes";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11690,19 +11690,19 @@ TEST( LineWidthTypeEnum_dashes, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_enclosure, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::enclosure;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::enclosure;
 	std::string expected = "enclosure";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11711,19 +11711,19 @@ TEST( LineWidthTypeEnum_enclosure, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_ending, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::ending;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::ending;
 	std::string expected = "ending";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11732,19 +11732,19 @@ TEST( LineWidthTypeEnum_ending, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_extend, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::extend;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::extend;
 	std::string expected = "extend";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11753,19 +11753,19 @@ TEST( LineWidthTypeEnum_extend, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_heavyBarline, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::heavyBarline;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::heavyBarline;
 	std::string expected = "heavy barline";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11774,19 +11774,19 @@ TEST( LineWidthTypeEnum_heavyBarline, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_leger, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::leger;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::leger;
 	std::string expected = "leger";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11795,19 +11795,19 @@ TEST( LineWidthTypeEnum_leger, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_lightBarline, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::lightBarline;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::lightBarline;
 	std::string expected = "light barline";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11816,19 +11816,19 @@ TEST( LineWidthTypeEnum_lightBarline, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_octaveShift, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::octaveShift;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::octaveShift;
 	std::string expected = "octave shift";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11837,19 +11837,19 @@ TEST( LineWidthTypeEnum_octaveShift, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_pedal, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::pedal;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::pedal;
 	std::string expected = "pedal";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11858,19 +11858,19 @@ TEST( LineWidthTypeEnum_pedal, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_slurMiddle, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurMiddle;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::slurMiddle;
 	std::string expected = "slur middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11879,19 +11879,19 @@ TEST( LineWidthTypeEnum_slurMiddle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_hyphen, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::beam;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::beam;
 	std::string expected = "beam";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11900,19 +11900,19 @@ TEST( LineWidthTypeEnum_hyphen, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_slurTip, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::slurTip;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::slurTip;
 	std::string expected = "slur tip";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11921,19 +11921,19 @@ TEST( LineWidthTypeEnum_slurTip, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_staff, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::staff;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::staff;
 	std::string expected = "staff";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11942,19 +11942,19 @@ TEST( LineWidthTypeEnum_staff, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_stem, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::stem;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::stem;
 	std::string expected = "stem";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11963,19 +11963,19 @@ TEST( LineWidthTypeEnum_stem, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_tieMiddle, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieMiddle;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::tieMiddle;
 	std::string expected = "tie middle";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -11984,19 +11984,19 @@ TEST( LineWidthTypeEnum_tieMiddle, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_tieTip, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tieTip;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::tieTip;
 	std::string expected = "tie tip";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12005,19 +12005,19 @@ TEST( LineWidthTypeEnum_tieTip, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_tupletBracket, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::tupletBracket;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::tupletBracket;
 	std::string expected = "tuplet bracket";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12026,19 +12026,19 @@ TEST( LineWidthTypeEnum_tupletBracket, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_wedge, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::wedge;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::wedge;
 	std::string expected = "wedge";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12047,19 +12047,19 @@ TEST( LineWidthTypeEnum_wedge, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthTypeEnum_other, Enums )
 {
-	mx::types::LineWidthTypeEnum e = mx::types::LineWidthTypeEnum::other;
+	mx::t::LineWidthTypeEnum e = mx::t::LineWidthTypeEnum::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12068,23 +12068,23 @@ TEST( LineWidthTypeEnum_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::LineWidthTypeEnum e2 = mx::types::parseLineWidthTypeEnum( expected );
+	mx::t::LineWidthTypeEnum e2 = mx::t::parseLineWidthTypeEnum( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( LineWidthType_beam, Enums )
 {
-    mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::beam;
-    mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::enclosure;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::LineWidthTypeEnum enumval = mx::t::LineWidthTypeEnum::beam;
+    mx::t::LineWidthTypeEnum diffval = mx::t::LineWidthTypeEnum::enclosure;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "enclosure";
     std::string badstr = "someothertype";
-    mx::types::LineWidthType object( enumval );
-    mx::types::LineWidthTypeEnum expected = enumval;
-    mx::types::LineWidthTypeEnum actual = object.getValue();
+    mx::t::LineWidthType object( enumval );
+    mx::t::LineWidthTypeEnum expected = enumval;
+    mx::t::LineWidthTypeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object2( diffval );
+    mx::t::LineWidthType object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -12093,36 +12093,36 @@ TEST( LineWidthType_beam, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object3( diffval );
-    object3 = mx::types::parseLineWidthType( strval );
+    mx::t::LineWidthType object3( diffval );
+    object3 = mx::t::parseLineWidthType( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object4( strval );
+    mx::t::LineWidthType object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object5( badstr );
-    expected = mx::types::LineWidthTypeEnum::other;
+    mx::t::LineWidthType object5( badstr );
+    expected = mx::t::LineWidthTypeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object6( enumval );
+    mx::t::LineWidthType object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseLineWidthType( badstr );
+    object6 = mx::t::parseLineWidthType( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -12132,17 +12132,17 @@ TEST( LineWidthType_beam, Enums )
 
 TEST( LineWidthType_tieTip, Enums )
 {
-    mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::tieTip;
-    mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::leger;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::LineWidthTypeEnum enumval = mx::t::LineWidthTypeEnum::tieTip;
+    mx::t::LineWidthTypeEnum diffval = mx::t::LineWidthTypeEnum::leger;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "leger";
     std::string badstr = "someothertype";
-    mx::types::LineWidthType object( enumval );
-    mx::types::LineWidthTypeEnum expected = enumval;
-    mx::types::LineWidthTypeEnum actual = object.getValue();
+    mx::t::LineWidthType object( enumval );
+    mx::t::LineWidthTypeEnum expected = enumval;
+    mx::t::LineWidthTypeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object2( diffval );
+    mx::t::LineWidthType object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -12151,36 +12151,36 @@ TEST( LineWidthType_tieTip, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object3( diffval );
-    object3 = mx::types::parseLineWidthType( strval );
+    mx::t::LineWidthType object3( diffval );
+    object3 = mx::t::parseLineWidthType( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object4( strval );
+    mx::t::LineWidthType object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object5( badstr );
-    expected = mx::types::LineWidthTypeEnum::other;
+    mx::t::LineWidthType object5( badstr );
+    expected = mx::t::LineWidthTypeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object6( enumval );
+    mx::t::LineWidthType object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseLineWidthType( badstr );
+    object6 = mx::t::parseLineWidthType( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -12190,17 +12190,17 @@ TEST( LineWidthType_tieTip, Enums )
 
 TEST( LineWidthType_other, Enums )
 {
-    mx::types::LineWidthTypeEnum enumval = mx::types::LineWidthTypeEnum::other;
-    mx::types::LineWidthTypeEnum diffval = mx::types::LineWidthTypeEnum::wedge;
-    std::string strval = ""; // mx::types::toString( enumval );
+    mx::t::LineWidthTypeEnum enumval = mx::t::LineWidthTypeEnum::other;
+    mx::t::LineWidthTypeEnum diffval = mx::t::LineWidthTypeEnum::wedge;
+    std::string strval = ""; // mx::t::toString( enumval );
     std::string difval = "enclosure";
     std::string badstr = "someothertype";
-    mx::types::LineWidthType object( enumval );
-    mx::types::LineWidthTypeEnum expected = enumval;
-    mx::types::LineWidthTypeEnum actual = object.getValue();
+    mx::t::LineWidthType object( enumval );
+    mx::t::LineWidthTypeEnum expected = enumval;
+    mx::t::LineWidthTypeEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object2( diffval );
+    mx::t::LineWidthType object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -12209,36 +12209,36 @@ TEST( LineWidthType_other, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object3( diffval );
-    object3 = mx::types::parseLineWidthType( strval );
+    mx::t::LineWidthType object3( diffval );
+    object3 = mx::t::parseLineWidthType( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object4( strval );
+    mx::t::LineWidthType object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object5( badstr );
-    expected = mx::types::LineWidthTypeEnum::other;
+    mx::t::LineWidthType object5( badstr );
+    expected = mx::t::LineWidthTypeEnum::other;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::LineWidthType object6( enumval );
+    mx::t::LineWidthType object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseLineWidthType( badstr );
+    object6 = mx::t::parseLineWidthType( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -12248,20 +12248,20 @@ TEST( LineWidthType_other, Enums )
 
 TEST( XlinkActuate_BadParse, Enums )
 {
-	mx::types::XlinkActuate actual = mx::types::parseXlinkActuate( "onrequest" );
-	mx::types::XlinkActuate expected = mx::types::XlinkActuate::onLoad;
+	mx::t::XlinkActuate actual = mx::t::parseXlinkActuate( "onrequest" );
+	mx::t::XlinkActuate expected = mx::t::XlinkActuate::onLoad;
 	CHECK_EQUAL( expected, actual )
 }
 
 TEST( XlinkActuate_onLoad, Enums )
 {
-	mx::types::XlinkActuate e = mx::types::XlinkActuate::onLoad;
+	mx::t::XlinkActuate e = mx::t::XlinkActuate::onLoad;
 	std::string expected = "onLoad";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12270,18 +12270,18 @@ TEST( XlinkActuate_onLoad, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	mx::t::XlinkActuate e2 = mx::t::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkActuate_onRequest, Enums )
 {
-	mx::types::XlinkActuate e = mx::types::XlinkActuate::onRequest;
+	mx::t::XlinkActuate e = mx::t::XlinkActuate::onRequest;
 	std::string expected = "onRequest";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12290,18 +12290,18 @@ TEST( XlinkActuate_onRequest, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	mx::t::XlinkActuate e2 = mx::t::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkActuate_other, Enums )
 {
-	mx::types::XlinkActuate e = mx::types::XlinkActuate::other;
+	mx::t::XlinkActuate e = mx::t::XlinkActuate::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12310,18 +12310,18 @@ TEST( XlinkActuate_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	mx::t::XlinkActuate e2 = mx::t::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkActuate_none, Enums )
 {
-	mx::types::XlinkActuate e = mx::types::XlinkActuate::none;
+	mx::t::XlinkActuate e = mx::t::XlinkActuate::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12330,25 +12330,25 @@ TEST( XlinkActuate_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkActuate e2 = mx::types::parseXlinkActuate( expected );
+	mx::t::XlinkActuate e2 = mx::t::parseXlinkActuate( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( XlinkShow_BadParse, Enums )
 {
-	mx::types::XlinkShow actual = mx::types::parseXlinkShow( "xyz" );
-	mx::types::XlinkShow expected = mx::types::XlinkShow::new_;
+	mx::t::XlinkShow actual = mx::t::parseXlinkShow( "xyz" );
+	mx::t::XlinkShow expected = mx::t::XlinkShow::new_;
 	CHECK_EQUAL( expected, actual )
 }
 TEST( XlinkShow_new_, Enums )
 {
-	mx::types::XlinkShow e = mx::types::XlinkShow::new_;
+	mx::t::XlinkShow e = mx::t::XlinkShow::new_;
 	std::string expected = "new";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12357,18 +12357,18 @@ TEST( XlinkShow_new_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	mx::t::XlinkShow e2 = mx::t::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkShow_replace, Enums )
 {
-	mx::types::XlinkShow e = mx::types::XlinkShow::replace;
+	mx::t::XlinkShow e = mx::t::XlinkShow::replace;
 	std::string expected = "replace";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12377,18 +12377,18 @@ TEST( XlinkShow_replace, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	mx::t::XlinkShow e2 = mx::t::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkShow_, Enums )
 {
-	mx::types::XlinkShow e = mx::types::XlinkShow::new_;
+	mx::t::XlinkShow e = mx::t::XlinkShow::new_;
 	std::string expected = "new";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12397,18 +12397,18 @@ TEST( XlinkShow_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	mx::t::XlinkShow e2 = mx::t::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkShow_embed, Enums )
 {
-	mx::types::XlinkShow e = mx::types::XlinkShow::embed;
+	mx::t::XlinkShow e = mx::t::XlinkShow::embed;
 	std::string expected = "embed";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12417,18 +12417,18 @@ TEST( XlinkShow_embed, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	mx::t::XlinkShow e2 = mx::t::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkShow_other, Enums )
 {
-	mx::types::XlinkShow e = mx::types::XlinkShow::other;
+	mx::t::XlinkShow e = mx::t::XlinkShow::other;
 	std::string expected = "other";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12437,18 +12437,18 @@ TEST( XlinkShow_other, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	mx::t::XlinkShow e2 = mx::t::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkShow_none, Enums )
 {
-	mx::types::XlinkShow e = mx::types::XlinkShow::none;
+	mx::t::XlinkShow e = mx::t::XlinkShow::none;
 	std::string expected = "none";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12457,25 +12457,25 @@ TEST( XlinkShow_none, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkShow e2 = mx::types::parseXlinkShow( expected );
+	mx::t::XlinkShow e2 = mx::t::parseXlinkShow( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( XlinkType_BadParse, Enums )
 {
-	mx::types::XlinkType actual = mx::types::parseXlinkType( "xyz" );
-	mx::types::XlinkType expected = mx::types::XlinkType::simple;
+	mx::t::XlinkType actual = mx::t::parseXlinkType( "xyz" );
+	mx::t::XlinkType expected = mx::t::XlinkType::simple;
 	CHECK_EQUAL( expected, actual )
 }
 TEST( XlinkType_simple, Enums )
 {
-	mx::types::XlinkType e = mx::types::XlinkType::simple;
+	mx::t::XlinkType e = mx::t::XlinkType::simple;
 	std::string expected = "simple";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12484,18 +12484,18 @@ TEST( XlinkType_simple, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	mx::t::XlinkType e2 = mx::t::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkType_extended, Enums )
 {
-	mx::types::XlinkType e = mx::types::XlinkType::extended;
+	mx::t::XlinkType e = mx::t::XlinkType::extended;
 	std::string expected = "extended";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12504,18 +12504,18 @@ TEST( XlinkType_extended, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	mx::t::XlinkType e2 = mx::t::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkType_title, Enums )
 {
-	mx::types::XlinkType e = mx::types::XlinkType::title;
+	mx::t::XlinkType e = mx::t::XlinkType::title;
 	std::string expected = "title";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12524,18 +12524,18 @@ TEST( XlinkType_title, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	mx::t::XlinkType e2 = mx::t::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkType_resource, Enums )
 {
-	mx::types::XlinkType e = mx::types::XlinkType::resource;
+	mx::t::XlinkType e = mx::t::XlinkType::resource;
 	std::string expected = "resource";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12544,18 +12544,18 @@ TEST( XlinkType_resource, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	mx::t::XlinkType e2 = mx::t::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkType_locator, Enums )
 {
-	mx::types::XlinkType e = mx::types::XlinkType::locator;
+	mx::t::XlinkType e = mx::t::XlinkType::locator;
 	std::string expected = "locator";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12564,18 +12564,18 @@ TEST( XlinkType_locator, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	mx::t::XlinkType e2 = mx::t::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XlinkType_arc, Enums )
 {
-	mx::types::XlinkType e = mx::types::XlinkType::arc;
+	mx::t::XlinkType e = mx::t::XlinkType::arc;
 	std::string expected = "arc";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12584,25 +12584,25 @@ TEST( XlinkType_arc, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XlinkType e2 = mx::types::parseXlinkType( expected );
+	mx::t::XlinkType e2 = mx::t::parseXlinkType( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 TEST( XmlSpace_BadParse, Enums )
 {
-	mx::types::XmlSpace actual = mx::types::parseXmlSpace( "xyz" );
-	mx::types::XmlSpace expected = mx::types::XmlSpace::default_;
+	mx::t::XmlSpace actual = mx::t::parseXmlSpace( "xyz" );
+	mx::t::XmlSpace expected = mx::t::XmlSpace::default_;
 	CHECK_EQUAL( expected, actual )
 }
 TEST( XmlSpace_default_, Enums )
 {
-	mx::types::XmlSpace e = mx::types::XmlSpace::default_;
+	mx::t::XmlSpace e = mx::t::XmlSpace::default_;
 	std::string expected = "default";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12611,18 +12611,18 @@ TEST( XmlSpace_default_, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
+	mx::t::XmlSpace e2 = mx::t::parseXmlSpace( expected );
 	CHECK_EQUAL( e, e2 )
 }
 TEST( XmlSpace_preserve, Enums )
 {
-	mx::types::XmlSpace e = mx::types::XmlSpace::preserve;
+	mx::t::XmlSpace e = mx::t::XmlSpace::preserve;
 	std::string expected = "preserve";
 	std::string actual = toString( e );
 	CHECK_EQUAL( expected, actual );
     
 	std::stringstream sstr;
-	mx::types::toStream( sstr, e );
+	mx::t::toStream( sstr, e );
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
@@ -12631,24 +12631,24 @@ TEST( XmlSpace_preserve, Enums )
 	actual = sstr.str();
 	CHECK_EQUAL( expected, actual );
     
-	mx::types::XmlSpace e2 = mx::types::parseXmlSpace( expected );
+	mx::t::XmlSpace e2 = mx::t::parseXmlSpace( expected );
 	CHECK_EQUAL( e, e2 )
 }
 
 
 TEST( DynamicsValue_beam, Enums )
 {
-    mx::types::DynamicsEnum enumval = mx::types::DynamicsEnum::ppppp;
-    mx::types::DynamicsEnum diffval = mx::types::DynamicsEnum::pp;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::DynamicsEnum enumval = mx::t::DynamicsEnum::ppppp;
+    mx::t::DynamicsEnum diffval = mx::t::DynamicsEnum::pp;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "enclosure";
     std::string badstr = "someothertype";
-    mx::types::DynamicsValue object( enumval );
-    mx::types::DynamicsEnum expected = enumval;
-    mx::types::DynamicsEnum actual = object.getValue();
+    mx::t::DynamicsValue object( enumval );
+    mx::t::DynamicsEnum expected = enumval;
+    mx::t::DynamicsEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object2( diffval );
+    mx::t::DynamicsValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -12657,36 +12657,36 @@ TEST( DynamicsValue_beam, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object3( diffval );
-    object3 = mx::types::parseDynamicsValue( strval );
+    mx::t::DynamicsValue object3( diffval );
+    object3 = mx::t::parseDynamicsValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object4( strval );
+    mx::t::DynamicsValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object5( badstr );
-    expected = mx::types::DynamicsEnum::otherDynamics;
+    mx::t::DynamicsValue object5( badstr );
+    expected = mx::t::DynamicsEnum::otherDynamics;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object6( enumval );
+    mx::t::DynamicsValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseDynamicsValue( badstr );
+    object6 = mx::t::parseDynamicsValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -12696,17 +12696,17 @@ TEST( DynamicsValue_beam, Enums )
 
 TEST( DynamicsValue_tieTip, Enums )
 {
-    mx::types::DynamicsEnum enumval = mx::types::DynamicsEnum::ff;
-    mx::types::DynamicsEnum diffval = mx::types::DynamicsEnum::sffz;
-    std::string strval = mx::types::toString( enumval );
+    mx::t::DynamicsEnum enumval = mx::t::DynamicsEnum::ff;
+    mx::t::DynamicsEnum diffval = mx::t::DynamicsEnum::sffz;
+    std::string strval = mx::t::toString( enumval );
     std::string difval = "leger";
     std::string badstr = "someothertype";
-    mx::types::DynamicsValue object( enumval );
-    mx::types::DynamicsEnum expected = enumval;
-    mx::types::DynamicsEnum actual = object.getValue();
+    mx::t::DynamicsValue object( enumval );
+    mx::t::DynamicsEnum expected = enumval;
+    mx::t::DynamicsEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object2( diffval );
+    mx::t::DynamicsValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -12715,36 +12715,36 @@ TEST( DynamicsValue_tieTip, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object3( diffval );
-    object3 = mx::types::parseDynamicsValue( strval );
+    mx::t::DynamicsValue object3( diffval );
+    object3 = mx::t::parseDynamicsValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object4( strval );
+    mx::t::DynamicsValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object5( badstr );
-    expected = mx::types::DynamicsEnum::otherDynamics;
+    mx::t::DynamicsValue object5( badstr );
+    expected = mx::t::DynamicsEnum::otherDynamics;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object6( enumval );
+    mx::t::DynamicsValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseDynamicsValue( badstr );
+    object6 = mx::t::parseDynamicsValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );
@@ -12754,17 +12754,17 @@ TEST( DynamicsValue_tieTip, Enums )
 
 TEST( DynamicsValue_other, Enums )
 {
-    mx::types::DynamicsEnum enumval = mx::types::DynamicsEnum::otherDynamics;
-    mx::types::DynamicsEnum diffval = mx::types::DynamicsEnum::rfz;
-    std::string strval = ""; // mx::types::toString( enumval );
+    mx::t::DynamicsEnum enumval = mx::t::DynamicsEnum::otherDynamics;
+    mx::t::DynamicsEnum diffval = mx::t::DynamicsEnum::rfz;
+    std::string strval = ""; // mx::t::toString( enumval );
     std::string difval = "enclosure";
     std::string badstr = "someothertype";
-    mx::types::DynamicsValue object( enumval );
-    mx::types::DynamicsEnum expected = enumval;
-    mx::types::DynamicsEnum actual = object.getValue();
+    mx::t::DynamicsValue object( enumval );
+    mx::t::DynamicsEnum expected = enumval;
+    mx::t::DynamicsEnum actual = object.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object2( diffval );
+    mx::t::DynamicsValue object2( diffval );
     expected = diffval;
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
@@ -12773,36 +12773,36 @@ TEST( DynamicsValue_other, Enums )
     actual = object2.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object3( diffval );
-    object3 = mx::types::parseDynamicsValue( strval );
+    mx::t::DynamicsValue object3( diffval );
+    object3 = mx::t::parseDynamicsValue( strval );
     expected = enumval;
     actual = object3.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object4( strval );
+    mx::t::DynamicsValue object4( strval );
     expected = enumval;
     actual = object4.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object5( badstr );
-    expected = mx::types::DynamicsEnum::otherDynamics;
+    mx::t::DynamicsValue object5( badstr );
+    expected = mx::t::DynamicsEnum::otherDynamics;
     actual = object5.getValue();
     CHECK_EQUAL( expected, actual )
     
-    mx::types::DynamicsValue object6( enumval );
+    mx::t::DynamicsValue object6( enumval );
     std::string expected_str = strval;
-    std::string actual_str = mx::types::toString( object6 );
+    std::string actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     std::stringstream ss;
-    mx::types::toStream( ss, object6 );
+    mx::t::toStream( ss, object6 );
     expected_str = strval;
     actual_str = ss.str();
     CHECK_EQUAL( expected_str, actual_str )
     
-    object6 = mx::types::parseDynamicsValue( badstr );
+    object6 = mx::t::parseDynamicsValue( badstr );
     expected_str = badstr;
-    actual_str = mx::types::toString( object6 );
+    actual_str = mx::t::toString( object6 );
     CHECK_EQUAL( expected_str, actual_str )
     
     ss.str( "" );

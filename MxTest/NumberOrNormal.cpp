@@ -4,7 +4,7 @@
 #include "NumberOrNormal.h"
 #include <sstream>
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( NumberOrNormal01, NumberOrNormal )
 {

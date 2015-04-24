@@ -4,7 +4,7 @@
 #include "FontSize.h"
 #include <sstream>
 
-using namespace mx::types;
+using namespace mx::t;
 
 TEST( FontSize01, FontSize )
 {

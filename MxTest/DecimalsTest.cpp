@@ -3,7 +3,7 @@
 #include "TestHarness.h"
 #include "Decimals.h"
 
-using namespace mx::types;
+using namespace mx::t;
 
 DecimalType kThreshold = 0.00000000000001;
 

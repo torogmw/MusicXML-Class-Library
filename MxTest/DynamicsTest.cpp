@@ -3,7 +3,7 @@
 #include "TestHarness.h"
 #include "Elements.h"
 
-using namespace mx::types;
+using namespace mx::t;
 using namespace mx::e;
 
 TEST( Test01, Dynamics )
