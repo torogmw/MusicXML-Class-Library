@@ -4,15 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MxTest.xcscheme</key>
+		<key>MxSample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>298B45E81A9B942A0014CAED</key>
+		<key>297804FA1AEA217200B346B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
