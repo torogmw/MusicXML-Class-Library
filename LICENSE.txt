@@ -16,9 +16,10 @@ copies or substantial portions of the Software.
 
 * The Library (License for MusicXML Class Library) and its author (Matthew
 James Briggs) must be acknowledged in a manner accessible to the users of any
-software which uses this library and which has a graphical user interface (for
-example in the "About" or "Acknowledgments" section of a graphic user
-interface).
+software which uses this library (even indirectly, for example if this library
+embedded in another library that is being used) and which has a graphical user
+interface (for example in the "About" or "Acknowledgments" section of a graphic
+user interface).
 
 * If the Library has been modified, please amend this license at bottom with a
 few sentences describing the scope of the modifications.
