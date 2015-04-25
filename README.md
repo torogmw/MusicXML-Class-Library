@@ -34,6 +34,8 @@ For example
 ```
 std::shared_ptr<Foo> foo; /* nullptr! */
 bar->setFoo( foo ); /* no-op because you passed a nullptr */
+auto x = bar->getFoo(); /* guaranteed not to bee null */
+x->somefuntion(); /* OK to dereference without checking for nullptr */
 ```
 
 'test'
