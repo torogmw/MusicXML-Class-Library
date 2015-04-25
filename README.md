@@ -24,7 +24,7 @@ Currently the project will remain as an Xcode workspace as I have not yet had th
 If you are not familiar with MusicXML then it will be difficult to use this library.  However one of the aims of this library is to make proper MusicXML construction "discoverable" in the sense that IDE code-completion will show you what can and cannot be done.
 
 ##### Namespaces
-Everything is contained in the mx namespace.  Within the mx namespace there are three sub namespaces.  These have names a single character in length for typing convenience.  The 't' namespace contains value types (t for types).  These are things like ranged integers, enums, strings, etc.  The 'e' namespace contains all of the XML element classes (e for elements).  And the 'd' namespace contains a few classes for representing the MusicXML document as a whole (d for document).  There are no name clashes between the three namespaces so it is OK to do this
+Everything is contained in the *mx* namespace.  Within the mx namespace there are three sub namespaces.  These have names a single character in length for typing convenience.  The *t* namespace contains value types (t for types).  These are things like ranged integers, enums, strings, etc.  The *e* namespace contains all of the XML element classes (e for elements).  And the *d* namespace contains a few classes for representing the MusicXML document as a whole (d for document).  There are no name clashes between the three namespaces so it is OK to do this
 ```
 using namespace mx::e;
 using namespace mx::d;
