@@ -25,7 +25,16 @@ If you are not familiar with MusicXML then it will be difficult to use this libr
 
 There are two types of MusicXML documents, "partwise" and "timewise".  A partwise document consists of a set of parts which contain measures.  A timewise document consists of a set of measures which contain parts.  Partwise is used more often by MusicXML applications and I will only use Partwise in this tutorial.
 
-Each XML element is represented by a class which derives from ElementInterface.
+Each XML element is represented by a class which derives from ElementInterface.  Elements are created and used by way of shared pointers.  Each element comes with a set of using/typedef statements as well as a convenience function for making the shared pointers.
+
+Many elements contain other elements.  When they do, these data members will also be shared pointers.  Get/set functions will allow access to the data members by accepting and returning shared pointers.  If you attempt to set a data member to a nullptr, the setter function will silently do nothing.  Thus we can be resonably assured our objects will never return nullptr.
+
+For example
+
+`
+std::shared_ptr<Foo> foo; /* nullptr! */
+bar->setFoo( foo ); /* no-op because you passed a nullptr */
+`
 
 'test'
 `test`
