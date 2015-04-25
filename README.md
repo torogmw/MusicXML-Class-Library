@@ -61,7 +61,11 @@ bar->toStream(...); /* Foo is not in the output! */
 bar->setHasFoo( true );
 bar->toStream(...); /* Now we see our Foo in the output. */
 ```
-
+Also note that setting HasFoo to *false* does not mean that Foo's value is gone.
+```
+bar->setHasFoo( false ); /* The XML document no longer has a Foo */
+bar->getFoo()->getName() == "Dave"; /* True! The value is still there even though it is not present in the XML document. */
+```
 ##### Optional Member Data with Unbounded Ocurrences
 
 ##### Required Member Data with Unbounded Ocurrences
