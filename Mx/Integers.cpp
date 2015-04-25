@@ -1,4 +1,5 @@
-/* matthew james briggs */
+/* MusicXML Class Library v0.1.0
+ Copyright (c) 2015 by Matthew James Briggs */
 
 #include "Integers.h"
 #include <sstream>

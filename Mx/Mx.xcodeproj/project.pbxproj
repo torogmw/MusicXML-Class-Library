@@ -84,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2947C15A1AEC210C00704318 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				29D728951AE9E48400806D33 /* DocumentHeader.cpp */,
+				29D728961AE9E48400806D33 /* DocumentHeader.h */,
+				29A71B961AEA073700B3657E /* DocumentPartwise.cpp */,
+				29A71B971AEA073700B3657E /* DocumentPartwise.h */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
 		298B360E1AC8F7400021CD1E /* Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +125,12 @@
 		298B360F1AC8F7A10021CD1E /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				29D632151AA54E9100E6E28B /* Elements.cpp */,
-				29D632161AA54E9100E6E28B /* Elements.h */,
 				2971FBEA1AA580C600547E82 /* AttributesInterface.cpp */,
 				2971FBEB1AA580C600547E82 /* AttributesInterface.h */,
 				2971FBEE1AA583D400547E82 /* ElementInterface.cpp */,
 				2971FBEF1AA583D400547E82 /* ElementInterface.h */,
+				29D632151AA54E9100E6E28B /* Elements.cpp */,
+				29D632161AA54E9100E6E28B /* Elements.h */,
 			);
 			name = Elements;
 			sourceTree = "<group>";
@@ -127,10 +138,7 @@
 		298B45D01A9B93FF0014CAED = {
 			isa = PBXGroup;
 			children = (
-				29A71B961AEA073700B3657E /* DocumentPartwise.cpp */,
-				29A71B971AEA073700B3657E /* DocumentPartwise.h */,
-				29D728951AE9E48400806D33 /* DocumentHeader.cpp */,
-				29D728961AE9E48400806D33 /* DocumentHeader.h */,
+				2947C15A1AEC210C00704318 /* Document */,
 				298B360F1AC8F7A10021CD1E /* Elements */,
 				298B360E1AC8F7400021CD1E /* Types */,
 				298B45DA1A9B93FF0014CAED /* Products */,

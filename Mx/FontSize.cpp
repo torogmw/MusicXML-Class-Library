@@ -1,4 +1,7 @@
 
+/* MusicXML Class Library v0.1.0
+ Copyright (c) 2015 by Matthew James Briggs */
+
 #include "FontSize.h"
 #include <string>
 #include <sstream>
