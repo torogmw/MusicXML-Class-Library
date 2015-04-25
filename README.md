@@ -67,6 +67,18 @@ bar->setHasFoo( false ); /* The XML document no longer has a Foo */
 bar->getFoo()->getName() == "Dave"; /* True! The value is still there even though it is not present in the XML document. */
 ```
 ##### Optional Member Data with Unbounded Ocurrences
+Sometimes an element may contain zero, one, or many occurences of another element.  For example
+```
+<xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded">
+```
+In this case there will be a collection of Keys and the getter/setters will look like this, where `KeySet` is a typedef of `std::vector<Key>`.
+```
+const KeySet& getKeySet() const;
+void addKey( const KeyPtr& value );
+void removeKey( const KeySetIterConst& value );
+void clearKeySet();
+KeyPtr getKey( const KeySetIterConst& setIterator ) const;
+```
 
 ##### Required Member Data with Unbounded Ocurrences
 
