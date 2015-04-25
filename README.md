@@ -38,7 +38,7 @@ There are two types of MusicXML documents, "partwise" and "timewise".  A partwis
 Each XML element is represented by a class which derives from ElementInterface.  Elements are created and used by way of shared pointers.  Each element comes with a set of using/typedef statements as well as a convenience function for making the shared pointers.
 
 ##### Shared Pointers
-Many elements contain other elements.  When they do, these data members will also be shared pointers.  Get/set functions will allow access to the data members by accepting and returning shared pointers.  If you attempt to set a data member to a nullptr, the setter function will silently do nothing.  Thus we can be resonably assured our objects will never return nullptr.
+Many elements contain other elements.  When they do, these data members will also be shared pointers.  Get/set functions will allow access to the data members by accepting and returning shared pointers.  If you attempt to set a data member to a nullptr, the setter function will silently do nothing.  Thus we can be reasonably assured our objects will never return nullptr.
 
 For example
 
@@ -50,7 +50,7 @@ x->somefuntion(); /* OK to dereference without checking for nullptr */
 ```
 
 ##### Optional Member Data
-Many of the elements in MusicXML are optional.  In these cases there is a bool which indicates whether or not the element is present.  The bool serves as a flag indicating whether or not the optional element will be output when you stream out your MusicXML document.  The bool has no side-effect on the element whos presence/absence it represents.  So for example we may set some data:
+Many of the elements in MusicXML are optional.  In these cases there is a bool which indicates whether or not the element is present.  The bool serves as a flag indicating whether or not the optional element will be output when you stream out your MusicXML document.  The bool has no side-effect on the element who's presence/absence it represents.  So for example we may set some data:
 ```
 foo->setName( "David" );
 bar->setFoo( foo );
@@ -67,7 +67,7 @@ bar->setHasFoo( false ); /* The XML document no longer has a Foo */
 bar->getFoo()->getName() == "Dave"; /* True! The value is still there even though it is not present in the XML document. */
 ```
 ##### Optional Member Data with Unbounded Ocurrences
-Sometimes an element may contain zero, one, or many occurences of another element.  For example
+Sometimes an element may contain zero, one, or many occurrences of another element.  For example
 ```
 <xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded">
 ```
@@ -80,7 +80,7 @@ void clearKeySet();
 KeyPtr getKey( const KeySetIterConst& setIterator ) const;
 ```
 
-##### Required Member Data with Unbounded Ocurrences
+##### Required Member Data with Unbounded Occurrences
 
 ##### Required Member Data with Specific Number of Allowed Ocurrences
 
