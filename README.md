@@ -24,7 +24,7 @@ Currently the project will remain as an Xcode workspace as I have not yet had th
 If you are not familiar with MusicXML then it will be difficult to use this library.  However one of the aims of this library is to make proper MusicXML construction "discoverable" in the sense that IDE code-completion will show you what can and cannot be done.
 
 ##### Namespaces
-Everything is contained in the *mx* namespace.  Within the mx namespace there are three sub namespaces.  These have names a single character in length for typing convenience.  The *t* namespace contains value types (t for types).  These are things like ranged integers, enums, strings, etc.  The *e* namespace contains all of the XML element classes (e for elements).  And the *d* namespace contains a few classes for representing the MusicXML document as a whole (d for document).  There are no name clashes between the three namespaces so it is OK to do this
+Everything is contained in the *mx* namespace.  Within the *mx* namespace there are three sub namespaces.  These have names a single character in length for typing convenience.  The *t* namespace contains value types (t for types).  These are things like ranged integers, enums, strings, etc.  The *e* namespace contains all of the XML element classes (e for elements).  And the *d* namespace contains a few classes for representing the MusicXML document as a whole (d for document).  There are no name clashes between the three namespaces so it is OK to do this
 ```
 using namespace mx::e;
 using namespace mx::d;
@@ -48,5 +48,28 @@ bar->setFoo( foo ); /* no-op because you passed a nullptr */
 auto x = bar->getFoo(); /* guaranteed not to bee null */
 x->somefuntion(); /* OK to dereference without checking for nullptr */
 ```
+
+##### Optional Member Data
+Many of the elements in MusicXML are optional.  In these cases there is a bool which indicates whether or not the element is present.  The bool serves as a flag indicating whether or not the optional element will be output when you stream out your MusicXML document.  The bool has no side-effect on the element whos presence/absence it represents.  So for example we may set some data:
+```
+foo->setName( "David" );
+bar->setFoo( foo );
+```
+But in this example, if Foo is an optional member of Bar, then we must also set HasFoo to *true* or else foo will not be in the XML output.
+```
+bar->toStream(...); /* Foo is not in the output! */
+bar->setHasFoo( true );
+bar->toStream(...); /* Now we see our Foo in the output. */
+```
+
+##### Optional Member Data with Unbounded Ocurrences
+
+##### Required Member Data with Unbounded Ocurrences
+
+##### Required Member Data with Specific Number of Allowed Ocurrences
+
+##### Handling of xs:choice Specifications
+##### Handling of xs:group Specifications
+##### Sample Program
 
 ### Unit Testing
