@@ -33,6 +33,7 @@ For example
 
 `
 std::shared_ptr<Foo> foo; /* nullptr! */
+
 bar->setFoo( foo ); /* no-op because you passed a nullptr */
 `
 
