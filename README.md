@@ -23,6 +23,14 @@ Currently the project will remain as an Xcode workspace as I have not yet had th
 ### Usage
 If you are not familiar with MusicXML then it will be difficult to use this library.  However one of the aims of this library is to make proper MusicXML construction "discoverable" in the sense that IDE code-completion will show you what can and cannot be done.
 
+##### Namespaces
+Everything is contained in the mx namespace.  Within the mx namespace there are three sub namespaces.  These have names a single character in length for typing convenience.  The 't' namespace contains value types (t for types).  These are things like ranged integers, enums, strings, etc.  The 'e' namespace contains all of the XML element classes (e for elements).  And the 'd' namespace contains a few classes for representing the MusicXML document as a whole (d for document).  There are no name clashes between the three namespaces so it is OK to do this
+```
+using namespace mx::e;
+using namespace mx::d;
+using namespace mx::t;
+```
+
 ##### Partwise vs. Timewise
 There are two types of MusicXML documents, "partwise" and "timewise".  A partwise document consists of a set of parts which contain measures.  A timewise document consists of a set of measures which contain parts.  Partwise is used more often by MusicXML applications and I will only use Partwise in this tutorial.
 
@@ -41,4 +49,4 @@ auto x = bar->getFoo(); /* guaranteed not to bee null */
 x->somefuntion(); /* OK to dereference without checking for nullptr */
 ```
 
-In many 
+### Unit Testing
