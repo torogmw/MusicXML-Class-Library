@@ -31,11 +31,10 @@ Many elements contain other elements.  When they do, these data members will als
 
 For example
 
-`
+```
 std::shared_ptr<Foo> foo; /* nullptr! */
-
 bar->setFoo( foo ); /* no-op because you passed a nullptr */
-`
+```
 
 'test'
 `test`
