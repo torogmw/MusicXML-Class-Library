@@ -17,3 +17,15 @@ The project uses C++11 semantics and has been compiled sucessfully with
 * Xcode 5.1.1 (5B1008) Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn)
 * Visual Studio 2013 (note use /bigobj flag due to the large size of the Elements.h/cpp translation unit)
 * GCC Version 4.8
+
+Currently the project will remain as an Xcode workspace as I have not yet had the time to explore using CMake to make the repository IDE-agnostic.  It is a simple build though and shouldn't be hard to bring it into another IDE.  The MxTest project must link to libMx.a (or Mx.lib) and must be able to find the headers from the Mx library.
+
+### Usage
+If you are not familiar with MusicXML then it will be difficult to use this library.  However one of the aims of this library is to make proper MusicXML construction "discoverable" in the sense that IDE code-completion will show you what can and cannot be done.
+
+There are two types of MusicXML documents, "partwise" and "timewise".  A partwise document consists of a set of parts which contain measures.  A timewise document consists of a set of measures which contain parts.  Partwise is used more often by MusicXML applications and I will only use Partwise in this tutorial.
+
+Each XML element is represented by a class which derives from ElementInterface.
+
+'test'
+`test`
