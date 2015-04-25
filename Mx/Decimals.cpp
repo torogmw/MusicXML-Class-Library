@@ -39,14 +39,20 @@ namespace mx
         Decimal::Decimal( const Decimal& other )
         :myImpl( new Decimal::impl( other.getValue() ) )
         { }
-        Decimal::Decimal( Decimal&& other ) = default;
+        Decimal::Decimal( Decimal&& other )
+        :myImpl( std::move( other.myImpl ) )
+        {}
         
         Decimal& Decimal::operator=( const Decimal& other )
         {
             this->myImpl = std::unique_ptr<Decimal::impl>( new Decimal::impl( other.getValue() ) );
             return *this;
         }
-        Decimal& Decimal::operator=( Decimal&& other ) = default;
+        Decimal& Decimal::operator=( Decimal&& other )
+        {
+            myImpl = std::move( other.myImpl );
+            return *this;
+        }
         
         DecimalType Decimal::getValue() const
         {
@@ -104,6 +110,12 @@ namespace mx
             setValue( other.getValue() );
             return *this;
         }
+        DecimalRange::DecimalRange( DecimalRange&& other )
+        :myMin( std::move( other.myMin ) )
+        ,myMax( std::move( other.myMax ) )
+        ,Decimal( std::move( other ) )
+        {}
+        
         DecimalRange& DecimalRange::operator=( DecimalRange&& other )
         {
             setValue( other.getValue() );

@@ -48,6 +48,12 @@ namespace mx
         }
         IntRange::~IntRange() {}
         
+        IntRange::IntRange( IntRange&& other )
+        :myMax( std::move( other.myMax ) )
+        ,myMin( std::move( other.myMin ) )
+        ,Integer( std::move( other ) )
+        {}
+        
         IntRange& IntRange::operator=( const IntRange& other )
         {
             this->setValue( other.getValue() );

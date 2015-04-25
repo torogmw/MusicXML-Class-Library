@@ -6,7 +6,9 @@ namespace mx
 {
     namespace e
     {
-        ElementInterface::ElementInterface()
+		const char* INDENT = "   ";
+ 
+		ElementInterface::ElementInterface()
         {}
         
         ElementInterface::~ElementInterface() {}

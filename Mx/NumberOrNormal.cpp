@@ -89,16 +89,21 @@ namespace mx
         :myImpl( new NumberOrNormal::impl( *other.myImpl ) )
         {}
         
-        NumberOrNormal::NumberOrNormal( NumberOrNormal&& other ) = default;
+        NumberOrNormal::NumberOrNormal( NumberOrNormal&& other )
+        :myImpl( std::move( other.myImpl ) )
+        {}
         
-        NumberOrNormal& NumberOrNormal::operator=( NumberOrNormal&& other ) = default;
+        NumberOrNormal& NumberOrNormal::operator=( NumberOrNormal&& other )
+        {
+            myImpl = std::move( other.myImpl );
+            return *this;
+        }
         
         NumberOrNormal& NumberOrNormal::operator=( const NumberOrNormal& other )
         {
             this->myImpl = std::unique_ptr<NumberOrNormal::impl>( new NumberOrNormal::impl( *other.myImpl ) );
             return *this;
         }
-        
         bool NumberOrNormal::getIsNormal() const
         {
             return myImpl->getIsNormal();

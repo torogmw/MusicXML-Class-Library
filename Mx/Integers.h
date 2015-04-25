@@ -28,7 +28,7 @@ namespace mx
             explicit IntRange( IntType min, IntType max, IntType value );
             virtual ~IntRange();
             IntRange( const IntRange& ) = default;
-            IntRange( IntRange&& ) = default;
+            IntRange( IntRange&& );
             IntRange& operator=( const IntRange& );
             IntRange& operator=( IntRange&& );
             

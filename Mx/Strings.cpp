@@ -1,6 +1,7 @@
 #include "Strings.h"
 #include <sstream>
 #include <cctype>
+#include <algorithm>
 
 namespace
 {

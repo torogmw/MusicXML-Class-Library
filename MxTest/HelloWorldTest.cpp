@@ -44,6 +44,11 @@ using namespace mx::d;
 using namespace mx::t;
 using namespace std;
 
+namespace MxTestHelpers
+{
+    std::string helloWorldExpected();
+}
+
 TEST( HelloWorld, HelloWorld )
 {
     auto doc = makeDocumentPartwise();
@@ -84,8 +89,51 @@ TEST( HelloWorld, HelloWorld )
     noteData->getNote()->getType()->setValue( NoteTypeValue::whole );
     measure->getMusicDataGroup()->addMusicDataChoice( noteData );
     
-    std::string expected = R"((()))";
+    std::string expected = MxTestHelpers::helloWorldExpected();
     std::stringstream actual;
     doc->toStream( actual );
     CHECK_EQUAL( expected, actual.str() )
+}
+
+namespace MxTestHelpers
+{
+    inline std::string helloWorldExpected()
+    {
+        std::stringstream os;
+        streamLine( os, 0, R"(<?xml version="1.0" encoding="UTF-8" standalone="no"?>)" );
+        streamLine( os, 0, R"(<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">)" );
+                   streamLine( os, 0, R"(<score-partwise version="3.0">)" );
+                   streamLine( os, 1, R"(<part-list>)" );
+                   streamLine( os, 2, R"(<score-part id="P1">)" );
+                   streamLine( os, 3, R"(<part-name>Music</part-name>)" );
+                   streamLine( os, 2, R"(</score-part>)" );
+                   streamLine( os, 1, R"(</part-list>)" );
+                   streamLine( os, 1, R"(<part id="P1">)" );
+                   streamLine( os, 2, R"(<measure number="1">)" );
+                   streamLine( os, 3, R"(<attributes>)" );
+                   streamLine( os, 4, R"(<divisions>1</divisions>)" );
+                   streamLine( os, 4, R"(<key>)" );
+                   streamLine( os, 5, R"(<fifths>0</fifths>)" );
+                   streamLine( os, 4, R"(</key>)" );
+                   streamLine( os, 4, R"(<time>)" );
+                   streamLine( os, 5, R"(<beats>4</beats>)" );
+                   streamLine( os, 5, R"(<beat-type>4</beat-type>)" );
+                   streamLine( os, 4, R"(</time>)" );
+                   streamLine( os, 4, R"(<clef>)" );
+                   streamLine( os, 5, R"(<sign>G</sign>)" );
+                   streamLine( os, 5, R"(<line>2</line>)" );
+                   streamLine( os, 4, R"(</clef>)" );
+                   streamLine( os, 3, R"(</attributes>)" );
+                   streamLine( os, 3, R"(<note>)" );
+                   streamLine( os, 4, R"(<pitch>)" );
+                   streamLine( os, 5, R"(<step>C</step>)" );
+                   streamLine( os, 5, R"(<octave>4</octave>)" );
+                   streamLine( os, 4, R"(</pitch>)" );
+                   streamLine( os, 4, R"(<duration>4</duration>)" );
+                   streamLine( os, 3, R"(</note>)" );
+                   streamLine( os, 2, R"(</measure>)" );
+                   streamLine( os, 1, R"(</part>)" );
+                   streamLine( os, 0, R"(</score-partwise>)", false );
+        return os.str();
+    }
 }

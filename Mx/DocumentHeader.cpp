@@ -70,7 +70,10 @@ namespace mx
             return os;
         }
         
-        constexpr DocumentSpecifications::DocumentSpecifications()
+#ifndef _MSC_VER /* Visual Studio Doesn't implement contexpr */
+		constexpr
+#endif 
+		DocumentSpecifications::DocumentSpecifications()
         :xmlVersion( kDefaultXmlVersion )
         ,documentEncoding( kDefaultDocumentEncoding )
         ,documentType( kDefaultDocumentType )

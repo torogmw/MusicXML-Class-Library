@@ -10,7 +10,7 @@ namespace mx
     {
         /* This will be used throughout when writing XML
          to indent the XML tree */
-        constexpr const char* INDENT = "   ";
+		extern const char* INDENT;
         
         struct ElementInterface;
         using ElementPtr = std::shared_ptr<ElementInterface>;

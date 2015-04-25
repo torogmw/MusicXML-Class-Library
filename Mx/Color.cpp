@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iomanip>
 #include <string>
+#include <memory>
 
 namespace mx
 {
@@ -175,6 +176,10 @@ namespace mx
         
         Color::Color( const Color& other )
         :myImpl( new Color::impl( *other.myImpl ) )
+        {}
+        
+        Color::Color( Color&& other )
+        :myImpl( std::move( other.myImpl ) )
         {}
         
         Color& Color::operator=( const Color& other )

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Integers.h"
+#include <memory>
 
 namespace mx
 {

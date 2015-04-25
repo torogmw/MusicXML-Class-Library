@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Integers.h"
+#include <memory>
 
 namespace mx
 {
@@ -25,7 +26,7 @@ namespace mx
             Color();
             virtual ~Color();
             Color( const Color& other );
-            Color( Color&& other ) = default;
+            Color( Color&& other );
             Color& operator=( const Color& other );
             
             IntType getAlpha() const;

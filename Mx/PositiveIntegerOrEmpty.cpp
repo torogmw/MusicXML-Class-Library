@@ -2,6 +2,7 @@
 #include "PositiveIntegerOrEmpty.h"
 #include <string>
 #include <sstream>
+#include <memory>
 
 namespace mx
 {
@@ -89,9 +90,15 @@ namespace mx
         :myImpl( new PositiveIntegerOrEmpty::impl( *other.myImpl ) )
         {}
         
-        PositiveIntegerOrEmpty::PositiveIntegerOrEmpty( PositiveIntegerOrEmpty&& other ) = default;
+        PositiveIntegerOrEmpty::PositiveIntegerOrEmpty( PositiveIntegerOrEmpty&& other )
+        :myImpl( std::move( other.myImpl ) )
+        {}
         
-        PositiveIntegerOrEmpty& PositiveIntegerOrEmpty::operator=( PositiveIntegerOrEmpty&& other ) = default;
+        PositiveIntegerOrEmpty& PositiveIntegerOrEmpty::operator=( PositiveIntegerOrEmpty&& other )
+        {
+            myImpl = std::move( other.myImpl );
+            return *this;
+        }
         
         PositiveIntegerOrEmpty& PositiveIntegerOrEmpty::operator=( const PositiveIntegerOrEmpty& other )
         {

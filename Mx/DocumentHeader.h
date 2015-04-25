@@ -10,33 +10,48 @@ namespace mx
             partwise = 1,
             timewise = 2
         };
-        constexpr const DocumentType kDefaultDocumentType = DocumentType::partwise;
+#ifndef _MSC_VER /* Visual Studio Doesn't implement contexpr */
+		constexpr
+#endif 
+		const DocumentType kDefaultDocumentType = DocumentType::partwise;
         std::ostream& stream( std::ostream& os, const DocumentType value );
         
         enum class XmlVersion
         {
             onePointZero = 1
         };
-        constexpr const XmlVersion kDefaultXmlVersion = XmlVersion::onePointZero;
+#ifndef _MSC_VER /* Visual Studio Doesn't implement contexpr */
+		constexpr
+#endif 
+		const XmlVersion kDefaultXmlVersion = XmlVersion::onePointZero;
         std::ostream& stream( std::ostream& os, const XmlVersion value );
         
         enum class DocumentEncoding
         {
             utfEight = 1
         };
-        constexpr const DocumentEncoding kDefaultDocumentEncoding = DocumentEncoding::utfEight;
+#ifndef _MSC_VER /* Visual Studio Doesn't implement contexpr */
+		constexpr
+#endif 
+		const DocumentEncoding kDefaultDocumentEncoding = DocumentEncoding::utfEight;
         std::ostream& stream( std::ostream& os, const DocumentEncoding value );
         
         enum class MusicXmlVersion
         {
             ThreePointZero = 1
         };
-        constexpr const MusicXmlVersion kDefaultMusicXmlVersion = MusicXmlVersion::ThreePointZero;
+#ifndef _MSC_VER /* Visual Studio Doesn't implement contexpr */
+		constexpr
+#endif 
+		const MusicXmlVersion kDefaultMusicXmlVersion = MusicXmlVersion::ThreePointZero;
         std::ostream& stream( std::ostream& os, const MusicXmlVersion value );
         
         struct DocumentSpecifications
         {
-            constexpr DocumentSpecifications();
+#ifndef _MSC_VER /* Visual Studio Doesn't implement contexpr */
+			constexpr
+#endif 
+			DocumentSpecifications();
             XmlVersion xmlVersion;
             DocumentEncoding documentEncoding;
             DocumentType documentType;

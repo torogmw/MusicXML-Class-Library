@@ -115,9 +115,15 @@ namespace mx
         :myImpl( new YesNoNumber::impl( *other.myImpl ) )
         {}
         
-        YesNoNumber::YesNoNumber( YesNoNumber&& other ) = default;
+        YesNoNumber::YesNoNumber( YesNoNumber&& other )
+        :myImpl( std::move( other.myImpl ) )
+        {}
         
-        YesNoNumber& YesNoNumber::operator=( YesNoNumber&& other ) = default;
+        YesNoNumber& YesNoNumber::operator=( YesNoNumber&& other )
+        {
+            myImpl = std::move( other.myImpl );
+            return *this;
+        }
         
         YesNoNumber& YesNoNumber::operator=( const YesNoNumber& other )
         {

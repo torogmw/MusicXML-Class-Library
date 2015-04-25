@@ -583,7 +583,9 @@ namespace mx
         {}
         
         
-        Date::Date( Date&& other ) = default;
+        Date::Date( Date&& other )
+        :myImpl( std::move( other.myImpl ) )
+        {}
         
         Date& Date::operator=( const Date& other )
         {
@@ -592,7 +594,11 @@ namespace mx
                                                            other.myImpl->getDay() ) );
             return *this;
         }
-        Date& Date::operator=( Date&& other ) = default;
+        Date& Date::operator=( Date&& other )
+        {
+            myImpl = std::move( other.myImpl );
+            return *this;
+        }
         
         /* Getters ---------------------------------------------------------------------------- */
         

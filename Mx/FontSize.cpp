@@ -115,9 +115,15 @@ namespace mx
         :myImpl( new FontSize::impl( *other.myImpl ) )
         {}
         
-        FontSize::FontSize( FontSize&& other ) = default;
+        FontSize::FontSize( FontSize&& other )
+        :myImpl( std::move( other.myImpl ) )
+        {}
         
-        FontSize& FontSize::operator=( FontSize&& other ) = default;
+        FontSize& FontSize::operator=( FontSize&& other )
+        {
+            myImpl = std::move( other.myImpl );
+            return *this;
+        }
         
         FontSize& FontSize::operator=( const FontSize& other )
         {
