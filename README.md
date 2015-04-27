@@ -3,7 +3,7 @@ MusicXML Class Library
 
 Author: Matthew James Briggs
 
-Datestamp: April 25, 2015
+Datestamp: April 26, 2015
 
 ### Introduction
 This project is a static C++ class library which represents MusicXML in object-oriented classes.  The scope of the project is intended to be limited to the representation of and manipulation of MusicXML data through an interface that is very closely aligned with the musicxml.xsd document (and thus the syntax for using this library is as verbose as the MusicXML language itself).
@@ -81,11 +81,91 @@ KeyPtr getKey( const KeySetIterConst& setIterator ) const;
 ```
 
 ##### Required Member Data with Unbounded Occurrences
+Sometimes an element is required, but you may optionally have more than one.  For example
+```
+<xs:element name="direction-type" type="direction-type" maxOccurs="unbounded"/>
+```
+In this case, minOccurs="1" (by default per XSD language rules).  In this case the the functions will look just like the previous example, but they will behave differently
+```
+const DirectionTypeSet& getDirectionTypeSet() const;
+void addDirectionType( const DirectionTypePtr& value );
+void removeDirectionType( const DirectionTypeSetIterConst& value );
+void clearDirectionTypeSet();
+DirectionTypePtr getDirectionType( const DirectionTypeSetIterConst& setIterator ) const;
+```
 
-##### Required Member Data with Specific Number of Allowed Ocurrences
+When the containing element is constructed, a single DirectionType will be default constructed and pushed onto the vector.  Thus you will have one default constructed DirectionType in the set upon construction.
+
+If you try to call removeDirectionType with only one DirectionType in the set (size==1) nothing will happen.  You will still have a single DirectionType in the collection.
+
+When you call clearDirectionTypeSet vector.clear() will be called but it will follow up by pushing a default constructed DirectionType onto the vector so you will still have size==1.
+
+
+##### Member Data with Bounded maxOccurs
+```
+<xs:element name="beam" type="beam" minOccurs="0" maxOccurs="8"/>
+```
+In this case if you call addBeam when there are already 8 beams in the vector, nothing will happen.
 
 ##### Handling of xs:choice Specifications
+
 ##### Handling of xs:group Specifications
+
 ##### Sample Program
+On the MusicXML home page there is an example of a "Hello World" simple MusicXML file.  Here is a main function that would output this "Hello World" MusicXML example to std::cout.
+```
+#include <iostream>
+#include "DocumentPartwise.h"
+#include "Elements.h"
+
+using namespace mx::e;
+using namespace mx::d;
+using namespace mx::t;
+using namespace std;
+
+int main(int argc, const char * argv[])
+{
+    auto doc = makeDocumentPartwise();
+    auto s = doc->getScorePartwise();
+    s->getAttributes()->hasVersion = true;
+    s->getAttributes()->version = XsToken( "3.0" );
+    auto header = s->getScoreHeaderGroup();
+    header->getPartList()->getScorePart()->getAttributes()->id = XsID( "P1" );
+    header->getPartList()->getScorePart()->getPartName()->setValue( XsString( "Music" ) );
+    auto part = *( s->getPartwisePartSet().cbegin() );
+    part->getAttributes()->id = XsIDREF( "P1" );
+    auto measure = *( part->getPartwiseMeasureSet().cbegin() );
+    measure->getAttributes()->number = XsToken( "1" );
+    auto propertiesChoice = makeMusicDataChoice();
+    propertiesChoice->setChoice( MusicDataChoice::Choice::properties );
+    auto properties = propertiesChoice->getProperties();
+    properties->setHasDivisions( true );
+    properties->getDivisions()->setValue( PositiveDivisionsValue( 1 ) );
+    properties->addKey( makeKey() );
+    auto time = makeTime();
+    time->getTimeChoice()->setChoice( TimeChoice::Choice::timeSignature );
+    time->getTimeChoice()->getTimeSignature()->getBeats()->setValue( XsString( "4" ) );
+    time->getTimeChoice()->getTimeSignature()->getBeatType()->setValue( XsString( "4" ) );
+    properties->addTime( time );
+    auto clef = makeClef();
+    clef->getSign()->setValue( ClefSign::g );
+    clef->setHasLine( true );
+    clef->getLine()->setValue( StaffLine( 2 ) );
+    properties->addClef( clef );
+    measure->getMusicDataGroup()->addMusicDataChoice( propertiesChoice );
+    auto noteData = makeMusicDataChoice();
+    noteData->setChoice( MusicDataChoice::Choice::note );
+    noteData->getNote()->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
+    noteData->getNote()->getNoteChoice()->getNormalNoteGroup()->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::pitch );
+    noteData->getNote()->getNoteChoice()->getNormalNoteGroup()->getFullNoteGroup()->getFullNoteTypeChoice()->getPitch()->getStep()->setValue( StepEnum::c );
+    noteData->getNote()->getNoteChoice()->getNormalNoteGroup()->getFullNoteGroup()->getFullNoteTypeChoice()->getPitch()->getOctave()->setValue( OctaveValue( 4 ) );
+    noteData->getNote()->getNoteChoice()->getNormalNoteGroup()->getDuration()->setValue( PositiveDivisionsValue( 4 ) );
+    noteData->getNote()->getType()->setValue( NoteTypeValue::whole );
+    measure->getMusicDataGroup()->addMusicDataChoice( noteData );
+    
+    doc->toStream( cout ); /* print Hello World MusicXML document to console */
+    return 0;
+}
+```
 
 ### Unit Testing

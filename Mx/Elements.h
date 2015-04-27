@@ -24208,7 +24208,7 @@ namespace mx
             virtual std::ostream& streamContents( std::ostream& os, const int indentLevel, bool& isOneLineOnly ) const;
             DirectionAttributesPtr getAttributes() const;
             void setAttributes( const DirectionAttributesPtr& value );
-            /* _________ DirectionType minOccurs = 0, maxOccurs = unbounded _________ */
+            /* _________ DirectionType minOccurs = 1, maxOccurs = unbounded _________ */
             const DirectionTypeSet& getDirectionTypeSet() const;
             void addDirectionType( const DirectionTypePtr& value );
             void removeDirectionType( const DirectionTypeSetIterConst& value );
