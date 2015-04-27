@@ -85,7 +85,7 @@ Sometimes an element is required, but you may optionally have more than one.  Fo
 ```
 <xs:element name="direction-type" type="direction-type" maxOccurs="unbounded"/>
 ```
-In this case, minOccurs="1" (by default per XSD language rules).  In this case the the functions will look just like the previous example, but they will behave differently
+In this case, minOccurs="1" (by default per XSD language rules).  The functions will look just like the previous example, but they will behave differently
 ```
 const DirectionTypeSet& getDirectionTypeSet() const;
 void addDirectionType( const DirectionTypePtr& value );
